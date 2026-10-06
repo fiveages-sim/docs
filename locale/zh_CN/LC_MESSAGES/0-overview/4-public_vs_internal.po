@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:07+0000\n"
+"POT-Creation-Date: 2026-10-06 16:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -187,7 +187,7 @@ msgstr ""
 "ws](https://github.com/fiveages-sim/open-deploy-ws)"
 
 #: ../../source/0-overview/4-public_vs_internal.md:27
-#: ../../source/0-overview/4-public_vs_internal.md:84
+#: ../../source/0-overview/4-public_vs_internal.md:81
 #: 13edb4181fa44dfc92f95006e463e09b 2223a63311b94a11a529a2c8218194a8
 msgid "Features"
 msgstr "功能特性"
@@ -216,7 +216,9 @@ msgstr "**真实硬件支持**：可将 ARX Acone 与 HT Panthera 部署到实�
 msgid ""
 "OCS2 available as a GitHub Release `.deb` (`ros-jazzy-ocs2`; not from apt"
 " / packages.ros.org)"
-msgstr "OCS2 以 GitHub Release `.deb` 提供（`ros-jazzy-ocs2`；不来自 apt / packages.ros.org）"
+msgstr ""
+"OCS2 以 GitHub Release `.deb` 提供（`ros-jazzy-ocs2`；不来自 apt / "
+"packages.ros.org）"
 
 #: ../../source/0-overview/4-public_vs_internal.md:33
 #: 8c2ded635bae45b3babb89ead8f24135
@@ -231,7 +233,7 @@ msgid ""
 msgstr "适合学习、试验、贡献代码以及真实机器人部署"
 
 #: ../../source/0-overview/4-public_vs_internal.md:36
-#: ../../source/0-overview/4-public_vs_internal.md:92
+#: ../../source/0-overview/4-public_vs_internal.md:89
 #: 117ca5e6f0934d82af880f5e46215759 79535aa5674345549d9ab128a87caa0b
 msgid "Initialization"
 msgstr "初始化"
@@ -270,47 +272,43 @@ msgstr "初始化所选子模块"
 #: ../../source/0-overview/4-public_vs_internal.md:49
 #: 7bd1957eae6c46e6a27c801ded214f5c
 msgid "Visibility Configuration"
-msgstr "可见性 配置"
+msgstr "可见性配置"
 
 #: ../../source/0-overview/4-public_vs_internal.md:51
-#: 18cbda3e5b644b05bfe260c2ff10faf1
+#: 176d029879e94a62997001e52a84a3fe
 msgid ""
-"The workspace uses `submodules_visibility.conf` to track which submodules"
-" are public or private:"
-msgstr "工作空间使用 `submodules_visibility.conf` 记录哪些子模块为公开或私有："
+"The workspace uses `submodules_visibility.conf` to control which "
+"**nested** submodules are public or private. The file is pipe-separated "
+"(`parent_dir|relative_path|visibility`); blank lines and `#` comments are"
+" ignored. It is not an INI file with `[public]` / `[private]` sections."
+msgstr "工作空间使用 `submodules_visibility.conf` 控制哪些**嵌套**子模块为公开或私有。文件为竖线分隔（`parent_dir|relative_path|visibility`）；空行和 `#` 注释会被忽略。它不是带 `[public]` / `[private]` 小节的 INI 文件。"
 
 #: ../../source/0-overview/4-public_vs_internal.md:53
-#: b64d051335d94238b50c30b93bc25310
+#: 867c6175d41b4730bad14893ca1a5ca6
 msgid ""
-"# Example visibility config\n"
-"[public]\n"
-"arms_ros2_control\n"
-"robot_descriptions\n"
-"robot-descriptions-common\n"
-"\n"
-"[private]\n"
-"# Private submodules are not cloned in open-deploy-ws\n"
+"# Format: parent_dir|relative_path|public or private\n"
+"src/robot-descriptions|common|public\n"
+"src/robot-descriptions|manipulator/Dobot|public\n"
+"src/robot-descriptions|manipulator/Tianji|private\n"
+"src/arms_ros2_control|controller/ocs2_wbc_controller|private"
 msgstr ""
-"# 可见性配置示例\n"
-"[public]\n"
-"arms_ros2_control\n"
-"robot_descriptions\n"
-"robot-descriptions-common\n"
-"\n"
-"[private]\n"
-"# 私有子模块不会在 open-deploy-ws 中克隆\n"
+"# Format: parent_dir|relative_path|public or private\n"
+"src/robot-descriptions|common|public\n"
+"src/robot-descriptions|manipulator/Dobot|public\n"
+"src/robot-descriptions|manipulator/Tianji|private\n"
+"src/arms_ros2_control|controller/ocs2_wbc_controller|private"
 
-#: ../../source/0-overview/4-public_vs_internal.md:64
+#: ../../source/0-overview/4-public_vs_internal.md:61
 #: 7350413c52a84add910740f4e3852500
 msgid "Lean Branches"
 msgstr "精简分支"
 
-#: ../../source/0-overview/4-public_vs_internal.md:66
+#: ../../source/0-overview/4-public_vs_internal.md:63
 #: ccc9dbb4d36a4774b81b7e7228765e37
 msgid "For minimal builds focusing on a single robot:"
 msgstr "若只需针对单一机器人做精简编译："
 
-#: ../../source/0-overview/4-public_vs_internal.md:68
+#: ../../source/0-overview/4-public_vs_internal.md:65
 #: 18182cb3b37d470a9bcdffa50abd4fe7
 msgid ""
 "# Dobot CR5 only\n"
@@ -325,49 +323,49 @@ msgstr ""
 "# ARX ACone only\n"
 "git checkout arx-acone\n"
 
-#: ../../source/0-overview/4-public_vs_internal.md:76
+#: ../../source/0-overview/4-public_vs_internal.md:73
 #: 39cdbcdb9ee14d5e97ca9511b7f3d6ed
 msgid "fa-deploy-ws (Internal)"
 msgstr "fa-deploy-ws（内部）"
 
-#: ../../source/0-overview/4-public_vs_internal.md:78
+#: ../../source/0-overview/4-public_vs_internal.md:75
 #: 0b692449c4f34e029fad3e056c967bdb
 msgid "Access Required"
 msgstr "需要访问权限"
 
-#: ../../source/0-overview/4-public_vs_internal.md:81
+#: ../../source/0-overview/4-public_vs_internal.md:78
 #: 0c5138fba91d421a9a24ece222dd7d13
 msgid ""
 "This workspace requires private repository access. Contact your team lead"
 " if you need access."
 msgstr "此工作空间需要私有仓库访问权限。如需开通，请联系你的团队负责人。"
 
-#: ../../source/0-overview/4-public_vs_internal.md:86
+#: ../../source/0-overview/4-public_vs_internal.md:83
 #: a29f8468a2fa4a588258f955e3af7631
 msgid "Access to all FiveAges robots: W2, W2R, S2, S2R"
 msgstr "可使用全部 FiveAges 机器人：W2、W2R、S2、S2R"
 
-#: ../../source/0-overview/4-public_vs_internal.md:87
+#: ../../source/0-overview/4-public_vs_internal.md:84
 #: 2240407dae234913b42e7529c2a0ace4
 msgid "Dual-arm CCS configurations (M6, M20S, AR5)"
 msgstr "双臂 CCS 配置（M6、M20S、AR5）"
 
-#: ../../source/0-overview/4-public_vs_internal.md:88
+#: ../../source/0-overview/4-public_vs_internal.md:85
 #: 7d8b28fbf92e47cf95d5565baf77e0c8
 msgid "Full OCS2 + WBC source integration"
 msgstr "完整的 OCS2 + WBC 源码集成"
 
-#: ../../source/0-overview/4-public_vs_internal.md:89
+#: ../../source/0-overview/4-public_vs_internal.md:86
 #: 199db14c3698437b82fbbd2e23faf811
 msgid "Release package generation (`./release.sh`)"
 msgstr "生成发布包（`./release.sh`）"
 
-#: ../../source/0-overview/4-public_vs_internal.md:90
+#: ../../source/0-overview/4-public_vs_internal.md:87
 #: f9bd06fcfdd548d695111acc1c7d1523
 msgid "Robot-specific initialization presets"
 msgstr "按机器人预设的初始化配置"
 
-#: ../../source/0-overview/4-public_vs_internal.md:94
+#: ../../source/0-overview/4-public_vs_internal.md:91
 #: 82584ffff1024399bdd6f18c948297a9
 msgid ""
 "git clone <internal-url>/fa-deploy-ws.git\n"
@@ -378,34 +376,34 @@ msgstr ""
 "cd fa-deploy-ws\n"
 "./init_repo.sh --robot <robot-id>\n"
 
-#: ../../source/0-overview/4-public_vs_internal.md:100
+#: ../../source/0-overview/4-public_vs_internal.md:97
 #: 889e9a1bb0df400fba6ce480b3cd1177
 msgid "Available robot IDs include:"
 msgstr "可用的机器人 ID 包括："
 
-#: ../../source/0-overview/4-public_vs_internal.md:101
+#: ../../source/0-overview/4-public_vs_internal.md:98
 #: ee33eab6594f455c8c6e5b73e7643c35
 msgid "Humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`"
 msgstr "人形机器人：`fiveages_w2`、`fiveages_w2r`、`fiveages_s2`、`fiveages_s2r`"
 
-#: ../../source/0-overview/4-public_vs_internal.md:102
+#: ../../source/0-overview/4-public_vs_internal.md:99
 #: b173312c79e04e2c8cd86aa5d411c9bb
 msgid "Dual-arm: `tianji_m6_ccs`, `tianji_m20s_ccs`, `rokae_ar5_ccs`"
 msgstr "双臂：`tianji_m6_ccs`、`tianji_m20s_ccs`、`rokae_ar5_ccs`"
 
-#: ../../source/0-overview/4-public_vs_internal.md:104
+#: ../../source/0-overview/4-public_vs_internal.md:101
 #: c99151c2663542f1b925b94f6f66745a
 msgid "Robot Configuration"
 msgstr "机器人 配置"
 
-#: ../../source/0-overview/4-public_vs_internal.md:106
+#: ../../source/0-overview/4-public_vs_internal.md:103
 #: f0b032ccd4b64e658082c77d9a2e6a23
 msgid ""
 "Each robot requires a `robot.local.yaml` file with deployment-specific "
 "settings:"
 msgstr "每台机器人都需要一份包含部署专用设置的 `robot.local.yaml` 文件："
 
-#: ../../source/0-overview/4-public_vs_internal.md:108
+#: ../../source/0-overview/4-public_vs_internal.md:105
 #: 3dab7a32c5864ff7942bf27279efb3cc
 msgid ""
 "# Example structure (actual values must be configured per-robot)\n"
@@ -426,12 +424,12 @@ msgstr ""
 "  arm_type: <arm-model>\n"
 "  gripper_type: <gripper-model>\n"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: aa62d936f89c40f386151a3c97c2f39d
 msgid "Configuration Values"
 msgstr "配置值"
 
-#: ../../source/0-overview/4-public_vs_internal.md:122
+#: ../../source/0-overview/4-public_vs_internal.md:119
 #: 10f024eb051044d2a9392cf065ea520a
 msgid ""
 "The actual values for domain IDs, network interfaces, and device "
@@ -440,12 +438,12 @@ msgid ""
 "correct values."
 msgstr "Domain ID、网络接口和设备地址的实际取值因机器人而异，不应提交到版本控制。请查阅该机器人的配置文档或咨询团队负责人以获取正确取值。"
 
-#: ../../source/0-overview/4-public_vs_internal.md:125
+#: ../../source/0-overview/4-public_vs_internal.md:122
 #: 0606fbddd82c452dbf48e0766d7dc6be
 msgid "Quick Start Flow"
 msgstr "快速启动流程"
 
-#: ../../source/0-overview/4-public_vs_internal.md:127
+#: ../../source/0-overview/4-public_vs_internal.md:124
 #: 56a89567abfe4f9b986e112ab5459572
 msgid ""
 "# Initialize for specific robot\n"
@@ -474,17 +472,17 @@ msgstr ""
 "# Run quick start\n"
 "./quick_start.sh\n"
 
-#: ../../source/0-overview/4-public_vs_internal.md:142
+#: ../../source/0-overview/4-public_vs_internal.md:139
 #: f08920680599454cb5b2bd681c9212b9
 msgid "Release Packages"
 msgstr "发布包"
 
-#: ../../source/0-overview/4-public_vs_internal.md:144
+#: ../../source/0-overview/4-public_vs_internal.md:141
 #: 9f1dd8a3170446258ab1afe79418bc0f
 msgid "For deployment without source builds:"
 msgstr "若需在不编译源码的情况下部署："
 
-#: ../../source/0-overview/4-public_vs_internal.md:146
+#: ../../source/0-overview/4-public_vs_internal.md:143
 #: 8b3feeae22c84e2ab35d057c96cf2cc6
 msgid ""
 "# Generate release zip\n"
@@ -499,164 +497,164 @@ msgstr ""
 "# Install on target machine\n"
 "./release.sh --install\n"
 
-#: ../../source/0-overview/4-public_vs_internal.md:154
+#: ../../source/0-overview/4-public_vs_internal.md:151
 #: df3965d205a1479b9ee2fc809ee43465
 msgid "Choosing Your Path"
 msgstr "选择路径"
 
-#: ../../source/0-overview/4-public_vs_internal.md:156
+#: ../../source/0-overview/4-public_vs_internal.md:153
 #: e255701d378d4709842492f33d1fc6ca
 msgid "Use the Public Path If:"
 msgstr "在以下情况使用公开路径："
 
-#: ../../source/0-overview/4-public_vs_internal.md:158
+#: ../../source/0-overview/4-public_vs_internal.md:155
 #: 7a95a7c109b44a7988432b2507a6cc2a
 msgid "You're new to the ecosystem"
 msgstr "你是本生态系统的新用户"
 
-#: ../../source/0-overview/4-public_vs_internal.md:159
+#: ../../source/0-overview/4-public_vs_internal.md:156
 #: d434607663e84c778aed68c554598ecf
 msgid "You're developing with publicly available robots"
 msgstr "你在使用公开可用的机器人进行开发"
 
-#: ../../source/0-overview/4-public_vs_internal.md:160
+#: ../../source/0-overview/4-public_vs_internal.md:157
 #: 824c5db333854650b0c5f929675ff3ca
 msgid "You're contributing to open source packages"
 msgstr "你在为开源软件包做贡献"
 
-#: ../../source/0-overview/4-public_vs_internal.md:161
+#: ../../source/0-overview/4-public_vs_internal.md:158
 #: c379377e3b274144819f310895cf810f
 msgid "You don't have FiveAges private repo access"
 msgstr "你没有 FiveAges 私有仓库的访问权限"
 
-#: ../../source/0-overview/4-public_vs_internal.md:163
+#: ../../source/0-overview/4-public_vs_internal.md:160
 #: 8d0f098abeec46948bcdd30d7dc4f39e
 msgid "Use the Internal Path If:"
 msgstr "在以下情况使用内部路径："
 
-#: ../../source/0-overview/4-public_vs_internal.md:165
+#: ../../source/0-overview/4-public_vs_internal.md:162
 #: fd71c38d90c7439e99b2439f081a5c11
 msgid "You're deploying to FA humanoids (W2/S2 series)"
 msgstr "你要部署到 FA 人形机器人（W2/S2 系列）"
 
-#: ../../source/0-overview/4-public_vs_internal.md:166
+#: ../../source/0-overview/4-public_vs_internal.md:163
 #: 68f3b86ac45e4ee689c48b2c276bd9c7
 msgid "You need WBC whole-body control"
 msgstr "你需要 WBC 全身控制"
 
-#: ../../source/0-overview/4-public_vs_internal.md:167
+#: ../../source/0-overview/4-public_vs_internal.md:164
 #: c5440d6f0d0f4c8d8cb69efbdd00baed
 msgid "You're building release packages for deployment"
 msgstr "你要构建用于部署的发布包"
 
-#: ../../source/0-overview/4-public_vs_internal.md:168
+#: ../../source/0-overview/4-public_vs_internal.md:165
 #: a56e269e8b9e469c8006ecdbdcd774a8
 msgid "You have authorized access to private repositories"
 msgstr "你已获得私有仓库的授权访问权限"
 
-#: ../../source/0-overview/4-public_vs_internal.md:170
+#: ../../source/0-overview/4-public_vs_internal.md:167
 #: bc46730634b549d8a73cd60457a1852c
 msgid "Transitioning Between Paths"
 msgstr "在两条路径之间切换"
 
-#: ../../source/0-overview/4-public_vs_internal.md:172
+#: ../../source/0-overview/4-public_vs_internal.md:169
 #: 54dfa60f6951465d8d918fe56676e6eb
 msgid "Public → Internal"
 msgstr "公开 → 内部"
 
-#: ../../source/0-overview/4-public_vs_internal.md:174
+#: ../../source/0-overview/4-public_vs_internal.md:171
 #: 1c5afab0f7ad42e788944282f0abf76c
 msgid "Request access to private repositories"
 msgstr "申请私有仓库访问权限"
 
-#: ../../source/0-overview/4-public_vs_internal.md:175
+#: ../../source/0-overview/4-public_vs_internal.md:172
 #: ade22e2890f949a894377651c5af8ffd
 msgid "Clone `fa-deploy-ws` fresh (don't try to convert open-deploy-ws)"
 msgstr "重新克隆 `fa-deploy-ws`（不要尝试把 open-deploy-ws 改成内部工作空间）"
 
-#: ../../source/0-overview/4-public_vs_internal.md:176
+#: ../../source/0-overview/4-public_vs_internal.md:173
 #: c78101815f5f432ea2532fc4aab67ef3
 msgid "Follow internal initialization with your robot ID"
 msgstr "使用你的机器人 ID 执行内部初始化"
 
-#: ../../source/0-overview/4-public_vs_internal.md:178
+#: ../../source/0-overview/4-public_vs_internal.md:175
 #: 51b63d8a916a480c8459ca3a1c56e262
 msgid "Internal Users on Public Hardware"
 msgstr "内部用户使用公开硬件"
 
-#: ../../source/0-overview/4-public_vs_internal.md:180
+#: ../../source/0-overview/4-public_vs_internal.md:177
 #: ce5fc59c97da4521a80e19f7ee83dc44
 msgid "If you have internal access but want to work with public robots:"
 msgstr "如果你已有内部访问权限，但想使用公开机器人："
 
-#: ../../source/0-overview/4-public_vs_internal.md:181
+#: ../../source/0-overview/4-public_vs_internal.md:178
 #: 1bf83ad92af14d66a45b837624d79f92
 msgid "Use `open-deploy-ws` for cleaner builds"
 msgstr "使用 `open-deploy-ws` 以获得更干净的编译"
 
-#: ../../source/0-overview/4-public_vs_internal.md:182
+#: ../../source/0-overview/4-public_vs_internal.md:179
 #: ddf15cb0a30f4d939cf1ff2ad2329c0d
 msgid "Or use `fa-deploy-ws` with public-only robot presets"
 msgstr "或在 `fa-deploy-ws` 中使用仅公开机器人的预设"
 
-#: ../../source/0-overview/4-public_vs_internal.md:184
+#: ../../source/0-overview/4-public_vs_internal.md:181
 #: 6728d5cbf7e146d38f63100a8e174bff
 msgid "Network Configuration"
 msgstr "网络配置"
 
-#: ../../source/0-overview/4-public_vs_internal.md:186
+#: ../../source/0-overview/4-public_vs_internal.md:183
 #: 88dd2a7dca0e4048b4b67ae6772915ed
 msgid ""
 "Both workspaces can communicate with real robots over the network. Key "
 "configuration points:"
 msgstr "两个工作空间都可以通过网络与真实机器人通信。关键配置如下："
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 362c2365deba4c5bab302c672c473d0c
 msgid "Setting"
 msgstr "配置项"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 8ea4be2075334d629479280af43ee2ad
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: d9593dbb86d043fcbd3d057855c2f2fb
 msgid "ROS Domain ID"
 msgstr "ROS Domain ID"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 100a518cd6bb4e9bbc72c00ae0d659b2
 msgid "Isolates ROS 2 traffic between robots/users"
 msgstr "在机器人/用户之间隔离 ROS 2 通信"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: ff27e0fad0f3486a86b29c8ebe9da4f1
 msgid "Zenoh configuration"
 msgstr "Zenoh 配置"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 825af625dffd4b2fbd43c5dffb5feaae
 msgid "Required for cross-network communication"
 msgstr "跨网段通信所必需"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 7022f6ea6f53446bb1c688cf3cda7673
 msgid "Network interface"
 msgstr "网络接口"
 
-#: ../../source/0-overview/4-public_vs_internal.md:119
+#: ../../source/0-overview/4-public_vs_internal.md:116
 #: 1d7bb7558a5f4ffe854691dadf4869ea
 msgid "Must match the robot's network segment"
 msgstr "必须与机器人所在网段一致"
 
-#: ../../source/0-overview/4-public_vs_internal.md:194
+#: ../../source/0-overview/4-public_vs_internal.md:191
 #: f0f5797637604d508840d0c5bd02f5a2
 msgid "Domain Isolation"
 msgstr "域隔离"
 
-#: ../../source/0-overview/4-public_vs_internal.md:197
+#: ../../source/0-overview/4-public_vs_internal.md:194
 #: 8f4ef9ba80574ae9abb9668dee09283d
 msgid ""
 "Always verify your Domain ID matches the target robot's configuration. "
@@ -677,4 +675,39 @@ msgstr "请始终确认你的 Domain ID 与目标机器人的配置一致。ID �
 
 #~ msgid "Prompt for OCS2 install method: Debian package or source"
 #~ msgstr "提示选择 OCS2 安装方式：Debian 软件包或源码"
+
+#~ msgid ""
+#~ "The workspace uses `submodules_visibility.conf` "
+#~ "to track which submodules are public "
+#~ "or private:"
+#~ msgstr "工作空间使用 `submodules_visibility.conf` 记录哪些子模块为公开或私有："
+
+#~ msgid ""
+#~ "# Example visibility config\n"
+#~ "[public]\n"
+#~ "arms_ros2_control\n"
+#~ "robot_descriptions\n"
+#~ "robot-descriptions-common\n"
+#~ "\n"
+#~ "[private]\n"
+#~ "# Private submodules are not cloned in open-deploy-ws\n"
+#~ msgstr ""
+#~ "# 可见性配置示例\n"
+#~ "[public]\n"
+#~ "arms_ros2_control\n"
+#~ "robot_descriptions\n"
+#~ "robot-descriptions-common\n"
+#~ "\n"
+#~ "[private]\n"
+#~ "# 私有子模块不会在 open-deploy-ws 中克隆\n"
+
+#~ msgid "Format: parent_dir|relative_path|public or private"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "src/robot-descriptions|common|public src/robot-"
+#~ "descriptions|manipulator/Dobot|public src/robot-"
+#~ "descriptions|manipulator/Tianji|private "
+#~ "src/arms_ros2_control|controller/ocs2_wbc_controller|private"
+#~ msgstr ""
 

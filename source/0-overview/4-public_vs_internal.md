@@ -48,18 +48,15 @@ The init script will:
 
 ### Visibility Configuration
 
-The workspace uses `submodules_visibility.conf` to track which submodules are public or private:
+The workspace uses `submodules_visibility.conf` to control which **nested** submodules are public or private. The file is pipe-separated (`parent_dir|relative_path|visibility`); blank lines and `#` comments are ignored. It is not an INI file with `[public]` / `[private]` sections.
 
-```ini
-# Example visibility config
-[public]
-arms_ros2_control
-robot_descriptions
-robot-descriptions-common
-
-[private]
-# Private submodules are not cloned in open-deploy-ws
-```
+:::{code-block} none
+# Format: parent_dir|relative_path|public or private
+src/robot-descriptions|common|public
+src/robot-descriptions|manipulator/Dobot|public
+src/robot-descriptions|manipulator/Tianji|private
+src/arms_ros2_control|controller/ocs2_wbc_controller|private
+:::
 
 ### Lean Branches
 
