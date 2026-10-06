@@ -11,7 +11,7 @@ Detailed setup guide for the public `open-deploy-ws` workspace.
 - Pre-configured submodule structure
 - Public-only visibility by default
 - Lean branches for minimal builds
-- Debian package integration for OCS2
+- GitHub Release `.deb` integration for OCS2 (and optionally common / arms)
 
 ## Cloning
 
@@ -30,17 +30,19 @@ cd open-deploy-ws
 
 The script will:
 1. Configure submodule visibility (public only)
-2. Prompt for OCS2 installation method
-3. Initialize selected submodules
+2. Prompt per core module for `d` (GitHub Release `.deb`) or `s` (source)
+3. Initialize selected submodules; deb mode calls `scripts/install_core_debs.sh`
 
-### OCS2 Options
+### Core module options (OCS2, arms, common)
 
-When prompted, choose:
+When prompted (`d=deb`, `s=source`; Enter accepts the default):
 
 | Option | Description | When to Use |
 |--------|-------------|-------------|
-| `d` | Debian package | Quick start, no OCS2 development |
-| `s` | Source build | OCS2 development, debugging |
+| `d` | GitHub Release `.deb` | Quick start; no need to build that module from source |
+| `s` | Source build | Development, debugging, or contributing |
+
+Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does **not** install from packages.ros.org.
 
 ### Lean Branches
 
@@ -72,7 +74,7 @@ open-deploy-ws/
 │   └── ocs2_ros2/              # (if source build)
 ├── init_repo.sh
 ├── submodules_visibility.conf
-└── deb_versions.txt
+└── deb_versions.conf
 ```
 
 ## Building
@@ -180,15 +182,15 @@ cd src/arms_ros2_control
 git pull origin main
 ```
 
-## Debian vs Source Matrix
+## GitHub Release `.deb` vs Source Matrix
 
-| Component | Debian Package | Source Path |
-|-----------|---------------|-------------|
-| OCS2 | `ros-jazzy-ocs2` | `src/ocs2_ros2` |
-| Common descriptions | `ros-jazzy-robot-descriptions-common` | `src/robot_descriptions/robot-descriptions-common` |
-| arms_ros2_control | (optional) | `src/arms_ros2_control` |
+| Component | GitHub Release `.deb` | Source Path |
+|-----------|----------------------|-------------|
+| OCS2 | `ros-jazzy-ocs2` ([releases](https://github.com/legubiao/ocs2_ros2/releases)) | `src/ocs2_ros2` |
+| Common descriptions | `ros-jazzy-robot-descriptions-common` ([releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)) | `src/robot_descriptions/robot-descriptions-common` |
+| arms_ros2_control | `ros-jazzy-arms-ros2-control` (optional; [releases](https://github.com/fiveages-sim/arms_ros2_control/releases)) | `src/arms_ros2_control` |
 
-Check `deb_versions.txt` for compatible Debian versions when mixing source and packages.
+Check `deb_versions.conf` for the GitHub repos and release tags used by `scripts/install_core_debs.sh`. These packages are not in the ROS apt index.
 
 ## Common Issues
 

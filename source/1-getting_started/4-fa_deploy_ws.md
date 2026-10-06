@@ -21,7 +21,7 @@ This workspace requires access to private repositories. Contact your team lead f
 |--------|---------------|--------------|
 | Submodules | Public only | Public + private |
 | Robots | Community robots | FA humanoids |
-| OCS2 | Debian or source | Full source (default) |
+| OCS2 | GitHub Release `.deb` or source | Full source (default) |
 | WBC | Not included | Included |
 | Release | Not available | `./release.sh` |
 | Initialization | `./init_repo.sh` | `./init_repo.sh --robot <id>` |

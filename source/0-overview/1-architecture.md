@@ -100,7 +100,7 @@ ROS 2 control plugins that communicate with physical or simulated hardware:
 Motion planning and control algorithms:
 
 - **arms_ros2_control** — Main controller package with OCS2 arm controller, gripper, and teleop plugins
-- **ocs2_ros2** — OCS2 MPC library (available as deb: `ros-jazzy-ocs2`)
+- **ocs2_ros2** — OCS2 MPC library (GitHub Release `.deb`: `ros-jazzy-ocs2`)
 - **ocs2-wbc-controller** — Whole-body control for humanoids (private)
 - **ocs2-humanoid** — Wheel-humanoid specific library (private)
 

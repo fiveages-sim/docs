@@ -11,7 +11,7 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 | **Robots** | Dobot, ARX, Galbot, HT, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
 | **Real Hardware** | ARX Acone, HT Panthera | All FA robots |
 | **Submodules** | Public only | Public + private |
-| **OCS2** | Debian package or source | Full source (default) |
+| **OCS2** | GitHub Release `.deb` or source | Full source (default) |
 | **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
 
 ```{admonition} Real Hardware on Public Path
@@ -29,7 +29,7 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 - All submodules are publicly accessible
 - Supports multiple robots: Dobot CR5, ARX X5/ACone/Lift2S, Galbot, HT Panthera
 - **Real hardware support**: ARX Acone and HT Panthera can be deployed to physical robots
-- OCS2 available as Debian package (`ros-jazzy-ocs2`)
+- OCS2 available as a GitHub Release `.deb` (`ros-jazzy-ocs2`; not from apt / packages.ros.org)
 - Lean branches for minimal builds: `dobot-cr5`, `arx-acone`
 - Good for learning, experimentation, contributing, and real robot deployment
 
@@ -43,7 +43,7 @@ cd open-deploy-ws
 
 The init script will:
 1. Configure submodule visibility (only public modules)
-2. Prompt for OCS2 install method: Debian package or source
+2. Prompt per core module: GitHub Release `.deb` (`d`) or source (`s`)
 3. Initialize selected submodules
 
 ### Visibility Configuration

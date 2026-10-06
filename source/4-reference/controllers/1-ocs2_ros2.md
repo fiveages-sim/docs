@@ -13,10 +13,17 @@ OCS2 is a Model Predictive Control (MPC) library providing:
 
 ## Installation
 
-### Debian Package (Recommended)
+### GitHub Release `.deb` (Recommended)
+
+OCS2 is **not** in the ROS apt index. The package name is `ros-jazzy-ocs2`; install the prebuilt `.deb` from GitHub Releases.
+
+**Most users:** run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws` and choose `d` for OCS2 (`scripts/install_core_debs.sh`).
+
+**Manual install:** download the matching asset for your architecture and ROS distro from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases), then:
 
 ```bash
-sudo apt install ros-jazzy-ocs2
+sudo dpkg -i ros-jazzy-ocs2_*.deb
+sudo apt-get install -f   # if dpkg reports missing dependencies
 ```
 
 ### From Source

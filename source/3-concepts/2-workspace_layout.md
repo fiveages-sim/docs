@@ -26,7 +26,7 @@ open-deploy-ws/
 │
 ├── init_repo.sh                     # Initialization script
 ├── submodules_visibility.conf       # Public/private visibility
-├── deb_versions.txt                 # Compatible Debian versions
+├── deb_versions.conf                # GitHub Release .deb repos and tags
 └── build/, install/, log/           # Build outputs
 ```
 

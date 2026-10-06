@@ -21,16 +21,13 @@ source /opt/ros/jazzy/setup.bash
 sudo apt update
 ```
 
-### Q: OCS2 Debian package not available
+### Q: OCS2 `.deb` not found via apt
 
-The OCS2 Debian package is published to the ROS 2 repositories:
+OCS2 is **not** published to ROS 2 / Ubuntu apt software sources. `sudo apt install ros-jazzy-ocs2` will not find it.
 
-```bash
-sudo apt update
-sudo apt install ros-jazzy-ocs2
-```
+Install the prebuilt `.deb` from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) (download the matching asset for your arch/distro, then `sudo dpkg -i ros-jazzy-ocs2_*.deb`), or run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws` and choose `d` for OCS2 (`scripts/install_core_debs.sh`).
 
-If still not found, you may need to build from source (choose `s` during `init_repo.sh`).
+To build from source instead, choose `s` during `init_repo.sh`, or clone `https://github.com/legubiao/ocs2_ros2.git` branch `ros2` and colcon build.
 
 ## Submodule Issues
 

@@ -27,13 +27,13 @@ Run the initialization script:
 ```
 
 The script will prompt you for:
-- **OCS2 installation method**: Choose `d` for Debian package (recommended for quick start)
+- **Core module install mode**: for OCS2, choose `d` (GitHub Release `.deb`; recommended for quick start) or `s` (source)
 - **Submodule visibility**: Automatically configured for public-only access
 
-```{admonition} Debian vs Source
+```{admonition} Deb vs Source
 :class: tip
 
-The Debian package (`ros-jazzy-ocs2`) is faster to install but cannot be modified. Choose source if you need to develop OCS2 itself.
+The GitHub Release `.deb` (`ros-jazzy-ocs2`) is faster to install but cannot be modified. Choose source if you need to develop OCS2 itself. OCS2 is not available from packages.ros.org / Ubuntu apt.
 ```
 
 ### 3. Install Dependencies
@@ -84,10 +84,13 @@ rosdep install --from-paths src --ignore-src -r -y
 
 ### OCS2 Package Not Found
 
-If using Debian install:
+OCS2 is not in the ROS apt index. Re-run workspace init and choose `d` for OCS2, or install from GitHub Releases:
+
 ```bash
-sudo apt install ros-jazzy-ocs2
+./scripts/install_core_debs.sh --only ocs2
 ```
+
+Manual alternative: download the matching asset from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and run `sudo dpkg -i ros-jazzy-ocs2_*.deb`.
 
 ### Submodule Errors
 

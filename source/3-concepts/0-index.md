@@ -8,7 +8,7 @@ This section explains the key concepts and design patterns used throughout the F
 - [Workspace Layout](2-workspace_layout.md) — Structure of deploy workspaces
 - [Naming Conventions](3-naming_conventions.md) — Parameter and package naming patterns
 - [FSM and Topics](4-fsm_and_topics.md) — State machine and topic contracts
-- [Source vs Deb](5-source_vs_deb.md) — When to use packages vs source builds
+- [Source vs Deb](5-source_vs_deb.md) — When to use GitHub Release `.deb` files vs source builds
 - [Submodules Visibility](6-submodules_visibility.md) — Public and private submodule management
 
 ## When to Read This

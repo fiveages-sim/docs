@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"POT-Creation-Date: 2026-10-06 16:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,185 +21,260 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/5-source_vs_deb.md:1
-#: 692f9276ce854399a858ff1417571821
-msgid "Source vs Debian Packages"
-msgstr "源码与 Debian 包"
+#: 84e97aae614d4780965f20b847641462
+msgid "Source vs GitHub Release `.deb`"
+msgstr "源码与 GitHub Release `.deb`"
 
 #: ../../source/3-concepts/5-source_vs_deb.md:3
-#: 6dcde7ced01e4d9b96ab65aee2aad085
+#: 6fc254ee605c47249b5ae7ca53caa10e
 msgid ""
-"This page explains when to use Debian packages versus source builds for "
-"stack components."
-msgstr "本页说明技术栈组件何时使用 Debian 包、何时从源码编译。"
+"This page explains when to use prebuilt `.deb` files from GitHub Releases"
+" versus source builds for stack components."
+msgstr "本页说明技术栈组件何时使用 GitHub Releases 上的预编译 `.deb`，何时从源码编译。"
 
 #: ../../source/3-concepts/5-source_vs_deb.md:5
-#: ab79a877dd034a4397395d7cf039abef
-msgid "Available Debian Packages"
-msgstr "可用的 Debian 包"
+#: 808662da7c2f4ad6b561ba9ce417b4c4
+msgid ""
+"These packages are **not** published to Debian / ROS apt software sources"
+" (`packages.ros.org` or Ubuntu apt). `sudo apt install ros-jazzy-ocs2` "
+"will not find them there."
+msgstr "这些包**没有**发布到 Debian / ROS apt 软件源（`packages.ros.org` 或 Ubuntu apt）。`sudo apt install ros-jazzy-ocs2` 在那些源中找不到它们。"
 
-#: ../../source/3-concepts/5-source_vs_deb.md dde0f16f840f4e4eb3c8feee400c406e
+#: ../../source/3-concepts/5-source_vs_deb.md:7
+#: 06fe9bfc8a8f40a5be84c6c35b47f5d3
+msgid "Available GitHub Release `.deb` packages"
+msgstr "可用的 GitHub Release `.deb` 包"
+
+#: ../../source/3-concepts/5-source_vs_deb.md 0325668dec9543499d1d94c01245533d
 msgid "Package"
 msgstr "软件包"
 
-#: ../../source/3-concepts/5-source_vs_deb.md d539d95cefd34b578e5f35249e0bd181
-msgid "Debian Name"
-msgstr "Debian 名称"
+#: ../../source/3-concepts/5-source_vs_deb.md 5c488f7d819a48a8b0e04076bdf62d2c
+msgid "`.deb` name"
+msgstr "`.deb` 名称"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 667532d8d97b4bfbaae26e75780a43b9
+#: ../../source/3-concepts/5-source_vs_deb.md e1617027f1494092b96f074a2771a5ea
+msgid "GitHub Releases"
+msgstr "GitHub Releases"
+
+#: ../../source/3-concepts/5-source_vs_deb.md 9423fa221d0240d4ba895b8ed921025d
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 2cb37209ba304c52be1adb1a81e2a2d6
-#: a165a12001e44b6e99b3c40eff312457
+#: ../../source/3-concepts/5-source_vs_deb.md 00091e8d460941b7b1f3b9f0454da467
+#: d5f66b7c8b7140c8a2319395e77205aa
 msgid "OCS2"
 msgstr "OCS2"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 643990b4a3fd4595b674d327d986cf0a
+#: ../../source/3-concepts/5-source_vs_deb.md b06b8e425e5f4b709debf62d20fbb933
 msgid "`ros-jazzy-ocs2`"
 msgstr "`ros-jazzy-ocs2`"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 144e9737fd8545d0b2eb36da857b1ce3
+#: ../../source/3-concepts/5-source_vs_deb.md e9a0c6a107ef48ca940ef69400d4081d
+msgid "[legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2/releases)"
+msgstr "[legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2/releases)"
+
+#: ../../source/3-concepts/5-source_vs_deb.md ac6482a4e3ce442bbda411875a5fe795
 msgid "MPC library"
 msgstr "MPC 库"
 
-#: ../../source/3-concepts/5-source_vs_deb.md bb03bd57f66d47439aa4614227674796
+#: ../../source/3-concepts/5-source_vs_deb.md 421ac7bfd62545d08916e1a1c40eb206
 msgid "Common descriptions"
 msgstr "通用描述包"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 675310eb2681474a9538133843b459c1
+#: ../../source/3-concepts/5-source_vs_deb.md 52ecb950951848f4860a9c7db75bc18c
 msgid "`ros-jazzy-robot-descriptions-common`"
 msgstr "`ros-jazzy-robot-descriptions-common`"
 
-#: ../../source/3-concepts/5-source_vs_deb.md d44cdd9e5779444985f3640c023652ce
+#: ../../source/3-concepts/5-source_vs_deb.md d17a4cc5c78b449e80a01bfd62b1e49e
+msgid ""
+"[fiveages-sim/robot-descriptions-common](https://github.com/fiveages-sim"
+"/robot-descriptions-common/releases)"
+msgstr "[fiveages-sim/robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common/releases)"
+
+#: ../../source/3-concepts/5-source_vs_deb.md 3c0b927ab3554427b6f824b500c90f74
 msgid "Shared components"
 msgstr "共享组件"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 41743597a35c406093dc39e7bbe085e6
-#: 58df897e3bac49dfae811d4d643cf81d
+#: ../../source/3-concepts/5-source_vs_deb.md 3095132486dc4fe49b3166491f73f96f
+#: d573363b9d6a47b99bc0a381bc38ab4b
 msgid "arms_ros2_control"
 msgstr "arms_ros2_control"
 
-#: ../../source/3-concepts/5-source_vs_deb.md a8ee1730975d4d3faac8c781920cb127
+#: ../../source/3-concepts/5-source_vs_deb.md bbff2b43a13840d4bd2c85a69195df79
 msgid "`ros-jazzy-arms-ros2-control`"
 msgstr "`ros-jazzy-arms-ros2-control`"
 
-#: ../../source/3-concepts/5-source_vs_deb.md ff76e7e9939c483aa3539ebba439fe26
+#: ../../source/3-concepts/5-source_vs_deb.md aae836cd098c47dd90f50fca94609d8e
+msgid ""
+"[fiveages-sim/arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control/releases)"
+msgstr "[fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control/releases)"
+
+#: ../../source/3-concepts/5-source_vs_deb.md 5daf693cd5804e85aaf497e9ad1bdd67
 msgid "Controllers (optional)"
 msgstr "控制器（可选）"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:13
-#: f4b9b17ffc4047aab2f32c62a6e20ff3
+#: ../../source/3-concepts/5-source_vs_deb.md:15
+#: 5ede512c94dc4478b71dc6b205438684
+msgid ""
+"**Recommended for most users:** run `./init_repo.sh` in `open-deploy-ws` "
+"or `fa-deploy-ws` and choose `d` (deb) for the modules you want. Deb mode"
+" downloads those release assets via `scripts/install_core_debs.sh`."
+msgstr "**大多数用户推荐：** 在 `open-deploy-ws` 或 `fa-deploy-ws` 中运行 `./init_repo.sh`，并为需要的模块选择 `d`（deb）。Deb 模式会通过 `scripts/install_core_debs.sh` 下载这些发行资源。"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:17
+#: 0bbf3eb53bd64309b51d69c3fcb0fbb4
 msgid "Decision Matrix"
 msgstr "决策矩阵"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 392fbeec4da44c02ab8f86976bcf46ba
+#: ../../source/3-concepts/5-source_vs_deb.md b1a1a902ec894e8481338a3540247c20
 msgid "Scenario"
 msgstr "场景"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 9bbd4cbe5fca496e870e029813550888
+#: ../../source/3-concepts/5-source_vs_deb.md 9c974dff213744e1a1d7116279ff25f2
 msgid "Recommendation"
 msgstr "建议"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 93c0a96dc0f44c5388eb3a4a7dd44a3d
+#: ../../source/3-concepts/5-source_vs_deb.md 19f1e4447f4e4f00ae00217ea0f1e397
 msgid "Quick start / learning"
 msgstr "快速入门 / 学习"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 0c41496b87644733b1e764a44900e28d
-#: 75be57c1eb2c4e8d9aa55cfe5bfd439f
-msgid "Debian packages"
-msgstr "Debian 包"
+#: ../../source/3-concepts/5-source_vs_deb.md 42104a2144f74eaaab34c1c6da3ca23f
+msgid "GitHub Release `.deb` (especially OCS2)"
+msgstr "GitHub Release `.deb`（尤其是 OCS2）"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 23e97dd4844247c391c13bca98dd74b0
-#: de36002c01cb489a9e205a713cee5742
+#: ../../source/3-concepts/5-source_vs_deb.md 2b212995d91346ea83d6086f6d506a52
 msgid "Production deployment"
 msgstr "生产部署"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 2cc12e8939ec4fbcb7b57ff703e987ec
+#: ../../source/3-concepts/5-source_vs_deb.md
+#: ../../source/3-concepts/5-source_vs_deb.md:30
+#: 2f513414801b424db5f56c0ab28121bb bc18850b468b4ff7b9d1ee48f32d05ed
+msgid "GitHub Release `.deb`"
+msgstr "GitHub Release `.deb`"
+
+#: ../../source/3-concepts/5-source_vs_deb.md 8d54ce4959b243598c39bf8b81f9d75e
 msgid "Controller development"
 msgstr "控制器开发"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 293f4eb2e608414cb02e521b3251d586
-#: 94c237260858471c81735010c452cafb df607b1b8fa846f893deb4226e961868
+#: ../../source/3-concepts/5-source_vs_deb.md 148c3c0e3f844883b91a0f0a5088e721
+#: 48be62366bca43818bf324a9db31cb0d a9d397cec0884d63bf9b337b03161fa0
 msgid "Source build"
 msgstr "源码编译"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 0d37a70a63d14b099c7bbae0c2665741
+#: ../../source/3-concepts/5-source_vs_deb.md fa9bf8951d6042bd81f6e8ef4d098cce
 msgid "OCS2 development"
 msgstr "OCS2 开发"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 4534b9214cc7453cb73edbe180c419b6
+#: ../../source/3-concepts/5-source_vs_deb.md 337b7d13438e4877b848bfa4bbed1f69
 msgid "Custom robot integration"
 msgstr "自定义机器人集成"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 0eb30916d45e40068ffe399e34d52dd5
-msgid "Source descriptions, Deb OCS2"
-msgstr "源码描述文件，Deb OCS2"
+#: ../../source/3-concepts/5-source_vs_deb.md a41666b5a20743b799b86be0dace05bd
+msgid "Source descriptions, GitHub Release `.deb` for OCS2"
+msgstr "源码描述文件，OCS2 使用 GitHub Release `.deb`"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 8cada38e9fc343ab9d01750f7a967dde
+#: ../../source/3-concepts/5-source_vs_deb.md 42e0b8d47e5846cba9a301b84179c3ba
 msgid "Contributing to the stack"
 msgstr "为本技术栈做贡献"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:24
-#: 47c8528f45b746b8893ec71a198bea62
+#: ../../source/3-concepts/5-source_vs_deb.md:28
+#: f6dd4252de1d47088823a7a75144d7ef
 msgid "OCS2: Deb vs Source"
 msgstr "OCS2：Deb 与源码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:26
-#: ba9ef6e8f4dd438b984131afdda60b2d
-msgid "Debian Package"
-msgstr "Debian 软件包"
-
-#: ../../source/3-concepts/5-source_vs_deb.md:28
-#: ../../source/3-concepts/5-source_vs_deb.md:129
-#: 6c27e195e3de42aca57c6758ffa5848f c54d226ab8f6413ca0db866f0867ff20
-msgid "sudo apt install ros-jazzy-ocs2\n"
-msgstr ""
-"sudo apt install ros-jazzy-ocs2\n"
-
 #: ../../source/3-concepts/5-source_vs_deb.md:32
-#: ../../source/3-concepts/5-source_vs_deb.md:49
-#: a0393cf4308b482594e8c96c343a0016 e2e94af856c348b8b956e0fdc058cf0b
+#: 0b4a5c1d48a84aa7b869035ef04c5543
+msgid "**Recommended:** in the deploy workspace, choose deb mode for OCS2:"
+msgstr "**推荐：** 在部署工作空间中为 OCS2 选择 deb 模式："
+
+#: ../../source/3-concepts/5-source_vs_deb.md:34
+#: b7f7907ceb88472298c8d9114c84eec2
+msgid ""
+"./init_repo.sh\n"
+"# When prompted for ocs2_ros2, choose d (deb)\n"
+msgstr ""
+"./init_repo.sh\n"
+"# When prompted for ocs2_ros2, choose d (deb)\n"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:39
+#: dee0af71b8794573812e57013e5c1da9
+msgid ""
+"That calls `scripts/install_core_debs.sh`, which downloads the matching "
+"`.deb` from GitHub Releases and installs it."
+msgstr "这会调用 `scripts/install_core_debs.sh`，从 GitHub Releases 下载匹配的 `.deb` 并安装。"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:41
+#: 68ffbc6564cc473b9a6c322ab6f5ae29
+msgid ""
+"**Manual install:** download the matching asset for your architecture and"
+" ROS distro from the [ocs2_ros2 "
+"Releases](https://github.com/legubiao/ocs2_ros2/releases) page (filename "
+"pattern `ros-jazzy-ocs2_*_<arch>.deb`), then:"
+msgstr "**手动安装：** 从 [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) 页面下载匹配你架构和 ROS 发行版的资源文件（文件名形如 `ros-jazzy-ocs2_*_<arch>.deb`），然后："
+
+#: ../../source/3-concepts/5-source_vs_deb.md:43
+#: 6cb8089a6a7c4ed18e8e62271e7f77e2
+msgid ""
+"sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
+"sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+msgstr ""
+"sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
+"sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:48
+#: b451f5ba844c49a29fe82c311d97bca5
+msgid ""
+"Do not hardcode a version; pick the asset that matches your machine. The "
+"package **name** is `ros-jazzy-ocs2`; it is not available from the ROS "
+"apt index."
+msgstr "不要写死版本号；请选择匹配你机器的资源文件。包**名**是 `ros-jazzy-ocs2`；它不在 ROS apt 索引中。"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:50
+#: ../../source/3-concepts/5-source_vs_deb.md:67
+#: c0f6eda735de4b05bc240943f1b869e6 d0ed3da236be410eb85954a5342f0c1a
 msgid "**Pros:**"
 msgstr "**优点：**"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:33
-#: 03cc20093df644e3850571d1c8e79eaa
+#: ../../source/3-concepts/5-source_vs_deb.md:51
+#: 7bb4c6b3e3524122bf6ea43997b71190
 msgid "Fast installation"
 msgstr "安装迅速"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:34
-#: 1e22f09da83b4b0eb22c173bcef112bd
+#: ../../source/3-concepts/5-source_vs_deb.md:52
+#: 4e4de951d0cf47c28ebe6a3b9a5bdc75
 msgid "Tested and stable"
 msgstr "经过测试且稳定"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:35
-#: 0011d5c38513426785e8f0f24dc41eef
+#: ../../source/3-concepts/5-source_vs_deb.md:53
+#: 4c4489619b6741199d383685ebe7ff0a
 msgid "No build time"
 msgstr "无需编译时间"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:37
-#: ../../source/3-concepts/5-source_vs_deb.md:54
-#: 64c6b81739084b68a494c42d60c20aae cadc44a10a624e39a7fb43a8e3e7705b
+#: ../../source/3-concepts/5-source_vs_deb.md:55
+#: ../../source/3-concepts/5-source_vs_deb.md:72
+#: 2d884a08a6b1487ea3a20fb84f1a1f79 b82afaab24d0463490f1165abcc00af4
 msgid "**Cons:**"
 msgstr "**缺点：**"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:38
-#: 3ac05675afe14cdaa4cdbbf7824bfc05
+#: ../../source/3-concepts/5-source_vs_deb.md:56
+#: 478d16a00fae44c28693256e19235141
 msgid "Cannot modify OCS2 code"
 msgstr "无法修改 OCS2 代码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:39
-#: f5a3593d09c04ee0b16df6786966e51f
-msgid "Locked to package version"
-msgstr "锁定在软件包版本"
+#: ../../source/3-concepts/5-source_vs_deb.md:57
+#: 7fe76567f7984a19bddae97bbfd37a9b
+msgid "Locked to the release asset version"
+msgstr "锁定在发行资源文件的版本"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:41
-#: b24ee1261a434220b37febab1519a67e
+#: ../../source/3-concepts/5-source_vs_deb.md:59
+#: 9b1517b0b0824976895b2b1ec22c79e3
 msgid "Source Build"
 msgstr "源码编译"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:43
-#: 157db340fe7a4649842a57852722abf6
+#: ../../source/3-concepts/5-source_vs_deb.md:61
+#: dc11fef6a68747b9b4042108eb3ddf05
 msgid ""
 "# In workspace src/\n"
 "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
@@ -209,186 +284,196 @@ msgstr ""
 "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
 "colcon build --packages-up-to ocs2\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:50
-#: 4c43285e5a1748a999fbfc3f1ab115a7
+#: ../../source/3-concepts/5-source_vs_deb.md:68
+#: d6aa25f7ed894e9e97014b46a947fcc4
 msgid "Full access to source"
 msgstr "可完整访问源码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:51
-#: 7b0e5c86fc16404281faf88e8a4c489d
+#: ../../source/3-concepts/5-source_vs_deb.md:69
+#: c567c1059eed4508a23f35a54fcc2a26
 msgid "Can modify and debug"
 msgstr "可以修改和调试"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:52
-#: a55d438ce4694a2894ce8fcd6e2ef87a
+#: ../../source/3-concepts/5-source_vs_deb.md:70
+#: 17e18da38a084c7f80815888bd6aeb8b
 msgid "Latest features"
 msgstr "最新功能"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:55
-#: f2cabb364ce849bfa98597e2b502d11f
+#: ../../source/3-concepts/5-source_vs_deb.md:73
+#: b772141386b04744962080144e49b7c0
 msgid "Long build time"
 msgstr "编译时间较长"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:56
-#: 961d3d6b7652414588df5c9c39637f06
+#: ../../source/3-concepts/5-source_vs_deb.md:74
+#: 6b7a20a1316a42a7ba1911f88165fdd2
 msgid "Requires more disk space"
 msgstr "需要更多磁盘空间"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:57
-#: 7efdb222a0c3409cab57af6404e35ca4
+#: ../../source/3-concepts/5-source_vs_deb.md:75
+#: c178b16785b3422ebd3ff2f31ad6a50e
 msgid "Must manage updates manually"
 msgstr "必须手动管理更新"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:59
-#: 0ae3c9ed14c647a48a7ebf380df029ba
+#: ../../source/3-concepts/5-source_vs_deb.md:77
+#: a573ba2177b94e9b8be0872ecfe14aba
 msgid "Mixing Source and Deb"
 msgstr "混合使用源码与 Deb"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:61
-#: 8e4e88d0db8244dfb7b7e8707b1743d4
-msgid "You can mix source and Deb packages, but be careful of version conflicts."
-msgstr "可以混合使用源码与 Deb 包，但需注意版本冲突。"
+#: ../../source/3-concepts/5-source_vs_deb.md:79
+#: c614a25e1a654bccafe8ac6333436971
+msgid ""
+"You can mix source trees and GitHub Release `.deb` packages, but be "
+"careful of version conflicts."
+msgstr "可以混合使用源码树与 GitHub Release `.deb` 包，但需注意版本冲突。"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:63
-#: 328becfac8a14e82b73d188c5ac3645e
+#: ../../source/3-concepts/5-source_vs_deb.md:81
+#: a9465f7c498c4443ae7b592590778edf
 msgid "Recommended Combinations"
 msgstr "推荐组合"
 
-#: ../../source/3-concepts/5-source_vs_deb.md aa057a92535543569c4a450029d00b37
+#: ../../source/3-concepts/5-source_vs_deb.md df77536a42bb454bb945bd611f04b1fa
 msgid "Descriptions"
 msgstr "描述文件"
 
-#: ../../source/3-concepts/5-source_vs_deb.md b8f1b4c580cf4d14a6b2736678b7922e
+#: ../../source/3-concepts/5-source_vs_deb.md 68f4e4340bd94dd8ab3284899fb7d61a
 msgid "Notes"
 msgstr "说明"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 0185ed6803f740bab1e38b4e06462de3
-#: 7aa7fc8db2224a1f9f1165fe04ce5067 888341e4a12d48cc9305faa09303b2e5
-#: bd85285a52be44b8aecc2757d300901c
+#: ../../source/3-concepts/5-source_vs_deb.md 2d5268377a714ac7907539257906eac2
+#: 453a9a4cf5e24715b06df865c862d784 9404ef2df2484db59dc3c555bc71ab18
+#: d47d437760304cff85396d654231e8e5
 msgid "Deb"
 msgstr "Deb"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 2e79d969ce354be68ed81718be1f24ab
-#: 9bf39e6c3c154c87b4d839a9d6ec4c25 a5845e3a3ac541788aeb27948d7dca8d
-#: d3b9870f927644b8afca5201cde865bd dec79789ac804d1b951814e64aad9ee9
+#: ../../source/3-concepts/5-source_vs_deb.md 6ff7573024004b32be0a38fa4c72451f
+#: 771479a5fc524538bdf5eb15a4662c66 7947d053b55b48a591787cda387eece0
+#: 8a1988534d5a4c05ab0dbfeac5372901 b008dbc400584fb8bf2a575a566ca33d
 msgid "Source"
 msgstr "源"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 39bc12b322cc4461b0a6e804d8283f38
-msgid "Typical development"
-msgstr "常规开发"
+#: ../../source/3-concepts/5-source_vs_deb.md fe52d6f27ac7421ab7ba240b4096d074
+msgid "Typical development (`init_repo.sh` default)"
+msgstr "常规开发（`init_repo.sh` 默认）"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 13191bcc867243b8a71df793f029ce43
+#: ../../source/3-concepts/5-source_vs_deb.md 7e9aa1cd7b3342d6ac1063b8f1cc4a8a
 msgid "Full stack development"
 msgstr "全栈开发"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:71
-#: 2bab1d91b7124f97a14fa31be9cb86e2
+#: ../../source/3-concepts/5-source_vs_deb.md 306c34b0112e471ca217c76659404900
+msgid "Fastest install; all three from GitHub Releases"
+msgstr "安装最快；三者均来自 GitHub Releases"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:89
+#: cdeec8ed4f8b43178a605a95bd0f8ee6
 msgid "Avoid"
 msgstr "应避免"
 
-#: ../../source/3-concepts/5-source_vs_deb.md b3fb5f4207504e9a99e9e89d2403e237
+#: ../../source/3-concepts/5-source_vs_deb.md fa046d7d94dd4285a37bd7b257c7ef6f
 msgid "Combination"
 msgstr "组合"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 8ef12ed883634b608d05e08e3082eba6
+#: ../../source/3-concepts/5-source_vs_deb.md cb9de89c4c564d6184bc4149f2c306df
 msgid "Problem"
 msgstr "问题"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 1b7378d3260a4b86ba67a532369f6889
+#: ../../source/3-concepts/5-source_vs_deb.md 23190f36b39e4116b5120a8dd64d01d9
 msgid "Source OCS2 + Deb arms"
 msgstr "源码 OCS2 + Deb arms"
 
-#: ../../source/3-concepts/5-source_vs_deb.md dd77dfebd2bc48fb9e386bba15faa854
+#: ../../source/3-concepts/5-source_vs_deb.md c57a0e4fb066467593620b1ac00a6084
 msgid "ABI mismatch possible"
 msgstr "可能出现 ABI 不匹配"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 61cd6b5e09cd49cda38e5e88203c734e
+#: ../../source/3-concepts/5-source_vs_deb.md f2b04cb133704cc8a8db11942a0af516
 msgid "Newer Deb + Older source"
 msgstr "较新 Deb + 较旧源码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md eca2a4f1073f47209c9ae7536633ff89
+#: ../../source/3-concepts/5-source_vs_deb.md f3980bd3cf6147f58348756c82b1e990
 msgid "API incompatibility"
 msgstr "API 不兼容"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:78
-#: 87cbf2c32bf8471d8652fd37c0368b83
+#: ../../source/3-concepts/5-source_vs_deb.md:96
+#: 94008b117a9846b08a8f14adc74f839c
 msgid "Version Tracking"
 msgstr "版本跟踪"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:80
-#: 7537a1ccb1aa4a8fab13c588fc83b894
-msgid "deb_versions.txt"
-msgstr "deb_versions.txt"
+#: ../../source/3-concepts/5-source_vs_deb.md:98
+#: 54b68b9262d948acb47a5d236b42bd93
+msgid "deb_versions.conf"
+msgstr "deb_versions.conf"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:82
-#: b5ced9cd0cd1471cb1736404c6ff86e4
+#: ../../source/3-concepts/5-source_vs_deb.md:100
+#: a0eb28db13ae46d8b725cee454d912f0
 msgid ""
-"The `open-deploy-ws` includes `deb_versions.txt` showing compatible "
-"versions:"
-msgstr "`open-deploy-ws` 包含 `deb_versions.txt`，用于标明兼容版本："
+"The `open-deploy-ws` includes `deb_versions.conf` listing package "
+"prefixes, GitHub repos, and release tags used by `install_core_debs.sh`:"
+msgstr "`open-deploy-ws` 包含 `deb_versions.conf`，列出 `install_core_debs.sh` 使用的包前缀、GitHub 仓库和发行标签："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:84
-#: 2dfc84d63b6849129986e1b771f0f914
+#: ../../source/3-concepts/5-source_vs_deb.md:102
+#: 35021d3a12d24ed2a443252649c30017
 msgid ""
-"# Compatible Debian versions\n"
-"ros-jazzy-ocs2: 1.2.3\n"
-"ros-jazzy-robot-descriptions-common: 0.5.0\n"
-"ros-jazzy-arms-ros2-control: 1.0.0\n"
+"# package prefix | release tag | GitHub repo\n"
+"ros-jazzy-ocs2|latest|legubiao/ocs2_ros2\n"
+"ros-jazzy-robot-descriptions-common|latest|fiveages-sim/robot-"
+"descriptions-common\n"
+"ros-jazzy-arms-ros2-control|latest|fiveages-sim/arms_ros2_control\n"
 msgstr ""
-"# 兼容的 Debian 版本\n"
-"ros-jazzy-ocs2: 1.2.3\n"
-"ros-jazzy-robot-descriptions-common: 0.5.0\n"
-"ros-jazzy-arms-ros2-control: 1.0.0\n"
+"# package prefix | release tag | GitHub repo\n"
+"ros-jazzy-ocs2|latest|legubiao/ocs2_ros2\n"
+"ros-jazzy-robot-descriptions-common|latest|fiveages-sim/robot-descriptions-common\n"
+"ros-jazzy-arms-ros2-control|latest|fiveages-sim/arms_ros2_control\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:91
-#: b7968b991f734e2fbca7b5596ec090e9
+#: ../../source/3-concepts/5-source_vs_deb.md:109
+#: c18c0b5152cc4d1e810405bc2a449e67
 msgid "Checking Installed Versions"
 msgstr "检查已安装版本"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:93
-#: e1f5fe09b85e4ea59270197d1143100d
+#: ../../source/3-concepts/5-source_vs_deb.md:111
+#: 5da58e9132a44474aae8b9b3ce84e74b
+#, python-brace-format
 msgid ""
-"# Check Debian package version\n"
-"apt show ros-jazzy-ocs2 | grep Version\n"
+"# Check installed .deb version\n"
+"dpkg-query -W -f='${Package} ${Version}\\n' ros-jazzy-ocs2\n"
 "\n"
 "# Check source version (if available)\n"
 "cd src/ocs2_ros2 && git describe --tags\n"
 msgstr ""
-"# Check Debian package version\n"
-"apt show ros-jazzy-ocs2 | grep Version\n"
+"# Check installed .deb version\n"
+"dpkg-query -W -f='${Package} ${Version}\\n' ros-jazzy-ocs2\n"
 "\n"
 "# Check source version (if available)\n"
 "cd src/ocs2_ros2 && git describe --tags\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:101
-#: 4ad8a5bd076042ee9c3e74717971f635
+#: ../../source/3-concepts/5-source_vs_deb.md:119
+#: d402890e9a8440729d33d7dafb957fcb
 msgid "Switching Between"
 msgstr "在两者之间切换"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:103
-#: 707230e672e242aba6085dbe3aaaa23d
+#: ../../source/3-concepts/5-source_vs_deb.md:121
+#: 2331a603c7294b298d90da3a3331efd2
 msgid "Deb → Source"
 msgstr "Deb → 源码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:105
-#: 7f3a89dd4a434aedbcdbfcbf8d576303
-msgid "Remove the Debian package (or leave it; source takes priority):"
-msgstr "移除 Debian 包（也可以保留；源码优先）："
+#: ../../source/3-concepts/5-source_vs_deb.md:123
+#: 68a2fd6aeb9d4da78ecf996ec64d35ec
+msgid ""
+"Remove the installed `.deb` (or leave it; workspace source takes "
+"priority):"
+msgstr "移除已安装的 `.deb`（也可以保留；工作空间源码优先）："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:106
-#: 93a34849795647878d881069128f2459
-msgid "sudo apt remove ros-jazzy-ocs2  # Optional\n"
+#: ../../source/3-concepts/5-source_vs_deb.md:124
+#: 47a60a797a5e4fbe9e2aa4f5170a7779
+msgid "sudo apt-get remove ros-jazzy-ocs2  # Optional\n"
 msgstr ""
-"sudo apt remove ros-jazzy-ocs2  # Optional\n"
+"sudo apt-get remove ros-jazzy-ocs2  # Optional\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:110
-#: d698908bfe6540e28eb1eae7a7dcee59
+#: ../../source/3-concepts/5-source_vs_deb.md:128
+#: c9a3f8c7fb724838ba33bdb000afa9e0
 msgid "Clone source:"
 msgstr "克隆源码："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:111
-#: f82530a8a7a044e5b93b24b919575799
+#: ../../source/3-concepts/5-source_vs_deb.md:129
+#: 4f192f093d8f440f8eee201ef7129360
 msgid ""
 "cd src\n"
 "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
@@ -396,45 +481,57 @@ msgstr ""
 "cd src\n"
 "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:116
-#: fe1bca1c366c4af697d4c5064d247218
+#: ../../source/3-concepts/5-source_vs_deb.md:134
+#: 73382db05a4a4a8f901698167d1d7897
 msgid "Rebuild:"
 msgstr "重新编译："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:117
-#: b4fd07c6fba74882920c1008a74dcf45
+#: ../../source/3-concepts/5-source_vs_deb.md:135
+#: 929a3c8877b5428c9405a736d4cc5b55
 msgid "colcon build --packages-up-to ocs2\n"
-msgstr ""
-"colcon build --packages-up-to ocs2\n"
+msgstr "colcon build --packages-up-to ocs2\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:121
-#: cbc44b6b931142558a167370311b5ce5
+#: ../../source/3-concepts/5-source_vs_deb.md:139
+#: d5fe610a3e764f07a2b14ff8b43ce0e7
 msgid "Source → Deb"
 msgstr "源码 → Deb"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:123
-#: 3cdaef82bb4d43c89a4b8325093a40a9
+#: ../../source/3-concepts/5-source_vs_deb.md:141
+#: 9fea613b6d304908a9116da7a1410069
 msgid "Remove source directory:"
 msgstr "删除源码目录："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:124
-#: 29267e6207fa43d4851367c6910837a5
+#: ../../source/3-concepts/5-source_vs_deb.md:142
+#: 3e988586bb774b9fa1d8c6b23a375c42
 msgid "rm -rf src/ocs2_ros2\n"
+msgstr "rm -rf src/ocs2_ros2\n"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:146
+#: 049c6062f7424f7c80a92e7ae7f18e2f
+msgid "Install the GitHub Release `.deb` (recommended via the workspace script):"
+msgstr "安装 GitHub Release `.deb`（推荐通过工作空间脚本）："
+
+#: ../../source/3-concepts/5-source_vs_deb.md:147
+#: c8ae9561b7a34292b599ade09de724ca
+msgid "./scripts/install_core_debs.sh --only ocs2\n"
 msgstr ""
-"rm -rf src/ocs2_ros2\n"
+"./scripts/install_core_debs.sh --only ocs2\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:128
-#: ad6d52916a1741f59acbc222b3c9c8c3
-msgid "Install Debian package:"
-msgstr "安装 Debian 包："
+#: ../../source/3-concepts/5-source_vs_deb.md:151
+#: 972f96a4ad6541508819bd5db342761e
+msgid ""
+"Manual alternative: download the matching asset from [ocs2_ros2 "
+"Releases](https://github.com/legubiao/ocs2_ros2/releases) and run `sudo "
+"dpkg -i ros-jazzy-ocs2_*.deb`."
+msgstr "手动替代方案：从 [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配的资源文件，然后执行 `sudo dpkg -i ros-jazzy-ocs2_*.deb`。"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:133
-#: 0df43c76af504e88826f0343f1d6be1f
+#: ../../source/3-concepts/5-source_vs_deb.md:153
+#: 046db60b60894685af2f16138311ad77
 msgid "Clean and rebuild:"
 msgstr "清理并重新编译："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:134
-#: 7c6f2781e7304adeb91e1e49e2cba5c5
+#: ../../source/3-concepts/5-source_vs_deb.md:154
+#: aabcb748d26948d48cdecf6a5e3ef53a
 msgid ""
 "rm -rf build/ocs2* install/ocs2*\n"
 "colcon build\n"
@@ -442,102 +539,112 @@ msgstr ""
 "rm -rf build/ocs2* install/ocs2*\n"
 "colcon build\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:139
-#: 209136e835fe447cbae72812e6a827cb
+#: ../../source/3-concepts/5-source_vs_deb.md:159
+#: af87614ef46c49b7855ee03cdd203ba2
 msgid "init_repo.sh Options"
 msgstr "init_repo.sh 选项"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:141
-#: 9f32161dded94129b31830edb5679e77
-msgid "The initialization script handles this choice:"
-msgstr "初始化脚本会处理这一选择："
+#: ../../source/3-concepts/5-source_vs_deb.md:161
+#: 315986082e354743b84abd9125c246f8
+msgid ""
+"The initialization script handles this choice per module (`d` = GitHub "
+"Release `.deb`, `s` = source; Enter accepts the default):"
+msgstr "初始化脚本按模块处理这一选择（`d` = GitHub Release `.deb`，`s` = 源码；回车使用默认值）："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:143
-#: 562505244020462b9f77fd1b2dcce0ab
+#: ../../source/3-concepts/5-source_vs_deb.md:163
+#: fb8b2c25a2634fdf9d051bfab7947f9e
 msgid ""
 "./init_repo.sh\n"
 "# Prompts:\n"
-"# OCS2 installation method:\n"
-"#   [d] Debian package (recommended for quick start)\n"
-"#   [s] Source build (for development)\n"
-"# Enter choice [d/s]:\n"
+"# 核心模块安装方式（d=deb, s=source）\n"
+"#   ocs2_ros2                  default: d  (GitHub Release .deb)\n"
+"#   arms_ros2_control          default: s  (source)\n"
+"#   robot-descriptions/common  default: s  (source)\n"
 msgstr ""
 "./init_repo.sh\n"
 "# Prompts:\n"
-"# OCS2 installation method:\n"
-"#   [d] Debian package (recommended for quick start)\n"
-"#   [s] Source build (for development)\n"
-"# Enter choice [d/s]:\n"
+"# 核心模块安装方式（d=deb, s=source）\n"
+"#   ocs2_ros2                  default: d  (GitHub Release .deb)\n"
+"#   arms_ros2_control          default: s  (source)\n"
+"#   robot-descriptions/common  default: s  (source)\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:152
-#: eb46679adaa540f29b291a694098e844
+#: ../../source/3-concepts/5-source_vs_deb.md:172
+#: 893abd6fefab43aeb81ec02b02f10a4b
+msgid ""
+"Choosing `d` downloads the prebuilt `.deb` from GitHub Releases via "
+"`scripts/install_core_debs.sh`. It does **not** install from "
+"packages.ros.org."
+msgstr "选择 `d` 会通过 `scripts/install_core_debs.sh` 从 GitHub Releases 下载预编译 `.deb`。它**不会**从 packages.ros.org 安装。"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:174
+#: a77c2e361bcf422980824e318e21747d
 msgid "Build Time Comparison"
 msgstr "构建时间对比"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 835f7d25a7ce493580249fc4c27ee685
+#: ../../source/3-concepts/5-source_vs_deb.md 1d9cea3065404103a459e0826068d0fd
 msgid "Configuration"
 msgstr "配置"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 057b67db730a4b45bf208205d4d576b5
+#: ../../source/3-concepts/5-source_vs_deb.md a55112e12de54cfd8276946302eb4866
 msgid "Approximate Build Time"
 msgstr "大约编译时间"
 
-#: ../../source/3-concepts/5-source_vs_deb.md eab0d980900f4594b5fa7fc6fe73b700
+#: ../../source/3-concepts/5-source_vs_deb.md 182b3cbd5224424bbbbcb257d4be6571
 msgid "All Deb"
 msgstr "全部使用 Deb"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 7ddc6d37c1354592a6174754a7a3fc91
+#: ../../source/3-concepts/5-source_vs_deb.md 366e2285fc3c4d059b3b948296e7f930
 msgid "Minutes"
 msgstr "数分钟"
 
-#: ../../source/3-concepts/5-source_vs_deb.md a5353d0d48764f1a9835910f31c4cf79
+#: ../../source/3-concepts/5-source_vs_deb.md 47f665d8bec4458aa97e87d899d5a65a
 msgid "Deb OCS2 + Source arms"
 msgstr "Deb OCS2 + 源码 arms"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 3d5c21107e6244e38549a16931b65e89
+#: ../../source/3-concepts/5-source_vs_deb.md 00f3e1aefaa04a878d033f3761ff88a1
 msgid "10-15 minutes"
 msgstr "10–15 分钟"
 
-#: ../../source/3-concepts/5-source_vs_deb.md 340b9e328ac545bf8172f4a71d46bdd2
+#: ../../source/3-concepts/5-source_vs_deb.md 4cc2a656292e4f1783c9d9c2edc03eda
 msgid "All Source"
 msgstr "全部使用源码"
 
-#: ../../source/3-concepts/5-source_vs_deb.md a9cc14553b4a45b69dc8fb3490a987cd
+#: ../../source/3-concepts/5-source_vs_deb.md 13829d1aa77d4a9494b0ad30350b0a1f
 msgid "20-40 minutes"
 msgstr "20–40 分钟"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:160
-#: f24a82f8fa9a48f4acb014c500a5dcfc
+#: ../../source/3-concepts/5-source_vs_deb.md:182
+#: 1a743a775aac46898aa55f584126162a
 msgid "Times vary by machine. OCS2 is the largest component."
 msgstr "耗时因机器而异。OCS2 是最大的组件。"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:162
-#: 857ea03d8d9542b3b216073686eb1f9e
+#: ../../source/3-concepts/5-source_vs_deb.md:184
+#: 6d6ac21f82194c00af4ac21262d3bfd5
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:164
-#: 7032f475d62a43eda02883fc470fa2dd
+#: ../../source/3-concepts/5-source_vs_deb.md:186
+#: 02715ba1b0ca4b8da230a15c5b4c9349
 msgid "Symbol/ABI Errors"
 msgstr "符号 / ABI 错误"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:166
-#: 05d217ad3c6944278d53a7382a7e18ba
+#: ../../source/3-concepts/5-source_vs_deb.md:188
+#: 95ea2108e7f44972bb341b73169ce4f8
 msgid "If you see errors about undefined symbols or ABI mismatches:"
 msgstr "如果出现未定义符号或 ABI 不匹配错误："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:168
-#: 7d65922e4da54fc19d679ee8c19a8553
+#: ../../source/3-concepts/5-source_vs_deb.md:190
+#: 0b838682107d4a72b9e22f6bff5ae668
 msgid "Check version compatibility"
 msgstr "检查版本兼容性"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:169
-#: 2d2223ce10ec408c827af09c71b04e3e
+#: ../../source/3-concepts/5-source_vs_deb.md:191
+#: fa20bbcc4b37480db973dcf85a4e5eff
 msgid "Clean and rebuild from scratch:"
 msgstr "彻底清理后重新编译："
 
-#: ../../source/3-concepts/5-source_vs_deb.md:170
-#: 6bb18afc83f742f2985cb25ff398a725
+#: ../../source/3-concepts/5-source_vs_deb.md:192
+#: e235732116ff4f35b7168cc312226f49
 msgid ""
 "rm -rf build install\n"
 "colcon build\n"
@@ -545,47 +652,123 @@ msgstr ""
 "rm -rf build install\n"
 "colcon build\n"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:174
-#: 843e1100e0ff48fda4626170f556b3d9
+#: ../../source/3-concepts/5-source_vs_deb.md:196
+#: 7e9e0cc4057d42b4a4b9c17dc07fe6f5
 msgid "Ensure consistent source/Deb choice"
 msgstr "确保源码/Deb 选择一致"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:176
-#: 03d47fac013249bc80cb799deb895037
+#: ../../source/3-concepts/5-source_vs_deb.md:198
+#: 42feb4583901414d9883d89c34791259
 msgid "Package Not Found After Install"
 msgstr "安装后找不到软件包"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:178
-#: c126ef80451c4887bed246edcca7bcc5
+#: ../../source/3-concepts/5-source_vs_deb.md:200
+#: 581060c3ba6242d58a11e8777f374771
 msgid ""
-"# Refresh package cache\n"
-"sudo apt update\n"
-"\n"
-"# Re-source ROS\n"
-"source /opt/ros/jazzy/setup.bash\n"
-msgstr ""
-"# Refresh package cache\n"
-"sudo apt update\n"
-"\n"
-"# Re-source ROS\n"
-"source /opt/ros/jazzy/setup.bash\n"
+"These `.deb` files are not in the ROS apt index. `sudo apt update` will "
+"not make `ros-jazzy-ocs2` appear."
+msgstr "这些 `.deb` 文件不在 ROS apt 索引中。`sudo apt update` 不会让 `ros-jazzy-ocs2` 出现。"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:186
-#: a3099ce268734d159291611c79c111ad
+#: ../../source/3-concepts/5-source_vs_deb.md:202
+#: 71ac5030f26c4d40b113fcc4202c78c9
+msgid ""
+"# Confirm the package is installed\n"
+"dpkg-query -W ros-jazzy-ocs2\n"
+"\n"
+"# Re-source ROS\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"\n"
+"# If missing, reinstall from GitHub Releases via the workspace script\n"
+"./scripts/install_core_debs.sh --only ocs2\n"
+msgstr ""
+"# Confirm the package is installed\n"
+"dpkg-query -W ros-jazzy-ocs2\n"
+"\n"
+"# Re-source ROS\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"\n"
+"# If missing, reinstall from GitHub Releases via the workspace script\n"
+"./scripts/install_core_debs.sh --only ocs2\n"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:213
+#: b8069dd840a844d38265aa6086fd2a06
 msgid "Conflicting Installations"
 msgstr "安装冲突"
 
-#: ../../source/3-concepts/5-source_vs_deb.md:188
-#: 012c2e86296347baa2906e2d19d6bece
+#: ../../source/3-concepts/5-source_vs_deb.md:215
+#: 97a4885e90964a24afa8a49c8878ed64
 msgid ""
 "# Check for duplicate packages\n"
 "ros2 pkg list | grep ocs2\n"
 "\n"
-"# Remove Deb if using source\n"
-"sudo apt remove ros-jazzy-ocs2\n"
+"# Remove installed .deb if using source\n"
+"sudo apt-get remove ros-jazzy-ocs2\n"
 msgstr ""
 "# Check for duplicate packages\n"
 "ros2 pkg list | grep ocs2\n"
 "\n"
-"# Remove Deb if using source\n"
-"sudo apt remove ros-jazzy-ocs2\n"
+"# Remove installed .deb if using source\n"
+"sudo apt-get remove ros-jazzy-ocs2\n"
+
+#~ msgid "Source vs Debian Packages"
+#~ msgstr "源码与 Debian 包"
+
+#~ msgid "Debian packages"
+#~ msgstr "Debian 包"
+
+#~ msgid "Debian Package"
+#~ msgstr "Debian 软件包"
+
+#~ msgid "sudo apt install ros-jazzy-ocs2\n"
+#~ msgstr "sudo apt install ros-jazzy-ocs2\n"
+
+#~ msgid ""
+#~ "The `open-deploy-ws` includes "
+#~ "`deb_versions.txt` showing compatible versions:"
+#~ msgstr "`open-deploy-ws` 包含 `deb_versions.txt`，用于标明兼容版本："
+
+#~ msgid ""
+#~ "# Compatible Debian versions\n"
+#~ "ros-jazzy-ocs2: 1.2.3\n"
+#~ "ros-jazzy-robot-descriptions-common: 0.5.0\n"
+#~ "ros-jazzy-arms-ros2-control: 1.0.0\n"
+#~ msgstr ""
+#~ "# 兼容的 Debian 版本\n"
+#~ "ros-jazzy-ocs2: 1.2.3\n"
+#~ "ros-jazzy-robot-descriptions-common: 0.5.0\n"
+#~ "ros-jazzy-arms-ros2-control: 1.0.0\n"
+
+#~ msgid "Install Debian package:"
+#~ msgstr "安装 Debian 包："
+
+#~ msgid "The initialization script handles this choice:"
+#~ msgstr "初始化脚本会处理这一选择："
+
+#~ msgid ""
+#~ "./init_repo.sh\n"
+#~ "# Prompts:\n"
+#~ "# OCS2 installation method:\n"
+#~ "#   [d] Debian package (recommended for quick start)\n"
+#~ "#   [s] Source build (for development)\n"
+#~ "# Enter choice [d/s]:\n"
+#~ msgstr ""
+#~ "./init_repo.sh\n"
+#~ "# Prompts:\n"
+#~ "# OCS2 installation method:\n"
+#~ "#   [d] Debian package (recommended for quick start)\n"
+#~ "#   [s] Source build (for development)\n"
+#~ "# Enter choice [d/s]:\n"
+
+#~ msgid ""
+#~ "# Refresh package cache\n"
+#~ "sudo apt update\n"
+#~ "\n"
+#~ "# Re-source ROS\n"
+#~ "source /opt/ros/jazzy/setup.bash\n"
+#~ msgstr ""
+#~ "# Refresh package cache\n"
+#~ "sudo apt update\n"
+#~ "\n"
+#~ "# Re-source ROS\n"
+#~ "source /opt/ros/jazzy/setup.bash\n"
+

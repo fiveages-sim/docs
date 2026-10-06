@@ -71,15 +71,24 @@ rosdep update
 
 OCS2 (Optimal Control for Switched Systems) is a core dependency.
 
-### Option A: Debian Package (Recommended)
+OCS2 is **not** published to Debian / ROS apt software sources. The `.deb` package name is still `ros-jazzy-ocs2`, but you must install it from GitHub Releases (or let the deploy workspace do that for you).
+
+### Option A: GitHub Release `.deb` (Recommended)
+
+**Most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` and choose `d` (deb) for OCS2. That downloads and installs the release `.deb` via `scripts/install_core_debs.sh`.
+
+**Manual install:** download the matching asset for your architecture and ROS distro from the [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) page (filename pattern `ros-jazzy-ocs2_*_<arch>.deb`), then:
 
 ```bash
-sudo apt install ros-jazzy-ocs2
+sudo dpkg -i ros-jazzy-ocs2_*.deb
+sudo apt-get install -f   # if dpkg reports missing dependencies
 ```
+
+Do not hardcode a version; pick the asset that matches your machine.
 
 ### Option B: From Source
 
-Clone within workspace (handled by `init_repo.sh` in deploy workspaces):
+Clone within workspace (handled by `init_repo.sh` in deploy workspaces when you choose `s`):
 
 ```bash
 cd ~/your_ws/src
@@ -182,7 +191,7 @@ ros2 --help
 # Check Gazebo
 gz sim --version
 
-# Check OCS2 (if installed via deb)
+# Check OCS2 (if installed via GitHub Release .deb)
 ros2 pkg list | grep ocs2
 ```
 
@@ -190,10 +199,23 @@ ros2 pkg list | grep ocs2
 
 ### Package Not Found After apt install
 
+This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). It does **not** apply to OCS2.
+
 ```bash
 sudo apt update
 source /opt/ros/jazzy/setup.bash
 ```
+
+### OCS2 not found after install
+
+OCS2 is not in packages.ros.org / Ubuntu apt. `sudo apt update` will not make `ros-jazzy-ocs2` appear.
+
+```bash
+dpkg-query -W ros-jazzy-ocs2
+source /opt/ros/jazzy/setup.bash
+```
+
+If the package is missing, re-run `./init_repo.sh` and choose `d` for OCS2, or download the matching `.deb` from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and install with `sudo dpkg -i ros-jazzy-ocs2_*.deb`.
 
 ### rosdep Errors
 
