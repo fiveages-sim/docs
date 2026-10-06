@@ -4,6 +4,12 @@ NVIDIA Isaac Sim integration for FiveAges Sim.
 
 **Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac)
 
+```{admonition} Required Version and Path
+:class: warning
+
+FaSim-Isaac requires **Isaac Sim 6.1 binary** installed at **`~/isaacsim`**. The `run.sh` script and other utilities assume this exact path. Other versions or installation paths will not work without script modifications.
+```
+
 ## Purpose
 
 FaSim-Isaac provides:
@@ -14,9 +20,9 @@ FaSim-Isaac provides:
 
 ## Prerequisites
 
+- **Isaac Sim 6.1** installed at `~/isaacsim`
 - NVIDIA GPU (RTX recommended)
-- NVIDIA Omniverse Launcher
-- Isaac Sim installed
+- NVIDIA drivers compatible with Isaac Sim 6.1
 
 ## Installation
 
@@ -113,9 +119,18 @@ environment: fiveages_env/office
 
 ### Isaac Sim Won't Start
 
-1. Check Omniverse Launcher
-2. Verify GPU drivers
-3. Check logs: `~/.nvidia-omniverse/logs/`
+1. **Verify path**: `ls ~/isaacsim/python.sh` — must exist
+2. **Verify version**: Must be Isaac Sim 6.1
+3. Check GPU drivers: `nvidia-smi`
+4. Check logs: `~/.nvidia-omniverse/logs/`
+
+### Wrong Installation Path
+
+If Isaac Sim is installed at a different location:
+```bash
+# Create symlink to expected path
+ln -s /your/actual/isaacsim/path ~/isaacsim
+```
 
 ### No ROS 2 Connection
 

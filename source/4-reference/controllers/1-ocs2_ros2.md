@@ -34,7 +34,7 @@ OCS2 is typically used through higher-level controllers like `ocs2_arm_controlle
 
 ### Include in Package
 
-```cmake
+```text
 find_package(ocs2_core REQUIRED)
 find_package(ocs2_mpc REQUIRED)
 find_package(ocs2_robotic_tools REQUIRED)

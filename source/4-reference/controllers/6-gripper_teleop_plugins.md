@@ -10,10 +10,17 @@ Position and force control for adaptive grippers.
 
 ### Usage
 
-Loaded automatically when gripper is specified:
+Loaded automatically when a gripper is specified in the launch command.
+
+```{admonition} TODO
+:class: note
+
+For valid robot + gripper combinations, check the launch files in `arms_ros2_control`.
+```
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock
+# General pattern
+ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
 ```
 
 ### Topics

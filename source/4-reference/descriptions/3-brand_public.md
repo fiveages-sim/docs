@@ -24,7 +24,12 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 | Parameter | Values |
 |-----------|--------|
 | `robot` | `dobot_cr5`, `dobot_cr10` |
-| `gripper` | `dh_ag95`, `dh_pgc`, etc. |
+
+```{admonition} TODO
+:class: note
+
+For valid gripper options, check the launch files in `arms_ros2_control`.
+```
 
 ## ARX
 
@@ -32,11 +37,17 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 
 ### Robots
 
-| Robot | Package | Type |
-|-------|---------|------|
-| X5 | `arx_x5_description` | Arm |
-| ACone | `arx_acone_description` | Arm |
-| Lift2S | `arx_lift2s_description` | Mobile manipulator |
+| Robot | Package | Type | Real Hardware |
+|-------|---------|------|---------------|
+| X5 | `arx_x5_description` | Arm | Simulation only |
+| **ACone** | `arx_acone_description` | Arm | **Supported** |
+| Lift2S | `arx_lift2s_description` | Mobile manipulator | Simulation only |
+
+```{admonition} Real Hardware Ready
+:class: tip
+
+**ARX Acone** is fully supported for real hardware deployment. See [Go to Real Hardware](../../2-how_to/9-go_real_hardware.md).
+```
 
 ### Usage
 
@@ -81,9 +92,15 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 
 ### Robots
 
-| Robot | Package | Type |
-|-------|---------|------|
-| Panthera | `ht_panthera_description` | Arm |
+| Robot | Package | Type | Real Hardware |
+|-------|---------|------|---------------|
+| **Panthera** | `ht_panthera_description` | Arm | **Supported** |
+
+```{admonition} Real Hardware Ready
+:class: tip
+
+**HT Panthera** is fully supported for real hardware deployment. See [Go to Real Hardware](../../2-how_to/9-go_real_hardware.md).
+```
 
 ### Usage
 
@@ -93,9 +110,10 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
 
 ### Features
 
-- Drag teaching support
+- Drag teaching support (real hardware)
 - Serial communication
 - Master-slave configuration available
+- Gravity compensation for manual guidance
 
 ## Quadruped
 

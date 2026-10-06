@@ -23,12 +23,12 @@ msgstr ""
 #: ../../source/4-reference/simulation/5-env_assets.md:1
 #: f6d067a85a5f4fc582dc311cab426043
 msgid "Environment Assets"
-msgstr ""
+msgstr "环境资产"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:3
 #: 21a86d8c25004a40a740a8416959429c
 msgid "USD environment and scene assets for simulation."
-msgstr ""
+msgstr "USD environment and scene assets for simulation."
 
 #: ../../source/4-reference/simulation/5-env_assets.md:5
 #: 46316f17524a42c7bf8f7aaec708eaf4
@@ -38,29 +38,29 @@ msgstr "概述"
 #: ../../source/4-reference/simulation/5-env_assets.md:7
 #: 5ca7383023d7488fbebfc6f41ed4fb3d
 msgid "Environment assets are separate from robot assets:"
-msgstr ""
+msgstr "Environment assets are separate from robot assets:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:8
 #: ee027eabcfb64a02a6fa602e56bdce86
 msgid "**robot_usds** — Robot models"
-msgstr ""
+msgstr "**robot_usds** — 机器人 models"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:9
 #: cf90262e97b243fb9df86589a4b79877
 msgid "**Environment assets** — Scenes, objects, terrain"
-msgstr ""
+msgstr "**Environment assets** — Scenes, objects, terrain"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:11
 #: c6443de9171e43cbaf217cac561d8c2c
 msgid "fiveages-env-usds"
-msgstr ""
+msgstr "fiveages-env-usds"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:13
 #: c0f07b4f91454d67bf2b87a0474cbacf
 msgid ""
 "**Repository:** [fiveages-sim/fiveages-env-usds](https://github.com"
 "/fiveages-sim/fiveages-env-usds)"
-msgstr ""
+msgstr "**仓库:** [fiveages-sim/fiveages-env-usds](https://github.com/fiveages-sim/fiveages-env-usds)"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:15
 #: ../../source/4-reference/simulation/5-env_assets.md:53
@@ -71,33 +71,33 @@ msgstr "用途"
 #: ../../source/4-reference/simulation/5-env_assets.md:17
 #: ed8b2e5add224e789740740eec435233
 msgid "Public environment USD assets:"
-msgstr ""
+msgstr "公开 environment USD assets:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:18
 #: dc919dfdac8c40a4b2c92daa7fd36082
 msgid "Indoor scenes (office, lab)"
-msgstr ""
+msgstr "Indoor scenes (office, lab)"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:19
 #: ae77c69132ba40cb93d628e43d87422d
 msgid "Objects for manipulation"
-msgstr ""
+msgstr "Objects for manipulation"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:20
 #: b03215cfd7a94ea08778d89fe6602775
 msgid "Terrain"
-msgstr ""
+msgstr "Terrain"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:22
 #: ../../source/4-reference/simulation/5-env_assets.md:57
 #: 9426d97ddbbb4f7490103cf0629e650b d3bc0c6dbee342799fd4bfa4e25e1293
 msgid "Location"
-msgstr ""
+msgstr "Location"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:24
 #: c6a67c2b345c4455a07e930251d269f0
 msgid "In FaSim-Isaac:"
-msgstr ""
+msgstr "In FaSim-Isaac:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:25
 #: d36646e53cf943f6b7260b2c8487536e
@@ -106,6 +106,9 @@ msgid ""
 "└── environment/\n"
 "    └── fiveages_env/    # → fiveages-env-usds\n"
 msgstr ""
+"FaSim-Isaac/\\n"
+"└── environment/\\n"
+"    └── fiveages_env/    # → fiveages-env-usds\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:31
 #: 9483aa657476443e874f892eb2c5e6de
@@ -123,16 +126,23 @@ msgid ""
 "    prim_path=\"/World/Environment\"\n"
 ")\n"
 msgstr ""
+"# Load environment in Isaac Sim\\n"
+"from omni.isaac.core.utils.stage import add_reference_to_stage\\n"
+"\\n"
+"add_reference_to_stage(\\n"
+"    usd_path=\\\"environment/fiveages_env/office.usd\\\",\\n"
+"    prim_path=\\\"/World/Environment\\\"\\n"
+")\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:43
 #: 10ed56e28fe94854bfeb359a7a5ed8a5
 msgid "fa-project-usd"
-msgstr ""
+msgstr "fa-project-usd"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:45
 #: 2a076af2ce3d4bfc93ccd319b0f54aaf
 msgid "**Repository:** fa-project-usd (private)"
-msgstr ""
+msgstr "**仓库:** fa-project-usd (private)"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:47
 #: dbc8b3b156474d599f511c214afbadc1
@@ -142,12 +152,12 @@ msgstr "需要访问权限"
 #: ../../source/4-reference/simulation/5-env_assets.md:50
 #: 04579e1480674e67a7edbe7aa02367ee
 msgid "This repository is private."
-msgstr ""
+msgstr "This repository is private."
 
 #: ../../source/4-reference/simulation/5-env_assets.md:55
 #: 8937e84c4f0f4657b50cc3217ba4292a
 msgid "Internal project-specific USD scenes and assets."
-msgstr ""
+msgstr "内部 project-specific USD scenes and assets."
 
 #: ../../source/4-reference/simulation/5-env_assets.md:59
 #: ef2f4302181246488976b28719cf5740
@@ -155,12 +165,12 @@ msgid ""
 "FaSim-Isaac/\n"
 "└── environment/\n"
 "    └── fa-project-usd/\n"
-msgstr ""
+msgstr "FaSim-Isaac/\\n└── environment/\\n    └── fa-project-usd/\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:65
 #: 15575b1e475f413094b60dbda4723d90
 msgid "Not robot_usds Submodules"
-msgstr ""
+msgstr "Not robot_usds Submodules"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:67
 #: 53bfe330772a476ab911b6b31ab4c706
@@ -170,27 +180,27 @@ msgstr "重要"
 #: ../../source/4-reference/simulation/5-env_assets.md:70
 #: e90c7d991a3e4a63a705d8c942f9b4c5
 msgid "Environment assets are **not** submodules of `robot_usds`. They are:"
-msgstr ""
+msgstr "Environment assets are **not** submodules of `robot_usds`. They are:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:71
 #: fb36e42e055044599953d4d9c89ec596
 msgid "Sibling directories in FaSim-Isaac"
-msgstr ""
+msgstr "Sibling directories in FaSim-Isaac"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:72
 #: fed137e1756a486ba9165a50b28940d3
 msgid "Separate submodules of FaSim-Isaac itself"
-msgstr ""
+msgstr "Separate submodules of FaSim-Isaac itself"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:75
 #: 28f9522b4a57408892bcab1c13367a7c
 msgid "Usage in FaSim"
-msgstr ""
+msgstr "使用方法 in FaSim"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:77
 #: 064b368dead64f3d90e4f98106094579
 msgid "FaSim-Isaac configuration selects environment:"
-msgstr ""
+msgstr "FaSim-Isaac configuration selects environment:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:79
 #: 77de5ed1db8345d5a34a1b3515d74462
@@ -200,36 +210,40 @@ msgid ""
 "  name: fiveages_env\n"
 "  scene: office\n"
 msgstr ""
+"# FaSim config\\n"
+"environment:\\n"
+"  name: fiveages_env\\n"
+"  scene: office\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:86
 #: d8c319dc2e824cf991a43e0a1617ac19
 msgid "Or via command line:"
-msgstr ""
+msgstr "Or via command line:"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:88
 #: 26cdd78e14dc42909fc5a4f43d0ad776
 msgid "./run.sh --env office\n"
-msgstr ""
+msgstr "./run.sh --env office\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:92
 #: adc45dd2a07a4a06ab2728063eedec02
 msgid "Creating Custom Environments"
-msgstr ""
+msgstr "Creating 自定义 Environments"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:94
 #: 2763ea113ade4818b3640a3e664fbde5
 msgid "Create USD scene in Isaac Sim"
-msgstr ""
+msgstr "Create USD scene in Isaac Sim"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:95
 #: 5b6d1ae7426c49768c60809bf41402e6
 msgid "Export to `environment/` directory"
-msgstr ""
+msgstr "Export to `environment/` directory"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:96
 #: 60bef335adf34e5c88358ebc9fcd292a
 msgid "Reference in configuration"
-msgstr ""
+msgstr "参考手册 in configuration"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:98
 #: 07061ca001c540559d9813aa4aa3102f
@@ -237,6 +251,8 @@ msgid ""
 "# Custom scene setup\n"
 "scene_path = \"environment/custom_scene.usd\"\n"
 msgstr ""
+"# 自定义 scene setup\\n"
+"scene_path = \\\"environment/custom_scene.usd\\\"\\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:103
 #: 6a8e54dd080f4ab0a6ef875d0bf9da41
@@ -246,10 +262,10 @@ msgstr "相关内容"
 #: ../../source/4-reference/simulation/5-env_assets.md:105
 #: 59b5c1548d814b408be0623a917c44f9
 msgid "[robot_usds](3-robot_usds.md)"
-msgstr ""
+msgstr "[robot_usds](3-robot_usds.md)"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:106
 #: d85972a63eba4545aa6f0ff523f8e7eb
 msgid "[FaSim-Isaac](2-fasim_isaac.md)"
-msgstr ""
+msgstr "[FaSim-Isaac](2-fasim_isaac.md)"
 

@@ -2,10 +2,23 @@
 
 Control robots using a VR headset and controllers.
 
+## Supported Headsets
+
+| Headset | Support Level | Modes | Notes |
+|---------|---------------|-------|-------|
+| **Pico** | **Recommended** | Web, XROtoolkit | Enterprise edition has faster release cadence, enabling lower-latency tracking |
+| **Meta Quest** | Supported | Web, XROtoolkit | Good consumer availability |
+
+```{admonition} Pico Recommended
+:class: tip
+
+**Pico headsets have the best support**, especially the enterprise edition which offers faster release updates and lower-latency tracking for more responsive robot control (更跟手).
+```
+
 ## Prerequisites
 
 - Working robot demo (mock, sim, or real)
-- VR headset (Meta Quest, HTC Vive, etc.)
+- VR headset (**Pico** recommended, or **Meta Quest**)
 - fa-py-libraries installed
 - Network connectivity between VR device and ROS 2 machine
 
@@ -44,25 +57,32 @@ This starts the VR pose publisher that bridges VR tracking to ROS 2.
 
 ## VR Modes
 
-### Vuer (WebXR)
+Both **Pico** and **Meta Quest** support two connection modes:
 
-Browser-based VR using Vuer:
+| Mode | Connection | Setup | Latency |
+|------|------------|-------|---------|
+| **Web** (WebXR) | Browser-based | Easy | Higher |
+| **XROtoolkit** | Native app | Requires app install | Lower |
+
+### Web Mode (WebXR)
+
+Browser-based VR using Vuer — works on both Pico and Meta Quest:
 
 ```bash
 ./run.sh vr --mode vuer
 ```
 
-Open the displayed URL on your VR headset's browser.
+Open the displayed URL on your VR headset's browser. No app installation required.
 
-### XRoboToolkit
+### XROtoolkit Mode
 
-For native VR application integration:
+Native application for lower latency — recommended for production:
 
 ```bash
 ./run.sh vr --mode xrt
 ```
 
-Requires XRoboToolkit application on the VR device.
+Requires XROtoolkit application installed on the VR device. Provides better tracking responsiveness, especially on Pico enterprise devices.
 
 ## Topics
 
@@ -133,6 +153,8 @@ For VR device on different network:
 
 ### High latency
 
+- Use **Pico enterprise edition** for lowest latency tracking
+- Use **XROtoolkit mode** instead of Web mode
 - Use wired network if possible
 - Reduce update rate in configuration
 - Check for network congestion

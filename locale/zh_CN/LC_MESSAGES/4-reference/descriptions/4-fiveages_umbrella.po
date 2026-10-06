@@ -23,12 +23,12 @@ msgstr ""
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:1
 #: b4f5d0c7ac464b899eaa19ce38207a54
 msgid "robot-descriptions-fiveages"
-msgstr ""
+msgstr "robot-descriptions-fiveages"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:3
 #: 7c8f9afcfd0c4fbcb273179556d342c4
 msgid "Private umbrella for FiveAges robot descriptions."
-msgstr ""
+msgstr "私有 umbrella for FiveAges robot descriptions."
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:5
 #: c46bf177ec64435d990e07457d55ce6a
@@ -40,7 +40,7 @@ msgstr "需要访问权限"
 msgid ""
 "This package requires private repository access. Contact your team lead "
 "for access."
-msgstr ""
+msgstr "This package requires private repository access. 请联系您的团队负责人获取访问权限。"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: 45348cc8a2cc4de897b2f6e1a564e6a6
@@ -52,22 +52,22 @@ msgstr "用途"
 msgid ""
 "`robot-descriptions-fiveages` aggregates all FiveAges humanoid and arm "
 "descriptions:"
-msgstr ""
+msgstr "`robot-descriptions-fiveages` aggregates all FiveAges humanoid and arm descriptions:"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:14
 #: e6f292e849c040249b0b3812a095a63a
 msgid "FA humanoids (W2, W2R, S2, S2R)"
-msgstr ""
+msgstr "FA humanoids (W2, W2R, S2, S2R)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:15
 #: ff74aab0b9294257afbedf84016d75b1
 msgid "FA-specific components"
-msgstr ""
+msgstr "FA-specific components"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:16
 #: 8f21b04f05424bdc8f506c2f64e0d76a
 msgid "Vendor arm integrations (Tianji, Rokae)"
-msgstr ""
+msgstr "Vendor arm integrations (Tianji, Rokae)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:18
 #: 75034a40536c4617a3261d017bc88af7
@@ -90,6 +90,18 @@ msgid ""
 "    ├── fa-s2-description/\n"
 "    └── fa-s2r-description/\n"
 msgstr ""
+"robot-descriptions-fiveages/\\n"
+"├── common/                    # Shared FA components\\n"
+"│   └── fa-w2-components/\\n"
+"├── arms/                      # Arm descriptions\\n"
+"│   ├── robot-descriptions-tianji/\\n"
+"│   ├── robot-descriptions-rokae/\\n"
+"│   └── ...\\n"
+"└── robot/                     # Complete robot descriptions\\n"
+"    ├── fa-w2-description/\\n"
+"    ├── fa-w2r-description/\\n"
+"    ├── fa-s2-description/\\n"
+"    └── fa-s2r-description/\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:35
 #: 17893448267e416e935efe8de20ad3d2
@@ -99,58 +111,58 @@ msgstr "使用方法"
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:37
 #: 6431ab73f4244fe1a867b6c6d4cd112b
 msgid "Via fa-deploy-ws"
-msgstr ""
+msgstr "Via fa-deploy-ws"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:39
 #: 4b36699158be4f6eb3f384a7089a1ef2
 msgid ""
 "cd fa-deploy-ws\n"
 "./init_repo.sh --robot fiveages_w2\n"
-msgstr ""
+msgstr "cd fa-deploy-ws\\n./init_repo.sh --robot fiveages_w2\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:44
 #: 396318d81ecb4f5e9ede804a0b0fd7b5
 msgid "Simulation Only"
-msgstr ""
+msgstr "仿真 Only"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:46
 #: 53af3ee800ba42e1bb758a4d4fb18ee4
 msgid "For simulation without full deployment:"
-msgstr ""
+msgstr "For simulation without full deployment:"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:48
 #: 5540e85fe6474300a5c85566bb7389af
 msgid ""
 "cd robot-descriptions-fiveages\n"
 "./scripts/init-sim.sh\n"
-msgstr ""
+msgstr "cd robot-descriptions-fiveages\\n./scripts/init-sim.sh\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:53
 #: bc37e97944c34d2093d7fcb52359ca7e
 msgid ""
 "This initializes only common and robot folders, skipping hardware-"
 "specific components."
-msgstr ""
+msgstr "This initializes only common and robot folders, skipping hardware-specific components."
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:55
 #: 1db16e2a81124fc186196cf16f8d64aa
 msgid "Initialization"
-msgstr ""
+msgstr "Initialization"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:57
 #: 1a2b45d159054cc898145a1157d02006
 msgid "Full Init (via fa-deploy-ws)"
-msgstr ""
+msgstr "完整 Init (via fa-deploy-ws)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:59
 #: 33302e10c92c4ce383b5544768537c7c
 msgid "./init_repo.sh --robot <robot_id>\n"
-msgstr ""
+msgstr "./init_repo.sh --robot <robot_id>\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:63
 #: a5ef914d191146efbdb021c269581293
 msgid "Selective Init"
-msgstr ""
+msgstr "Selective Init"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:65
 #: a5f98d0c53114f85a52c276278303231
@@ -161,16 +173,21 @@ msgid ""
 "# Specific robot\n"
 "git submodule update --init robot/fa-w2-description\n"
 msgstr ""
+"# Common components only\\n"
+"git submodule update --init common/fa-w2-components\\n"
+"\\n"
+"# Specific robot\\n"
+"git submodule update --init robot/fa-w2-description\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:73
 #: 9cd0730879ca467794cde27d77808fa7
 msgid "Nested Structure"
-msgstr ""
+msgstr "Nested Structure"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:75
 #: f0a7cdda50ae4c14902354c52b0d67a8
 msgid "Each robot description may include additional submodules:"
-msgstr ""
+msgstr "Each robot description may include additional submodules:"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:77
 #: 348eac0222654393b833ef4cc212c16f
@@ -181,21 +198,26 @@ msgid ""
 "├── config/\n"
 "└── components/          # Nested component references\n"
 msgstr ""
+"fa-w2-description/\\n"
+"├── urdf/\\n"
+"├── meshes/\\n"
+"├── config/\\n"
+"└── components/          # Nested component references\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:85
 #: 91466895f7894d86bb26026bb1fed66f
 msgid "Launch Integration"
-msgstr ""
+msgstr "Launch Integration"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:87
 #: bcbb639f870f4fe8ba0a478dfddc28ec
 msgid "Descriptions integrate with `fa-deploy-ws` launches:"
-msgstr ""
+msgstr "Descriptions integrate with `fa-deploy-ws` launches:"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:89
 #: 2a2e27d677f74fafb02ac9ef4878c3fa
 msgid "ros2 launch fiveages_bringup bringup.launch.py robot:=fiveages_w2\n"
-msgstr ""
+msgstr "ros2 launch fiveages_bringup bringup.launch.py robot:=fiveages_w2\\n"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:93
 #: 377e17f670d64fdb9fc5c23589c61478
@@ -205,10 +227,10 @@ msgstr "相关内容"
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:95
 #: ce22ec18c32649fca1fdf544e3a0eb85
 msgid "[FA Robot Descriptions](5-fa_robots.md)"
-msgstr ""
+msgstr "[FA Robot Descriptions](5-fa_robots.md)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:96
 #: 376de235923e4834bfe58de5a3467c5f
 msgid "[fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md)"
-msgstr ""
+msgstr "[fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md)"
 

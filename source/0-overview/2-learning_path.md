@@ -12,8 +12,14 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 | Day 3 | Gazebo / Isaac | 2-4 hours |
 | Day 4 | Python interface | 2-3 hours |
 | Day 5 | Teleoperation | 2-4 hours |
-| Day 6+ | Real hardware (internal) | Varies |
+| Day 6 | Real hardware | Varies |
 | Day 7+ | Add a robot | Project-dependent |
+
+```{admonition} Real Hardware for External Users
+:class: tip
+
+**ARX Acone** and **HT Panthera** are available for real hardware deployment on the public path. You don't need internal access to deploy to these robots.
+```
 
 ## Day 0: Map the Stack
 
@@ -93,17 +99,24 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 
 ### Isaac Sim
 
-1. Clone and initialize FaSim-Isaac:
+```{admonition} Isaac Sim 6.1 Required
+:class: warning
+
+FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify with: `ls ~/isaacsim/python.sh`
+```
+
+1. Install Isaac Sim 6.1 to `~/isaacsim`
+2. Clone and initialize FaSim-Isaac:
    ```bash
    git clone https://github.com/fiveages-sim/FaSim-Isaac.git
    cd FaSim-Isaac
    ./init.sh
    ```
-2. Run the Isaac environment:
+3. Run the Isaac environment:
    ```bash
    ./run.sh
    ```
-3. In another terminal, launch the ROS 2 side with Isaac hardware:
+4. In another terminal, launch the ROS 2 side with Isaac hardware:
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
    ```
@@ -143,9 +156,18 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 **Goal:** Control the robot via VR or manual teaching.
 
 ### VR Teleoperation
+
+**Supported headsets:** Pico (recommended) and Meta Quest, using Web or XROtoolkit modes.
+
 ```bash
 cd fa-py-libraries
 ./run.sh vr
+```
+
+```{admonition} Pico Recommended
+:class: tip
+
+Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control.
 ```
 
 ### Drag Teaching (HT Panthera)
@@ -157,14 +179,38 @@ ros2 launch drag_teleop_controller drag_teleop.launch.py
 
 **Outcome:** Real-time control via VR headset or manual guidance.
 
-## Day 6+: Real Hardware (Internal)
+## Day 6: Real Hardware
 
-**Goal:** Deploy to physical FA robots.
+**Goal:** Deploy to physical robots.
+
+### Public Path (ARX Acone, HT Panthera)
+
+External users can deploy to **ARX Acone** and **HT Panthera** using only public packages:
+
+**ARX Acone (CAN bus):**
+```bash
+cd ~/open-deploy-ws
+source install/setup.bash
+
+# Configure CAN interface
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
+
+# Deploy to real hardware
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
+```
+
+**HT Panthera (Serial):**
+```bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
+```
+
+### Internal Path (FA Robots)
 
 ```{admonition} Internal Access Required
 :class: warning
 
-This stage requires access to `fa-deploy-ws` and a physical robot. Contact your team lead for repository access and hardware allocation.
+FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Contact your team lead for repository access and hardware allocation.
 ```
 
 **Tasks:**

@@ -23,19 +23,19 @@ msgstr ""
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:1
 #: 48d3225dfaf64645912f02d0be7bbed1
 msgid "ros2_robot_interface"
-msgstr ""
+msgstr "ros2_robot_interface"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:3
 #: d698cf10e5d34bb99561b4319d080e4d
 msgid "High-level Python API for robot control."
-msgstr ""
+msgstr "High-level Python API for robot control."
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:5
 #: c9bf4196adc44068aea247bf6aab7eed
 msgid ""
 "**Repository:** [fiveages-sim/ros2_robot_interface](https://github.com"
 "/fiveages-sim/ros2_robot_interface)"
-msgstr ""
+msgstr "**仓库:** [fiveages-sim/ros2_robot_interface](https://github.com/fiveages-sim/ros2_robot_interface)"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:7
 #: 7a7437574d7b4e31adc474e204d82312
@@ -45,27 +45,27 @@ msgstr "用途"
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:9
 #: 89c3fe54deb740e9ad4ef01bae32b446
 msgid "Simplifies robot control from Python:"
-msgstr ""
+msgstr "Simplifies robot control from Python:"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:10
 #: 037c9a9a40364f7984dbd9105945e0f7
 msgid "Connection management"
-msgstr ""
+msgstr "Connection management"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:11
 #: a299a402cd604b1ba7019b8f9dfe557b
 msgid "Motion commands"
-msgstr ""
+msgstr "Motion commands"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:12
 #: 43a3111ee88b49418557a3836fb4aff3
 msgid "State queries"
-msgstr ""
+msgstr "State queries"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:13
 #: 3e03ee35a7a24079ad21d59a587790ab
 msgid "Gripper control"
-msgstr ""
+msgstr "Gripper control"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:15
 #: 5cdfbfd6bb504a8d9b87a4166aa8514a
@@ -75,12 +75,12 @@ msgstr "安装"
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:17
 #: d5a7171287004bec8bcd3fde7741243f
 msgid "pip install ros2-robot-interface\n"
-msgstr ""
+msgstr "pip install ros2-robot-interface\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:21
 #: c23aa5d8ecc6437ea2f94b08fc2b7531
 msgid "Or from source:"
-msgstr ""
+msgstr "Or from source:"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:23
 #: e45c109bbb704f0489b531f917eca7a7
@@ -89,11 +89,14 @@ msgid ""
 "cd ros2_robot_interface\n"
 "pip install -e .\n"
 msgstr ""
+"git clone https://github.com/fiveages-sim/ros2_robot_interface.git\\n"
+"cd ros2_robot_interface\\n"
+"pip install -e .\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:29
 #: 081a213df5964834a387b92c31adaa9c
 msgid "Quick Start"
-msgstr ""
+msgstr "Quick Start"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
 #: 4577fd4a20f54e299feea6233a95e259
@@ -113,16 +116,30 @@ msgid ""
 "robot.gripper_open()\n"
 "robot.gripper_close()\n"
 msgstr ""
+"from ros2_robot_interface import RobotInterface\\n"
+"\\n"
+"robot = RobotInterface()\\n"
+"robot.connect()\\n"
+"\\n"
+"# Move joints\\n"
+"robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\\n"
+"\\n"
+"# Move Cartesian\\n"
+"robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])\\n"
+"\\n"
+"# Gripper\\n"
+"robot.gripper_open()\\n"
+"robot.gripper_close()\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:48
 #: 4c451fff4d6f49158e501547990570ff
 msgid "API Reference"
-msgstr ""
+msgstr "API 参考手册"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:50
 #: f1a9342b5f714b77b54eebc855940f06
 msgid "Connection"
-msgstr ""
+msgstr "Connection"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:52
 #: 58840e9bf0c84f2d9c36d762bb6f28c9
@@ -132,11 +149,15 @@ msgid ""
 "robot.disconnect()\n"
 "robot.is_connected()  # -> bool\n"
 msgstr ""
+"robot = RobotInterface()\\n"
+"robot.connect()\\n"
+"robot.disconnect()\\n"
+"robot.is_connected()  # -> bool\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:59
 #: 40ee729da3244779b0ac5b85b1cbc8e1
 msgid "Motion"
-msgstr ""
+msgstr "Motion"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:61
 #: a50fff0864cb4af89def10734f8c50dc
@@ -155,11 +176,24 @@ msgid ""
 "robot.is_moving()  # -> bool\n"
 "robot.wait_for_motion()\n"
 msgstr ""
+"# Joint space\\n"
+"robot.move_j(positions: List[float], duration: float = 无)\\n"
+"\\n"
+"# Cartesian\\n"
+"robot.move_l(\\n"
+"    position: List[float],  # [x, y, z]\\n"
+"    orientation: List[float],  # [qw, qx, qy, qz]\\n"
+"    duration: float = 无\\n"
+")\\n"
+"\\n"
+"# Check motion state\\n"
+"robot.is_moving()  # -> bool\\n"
+"robot.wait_for_motion()\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:77
 #: e198c9c8f7b146e2b8af1f22b06bdeb6
 msgid "State"
-msgstr ""
+msgstr "State"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:79
 #: 204a873b3f584f3d9d553e4fc5326575
@@ -171,11 +205,17 @@ msgid ""
 "# Cartesian\n"
 "robot.get_ee_pose()  # -> Pose\n"
 msgstr ""
+"# Joint state\\n"
+"robot.get_joint_positions()  # -> List[float]\\n"
+"robot.get_joint_velocities()  # -> List[float]\\n"
+"\\n"
+"# Cartesian\\n"
+"robot.get_ee_pose()  # -> Pose\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:88
 #: 3fb24eb1d2584609b49f1f6d117b8519
 msgid "Gripper"
-msgstr ""
+msgstr "Gripper"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:90
 #: edc5fe22219f47959f9a6fcba9bd00c7
@@ -185,11 +225,15 @@ msgid ""
 "robot.gripper_move(position: float)  # 0.0-1.0\n"
 "robot.get_gripper_position()  # -> float\n"
 msgstr ""
+"robot.gripper_open()\\n"
+"robot.gripper_close()\\n"
+"robot.gripper_move(position: float)  # 0.0-1.0\\n"
+"robot.get_gripper_position()  # -> float\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:97
 #: 9851429976e142008e73b2e196f86ca9
 msgid "FSM"
-msgstr ""
+msgstr "FSM"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:99
 #: 5ef578a88928404098ac9384dce3df26
@@ -198,11 +242,14 @@ msgid ""
 "robot.get_mode()  # -> str\n"
 "robot.send_fsm_command(command: str)\n"
 msgstr ""
+"robot.set_mode(mode: str)\\n"
+"robot.get_mode()  # -> str\\n"
+"robot.send_fsm_command(command: str)\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:105
 #: 5409a8cb64d5401ca95cd211406acae6
 msgid "Async Interface"
-msgstr ""
+msgstr "Async 接口"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:107
 #: 509432dca2f34678837efc6f72f66bfa
@@ -217,6 +264,15 @@ msgid ""
 "\n"
 "asyncio.run(main())\n"
 msgstr ""
+"from ros2_robot_interface import AsyncRobotInterface\\n"
+"import asyncio\\n"
+"\\n"
+"async def main():\\n"
+"    robot = AsyncRobotInterface()\\n"
+"    await robot.connect()\\n"
+"    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\\n"
+"\\n"
+"asyncio.run(main())\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:119
 #: 456d3e5974ab4dc0bbf2b2f8b708a145
@@ -232,6 +288,11 @@ msgid ""
 "    domain_id=42\n"
 ")\n"
 msgstr ""
+"robot = RobotInterface(\\n"
+"    node_name='my_controller',\\n"
+"    namespace='robot1',\\n"
+"    domain_id=42\\n"
+")\\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:129
 #: 257af6d8c2d74a728fc402b3840deda8
@@ -241,10 +302,10 @@ msgstr "相关内容"
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:131
 #: 7dda72c2f39d4235b2de9759ee7d5122
 msgid "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
-msgstr ""
+msgstr "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:132
 #: 37e72d06c1c14c80b934c87ccafa4758
 msgid "[fa-py-libraries](2-fa_py_libraries.md)"
-msgstr ""
+msgstr "[fa-py-libraries](2-fa_py_libraries.md)"
 

@@ -12,6 +12,23 @@ Working with real robots requires:
 4. Understanding of robot's motion range
 ```
 
+## Supported Robots
+
+### Public Path (open-deploy-ws)
+
+The following robots can be deployed to real hardware using only public packages:
+
+| Robot | Hardware Interface | Communication |
+|-------|-------------------|---------------|
+| **ARX Acone** | arx-ros2-control | CAN bus |
+| **HT Panthera** | ht-ros2-control | Serial |
+
+These robots are fully supported for external users without requiring private repository access.
+
+### Internal Path (fa-deploy-ws)
+
+FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R, and dual-arm CCS configurations. See [fa-deploy-ws setup](../1-getting_started/4-fa_deploy_ws.md).
+
 ## Prerequisites
 
 - Successfully tested in mock mode
@@ -119,6 +136,43 @@ acceleration_scaling: 0.1
 ```
 
 Increase gradually after verifying safe operation.
+
+## Public Robot Deployment (open-deploy-ws)
+
+### ARX Acone
+
+```bash
+cd ~/open-deploy-ws
+source install/setup.bash
+
+# Verify CAN interface
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
+
+# Test with mock first
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+
+# Deploy to real hardware
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
+```
+
+### HT Panthera
+
+```bash
+cd ~/open-deploy-ws
+source install/setup.bash
+
+# Verify serial port (typically /dev/ttyACM0 or /dev/ttyUSB0)
+ls /dev/ttyACM* /dev/ttyUSB*
+
+# Test with mock first
+ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
+
+# Deploy to real hardware
+ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
+```
+
+HT Panthera also supports drag teaching mode for manual guidance.
 
 ## Internal Deployment (fa-deploy-ws)
 

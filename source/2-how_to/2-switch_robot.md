@@ -69,14 +69,17 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 
 ## With Grippers
 
-Different robots support different grippers:
+Different robots support different grippers. The `gripper:=` parameter specifies the end-effector.
+
+```{admonition} TODO
+:class: note
+
+For valid robot + gripper combinations and exact launch syntax, check the launch files in `arms_ros2_control` and the specific robot description packages. Not all combinations are supported.
+```
 
 ```bash
-# Dobot with DH AG95
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock
-
-# ARX with inspire hand
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_x5 gripper:=inspire_rh56 hardware:=mock
+# General pattern
+ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
 ```
 
 ## Verification

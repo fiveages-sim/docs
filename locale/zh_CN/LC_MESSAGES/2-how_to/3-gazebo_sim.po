@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../source/2-how_to/3-gazebo_sim.md:1 3f4c38a3b0864ebfb7ad75613c26c7b9
 msgid "Gazebo Simulation"
-msgstr ""
+msgstr "Gazebo 仿真"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:3 01e69357d68145e78320f3093776b640
 msgid "Run robot demos with Gazebo Harmonic physics simulation."
-msgstr ""
+msgstr "Run robot demos with Gazebo Harmonic physics simulation."
 
 #: ../../source/2-how_to/3-gazebo_sim.md:5 623c9c76d3da402ba079577d9611a5db
 msgid "Prerequisites"
@@ -34,19 +34,19 @@ msgstr "前提条件"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:7 15d26b5f336b45f6846e8c85c3938e0c
 msgid "Workspace built"
-msgstr ""
+msgstr "工作空间 built"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:8 e28a5d91c18b45f1bc73bc4c113c2168
 msgid "Gazebo Harmonic packages installed"
-msgstr ""
+msgstr "Gazebo Harmonic packages installed"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:10 da95567e29ea4c1684eab624449dc187
 msgid "Install Gazebo"
-msgstr ""
+msgstr "Install Gazebo"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:12 a388edd16b6b472e81af210d98a92eb0
 msgid "sudo apt install ros-jazzy-gz-*\n"
-msgstr ""
+msgstr "sudo apt install ros-jazzy-gz-*\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:16 fe3b8fce84e54c35b135ea508fdd3d9f
 msgid "Steps"
@@ -54,45 +54,47 @@ msgstr "步骤"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:18 d910123813da4a9692dd2e03e61da553
 msgid "1. Source Workspace"
-msgstr ""
+msgstr "1. 源 工作空间"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:20 1c16ed5f24a54d3e99f029c906e72eab
 msgid ""
 "source /opt/ros/jazzy/setup.bash\n"
 "source ~/open-deploy-ws/install/setup.bash\n"
 msgstr ""
+"source /opt/ros/jazzy/setup.bash\\n"
+"source ~/open-deploy-ws/install/setup.bash\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:25 74c07717d42547719027c1e4ffcb3ecb
 msgid "2. Launch with Gazebo"
-msgstr ""
+msgstr "2. Launch with Gazebo"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:27 4010a82439b7471a879bb431fe4b63af
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\n"
-msgstr ""
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:31 334e59ba7057443aac7cb3ac789fd647
 msgid "This launches:"
-msgstr ""
+msgstr "This launches:"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:32 8d5507935d004bb788f5a14256481d2e
 msgid "Gazebo simulator with robot model"
-msgstr ""
+msgstr "Gazebo simulator with robot model"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:33 b719f8957a134648a900c9742c360c94
 msgid "ROS 2 controllers"
-msgstr ""
+msgstr "ROS 2 controllers"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:34 8cbfb22777ff45fb8cde2b33424c9a6d
 msgid "RViz visualization"
-msgstr ""
+msgstr "RViz visualization"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:36 5540f53f60e4431294df1e74dbd44860
 msgid "3. Interact"
-msgstr ""
+msgstr "3. Interact"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:38 c9da71e0c2514fd892bae29a5a9522e7
 msgid "Send commands as usual:"
-msgstr ""
+msgstr "Send commands as usual:"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:40 be2d43f87f9c4ff98248518e4b604abe
 #, python-brace-format
@@ -102,10 +104,13 @@ msgid ""
 "z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
 "  --once\n"
 msgstr ""
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\\\\n"
+"  \\\"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, orientation: {w: 1.0}}}\\\" \\\\\\n"
+"  --once\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:46 ba31f75f08734acbab5c5a750420845e
 msgid "Launch Options"
-msgstr ""
+msgstr "Launch 选项"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:48 4dd57c270d3c4bc79becaf68bcff2291
 msgid ""
@@ -120,42 +125,51 @@ msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz "
 "headless:=true\n"
 msgstr ""
+"# With specific robot\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz\\n"
+"\\n"
+"# Without RViz (Gazebo only)\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz rviz:=false\\n"
+"\\n"
+"# Headless mode\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz headless:=true\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:59 c6091c5c10b44a1985318aac2d55ccd8
 msgid "Gazebo Features"
-msgstr ""
+msgstr "Gazebo 功能特性"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:61 8d736c5d693946438915cf07c8006f60
 msgid "Physics Tuning"
-msgstr ""
+msgstr "Physics Tuning"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:63 251faf84a9cc40a289e6e2cfad95e71f
 msgid ""
 "The default physics parameters work for most robots. For custom tuning, "
 "modify the SDF files in the description packages."
-msgstr ""
+msgstr "The default physics parameters work for most robots. For custom tuning, modify the SDF files in the description packages."
 
 #: ../../source/2-how_to/3-gazebo_sim.md:65 c4937fd218cb496fb734ffa2ac94154e
 msgid "World Files"
-msgstr ""
+msgstr "World Files"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:67 a5ff30c5634b4ba68fa0253a6f3d1d2c
 msgid "Custom world files can be loaded:"
-msgstr ""
+msgstr "自定义 world files can be loaded:"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:69 2b0e0d96719e4c67a46bfa6ea50543b7
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz "
 "world:=custom_world.sdf\n"
 msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz world:=custom_world.sdf\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:73 36ef7cdb59664e339a66b752338390cf
 msgid "Recording"
-msgstr ""
+msgstr "Recording"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:75 ddeebf804d5f49e6bd8a9462b3afc84f
 msgid "Record simulation for playback:"
-msgstr ""
+msgstr "Record simulation for playback:"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:77 3afc493cfdc64b78a57e188ef7679d4c
 msgid ""
@@ -165,10 +179,15 @@ msgid ""
 "  --timeout 3000 \\\n"
 "  --req 'pause: false'\n"
 msgstr ""
+"gz service -s /world/default/control \\\\\\n"
+"  --reqtype gz.msgs.WorldControl \\\\\\n"
+"  --reptype gz.msgs.Boolean \\\\\\n"
+"  --timeout 3000 \\\\\\n"
+"  --req 'pause: false'\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:85 4226afc2be9049248f0cc05330e27a07
 msgid "Mock vs Gazebo"
-msgstr ""
+msgstr "Mock vs Gazebo"
 
 #: ../../source/2-how_to/3-gazebo_sim.md b8e35c0aa2304fb7a423a24cb6f19dca
 msgid "Aspect"
@@ -176,15 +195,15 @@ msgstr "方面"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 9f4bfa8daa2f4ced8b5fe1786f3aa2e1
 msgid "Mock"
-msgstr ""
+msgstr "Mock"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 255e319ca96747bc81713c4a7364b025
 msgid "Gazebo"
-msgstr ""
+msgstr "Gazebo"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 2da9c62c72e04da9821d1a0932d20899
 msgid "Physics"
-msgstr ""
+msgstr "Physics"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 2388f7a3431f4643bd4fcd28607740b4
 msgid "None"
@@ -192,23 +211,23 @@ msgstr "无"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 3cefcc58d57449e5b2208d07089d9698
 msgid "Full simulation"
-msgstr ""
+msgstr "完整 simulation"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 3af68728930d453dba451c1b5e7f918f
 msgid "Speed"
-msgstr ""
+msgstr "Speed"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 486406d826644470a3db4e4ca660f5b9
 msgid "Real-time"
-msgstr ""
+msgstr "Real-time"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 5eeabd362e92439b9490507a25d47da1
 msgid "Configurable"
-msgstr ""
+msgstr "Configurable"
 
 #: ../../source/2-how_to/3-gazebo_sim.md dfe91dcca16e400a937f9dca3248369b
 msgid "Collisions"
-msgstr ""
+msgstr "Collisions"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 6431ffaa080e40238a74e8da9ff7184c
 msgid "No"
@@ -220,31 +239,31 @@ msgstr "是"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 8bd5da22e067485a8a0005c07cd90ba3
 msgid "Sensors"
-msgstr ""
+msgstr "Sensors"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 0e809ba0fd4e4f4f8e4e0b7a11569a3d
 msgid "Placeholder"
-msgstr ""
+msgstr "Placeholder"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 8b610e69c2d2419d90751b28905b6a1d
 msgid "Simulated"
-msgstr ""
+msgstr "Simulated"
 
 #: ../../source/2-how_to/3-gazebo_sim.md e12726e7444f47fda5240ded618e5909
 msgid "Resource use"
-msgstr ""
+msgstr "Resource use"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 44e0311966d9455eb842ed881c756861
 msgid "Low"
-msgstr ""
+msgstr "低"
 
 #: ../../source/2-how_to/3-gazebo_sim.md 7ff91b0d527c4df9a35795ea943f69c1
 msgid "Medium-high"
-msgstr ""
+msgstr "Medium-high"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:95 df8a06cc87a2412289140063c7d35519
 msgid "Use mock for controller development, Gazebo for behavior testing."
-msgstr ""
+msgstr "Use mock for controller development, Gazebo for behavior testing."
 
 #: ../../source/2-how_to/3-gazebo_sim.md:97 0af00fbaaa1842f68fe7ece66297e52a
 msgid "Verification"
@@ -252,15 +271,15 @@ msgstr "验证"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:99 30facdb680d74a5eb1a86deea6e7fc6f
 msgid "Gazebo window shows robot in environment"
-msgstr ""
+msgstr "Gazebo window shows robot in environment"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:100 65dd703ec2ca47b18082dbbba5195451
 msgid "Robot responds to ROS 2 commands"
-msgstr ""
+msgstr "机器人 responds to ROS 2 commands"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:101 13af5eb8889a4cddae6039828772d919
 msgid "Physics interactions (collisions, gravity) work"
-msgstr ""
+msgstr "Physics interactions (collisions, gravity) work"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:103 2ca21ec94f884e55a6cfa1467c8e0916
 msgid "Troubleshooting"
@@ -268,7 +287,7 @@ msgstr "故障排除"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:105 71cc4df887db444bbfccd2954d9f7fb2
 msgid "Gazebo crashes on start"
-msgstr ""
+msgstr "Gazebo crashes on start"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:107 8f96e320b5f24654b1cf3df036bee237
 msgid ""
@@ -279,36 +298,43 @@ msgid ""
 "export LIBGL_ALWAYS_SOFTWARE=1\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\n"
 msgstr ""
+"# Check GPU drivers\\n"
+"nvidia-smi\\n"
+"\\n"
+"# Try software rendering\\n"
+"export LIBGL_ALWAYS_SOFTWARE=1\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\\n"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:116 d1f8f4cde4db43858bf964067ea356b6
 msgid "Robot falls through floor"
-msgstr ""
+msgstr "机器人 falls through floor"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:118 a2ef776fac6d455e83e17afc3dbebf8b
 msgid "Check that the world file includes a ground plane."
-msgstr ""
+msgstr "Check that the world file includes a ground plane."
 
 #: ../../source/2-how_to/3-gazebo_sim.md:120 15bd7256153849de8b9fb3d7caf11d26
 msgid "Controllers don't start"
-msgstr ""
+msgstr "Controllers don't start"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:122 25afaf41ded24161b8d656054c938e86
 msgid ""
 "Wait for Gazebo to fully initialize before sending commands. Check for "
 "error messages about failed controller spawning."
-msgstr ""
+msgstr "Wait for Gazebo to fully initialize before sending commands. Check for error messages about failed controller spawning."
 
 #: ../../source/2-how_to/3-gazebo_sim.md:124 f2c21888c0414dc4af576b7f42a3d6b0
 msgid "High CPU usage"
-msgstr ""
+msgstr "高 CPU usage"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:126 84b20ad2cadd49e497e799dcbf0905d8
 msgid "Reduce physics update rate or run headless:"
-msgstr ""
+msgstr "Reduce physics update rate or run headless:"
 
 #: ../../source/2-how_to/3-gazebo_sim.md:128 ec613611602e4319b6d27625ef3223f1
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz "
 "headless:=true\n"
 msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz headless:=true\\n"
 

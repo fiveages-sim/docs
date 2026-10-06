@@ -2,6 +2,12 @@
 
 Public ros2_control hardware interface plugins.
 
+```{admonition} Real Hardware Ready
+:class: tip
+
+**ARX Acone** (via arx-ros2-control) and **HT Panthera** (via ht-ros2-control) are fully supported for real hardware deployment using only public packages. External users can deploy to these robots without requiring private repository access.
+```
+
 ## ARX
 
 **Repository:** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control)

@@ -96,11 +96,28 @@ sudo apt install ros-jazzy-gz-*
 
 ### Isaac Sim
 
-Isaac Sim requires:
-- NVIDIA GPU with recent drivers
-- Omniverse Launcher
+```{admonition} Required Version and Path
+:class: warning
 
-See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md) for setup details.
+FaSim-Isaac requires **Isaac Sim 6.1 binary** installed at **`~/isaacsim`**. The run scripts assume this exact path.
+```
+
+**Requirements:**
+- **Isaac Sim 6.1** (not older versions)
+- Install path: **`~/isaacsim`** (scripts expect this exact path)
+- NVIDIA GPU with drivers compatible with Isaac Sim 6.1
+
+**Installation:**
+1. Download Isaac Sim 6.1 from NVIDIA
+2. Extract or install to `~/isaacsim`
+3. Verify: `ls ~/isaacsim/python.sh` should exist
+
+If you install Isaac Sim to a different path, create a symlink:
+```bash
+ln -s /your/actual/path ~/isaacsim
+```
+
+See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md) for usage details.
 
 ## Network Configuration (Optional)
 

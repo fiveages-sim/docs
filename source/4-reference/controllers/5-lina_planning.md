@@ -5,106 +5,51 @@ Trajectory primitive library for motion planning.
 ```{admonition} Access Required
 :class: warning
 
-This package requires private repository access.
+This package requires private repository access. Contact your team lead for access.
 ```
 
 **Repository:** lina_planning (private)
 
 ## Purpose
 
-`lina_planning` provides trajectory primitive generators:
-- MoveJ — Joint space motion
-- MoveL — Linear Cartesian motion
-- Circular — Arc motion
-- Bezier — Smooth curves
+`lina_planning` provides trajectory primitive generators for motion planning, including joint space and Cartesian space trajectories.
+
+## Features
+
+```{admonition} TODO
+:class: note
+
+For the complete list of available trajectory types, API documentation, and usage examples, refer to the repository's README and header files. The overview below is general; consult the in-repo docs for accurate details.
+```
+
+The library typically provides trajectory primitives such as:
+- Joint space motion planning
+- Cartesian space motion planning
+- Smooth trajectory interpolation
 
 ## Usage
-
-### Build
 
 ```bash
 colcon build --packages-up-to lina_planning
 ```
 
-### API
+```{admonition} TODO
+:class: note
 
-```cpp
-#include <lina_planning/trajectory_primitives.h>
-
-// MoveJ: Joint space trajectory
-auto traj = lina_planning::MoveJ(
-    start_joints,
-    end_joints,
-    duration
-);
-
-// MoveL: Linear Cartesian trajectory
-auto traj = lina_planning::MoveL(
-    start_pose,
-    end_pose,
-    duration
-);
-
-// Circular: Arc trajectory
-auto traj = lina_planning::Circular(
-    start_pose,
-    via_pose,
-    end_pose,
-    duration
-);
-```
-
-## Trajectory Types
-
-### MoveJ
-
-Joint space interpolation:
-- Smooth joint motion
-- Respects joint limits
-- Optional velocity limits
-
-### MoveL
-
-Linear Cartesian interpolation:
-- Straight-line end-effector path
-- Orientation interpolation
-- Collision checking integration
-
-### Circular
-
-Arc motion through three points:
-- Start, via, end poses
-- Circular path in Cartesian space
-
-### Bezier
-
-Smooth curves:
-- Multiple control points
-- Continuous velocity/acceleration
-- Configurable order
-
-## Integration
-
-Used by higher-level planners and controllers:
-
-```cpp
-// Example integration
-class MotionExecutor {
-    void execute_movej(const JointState& target) {
-        auto traj = lina_planning::MoveJ(current_, target, 2.0);
-        execute_trajectory(traj);
-    }
-};
+API details, function signatures, and code examples should be taken from the repository's documentation and header files. Do not rely on examples shown elsewhere.
 ```
 
 ## Configuration
 
-```yaml
-lina_planning:
-  default_joint_velocity: 1.0  # rad/s
-  default_cartesian_velocity: 0.1  # m/s
-  interpolation_dt: 0.01  # seconds
+```{admonition} TODO
+:class: note
+
+Configuration parameters and default values are maintained in the repository. Check the package's config files for current options.
 ```
+
+## Integration
+
+`lina_planning` is used by higher-level controllers and planners in the stack.
 
 ## Related
 
