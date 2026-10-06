@@ -47,7 +47,15 @@ make html-all
 python -m http.server -d build/html 8000
 ```
 
-Open `http://localhost:8000`.
+Open `http://localhost:8000`. The Chinese tree is at `http://localhost:8000/zh_CN/`. The sidebar language dropdown stays on the same page when switching (`foo.html` ↔ `zh_CN/foo.html`).
+
+## Language switcher
+
+The Furo sidebar uses a UniLab-style `<select>` **below the brand, above search** (`source/_templates/sidebar/lang_switcher.html`).
+
+This site stays on **sphinx-intl dual builds** (English at the HTML root, Chinese under `zh_CN/`). It does **not** use UniLab’s parallel `source/en/` + `source/zh_CN/` single-build tree. Counterpart URLs are therefore relative hrefs injected in `conf.py` (`html-page-context`), not `pathto()` of the other locale (that page is not in the same builder’s `found_docs`).
+
+On GitHub Pages the site lives at `/docs/`. Relative hrefs resolve to `/docs/...` ↔ `/docs/zh_CN/...`. Do **not** link to domain-root `/zh_CN/` (404). `html_baseurl` is `https://fiveages-sim.github.io/docs/`.
 
 ## Translation Workflow
 
@@ -217,6 +225,7 @@ CI fails when:
 - Source files nest `` ``` `` inside `` ```{admonition} ``
 - Sphinx emits any warning (`SPHINXOPTS=-W`)
 - Built HTML contains a literal `` ``` `` fence (broken MyST nesting)
+- Language switcher uses domain-root `/zh_CN/` (missing GitHub Pages `/docs`)
 
 Build must pass before merging.
 

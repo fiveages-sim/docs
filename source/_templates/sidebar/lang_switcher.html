@@ -1,0 +1,23 @@
+{# Furo sidebar: language dropdown below brand, above search (UniLab pattern).
+   Targets are precomputed relative hrefs — sphinx-intl dual builds cannot
+   pathto() the other locale. #}
+{%- set current = current_language|default("en") -%}
+{%- set hrefs = language_switcher_hrefs if language_switcher_hrefs is defined else {} -%}
+{%- set en_href = hrefs.get("en", "index.html") -%}
+{%- set zh_href = hrefs.get("zh_CN", "zh_CN/index.html") -%}
+<div class="sidebar-lang-switcher">
+  <select class="sidebar-lang-switcher__select" aria-label="Language">
+    <option value="{{ en_href|e }}"{% if current == "en" %} selected{% endif %}>English</option>
+    <option value="{{ zh_href|e }}"{% if current == "zh_CN" %} selected{% endif %}>简体中文</option>
+  </select>
+</div>
+<script>
+(function(){
+  var sel = document.querySelector(".sidebar-lang-switcher__select");
+  if (!sel) return;
+  sel.addEventListener("change", function(){
+    var url = this.value;
+    if (url) window.location.href = new URL(url, window.location.href).href;
+  });
+})();
+</script>

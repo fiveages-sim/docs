@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:36+0000\n"
+"POT-Creation-Date: 2026-10-06 16:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid "Build Chinese"
 msgstr "构建中文版"
 
 #: ../../source/5-developer/2-docs_build.md:32
-#: ../../source/5-developer/2-docs_build.md:75
+#: ../../source/5-developer/2-docs_build.md:83
 #: 70c87408dd51453db8e60e33c80f1fc5 92bc5079e4b947569e2a7b8cd35be9ca
 msgid "make html-zh_CN\n"
 msgstr "make html-zh_CN\n"
@@ -125,26 +125,71 @@ msgid "python -m http.server -d build/html 8000\n"
 msgstr "python -m http.server -d build/html 8000\n"
 
 #: ../../source/5-developer/2-docs_build.md:50
-#: 50481f36836c428e9768861a59d25c2f
-msgid "Open `http://localhost:8000`."
-msgstr "打开 `http://localhost:8000`。"
+#: 1dc412d5a8634704bbe74181d34f89ec
+msgid ""
+"Open `http://localhost:8000`. The Chinese tree is at "
+"`http://localhost:8000/zh_CN/`. The sidebar language dropdown stays on the "
+"same page when switching (`foo.html` ↔ `zh_CN/foo.html`)."
+msgstr ""
+"打开 `http://localhost:8000`。中文树在 "
+"`http://localhost:8000/zh_CN/`。侧边栏语言下拉在切换时停留在同一页面（`foo.html` ↔ "
+"`zh_CN/foo.html`）。"
 
 #: ../../source/5-developer/2-docs_build.md:52
+#: 7e8e4dc1f52a48a58c2f1fe26c5661cb
+msgid "Language switcher"
+msgstr "语言切换"
+
+#: ../../source/5-developer/2-docs_build.md:54
+#: 958bf202dff343f4a8f2cdfa408d00dd
+msgid ""
+"The Furo sidebar uses a UniLab-style `<select>` **below the brand, above "
+"search** (`source/_templates/sidebar/lang_switcher.html`)."
+msgstr ""
+"Furo 侧边栏使用 UniLab 风格的 "
+"`<select>`，放在**品牌名下方、搜索框上方**（`source/_templates/sidebar/lang_switcher.html`）。"
+
+#: ../../source/5-developer/2-docs_build.md:56
+#: 8d6e3a4e0af24df7a0e6ac379bc1f849
+msgid ""
+"This site stays on **sphinx-intl dual builds** (English at the HTML root, "
+"Chinese under `zh_CN/`). It does **not** use UniLab’s parallel `source/en/` "
+"+ `source/zh_CN/` single-build tree. Counterpart URLs are therefore relative"
+" hrefs injected in `conf.py` (`html-page-context`), not `pathto()` of the "
+"other locale (that page is not in the same builder’s `found_docs`)."
+msgstr ""
+"本站仍用 **sphinx-intl 双构建**（英文在 HTML 根目录，中文在 `zh_CN/`）。**没有**采用 UniLab 那种并行 "
+"`source/en/` + `source/zh_CN/` 单次构建。因此对应页 URL 是在 `conf.py`（`html-page-"
+"context`）里注入的相对 href，而不是对另一语言做 `pathto()`（那个页面不在同一次 builder 的 `found_docs` "
+"里）。"
+
+#: ../../source/5-developer/2-docs_build.md:58
+#: 987374e6109c4f09a3ee7e665c88335a
+msgid ""
+"On GitHub Pages the site lives at `/docs/`. Relative hrefs resolve to "
+"`/docs/...` ↔ `/docs/zh_CN/...`. Do **not** link to domain-root `/zh_CN/` "
+"(404). `html_baseurl` is `https://fiveages-sim.github.io/docs/`."
+msgstr ""
+"GitHub Pages 站点位于 `/docs/`。相对 href 会解析成 `/docs/...` ↔ "
+"`/docs/zh_CN/...`。**不要**链到域名根路径 `/zh_CN/`（会 404）。`html_baseurl` 是 "
+"`https://fiveages-sim.github.io/docs/`。"
+
+#: ../../source/5-developer/2-docs_build.md:60
 #: 40cc6f15e347474d9101e9935296d9de
 msgid "Translation Workflow"
 msgstr "翻译工作流"
 
-#: ../../source/5-developer/2-docs_build.md:54
+#: ../../source/5-developer/2-docs_build.md:62
 #: 60e88d6d154e41c08eddc3ca0b8698dc
 msgid "Update Source Strings"
 msgstr "更新源字符串"
 
-#: ../../source/5-developer/2-docs_build.md:56
+#: ../../source/5-developer/2-docs_build.md:64
 #: cce348cec85e4161a7342fd3375fe9ad
 msgid "After changing English content:"
 msgstr "修改英文内容后："
 
-#: ../../source/5-developer/2-docs_build.md:58
+#: ../../source/5-developer/2-docs_build.md:66
 #: f53df8ee52a54161a3d802f89836bbe3
 msgid ""
 "make gettext\n"
@@ -153,17 +198,17 @@ msgstr ""
 "make gettext\n"
 "sphinx-intl update -p build/gettext -l zh_CN\n"
 
-#: ../../source/5-developer/2-docs_build.md:63
+#: ../../source/5-developer/2-docs_build.md:71
 #: 8949a1d589454d00b13b5976a3e5c09b
 msgid "Edit Translations"
 msgstr "编辑译文"
 
-#: ../../source/5-developer/2-docs_build.md:65
+#: ../../source/5-developer/2-docs_build.md:73
 #: c590218bebe24f0ea5246d7efaf74ab4
 msgid "Edit files in `locale/zh_CN/LC_MESSAGES/*.po`:"
 msgstr "编辑 `locale/zh_CN/LC_MESSAGES/*.po` 中的文件："
 
-#: ../../source/5-developer/2-docs_build.md:67
+#: ../../source/5-developer/2-docs_build.md:75
 #: 964fd57b4ab4447f940a10e17dbde98e
 msgid ""
 "#: source/index.md:1\n"
@@ -174,17 +219,17 @@ msgstr ""
 "msgid \"FiveAges Sim Documentation\"\n"
 "msgstr \"FiveAges Sim 文档\"\n"
 
-#: ../../source/5-developer/2-docs_build.md:73
+#: ../../source/5-developer/2-docs_build.md:81
 #: 40945692078c477ea9957bd8aad611a8
 msgid "Build Translated Version"
 msgstr "构建翻译版本"
 
-#: ../../source/5-developer/2-docs_build.md:79
+#: ../../source/5-developer/2-docs_build.md:87
 #: 8ee067ea4f2043f1838211124cbae4c2
 msgid "File Structure"
 msgstr "文件结构"
 
-#: ../../source/5-developer/2-docs_build.md:81
+#: ../../source/5-developer/2-docs_build.md:89
 #: 506bba68f355428f80a304b6b5322a3e
 msgid ""
 "docs/\n"
@@ -223,17 +268,17 @@ msgstr ""
 "├── Makefile\n"
 "└── requirements.txt"
 
-#: ../../source/5-developer/2-docs_build.md:101
+#: ../../source/5-developer/2-docs_build.md:109
 #: f54c127b762a466b8b99078cea9cc294
 msgid "Writing Guidelines"
 msgstr "写作指南"
 
-#: ../../source/5-developer/2-docs_build.md:103
+#: ../../source/5-developer/2-docs_build.md:111
 #: 0b0a650259884d25b321b53ae5019bfb
 msgid "Markdown (MyST)"
 msgstr "Markdown (MyST)"
 
-#: ../../source/5-developer/2-docs_build.md:105
+#: ../../source/5-developer/2-docs_build.md:113
 #: 1141bae7c8b14c3dab60871252d6b8f3
 #, python-brace-format
 msgid ""
@@ -245,7 +290,7 @@ msgstr ""
 "使用 MyST 风格的 Markdown。**切勿在 `` ```{admonition} `` 内部嵌套 `` ``` `` 围栏**——这会破坏 "
 "zh_CN 渲染。当提示框需要包含代码块时，请使用冒号围栏（`:::`）；展示围栏语法的示例请用 4 个反引号作为外层围栏："
 
-#: ../../source/5-developer/2-docs_build.md:107
+#: ../../source/5-developer/2-docs_build.md:115
 #: 2708e8d3dead4dc1a4aff503aec1e916
 #, python-brace-format
 msgid ""
@@ -287,12 +332,12 @@ msgstr ""
 "Admonition content.\n"
 ":::\n"
 
-#: ../../source/5-developer/2-docs_build.md:128
+#: ../../source/5-developer/2-docs_build.md:136
 #: 10b9d7b9e1724b0ab166db46e8419f88
 msgid "Code Blocks"
 msgstr "代码块"
 
-#: ../../source/5-developer/2-docs_build.md:130
+#: ../../source/5-developer/2-docs_build.md:138
 #: 61d8c75b7682422c9a3139519e37d495
 msgid ""
 "Use fenced code blocks with language. **Do not use unlabeled** `` ``` `` "
@@ -302,7 +347,7 @@ msgstr ""
 "带语言标记的围栏代码块。**不要用无语言标记的** `` ``` `` **围栏**画 ASCII 图或目录树——sphinx-intl 会把它们变成 "
 "RST 的 `::`，中文 HTML 会漏出裸的 `::`。请改用 colon fence："
 
-#: ../../source/5-developer/2-docs_build.md:132
+#: ../../source/5-developer/2-docs_build.md:140
 #: 7fe28451f61f4b05a16a4a6a0b70d25b
 msgid ""
 "Controllers\n"
@@ -313,12 +358,12 @@ msgstr ""
 "        ↓\n"
 "Hardware"
 
-#: ../../source/5-developer/2-docs_build.md:138
+#: ../../source/5-developer/2-docs_build.md:146
 #: 7e8e4dc1f52a48a58c2f1fe26c5661cb
 msgid "Language-tagged examples:"
 msgstr "带语言标记的示例："
 
-#: ../../source/5-developer/2-docs_build.md:140
+#: ../../source/5-developer/2-docs_build.md:148
 #: 057c2e5217854bb48f1dfaa47c4105e1
 msgid ""
 "```bash\n"
@@ -337,19 +382,19 @@ msgstr ""
 "from ros2_robot_interface import RobotInterface\n"
 "```\n"
 
-#: ../../source/5-developer/2-docs_build.md:150
+#: ../../source/5-developer/2-docs_build.md:158
 #: 5aff6d0158d04ffa849fc60e4d5d26bf
 msgid "Admonitions"
 msgstr "提示框"
 
-#: ../../source/5-developer/2-docs_build.md:152
+#: ../../source/5-developer/2-docs_build.md:160
 #: 9fa597d578104be48746badc6e136ea1
 msgid ""
 "Use backtick fences only when the body has **no** nested ` ``` ` code "
 "fences:"
 msgstr "仅当提示框正文中**没有**嵌套的 ` ``` ` 代码围栏时，才使用反引号围栏："
 
-#: ../../source/5-developer/2-docs_build.md:154
+#: ../../source/5-developer/2-docs_build.md:162
 #: af175f61aedb4cf7a059f17e57ad7fdb
 #, python-brace-format
 msgid ""
@@ -377,13 +422,13 @@ msgstr ""
 "To be completed.\n"
 "```\n"
 
-#: ../../source/5-developer/2-docs_build.md:168
+#: ../../source/5-developer/2-docs_build.md:176
 #: cc17ee9ba4ea46a69be83dd09c5e7601
 msgid ""
 "If the admonition body needs a fenced code block, use a colon fence instead:"
 msgstr "如果提示框正文需要围栏代码块，请改用冒号围栏："
 
-#: ../../source/5-developer/2-docs_build.md:170
+#: ../../source/5-developer/2-docs_build.md:178
 #: 50ff31d1de5d4c8a849fb0577a06b78e
 #, python-brace-format
 msgid ""
@@ -407,12 +452,12 @@ msgstr ""
 "```\n"
 ":::\n"
 
-#: ../../source/5-developer/2-docs_build.md:182
+#: ../../source/5-developer/2-docs_build.md:190
 #: 273a8f0c47fb4c8c98e7eb4949005b6d
 msgid "Cross-References"
 msgstr "交叉引用"
 
-#: ../../source/5-developer/2-docs_build.md:184
+#: ../../source/5-developer/2-docs_build.md:192
 #: 29e27776f4ac448b930dcb36144dd2ec
 #, python-brace-format
 msgid ""
@@ -424,12 +469,12 @@ msgstr ""
 "\n"
 "See {doc}`../0-overview/1-architecture`.\n"
 
-#: ../../source/5-developer/2-docs_build.md:190
+#: ../../source/5-developer/2-docs_build.md:198
 #: 7ee3e481222f44cb9972479a1a627dfd
 msgid "Tables"
 msgstr "表格"
 
-#: ../../source/5-developer/2-docs_build.md:192
+#: ../../source/5-developer/2-docs_build.md:200
 #: 5fe867cb08d847d083ca5f45919f4016
 msgid ""
 "| Column 1 | Column 2 |\n"
@@ -440,17 +485,17 @@ msgstr ""
 "|----------|----------|\n"
 "| Value 1  | Value 2  |\n"
 
-#: ../../source/5-developer/2-docs_build.md:198
+#: ../../source/5-developer/2-docs_build.md:206
 #: d6493757defd45c287f013a3a2523e3d
 msgid "Diagrams"
 msgstr "图表"
 
-#: ../../source/5-developer/2-docs_build.md:200
+#: ../../source/5-developer/2-docs_build.md:208
 #: 8ffe3932ce314e039e48f86c35db70da
 msgid "Use Mermaid for diagrams:"
 msgstr "使用 Mermaid 绘制图表："
 
-#: ../../source/5-developer/2-docs_build.md:202
+#: ../../source/5-developer/2-docs_build.md:210
 #: 2f353c41cf784ac89209bbefd98a1edc
 #, python-brace-format
 msgid ""
@@ -464,78 +509,84 @@ msgstr ""
 "    A --> B --> C\n"
 "```\n"
 
-#: ../../source/5-developer/2-docs_build.md:209
+#: ../../source/5-developer/2-docs_build.md:217
 #: 6d15eb46f1e544bb9ef8f6440584c98b
 msgid "CI/CD"
 msgstr "CI/CD"
 
-#: ../../source/5-developer/2-docs_build.md:211
+#: ../../source/5-developer/2-docs_build.md:219
 #: 9c7217b412ff48938c9f6560e4e55593
 msgid "GitHub Actions builds documentation on:"
 msgstr "GitHub Actions 会在以下情况构建文档："
 
-#: ../../source/5-developer/2-docs_build.md:212
+#: ../../source/5-developer/2-docs_build.md:220
 #: 6044768b53854e6f88eb699307d5d96f
 msgid "Push to main (deploy)"
 msgstr "推送到 main（部署）"
 
-#: ../../source/5-developer/2-docs_build.md:213
+#: ../../source/5-developer/2-docs_build.md:221
 #: 8c6033ddfcae48479c54a893d5b879d0
 msgid "Pull requests (check build)"
 msgstr "提交 pull request（检查构建）"
 
-#: ../../source/5-developer/2-docs_build.md:215
+#: ../../source/5-developer/2-docs_build.md:223
 #: 7c5e5fcff0204040be6a81b48f129f2b
 msgid "CI fails when:"
 msgstr "出现以下情况时 CI 会失败："
 
-#: ../../source/5-developer/2-docs_build.md:216
+#: ../../source/5-developer/2-docs_build.md:224
 #: b8296a6b044f41ee8a97963842c41b1a
 msgid "zh_CN translation coverage is below 95%"
 msgstr "zh_CN 翻译覆盖率低于 95%"
 
-#: ../../source/5-developer/2-docs_build.md:217
+#: ../../source/5-developer/2-docs_build.md:225
 #: c99badd0b75e4c6fbb22897884cc4a52
 #, python-brace-format
 msgid "Source files nest `` ``` `` inside `` ```{admonition} ``"
 msgstr "源文件在 `` ```{admonition} `` 内部嵌套了 `` ``` ``"
 
-#: ../../source/5-developer/2-docs_build.md:218
+#: ../../source/5-developer/2-docs_build.md:226
 #: 2f725050b41a4969bed60becdacc1964
 msgid "Sphinx emits any warning (`SPHINXOPTS=-W`)"
 msgstr "Sphinx 产生任何警告（`SPHINXOPTS=-W`）"
 
-#: ../../source/5-developer/2-docs_build.md:219
+#: ../../source/5-developer/2-docs_build.md:227
 #: e0eac335b2384d958c28e3964ce0f6d9
 msgid "Built HTML contains a literal `` ``` `` fence (broken MyST nesting)"
 msgstr "构建出的 HTML 中出现字面量 `` ``` `` 围栏（MyST 嵌套损坏）"
 
-#: ../../source/5-developer/2-docs_build.md:221
+#: ../../source/5-developer/2-docs_build.md:228
+#: 1929b43549774574bec066256df54ec1
+msgid ""
+"Language switcher uses domain-root `/zh_CN/` (missing GitHub Pages `/docs`)"
+msgstr "语言切换使用了域名根路径 `/zh_CN/`（缺少 GitHub Pages 的 `/docs`）"
+
+#: ../../source/5-developer/2-docs_build.md:230
 #: 5b4a3d2630a647adbf5713645913fa72
 msgid "Build must pass before merging."
 msgstr "合并前构建必须通过。"
 
-#: ../../source/5-developer/2-docs_build.md:223
+#: ../../source/5-developer/2-docs_build.md:232
 #: 415ae7c7f68748b89764f6c832f523e9
 msgid "Contributing"
 msgstr "贡献指南"
 
-#: ../../source/5-developer/2-docs_build.md:225
+#: ../../source/5-developer/2-docs_build.md:234
 #: b0072edc696e4cb0ab49c8c60befc2db
 msgid "Fork the docs repository"
 msgstr "Fork 文档仓库"
 
-#: ../../source/5-developer/2-docs_build.md:226
+#: ../../source/5-developer/2-docs_build.md:235
 #: 0309a1bbed72495482290afbdd4d63a1
 msgid "Make changes"
 msgstr "进行修改"
 
-#: ../../source/5-developer/2-docs_build.md:227
+#: ../../source/5-developer/2-docs_build.md:236
 #: 4302e7038c02416485ecbd358db9bd87
 msgid "Test locally with `make html-all`"
 msgstr "使用 `make html-all` 在本地测试"
 
-#: ../../source/5-developer/2-docs_build.md:228
+#: ../../source/5-developer/2-docs_build.md:237
 #: 31710e8b0b884903b074ab7b32f23e3b
 msgid "Submit pull request"
 msgstr "提交 pull request"
@@ -691,3 +742,6 @@ msgstr "提交 pull request"
 #~ "flowchart LR\n"
 #~ "    A --> B --> C\n"
 #~ "```\n"
+
+#~ msgid "Open `http://localhost:8000`."
+#~ msgstr "打开 `http://localhost:8000`。"

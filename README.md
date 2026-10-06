@@ -45,7 +45,7 @@ make html-all
 python -m http.server -d build/html 8000
 ```
 
-Then open http://localhost:8000
+Then open http://localhost:8000 (Chinese: http://localhost:8000/zh_CN/). The sidebar language dropdown keeps the same page when switching.
 
 ## Translation Workflow
 
