@@ -23,19 +23,19 @@ msgstr ""
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:1
 #: 47967ca8aee148cf9418b09221dcafc2
 msgid "fa-py-libraries"
-msgstr ""
+msgstr "fa-py-libraries"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:3
 #: ad167f33e07c4893b5ac453979ac0d91
 msgid "Python utilities umbrella for FiveAges Sim."
-msgstr ""
+msgstr "Python utilities umbrella for FiveAges Sim."
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:5
 #: 78b16019aa1c48088123f4271a036c22
 msgid ""
 "**Repository:** [fiveages-sim/fa-py-libraries](https://github.com"
 "/fiveages-sim/fa-py-libraries)"
-msgstr ""
+msgstr "**仓库:** [fiveages-sim/fa-py-libraries](https://github.com/fiveages-sim/fa-py-libraries)"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:7
@@ -46,28 +46,28 @@ msgstr "用途"
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:9
 #: 373873fd400748b889970879c8d5a819
 msgid "Aggregates Python utilities:"
-msgstr ""
+msgstr "Aggregates Python utilities:"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:10
 #: db755e92df994ab1b51644ddfac95d97 e72f0ce9d29f4e02b8bdd5e3c2cd21b5
 msgid "ros2_robot_interface"
-msgstr ""
+msgstr "ros2_robot_interface"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:11
 #: 9b51d2e6e7634622862db80c114f9755
 msgid "viser visualization"
-msgstr ""
+msgstr "viser visualization"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:12
 #: a3b3fba2107c4a398e7ad13ad0f6b32d
 msgid "VR pose publisher"
-msgstr ""
+msgstr "VR pose publisher"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:13
 #: 36387b6fc13a4a5b87514709eb212092
 msgid "Common utilities"
-msgstr ""
+msgstr "Common utilities"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:15
 #: aa3f516e0ce848a3a79bc814104b842d
@@ -81,6 +81,9 @@ msgid ""
 "cd fa-py-libraries\n"
 "pip install -e .\n"
 msgstr ""
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\\n"
+"cd fa-py-libraries\\n"
+"pip install -e .\\n"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:23
 #: ffe936ce9a70485690e1fa99fc07d1d0
@@ -90,42 +93,42 @@ msgstr "使用方法"
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:25
 #: dbf9012612ac4aeb8f8423081e1125de
 msgid "Interactive Menu"
-msgstr ""
+msgstr "Interactive Menu"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:27
 #: 37425b3b7a7d4fbda8030067b2e328c3
 msgid "./run.sh\n"
-msgstr ""
+msgstr "./run.sh\\n"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:31
 #: 21e5dab0f0b841e1adc3ab83b80130c8
 msgid "Presents menu:"
-msgstr ""
+msgstr "Presents menu:"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:32
 #: fb6988f76c7a4b7083b81957d313484a
 msgid "Robot interface demo"
-msgstr ""
+msgstr "机器人 interface demo"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:33
 #: f03a4d9a2e20401f9fc419de2c8c5333
 msgid "Viser visualization"
-msgstr ""
+msgstr "Viser visualization"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:34
 #: 0d112eabfb934887901fd4f94a6b97b0
 msgid "VR teleoperation"
-msgstr ""
+msgstr "VR teleoperation"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:35
 #: 58a4c72392824f5b82ffae63889dec8e
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:37
 #: 64731870664f42f1a57fd2cc2a2dfdd5
 msgid "Direct Commands"
-msgstr ""
+msgstr "Direct 命令"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:39
 #: 384d9d73ac024fd6969d4d5b47582502
@@ -139,6 +142,14 @@ msgid ""
 "# Robot interface\n"
 "./run.sh interface\n"
 msgstr ""
+"# VR teleoperation\\n"
+"./run.sh vr\\n"
+"\\n"
+"# Viser visualization\\n"
+"./run.sh viser\\n"
+"\\n"
+"# 机器人 interface\\n"
+"./run.sh interface\\n"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:50
 #: e756fff9ef3f4aafafd14af711c4225f
@@ -156,11 +167,18 @@ msgid ""
 "├── run.sh                  # Entry point\n"
 "└── setup.py\n"
 msgstr ""
+"fa-py-libraries/\\n"
+"├── ros2_robot_interface/    # 机器人 API\\n"
+"├── ros2_viser/             # Viser visualization\\n"
+"├── vr_pose_publisher/      # VR bridge\\n"
+"├── utils/                  # Common utilities\\n"
+"├── run.sh                  # 入口 point\\n"
+"└── setup.py\\n"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:62
 #: 4a9e142ac74d4a4c82c209f79fc15fd1
 msgid "Subpackages"
-msgstr ""
+msgstr "Subpackages"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: fbaf0426ceeb4dae8f2c2a4d575cf7ee
@@ -170,27 +188,27 @@ msgstr "软件包"
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: 42e651a643f042aaaed97e0e7872a7be
 msgid "Robot control API"
-msgstr ""
+msgstr "机器人 control API"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: dfdc50f60f5341b6a6edb772dbdd3aea
 msgid "ros2_viser"
-msgstr ""
+msgstr "ros2_viser"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: ca9e7d542d8f49f390264e7b1ef02497
 msgid "Web visualization"
-msgstr ""
+msgstr "Web visualization"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: e6ed4d7eef4a43c7a5fb1beefc29bbe0
 msgid "vr_pose_publisher"
-msgstr ""
+msgstr "vr_pose_publisher"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md
 #: aa7a4b89cd1044dc82ab65ef52832744
 msgid "VR tracking bridge"
-msgstr ""
+msgstr "VR tracking bridge"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:70
 #: 6195f71dcc35426086e799699a49b17a
@@ -200,15 +218,15 @@ msgstr "相关内容"
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:72
 #: 50fed63a2993429d8bfde52465514893
 msgid "[ros2_robot_interface](1-ros2_robot_interface.md)"
-msgstr ""
+msgstr "[ros2_robot_interface](1-ros2_robot_interface.md)"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:73
 #: c819560db7a441df8e9a5701ba58d0e6
 msgid "[ros2-viser](3-ros2_viser.md)"
-msgstr ""
+msgstr "[ros2-viser](3-ros2_viser.md)"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:74
 #: 2edd0e6ca141493aac6ea42ac0adb295
 msgid "[VR Teleop How-To](../../2-how_to/6-vr_teleop.md)"
-msgstr ""
+msgstr "[VR Teleop How-To](../../2-how_to/6-vr_teleop.md)"
 

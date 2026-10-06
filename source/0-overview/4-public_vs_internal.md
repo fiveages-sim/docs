@@ -9,9 +9,16 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 | **Workspace** | `open-deploy-ws` | `fa-deploy-ws` |
 | **Access** | Anyone (public GitHub) | FiveAges team only |
 | **Robots** | Dobot, ARX, Galbot, HT, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
+| **Real Hardware** | ARX Acone, HT Panthera | All FA robots |
 | **Submodules** | Public only | Public + private |
 | **OCS2** | Debian package or source | Full source (default) |
-| **Purpose** | Learning, OSS development | Production deployment |
+| **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
+
+```{admonition} Real Hardware on Public Path
+:class: tip
+
+**ARX Acone** and **HT Panthera** are fully supported for real hardware deployment using only public packages. External users can deploy to these robots without needing private repository access.
+```
 
 ## open-deploy-ws (Public)
 
@@ -21,9 +28,10 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 
 - All submodules are publicly accessible
 - Supports multiple robots: Dobot CR5, ARX X5/ACone/Lift2S, Galbot, HT Panthera
+- **Real hardware support**: ARX Acone and HT Panthera can be deployed to physical robots
 - OCS2 available as Debian package (`ros-jazzy-ocs2`)
 - Lean branches for minimal builds: `dobot-cr5`, `arx-acone`
-- Good for learning, experimentation, and contributing
+- Good for learning, experimentation, contributing, and real robot deployment
 
 ### Initialization
 

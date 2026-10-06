@@ -23,19 +23,19 @@ msgstr ""
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:1
 #: d7c0f96be7914d99a7017afc924f3761
 msgid "FaSim-Isaac"
-msgstr ""
+msgstr "FaSim-Isaac"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:3
 #: 8b60f3462b3f42b8b4995183b939b7b1
 msgid "NVIDIA Isaac Sim integration for FiveAges Sim."
-msgstr ""
+msgstr "NVIDIA Isaac Sim integration for FiveAges Sim."
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:5
 #: 79b421dc68314bb787e63b4359d180ed
 msgid ""
 "**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-"
 "sim/FaSim-Isaac)"
-msgstr ""
+msgstr "**仓库:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:7
 #: 4b9d33998adb43eb82d4c11221a72578
@@ -45,27 +45,27 @@ msgstr "用途"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:9
 #: d1b501a9fa8149308db406cbda15df0b
 msgid "FaSim-Isaac provides:"
-msgstr ""
+msgstr "FaSim-Isaac provides:"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:10
 #: 31a9e11957864044997429d85750e097
 msgid "One-click Isaac Sim setup"
-msgstr ""
+msgstr "One-click Isaac Sim setup"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:11
 #: 477e0afcebbb4a4e9694a12effcf82dc
 msgid "USD robot asset management"
-msgstr ""
+msgstr "USD robot asset management"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:12
 #: dc743af3f8394cecad728676b536a098
 msgid "ROS 2 Jazzy workspace integration"
-msgstr ""
+msgstr "ROS 2 Jazzy workspace integration"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:13
 #: e49c91077f94479f9e0a7d47c6024ea3
 msgid "Environment assets"
-msgstr ""
+msgstr "Environment assets"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:15
 #: 69222162176947848580f4224c5211be
@@ -75,17 +75,17 @@ msgstr "前提条件"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:17
 #: aa940742f3dc4491a26a3bdf6603e75c
 msgid "NVIDIA GPU (RTX recommended)"
-msgstr ""
+msgstr "NVIDIA GPU (RTX recommended)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:18
 #: fdb67ddbb0e34cf2a9432f6ea6de7342
 msgid "NVIDIA Omniverse Launcher"
-msgstr ""
+msgstr "NVIDIA Omniverse Launcher"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:19
 #: 527219be69cd4a38ac3ea4b1c79b2786
 msgid "Isaac Sim installed"
-msgstr ""
+msgstr "Isaac Sim installed"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:21
 #: 5144fd65f36e4a9aa129cf732978bc45
@@ -99,31 +99,34 @@ msgid ""
 "cd FaSim-Isaac\n"
 "./init.sh\n"
 msgstr ""
+"git clone https://github.com/fiveages-sim/FaSim-Isaac.git\\n"
+"cd FaSim-Isaac\\n"
+"./init.sh\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:29
 #: 14ea260dec4740e8bd9d6ae8288c5613
 msgid "init.sh Operations"
-msgstr ""
+msgstr "init.sh Operations"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:31
 #: 1aa3622e4b934e6796d9eaa39002cf22
 msgid "Initialize `robot_usds` submodule"
-msgstr ""
+msgstr "Initialize `robot_usds` submodule"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:32
 #: 80a4b4f078454eb9898e78a5a7cd38e9
 msgid "Initialize environment submodules"
-msgstr ""
+msgstr "Initialize environment submodules"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:33
 #: 6a3e00e96c3c45b8babd973b5eb0196d
 msgid "Configure Isaac Sim paths"
-msgstr ""
+msgstr "Configure Isaac Sim paths"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:34
 #: 5af0a5682a6943c8a02343614c2cc6b2
 msgid "Set up optional jazzy_ws"
-msgstr ""
+msgstr "Set up optional jazzy_ws"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:36
 #: e87862238dc64f149556fe3448a29d8c
@@ -133,17 +136,17 @@ msgstr "使用方法"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:38
 #: 385898131a4048d6ba137b2b914bfc2b
 msgid "Start Isaac Sim"
-msgstr ""
+msgstr "Start Isaac Sim"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:40
 #: 973fad06f63c429d83780c54346e2953
 msgid "./run.sh\n"
-msgstr ""
+msgstr "./run.sh\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:44
 #: 761718696a30453da3f7982711754a1d
 msgid "With Options"
-msgstr ""
+msgstr "With 选项"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:46
 #: fdc6a92b6e7343298548826a819e51c8
@@ -154,21 +157,26 @@ msgid ""
 "# Headless mode\n"
 "./run.sh --headless\n"
 msgstr ""
+"# Specific robot\\n"
+"./run.sh --robot galbot\\n"
+"\\n"
+"# Headless mode\\n"
+"./run.sh --headless\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:54
 #: 3606963c15004eb99c34848e18e8bcfa
 msgid "ROS 2 Connection"
-msgstr ""
+msgstr "ROS 2 Connection"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:56
 #: da0e8e6c61c648a69b14371646757d1d
 msgid "In separate terminal:"
-msgstr ""
+msgstr "In separate terminal:"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:58
 #: 738b96004add4bc6a8cfeaf2ea1dd22c
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\n"
-msgstr ""
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:62
 #: 0be36fb5f67048deb6a47355086bac65
@@ -187,11 +195,19 @@ msgid ""
 "├── init.sh\n"
 "└── run.sh\n"
 msgstr ""
+"FaSim-Isaac/\\n"
+"├── robots/                    # → robot_usds submodule\\n"
+"├── environment/\\n"
+"│   ├── fiveages_env/         # → fiveages-env-usds\\n"
+"│   └── fa-project-usd/       # → fa-project-usd (private)\\n"
+"├── jazzy_ws/                 # 可选 ROS 2 workspace\\n"
+"├── init.sh\\n"
+"└── run.sh\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:75
 #: a020a7a406b141d088ffb6f1a202cfc7
 msgid "Submodules"
-msgstr ""
+msgstr "Submodules"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: c8704f70dd60466e8d517461d5e1a1ec
@@ -211,12 +227,12 @@ msgstr "可见性"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: ba9aa79ed6a34c908f4f3541ca4b42cf
 msgid "`robots/`"
-msgstr ""
+msgstr "`robots/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 6fdb026d9ddf4c47937ba7ea7f34dab9
 msgid "robot_usds"
-msgstr ""
+msgstr "robot_usds"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 6b18a6d651814040b66dd69595169862 b4feb33130ee493ebb19c68d53bf0ce5
@@ -226,22 +242,22 @@ msgstr "公开"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 60746140f31449bd8bc26e018cb91aa8
 msgid "`environment/fiveages_env/`"
-msgstr ""
+msgstr "`environment/fiveages_env/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 31a15b19b97746c99a6e140287fd8b07
 msgid "fiveages-env-usds"
-msgstr ""
+msgstr "fiveages-env-usds"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 5bbba78c90b84acaa82bb75bdd649419
 msgid "`environment/fa-project-usd/`"
-msgstr ""
+msgstr "`environment/fa-project-usd/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 609e9cc4382d42bcacaafe10471f2049
 msgid "fa-project-usd"
-msgstr ""
+msgstr "fa-project-usd"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: ae2f4db4b7e641fe814fa3a0fe98dd6a
@@ -251,22 +267,22 @@ msgstr "私有"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:83
 #: 6a424dc0da864e4e84dd672fea02b249
 msgid "Topic Bridge"
-msgstr ""
+msgstr "话题 Bridge"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:85
 #: 64e2ac685d9f4663b16b92ba59038ac0
 msgid "FaSim-Isaac bridges Isaac Sim to ROS 2:"
-msgstr ""
+msgstr "FaSim-Isaac bridges Isaac Sim to ROS 2:"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: df88baec80204dfd9c301bc5236ba0ed
 msgid "Isaac Topic"
-msgstr ""
+msgstr "Isaac 话题"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 541ac23c713f48e1969ecaeafc14adc8
 msgid "ROS 2 Topic"
-msgstr ""
+msgstr "ROS 2 话题"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 79e7a6aa9a584b91b2d0753186d34615
@@ -276,32 +292,32 @@ msgstr "方向"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 2123773040d84a09a9ade58804d35199
 msgid "Joint positions"
-msgstr ""
+msgstr "Joint positions"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 0e19dc8a681942df93835ae6409f2f92
 msgid "`/joint_states`"
-msgstr ""
+msgstr "`/joint_states`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: f79997d0523341ee9110a03dadb3b363
 msgid "Isaac → ROS"
-msgstr ""
+msgstr "Isaac → ROS"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: e238bcdcf21b48779dc2b91eddf8e540
 msgid "Joint commands"
-msgstr ""
+msgstr "Joint commands"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 09c9a6f5e6cb49de9327d16d431a89b6
 msgid "`/joint_commands`"
-msgstr ""
+msgstr "`/joint_commands`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 15241a1d2ee94d4797d151b7c0800471
 msgid "ROS → Isaac"
-msgstr ""
+msgstr "ROS → Isaac"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:92
 #: dfbe840f697440b39e7f569cf033c41a
@@ -311,12 +327,12 @@ msgstr "配置"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:94
 #: aa91ea0bfa344342aedf09bbf4e520d7
 msgid "Robot Selection"
-msgstr ""
+msgstr "机器人 Selection"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:96
 #: 52a4eb363d674910b80d42df7f83f381
 msgid "Edit config or use command line:"
-msgstr ""
+msgstr "Edit config or use command line:"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:98
 #: 2933590fa1d44555a7efebe753485264
@@ -324,22 +340,22 @@ msgid ""
 "# config.yaml\n"
 "robot: galbot\n"
 "world: default\n"
-msgstr ""
+msgstr "# config.yaml\\nrobot: galbot\\nworld: default\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:104
 #: 6ab63f263c28484bb2a58ef3c5701647
 msgid "Environment"
-msgstr ""
+msgstr "Environment"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:106
 #: 8a68e8935c054c6c81d6da9afe8ea740
 msgid "Select environment USD:"
-msgstr ""
+msgstr "Select environment USD:"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:108
 #: 85762956d9364aab81f25f19ed12d43f
 msgid "environment: fiveages_env/office\n"
-msgstr ""
+msgstr "environment: fiveages_env/office\\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:112
 #: fc27ccbb16dd49828e1cf2bed422155c
@@ -349,42 +365,42 @@ msgstr "故障排除"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:114
 #: 5431d4a7588f4d63ac7f103083827f7a
 msgid "Isaac Sim Won't Start"
-msgstr ""
+msgstr "Isaac Sim Won't Start"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:116
 #: 675bb0e98e504f2c848ee0b5edaf7aa9
 msgid "Check Omniverse Launcher"
-msgstr ""
+msgstr "Check Omniverse Launcher"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:117
 #: b3eaa61e90424c738193e5a16915a341
 msgid "Verify GPU drivers"
-msgstr ""
+msgstr "Verify GPU drivers"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:118
 #: 1703a809ef144bf29b17db200e1c2164
 msgid "Check logs: `~/.nvidia-omniverse/logs/`"
-msgstr ""
+msgstr "Check logs: `~/.nvidia-omniverse/logs/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:120
 #: 4db24a62541e4cdb998b980d6dfff559
 msgid "No ROS 2 Connection"
-msgstr ""
+msgstr "否 ROS 2 Connection"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:122
 #: a4fc5dc61db14fbab3097d706791deb8
 msgid "Check domain ID matches"
-msgstr ""
+msgstr "Check domain ID matches"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:123
 #: 2a8159adc7a14eb68508e156504f34ff
 msgid "Verify ROS 2 bridge extension enabled"
-msgstr ""
+msgstr "Verify ROS 2 bridge extension enabled"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:124
 #: 6dde8289bd9c4348aa0b8ad533432016
 msgid "Restart both Isaac and ROS 2 nodes"
-msgstr ""
+msgstr "Restart both Isaac and ROS 2 nodes"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:126
 #: cc768de64e0b4016b733ce425ad24942
@@ -394,10 +410,10 @@ msgstr "相关内容"
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:128
 #: ca53bb4e30a84a77969f64b09f9db4dc
 msgid "[robot_usds](3-robot_usds.md)"
-msgstr ""
+msgstr "[robot_usds](3-robot_usds.md)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:129
 #: 896f59bdb10c4d278c3037f42c3e5b4d
 msgid "[Isaac Sim How-To](../../2-how_to/4-isaac_sim.md)"
-msgstr ""
+msgstr "[Isaac Sim How-To](../../2-how_to/4-isaac_sim.md)"
 

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../source/2-how_to/6-vr_teleop.md:1 7610c4ca54b1473ba4f3807bc612920b
 msgid "VR Teleoperation"
-msgstr ""
+msgstr "VR 遥操作"
 
 #: ../../source/2-how_to/6-vr_teleop.md:3 d80b573df89a449abf73d9be27304c3d
 msgid "Control robots using a VR headset and controllers."
-msgstr ""
+msgstr "Control robots using a VR headset and controllers."
 
 #: ../../source/2-how_to/6-vr_teleop.md:5 734f089275364793b0e688ab88ea880c
 msgid "Prerequisites"
@@ -34,19 +34,19 @@ msgstr "前提条件"
 
 #: ../../source/2-how_to/6-vr_teleop.md:7 f675c078e3414ec6842d5b02bf0c1780
 msgid "Working robot demo (mock, sim, or real)"
-msgstr ""
+msgstr "Working robot demo (mock, sim, or real)"
 
 #: ../../source/2-how_to/6-vr_teleop.md:8 3f8c757cf7fe459f807f7702f395dbcd
 msgid "VR headset (Meta Quest, HTC Vive, etc.)"
-msgstr ""
+msgstr "VR headset (Meta Quest, HTC Vive, etc.)"
 
 #: ../../source/2-how_to/6-vr_teleop.md:9 3cf17a66862a4229a828bc0293fcb0fa
 msgid "fa-py-libraries installed"
-msgstr ""
+msgstr "fa-py-libraries installed"
 
 #: ../../source/2-how_to/6-vr_teleop.md:10 d05bd98826444f6a8178c97478f688cb
 msgid "Network connectivity between VR device and ROS 2 machine"
-msgstr ""
+msgstr "Network connectivity between VR device and ROS 2 machine"
 
 #: ../../source/2-how_to/6-vr_teleop.md:12 4811fbb6306147dd87be42e2c114f372
 msgid "Overview"
@@ -57,7 +57,7 @@ msgid ""
 "VR teleoperation publishes end-effector pose targets from VR controller "
 "tracking. The MPC controller then generates joint trajectories to follow "
 "these targets."
-msgstr ""
+msgstr "VR teleoperation publishes end-effector pose targets from VR controller tracking. The MPC controller then generates joint trajectories to follow these targets."
 
 #: ../../source/2-how_to/6-vr_teleop.md:16 5fda4ea44f6f4d4fbb1de922a784375a
 msgid "Setup"
@@ -65,7 +65,7 @@ msgstr "设置"
 
 #: ../../source/2-how_to/6-vr_teleop.md:18 df01362ba3374d7090d1e94a31adf806
 msgid "1. Install fa-py-libraries"
-msgstr ""
+msgstr "1. Install fa-py-libraries"
 
 #: ../../source/2-how_to/6-vr_teleop.md:20 7aeb232b9ca144458b31f76af0e2ae6a
 msgid ""
@@ -74,70 +74,76 @@ msgid ""
 "cd fa-py-libraries\n"
 "pip install -e .\n"
 msgstr ""
+"cd ~/\\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\\n"
+"cd fa-py-libraries\\n"
+"pip install -e .\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:27 4f06ef688d7e49efa6ab0ecd9d2c06e0
 msgid "2. Start Robot Demo"
-msgstr ""
+msgstr "2. Start 机器人 Demo"
 
 #: ../../source/2-how_to/6-vr_teleop.md:29 fea2fc6e576f4da88b784cb7b6ccf9f6
 msgid ""
 "source ~/open-deploy-ws/install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 msgstr ""
+"source ~/open-deploy-ws/install/setup.bash\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:34 d25cfc87c29340f3adf9d0a421ef4d81
 msgid "3. Start VR Bridge"
-msgstr ""
+msgstr "3. Start VR Bridge"
 
 #: ../../source/2-how_to/6-vr_teleop.md:36 795f83d382824259b97e7df7fb60ee1d
 msgid "In a new terminal:"
-msgstr ""
+msgstr "In a new terminal:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:38 ee0464d602b947f9bd76e57b2a1b457c
 msgid ""
 "cd ~/fa-py-libraries\n"
 "./run.sh vr\n"
-msgstr ""
+msgstr "cd ~/fa-py-libraries\\n./run.sh vr\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:43 c4926c19bbc7456b9908e6e5d3e5ba60
 msgid "This starts the VR pose publisher that bridges VR tracking to ROS 2."
-msgstr ""
+msgstr "This starts the VR pose publisher that bridges VR tracking to ROS 2."
 
 #: ../../source/2-how_to/6-vr_teleop.md:45 1e95dc46030c4671a24ad2e83e31ce23
 msgid "VR Modes"
-msgstr ""
+msgstr "VR 模式"
 
 #: ../../source/2-how_to/6-vr_teleop.md:47 88f06b7c969243f3aabb7cee5f191f71
 msgid "Vuer (WebXR)"
-msgstr ""
+msgstr "Vuer (WebXR)"
 
 #: ../../source/2-how_to/6-vr_teleop.md:49 de484761da55463c85220b70e2cc626b
 msgid "Browser-based VR using Vuer:"
-msgstr ""
+msgstr "Browser-based VR using Vuer:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:51 b9d5ef9ca41840548d1e50e1350eff24
 msgid "./run.sh vr --mode vuer\n"
-msgstr ""
+msgstr "./run.sh vr --mode vuer\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:55 c35a2215469744ab9ac9cb716597b2fb
 msgid "Open the displayed URL on your VR headset's browser."
-msgstr ""
+msgstr "Open the displayed URL on your VR headset's browser."
 
 #: ../../source/2-how_to/6-vr_teleop.md:57 9e2ab5b3a8c6430b99a350677ae32594
 msgid "XRoboToolkit"
-msgstr ""
+msgstr "XRoboToolkit"
 
 #: ../../source/2-how_to/6-vr_teleop.md:59 27a569e017274193983307adba44a871
 msgid "For native VR application integration:"
-msgstr ""
+msgstr "For native VR application integration:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:61 6449bd0b074f4d60ba246eae44e6e059
 msgid "./run.sh vr --mode xrt\n"
-msgstr ""
+msgstr "./run.sh vr --mode xrt\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:65 ffb827a043e348dc9a5c22adb6fa178f
 msgid "Requires XRoboToolkit application on the VR device."
-msgstr ""
+msgstr "Requires XRoboToolkit application on the VR device."
 
 #: ../../source/2-how_to/6-vr_teleop.md:67 151733d185b347a3b3ed0e37680a19b4
 msgid "Topics"
@@ -145,11 +151,11 @@ msgstr "主题"
 
 #: ../../source/2-how_to/6-vr_teleop.md:69 3a4accd6f3cf4c1e9426cbb13170f771
 msgid "VR teleoperation publishes to:"
-msgstr ""
+msgstr "VR teleoperation publishes to:"
 
 #: ../../source/2-how_to/6-vr_teleop.md f408db7bab9f419a932fe68c637dd33a
 msgid "Topic"
-msgstr ""
+msgstr "话题"
 
 #: ../../source/2-how_to/6-vr_teleop.md f56eb836f4594dcd9309a402ec00783f
 msgid "Type"
@@ -161,52 +167,52 @@ msgstr "描述"
 
 #: ../../source/2-how_to/6-vr_teleop.md 454e1735fd404eab9e4a7dfcceef6a57
 msgid "`/teleop/left_ee_pose`"
-msgstr ""
+msgstr "`/teleop/left_ee_pose`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 67fa48bd529949ccb220232c2660be89
 #: d1557cb7a9d64a5bb8c9ddbc20649e4e e2db306b169e4e67afcfc44eb9bded98
 msgid "`PoseStamped`"
-msgstr ""
+msgstr "`PoseStamped`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 39ad989030ed4174924a67cc151f3a8e
 msgid "Left hand target pose"
-msgstr ""
+msgstr "Left hand target pose"
 
 #: ../../source/2-how_to/6-vr_teleop.md e4746c7016904c7ebcdae5e1815f9d7a
 msgid "`/teleop/right_ee_pose`"
-msgstr ""
+msgstr "`/teleop/right_ee_pose`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 891e6d49c8c4447082f358eeabd7d99f
 msgid "Right hand target pose"
-msgstr ""
+msgstr "Right hand target pose"
 
 #: ../../source/2-how_to/6-vr_teleop.md d31618eec4424cddbb8d1d1a54b5a350
 msgid "`/teleop/head_pose`"
-msgstr ""
+msgstr "`/teleop/head_pose`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 5518228cddf44b96950ea2073d03567a
 msgid "Head tracking"
-msgstr ""
+msgstr "Head tracking"
 
 #: ../../source/2-how_to/6-vr_teleop.md 683dbb14b3ae4d138462ae61474124f9
 msgid "`/teleop/trigger`"
-msgstr ""
+msgstr "`/teleop/trigger`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 0307622dac1f49d4a0a669bff8648ea3
 msgid "`Bool`"
-msgstr ""
+msgstr "`Bool`"
 
 #: ../../source/2-how_to/6-vr_teleop.md 936dbee23a2147799d1ec6f57dc737ca
 msgid "Controller trigger state"
-msgstr ""
+msgstr "控制器 trigger state"
 
 #: ../../source/2-how_to/6-vr_teleop.md:78 7a8fff736f544de8a8621c0ed517ee61
 msgid "Arm Following"
-msgstr ""
+msgstr "Arm Following"
 
 #: ../../source/2-how_to/6-vr_teleop.md:80 91e6bf5254874780859c0e7343825c5e
 msgid "Configure which arm follows which controller:"
-msgstr ""
+msgstr "Configure which arm follows which controller:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:82 aadb3f63af244bd9a6dbbdfb1ee7998d
 msgid ""
@@ -217,18 +223,24 @@ msgid ""
 "  # or for single arm:\n"
 "  right_arm: \"any_controller\"\n"
 msgstr ""
+"# In configuration or launch\\n"
+"teleop_config:\\n"
+"  left_arm: \\\"left_controller\\\"\\n"
+"  right_arm: \\\"right_controller\\\"\\n"
+"  # or for single arm:\\n"
+"  right_arm: \\\"any_controller\\\"\\n"
 
 #: ../../source/2-how_to/6-vr_teleop.md:91 a9ea8de3e112452387b37ef85df8c734
 msgid "Gripper Control"
-msgstr ""
+msgstr "Gripper Control"
 
 #: ../../source/2-how_to/6-vr_teleop.md:93 e6c22a7354ed4872a80e1afe3eb65079
 msgid "VR controller buttons map to gripper:"
-msgstr ""
+msgstr "VR controller buttons map to gripper:"
 
 #: ../../source/2-how_to/6-vr_teleop.md a97375bbbea84cbf8548837c60e2ea49
 msgid "Button"
-msgstr ""
+msgstr "Button"
 
 #: ../../source/2-how_to/6-vr_teleop.md 2f95faccff46493bbefe3cc7e219c827
 msgid "Action"
@@ -236,23 +248,23 @@ msgstr "动作"
 
 #: ../../source/2-how_to/6-vr_teleop.md 7c03775bb2ef41f8b4b8c21885dda768
 msgid "Trigger"
-msgstr ""
+msgstr "Trigger"
 
 #: ../../source/2-how_to/6-vr_teleop.md 1a810644db344d99984dbd553151142c
 msgid "Close gripper (proportional)"
-msgstr ""
+msgstr "Close gripper (proportional)"
 
 #: ../../source/2-how_to/6-vr_teleop.md 5007dab9dac54733a5808c9cd5ad7e3c
 msgid "Grip"
-msgstr ""
+msgstr "Grip"
 
 #: ../../source/2-how_to/6-vr_teleop.md 58ecd08bd8894530a607086628d8c1c9
 msgid "Toggle gripper state"
-msgstr ""
+msgstr "Toggle gripper state"
 
 #: ../../source/2-how_to/6-vr_teleop.md:100 bb58fefdd003495ca05333f13f4c898d
 msgid "Safety"
-msgstr ""
+msgstr "Safety"
 
 #: ../../source/2-how_to/6-vr_teleop.md:102 2136a57c2b49442c9de3d22d59c3f817
 msgid "Motion Limits"
@@ -260,23 +272,23 @@ msgstr "运动限制"
 
 #: ../../source/2-how_to/6-vr_teleop.md:105 358614c4968048929b239e276e937436
 msgid "VR teleoperation can command rapid motions. When using real hardware:"
-msgstr ""
+msgstr "VR teleoperation can command rapid motions. When using real hardware:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:106 e5dd3865f92c478286c643b60be81232
 msgid "Start with low speed limits"
-msgstr ""
+msgstr "Start with low speed limits"
 
 #: ../../source/2-how_to/6-vr_teleop.md:107 37e1adb4071848d19b43e99286cabcbe
 msgid "Keep hand on emergency stop"
-msgstr ""
+msgstr "Keep hand on emergency stop"
 
 #: ../../source/2-how_to/6-vr_teleop.md:108 81d8d425cae9452e9cec3fa8add4ad14
 msgid "Clear the robot workspace"
-msgstr ""
+msgstr "Clear the robot workspace"
 
 #: ../../source/2-how_to/6-vr_teleop.md:109 703e5f7eb2d74ea199d8282c87792802
 msgid "Use workspace limits in software"
-msgstr ""
+msgstr "Use workspace limits in software"
 
 #: ../../source/2-how_to/6-vr_teleop.md:112 66f6d8f69f5f492e9072bde99f8bf91a
 msgid "Network Setup"
@@ -284,19 +296,19 @@ msgstr "网络设置"
 
 #: ../../source/2-how_to/6-vr_teleop.md:114 e0f96be3895e4c87b5437aa8c34fe835
 msgid "For VR device on different network:"
-msgstr ""
+msgstr "For VR device on different network:"
 
 #: ../../source/2-how_to/6-vr_teleop.md:116 5ed11fb652e542d9a3000b9325ceeab9
 msgid "Ensure both devices can reach each other"
-msgstr ""
+msgstr "Ensure both devices can reach each other"
 
 #: ../../source/2-how_to/6-vr_teleop.md:117 0869c05318e34b7fabca04bcca7eee65
 msgid "Configure ROS 2 domain or Zenoh bridge"
-msgstr ""
+msgstr "Configure ROS 2 domain or Zenoh bridge"
 
 #: ../../source/2-how_to/6-vr_teleop.md:118 d00ed93d9a6d45439683a1e5dc2c2889
 msgid "Set proper firewall rules for ROS 2 ports"
-msgstr ""
+msgstr "Set proper firewall rules for ROS 2 ports"
 
 #: ../../source/2-how_to/6-vr_teleop.md:120 247334cbcb4a49ea8c019097c427be72
 msgid "Verification"
@@ -304,15 +316,15 @@ msgstr "验证"
 
 #: ../../source/2-how_to/6-vr_teleop.md:122 f9da86e25a1b4d2fbee0886fb4274ece
 msgid "VR bridge logs show tracking data"
-msgstr ""
+msgstr "VR bridge logs show tracking data"
 
 #: ../../source/2-how_to/6-vr_teleop.md:123 fcc3198e3f3c491a8a23098a805cbae7
 msgid "`ros2 topic echo /teleop/right_ee_pose` shows updates"
-msgstr ""
+msgstr "`ros2 topic echo /teleop/right_ee_pose` shows updates"
 
 #: ../../source/2-how_to/6-vr_teleop.md:124 1aac00073fcd4e37a1ebe8004a3ee599
 msgid "Robot follows VR controller motion"
-msgstr ""
+msgstr "机器人 follows VR controller motion"
 
 #: ../../source/2-how_to/6-vr_teleop.md:126 75231c8eba40443ca461e9edd0e2ed28
 msgid "Troubleshooting"
@@ -320,51 +332,51 @@ msgstr "故障排除"
 
 #: ../../source/2-how_to/6-vr_teleop.md:128 2310db3c3a79463ea97e5eb04deaaa0c
 msgid "No tracking data"
-msgstr ""
+msgstr "否 tracking data"
 
 #: ../../source/2-how_to/6-vr_teleop.md:130 2fa810128380475394fd7e7f17c06306
 msgid "Check VR device is properly tracked"
-msgstr ""
+msgstr "Check VR device is properly tracked"
 
 #: ../../source/2-how_to/6-vr_teleop.md:131 d6bdbf260b77415ca66db6f7cecb4149
 msgid "Verify browser/app has WebXR permissions"
-msgstr ""
+msgstr "Verify browser/app has WebXR permissions"
 
 #: ../../source/2-how_to/6-vr_teleop.md:132 adf46305947b4a7cb3572c7eef2b2b31
 msgid "Check network connectivity"
-msgstr ""
+msgstr "Check network connectivity"
 
 #: ../../source/2-how_to/6-vr_teleop.md:134 f8571ca5fb1a430a88ddc08007f710b6
 msgid "High latency"
-msgstr ""
+msgstr "高 latency"
 
 #: ../../source/2-how_to/6-vr_teleop.md:136 b42c25ff8c4c4a8bb01733cffeaa4b05
 msgid "Use wired network if possible"
-msgstr ""
+msgstr "Use wired network if possible"
 
 #: ../../source/2-how_to/6-vr_teleop.md:137 e385791679ff4dd7a6a0d847b66d7bfe
 msgid "Reduce update rate in configuration"
-msgstr ""
+msgstr "Reduce update rate in configuration"
 
 #: ../../source/2-how_to/6-vr_teleop.md:138 0a0f632124bd42708d6524949e4353cf
 msgid "Check for network congestion"
-msgstr ""
+msgstr "Check for network congestion"
 
 #: ../../source/2-how_to/6-vr_teleop.md:140 4d8250bb15734e14a0f2daa0451fdcb7
 msgid "Robot doesn't follow"
-msgstr ""
+msgstr "机器人 doesn't follow"
 
 #: ../../source/2-how_to/6-vr_teleop.md:142 78aa1db389394440ae01c342983203fb
 msgid "Verify controller is in teleop mode"
-msgstr ""
+msgstr "Verify controller is in teleop mode"
 
 #: ../../source/2-how_to/6-vr_teleop.md:143 5d30cc229f4841ac96149716c226a786
 msgid "Check target poses are within workspace"
-msgstr ""
+msgstr "Check target poses are within workspace"
 
 #: ../../source/2-how_to/6-vr_teleop.md:144 43e2e49b96a7483cb9fb1fd428b62f8f
 msgid "Ensure no safety limits are triggered"
-msgstr ""
+msgstr "Ensure no safety limits are triggered"
 
 #: ../../source/2-how_to/6-vr_teleop.md:146 9e0342d08ca949d790d35ad2748a2131
 msgid "Next Steps"
@@ -372,9 +384,9 @@ msgstr "下一步"
 
 #: ../../source/2-how_to/6-vr_teleop.md:148 8e18aae22f734f80a77bc74c55662a51
 msgid "[Drag Teleop](7-drag_teleop.md) for manual teaching"
-msgstr ""
+msgstr "[拖动遥操作](7-drag_teleop.md) for manual teaching"
 
 #: ../../source/2-how_to/6-vr_teleop.md:149 4c68a88ebdff431bbb84881aab70673f
 msgid "[FSM and Topics](../3-concepts/4-fsm_and_topics.md) for mode control"
-msgstr ""
+msgstr "[状态机与话题](../3-concepts/4-fsm_and_topics.md) for mode control"
 

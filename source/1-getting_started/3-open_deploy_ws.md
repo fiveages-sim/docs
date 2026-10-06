@@ -104,15 +104,21 @@ colcon build --packages-up-to ocs2_arm_controller
 
 ## Supported Robots
 
-| Robot | Description Package | Hardware Interface |
-|-------|--------------------|--------------------|
-| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control |
-| ARX X5 | robot-descriptions-arx | arx-ros2-control |
-| ARX ACone | robot-descriptions-arx | arx-ros2-control |
-| ARX Lift2S | robot-descriptions-arx | arx-ros2-control |
-| Galbot | robot-descriptions-galbot | (varies) |
-| HT Panthera | robot-descriptions-ht | ht-ros2-control |
-| Quadruped | robot-descriptions-quadruped | unitree-ros2-control |
+| Robot | Description Package | Hardware Interface | Real Hardware |
+|-------|--------------------|--------------------|---------------|
+| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | Simulation only |
+| ARX X5 | robot-descriptions-arx | arx-ros2-control | Simulation only |
+| **ARX ACone** | robot-descriptions-arx | arx-ros2-control | **Supported** |
+| ARX Lift2S | robot-descriptions-arx | arx-ros2-control | Simulation only |
+| Galbot | robot-descriptions-galbot | (varies) | Simulation only |
+| **HT Panthera** | robot-descriptions-ht | ht-ros2-control | **Supported** |
+| Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation only |
+
+```{admonition} Real Hardware Deployment
+:class: tip
+
+**ARX Acone** and **HT Panthera** can be deployed to real hardware using only public packages. See [Go to Real Hardware](../2-how_to/9-go_real_hardware.md) for deployment instructions.
+```
 
 ## Launch Examples
 
