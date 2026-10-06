@@ -22,7 +22,8 @@ This section contains task-oriented recipes for common operations. Each guide fo
 ### Teleoperation
 
 - [VR Teleop](6-vr_teleop.md) — VR headset control
-- [Isomorphic Teleop](7-isomorphic_teleop.md) — Master–slave isomorphic teleop (HT Panthera)
+- [Isomorphic Teleop](7-isomorphic_teleop.md) — Master–slave isomorphic teleop (同构遥操作, HT Panthera)
+- [Drag teaching is not implemented](7-drag_teleop.md) — 拖动遥操作 is not a supported path
 - [DexCap Teleop](8-dexcap_teleop.md) — DexCap glove (internal)
 
 ### Deployment

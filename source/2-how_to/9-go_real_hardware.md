@@ -64,61 +64,62 @@ FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R
 
 ## Deployment Steps
 
-### 1. Verify Mock Operation
+### Verify mock operation
 
-```bash
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=mock
 # Test all planned motions
-```
+:::
 
-### 2. Configure Hardware Interface
+### Configure hardware interface
 
 Set hardware-specific parameters in your configuration.
 
 For CAN-based robots:
-```bash
+
+:::{code-block} bash
 # Verify CAN interface
 ip link show can0
 
 # Set CAN bitrate if needed
 sudo ip link set can0 type can bitrate 1000000
 sudo ip link set can0 up
-```
+:::
 
 For Ethernet-based robots:
 
-```bash
+:::{code-block} bash
 # Verify network interface
 ip addr show eth0
-```
+:::
 
-### 3. Test Connection
+### Test connection
 
-```bash
+:::{code-block} bash
 # Start with hardware detection only
 ros2 launch <robot>_bringup hardware_test.launch.py
-```
+:::
 
-### 4. Enable Motors
+### Enable motors
 
-```bash
+:::{code-block} bash
 # Robot-specific enable command
 ros2 service call /enable_motors std_srvs/srv/Trigger
-```
+:::
 
-### 5. First Motion
+### First motion
 
 Start with minimal motion:
 
-```bash
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=real
 
 # Send small joint space command
 ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
   "{position: [0.01, 0.0, 0.0, 0.0, 0.0, 0.0]}" --once
-```
+:::
 
-### 6. Gradual Testing
+### Gradual testing
 
 1. Small joint motions
 2. Larger joint motions
@@ -130,11 +131,11 @@ ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
 
 Start with conservative speed limits:
 
-```yaml
+:::{code-block} yaml
 # Example launch parameter
 velocity_scaling: 0.1  # 10% of max speed
 acceleration_scaling: 0.1
-```
+:::
 
 Increase gradually after verifying safe operation.
 
@@ -142,7 +143,7 @@ Increase gradually after verifying safe operation.
 
 ### ARX Acone
 
-```bash
+:::{code-block} bash
 cd ~/open-deploy-ws
 source install/setup.bash
 
@@ -155,11 +156,11 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 
 # Deploy to real hardware
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
-```
+:::
 
 ### HT Panthera
 
-```bash
+:::{code-block} bash
 cd ~/open-deploy-ws
 source install/setup.bash
 
@@ -171,15 +172,15 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
 
 # Deploy to real hardware
 ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
-```
+:::
 
-For master–slave isomorphic teleop on HT Panthera (not drag teaching), see [Isomorphic Teleop](7-isomorphic_teleop.md).
+HT Panthera teleop on real hardware is **isomorphic teleop** (同构遥操作). See [Isomorphic Teleop](7-isomorphic_teleop.md). Drag teaching (拖动遥操作) is **not** implemented.
 
 ## Internal Deployment (fa-deploy-ws)
 
 For FiveAges robots:
 
-```bash
+:::{code-block} bash
 cd ~/fa-deploy-ws
 ./init_repo.sh --robot <robot_id>
 
@@ -188,7 +189,7 @@ vim robot.local.yaml
 
 # Quick start (includes safety checks)
 ./quick_start.sh
-```
+:::
 
 ## Common Hardware Issues
 

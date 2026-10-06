@@ -2,7 +2,7 @@
 
 Master–slave **isomorphic teleop** (同构遥操作) for HT Panthera dual-arm: move the master arm in joint space and the slave follows.
 
-This is **not** drag teaching. There is no trajectory record/playback and no `enter_teach_mode` API. The implemented path is the public package [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller).
+**Implemented:** 同构遥操作 via [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller) (package name is historical). **Not implemented:** drag teaching (拖动遥操作), trajectory record/playback, or `enter_teach_mode`.
 
 **README:** [drag_teleop_controller README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md)
 
@@ -18,7 +18,7 @@ One controller plugin, two roles:
 
 | Role | What it does |
 |------|----------------|
-| `master` | Operator side. Gravity compensation so you can move the arm; publishes mapped joint state. |
+| `master` | Operator side. Gravity compensation so you can move the arm in joint space; publishes mapped joint state. |
 | `slave` | Follower. Tracks the mapped master joints (optional ruckig smoothing). |
 
 Control modes (`mode`): `position` (slave only), `mit`, `effort`. Master-only force feedback (`feedback`): `false`, `position`, `effort`. Joint mapping runs before `teleop_states` is published. Grippers are handled by `adaptive_gripper_controller` (spawned from the same launch).

@@ -66,6 +66,7 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 2-how_to/5-python_interface
 2-how_to/6-vr_teleop
 2-how_to/7-isomorphic_teleop
+2-how_to/7-drag_teleop
 2-how_to/8-dexcap_teleop
 2-how_to/9-go_real_hardware
 2-how_to/10-add_a_robot

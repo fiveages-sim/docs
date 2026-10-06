@@ -172,7 +172,7 @@ Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise support
 
 ### Isomorphic Teleop (HT Panthera)
 
-Master–slave isomorphic teleop (同构遥操作), not drag teaching. Two processes:
+Master–slave **isomorphic teleop** (同构遥操作). Two processes:
 
 ```bash
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \

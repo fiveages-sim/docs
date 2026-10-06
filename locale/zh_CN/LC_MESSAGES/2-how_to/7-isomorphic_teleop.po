@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:31+0000\n"
+"POT-Creation-Date: 2026-10-06 17:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -33,16 +33,17 @@ msgid ""
 msgstr "面向 HT Panthera 双臂的主从 **同构遥操作**：在关节空间移动主臂，从臂跟随。"
 
 #: ../../source/2-how_to/7-isomorphic_teleop.md:5
-#: 05afe7fbe6ec43b087f1516f1600f8e0
+#: 75c0cad1af3f4209a04b92188e88c37c
 msgid ""
-"This is **not** drag teaching. There is no trajectory record/playback and no"
-" `enter_teach_mode` API. The implemented path is the public package "
+"**Implemented:** 同构遥操作 via "
 "[`drag_teleop_controller`](https://github.com/fiveages-"
-"sim/drag_teleop_controller)."
+"sim/drag_teleop_controller) (package name is historical). **Not "
+"implemented:** drag teaching (拖动遥操作), trajectory record/playback, or "
+"`enter_teach_mode`."
 msgstr ""
-"这 **不是** 拖动示教。没有轨迹录制/回放，也没有 `enter_teach_mode` API。已实现路径是公开软件包 "
-"[`drag_teleop_controller`](https://github.com/fiveages-"
-"sim/drag_teleop_controller)。"
+"**已实现：** 通过 [`drag_teleop_controller`](https://github.com/fiveages-"
+"sim/drag_teleop_controller) 的同构遥操作（包名是历史遗留）。**未实现：** 拖动示教（拖动遥操作）、轨迹录制/回放，或 "
+"`enter_teach_mode`。"
 
 #: ../../source/2-how_to/7-isomorphic_teleop.md:7
 #: 0f1e15b36fe546518abe224e8b159456
@@ -102,9 +103,9 @@ msgstr "`master`"
 #: ../../source/2-how_to/7-isomorphic_teleop.md
 #: d79a6e2a1319443fa40a0e884695428c
 msgid ""
-"Operator side. Gravity compensation so you can move the arm; publishes "
-"mapped joint state."
-msgstr "操作者侧。重力补偿以便拖动主臂；发布映射后的关节状态。"
+"Operator side. Gravity compensation so you can move the arm in joint space; "
+"publishes mapped joint state."
+msgstr "操作者侧。重力补偿，便于在关节空间移动主臂；发布映射后的关节状态。"
 
 #: ../../source/2-how_to/7-isomorphic_teleop.md
 #: adf766f6c59749468a42a90ea2dda7df
@@ -531,3 +532,13 @@ msgstr "[drag_teleop_controller 参考](../4-reference/teleop/2-drag_teleop.md)"
 #: 882ae9bbf50f489caf325d7b75645382
 msgid "[Go to Real Hardware](9-go_real_hardware.md)"
 msgstr "[部署到真实硬件](9-go_real_hardware.md)"
+
+#~ msgid ""
+#~ "This is **not** drag teaching. There is no trajectory record/playback and no"
+#~ " `enter_teach_mode` API. The implemented path is the public package "
+#~ "[`drag_teleop_controller`](https://github.com/fiveages-"
+#~ "sim/drag_teleop_controller)."
+#~ msgstr ""
+#~ "这 **不是** 拖动示教。没有轨迹录制/回放，也没有 `enter_teach_mode` API。已实现路径是公开软件包 "
+#~ "[`drag_teleop_controller`](https://github.com/fiveages-"
+#~ "sim/drag_teleop_controller)。"

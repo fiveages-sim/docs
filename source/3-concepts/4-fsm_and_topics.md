@@ -49,13 +49,13 @@ The control stack uses FSM patterns for:
 
 Mode commands are typically numeric:
 
-```python
+:::{code-block} python
 # Example mode definitions
 MODE_IDLE = 0
 MODE_POSITION = 1
 MODE_CARTESIAN = 2
 MODE_TELEOP = 3
-```
+:::
 
 Send mode command:
 
@@ -96,7 +96,7 @@ Publishers (teleop, planners) must:
 - Publish at consistent rate (10-100 Hz typical)
 - Include valid orientation quaternion
 
-```python
+:::{code-block} python
 from geometry_msgs.msg import PoseStamped
 
 target = PoseStamped()
@@ -106,7 +106,7 @@ target.pose.position.x = 0.3
 target.pose.position.y = 0.0
 target.pose.position.z = 0.4
 target.pose.orientation.w = 1.0  # Valid quaternion!
-```
+:::
 
 ### Joint State Contract
 
@@ -136,13 +136,13 @@ idle → position_control → cartesian_control → teleop
 
 ### Sending Transitions
 
-```bash
+:::{code-block} bash
 # Enter teleop mode
 ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'teleop'}" --once
 
 # Return to idle
 ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'idle'}" --once
-```
+:::
 
 ## QoS Settings
 
@@ -166,7 +166,7 @@ ros2 topic echo /mode_state
 
 ### Check Topic Flow
 
-```bash
+:::{code-block} bash
 # List all topics
 ros2 topic list
 
@@ -175,7 +175,7 @@ ros2 topic hz /target_pose
 
 # Inspect message
 ros2 topic echo /target_pose --once
-```
+:::
 
 ### Verify Connections
 

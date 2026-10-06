@@ -1,6 +1,6 @@
-# drag_teleop_controller
+# Isomorphic teleop (`drag_teleop_controller`)
 
-Master–slave **isomorphic teleop** (同构遥操作) for HT Panthera dual-arm. Not a drag-teaching / record-playback stack.
+Master–slave **isomorphic teleop** (同构遥操作) for HT Panthera dual-arm. The ROS package is still named `drag_teleop_controller`; that is **not** drag teaching.
 
 **Repository:** [fiveages-sim/drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)
 
