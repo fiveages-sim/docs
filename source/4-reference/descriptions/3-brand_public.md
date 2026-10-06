@@ -24,7 +24,12 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 | Parameter | Values |
 |-----------|--------|
 | `robot` | `dobot_cr5`, `dobot_cr10` |
-| `gripper` | `dh_ag95`, `dh_pgc`, etc. |
+
+```{admonition} TODO
+:class: note
+
+For valid gripper options, check the launch files in `arms_ros2_control`.
+```
 
 ## ARX
 

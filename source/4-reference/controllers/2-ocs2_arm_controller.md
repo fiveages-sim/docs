@@ -32,10 +32,15 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
 
 ```bash
 ros2 launch ocs2_arm_controller demo.launch.py \
-  robot:=dobot_cr5 \
+  robot:=<robot_name> \
   hardware:=mock \
-  gripper:=dh_ag95 \
   rviz:=true
+```
+
+```{admonition} TODO
+:class: note
+
+For valid `robot` and `gripper` parameter values, check the launch files in `arms_ros2_control` and the corresponding description packages.
 ```
 
 ## Launch Parameters

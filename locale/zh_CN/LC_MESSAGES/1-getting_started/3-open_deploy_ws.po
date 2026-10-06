@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 15:04+0000\n"
+"POT-Creation-Date: 2026-10-06 15:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -40,14 +40,18 @@ msgstr "仓库 概述"
 msgid ""
 "**URL:** [https://github.com/fiveages-sim/open-deploy-"
 "ws](https://github.com/fiveages-sim/open-deploy-ws)"
-msgstr "**URL:** [https://github.com/fiveages-sim/open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws)"
+msgstr ""
+"**URL:** [https://github.com/fiveages-sim/open-deploy-"
+"ws](https://github.com/fiveages-sim/open-deploy-ws)"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:9
 #: c7de6959cc644022b5b9306a9ea32c19
 msgid ""
 "`open-deploy-ws` is the public entry point for the FiveAges Sim "
 "ecosystem. It provides:"
-msgstr "`open-deploy-ws` is the public entry point for the FiveAges Sim ecosystem. It provides:"
+msgstr ""
+"`open-deploy-ws` is the public entry point for the FiveAges Sim "
+"ecosystem. It provides:"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:11
 #: 5686429b120549918599cfb631926d0b
@@ -80,8 +84,8 @@ msgid ""
 "git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
 "cd open-deploy-ws\n"
 msgstr ""
-"git clone https://github.com/fiveages-sim/open-deploy-ws.git\\n"
-"cd open-deploy-ws\\n"
+"git clone https://github.com/fiveages-sim/open-deploy-ws.git\\ncd open-"
+"deploy-ws\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:23
 #: f3c6f688a4804ba191eac6a401d310d2
@@ -194,13 +198,8 @@ msgid ""
 "git checkout arx-acone\n"
 "./init_repo.sh\n"
 msgstr ""
-"# Dobot CR5 only\\n"
-"git checkout dobot-cr5\\n"
-"./init_repo.sh\\n"
-"\\n"
-"# ARX ACone only  \\n"
-"git checkout arx-acone\\n"
-"./init_repo.sh\\n"
+"# Dobot CR5 only\\ngit checkout dobot-cr5\\n./init_repo.sh\\n\\n# ARX "
+"ACone only  \\ngit checkout arx-acone\\n./init_repo.sh\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:59
 #: 74d4ab8321fc403c9f207684f256923d
@@ -228,18 +227,12 @@ msgid ""
 "├── submodules_visibility.conf\n"
 "└── deb_versions.txt\n"
 msgstr ""
-"open-deploy-ws/\\n"
-"├── src/\\n"
-"│   ├── arms_ros2_control/       # Controllers + nested HIs\\n"
-"│   ├── robot_descriptions/      # 描述 umbrella\\n"
-"│   │   ├── robot-descriptions-common/\\n"
-"│   │   ├── robot-descriptions-dobot/\\n"
-"│   │   ├── robot-descriptions-arx/\\n"
-"│   │   └── ...\\n"
-"│   └── ocs2_ros2/              # (if source build)\\n"
-"├── init_repo.sh\\n"
-"├── submodules_visibility.conf\\n"
-"└── deb_versions.txt\\n"
+"open-deploy-ws/\\n├── src/\\n│   ├── arms_ros2_control/       # "
+"Controllers + nested HIs\\n│   ├── robot_descriptions/      # 描述 "
+"umbrella\\n│   │   ├── robot-descriptions-common/\\n│   │   ├── robot-"
+"descriptions-dobot/\\n│   │   ├── robot-descriptions-arx/\\n│   │   └── "
+"...\\n│   └── ocs2_ros2/              # (if source build)\\n├── "
+"init_repo.sh\\n├── submodules_visibility.conf\\n└── deb_versions.txt\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:78
 #: a2cf20360bd74b51b3aa1fd7dfa128f8
@@ -257,8 +250,8 @@ msgid ""
 "source /opt/ros/jazzy/setup.bash\n"
 "rosdep install --from-paths src --ignore-src -r -y\n"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\\n"
-"rosdep install --from-paths src --ignore-src -r -y\\n"
+"source /opt/ros/jazzy/setup.bash\\nrosdep install --from-paths src "
+"--ignore-src -r -y\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:87
 #: bc046538edbf4af8a6bb3ccbcc8fe30b
@@ -289,11 +282,9 @@ msgid ""
 "# Up to a specific package\n"
 "colcon build --packages-up-to ocs2_arm_controller\n"
 msgstr ""
-"# Just descriptions\\n"
-"colcon build --packages-select robot-descriptions-dobot\\n"
-"\\n"
-"# Up to a specific package\\n"
-"colcon build --packages-up-to ocs2_arm_controller\\n"
+"# Just descriptions\\ncolcon build --packages-select robot-descriptions-"
+"dobot\\n\\n# Up to a specific package\\ncolcon build --packages-up-to "
+"ocs2_arm_controller\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:105
 #: 5f2ab6071227423291bd7fcb143751e2
@@ -428,7 +419,10 @@ msgid ""
 "**ARX Acone** and **HT Panthera** can be deployed to real hardware using "
 "only public packages. See [Go to Real "
 "Hardware](../2-how_to/9-go_real_hardware.md) for deployment instructions."
-msgstr "**ARX Acone** and **HT Panthera** can be deployed to real hardware using only public packages. See [部署到真实硬件](../2-how_to/9-go_real_hardware.md) for deployment instructions."
+msgstr ""
+"**ARX Acone** and **HT Panthera** can be deployed to real hardware using "
+"only public packages. See [部署到真实硬件](../2-how_to/9-go_real_hardware.md) "
+"for deployment instructions."
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:123
 #: 6246779137794f9eb2a4b6c5aa0b4698
@@ -446,8 +440,8 @@ msgid ""
 "source install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 msgstr ""
-"source install/setup.bash\\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
+"source install/setup.bash\\nros2 launch ocs2_arm_controller "
+"demo.launch.py hardware:=mock\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:132
 #: 5f6811e6aa854c06a38f08ba1a6476c3
@@ -460,7 +454,8 @@ msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
 "hardware:=mock\n"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
+"hardware:=mock\\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:138
 #: 61ac687d4602471bb092fd2ebb7b5bbf
@@ -468,24 +463,39 @@ msgid "With Gripper"
 msgstr "With Gripper"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:140
-#: 625f67f344cd4b29b24bab2aadea684a
-msgid ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
-"gripper:=dh_ag95 hardware:=mock\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock\\n"
+#: 77615b7e16a6411f9d01f30d36386d4a
+msgid "TODO"
+msgstr "待完成"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:144
+#: ../../source/1-getting_started/3-open_deploy_ws.md:143
+#: a9a0e33dd408400fb7f2ecef6e3a290c
+msgid ""
+"For valid robot + gripper combinations, check the launch files in "
+"`arms_ros2_control`. Not all combinations are supported."
+msgstr "For valid robot + gripper combinations, check the launch files in `arms_ros2_control`. Not all combinations are supported."
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:146
+#: 625f67f344cd4b29b24bab2aadea684a
+#, fuzzy
+msgid ""
+"# General pattern\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
+"gripper:=<gripper_name> hardware:=mock\n"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"gripper:=dh_ag95 hardware:=mock\\n"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:151
 #: 3348f80ef74f4941b4e2308ef6d47e16
 msgid "Adding Robot Descriptions"
 msgstr "Adding 机器人 Descriptions"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:146
+#: ../../source/1-getting_started/3-open_deploy_ws.md:153
 #: 39c27664d7794198a4ac68047f5f9084
 msgid "To add a new robot to your workspace:"
 msgstr "To add a new robot to your workspace:"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:148
+#: ../../source/1-getting_started/3-open_deploy_ws.md:155
 #: 3d9561faa3c445c6a6ef6223b57b9624
 msgid ""
 "cd src/robot_descriptions\n"
@@ -493,200 +503,202 @@ msgid ""
 "cd ../..\n"
 "colcon build --packages-up-to robot-descriptions-<brand>\n"
 msgstr ""
-"cd src/robot_descriptions\\n"
-"git submodule update --init robot-descriptions-<brand>\\n"
-"cd ../..\\n"
-"colcon build --packages-up-to robot-descriptions-<brand>\\n"
+"cd src/robot_descriptions\\ngit submodule update --init robot-"
+"descriptions-<brand>\\ncd ../..\\ncolcon build --packages-up-to robot-"
+"descriptions-<brand>\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:155
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
 #: 16f8337c58ab4275acc01771189a0fbf
 msgid "Submodule Management"
 msgstr "Submodule Management"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:157
+#: ../../source/1-getting_started/3-open_deploy_ws.md:164
 #: 42a1df9a602e458183711120d80a0850
 msgid "Check Status"
 msgstr "Check 状态"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:159
+#: ../../source/1-getting_started/3-open_deploy_ws.md:166
 #: 178fbea3feee44babb6b489a4e1e5094
 msgid "git submodule status\n"
 msgstr "git submodule status\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:163
+#: ../../source/1-getting_started/3-open_deploy_ws.md:170
 #: b28b51b4475b4b869895e3b3d0226f5c
 msgid "Update All"
 msgstr "Update All"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:165
-#: ../../source/1-getting_started/3-open_deploy_ws.md:190
+#: ../../source/1-getting_started/3-open_deploy_ws.md:172
+#: ../../source/1-getting_started/3-open_deploy_ws.md:197
 #: 0452ccdb4f9941bc94f784e7d71ef211
 msgid "git submodule update --init --recursive\n"
 msgstr "git submodule update --init --recursive\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:169
+#: ../../source/1-getting_started/3-open_deploy_ws.md:176
 #: e71f8dc70fc048dcb2d54eb3493f30a6
 msgid "Update Specific"
 msgstr "Update Specific"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:171
+#: ../../source/1-getting_started/3-open_deploy_ws.md:178
 #: efb6b87ffe2e43c58b7edd445e117b22
 msgid ""
 "cd src/arms_ros2_control\n"
 "git pull origin main\n"
 msgstr "cd src/arms_ros2_control\\ngit pull origin main\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:176
+#: ../../source/1-getting_started/3-open_deploy_ws.md:183
 #: 1423df2ab19a4c0792896877852c3245
 msgid "Debian vs Source Matrix"
 msgstr "Debian vs 源 Matrix"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: c2d07105003147f9835c479cab3fac76
 msgid "Component"
 msgstr "组件"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 63940cc5a22a4e9b91404cef31fe7a24
 msgid "Debian Package"
 msgstr "Debian 软件包"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 7c2504e0de3f4da187e710747f147f18
 msgid "Source Path"
 msgstr "源 路径"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 3036d4f1163e4440b7a6efed58041a9a
 msgid "OCS2"
 msgstr "OCS2"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: c07026f0068e4e48af3347d2692cc1a8
 msgid "`ros-jazzy-ocs2`"
 msgstr "`ros-jazzy-ocs2`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 7731bdfae7874f49b2d245b4e32edacb
 msgid "`src/ocs2_ros2`"
 msgstr "`src/ocs2_ros2`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 78ed7e226f0f4fb79ef1201539e0dbe5
 msgid "Common descriptions"
 msgstr "Common descriptions"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 8b653b7092bb41ecac5284a37dd2108e
 msgid "`ros-jazzy-robot-descriptions-common`"
 msgstr "`ros-jazzy-robot-descriptions-common`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 66103039c1714dc29400581c4e706fb5
 msgid "`src/robot_descriptions/robot-descriptions-common`"
 msgstr "`src/robot_descriptions/robot-descriptions-common`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 67b44d9ee3bd46de92f4834aa7dbecb5
 msgid "arms_ros2_control"
 msgstr "arms_ros2_control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 1677ccc23ba9464aaad812343cc5c65b
 msgid "(optional)"
 msgstr "(optional)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:117
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
 #: 6625ccc33ec948d69c42443e39c02a71
 msgid "`src/arms_ros2_control`"
 msgstr "`src/arms_ros2_control`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:184
+#: ../../source/1-getting_started/3-open_deploy_ws.md:191
 #: b5aa330c83ac48bb977de4b41647d3a0
 msgid ""
 "Check `deb_versions.txt` for compatible Debian versions when mixing "
 "source and packages."
-msgstr "Check `deb_versions.txt` for compatible Debian versions when mixing source and packages."
+msgstr ""
+"Check `deb_versions.txt` for compatible Debian versions when mixing "
+"source and packages."
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:186
+#: ../../source/1-getting_started/3-open_deploy_ws.md:193
 #: ec11cc08f7474da98669c503f2e1a605
 msgid "Common Issues"
 msgstr "常见问题"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:188
+#: ../../source/1-getting_started/3-open_deploy_ws.md:195
 #: f97aaa9d57d044e89b69a0af062afea9
 msgid "Submodules Empty"
 msgstr "Submodules Empty"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:194
+#: ../../source/1-getting_started/3-open_deploy_ws.md:201
 #: 260e557710f04a8d94faa585475bdabb
 msgid "Access Denied to Submodule"
 msgstr "Access Denied to Submodule"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:196
+#: ../../source/1-getting_started/3-open_deploy_ws.md:203
 #: 6c18782e3b484e83b61b92ea1e561188
 msgid ""
 "Some submodules are private. In `open-deploy-ws`, only public submodules "
 "should be required. If you see access errors:"
-msgstr "Some submodules are private. In `open-deploy-ws`, only public submodules should be required. If you see access errors:"
+msgstr ""
+"Some submodules are private. In `open-deploy-ws`, only public submodules "
+"should be required. If you see access errors:"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:198
+#: ../../source/1-getting_started/3-open_deploy_ws.md:205
 #: 728e82ddba5943a487ca95c75973a759
 msgid "Check you're on the correct branch (not accidentally on a private branch)"
 msgstr "Check you're on the correct branch (not accidentally on a private branch)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:199
+#: ../../source/1-getting_started/3-open_deploy_ws.md:206
 #: a057dcbb8ece4fc5bacdec72ae522738
 msgid "Verify the submodule is listed as public in `submodules_visibility.conf`"
 msgstr "Verify the submodule is listed as public in `submodules_visibility.conf`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:201
+#: ../../source/1-getting_started/3-open_deploy_ws.md:208
 #: 45bc8880bcfb4d3a85130d2e2bb88516
 msgid "Build Fails with numpy"
 msgstr "Build Fails with numpy"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:203
+#: ../../source/1-getting_started/3-open_deploy_ws.md:210
 #: 817f5c14704b432db274303b12e06fa5
 msgid "pip install 'numpy<2'\n"
 msgstr "pip install 'numpy<2'\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:207
+#: ../../source/1-getting_started/3-open_deploy_ws.md:214
 #: 9dd58c80e62440bd9db0e1875d59ed8e
 msgid "CAN Interface Rename Needed"
 msgstr "CAN 总线 接口 Rename Needed"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:209
+#: ../../source/1-getting_started/3-open_deploy_ws.md:216
 #: 19365ff97f62455891988db1d02b88a6
 msgid "For CAN-based robots, you may need to rename the interface:"
 msgstr "For CAN-based robots, you may need to rename the interface:"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:211
+#: ../../source/1-getting_started/3-open_deploy_ws.md:218
 #: 236dca5e23444edca28bf689bf103f75
 msgid ""
 "sudo ip link set can0 down\n"
 "sudo ip link set can0 name <expected_name>\n"
 "sudo ip link set <expected_name> up\n"
 msgstr ""
-"sudo ip link set can0 down\\n"
-"sudo ip link set can0 name <expected_name>\\n"
-"sudo ip link set <expected_name> up\\n"
+"sudo ip link set can0 down\\nsudo ip link set can0 name "
+"<expected_name>\\nsudo ip link set <expected_name> up\\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:217
+#: ../../source/1-getting_started/3-open_deploy_ws.md:224
 #: 8272b9a5842849da9f502ed13be2b41d
 msgid "Next Steps"
 msgstr "下一步"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:219
+#: ../../source/1-getting_started/3-open_deploy_ws.md:226
 #: da750942b28f4d0daf51c5312de18bd0
 msgid "[Run mock demo](../2-how_to/1-run_mock_demo.md)"
 msgstr "[Run mock demo](../2-how_to/1-run_mock_demo.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:220
+#: ../../source/1-getting_started/3-open_deploy_ws.md:227
 #: a09d6f56bf0b4d1ab26d4bb0e2251727
 msgid "[Switch robots](../2-how_to/2-switch_robot.md)"
 msgstr "[Switch robots](../2-how_to/2-switch_robot.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:221
+#: ../../source/1-getting_started/3-open_deploy_ws.md:228
 #: bbbc3188ea7b496399e53ae90662b249
 msgid "[Gazebo simulation](../2-how_to/3-gazebo_sim.md)"
 msgstr "[Gazebo simulation](../2-how_to/3-gazebo_sim.md)"

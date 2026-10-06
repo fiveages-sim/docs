@@ -45,9 +45,19 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 
 # ARX ACone
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+```
 
-# With gripper
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock
+### With Gripper
+
+```{admonition} TODO
+:class: note
+
+For valid robot + gripper combinations, check the launch files in `arms_ros2_control`.
+```
+
+```bash
+# General pattern
+ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
 ```
 
 ## Launch Parameters
