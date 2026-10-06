@@ -10,24 +10,24 @@ Control robots programmatically using the Python interface.
 
 ## Install fa-py-libraries
 
-```bash
+:::{code-block} bash
 cd ~/
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
 ./init.sh all    # Python 3.12 env
-```
+:::
 
 Or install ros2_robot_interface directly:
 
-```bash
+:::{code-block} bash
 pip install ros2-robot-interface
-```
+:::
 
 ## Basic Usage
 
 ### Connect to Robot
 
-```python
+:::{code-block} python
 from ros2_robot_interface import RobotInterface
 
 # Initialize
@@ -36,21 +36,21 @@ robot.connect()
 
 # Check connection
 print(f"Connected: {robot.is_connected()}")
-```
+:::
 
 ### Move Robot
 
-```python
+:::{code-block} python
 # Move to joint position (radians)
 robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])
 
 # Move to Cartesian pose
 robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], [qw,qx,qy,qz]
-```
+:::
 
 ### Gripper Control
 
-```python
+:::{code-block} python
 # Open gripper
 robot.gripper_open()
 
@@ -59,11 +59,11 @@ robot.gripper_close()
 
 # Set position (0.0 = closed, 1.0 = open)
 robot.gripper_move(0.5)
-```
+:::
 
 ### Read State
 
-```python
+:::{code-block} python
 # Joint positions
 joints = robot.get_joint_positions()
 print(f"Joints: {joints}")
@@ -71,11 +71,11 @@ print(f"Joints: {joints}")
 # End-effector pose
 pose = robot.get_ee_pose()
 print(f"EE pose: {pose}")
-```
+:::
 
 ## Example: Pick and Place
 
-```python
+:::{code-block} python
 from ros2_robot_interface import RobotInterface
 import time
 
@@ -116,16 +116,16 @@ time.sleep(0.5)
 
 # Return home
 robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-```
+:::
 
 ## With Viser Visualization
 
 Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
 
-```bash
+:::{code-block} bash
 cd ~/fa-py-libraries
 ./run.sh viser
-```
+:::
 
 `ros2_viser` is a library dependency of that command. Embedding `ROS2ViserVisualizer` in your own script is covered on [ros2-viser](../4-reference/python_apps/3-ros2_viser.md).
 
@@ -133,14 +133,14 @@ cd ~/fa-py-libraries
 
 For whole-body control or complex motions:
 
-```python
+:::{code-block} python
 # Send FSM command
 robot.send_fsm_command("stand")
 robot.send_fsm_command("walk")
 
 # Mode commands
 robot.send_mode_command("arm_teleop")
-```
+:::
 
 See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available commands.
 
@@ -148,7 +148,7 @@ See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available commands.
 
 For non-blocking operations:
 
-```python
+:::{code-block} python
 import asyncio
 from ros2_robot_interface import AsyncRobotInterface
 
@@ -167,11 +167,11 @@ async def main():
     print("Done!")
 
 asyncio.run(main())
-```
+:::
 
 ## Verification
 
-```python
+:::{code-block} python
 # Test script
 from ros2_robot_interface import RobotInterface
 
@@ -186,7 +186,7 @@ print(f"EE Pose: {robot.get_ee_pose()}")
 current = robot.get_joint_positions()
 current[0] += 0.1  # Small rotation of first joint
 robot.move_j(current)
-```
+:::
 
 ## Troubleshooting
 
@@ -204,11 +204,11 @@ robot.move_j(current)
 
 ### Import error
 
-```bash
+:::{code-block} bash
 cd ~/fa-py-libraries
 ./init.sh all
 # or, inside that env:
 pip install -e ~/fa-py-libraries
 # or
 pip install ros2-robot-interface
-```
+:::
