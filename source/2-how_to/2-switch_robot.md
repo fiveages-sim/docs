@@ -44,9 +44,9 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> hardware:=moc
 | Brand | Robot Names |
 |-------|-------------|
 | Dobot | `dobot_cr5`, `dobot_cr10` |
-| ARX | `arx_x5`, `arx_acone`, `arx_lift2s` |
+| ARX | `arx_x5`, `arx_acone` (**arm only**), `arx_lift2s` (**Ark / Lift 2s** full-body) |
 | Galbot | `galbot_g1` |
-| HT | `ht_panthera` |
+| HT | `panthera_ht` (**Panthera HT**) |
 
 ## Example: Dobot to ARX
 
@@ -63,9 +63,11 @@ cd ~/open-deploy-ws
 colcon build --packages-up-to robot-descriptions-arx
 source install/setup.bash
 
-# Launch with ARX
+# Launch with Acone (arm only, not Lift 2s)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
+
+`arx_acone` is the manipulator. Full-body **Ark / Lift 2s** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [Ark / Lift 2s](11-ark_lift2s.md). Panthera HT launch name is `panthera_ht` — see [Panthera HT](12-panthera_ht.md).
 
 ## With Grippers
 

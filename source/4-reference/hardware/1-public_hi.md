@@ -5,7 +5,7 @@ Public ros2_control hardware interface plugins.
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Acone** (via arx-ros2-control) and **HT Panthera** (via ht-ros2-control) are fully supported for real hardware deployment using only public packages. External users can deploy to these robots without requiring private repository access.
+**Ark / Lift 2s** (full-body) and **Acone** (arm only) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [Ark / Lift 2s](../../2-how_to/11-ark_lift2s.md) and [Panthera HT](../../2-how_to/12-panthera_ht.md).
 ```
 
 ## ARX
@@ -14,7 +14,7 @@ Public ros2_control hardware interface plugins.
 
 ### Purpose
 
-CAN bus interface for ARX robots (X5, ACone, Lift2S).
+CAN bus interface for ARX robots (X5, Acone arm, Lift 2s / Ark full-body).
 
 ### Configuration
 
@@ -105,7 +105,7 @@ SDK2 interface for Unitree quadruped robots.
 
 ### Purpose
 
-Serial interface for HT Panthera robots.
+Serial interface for **Panthera HT** robots.
 
 ### Configuration
 

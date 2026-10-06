@@ -22,13 +22,15 @@ This section contains task-oriented recipes for common operations. Each guide fo
 ### Teleoperation
 
 - [VR Teleop](6-vr_teleop.md) — VR headset control
-- [Isomorphic Teleop](7-isomorphic_teleop.md) — Master–slave isomorphic teleop (同构遥操作, HT Panthera)
+- [Isomorphic Teleop](7-isomorphic_teleop.md) — Master–slave isomorphic teleop (同构遥操作, Panthera HT)
 - [Drag teaching is not implemented](7-drag_teleop.md) — 拖动遥操作 is not a supported path
 - [DexCap Teleop](8-dexcap_teleop.md) — DexCap glove (internal)
 
 ### Deployment
 
 - [Go Real Hardware](9-go_real_hardware.md) — Deploy to physical robots
+- [Ark / Lift 2s](11-ark_lift2s.md) — Full-body 方舟 platform (chassis + arms)
+- [Panthera HT](12-panthera_ht.md) — Dual-arm manipulator (`panthera-ht` branch)
 - [Add a Robot](10-add_a_robot.md) — Integrate new robot models
 
 ## Guide Format

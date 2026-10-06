@@ -18,7 +18,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 ```{admonition} Real Hardware for External Users
 :class: tip
 
-**ARX Acone** and **HT Panthera** are available for real hardware deployment on the public path. You don't need internal access to deploy to these robots.
+**Ark / Lift 2s** is the full-body 方舟 platform (including chassis). **Acone** is the **arm only**, not Lift 2s. **Panthera HT** is the dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
 ```
 
 ## Day 0: Map the Stack
@@ -78,10 +78,11 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
    ```
+   `arx_acone` is the **Acone arm**, not Lift 2s. Full-body Ark / Lift 2s uses the `arx-lift2s` branch scripts — see [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md).
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You can switch between Dobot CR5, ARX ACone, Galbot, etc.
+**Outcome:** You can switch between Dobot CR5, Acone (arm), Galbot, etc.
 
 ## Day 3: Gazebo and Isaac Simulation
 
@@ -170,9 +171,9 @@ cd fa-py-libraries
 Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Do not install one App for both.
 ```
 
-### Isomorphic Teleop (HT Panthera)
+### Isomorphic Teleop (Panthera HT)
 
-Master–slave **isomorphic teleop** (同构遥操作). Two processes:
+Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [Panthera HT](../2-how_to/12-panthera_ht.md). Mock (package README):
 
 ```bash
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
@@ -189,27 +190,13 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 
 **Goal:** Deploy to physical robots.
 
-### Public Path (ARX Acone, HT Panthera)
+### Public Path (Ark / Lift 2s, Acone arm, Panthera HT)
 
-External users can deploy to **ARX Acone** and **HT Panthera** using only public packages:
+Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2s.
 
-**ARX Acone (CAN bus):**
-```bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Configure CAN interface
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
-```
-
-**HT Panthera (Serial):**
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
-```
+- **[Ark / Lift 2s](../2-how_to/11-ark_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
+- **Acone** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
+- **[Panthera HT](../2-how_to/12-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
 ### Internal Path (FA Robots)
 
@@ -256,5 +243,5 @@ Follow [Synthetic Data](../6-synthetic_data/0-index.md). Documented composer/ler
 
 1. **Don't skip mock mode** — Always verify behavior in mock before simulation or real hardware
 2. **Read the warnings** — The stack logs helpful messages about configuration issues
-3. **Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-acone` branches for minimal builds
+3. **Use lean branches** — `open-deploy-ws` offers `dobot-cr5`, `arx-lift2s`, and `panthera-ht`
 4. **Ask questions** — File issues on the relevant repository for bugs or unclear documentation

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 17:06+0000\n"
+"POT-Creation-Date: 2026-10-06 17:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -21,22 +21,22 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:1
-#: f352c70023fe4e688ec0c1368faf1239
+#: 9d1717184c494004b84c2391c4a254a9
 msgid "Isomorphic teleop (`drag_teleop_controller`)"
 msgstr "同构遥操作（`drag_teleop_controller`）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:3
-#: 03f6d7ab1b3142608c40cf6e2da80145
+#: 95bfaa1a9dba437eaa327c915b04b01d
 msgid ""
-"Master–slave **isomorphic teleop** (同构遥操作) for HT Panthera dual-arm. The ROS"
-" package is still named `drag_teleop_controller`; that is **not** drag "
+"Master–slave **isomorphic teleop** (同构遥操作) for **Panthera HT** dual-arm. The"
+" ROS package is still named `drag_teleop_controller`; that is **not** drag "
 "teaching."
 msgstr ""
-"面向 HT Panthera 双臂的主从 **同构遥操作**。ROS 软件包仍名为 `drag_teleop_controller`；这 **不是** "
-"拖动示教。"
+"面向 **Panthera HT** 双臂的主从 **同构遥操作**。ROS 软件包仍名为 `drag_teleop_controller`；这 "
+"**不是** 拖动示教。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:5
-#: 70079ac6609348a3be492068e792b61d
+#: 75d4656df7d94e778acc4d7f3ce31024
 msgid ""
 "**Repository:** [fiveages-"
 "sim/drag_teleop_controller](https://github.com/fiveages-"
@@ -46,7 +46,7 @@ msgstr ""
 "sim/drag_teleop_controller)"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:7
-#: 9bb7039948234e08a6e336214d126b58
+#: 7823cc3bffa14ebabe61415d148147b1
 msgid ""
 "**README:** [README.md](https://github.com/fiveages-"
 "sim/drag_teleop_controller/blob/main/README.md)"
@@ -55,31 +55,31 @@ msgstr ""
 "sim/drag_teleop_controller/blob/main/README.md)"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:9
-#: b3d6c5f54d5e4160b95fc41e387339df
+#: d892349849fd4f58b58d87e49021784e
 msgid "Purpose"
 msgstr "用途"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:11
-#: 89d8e0fd194847dcb5ad5a0f968234bd
+#: 7798449568d849a7a2ad1d4a6a47dae1
 msgid "One `ros2_control` controller plugin, started twice:"
 msgstr "同一个 `ros2_control` 控制器插件，启动两次："
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:13
-#: 6f427ad238c44a49b68c30a87422932e
+#: a6d4ed6585e44d128d02f6f4b5be8685
 msgid ""
 "`role:=master` — operator arm with Pinocchio gravity compensation (`τ_G = "
 "rnea(q, 0, 0)`); optional force feedback"
 msgstr "`role:=master` — 操作者臂，Pinocchio 重力补偿（`τ_G = rnea(q, 0, 0)`）；可选力反馈"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:14
-#: aa771bb23df54a1b9e4375721a6633cb
+#: 75199b2c0a3046e99d98f8be67299257
 msgid ""
 "`role:=slave` — follower; tracks mapped master joints (`position` / `mit` / "
 "`effort`)"
 msgstr "`role:=slave` — 从臂；跟踪映射后的主臂关节（`position` / `mit` / `effort`）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:16
-#: 3e2cc58dabc845fe91530a54bbf7f62c
+#: d820be54785d4cf599a5c3d83a900564
 msgid ""
 "Joint mapping (and effort mapping under power conservation) is applied "
 "**before** publishing `teleop_states`. Arm joints (12) are commanded by this"
@@ -89,26 +89,26 @@ msgstr ""
 "`adaptive_gripper_controller`。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:18
-#: 8dd200264c0044adb899cc4665510093
+#: 1cf98fcee0634425b4c6042a5b25f60d
 msgid ""
 "There is **no** `enter_teach_mode`, `/start_recording`, or `/playback` "
 "service."
 msgstr "**没有** `enter_teach_mode`、`/start_recording` 或 `/playback` 服务。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:20
-#: 50f1d47176034fdab9803e75be26cfd8
+#: ccf97b4825fa4387b082f4613d739c09
 msgid "Launch"
 msgstr "启动文件"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:22
-#: ddb9fe5aae87410fabc708b3344ea928
+#: 52f9253c2e0244f7ab56382a6bcb1e3a
 msgid ""
 "Launch file: `drag_teleop_controller.launch.py` (not "
 "`drag_teleop.launch.py`)."
 msgstr "启动文件：`drag_teleop_controller.launch.py`（不是 `drag_teleop.launch.py`）。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:24
-#: 90224e71489c43b387278f005b8306c9
+#: e225a1b2baee4dc38969a5e1e5a9eb00
 msgid ""
 "# Mock\n"
 "ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
@@ -137,247 +137,247 @@ msgstr ""
 "  role:=slave hardware:=real mode:=mit\n"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:39
-#: 5503d12c468d41c7ad4ec15726a5741a
+#: 97614719f68b4e04b984164791d8101c
 #, python-brace-format
 msgid ""
 "Default `robot` is `panthera_ht`. Namespaces are `/drag_teleop_{role}`."
 msgstr "默认 `robot` 为 `panthera_ht`。命名空间为 `/drag_teleop_{role}`。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:41
-#: 23ff813131fb4abcb55b5f9158b240cc
+#: 76b30f618a1545f7ae17606218e29b41
 msgid "Services"
 msgstr "服务"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 5e9d167a23ec495bb9fc7d8791abee74
+#: 5c189f7a252a4805a41cf088e27638bb
 msgid "Service"
 msgstr "服务"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c3ce7b94835f4c99926aad872e06c9b3
+#: 2eea4e2720474a19b7ee855a0234187f
 msgid "Type"
 msgstr "类型"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 84b936dea52e4aeca57ca358fe1cc514
+#: 3bdfe72b8ffc49dc9fd18d0dcf6e3192 ff5514ab93f34876b4bb8f3d25c23f24
 msgid "Description"
 msgstr "描述"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 947194ef9e3245e0b04cd5b93533b650
+#: c7bdbb36ed78429c8650960800206d36
 #, python-brace-format
 msgid "`/drag_teleop_{role}/teleop_mode`"
 msgstr "`/drag_teleop_{role}/teleop_mode`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 21469e80f8b0450cb60e207d1b1a8b2f
+#: f0962a9a8d124951a09e188c47bced41
 msgid "`drag_teleop_controller/srv/TeleopMode`"
 msgstr "`drag_teleop_controller/srv/TeleopMode`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 109e3950060042abb452aa7e1e6b80bb
+#: ce204bd7bf5643e78e0784edfe47bc6c
 msgid "Runtime `position` / `mit` / `effort`"
 msgstr "运行时 `position` / `mit` / `effort`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: bac27a0f75344ea5bf0935b6b420c193
+#: 91ad4b8748844c66865fbd71049b9ca0
 #, python-brace-format
 msgid "`/drag_teleop_{role}/teleop_feedback`"
 msgstr "`/drag_teleop_{role}/teleop_feedback`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 21469e80f8b0450cb60e207d1b1a8b2f
+#: d3b397c894754b64a8e5d7852516f64c
 msgid "`drag_teleop_controller/srv/TeleopFeedback`"
 msgstr "`drag_teleop_controller/srv/TeleopFeedback`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 27f405ce4f1f4fb7a04e123eee0c47b6
+#: 609898bd94f3413faab95447d5aa22f3
 msgid "Master-only: `false` / `position` / `effort`"
 msgstr "仅主臂：`false` / `position` / `effort`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:48
-#: a4e441742256444db8c75c2c418d422c
+#: b180515d1c68478d92a40a797d3cddab
 msgid "Topics"
 msgstr "主题"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 9d2a79a187154f5980aa7ca06b329a29
+#: 9a123f3c7dc544818bc708e431adffd0
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3f1c5d0d50204f58b491052cfaf32fc1
+#: a5c53a8067b3404f969857d404a78783
 msgid "Direction"
 msgstr "方向"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 7997980eec184cb5abed1e7e647f1777
+#: 6fcd1e715dd74e00bc9ac44432fad050
 msgid "`/drag_teleop_master/teleop_states`"
 msgstr "`/drag_teleop_master/teleop_states`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: a4df9622692140858ac2f355ecf2cc44
+#: 7f054d1cb7494379a2648fe77ba7e137
 msgid "Publish (master) / Subscribe (slave)"
 msgstr "发布（主）/ 订阅（从）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3611b9e2b2674073966410e846f0006f
+#: 9ff6623b500743748f4dcad031d977a6
 msgid "Forward-mapped master state"
 msgstr "正映射后的主臂状态"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 4c1e800471d94aa18e73edd515ebc0b4
+#: d014d47a80cc4e8394bdfe97c8162425
 msgid "`/drag_teleop_slave/teleop_states`"
 msgstr "`/drag_teleop_slave/teleop_states`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: d98de302611f420e81992992e05dfe2e
+#: 6652d99122154647badccf1c29c21346
 msgid "Publish (slave) / Subscribe (master)"
 msgstr "发布（从）/ 订阅（主）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 40f7b9071c004672815a6441f56e11b5
+#: df1612697ab843b087ce753612f78c1f
 msgid "Inverse-mapped slave state"
 msgstr "逆映射后的从臂状态"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:55
-#: 6c2bc73b7ce048f38290bdcb0cb7d1ce
+#: 8a7d7d228ce84eb7a451a840d79e18e5
 msgid "Launch arguments"
 msgstr "启动参数"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: afc3636ffc36476885fc86dbe1cfa379
+#: 4cb7f79169f14535b2b98ab86bdf173c
 msgid "Argument"
 msgstr "参数"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: de89786730ac467f918ccb7d2de9d92e
+#: c0534811e7f04804ac6ff0e012550732
 msgid "Default"
 msgstr "默认值"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 274989b7bf1b4681bdbc69b973e640da
+#: 82de9e1805864c5e88ce003d1846e52a
 msgid "Meaning"
 msgstr "含义"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 4a7eb04c69824ee7895d1882fbe5d868
+#: 40731423a9bf40179fa5a5176aeb2434
 msgid "`role`"
 msgstr "`role`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 5bd4273b2977494cbd4bb2326358276f
+#: be19017e9f15459890727b58fd9b71f4
 msgid "(required)"
 msgstr "（必选）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: dfca5197d9d14d979f2b9b90f808ed72
+#: 5408f00249df426e9d447339afbe92c4
 msgid "`master` | `slave`"
 msgstr "`master` | `slave`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 379aacb5c291427d9726c4b9600ed265
+#: 83eaa52d01074657abc69a99a2b4c90e
 msgid "`robot`"
 msgstr "`robot`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 466827be95cf4c948e97d18cbaa979a2
+#: 48775e75a5f2432793b37cb279692c0a
 msgid "`panthera_ht`"
 msgstr "`panthera_ht`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c4600b814ea248eb8f700d8d75c55f56
+#: af8baa0fa6b24c1b8a75da176b6421ec
 #, python-brace-format
 msgid "`{robot}_description` package"
 msgstr "`{robot}_description` 软件包"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 4a7eb04c69824ee7895d1882fbe5d868
+#: 09dcf86a10984c1982a91dcd55c0e573
 msgid "`type`"
 msgstr "`type`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 21a05f19cb6d4e3daba3935fe914ea1a
+#: 8b89d6809bee48c79aa315bfc563507d
 msgid "`dual`"
 msgstr "`dual`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 4684707194a142d2a4193d4f750841ac
+#: 3f2dab04bc8e4124821ec6cea62a6563
 msgid "`single` | `left` | `right` | `dual`"
 msgstr "`single` | `left` | `right` | `dual`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: e55df7cc85e64c3e9a799b2869333b3c
+#: 746b71ea75104144b006ed77a0aab128
 msgid "`hardware`"
 msgstr "`hardware`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 1d90637744eb481daa0d22740c0f7703
+#: 93060fb4f96447b7b9ae22fd83dd567f
 msgid "`mock_components`"
 msgstr "`mock_components`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: bba93ae187e14380aabb32f6560b8817
+#: 207a90bcff3e42c4b0657f37436065fe
 msgid "`real` | `real_usb` | `mock_components` | `gz` | `isaac`"
 msgstr "`real` | `real_usb` | `mock_components` | `gz` | `isaac`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 4a7eb04c69824ee7895d1882fbe5d868
+#: 498091689896435f9fe86366bad590fb
 msgid "`mode`"
 msgstr "`mode`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 5b0e952733e0475698fcfff6b4ffc770 87b6f4485d5c4a2a8cd23f801418deb5
+#: 4e54a5d8f4db44979a152510be18c28f e59cc0eb422146c1881614fb27c3c898
 msgid "(yaml)"
 msgstr "（yaml）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 1c70acb5190a4fafb05cc7d7312cade5
+#: 31675e8cbcaf46bda75a5bd68966fc09
 msgid "`position` (slave only) | `mit` | `effort`"
 msgstr "`position`（仅从臂） | `mit` | `effort`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 6e36140b289e4ba88f413a996f517f95
+#: 5b85af1b5c0a48389fd38a57d53351b0
 msgid "`feedback`"
 msgstr "`feedback`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: cdb803acf0c64436bcf7bfb8a841b475
+#: 30611f8ba3e7423c94b8909403cd4be8
 msgid "`false` | `position` | `effort` (master)"
 msgstr "`false` | `position` | `effort`（主臂）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c2f0da52104740388ee4a0765646d544
+#: c75685758f414ccea701cef34fd4ff6c
 msgid "`moveJ_pub`"
 msgstr "`moveJ_pub`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c669cde6688644329ac49dc91b8e24af
+#: 09c328ad19c54953b8c32878d85e3f0b
 msgid "`false`"
 msgstr "`false`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 9b3a3bbb1d23401c971eafedcde0a052
+#: 6d36a36e48b64499a91d830d1fde9de6
 msgid "Master publishes OCS2 moveJ + gripper commands"
 msgstr "主臂发布 OCS2 moveJ 与夹爪命令"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 5d9c5695ec3f41a0987887aeec3d289f
+#: ad529fe4f74147a1a6a14a54a6941783
 msgid "`controller_params`"
 msgstr "`controller_params`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 401e7a70bf694fb0b65234f3a41485d7
+#: 3b5b2b212bd746b39469222d89c3eeb7
 msgid "package yaml"
 msgstr "软件包 yaml"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 7d86f34508a24b9d8c382047068ea468
+#: d63060d181464561835c9b1065c4cc5a
 msgid "e.g. `panthera_ht_2_panthera_ht.yaml`"
 msgstr "例如 `panthera_ht_2_panthera_ht.yaml`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:68
-#: 24ad11dfd2b74cd8b0854c4f82f33269
+#: 00eebe5a2d03429199f08f8e2803fa31
 msgid ""
 "Mode × hardware command-interface matrix, control laws, and YAML keys: read "
 "the README. Do not treat DexCap [`teleop-joint-"
@@ -387,12 +387,12 @@ msgstr ""
 "mapper`](4-teleop_joint_mapper.md) 当成本软件包。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:70
-#: c4e393f126a4436c95ccfd5d26604d66
+#: 185ae7f0477f4904809ad9e0a3980130
 msgid "Related"
-msgstr "相关内容"
+msgstr "相关"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:72
-#: f4ca5a14525d43f7b7146558402b1003
+#: 9874be1af5b141c1ac5e02b15f517469
 msgid "[Isomorphic Teleop How-To](../../2-how_to/7-isomorphic_teleop.md)"
 msgstr "[同构遥操作指南](../../2-how_to/7-isomorphic_teleop.md)"
 

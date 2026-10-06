@@ -32,9 +32,9 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | Repository | Visibility | Robots |
 |------------|------------|--------|
 | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) | [P] | Dobot CR series |
-| [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) | [P] | ARX X5, ACone, Lift2S |
+| [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) | [P] | ARX X5, Acone (arm), Lift 2s (Ark) |
 | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) | [P] | Galbot mobile manipulators |
-| [robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht) | [P] | HT Panthera |
+| [robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht) | [P] | Panthera HT |
 | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) | [P] | Quadruped robots |
 
 ### Brand-Specific (Private)
@@ -62,7 +62,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) | [P] | ARX CAN interface |
 | [dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control) | [P] | Dobot TCP interface |
 | [unitree-ros2-control](https://github.com/fiveages-sim/unitree-ros2-control) | [P] | Unitree SDK2 |
-| [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) | [P] | HT Panthera serial |
+| [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) | [P] | Panthera HT serial |
 | [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control) | [P] | Tianji + EE matrix |
 | [modbus-ros2-control](https://github.com/fiveages-sim/modbus-ros2-control) | [P] | RS485 grippers |
 | [can-ros2-control](https://github.com/fiveages-sim/can-ros2-control) | [P] | CAN/CANFD hands |

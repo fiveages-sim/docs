@@ -69,6 +69,8 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 2-how_to/7-drag_teleop
 2-how_to/8-dexcap_teleop
 2-how_to/9-go_real_hardware
+2-how_to/11-ark_lift2s
+2-how_to/12-panthera_ht
 2-how_to/10-add_a_robot
 ```
 

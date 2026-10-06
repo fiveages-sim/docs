@@ -48,9 +48,9 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5
 |-----------|------------|--------|
 | robot-descriptions-common | Public | Grippers, sensors, hands |
 | robot-descriptions-dobot | Public | CR5, CR10 |
-| robot-descriptions-arx | Public | X5, ACone, Lift2S |
+| robot-descriptions-arx | Public | X5, Acone (arm), Lift 2s (Ark) |
 | robot-descriptions-galbot | Public | G1 mobile manipulator |
-| robot-descriptions-ht | Public | Panthera |
+| robot-descriptions-ht | Public | Panthera HT |
 | robot-descriptions-quadruped | Public | Quadrupeds |
 | robot-descriptions-tianji | Private | M6, M6S, M20S |
 | robot-descriptions-rokae | Private | Rokae arms |

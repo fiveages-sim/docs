@@ -26,7 +26,7 @@ The ecosystem has two entry points:
 
 | Path | Workspace | Audience | Robots |
 |------|-----------|----------|--------|
-| **Public** | [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws) | Open source users | Dobot CR5, ARX ACone, Galbot, HT Panthera, etc. |
+| **Public** | [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws) | Open source users | Dobot CR5, Ark / Lift 2s, Acone (arm), Galbot, Panthera HT, etc. |
 | **Internal** | fa-deploy-ws | FiveAges team | W2, W2R, S2, S2R, dual-arm CCS |
 
 **If you're new**, start with the public path. It uses only public submodules and can run demos without special access.
@@ -34,7 +34,7 @@ The ecosystem has two entry points:
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**ARX Acone** and **HT Panthera** are fully supported for real hardware deployment on the public path. External users can deploy to these physical robots without needing private repository access.
+**Ark / Lift 2s** (full-body, including chassis) and **Panthera HT** (dual-arm manipulator) have dedicated `open-deploy-ws` branches. **Acone** is the **arm only**, not the Lift 2s platform. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md).
 ```
 
 ## Documentation Map

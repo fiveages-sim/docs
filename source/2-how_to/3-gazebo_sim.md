@@ -47,6 +47,7 @@ ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \
 
 ```bash
 # With specific robot
+# Acone arm (not Lift 2s)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz
 
 # Without RViz (Gazebo only)

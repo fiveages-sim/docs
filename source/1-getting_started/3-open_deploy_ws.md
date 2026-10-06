@@ -51,17 +51,18 @@ Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does **no
 
 ### Lean Branches
 
-For minimal builds with a single robot:
+For a single product, clone the matching branch (README directory names):
 
-```bash
-# Dobot CR5 only
-git checkout dobot-cr5
-./init_repo.sh
+:::{code-block} bash
+# Dobot CR5
+git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git dobot_cr5_ws
+# Ark / Lift 2s (full-body). Acone arm is co-debug in this workspace, not a separate platform.
+git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
+# Panthera HT
+git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws
+:::
 
-# ARX ACone only  
-git checkout arx-acone
-./init_repo.sh
-```
+Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md).
 
 ## Directory Structure
 
@@ -105,20 +106,20 @@ colcon build --packages-up-to ocs2_arm_controller
 
 ## Supported Robots
 
-| Robot | Description Package | Hardware Interface | Real Hardware |
-|-------|--------------------|--------------------|---------------|
-| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | Simulation only |
-| ARX X5 | robot-descriptions-arx | arx-ros2-control | Simulation only |
-| **ARX ACone** | robot-descriptions-arx | arx-ros2-control | **Supported** |
-| ARX Lift2S | robot-descriptions-arx | arx-ros2-control | Simulation only |
-| Galbot | robot-descriptions-galbot | (varies) | Simulation only |
-| **HT Panthera** | robot-descriptions-ht | ht-ros2-control | **Supported** |
-| Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation only |
+| Robot | Description Package | Hardware Interface | Notes |
+|-------|--------------------|--------------------|-------|
+| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | `dobot-cr5` branch |
+| ARX X5 | robot-descriptions-arx | arx-ros2-control | Co-debug in `arx-lift2s` |
+| **Acone** | robot-descriptions-arx | arx-ros2-control | **Arm only** (not Lift 2s) |
+| **Ark / Lift 2s** | robot-descriptions-arx | arx-ros2-control | **Full-body** (arms + lift + chassis); branch `arx-lift2s` |
+| Galbot | robot-descriptions-galbot | (varies) | Simulation-oriented |
+| **Panthera HT** | robot-descriptions-ht | ht-ros2-control | Dual-arm; branch `panthera-ht` |
+| Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation-oriented |
 
 ```{admonition} Real Hardware Deployment
 :class: tip
 
-**ARX Acone** and **HT Panthera** can be deployed to real hardware using only public packages. See [Go to Real Hardware](../2-how_to/9-go_real_hardware.md) for deployment instructions.
+**Ark / Lift 2s** is the full-body 方舟 platform. **Acone** is arm-only. **Panthera HT** is the dual-arm manipulator. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md), [Panthera HT](../2-how_to/12-panthera_ht.md), and [Go to Real Hardware](../2-how_to/9-go_real_hardware.md).
 ```
 
 ## Launch Examples
@@ -133,6 +134,7 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
 ### With Specific Robot
 
 ```bash
+# Acone arm mock (not Lift 2s)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
@@ -207,4 +209,6 @@ sudo ip link set <expected_name> up
 
 - [Run mock demo](../2-how_to/1-run_mock_demo.md)
 - [Switch robots](../2-how_to/2-switch_robot.md)
+- [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md)
+- [Panthera HT](../2-how_to/12-panthera_ht.md)
 - [Gazebo simulation](../2-how_to/3-gazebo_sim.md)

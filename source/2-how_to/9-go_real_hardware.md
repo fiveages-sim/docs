@@ -16,12 +16,13 @@ Working with real robots requires:
 
 ### Public Path (open-deploy-ws)
 
-The following robots can be deployed to real hardware using only public packages:
+The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`); do not treat Acone as the full Lift 2s.
 
-| Robot | Hardware Interface | Communication |
-|-------|-------------------|---------------|
-| **ARX Acone** | arx-ros2-control | CAN bus |
-| **HT Panthera** | ht-ros2-control | Serial |
+| Robot | Role | Branch | How-to |
+|-------|------|--------|--------|
+| **Ark / Lift 2s** | Full-body (arms + lift + **chassis**) | `arx-lift2s` | [Ark / Lift 2s](11-ark_lift2s.md) |
+| **Acone** | **Arm only** (same 方舟 description tree; not Lift 2s) | `arx-lift2s` (`quick_start` co-debug) | [Ark / Lift 2s](11-ark_lift2s.md) |
+| **Panthera HT** | Dual-arm manipulator | `panthera-ht` | [Panthera HT](12-panthera_ht.md) |
 
 These robots are fully supported for external users without requiring private repository access.
 
@@ -141,40 +142,11 @@ Increase gradually after verifying safe operation.
 
 ## Public Robot Deployment (open-deploy-ws)
 
-### ARX Acone
+Use the matching **branch** and its README scripts. Do not treat `demo.launch.py robot:=arx_acone` as Lift 2s, and do not use the invented name `ht_panthera` (README launch name is `panthera_ht`).
 
-:::{code-block} bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Verify CAN interface
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-
-# Test with mock first
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
-:::
-
-### HT Panthera
-
-:::{code-block} bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Verify serial port (typically /dev/ttyACM0 or /dev/ttyUSB0)
-ls /dev/ttyACM* /dev/ttyUSB*
-
-# Test with mock first
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
-:::
-
-HT Panthera teleop on real hardware is **isomorphic teleop** (同构遥操作). See [Isomorphic Teleop](7-isomorphic_teleop.md). Drag teaching (拖动遥操作) is **not** implemented.
+- **[Ark / Lift 2s](11-ark_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
+- **Acone** — arm-only; pick ACone in that same `quick_start` menu for co-debug.
+- **[Panthera HT](12-panthera_ht.md)** — `git clone -b panthera-ht …` then `./init_repo.sh` / `./release.sh --install` and `./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`.
 
 ## Internal Deployment (fa-deploy-ws)
 
@@ -233,6 +205,5 @@ vim robot.local.yaml
 ## Next Steps
 
 After successful deployment:
+- [Ark / Lift 2s](11-ark_lift2s.md) and [Panthera HT](12-panthera_ht.md) for public robots
 - [Add a Robot](10-add_a_robot.md) for custom integrations
-- Document your robot's specific parameters
-- Create robot-specific launch files
