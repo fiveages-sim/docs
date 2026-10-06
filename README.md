@@ -8,7 +8,7 @@ Public documentation for the [FiveAges Sim](https://github.com/fiveages-sim) rob
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.12
 - pip
 
 ### Install Dependencies

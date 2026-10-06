@@ -120,7 +120,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 |------------|------------|---------|
 | [fa-py-libraries](https://github.com/fiveages-sim/fa-py-libraries) | [P] | Python utilities umbrella |
 | [ros2_robot_interface](https://github.com/fiveages-sim/ros2_robot_interface) | [P] | High-level robot API |
-| [ros2-viser](https://github.com/fiveages-sim/ros2-viser) | [P] | Viser visualization |
+| [ros2-viser](https://github.com/fiveages-sim/ros2-viser) | [P] | Viser library (launch via fa-py-libraries) |
 | [lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) | [P] | LeRobot ↔ ROS 2 monorepo |
 | [robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) | [P] | Task-queue YAML / motion generation |
 | [wuji-retargeting](https://github.com/fiveages-sim/wuji-retargeting) | [P] | Hand retargeting |

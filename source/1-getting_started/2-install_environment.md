@@ -6,6 +6,8 @@ This page covers installing the base development environment for FiveAges Sim wo
 
 **Supported:** Ubuntu 24.04 LTS (Noble Numbat)
 
+**Python:** **3.12** only (ROS 2 Jazzy on Ubuntu 24.04). Do not use 3.10/3.11 venvs for this stack.
+
 Other platforms are not officially supported but may work:
 - Ubuntu 22.04 with ROS 2 Humble (limited compatibility)
 - Other Linux distributions with manual ROS 2 installation

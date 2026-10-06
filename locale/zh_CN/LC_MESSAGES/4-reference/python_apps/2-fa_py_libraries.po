@@ -7,15 +7,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FiveAges Sim \n"
+"Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:23+0000\n"
+"POT-Creation-Date: 2026-10-06 16:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:7
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:52
-#: 859534b86307432bbf65c3656a1a798a 34c321e3d6db4520b118dfba5dc18333
+#: 34c321e3d6db4520b118dfba5dc18333 859534b86307432bbf65c3656a1a798a
 msgid "Purpose"
 msgstr "用途"
 
@@ -52,14 +52,14 @@ msgstr "汇总以下 Python 工具："
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:10
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:52
-#: 8559a56aeee64e948329f1d8e09af054 01f3716d6db94f03ada4e4035609c8df
+#: 01f3716d6db94f03ada4e4035609c8df 8559a56aeee64e948329f1d8e09af054
 msgid "ros2_robot_interface"
 msgstr "ros2_robot_interface"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:11
-#: ae15d0ce3c4b4a629ee2b0daa230b00a
-msgid "viser visualization"
-msgstr "Viser 可视化"
+#: 0a4122bcf5484e97ac0d3d80b237832a
+msgid "ros2-viser (Viser 3D visualization)"
+msgstr "ros2-viser（Viser 三维可视化）"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:12
 #: ab8384cac92f422a9f16561d28d62f41
@@ -72,86 +72,93 @@ msgid "Common utilities"
 msgstr "通用工具"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:15
+#: 1fd47a86e49a438c9cfcdf8def960d03
+msgid ""
+"Default env is **Python 3.12** (`./init.sh env 3.12`). This is also the "
+"**primary launcher** for Viser (`./run.sh viser`)."
+msgstr ""
+"默认环境是 **Python 3.12**（`./init.sh env 3.12`）。这也是 Viser 的**主启动入口**（`./run.sh "
+"viser`）。"
+
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:17
 #: e30070e3c8814f5b9f8f74a0ac64ea94
 msgid "Installation"
 msgstr "安装"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:17
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:19
 #: 8c80e930b3024cde95d7f6a0d860478b
 msgid ""
 "git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
 "cd fa-py-libraries\n"
-"pip install -e .\n"
+"./init.sh all\n"
 msgstr ""
 "git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
 "cd fa-py-libraries\n"
-"pip install -e .\n"
+"./init.sh all\n"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:23
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:25
+#: 0e6c6978a43e48498050cd569b42834a
+msgid ""
+"`./init.sh all` initializes submodules, creates a Python 3.12 env, and "
+"installs `ros2_robot_interface`, `ros2-viser`, and `vr_pose_publisher`."
+msgstr ""
+"`./init.sh all` 会初始化子模块、创建 Python 3.12 环境，并安装 "
+"`ros2_robot_interface`、`ros2-viser` 和 `vr_pose_publisher`。"
+
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:27
 #: 75fbd322e2174d5c974f949889920c3c
 msgid "Usage"
 msgstr "使用方法"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:25
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:29
 #: 4c5c926ad87d4aebb88b18e789ed51b9
 msgid "Interactive Menu"
 msgstr "交互式菜单"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:27
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:31
 #: 69517eaf30fb4eabb3ceea3066acd889
 msgid "./run.sh\n"
 msgstr "./run.sh\n"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:31
-#: 7252a6503dd2434e84c7f11dc071e197
-msgid "Presents menu:"
-msgstr "显示菜单："
-
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:32
-#: d07eef3ce97a44fb820a973c8a3a04c7
-msgid "Robot interface demo"
-msgstr "机器人接口演示"
-
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:33
-#: 59a706a882f44ed6bfb946bf3df898c2
-msgid "Viser visualization"
-msgstr "Viser 可视化"
-
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:34
-#: d83e05266412487ebf2d83fc12793700
-msgid "VR teleoperation"
-msgstr "VR 遥操作"
-
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:35
-#: 8eddd167851d471a93916f4246e58218
-msgid "..."
-msgstr "..."
+#: ece15c80faca49c88ddbc134c7589576
+msgid "Presents menu (numbers from the README):"
+msgstr "出现菜单（编号与 README 一致）："
+
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:36
+#: 9a2330beedcf438d80470f8ea88975c9
+msgid "ros2-viser launch"
+msgstr "ros2-viser 启动"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:37
+#: 14edb46c392049b9bf8e6fa3ffe1459d
+msgid "VR pose launch"
+msgstr "VR 位姿启动"
+
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:38
+#: 7cf541e56e5d411fbae4d081a63f82ab
+msgid "…"
+msgstr "…"
+
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:40
 #: eaf578d62184490baa0bc2ceae6514dd
 msgid "Direct Commands"
 msgstr "直接命令"
 
-#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:39
+#: ../../source/4-reference/python_apps/2-fa_py_libraries.md:42
 #: 6affd726776f4529b761925b69dff8b5
 msgid ""
 "# VR teleoperation\n"
 "./run.sh vr\n"
 "\n"
-"# Viser visualization\n"
+"# Viser visualization (primary entry for ros2-viser)\n"
 "./run.sh viser\n"
-"\n"
-"# Robot interface\n"
-"./run.sh interface\n"
 msgstr ""
 "# VR teleoperation\n"
 "./run.sh vr\n"
 "\n"
-"# Viser visualization\n"
+"# Viser visualization (primary entry for ros2-viser)\n"
 "./run.sh viser\n"
-"\n"
-"# Robot interface\n"
-"./run.sh interface\n"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:50
 #: 8d2869358b014f0894e58eda64b6a6ee
@@ -198,9 +205,9 @@ msgid "ros2_viser"
 msgstr "ros2_viser"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:52
-#: cdb9b9cf8af24d8295b260d78287e125
-msgid "Web visualization"
-msgstr "Web 可视化"
+#: a910338d06694a03b0f910aa1bfa1c6b
+msgid "Viser library (start with `./run.sh viser`)"
+msgstr "Viser 库（用 `./run.sh viser` 启动）"
 
 #: ../../source/4-reference/python_apps/2-fa_py_libraries.md:52
 #: 1577f412a1ca4f879640d45806f2b459
@@ -248,3 +255,21 @@ msgstr "[VR 遥操作指南](../../2-how_to/6-vr_teleop.md)"
 #~ "├── utils/                  # Common utilities\n"
 #~ "├── run.sh                  # Entry point\n"
 #~ "└── setup.py\n"
+
+#~ msgid "viser visualization"
+#~ msgstr "Viser 可视化"
+
+#~ msgid "Presents menu:"
+#~ msgstr "显示菜单："
+
+#~ msgid "Robot interface demo"
+#~ msgstr "机器人接口演示"
+
+#~ msgid "VR teleoperation"
+#~ msgstr "VR 遥操作"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Web visualization"
+#~ msgstr "Web 可视化"

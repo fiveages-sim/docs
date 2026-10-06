@@ -53,7 +53,7 @@ Deployment workspace for DexCap teleoperation.
 
 ```bash
 # Conda environment
-conda create -n dexcap python=3.10
+conda create -n dexcap python=3.12
 conda activate dexcap
 
 # Deploy

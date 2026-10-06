@@ -26,7 +26,7 @@ The LeRobot core library is installed from PyPI. The default pin is `lerobot==0.
 ## Requirements
 
 - ROS 2 (tested: **Jazzy**)
-- Python **≥ 3.12**
+- **Python 3.12**
 - [uv](https://docs.astral.sh/uv/) (recommended) or Conda
 
 ## Installation
@@ -85,7 +85,7 @@ uv pip install "lerobot==0.5.1"
 uv pip install -e submodules/ros2_robot_interface --no-deps
 uv pip install numpy pyyaml
 uv pip install -e submodules/robot_action_composer --no-deps
-uv pip install "viser>=0.2"   # optional grasp-generation UI
+uv pip install "viser>=0.2"   # optional grasp-generation UI (PyPI viser, not ros2-viser launch)
 uv pip install -e lerobot_robot_ros2 --no-deps
 uv pip install -e lerobot_camera_ros2 --no-deps
 :::

@@ -6,7 +6,7 @@ Control robots programmatically using the Python interface.
 
 - ROS 2 Jazzy installed
 - Robot demo running (mock, Gazebo, or real)
-- Python 3.10+
+- **Python 3.12** (ROS 2 Jazzy)
 
 ## Install fa-py-libraries
 
@@ -14,7 +14,7 @@ Control robots programmatically using the Python interface.
 cd ~/
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
-pip install -e .
+./init.sh all    # Python 3.12 env
 ```
 
 Or install ros2_robot_interface directly:
@@ -120,20 +120,14 @@ robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
 ## With Viser Visualization
 
-```python
-from ros2_robot_interface import RobotInterface
-from ros2_viser import ViserVisualizer
+Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
 
-robot = RobotInterface()
-robot.connect()
-
-# Start visualizer
-viz = ViserVisualizer()
-viz.start()
-
-# Visualization updates automatically with robot state
-print(f"Open browser to: {viz.get_url()}")
+```bash
+cd ~/fa-py-libraries
+./run.sh viser
 ```
+
+`ros2_viser` is a library dependency of that command. Embedding `ROS2ViserVisualizer` in your own script is covered on [ros2-viser](../4-reference/python_apps/3-ros2_viser.md).
 
 ## FSM Commands
 
@@ -211,6 +205,9 @@ robot.move_j(current)
 ### Import error
 
 ```bash
+cd ~/fa-py-libraries
+./init.sh all
+# or, inside that env:
 pip install -e ~/fa-py-libraries
 # or
 pip install ros2-robot-interface

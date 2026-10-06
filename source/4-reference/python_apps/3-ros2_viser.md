@@ -1,96 +1,72 @@
 # ros2-viser
 
-Web-based 3D visualization using Viser.
+ROS 2 3D visualization library built on Viser. **Launch it from fa-py-libraries**, not as a standalone product entry and not from lerobot_ros2.
 
 **Repository:** [fiveages-sim/ros2-viser](https://github.com/fiveages-sim/ros2-viser)
 
+**README:** [README.md](https://github.com/fiveages-sim/ros2-viser/blob/main/README.md)
+
 ## Purpose
 
-Web visualization for ROS 2:
-- 3D robot model
-- Joint state display
-- Target markers
-- Browser accessible
+- Subscribe robot URDF from `/robot_description`
+- Show joint state in a Viser 3D view
+- Optional FSM and gripper panels
+- All ROS 2 I/O goes through **`ros2_robot_interface`** (the visualizer creates an internal `ROS2RobotInterface`)
 
-## Installation
+## Primary launch (fa-py-libraries)
+
+This is the supported operator path:
 
 ```bash
-pip install ros2-viser
+git clone https://github.com/fiveages-sim/fa-py-libraries.git
+cd fa-py-libraries
+./init.sh all          # Python 3.12 env; installs ros2-viser among other submodules
+./run.sh viser
 ```
 
-Or via fa-py-libraries:
+`./run.sh` with no arguments opens a menu; item 1 is `ros2-viser launch`. See [fa-py-libraries](2-fa_py_libraries.md).
+
+lerobot_ros2 / robot_action_composer may list a PyPI extra `viser>=0.2` for grasp-generation UI. That is a **library dependency**, not the ros2-viser launcher.
+
+## Library install (package development)
+
+When you are working on the `ros2_viser` tree itself (from the README):
 
 ```bash
-cd fa-py-libraries
+cd ros2_viser
 pip install -e .
 ```
 
-## Usage
+Requires `ros2-robot-interface`. Do not treat `pip install ros2-viser` from a random venv as the stack’s main entry.
 
-### Basic
+## Embedding (README API)
 
-```python
-from ros2_viser import ViserVisualizer
-
-viz = ViserVisualizer()
-viz.start()
-
-print(f"Open browser: {viz.get_url()}")
-```
-
-### With Robot
+Class names below match the package README (`ROS2ViserVisualizer` / `ROS2ViserConfig`). There is no `ViserVisualizer` class in this repo.
 
 ```python
-from ros2_viser import ViserVisualizer
-from ros2_robot_interface import RobotInterface
+from ros2_viser import ROS2ViserVisualizer, ROS2ViserConfig
+import time
 
-robot = RobotInterface()
-robot.connect()
-
-viz = ViserVisualizer()
-viz.set_robot_model("dobot_cr5")
-viz.start()
-
-# Visualization updates automatically from /joint_states
-```
-
-## Features
-
-### Robot Visualization
-
-- URDF model rendering
-- Real-time joint updates
-- Link highlighting
-
-### Markers
-
-- Target pose markers
-- Trajectory preview
-- Custom markers
-
-### UI Elements
-
-- Joint sliders
-- Mode selector
-- Status display
-
-## Configuration
-
-```python
-viz = ViserVisualizer(
-    host="0.0.0.0",
-    port=8080,
-    urdf_path="/path/to/robot.urdf"
+config = ROS2ViserConfig(
+    robot_description_topic="/robot_description",
+    joint_states_topic="/joint_states",
+    root_node_name="/robot",
+    update_rate=30.0,
 )
+visualizer = ROS2ViserVisualizer(config)
+visualizer.start()
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    visualizer.stop()
 ```
 
-## Web Interface
+Config fields documented in the README: `robot_description_topic`, `joint_states_topic`, `root_node_name`, `update_rate`, `auto_connect`, `enable_fsm_panel`, `enable_gripper_panel`.
 
-Access via browser:
-- Desktop: `http://localhost:8080`
-- Mobile: `http://<host-ip>:8080`
-- VR: WebXR compatible
+Needs `/robot_description` and `/joint_states` publishing. Joint names must match the URDF.
 
 ## Related
 
-- [fa-py-libraries](2-fa_py_libraries.md)
+- [fa-py-libraries](2-fa_py_libraries.md) — primary `./run.sh viser` launcher
+- [ros2_robot_interface](1-ros2_robot_interface.md)

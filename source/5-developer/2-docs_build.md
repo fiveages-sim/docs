@@ -15,7 +15,7 @@ Building and contributing to this documentation site.
 ### Prerequisites
 
 ```bash
-# Python 3.10+
+# Python 3.12
 pip install -r requirements.txt
 ```
 

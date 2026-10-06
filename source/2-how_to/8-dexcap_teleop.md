@@ -38,7 +38,7 @@ cd dexcap_teleop_ws
 
 ```bash
 # Create conda environment
-conda create -n dexcap python=3.10
+conda create -n dexcap python=3.12
 conda activate dexcap
 
 # Deploy firmware
