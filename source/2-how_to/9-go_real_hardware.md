@@ -86,10 +86,11 @@ sudo ip link set can0 up
 ```
 
 For Ethernet-based robots:
-:::{code-block} bash
+
+```bash
 # Verify network interface
 ip addr show eth0
-:::
+```
 
 ### 3. Test Connection
 
@@ -172,7 +173,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
 ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
 ```
 
-HT Panthera also supports drag teaching mode for manual guidance.
+For master–slave isomorphic teleop on HT Panthera (not drag teaching), see [Isomorphic Teleop](7-isomorphic_teleop.md).
 
 ## Internal Deployment (fa-deploy-ws)
 

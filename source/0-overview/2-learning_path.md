@@ -153,7 +153,7 @@ FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify wit
 
 ## Day 5: Teleoperation
 
-**Goal:** Control the robot via VR or manual teaching.
+**Goal:** Control the robot via VR or isomorphic teleop.
 
 ### VR Teleoperation
 
@@ -170,14 +170,20 @@ cd fa-py-libraries
 Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control.
 ```
 
-### Drag Teaching (HT Panthera)
+### Isomorphic Teleop (HT Panthera)
+
+Master–slave isomorphic teleop (同构遥操作), not drag teaching. Two processes:
+
 ```bash
-ros2 launch drag_teleop_controller drag_teleop.launch.py
+ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
+  role:=master hardware:=mock_components
+ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
+  role:=slave hardware:=mock_components
 ```
 
 **Primary sources:** VR pose publisher, [drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)
 
-**Outcome:** Real-time control via VR headset or manual guidance.
+**Outcome:** Real-time control via VR headset or master–slave isomorphic teleop.
 
 ## Day 6: Real Hardware
 

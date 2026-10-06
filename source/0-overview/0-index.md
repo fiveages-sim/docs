@@ -10,8 +10,14 @@ FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 - **Hardware Control** — Interface plugins for real robot hardware
 - **MPC Controllers** — OCS2-based motion planning and control
 - **Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends
-- **Teleoperation** — VR, drag teaching, and glove-based control
+- **Teleoperation** — VR, isomorphic teleop, and glove-based control
 - **Python Applications** — High-level APIs for data collection and autonomous tasks
+
+```{admonition} Terminology
+:class: note
+
+In this documentation, **humanoid** means a **wheeled-arm humanoid** (mobile base + arms, e.g. FiveAges W2/W2R). It does **not** mean a bipedal or footed humanoid.
+```
 
 ## Public vs Internal
 

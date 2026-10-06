@@ -110,10 +110,9 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
 
 ### Features
 
-- Drag teaching support (real hardware)
+- Isomorphic master–slave teleop (real hardware)
 - Serial communication
-- Master-slave configuration available
-- Gravity compensation for manual guidance
+- Gravity compensation on the master role
 
 ## Quadruped
 

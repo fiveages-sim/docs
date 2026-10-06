@@ -120,9 +120,8 @@ Serial interface for HT Panthera robots.
 
 ### Features
 
-- Drag teaching support
-- Master-slave mode
-- Gravity compensation
+- Isomorphic master–slave teleop
+- Gravity compensation on the master role
 
 ## Marvin
 

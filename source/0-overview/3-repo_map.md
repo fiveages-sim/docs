@@ -87,7 +87,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) | [P] | OCS2 arm controller, teleop plugins |
 | [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) | [X] | OCS2 MPC library (branch: ros2) |
 | ocs2-wbc-controller | [I] | Whole-body control |
-| ocs2-humanoid | [I] | Wheel-humanoid library |
+| ocs2-humanoid | [I] | Wheeled-arm humanoid library |
 | lina_planning | [I] | Trajectory primitives |
 
 ## L4: Simulation
@@ -108,7 +108,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 
 | Repository | Visibility | Purpose |
 |------------|------------|---------|
-| [drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller) | [P] | Drag teaching |
+| [drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller) | [P] | Isomorphic teleop (master–slave) |
 | vr_pose_publisher | [I] | VR pose bridge |
 | teleop-joint-mapper | [I] | DexCap→M6 mapper |
 | wuji_glove_teleop | [I] | Glove teleoperation |

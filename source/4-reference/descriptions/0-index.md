@@ -2,6 +2,12 @@
 
 This section documents the robot description packages — URDF/xacro models, meshes, and ros2_control configurations.
 
+```{admonition} Terminology
+:class: note
+
+FiveAges **humanoid** descriptions (W2, W2R, S2, S2R) are **wheeled-arm humanoids** (mobile base + arms). They are **not** bipedal or footed humanoids.
+```
+
 ## Overview
 
 Robot descriptions are organized in a hierarchy:

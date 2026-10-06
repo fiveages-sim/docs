@@ -1,6 +1,6 @@
 # FiveAges Robot Descriptions
 
-Usage reference for FiveAges humanoid descriptions.
+Usage reference for FiveAges wheeled-arm humanoid descriptions.
 
 ```{admonition} Access Required
 :class: warning
@@ -65,7 +65,7 @@ fa-w2-description/
 
 ### WBC Configuration
 
-Whole-body control configuration for humanoids:
+Whole-body control configuration for wheeled-arm humanoids:
 
 :::{code-block} none
 fa-w2-description/

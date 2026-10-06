@@ -95,7 +95,7 @@ cd fa-deploy-ws
 ```
 
 Available robot IDs include:
-- Humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`
+- Wheeled-arm humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`
 - Dual-arm: `tianji_m6_ccs`, `tianji_m20s_ccs`, `rokae_ar5_ccs`
 
 ### Robot Configuration
@@ -159,7 +159,7 @@ For deployment without source builds:
 
 ### Use the Internal Path If:
 
-- You're deploying to FA humanoids (W2/S2 series)
+- You're deploying to FA wheeled-arm humanoids (W2/S2 series)
 - You need WBC whole-body control
 - You're building release packages for deployment
 - You have authorized access to private repositories

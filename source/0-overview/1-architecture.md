@@ -39,7 +39,7 @@ flowchart TB
 
   subgraph L5 [L5 Teleop / Apps / Python]
     PY["fa-py-libraries<br/>interface · viser · vr_pose_publisher"]
-    TEL["drag / DexCap / wuji glove / vive / teleop-joint-mapper"]
+    TEL["isomorphic / DexCap / wuji glove / vive / teleop-joint-mapper"]
     APP["lerobot_ros2 · robot_action_composer · HUG"]
   end
 
@@ -85,7 +85,7 @@ Robot descriptions define the URDF/xacro models, visual meshes, and ros2_control
 
 - **robot_descriptions** — Public umbrella that aggregates brand-specific packages
 - **robot-descriptions-common** — Shared grippers, hands, sensors, and launch utilities
-- **robot-descriptions-fiveages** — Private umbrella for FA humanoids
+- **robot-descriptions-fiveages** — Private umbrella for FA wheeled-arm humanoids
 - **Brand packages** — Per-vendor descriptions (dobot, arx, galbot, etc.)
 
 ### L2: Hardware Interfaces
@@ -101,8 +101,8 @@ Motion planning and control algorithms:
 
 - **arms_ros2_control** — Main controller package with OCS2 arm controller, gripper, and teleop plugins
 - **ocs2_ros2** — OCS2 MPC library (GitHub Release `.deb`: `ros-jazzy-ocs2`)
-- **ocs2-wbc-controller** — Whole-body control for humanoids (private)
-- **ocs2-humanoid** — Wheel-humanoid specific library (private)
+- **ocs2-wbc-controller** — Whole-body control for wheeled-arm humanoids (private)
+- **ocs2-humanoid** — Wheeled-arm humanoid specific library (private)
 
 ### L4: Simulation
 
@@ -117,7 +117,7 @@ Simulation backends and assets:
 High-level applications and teleoperation:
 
 - **fa-py-libraries** — Python utilities including ros2_robot_interface, viser, vr_pose_publisher
-- **Teleop systems** — drag teaching, DexCap, wuji glove, vive tracker
+- **Teleop systems** — isomorphic teleop, DexCap, wuji glove, vive tracker
 - **Applications** — lerobot_ros2, robot_action_composer, HUG
 
 ## Dependency Rule of Thumb

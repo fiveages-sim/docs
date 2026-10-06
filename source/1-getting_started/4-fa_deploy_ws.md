@@ -11,7 +11,7 @@ This workspace requires access to private repositories. Contact your team lead f
 ## Overview
 
 `fa-deploy-ws` is the internal deployment workspace for:
-- FiveAges humanoids: W2, W2R, S2, S2R (and other prototypes)
+- FiveAges wheeled-arm humanoids: W2, W2R, S2, S2R (and other prototypes)
 - Dual-arm CCS configurations
 - Production deployment and release packaging
 
@@ -20,7 +20,7 @@ This workspace requires access to private repositories. Contact your team lead f
 | Aspect | open-deploy-ws | fa-deploy-ws |
 |--------|---------------|--------------|
 | Submodules | Public only | Public + private |
-| Robots | Community robots | FA humanoids |
+| Robots | Community robots | FA wheeled-arm humanoids |
 | OCS2 | GitHub Release `.deb` or source | Full source (default) |
 | WBC | Not included | Included |
 | Release | Not available | `./release.sh` |

@@ -167,5 +167,5 @@ For VR device on different network:
 
 ## Next Steps
 
-- [Drag Teleop](7-drag_teleop.md) for manual teaching
+- [Isomorphic Teleop](7-isomorphic_teleop.md) for master–slave joint following
 - [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for mode control

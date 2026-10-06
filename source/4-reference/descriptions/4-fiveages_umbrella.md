@@ -10,8 +10,8 @@ This package requires private repository access. Contact your team lead for acce
 
 ## Purpose
 
-`robot-descriptions-fiveages` aggregates all FiveAges humanoid and arm descriptions:
-- FA humanoids (W2, W2R, S2, S2R)
+`robot-descriptions-fiveages` aggregates all FiveAges wheeled-arm humanoid and arm descriptions:
+- FA wheeled-arm humanoids (W2, W2R, S2, S2R)
 - FA-specific components
 - Vendor arm integrations (Tianji, Rokae)
 

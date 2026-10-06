@@ -36,7 +36,7 @@ The control stack uses FSM patterns for:
 | `cartesian_control` | End-effector pose control |
 | `teleop` | Teleoperation mode |
 
-### Humanoid States (WBC)
+### Wheeled-arm humanoid states (WBC)
 
 | State | Description |
 |-------|-------------|
