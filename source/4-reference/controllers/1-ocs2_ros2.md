@@ -13,27 +13,24 @@ OCS2 is a Model Predictive Control (MPC) library providing:
 
 ## Installation
 
-### GitHub Release `.deb` (Recommended)
+OCS2 is **not** in the ROS apt index. Install (or switch source ↔ deb) through the deploy workspace:
 
-OCS2 is **not** in the ROS apt index. The package name is `ros-jazzy-ocs2`; install the prebuilt `.deb` from GitHub Releases.
+:::{code-block} bash
+cd ~/open-deploy-ws   # or fa-deploy-ws
+./init_repo.sh
+# 1) init: choose d (deb) or s (source) for OCS2
+# 2) 切换模块安装方式 — change an existing OCS2 path
+# 3) ./scripts/install_core_debs.sh --only ocs2
+# 4) ./scripts/uninstall_core_debs.sh --only ocs2
+:::
 
-**Most users:** run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws` and choose `d` for OCS2 (`scripts/install_core_debs.sh`).
+Default in `open-deploy-ws` is OCS2=`d` (GitHub Release `.deb` via `scripts/install_core_debs.sh`). Then `colcon build`.
 
-**Manual install:** download the matching asset for your architecture and ROS distro from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases), then:
+:::{admonition} Manual fallback
+:class: note
 
-```bash
-sudo dpkg -i ros-jazzy-ocs2_*.deb
-sudo apt-get install -f   # if dpkg reports missing dependencies
-```
-
-### From Source
-
-```bash
-cd ~/your_ws/src
-git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git
-cd ..
-colcon build --packages-up-to ocs2
-```
+Without a deploy workspace: download `ros-jazzy-ocs2_*_<arch>.deb` from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and `sudo dpkg -i`. For source, clone branch `ros2` into `src/` and `colcon build --packages-up-to ocs2`.
+:::
 
 ## Usage
 

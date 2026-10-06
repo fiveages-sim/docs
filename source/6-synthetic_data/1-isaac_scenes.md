@@ -47,15 +47,19 @@ Package details: [FaSim-Isaac reference](../4-reference/simulation/2-fasim_isaac
 
 **Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-sim/robot_usds)
 
-This chapter documents USD **as referenced by robot_usds** (and as the FaSim `robots/` submodule). After a plain clone, submodule directories are empty until:
+This chapter documents USD **as referenced by robot_usds** (and as the FaSim `robots/` submodule). **Primary path:** FaSim `./init.sh` operation 1 initializes that submodule (public items by default).
+
+:::{admonition} Manual fallback
+:class: note
+
+After a plain clone of robot_usds (outside FaSim), submodule directories are empty until:
 
 :::{code-block} bash
 git clone git@github.com:fiveages-sim/robot_usds.git
 cd robot_usds
 git submodule update --init --recursive
 :::
-
-Inside FaSim, `./init.sh` does that for you. Paths in `.gitmodules` are relative to the robot_usds root so USD references resolve.
+:::
 
 Git submodules recorded there:
 

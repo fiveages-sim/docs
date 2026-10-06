@@ -42,20 +42,24 @@ The following are managed as Git submodules:
 
 ## Usage
 
-### Initialize
+**Primary path:** inside FaSim-Isaac, `./init.sh` operation 1 initializes `robots/` (this superproject) according to `submodules_visibility.conf`.
 
-```bash
+:::{code-block} bash
+cd FaSim-Isaac
+./init.sh
+:::
+
+:::{admonition} Manual fallback
+:class: note
+
+Standalone clone only if you are not using FaSim:
+
+:::{code-block} bash
 git clone https://github.com/fiveages-sim/robot_usds.git
 cd robot_usds
 git submodule update --init
-```
-
-### With FaSim-Isaac
-
-```bash
-cd FaSim-Isaac
-./init.sh  # Handles robot_usds initialization
-```
+:::
+:::
 
 ## In-Tree Assets
 

@@ -99,20 +99,20 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 
 ### Isaac Sim
 
-```{admonition} Isaac Sim 6.1 Required
+```{admonition} FaSim-Isaac scripts
 :class: warning
 
-FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify with: `ls ~/isaacsim/python.sh`
+Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`. Version for the optional ROS 2 workspace comes from the init menu (fallback list in `config/fa_sim.conf`), not a hardcoded minor version in these docs.
 ```
 
-1. Install Isaac Sim 6.1 to `~/isaacsim`
+1. Install NVIDIA Isaac Sim (default directory `~/isaacsim`, or set `ISAACSIM_DIR`).
 2. Clone and initialize FaSim-Isaac:
    ```bash
-   git clone https://github.com/fiveages-sim/FaSim-Isaac.git
+   git clone git@github.com:fiveages-sim/FaSim-Isaac.git
    cd FaSim-Isaac
    ./init.sh
    ```
-3. Run the Isaac environment:
+3. Start Isaac (`./run.sh` menu: PhysX / Newton / Headless Streaming):
    ```bash
    ./run.sh
    ```
@@ -135,7 +135,7 @@ FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify wit
    cd ~/
    git clone https://github.com/fiveages-sim/fa-py-libraries.git
    cd fa-py-libraries
-   pip install -e .
+   ./init.sh all    # Python 3.12 env; installs ros2_robot_interface and related submodules
    ```
 2. Write a simple script:
    ```python

@@ -30,14 +30,14 @@ The stack supports multiple simulation backends:
 |--------|------|--------|-------|
 | Physics | No | Yes | Yes (PhysX) |
 | Rendering | RViz only | Basic | Photorealistic |
-| Setup | None | `apt install` | Isaac Sim 6.1 |
+| Setup | None | `apt install` | FaSim-Isaac `./init.sh` + `./run.sh` |
 | Speed | Real-time | ~Real-time | Configurable |
 | USD support | No | No | Native |
 
 ```{admonition} Isaac Sim Requirements
 :class: warning
 
-Isaac Sim integration requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. See [FaSim-Isaac](2-fasim_isaac.md) for details.
+Isaac Sim integration uses **FaSim-Isaac** (`./init.sh`, `./run.sh`). Default path is `ISAACSIM_DIR` (`~/isaacsim`); version comes from FaSim config / the init menu. See [FaSim-Isaac](2-fasim_isaac.md).
 ```
 
 Isaac **datagen** (USD → orchestration → LeRobot export, no Gazebo): [Synthetic Data](../../6-synthetic_data/0-index.md).

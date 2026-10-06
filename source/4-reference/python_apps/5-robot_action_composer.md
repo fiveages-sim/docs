@@ -41,17 +41,21 @@ Typical path is from a **lerobot_ros2** checkout (composer is `submodules/robot_
 # or once: ./init.sh all
 :::
 
-Manual install, still from the monorepo root, after the env is active. Prefer **uv** and **`--no-deps`** so install does not pull `rclpy` from PyPI (see the lerobot_ros2 README):
+`./init.sh all-motion` creates the env and installs the two local packages. Optional extras named in composer `pyproject.toml`: `[recording]` (LeRobot / `lerobot_robot_ros2`), `[grasp]` (`viser>=0.2` for grasp-generation UI). That extra is not the fa-py-libraries `./run.sh viser` launcher.
+
+Console scripts after install: `motion-generation`, `ros2-stack`, `grasp-generation`, `check-isaac-pose`, `check-robot-status`.
+
+:::{admonition} Manual fallback
+:class: note
+
+From the monorepo root, after the env is active. Prefer **uv** and **`--no-deps`** so install does not pull `rclpy` from PyPI. The composer README also shows `pip install -e submodules/ros2_robot_interface` then `pip install -e submodules/robot_action_composer` inside the project venv only (system `pip` hits PEP 668).
 
 :::{code-block} bash
 uv pip install -e submodules/ros2_robot_interface --no-deps
 uv pip install -e submodules/robot_action_composer --no-deps
-uv pip install "viser>=0.2"   # optional; grasp-generation UI (PyPI viser, not ros2-viser launch)
+uv pip install "viser>=0.2"   # optional; grasp-generation UI
 :::
-
-The composer README also shows `pip install -e submodules/ros2_robot_interface` then `pip install -e submodules/robot_action_composer`. Use that only inside the project venv; on Ubuntu, system `pip` hits PEP 668. Optional extras named in `pyproject.toml`: `[recording]` (LeRobot / `lerobot_robot_ros2`), `[grasp]` (`viser>=0.2` for grasp-generation UI). That extra is not the fa-py-libraries `./run.sh viser` launcher.
-
-Console scripts after install: `motion-generation`, `ros2-stack`, `grasp-generation`, `check-isaac-pose`, `check-robot-status`.
+:::
 
 ## Layers
 

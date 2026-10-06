@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:36+0000\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
 "PO-Revision-Date: 2026-10-06 16:20+0000\n"
 "Last-Translator: Cursor Agent\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -297,34 +297,40 @@ msgid "ROS 2 workspace; sourced when the env is activated"
 msgstr "ROS 2 工作空间；激活环境时自动 source"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:67
-#: 959667527e3743b29c5fca328f8641e4
+#: 73bce62760e64141a27d0d0e0d91e68c
 msgid ""
 "Personal overrides: `.fa-env.local.toml`. Env notes: "
 "[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
-"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md)."
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md). "
+"Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668). Do "
+"not install `ros2-stack` / `grasp-generation` into `submodules/hug/.venv` "
+"(HUG's Python 3.10 env)."
 msgstr ""
 "个人覆盖：`.fa-"
 "env.local.toml`。环境说明：[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
-"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md)。"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/docs/ENV_THIS_CHECKOUT.md)。在本检出的 `.venv` 里用 `uv pip`，不要用系统 `pip`（PEP"
+" 668）。不要把 `ros2-stack` / `grasp-generation` 装进 `submodules/hug/.venv`（HUG 的 "
+"Python 3.10 环境）。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:69
 #: 3e0357b80e9b4dc3a958af53f32852b4
-msgid "Manual install (uv)"
-msgstr "手动安装（uv）"
+msgid "Manual fallback"
+msgstr "手动回退"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:71
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:72
 #: ca4b9f60021a4f7ea505c2831464bfeb
 msgid ""
-"If you skip `init.sh`, the README's uv path is: create `.venv` with "
+"Skip `init.sh` only if you must. The README uv path: create `.venv` with "
 "`--system-site-packages`, then install local packages with **`--no-deps`** "
-"so pip does not try to fetch `rclpy` from PyPI. ROS Python packages come "
-"from the sourced Jazzy overlay."
+"so pip does not fetch `rclpy` from PyPI. ROS Python packages come from the "
+"sourced Jazzy overlay."
 msgstr ""
-"若跳过 `init.sh`，README 的 uv 路径是：用 `--system-site-packages` 创建 `.venv`，本地包加 "
-"**`--no-deps`**，避免 pip 去 PyPI 拉 `rclpy`。ROS Python 包来自已 source 的 Jazzy "
+"仅在必须时才跳过 `init.sh`。README 的 uv 路径：用 `--system-site-packages` 创建 `.venv`，本地包加"
+" **`--no-deps`**，避免 pip 从 PyPI 拉 `rclpy`。ROS Python 包来自已 source 的 Jazzy "
 "overlay。"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:73
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:74
 #: ba11cca7816c48c3b6f7b88c2a4b8697
 msgid ""
 "git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
@@ -363,22 +369,10 @@ msgstr ""
 "uv pip install -e lerobot_robot_ros2 --no-deps\n"
 "uv pip install -e lerobot_camera_ros2 --no-deps"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:93
-#: d151839c905e4547870349bdff77963a
-msgid ""
-"Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668 / "
-"`externally-managed-environment`). Do not install `ros2-stack` / `grasp-"
-"generation` into `submodules/hug/.venv` (HUG's Python 3.10 env). See the "
-"README section on that pitfall."
-msgstr ""
-"在本仓库的 `.venv` 里用 `uv pip`，不要用系统 `pip`（PEP 668 / `externally-managed-"
-"environment`）。不要把 `ros2-stack` / `grasp-generation` 装进 "
-"`submodules/hug/.venv`（那是 HUG 的 Python 3.10 环境）。见 README 中该常见坑。"
-
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:95
 #: 3541b08752f8446496f84c913aefcc35
-msgid "Usage: `ROS2Robot`"
-msgstr "使用：`ROS2Robot`"
+msgid "Usage: ROS2Robot"
+msgstr "使用：ROS2Robot"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:97
 #: d3e68d66fc244df6b65f3595011ca9a4
@@ -404,7 +398,7 @@ msgid ""
 "robot = ROS2Robot(config)\n"
 "robot.connect()\n"
 "# ...\n"
-"robot.disconnect()"
+"robot.disconnect()\n"
 msgstr ""
 "from lerobot_robot_ros2 import ROS2Robot, ROS2RobotConfig, ROS2RobotInterfaceConfig\n"
 "\n"
@@ -420,7 +414,7 @@ msgstr ""
 "robot = ROS2Robot(config)\n"
 "robot.connect()\n"
 "# ...\n"
-"robot.disconnect()"
+"robot.disconnect()\n"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:117
 #: 8f7f8cbf27694d4fb881d7ecf0b46996
@@ -560,18 +554,31 @@ msgid "[robot_action_composer](5-robot_action_composer.md)"
 msgstr "[robot_action_composer](5-robot_action_composer.md)"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:144
-#: 316b9e65a4d64fc293a3471be7fbebd5
-msgid "[HUG](6-hug.md)"
-msgstr "[HUG](6-hug.md)"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:145
-#: cffb557639fc4936b579845d11b1bb15
-msgid "[wuji-retargeting](7-wuji_retargeting.md)"
-msgstr "[wuji-retargeting](7-wuji_retargeting.md)"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:144
 #: 766fd8fb31db4390afbf11fef5d6d895
 msgid ""
 "[Synthetic Data](../../6-synthetic_data/0-index.md) — record/export only (no"
 " training)"
 msgstr "[合成数据](../../6-synthetic_data/0-index.md) — 仅录制/导出（不含训练）"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:145
+#: 316b9e65a4d64fc293a3471be7fbebd5
+msgid "[HUG](6-hug.md)"
+msgstr "[HUG](6-hug.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:146
+#: cffb557639fc4936b579845d11b1bb15
+msgid "[wuji-retargeting](7-wuji_retargeting.md)"
+msgstr "[wuji-retargeting](7-wuji_retargeting.md)"
+
+#~ msgid "Manual install (uv)"
+#~ msgstr "手动安装（uv）"
+
+#~ msgid ""
+#~ "Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668 / "
+#~ "`externally-managed-environment`). Do not install `ros2-stack` / `grasp-"
+#~ "generation` into `submodules/hug/.venv` (HUG's Python 3.10 env). See the "
+#~ "README section on that pitfall."
+#~ msgstr ""
+#~ "在本仓库的 `.venv` 里用 `uv pip`，不要用系统 `pip`（PEP 668 / `externally-managed-"
+#~ "environment`）。不要把 `ros2-stack` / `grasp-generation` 装进 "
+#~ "`submodules/hug/.venv`（那是 HUG 的 Python 3.10 环境）。见 README 中该常见坑。"

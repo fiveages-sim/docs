@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:31+0000\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -376,23 +376,28 @@ msgid "Isaac Sim"
 msgstr "Isaac Sim"
 
 #: ../../source/0-overview/2-learning_path.md:102
-#: 219c1488d39f4090a993ef64dcbb0549
-msgid "Isaac Sim 6.1 Required"
-msgstr "需要 Isaac Sim 6.1"
+#: 5324f1fae10140f6bb887f622384e2b3
+msgid "FaSim-Isaac scripts"
+msgstr "FaSim-Isaac 脚本"
 
 #: ../../source/0-overview/2-learning_path.md:105
-#: ec92f55a681e4609abf068b320bd34fa
+#: d6901458ff7a41378dce6d38ba837201
 msgid ""
-"FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify"
-" with: `ls ~/isaacsim/python.sh`"
+"Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is "
+"`ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`. "
+"Version for the optional ROS 2 workspace comes from the init menu (fallback "
+"list in `config/fa_sim.conf`), not a hardcoded minor version in these docs."
 msgstr ""
-"FaSim-Isaac 要求将 **Isaac Sim 6.1** 安装在 **`~/isaacsim`**。可用以下命令验证：`ls "
-"~/isaacsim/python.sh`"
+"使用 **FaSim-Isaac** 的 `./init.sh`，再运行 `./run.sh`。默认 Isaac 路径是 "
+"`ISAACSIM_DIR`（`~/isaacsim`）；在 `config/fa_sim.local.conf` 中覆盖。可选 ROS 2 "
+"工作空间的版本来自 init 菜单（回退列表见 `config/fa_sim.conf`），不要在文档里写死某个次版本号。"
 
 #: ../../source/0-overview/2-learning_path.md:108
-#: 205f69d040554331ab7e1ef649c25828
-msgid "Install Isaac Sim 6.1 to `~/isaacsim`"
-msgstr "将 Isaac Sim 6.1 安装到 `~/isaacsim`"
+#: 7f3153cc4f9c40b38f029bedd17ccd23
+msgid ""
+"Install NVIDIA Isaac Sim (default directory `~/isaacsim`, or set "
+"`ISAACSIM_DIR`)."
+msgstr "安装 NVIDIA Isaac Sim（默认目录 `~/isaacsim`，或设置 `ISAACSIM_DIR`）。"
 
 #: ../../source/0-overview/2-learning_path.md:109
 #: 79670cb17c4442f3aa6a911cde7c2b9a
@@ -402,18 +407,18 @@ msgstr "克隆并初始化 FaSim-Isaac："
 #: ../../source/0-overview/2-learning_path.md:110
 #: 5316e59af4ec471f8491192af1282c23
 msgid ""
-"git clone https://github.com/fiveages-sim/FaSim-Isaac.git\n"
+"git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
 "./init.sh\n"
 msgstr ""
-"git clone https://github.com/fiveages-sim/FaSim-Isaac.git\n"
+"git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
 "./init.sh\n"
 
 #: ../../source/0-overview/2-learning_path.md:115
-#: d09a98bf6e274a91846ffc69bfedc165
-msgid "Run the Isaac environment:"
-msgstr "运行 Isaac 环境："
+#: 805166b1a08a40e09095deb5719b0bc5
+msgid "Start Isaac (`./run.sh` menu: PhysX / Newton / Headless Streaming):"
+msgstr "启动 Isaac（`./run.sh` 菜单：PhysX / Newton / Headless Streaming）："
 
 #: ../../source/0-overview/2-learning_path.md:116
 #: 9b72c229fc064f408eaef51b95883612
@@ -460,17 +465,17 @@ msgid "Install fa-py-libraries:"
 msgstr "安装 fa-py-libraries："
 
 #: ../../source/0-overview/2-learning_path.md:134
-#: ac4f434fd6424f3cb052c0571abfd3f2
+#: bdc55a13f001477ca9660f28358f1aeb
 msgid ""
 "cd ~/\n"
 "git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
 "cd fa-py-libraries\n"
-"pip install -e .\n"
+"./init.sh all    # Python 3.12 env; installs ros2_robot_interface and related submodules\n"
 msgstr ""
 "cd ~/\n"
 "git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
 "cd fa-py-libraries\n"
-"pip install -e .\n"
+"./init.sh all    # Python 3.12 env; installs ros2_robot_interface and related submodules\n"
 
 #: ../../source/0-overview/2-learning_path.md:140
 #: ec4ab8ee38f0479986ab2471f878c3ce
@@ -753,39 +758,6 @@ msgid ""
 msgstr "详细说明请参阅[开发者指南](../5-developer/0-index.md)。"
 
 #: ../../source/0-overview/2-learning_path.md:249
-#: 878a267cd79c411ebd7a4550611aa2c4
-msgid "Tips for Success"
-msgstr "实用建议"
-
-#: ../../source/0-overview/2-learning_path.md:251
-#: 7f1a67a6aa6f45e391155818dd8bd1ad
-msgid ""
-"**Don't skip mock mode** — Always verify behavior in mock before simulation "
-"or real hardware"
-msgstr "**不要跳过 mock 模式** — 在进入仿真或真实硬件之前，务必先在 mock 中验证行为"
-
-#: ../../source/0-overview/2-learning_path.md:252
-#: 39ca249623d246248a70a90accf70a79
-msgid ""
-"**Read the warnings** — The stack logs helpful messages about configuration "
-"issues"
-msgstr "**阅读警告信息** — 技术栈会记录有助于排查配置问题的日志"
-
-#: ../../source/0-overview/2-learning_path.md:253
-#: ac185ba6ff754dac965752edd3025176
-msgid ""
-"**Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-acone` "
-"branches for minimal builds"
-msgstr "**使用精简分支** — `open-deploy-ws` 提供 `dobot-cr5` 与 `arx-acone` 分支，便于最小化编译"
-
-#: ../../source/0-overview/2-learning_path.md:254
-#: f14f985059e946139923fd182b117e69
-msgid ""
-"**Ask questions** — File issues on the relevant repository for bugs or "
-"unclear documentation"
-msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库提交 issue"
-
-#: ../../source/0-overview/2-learning_path.md:249
 #: 42a113965eff44679dbdc17d98f49f69
 msgid "Optional: Synthetic data (Isaac)"
 msgstr "可选：合成数据（Isaac）"
@@ -809,6 +781,39 @@ msgstr ""
 "见 [合成数据](../6-synthetic_data/0-index.md)。文档对应的 composer/lerobot 分支是 "
 "`feature/dex-grasp-generator` 与 `feature/sim-grasp-datagen`。停在录制/导出；跳过训练。"
 
+#: ../../source/0-overview/2-learning_path.md:255
+#: 878a267cd79c411ebd7a4550611aa2c4
+msgid "Tips for Success"
+msgstr "实用建议"
+
+#: ../../source/0-overview/2-learning_path.md:257
+#: 7f1a67a6aa6f45e391155818dd8bd1ad
+msgid ""
+"**Don't skip mock mode** — Always verify behavior in mock before simulation "
+"or real hardware"
+msgstr "**不要跳过 mock 模式** — 在进入仿真或真实硬件之前，务必先在 mock 中验证行为"
+
+#: ../../source/0-overview/2-learning_path.md:258
+#: 39ca249623d246248a70a90accf70a79
+msgid ""
+"**Read the warnings** — The stack logs helpful messages about configuration "
+"issues"
+msgstr "**阅读警告信息** — 技术栈会记录有助于排查配置问题的日志"
+
+#: ../../source/0-overview/2-learning_path.md:259
+#: ac185ba6ff754dac965752edd3025176
+msgid ""
+"**Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-acone` "
+"branches for minimal builds"
+msgstr "**使用精简分支** — `open-deploy-ws` 提供 `dobot-cr5` 与 `arx-acone` 分支，便于最小化编译"
+
+#: ../../source/0-overview/2-learning_path.md:260
+#: f14f985059e946139923fd182b117e69
+msgid ""
+"**Ask questions** — File issues on the relevant repository for bugs or "
+"unclear documentation"
+msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库提交 issue"
+
 #~ msgid "Day 6+"
 #~ msgstr ""
 
@@ -828,3 +833,19 @@ msgstr ""
 
 #~ msgid "ros2 launch drag_teleop_controller drag_teleop.launch.py\n"
 #~ msgstr "ros2 launch drag_teleop_controller drag_teleop.launch.py\n"
+
+#~ msgid "Isaac Sim 6.1 Required"
+#~ msgstr "需要 Isaac Sim 6.1"
+
+#~ msgid ""
+#~ "FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify"
+#~ " with: `ls ~/isaacsim/python.sh`"
+#~ msgstr ""
+#~ "FaSim-Isaac 要求将 **Isaac Sim 6.1** 安装在 **`~/isaacsim`**。可用以下命令验证：`ls "
+#~ "~/isaacsim/python.sh`"
+
+#~ msgid "Install Isaac Sim 6.1 to `~/isaacsim`"
+#~ msgstr "将 Isaac Sim 6.1 安装到 `~/isaacsim`"
+
+#~ msgid "Run the Isaac environment:"
+#~ msgstr "运行 Isaac 环境："

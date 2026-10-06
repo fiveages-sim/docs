@@ -7,17 +7,17 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FiveAges Sim \n"
+"Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:07+0000\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/1-ocs2_ros2.md:1
@@ -33,15 +33,14 @@ msgstr "OCS2（Optimal Control for Switched Systems，切换系统最优控制�
 #: ../../source/4-reference/controllers/1-ocs2_ros2.md:5
 #: f619d74662bd4bf7945b0c15a655e087
 msgid ""
-"**Repository:** "
-"[legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) (branch: "
-"`ros2`)"
-msgstr ""
-"**仓库:** [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) "
+"**Repository:** [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) "
 "(branch: `ros2`)"
+msgstr ""
+"**仓库:** [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) (branch:"
+" `ros2`)"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
 #: ../../source/4-reference/controllers/1-ocs2_ros2.md:7
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: a147f3c978b342bdb102c9efde592e7a b2f20d0b04a3457bbda4c15a8256bab2
 msgid "Purpose"
 msgstr "用途"
@@ -72,77 +71,74 @@ msgid "Installation"
 msgstr "安装"
 
 #: ../../source/4-reference/controllers/1-ocs2_ros2.md:16
-#: 19e7a9dd27d8483a9a85a9890260c0e1
-msgid "GitHub Release `.deb` (Recommended)"
-msgstr "GitHub Release `.deb`（推荐）"
-
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:18
 #: fd87f39c52064bb983f0fe131363e9e5
 msgid ""
-"OCS2 is **not** in the ROS apt index. The package name is `ros-jazzy-"
-"ocs2`; install the prebuilt `.deb` from GitHub Releases."
-msgstr "OCS2 **不在** ROS apt 索引中。包名仍是 `ros-jazzy-ocs2`；请从 GitHub Releases 安装预编译 `.deb`。"
+"OCS2 is **not** in the ROS apt index. Install (or switch source ↔ deb) "
+"through the deploy workspace:"
+msgstr "OCS2 **不在** ROS apt 索引中。通过部署工作空间安装（或在源码 ↔ deb 之间切换）："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:20
-#: a518ac0869bd49d68a017271a7f78fe8
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:18
+#: 86db8d027d4c41ec87c1e8367d6e60b6
 msgid ""
-"**Most users:** run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws`"
-" and choose `d` for OCS2 (`scripts/install_core_debs.sh`)."
-msgstr "**大多数用户：** 在 `open-deploy-ws` / `fa-deploy-ws` 中运行 `./init_repo.sh`，并为 OCS2 选择 `d`（`scripts/install_core_debs.sh`）。"
-
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:22
-#: bdf5acb35c6c40849f19dff065adebd0
-msgid ""
-"**Manual install:** download the matching asset for your architecture and"
-" ROS distro from [ocs2_ros2 "
-"Releases](https://github.com/legubiao/ocs2_ros2/releases), then:"
-msgstr "**手动安装：** 从 [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配你架构和 ROS 发行版的资源文件，然后："
-
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:24
-#: f5e8fa530a2243b48653811dc861fa4a
-msgid ""
-"sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
-"sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+"cd ~/open-deploy-ws   # or fa-deploy-ws\n"
+"./init_repo.sh\n"
+"# 1) init: choose d (deb) or s (source) for OCS2\n"
+"# 2) 切换模块安装方式 — change an existing OCS2 path\n"
+"# 3) ./scripts/install_core_debs.sh --only ocs2\n"
+"# 4) ./scripts/uninstall_core_debs.sh --only ocs2"
 msgstr ""
-"sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
-"sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+"cd ~/open-deploy-ws   # or fa-deploy-ws\n"
+"./init_repo.sh\n"
+"# 1) init: choose d (deb) or s (source) for OCS2\n"
+"# 2) 切换模块安装方式 — change an existing OCS2 path\n"
+"# 3) ./scripts/install_core_debs.sh --only ocs2\n"
+"# 4) ./scripts/uninstall_core_debs.sh --only ocs2"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:27
+#: 522c0cf4d6d74ef1b3d54346f8913fa7
+msgid ""
+"Default in `open-deploy-ws` is OCS2=`d` (GitHub Release `.deb` via "
+"`scripts/install_core_debs.sh`). Then `colcon build`."
+msgstr ""
+"`open-deploy-ws` 默认 OCS2=`d`（经 `scripts/install_core_debs.sh` 的 GitHub "
+"Release `.deb`）。然后 `colcon build`。"
 
 #: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
-#: 7b6f7b168a654df784e9650bf231b789
-msgid "From Source"
-msgstr "从源码安装"
+#: b349d7ca482a42b29ec594ef69d2cc09
+msgid "Manual fallback"
+msgstr "手动回退"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:31
-#: c9c4b014f8c04a1a8200786cfc84a0f2
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:32
+#: 6d22a56b67b740e4a5fa06d4796268b7
 msgid ""
-"cd ~/your_ws/src\n"
-"git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
-"cd ..\n"
-"colcon build --packages-up-to ocs2\n"
+"Without a deploy workspace: download `ros-jazzy-ocs2_*_<arch>.deb` from "
+"[ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and "
+"`sudo dpkg -i`. For source, clone branch `ros2` into `src/` and `colcon "
+"build --packages-up-to ocs2`."
 msgstr ""
-"cd ~/your_ws/src\n"
-"git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
-"cd ..\n"
-"colcon build --packages-up-to ocs2\n"
+"没有部署工作空间时：从 [ocs2_ros2 "
+"Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载 `ros-jazzy-"
+"ocs2_*_<arch>.deb` 并 `sudo dpkg -i`。源码则把 `ros2` 分支克隆进 `src/`，再 `colcon build"
+" --packages-up-to ocs2`。"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:38
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:35
 #: 4f17b2c9ea9941de8f0ac0e418770862
 msgid "Usage"
 msgstr "使用方法"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:40
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:37
 #: ed7375fb463545519ceea2e9abfbbf5e
 msgid ""
 "OCS2 is typically used through higher-level controllers like "
 "`ocs2_arm_controller`. Direct usage:"
 msgstr "OCS2 通常通过更高层的控制器（如 `ocs2_arm_controller`）使用。直接使用方式："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:42
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:39
 #: 33f9037eb55743e6810ff19d5b5d3d41
 msgid "Include in Package"
 msgstr "在软件包中引入"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:44
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:41
 #: 6b9a02e823aa4a918f92593dde43c386
 msgid ""
 "find_package(ocs2_core REQUIRED)\n"
@@ -163,182 +159,182 @@ msgstr ""
 "  ocs2_mpc::ocs2_mpc\n"
 ")\n"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:55
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:52
 #: f1947a89b97347118816e5849ea50c39
 msgid "Examples"
 msgstr "示例"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:57
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:54
 #: 97509f462518447e86c25be0218dd74c
 msgid "The repository includes example packages:"
 msgstr "该仓库包含以下示例软件包："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 2bcf4aa61cd34d149b5874992f215ea4
 msgid "Example"
 msgstr "示例"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: b30018d8f870401e94dc3fb07f13bd13
 msgid "Description"
 msgstr "描述"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: c3b53e5bf1bd47a6abf8e4c02c75cf14
 msgid "`ocs2_double_integrator`"
 msgstr "`ocs2_double_integrator`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 79631bb5926a4f87927a37d626ccffc5
 msgid "Simple 1D system"
 msgstr "简单一维系统"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: bc62034b796847d68fcf4816b8c133e3
 msgid "`ocs2_cartpole`"
 msgstr "`ocs2_cartpole`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 24277fb6f22d434d80f568d92de42b03
 msgid "Classic control example"
 msgstr "经典控制示例"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: e5d170df04f6449b9ccbaeac00025691
 msgid "`ocs2_ballbot`"
 msgstr "`ocs2_ballbot`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 498b59ee59f649f4a5f02ab7de41bd2d
 msgid "Mobile robot example"
 msgstr "移动机器人示例"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 29435903096045b39f125148e031d1af
 msgid "`ocs2_mobile_manipulator`"
 msgstr "`ocs2_mobile_manipulator`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: cc34a24a552c445a99163801f51392d5
 msgid "Arm + base"
 msgstr "机械臂 + 底盘"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: b2c2d2e952bf4f80b48de806dc3279d5
 msgid "`ocs2_legged_robot`"
 msgstr "`ocs2_legged_robot`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: cb419480787c4cd394b490779275a05e
 msgid "Quadruped"
 msgstr "四足机器人"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:67
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:64
 #: 73ae5ac5d1f04097847c06924801dde3
 msgid "Run Double Integrator Example"
 msgstr "运行双积分器示例"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:69
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:66
 #: d5b15fc4734442278dc6418fc080d68d
 msgid "ros2 launch ocs2_double_integrator double_integrator.launch.py\n"
 msgstr "ros2 launch ocs2_double_integrator double_integrator.launch.py\n"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:73
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:70
 #: 2c8329c87b2a4e7f823edcf6e1984704
 msgid "Key Concepts"
 msgstr "核心概念"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:75
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:72
 #: 57a24c42ab0d4da9a823d1236cdfd760
 msgid "MPC Problem"
 msgstr "MPC 问题"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:77
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:74
 #: b836584bce244c8f9165e6cc8f601b8b
 msgid "OCS2 solves optimal control problems:"
 msgstr "OCS2 求解最优控制问题："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:79
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:76
 #: 1ab3363b05eb4ac0857a37730dfa34d4
 msgid "**State**: Robot configuration (positions, velocities)"
 msgstr "**状态**：机器人构型（位置、速度）"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:80
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:77
 #: 5bcca5e14ccf4d6cb12e8c8ad1b2c23f
 msgid "**Input**: Control commands"
 msgstr "**输入**：控制指令"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:81
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:78
 #: 0b264b885c264b23bce7f27c1db38d6d
 msgid "**Cost**: Tracking error + control effort"
 msgstr "**代价**：跟踪误差 + 控制输入"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:82
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:79
 #: fcc748b7ceac49ad8b78c3ca18dd59d8
 msgid "**Constraints**: Joint limits, collision avoidance"
 msgstr "**约束**：关节限位、碰撞避免"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:84
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:81
 #: f4559354a83d4b6586a8de200c04f71a
 msgid "DDP Solver"
 msgstr "DDP 求解器"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:86
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:83
 #: 4e7d5c8ba2494fc791097ec4b37b53f2
 msgid "Uses Differential Dynamic Programming:"
 msgstr "使用微分动态规划（Differential Dynamic Programming）："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:87
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:84
 #: 2afe3ae8ca264c27ba213d6eb10502bc
 msgid "Forward pass: Simulate trajectory"
 msgstr "前向传递：仿真轨迹"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:88
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:85
 #: f62bbeb8cbd441bc82c92e2c6cdbd051
 msgid "Backward pass: Compute optimal gains"
 msgstr "反向传递：计算最优增益"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:89
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:86
 #: 65972cbdafb14e9097154d6b6e865664
 msgid "Iterate until convergence"
 msgstr "迭代直至收敛"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:91
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:88
 #: 998574a1446b40239a0b018fe3e284dd
 msgid "Real-time Operation"
 msgstr "实时运行"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:93
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:90
 #: 9cf5229482264fa3b7024c162fd73a9e
 msgid "The MPC runs in a separate thread:"
 msgstr "MPC 在独立线程中运行："
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:94
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:91
 #: 426a0dbbaaf44a889fd6b914a77cf34e
 msgid "Configurable update rate"
 msgstr "可配置的更新频率"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:95
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:92
 #: 544b0dfcf68d43d595e57966eb702431
 msgid "Latest solution always available"
 msgstr "始终可获取最新解"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:96
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:93
 #: 10bde649923546b5b84469fd52b0b89e
 msgid "Handles timing variations"
 msgstr "能够应对时序波动"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:98
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:95
 #: 7a95db67c05346e1830567fe80447da4
 msgid "Configuration"
 msgstr "配置"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:100
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:97
 #: 3b5d73867f1e42119f8e66dcd8221dce
 msgid "MPC Parameters"
 msgstr "MPC 参数"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:102
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:99
 #: 8e50fac6f3e64465a86d33f45fe1fed9
 msgid ""
 "mpc:\n"
@@ -351,85 +347,83 @@ msgstr ""
 "  horizon: 1.0       # Prediction horizon (seconds)\n"
 "  iterations: 1      # DDP iterations per update\n"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:109
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:106
 #: f58428286eae4577a82e398bac93bafd
 msgid "Task Configuration"
 msgstr "任务配置"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:111
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:108
 #: 5394011e434a48fd8c33b8fb9804298a
 msgid ""
 "task:\n"
-"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]  # Position, "
-"orientation\n"
+"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]  # Position, orientation\n"
 "  inputWeight: [1, 1, 1, 1, 1, 1]                     # Control effort\n"
 msgstr ""
 "task:\n"
-"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]  # Position, "
-"orientation\n"
+"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]  # Position, orientation\n"
 "  inputWeight: [1, 1, 1, 1, 1, 1]                     # Control effort\n"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:117
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:114
 #: 3de09bab2c1245498e7323c87c16892c
 msgid "Related Packages"
 msgstr "相关软件包"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: a2dac62b73674ea0924237795b3e2a68
 msgid "Package"
 msgstr "软件包"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 7be219ddcb7c450d8720841bb98a3744
 msgid "`ocs2_core`"
 msgstr "`ocs2_core`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 26e22d701adc4590bc57d6cf04df0821
 msgid "Core algorithms"
 msgstr "核心算法"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 5c3ca34c9b3042e3b7ce5edd6f954b27
 msgid "`ocs2_mpc`"
 msgstr "`ocs2_mpc`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 5316ef259a4e495285aab6d0e17df409
 msgid "MPC implementation"
 msgstr "MPC 实现"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 4420e3db7ee04ef19193ee116f3f874f
 msgid "`ocs2_robotic_tools`"
 msgstr "`ocs2_robotic_tools`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: aca228763fc546599552f530bc41faef
 msgid "Robot utilities"
 msgstr "机器人工具"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 1f79b6f5fb2f4b0299951776f481fe46
 msgid "`ocs2_pinocchio_interface`"
 msgstr "`ocs2_pinocchio_interface`"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:29
 #: 524a0fcdcc854eb6a285117cf54f479a
 msgid "Pinocchio integration"
 msgstr "Pinocchio 集成"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:126
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:123
 #: 88b60e73ad7a41809c0e96bcebae630e
 msgid "References"
 msgstr "参考资料"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:128
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:125
 #: 9462efde42ee4f319a5a4fb8b48dbb96
 msgid "[OCS2 Documentation](https://leggedrobotics.github.io/ocs2/)"
 msgstr "[OCS2 文档](https://leggedrobotics.github.io/ocs2/)"
 
-#: ../../source/4-reference/controllers/1-ocs2_ros2.md:129
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:126
 #: e4bc8e087f494dab95424c44f673f3a6
 msgid "[Original OCS2 Repository](https://github.com/leggedrobotics/ocs2)"
 msgstr "[OCS2 原始仓库](https://github.com/leggedrobotics/ocs2)"
@@ -440,3 +434,49 @@ msgstr "[OCS2 原始仓库](https://github.com/leggedrobotics/ocs2)"
 #~ msgid "sudo apt install ros-jazzy-ocs2\n"
 #~ msgstr "sudo apt install ros-jazzy-ocs2\n"
 
+#~ msgid "GitHub Release `.deb` (Recommended)"
+#~ msgstr "GitHub Release `.deb`（推荐）"
+
+#~ msgid ""
+#~ "OCS2 is **not** in the ROS apt index. The package name is `ros-jazzy-ocs2`; "
+#~ "install the prebuilt `.deb` from GitHub Releases."
+#~ msgstr ""
+#~ "OCS2 **不在** ROS apt 索引中。包名仍是 `ros-jazzy-ocs2`；请从 GitHub Releases 安装预编译 "
+#~ "`.deb`。"
+
+#~ msgid ""
+#~ "**Most users:** run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws` "
+#~ "and choose `d` for OCS2 (`scripts/install_core_debs.sh`)."
+#~ msgstr ""
+#~ "**大多数用户：** 在 `open-deploy-ws` / `fa-deploy-ws` 中运行 `./init_repo.sh`，并为 OCS2 "
+#~ "选择 `d`（`scripts/install_core_debs.sh`）。"
+
+#~ msgid ""
+#~ "**Manual install:** download the matching asset for your architecture and "
+#~ "ROS distro from [ocs2_ros2 "
+#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases), then:"
+#~ msgstr ""
+#~ "**手动安装：** 从 [ocs2_ros2 "
+#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配你架构和 ROS "
+#~ "发行版的资源文件，然后："
+
+#~ msgid ""
+#~ "sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
+#~ "sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+#~ msgstr ""
+#~ "sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
+#~ "sudo apt-get install -f   # if dpkg reports missing dependencies\n"
+
+#~ msgid "From Source"
+#~ msgstr "从源码安装"
+
+#~ msgid ""
+#~ "cd ~/your_ws/src\n"
+#~ "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
+#~ "cd ..\n"
+#~ "colcon build --packages-up-to ocs2\n"
+#~ msgstr ""
+#~ "cd ~/your_ws/src\n"
+#~ "git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
+#~ "cd ..\n"
+#~ "colcon build --packages-up-to ocs2\n"

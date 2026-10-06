@@ -30,28 +30,29 @@ Bridges VR tracking data to ROS 2 topics:
 
 ## Modes
 
-Both Pico and Meta Quest support **Web** and **XROtoolkit** modes.
+Both Pico and Meta Quest support **WebXR (Vuer)** and **XRoboToolkit** backends. Launch from **fa-py-libraries** (`./init.sh all` first). There is no `./run.sh vr --mode` flag.
 
 ### Web Mode (WebXR/Vuer)
 
-Browser-based VR — easy setup, works on both headsets:
-
-```bash
+:::{code-block} bash
 cd fa-py-libraries
-./run.sh vr --mode vuer
-```
+./run.sh vr
+:::
 
-Opens WebXR session accessible from VR headset browser.
+Opens a WebXR session accessible from the VR headset browser.
 
-### XROtoolkit Mode
+### XRoboToolkit Mode
 
 Native application — lower latency, recommended for production:
 
-```bash
-./run.sh vr --mode xrt
-```
+:::{code-block} bash
+./init.sh install-xrobotoolkit-pc-service
+./init.sh install-xrobotoolkit
+./run.sh vr-xrt-service
+./run.sh vr-xrt
+:::
 
-Requires XROtoolkit app on VR device. Provides better tracking responsiveness.
+Requires the XRoboToolkit app on the VR device. `./run.sh vr-xrt-service stop` shuts down the PC Service.
 
 ## Topics Published
 

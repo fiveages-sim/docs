@@ -30,12 +30,14 @@ VR teleoperation publishes end-effector pose targets from VR controller tracking
 
 ### 1. Install fa-py-libraries
 
-```bash
+:::{code-block} bash
 cd ~/
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
-pip install -e .
-```
+./init.sh all
+:::
+
+What `./init.sh all` does: submodules + Python 3.12 env + `ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher`.
 
 ### 2. Start Robot Demo
 
@@ -46,43 +48,46 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
 
 ### 3. Start VR Bridge
 
-In a new terminal:
+In a new terminal, from fa-py-libraries (README commands — there is no `./run.sh vr --mode`):
 
-```bash
+:::{code-block} bash
 cd ~/fa-py-libraries
 ./run.sh vr
-```
+:::
 
-This starts the VR pose publisher that bridges VR tracking to ROS 2.
+This starts the Vuer/WebXR VR pose publisher.
 
 ## VR Modes
 
 Both **Pico** and **Meta Quest** support two connection modes:
 
-| Mode | Connection | Setup | Latency |
-|------|------------|-------|---------|
-| **Web** (WebXR) | Browser-based | Easy | Higher |
-| **XROtoolkit** | Native app | Requires app install | Lower |
+| Mode | Connection | Setup | Latency | Command |
+|------|------------|-------|---------|---------|
+| **Web** (WebXR) | Browser-based | Easy | Higher | `./run.sh vr` |
+| **XRoboToolkit** | Native app + PC Service | Requires app install | Lower | `./run.sh vr-xrt-service` then `./run.sh vr-xrt` |
 
 ### Web Mode (WebXR)
 
 Browser-based VR using Vuer — works on both Pico and Meta Quest:
 
-```bash
-./run.sh vr --mode vuer
-```
+:::{code-block} bash
+./run.sh vr
+:::
 
 Open the displayed URL on your VR headset's browser. No app installation required.
 
-### XROtoolkit Mode
+### XRoboToolkit Mode
 
-Native application for lower latency — recommended for production:
+Native application for lower latency — recommended for production. From the fa-py-libraries README:
 
-```bash
-./run.sh vr --mode xrt
-```
+:::{code-block} bash
+./init.sh install-xrobotoolkit-pc-service
+./init.sh install-xrobotoolkit
+./run.sh vr-xrt-service
+./run.sh vr-xrt
+:::
 
-Requires XROtoolkit application installed on the VR device. Provides better tracking responsiveness, especially on Pico enterprise devices.
+Requires the XRoboToolkit application on the VR device. Provides better tracking responsiveness, especially on Pico enterprise devices.
 
 ## Topics
 

@@ -25,25 +25,21 @@ sudo apt update
 
 OCS2 is **not** published to ROS 2 / Ubuntu apt software sources. `sudo apt install ros-jazzy-ocs2` will not find it.
 
-Install the prebuilt `.deb` from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) (download the matching asset for your arch/distro, then `sudo dpkg -i ros-jazzy-ocs2_*.deb`), or run `./init_repo.sh` in `open-deploy-ws` / `fa-deploy-ws` and choose `d` for OCS2 (`scripts/install_core_debs.sh`).
+**Primary path:** in `open-deploy-ws` / `fa-deploy-ws`, run `./init_repo.sh`. Choose `d` for OCS2 (menu 1), switch source ↔ deb with menu **2**, or install/update with menu **3** (`./scripts/install_core_debs.sh --only ocs2`).
 
-To build from source instead, choose `s` during `init_repo.sh`, or clone `https://github.com/legubiao/ocs2_ros2.git` branch `ros2` and colcon build.
+To build from source, choose `s` during init (or menu 2).
+
+:::{admonition} Manual fallback
+:class: note
+
+Download the matching asset from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and `sudo dpkg -i ros-jazzy-ocs2_*.deb` only if you are not using a deploy workspace.
+:::
 
 ## Submodule Issues
 
 ### Q: Submodules are empty after clone
 
-Initialize the submodules:
-
-```bash
-git submodule update --init
-```
-
-For specific submodules only:
-
-```bash
-git submodule update --init src/robot_descriptions
-```
+In `open-deploy-ws` / `fa-deploy-ws`, re-run `./init_repo.sh` (menu 1). In FaSim-Isaac / fa-py-libraries / lerobot_ros2, re-run that repo’s `./init.sh` (or `./init.sh all`). Do not start with a recursive `git submodule update --init --recursive`.
 
 ### Q: Access denied to submodule
 
@@ -188,18 +184,15 @@ Check GPU drivers if using hardware rendering.
 
 ### Q: Isaac Sim won't start or scripts fail
 
-**FaSim-Isaac requires Isaac Sim 6.1 at `~/isaacsim`.**
+Use **FaSim-Isaac** `./init.sh` / `./run.sh`. Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim` unless overridden in `config/fa_sim.local.conf`). Version for the optional Isaac ROS 2 workspace comes from the `./init.sh` operation 2 menu (GitHub tags; fallback in `config/fa_sim.conf`: `6.0.1` / `6.0.0` / `5.1.0`) — do not assume a single hardcoded minor version.
 
-1. Verify installation path: `ls ~/isaacsim/python.sh` — must exist
-2. Verify version: Must be Isaac Sim 6.1 (not older versions)
-3. If installed elsewhere, create a symlink:
-   ```bash
-   ln -s /your/actual/path ~/isaacsim
-   ```
+1. Confirm the directory in `ISAACSIM_DIR` exists and contains the launch scripts named in `config/fa_sim.conf` (`isaac-sim.sh`, …)
+2. Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` if Isaac is not at `~/isaacsim`
+3. Re-run `./run.sh` and pick PhysX / Newton / Headless Streaming from the menu (`./run.sh` has no `--headless` / `--robot` flags)
 
 ### Q: Isaac Sim connection fails
 
-1. Verify Isaac Sim 6.1 is running
+1. Verify Isaac Sim is running (`./run.sh` from FaSim-Isaac)
 2. Check that the topic bridge is active
 3. Ensure `hardware:=isaac` is set in launch
 4. Check Domain ID matches between Isaac and ROS 2

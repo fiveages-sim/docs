@@ -64,11 +64,12 @@ Runtime config lives in local `.fa-env.toml` (gitignored; copied from the exampl
 | `[lerobot].version` | PyPI LeRobot version (default `0.5.1`) |
 | `[ros2].workspace` | ROS 2 workspace; sourced when the env is activated |
 
-Personal overrides: `.fa-env.local.toml`. Env notes: [docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md).
+Personal overrides: `.fa-env.local.toml`. Env notes: [docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md). Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668). Do not install `ros2-stack` / `grasp-generation` into `submodules/hug/.venv` (HUG's Python 3.10 env).
 
-### Manual install (uv)
+:::{admonition} Manual fallback
+:class: note
 
-If you skip `init.sh`, the README's uv path is: create `.venv` with `--system-site-packages`, then install local packages with **`--no-deps`** so pip does not try to fetch `rclpy` from PyPI. ROS Python packages come from the sourced Jazzy overlay.
+Skip `init.sh` only if you must. The README uv path: create `.venv` with `--system-site-packages`, then install local packages with **`--no-deps`** so pip does not fetch `rclpy` from PyPI. ROS Python packages come from the sourced Jazzy overlay.
 
 :::{code-block} bash
 git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git
@@ -89,8 +90,7 @@ uv pip install "viser>=0.2"   # optional grasp-generation UI (PyPI viser, not ro
 uv pip install -e lerobot_robot_ros2 --no-deps
 uv pip install -e lerobot_camera_ros2 --no-deps
 :::
-
-Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668 / `externally-managed-environment`). Do not install `ros2-stack` / `grasp-generation` into `submodules/hug/.venv` (HUG's Python 3.10 env). See the README section on that pitfall.
+:::
 
 ## Usage: `ROS2Robot`
 

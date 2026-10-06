@@ -12,7 +12,7 @@ These packages are **not** published to Debian / ROS apt software sources (`pack
 | Common descriptions | `ros-jazzy-robot-descriptions-common` | [fiveages-sim/robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common/releases) | Shared components |
 | arms_ros2_control | `ros-jazzy-arms-ros2-control` | [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control/releases) | Controllers (optional) |
 
-**Recommended for most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` and choose `d` (deb) for the modules you want. Deb mode downloads those release assets via `scripts/install_core_debs.sh`.
+**Recommended for most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` and choose `d` (deb) for the modules you want. To **switch** an existing module (including OCS2) between source and deb, use menu **2) 切换模块安装方式** — do not hand-edit apt lists or run `dpkg` as the primary path. Deb mode downloads those release assets via `scripts/install_core_debs.sh`.
 
 ## Decision Matrix
 
@@ -29,23 +29,22 @@ These packages are **not** published to Debian / ROS apt software sources (`pack
 
 ### GitHub Release `.deb`
 
-**Recommended:** in the deploy workspace, choose deb mode for OCS2:
+**Primary path:** in the deploy workspace, run `./init_repo.sh` and choose `d` for OCS2 (menu 1), or install/update without Git (menu 3):
 
-```bash
+:::{code-block} bash
 ./init_repo.sh
-# When prompted for ocs2_ros2, choose d (deb)
-```
+# 1) init → ocs2_ros2: d (deb)
+# or 3) 仅安装/更新核心 deb
+./scripts/install_core_debs.sh --only ocs2
+:::
 
-That calls `scripts/install_core_debs.sh`, which downloads the matching `.deb` from GitHub Releases and installs it.
+That downloads the matching `.deb` from GitHub Releases. The package **name** is `ros-jazzy-ocs2`; it is not available from the ROS apt index.
 
-**Manual install:** download the matching asset for your architecture and ROS distro from the [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) page (filename pattern `ros-jazzy-ocs2_*_<arch>.deb`), then:
+:::{admonition} Manual fallback
+:class: note
 
-```bash
-sudo dpkg -i ros-jazzy-ocs2_*.deb
-sudo apt-get install -f   # if dpkg reports missing dependencies
-```
-
-Do not hardcode a version; pick the asset that matches your machine. The package **name** is `ros-jazzy-ocs2`; it is not available from the ROS apt index.
+Download the matching asset from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) (`ros-jazzy-ocs2_*_<arch>.deb`), then `sudo dpkg -i ros-jazzy-ocs2_*.deb` and `sudo apt-get install -f` if needed.
+:::
 
 **Pros:**
 - Fast installation
@@ -58,11 +57,7 @@ Do not hardcode a version; pick the asset that matches your machine. The package
 
 ### Source Build
 
-```bash
-# In workspace src/
-git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git
-colcon build --packages-up-to ocs2
-```
+Choose `s` for OCS2 in `./init_repo.sh` (menu 1), or switch an existing deb install with menu **2**. The script clones `src/ocs2_ros2` on branch `ros2`. Then `colcon build --packages-up-to ocs2`.
 
 **Pros:**
 - Full access to source
@@ -118,43 +113,25 @@ cd src/ocs2_ros2 && git describe --tags
 
 ## Switching Between
 
-### Deb → Source
+**Primary path:** `./init_repo.sh` menu **2) 切换模块安装方式**. The script detects current dpkg / source-tree state, switches **source ↔ deb** per module (cleans conflicting source or uninstalls the matching deb), then re-syncs.
 
-1. Remove the installed `.deb` (or leave it; workspace source takes priority):
-   ```bash
-   sudo apt-get remove ros-jazzy-ocs2  # Optional
-   ```
+:::{code-block} bash
+./init_repo.sh
+# choose 2) 切换模块安装方式
+:::
 
-2. Clone source:
-   ```bash
-   cd src
-   git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git
-   ```
+Related menu items from the same script:
 
-3. Rebuild:
-   ```bash
-   colcon build --packages-up-to ocs2
-   ```
+- **3)** install/update debs without Git: `./scripts/install_core_debs.sh --only ocs2`
+- **4)** uninstall: `./scripts/uninstall_core_debs.sh --only ocs2`
 
-### Source → Deb
+Then `colcon build` as usual.
 
-1. Remove source directory:
-   ```bash
-   rm -rf src/ocs2_ros2
-   ```
+:::{admonition} Manual fallback
+:class: note
 
-2. Install the GitHub Release `.deb` (recommended via the workspace script):
-   ```bash
-   ./scripts/install_core_debs.sh --only ocs2
-   ```
-
-   Manual alternative: download the matching asset from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and run `sudo dpkg -i ros-jazzy-ocs2_*.deb`.
-
-3. Clean and rebuild:
-   ```bash
-   rm -rf build/ocs2* install/ocs2*
-   colcon build
-   ```
+Hand-removing `src/ocs2_ros2`, `sudo apt-get remove ros-jazzy-ocs2`, or `sudo dpkg -i` is only for cases the init menu does not cover. Prefer menu 2 so visibility, submodules, and `.core_module_mode` stay consistent.
+:::
 
 ## init_repo.sh Options
 
@@ -206,16 +183,14 @@ dpkg-query -W ros-jazzy-ocs2
 # Re-source ROS
 source /opt/ros/jazzy/setup.bash
 
-# If missing, reinstall from GitHub Releases via the workspace script
+# If missing, re-run ./init_repo.sh menu 2 or 3
 ./scripts/install_core_debs.sh --only ocs2
 ```
 
 ### Conflicting Installations
 
-```bash
-# Check for duplicate packages
-ros2 pkg list | grep ocs2
+Use `./init_repo.sh` menu **2** so the workspace switches cleanly. Checking leftovers:
 
-# Remove installed .deb if using source
-sudo apt-get remove ros-jazzy-ocs2
+```bash
+ros2 pkg list | grep ocs2
 ```

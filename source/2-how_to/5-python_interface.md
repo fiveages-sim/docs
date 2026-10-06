@@ -14,13 +14,15 @@ Control robots programmatically using the Python interface.
 cd ~/
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
-./init.sh all    # Python 3.12 env
+./init.sh all    # Python 3.12 env; installs ros2_robot_interface
 :::
 
-Or install ros2_robot_interface directly:
+`./init.sh all` initializes submodules, creates the env, and installs the Python packages. Then use `./run.sh` (or `./run.sh viser`) for launchers.
 
-:::{code-block} bash
-pip install ros2-robot-interface
+:::{admonition} Manual fallback
+:class: note
+
+`pip install ros2-robot-interface` on system Python is not the documented entry. If you must install the package alone, do it inside the fa-py-libraries env after `./init.sh env 3.12`.
 :::
 
 ## Basic Usage
@@ -207,8 +209,4 @@ robot.move_j(current)
 :::{code-block} bash
 cd ~/fa-py-libraries
 ./init.sh all
-# or, inside that env:
-pip install -e ~/fa-py-libraries
-# or
-pip install ros2-robot-interface
 :::

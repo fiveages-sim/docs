@@ -22,16 +22,21 @@ cd open-deploy-ws
 
 ## Initialization
 
-### Basic Initialization
-
 ```bash
 ./init_repo.sh
 ```
 
-The script will:
-1. Configure submodule visibility (public only)
-2. Prompt per core module for `d` (GitHub Release `.deb`) or `s` (source)
-3. Initialize selected submodules; deb mode calls `scripts/install_core_debs.sh`
+What the script does (open-deploy-ws README). Interactive menu:
+
+| Menu | Role |
+|------|------|
+| **1) 初始化工作空间（推荐）** | Nested visibility (`public` / `private`), then per-module `d` (GitHub Release `.deb`) or `s` (source). Then submodule sync, `rosdep install` on source paths, and install chosen debs. |
+| **2) 切换模块安装方式** | Switch source ↔ deb for a module (OCS2, arms, common). Cleans conflicting source or uninstalls the matching deb, then re-syncs. |
+| **3) 仅安装/更新核心 deb** | Skip Git. `./scripts/install_core_debs.sh --only ocs2` (or `common`, `arms`, comma-separated). |
+| **4) 卸载核心 deb** | `./scripts/uninstall_core_debs.sh --only ocs2` |
+| **5) 仅运行 rosdep** | `rosdep install --from-paths src --ignore-src -r -y` — no Git, no debs |
+
+You still **colcon-build** after init. Do not start with `git submodule update --init --recursive`; the script already initializes the modules you selected.
 
 ### Core module options (OCS2, arms, common)
 
@@ -79,16 +84,10 @@ open-deploy-ws/
 
 ## Building
 
-### Install Dependencies
+`./init_repo.sh` already runs `rosdep install` on source paths. You still need to colcon-build:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-### Full Build
-
-```bash
 colcon build --symlink-install
 ```
 
@@ -163,24 +162,7 @@ colcon build --packages-up-to robot-descriptions-<brand>
 
 ## Submodule Management
 
-### Check Status
-
-```bash
-git submodule status
-```
-
-### Update All
-
-```bash
-git submodule update --init --recursive
-```
-
-### Update Specific
-
-```bash
-cd src/arms_ros2_control
-git pull origin main
-```
+Prefer `./init_repo.sh` (menu 1 or 2) over a recursive submodule init. Check status with `git submodule status`. To update a specific source tree you already initialized, pull that module then rebuild.
 
 ## GitHub Release `.deb` vs Source Matrix
 
@@ -196,9 +178,7 @@ Check `deb_versions.conf` for the GitHub repos and release tags used by `scripts
 
 ### Submodules Empty
 
-```bash
-git submodule update --init --recursive
-```
+Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init --recursive` as the primary recovery path.
 
 ### Access Denied to Submodule
 

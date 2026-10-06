@@ -10,53 +10,56 @@ Aggregates Python utilities:
 - ros2_robot_interface
 - ros2-viser (Viser 3D visualization)
 - VR pose publisher
-- Common utilities
 
 Default env is **Python 3.12** (`./init.sh env 3.12`). This is also the **primary launcher** for Viser (`./run.sh viser`).
 
 ## Installation
 
-```bash
+:::{code-block} bash
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
 ./init.sh all
-```
+:::
 
-`./init.sh all` initializes submodules, creates a Python 3.12 env, and installs `ros2_robot_interface`, `ros2-viser`, and `vr_pose_publisher`.
+What `./init.sh all` does: initialize submodules, create a Python **3.12** env (from `.fa-env.toml` `backend`: `uv` or `conda`), then install `ros2_robot_interface`, `ros2-viser`, and `vr_pose_publisher`.
+
+Switch backend with `./init.sh set-backend uv`. Personal overrides: `.fa-env.local.toml`.
 
 ## Usage
 
 ### Interactive Menu
 
-```bash
+:::{code-block} bash
 ./run.sh
-```
+:::
 
-Presents menu (numbers from the README):
-1. ros2-viser launch
-2. VR pose launch
-3. …
+What `./run.sh` does: activate the env (and source `[ros2].workspace` if set), then the README menu: viser, VR (Vuer / XRoboToolkit), VR bag record/playback, interface joint record/playback, versions.
 
 ### Direct Commands
 
-```bash
-# VR teleoperation
-./run.sh vr
+Commands from the fa-py-libraries README (do not invent flags):
 
-# Viser visualization (primary entry for ros2-viser)
-./run.sh viser
-```
+| Command | What it does |
+|---------|----------------|
+| `./run.sh viser` | ros2-viser (primary Viser entry) |
+| `./run.sh vr` | vr_pose_publisher (Vuer/WebXR) |
+| `./run.sh vr-xrt` | vr_pose_publisher (XRoboToolkit SDK) |
+| `./run.sh vr-xrt-service` | start XRoboToolkit PC Service (`stop` to shut down) |
+| `./run.sh vr-record` | record `/teleop/*` bags |
+| `./run.sh record` / `playback` | interface joint snapshot JSON |
 
 ## Structure
 
 :::{code-block} none
 fa-py-libraries/
-├── ros2_robot_interface/    # Robot API
-├── ros2_viser/             # Viser visualization
-├── vr_pose_publisher/      # VR bridge
-├── utils/                  # Common utilities
-├── run.sh                  # Entry point
-└── setup.py
+├── init.sh
+├── run.sh
+├── release.sh
+├── .fa-env.toml
+├── scripts/                 # fa-env.sh, vr-bag.sh
+├── ros2_robot_interface/
+├── ros2_viser/
+└── vr_pose_publisher/
 :::
 
 ## Subpackages

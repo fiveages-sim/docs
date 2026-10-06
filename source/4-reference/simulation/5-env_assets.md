@@ -74,20 +74,7 @@ Environment assets are **not** submodules of `robot_usds`. They are:
 
 ## Usage in FaSim
 
-FaSim-Isaac configuration selects environment:
-
-```yaml
-# FaSim config
-environment:
-  name: fiveages_env
-  scene: office
-```
-
-Or via command line:
-
-```bash
-./run.sh --env office
-```
+Start Isaac with FaSim `./run.sh` (PhysX / Newton / Headless Streaming menu). Open the scene USD under `environment/fiveages_env/` (or `fa-project-usd/`) in Isaac. There is no `./run.sh --env` flag.
 
 ## Creating Custom Environments
 

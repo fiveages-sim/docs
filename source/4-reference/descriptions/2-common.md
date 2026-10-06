@@ -80,14 +80,15 @@ Utility launch files and helpers:
 
 ## GitHub Release `.deb`
 
-`ros-jazzy-robot-descriptions-common` is **not** published to Debian / ROS apt software sources. Install the prebuilt `.deb` from [robot-descriptions-common Releases](https://github.com/fiveages-sim/robot-descriptions-common/releases), or choose `d` (deb) for common during `./init_repo.sh` (that path uses `scripts/install_core_debs.sh`).
+`ros-jazzy-robot-descriptions-common` is **not** published to Debian / ROS apt software sources.
 
-**Manual install:** download the matching asset for your architecture and ROS distro, then:
+**Primary path:** in `open-deploy-ws` / `fa-deploy-ws`, run `./init_repo.sh` and choose `d` for common, or `./scripts/install_core_debs.sh --only common`. Switch source ↔ deb with menu **2) 切换模块安装方式**.
 
-```bash
-sudo dpkg -i ros-jazzy-robot-descriptions-common_*.deb
-sudo apt-get install -f   # if dpkg reports missing dependencies
-```
+:::{admonition} Manual fallback
+:class: note
+
+Download the matching asset from [robot-descriptions-common Releases](https://github.com/fiveages-sim/robot-descriptions-common/releases), then `sudo dpkg -i ros-jazzy-robot-descriptions-common_*.deb` and `sudo apt-get install -f` if needed.
+:::
 
 ## Package Structure
 

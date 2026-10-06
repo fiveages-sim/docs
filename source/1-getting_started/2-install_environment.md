@@ -73,29 +73,32 @@ rosdep update
 
 OCS2 (Optimal Control for Switched Systems) is a core dependency.
 
-OCS2 is **not** published to Debian / ROS apt software sources. The `.deb` package name is still `ros-jazzy-ocs2`, but you must install it from GitHub Releases (or let the deploy workspace do that for you).
+OCS2 is **not** published to Debian / ROS apt software sources. The `.deb` package name is still `ros-jazzy-ocs2`. **Do not** treat `sudo apt install` or a hand-run `dpkg -i` as the primary path.
 
-### Option A: GitHub Release `.deb` (Recommended)
+Use the deploy-workspace scripts in `open-deploy-ws` or `fa-deploy-ws`. They already switch and install OCS2 (GitHub Release `.deb` or source).
 
-**Most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` and choose `d` (deb) for OCS2. That downloads and installs the release `.deb` via `scripts/install_core_debs.sh`.
+:::{code-block} bash
+cd ~/open-deploy-ws   # or fa-deploy-ws
+./init_repo.sh
+:::
 
-**Manual install:** download the matching asset for your architecture and ROS distro from the [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) page (filename pattern `ros-jazzy-ocs2_*_<arch>.deb`), then:
+What the script does (from the open-deploy-ws README):
 
-```bash
-sudo dpkg -i ros-jazzy-ocs2_*.deb
-sudo apt-get install -f   # if dpkg reports missing dependencies
-```
+| Menu | Role |
+|------|------|
+| **1) 初始化工作空间** | Nested visibility, then per-module `d` (GitHub Release `.deb`) or `s` (source). OCS2 default is **deb**. |
+| **2) 切换模块安装方式** | Switch an already-initialized module **source ↔ deb** (cleans conflicting source or uninstalls the matching deb). Use this to change the OCS2 install path. |
+| **3) 仅安装/更新核心 deb** | Skip Git; e.g. `./scripts/install_core_debs.sh --only ocs2` |
+| **4) 卸载核心 deb** | e.g. `./scripts/uninstall_core_debs.sh --only ocs2` |
+| **5) 仅运行 rosdep** | `rosdep install` on `src/` only |
 
-Do not hardcode a version; pick the asset that matches your machine.
+Choosing `d` downloads the matching GitHub Release asset via `scripts/install_core_debs.sh`. It does **not** install from packages.ros.org. After init, you still `colcon build`.
 
-### Option B: From Source
+:::{admonition} Manual fallback
+:class: note
 
-Clone within workspace (handled by `init_repo.sh` in deploy workspaces when you choose `s`):
-
-```bash
-cd ~/your_ws/src
-git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git
-```
+Only if you are not using a deploy workspace. Download the matching asset for your architecture and ROS distro from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) (filename pattern `ros-jazzy-ocs2_*_<arch>.deb`), then `sudo dpkg -i ros-jazzy-ocs2_*.deb` and `sudo apt-get install -f` if dpkg reports missing dependencies. For source: clone branch `ros2` into `src/` — or choose `s` in `./init_repo.sh`.
+:::
 
 ## Simulation Dependencies
 
@@ -107,28 +110,19 @@ sudo apt install ros-jazzy-gz-*
 
 ### Isaac Sim
 
-```{admonition} Required Version and Path
-:class: warning
+Use **FaSim-Isaac** scripts. Path and version live in config, not in a hardcoded minor version in these docs.
 
-FaSim-Isaac requires **Isaac Sim 6.1 binary** installed at **`~/isaacsim`**. The run scripts assume this exact path.
-```
+- Default install directory: `ISAACSIM_DIR` (`~/isaacsim` unless you set it in `config/fa_sim.local.conf` or the environment)
+- Optional Isaac ROS 2 Jazzy workspace version: `./init.sh` operation 2 menu (queries GitHub stable tags; fallback list in `config/fa_sim.conf` currently `6.0.1` / `6.0.0` / `5.1.0`). Override with `ISAAC_SIM_VERSION=… ./init.sh`
 
-**Requirements:**
-- **Isaac Sim 6.1** (not older versions)
-- Install path: **`~/isaacsim`** (scripts expect this exact path)
-- NVIDIA GPU with drivers compatible with Isaac Sim 6.1
+:::{code-block} bash
+git clone git@github.com:fiveages-sim/FaSim-Isaac.git
+cd FaSim-Isaac
+./init.sh    # 1) submodules  2) optional Isaac ROS 2 Jazzy workspace
+./run.sh     # menu: PhysX / Newton / Headless Streaming
+:::
 
-**Installation:**
-1. Download Isaac Sim 6.1 from NVIDIA
-2. Extract or install to `~/isaacsim`
-3. Verify: `ls ~/isaacsim/python.sh` should exist
-
-If you install Isaac Sim to a different path, create a symlink:
-```bash
-ln -s /your/actual/path ~/isaacsim
-```
-
-See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md) for usage details.
+Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` to change `ISAACSIM_DIR` or the default version. See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md).
 
 ## Network Configuration (Optional)
 
@@ -193,7 +187,7 @@ ros2 --help
 # Check Gazebo
 gz sim --version
 
-# Check OCS2 (if installed via GitHub Release .deb)
+# Check OCS2 (after deploy-ws init / install_core_debs.sh)
 ros2 pkg list | grep ocs2
 ```
 
@@ -212,12 +206,12 @@ source /opt/ros/jazzy/setup.bash
 
 OCS2 is not in packages.ros.org / Ubuntu apt. `sudo apt update` will not make `ros-jazzy-ocs2` appear.
 
+Re-run `./init_repo.sh` in the deploy workspace: choose **1** and `d` for OCS2, or **3** (`./scripts/install_core_debs.sh --only ocs2`). To change an existing install, use menu **2) 切换模块安装方式**.
+
 ```bash
 dpkg-query -W ros-jazzy-ocs2
 source /opt/ros/jazzy/setup.bash
 ```
-
-If the package is missing, re-run `./init_repo.sh` and choose `d` for OCS2, or download the matching `.deb` from [ocs2_ros2 Releases](https://github.com/legubiao/ocs2_ros2/releases) and install with `sudo dpkg -i ros-jazzy-ocs2_*.deb`.
 
 ### rosdep Errors
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:36+0000\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
 "PO-Revision-Date: 2026-10-06 16:20+0000\n"
 "Last-Translator: Cursor Agent\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -176,44 +176,19 @@ msgstr ""
 "# or once: ./init.sh all"
 
 #: ../../source/4-reference/python_apps/5-robot_action_composer.md:44
-#: 5c1605aa2b0f4e739c1d59d775c9026d
-msgid ""
-"Manual install, still from the monorepo root, after the env is active. "
-"Prefer **uv** and **`--no-deps`** so install does not pull `rclpy` from PyPI"
-" (see the lerobot_ros2 README):"
-msgstr ""
-"手动安装仍在单体仓库根目录、环境已激活之后进行。推荐 **uv** 并加 **`--no-deps`**，避免从 PyPI 拉取 `rclpy`（见 "
-"lerobot_ros2 README）："
-
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
-#: b162629441a4446eaedf17af296df27a
-msgid ""
-"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
-"uv pip install -e submodules/robot_action_composer --no-deps\n"
-"uv pip install \"viser>=0.2\"   # optional; grasp-generation UI (PyPI viser, not ros2-viser launch)"
-msgstr ""
-"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
-"uv pip install -e submodules/robot_action_composer --no-deps\n"
-"uv pip install \"viser>=0.2\"   # optional; grasp-generation UI (PyPI viser, not ros2-viser launch)"
-
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:52
 #: 04d6c06bfa574968b1189129095a11da
 msgid ""
-"The composer README also shows `pip install -e "
-"submodules/ros2_robot_interface` then `pip install -e "
-"submodules/robot_action_composer`. Use that only inside the project venv; on"
-" Ubuntu, system `pip` hits PEP 668. Optional extras named in "
-"`pyproject.toml`: `[recording]` (LeRobot / `lerobot_robot_ros2`), `[grasp]` "
-"(`viser>=0.2` for grasp-generation UI). That extra is not the fa-py-"
-"libraries `./run.sh viser` launcher."
+"`./init.sh all-motion` creates the env and installs the two local packages. "
+"Optional extras named in composer `pyproject.toml`: `[recording]` (LeRobot /"
+" `lerobot_robot_ros2`), `[grasp]` (`viser>=0.2` for grasp-generation UI). "
+"That extra is not the fa-py-libraries `./run.sh viser` launcher."
 msgstr ""
-"composer README 也写了 `pip install -e submodules/ros2_robot_interface` 再 `pip "
-"install -e submodules/robot_action_composer`。只在项目虚拟环境内使用；Ubuntu 上系统 `pip` "
-"会碰到 PEP 668。`pyproject.toml` 中的可选 extra：`[recording]`（LeRobot / "
+"`./init.sh all-motion` 会创建环境并安装这两个本地包。composer `pyproject.toml` 中的可选 "
+"extra：`[recording]`（LeRobot / "
 "`lerobot_robot_ros2`）、`[grasp]`（`viser>=0.2`，抓取生成 UI）。该 extra **不是** fa-py-"
 "libraries 的 `./run.sh viser` 启动器。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:54
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
 #: b5cee6dba95f48df89b148161f3ba6e9
 msgid ""
 "Console scripts after install: `motion-generation`, `ros2-stack`, `grasp-"
@@ -222,19 +197,48 @@ msgstr ""
 "安装后可用的控制台脚本：`motion-generation`、`ros2-stack`、`grasp-generation`、`check-"
 "isaac-pose`、`check-robot-status`。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:56
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:48
+#: 005d0235ecc240a49d5bdf78f12ffaa2
+msgid "Manual fallback"
+msgstr "手动回退"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:51
+#: bd5fa38af6aa45bdb4d36712d05a8541
+msgid ""
+"From the monorepo root, after the env is active. Prefer **uv** and **`--no-"
+"deps`** so install does not pull `rclpy` from PyPI. The composer README also"
+" shows `pip install -e submodules/ros2_robot_interface` then `pip install -e"
+" submodules/robot_action_composer` inside the project venv only (system "
+"`pip` hits PEP 668)."
+msgstr ""
+"在单体仓库根目录、环境已激活后。优先用 **uv** 和 **`--no-deps`**，以免从 PyPI 拉 `rclpy`。composer "
+"README 也写了只在项目虚拟环境内 `pip install -e submodules/ros2_robot_interface` 再 `pip "
+"install -e submodules/robot_action_composer`（系统 `pip` 会碰到 PEP 668）。"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
+#: b162629441a4446eaedf17af296df27a
+msgid ""
+"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
+"uv pip install -e submodules/robot_action_composer --no-deps\n"
+"uv pip install \"viser>=0.2\"   # optional; grasp-generation UI"
+msgstr ""
+"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
+"uv pip install -e submodules/robot_action_composer --no-deps\n"
+"uv pip install \"viser>=0.2\"   # optional; grasp-generation UI"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:60
 #: 5176e8e9f86444559a430f4d31dc138a
 msgid "Layers"
 msgstr "分层"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:58
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:62
 #: cf839f2326074aa2bd268362a397d7bd
 msgid ""
 "**`motion_generation`** — what each motion segment looks like and how it is "
 "sent."
 msgstr "**`motion_generation`**：每一段运动长什么样、怎么发到机器人。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:60
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:64
 #: 1c85cf98fc36474fb411603ed7adf70d
 msgid ""
 "`sequence/` — `StageTarget` / `ArmTarget` / `ArmStage`, builders such as "
@@ -245,21 +249,21 @@ msgstr ""
 "`build_single_arm_pick_sequence` 等 builder，还有 `execute_stage_sequence`（调用 "
 "`ROS2RobotInterface`、到位等待、夹爪节拍）。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:61
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:65
 #: 2b1223685ae647378e80fa358f3f9538
 msgid ""
 "`tasks/` — geometry wrappers on top of that (handover, bimanual carry, "
 "parallel pick, drawer, pick/place, MoveJ return used by dataset recording)."
 msgstr "`tasks/`：在 sequence 之上的几何封装（交接、双臂搬运、并行抓取、抽屉、抓放、数据集录制用的 MoveJ 返回）。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:63
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:67
 #: 549d11238b574803a22c360b0b10e8ae
 msgid ""
 "**`task_runtime`** — which skills run, in what order, with which merged "
 "params."
 msgstr "**`task_runtime`**：按队列调用哪些技能、顺序如何、合并后的参数是什么。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:65
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:69
 #: ffd095d517564bd18107217cade85067
 msgid ""
 "`runner.run_task_queue` — connect → FSM → optional env reset → "
@@ -270,7 +274,7 @@ msgstr ""
 "→ 顺序执行 `task_queue` 各块（支持 `ParallelSpec`）→ `get_skill` → "
 "`execute_stage_sequence`。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:66
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:70
 #: 5bdddf5140464cd9971c950509ccd1d6
 msgid ""
 "`registry.py` — `register_skill(name, fn)` / `get_skill(name)`; unknown "
@@ -279,7 +283,7 @@ msgstr ""
 "`registry.py`：`register_skill(name, fn)` / `get_skill(name)`；未知技能名会抛出 "
 "`KeyError`（错误信息含已注册名列表）。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:67
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:71
 #: 1f950e51f97d48828f9edf9ba72d2015
 msgid ""
 "Each skill: `(ctx, params) -> (list[StageTarget], ExecutionMeta)`. Blocks "
@@ -289,7 +293,7 @@ msgstr ""
 "每个技能签名：`(ctx, params) -> (list[StageTarget], "
 "ExecutionMeta)`。无笛卡尔阶段的块返回空列表（纯导航、纯 MoveJ、仅副作用）。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:69
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:73
 #: 7a011087c2cb4beeb058a2836eb4f66d
 msgid ""
 "YAML discovery scans `task_configs/**/*.yaml` and `robots/*/` (optional "
@@ -310,12 +314,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/ROBOT_CONFIG.md)。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:71
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:75
 #: 72f71d0037074cdeab748129bf755621
 msgid "Skills (registered names)"
 msgstr "技能（注册名）"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:73
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:77
 #: 214c9d396fd34d6b83fae351c636f689
 msgid ""
 "Do not invent a Python `MoveJ` / `GripperOpen` action class. YAML blocks set"
@@ -325,22 +329,22 @@ msgstr ""
 "不要发明 Python 版 `MoveJ` / `GripperOpen` Action 类。YAML 块把 `skill:` "
 "写成**注册名**。分类（示例来自 README 索引；参数见 SKILLS_REFERENCE）："
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 0c729ac166444726a7b74a0d3ebb35da
 msgid "Category"
 msgstr "分类"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 498c4d2474c44f878d1b7813c24eea58
 msgid "Example skills"
 msgstr "示例技能"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 53d6fdee0ac844ff9808f31b64d7c4a9
 msgid "Single arm"
 msgstr "单臂"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: e5ddfc8215f24b26a89cb986edd6a041
 msgid ""
 "`single_arm.pick`, `single_arm.place`, `single_arm.move_to_pose`, "
@@ -353,12 +357,12 @@ msgstr ""
 "`single_arm.goto_cache_pose`, `single_arm.drawer.pull_open`, "
 "`single_arm.drawer.close_push`"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 904154bbfe4f4ddcaf902ac0cb85797c
 msgid "Dual arm"
 msgstr "双臂"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 3c7315bdab0c4dfd9697cae5808f6fd2
 msgid ""
 "`dual_arm.carry`, `dual_arm.parallel_pick`, `dual_arm.handover`, "
@@ -367,12 +371,12 @@ msgstr ""
 "`dual_arm.carry`, `dual_arm.parallel_pick`, `dual_arm.handover`, "
 "`dual_arm.place`, `dual_arm.bimanual_align`, `dual_arm.goto_cache_pose`"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: b9e21a07700e4f27912c7e7b70a1c726
 msgid "Navigation"
 msgstr "导航"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 50565b6f533f40988581b59619491607
 msgid ""
 "`nav.navigate_to_pose`, `nav.navigate_to_object`, `nav.navigate_relative`, "
@@ -381,22 +385,22 @@ msgstr ""
 "`nav.navigate_to_pose`, `nav.navigate_to_object`, `nav.navigate_relative`, "
 "`nav.send_nav_goal`, `nav.wait_nav_arrived`"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: cb9fe6f684ed461498e87aff023fe2c2
 msgid "Joint"
 msgstr "关节"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 64af8587238e4cb88f9f2ce8b5ec3842
 msgid "`joint.movej_to_config`, `joint.goto_cached_joints`"
 msgstr "`joint.movej_to_config`, `joint.goto_cached_joints`"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: 2d189dab3f194c52bfe60694e1478742
 msgid "Session / robot / env"
 msgstr "会话 / 机器人 / 环境"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:46
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:53
 #: ba4475f1a5e644e08b20b7ab1857c514
 msgid ""
 "`session.scratch_put`, `robot.cache_ee_pose`, `robot.cache_joint_state`, "
@@ -405,7 +409,7 @@ msgstr ""
 "`session.scratch_put`, `robot.cache_ee_pose`, `robot.cache_joint_state`, "
 "`robot.send_mode_command`, `env.randomize_object_local_xyz`"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:83
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:87
 #: 1d6d39b0475442c79d6dd2688f1e5ca7
 msgid ""
 "Full list, defaults, and YAML examples: "
@@ -417,12 +421,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/SKILLS_REFERENCE.md)。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:85
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
 #: 9b01cccd0f8b4666b5c77e3fef74f6ff
 msgid "CLI pointers"
 msgstr "CLI 要点"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:87
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:91
 #: 01554c27d1614c31818427e9382c7fdd
 msgid ""
 "Run from a workspace that contains `robots/` (the README uses "
@@ -432,7 +436,7 @@ msgstr ""
 "在含 `robots/` 的工作区目录下运行（README 使用 lerobot_ros2 树中的 "
 "`examples/IsaacSim`）。下列参数来自 composer README；完整集合以该文件为准。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 7986829b099942178f05db042df19341
 msgid ""
 "# Task queue\n"
@@ -459,7 +463,7 @@ msgid ""
 "# Current joints / EE pose (pasteable into YAML)\n"
 "check-robot-status\n"
 "check-robot-status --robot fiveages_w2 --workspace examples/IsaacSim\n"
-"check-robot-status --wait 3.0 --show-joint-names"
+"check-robot-status --wait 3.0 --show-joint-names\n"
 msgstr ""
 "# Task queue\n"
 "motion-generation\n"
@@ -485,9 +489,9 @@ msgstr ""
 "# Current joints / EE pose (pasteable into YAML)\n"
 "check-robot-status\n"
 "check-robot-status --robot fiveages_w2 --workspace examples/IsaacSim\n"
-"check-robot-status --wait 3.0 --show-joint-names"
+"check-robot-status --wait 3.0 --show-joint-names\n"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:117
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:121
 #: 8929d3d36ba34454902283229ae4588c
 msgid ""
 "`motion-generation` default `workspace_dir` is the current working "
@@ -499,27 +503,27 @@ msgstr ""
 "`MOTION_GENERATION_LANG` > `.motion_last.json` > 系统 "
 "`LANG`。`ensure_ros2_stack` 等偏好缓存在工作区根目录的 `.motion_last.json`（已 gitignore）。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:119
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:123
 #: ebc8def074554a5bbd3724bfee0e5084
 msgid "In-repo docs (this branch)"
 msgstr "仓库内文档（本分支）"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:121
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:125
 #: db6735cb3f674c2f9aab606365d0cecf
 msgid "Do not treat this Sphinx page as a substitute for the package docs:"
 msgstr "不要把本 Sphinx 页当成软件包文档的替代："
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 22424fc777844223b32c1d6570331282
 msgid "Doc"
 msgstr "文档"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: a4bb271d4a7c4c4789e5fec8a705fd92
 msgid "Content"
 msgstr "内容"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: ed21b119bdcb4a65bfaed3e83224106c
 msgid ""
 "[docs/SKILLS_REFERENCE.md](https://github.com/fiveages-"
@@ -530,12 +534,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/SKILLS_REFERENCE.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 5c09d66f64dc4d74be4dd9f5ed25c60d
 msgid "Per-skill parameters, defaults, YAML examples"
 msgstr "各技能参数、默认值与 YAML 示例"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: ba1f39ce152548039ef3d6258b1f8859
 msgid ""
 "[docs/TASK_CONFIG_YAML.md](https://github.com/fiveages-"
@@ -546,12 +550,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/TASK_CONFIG_YAML.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 0f71c28271684462bd9c818997cff146
 msgid "Task YAML shape, `skill_defaults` / `skill_params`, load/merge"
 msgstr "任务 YAML 格式、`skill_defaults` / `skill_params`、加载与合并"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 01f9d6b71c3448c78158cbc287cdf5b6
 msgid ""
 "[docs/ROBOT_CONFIG.md](https://github.com/fiveages-"
@@ -562,12 +566,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/ROBOT_CONFIG.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 7f4a24b65b604cc689c8984a32423f85
 msgid "`robot.yaml` / `lerobot_config.py` and `robots/` layout"
 msgstr "`robot.yaml` / `lerobot_config.py` 与 `robots/` 目录约定"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 0d36b3604ab34295ae3d637101dc8f0c
 msgid ""
 "[docs/ROS2_STACK.md](https://github.com/fiveages-"
@@ -578,12 +582,12 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/ROS2_STACK.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: a66b98cbd4f843f791ff59529de4438f
 msgid "Scene-level control/nav launch (`.meta/ros2_stack.yaml`, `ros2-stack`)"
 msgstr "场景级运控/导航启动（`.meta/ros2_stack.yaml`、`ros2-stack`）"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 21929aee56db4ce8a23d1d6c15b40ce4
 msgid ""
 "[docs/GRASP_GENERATION.md](https://github.com/fiveages-"
@@ -594,41 +598,49 @@ msgstr ""
 "sim/robot_action_composer/blob/feature/dex-grasp-"
 "generator/docs/GRASP_GENERATION.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:89
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:93
 #: 9dce79bcb14f4320a171821cbd78be33
 msgid "Grasp-generation UI and smoke"
 msgstr "抓取生成 UI 与冒烟"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:131
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:135
 #: bf85fb344294423581fe9954aa02281b
 msgid ""
 "Isaac Sim env / USD / workspace steps, when present, are in the monorepo "
 "`examples/IsaacSim/README.md`."
 msgstr "Isaac Sim 环境、USD、工作空间步骤（若存在）见单体仓库 `examples/IsaacSim/README.md`。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:133
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:137
 #: f6cb4984f4604bc0ac405bc5f025826d
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:135
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:139
 #: 95860df2c52847579d6ec74c68b2809b
 msgid "[lerobot_ros2](4-lerobot_ros2.md)"
 msgstr "[lerobot_ros2](4-lerobot_ros2.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:136
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:140
 #: 95860df2c52847579d6ec74c68b2809b
 msgid "[ros2_robot_interface](1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](1-ros2_robot_interface.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:137
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:141
 #: a9e9a0598c5c45cc89db4b4770999fac
 msgid "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
 msgstr "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:138
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:142
 #: 8f19e4d46061410da113c1f6c298193e
 msgid ""
 "[Synthetic Data](../../6-synthetic_data/0-index.md) — pipeline story for "
 "Isaac datagen"
 msgstr "[合成数据](../../6-synthetic_data/0-index.md) — Isaac 数据采集的流水线说明"
+
+#~ msgid ""
+#~ "Manual install, still from the monorepo root, after the env is active. "
+#~ "Prefer **uv** and **`--no-deps`** so install does not pull `rclpy` from PyPI"
+#~ " (see the lerobot_ros2 README):"
+#~ msgstr ""
+#~ "手动安装仍在单体仓库根目录、环境已激活之后进行。推荐 **uv** 并加 **`--no-deps`**，避免从 PyPI 拉取 `rclpy`（见 "
+#~ "lerobot_ros2 README）："

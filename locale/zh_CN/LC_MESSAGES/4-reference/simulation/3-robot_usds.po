@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:23+0000\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
@@ -134,9 +134,9 @@ msgid "fiveages-gen1-robot-usds"
 msgstr "fiveages-gen1-robot-usds"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:16
-#: 4430467293674e1ba017a2f42c06b6c4 326647e1d9d544d0b69eba9e26fbca6b
-#: 0256980616334690b5b128835b4b9e94 bcd7235308554feab06b75fbfa23dc2c
-#: 5c165f051c014be9af3443af5b1d33e7
+#: 0256980616334690b5b128835b4b9e94 326647e1d9d544d0b69eba9e26fbca6b
+#: 4430467293674e1ba017a2f42c06b6c4 5c165f051c014be9af3443af5b1d33e7
+#: bcd7235308554feab06b75fbfa23dc2c
 msgid "main"
 msgstr "main"
 
@@ -186,136 +186,145 @@ msgid "Usage"
 msgstr "使用方法"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:45
-#: 5040e1b2bdc84099906151e9addbe3a5
-msgid "Initialize"
-msgstr "初始化"
+#: b363595e7572482ebf6a6587a6577295
+msgid ""
+"**Primary path:** inside FaSim-Isaac, `./init.sh` operation 1 initializes "
+"`robots/` (this superproject) according to `submodules_visibility.conf`."
+msgstr ""
+"**主路径：** 在 FaSim-Isaac 内，`./init.sh` 操作 1 按 `submodules_visibility.conf` 初始化"
+" `robots/`（本超级工程）。"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:47
+#: a019b6c5190a4af39f5c6487dd0e588a
+msgid ""
+"cd FaSim-Isaac\n"
+"./init.sh"
+msgstr ""
+"cd FaSim-Isaac\n"
+"./init.sh"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:52
+#: 862681978d8d45df87b7e35a7cd63834
+msgid "Manual fallback"
+msgstr "手动回退"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:55
+#: a22129a5fbda4c3d83309c21da539896
+msgid "Standalone clone only if you are not using FaSim:"
+msgstr "仅当你不使用 FaSim 时才单独克隆："
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 3fec33dd5c8841bdb0b0c85d982d46af
 msgid ""
 "git clone https://github.com/fiveages-sim/robot_usds.git\n"
 "cd robot_usds\n"
-"git submodule update --init\n"
+"git submodule update --init"
 msgstr ""
 "git clone https://github.com/fiveages-sim/robot_usds.git\n"
 "cd robot_usds\n"
-"git submodule update --init\n"
+"git submodule update --init"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:53
-#: 622267250a3c46d692e8276eddcd47bf
-msgid "With FaSim-Isaac"
-msgstr "通过 FaSim-Isaac"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:55
-#: a019b6c5190a4af39f5c6487dd0e588a
-msgid ""
-"cd FaSim-Isaac\n"
-"./init.sh  # Handles robot_usds initialization\n"
-msgstr ""
-"cd FaSim-Isaac\n"
-"./init.sh  # Handles robot_usds initialization\n"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:60
+#: ../../source/4-reference/simulation/3-robot_usds.md:64
 #: acfbb2a5631b45c5a15a18c774f98c58
 msgid "In-Tree Assets"
 msgstr "仓库内资产"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:62
+#: ../../source/4-reference/simulation/3-robot_usds.md:66
 #: 66b6d9af93074d95b6eb318b8409dc82
 msgid "Assets directly in `robot_usds` (not submodules):"
 msgstr "`robot_usds` 仓库内直接包含的资产（非子模块）："
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 33231fc5842d4847838aa27f80bf3d79
 msgid "Directory"
 msgstr "目录"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 8a8adb62eef84b7ea0dc901d6faaa83e
 msgid "Content"
 msgstr "内容"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 0cccf41ae86f4620b1531a0a6883a589
 msgid "`grippers/`"
 msgstr "`grippers/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 461b7a7aee4743bd8fbee13787d751c6
 msgid "Gripper USD models"
 msgstr "夹爪 USD 模型"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 3ab7287df4c641e2ad193016d2e505b6
 msgid "`manipulators/`"
 msgstr "`manipulators/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 1288d2004bca40a6bbb618b5b10e6ed0
 msgid "Arm models"
 msgstr "机械臂模型"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: aec1cfc1e21a419eb9a10c3253a182bc
 msgid "`mobile_manipulators/`"
 msgstr "`mobile_manipulators/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 95bdca5ce982415dbdfd1c145cd5f168
 msgid "Mobile + arm"
 msgstr "移动底盘 + 机械臂"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 975d86ec87f84b78ad0d369cad0d704a
 msgid "`sensors/`"
 msgstr "`sensors/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
+#: ../../source/4-reference/simulation/3-robot_usds.md:57
 #: 41ff3ecae33e40ddae9c154a931b50e1
 msgid "Camera, lidar models"
 msgstr "相机、激光雷达模型"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:71
+#: ../../source/4-reference/simulation/3-robot_usds.md:75
 #: 4bfed684e0be47919b252f68752e7b06
 msgid "Asset Naming"
 msgstr "资产命名"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:73
+#: ../../source/4-reference/simulation/3-robot_usds.md:77
 #: 2df8ff8047064bddb8b3da49019064ca
 msgid "Gen1/Gen2/Gen3"
 msgstr "Gen1/Gen2/Gen3"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:75
+#: ../../source/4-reference/simulation/3-robot_usds.md:79
 #: 38e8ca9667364287a5f7dfee442ff7e3
 msgid "FiveAges robot generations:"
 msgstr "FiveAges 机器人代际："
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:76
+#: ../../source/4-reference/simulation/3-robot_usds.md:80
 #: 691d0a3d13634ccaa59c1bed4d4c8603
 msgid "**Gen1** — First generation humanoid"
 msgstr "**Gen1** — 第一代人形机器人"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:77
+#: ../../source/4-reference/simulation/3-robot_usds.md:81
 #: ca29b54927a54ecfad3e32ba6b038e12
 msgid "**Gen2** — Second generation humanoid"
 msgstr "**Gen2** — 第二代人形机器人"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:78
+#: ../../source/4-reference/simulation/3-robot_usds.md:82
 #: be48be5ced40490a871122372eed3b13
 msgid "**Gen3** — Third generation humanoid"
 msgstr "**Gen3** — 第三代人形机器人"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:80
+#: ../../source/4-reference/simulation/3-robot_usds.md:84
 #: 3db2cd3fa05544b3be2ed2376d984156
 msgid "These names refer to internal development generations."
 msgstr "这些名称指内部研发代际。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:82
+#: ../../source/4-reference/simulation/3-robot_usds.md:86
 #: e916013f3b2a4041a9176201124e0c95
 msgid "Loading in Isaac Sim"
 msgstr "在 Isaac Sim 中加载"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:84
+#: ../../source/4-reference/simulation/3-robot_usds.md:88
 #: 3ed86d0f4afa43e7aea34ab953a772d4
 msgid ""
 "from omni.isaac.core.utils.stage import add_reference_to_stage\n"
@@ -334,22 +343,22 @@ msgstr ""
 "    prim_path=\"/World/Robot\"\n"
 ")\n"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:94
+#: ../../source/4-reference/simulation/3-robot_usds.md:98
 #: 5ff2eb7c493a4ae19ba1460f1107caea
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:96
+#: ../../source/4-reference/simulation/3-robot_usds.md:100
 #: 27dbd07ef1014c6782c32502dcef40f7
 msgid "[USD Submodules](4-usd_submodules.md)"
 msgstr "[USD 子模块](4-usd_submodules.md)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:97
+#: ../../source/4-reference/simulation/3-robot_usds.md:101
 #: ce3fbf68f23f41cf8d4857dd9995602a
 msgid "[FaSim-Isaac](2-fasim_isaac.md)"
 msgstr "[FaSim-Isaac](2-fasim_isaac.md)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:98
+#: ../../source/4-reference/simulation/3-robot_usds.md:102
 #: 0fee12b2005043a2887fcc0fdbef4889
 msgid "[Synthetic Data](../../6-synthetic_data/1-isaac_scenes.md)"
 msgstr "[合成数据](../../6-synthetic_data/1-isaac_scenes.md)"
@@ -380,3 +389,13 @@ msgstr "[合成数据](../../6-synthetic_data/1-isaac_scenes.md)"
 #~ "├── mobile_manipulators/\n"
 #~ "├── grippers/\n"
 #~ "└── sensors/\n"
+
+#~ msgid "Initialize"
+#~ msgstr "初始化"
+
+#~ msgid ""
+#~ "cd FaSim-Isaac\n"
+#~ "./init.sh  # Handles robot_usds initialization\n"
+#~ msgstr ""
+#~ "cd FaSim-Isaac\n"
+#~ "./init.sh  # Handles robot_usds initialization\n"
