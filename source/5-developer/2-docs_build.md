@@ -102,9 +102,9 @@ docs/
 
 ### Markdown (MyST)
 
-Use MyST-flavored Markdown:
+Use MyST-flavored Markdown. **Never nest `` ``` `` fences inside `` ```{admonition} ``** — that breaks zh_CN rendering. Use colon fences (`:::`) when an admonition must contain a code block, and wrap examples of fences in a 4-backtick outer fence:
 
-```markdown
+````markdown
 # Heading
 
 Paragraph text.
@@ -118,12 +118,12 @@ Paragraph text.
 code block
 ```
 
-```{admonition} Note
+:::{admonition} Note
 :class: tip
 
 Admonition content.
-```
-```
+:::
+````
 
 ### Code Blocks
 
@@ -141,7 +141,9 @@ from ros2_robot_interface import RobotInterface
 
 ### Admonitions
 
-```markdown
+Use backtick fences only when the body has **no** nested ` ``` ` code fences:
+
+````markdown
 ```{admonition} Warning
 :class: warning
 
@@ -153,7 +155,21 @@ Warning content.
 
 To be completed.
 ```
+````
+
+If the admonition body needs a fenced code block, use a colon fence instead:
+
+````markdown
+:::{admonition} Path Verification
+:class: tip
+
+Verify the binary exists:
+
+```bash
+ls ~/isaacsim/python.sh
 ```
+:::
+````
 
 ### Cross-References
 
@@ -187,6 +203,12 @@ flowchart LR
 GitHub Actions builds documentation on:
 - Push to main (deploy)
 - Pull requests (check build)
+
+CI fails when:
+- zh_CN translation coverage is below 95%
+- Source files nest `` ``` `` inside `` ```{admonition} ``
+- Sphinx emits any warning (`SPHINXOPTS=-W`)
+- Built HTML contains a literal `` ``` `` fence (broken MyST nesting)
 
 Build must pass before merging.
 

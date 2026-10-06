@@ -1,6 +1,7 @@
 # Minimal makefile for Sphinx documentation
 
-SPHINXOPTS    ?=
+# Treat warnings as errors so CI fails on Sphinx warnings (including MyST fence issues).
+SPHINXOPTS    ?= -W --keep-going
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build

@@ -79,10 +79,14 @@ gettext_uuid = True
 gettext_additional_targets = ['literal-block', 'raw']
 
 # -- Language switcher for Furo ----------------------------------------------
-# We use custom template to provide language switching
+# GitHub Pages project site is served at /docs/, not the domain root.
+html_baseurl = "https://fiveages-sim.github.io/docs/"
+
+# Custom sidebar template provides language switching.
+# Paths must include the /docs/ prefix for the project site.
 html_context = {
     "languages": [
-        ("English", "/"),
-        ("简体中文", "/zh_CN/"),
+        ("English", "/docs/"),
+        ("简体中文", "/docs/zh_CN/"),
     ],
 }

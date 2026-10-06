@@ -28,14 +28,15 @@ msgstr "lerobot_ros2"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:3
 #: deefaf7000474f47bd80de6a9ac02c7a
 msgid "LeRobot integration for ROS 2."
-msgstr "LeRobot integration for ROS 2."
+msgstr "面向 ROS 2 的 LeRobot 集成。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:5
 #: 1ade09f7291341908b7efc0fcc2eaf3a
 msgid ""
 "**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
 "sim/lerobot_ros2)"
-msgstr "**仓库:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2)"
+msgstr ""
+"**仓库：** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2)"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:7
 #: 6612be29a8ab41598550f77cf6538e08
@@ -45,22 +46,22 @@ msgstr "用途"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:9
 #: 75cd9371271d493694965a61a6685df4
 msgid "Integrates LeRobot learning framework with ROS 2:"
-msgstr "Integrates LeRobot learning framework with ROS 2:"
+msgstr "将 LeRobot 学习框架与 ROS 2 集成："
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:10
 #: 612ac4c1db874423a6c62daca97e23bb
 msgid "Data collection"
-msgstr "Data collection"
+msgstr "数据采集"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:11
 #: 76c99bf523ce463d9c158f60d4da920c
 msgid "Policy deployment"
-msgstr "Policy deployment"
+msgstr "策略部署"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:12
 #: de5423d14479448db0c8a87b531dcdf6
 msgid "Training pipelines"
-msgstr "Training pipelines"
+msgstr "训练流水线"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:14
 #: b618baf5e8e34aa8b1e6023536102a7e
@@ -74,9 +75,9 @@ msgid ""
 "cd lerobot_ros2\n"
 "pip install -e .\n"
 msgstr ""
-"git clone https://github.com/fiveages-sim/lerobot_ros2.git\\n"
-"cd lerobot_ros2\\n"
-"pip install -e .\\n"
+"git clone https://github.com/fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"pip install -e .\n"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:22
 #: 51a4d84bcdd545fc91b9a9255ff27e92
@@ -86,12 +87,12 @@ msgstr "功能特性"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:24
 #: 17afbbc6fd4340c4aff573876c525bc2
 msgid "Data Collection"
-msgstr "Data Collection"
+msgstr "数据采集"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:26
 #: edb7883d9aba47c3940706ce17ce3254
 msgid "Record robot demonstrations:"
-msgstr "Record robot demonstrations:"
+msgstr "录制机器人示范："
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:28
 #: db6b44b494de49a5860e4b76abf40fd9
@@ -108,27 +109,27 @@ msgid ""
 "collector.stop_recording()\n"
 "collector.save()\n"
 msgstr ""
-"from lerobot_ros2 import DataCollector\\n"
-"\\n"
-"collector = DataCollector(\\n"
-"    dataset_name=\\\"my_task\\\",\\n"
-"    robot_interface=robot\\n"
-")\\n"
-"\\n"
-"collector.start_recording()\\n"
-"# ... perform demonstration ...\\n"
-"collector.stop_recording()\\n"
-"collector.save()\\n"
+"from lerobot_ros2 import DataCollector\n"
+"\n"
+"collector = DataCollector(\n"
+"    dataset_name=\"my_task\",\n"
+"    robot_interface=robot\n"
+")\n"
+"\n"
+"collector.start_recording()\n"
+"# ... perform demonstration ...\n"
+"collector.stop_recording()\n"
+"collector.save()\n"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:42
 #: 2654592bcc4c4282bf9a570ee017d584
 msgid "Policy Deployment"
-msgstr "Policy 部署"
+msgstr "策略部署"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:44
 #: 6486fee825ec46fcbc6f472239b06c30
 msgid "Run trained policies:"
-msgstr "Run trained policies:"
+msgstr "运行已训练的策略："
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:46
 #: 5bf864f2f5d944cbbd71ecba76a37e0c
@@ -142,14 +143,14 @@ msgid ""
 "\n"
 "runner.run()\n"
 msgstr ""
-"from lerobot_ros2 import PolicyRunner\\n"
-"\\n"
-"runner = PolicyRunner(\\n"
-"    model_path=\\\"path/to/model\\\",\\n"
-"    robot_interface=robot\\n"
-")\\n"
-"\\n"
-"runner.run()\\n"
+"from lerobot_ros2 import PolicyRunner\n"
+"\n"
+"runner = PolicyRunner(\n"
+"    model_path=\"path/to/model\",\n"
+"    robot_interface=robot\n"
+")\n"
+"\n"
+"runner.run()\n"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:57
 #: 076c18b694bc476ca79464c96d39b80c
@@ -189,12 +190,12 @@ msgstr "`Empty`"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: 2d1bdfeef98840899cedd7c9f6512db4 d2101187ed4f4e5fb6bdc9456d00927b
 msgid "Subscribe"
-msgstr "Subscribe"
+msgstr "订阅"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: c1a1703411444973872e84806a780cae
 msgid "Start episode"
-msgstr "Start episode"
+msgstr "开始回合"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: 673a3b056fb34dd48691e08c336a50f7
@@ -204,7 +205,7 @@ msgstr "`/lerobot/episode_end`"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: 1940cb75268e43e6a462f59567a75034
 msgid "End episode"
-msgstr "End episode"
+msgstr "结束回合"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: 904c5b7d583b49ca9c8f8e2c08d216a0
@@ -219,37 +220,37 @@ msgstr "`JointState`"
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: 14310c19a7e94da9a2f165e9e62e2aef
 msgid "Publish"
-msgstr "Publish"
+msgstr "发布"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md
 #: c15e3bd8672d429c8142742986b79b5e
 msgid "Policy output"
-msgstr "Policy output"
+msgstr "策略输出"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:65
 #: 697304b746d244129248ea40875d7ef7
 msgid "Dataset Format"
-msgstr "Dataset Format"
+msgstr "数据集格式"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:67
 #: fcea7e8424cc40b285405fbd5ed98f5e
 msgid "Compatible with LeRobot HuggingFace datasets:"
-msgstr "Compatible with LeRobot HuggingFace datasets:"
+msgstr "兼容 LeRobot HuggingFace 数据集："
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:68
 #: 0b857cb7f75142a9841da94bcbeb5bd1
 msgid "Episode structure"
-msgstr "Episode structure"
+msgstr "回合结构"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:69
 #: a822d8fc42254bdb9b65989be762bde6
 msgid "Observation/action format"
-msgstr "Observation/action format"
+msgstr "观测/动作格式"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:70
 #: 8983cfbca9324b87951ca374f04be582
 msgid "Metadata"
-msgstr "Metadata"
+msgstr "元数据"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:72
 #: f8e4bff13be2421398977868e8822f9e
@@ -265,4 +266,3 @@ msgstr "[ros2_robot_interface](1-ros2_robot_interface.md)"
 #: 2b0a0c846e084e038f754bacfd8669a1
 msgid "[HUG](6-hug.md)"
 msgstr "[HUG](6-hug.md)"
-

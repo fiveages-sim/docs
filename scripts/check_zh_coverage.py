@@ -30,27 +30,26 @@ def check_coverage(locale_dir: Path, threshold: float) -> tuple[int, int, float]
         
         i = 0
         while i < len(lines):
-            if lines[i].startswith('msgid "') and lines[i].strip() != 'msgid ""':
-                # Get msgid
-                msgid = lines[i][7:-2] if lines[i].endswith('"\n') else ""
+            if lines[i].startswith('msgid "'):
+                # Include multiline msgids that start with msgid "".
+                msgid = lines[i][7:-2] if lines[i].endswith('"\n') else lines[i][7:].rstrip('\n').rstrip('"')
                 j = i + 1
                 while j < len(lines) and lines[j].startswith('"'):
-                    msgid += lines[j][1:-2] if lines[j].endswith('"\n') else ""
+                    msgid += lines[j][1:-2] if lines[j].endswith('"\n') else lines[j][1:].rstrip('\n').rstrip('"')
                     j += 1
-                
-                # Get msgstr
+
                 if j < len(lines) and lines[j].startswith('msgstr "'):
-                    msgstr = lines[j][8:-2] if lines[j].endswith('"\n') else ""
+                    msgstr = lines[j][8:-2] if lines[j].endswith('"\n') else lines[j][8:].rstrip('\n').rstrip('"')
                     k = j + 1
                     while k < len(lines) and lines[k].startswith('"'):
-                        msgstr += lines[k][1:-2] if lines[k].endswith('"\n') else ""
+                        msgstr += lines[k][1:-2] if lines[k].endswith('"\n') else lines[k][1:].rstrip('\n').rstrip('"')
                         k += 1
-                    
+
                     if msgid.strip():
                         total_msgids += 1
                         if msgstr.strip():
                             total_translated += 1
-                    
+
                     i = k
                     continue
             i += 1

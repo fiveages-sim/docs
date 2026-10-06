@@ -28,9 +28,7 @@ msgstr "运行模拟演示"
 msgid ""
 "Run a robot demonstration in mock hardware mode without physical hardware"
 " or simulation."
-msgstr ""
-"Run a robot demonstration in mock hardware mode without physical hardware"
-" or simulation."
+msgstr "在模拟硬件模式下运行机器人演示，无需实体硬件或仿真。"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:5 fbf13e119563482a9293f61d5828dfa3
 msgid "Prerequisites"
@@ -38,11 +36,11 @@ msgstr "前提条件"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:7 0327ad1390a14d3ea800517114a46371
 msgid "Workspace built and sourced"
-msgstr "工作空间 built and sourced"
+msgstr "工作空间已编译并已执行 source"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:8 5e711fdd01b24a0f9902ed0c4213e103
 msgid "RViz2 installed (`ros-jazzy-rviz2`)"
-msgstr "RViz2 installed (`ros-jazzy-rviz2`)"
+msgstr "已安装 RViz2（`ros-jazzy-rviz2`）"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:10 e4878fc9207242d0aae4676aca51832b
 msgid "Steps"
@@ -57,24 +55,25 @@ msgid ""
 "source /opt/ros/jazzy/setup.bash\n"
 "source ~/open-deploy-ws/install/setup.bash\n"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\\nsource ~/open-deploy-"
-"ws/install/setup.bash\\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:19 b79be382fd7a442896564336cbce8e06
 msgid "2. Launch Mock Demo"
-msgstr "2. Launch Mock Demo"
+msgstr "2. 启动模拟演示"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:21 ca36c0c78cda4af4a1113aada9f3fc3d
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
-msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:25 cdc2cd76c4ed4e4f8e94914111c10ae3
 msgid "3. Send Target Pose"
-msgstr "3. Send 目标 Pose"
+msgstr "3. 发送目标位姿"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:27 bb73abd34b3c4d56ad85ce39625035ff
 msgid "In a new terminal:"
-msgstr "In a new terminal:"
+msgstr "在新终端中："
 
 #: ../../source/2-how_to/1-run_mock_demo.md:29 d7c915c0fd264ed090d85828bcc3b58e
 #, python-brace-format
@@ -85,25 +84,24 @@ msgid ""
 "z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
 "  --once\n"
 msgstr ""
-"source ~/open-deploy-ws/install/setup.bash\\nros2 topic pub /target_pose "
-"geometry_msgs/msg/PoseStamped \\\\\\n  \\\"{header: {frame_id: "
-"'base_link'}, pose: {position: {x: 0.3, y: 0.1, z: 0.4}, orientation: {w:"
-" 1.0}}}\\\" \\\\\\n  --once\\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\n"
+"  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.1, z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
+"  --once\n"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:36 413b1eff457243c0994ea28de9ae9145
 msgid "4. Observe Motion"
-msgstr "4. Observe Motion"
+msgstr "4. 观察运动"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:38 54e41b352aaa466c82dd20aed0c0f949
 msgid "Watch RViz — the robot should move to the target pose."
-msgstr "Watch RViz — the robot should move to the target pose."
+msgstr "观察 RViz — 机器人应移动到目标位姿。"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:40 16981d1aa1684c39bab48068fcec1558
 msgid "With Different Robots"
-msgstr "With Different 机器人"
+msgstr "使用不同机器人"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:42 16369f67ec9d4f33846a02d5cd06d46e
-#, fuzzy
 msgid ""
 "# Dobot CR5\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
@@ -113,16 +111,15 @@ msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
 "hardware:=mock\n"
 msgstr ""
-"# Dobot CR5\\nros2 launch ocs2_arm_controller demo.launch.py "
-"robot:=dobot_cr5 hardware:=mock\\n\\n# ARX ACone\\nros2 launch "
-"ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock\\n\\n#"
-" With gripper\\nros2 launch ocs2_arm_controller demo.launch.py "
-"robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock\\n"
+"# Dobot CR5\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock\n"
+"\n"
+"# ARX ACone\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock\n"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:50 5a4959fff93446bea4a306d3bf4bde5a
-#, fuzzy
 msgid "With Gripper"
-msgstr "`gripper`"
+msgstr "带夹爪"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 1779b016b3c443cda32e16208a97f1da
 msgid "TODO"
@@ -132,19 +129,20 @@ msgstr "待完成"
 msgid ""
 "For valid robot + gripper combinations, check the launch files in "
 "`arms_ros2_control`."
-msgstr "For valid robot + gripper combinations, check the launch files in `arms_ros2_control`."
+msgstr "有效的机器人与夹爪组合，请查看 `arms_ros2_control` 中的启动文件。"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:58 16369f67ec9d4f33846a02d5cd06d46e
-#, fuzzy
 msgid ""
 "# General pattern\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
 "gripper:=<gripper_name> hardware:=mock\n"
-msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
+msgstr ""
+"# General pattern\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock\n"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:63 668a955685994913a71965c7802caa99
 msgid "Launch Parameters"
-msgstr "Launch 参数"
+msgstr "启动参数"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 a754842f41044760a839075a01fe40dc
 msgid "Parameter"
@@ -168,7 +166,7 @@ msgstr "`mock`, `gz`, `isaac`, (real)"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 bbf5c289086949b7a1afa01d5d8c0ca5
 msgid "varies"
-msgstr "varies"
+msgstr "视情况而定"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 be37b49851b84838a81f234222838f08
 msgid "`robot`"
@@ -176,7 +174,7 @@ msgstr "`robot`"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 6705e3c5b12d42f3b7376d0c4c0c3bd9
 msgid "Robot name"
-msgstr "机器人 name"
+msgstr "机器人名称"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 859d0c3f97bd4d939be446184aada373
 msgid "`dobot_cr5`"
@@ -188,11 +186,11 @@ msgstr "`gripper`"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 c1b9ffdd05d94cce99ebbe493d2a4b50
 msgid "Gripper name"
-msgstr "Gripper name"
+msgstr "夹爪名称"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 c28985f39c31436cbdd876b125fef22b
 msgid "none"
-msgstr "none"
+msgstr "无"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:52 74f3bac78caf489cafc345e6bbdddbd7
 msgid "`rviz`"
@@ -212,11 +210,11 @@ msgstr "验证"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:74 c5624d468bab4e58bdce2fc366a5d783
 msgid "Success indicators:"
-msgstr "Success indicators:"
+msgstr "成功标志："
 
 #: ../../source/2-how_to/1-run_mock_demo.md:75 7af3fdfbddd946468f76c764748a2366
 msgid "RViz window opens showing robot model"
-msgstr "RViz window opens showing robot model"
+msgstr "RViz 窗口打开并显示机器人模型"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:76 e56b49be2e1e49e7a8c60b73a861149a
 msgid "Controller logs show \"Controller started\""
@@ -224,7 +222,7 @@ msgstr "控制器 logs show \\\"控制器 started\\\""
 
 #: ../../source/2-how_to/1-run_mock_demo.md:77 ec34fad655704373991a7e05228b2abf
 msgid "Robot responds to target pose commands"
-msgstr "机器人 responds to target pose commands"
+msgstr "机器人响应目标位姿指令"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:79 0067c658704041e5b6272fb7d4f5b722
 msgid "Troubleshooting"
@@ -232,37 +230,37 @@ msgstr "故障排除"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:81 91d529c86d6a4ab4842f2d4b49148024
 msgid "Robot doesn't move"
-msgstr "机器人 doesn't move"
+msgstr "机器人不运动"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:83 a505b0bf9ff64cc6b53d5970ab737a77
 msgid "Check target pose is reachable"
-msgstr "Check target pose is reachable"
+msgstr "检查目标位姿是否可达"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:84 b4523a59ef6f4151ab12993b6812dd90
 msgid "Verify no error messages in controller output"
-msgstr "Verify no error messages in controller output"
+msgstr "确认控制器输出中没有错误信息"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:85 be8be589840749b2b1089da63b7d75b5
 msgid "Ensure correct robot parameter"
-msgstr "Ensure correct robot parameter"
+msgstr "确认机器人参数正确"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:87 676295aea7944b87812fdba01af226fb
 msgid "RViz shows broken model"
-msgstr "RViz shows broken model"
+msgstr "RViz 中模型显示异常"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:89 4111fed71edd4c1fbeb2c845bf220de9
 msgid "Rebuild description packages"
-msgstr "Rebuild description packages"
+msgstr "重新编译描述软件包"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:90 da7f4fcd05634d2d8dbb994b2a1bd5f3
 msgid "Check URDF for errors: `check_urdf <file>.urdf`"
-msgstr "Check URDF for errors: `check_urdf <file>.urdf`"
+msgstr "检查 URDF 是否有错误：`check_urdf <file>.urdf`"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:92 1c72acb5b3a444bf86a6fb7a3c580cf4
 msgid "Command not found"
-msgstr "Command not found"
+msgstr "找不到命令"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:94 e639ed8147e24ffbbc93228b2d87f694
 msgid "source install/setup.bash  # Must source after building\n"
-msgstr "source install/setup.bash  # Must source after building\\n"
-
+msgstr ""
+"source install/setup.bash  # Must source after building\n"

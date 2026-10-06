@@ -28,14 +28,15 @@ msgstr "wuji-retargeting"
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:3
 #: 2f21486458b14c76bd3367525ae6d4af
 msgid "Hand motion retargeting for Wuji hands."
-msgstr "Hand motion retargeting for Wuji hands."
+msgstr "面向 Wuji 灵巧手的手部运动重定向。"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:5
 #: 23a01afa50384ccdb340a9308069e577
 msgid ""
 "**Repository:** [fiveages-sim/wuji-retargeting](https://github.com"
 "/fiveages-sim/wuji-retargeting)"
-msgstr "**仓库:** [fiveages-sim/wuji-retargeting](https://github.com/fiveages-sim/wuji-retargeting)"
+msgstr ""
+"**仓库：** [fiveages-sim/wuji-retargeting](https://github.com/fiveages-sim/wuji-retargeting)"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:7
 #: 9ca669e6e29b49ab9cadb0b4992f44b9
@@ -45,22 +46,22 @@ msgstr "用途"
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:9
 #: 23ede177378a42b78d2a212ccbe29e14
 msgid "Retargets hand motion between different hand models:"
-msgstr "Retargets hand motion between different hand models:"
+msgstr "在不同手部模型之间重定向手部运动："
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:10
 #: 22783a8dd92a4202bc6f77df2a24ad5d
 msgid "Human to robot"
-msgstr "Human to robot"
+msgstr "人手到机器人"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:11
 #: ee47d7719e4247e39119872d29408a08
 msgid "Robot to robot"
-msgstr "机器人 to robot"
+msgstr "机器人到机器人"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:12
 #: 4af4661f9a8c4454b6456c7e777b89aa
 msgid "Mirror operations"
-msgstr "Mirror operations"
+msgstr "镜像操作"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:14
 #: c1d68123b7d4402ab8312561fbb4ecf2
@@ -74,9 +75,9 @@ msgid ""
 "cd wuji-retargeting\n"
 "pip install -e .\n"
 msgstr ""
-"git clone https://github.com/fiveages-sim/wuji-retargeting.git\\n"
-"cd wuji-retargeting\\n"
-"pip install -e .\\n"
+"git clone https://github.com/fiveages-sim/wuji-retargeting.git\n"
+"cd wuji-retargeting\n"
+"pip install -e .\n"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:22
 #: bfe900cc89aa4584ac6a66720db81fb0
@@ -95,14 +96,14 @@ msgid ""
 "\n"
 "robot_joints = retargeter.retarget(human_joints)\n"
 msgstr ""
-"from wuji_retargeting import Retargeter\\n"
-"\\n"
-"retargeter = Retargeter(\\n"
-"    source_model=\\\"human_hand\\\",\\n"
-"    target_model=\\\"wuji_hand2\\\"\\n"
-")\\n"
-"\\n"
-"robot_joints = retargeter.retarget(human_joints)\\n"
+"from wuji_retargeting import Retargeter\n"
+"\n"
+"retargeter = Retargeter(\n"
+"    source_model=\"human_hand\",\n"
+"    target_model=\"wuji_hand2\"\n"
+")\n"
+"\n"
+"robot_joints = retargeter.retarget(human_joints)\n"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:35
 #: 7554e320887c4059adfc4e865eaeffe6
@@ -127,30 +128,30 @@ msgid ""
 "    human_thumb_pip: wuji_thumb_2\n"
 "    # ...\n"
 msgstr ""
-"retargeting:\\n"
-"  source:\\n"
-"    model: human_hand\\n"
-"    joint_names: [...]\\n"
-"  \\n"
-"  target:\\n"
-"    model: wuji_hand2\\n"
-"    joint_names: [...]\\n"
-"  \\n"
-"  mapping:\\n"
-"    # Joint correspondence\\n"
-"    human_thumb_mcp: wuji_thumb_1\\n"
-"    human_thumb_pip: wuji_thumb_2\\n"
-"    # ...\\n"
+"retargeting:\n"
+"  source:\n"
+"    model: human_hand\n"
+"    joint_names: [...]\n"
+"  \n"
+"  target:\n"
+"    model: wuji_hand2\n"
+"    joint_names: [...]\n"
+"  \n"
+"  mapping:\n"
+"    # Joint correspondence\n"
+"    human_thumb_mcp: wuji_thumb_1\n"
+"    human_thumb_pip: wuji_thumb_2\n"
+"    # ...\n"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:54
 #: cb0ddde7b9934348b25ac30d44236f34
 msgid "SDK Preference"
-msgstr "SDK Preference"
+msgstr "SDK 选用建议"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:56
 #: 9128c15b934f4a09af689504871d9ac3
 msgid "For best results, prefer wuji-sdk for direct hand control where available."
-msgstr "For best results, prefer wuji-sdk for direct hand control where available."
+msgstr "为获得最佳效果，在可用时应优先使用 wuji-sdk 直接控制灵巧手。"
 
 #: ../../source/4-reference/python_apps/7-wuji_retargeting.md:58
 #: e13b0e1dcc194c05a3a2ab275956ad3b
@@ -166,4 +167,3 @@ msgstr "[wuji_glove_teleop](../teleop/5-wuji_glove.md)"
 #: 8f137a619b7944d2a6092b63a194a455
 msgid "[wuji-ros2-control](../teleop/7-wuji_hand_hi.md)"
 msgstr "[wuji-ros2-control](../teleop/7-wuji_hand_hi.md)"
-

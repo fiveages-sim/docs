@@ -28,7 +28,7 @@ msgstr "ocs2_arm_controller"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:3
 #: a2e5979ba46345cba74c4fca54d66088
 msgid "MPC-based arm controller for the FiveAges Sim stack."
-msgstr "MPC-based arm controller for the FiveAges Sim stack."
+msgstr "用于 FiveAges Sim 技术栈的基于 MPC 的机械臂控制器。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:5
 #: 1f4933099d8046699b93ca43e56647e0
@@ -36,8 +36,7 @@ msgid ""
 "**Repository:** [fiveages-sim/arms_ros2_control](https://github.com"
 "/fiveages-sim/arms_ros2_control)"
 msgstr ""
-"**仓库:** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-"
-"sim/arms_ros2_control)"
+"**仓库：** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:7
 #: bc1e32a8dcd34d4599f5fee88e214d55
@@ -47,27 +46,27 @@ msgstr "用途"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:9
 #: a15ecf22aa6b45808fb70b902644e96b
 msgid "`ocs2_arm_controller` provides:"
-msgstr "`ocs2_arm_controller` provides:"
+msgstr "`ocs2_arm_controller` 提供："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:10
 #: 18190e9c6491478f88040fdd34837b0d
 msgid "End-effector pose tracking"
-msgstr "End-effector pose tracking"
+msgstr "末端执行器位姿跟踪"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:11
 #: 2ef7d6df635f46de801492ce932b19e0
 msgid "Joint position control"
-msgstr "Joint position control"
+msgstr "关节位置控制"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:12
 #: 380f7ed050e940d1aee0939d15860fa1
 msgid "Smooth trajectory generation"
-msgstr "Smooth trajectory generation"
+msgstr "平滑轨迹生成"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:13
 #: 59c4c29606db41d4b4c41ec1c4a91cb9
 msgid "Multiple hardware backend support"
-msgstr "Multiple hardware backend support"
+msgstr "支持多种硬件后端"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:15
 #: 042dbd61c61f4384b68ed16c85d40e6f
@@ -77,12 +76,13 @@ msgstr "安装"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:17
 #: 1efffce1976445faa8a4bbf9b60319ed
 msgid "Included in `arms_ros2_control` package:"
-msgstr "Included in `arms_ros2_control` package:"
+msgstr "包含在 `arms_ros2_control` 软件包中："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:19
 #: 8fe77f8e799249a083c41e09a56f936a
 msgid "colcon build --packages-up-to ocs2_arm_controller\n"
-msgstr "colcon build --packages-up-to ocs2_arm_controller\\n"
+msgstr ""
+"colcon build --packages-up-to ocs2_arm_controller\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:23
 #: 6dda7c85f5274b2e9675404fc8ec4c1b
@@ -92,29 +92,31 @@ msgstr "使用方法"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:25
 #: 1916bfe0768d4ae3ab9a1cb4663b0784
 msgid "Basic Launch"
-msgstr "Basic Launch"
+msgstr "基本启动"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:27
 #: 9c97a639800548ea834215ce1b135822
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
-msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:31
 #: f21c2dc2ec8e48cab38d4bf2929b9524
 msgid "With Parameters"
-msgstr "With 参数"
+msgstr "带参数启动"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:33
 #: d3c02f5efbd041b59c068c0241ff9334
-#, fuzzy
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py \\\n"
 "  robot:=<robot_name> \\\n"
 "  hardware:=mock \\\n"
 "  rviz:=true\n"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py \\\\\\n  robot:=dobot_cr5 "
-"\\\\\\n  hardware:=mock \\\\\\n  gripper:=dh_ag95 \\\\\\n  rviz:=true\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot:=<robot_name> \\\n"
+"  hardware:=mock \\\n"
+"  rviz:=true\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: afe1c187e7d544e6b80ac53971003ca2
@@ -126,12 +128,12 @@ msgstr "待完成"
 msgid ""
 "For valid `robot` and `gripper` parameter values, check the launch files "
 "in `arms_ros2_control` and the corresponding description packages."
-msgstr "For valid `robot` and `gripper` parameter values, check the launch files in `arms_ros2_control` and the corresponding description packages."
+msgstr "有效的 `robot` 和 `gripper` 参数取值，请查看 `arms_ros2_control` 中的启动文件以及对应的描述软件包。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:46
 #: 8f395952f23040e7b9f9027f7065802a
 msgid "Launch Parameters"
-msgstr "Launch 参数"
+msgstr "启动参数"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 00f3e9a4c4d440c4af937fae9b8062cc
@@ -141,7 +143,7 @@ msgstr "参数"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: cac4748def544fb2a2b2a08ba7fe5054
 msgid "Values"
-msgstr "Values"
+msgstr "取值"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 22ca9daa401f4f4b8cc00ba4ffb1c2b8
@@ -161,7 +163,7 @@ msgstr "`robot`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 7a555665f2324d68a7c8e1c906ba2614
 msgid "Robot names"
-msgstr "机器人 names"
+msgstr "机器人名称"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 7b295bc843f049878941f2301d983135
@@ -171,7 +173,7 @@ msgstr "`dobot_cr5`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: c6e47ce6fa0342a4845e4ddb7f641929
 msgid "Robot model"
-msgstr "机器人 model"
+msgstr "机器人模型"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 6abfb3d934514c26a33f09662696bfb1
@@ -181,17 +183,17 @@ msgstr "`hardware`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: abe8f02385f8435d87be1e95cf8fcac8
 msgid "`mock`, `gz`, `isaac`, etc."
-msgstr "`mock`, `gz`, `isaac`, etc."
+msgstr "`mock`、`gz`、`isaac` 等"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 5f12ecbbd812499e8d4f7519a1c8ae54
 msgid "varies"
-msgstr "varies"
+msgstr "视情况而定"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: a790113485574146868d8ceab9a74f81
 msgid "Hardware type"
-msgstr "硬件 type"
+msgstr "硬件类型"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: f9b9c27567fe487a924714681b5f829f
@@ -201,17 +203,17 @@ msgstr "`gripper`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 1c4cd4db415247699e73ea7148060435
 msgid "Gripper names"
-msgstr "Gripper names"
+msgstr "夹爪名称"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 3489e8fed5d74c60a196e618aa319464
 msgid "none"
-msgstr "none"
+msgstr "无"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 348110b4be97496e92b5abea14415190
 msgid "Attached gripper"
-msgstr "Attached gripper"
+msgstr "所连接的夹爪"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: f46c23a97fd843719380e26fb6aadc1d
@@ -231,7 +233,7 @@ msgstr "`true`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 9a81e637eddc485ea49e475a52df996e
 msgid "Launch RViz"
-msgstr "Launch RViz"
+msgstr "启动 RViz"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:55
 #: 8d64741f398b475b990834f5e527ef8b
@@ -241,7 +243,7 @@ msgstr "主题"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:57
 #: 26ab161f8d2b49158a7615c2a590023b
 msgid "Subscribed"
-msgstr "Subscribed"
+msgstr "订阅"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 7368dd1e50a5475daadec34246da57cd
@@ -266,7 +268,7 @@ msgstr "`PoseStamped`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 54edffa1d1ce4351a2794a24412c7cf7
 msgid "Cartesian target"
-msgstr "Cartesian target"
+msgstr "笛卡尔空间目标"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: fc6b1f68c4c549efa30597ee03b3fe10
@@ -281,12 +283,12 @@ msgstr "`JointState`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 121dff76205241cfad0045af01c0f060
 msgid "Joint targets"
-msgstr "Joint targets"
+msgstr "关节目标"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:64
 #: ff7b9c0702c6414389cec1534e040f97
 msgid "Published"
-msgstr "Published"
+msgstr "发布"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 306a57439ede4888a1ec0590aaf0d138
@@ -296,7 +298,7 @@ msgstr "`/joint_states`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 1fb0902a986742d7b07d4323791979c3
 msgid "Current state"
-msgstr "Current state"
+msgstr "当前状态"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: d54678db73314c588279db9c0ad5eab3
@@ -311,7 +313,7 @@ msgstr "自定义"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: 11758de025084c109ce1e46802286c81
 msgid "MPC trajectory"
-msgstr "MPC trajectory"
+msgstr "MPC 轨迹"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: dd083b1de9e94375b7b263951bf05ae9
@@ -321,7 +323,7 @@ msgstr "`/ee_pose`"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: ff57aa7479394a8dbf9e72bad0043317
 msgid "End-effector pose"
-msgstr "End-effector pose"
+msgstr "末端执行器位姿"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:72
 #: 08bc412b636e4b799962fac9569958fd
@@ -331,12 +333,12 @@ msgstr "配置"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:74
 #: c834ae0f60ed49219439870d5584a97e
 msgid "OCS2 Config"
-msgstr "OCS2 Config"
+msgstr "OCS2 配置"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:76
 #: 11d10293b97f465cb19d69af5eea423d
 msgid "Located in description packages:"
-msgstr "Located in description packages:"
+msgstr "位于描述软件包中："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:78
 #: e5ad969d230a4b41ae74070f0847078a
@@ -354,15 +356,23 @@ msgid ""
 "  targetTrackingWeight: [100, 100, 100, 10, 10, 10]\n"
 "  inputWeight: [1, 1, 1, 1, 1, 1]\n"
 msgstr ""
-"# config/ocs2_arm_config.yaml\\narm:\\n  dof: 6\\n  joint_names: "
-"[joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]\\n\\nmpc:\\n  dt: "
-"0.01\\n  horizon: 1.0\\n\\ntask:\\n  targetTrackingWeight: [100, 100, "
-"100, 10, 10, 10]\\n  inputWeight: [1, 1, 1, 1, 1, 1]\\n"
+"# config/ocs2_arm_config.yaml\n"
+"arm:\n"
+"  dof: 6\n"
+"  joint_names: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]\n"
+"\n"
+"mpc:\n"
+"  dt: 0.01\n"
+"  horizon: 1.0\n"
+"\n"
+"task:\n"
+"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]\n"
+"  inputWeight: [1, 1, 1, 1, 1, 1]\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:93
 #: af09b7c85bc9454cbccbb97d154ac1f5
 msgid "Controller Config"
-msgstr "控制器 Config"
+msgstr "控制器配置"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:95
 #: 877e2b1c8be94e2fa7ee71e6d78136b0
@@ -384,11 +394,22 @@ msgid ""
 "      - position\n"
 "      - velocity\n"
 msgstr ""
-"ocs2_arm_controller:\\n  ros__parameters:\\n    joints:\\n      - "
-"joint_1\\n      - joint_2\\n      - joint_3\\n      - joint_4\\n      - "
-"joint_5\\n      - joint_6\\n    \\n    command_interfaces:\\n      - "
-"position\\n    \\n    state_interfaces:\\n      - position\\n      - "
-"velocity\\n"
+"ocs2_arm_controller:\n"
+"  ros__parameters:\n"
+"    joints:\n"
+"      - joint_1\n"
+"      - joint_2\n"
+"      - joint_3\n"
+"      - joint_4\n"
+"      - joint_5\n"
+"      - joint_6\n"
+"    \n"
+"    command_interfaces:\n"
+"      - position\n"
+"    \n"
+"    state_interfaces:\n"
+"      - position\n"
+"      - velocity\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:114
 #: 5438aa5852d34312b396d28a42e2f0f7
@@ -414,13 +435,21 @@ msgid ""
 "\n"
 "pub.publish(target)\n"
 msgstr ""
-"from geometry_msgs.msg import PoseStamped\\nimport "
-"rclpy\\n\\nrclpy.init()\\nnode = rclpy.create_node('target_sender')\\npub"
-" = node.create_publisher(PoseStamped, '/target_pose', 10)\\n\\ntarget = "
-"PoseStamped()\\ntarget.header.frame_id = "
-"'base_link'\\ntarget.pose.position.x = 0.3\\ntarget.pose.position.y = "
-"0.0\\ntarget.pose.position.z = 0.4\\ntarget.pose.orientation.w = "
-"1.0\\n\\npub.publish(target)\\n"
+"from geometry_msgs.msg import PoseStamped\n"
+"import rclpy\n"
+"\n"
+"rclpy.init()\n"
+"node = rclpy.create_node('target_sender')\n"
+"pub = node.create_publisher(PoseStamped, '/target_pose', 10)\n"
+"\n"
+"target = PoseStamped()\n"
+"target.header.frame_id = 'base_link'\n"
+"target.pose.position.x = 0.3\n"
+"target.pose.position.y = 0.0\n"
+"target.pose.position.z = 0.4\n"
+"target.pose.orientation.w = 1.0\n"
+"\n"
+"pub.publish(target)\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:134
 #: 1126620cf7fc48dd9879e50e80be6d47
@@ -430,12 +459,12 @@ msgstr "模式"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:136
 #: e4f73afd45d74407ba44f8a455a6a6da
 msgid "Cartesian Mode"
-msgstr "Cartesian 模式"
+msgstr "笛卡尔模式"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:138
 #: cc99130aa31049eda7d8e473f84fa994
 msgid "Target end-effector pose:"
-msgstr "目标 end-effector pose:"
+msgstr "目标末端执行器位姿："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:140
 #: 0f8946737c3e486bba45e95bddc2c88c
@@ -445,19 +474,18 @@ msgid ""
 "  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0, z: "
 "0.4}, orientation: {w: 1}}}\" --once\n"
 msgstr ""
-"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\\\\n  "
-"\\\"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0, z: "
-"0.4}, orientation: {w: 1}}}\\\" --once\\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\n"
+"  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0, z: 0.4}, orientation: {w: 1}}}\" --once\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:145
 #: eb3417d0ce0c4f2cab3c8ff349681665
 msgid "Joint Mode"
-msgstr "Joint 模式"
+msgstr "关节模式"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:147
 #: 65fe42ac47454708a69bb43b6666921f
 msgid "Target joint positions:"
-msgstr "目标 joint positions:"
+msgstr "目标关节位置："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:149
 #: f88331436c48431ea136e47791daf6a0
@@ -466,8 +494,8 @@ msgid ""
 "ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \\\n"
 "  \"{position: [0, -0.5, 0.5, 0, 0.5, 0]}\" --once\n"
 msgstr ""
-"ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \\\\\\n"
-"  \\\"{position: [0, -0.5, 0.5, 0, 0.5, 0]}\\\" --once\\n"
+"ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \\\n"
+"  \"{position: [0, -0.5, 0.5, 0, 0.5, 0]}\" --once\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:154
 #: b65052d3356449f1b13c96bc69747a34
@@ -477,47 +505,49 @@ msgstr "调试"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:156
 #: d1e330aef71946e2bc602fae4de110c1
 msgid "Check Controller Status"
-msgstr "Check 控制器 状态"
+msgstr "检查控制器状态"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:158
 #: 13f6fa8e9c054523a4952254ad24b38c
 msgid "ros2 control list_controllers\n"
-msgstr "ros2 control list_controllers\\n"
+msgstr ""
+"ros2 control list_controllers\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:162
 #: a8fb917a95eb45809d100bacc83bf40d
 msgid "Monitor MPC"
-msgstr "Monitor MPC"
+msgstr "监控 MPC"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:164
 #: cbaf3a8e7026412a8f665a7322a72a7a
 msgid "ros2 topic echo /mpc_solution\n"
-msgstr "ros2 topic echo /mpc_solution\\n"
+msgstr ""
+"ros2 topic echo /mpc_solution\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:168
 #: 705b879491314ded87857dc128f6ac12
 msgid "Visualize Trajectory"
-msgstr "Visualize Trajectory"
+msgstr "可视化轨迹"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:170
 #: 39654ea4098c40de820ec91bfe73e910
 msgid "RViz displays:"
-msgstr "RViz displays:"
+msgstr "RViz 会显示："
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:171
 #: 9d22d5a6e9f0469f943aa46bcbe22e8f
 msgid "Current robot state"
-msgstr "Current robot state"
+msgstr "当前机器人状态"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:172
 #: c23d5aa71e804695bab3d4af6fe5c3c9
 msgid "Target marker"
-msgstr "目标 marker"
+msgstr "目标标记"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:173
 #: 99ed99f9eb1b48da8e202ed1036c0684
 msgid "Planned trajectory (if published)"
-msgstr "Planned trajectory (if published)"
+msgstr "规划轨迹（若已发布）"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:175
 #: 984154b8cace49a3b00ef8a70fcbc44b
@@ -532,5 +562,4 @@ msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:178
 #: 158eb312ad424656a70ce69407f0a4f2
 msgid "[Gripper and Teleop Plugins](6-gripper_teleop_plugins.md)"
-msgstr "[Gripper and Teleop Plugins](6-gripper_teleop_plugins.md)"
-
+msgstr "[夹爪与遥操作插件](6-gripper_teleop_plugins.md)"

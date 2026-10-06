@@ -26,7 +26,7 @@ msgstr "切换机器人"
 
 #: ../../source/2-how_to/2-switch_robot.md:3 7a9318e9faf94a07b9c280eb4935713f
 msgid "Change the robot model in your workspace and launches."
-msgstr "Change the robot model in your workspace and launches."
+msgstr "在工作空间和启动文件中更换机器人型号。"
 
 #: ../../source/2-how_to/2-switch_robot.md:5 9736d0d840b346f9aab3836f10eaebf3
 msgid "Prerequisites"
@@ -34,11 +34,11 @@ msgstr "前提条件"
 
 #: ../../source/2-how_to/2-switch_robot.md:7 2fb9400bc4854dc2a906a9a93d8af490
 msgid "Workspace cloned and initialized"
-msgstr "工作空间 cloned and initialized"
+msgstr "工作空间已克隆并初始化"
 
 #: ../../source/2-how_to/2-switch_robot.md:8 89c5154a73e24d1e81b416a6f5381b4c
 msgid "Target robot's description available"
-msgstr "目标 robot's description available"
+msgstr "目标机器人的描述已可用"
 
 #: ../../source/2-how_to/2-switch_robot.md:10 e7cbec1d2d2249bfbff51afc1ee5983d
 msgid "Steps"
@@ -46,23 +46,23 @@ msgstr "步骤"
 
 #: ../../source/2-how_to/2-switch_robot.md:12 8a61aee1db2a4012ae24fbea94db6a75
 msgid "1. Initialize Robot Description"
-msgstr "1. Initialize 机器人 描述"
+msgstr "1. 初始化机器人描述"
 
 #: ../../source/2-how_to/2-switch_robot.md:14 2d0e6ad6cd704b2aae4367bacdb5a55b
 msgid "If the robot description isn't already initialized:"
-msgstr "If the robot description isn't already initialized:"
+msgstr "如果机器人描述尚未初始化："
 
 #: ../../source/2-how_to/2-switch_robot.md:16 5c1199b82a4940ba8304d62faeacaaf9
 msgid ""
 "cd ~/open-deploy-ws/src/robot_descriptions\n"
 "git submodule update --init robot-descriptions-<brand>\n"
 msgstr ""
-"cd ~/open-deploy-ws/src/robot_descriptions\\ngit submodule update --init "
-"robot-descriptions-<brand>\\n"
+"cd ~/open-deploy-ws/src/robot_descriptions\n"
+"git submodule update --init robot-descriptions-<brand>\n"
 
 #: ../../source/2-how_to/2-switch_robot.md:21 4a2510131e78491ab373f6591b18bb8a
 msgid "Available brands:"
-msgstr "可用 brands:"
+msgstr "可用品牌："
 
 #: ../../source/2-how_to/2-switch_robot.md:22 490120987c3b4706b4c61edfe7cc487f
 msgid "`robot-descriptions-dobot`"
@@ -86,7 +86,7 @@ msgstr "`robot-descriptions-quadruped`"
 
 #: ../../source/2-how_to/2-switch_robot.md:28 ea099dd47bb54b829a97c6446c0b4246
 msgid "2. Rebuild"
-msgstr "2. Rebuild"
+msgstr "2. 重新编译"
 
 #: ../../source/2-how_to/2-switch_robot.md:30 ab083557ad5b43acb3e62f24bc995ffa
 msgid ""
@@ -94,30 +94,30 @@ msgid ""
 "colcon build --packages-up-to robot-descriptions-<brand>\n"
 "source install/setup.bash\n"
 msgstr ""
-"cd ~/open-deploy-ws\\ncolcon build --packages-up-to robot-"
-"descriptions-<brand>\\nsource install/setup.bash\\n"
+"cd ~/open-deploy-ws\n"
+"colcon build --packages-up-to robot-descriptions-<brand>\n"
+"source install/setup.bash\n"
 
 #: ../../source/2-how_to/2-switch_robot.md:36 9dc7837f8b1547bf8485fe94bea93a39
 msgid "3. Launch with New Robot"
-msgstr "3. Launch with New 机器人"
+msgstr "3. 使用新机器人启动"
 
 #: ../../source/2-how_to/2-switch_robot.md:38 6c2958fc6aff4375909f96d33f9a8715
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
 "hardware:=mock\n"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
-"hardware:=mock\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> hardware:=mock\n"
 
 #: ../../source/2-how_to/2-switch_robot.md
 #: ../../source/2-how_to/2-switch_robot.md:42 168b37e42203438ab552279cfc2c68ae
 #: 19a097e608074ec6974de87b6faaba93
 msgid "Robot Names"
-msgstr "机器人 Names"
+msgstr "机器人名称"
 
 #: ../../source/2-how_to/2-switch_robot.md d20461594bc04dc9a55acaf5eab523de
 msgid "Brand"
-msgstr "Brand"
+msgstr "品牌"
 
 #: ../../source/2-how_to/2-switch_robot.md b1f8594627fa4fe6929ada879d27b058
 msgid "Dobot"
@@ -153,7 +153,7 @@ msgstr "`ht_panthera`"
 
 #: ../../source/2-how_to/2-switch_robot.md:51 4917825e49dd4d0e9180ab798363ef75
 msgid "Example: Dobot to ARX"
-msgstr "示例: Dobot to ARX"
+msgstr "示例：从 Dobot 切换到 ARX"
 
 #: ../../source/2-how_to/2-switch_robot.md:53 809f3e7e46ff4e6a9560964f65b561f0
 msgid ""
@@ -174,24 +174,30 @@ msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
 "hardware:=mock\n"
 msgstr ""
-"# Current: Dobot CR5\\nros2 launch ocs2_arm_controller demo.launch.py "
-"robot:=dobot_cr5 hardware:=mock\\n\\n# Initialize ARX descriptions\\ncd "
-"src/robot_descriptions\\ngit submodule update --init robot-descriptions-"
-"arx\\n\\n# Rebuild\\ncd ~/open-deploy-ws\\ncolcon build --packages-up-to "
-"robot-descriptions-arx\\nsource install/setup.bash\\n\\n# Launch with "
-"ARX\\nros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
-"hardware:=mock\\n"
+"# Current: Dobot CR5\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock\n"
+"\n"
+"# Initialize ARX descriptions\n"
+"cd src/robot_descriptions\n"
+"git submodule update --init robot-descriptions-arx\n"
+"\n"
+"# Rebuild\n"
+"cd ~/open-deploy-ws\n"
+"colcon build --packages-up-to robot-descriptions-arx\n"
+"source install/setup.bash\n"
+"\n"
+"# Launch with ARX\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock\n"
 
 #: ../../source/2-how_to/2-switch_robot.md:70 f51cc8ae9f7340a79bb290cccea5842c
 msgid "With Grippers"
-msgstr "With Grippers"
+msgstr "搭配夹爪"
 
 #: ../../source/2-how_to/2-switch_robot.md:72 75b2f3498d3e42c0b0087b360701cd9a
-#, fuzzy
 msgid ""
 "Different robots support different grippers. The `gripper:=` parameter "
 "specifies the end-effector."
-msgstr "Different robots support different grippers:"
+msgstr "不同机器人支持不同的夹爪。`gripper:=` 参数用于指定末端执行器。"
 
 #: ../../source/2-how_to/2-switch_robot.md:74 8811a00fdc864e32976ab71b2f32c6df
 msgid "TODO"
@@ -202,17 +208,16 @@ msgid ""
 "For valid robot + gripper combinations and exact launch syntax, check the"
 " launch files in `arms_ros2_control` and the specific robot description "
 "packages. Not all combinations are supported."
-msgstr "For valid robot + gripper combinations and exact launch syntax, check the launch files in `arms_ros2_control` and the specific robot description packages. Not all combinations are supported."
+msgstr "有效的机器人与夹爪组合及确切启动语法，请查看 `arms_ros2_control` 中的启动文件以及对应的机器人描述软件包。并非所有组合都受支持。"
 
 #: ../../source/2-how_to/2-switch_robot.md:80 5442bd7551c04eab8c75acbc98c6d2f6
-#, fuzzy
 msgid ""
 "# General pattern\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
 "gripper:=<gripper_name> hardware:=mock\n"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
-"hardware:=mock\\n"
+"# General pattern\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock\n"
 
 #: ../../source/2-how_to/2-switch_robot.md:85 a95a1103412f4a3f81c3ac86dae19f30
 msgid "Verification"
@@ -220,15 +225,15 @@ msgstr "验证"
 
 #: ../../source/2-how_to/2-switch_robot.md:87 ec6890ef885a474e99c4debb39a003d2
 msgid "RViz shows the correct robot model"
-msgstr "RViz shows the correct robot model"
+msgstr "RViz 显示正确的机器人模型"
 
 #: ../../source/2-how_to/2-switch_robot.md:88 dbc618ce38ad42209fcab3db4b54b43b
 msgid "Joint names in `/joint_states` match the new robot"
-msgstr "Joint names in `/joint_states` match the new robot"
+msgstr "`/joint_states` 中的关节名称与新机器人匹配"
 
 #: ../../source/2-how_to/2-switch_robot.md:89 190c00bffc6f4a648f63a9122870b415
 msgid "Controller accepts commands appropriate for the robot"
-msgstr "控制器 accepts commands appropriate for the robot"
+msgstr "控制器接受适合该机器人的指令"
 
 #: ../../source/2-how_to/2-switch_robot.md:91 a3127585cd9b49599e3c1e347cce9926
 msgid "Troubleshooting"
@@ -236,35 +241,33 @@ msgstr "故障排除"
 
 #: ../../source/2-how_to/2-switch_robot.md:93 23adb4e3f4524dc6bfc9c33f187b0cdb
 msgid "Package not found"
-msgstr "软件包 not found"
+msgstr "找不到软件包"
 
 #: ../../source/2-how_to/2-switch_robot.md:95 954621991ebf49a8bf0e4ae51b302da6
 msgid ""
 "colcon build --packages-up-to robot-descriptions-<brand>\n"
 "source install/setup.bash\n"
 msgstr ""
-"colcon build --packages-up-to robot-descriptions-<brand>\\nsource "
-"install/setup.bash\\n"
+"colcon build --packages-up-to robot-descriptions-<brand>\n"
+"source install/setup.bash\n"
 
 #: ../../source/2-how_to/2-switch_robot.md:100 4b38ec0eb192444f8078385cd30ccca8
 msgid "URDF errors"
-msgstr "URDF errors"
+msgstr "URDF 错误"
 
 #: ../../source/2-how_to/2-switch_robot.md:102 183daef12a1e4aaaac5c8777bfe26e6b
 msgid "Check the description package's README for dependencies."
-msgstr "Check the description package's README for dependencies."
+msgstr "查看描述软件包的 README 以了解依赖项。"
 
 #: ../../source/2-how_to/2-switch_robot.md:104 438ae17199874c77b4a881fda4558f47
 msgid "Wrong joint limits"
-msgstr "Wrong joint limits"
+msgstr "关节限位不正确"
 
 #: ../../source/2-how_to/2-switch_robot.md:106 e9f8998049d44943856c3b93120ca14b
 msgid ""
 "Each robot has its own joint limits in URDF. Verify the target pose is "
 "within limits."
-msgstr ""
-"Each robot has its own joint limits in URDF. Verify the target pose is "
-"within limits."
+msgstr "每台机器人在 URDF 中都有自己的关节限位。请确认目标位姿在限位范围内。"
 
 #~ msgid ""
 #~ "# Dobot with DH AG95\n"
@@ -281,4 +284,3 @@ msgstr ""
 #~ "inspire hand\\nros2 launch ocs2_arm_controller "
 #~ "demo.launch.py robot:=arx_x5 gripper:=inspire_rh56 "
 #~ "hardware:=mock\\n"
-

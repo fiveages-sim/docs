@@ -28,7 +28,7 @@ msgstr "Debian 打包"
 #: ../../source/5-developer/3-packaging_deb.md:3
 #: 2a3fb49c560f4bdd85c7786bbfe8a795
 msgid "Creating Debian packages for FiveAges Sim components."
-msgstr "Creating Debian packages for FiveAges Sim components."
+msgstr "为 FiveAges Sim 组件创建 Debian 软件包。"
 
 #: ../../source/5-developer/3-packaging_deb.md:5
 #: 43990617e13c4ffbbbc3ec468488ef48
@@ -38,7 +38,7 @@ msgstr "概述"
 #: ../../source/5-developer/3-packaging_deb.md:7
 #: 52be42503699456cbbae8232acde5ffe
 msgid "Several components are available as Debian packages:"
-msgstr "Several components are available as Debian packages:"
+msgstr "以下组件提供 Debian 软件包："
 
 #: ../../source/5-developer/3-packaging_deb.md:8
 #: 4184c7d49fef4d749dd841f3dc7fc9b4
@@ -54,19 +54,19 @@ msgstr "robot-descriptions-common"
 #: ../../source/5-developer/3-packaging_deb.md:10
 #: 945f27b6e8a5440096c8304f15f8aa43
 msgid "arms_ros2_control (optional)"
-msgstr "arms_ros2_control (optional)"
+msgstr "arms_ros2_control（可选）"
 
 #: ../../source/5-developer/3-packaging_deb.md:12
 #: 1624fdbca9664c6aaba3819b0029ed1c
 msgid "Package Documentation"
-msgstr "软件包 Documentation"
+msgstr "软件包文档"
 
 #: ../../source/5-developer/3-packaging_deb.md:14
 #: 0a076b2bd9a54bd4adff3bc341960eaf
 msgid ""
 "Detailed packaging instructions are in repository-specific "
 "`README.deb.md` files:"
-msgstr "Detailed packaging instructions are in repository-specific `README.deb.md` files:"
+msgstr "详细打包说明见各仓库中的 `README.deb.md` 文件："
 
 #: ../../source/5-developer/3-packaging_deb.md:16
 #: aad5917550a14c4284613776c46bad48
@@ -76,47 +76,47 @@ msgstr "arms_ros2_control"
 #: ../../source/5-developer/3-packaging_deb.md:18
 #: 2206ba085d664ec5b1657a8d26c41d46
 msgid "See `arms_ros2_control/README.deb.md` for:"
-msgstr "See `arms_ros2_control/README.deb.md` for:"
+msgstr "参见 `arms_ros2_control/README.deb.md`，内容包括："
 
 #: ../../source/5-developer/3-packaging_deb.md:19
 #: 86882c9049cb4b0487aef9e371fa0a73
 msgid "Build configuration"
-msgstr "Build configuration"
+msgstr "构建配置"
 
 #: ../../source/5-developer/3-packaging_deb.md:20
 #: f50bd8ef64f3471e9f1c3e4d93a9530e
 msgid "Dependencies"
-msgstr "Dependencies"
+msgstr "依赖"
 
 #: ../../source/5-developer/3-packaging_deb.md:21
 #: d09bd302d38c495982f161993f38ea80
 msgid "Release process"
-msgstr "Release process"
+msgstr "发布流程"
 
 #: ../../source/5-developer/3-packaging_deb.md:25
 #: 7c6d62e2458d4210a427b7b806b34035
 msgid "See `robot-descriptions-common/README.deb.md` for:"
-msgstr "See `robot-descriptions-common/README.deb.md` for:"
+msgstr "参见 `robot-descriptions-common/README.deb.md`，内容包括："
 
 #: ../../source/5-developer/3-packaging_deb.md:26
 #: 03413a2d34da4e19aefb50454a70f330
 msgid "URDF packaging"
-msgstr "URDF packaging"
+msgstr "URDF 打包"
 
 #: ../../source/5-developer/3-packaging_deb.md:27
 #: d2fea6fcb352456fa0978e3873c756de
 msgid "Mesh handling"
-msgstr "Mesh handling"
+msgstr "网格处理"
 
 #: ../../source/5-developer/3-packaging_deb.md:28
 #: d237e2651f00454ebaaf8052462e00bc
 msgid "Version management"
-msgstr "Version management"
+msgstr "版本管理"
 
 #: ../../source/5-developer/3-packaging_deb.md:30
 #: 1127e87617ae4ec59900a85980fcbc6a
 msgid "General Process"
-msgstr "General Process"
+msgstr "通用流程"
 
 #: ../../source/5-developer/3-packaging_deb.md:32
 #: d5163fa0507c407bbd00a55e39f47faa
@@ -126,12 +126,13 @@ msgstr "前提条件"
 #: ../../source/5-developer/3-packaging_deb.md:34
 #: b2594aeb4f8a41e1ac56e30a6a043659
 msgid "sudo apt install python3-bloom fakeroot debhelper\n"
-msgstr "sudo apt install python3-bloom fakeroot debhelper\\n"
+msgstr ""
+"sudo apt install python3-bloom fakeroot debhelper\n"
 
 #: ../../source/5-developer/3-packaging_deb.md:38
 #: 1541b49c104b4c14856047ac6c9d2759
 msgid "Create Package"
-msgstr "Create 软件包"
+msgstr "创建软件包"
 
 #: ../../source/5-developer/3-packaging_deb.md:40
 #: 1129e36b8a804b8cb381221637242988
@@ -140,24 +141,24 @@ msgid ""
 "bloom-generate rosdebian --ros-distro jazzy\n"
 "fakeroot debian/rules binary\n"
 msgstr ""
-"cd <package>\\n"
-"bloom-generate rosdebian --ros-distro jazzy\\n"
-"fakeroot debian/rules binary\\n"
+"cd <package>\n"
+"bloom-generate rosdebian --ros-distro jazzy\n"
+"fakeroot debian/rules binary\n"
 
 #: ../../source/5-developer/3-packaging_deb.md:46
 #: fd75bd7651034dfa9e22da9adde3672d
 msgid "Resulting Package"
-msgstr "Resulting 软件包"
+msgstr "生成的软件包"
 
 #: ../../source/5-developer/3-packaging_deb.md:48
 #: befc2f6d70cf4158a94f9f85983cf751
 msgid "Output: `../<package>_<version>_amd64.deb`"
-msgstr "Output: `../<package>_<version>_amd64.deb`"
+msgstr "输出：`../<package>_<version>_amd64.deb`"
 
 #: ../../source/5-developer/3-packaging_deb.md:50
 #: 76e9f12d9957424a8cc551e038faa816
 msgid "Install"
-msgstr "Install"
+msgstr "安装"
 
 #: ../../source/5-developer/3-packaging_deb.md:52
 #: 1ff704f2eae2440e8627d3811b2a22fc
@@ -165,48 +166,48 @@ msgid ""
 "sudo dpkg -i <package>_<version>_amd64.deb\n"
 "sudo apt install -f  # Fix dependencies\n"
 msgstr ""
-"sudo dpkg -i <package>_<version>_amd64.deb\\n"
-"sudo apt install -f  # Fix dependencies\\n"
+"sudo dpkg -i <package>_<version>_amd64.deb\n"
+"sudo apt install -f  # Fix dependencies\n"
 
 #: ../../source/5-developer/3-packaging_deb.md:57
 #: 2059ed817de04e29841159eca932edaa
 msgid "Version Management"
-msgstr "Version Management"
+msgstr "版本管理"
 
 #: ../../source/5-developer/3-packaging_deb.md:59
 #: 29ee2e66ebee468494f36ef31009ba2c
 msgid "Semantic Versioning"
-msgstr "Semantic Versioning"
+msgstr "语义化版本"
 
 #: ../../source/5-developer/3-packaging_deb.md:61
 #: c8ee759a7ade45ee80eca7b4717e40e7
 msgid "Use semantic versioning: `MAJOR.MINOR.PATCH`"
-msgstr "Use semantic versioning: `MAJOR.MINOR.PATCH`"
+msgstr "使用语义化版本：`MAJOR.MINOR.PATCH`"
 
 #: ../../source/5-developer/3-packaging_deb.md:63
 #: 590f7a6839d14637be65c7e9890d87cf
 msgid "MAJOR: Breaking changes"
-msgstr "MAJOR: Breaking changes"
+msgstr "MAJOR：破坏性变更"
 
 #: ../../source/5-developer/3-packaging_deb.md:64
 #: 3307a52f575946ddbac29b46b0bebcc6
 msgid "MINOR: New features"
-msgstr "MINOR: New features"
+msgstr "MINOR：新功能"
 
 #: ../../source/5-developer/3-packaging_deb.md:65
 #: 29b665c883dd4d96b59b5bf6a08f12f5
 msgid "PATCH: Bug fixes"
-msgstr "PATCH: Bug fixes"
+msgstr "PATCH：缺陷修复"
 
 #: ../../source/5-developer/3-packaging_deb.md:67
 #: ce0bf0082e5b449596b8d6ccbec238cf
 msgid "Changelog"
-msgstr "Changelog"
+msgstr "更新日志"
 
 #: ../../source/5-developer/3-packaging_deb.md:69
 #: f5adbac3539e49ada8adbc6b077818b4
 msgid "Maintain changelog for releases:"
-msgstr "Maintain changelog for releases:"
+msgstr "为每次发布维护更新日志："
 
 #: ../../source/5-developer/3-packaging_deb.md:71
 #: 1b603df645064d53a1a1967f57b27500
@@ -218,37 +219,37 @@ msgid ""
 "\n"
 " -- Maintainer <email>  Date\n"
 msgstr ""
-"package (1.2.3-1) jazzy; urgency=medium\\n"
-"\\n"
-"  * Fix gripper control bug\\n"
-"  * Add new robot support\\n"
-"\\n"
-" -- Maintainer <email>  Date\\n"
+"package (1.2.3-1) jazzy; urgency=medium\n"
+"\n"
+"  * 修复夹爪控制缺陷\n"
+"  * 新增机器人支持\n"
+"\n"
+" -- Maintainer <email>  Date\n"
 
 #: ../../source/5-developer/3-packaging_deb.md:80
 #: 63adb135c0f44ff19bfa2f23a68bde8b
 msgid "CI/CD Integration"
-msgstr "CI/CD Integration"
+msgstr "CI/CD 集成"
 
 #: ../../source/5-developer/3-packaging_deb.md:82
 #: 59036bef35a24fe6bf28de3860a66e64
 msgid "Packages are built and tested in CI:"
-msgstr "Packages are built and tested in CI:"
+msgstr "软件包会在 CI 中构建并测试："
 
 #: ../../source/5-developer/3-packaging_deb.md:83
 #: 573c982e442944c8b6f07b98b1712180
 msgid "Build on each release tag"
-msgstr "Build on each release tag"
+msgstr "在每个发布标签上构建"
 
 #: ../../source/5-developer/3-packaging_deb.md:84
 #: 52b13ec38f9a463e95f55be48a57a0a1
 msgid "Publish to package repository"
-msgstr "Publish to package repository"
+msgstr "发布到软件包仓库"
 
 #: ../../source/5-developer/3-packaging_deb.md:85
 #: aa89161ae6bd48a4b36b929694fd5d05
 msgid "Test installation"
-msgstr "Test installation"
+msgstr "测试安装"
 
 #: ../../source/5-developer/3-packaging_deb.md:87
 #: f9469e8e9d4440e5972a58e09ed10642
@@ -260,7 +261,7 @@ msgstr "待完成"
 msgid ""
 "Package repository and automated release process documentation to be "
 "added."
-msgstr "软件包 repository and automated release process documentation to be added."
+msgstr "软件包仓库与自动化发布流程的文档尚待补充。"
 
 #: ../../source/5-developer/3-packaging_deb.md:93
 #: ba2ff6ea2b1a4897821aad5e9662b8f4
@@ -270,5 +271,4 @@ msgstr "相关内容"
 #: ../../source/5-developer/3-packaging_deb.md:95
 #: a6028868bcbf47efb545ef13f68d0085
 msgid "[Source vs Deb](../3-concepts/5-source_vs_deb.md)"
-msgstr "[Source vs Deb](../3-concepts/5-source_vs_deb.md)"
-
+msgstr "[源码与 Debian 包](../3-concepts/5-source_vs_deb.md)"

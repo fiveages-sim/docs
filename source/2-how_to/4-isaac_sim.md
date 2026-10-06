@@ -44,15 +44,17 @@ This initializes:
 
 This launches Isaac Sim with the configured scene. The script expects Isaac Sim 6.1 at `~/isaacsim`.
 
-```{admonition} Path Verification
+:::{admonition} Path Verification
 :class: tip
 
 Verify your installation path before running:
+
 ```bash
 ls ~/isaacsim/python.sh
 ```
+
 If this file doesn't exist, either install Isaac Sim 6.1 to `~/isaacsim` or create a symlink.
-```
+:::
 
 ### 4. Launch ROS 2 Side
 
