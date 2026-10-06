@@ -30,6 +30,12 @@ The stack supports multiple simulation backends:
 |--------|------|--------|-------|
 | Physics | No | Yes | Yes (PhysX) |
 | Rendering | RViz only | Basic | Photorealistic |
-| Setup | None | `apt install` | Omniverse |
+| Setup | None | `apt install` | Isaac Sim 6.1 |
 | Speed | Real-time | ~Real-time | Configurable |
 | USD support | No | No | Native |
+
+```{admonition} Isaac Sim Requirements
+:class: warning
+
+Isaac Sim integration requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. See [FaSim-Isaac](2-fasim_isaac.md) for details.
+```

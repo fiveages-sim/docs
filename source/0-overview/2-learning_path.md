@@ -99,17 +99,24 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 
 ### Isaac Sim
 
-1. Clone and initialize FaSim-Isaac:
+```{admonition} Isaac Sim 6.1 Required
+:class: warning
+
+FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify with: `ls ~/isaacsim/python.sh`
+```
+
+1. Install Isaac Sim 6.1 to `~/isaacsim`
+2. Clone and initialize FaSim-Isaac:
    ```bash
    git clone https://github.com/fiveages-sim/FaSim-Isaac.git
    cd FaSim-Isaac
    ./init.sh
    ```
-2. Run the Isaac environment:
+3. Run the Isaac environment:
    ```bash
    ./run.sh
    ```
-3. In another terminal, launch the ROS 2 side with Isaac hardware:
+4. In another terminal, launch the ROS 2 side with Isaac hardware:
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
    ```

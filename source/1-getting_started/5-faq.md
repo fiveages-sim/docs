@@ -189,11 +189,23 @@ sudo apt install ros-jazzy-gz-*
 
 Check GPU drivers if using hardware rendering.
 
+### Q: Isaac Sim won't start or scripts fail
+
+**FaSim-Isaac requires Isaac Sim 6.1 at `~/isaacsim`.**
+
+1. Verify installation path: `ls ~/isaacsim/python.sh` — must exist
+2. Verify version: Must be Isaac Sim 6.1 (not older versions)
+3. If installed elsewhere, create a symlink:
+   ```bash
+   ln -s /your/actual/path ~/isaacsim
+   ```
+
 ### Q: Isaac Sim connection fails
 
-1. Verify Isaac Sim is running
+1. Verify Isaac Sim 6.1 is running
 2. Check that the topic bridge is active
 3. Ensure `hardware:=isaac` is set in launch
+4. Check Domain ID matches between Isaac and ROS 2
 
 ## Network Configuration
 

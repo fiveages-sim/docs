@@ -2,11 +2,17 @@
 
 Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation.
 
+```{admonition} Required Version and Path
+:class: warning
+
+FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. The run scripts assume this exact path. Other versions or paths will not work without modifying the scripts.
+```
+
 ## Prerequisites
 
+- **Isaac Sim 6.1 binary** installed at `~/isaacsim`
 - NVIDIA GPU (RTX recommended)
-- NVIDIA Omniverse Launcher installed
-- Isaac Sim installed via Omniverse
+- NVIDIA drivers compatible with Isaac Sim 6.1
 - ROS 2 Jazzy workspace
 
 ## Steps
@@ -36,7 +42,17 @@ This initializes:
 ./run.sh
 ```
 
-This launches Isaac Sim with the configured scene.
+This launches Isaac Sim with the configured scene. The script expects Isaac Sim 6.1 at `~/isaacsim`.
+
+```{admonition} Path Verification
+:class: tip
+
+Verify your installation path before running:
+```bash
+ls ~/isaacsim/python.sh
+```
+If this file doesn't exist, either install Isaac Sim 6.1 to `~/isaacsim` or create a symlink.
+```
 
 ### 4. Launch ROS 2 Side
 
@@ -110,9 +126,17 @@ For training or CI:
 
 ### Isaac Sim fails to launch
 
-1. Check Omniverse Launcher for updates
-2. Verify GPU drivers: `nvidia-smi`
-3. Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`
+1. **Verify installation path**: `ls ~/isaacsim/python.sh` — must exist
+2. **Check version**: Ensure you have Isaac Sim 6.1 (not older versions)
+3. Verify GPU drivers: `nvidia-smi`
+4. Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`
+
+### Wrong Isaac Sim path
+
+If Isaac Sim is installed elsewhere, create a symlink:
+```bash
+ln -s /path/to/your/isaacsim ~/isaacsim
+```
 
 ### No ROS 2 topics
 
