@@ -5,143 +5,108 @@ Private ros2_control hardware interface plugins for internal use.
 ```{admonition} Access Required
 :class: warning
 
-These packages require private repository access.
+These packages require private repository access. Contact your team lead for access.
 ```
+
+## Overview
+
+The following private hardware interfaces are available for internal deployments. For specific configuration parameters, API details, and usage instructions, refer to each repository's README and documentation.
 
 ## Rokae
 
-**Repository:** rokae-ros2-control
-
-### Purpose
+**Repository:** rokae-ros2-control (private)
 
 TCP interface for Rokae collaborative arms.
 
-### Configuration
+```{admonition} TODO
+:class: note
 
-The interface requires network configuration. Key parameters:
-
-| Parameter | Description |
-|-----------|-------------|
-| `arm_ip` | Robot controller IP |
-| `local_ip` | Host machine IP |
-
-### End-Effector
-
-Supports RS485 end-effector communication.
+See repository README for configuration parameters and setup instructions.
+```
 
 ## Eyou (CANopen)
 
-**Repository:** eyou-ros2-control
-
-### Purpose
+**Repository:** eyou-ros2-control (private)
 
 CANopen interface for Eyou harmonic drives.
 
-### Notes
+```{admonition} TODO
+:class: note
 
-Used for specific harmonic actuator configurations.
+See repository README for actuator configuration and usage.
+```
 
 ## Eyou CAN FD
 
-**Repository:** eyou_canfd_ros2_control
-
-### Purpose
+**Repository:** eyou_canfd_ros2_control (private)
 
 CAN FD interface for PHU CSP mode actuators.
 
-### Bench Commands
+```{admonition} TODO
+:class: note
 
-The interface includes bench testing utilities. See repository for usage.
+See repository README for bench testing utilities and configuration.
+```
 
 ## iNex
 
-**Repository:** inex-ros2-control
-
-### Purpose
+**Repository:** inex-ros2-control (private)
 
 Interface for iNexus arms with LinkerHand integration.
 
-### Features
+```{admonition} TODO
+:class: note
 
-- Arm control
-- Integrated hand support
-- Custom protocol
+See repository README for arm and hand configuration details.
+```
 
 ## Wuji
 
-**Repository:** wuji-ros2-control
-
-### Purpose
+**Repository:** wuji-ros2-control (private)
 
 Ethernet interface for Wuji Hand2 dexterous hands.
 
-### Usage
+```{admonition} TODO
+:class: note
 
-1. Scan for devices on network
-2. Configure hand side (left/right)
-3. Launch driver
-
-### Key Parameters
-
-| Parameter | Description |
-|-----------|-------------|
-| `hand_side` | `left` or `right` |
-
-### Network
-
-Devices are discovered via network scan. Specific IPs are configured at deployment time.
+See repository README for network discovery, hand configuration, and deployment parameters.
+```
 
 ## DexCap
 
-**Repository:** dexcap-ros2-control
+**Repository:** dexcap-ros2-control (private)
 
-### Purpose
-
-Driver for DexCap V4 teleoperation gloves.
-
-### Components
-
-- DexCap driver node
-- Joint mappers
-- Calibration utilities
-
-### Usage
+Driver for DexCap teleoperation gloves.
 
 See [DexCap Teleop](../../2-how_to/8-dexcap_teleop.md) for usage guide.
 
+```{admonition} TODO
+:class: note
+
+See repository README for driver configuration and calibration procedures.
+```
+
 ## Fairino
 
-**Repository:** fairino-ros2-control
-
-### Purpose
+**Repository:** fairino-ros2-control (private)
 
 ART SDK interface for Fairino arms.
 
-### Configuration
+```{admonition} TODO
+:class: note
 
-Requires Fairino SDK and network configuration.
-
-| Parameter | Description |
-|-----------|-------------|
-| `device_ip` | Robot controller IP |
-| `port` | Control port |
+See repository README for SDK setup and network configuration.
+```
 
 ## Common Patterns
 
 ### Parameter Configuration
 
-Private interfaces often require deployment-specific parameters. These should be:
+Private interfaces often require deployment-specific parameters that should be:
 
-1. Documented in `robot.local.yaml`
-2. Not committed to version control
-3. Configured per-installation
-
-### Error Handling
-
-Most interfaces provide:
-- Connection status reporting
-- Automatic reconnection
-- Error state publishing
+1. Configured per-installation
+2. Documented in deployment-specific config files (e.g., `robot.local.yaml`)
+3. Not committed to version control
 
 ### Debugging
 
@@ -151,7 +116,6 @@ ros2 control list_hardware_interfaces
 
 # Monitor joint states
 ros2 topic echo /joint_states
-
-# Check for errors
-ros2 topic echo /diagnostics
 ```
+
+For interface-specific debugging, refer to each repository's documentation.

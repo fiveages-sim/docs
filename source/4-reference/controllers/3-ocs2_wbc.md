@@ -5,120 +5,72 @@ Whole-body control for FiveAges humanoid robots.
 ```{admonition} Access Required
 :class: warning
 
-This package requires private repository access.
+This package requires private repository access. Contact your team lead for access.
 ```
 
 **Repository:** ocs2-wbc-controller (private)
 
 ## Purpose
 
-`ocs2-wbc-controller` provides whole-body control for humanoid robots:
+`ocs2-wbc-controller` provides whole-body control capabilities for humanoid robots, enabling:
 - Full-body motion planning
-- Balance and stability
-- Multiple control modes
+- Balance and stability control
 - FSM integration
-
-## Features
-
-### Modes
-
-| Mode | Description |
-|------|-------------|
-| Stand | Static standing pose |
-| Walk | Walking locomotion |
-| Arm teleop | Arm tracking with balance |
-| Full body | Complete body control |
-
-### Balance
-
-- Center of mass tracking
-- Zero moment point (ZMP) control
-- Foot contact management
 
 ## Usage
 
-### Launch
+```{admonition} TODO
+:class: note
 
-```bash
-ros2 launch ocs2_wbc_controller full_body.launch.py robot:=fiveages_w2 hardware:=mock
+For specific launch commands, available modes, parameters, and configuration options, refer to the repository's README and documentation. The content below is a general overview; consult the in-repo docs for accurate details.
 ```
 
-### Mode Switching
+### General Launch Pattern
 
 ```bash
-# Enter stand mode
-ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'stand'}" --once
-
-# Enter walk mode
-ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'walk'}" --once
-
-# Arm teleop
-ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'arm_teleop'}" --once
+ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id> hardware:=mock
 ```
+
+Replace `<launch_file>` and `<robot_id>` with values from the repository documentation.
 
 ## Topics
 
-### Commands
+```{admonition} TODO
+:class: note
 
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/fsm_command` | `String` | Mode command |
-| `/cmd_vel` | `Twist` | Velocity command (walk mode) |
-| `/teleop/left_ee_pose` | `PoseStamped` | Left arm target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right arm target |
+Topic names, types, and behaviors are defined in the repository. Check the package's message definitions and launch files for the current interface.
+```
 
-### State
-
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/fsm_state` | `String` | Current FSM state |
-| `/joint_states` | `JointState` | Full body state |
+The controller typically uses:
+- FSM command topics for mode switching
+- Joint state topics for feedback
+- Target pose topics for teleop integration
 
 ## Configuration
 
-### WBC Parameters
+```{admonition} TODO
+:class: note
 
-```yaml
-wbc:
-  balance_weight: 100.0
-  tracking_weight: 10.0
-  
-  contact_constraints:
-    friction_coefficient: 0.7
+Configuration parameters, default values, and YAML schemas are maintained in the repository. Do not rely on example values shown elsewhere; always use the actual config files from the repo.
 ```
-
-### FSM Configuration
-
-```yaml
-fsm:
-  initial_state: stand
-  transitions:
-    - from: stand
-      to: walk
-      trigger: walk
-    - from: walk
-      to: stand
-      trigger: stand
-```
-
-## Integration
-
-WBC integrates with:
-- Arm controllers for manipulation
-- Teleop systems for remote control
-- Navigation for mobility
 
 ## Safety
 
 ```{admonition} Safety Warning
 :class: danger
 
-WBC controls the full body. Always:
-1. Start in stand mode
-2. Verify balance before walking
-3. Have emergency stop ready
-4. Monitor joint limits
+WBC controls the full body of humanoid robots. Always:
+1. Verify the robot is in a safe initial state
+2. Have emergency stop ready
+3. Monitor joint and balance limits
+4. Follow the safety procedures documented in the repository
 ```
+
+## Integration
+
+WBC integrates with other components in fa-deploy-ws:
+- Arm controllers for manipulation
+- Teleop systems for remote control
 
 ## Related
 
