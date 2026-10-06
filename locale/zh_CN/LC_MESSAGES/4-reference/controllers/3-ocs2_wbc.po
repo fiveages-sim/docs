@@ -28,7 +28,7 @@ msgstr "ocs2-wbc-controller"
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:3
 #: 90bf4a06bbf644bda2d72952e318b0e1
 msgid "Whole-body control for FiveAges humanoid robots."
-msgstr "Whole-body control for FiveAges humanoid robots."
+msgstr "用于 FiveAges 人形机器人的全身控制。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:5
 #: 015b081ef0af482fa4b7fae19b79826a
@@ -37,16 +37,15 @@ msgstr "需要访问权限"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:8
 #: 6717a2bea99448a3b4303c2f3e5d04a1
-#, fuzzy
 msgid ""
 "This package requires private repository access. Contact your team lead "
 "for access."
-msgstr "This package requires private repository access."
+msgstr "该软件包需要私有仓库访问权限。请联系团队负责人申请访问。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:11
 #: 42100e1f74cb43a7adfc3c16cff6c92e
 msgid "**Repository:** ocs2-wbc-controller (private)"
-msgstr "**仓库:** ocs2-wbc-controller (private)"
+msgstr "**仓库：** ocs2-wbc-controller（私有）"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:13
 #: e04f110567434d38876272809cae2e36
@@ -55,27 +54,25 @@ msgstr "用途"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:15
 #: 5c56cfff6ae941ca96745a14d3986d19
-#, fuzzy
 msgid ""
 "`ocs2-wbc-controller` provides whole-body control capabilities for "
 "humanoid robots, enabling:"
-msgstr "`ocs2-wbc-controller` provides whole-body control for humanoid robots:"
+msgstr "`ocs2-wbc-controller` 为人形机器人提供全身控制能力，可实现："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:16
 #: 536e6e747dce43668e623f41119b9628
 msgid "Full-body motion planning"
-msgstr "Full-body motion planning"
+msgstr "全身运动规划"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:17
 #: ce1b9b6e4cbc47069ba353d608367053
-#, fuzzy
 msgid "Balance and stability control"
-msgstr "Balance and stability"
+msgstr "平衡与稳定性控制"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:18
 #: 91eeaf85ecbc41d4accc0f45fde36544
 msgid "FSM integration"
-msgstr "FSM integration"
+msgstr "FSM 集成"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:20
 #: 9802f357f30f45b0b81466c24c875054
@@ -97,29 +94,27 @@ msgid ""
 "configuration options, refer to the repository's README and "
 "documentation. The content below is a general overview; consult the in-"
 "repo docs for accurate details."
-msgstr "For specific launch commands, available modes, parameters, and configuration options, refer to the repository's README and documentation. The content below is a general overview; consult the in-repo docs for accurate details."
+msgstr "具体的启动命令、可用模式、参数和配置选项，请参阅仓库中的 README 与文档。下文仅为概述；请以仓库内文档为准。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:28
 #: 5d6d5cde86e748009e9935da84514eaa
 msgid "General Launch Pattern"
-msgstr "General Launch Pattern"
+msgstr "通用启动方式"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:30
 #: 90a44e9e294e4ad78759ab510f21980e
-#, fuzzy
 msgid ""
 "ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id>"
 " hardware:=mock\n"
 msgstr ""
-"ros2 launch ocs2_wbc_controller full_body.launch.py robot:=fiveages_w2 "
-"hardware:=mock\\n"
+"ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id> hardware:=mock\n"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:34
 #: 9205c74f48d043c087a6e8dd89041363
 msgid ""
 "Replace `<launch_file>` and `<robot_id>` with values from the repository "
 "documentation."
-msgstr "Replace `<launch_file>` and `<robot_id>` with values from the repository documentation."
+msgstr "请将 `<launch_file>` 和 `<robot_id>` 替换为仓库文档中给出的取值。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:36
 #: e2fc2ed3c5104ae088ca8f01ff3cfc03
@@ -132,27 +127,27 @@ msgid ""
 "Topic names, types, and behaviors are defined in the repository. Check "
 "the package's message definitions and launch files for the current "
 "interface."
-msgstr "话题 names, types, and behaviors are defined in the repository. Check the package's message definitions and launch files for the current interface."
+msgstr "话题名称、类型与行为在仓库中定义。请查看该软件包的消息定义和启动文件，以了解当前接口。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:44
 #: bad905620bb247dbb9b9f4e8c7d1a1dc
 msgid "The controller typically uses:"
-msgstr "The controller typically uses:"
+msgstr "该控制器通常使用："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:45
 #: bb520022c93f40a9bba6f0a2b1fa0b00
 msgid "FSM command topics for mode switching"
-msgstr "FSM command topics for mode switching"
+msgstr "用于模式切换的 FSM 指令话题"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:46
 #: 7ae03822040646888764dbfc8a218a91
 msgid "Joint state topics for feedback"
-msgstr "Joint state topics for feedback"
+msgstr "用于反馈的关节状态话题"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:47
 #: dd7873cb5031431e8f57d41d5fef34c8
 msgid "Target pose topics for teleop integration"
-msgstr "目标 pose topics for teleop integration"
+msgstr "用于遥操作集成的目标位姿话题"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:49
 #: b1de8d13b8614438a80af785e1359f28
@@ -165,12 +160,12 @@ msgid ""
 "Configuration parameters, default values, and YAML schemas are maintained"
 " in the repository. Do not rely on example values shown elsewhere; always"
 " use the actual config files from the repo."
-msgstr "配置 parameters, default values, and YAML schemas are maintained in the repository. Do not rely on example values shown elsewhere; always use the actual config files from the repo."
+msgstr "配置参数、默认值以及 YAML 模式均维护在仓库中。不要依赖其他地方给出的示例值；请始终使用仓库中的实际配置文件。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:57
 #: a1bef0ba568844eeb9e99e33f313ff3e
 msgid "Safety"
-msgstr "Safety"
+msgstr "安全"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:59
 #: e1308c33306a40e29b76ca1b32ee7523
@@ -179,50 +174,48 @@ msgstr "安全警告"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:62
 #: a10d9e30046b432dbd0c5257c755ac52
-#, fuzzy
 msgid "WBC controls the full body of humanoid robots. Always:"
-msgstr "WBC controls the full body. Always:"
+msgstr "WBC 控制人形机器人的全身。务必："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:63
 #: 4de2affd2fd24f3bad2389c15b4ae33e
 msgid "Verify the robot is in a safe initial state"
-msgstr "Verify the robot is in a safe initial state"
+msgstr "确认机器人处于安全的初始状态"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:64
 #: 453f131dbaf44729bdae58923560fe17
 msgid "Have emergency stop ready"
-msgstr "Have emergency stop ready"
+msgstr "确保急停随时可用"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:65
 #: 1f6563c2a55846749bfd7817d4cef5db
-#, fuzzy
 msgid "Monitor joint and balance limits"
-msgstr "Monitor joint limits"
+msgstr "监控关节限位与平衡约束"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:66
 #: bb7c040798d84a208d422b5f577bed9c
 msgid "Follow the safety procedures documented in the repository"
-msgstr "Follow the safety procedures documented in the repository"
+msgstr "遵守仓库文档中的安全规程"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:69
 #: 512a307975ac4cd89b9fee15b9b815b0
 msgid "Integration"
-msgstr "Integration"
+msgstr "集成"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:71
 #: 8cf0c184c9984aa2bca2f560ac6cddbf
 msgid "WBC integrates with other components in fa-deploy-ws:"
-msgstr "WBC integrates with other components in fa-deploy-ws:"
+msgstr "WBC 与 fa-deploy-ws 中的其他组件集成："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:72
 #: bad905620bb247dbb9b9f4e8c7d1a1dc
 msgid "Arm controllers for manipulation"
-msgstr "Arm controllers for manipulation"
+msgstr "用于操作的机械臂控制器"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:73
 #: 0a8e30fe5844427088d3968747ecc630
 msgid "Teleop systems for remote control"
-msgstr "Teleop systems for remote control"
+msgstr "用于远程控制的遥操作系统"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:75
 #: 9d885a1670f5490ba4370b81e9ea20eb
@@ -237,7 +230,7 @@ msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:78
 #: fd4a5ade31744c3ca502a40c753a197a
 msgid "[FA Robot Descriptions](../descriptions/5-fa_robots.md)"
-msgstr "[FA Robot Descriptions](../descriptions/5-fa_robots.md)"
+msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
 
 #~ msgid "Multiple control modes"
 #~ msgstr "Multiple control modes"
@@ -426,4 +419,3 @@ msgstr "[FA Robot Descriptions](../descriptions/5-fa_robots.md)"
 
 #~ msgid "Verify balance before walking"
 #~ msgstr "Verify balance before walking"
-

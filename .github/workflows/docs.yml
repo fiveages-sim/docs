@@ -36,6 +36,10 @@ jobs:
         run: |
           python scripts/check_zh_coverage.py --threshold 95
 
+      - name: Reject nested fences inside MyST admonitions
+        run: |
+          python scripts/check_nested_admonition_fences.py
+
       - name: Build English documentation
         run: |
           make html
@@ -43,6 +47,10 @@ jobs:
       - name: Build Chinese documentation
         run: |
           make html-zh_CN
+
+      - name: Reject literal Markdown fences in built HTML
+        run: |
+          python scripts/check_html_fences.py build/html
 
       - name: Upload artifact for Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

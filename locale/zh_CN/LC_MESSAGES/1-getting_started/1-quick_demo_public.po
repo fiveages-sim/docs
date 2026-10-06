@@ -30,7 +30,7 @@ msgstr "快速演示（公开版路径）"
 msgid ""
 "This guide gets you from zero to a moving robot in the shortest time "
 "using the public `open-deploy-ws` workspace."
-msgstr "This guide gets you from zero to a moving robot in the shortest time using the public `open-deploy-ws` workspace."
+msgstr "本指南使用公开的 `open-deploy-ws` 工作空间，帮助你以最短时间从零开始让机器人动起来。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:5
 #: bfe26d1f2c6e4b30a4f80810c0787e12
@@ -47,12 +47,12 @@ msgstr "Ubuntu 24.04"
 msgid ""
 "ROS 2 Jazzy installed (see [Install "
 "Environment](2-install_environment.md) if needed)"
-msgstr "ROS 2 Jazzy installed (see [环境安装](2-install_environment.md) if needed)"
+msgstr "已安装 ROS 2 Jazzy（如需安装，请参阅[环境安装](2-install_environment.md)）"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:9
 #: 814b07ffdd2043f3b0c562d0ccef49da
 msgid "Git with GitHub access"
-msgstr "Git with GitHub access"
+msgstr "可访问 GitHub 的 Git"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:11
 #: e116df552b724678928ae0346c2c8d34
@@ -62,7 +62,7 @@ msgstr "步骤"
 #: ../../source/1-getting_started/1-quick_demo_public.md:13
 #: e6606174b8114e15abda8e1586336828
 msgid "1. Clone the Workspace"
-msgstr "1. Clone the 工作空间"
+msgstr "1. 克隆工作空间"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:15
 #: c6648efc0fc6443d8757585284029337
@@ -71,58 +71,59 @@ msgid ""
 "git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
 "cd open-deploy-ws\n"
 msgstr ""
-"cd ~/\\n"
-"git clone https://github.com/fiveages-sim/open-deploy-ws.git\\n"
-"cd open-deploy-ws\\n"
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
+"cd open-deploy-ws\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:21
 #: ccab963b7c8a4473be9d93ad517edc4f
 msgid "2. Initialize Repository"
-msgstr "2. Initialize 仓库"
+msgstr "2. 初始化仓库"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:23
 #: 4366d02e7aef4eae94ec276add4278d6
 msgid "Run the initialization script:"
-msgstr "Run the initialization script:"
+msgstr "运行初始化脚本："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:25
 #: a5e3adb9304c49368b6cce7aac4a8904
 msgid "./init_repo.sh\n"
-msgstr "./init_repo.sh\\n"
+msgstr ""
+"./init_repo.sh\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:29
 #: 4c122ce1ad2c44448015cdce21c36968
 msgid "The script will prompt you for:"
-msgstr "The script will prompt you for:"
+msgstr "脚本会提示你选择："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:30
 #: ceeea11b1d4643f6b2d319a52fd39110
 msgid ""
 "**OCS2 installation method**: Choose `d` for Debian package (recommended "
 "for quick start)"
-msgstr "**OCS2 installation method**: Choose `d` for Debian package (recommended for quick start)"
+msgstr "**OCS2 安装方式**：选择 `d` 使用 Debian 软件包（快速入门推荐）"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:31
 #: 8e7e6a49c3144ad7918cfaa24b78edb3
 msgid "**Submodule visibility**: Automatically configured for public-only access"
-msgstr "**Submodule visibility**: Automatically configured for public-only access"
+msgstr "**子模块可见性**：自动配置为仅公开访问"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:33
 #: ff1d230f90334972a872d69f6cab06ed
 msgid "Debian vs Source"
-msgstr "Debian vs 源"
+msgstr "Debian 与源码"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:36
 #: ba011c95167a4c67bdbb9a2ea20a515d
 msgid ""
 "The Debian package (`ros-jazzy-ocs2`) is faster to install but cannot be "
 "modified. Choose source if you need to develop OCS2 itself."
-msgstr "The Debian package (`ros-jazzy-ocs2`) is faster to install but cannot be modified. Choose source if you need to develop OCS2 itself."
+msgstr "Debian 软件包（`ros-jazzy-ocs2`）安装更快，但无法修改。若需要开发 OCS2 本身，请选择源码。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:39
 #: a5d18bfdbcfb4f3ba3abd9448c7c7d7c
 msgid "3. Install Dependencies"
-msgstr "3. Install Dependencies"
+msgstr "3. 安装依赖"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:41
 #: 8f653cc7e4084845b9ad2cabfa8c44c8
@@ -132,30 +133,31 @@ msgid ""
 "rosdep update\n"
 "rosdep install --from-paths src --ignore-src -r -y\n"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\\n"
-"sudo apt update\\n"
-"rosdep update\\n"
-"rosdep install --from-paths src --ignore-src -r -y\\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"sudo apt update\n"
+"rosdep update\n"
+"rosdep install --from-paths src --ignore-src -r -y\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:48
 #: 78719689a29e42b498a6aef7084b404d
 msgid "4. Build the Workspace"
-msgstr "4. Build the 工作空间"
+msgstr "4. 编译工作空间"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:50
 #: 6bca891df9b341589f2fc3302aa677bd
 msgid "colcon build --symlink-install\n"
-msgstr "colcon build --symlink-install\\n"
+msgstr ""
+"colcon build --symlink-install\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:54
 #: ac96ba90910b49648456bb1e6bf150ae
 msgid "This typically takes 10-20 minutes on first build."
-msgstr "This typically takes 10-20 minutes on first build."
+msgstr "首次编译通常需要 10-20 分钟。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:56
 #: 32afca46453a4538a17c0e3ac072e6c9
 msgid "5. Source and Launch"
-msgstr "5. 源 and Launch"
+msgstr "5. 加载环境并启动"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:58
 #: 46c6b80e117e41adab1cdc5c2f28fce9
@@ -163,38 +165,38 @@ msgid ""
 "source install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 msgstr ""
-"source install/setup.bash\\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\\n"
+"source install/setup.bash\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:63
 #: a6db5bbd008b40268c887688e6043ea0
 msgid "6. Observe the Demo"
-msgstr "6. Observe the Demo"
+msgstr "6. 观察演示"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:65
 #: c1ad7d7770794697ac78c22d128207d1
 msgid "You should see:"
-msgstr "You should see:"
+msgstr "你应该能看到："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:66
 #: 1c3f39ee99474cf5b7389a50494d5975
 msgid "**RViz** window with robot visualization"
-msgstr "**RViz** window with robot visualization"
+msgstr "带有机器人可视化的 **RViz** 窗口"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:67
 #: 626dca1b18d7478d9b01c795b3b5d8ff
 msgid "**Terminal** output showing controller status"
-msgstr "**Terminal** output showing controller status"
+msgstr "显示控制器状态的**终端**输出"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:68
 #: bf9337836b3b46b8b39e5d5ce70498b2
 msgid "Robot responding to MPC target commands"
-msgstr "机器人 responding to MPC target commands"
+msgstr "机器人响应 MPC 目标指令"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:70
 #: 36c2bde39c724039a1edb8dd409dee3f
 msgid "To send a target pose:"
-msgstr "To send a target pose:"
+msgstr "发送目标位姿："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:71
 #: c27d29b4bb8d41559f9b5e9a5b525646
@@ -206,9 +208,9 @@ msgid ""
 "{frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, "
 "orientation: {w: 1.0}}}\" --once\n"
 msgstr ""
-"# In a new terminal\\n"
-"source install/setup.bash\\n"
-"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, orientation: {w: 1.0}}}\\\" --once\\n"
+"# In a new terminal\n"
+"source install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, orientation: {w: 1.0}}}\" --once\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:77
 #: a0212efe21bf4e3183f4eb30b7fce4c6
@@ -218,47 +220,50 @@ msgstr "故障排除"
 #: ../../source/1-getting_started/1-quick_demo_public.md:79
 #: 1d6712e698ee44aab3752b4f4bd72ac3
 msgid "Build Fails with Missing Packages"
-msgstr "Build Fails with Missing Packages"
+msgstr "编译失败：缺少软件包"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:81
 #: 0c8c6be813f34c21836a19f168c4d612
 msgid "rosdep install --from-paths src --ignore-src -r -y\n"
-msgstr "rosdep install --from-paths src --ignore-src -r -y\\n"
+msgstr ""
+"rosdep install --from-paths src --ignore-src -r -y\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:85
 #: 960ecb5121c54bccb39220c64299a6ec
 msgid "OCS2 Package Not Found"
-msgstr "OCS2 软件包 Not Found"
+msgstr "找不到 OCS2 软件包"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:87
 #: 0b5baa1ddc674d7c9b02437f14d8dd0d
 msgid "If using Debian install:"
-msgstr "If using Debian install:"
+msgstr "若使用 Debian 安装："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:88
 #: 1b3a57987c8348e48c19a7757b419400
 msgid "sudo apt install ros-jazzy-ocs2\n"
-msgstr "sudo apt install ros-jazzy-ocs2\\n"
+msgstr ""
+"sudo apt install ros-jazzy-ocs2\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:92
 #: ff288e1480444ca58f1175cd526d780d
 msgid "Submodule Errors"
-msgstr "Submodule Errors"
+msgstr "子模块错误"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:94
 #: 2dcdd7d4713149cea802f67cc572bbf7
 msgid "git submodule update --init --recursive\n"
-msgstr "git submodule update --init --recursive\\n"
+msgstr ""
+"git submodule update --init --recursive\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:98
 #: d8b8fc85e3db4d5baf7a85f0569ece97
 msgid "Workspace Not Sourced"
-msgstr "工作空间 Not Sourced"
+msgstr "未加载工作空间环境"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:100
 #: 29eae12b565e41519d9f243d653ec260
 msgid "Always source after opening a new terminal:"
-msgstr "Always source after opening a new terminal:"
+msgstr "打开新终端后务必先加载环境："
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:101
 #: dc92c94a83a54a008ee0e0e2b2b1c340
@@ -266,8 +271,8 @@ msgid ""
 "source /opt/ros/jazzy/setup.bash\n"
 "source ~/open-deploy-ws/install/setup.bash\n"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\\n"
-"source ~/open-deploy-ws/install/setup.bash\\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:106
 #: 806556b93b544e2e82add2e5bd7aa723
@@ -277,22 +282,22 @@ msgstr "下一步"
 #: ../../source/1-getting_started/1-quick_demo_public.md:108
 #: ec2464e8d2e84468a838e7ec370ca72d
 msgid "[Switch to different robots](../2-how_to/2-switch_robot.md)"
-msgstr "[Switch to different robots](../2-how_to/2-switch_robot.md)"
+msgstr "[切换到其他机器人](../2-how_to/2-switch_robot.md)"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:109
 #: 3f031c7385244819b70f4e42e763a0a4
 msgid "[Run Gazebo simulation](../2-how_to/3-gazebo_sim.md)"
-msgstr "[Run Gazebo simulation](../2-how_to/3-gazebo_sim.md)"
+msgstr "[运行 Gazebo 仿真](../2-how_to/3-gazebo_sim.md)"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:110
 #: f986c9aaf1ba4cafbc11e0ef36a5a1f0
 msgid "[Connect Python interface](../2-how_to/5-python_interface.md)"
-msgstr "[Connect Python interface](../2-how_to/5-python_interface.md)"
+msgstr "[接入 Python 接口](../2-how_to/5-python_interface.md)"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:112
 #: f5ad4a5e41e64548b81760aa9504fc1c
 msgid "Video Demo"
-msgstr "Video Demo"
+msgstr "视频演示"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:114
 #: 35a71f6ed2934bb48b1717b4b65b6c41
@@ -304,5 +309,4 @@ msgstr "待完成"
 msgid ""
 "Video demonstration to be added showing expected RViz output and robot "
 "motion."
-msgstr "Video demonstration to be added showing expected RViz output and robot motion."
-
+msgstr "将补充视频演示，展示预期的 RViz 画面与机器人运动。"
