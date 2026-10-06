@@ -57,21 +57,21 @@ Shared components for W2-based robots:
 
 Each robot includes OCS2 MPC configuration:
 
-```
+:::{code-block} none
 fa-w2-description/
 └── config/
     └── ocs2_config.yaml
-```
+:::
 
 ### WBC Configuration
 
 Whole-body control configuration for humanoids:
 
-```
+:::{code-block} none
 fa-w2-description/
 └── config/
     └── wbc_config.yaml
-```
+:::
 
 ## Related
 

@@ -6,7 +6,7 @@ This section documents the robot description packages — URDF/xacro models, mes
 
 Robot descriptions are organized in a hierarchy:
 
-```
+:::{code-block} none
 robot_descriptions (umbrella)
 ├── robot-descriptions-common
 ├── robot-descriptions-dobot
@@ -15,7 +15,7 @@ robot_descriptions (umbrella)
 ├── robot-descriptions-ht
 ├── robot-descriptions-quadruped
 └── ... (brand packages)
-```
+:::
 
 ## In This Section
 

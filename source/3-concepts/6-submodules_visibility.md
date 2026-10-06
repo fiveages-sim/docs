@@ -105,10 +105,10 @@ git ls-remote git@github.com:fiveages-sim/fa-deploy-ws.git
 ### Access Denied During Init
 
 **Symptom:**
-```
+:::{code-block} none
 Permission denied (publickey)
 fatal: Could not read from remote repository
-```
+:::
 
 **Solution:**
 - You don't have access to that private submodule
@@ -118,9 +118,9 @@ fatal: Could not read from remote repository
 ### Submodule Path Conflicts
 
 **Symptom:**
-```
+:::{code-block} none
 fatal: destination path 'src/xxx' already exists
-```
+:::
 
 **Solution:**
 ```bash
@@ -132,9 +132,9 @@ git submodule update --init src/xxx
 ### Detached HEAD Warnings
 
 **Symptom:**
-```
+:::{code-block} none
 HEAD is now at abc123... Commit message
-```
+:::
 
 **This is normal** — submodules are pinned to specific commits.
 
@@ -156,7 +156,7 @@ git pull
 
 Some submodules contain their own submodules:
 
-```
+:::{code-block} none
 arms_ros2_control/
 ├── hardware/
 │   ├── arx-ros2-control/      # Public
@@ -165,7 +165,7 @@ arms_ros2_control/
 └── library/
     ├── ocs2-wbc-controller/   # Private
     └── ...
-```
+:::
 
 The init script handles nested visibility automatically. If manually initializing:
 

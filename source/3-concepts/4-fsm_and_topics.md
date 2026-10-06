@@ -128,11 +128,11 @@ js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]
 
 ### Safe Transitions
 
-```
+:::{code-block} none
 idle → position_control → cartesian_control → teleop
   ↑                                              ↓
   ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←
-```
+:::
 
 ### Sending Transitions
 

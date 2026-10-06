@@ -9,58 +9,58 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"POT-Creation-Date: 2026-10-06 16:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:1 dfc29398133046b5b406dc5928b66085
+#: ../../source/2-how_to/10-add_a_robot.md:1 3a52ec3075454209a32c777ae7945927
 msgid "Add a Robot"
 msgstr "添加机器人"
 
-#: ../../source/2-how_to/10-add_a_robot.md:3 e223a94aa2fd49798f095a18df6fb159
+#: ../../source/2-how_to/10-add_a_robot.md:3 606640ea848e45dd9a12dcd2422b8f3e
 msgid "Integrate a new robot into the FiveAges Sim ecosystem."
 msgstr "将新机器人集成到 FiveAges Sim 生态系统中。"
 
-#: ../../source/2-how_to/10-add_a_robot.md:5 3b2391fd89354017898a3b9028f37b77
+#: ../../source/2-how_to/10-add_a_robot.md:5 cac457b7966d473aa261c9cde556f06b
 msgid "Overview"
 msgstr "概述"
 
-#: ../../source/2-how_to/10-add_a_robot.md:7 d014807cd4244ab4847ba30f1654d7a9
+#: ../../source/2-how_to/10-add_a_robot.md:7 f19de39c85e048a581bdefb481718e9d
 msgid "Adding a robot requires:"
 msgstr "添加机器人需要："
 
-#: ../../source/2-how_to/10-add_a_robot.md:8 8418fcdbb14447c6a10d4c4904acd070
+#: ../../source/2-how_to/10-add_a_robot.md:8 7f6aa892fd8947e7adea1e0c1ea5c828
 msgid "Description package (URDF/xacro + ros2_control config)"
 msgstr "描述软件包（URDF/xacro + ros2_control 配置）"
 
-#: ../../source/2-how_to/10-add_a_robot.md:9 9bbf9e109f344b5586788729988d58e7
+#: ../../source/2-how_to/10-add_a_robot.md:9 e01c376efbc84c73b29381c2b8d9e24b
 msgid "Hardware interface plugin (if not existing)"
 msgstr "硬件接口插件（如尚不存在）"
 
-#: ../../source/2-how_to/10-add_a_robot.md:10 2830f5c8994a409a9364d0b0484e450e
+#: ../../source/2-how_to/10-add_a_robot.md:10 72f29b9f57ac447783e518dfcf837750
 msgid "Controller configuration"
 msgstr "控制器配置"
 
-#: ../../source/2-how_to/10-add_a_robot.md:11 e337c4900ec249099a605a8fcc859398
+#: ../../source/2-how_to/10-add_a_robot.md:11 be078b7f7d7f49828a71453635ed9063
 msgid "Testing progression: mock → simulation → real"
-msgstr "测试递进：mock → 仿真 → 真实硬件"
+msgstr "Testing progression: mock → simulation → real"
 
-#: ../../source/2-how_to/10-add_a_robot.md:13 b764bc9c1c5b476eb281fecace0f9529
+#: ../../source/2-how_to/10-add_a_robot.md:13 a3ff7bfaa238486cb3004a42337feeba
 msgid "Step 1: Create Description Package"
 msgstr "步骤 1：创建描述软件包"
 
-#: ../../source/2-how_to/10-add_a_robot.md:15 060dce426bad4d95a226eea3ef1857b2
+#: ../../source/2-how_to/10-add_a_robot.md:15 ebb5772b175044daa9478fc9e896bb4f
 msgid "Package Structure"
 msgstr "软件包结构"
 
-#: ../../source/2-how_to/10-add_a_robot.md:17 37167c0aa9254134801365c3d621debf
+#: ../../source/2-how_to/10-add_a_robot.md:17 8c354c0672234007bed91d4028c92839
 msgid ""
 "robot_description_newrobot/\n"
 "├── CMakeLists.txt\n"
@@ -74,7 +74,7 @@ msgid ""
 "├── config/\n"
 "│   └── ocs2_arm_config.yaml\n"
 "└── launch/\n"
-"    └── display.launch.py\n"
+"    └── display.launch.py"
 msgstr ""
 "robot_description_newrobot/\n"
 "├── CMakeLists.txt\n"
@@ -88,35 +88,33 @@ msgstr ""
 "├── config/\n"
 "│   └── ocs2_arm_config.yaml\n"
 "└── launch/\n"
-"    └── display.launch.py\n"
+"    └── display.launch.py"
 
-#: ../../source/2-how_to/10-add_a_robot.md:33 217a087f271d4cdbb522e34c93de8294
+#: ../../source/2-how_to/10-add_a_robot.md:33 b4b05d01adde4b84919ee583313898f3
 msgid "URDF/Xacro"
 msgstr "URDF/Xacro"
 
-#: ../../source/2-how_to/10-add_a_robot.md:35 d82e81f369354ad48bd879ccd61108f7
+#: ../../source/2-how_to/10-add_a_robot.md:35 13d4e4f2487144909c2f9b7d46c8527f
 msgid ""
 "<?xml version=\"1.0\"?>\n"
 "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
 "  \n"
 "  <!-- Include ros2_control -->\n"
-"  <xacro:include filename=\"$(find "
-"robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
+"  <xacro:include filename=\"$(find robot_description_newrobot)/urdf/newrobot."
+"ros2_control.xacro\"/>\n"
 "  \n"
 "  <!-- Base link -->\n"
 "  <link name=\"base_link\">\n"
 "    <visual>\n"
 "      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
-"\n"
+"        <mesh filename=\"package://robot_description_newrobot/meshes/visual/"
+"base.stl\"/>\n"
 "      </geometry>\n"
 "    </visual>\n"
 "    <collision>\n"
 "      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
-"\n"
+"        <mesh filename=\"package://robot_description_newrobot/meshes/"
+"collision/base.stl\"/>\n"
 "      </geometry>\n"
 "    </collision>\n"
 "    <inertial>\n"
@@ -134,23 +132,27 @@ msgstr ""
 "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
 "  \n"
 "  <!-- Include ros2_control -->\n"
-"  <xacro:include filename=\"$(find robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
+"  <xacro:include filename=\"$(find robot_description_newrobot)/urdf/newrobot."
+"ros2_control.xacro\"/>\n"
 "  \n"
 "  <!-- Base link -->\n"
 "  <link name=\"base_link\">\n"
 "    <visual>\n"
 "      <geometry>\n"
-"        <mesh filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>\n"
+"        <mesh filename=\"package://robot_description_newrobot/meshes/visual/"
+"base.stl\"/>\n"
 "      </geometry>\n"
 "    </visual>\n"
 "    <collision>\n"
 "      <geometry>\n"
-"        <mesh filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>\n"
+"        <mesh filename=\"package://robot_description_newrobot/meshes/"
+"collision/base.stl\"/>\n"
 "      </geometry>\n"
 "    </collision>\n"
 "    <inertial>\n"
 "      <mass value=\"5.0\"/>\n"
-"      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
+"      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" "
+"izz=\"0.01\"/>\n"
 "    </inertial>\n"
 "  </link>\n"
 "  \n"
@@ -158,12 +160,11 @@ msgstr ""
 "  \n"
 "</robot>\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:65 1d4c0fa8ae73409d82e97f69e4512cde
+#: ../../source/2-how_to/10-add_a_robot.md:65 b7243335076049fcb717d86249c8d97a
 msgid "ros2_control Configuration"
 msgstr "ros2_control 配置"
 
-#: ../../source/2-how_to/10-add_a_robot.md:67 b28408f673984664a47f6003d50fd447
-#, python-brace-format
+#: ../../source/2-how_to/10-add_a_robot.md:67 8a4dec58c4584538902783d11e5ca046
 msgid ""
 "<?xml version=\"1.0\"?>\n"
 "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
@@ -185,8 +186,7 @@ msgid ""
 "      \n"
 "      <xacro:if value=\"${hardware_type == 'real'}\">\n"
 "        <hardware>\n"
-"          "
-"<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
+"          <plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
 "          <param name=\"device\">can0</param>\n"
 "        </hardware>\n"
 "      </xacro:if>\n"
@@ -240,37 +240,36 @@ msgstr ""
 "  \n"
 "</robot>\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:106 e7a70871331044aaa6206d0b9af35534
+#: ../../source/2-how_to/10-add_a_robot.md:106 57f530b9fd6e4d688d68ac1ccb340cd6
 msgid "Step 2: Hardware Interface (if needed)"
 msgstr "步骤 2：硬件接口（如需要）"
 
-#: ../../source/2-how_to/10-add_a_robot.md:108 ba15e65b790c45e899afd3b32221755f
+#: ../../source/2-how_to/10-add_a_robot.md:108 cd47071625b04365a6b0ca9c6176b6fb
 msgid "If using an existing interface (CAN, Modbus, etc.), skip this step."
 msgstr "如果使用现有接口（CAN、Modbus 等），可跳过此步骤。"
 
-#: ../../source/2-how_to/10-add_a_robot.md:110 9e31f5ef523e4eb48d2cac917719522d
+#: ../../source/2-how_to/10-add_a_robot.md:110 48cdacb9ced34e54b68792b9d8340e5c
 msgid "Plugin Structure"
 msgstr "插件结构"
 
-#: ../../source/2-how_to/10-add_a_robot.md:112 57fc60bccd6448d58c3b93cb4faca268
-#, python-brace-format
+#: ../../source/2-how_to/10-add_a_robot.md:112 65607da7e4f44dfe8439243b2b1fe63e
 msgid ""
 "// newrobot_hardware_interface.hpp\n"
-"class NewRobotHardwareInterface : public "
-"hardware_interface::SystemInterface\n"
+"class NewRobotHardwareInterface : public hardware_interface::"
+"SystemInterface\n"
 "{\n"
 "public:\n"
 "  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) "
 "override;\n"
 "  CallbackReturn on_configure(const rclcpp_lifecycle::State & "
 "previous_state) override;\n"
-"  CallbackReturn on_activate(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
+"  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) "
+"override;\n"
 "  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & "
 "previous_state) override;\n"
 "  \n"
-"  std::vector<hardware_interface::StateInterface> "
-"export_state_interfaces() override;\n"
+"  std::vector<hardware_interface::StateInterface> export_state_interfaces() "
+"override;\n"
 "  std::vector<hardware_interface::CommandInterface> "
 "export_command_interfaces() override;\n"
 "  \n"
@@ -281,30 +280,39 @@ msgid ""
 "};\n"
 msgstr ""
 "// newrobot_hardware_interface.hpp\n"
-"class NewRobotHardwareInterface : public hardware_interface::SystemInterface\n"
+"class NewRobotHardwareInterface : public hardware_interface::"
+"SystemInterface\n"
 "{\n"
 "public:\n"
-"  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override;\n"
-"  CallbackReturn on_configure(const rclcpp_lifecycle::State & previous_state) override;\n"
-"  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override;\n"
-"  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;\n"
+"  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) "
+"override;\n"
+"  CallbackReturn on_configure(const rclcpp_lifecycle::State & "
+"previous_state) override;\n"
+"  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) "
+"override;\n"
+"  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & "
+"previous_state) override;\n"
 "  \n"
-"  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;\n"
-"  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;\n"
+"  std::vector<hardware_interface::StateInterface> export_state_interfaces() "
+"override;\n"
+"  std::vector<hardware_interface::CommandInterface> "
+"export_command_interfaces() override;\n"
 "  \n"
-"  return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
-"  return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
+"  return_type read(const rclcpp::Time & time, const rclcpp::Duration & "
+"period) override;\n"
+"  return_type write(const rclcpp::Time & time, const rclcpp::Duration & "
+"period) override;\n"
 "};\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:130 1a09278f136b42838822379fb9f8a594
+#: ../../source/2-how_to/10-add_a_robot.md:130 5b550ed8abf14e36b3184967e0949565
 msgid "Step 3: Controller Configuration"
 msgstr "步骤 3：控制器配置"
 
-#: ../../source/2-how_to/10-add_a_robot.md:132 4a221bc8bc904c608b2b8278ba05fc39
+#: ../../source/2-how_to/10-add_a_robot.md:132 6acd744002344881b6e5cf453c1b1cde
 msgid "OCS2 Arm Config"
 msgstr "OCS2 机械臂配置"
 
-#: ../../source/2-how_to/10-add_a_robot.md:134 de5a3d01cd7a4279b8085f1ce7059839
+#: ../../source/2-how_to/10-add_a_robot.md:134 a7f872caaca14e4abeb0e9dfa27f5a71
 msgid ""
 "# config/ocs2_arm_config.yaml\n"
 "arm:\n"
@@ -352,15 +360,15 @@ msgstr ""
 "  horizon: 1.0\n"
 "  # MPC tuning parameters...\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:159 18563760fce047c8adc0b75289e40d67
+#: ../../source/2-how_to/10-add_a_robot.md:159 6bf09a94d8804c73b4922a2fec474804
 msgid "Step 4: Test Progression"
 msgstr "步骤 4：测试递进"
 
-#: ../../source/2-how_to/10-add_a_robot.md:161 3662f448368b4682906a7b4f27b28903
+#: ../../source/2-how_to/10-add_a_robot.md:161 baa68263b6f9456a903c83e8939021c7
 msgid "Mock Testing"
 msgstr "模拟测试"
 
-#: ../../source/2-how_to/10-add_a_robot.md:163 1b37b01137944fb7a1b2b067dc3adf3c
+#: ../../source/2-how_to/10-add_a_robot.md:163 22e291385cbc47059c5de9ed8d16748d
 msgid ""
 "# Verify URDF\n"
 "check_urdf newrobot.urdf\n"
@@ -369,8 +377,8 @@ msgid ""
 "ros2 launch robot_description_newrobot display.launch.py\n"
 "\n"
 "# Mock demo\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:"
+"=mock\n"
 msgstr ""
 "# Verify URDF\n"
 "check_urdf newrobot.urdf\n"
@@ -379,81 +387,82 @@ msgstr ""
 "ros2 launch robot_description_newrobot display.launch.py\n"
 "\n"
 "# Mock demo\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:"
+"=mock\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:174 58cf6face0484486a14a95bb10b83fbe
+#: ../../source/2-how_to/10-add_a_robot.md:174 9c63c85d8f1a4477893324e826d738ac
 msgid "Gazebo Testing"
 msgstr "Gazebo 测试"
 
-#: ../../source/2-how_to/10-add_a_robot.md:176 bad8fc35a11741f98d053193a7836172
+#: ../../source/2-how_to/10-add_a_robot.md:176 9833129dec1a4e63bd5dcc1f7f1e53d9
 msgid ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=gz\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=gz\n"
 msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=gz\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:180 5579dd61cfe3423d9302e00914fef5b0
+#: ../../source/2-how_to/10-add_a_robot.md:180 d4e92c64a52d4b95b323c90f9fc75daa
 msgid "Real Hardware Testing"
 msgstr "真实硬件测试"
 
-#: ../../source/2-how_to/10-add_a_robot.md:182 f0bb38eca92748e9a02ee1c234056b35
+#: ../../source/2-how_to/10-add_a_robot.md:182 36e35f01fc6b44688f71b93ee524097b
 msgid ""
 "# Follow the go_real_hardware guide\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=real\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:"
+"=real\n"
 msgstr ""
 "# Follow the go_real_hardware guide\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=real\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:"
+"=real\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:187 3a35f805d3bb483697a7af2ccf2734cc
+#: ../../source/2-how_to/10-add_a_robot.md:187 8fd639ee6a9740ab88ca9ab662a9fd8f
 msgid "Step 5: Integration"
 msgstr "步骤 5：集成"
 
-#: ../../source/2-how_to/10-add_a_robot.md:189 b4666807dc7146338a36a77a5283158f
+#: ../../source/2-how_to/10-add_a_robot.md:189 ae119d44d79342c2915b2ee513a96a97
 msgid "Add to robot_descriptions"
 msgstr "添加到 robot_descriptions"
 
-#: ../../source/2-how_to/10-add_a_robot.md:191 157d65e707104c7495e353dd6fbc1b7b
+#: ../../source/2-how_to/10-add_a_robot.md:191 f5a59d557a7741edae83ffd01aecef8e
 msgid "Create package in appropriate location"
 msgstr "在合适的位置创建软件包"
 
-#: ../../source/2-how_to/10-add_a_robot.md:192 57aee3cb7b6d4001b35fa55b3de2bf23
+#: ../../source/2-how_to/10-add_a_robot.md:192 23b9a029bada4c4d841bce8869b41c23
 msgid "Add as submodule to `robot_descriptions`"
 msgstr "作为子模块添加到 `robot_descriptions`"
 
-#: ../../source/2-how_to/10-add_a_robot.md:193 afba904c8431496d8e472011272b4169
+#: ../../source/2-how_to/10-add_a_robot.md:193 521a3f9c13d9480ca84a6aea93de5e6e
 msgid "Update visibility configuration"
 msgstr "更新可见性配置"
 
-#: ../../source/2-how_to/10-add_a_robot.md:194 045440a39a614fb6b494f35609d3de3a
+#: ../../source/2-how_to/10-add_a_robot.md:194 393c63a7408e4f87a8a988b22cbf0edc
 msgid "Create PR"
 msgstr "创建 PR"
 
-#: ../../source/2-how_to/10-add_a_robot.md:196 a8a7f4b4c0b14e4fb5b41119085ab96c
+#: ../../source/2-how_to/10-add_a_robot.md:196 474c611c27b6474db727a045c5d36ec4
 msgid "Document"
 msgstr "编写文档"
 
-#: ../../source/2-how_to/10-add_a_robot.md:198 23dad78ad2e947d091ed1af59141f144
+#: ../../source/2-how_to/10-add_a_robot.md:198 647e9965a6a7445eae64b05bf61cc0f7
 msgid "Create or update:"
 msgstr "创建或更新："
 
-#: ../../source/2-how_to/10-add_a_robot.md:199 17e90f0033d442f9a28b32e67b70c5d7
+#: ../../source/2-how_to/10-add_a_robot.md:199 42ab16c88051414fb0ac22b2a61fe76c
 msgid "Package README"
 msgstr "软件包 README"
 
-#: ../../source/2-how_to/10-add_a_robot.md:200 fdc82f6a92e74feb8c6081a2c79acac5
+#: ../../source/2-how_to/10-add_a_robot.md:200 610c30d9b3b34ad69ce468edd7e4c574
 msgid "Launch file documentation"
 msgstr "启动文件文档"
 
-#: ../../source/2-how_to/10-add_a_robot.md:201 950208681ef94fb6ac3f2c0fea83c966
+#: ../../source/2-how_to/10-add_a_robot.md:201 118e94c5f99142bd9abea7334982ace2
 msgid "Hardware-specific notes"
 msgstr "硬件相关说明"
 
-#: ../../source/2-how_to/10-add_a_robot.md:203 5076916cfcbc456fb2a34bd0555be676
+#: ../../source/2-how_to/10-add_a_robot.md:203 0adf6757efe2410f968e465c1172f135
 msgid "Checklist"
 msgstr "检查清单"
 
-#: ../../source/2-how_to/10-add_a_robot.md:205 fedeed83fea34871a14b8cd9d4de4fa7
+#: ../../source/2-how_to/10-add_a_robot.md:205 dd3a8192996e415cbb5332630c8eb3f2
 msgid "URDF parses without errors"
 msgstr "URDF 解析无错误"
 
@@ -465,58 +474,59 @@ msgstr "URDF 解析无错误"
 #: ../../source/2-how_to/10-add_a_robot.md:210
 #: ../../source/2-how_to/10-add_a_robot.md:211
 #: ../../source/2-how_to/10-add_a_robot.md:212
-#: ../../source/2-how_to/10-add_a_robot.md:213 04bd0807b0fc4356a7ee3122a7f27829
-#: 1dcf31c6e3b8418585aa73eddbc83087 40462673e97c4088a3edbc81237a5eba
-#: 456c213bd310485db3c09ee0262a661a 4ba6d77e10324cba9f18c66869cf1f95
-#: 51e8e60db84844e0be2da02d4f44dbb0 bb5dda3e9775401cb080db88567f9463
-#: c55ffeeec4d64d36bd08063580175e40 d93cd869dd1f451081e6563a087834dc
+#: ../../source/2-how_to/10-add_a_robot.md:213 3c95844489a546d0b899f280fbcc2f12
+#: 1c76cdb31829476e9e87e775252f5f07 2f25ee6c7cd844c48f5c9ddbe23c21d7
+#: f1615e6bc6fd47e5808ff4a3c5cfa496 250a1c6665a94543bd083fe50a58103f
+#: ecea706e08e549628c2e83dd247f9cc7 62b9d6cec6de4d75a395b05514dec5b7
+#: add1087d9d2a426b94d7cd88f3e66311 5d06679b19104e77962432bc1462eab5
 msgid ""
 "<input class=\"task-list-item-checkbox\" disabled=\"disabled\" "
 "type=\"checkbox\">"
 msgstr ""
-"<input class=\"task-list-item-checkbox\" disabled=\"disabled\" type=\"checkbox\">"
+"<input class=\"task-list-item-checkbox\" disabled=\"disabled\" "
+"type=\"checkbox\">"
 
-#: ../../source/2-how_to/10-add_a_robot.md:206 b5a8b045bddb48b0a369d2d9a8e0916a
+#: ../../source/2-how_to/10-add_a_robot.md:206 b12826d5d24747c0908db11e5c78ebc2
 msgid "Meshes display correctly in RViz"
 msgstr "网格在 RViz 中正确显示"
 
-#: ../../source/2-how_to/10-add_a_robot.md:207 c981ed4bac2f4e5c879b6118383f376b
+#: ../../source/2-how_to/10-add_a_robot.md:207 99352bef84984984ba65ef7f6bf12a66
 msgid "ros2_control configuration valid"
 msgstr "ros2_control 配置有效"
 
-#: ../../source/2-how_to/10-add_a_robot.md:208 f627af95aa624ed9ae4066ac6875bfb4
+#: ../../source/2-how_to/10-add_a_robot.md:208 918fb4e4804c4ab3b5e30777ae18ae8c
 msgid "Mock hardware demo works"
 msgstr "模拟硬件演示可以运行"
 
-#: ../../source/2-how_to/10-add_a_robot.md:209 4a9a46ac010d422290e39fb7a353f11f
+#: ../../source/2-how_to/10-add_a_robot.md:209 0e88e2a424604a23b11b7f2a710232f9
 msgid "Gazebo simulation works (if applicable)"
 msgstr "Gazebo 仿真可以运行（如适用）"
 
-#: ../../source/2-how_to/10-add_a_robot.md:210 02901c150efd470bb41f7f5436da0d3d
+#: ../../source/2-how_to/10-add_a_robot.md:210 f6f4830d01134159913caf62ebf06ee3
 msgid "Real hardware works (if applicable)"
 msgstr "真实硬件可以运行（如适用）"
 
-#: ../../source/2-how_to/10-add_a_robot.md:211 3c4d620ded444377be90b881e9e58c02
+#: ../../source/2-how_to/10-add_a_robot.md:211 0a07cd747e83441f8d6c090457f132aa
 msgid "OCS2 controller tracks targets"
 msgstr "OCS2 控制器能够跟踪目标"
 
-#: ../../source/2-how_to/10-add_a_robot.md:212 9e320122ac504dcc88193e03af4adde7
+#: ../../source/2-how_to/10-add_a_robot.md:212 b276485a58f9411b846bfa60cafa6ac3
 msgid "Package builds cleanly"
 msgstr "软件包能够干净地编译"
 
-#: ../../source/2-how_to/10-add_a_robot.md:213 9b15c2f8b5d349cbb532cb95add90abd
+#: ../../source/2-how_to/10-add_a_robot.md:213 ca033117f93b4d8fa14d4f20537426da
 msgid "README documents usage"
 msgstr "README 说明了用法"
 
-#: ../../source/2-how_to/10-add_a_robot.md:215 e2670b207f5f4a9ca51f39d5fc4f6155
+#: ../../source/2-how_to/10-add_a_robot.md:215 6ddf2898b6574a20ac0edef771b9d753
 msgid "Common Issues"
 msgstr "常见问题"
 
-#: ../../source/2-how_to/10-add_a_robot.md:217 e37289dc916847b0b095c9985f8ae10a
+#: ../../source/2-how_to/10-add_a_robot.md:217 69081db550d5468285ae140c59e5b68f
 msgid "URDF errors"
 msgstr "URDF 错误"
 
-#: ../../source/2-how_to/10-add_a_robot.md:219 8eaf7f4a3bab48feaeb816c8c3ae869b
+#: ../../source/2-how_to/10-add_a_robot.md:219 cf026ecf1cf94df18d21bdc23126eacf
 msgid ""
 "# Check for syntax errors\n"
 "check_urdf <(xacro newrobot.urdf.xacro)\n"
@@ -524,48 +534,79 @@ msgstr ""
 "# 检查语法错误\n"
 "check_urdf <(xacro newrobot.urdf.xacro)\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:224 5abff2ccdc7c4a0192dd0a62e7fb8fa4
+#: ../../source/2-how_to/10-add_a_robot.md:224 07d29272e0f7408fae3ac5d2069c5793
 msgid "Controller fails to start"
 msgstr "控制器启动失败"
 
-#: ../../source/2-how_to/10-add_a_robot.md:226 b9e369f7607a471b9c53f4610a98906d
+#: ../../source/2-how_to/10-add_a_robot.md:226 00325eea08d84c7fa6f2cf2170992741
 msgid "Verify joint names match between URDF and config"
 msgstr "确认 URDF 与配置中的关节名称一致"
 
-#: ../../source/2-how_to/10-add_a_robot.md:227 03c77840817b40e1ace5fedef984ef84
+#: ../../source/2-how_to/10-add_a_robot.md:227 77b1b287c0af43bfb767c1a8c2afad16
 msgid "Check ros2_control hardware plugin is found"
 msgstr "确认能够找到 ros2_control 硬件插件"
 
-#: ../../source/2-how_to/10-add_a_robot.md:228 d2567d3d862d42d3ae1a84d8e748cbb3
+#: ../../source/2-how_to/10-add_a_robot.md:228 9fed7f3742b74accb9a225c3755c9580
 msgid "Review controller manager logs"
 msgstr "查看 controller manager 日志"
 
-#: ../../source/2-how_to/10-add_a_robot.md:230 7a671f4582fd410780ed0e75897fc9b6
+#: ../../source/2-how_to/10-add_a_robot.md:230 9b343943c7134328bcff227ca5ab6694
 msgid "Motion incorrect"
 msgstr "运动不正确"
 
-#: ../../source/2-how_to/10-add_a_robot.md:232 136e22542dfc4609a4b269a7b83eadd0
+#: ../../source/2-how_to/10-add_a_robot.md:232 02731bdc8e88476db1cd1673ded695ee
 msgid "Verify joint axis directions"
 msgstr "确认关节轴向"
 
-#: ../../source/2-how_to/10-add_a_robot.md:233 ae63bf550e634dabae2483dabf96f8b3
+#: ../../source/2-how_to/10-add_a_robot.md:233 c7a91bcbceeb46ae956c70b94250f532
 msgid "Check joint limits match physical robot"
 msgstr "确认关节限位与实体机器人一致"
 
-#: ../../source/2-how_to/10-add_a_robot.md:234 43a9e810a79046a7a8c46d6ac4d9abd7
+#: ../../source/2-how_to/10-add_a_robot.md:234 3562d32b95404838b9086e4ba359abbf
 msgid "Verify inertia parameters"
 msgstr "确认惯性参数"
 
-#: ../../source/2-how_to/10-add_a_robot.md:236 592d2ac756a348f49d65b58edf2425c8
+#: ../../source/2-how_to/10-add_a_robot.md:236 5a1352e70e5a4bb5938f3e3ef5338fc3
 msgid "Next Steps"
 msgstr "下一步"
 
-#: ../../source/2-how_to/10-add_a_robot.md:238 08aadc629c6941188c61fd298fb5e408
+#: ../../source/2-how_to/10-add_a_robot.md:238 53f93f4c15244fc3a9695d0f1547797b
 msgid ""
-"[ros2_control here](../3-concepts/1-ros2_control_here.md) — Understand "
-"the control architecture"
-msgstr "[ros2_control 在本项目中](../3-concepts/1-ros2_control_here.md) — 理解控制架构"
+"[ros2_control here](../3-concepts/1-ros2_control_here.md) — Understand the "
+"control architecture"
+msgstr ""
+"[ros2_control 在本项目中](../3-concepts/1-ros2_control_here.md) — 理解控制架"
+"构"
 
-#: ../../source/2-how_to/10-add_a_robot.md:239 5b2870e4c598424985dc522bea68911d
+#: ../../source/2-how_to/10-add_a_robot.md:239 55c5918daa6e4411b68420298218cb2e
 msgid "[Developer guide](../5-developer/0-index.md) — Contributing guidelines"
 msgstr "[开发者指南](../5-developer/0-index.md) — 贡献规范"
+
+#~ msgid ""
+#~ "robot_description_newrobot/\n"
+#~ "├── CMakeLists.txt\n"
+#~ "├── package.xml\n"
+#~ "├── urdf/\n"
+#~ "│   ├── newrobot.urdf.xacro\n"
+#~ "│   └── newrobot.ros2_control.xacro\n"
+#~ "├── meshes/\n"
+#~ "│   ├── visual/\n"
+#~ "│   └── collision/\n"
+#~ "├── config/\n"
+#~ "│   └── ocs2_arm_config.yaml\n"
+#~ "└── launch/\n"
+#~ "    └── display.launch.py\n"
+#~ msgstr ""
+#~ "robot_description_newrobot/\n"
+#~ "├── CMakeLists.txt\n"
+#~ "├── package.xml\n"
+#~ "├── urdf/\n"
+#~ "│   ├── newrobot.urdf.xacro\n"
+#~ "│   └── newrobot.ros2_control.xacro\n"
+#~ "├── meshes/\n"
+#~ "│   ├── visual/\n"
+#~ "│   └── collision/\n"
+#~ "├── config/\n"
+#~ "│   └── ocs2_arm_config.yaml\n"
+#~ "└── launch/\n"
+#~ "    └── display.launch.py\n"

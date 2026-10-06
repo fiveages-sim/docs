@@ -9,39 +9,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"POT-Creation-Date: 2026-10-06 16:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:1
-#: e22b6beb10194f3ebae4fd88c9d9d7da
+#: 6a348dd1c01b4a9686e4ab3409ca38d2
 msgid "ros2_control in This Stack"
 msgstr "本技术栈中的 ros2_control"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:3
-#: 1b4487c74e0042deae6145f6cca3306e
+#: 3b59707dd290473182bd9d6f1e346887
 msgid "This page explains how FiveAges Sim uses the ROS 2 control framework."
 msgstr "本页说明 FiveAges Sim 如何使用 ROS 2 control 框架。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 4f66601e8c9f4ac1afe9044ee4033153
+#: b7c7dca1e4334b52b5804ab1fc439350
 msgid "Overview"
 msgstr "概述"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:7
-#: fd148a0df2734e8b9d90a8f3d1c70c04
+#: 3e496f7e7b374b6b82be2c7a35a097d1
 msgid "The stack uses `ros2_control` as its hardware abstraction layer:"
 msgstr "本技术栈使用 `ros2_control` 作为硬件抽象层："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:9
-#: d7ed294979534d2fa78cf5ea53c1c2cb
+#: a2eee33ece084871aac12b7ceaee976f
 msgid ""
 "Controllers (MPC, teleop)\n"
 "        ↓\n"
@@ -49,205 +49,205 @@ msgid ""
 "        ↓\n"
 "Hardware Interfaces (plugins)\n"
 "        ↓\n"
-"Physical/Simulated Hardware\n"
+"Physical/Simulated Hardware"
 msgstr ""
-"控制器（MPC、遥操作）\n"
+"Controllers (MPC, teleop)\n"
 "        ↓\n"
-"控制器管理器\n"
+"Controller Manager\n"
 "        ↓\n"
-"硬件接口（插件）\n"
+"Hardware Interfaces (plugins)\n"
 "        ↓\n"
-"物理/仿真硬件\n"
+"Physical/Simulated Hardware"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:19
-#: e4ca8ffb2ed949a9ad3a40b5167cd4d0
+#: d12ad89111404c0096fa7e54d709bb57
 msgid "Key Components"
 msgstr "关键组件"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:21
-#: a5d56ece1e7d4a7c801afa2670ea128a
+#: 9fc8c1ef0b184ea4b99e0bb7593a1800
 msgid "Controller Manager"
 msgstr "控制器管理器"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:23
-#: bc643ba907f6477eb5ae2cb0bf29a60d
+#: b902bf236a22409696692c0aa9024dd7
 msgid ""
-"The Controller Manager loads, configures, and executes controllers. In "
-"this stack:"
+"The Controller Manager loads, configures, and executes controllers. In this "
+"stack:"
 msgstr "控制器管理器负责加载、配置并执行控制器。在本技术栈中："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:25
-#: 1e61f1631fc345218ccc0172649d3fab
+#: c56a4eff93ec4f9a8ecd5afaada3593c
 msgid "Controllers are spawned via launch files"
 msgstr "控制器通过启动文件启动"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:26
-#: b6bdb0347f5b4dba9eb397558176a3cc
+#: 9608bc960acc4d08933a3a02f0d75eae
 msgid "Multiple controllers can run simultaneously"
 msgstr "多个控制器可以同时运行"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:27
-#: 14229890b18547e9ab92687a6c3abdce
+#: de27cf5226214809afbd137284e46421
 msgid "Controller switching is handled by the manager"
 msgstr "控制器切换由管理器处理"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:29
-#: 662f681efaa64ca083d893f33b9d86c4
+#: f508c7e15898465b98a04757c6614d4e
 msgid "Hardware Interfaces"
 msgstr "硬件接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:31
-#: 2903e1c80e584baebf6c0d688008051c
+#: 4d717236e6d44887b92f7bb2c35522c4
 msgid "Hardware interfaces bridge controllers to actual hardware:"
 msgstr "硬件接口将控制器桥接到实际硬件："
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: cb8072271e2d4a02aa0596a2b5b1a321
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: deadff8cfc6f41f9a1ce2846bb9e0fc9
 msgid "Interface Type"
 msgstr "接口 类型"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: c92ce0a6482242e59d2514f24422e985
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 458ddac7b75c4d938ca3d260f6d4a62d
 msgid "Plugin"
 msgstr "插件"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 95e76e87e0c644b88ee02abdb051edd5
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 7202601b5c0047988999ff71dff6c2f5
 msgid "Example"
 msgstr "示例"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: f3779da1c3934641af900b9fed04a140
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 262bedb5203e4a07a4160853654453e9
 msgid "Mock"
 msgstr "Mock"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: c5f1241b9e014ac883f63dfb613b92f7
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 18ddb0750fba4911893b1e64a328b742
 msgid "`mock_components/GenericSystem`"
 msgstr "`mock_components/GenericSystem`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 9411497fc4a64d45b4f3ab9f5a22679b
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 24b2820eefe6437a9a2ae37963bf0872
 msgid "Testing without hardware"
 msgstr "无需硬件即可测试"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 8ab0d921b99147b7b25d04f6816c76a3
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: a5821cf2ead54c1cad7dbf9f79e1a408
 msgid "Gazebo"
 msgstr "Gazebo"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: f67e5f7eb51b4b139628009f12110173
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: b1c64685ba6b42949676f567607442ae
 msgid "`gz_ros2_control/GazeboSimSystem`"
 msgstr "`gz_ros2_control/GazeboSimSystem`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 157a228786764f5d94d328f97315db5c
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 5a415d0cfeb24aadb6bd3e9cd1efdf0d
 msgid "Gazebo simulation"
 msgstr "Gazebo 仿真"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 986d2f03b0ae4fc1b8c20e57c19fb30c
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 385af404e62144b5a845c33e18b79400
 msgid "Isaac"
 msgstr "Isaac"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: b0ac120e47eb4a569c01550c187d1aea
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: ce0be2a5efa64957b8f7b2926b4b4045
 msgid "Topic-based interface"
 msgstr "基于话题的接口"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: c63af7aac3fd405c8b65450c2f1fb6be
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 57f32531a6f348e0b4d80c0a41e72463
 msgid "Isaac Sim bridge"
 msgstr "Isaac Sim 桥接"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 31f722f4479b40ccae733b859ddcfbbf
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 17afceab4e314a4a9d48039396d7bbc0
 msgid "Real"
 msgstr "真机"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 244bd9565f1246428221382be930d5db
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 7297b5bf0717492eba60de583eedd0a9
 msgid "Vendor-specific plugins"
 msgstr "厂商专用插件"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 94237d36b4d849f0953b447553c7c366
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 1c4956ef7eaf4e40945aa1ecedf121a2
 msgid "CAN, TCP, serial"
 msgstr "CAN、TCP、串口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:40
-#: 7531ed58fd3145fc991ef4c66765bb47
+#: 8ca3ac754fce48169d2c839ff4e750da
 msgid "Controllers"
 msgstr "控制器"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:42
-#: ffc9e46a5fd344d1ad53ca3574a9d490
+#: 5f50ebf70f6d401b9184653e84dadc22
 msgid "The main controllers in this stack:"
 msgstr "本技术栈中的主要控制器："
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 3414eae0fa0c44f3ab1133d49a874980
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: d280e3fc179b4ac18181096fc8703a7f
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 4b9c953eca054afd9334c65bd535d0cf f136702157d84dfb94125873cbbf7f00
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 21354a0cd6d242de9d6ac9ad8a291eb2 1954a6c076c94e0e9bd01e37907fc16a
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: f661f4852eec4f3dab1247e246073d8e
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: b9ca3fae011647048728512a541b6ccb
 msgid "`ocs2_arm_controller`"
 msgstr "`ocs2_arm_controller`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 804ec7fbc21b4673acce9502c071410c
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 7453be3f06484d4abb73d908960e6cbb
 msgid "MPC-based arm motion"
 msgstr "基于 MPC 的机械臂运动"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 9dba20f1972c4770b00c6673d580f8b8
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 6fe39c431ab84084b739ae918f2c357d
 msgid "`adaptive_gripper_controller`"
 msgstr "`adaptive_gripper_controller`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: e5c33383c6b6416884203a09711968bf
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 8aacd82562bd429d83e302a1d784ae32
 msgid "Gripper position/force control"
 msgstr "夹爪位置/力控制"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: ab8606de8376496a970e6df2866eaeea
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 3ab9e77732f344328add97fd66619714
 msgid "`arms_teleop_controller`"
 msgstr "`arms_teleop_controller`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: ef8a107095484000ac4e2421b531361d
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 5d7f20953d2c4b778c7ad4a6a0d46f59
 msgid "End-effector target tracking"
 msgstr "末端执行器目标跟踪"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 748de1258c214131a3558f47220be3dc
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 495d65e8b8654501a1683db286fd7f7d
 msgid "`target_manager_controller`"
 msgstr "`target_manager_controller`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 8340d18cb6f24fb3a1ecd941b6670a05
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 05c3ee8b38f346c7ae5e679be76f5984
 msgid "Target pose management"
 msgstr "目标位姿管理"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:51
-#: 3c71193d94a44fff9a3f056071f8eb75
+#: 2162da55f53641beaa967bbae3365b3b
 msgid "The `hardware:=` Parameter"
 msgstr "`hardware:=` 参数"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:53
-#: 7e1323f6e4024747af23e8549b9cc147
+#: cd78ceabdbb64f2ab7de991d9f53d745
 msgid "Launch files use the `hardware` parameter to select the interface:"
 msgstr "启动文件使用 `hardware` 参数来选择接口："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:55
-#: 1ef9127adf534ab2b006f63c2ac8a06f
+#: 47a95f37c1ca401b9ee35a9aaa5c615e
 msgid ""
 "# Mock - no hardware, instant response\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
@@ -274,40 +274,38 @@ msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=real\n"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:69
-#: ac0e9e529ec14aba9185ce22d360c5bc
+#: bd09778cb3a6454d969583ab10fc14af
 msgid "Configuration Flow"
 msgstr "配置流程"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:71
-#: 221afb070de04a6c9fded9dcd6387296
+#: c85b56839ca1419fa9a519384e5f35ce
 msgid "**URDF/xacro** defines the robot model and includes ros2_control tags"
 msgstr "**URDF/xacro** 定义机器人模型，并包含 ros2_control 标签"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:72
-#: 828a30700a804a14ab7be58a05e07bd1
+#: 7419be7175f4461891dcefd8d199db9f
 msgid ""
-"**ros2_control xacro** specifies hardware interfaces per `hardware:=` "
-"value"
+"**ros2_control xacro** specifies hardware interfaces per `hardware:=` value"
 msgstr "**ros2_control xacro** 根据 `hardware:=` 的值指定硬件接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:73
-#: cfe8648b189b418793832558842779e5
+#: 387053792e44427eab5387b8b53be959
 msgid "**Controller config YAML** defines controller parameters"
 msgstr "**控制器配置 YAML** 定义控制器参数"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:74
-#: 5c22f3e1bce24e9298a18124d1b5fb23
+#: 20f61b0c2b0047398d7635ae0802a7a4
 msgid "**Launch file** spawns controller manager and controllers"
 msgstr "**启动文件** 启动控制器管理器与各控制器"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:76
-#: f4d57eccbc484b33af114552e22ab5f4
+#: 794dcf7de730402e8c9fe325a19af6ed
 msgid "Example xacro snippet:"
 msgstr "xacro 片段示例："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:78
-#: 8ad0095192f746d8aea5629e5d36a8d3
-#, python-brace-format
+#: 66d16a8bcdbb45a39a999f07ae79cf6f
 msgid ""
 "<ros2_control name=\"ArmSystem\" type=\"system\">\n"
 "  <xacro:if value=\"${hardware_type == 'mock'}\">\n"
@@ -338,122 +336,122 @@ msgstr ""
 "</ros2_control>\n"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:94
-#: 492cfbf046bc4f42afde31729213ad01
+#: 69ed4aa56554437b8ff180d4db51d594
 msgid "Command and State Interfaces"
 msgstr "命令接口与状态接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:96
-#: 707a6fc5d3a7496087f3ad51252c5956
+#: 8193515d89c9413b872efb5bc84b273c
 msgid "Command Interfaces"
 msgstr "命令接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:98
-#: 7d08a749a60743f0935dced26eabe699
+#: d366923c2698448ba17ef3f0be688f7e
 msgid "What controllers can command:"
 msgstr "控制器可以下发的指令："
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 4f0ad9d600074ab59aa76919ddf4753d c88834cfc119422bb0fe87b09338ef50
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 6b3bb45c04524087afb097aed6711ed8 f9350f818997413cbb1447b2b7d4739f
 msgid "Interface"
 msgstr "接口"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: dbfe5731a22742a59ea0c308d03091b2 df3e520bceb14fd698dc7a0aaed841bb
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 548036c9a6f34333b2cec086960375b5 2420522581014a9dabdf225f6bc24edb
 msgid "Description"
 msgstr "描述"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 3bc0d86db0f64b0e82659d270b6da441 d09d3d21e92a47a28be660f212a39470
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 6380a344f054434c8efb8836512e85f7 8685c675bd5a4b83ad8548d84d30cd78
 msgid "`position`"
 msgstr "`position`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 2e7ae23e4c3a476baf0f43ba26537869
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: df9f034d72804159987f20a410945deb
 msgid "Joint position (radians)"
 msgstr "关节位置（弧度）"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 9a4e305cf2d844bdb74b8d08faac0df3 ce4c7bac7d1f4c868766cc5b7dee0474
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 60f3c3f413f2491c9a7bd300aceb5327 a7732ffd8ac04d179f956db89417cbe6
 msgid "`velocity`"
 msgstr "`velocity`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 0d8b35a8ffa844438982dfd8e0380e72
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 914ccda2f4ac45138759ecd3f5797307
 msgid "Joint velocity (rad/s)"
 msgstr "关节速度（rad/s）"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 9e588ad9d7ad418892f6cbc1b02ad0a7 e97c8e765a874e12af9e8f5ff47d8b65
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 7747ffb0643c4e3eb7437ba19867e05a a8404881335a49b3ba9c01b306ba42c5
 msgid "`effort`"
 msgstr "`effort`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 5e2c448f91da48889594c7cb0d4dd0eb
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 0ed11b77f17641569e8a2fefc96f8918
 msgid "Joint torque (Nm)"
 msgstr "关节力矩（Nm）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:106
-#: 9075e7ff5bdd4fc5825a7ff326995858
+#: a4c4124000424b63bacfe62d78571b0b
 msgid "State Interfaces"
 msgstr "状态接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:108
-#: 7e831d635c1f4793a01a9b1afd7faa6e
+#: ea197346107a41a49930baeb9d18ae4d
 msgid "What controllers can read:"
 msgstr "控制器可以读取的状态："
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: d05e7f9160764c089518544c89eeda65
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: a597da489f0545beb68b45feedd374d4
 msgid "Current joint position"
 msgstr "当前关节位置"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: b39b5e65427c45b3a540628e36bd8713
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: fb3a24a8c9974f6bb4fc61df5fe26b95
 msgid "Current joint velocity"
 msgstr "当前关节速度"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 75233525b3e84aec9f283124a5f89ede
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: bbf9cdfd1db94ae88430b83e3456a9a9
 msgid "Current joint effort/torque"
 msgstr "当前关节力/力矩"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:116
-#: 7c8f9ab4bfc84494a124f0288169dfb0
+#: c4157212655e4cb99ec5a0ad18fe69a8
 msgid "Controller Lifecycle"
 msgstr "控制器生命周期"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:118
-#: f68589861bbd48faa0172af2533f1202
+#: d7002b1b9c804590bc6d58fc4ff032b1
 msgid "Controllers follow the ROS 2 lifecycle:"
 msgstr "控制器遵循 ROS 2 生命周期："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:120
-#: be1d00f639784316835d167fd144a8c9
+#: 627b99cc457d482bb393bdd01446d138
 msgid "**Unconfigured** — Initial state"
 msgstr "**Unconfigured** — 初始状态"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:121
-#: 27139e3eee074f1c9c9d62756da73a3d
+#: 040a86913366492982c5406a55b24efb
 msgid "**Inactive** — Configured but not running"
 msgstr "**Inactive** — 已配置但未运行"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:122
-#: a6201160e9324e299c90307ff977f189
+#: 09655a127a804cce96b4c77571d12f17
 msgid "**Active** — Running and commanding hardware"
 msgstr "**Active** — 正在运行并向硬件下发指令"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:123
-#: b34223cc0a164dfc93609873f4666bce
+#: 5aeab2b8fb9b44d7b10ea03a69f45b48
 msgid "**Finalized** — Shutdown"
 msgstr "**Finalized** — 已关闭"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:125
-#: 2489e7113fd74d8ba71fc927ea6f6123
+#: 07fbd418139d4debb07c409a3e58f7ad
 msgid "Typical commands:"
 msgstr "常用命令："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:127
-#: c41b368f28334bcfabbd0f1c8a8137e3
+#: 91d450a243854f04a05550f5c2d03362
 msgid ""
 "# List controllers\n"
 "ros2 control list_controllers\n"
@@ -469,124 +467,142 @@ msgstr ""
 "ros2 control list_controllers\n"
 "\n"
 "# Switch controllers\n"
-"ros2 control switch_controllers --activate new_controller --deactivate old_controller\n"
+"ros2 control switch_controllers --activate new_controller --deactivate "
+"old_controller\n"
 "\n"
 "# Check hardware interfaces\n"
 "ros2 control list_hardware_interfaces\n"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:138
-#: 48428374c28642b49bac284148202c92
+#: 5e9de0b83e2f4a649a19eee98737a165
 msgid "MPC Controller Specifics"
 msgstr "MPC 控制器要点"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:140
-#: 5996752af00e4ae8ac02be500802c8e9
+#: a5d08e7703ec45c9940b192bcb9a5491
 msgid "The OCS2 arm controller uses Model Predictive Control:"
 msgstr "OCS2 机械臂控制器使用模型预测控制（MPC）："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:142
-#: 59bd6f5510c3480bbf0e0ccf40f96c37
+#: f5f7fb4665e74dff984e56ed6e50beb5
 msgid "**Prediction horizon:** Looks ahead to plan smooth trajectories"
 msgstr "**预测时域：** 前瞻规划平滑轨迹"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:143
-#: b957dbbe364e4f6aa209cd0c1aebba24
+#: 6c345a58646842bbbe18e251ca30c68f
 msgid "**Constraints:** Respects joint limits, velocity limits"
 msgstr "**约束：** 遵守关节限位与速度限位"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:144
-#: c8a493bfb80044348b8934d678b19d88
+#: 00f14e1445a84a709e7dddc82888d1ec
 msgid "**Real-time:** Runs at control loop frequency"
 msgstr "**实时：** 以控制循环频率运行"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:146
-#: f72e964284354b5282ae55c251efd9f7
+#: 64409ba5b1e34b49871a9c935602aabd
 msgid "Key topics:"
 msgstr "关键话题："
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 3d992917cfc84d0eb8eaa4097b549612
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: d52ec142071c402e803d464fe410afe0
 msgid "Topic"
 msgstr "话题"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: ff396d4b025a45f9b9a865d7eb1071a4
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: b8a1e15d2d5443538dfb20ed478458f2
 msgid "Direction"
 msgstr "方向"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: a155b966ebe842d1ab7f0c24d41514c4
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: b002d558b4674ec8a6b5a016b19a5af3
 msgid "`/target_pose`"
 msgstr "`/target_pose`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 3a45e9c51e0c442187a11b565e1a989f 43a437349ba249c8b8aea23822f994e0
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 543fe7dc44f54fe9b2bf30ce56b446b7 4552546a4d4e44dbb722d48ad6c1d7cb
 msgid "Subscribe"
 msgstr "订阅"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 255851973c2349e282e3aa1ac23542f4
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 8eb627b7ff554acba20c3a71c4e3f0fb
 msgid "Cartesian target"
 msgstr "笛卡尔空间目标"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 318bfed4db034e6aa62b0fdce07dd89b
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 5e5e3d342b9b4501b186ce51bcc5ff9d
 msgid "`/target_joint_positions`"
 msgstr "`/target_joint_positions`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 8c5c760d87f34d17a2cf873f9cf43bda
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 951f3770d31e4a248f16c0c393474e2a
 msgid "Joint space target"
 msgstr "关节空间目标"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 74b88b122b974d2fac9774c84635a25e
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: c8c2fe9e575c4ce48565799699101f59
 msgid "`/joint_states`"
 msgstr "`/joint_states`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 0c1757f13ef349b78c5756e93bf3d217 47dd681b00e841e5a6990dc6abce7f22
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 129d8104abbf4c39a9f7444b80aa0c52 c8bd6229cf614ab686de9dd5bb87813b
 msgid "Publish"
 msgstr "发布"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 061af02ced2445cb9597aa2f5e99190e
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: 27933a9238b1469191d35e1365182737
 msgid "Current state"
 msgstr "当前状态"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: faf63f4cfd014cb0822db45946e5fe14
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: ecc9db9bbbf146c4be452c7c30f4d297
 msgid "`/mpc_solution`"
 msgstr "`/mpc_solution`"
 
-#: ../../source/3-concepts/1-ros2_control_here.md
-#: 7db476da967e4818a37ef06eb27f657a
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: fbfe2d04a2d9479fb2f83383cda8b66a
 msgid "Planned trajectory"
 msgstr "规划轨迹"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:155
-#: 0506370c9cc24ce2b9ec2565857ce362
+#: b69bc57b7dca4aa392fc2999c9d01d35
 msgid "Best Practices"
 msgstr "最佳实践"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:157
-#: 30491ac1b4944b2689f72b31c4983100
-msgid "**Always test with mock first** — Verify behavior before simulation/real"
+#: d458c1f2accc4cfa8dbff044ac9d03e0
+msgid ""
+"**Always test with mock first** — Verify behavior before simulation/real"
 msgstr "**始终先用 mock 测试** — 在仿真/真机之前先验证行为"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:158
-#: ac809dd980a742d3b4e501f69f2566bb
+#: 75c77e6eea5143c7beef4528b159aa40
 msgid ""
-"**Check hardware interfaces** — Use `ros2 control "
-"list_hardware_interfaces`"
+"**Check hardware interfaces** — Use `ros2 control list_hardware_interfaces`"
 msgstr "**检查硬件接口** — 使用 `ros2 control list_hardware_interfaces`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:159
-#: 7ef71cd0d4234b65a4926c9a17be2da9
+#: 458b30d00f1641bcb9eb789f3714f485
 msgid "**Monitor controller state** — Use `ros2 control list_controllers`"
 msgstr "**监视控制器状态** — 使用 `ros2 control list_controllers`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:160
-#: 2b0dc9ef8b08483e851ee1b44610c511
+#: d6070662653d474abef10ce722e5c61a
 msgid "**Use appropriate QoS** — Match publisher/subscriber QoS settings"
 msgstr "**使用合适的 QoS** — 匹配发布者/订阅者的 QoS 设置"
+
+#~ msgid ""
+#~ "Controllers (MPC, teleop)\n"
+#~ "        ↓\n"
+#~ "Controller Manager\n"
+#~ "        ↓\n"
+#~ "Hardware Interfaces (plugins)\n"
+#~ "        ↓\n"
+#~ "Physical/Simulated Hardware\n"
+#~ msgstr ""
+#~ "控制器（MPC、遥操作）\n"
+#~ "        ↓\n"
+#~ "控制器管理器\n"
+#~ "        ↓\n"
+#~ "硬件接口（插件）\n"
+#~ "        ↓\n"
+#~ "物理/仿真硬件\n"

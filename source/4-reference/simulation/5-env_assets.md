@@ -22,11 +22,11 @@ Public environment USD assets:
 ### Location
 
 In FaSim-Isaac:
-```
+:::{code-block} none
 FaSim-Isaac/
 └── environment/
     └── fiveages_env/    # → fiveages-env-usds
-```
+:::
 
 ### Usage
 
@@ -56,11 +56,11 @@ Internal project-specific USD scenes and assets.
 
 ### Location
 
-```
+:::{code-block} none
 FaSim-Isaac/
 └── environment/
     └── fa-project-usd/
-```
+:::
 
 ## Not robot_usds Submodules
 

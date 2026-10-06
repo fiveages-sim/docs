@@ -172,7 +172,7 @@ On target machine:
 
 ## Directory Structure
 
-```
+:::{code-block} none
 fa-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/
@@ -188,7 +188,7 @@ fa-deploy-ws/
     ├── fiveages_w2.yaml
     ├── fiveages_s2.yaml
     └── ...
-```
+:::
 
 ## Submodule Management
 

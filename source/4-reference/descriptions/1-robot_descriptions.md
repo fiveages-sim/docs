@@ -10,7 +10,7 @@ Public umbrella repository for all robot descriptions.
 
 ## Structure
 
-```
+:::{code-block} none
 robot_descriptions/
 ├── robot-descriptions-common/    # Shared components
 ├── robot-descriptions-dobot/     # Dobot robots
@@ -19,7 +19,7 @@ robot_descriptions/
 ├── robot-descriptions-ht/        # HT robots
 ├── robot-descriptions-quadruped/ # Quadruped robots
 └── ... (more brands)
-```
+:::
 
 ## Usage
 

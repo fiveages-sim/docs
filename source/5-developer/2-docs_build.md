@@ -78,7 +78,7 @@ make html-zh_CN
 
 ## File Structure
 
-```
+:::{code-block} none
 docs/
 ├── source/
 │   ├── conf.py              # Sphinx configuration
@@ -96,7 +96,7 @@ docs/
 │       └── LC_MESSAGES/     # Chinese translations
 ├── Makefile
 └── requirements.txt
-```
+:::
 
 ## Writing Guidelines
 
@@ -127,7 +127,15 @@ Admonition content.
 
 ### Code Blocks
 
-Use fenced code blocks with language:
+Use fenced code blocks with language. **Do not use unlabeled** `` ``` `` **fences** for ASCII diagrams or directory trees — sphinx-intl turns those into RST `::` and Chinese HTML leaks a bare `::`. Use a colon fence instead:
+
+:::{code-block} none
+Controllers
+        ↓
+Hardware
+:::
+
+Language-tagged examples:
 
 ````markdown
 ```bash

@@ -99,12 +99,12 @@ You can mix source trees and GitHub Release `.deb` packages, but be careful of v
 
 The `open-deploy-ws` includes `deb_versions.conf` listing package prefixes, GitHub repos, and release tags used by `install_core_debs.sh`:
 
-```
+:::{code-block} none
 # package prefix | release tag | GitHub repo
 ros-jazzy-ocs2|latest|legubiao/ocs2_ros2
 ros-jazzy-robot-descriptions-common|latest|fiveages-sim/robot-descriptions-common
 ros-jazzy-arms-ros2-control|latest|fiveages-sim/arms_ros2_control
-```
+:::
 
 ### Checking Installed Versions
 

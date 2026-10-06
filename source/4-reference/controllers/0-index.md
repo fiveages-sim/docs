@@ -6,9 +6,9 @@ This section documents the ROS 2 controllers used in the stack.
 
 Controllers receive commands and produce joint/actuator outputs:
 
-```
+:::{code-block} none
 Target Pose/Joints → Controller → Command Interfaces → Hardware
-```
+:::
 
 ## In This Section
 

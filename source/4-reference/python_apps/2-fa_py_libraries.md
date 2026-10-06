@@ -49,7 +49,7 @@ Presents menu:
 
 ## Structure
 
-```
+:::{code-block} none
 fa-py-libraries/
 ├── ros2_robot_interface/    # Robot API
 ├── ros2_viser/             # Viser visualization
@@ -57,7 +57,7 @@ fa-py-libraries/
 ├── utils/                  # Common utilities
 ├── run.sh                  # Entry point
 └── setup.py
-```
+:::
 
 ## Subpackages
 

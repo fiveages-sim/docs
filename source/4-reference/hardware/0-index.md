@@ -6,13 +6,13 @@ This section documents the ros2_control hardware interface plugins.
 
 Hardware interfaces bridge ROS 2 controllers to physical or simulated hardware:
 
-```
+:::{code-block} none
 Controller Manager
        ↓
 Hardware Interface Plugin
        ↓
 CAN / TCP / Serial / Simulation
-```
+:::
 
 ## In This Section
 

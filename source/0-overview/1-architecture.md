@@ -122,7 +122,7 @@ High-level applications and teleoperation:
 
 ## Dependency Rule of Thumb
 
-```
+:::{code-block} none
 Descriptions (URDF + ros2_control YAML)
     ↓
 Hardware Interface plugins
@@ -132,7 +132,7 @@ Controllers (arm MPC / WBC)
 Simulation backends OR Real hardware
     ↓
 Teleop / Apps (same topic/FSM contracts)
-```
+:::
 
 When adding a new robot:
 1. Create or extend a description package

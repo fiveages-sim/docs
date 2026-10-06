@@ -62,7 +62,7 @@ git checkout arx-acone
 
 After initialization:
 
-```
+:::{code-block} none
 open-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/       # Controllers + nested HIs
@@ -75,7 +75,7 @@ open-deploy-ws/
 ├── init_repo.sh
 ├── submodules_visibility.conf
 └── deb_versions.conf
-```
+:::
 
 ## Building
 

@@ -131,7 +131,7 @@ Typically used with separate quadruped controller stacks.
 
 Each brand package follows the standard layout:
 
-```
+:::{code-block} none
 robot-descriptions-<brand>/
 ├── <robot>_description/
 │   ├── CMakeLists.txt
@@ -147,7 +147,7 @@ robot-descriptions-<brand>/
 │   └── launch/
 │       └── display.launch.py
 └── ...
-```
+:::
 
 ## Adding a New Brand
 

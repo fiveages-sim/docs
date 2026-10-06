@@ -68,14 +68,14 @@ Use semantic versioning: `MAJOR.MINOR.PATCH`
 
 Maintain changelog for releases:
 
-```
+:::{code-block} none
 package (1.2.3-1) jazzy; urgency=medium
 
   * Fix gripper control bug
   * Add new robot support
 
  -- Maintainer <email>  Date
-```
+:::
 
 ## CI/CD Integration
 

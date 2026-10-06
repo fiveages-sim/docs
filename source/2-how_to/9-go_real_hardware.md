@@ -86,10 +86,10 @@ sudo ip link set can0 up
 ```
 
 For Ethernet-based robots:
-```bash
+:::{code-block} bash
 # Verify network interface
 ip addr show eth0
-```
+:::
 
 ### 3. Test Connection
 

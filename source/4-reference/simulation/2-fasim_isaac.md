@@ -67,7 +67,7 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
 
 ## Structure
 
-```
+:::{code-block} none
 FaSim-Isaac/
 ├── robots/                    # → robot_usds submodule
 ├── environment/
@@ -76,7 +76,7 @@ FaSim-Isaac/
 ├── jazzy_ws/                 # Optional ROS 2 workspace
 ├── init.sh
 └── run.sh
-```
+:::
 
 ## Submodules
 

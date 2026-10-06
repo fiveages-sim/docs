@@ -88,7 +88,7 @@ Include:
 
 Use clear, descriptive commit messages:
 
-```
+:::{code-block} none
 Add support for new gripper model
 
 - Add URDF for XYZ gripper
@@ -96,7 +96,7 @@ Add support for new gripper model
 - Add launch file integration
 
 Closes #123
-```
+:::
 
 ## Licensing
 

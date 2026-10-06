@@ -18,7 +18,7 @@ This section covers contributing to the FiveAges Sim ecosystem.
 
 ## Development Workflow
 
-```
+:::{code-block} none
 Fork repository
     ↓
 Create feature branch
@@ -32,7 +32,7 @@ Submit pull request
 Code review
     ↓
 Merge
-```
+:::
 
 ## Key Resources
 

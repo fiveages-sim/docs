@@ -91,7 +91,7 @@ sudo apt-get install -f   # if dpkg reports missing dependencies
 
 ## Package Structure
 
-```
+:::{code-block} none
 robot-descriptions-common/
 ├── dh_ag95_description/
 │   ├── urdf/
@@ -103,7 +103,7 @@ robot-descriptions-common/
 ├── inspire_rh56_description/
 ├── robot_common_launch/
 └── ...
-```
+:::
 
 ## Adding Components
 

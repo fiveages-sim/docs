@@ -13,7 +13,7 @@ USD robot asset superproject for Isaac Sim.
 
 ## Structure
 
-```
+:::{code-block} none
 robot_usds/
 ├── humanoid/
 │   ├── FiveAges/
@@ -26,7 +26,7 @@ robot_usds/
 ├── mobile_manipulators/
 ├── grippers/
 └── sensors/
-```
+:::
 
 ## Submodules
 

@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:12+0000\n"
+"POT-Creation-Date: 2026-10-06 16:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:1
@@ -71,10 +71,12 @@ msgstr "submodules_visibility.conf"
 #: 36f50c772d994e458f6cd34e09731a27
 msgid ""
 "`open-deploy-ws` (and `fa-deploy-ws`) uses this file for **nested** "
-"submodule visibility. Each data line is `parent_dir|relative_path|public`"
-" or `private`. Blank lines and `#` comments are ignored. This is not an "
-"INI file."
-msgstr "`open-deploy-ws`（以及 `fa-deploy-ws`）用该文件管理**嵌套**子模块可见性。每条数据行格式为 `parent_dir|relative_path|public` 或 `private`。空行和 `#` 注释会被忽略。这不是 INI 文件。"
+"submodule visibility. Each data line is `parent_dir|relative_path|public` or "
+"`private`. Blank lines and `#` comments are ignored. This is not an INI file."
+msgstr ""
+"`open-deploy-ws`（以及 `fa-deploy-ws`）用该文件管理**嵌套**子模块可见性。每条"
+"数据行格式为 `parent_dir|relative_path|public` 或 `private`。空行和 `#` 注释"
+"会被忽略。这不是 INI 文件。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:19
 #: 8adfb146b04449beadddb1b8581a13b7
@@ -244,15 +246,13 @@ msgstr "初始化指定子模块"
 #: 4363e72ad34744a3a5596f15c889c184
 msgid ""
 "# Public submodule (should work for everyone)\n"
-"git submodule update --init src/robot_descriptions/robot-descriptions-arx"
-"\n"
+"git submodule update --init src/robot_descriptions/robot-descriptions-arx\n"
 "\n"
 "# Private submodule (requires access)\n"
 "git submodule update --init src/robot-descriptions-fiveages\n"
 msgstr ""
 "# Public submodule (should work for everyone)\n"
-"git submodule update --init src/robot_descriptions/robot-descriptions-arx"
-"\n"
+"git submodule update --init src/robot_descriptions/robot-descriptions-arx\n"
 "\n"
 "# Private submodule (requires access)\n"
 "git submodule update --init src/robot-descriptions-fiveages\n"
@@ -341,10 +341,10 @@ msgstr "**现象：**"
 #: 0de811eb04f64d4e98c837d0270a4d8d
 msgid ""
 "Permission denied (publickey)\n"
-"fatal: Could not read from remote repository\n"
+"fatal: Could not read from remote repository"
 msgstr ""
 "Permission denied (publickey)\n"
-"fatal: Could not read from remote repository\n"
+"fatal: Could not read from remote repository"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:113
 #: ../../source/3-concepts/6-submodules_visibility.md:125
@@ -374,8 +374,8 @@ msgstr "子模块路径冲突"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:121
 #: 7bc4cf7fccf84f7ba8c347b55a782bed
-msgid "fatal: destination path 'src/xxx' already exists\n"
-msgstr "fatal: destination path 'src/xxx' already exists\n"
+msgid "fatal: destination path 'src/xxx' already exists"
+msgstr "fatal: destination path 'src/xxx' already exists"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:126
 #: 756513a0b23c4ec99406baafe1df5edd
@@ -395,8 +395,8 @@ msgstr "Detached HEAD 警告"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:135
 #: bab8f7ebe70e4bc7a810ca40d6f697e1
-msgid "HEAD is now at abc123... Commit message\n"
-msgstr "HEAD is now at abc123... Commit message\n"
+msgid "HEAD is now at abc123... Commit message"
+msgstr "HEAD is now at abc123... Commit message"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:139
 #: baf2d0522b4f407d865456ad83d2123a
@@ -432,20 +432,24 @@ msgstr "**使用初始化脚本** — 它们会遵守可见性配置"
 #: ../../source/3-concepts/6-submodules_visibility.md:151
 #: a5be6b735a3a4645bf9f7251ae2d5c00
 msgid ""
-"**Don't blind recursive init** — `git submodule update --init "
-"--recursive` will fail on private modules"
-msgstr "**不要盲目递归初始化** — `git submodule update --init --recursive` 会在私有模块上失败"
+"**Don't blind recursive init** — `git submodule update --init --recursive` "
+"will fail on private modules"
+msgstr ""
+"**不要盲目递归初始化** — `git submodule update --init --recursive` 会在私有模"
+"块上失败"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:152
 #: f07a6347e55a41cfa7824cd9acda624c
 msgid ""
-"**Keep workspaces separate** — Use open-deploy-ws for public, fa-deploy-"
-"ws for private"
-msgstr "**保持工作空间分离** — 公开内容用 open-deploy-ws，私有内容用 fa-deploy-ws"
+"**Keep workspaces separate** — Use open-deploy-ws for public, fa-deploy-ws "
+"for private"
+msgstr ""
+"**保持工作空间分离** — 公开内容用 open-deploy-ws，私有内容用 fa-deploy-ws"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:153
 #: c9204d35e82e4c2f9fb54dfa4f7a8809
-msgid "**Document access requirements** — Note which features need private access"
+msgid ""
+"**Document access requirements** — Note which features need private access"
 msgstr "**记录访问要求** — 注明哪些功能需要私有访问权限"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:155
@@ -468,7 +472,7 @@ msgid ""
 "│   └── ...\n"
 "└── library/\n"
 "    ├── ocs2-wbc-controller/   # Private\n"
-"    └── ...\n"
+"    └── ..."
 msgstr ""
 "arms_ros2_control/\n"
 "├── hardware/\n"
@@ -477,7 +481,7 @@ msgstr ""
 "│   └── ...\n"
 "└── library/\n"
 "    ├── ocs2-wbc-controller/   # Private\n"
-"    └── ...\n"
+"    └── ..."
 
 #: ../../source/3-concepts/6-submodules_visibility.md:170
 #: 1f9d1369c6a142c4aa82d66819e91065
@@ -544,6 +548,38 @@ msgstr "src/parent-repo|path/to/new-package|public"
 msgid "Test initialization in a clean clone"
 msgstr "在干净的克隆中测试初始化"
 
+#~ msgid ""
+#~ "Permission denied (publickey)\n"
+#~ "fatal: Could not read from remote repository\n"
+#~ msgstr ""
+#~ "Permission denied (publickey)\n"
+#~ "fatal: Could not read from remote repository\n"
+
+#~ msgid "fatal: destination path 'src/xxx' already exists\n"
+#~ msgstr "fatal: destination path 'src/xxx' already exists\n"
+
+#~ msgid "HEAD is now at abc123... Commit message\n"
+#~ msgstr "HEAD is now at abc123... Commit message\n"
+
+#~ msgid ""
+#~ "arms_ros2_control/\n"
+#~ "├── hardware/\n"
+#~ "│   ├── arx-ros2-control/      # Public\n"
+#~ "│   ├── rokae-ros2-control/    # Private\n"
+#~ "│   └── ...\n"
+#~ "└── library/\n"
+#~ "    ├── ocs2-wbc-controller/   # Private\n"
+#~ "    └── ...\n"
+#~ msgstr ""
+#~ "arms_ros2_control/\n"
+#~ "├── hardware/\n"
+#~ "│   ├── arx-ros2-control/      # Public\n"
+#~ "│   ├── rokae-ros2-control/    # Private\n"
+#~ "│   └── ...\n"
+#~ "└── library/\n"
+#~ "    ├── ocs2-wbc-controller/   # Private\n"
+#~ "    └── ...\n"
+
 #~ msgid "The `open-deploy-ws` uses a configuration file to track visibility:"
 #~ msgstr "`open-deploy-ws` 使用配置文件来跟踪可见性："
 
@@ -601,15 +637,3 @@ msgstr "在干净的克隆中测试初始化"
 #~ msgstr ""
 #~ "[public]\n"
 #~ "src/new-package\n"
-
-#~ msgid "Format: parent_dir|relative_path|public or private"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "src/robot-descriptions|common|public src/robot-"
-#~ "descriptions|manipulator/Dobot|public src/robot-"
-#~ "descriptions|manipulator/Tianji|private "
-#~ "src/arms_ros2_control|controller/ocs2_wbc_controller|private "
-#~ "src/arms_ros2_control|libraries/ocs2_humanoid|private"
-#~ msgstr ""
-
