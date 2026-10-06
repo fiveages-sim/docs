@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:1
+#: e7115161aa3f42b6b501f806169741a4
+msgid "robot_action_composer"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:3
+#: 0df0f8d68e3a497288928d7ed3e54734
+msgid "Action sequence composition for robot tasks."
+msgstr "动作 sequence composition for 机器人 tasks."
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:5
+#: a12339bec2824adabf701042a64a60d5
+msgid ""
+"**Repository:** [fiveages-sim/robot_action_composer](https://github.com"
+"/fiveages-sim/robot_action_composer)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:7
+#: ddf5eda4b6c8498082949850a9f33988
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:9
+#: 5d17bb1d6c2046e8974c02979c748508
+msgid "Compose and execute sequences of robot actions:"
+msgstr "Compose and execute sequences of 机器人 actions:"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:10
+#: 15e9ed9421d64d59944d3b770ca73bb5
+msgid "Primitive actions (move, grasp)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:11
+#: 462f4fa4677f4dd5994241ed36629c3c
+msgid "Conditional logic"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:12
+#: 9debe45c76ac4ac9b6ec3b9135c4b90a
+msgid "Looping"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:13
+#: 7167c6b65ffc44fcad6b206ad7bd6355
+msgid "Error handling"
+msgstr "错误 handling"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:15
+#: 061cdcc826b54025b00fe70764ba4954
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:17
+#: 7fa3bc4431a64ddd90f5f0953d2368a1
+msgid ""
+"git clone https://github.com/fiveages-sim/robot_action_composer.git\n"
+"cd robot_action_composer\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:23
+#: d7cee5ee393544929a1d6bdf802ba757
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:25
+#: 141a402b8af643b580481a174c1eed19
+msgid "Define Actions"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:27
+#: 442e95128eb6406f9a4c06d1b3e1b446
+msgid ""
+"from robot_action_composer import ActionSequence, actions\n"
+"\n"
+"sequence = ActionSequence([\n"
+"    actions.MoveJ([0, 0, 0, 0, 0, 0]),\n"
+"    actions.MoveL([0.3, 0.0, 0.4]),\n"
+"    actions.GripperClose(),\n"
+"    actions.MoveL([0.3, 0.0, 0.5]),\n"
+"    actions.MoveL([0.3, 0.2, 0.5]),\n"
+"    actions.GripperOpen(),\n"
+"])\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:40
+#: 5b6f96d7bbfe48c2a26428fd7f2bfc7d
+msgid "Execute"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:42
+#: 13f39544495849b0ab233c5385abd943
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"sequence.execute(robot)\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:51
+#: 2a49ff430db049d686f171dfb2c9ca0f
+msgid "Available Actions"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: c99f4ad2956544c9947fe30d4917d717
+msgid "Action"
+msgstr "动作"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 71efdc4f5e1a4bb6ad01fc8c0a220da5
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 49d73f3386a848a8b1f747aba1d747b8
+msgid "`MoveJ`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 05dd968235704dde80f492df73f22b7a
+msgid "Joint space motion"
+msgstr "关节 space 运动"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 8f185baa962b4c768cbd08807e11c7d7
+msgid "`MoveL`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 1bccaa3983774de3a42a1ece950b6120
+msgid "Linear Cartesian motion"
+msgstr "Linear 笛卡尔 运动"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 706a15efc51d4a7c81d9df15863c84f0
+msgid "`GripperOpen`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 91c15eba468444548958e45d0d5480b0
+msgid "Open gripper"
+msgstr "Open 夹爪"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 12997ae0356d48bbb826e41b848a6177
+msgid "`GripperClose`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 9ca0ccbab79e4a02b77c3283f8f74d6a
+msgid "Close gripper"
+msgstr "Close 夹爪"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: b77f8b5efd6a4c9a9b5e3937704a358d
+msgid "`Wait`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: e3b8f113317a4b209bece6f197d2816f
+msgid "Time delay"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 45a4a15f04ae4313a9058cdf7759cfc9
+msgid "`Conditional`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 4092b9b6d8ff4e5d8c3bcc0b1ef091b3
+msgid "If/else branching"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: b18da37abf59475a808eb35544916a7d
+msgid "`Loop`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md
+#: 3ed0bc77f20a48b68d610df25174fe1b
+msgid "Repeat actions"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:63
+#: 87a8dc42676e4ee09c27c5b0a1ecb90d
+msgid "Custom Actions"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:65
+#: 5c3cc34950ef484c836fa83ccced35ec
+msgid ""
+"from robot_action_composer import Action\n"
+"\n"
+"class CustomAction(Action):\n"
+"    def execute(self, robot):\n"
+"        # Custom logic\n"
+"        pass\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:74
+#: 0397721d11d1497c8a71a135a5db0e44
+msgid "Error Handling"
+msgstr "错误 Handling"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:76
+#: b34ac2286fe54bc6bd73f1bb77f368e4
+msgid ""
+"sequence = ActionSequence([\n"
+"    actions.MoveL([0.3, 0.0, 0.4]),\n"
+"    actions.GripperClose(),\n"
+"], on_error='retry', max_retries=3)\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:83
+#: fab840a114054490ae2e8a6afdb4771e
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:85
+#: f064461394614337bffae091ac2602da
+msgid "[ros2_robot_interface](1-ros2_robot_interface.md)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:86
+#: cc3853d7c188402589ac0ec78c2d4df8
+msgid "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
+msgstr "[Python 接口 How-To](../../2-how_to/5-python_interface.md)"
+

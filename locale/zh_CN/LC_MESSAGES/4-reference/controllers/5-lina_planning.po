@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:1
+#: 9b77a38f6df8431481c4fc7be409d257
+msgid "lina_planning"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:3
+#: e5089e109fb84803a40c49a4dae42bc9
+msgid "Trajectory primitive library for motion planning."
+msgstr "轨迹 primitive library for 运动 planning."
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:5
+#: 55b9efa1a9464226be152d93be2085ed
+msgid "Access Required"
+msgstr "需要访问权限"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:8
+#: d8259c5168f042dbae730e51a5903bfc
+msgid "This package requires private repository access."
+msgstr "This 软件包 requires 私有 仓库 access."
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:11
+#: 4130b68bd03046aa9a72050320676d9b
+msgid "**Repository:** lina_planning (private)"
+msgstr "**仓库:** lina_planning (私有)"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:13
+#: f56aca1b5a7346e9b993c35e22416827
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:15
+#: 5384f6120fe74ad8a4dfb71b3aff2d2a
+msgid "`lina_planning` provides trajectory primitive generators:"
+msgstr "`lina_planning` provides 轨迹 primitive generators:"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:16
+#: feccbcf49ddf47db9234c4f788ba77fb
+msgid "MoveJ — Joint space motion"
+msgstr "MoveJ — 关节 space 运动"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:17
+#: 160064d4e91d442ea20f21b92a549826
+msgid "MoveL — Linear Cartesian motion"
+msgstr "MoveL — Linear 笛卡尔 运动"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:18
+#: bc4e8cc054204846918c3b7617a708d0
+msgid "Circular — Arc motion"
+msgstr "Circular — Arc 运动"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:19
+#: a7153d7870844341be7f4fb6c0e04f9d
+msgid "Bezier — Smooth curves"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:21
+#: 23fb33b662ab4ad59d5d0afad7d36a0d
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:23
+#: 5b7ffd3c06384fb587cd81690c07d282
+msgid "Build"
+msgstr "构建"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:25
+#: 89f50fe0bb6f4f5bbfa8ac25fc83ab4e
+msgid "colcon build --packages-up-to lina_planning\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:29
+#: 24e898d813c04c3fad12535d14c24c5b
+msgid "API"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:31
+#: 9edd47ff28d341cdad12ede3110800d0
+msgid ""
+"#include <lina_planning/trajectory_primitives.h>\n"
+"\n"
+"// MoveJ: Joint space trajectory\n"
+"auto traj = lina_planning::MoveJ(\n"
+"    start_joints,\n"
+"    end_joints,\n"
+"    duration\n"
+");\n"
+"\n"
+"// MoveL: Linear Cartesian trajectory\n"
+"auto traj = lina_planning::MoveL(\n"
+"    start_pose,\n"
+"    end_pose,\n"
+"    duration\n"
+");\n"
+"\n"
+"// Circular: Arc trajectory\n"
+"auto traj = lina_planning::Circular(\n"
+"    start_pose,\n"
+"    via_pose,\n"
+"    end_pose,\n"
+"    duration\n"
+");\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:57
+#: b0323d1dc8854781a8e82e73e7d93a26
+msgid "Trajectory Types"
+msgstr "轨迹 Types"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:59
+#: 6196b751dc5d4856b8b0bb4844e0b28a
+msgid "MoveJ"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:61
+#: b9160c377653409f8bda502f41533c62
+msgid "Joint space interpolation:"
+msgstr "关节 space interpolation:"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:62
+#: 09d58c70a8744296a9b7f8d4d1020637
+msgid "Smooth joint motion"
+msgstr "Smooth 关节 运动"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:63
+#: b34311c2a09d482aaf1be5e0fa9e355e
+msgid "Respects joint limits"
+msgstr "Respects 关节 limits"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:64
+#: 71cdb208ec9e400babae2c93cc56411e
+msgid "Optional velocity limits"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:66
+#: 821730d28d6b402389ef02dfb44466b7
+msgid "MoveL"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:68
+#: a855776be25243148ddec9a8a287706e
+msgid "Linear Cartesian interpolation:"
+msgstr "Linear 笛卡尔 interpolation:"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:69
+#: 7e37b73213a5481597e6dd355d1e6e5c
+msgid "Straight-line end-effector path"
+msgstr "Straight-line 末端执行器 path"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:70
+#: e4aba9990e0f45ec9dea6e5a2b261c01
+msgid "Orientation interpolation"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:71
+#: 8bee657e970244d99dfa0fd23fbcf701
+msgid "Collision checking integration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:73
+#: 25960d854c2c4427af97d0a56eac2f6f
+msgid "Circular"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:75
+#: 4a5ec02a789b40a099427dfa8cf1e45a
+msgid "Arc motion through three points:"
+msgstr "Arc 运动 through three points:"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:76
+#: 5fdabab055c14372bc3f49a255bc003a
+msgid "Start, via, end poses"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:77
+#: 529a13913e5b4345b8e2c937413ff157
+msgid "Circular path in Cartesian space"
+msgstr "Circular path in 笛卡尔 space"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:79
+#: 73911567800b411f890432fd0b32ca0e
+msgid "Bezier"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:81
+#: e7c4d0024ce14da08d2af7d010bd41c9
+msgid "Smooth curves:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:82
+#: 4c9ebdf8e02a468c97e4e6e22b4cb601
+msgid "Multiple control points"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:83
+#: bff5fcc9434d41da9a642b3def16bc9d
+msgid "Continuous velocity/acceleration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:84
+#: b0f7a2f5bc1145fdb085e9c9ee7ac3bc
+msgid "Configurable order"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:86
+#: 60ac9f1cf9c6496b8c9af06a75dd8eaa
+msgid "Integration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:88
+#: c48d6b9e2be54bfe9ed40c0f4d4f267e
+msgid "Used by higher-level planners and controllers:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:90
+#: 39f8940c9c7a402898f214bcc4da6694
+msgid ""
+"// Example integration\n"
+"class MotionExecutor {\n"
+"    void execute_movej(const JointState& target) {\n"
+"        auto traj = lina_planning::MoveJ(current_, target, 2.0);\n"
+"        execute_trajectory(traj);\n"
+"    }\n"
+"};\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:100
+#: c5f1c4b6c7f74cb5bb6068fc6e79231c
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:102
+#: ff0d05f208cb4aaaa5785101833627f1
+msgid ""
+"lina_planning:\n"
+"  default_joint_velocity: 1.0  # rad/s\n"
+"  default_cartesian_velocity: 0.1  # m/s\n"
+"  interpolation_dt: 0.01  # seconds\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:109
+#: 24a256aa0d274fbab77e77762c745ac7
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:111
+#: 6014e2aff8bf42bb9b387eb6fda8973d
+msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+msgstr "[ocs2_arm_controller（OCS2机械臂控制器）](2-ocs2_arm_controller（OCS2机械臂控制器）.md)"
+

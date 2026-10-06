@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:1 d5d01b9483554f0383f0744a6ac44171
+msgid "Run Mock Demo"
+msgstr "运行 Mock Demo"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:3 7665d1b0efaf4d28b498e39adb8b5a0f
+msgid ""
+"Run a robot demonstration in mock hardware mode without physical hardware"
+" or simulation."
+msgstr "运行 a robot demonstration in mock hardware mode without physical hardware or simulation."
+
+#: ../../source/2-how_to/1-run_mock_demo.md:5 59908a5d28fb49b494f4e5668cbc24f6
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:7 42bb2a2c1f1c4f868a32386d7b67bf76
+msgid "Workspace built and sourced"
+msgstr "工作空间 built and sourced"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:8 c6c70bcfa9b346f0b3271a808b9aafd3
+msgid "RViz2 installed (`ros-jazzy-rviz2`)"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:10 e37c81bf69cc4c2487019fecce865ec8
+msgid "Steps"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:12 e4476db2ee60438e9d3bbb0d6433e421
+msgid "1. Source Workspace"
+msgstr "1. Source 工作空间"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:14 972131eef7c04f9ead54388d5f696871
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:19 222fe2c9931c4894971e107032bc3da0
+msgid "2. Launch Mock Demo"
+msgstr "2. 启动 Mock Demo"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:21 e3aa0ecef411418685b021f13f38cb38
+msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:25 299393a3ea014c758d9b42aea44e1bf0
+msgid "3. Send Target Pose"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:27 bd4a00644c5745aea55dd208c95ee075
+msgid "In a new terminal:"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:29 60abac0e3108491ead4d74c14e254c27
+#, python-brace-format
+msgid ""
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\n"
+"  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.1, "
+"z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
+"  --once\n"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:36 25feea29d2ff4db197363ad3fbd88003
+msgid "4. Observe Motion"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:38 327eca0e8eb04806b9f4b3734e37f5d1
+msgid "Watch RViz — the robot should move to the target pose."
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:40 45eda26602e148439d95a6a1f3f3517c
+msgid "With Different Robots"
+msgstr "With Different 机器人"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:42 658a0970c53841abb1140479cc26753b
+msgid ""
+"# Dobot CR5\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"hardware:=mock\n"
+"\n"
+"# ARX ACone\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
+"hardware:=mock\n"
+"\n"
+"# With gripper\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"gripper:=dh_ag95 hardware:=mock\n"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:53 758931a788f049629c21951b48273c3d
+msgid "Launch Parameters"
+msgstr "启动 参数"
+
+#: ../../source/2-how_to/1-run_mock_demo.md f79f86705a584149bd477bfeee3060ad
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md f925eaf7038e4fb5b3d10f6cf22646f6
+msgid "Options"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 4dd685779e33404dbd8d3b50256daa32
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/2-how_to/1-run_mock_demo.md a6f35b00a03b472eab9b8eef160d958b
+msgid "`hardware`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 8efc41805a544b07b8ab8d442bfcda7a
+msgid "`mock`, `gz`, `isaac`, (real)"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md ae83a502075b44e9a2a9dcdd5544d789
+msgid "varies"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 759a4fb90e224086b3653da677e4b9d5
+msgid "`robot`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 817212305b734735a28c7ef0eadb2a36
+msgid "Robot name"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 9f60776b7dc24285a1a6d5c4a9745d5a
+msgid "`dobot_cr5`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 80ea38e93fc746f4bd8a487215880200
+msgid "`gripper`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 584fccae61d748109f91d6ed89597606
+msgid "Gripper name"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md acfa344604dc4876a6e2607c4f508d8c
+msgid "none"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 09eca38b12e74be99596b8c7f55a11ce
+msgid "`rviz`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md cf9e1e7b969e409e98f39494179b441b
+msgid "`true`, `false`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md 08b5bfe9682c4790a716d76429e76efe
+msgid "`true`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:62 e5b5a0a8e1dc41f5a65c10947f5c246b
+msgid "Verification"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:64 260c527a2a94422faeeef6a703e5b41f
+msgid "Success indicators:"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:65 f03b9713714c4519947cec3f4fc5d095
+msgid "RViz window opens showing robot model"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:66 7700f74ae5894c639626eb31b5e480c5
+msgid "Controller logs show \"Controller started\""
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:67 8c6d0d49ccb644299dd4a0b08e7c1866
+msgid "Robot responds to target pose commands"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:69 b6d6526fb5af46779898fc0ba06c026c
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/1-run_mock_demo.md:71 8c479ca2db4f4d4a968c79bd736c6109
+msgid "Robot doesn't move"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:73 91cb711fd5f44df0a4919196152cbfcc
+msgid "Check target pose is reachable"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:74 dd2adee295e649ae98dc0f528e56e94b
+msgid "Verify no error messages in controller output"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:75 fbe57b3e7cbe456eb74c45c6013ea4fa
+msgid "Ensure correct robot parameter"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:77 a852a704d8634d998def01974cb50fbb
+msgid "RViz shows broken model"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:79 ba7cb73565524158b2a4ed5777398b20
+msgid "Rebuild description packages"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:80 eeab22c40bba4d01a851d470095d9838
+msgid "Check URDF for errors: `check_urdf <file>.urdf`"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:82 169a0207171740d78f778932a9e605d4
+msgid "Command not found"
+msgstr ""
+
+#: ../../source/2-how_to/1-run_mock_demo.md:84 eda087191b654860942defe0a14c2444
+msgid "source install/setup.bash  # Must source after building\n"
+msgstr ""
+

@@ -1,0 +1,10 @@
+<div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">{{ _('Languages') }}</span></p>
+  <ul>
+    {% for name, link in languages %}
+    <li class="toctree-l1">
+      <a class="reference internal" href="{{ link }}">{{ name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,389 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/3-concepts/2-workspace_layout.md:1
+#: 1864c3a6db9f41d482d6a047e7c7e78c
+msgid "Workspace Layout"
+msgstr "工作空间 Layout"
+
+#: ../../source/3-concepts/2-workspace_layout.md:3
+#: 2237ad2923e5493db6fdb21937ee35cc
+msgid ""
+"This page explains the structure of the deploy workspaces and how to "
+"navigate them."
+msgstr "本页 explains the structure of the deploy workspaces and how to navigate them."
+
+#: ../../source/3-concepts/2-workspace_layout.md:5
+#: 1fb3ba4fcf4843ea8eca63cdc19e6acc
+msgid "open-deploy-ws Structure"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:7
+#: bad39566eb97497fb8bffc216b3d489f
+msgid ""
+"open-deploy-ws/\n"
+"├── src/\n"
+"│   ├── arms_ros2_control/           # Main controller package\n"
+"│   │   ├── ocs2_arm_controller/     # MPC controller\n"
+"│   │   ├── adaptive_gripper_controller/\n"
+"│   │   ├── arms_teleop_controller/\n"
+"│   │   └── hardware/                # Nested HI submodules\n"
+"│   │       ├── arx-ros2-control/\n"
+"│   │       ├── dobot-cr-ros2-control/\n"
+"│   │       └── ...\n"
+"│   │\n"
+"│   ├── robot_descriptions/          # Description umbrella\n"
+"│   │   ├── robot-descriptions-common/\n"
+"│   │   ├── robot-descriptions-dobot/\n"
+"│   │   ├── robot-descriptions-arx/\n"
+"│   │   └── ...\n"
+"│   │\n"
+"│   └── ocs2_ros2/                   # (if source build)\n"
+"│\n"
+"├── init_repo.sh                     # Initialization script\n"
+"├── submodules_visibility.conf       # Public/private visibility\n"
+"├── deb_versions.txt                 # Compatible Debian versions\n"
+"└── build/, install/, log/           # Build outputs\n"
+msgstr "open-deploy-ws/\n├── src/\n│   ├── arms_ros2_control/           # Main controller package\n│   │   ├── ocs2_arm_controller/     # MPC controller\n│   │   ├── adaptive_gripper_controller/\n│   │   ├── arms_teleop_controller/\n│   │   └── hardware/                # Nested HI submodules\n│   │       ├── arx-ros2-control/\n│   │       ├── dobot-cr-ros2-control/\n│   │       └── ...\n│   │\n│   ├── robot_descriptions/          # 描述 umbrella\n│   │   ├── robot-descriptions-common/\n│   │   ├── robot-descriptions-dobot/\n│   │   ├── robot-descriptions-arx/\n│   │   └── ...\n│   │\n│   └── ocs2_ros2/                   # (if source build)\n│\n├── init_repo.sh                     # Initialization script\n├── submodules_visibility.conf       # Public/private visibility\n├── deb_versions.txt                 # Compatible Debian versions\n└── build/, install/, log/           # 构建 outputs\n"
+
+#: ../../source/3-concepts/2-workspace_layout.md:33
+#: 230290b0ec9942aa81bef6af329d0fa3
+msgid "fa-deploy-ws Structure"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:35
+#: f7db23cf04df45358bca178752976cd7
+msgid ""
+"fa-deploy-ws/\n"
+"├── src/\n"
+"│   ├── arms_ros2_control/           # Same as open-deploy-ws\n"
+"│   │   └── library/                 # Additional private submodules\n"
+"│   │       ├── ocs2-wbc-controller/\n"
+"│   │       ├── ocs2-humanoid/\n"
+"│   │       └── lina_planning/\n"
+"│   │\n"
+"│   ├── robot-descriptions-fiveages/ # Private FA descriptions\n"
+"│   │   ├── common/\n"
+"│   │   ├── arms/\n"
+"│   │   └── robot/\n"
+"│   │       ├── fa-w2-description/\n"
+"│   │       ├── fa-s2-description/\n"
+"│   │       └── ...\n"
+"│   │\n"
+"│   └── ocs2_ros2/                   # Full source (default)\n"
+"│\n"
+"├── init_repo.sh                     # Robot-specific init\n"
+"├── quick_start.sh                   # Quick launch script\n"
+"├── release.sh                       # Release packaging\n"
+"├── presets/                         # Robot configurations\n"
+"│   ├── fiveages_w2.yaml\n"
+"│   ├── tianji_m6_ccs.yaml\n"
+"│   └── ...\n"
+"└── robot.local.yaml.template        # Local config template\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:64
+#: f18e921402854177ad40de0126f4cc82
+msgid "Key Differences"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 0cde58234b81475db427b250f64551a5
+msgid "Aspect"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 5cfaa3a5f20043259ae45ae339262603
+msgid "open-deploy-ws"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 1cfd3c949b274100a2763ade4081266c
+msgid "fa-deploy-ws"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: fd50296ec77e47e48367c127f1021f90
+msgid "Submodules"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 81095576fa4f45eaaff16ff0331af02c
+msgid "Public only"
+msgstr "公开 only"
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: fc786433e2ff4fe69a6010211e637282
+msgid "Public + private"
+msgstr "公开 + private"
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 306d980669cb4a6180dbf1633dcea174
+msgid "Init script"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: afc9ccf2fa644811a38a5cbba2ac8812
+msgid "`./init_repo.sh`"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: bd0c60a919fa4a08be96ccfc32f90d88
+msgid "`./init_repo.sh --robot <id>`"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 0e7b5deba1f8407f9df86dc37633c572
+msgid "WBC controller"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 88c2fca270aa4bd2b3ed6bee9882a274
+msgid "Not included"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 81e09d13bde84eb4be3bc8329d7412cb
+msgid "Included in library/"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: ca86e773d1a448f2bd3f3a37ab05b1b6
+msgid "Release script"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 2018ecea5d3c40f9a46863ae45f51daf
+msgid "No"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: 6fdfd429308d4bf2b560b2fe1afecd89
+msgid "Yes"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md
+#: fad432aadcfb4b64862ce4babfbe07d6
+msgid "Robot presets"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:74
+#: 62ae7a66bf984ed1bac14aa76cb2acbb
+msgid "Submodule Organization"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:76
+#: 7613573f7aa24d3a8e87157d1038c4e3
+msgid "Nested Submodules"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:78
+#: 5cf54cfe4bbb4da6bdf0b9d48276f716
+msgid "Submodules are organized hierarchically:"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:80
+#: 0f30fcfaaa36450bb66cfdc3ce2aa34a
+msgid ""
+"arms_ros2_control/\n"
+"└── hardware/           # Hardware interfaces\n"
+"    ├── arx-ros2-control/      (submodule)\n"
+"    ├── dobot-cr-ros2-control/ (submodule)\n"
+"    └── ...\n"
+"\n"
+"robot_descriptions/\n"
+"├── robot-descriptions-common/ (submodule)\n"
+"├── robot-descriptions-dobot/  (submodule)\n"
+"└── ...\n"
+msgstr "arms_ros2_control/\n└── hardware/           # 硬件 interfaces\n    ├── arx-ros2-control/      (submodule)\n    ├── dobot-cr-ros2-control/ (submodule)\n    └── ...\n\nrobot_descriptions/\n├── robot-descriptions-common/ (submodule)\n├── robot-descriptions-dobot/  (submodule)\n└── ...\n"
+
+#: ../../source/3-concepts/2-workspace_layout.md:93
+#: 951a76df13bf4b53a41f19a3a091b921
+msgid "Initialization"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:95
+#: cc46e35a7dbc4cb9a66bea9a9610d3fb
+msgid "**Don't use blind recursive init:**"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:97
+#: 59b34c25e46442129c105cf1d9a35776
+msgid ""
+"# AVOID - initializes everything including private modules\n"
+"git submodule update --init --recursive\n"
+"\n"
+"# BETTER - use the init script\n"
+"./init_repo.sh\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:105
+#: 07c39f59f26c4e09b9d6a66ffefe7ed6
+msgid ""
+"The init script respects visibility and only initializes appropriate "
+"submodules."
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:107
+#: 3221e61186ea4657924744ee12cb9e27
+msgid "Build Outputs"
+msgstr "构建 Outputs"
+
+#: ../../source/3-concepts/2-workspace_layout.md:109
+#: c87b8786c56741198fff1d62767098d0
+msgid "After building:"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:111
+#: 79d437acb8094d1594f5f97ab41e994f
+msgid ""
+"workspace/\n"
+"├── build/              # Build artifacts\n"
+"│   ├── package_a/\n"
+"│   └── package_b/\n"
+"├── install/            # Installed packages\n"
+"│   ├── setup.bash      # Source this!\n"
+"│   ├── package_a/\n"
+"│   └── package_b/\n"
+"└── log/                # Build logs\n"
+msgstr "workspace/\n├── build/              # 构建 artifacts\n│   ├── package_a/\n│   └── package_b/\n├── install/            # Installed packages\n│   ├── setup.bash      # Source this!\n│   ├── package_a/\n│   └── package_b/\n└── log/                # 构建 logs\n"
+
+#: ../../source/3-concepts/2-workspace_layout.md:123
+#: c88efd3c2adb4cc1985dae8486196029
+msgid "**Always source from install:**"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:125
+#: e3bb4069ff7845eea6f23a00721fb07d
+msgid ""
+"source install/setup.bash  # Correct\n"
+"source build/...           # Wrong!\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:130
+#: 0e655532a5764a72b089d0a829265d04
+msgid "Package Dependencies"
+msgstr "软件包 Dependencies"
+
+#: ../../source/3-concepts/2-workspace_layout.md:132
+#: 4ba6be2711834017a9db624f8cb40252
+msgid "Dependencies flow downward:"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:134
+#: f43982003cd841dd8bee2d56094c73cb
+msgid ""
+"Controllers (ocs2_arm_controller)\n"
+"      ↓ depends on\n"
+"Hardware Interfaces (*-ros2-control)\n"
+"      ↓ depends on\n"
+"Descriptions (*-description)\n"
+"      ↓ depends on\n"
+"Common (robot-descriptions-common)\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:144
+#: 759f05855e82426e8c181c285675f902
+msgid "Build with `--packages-up-to` to build a package and its dependencies:"
+msgstr "构建 with `--packages-up-to` to build a package and its dependencies:"
+
+#: ../../source/3-concepts/2-workspace_layout.md:146
+#: 8667788613eb44889ee9fd51c1ee46e3
+msgid "colcon build --packages-up-to ocs2_arm_controller\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:150
+#: 55928f1b00754753bd44b04b08e54041
+msgid "Working with Submodules"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:152
+#: 3a57e9a88a924eb48dc0bee305d810cd
+msgid "Check Status"
+msgstr "Check 状态"
+
+#: ../../source/3-concepts/2-workspace_layout.md:154
+#: 4def6861f2d04c648a1df8e8a012bd04
+msgid "git submodule status\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:158
+#: cf7401a6ae7147bb80a999e662974c27
+msgid "Update One Submodule"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:160
+#: 1873ddc9919141148300cadf4d35e321
+msgid ""
+"cd src/arms_ros2_control\n"
+"git fetch origin\n"
+"git checkout main\n"
+"git pull\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:167
+#: 4b27df11bb3647cd8e46fd3c8474bfb8
+msgid "Update All (Carefully)"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:169
+#: 566e8676fede4891a976636729ad4e3a
+msgid "git submodule update --remote\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:173
+#: 39f5f363797e49a59dee2c5510cadc59
+msgid "Reset to Pinned Versions"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:175
+#: 458c914cdd3a4e118abb235865dddd15
+msgid "git submodule update --init\n"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:179
+#: 9cf02699b4b0488f8f7712569cc4b2b6
+msgid "Best Practices"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:181
+#: 873e888e70d845a7af0375ef4e77fa68
+msgid "**Use init scripts** — They handle visibility and dependencies"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:182
+#: 77434f7f5d24469a94ff1eb122620d28
+msgid ""
+"**Don't commit submodule changes accidentally** — Check `git status` in "
+"root"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:183
+#: 2496253661fc475784cfd1df5413ef45
+msgid "**Build incrementally** — Use `--packages-up-to` for faster iteration"
+msgstr ""
+
+#: ../../source/3-concepts/2-workspace_layout.md:184
+#: e0eaeb72257a45d9ae5037609a64d27b
+msgid "**Keep workspaces separate** — Don't mix open-deploy-ws and fa-deploy-ws"
+msgstr ""
+

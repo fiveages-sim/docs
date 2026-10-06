@@ -1,0 +1,505 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:1
+#: 22634a49c0c14b25870e5a85100be00c
+msgid "Submodules Visibility"
+msgstr "Submodules 可见性"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:3
+#: 98518aa4f87e44e1bd73a3c05b3fa44f
+msgid "This page explains how the stack manages public and private submodules."
+msgstr "本页 explains how the stack manages public and private submodules."
+
+#: ../../source/3-concepts/6-submodules_visibility.md:5
+#: de077124c5874b21b69d4b92c1432836
+msgid "The Visibility Problem"
+msgstr "The 可见性 Problem"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:7
+#: de0487d64b8e40d1a7a9c2cf16b7c199
+msgid "The FiveAges Sim ecosystem includes both:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:8
+#: 2e480c7e73ef4c33a46044964fdf95a7
+msgid "**Public repositories** — Open source, anyone can clone"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:9
+#: 2b1c6fa52e7846ddaa79446be678016d
+msgid "**Private repositories** — FiveAges internal, require access"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:11
+#: 0cfbc007e43a405982259821ed76a3c0
+msgid ""
+"Without careful management, users would encounter access errors when "
+"initializing submodules."
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:13
+#: 1c3e435168474a99a434e8de1f98ae70
+msgid "Visibility Configuration"
+msgstr "可见性 配置"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:15
+#: ead62450e97a474b82878adb0a5f237f
+msgid "submodules_visibility.conf"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:17
+#: 14fe5ade1cdc4aa2aa9c382a0eef45c1
+msgid "The `open-deploy-ws` uses a configuration file to track visibility:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:19
+#: 8f7c276342404f5aacf6bd894b3346be
+msgid ""
+"# submodules_visibility.conf\n"
+"\n"
+"[public]\n"
+"src/arms_ros2_control\n"
+"src/robot_descriptions\n"
+"src/robot_descriptions/robot-descriptions-common\n"
+"src/robot_descriptions/robot-descriptions-dobot\n"
+"src/robot_descriptions/robot-descriptions-arx\n"
+"# ... more public modules\n"
+"\n"
+"[private]\n"
+"# These are NOT initialized in open-deploy-ws\n"
+"src/robot-descriptions-fiveages\n"
+"src/arms_ros2_control/library/ocs2-wbc-controller\n"
+"# ... private modules\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:37
+#: 89fd3311bb064ad3be1547b102233901
+msgid "How It Works"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:39
+#: e41ad482e776441dabab02cf72c0144f
+msgid "`init_repo.sh` reads the visibility config"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:40
+#: 38057f316ee044e5966cc41f910f61a8
+msgid "Only initializes submodules marked as `[public]`"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:41
+#: 10b0b97076ec4561b0e785a7f65714be
+msgid "Skips private submodules silently"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:42
+#: b981399c0dd14999af5e28c29a8c47b9
+msgid "Users with access can manually init private modules"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:44
+#: 8f3353cb1b5e4a3283331fefff4a088e
+msgid "Public vs Private Submodules"
+msgstr "公开 vs 私有 Submodules"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:46
+#: 0d328bb4141b46d6a67fec640e67c092
+msgid "Public (open-deploy-ws)"
+msgstr "公开 (open-deploy-ws)"
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: b8dda676cc244d76865e05d8fb8bed53
+msgid "Category"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 49771e72a82a49108092710584e2d814
+msgid "Examples"
+msgstr "示例"
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: e1dd223036a344fcb9938595262b3056
+msgid "Descriptions"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 6dd8581cfc834aa18951e2e4496a6d61
+msgid "dobot, arx, galbot, ht, quadruped, common"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 15ec6637b60041edbc8859eb389d2c51
+msgid "Hardware interfaces"
+msgstr "硬件 interfaces"
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 582831881d2c4b28a46e4144144f1208
+msgid "arx, dobot, unitree, ht, marvin, modbus, can, juxie"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 8f12fb6791a9490098940bacf70322fb
+msgid "Controllers"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: b9ed02779862462b95b3f1d0990cbf77
+msgid "ocs2_arm_controller, adaptive_gripper_controller"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 16d1bb0d9f0f4cdf8ba6ec21375bc3c5
+msgid "Simulation"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: c2a2777165b0452fbadd31bf89a0cbe5
+msgid "robot_usds, galbot-usds"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:55
+#: dbdc067b7cd74d5cab8ee8286f897f89
+msgid "Private (fa-deploy-ws only)"
+msgstr "私有 (fa-deploy-ws only)"
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: b4feb8fc1cde4031ba64646b58d06736
+msgid "fiveages umbrella, tianji, rokae, fairino, FA robots"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 0b4802e81a56460bb12210964796198a
+msgid "rokae, eyou, wuji, dexcap, fairino"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: fdb4cbaaf27b4a70b2b9b734832c97ab
+msgid "ocs2-wbc-controller, ocs2-humanoid, lina_planning"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: d7d116420aff43e4923e35e759d9da2a
+msgid "Teleop"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md
+#: 875797f83abf4cdcaafe2e1ecbc177b0
+msgid "vr_pose_publisher, teleop-joint-mapper, wuji_glove_teleop"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:64
+#: dfebb09b43f84b998fe85e1a87688f13
+msgid "Working with Visibility"
+msgstr "Working with 可见性"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:66
+#: c025ff5db8164c14aa618fac711a1212
+msgid "Check Current Status"
+msgstr "Check Current 状态"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:68
+#: 539949585cd84132961d57213e29289f
+msgid ""
+"# See which submodules are initialized\n"
+"git submodule status\n"
+"\n"
+"# See which are registered (all)\n"
+"git config --file .gitmodules --get-regexp path\n"
+msgstr "# 参见 which submodules are initialized\ngit submodule status\n\n# 参见 which are registered (all)\ngit config --file .gitmodules --get-regexp path\n"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:76
+#: aff0d9c8fe284e7992d59b0a750299be
+msgid "Initialize Specific Submodule"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:78
+#: 847c6bd9aabb4ad68a047ae8c671783e
+msgid ""
+"# Public submodule (should work for everyone)\n"
+"git submodule update --init src/robot_descriptions/robot-descriptions-arx"
+"\n"
+"\n"
+"# Private submodule (requires access)\n"
+"git submodule update --init src/robot-descriptions-fiveages\n"
+msgstr "# 公开 submodule (should work for everyone)\ngit submodule update --init src/robot_descriptions/robot-descriptions-arx\n\n# 私有 submodule (requires access)\ngit submodule update --init src/robot-descriptions-fiveages\n"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:86
+#: 0d468465cc434cf7a9894899c94a1595
+msgid "Force Skip Access Errors"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:88
+#: 579cfd23faa7478593fcad099d62f1f2
+msgid ""
+"# Continue even if some submodules fail\n"
+"git submodule update --init || true\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:93
+#: 13de5661f445407e817076ff2f124e06
+msgid "Access Management"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:95
+#: 6a9df698397244b1854b15c2c287b0c4
+msgid "Getting Private Access"
+msgstr "Getting 私有 Access"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:97
+#: fa73763bea6e48a0b4f279d34b8748a9
+msgid "Request access from your team lead"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:98
+#: c03e197122cd4b709dfc8c8646fd22a0
+msgid "Add SSH key to GitHub account"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:99
+#: 3770ef3ffb644258b6113f6c6d4422f8
+msgid "Verify access:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:100
+#: c1b231af04f9492599aa812dbeb99a4e
+msgid "ssh -T git@github.com\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:103
+#: 1a584efd47694a7b849a58e541f61d63
+msgid "Re-run initialization or manually init private submodules"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:105
+#: 0ab4bd0e903449799cf7904a17457292
+msgid "Testing Access"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:107
+#: 8c88c86d8d9143a9bdb90c1b615dcd55
+msgid ""
+"# Test if you can access a private repo\n"
+"git ls-remote git@github.com:fiveages-sim/fa-deploy-ws.git\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:112
+#: a34ddc7df7a64bcdac7938fd95aa308d
+msgid "Common Issues"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:114
+#: 02485ed4c53045319e83edaca1f57fdb
+msgid "Access Denied During Init"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:116
+#: ../../source/3-concepts/6-submodules_visibility.md:129
+#: ../../source/3-concepts/6-submodules_visibility.md:143
+#: 095f8ff71cc544479eaf737af8359276 69e379b18cb94d86a4e6d8094c963d28
+msgid "**Symptom:**"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:117
+#: 692997ada3974b7dbd2bf69a4db5042e
+msgid ""
+"Permission denied (publickey)\n"
+"fatal: Could not read from remote repository\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:122
+#: ../../source/3-concepts/6-submodules_visibility.md:134
+#: 6bddb911b5374bfaa30e503139fcf95d
+msgid "**Solution:**"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:123
+#: f6271af456604ddb9c8d1fd961533780
+msgid "You don't have access to that private submodule"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:124
+#: 844d89fe45b34a65b714d064c1e91cbc
+msgid "Use `open-deploy-ws` for public-only access"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:125
+#: c9d735753c68412997bd6dbb0c97ddc1
+msgid "Or request private access"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:127
+#: 1dd34b8c9de44e3592fd9c24d9bdc626
+msgid "Submodule Path Conflicts"
+msgstr "Submodule 路径 Conflicts"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:130
+#: 00b9127eab494357b8af8747da2bb22c
+msgid "fatal: destination path 'src/xxx' already exists\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:135
+#: deba27baac914e50ade4f88a5a71b671
+msgid ""
+"# Remove and re-init\n"
+"rm -rf src/xxx\n"
+"git submodule update --init src/xxx\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:141
+#: cec53672d3714f6d8ee1613ec5b59858
+msgid "Detached HEAD Warnings"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:144
+#: 561ad06f892e4f9398a738a9b567ce89
+msgid "HEAD is now at abc123... Commit message\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:148
+#: 260df19515ef42f5a7fceede51776a19
+msgid "**This is normal** — submodules are pinned to specific commits."
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:150
+#: 4dee5a33465b4a7ea12831d4380154bd
+msgid "To update to latest:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:151
+#: 9e98d6d1f1c6457980597ffe12ce4d1a
+msgid ""
+"cd src/submodule_path\n"
+"git checkout main\n"
+"git pull\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:157
+#: b372a90f8e244b7f9ad67d8c904aab3a
+msgid "Best Practices"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:159
+#: 35b1f6bc80c943e6aa657fa9fbb46c67
+msgid "**Use init scripts** — They respect visibility configuration"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:160
+#: 2e79d3c003d44e4691b06502ce314019
+msgid ""
+"**Don't blind recursive init** — `git submodule update --init "
+"--recursive` will fail on private modules"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:161
+#: 48ec47570b5746d39faf4f872aa5e0a0
+msgid ""
+"**Keep workspaces separate** — Use open-deploy-ws for public, fa-deploy-"
+"ws for private"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:162
+#: 1fe35465df3841aa844bb5c411103732
+msgid "**Document access requirements** — Note which features need private access"
+msgstr "**Document access requirements** — 注意 which features need private access"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:164
+#: 98f9f715cec5429ca00c8883dd6cf733
+msgid "Nested Submodules"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:166
+#: 1502856f3df5483c8ae3da303350d1e8
+msgid "Some submodules contain their own submodules:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:168
+#: fff288c2218a4983b099ca436c249529
+msgid ""
+"arms_ros2_control/\n"
+"├── hardware/\n"
+"│   ├── arx-ros2-control/      # Public\n"
+"│   ├── rokae-ros2-control/    # Private\n"
+"│   └── ...\n"
+"└── library/\n"
+"    ├── ocs2-wbc-controller/   # Private\n"
+"    └── ...\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:179
+#: 22e9afb8d74042779af55d875bc2ae58
+msgid ""
+"The init script handles nested visibility automatically. If manually "
+"initializing:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:181
+#: 5af372f52b104852b30f44050fa4ac87
+msgid ""
+"# Init parent first\n"
+"git submodule update --init src/arms_ros2_control\n"
+"\n"
+"# Then specific children\n"
+"cd src/arms_ros2_control\n"
+"git submodule update --init hardware/arx-ros2-control\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:190
+#: df39adbbd75e4af0a833a80cda9cca36
+msgid "Updating Visibility Config"
+msgstr "Updating 可见性 Config"
+
+#: ../../source/3-concepts/6-submodules_visibility.md:192
+#: ffccf2997ae546e699da0ecdf4477fb8
+msgid "If contributing a new submodule:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:194
+#: b7fccd84115843629ae5e0aca8ae748d
+msgid "Add to `.gitmodules`:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:195
+#: 20744b42b07e4e5a91bff0efa0309c5a
+msgid ""
+"[submodule \"src/new-package\"]\n"
+"    path = src/new-package\n"
+"    url = https://github.com/fiveages-sim/new-package.git\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:201
+#: e24eb43a7d674da3b1b726eb4ae85e1e
+msgid "Update visibility config:"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:202
+#: d8667fcffa964c19bddd10e97b689a56
+msgid ""
+"[public]\n"
+"src/new-package\n"
+msgstr ""
+
+#: ../../source/3-concepts/6-submodules_visibility.md:207
+#: 12d1c94eb9be41b5b2580d028437aa18
+msgid "Test initialization in a clean clone"
+msgstr ""
+

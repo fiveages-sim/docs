@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/5-developer/2-docs_build.md:1 a08d1cbdee4b4768aa1f4a47dc2a4118
+msgid "Documentation Build"
+msgstr "Documentation 构建"
+
+#: ../../source/5-developer/2-docs_build.md:3 b1d1b20539934041939818c4c1665907
+msgid "Building and contributing to this documentation site."
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:5 f217ae6a56214f13829eb47131a3556b
+msgid "Technology Stack"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:7 379ac0ae03524efbb28d6de400ad9a1e
+msgid "**Sphinx** — Documentation generator"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:8 944313b09f0343d99c364a1866423795
+msgid "**Furo** — Theme"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:9 d353169bf1194725b508fca8134d666a
+msgid "**MyST** — Markdown parser"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:10 b7673c238a224c4e9dd3a0e60e5549ad
+msgid "**sphinx-intl** — Internationalization"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:11 5df5dc3ae4af49558c67e9efa56c3f09
+msgid "**sphinxcontrib-mermaid** — Diagram support"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:13 76ea00b099924d06bd4155d498862718
+msgid "Local Build"
+msgstr "Local 构建"
+
+#: ../../source/5-developer/2-docs_build.md:15 0b3a94877a514619b5c5e354da6ccd72
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/5-developer/2-docs_build.md:17 3a81730d17074a2cbe46272e6098d38b
+msgid ""
+"# Python 3.10+\n"
+"pip install -r requirements.txt\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:22 0cb756c49fbf4cb9a4e97318ee4744db
+msgid "Build English"
+msgstr "构建 English"
+
+#: ../../source/5-developer/2-docs_build.md:24 0fe4b637bece40efa0bedf34827e54e7
+msgid "make html\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:28 1be5b5474d264f2690d36ca8bdfb77da
+msgid "Output in `build/html/`."
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:30 b783175718fc47c489469922f36d8932
+msgid "Build Chinese"
+msgstr "构建 Chinese"
+
+#: ../../source/5-developer/2-docs_build.md:32
+#: ../../source/5-developer/2-docs_build.md:75 0b39dbcc349345e5b614424467f7cdfd
+#: 8d51ac834f5f4e788aac9d9345586760
+msgid "make html-zh_CN\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:36 c35004b5e8e84fbcab68f4ac886a2e1a
+msgid "Output in `build/html/zh_CN/`."
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:38 4dfe8ddd1bc440e685d1a41d7e90ef16
+msgid "Build Both"
+msgstr "构建 Both"
+
+#: ../../source/5-developer/2-docs_build.md:40 a83dc083af2b4b5ea11811899ef2df5e
+msgid "make html-all\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:44 32bd4c9b3bd843818f3c2bda461ca1ad
+msgid "View Locally"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:46 6dfa0d854bd148df94c330871fce47f5
+msgid "python -m http.server -d build/html 8000\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:50 0e26d6aeff194bc5b42dcece42925770
+msgid "Open `http://localhost:8000`."
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:52 2684653db8614287820b7ab25d971a97
+msgid "Translation Workflow"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:54 4c8343cf5d154e97ac02749ec2a177e0
+msgid "Update Source Strings"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:56 03d2647083bc4c00819badaad19a2798
+msgid "After changing English content:"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:58 20edd1abd08242a8b73078d7784c88fc
+msgid ""
+"make gettext\n"
+"sphinx-intl update -p build/gettext -l zh_CN\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:63 8691fbb26006439b89de0193208d9372
+msgid "Edit Translations"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:65 a305bb0a44564ddda7d2168b3c19e2f1
+msgid "Edit files in `locale/zh_CN/LC_MESSAGES/*.po`:"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:67 e8b5dcdcd7e240bd9babea8b8dfbe38b
+msgid ""
+"#: source/index.md:1\n"
+"msgid \"FiveAges Sim Documentation\"\n"
+"msgstr \"FiveAges Sim 文档\"\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:73 0745ff6420ce4e3889610faf9008fe52
+msgid "Build Translated Version"
+msgstr "构建 Translated Version"
+
+#: ../../source/5-developer/2-docs_build.md:79 f775d9d82c10496d8bb2c0e3904f10de
+msgid "File Structure"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:81 fdf7adc31fbf496089d73490ed8edebe
+msgid ""
+"docs/\n"
+"├── source/\n"
+"│   ├── conf.py              # Sphinx configuration\n"
+"│   ├── index.md             # Landing page\n"
+"│   ├── 0-overview/          # Overview section\n"
+"│   ├── 1-getting_started/   # Getting started\n"
+"│   ├── 2-how_to/            # How-to guides\n"
+"│   ├── 3-concepts/          # Concepts\n"
+"│   ├── 4-reference/         # Reference\n"
+"│   ├── 5-developer/         # Developer guide\n"
+"│   ├── _static/             # Static files (CSS, images)\n"
+"│   └── _templates/          # Custom templates\n"
+"├── locale/\n"
+"│   └── zh_CN/\n"
+"│       └── LC_MESSAGES/     # Chinese translations\n"
+"├── Makefile\n"
+"└── requirements.txt\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:101
+#: 309c77998ff44b48b1057f03e91f640d
+msgid "Writing Guidelines"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:103
+#: b5c99c7fb8d346a4a7b9129b3ae2bd13
+msgid "Markdown (MyST)"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:105
+#: 4cbc62ca7cc04129929f3c75d2010d35
+msgid "Use MyST-flavored Markdown:"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:107
+#: 4bbe0cff3b664a688c3831ca276327cb
+msgid ""
+"# Heading\n"
+"\n"
+"Paragraph text.\n"
+"\n"
+"## Subheading\n"
+"\n"
+"- List item\n"
+"- Another item\n"
+"\n"
+"```bash\n"
+"code block\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:121
+#: 50dd8e17b28c4b9ab4607650e57d47b7
+msgid "Note"
+msgstr "注意"
+
+#: ../../source/5-developer/2-docs_build.md:124
+#: 5ab12d3585e24ca7abf482517eeaa176
+msgid "Admonition content."
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:126
+#: 8e0844f87d7b41a39f14f3c7f8e29864
+msgid ""
+"\n"
+"### Code Blocks\n"
+"\n"
+"Use fenced code blocks with language:\n"
+"\n"
+"````markdown\n"
+"```bash\n"
+"ros2 launch package launch.py\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:137
+#: 26f1a1e9238d408d910a961010d2c85f
+msgid "from ros2_robot_interface import RobotInterface\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:140
+#: c174243aa3cb4c10895b8ab9218d6c07
+#, python-brace-format
+msgid ""
+"\n"
+"### Admonitions\n"
+"\n"
+"```markdown\n"
+"```{admonition} Warning\n"
+":class: warning\n"
+"\n"
+"Warning content.\n"
+"```\n"
+"\n"
+"```{admonition} TODO\n"
+":class: warning\n"
+"\n"
+"To be completed.\n"
+"```\n"
+"```\n"
+"\n"
+"### Cross-References\n"
+"\n"
+"```markdown\n"
+"See [Architecture](../0-overview/1-architecture.md).\n"
+"\n"
+"See {doc}`../0-overview/1-architecture`.\n"
+"```\n"
+"\n"
+"### Tables\n"
+"\n"
+"```markdown\n"
+"| Column 1 | Column 2 |\n"
+"|----------|----------|\n"
+"| Value 1  | Value 2  |\n"
+"```\n"
+"\n"
+"## Diagrams\n"
+"\n"
+"Use Mermaid for diagrams:\n"
+"\n"
+"````markdown\n"
+"```{mermaid}\n"
+"flowchart LR\n"
+"    A --> B --> C\n"
+"```\n"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:185
+#: c6076e6ac7fa4a29b53075af4df81d4d
+msgid "CI/CD"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:187
+#: 25cbbd5ee33a4036a600705214c82dea
+msgid "GitHub Actions builds documentation on:"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:188
+#: 8363825081fd437594f901fb9f2bb132
+msgid "Push to main (deploy)"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:189
+#: 1d532ac9b20446f19b8bcb4b7a9077f1
+msgid "Pull requests (check build)"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:191
+#: 4a74ce4dee034ac485b96f26f4eb0223
+msgid "Build must pass before merging."
+msgstr "构建 must pass before merging."
+
+#: ../../source/5-developer/2-docs_build.md:193
+#: ff774cd097134e769635b8ab0de36dde
+msgid "Contributing"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:195
+#: b7a596a14ce44fc6bdabe234bd925650
+msgid "Fork the docs repository"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:196
+#: 0fe4b637bece40efa0bedf34827e54e7
+msgid "Make changes"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:197
+#: a83dc083af2b4b5ea11811899ef2df5e
+msgid "Test locally with `make html-all`"
+msgstr ""
+
+#: ../../source/5-developer/2-docs_build.md:198
+#: 431325cd71984fa18656decc26c9787e
+msgid "Submit pull request"
+msgstr ""
+

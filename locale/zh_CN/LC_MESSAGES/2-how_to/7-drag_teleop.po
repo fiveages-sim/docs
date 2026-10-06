@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/7-drag_teleop.md:1 030282c993fa48a18f377c6b20291bbd
+msgid "Drag Teleoperation"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:3 6587e30ade1943da813ded4744e66dba
+msgid ""
+"Manually guide the robot through motions using the drag teaching "
+"controller."
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:5 6af3db223d3c4addba369fada9484754
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/7-drag_teleop.md:7 21173dd6d66e4ab28f572def899957af
+msgid "Robot with compliant/teach mode support"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:8 8bd12b4946e3498e8c4a39c450676c5b
+msgid "HT Panthera or similar robot with drag teaching"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:9 01433ed3fa00435ea8f988fe2852d01b
+msgid "Workspace built with drag_teleop_controller"
+msgstr "工作空间 built with drag_teleop_controller"
+
+#: ../../source/2-how_to/7-drag_teleop.md:11 743aefd9211040a1882dbe90875526d5
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/2-how_to/7-drag_teleop.md:13 5b9701053e15471581e6b1ad2908540e
+msgid "Drag teleoperation enables:"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:14 473c106b91e64c5fa56e1d41fe840422
+msgid "Gravity compensation mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:15 fbaadb95286848bfbacd79e81891351c
+msgid "Recording trajectories while manually guiding"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:16 b4976d1fde1f4dc7b811743c45b83411
+msgid "Playback of recorded motions"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:18 ca87183ecc9c4b8888c91aceec069b0b
+msgid "Setup"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:20 89a07f3acff04e7e8c2718216ac0953c
+msgid "1. Build Controller"
+msgstr "1. 构建 Controller"
+
+#: ../../source/2-how_to/7-drag_teleop.md:22 13910b4f9cdb459cb4e738d5b4d46df3
+msgid ""
+"cd ~/open-deploy-ws\n"
+"colcon build --packages-up-to drag_teleop_controller\n"
+"source install/setup.bash\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:28 c8f3c9c5458e431d8a13a0049dda70ee
+msgid "2. Launch"
+msgstr "2. 启动"
+
+#: ../../source/2-how_to/7-drag_teleop.md:30 7d979615ac59452f93c7a9353c2a08e5
+msgid ""
+"ros2 launch drag_teleop_controller drag_teleop.launch.py "
+"robot:=ht_panthera\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:34 f244aeac8c7e43f2b27b6330d4c327ca
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/2-how_to/7-drag_teleop.md:36 1c22fd18747a423b8ce5f0e26237689e
+msgid "Enter Teach Mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:38 78d2b8756a654e48abaa7102dc4379ba
+msgid "ros2 service call /enter_teach_mode std_srvs/srv/Trigger\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:42 fc8a4d8ba2e849feb4cbd31a46a5fe61
+msgid "The robot enters gravity compensation — you can now physically guide it."
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:44 c81a95438fbf4bd78c8904d94dd51adf
+msgid "Record Trajectory"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:46 f25898619cc64305b0b2a2494661893a
+msgid ""
+"# Start recording\n"
+"ros2 service call /start_recording std_srvs/srv/Trigger\n"
+"\n"
+"# Move the robot manually...\n"
+"\n"
+"# Stop recording\n"
+"ros2 service call /stop_recording std_srvs/srv/Trigger\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:56 e77794e729b94bb19a62964ebc1033e6
+msgid "Playback"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:58 fe77297dae754b20a305727e333357a6
+msgid "ros2 service call /playback std_srvs/srv/Trigger\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:62 56f90f0725ab4654bf5cf8a049212f7e
+msgid "Exit Teach Mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:64 72b23130bb0047e59cb2926f746ba382
+msgid "ros2 service call /exit_teach_mode std_srvs/srv/Trigger\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:68 dbb57b87f6df4d58aac45f8ec6e75348
+msgid "Safety"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 03b200b7814f4fe58cbdc464f06dc34f
+msgid "Physical Interaction"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:73 377a7577d95743cc987944803fc7f68f
+msgid "During drag teaching:"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:74 7e4b0697980c47a2901e75675f1e12bb
+msgid "Keep emergency stop accessible"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:75 d341f97e522b4d72bdbedd24f071ea20
+msgid "Move the robot slowly and smoothly"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:76 03b0660558d44bf7852813b2bfc3a3e6
+msgid "Avoid joint limits"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:77 4cbbeae81a964494aff984cdf3944e03
+msgid "Be aware of pinch points"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:80 e71e820b53884c97975b817ebc676197
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 9bda099a776f411296918a75bbef9c31
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 45bd8cceea674c8c83a05226f1952348
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 04aab40ae6c14b8bbb25f9ca1812579e
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 635687e4d36c4f00946c99b8c2410091
+msgid "`gravity_compensation`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 a249347fd5834c0ab12e371b88fabdf2
+msgid "`true`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 22e13ea5ae7e4de695efdadb1bc469c7
+msgid "Enable gravity compensation"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 3a86cd45805643bba8266ed3fcb09254
+msgid "`recording_rate`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 916f348747bb4fa78ddfa22ca57b9685
+msgid "`100`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 e2ea49c4d10941a5b5a597722864fb85
+msgid "Recording sample rate (Hz)"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 cb938c0481e747b0a06b191f346cc283
+msgid "`playback_speed`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 06e737410f3549cab8216b06a6ac7527
+msgid "`1.0`"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 73c85d0b2acf4b098eb0275088833b46
+msgid "Trajectory playback speed"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:88 113882a6f33e41d990ee31009280eeff
+msgid "Master-Slave Mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:90 a394f623004f478c99e6fafae67b27a7
+msgid "For robots with master and slave arms (bilateral teleoperation):"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:92 9249a44b66cf4830b41edc95317cb457
+msgid ""
+"ros2 launch drag_teleop_controller master_slave.launch.py \\\n"
+"  master_robot:=ht_panthera_master \\\n"
+"  slave_robot:=ht_panthera_slave\n"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:98 c6571f65efbd42e9ab1b87ee3048c672
+msgid "The slave arm mirrors the master arm's motion in real-time."
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:100 e3650079c85b49d3b8e41ac4136a872a
+msgid "Verification"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:102 3eefb165deaa41ab9b2c9d9217acc8dc
+msgid "Robot enters compliant state when teach mode activated"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:103 46a541cd2a3e4cdd854ce5f5f18a093c
+msgid "Trajectory is recorded (check `/recorded_trajectory` topic)"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:104 89d9185df91846be83235a9579ffa863
+msgid "Playback reproduces the guided motion"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:106 adfc8dfd382641b6b517bf95d744600e
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/7-drag_teleop.md:108 54486232f407472485535ccad0ea9f76
+msgid "Robot doesn't go compliant"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:110 5cca855a9e1d41d687dd624305351172
+msgid "Verify hardware supports teach mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:111 e3aa3fc9c6fe4d06ac724e6b6f266c73
+msgid "Check hardware interface configuration"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:112 e9695d70a44647cbb119094b106d71ae
+msgid "Ensure motor drivers are in correct mode"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:114 b2b3649289144a5a80a063352fcfb640
+msgid "Recording empty"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:116 8fc61086fa4248bd90549e479fd56dfb
+msgid "Verify `/joint_states` is publishing"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:117 4a5fd901697344e592fe9bbe5d51e883
+msgid "Check recording service completed successfully"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:119 e511506a0d48485f901227f47bb41925
+msgid "Playback jerky"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:121 b5c824e6b6fd4d0c8c2b6fba86ee0dd1
+msgid "Reduce playback speed"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:122 a54d11a2bc6f49af811d67c73001f19f
+msgid "Check trajectory smoothness"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:123 b98073ff76fd49fd90abda187086a9a6
+msgid "Verify controller gains"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:125 9e69536b58ed49b186f6e7746c6e868c
+msgid "Supported Robots"
+msgstr "Supported 机器人"
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 3fd6f53a7d734c60833bbc5e57280b2f
+msgid "Robot"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 017c8bef43c34d9881ec6e4b3c21aca1
+msgid "Drag Support"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 d507bb4cb3134e0ea5ff1b2d29178919
+msgid "HT Panthera"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 b7e51063598c4005b55707ea5e98f764
+msgid "Full"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 38c037b8dd22437d95788ec3067931fb
+msgid "Dobot CR5"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 453545683c3e4ff0b8b9b8b185b75dc1
+msgid "Limited (external button)"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 da69955c4d8541149ed8845a66000f7e
+msgid "ARX"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:70 0c08f9ade40848fab9e47ee99cfff1b9
+msgid "Via SDK commands"
+msgstr ""
+
+#: ../../source/2-how_to/7-drag_teleop.md:133 055ffe559b3248bc8c93b8dcbd1ca8f5
+msgid "TODO"
+msgstr "待完成"
+
+#: ../../source/2-how_to/7-drag_teleop.md:136 a72feaf7d4cc427983c0954a293150a7
+msgid "Complete list of drag-capable robots and their specific procedures."
+msgstr ""
+

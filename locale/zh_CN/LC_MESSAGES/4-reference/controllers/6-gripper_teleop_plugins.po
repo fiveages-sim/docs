@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:1
+#: ffa900af69604b668a83ff9d2bf536dc
+msgid "Gripper and Teleop Plugins"
+msgstr "夹爪 and 遥操作 Plugins"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:3
+#: ca74f429599444ab829fc5af3d38c910
+msgid "Controller plugins for grippers and teleoperation."
+msgstr "控制器 plugins for grippers and 遥操作."
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:5
+#: 5d249849dde44f4fa123d9fd8c2970c3
+msgid ""
+"**Repository:** [fiveages-sim/arms_ros2_control](https://github.com"
+"/fiveages-sim/arms_ros2_control)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:7
+#: 928a564ce02d40c3966dc4c55f153c57
+msgid "adaptive_gripper_controller"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:9
+#: 31d5c831d0b74280b77896155baff41f
+msgid "Position and force control for adaptive grippers."
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:11
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:95
+#: 903f9259010b4f938dbdb101fe3621ef b3d4c0419234470ba88c6419c8ccfdb2
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:13
+#: 400ac02fdd8a478da3ff1d93d97cdf35
+msgid "Loaded automatically when gripper is specified:"
+msgstr "Loaded automatically when 夹爪 is specified:"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:15
+#: be40574b192c4d3681a7e95f17933173
+msgid ""
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"gripper:=dh_ag95 hardware:=mock\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:19
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:57
+#: 8efce37637e44e569b1b4e3cf9dc0b09
+msgid "Topics"
+msgstr "主题"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 6451eed10ae74e14856ad6c323dda9cc
+msgid "Topic"
+msgstr "话题"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: b1d864ccd7734b6a9b3649549d5918ad
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: d8380523a30544fa8665d339dc225b3c
+msgid "Direction"
+msgstr "方向"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 22e58861d37a455290521081471d2e39
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: c2cba7edf45140fd8b5d4adb327693ee
+msgid "`/gripper/command`"
+msgstr "`/夹爪/command`"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 834c254967a54eb4926547f46295be56
+msgid "`Float64`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: b1d03e41c76c47d194950ef3416cd1aa
+msgid "Subscribe"
+msgstr "订阅"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 34f71e1fb20d406c8fece5d83fbec03c
+msgid "Position command (0-1)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: d483b8f02961402291f1a91bb10ae16e
+msgid "`/gripper/state`"
+msgstr "`/夹爪/state`"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 927907a9079a47728c3d8848bd12c8a0
+msgid "Publish"
+msgstr "发布"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: f6499e48a8fb4a7eb1e1d57c301c7e4a
+msgid "Current position"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:26
+#: 1dd9f4a967ea46b49c692827dede6a53
+msgid "Commands"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:28
+#: 235191b47dc4458fbfeb0f57415180c3
+#, python-brace-format
+msgid ""
+"# Open gripper\n"
+"ros2 topic pub /gripper/command std_msgs/msg/Float64 \"{data: 1.0}\" "
+"--once\n"
+"\n"
+"# Close gripper\n"
+"ros2 topic pub /gripper/command std_msgs/msg/Float64 \"{data: 0.0}\" "
+"--once\n"
+"\n"
+"# Half open\n"
+"ros2 topic pub /gripper/command std_msgs/msg/Float64 \"{data: 0.5}\" "
+"--once\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:39
+#: 5b7a25ae73c84d1b83fabacce0695a0a
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 6bb1640474784c3082de561d8253d518
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 9e9e0ed3ea4d4cc089b85be3978bd640
+msgid "`max_effort`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 45f2e19ca86f4585a8ed69905c5a7333
+msgid "float"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 1bafca8ff8a24279afa27db99bc6aa13
+msgid "Maximum grip force"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 70547ba724f84b93862232a828ad0c2b
+msgid "`default_position`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 33c3e750c85646ac8b43299046788311
+msgid "Default position on start"
+msgstr "默认值 position on start"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:46
+#: 724e5f473b50443d978ebc4288c3f0b8
+msgid "arms_teleop_controller"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:48
+#: 522f5efe066d46cab933650224d95aa6
+msgid "End-effector target management for teleoperation."
+msgstr "末端执行器 target management for 遥操作."
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:50
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:82
+#: 208061d92e1f42ed8ccbfad8ec3ac2fa
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:52
+#: 75dd9b5f4730437892dabbb4b1f65a6e
+msgid "Bridges teleop inputs to arm controller:"
+msgstr "Bridges 遥操作 inputs to 机械臂 控制器:"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:53
+#: 12072febe8384988ae8539ab94d13f38
+msgid "Smooths target updates"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:54
+#: 0ae35516111b4967b8932c7ea2039eba
+msgid "Applies workspace limits"
+msgstr "Applies 工作空间 limits"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:55
+#: f858682120744da1ae213cbc74a41dc1
+msgid "Handles frame transformations"
+msgstr "Handles 坐标系 transformations"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 5eeb60c082c34fac82b3e032b46027bc
+msgid "`/teleop/ee_pose`"
+msgstr "`/遥操作/ee_pose`"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: d5c190a35c1244588a8f0e9ee8c0cba9
+msgid "`PoseStamped`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 86593efc4fee4f1d9cdb5c39cdb93a1e
+msgid "Teleop input"
+msgstr "遥操作 input"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 291c464a070c4251a5cc5d0bed9cc23f
+msgid "`/target_pose`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: b59bef16a90546be976b064d49fff3b2
+msgid "Smoothed target"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:64
+#: a8d24b7925684acaadf303b0b3b5d10d
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:66
+#: fba6fbe4a7f344898a943009f7298c9f
+msgid ""
+"arms_teleop_controller:\n"
+"  ros__parameters:\n"
+"    input_topic: /teleop/ee_pose\n"
+"    output_topic: /target_pose\n"
+"    smoothing_factor: 0.8\n"
+"    workspace_limits:\n"
+"      x: [-0.5, 0.5]\n"
+"      y: [-0.5, 0.5]\n"
+"      z: [0.0, 0.8]\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:78
+#: 5ec954e0163248a1a63287c28019b66f
+msgid "target_manager_controller"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:80
+#: 4e658a09932041d59c428f0df4caf703
+msgid "Target pose queue management."
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:84
+#: ae045d6aaaa4448588041cc88792be69
+msgid "Manages sequences of target poses:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:85
+#: 540e4778dfa34bf49b964bd656bf9edf
+msgid "Queue-based target execution"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:86
+#: a6fc995eb17442b3a9cb268959429dc6
+msgid "Waypoint following"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:87
+#: 07a77e4711cc4fee86b96a9d249ca6dd
+msgid "Action interface"
+msgstr "动作 接口"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:89
+#: e9ed0d867899408b96cf373b37b6e802
+msgid "Actions"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 56c1aa3d8b3945aea7b3d4b4a38110f1
+msgid "Action"
+msgstr "动作"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 681ffda74d3240e6ab443cdedcf9c4c0
+msgid "`/execute_targets`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 241705e3ce494244b116c853ea5c705b
+msgid "Custom"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
+#: 311ad13d20254dcf8334b343b8e999a5
+msgid "Execute target sequence"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:97
+#: 3cb429f70de74230a459fba0089445dc
+msgid ""
+"# Send target sequence\n"
+"targets = [pose1, pose2, pose3]\n"
+"action_client.send_goal(targets)\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:103
+#: 18d448019f414a4dae57ebf04bfa890e
+msgid "Plugin Loading"
+msgstr "插件 Loading"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:105
+#: 160c27abb13c4f308d58dff7809f8386
+msgid "Plugins are loaded via controller configuration:"
+msgstr "Plugins are loaded via 控制器 配置:"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:107
+#: ef082679cdd84ea0918f4dc2f2447a85
+msgid ""
+"controller_manager:\n"
+"  ros__parameters:\n"
+"    update_rate: 100\n"
+"    \n"
+"    gripper_controller:\n"
+"      type: adaptive_gripper_controller/AdaptiveGripperController\n"
+"\n"
+"    teleop_controller:\n"
+"      type: arms_teleop_controller/ArmsTeleopController\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:119
+#: ce2472bdc40247c58cc909ee81c376dd
+msgid "Custom Plugins"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:121
+#: 07a51f53a2574d43a5221e679776437e
+msgid "To create custom plugins, follow the ros2_control plugin pattern:"
+msgstr "To create custom plugins, follow the ros2_control 插件 pattern:"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:123
+#: bf2121a17db94ae0ba68498f79016222
+msgid "Inherit from `controller_interface::ControllerInterface`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:124
+#: 6053474ee99d433a99e60c59e701e650
+msgid "Implement lifecycle methods"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:125
+#: af21259997f147aab7134f33af66f67b
+msgid "Register with pluginlib"
+msgstr ""
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:126
+#: d8d825ecc18d4ae6a8a39759bad35c23
+msgid "Add to controller configuration"
+msgstr "Add to 控制器 配置"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:128
+#: 306179cd580e47ef96e64e0d90acf624
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:130
+#: acd82e07526a4040a8bc2b5febe3a923
+msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+msgstr "[ocs2_arm_controller（OCS2机械臂控制器）](2-ocs2_arm_controller（OCS2机械臂控制器）.md)"
+
+#: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:131
+#: 9a00a3938fe145f48e33e2a8302b707e
+msgid "[ros2_control here](../../3-concepts/1-ros2_control_here.md)"
+msgstr "[ros2_control here](../../3-核心概念/1-ros2_control_here.md)"
+

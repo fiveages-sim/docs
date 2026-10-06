@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:1
+#: 8a93f531c4574a62817d5ef5351aa7f4
+msgid "ros2-viser"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:3
+#: 0aba49053f8a4e70b55e3e6c712e52e1
+msgid "Web-based 3D visualization using Viser."
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:5
+#: 47683383e4c14c61abfabb835fc54f65
+msgid ""
+"**Repository:** [fiveages-sim/ros2-viser](https://github.com/fiveages-"
+"sim/ros2-viser)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:7
+#: a3f4b6f6f3f542e4968849a09dfa4ff3
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:9
+#: 277f51554db840aaaefbc935097860b1
+msgid "Web visualization for ROS 2:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:10
+#: a1d024b7ee774b5cb6bcad517d234e7b
+msgid "3D robot model"
+msgstr "3D 机器人 model"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:11
+#: 351f9cde699c487ca8a3511d97380ef8
+msgid "Joint state display"
+msgstr "关节 state display"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:12
+#: 9a75cc8595724b2790f1ca1ce5b2a653
+msgid "Target markers"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:13
+#: 3853458031cd4840aadfade24a996b74
+msgid "Browser accessible"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:15
+#: de2fb5ec2e5d42529d9339b8653ffd41
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:17
+#: 98171b08ace041398d290fc7775043d1
+msgid "pip install ros2-viser\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:21
+#: 077bf59e930d4ba59ec3f4a3ab710638
+msgid "Or via fa-py-libraries:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:23
+#: 855066a64b9f4659acbfb00714c69b64
+msgid ""
+"cd fa-py-libraries\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:28
+#: 38a4d118e9d4439f97967df39915dcd4
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:30
+#: 4bdb32827f6643f2954831204dce66e8
+msgid "Basic"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:32
+#: a708c9182383476ab38815e784846b39
+#, python-brace-format
+msgid ""
+"from ros2_viser import ViserVisualizer\n"
+"\n"
+"viz = ViserVisualizer()\n"
+"viz.start()\n"
+"\n"
+"print(f\"Open browser: {viz.get_url()}\")\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:41
+#: 125ffe69702140c6a0f09d3e91b99140
+msgid "With Robot"
+msgstr "With 机器人"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:43
+#: ecb405697aea46b482d1b1a44791455e
+msgid ""
+"from ros2_viser import ViserVisualizer\n"
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"viz = ViserVisualizer()\n"
+"viz.set_robot_model(\"dobot_cr5\")\n"
+"viz.start()\n"
+"\n"
+"# Visualization updates automatically from /joint_states\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:57
+#: 7d1c08f4b4a74b18a68263693aa85035
+msgid "Features"
+msgstr "功能特性"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:59
+#: 8e55d581d5494960b2d766fc18b4e951
+msgid "Robot Visualization"
+msgstr "机器人 Visualization"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:61
+#: b7068a49f98247f88a078589e5bbe10f
+msgid "URDF model rendering"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:62
+#: 677dce220c5742718d48090226cc8b2c
+msgid "Real-time joint updates"
+msgstr "Real-time 关节 updates"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:63
+#: 21faf499e0e84c5193dd438d9f188737
+msgid "Link highlighting"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:65
+#: c5844917bd744fcabb21bcaccd764c80
+msgid "Markers"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:67
+#: 565301e28b7a41a29a0d6144e7ad9730
+msgid "Target pose markers"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:68
+#: 8d0139f6ad8049a3b50181eda72530f1
+msgid "Trajectory preview"
+msgstr "轨迹 preview"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:69
+#: 202a7d828bf74ee79ed292e5356cf2bd
+msgid "Custom markers"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:71
+#: e8b6f00875044121a3d0f3f37386166e
+msgid "UI Elements"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:73
+#: f8ef76d2ecc040a0aacc26ddfe4fc2d4
+msgid "Joint sliders"
+msgstr "关节 sliders"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:74
+#: 93c2538082bb4af693a6374632ca97db
+msgid "Mode selector"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:75
+#: 56accb9918904d6995840342e1fcd13b
+msgid "Status display"
+msgstr "状态 display"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:77
+#: c84f2d2806244c97a12ea31738b0b4ba
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:79
+#: 5ca3dc462cc246218af9568b655e8c4c
+msgid ""
+"viz = ViserVisualizer(\n"
+"    host=\"0.0.0.0\",\n"
+"    port=8080,\n"
+"    urdf_path=\"/path/to/robot.urdf\"\n"
+")\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:87
+#: 44e27210d45040d48d9512ab722bef3b
+msgid "Web Interface"
+msgstr "Web 接口"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:89
+#: d958db1df6844c16979c0d544d32772e
+msgid "Access via browser:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:90
+#: 62a7137f94574ba5b0862d01b66406de
+msgid "Desktop: `http://localhost:8080`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:91
+#: 74fc92a555564cafb6c5703f6350e629
+msgid "Mobile: `http://<host-ip>:8080`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:92
+#: 607fe33db08f4114838d5a90aff36b40
+msgid "VR: WebXR compatible"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:94
+#: 430b69984b224d27a347a3906515e78d
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/3-ros2_viser.md:96
+#: 855066a64b9f4659acbfb00714c69b64
+msgid "[fa-py-libraries](2-fa_py_libraries.md)"
+msgstr ""
+

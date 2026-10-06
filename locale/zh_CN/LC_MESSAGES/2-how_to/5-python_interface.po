@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/5-python_interface.md:1
+#: ebd7eeddda304ce2911fa8a0dc5cd656
+msgid "Python Interface"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:3
+#: 75edf4f09443424bb066f4e0fb2648cc
+msgid "Control robots programmatically using the Python interface."
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:5
+#: 1a38617d924e495395555e2f6c49c385
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/5-python_interface.md:7
+#: bd9f5626ef6b478ba840f9c37372f37e
+msgid "ROS 2 Jazzy installed"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:8
+#: 0b97a0e3d4bb426b8633b9082df5ecfa
+msgid "Robot demo running (mock, Gazebo, or real)"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:9
+#: 97eafb3405744d6ca1c7e1b548b9a8ad
+msgid "Python 3.10+"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:11
+#: 9090b0b4b9ea4826a9a7c8a0294b6d90
+msgid "Install fa-py-libraries"
+msgstr "安装 fa-py-libraries"
+
+#: ../../source/2-how_to/5-python_interface.md:13
+#: e18d232c7bb644bab19d183b0ed8d045
+msgid ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:20
+#: a71f3c64c9a843f68b332970ddc7589e
+msgid "Or install ros2_robot_interface directly:"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:22
+#: a71f3c64c9a843f68b332970ddc7589e
+msgid "pip install ros2-robot-interface\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:26
+#: af876514ce1a4553bd900fdbe61e016b
+msgid "Basic Usage"
+msgstr "Basic 使用方法"
+
+#: ../../source/2-how_to/5-python_interface.md:28
+#: b7a82f919b3d4551a6d471220df1a3fa
+msgid "Connect to Robot"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:30
+#: 7d5a784d2b644372ad0ec882841772a5
+#, python-brace-format
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"# Initialize\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Check connection\n"
+"print(f\"Connected: {robot.is_connected()}\")\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:41
+#: 192cbca51af3497590c75568a63ab242
+msgid "Move Robot"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:43
+#: 5cb8fdc379b042909ae292a8425c59ee
+msgid ""
+"# Move to joint position (radians)\n"
+"robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"\n"
+"# Move to Cartesian pose\n"
+"robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], "
+"[qw,qx,qy,qz]\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:51
+#: ff30b8ca64e3476ba6d69c364bfd4097
+msgid "Gripper Control"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:53
+#: ea8f8d0e2fcc4d6b93393415cb89bf74
+msgid ""
+"# Open gripper\n"
+"robot.gripper_open()\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"\n"
+"# Set position (0.0 = closed, 1.0 = open)\n"
+"robot.gripper_move(0.5)\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:64
+#: b2564c49e7f844b0b5f7e7c9332f9c1c
+msgid "Read State"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:66
+#: 17462cbd753e495d867e606e521f89bd
+#, python-brace-format
+msgid ""
+"# Joint positions\n"
+"joints = robot.get_joint_positions()\n"
+"print(f\"Joints: {joints}\")\n"
+"\n"
+"# End-effector pose\n"
+"pose = robot.get_ee_pose()\n"
+"print(f\"EE pose: {pose}\")\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:76
+#: 96582a9768cb489396cca24dc2ffdb46
+msgid "Example: Pick and Place"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:78
+#: bc8c34e1582c43d2bb30bd317db49a05
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"import time\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Move to home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(1)\n"
+"\n"
+"# Move above pick location\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move down to pick\n"
+"robot.move_l([0.3, 0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lift\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move to place\n"
+"robot.move_l([0.3, -0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lower\n"
+"robot.move_l([0.3, -0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Release\n"
+"robot.gripper_open()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Return home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:121
+#: b69ad132150b4b84af6b71a8e52721b6
+msgid "With Viser Visualization"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:123
+#: 18b2d9532d1a4ff9b7beaab4faf8b54f
+#, python-brace-format
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"from ros2_viser import ViserVisualizer\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Start visualizer\n"
+"viz = ViserVisualizer()\n"
+"viz.start()\n"
+"\n"
+"# Visualization updates automatically with robot state\n"
+"print(f\"Open browser to: {viz.get_url()}\")\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:138
+#: 725c21ae3f754c4fbe5ef30417d36e65
+msgid "FSM Commands"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:140
+#: d33b2675e5814c49baf18e4d33ffb30b
+msgid "For whole-body control or complex motions:"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:142
+#: 0eaabe84eb2b4ec2b1a9109c6a03cdf3
+msgid ""
+"# Send FSM command\n"
+"robot.send_fsm_command(\"stand\")\n"
+"robot.send_fsm_command(\"walk\")\n"
+"\n"
+"# Mode commands\n"
+"robot.send_mode_command(\"arm_teleop\")\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:151
+#: 619a773a3daa49aaa6f32dafe917c0f2
+msgid ""
+"See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available "
+"commands."
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:153
+#: 98556cd677bf43b6a9847e9ec44ed3a6
+msgid "Async Interface"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:155
+#: 9351701a622746d7b74721fa0ba7c57d
+msgid "For non-blocking operations:"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:157
+#: d655e091cccc4ceaa3a78ff0edfbefa5
+msgid ""
+"import asyncio\n"
+"from ros2_robot_interface import AsyncRobotInterface\n"
+"\n"
+"async def main():\n"
+"    robot = AsyncRobotInterface()\n"
+"    await robot.connect()\n"
+"    \n"
+"    # Non-blocking motion\n"
+"    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"    \n"
+"    # Do other things while moving\n"
+"    while robot.is_moving():\n"
+"        print(\"Moving...\")\n"
+"        await asyncio.sleep(0.1)\n"
+"    \n"
+"    print(\"Done!\")\n"
+"\n"
+"asyncio.run(main())\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:178
+#: 7e48014f2a1d4f4eb5562c53494a9244
+msgid "Verification"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:180
+#: 48472d48b34747f6b92c30b34122e1d1
+#, python-brace-format
+msgid ""
+"# Test script\n"
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Read current state\n"
+"print(f\"Joints: {robot.get_joint_positions()}\")\n"
+"print(f\"EE Pose: {robot.get_ee_pose()}\")\n"
+"\n"
+"# Small motion test\n"
+"current = robot.get_joint_positions()\n"
+"current[0] += 0.1  # Small rotation of first joint\n"
+"robot.move_j(current)\n"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:197
+#: 24ff3b86520d492ba90b943f782abf8e
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/5-python_interface.md:199
+#: acda4be0c41a4f25a7b805601b5150c3
+msgid "Connection fails"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:201
+#: ce1896a62bd4403182d4262646ed8c7c
+msgid "Ensure robot demo is running"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:202
+#: 1fbd3b3a5fc5460eabaf9966aadd99de
+msgid "Check ROS 2 domain ID matches"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:203
+#: 1a6d3fbf49c3443cae54a042ad1823c7
+msgid "Verify topics are publishing: `ros2 topic list`"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:205
+#: 28f81f45db304ca88a256f1eaa29f481
+msgid "Motion commands ignored"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:207
+#: c7c71eb51b84475aa9a33033c42971cb
+msgid "Check controller is in correct mode"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:208
+#: 97312a2124364c60b3d4880510df178a
+msgid "Verify target is within joint limits"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:209
+#: 01d70d9b2bf04cd5ba314027f2398058
+msgid "Check for collision detection blocks"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:211
+#: b17fee2a85b44a14be2acc51d97f91e1
+msgid "Import error"
+msgstr ""
+
+#: ../../source/2-how_to/5-python_interface.md:213
+#: e2bf4b74502a487697c22ecb932baf55
+msgid ""
+"pip install -e ~/fa-py-libraries\n"
+"# or\n"
+"pip install ros2-robot-interface\n"
+msgstr ""
+

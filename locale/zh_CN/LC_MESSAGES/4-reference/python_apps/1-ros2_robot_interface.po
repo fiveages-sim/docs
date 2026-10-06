@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:1
+#: 04cb0d110ff04bfabfde528efc384fde
+msgid "ros2_robot_interface"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:3
+#: 6ee8f2754b6c49b59186a1a764719c38
+msgid "High-level Python API for robot control."
+msgstr "High-level Python API for 机器人 control."
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:5
+#: 73ac053869f0410c997b9d9cd4f9b35a
+msgid ""
+"**Repository:** [fiveages-sim/ros2_robot_interface](https://github.com"
+"/fiveages-sim/ros2_robot_interface)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:7
+#: f7185a23d77545deaed08cce95691efe
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:9
+#: a130a27f383348c7a1f8ceed12129554
+msgid "Simplifies robot control from Python:"
+msgstr "Simplifies 机器人 control from Python:"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:10
+#: a8c08e9a284041f78ef59e96c7963083
+msgid "Connection management"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:11
+#: aae0abbc208547988a5b2dc13ee685fd
+msgid "Motion commands"
+msgstr "运动 commands"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:12
+#: 59fa76d1e7764e7ca005b2ea4e6d1712
+msgid "State queries"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:13
+#: ac842e94c82c4a099d7eeba71268823f
+msgid "Gripper control"
+msgstr "夹爪 control"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:15
+#: 1b3fa1f66b13440780ad27a19a11c917
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:17
+#: 76d59e9b7de94195a25c94fd2c574b77
+msgid "pip install ros2-robot-interface\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:21
+#: fa063f2954cd40e2b2605c49283164c2
+msgid "Or from source:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:23
+#: 2e9b39f5a4c14b9ea013c2c326323c3e
+msgid ""
+"git clone https://github.com/fiveages-sim/ros2_robot_interface.git\n"
+"cd ros2_robot_interface\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:29
+#: aa56c1c6ae18498dadb45153d2145540
+msgid "Quick Start"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: aabbec321bda413c9e79bc2ab010774f
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Move joints\n"
+"robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"\n"
+"# Move Cartesian\n"
+"robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])\n"
+"\n"
+"# Gripper\n"
+"robot.gripper_open()\n"
+"robot.gripper_close()\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:48
+#: f3ab2aa04dbb4a5993525a93af9f20ac
+msgid "API Reference"
+msgstr "API 参考手册"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:50
+#: e97c9b9332b74d839ea630376f8f331f
+msgid "Connection"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:52
+#: 9c919815ec144f8fbaf96b3704acb8ae
+msgid ""
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"robot.disconnect()\n"
+"robot.is_connected()  # -> bool\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:59
+#: 3c7b821d8617448e976cbf9881bd82a8
+msgid "Motion"
+msgstr "运动"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:61
+#: b458c4166fc04d58a9436189784fa164
+msgid ""
+"# Joint space\n"
+"robot.move_j(positions: List[float], duration: float = None)\n"
+"\n"
+"# Cartesian\n"
+"robot.move_l(\n"
+"    position: List[float],  # [x, y, z]\n"
+"    orientation: List[float],  # [qw, qx, qy, qz]\n"
+"    duration: float = None\n"
+")\n"
+"\n"
+"# Check motion state\n"
+"robot.is_moving()  # -> bool\n"
+"robot.wait_for_motion()\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:77
+#: 5b83d8a605ab4fa8b25c1b74c65fa61b
+msgid "State"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:79
+#: d1a3c18ece0442419f3afd8f6a05d3e7
+msgid ""
+"# Joint state\n"
+"robot.get_joint_positions()  # -> List[float]\n"
+"robot.get_joint_velocities()  # -> List[float]\n"
+"\n"
+"# Cartesian\n"
+"robot.get_ee_pose()  # -> Pose\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:88
+#: 287bfb5d8e8442d98b769dd972330af0
+msgid "Gripper"
+msgstr "夹爪"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:90
+#: d1e9f3e6016e4f3685d04b0f59a53e78
+msgid ""
+"robot.gripper_open()\n"
+"robot.gripper_close()\n"
+"robot.gripper_move(position: float)  # 0.0-1.0\n"
+"robot.get_gripper_position()  # -> float\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:97
+#: 3c9d1092a9cd4b14b48c549a50491ee3
+msgid "FSM"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:99
+#: f9f36aba9a5742e69521b19706ff2076
+msgid ""
+"robot.set_mode(mode: str)\n"
+"robot.get_mode()  # -> str\n"
+"robot.send_fsm_command(command: str)\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:105
+#: a2c04f8684f245db951ec7f3ed74431d
+msgid "Async Interface"
+msgstr "Async 接口"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:107
+#: 115b661c2b1547d1ba0625713a1a38c9
+msgid ""
+"from ros2_robot_interface import AsyncRobotInterface\n"
+"import asyncio\n"
+"\n"
+"async def main():\n"
+"    robot = AsyncRobotInterface()\n"
+"    await robot.connect()\n"
+"    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"\n"
+"asyncio.run(main())\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:119
+#: 1ed857b877ba445a87b2dcc0a8186a94
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:121
+#: f416a37cf39349b1b92a1cd81c668333
+msgid ""
+"robot = RobotInterface(\n"
+"    node_name='my_controller',\n"
+"    namespace='robot1',\n"
+"    domain_id=42\n"
+")\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:129
+#: 039fd18a598941da9b26e3e5f9f0c7a9
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:131
+#: e61bf8a6ef22472ca293c11b79dfa17a
+msgid "[Python Interface How-To](../../2-how_to/5-python_interface.md)"
+msgstr "[Python 接口 How-To](../../2-how_to/5-python_interface.md)"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:132
+#: a89bd589b29d48488b17d4581741d336
+msgid "[fa-py-libraries](2-fa_py_libraries.md)"
+msgstr ""
+

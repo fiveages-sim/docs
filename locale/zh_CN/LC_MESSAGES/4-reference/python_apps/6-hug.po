@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/6-hug.md:1
+#: e876c102c9214f748457c44791a0c358
+msgid "HUG"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:3
+#: 149a582e4e204ff6904d8be42ed212b2
+msgid "Human grasp inference for manipulation."
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:5
+#: 0e71f95b818e45d5b06c0b3b9ebc8d5b
+msgid "Access Required"
+msgstr "需要访问权限"
+
+#: ../../source/4-reference/python_apps/6-hug.md:8
+#: 0086a39f37bd46aab90d5be3bc649891
+msgid "This package requires private repository access."
+msgstr "This 软件包 requires 私有 仓库 access."
+
+#: ../../source/4-reference/python_apps/6-hug.md:11
+#: ee7da876cc5944cf9a71c5fce08235b1
+msgid "**Repository:** HUG (private)"
+msgstr "**仓库:** HUG (私有)"
+
+#: ../../source/4-reference/python_apps/6-hug.md:13
+#: 433dc8cab0ef48a5ba65c5eedefc5d18
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/6-hug.md:15
+#: 72500da007954bc282700dc9256a2e77
+msgid "Grasp inference from human demonstrations:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:16
+#: 9e317a977d5e4d4fb96441c792e456f6
+msgid "Grasp pose prediction"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:17
+#: 5a8366e6c9f14e0e9e65a58a23a944d7
+msgid "Object manipulation"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:18
+#: 66e4d6b387fa4c6788346eae9aab0b6c
+msgid "Learning from observation"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:20
+#: 73788a39b4954d9d8f52731071c831dd
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/6-hug.md:22
+#: 97137ac05b9b438eaaa27bf97b69cb80
+msgid "HUG is a submodule of lerobot_ros2:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:24
+#: 67b327b6638246919603059b56c48ee6
+msgid ""
+"cd lerobot_ros2\n"
+"git submodule update --init HUG\n"
+"cd HUG\n"
+"uv sync  # or pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:31
+#: 85e39d10be55496fbbb4998e46b2909f
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/python_apps/6-hug.md:33
+#: 314319b55e154df9a0d3b27233cf80ca
+msgid ""
+"from hug import GraspInference\n"
+"\n"
+"model = GraspInference.load(\"path/to/model\")\n"
+"grasp_pose = model.predict(rgb_image, depth_image)\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:40
+#: 1cf1c288b10146f2aa8a9cedb23eb3aa
+msgid "Integration"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:42
+#: e22ce7314dac4041a7c1f29151a4eb3c
+msgid "Used with lerobot_ros2 for:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:43
+#: 3c18fdfb08f84a1385409cab65a3106b
+msgid "Data collection with grasp labels"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:44
+#: d3646bb822494e6e96e382b4b9e1d479
+msgid "Policy training"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:45
+#: 3b7d0e5c4063470e949e22a96faab8e6
+msgid "Deployment"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:47
+#: ad1a6c090c1246a28915354535131d8d
+msgid "Notes"
+msgstr "说明"
+
+#: ../../source/4-reference/python_apps/6-hug.md:49
+#: 397409cc4a8841428c4f91113a17dcd3
+msgid "No training secrets in public docs"
+msgstr "No training secrets in 公开 docs"
+
+#: ../../source/4-reference/python_apps/6-hug.md:50
+#: 8b5f99c7dd994e15b52c3a3e138397ab
+msgid "Model weights separate from code"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/6-hug.md:51
+#: 0bfec994fc4640d68dcb9f4133aa0216
+msgid "See internal documentation for training"
+msgstr "参见 内部 documentation for training"
+
+#: ../../source/4-reference/python_apps/6-hug.md:53
+#: 4b849ce6ee74481b92ab06409269b451
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/6-hug.md:55
+#: 4753ec0bc52d478db26908d057cb0c97
+msgid "[lerobot_ros2](4-lerobot_ros2.md)"
+msgstr ""
+
