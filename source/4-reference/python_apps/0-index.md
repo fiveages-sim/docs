@@ -7,8 +7,8 @@ This section documents the Python libraries and applications.
 Python libraries provide high-level interfaces:
 - Robot control API
 - Visualization
-- Data collection
-- Application frameworks
+- LeRobot ROS 2 plugins
+- Task-queue YAML orchestration
 
 ## In This Section
 
@@ -31,7 +31,7 @@ Python libraries provide high-level interfaces:
 | [ros2_robot_interface](1-ros2_robot_interface.md) | High-level robot API | Public |
 | [fa-py-libraries](2-fa_py_libraries.md) | Utilities umbrella | Public |
 | [ros2-viser](3-ros2_viser.md) | Web visualization | Public |
-| [lerobot_ros2](4-lerobot_ros2.md) | LeRobot integration | Public |
-| [robot_action_composer](5-robot_action_composer.md) | Action sequencing | Public |
+| [lerobot_ros2](4-lerobot_ros2.md) | LeRobot ↔ ROS 2 monorepo | Public |
+| [robot_action_composer](5-robot_action_composer.md) | Task-queue YAML / motion generation | Public |
 | [HUG](6-hug.md) | Grasp inference | Private |
 | [wuji-retargeting](7-wuji_retargeting.md) | Hand retargeting | Public |
