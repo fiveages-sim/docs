@@ -8,6 +8,19 @@ VR pose bridge for teleoperation.
 Available through fa-py-libraries (public) or as standalone (private).
 ```
 
+## Supported Headsets
+
+| Headset | Support Level | Notes |
+|---------|---------------|-------|
+| **Pico** | **Recommended** | Enterprise edition offers lower-latency tracking |
+| **Meta Quest** | Supported | Good consumer availability |
+
+```{admonition} Pico Recommended
+:class: tip
+
+**Pico headsets have the best support.** The enterprise edition has a faster release cadence, enabling lower-latency tracking for more responsive control (更跟手).
+```
+
 ## Purpose
 
 Bridges VR tracking data to ROS 2 topics:
@@ -17,9 +30,11 @@ Bridges VR tracking data to ROS 2 topics:
 
 ## Modes
 
-### Vuer (WebXR)
+Both Pico and Meta Quest support **Web** and **XROtoolkit** modes.
 
-Browser-based VR:
+### Web Mode (WebXR/Vuer)
+
+Browser-based VR — easy setup, works on both headsets:
 
 ```bash
 cd fa-py-libraries
@@ -28,15 +43,15 @@ cd fa-py-libraries
 
 Opens WebXR session accessible from VR headset browser.
 
-### XRoboToolkit
+### XROtoolkit Mode
 
-Native application integration:
+Native application — lower latency, recommended for production:
 
 ```bash
 ./run.sh vr --mode xrt
 ```
 
-Requires XRoboToolkit app on VR device.
+Requires XROtoolkit app on VR device. Provides better tracking responsiveness.
 
 ## Topics Published
 

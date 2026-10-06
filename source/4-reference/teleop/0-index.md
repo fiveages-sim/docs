@@ -8,11 +8,17 @@ The stack supports multiple teleoperation methods:
 
 | Method | Input Device | Use Case |
 |--------|-------------|----------|
-| VR | VR headset | Remote manipulation |
+| VR | VR headset (Pico, Meta Quest) | Remote manipulation |
 | Drag | Direct contact | Teaching |
 | DexCap | Gloves | Dexterous teleop |
 | Vive | Trackers | Arm tracking |
 | Wuji | Gloves | Hand tracking |
+
+```{admonition} VR Headset Recommendation
+:class: tip
+
+For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headsets. Both support **Web** and **XROtoolkit** modes. **Pico has better support** — the enterprise edition offers a faster release cadence and lower-latency tracking (更跟手).
+```
 
 ## In This Section
 

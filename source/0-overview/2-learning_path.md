@@ -156,9 +156,18 @@ FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify wit
 **Goal:** Control the robot via VR or manual teaching.
 
 ### VR Teleoperation
+
+**Supported headsets:** Pico (recommended) and Meta Quest, using Web or XROtoolkit modes.
+
 ```bash
 cd fa-py-libraries
 ./run.sh vr
+```
+
+```{admonition} Pico Recommended
+:class: tip
+
+Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control.
 ```
 
 ### Drag Teaching (HT Panthera)

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 15:06+0000\n"
+"POT-Creation-Date: 2026-10-06 15:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -172,8 +172,8 @@ msgstr "**Goal:** Understand the ecosystem structure and choose your entry path.
 #: ../../source/0-overview/2-learning_path.md:40
 #: ../../source/0-overview/2-learning_path.md:67
 #: ../../source/0-overview/2-learning_path.md:132
-#: ../../source/0-overview/2-learning_path.md:207
-#: ../../source/0-overview/2-learning_path.md:226
+#: ../../source/0-overview/2-learning_path.md:216
+#: ../../source/0-overview/2-learning_path.md:235
 #: acd2b220297348b8b249c06324498220
 msgid "**Tasks:**"
 msgstr "**任务：**"
@@ -385,7 +385,9 @@ msgstr "内部 需要访问权限"
 msgid ""
 "FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. "
 "Verify with: `ls ~/isaacsim/python.sh`"
-msgstr "FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify with: `ls ~/isaacsim/python.sh`"
+msgstr ""
+"FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. "
+"Verify with: `ls ~/isaacsim/python.sh`"
 
 #: ../../source/0-overview/2-learning_path.md:108
 #: 87e05736f2c74834aecc01fc54524d55
@@ -517,24 +519,43 @@ msgstr "**Goal:** Control the robot via VR or manual teaching."
 msgid "VR Teleoperation"
 msgstr "VR 遥操作"
 
-#: ../../source/0-overview/2-learning_path.md:159
+#: ../../source/0-overview/2-learning_path.md:160
+#: 64586ef19a0a406997f02892dfa4597f
+msgid ""
+"**Supported headsets:** Pico (recommended) and Meta Quest, using Web or "
+"XROtoolkit modes."
+msgstr "**支持 headsets:** Pico (recommended) and Meta Quest, using Web or XROtoolkit modes."
+
+#: ../../source/0-overview/2-learning_path.md:162
 #: 33eae1f549bd4598a625d6a391f4da81
 msgid ""
 "cd fa-py-libraries\n"
 "./run.sh vr\n"
 msgstr "cd fa-py-libraries\\n./run.sh vr\\n"
 
-#: ../../source/0-overview/2-learning_path.md:164
+#: ../../source/0-overview/2-learning_path.md:167
+#: fadbcbaea6cd4ebea49296a143d059e5
+msgid "Pico Recommended"
+msgstr "Pico Recommended"
+
+#: ../../source/0-overview/2-learning_path.md:170
+#: ee29c4161cb44edcaa7553afa27df3d4
+msgid ""
+"Pico headsets have better support. The enterprise edition offers lower-"
+"latency tracking for more responsive control."
+msgstr "Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control."
+
+#: ../../source/0-overview/2-learning_path.md:173
 #: a36e74f4d38145149f0971eee7ba8023
 msgid "Drag Teaching (HT Panthera)"
 msgstr "Drag Teaching (HT Panthera)"
 
-#: ../../source/0-overview/2-learning_path.md:165
+#: ../../source/0-overview/2-learning_path.md:174
 #: 760a2ca40bb14a7d8ee93d671c81becb
 msgid "ros2 launch drag_teleop_controller drag_teleop.launch.py\n"
 msgstr "ros2 launch drag_teleop_controller drag_teleop.launch.py\\n"
 
-#: ../../source/0-overview/2-learning_path.md:169
+#: ../../source/0-overview/2-learning_path.md:178
 #: d7c234c376ab4b8f8f399b6f1041fb66
 msgid ""
 "**Primary sources:** VR pose publisher, "
@@ -545,27 +566,27 @@ msgstr ""
 "[drag_teleop_controller](https://github.com/fiveages-"
 "sim/drag_teleop_controller)"
 
-#: ../../source/0-overview/2-learning_path.md:171
+#: ../../source/0-overview/2-learning_path.md:180
 #: f906b71b8bb8428aaca89c008ac8739b
 msgid "**Outcome:** Real-time control via VR headset or manual guidance."
 msgstr "**预期结果：** Real-time control via VR headset or manual guidance."
 
-#: ../../source/0-overview/2-learning_path.md:173
+#: ../../source/0-overview/2-learning_path.md:182
 #: 6ccf9f68627d476bb868714bc9fbda3d
 msgid "Day 6: Real Hardware"
 msgstr "Day 6: Real 硬件"
 
-#: ../../source/0-overview/2-learning_path.md:175
+#: ../../source/0-overview/2-learning_path.md:184
 #: 821322331afe402b8e2d9546ad193311
 msgid "**Goal:** Deploy to physical robots."
 msgstr "**Goal:** Deploy to physical robots."
 
-#: ../../source/0-overview/2-learning_path.md:177
+#: ../../source/0-overview/2-learning_path.md:186
 #: 5023e73278a44f239d749fba6088cfcf
 msgid "Public Path (ARX Acone, HT Panthera)"
 msgstr "公开 路径 (ARX Acone, HT Panthera)"
 
-#: ../../source/0-overview/2-learning_path.md:179
+#: ../../source/0-overview/2-learning_path.md:188
 #: c932b761377a423b993d025f351a5d5a
 msgid ""
 "External users can deploy to **ARX Acone** and **HT Panthera** using only"
@@ -574,12 +595,12 @@ msgstr ""
 "External users can deploy to **ARX Acone** and **HT Panthera** using only"
 " public packages:"
 
-#: ../../source/0-overview/2-learning_path.md:181
+#: ../../source/0-overview/2-learning_path.md:190
 #: ee79d3896f734f69804f9fdb12fc6d23
 msgid "**ARX Acone (CAN bus):**"
 msgstr "**ARX Acone (CAN 总线 bus):**"
 
-#: ../../source/0-overview/2-learning_path.md:182
+#: ../../source/0-overview/2-learning_path.md:191
 #: 5c269927b7f04670a11b11fac4551c42
 msgid ""
 "cd ~/open-deploy-ws\n"
@@ -598,12 +619,12 @@ msgstr ""
 " set can0 up\\n\\n# Deploy to real hardware\\nros2 launch "
 "ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real\\n"
 
-#: ../../source/0-overview/2-learning_path.md:194
+#: ../../source/0-overview/2-learning_path.md:203
 #: 312e9a8fe3a84c4bbaf09f8894308887
 msgid "**HT Panthera (Serial):**"
 msgstr "**HT Panthera (串口):**"
 
-#: ../../source/0-overview/2-learning_path.md:195
+#: ../../source/0-overview/2-learning_path.md:204
 #: 8ad667a482c542fb9a856a4c16a5d75a
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera "
@@ -612,17 +633,17 @@ msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera "
 "hardware:=real\\n"
 
-#: ../../source/0-overview/2-learning_path.md:199
+#: ../../source/0-overview/2-learning_path.md:208
 #: 5c9d528788074716a0baeb0826c70ce7
 msgid "Internal Path (FA Robots)"
 msgstr "内部 路径 (FA 机器人)"
 
-#: ../../source/0-overview/2-learning_path.md:201
+#: ../../source/0-overview/2-learning_path.md:210
 #: 5c9d528788074716a0baeb0826c70ce7
 msgid "Internal Access Required"
 msgstr "内部 需要访问权限"
 
-#: ../../source/0-overview/2-learning_path.md:204
+#: ../../source/0-overview/2-learning_path.md:213
 #: 456e8ed98d0d46af94c535fb99dd9fe9
 msgid ""
 "FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-"
@@ -633,12 +654,12 @@ msgstr ""
 "ws`. Contact your team lead for repository access and hardware "
 "allocation."
 
-#: ../../source/0-overview/2-learning_path.md:208
+#: ../../source/0-overview/2-learning_path.md:217
 #: 3845b15e02cb420db5cc8ada893df8a9
 msgid "Clone `fa-deploy-ws` and initialize for your robot (e.g., W2):"
 msgstr "Clone `fa-deploy-ws` and initialize for your robot (e.g., W2):"
 
-#: ../../source/0-overview/2-learning_path.md:209
+#: ../../source/0-overview/2-learning_path.md:218
 #: c6a975fcdc7d4fad820e330a190bc5a0
 msgid ""
 "git clone <internal-url>/fa-deploy-ws.git\n"
@@ -648,7 +669,7 @@ msgstr ""
 "git clone <internal-url>/fa-deploy-ws.git\\ncd fa-deploy-"
 "ws\\n./init_repo.sh --robot fiveages_w2\\n"
 
-#: ../../source/0-overview/2-learning_path.md:214
+#: ../../source/0-overview/2-learning_path.md:223
 #: 6cbabdf095704900989026a5e1ca3114
 msgid ""
 "Configure `robot.local.yaml` with your robot's parameters (network "
@@ -657,17 +678,17 @@ msgstr ""
 "Configure `robot.local.yaml` with your robot's parameters (network "
 "settings, domain ID, etc.)"
 
-#: ../../source/0-overview/2-learning_path.md:215
+#: ../../source/0-overview/2-learning_path.md:224
 #: e36ebb3d6b674035b6decd27376b45f7
 msgid "Run the quick start:"
 msgstr "Run the quick start:"
 
-#: ../../source/0-overview/2-learning_path.md:216
+#: ../../source/0-overview/2-learning_path.md:225
 #: a79cc164d918486eb81fca5ffcee8b26
 msgid "./quick_start.sh\n"
 msgstr "./quick_start.sh\\n"
 
-#: ../../source/0-overview/2-learning_path.md:220
+#: ../../source/0-overview/2-learning_path.md:229
 #: c4e88601eb5e4ec6ae5e42e086303801
 msgid ""
 "**Safety:** Always start with `mock` mode, verify trajectories, then "
@@ -676,49 +697,49 @@ msgstr ""
 "**Safety:** Always start with `mock` mode, verify trajectories, then "
 "switch to real hardware."
 
-#: ../../source/0-overview/2-learning_path.md:222
+#: ../../source/0-overview/2-learning_path.md:231
 #: 3a2911fdf3ef47e39323a23785ac7b39
 msgid "Day 7+: Add a Robot"
 msgstr "Day 7+: 添加机器人"
 
-#: ../../source/0-overview/2-learning_path.md:224
+#: ../../source/0-overview/2-learning_path.md:233
 #: 85043646a80f464b954e9b5bd1a36e0e
 msgid "**Goal:** Integrate a new robot into the ecosystem."
 msgstr "**Goal:** Integrate a new robot into the ecosystem."
 
-#: ../../source/0-overview/2-learning_path.md:227
+#: ../../source/0-overview/2-learning_path.md:236
 #: 74c2ca2671084c29914cc62b992f6e8b
 msgid "Create a description package with URDF/xacro"
 msgstr "Create a description package with URDF/xacro"
 
-#: ../../source/0-overview/2-learning_path.md:228
+#: ../../source/0-overview/2-learning_path.md:237
 #: e95a60b0adb24681ae4920cc25117e61
 msgid "Add ros2_control hardware interface YAML"
 msgstr "Add ros2_control hardware interface YAML"
 
-#: ../../source/0-overview/2-learning_path.md:229
+#: ../../source/0-overview/2-learning_path.md:238
 #: e95dbe55d32844a28c38f6c5b67737e7
 msgid "Configure OCS2 controller parameters"
 msgstr "Configure OCS2 controller parameters"
 
-#: ../../source/0-overview/2-learning_path.md:230
+#: ../../source/0-overview/2-learning_path.md:239
 #: ef3ed16f930b4058b215a21d070bb155
 msgid "Test progression: mock → simulation → real hardware"
 msgstr "Test progression: mock → simulation → real hardware"
 
-#: ../../source/0-overview/2-learning_path.md:232
+#: ../../source/0-overview/2-learning_path.md:241
 #: 1a6d6059ca4f446ca6b7256f8e5c4cc4
 msgid ""
 "See the [Developer Guide](../5-developer/0-index.md) for detailed "
 "instructions."
 msgstr "See the [开发者指南](../5-developer/0-index.md) for detailed instructions."
 
-#: ../../source/0-overview/2-learning_path.md:234
+#: ../../source/0-overview/2-learning_path.md:243
 #: 108b5d62112a4c09b0fe4e357ac0775f
 msgid "Tips for Success"
 msgstr "Tips for Success"
 
-#: ../../source/0-overview/2-learning_path.md:236
+#: ../../source/0-overview/2-learning_path.md:245
 #: afb6a398303945f9ba89f70a6bb55007
 msgid ""
 "**Don't skip mock mode** — Always verify behavior in mock before "
@@ -727,7 +748,7 @@ msgstr ""
 "**Don't skip mock mode** — Always verify behavior in mock before "
 "simulation or real hardware"
 
-#: ../../source/0-overview/2-learning_path.md:237
+#: ../../source/0-overview/2-learning_path.md:246
 #: fd72d167dcf24b20a4c73ec376666b14
 msgid ""
 "**Read the warnings** — The stack logs helpful messages about "
@@ -736,7 +757,7 @@ msgstr ""
 "**Read the warnings** — The stack logs helpful messages about "
 "configuration issues"
 
-#: ../../source/0-overview/2-learning_path.md:238
+#: ../../source/0-overview/2-learning_path.md:247
 #: 32b7ec4f4c6e4b818725df0767e0e350
 msgid ""
 "**Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-"
@@ -745,7 +766,7 @@ msgstr ""
 "**Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-"
 "acone` branches for minimal builds"
 
-#: ../../source/0-overview/2-learning_path.md:239
+#: ../../source/0-overview/2-learning_path.md:248
 #: 22373e08d7804f538e1343c32d8c7195
 msgid ""
 "**Ask questions** — File issues on the relevant repository for bugs or "
