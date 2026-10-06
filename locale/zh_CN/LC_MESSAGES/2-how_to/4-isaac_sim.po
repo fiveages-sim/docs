@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../source/2-how_to/4-isaac_sim.md:1 ec6e240717304c94bc7a75072b369c70
 msgid "Isaac Sim"
-msgstr ""
+msgstr "Isaac Sim"
 
 #: ../../source/2-how_to/4-isaac_sim.md:3 c90579a787014e71b08331ff5f43dd01
 msgid "Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation."
-msgstr ""
+msgstr "Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation."
 
 #: ../../source/2-how_to/4-isaac_sim.md:5 eb6dff3f21d14722af40f0fdc3a0749b
 msgid "Prerequisites"
@@ -34,19 +34,19 @@ msgstr "前提条件"
 
 #: ../../source/2-how_to/4-isaac_sim.md:7 2c19273837f0417db82878ad7b1aca25
 msgid "NVIDIA GPU (RTX recommended)"
-msgstr ""
+msgstr "NVIDIA GPU (RTX recommended)"
 
 #: ../../source/2-how_to/4-isaac_sim.md:8 5b86e94936574d67b2481b300eb954a3
 msgid "NVIDIA Omniverse Launcher installed"
-msgstr ""
+msgstr "NVIDIA Omniverse Launcher installed"
 
 #: ../../source/2-how_to/4-isaac_sim.md:9 c10fde3a7ed549cfa60a8bd21e63ad80
 msgid "Isaac Sim installed via Omniverse"
-msgstr ""
+msgstr "Isaac Sim installed via Omniverse"
 
 #: ../../source/2-how_to/4-isaac_sim.md:10 d49f87741bb1456c992476061e926b5e
 msgid "ROS 2 Jazzy workspace"
-msgstr ""
+msgstr "ROS 2 Jazzy workspace"
 
 #: ../../source/2-how_to/4-isaac_sim.md:12 6d3f1236d51f408283c646d81d14e93d
 msgid "Steps"
@@ -54,7 +54,7 @@ msgstr "步骤"
 
 #: ../../source/2-how_to/4-isaac_sim.md:14 1d1fd6ccfc9c4f0c9fbccb7849a0829d
 msgid "1. Clone FaSim-Isaac"
-msgstr ""
+msgstr "1. Clone FaSim-Isaac"
 
 #: ../../source/2-how_to/4-isaac_sim.md:16 874755e8d89243e89b70cbf61cb6e8ff
 msgid ""
@@ -62,50 +62,53 @@ msgid ""
 "git clone https://github.com/fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
 msgstr ""
+"cd ~/\\n"
+"git clone https://github.com/fiveages-sim/FaSim-Isaac.git\\n"
+"cd FaSim-Isaac\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:22 037a09599e3a4a3ca7e25659ba93d657
 msgid "2. Initialize"
-msgstr ""
+msgstr "2. Initialize"
 
 #: ../../source/2-how_to/4-isaac_sim.md:24 0d37c0527e564b17a34331b49136b40a
 msgid "./init.sh\n"
-msgstr ""
+msgstr "./init.sh\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:28 d657c8848d0f4e1ab3aa14afe9bd7c07
 msgid "This initializes:"
-msgstr ""
+msgstr "This initializes:"
 
 #: ../../source/2-how_to/4-isaac_sim.md:29 ab0b750dd0004376b7f77ba8aae72057
 msgid "`robot_usds` submodule (USD robot assets)"
-msgstr ""
+msgstr "`robot_usds` submodule (USD robot assets)"
 
 #: ../../source/2-how_to/4-isaac_sim.md:30 7d5395cb0e5e4ce5a569e1c2d6673d7c
 msgid "Environment assets"
-msgstr ""
+msgstr "Environment assets"
 
 #: ../../source/2-how_to/4-isaac_sim.md:31 95fdae9789384bff918bc7b32ca4322a
 msgid "Configuration files"
-msgstr ""
+msgstr "配置 files"
 
 #: ../../source/2-how_to/4-isaac_sim.md:33 c4820eeefbd84980a9828e58265c9ae8
 msgid "3. Start Isaac Sim"
-msgstr ""
+msgstr "3. Start Isaac Sim"
 
 #: ../../source/2-how_to/4-isaac_sim.md:35 f5e66df010174c658252d0b97a432ae9
 msgid "./run.sh\n"
-msgstr ""
+msgstr "./run.sh\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:39 c4e7f8e55ab1408e8f145a52e7b73fdb
 msgid "This launches Isaac Sim with the configured scene."
-msgstr ""
+msgstr "This launches Isaac Sim with the configured scene."
 
 #: ../../source/2-how_to/4-isaac_sim.md:41 3263885269b244f2bbe494404b82736f
 msgid "4. Launch ROS 2 Side"
-msgstr ""
+msgstr "4. Launch ROS 2 Side"
 
 #: ../../source/2-how_to/4-isaac_sim.md:43 749c1184e6b844f686f035b157c79bf7
 msgid "In a new terminal:"
-msgstr ""
+msgstr "In a new terminal:"
 
 #: ../../source/2-how_to/4-isaac_sim.md:45 25e11c8f70974e4aa40e6251b8f6396f
 msgid ""
@@ -113,30 +116,33 @@ msgid ""
 "source ~/open-deploy-ws/install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\n"
 msgstr ""
+"source /opt/ros/jazzy/setup.bash\\n"
+"source ~/open-deploy-ws/install/setup.bash\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:51 90fff23481c84d42b2e0059ce633613e
 msgid "5. Verify Connection"
-msgstr ""
+msgstr "5. Verify Connection"
 
 #: ../../source/2-how_to/4-isaac_sim.md:53 0e1feac06e9444c3b8ef802e1b6ec558
 msgid "Check topics are bridged:"
-msgstr ""
+msgstr "Check topics are bridged:"
 
 #: ../../source/2-how_to/4-isaac_sim.md:55 d1410183ae8c4d1bb5c0cb18da06a779
 msgid ""
 "ros2 topic list\n"
 "# Should see /joint_states, /target_pose, etc.\n"
-msgstr ""
+msgstr "ros2 topic list\\n# Should see /joint_states, /target_pose, etc.\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:60 d6d92debf091472bb32b5dcdc5cf123a
 msgid "USD Assets"
-msgstr ""
+msgstr "USD Assets"
 
 #: ../../source/2-how_to/4-isaac_sim.md:62 08706268ed2946728343c56e30dc6e76
 msgid ""
 "FaSim-Isaac uses USD (Universal Scene Description) assets from "
 "`robot_usds`:"
-msgstr ""
+msgstr "FaSim-Isaac uses USD (Universal Scene 描述) assets from `robot_usds`:"
 
 #: ../../source/2-how_to/4-isaac_sim.md e9c3faf390024dc883e73fd8e6b778f5
 msgid "Path"
@@ -148,79 +154,79 @@ msgstr "内容"
 
 #: ../../source/2-how_to/4-isaac_sim.md f3c3631ea19445a489916026d3f6b5e9
 msgid "`humanoid/FiveAges/Gen1`"
-msgstr ""
+msgstr "`humanoid/FiveAges/Gen1`"
 
 #: ../../source/2-how_to/4-isaac_sim.md ed9b4dcb4e3f4e17a730c5fb2e109a85
 msgid "Gen1 humanoid USD"
-msgstr ""
+msgstr "Gen1 humanoid USD"
 
 #: ../../source/2-how_to/4-isaac_sim.md 7ee3c34c4bfb43babcf02953a335f0af
 msgid "`humanoid/FiveAges/Gen2`"
-msgstr ""
+msgstr "`humanoid/FiveAges/Gen2`"
 
 #: ../../source/2-how_to/4-isaac_sim.md 892083dc82074b7fabd339df41c40d76
 msgid "Gen2 humanoid USD"
-msgstr ""
+msgstr "Gen2 humanoid USD"
 
 #: ../../source/2-how_to/4-isaac_sim.md 1165f7fd01b046d7b7314601b276c34e
 msgid "`humanoid/FiveAges/Gen3`"
-msgstr ""
+msgstr "`humanoid/FiveAges/Gen3`"
 
 #: ../../source/2-how_to/4-isaac_sim.md f98fa35efaa94d418130a700a3187daf
 msgid "Gen3 humanoid USD"
-msgstr ""
+msgstr "Gen3 humanoid USD"
 
 #: ../../source/2-how_to/4-isaac_sim.md 73ea52d5a7a844c7a4787aff62166b3f
 msgid "`humanoid/Galbot`"
-msgstr ""
+msgstr "`humanoid/Galbot`"
 
 #: ../../source/2-how_to/4-isaac_sim.md 7a6a51fdd5784d678355c8ea7415cf91
 msgid "Galbot mobile manipulator"
-msgstr ""
+msgstr "Galbot mobile manipulator"
 
 #: ../../source/2-how_to/4-isaac_sim.md ae91f73ba90c4e8abcfa1f7502f95ce9
 msgid "`humanoid/Ubtech`"
-msgstr ""
+msgstr "`humanoid/Ubtech`"
 
 #: ../../source/2-how_to/4-isaac_sim.md 01c935b83d9d483da3ac2b87f2d1183b
 msgid "Ubtech humanoid"
-msgstr ""
+msgstr "Ubtech humanoid"
 
 #: ../../source/2-how_to/4-isaac_sim.md:72 e5cc4da8252642cdb3d076623dcb4ff0
 msgid ""
 "See [robot_usds reference](../4-reference/simulation/3-robot_usds.md) for"
 " details."
-msgstr ""
+msgstr "See [robot_usds reference](../4-reference/simulation/3-robot_usds.md) for details."
 
 #: ../../source/2-how_to/4-isaac_sim.md:74 f10f033aa4644b4698eb03f44a601591
 msgid "Environment Assets"
-msgstr ""
+msgstr "环境资产"
 
 #: ../../source/2-how_to/4-isaac_sim.md:76 fe5411909dc04a2fbd87542e86542ab7
 msgid "Scene environments are loaded from:"
-msgstr ""
+msgstr "Scene environments are loaded from:"
 
 #: ../../source/2-how_to/4-isaac_sim.md:77 ed970d72b8604642a98c60aa31003cab
 msgid "`fiveages-env-usds` — Public environment assets"
-msgstr ""
+msgstr "`fiveages-env-usds` — 公开 environment assets"
 
 #: ../../source/2-how_to/4-isaac_sim.md:78 8e3f86a0e67c4c41a4ba19f804c5b871
 msgid "`fa-project-usd` — Internal project-specific scenes (private)"
-msgstr ""
+msgstr "`fa-project-usd` — 内部 project-specific scenes (private)"
 
 #: ../../source/2-how_to/4-isaac_sim.md:80 f5f547015e1c4de18294fe143b118a8e
 msgid "Hardware Interface"
-msgstr ""
+msgstr "硬件接口"
 
 #: ../../source/2-how_to/4-isaac_sim.md:82 db509d8f9cb24e29b7baf839a413ff20
 msgid ""
 "The `hardware:=isaac` parameter uses the topic-based hardware interface "
 "that bridges Isaac Sim physics to ROS 2 control."
-msgstr ""
+msgstr "The `hardware:=isaac` parameter uses the topic-based hardware interface that bridges Isaac Sim physics to ROS 2 control."
 
 #: ../../source/2-how_to/4-isaac_sim.md:84 3ce74fd1a4bf4c46b7c1e44addef2b18
 msgid "Switching Robots"
-msgstr ""
+msgstr "Switching 机器人"
 
 #: ../../source/2-how_to/4-isaac_sim.md:86 2cf1214ebd79448cadb74d08198a2089
 msgid ""
@@ -231,18 +237,23 @@ msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot "
 "hardware:=isaac\n"
 msgstr ""
+"# Edit FaSim-Isaac config or use command line\\n"
+"./run.sh --robot galbot\\n"
+"\\n"
+"# Corresponding ROS 2 launch\\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot hardware:=isaac\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:94 85a93447af7d4842b0989584e98f5e25
 msgid "Headless Mode"
-msgstr ""
+msgstr "Headless 模式"
 
 #: ../../source/2-how_to/4-isaac_sim.md:96 0976988b0c954e86a799f599e0e62ee0
 msgid "For training or CI:"
-msgstr ""
+msgstr "For training or CI:"
 
 #: ../../source/2-how_to/4-isaac_sim.md:98 4e8e20c0c1dc4f25a29077715206e62b
 msgid "./run.sh --headless\n"
-msgstr ""
+msgstr "./run.sh --headless\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:102 b9253d016c9a41d884bbe41c7be5cb1f
 msgid "Verification"
@@ -250,19 +261,19 @@ msgstr "验证"
 
 #: ../../source/2-how_to/4-isaac_sim.md:104 2e5409654e0a44268ec689f22b804910
 msgid "Isaac Sim window shows robot in scene"
-msgstr ""
+msgstr "Isaac Sim window shows robot in scene"
 
 #: ../../source/2-how_to/4-isaac_sim.md:105 d9cb52a6dff8450d84c897688a21bea4
 msgid "ROS 2 topics from Isaac appear in `ros2 topic list`"
-msgstr ""
+msgstr "ROS 2 topics from Isaac appear in `ros2 topic list`"
 
 #: ../../source/2-how_to/4-isaac_sim.md:106 37b691dfd29a438bbe234d1d955abde8
 msgid "Robot responds to joint commands"
-msgstr ""
+msgstr "机器人 responds to joint commands"
 
 #: ../../source/2-how_to/4-isaac_sim.md:107 ae79c24b879e4bc09726e7e3af3f8094
 msgid "Sensor data (if configured) publishes to ROS 2"
-msgstr ""
+msgstr "Sensor data (if configured) publishes to ROS 2"
 
 #: ../../source/2-how_to/4-isaac_sim.md:109 b9a611ade43941dcab2214e4d4fe39d0
 msgid "Troubleshooting"
@@ -270,61 +281,61 @@ msgstr "故障排除"
 
 #: ../../source/2-how_to/4-isaac_sim.md:111 9c676fe5ffcc4cda8d6bb00b28eccd7f
 msgid "Isaac Sim fails to launch"
-msgstr ""
+msgstr "Isaac Sim fails to launch"
 
 #: ../../source/2-how_to/4-isaac_sim.md:113 e379f6923af844b0ab4984f6da291b75
 msgid "Check Omniverse Launcher for updates"
-msgstr ""
+msgstr "Check Omniverse Launcher for updates"
 
 #: ../../source/2-how_to/4-isaac_sim.md:114 93f7cafe25e34e939dbdce99fe7bbc98
 msgid "Verify GPU drivers: `nvidia-smi`"
-msgstr ""
+msgstr "Verify GPU drivers: `nvidia-smi`"
 
 #: ../../source/2-how_to/4-isaac_sim.md:115 b4584e7fe11f4c62bc4b4940306639fc
 msgid "Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`"
-msgstr ""
+msgstr "Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`"
 
 #: ../../source/2-how_to/4-isaac_sim.md:117 503d064e05f841e3ad1cd3b57e01996f
 msgid "No ROS 2 topics"
-msgstr ""
+msgstr "否 ROS 2 topics"
 
 #: ../../source/2-how_to/4-isaac_sim.md:119 aa468ea1af06423bb71a6bb54c6d75ea
 msgid "Verify the ROS 2 bridge extension is enabled in Isaac Sim"
-msgstr ""
+msgstr "Verify the ROS 2 bridge extension is enabled in Isaac Sim"
 
 #: ../../source/2-how_to/4-isaac_sim.md:120 cf1249b8a0e74cc28563bb609e31912d
 msgid "Check domain ID matches between Isaac and ROS 2"
-msgstr ""
+msgstr "Check domain ID matches between Isaac and ROS 2"
 
 #: ../../source/2-how_to/4-isaac_sim.md:121 cc83c6bc01a243ef86ee8d1167ec3911
 msgid "Restart Isaac Sim and the bridge"
-msgstr ""
+msgstr "Restart Isaac Sim and the bridge"
 
 #: ../../source/2-how_to/4-isaac_sim.md:123 6bd957c707d542cd8937ce024ec919f8
 msgid "USD asset not found"
-msgstr ""
+msgstr "USD asset not found"
 
 #: ../../source/2-how_to/4-isaac_sim.md:125 bad35b0da6f24185880b09f976e61953
 msgid ""
 "cd FaSim-Isaac\n"
 "git submodule update --init --recursive\n"
-msgstr ""
+msgstr "cd FaSim-Isaac\\ngit submodule update --init --recursive\\n"
 
 #: ../../source/2-how_to/4-isaac_sim.md:130 48908e93bdb74655a45ea8d886b8a66a
 msgid "Simulation runs slowly"
-msgstr ""
+msgstr "仿真 runs slowly"
 
 #: ../../source/2-how_to/4-isaac_sim.md:132 e55899925f9c4df685587f98a7b00ccb
 msgid "Reduce rendering quality in Isaac Sim settings"
-msgstr ""
+msgstr "Reduce rendering quality in Isaac Sim settings"
 
 #: ../../source/2-how_to/4-isaac_sim.md:133 2a378eb5fcb24cb7b7b5b1cb5ac18e9a
 msgid "Use headless mode for non-visual testing"
-msgstr ""
+msgstr "Use headless mode for non-visual testing"
 
 #: ../../source/2-how_to/4-isaac_sim.md:134 8a1a329c7ef04b6ea3120c43c600ebdc
 msgid "Check GPU memory usage"
-msgstr ""
+msgstr "Check GPU memory usage"
 
 #: ../../source/2-how_to/4-isaac_sim.md:136 3c6c7fa34e194ed09a853d75cbf0b91b
 msgid "Next Steps"
@@ -332,9 +343,9 @@ msgstr "下一步"
 
 #: ../../source/2-how_to/4-isaac_sim.md:138 d639f66a96c946e5b7b457686c6474e5
 msgid "[robot_usds reference](../4-reference/simulation/3-robot_usds.md)"
-msgstr ""
+msgstr "[robot_usds reference](../4-reference/simulation/3-robot_usds.md)"
 
 #: ../../source/2-how_to/4-isaac_sim.md:139 de534ba497634af698a4ab85d677db27
 msgid "[FaSim-Isaac reference](../4-reference/simulation/2-fasim_isaac.md)"
-msgstr ""
+msgstr "[FaSim-Isaac reference](../4-reference/simulation/2-fasim_isaac.md)"
 

@@ -64,7 +64,7 @@ sphinx-intl update -p build/gettext -l zh_CN
 
 Edit files in `locale/zh_CN/LC_MESSAGES/*.po`:
 
-```po
+```text
 #: source/index.md:1
 msgid "FiveAges Sim Documentation"
 msgstr "FiveAges Sim 文档"
