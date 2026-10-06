@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,42 +21,42 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/5-python_interface.md:1
-#: ebd7eeddda304ce2911fa8a0dc5cd656
+#: 7344eed1d7c74f2aba0d66f99655d000
 msgid "Python Interface"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:3
-#: 75edf4f09443424bb066f4e0fb2648cc
+#: fe249cd55da24d51b5b87962444c6dce
 msgid "Control robots programmatically using the Python interface."
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:5
-#: 1a38617d924e495395555e2f6c49c385
+#: d84e3901334245b9b837ee7dce93def5
 msgid "Prerequisites"
 msgstr "前提条件"
 
 #: ../../source/2-how_to/5-python_interface.md:7
-#: bd9f5626ef6b478ba840f9c37372f37e
+#: 3b3167d14342472daafcf23736ec1e74
 msgid "ROS 2 Jazzy installed"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:8
-#: 0b97a0e3d4bb426b8633b9082df5ecfa
+#: e5485bffcc9143bd8ef0e64beadb3f16
 msgid "Robot demo running (mock, Gazebo, or real)"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:9
-#: 97eafb3405744d6ca1c7e1b548b9a8ad
+#: ae6dcf327c6d4bb4810d1eb789a34541
 msgid "Python 3.10+"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:11
-#: 9090b0b4b9ea4826a9a7c8a0294b6d90
+#: 559025806f294bd49e0d97ae61fe4318
 msgid "Install fa-py-libraries"
-msgstr "安装 fa-py-libraries"
+msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:13
-#: e18d232c7bb644bab19d183b0ed8d045
+#: df210881f2c047bfa503d5bc796f9112
 msgid ""
 "cd ~/\n"
 "git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
@@ -65,27 +65,27 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:20
-#: a71f3c64c9a843f68b332970ddc7589e
+#: 6b8df785046d47ed8d69c7805f65d75b
 msgid "Or install ros2_robot_interface directly:"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:22
-#: a71f3c64c9a843f68b332970ddc7589e
+#: 6f20250afcf04d4b826e06071991541a
 msgid "pip install ros2-robot-interface\n"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:26
-#: af876514ce1a4553bd900fdbe61e016b
+#: 24182df25ed8440cab0e73caee5a8ecd
 msgid "Basic Usage"
-msgstr "Basic 使用方法"
+msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:28
-#: b7a82f919b3d4551a6d471220df1a3fa
+#: d993a59e079846318a2ddccf89b46759
 msgid "Connect to Robot"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:30
-#: 7d5a784d2b644372ad0ec882841772a5
+#: 72a1b417667e46fb9d8dee5c9197f81f
 #, python-brace-format
 msgid ""
 "from ros2_robot_interface import RobotInterface\n"
@@ -99,12 +99,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:41
-#: 192cbca51af3497590c75568a63ab242
+#: d0627dd8ecee40d59dc8d1b5037ad71b
 msgid "Move Robot"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:43
-#: 5cb8fdc379b042909ae292a8425c59ee
+#: 4562fdcf072e48cf8ef9e053a96ab486
 msgid ""
 "# Move to joint position (radians)\n"
 "robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
@@ -115,12 +115,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:51
-#: ff30b8ca64e3476ba6d69c364bfd4097
+#: e99d4cd8cb484a5b8e053fe60116e346
 msgid "Gripper Control"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:53
-#: ea8f8d0e2fcc4d6b93393415cb89bf74
+#: 6ec9e47dbda5455289260fb2dc515756
 msgid ""
 "# Open gripper\n"
 "robot.gripper_open()\n"
@@ -133,12 +133,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:64
-#: b2564c49e7f844b0b5f7e7c9332f9c1c
+#: 3c40161999844d368e93d3e8fef5cf58
 msgid "Read State"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:66
-#: 17462cbd753e495d867e606e521f89bd
+#: c6903d86f87f45bdbf96d0879ce21163
 #, python-brace-format
 msgid ""
 "# Joint positions\n"
@@ -151,12 +151,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:76
-#: 96582a9768cb489396cca24dc2ffdb46
+#: bba6cb9379034fad884e021bd5396e2e
 msgid "Example: Pick and Place"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:78
-#: bc8c34e1582c43d2bb30bd317db49a05
+#: 303fb3f84b34461b9fbdc0d6702819e5
 msgid ""
 "from ros2_robot_interface import RobotInterface\n"
 "import time\n"
@@ -201,12 +201,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:121
-#: b69ad132150b4b84af6b71a8e52721b6
+#: c1df98ed14ac417fbeb9aeaea397b197
 msgid "With Viser Visualization"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:123
-#: 18b2d9532d1a4ff9b7beaab4faf8b54f
+#: 827830802f824b079552b971e00f8501
 #, python-brace-format
 msgid ""
 "from ros2_robot_interface import RobotInterface\n"
@@ -224,17 +224,17 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:138
-#: 725c21ae3f754c4fbe5ef30417d36e65
+#: 34416b1314e94d0ebe078e6c3903e675
 msgid "FSM Commands"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:140
-#: d33b2675e5814c49baf18e4d33ffb30b
+#: 2e1d739cc0154270aefb4ad3f16471b9
 msgid "For whole-body control or complex motions:"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:142
-#: 0eaabe84eb2b4ec2b1a9109c6a03cdf3
+#: ac870f76ddcc4686920e1ea4228858cb
 msgid ""
 "# Send FSM command\n"
 "robot.send_fsm_command(\"stand\")\n"
@@ -245,24 +245,24 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:151
-#: 619a773a3daa49aaa6f32dafe917c0f2
+#: 72879e995115435d8dd5735296414ef8
 msgid ""
 "See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available "
 "commands."
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:153
-#: 98556cd677bf43b6a9847e9ec44ed3a6
+#: f87d0f2b6072418abaa2b107fdecc047
 msgid "Async Interface"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:155
-#: 9351701a622746d7b74721fa0ba7c57d
+#: f0d29de220f04ad6a6530369aebef816
 msgid "For non-blocking operations:"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:157
-#: d655e091cccc4ceaa3a78ff0edfbefa5
+#: 6c6a3df04ee54ff4a9dbb960a1ee770a
 msgid ""
 "import asyncio\n"
 "from ros2_robot_interface import AsyncRobotInterface\n"
@@ -285,12 +285,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:178
-#: 7e48014f2a1d4f4eb5562c53494a9244
+#: 2f5d0e4b273449b8b2ffaf7eef20fee6
 msgid "Verification"
-msgstr ""
+msgstr "验证"
 
 #: ../../source/2-how_to/5-python_interface.md:180
-#: 48472d48b34747f6b92c30b34122e1d1
+#: b761144bb2cf451a9b96cf43756ad742
 #, python-brace-format
 msgid ""
 "# Test script\n"
@@ -310,57 +310,57 @@ msgid ""
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:197
-#: 24ff3b86520d492ba90b943f782abf8e
+#: f79eab9e34154041a8a78c79aaac25c4
 msgid "Troubleshooting"
 msgstr "故障排除"
 
 #: ../../source/2-how_to/5-python_interface.md:199
-#: acda4be0c41a4f25a7b805601b5150c3
+#: 77843c9daffe418d9608320ccf1bca53
 msgid "Connection fails"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:201
-#: ce1896a62bd4403182d4262646ed8c7c
+#: 7974e84d2e144c47b0495b5679a769cd
 msgid "Ensure robot demo is running"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:202
-#: 1fbd3b3a5fc5460eabaf9966aadd99de
+#: 213c7cbfdb4a42dd80a07091d1ef51ff
 msgid "Check ROS 2 domain ID matches"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:203
-#: 1a6d3fbf49c3443cae54a042ad1823c7
+#: bc3a178b40654dfc86b6dec2195dba14
 msgid "Verify topics are publishing: `ros2 topic list`"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:205
-#: 28f81f45db304ca88a256f1eaa29f481
+#: c28bf7b5b8d44508958aca174e115331
 msgid "Motion commands ignored"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:207
-#: c7c71eb51b84475aa9a33033c42971cb
+#: 17d2106915eb49a19be5653512cfd09a
 msgid "Check controller is in correct mode"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:208
-#: 97312a2124364c60b3d4880510df178a
+#: 89900736a789441b99f7f7d240e01929
 msgid "Verify target is within joint limits"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:209
-#: 01d70d9b2bf04cd5ba314027f2398058
+#: b233996b66864f0a8b29e5745c95c190
 msgid "Check for collision detection blocks"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:211
-#: b17fee2a85b44a14be2acc51d97f91e1
+#: 18e3163ecd534f3f9b670dfdc003f9b1
 msgid "Import error"
 msgstr ""
 
 #: ../../source/2-how_to/5-python_interface.md:213
-#: e2bf4b74502a487697c22ecb932baf55
+#: 7f45254a4868472c8a59e4fefc4fd339
 msgid ""
 "pip install -e ~/fa-py-libraries\n"
 "# or\n"

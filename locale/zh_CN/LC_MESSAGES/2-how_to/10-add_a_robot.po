@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/2-how_to/10-add_a_robot.md:1 d7388d8669f54375a389419cfed19b82
+#: ../../source/2-how_to/10-add_a_robot.md:1 dfc29398133046b5b406dc5928b66085
 msgid "Add a Robot"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:3 6b2c9f5bdaef4a08a4d4a3d887c32600
+#: ../../source/2-how_to/10-add_a_robot.md:3 e223a94aa2fd49798f095a18df6fb159
 msgid "Integrate a new robot into the FiveAges Sim ecosystem."
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:5 34bd3fa7ab2643acb7bc7ae0e7578c06
+#: ../../source/2-how_to/10-add_a_robot.md:5 3b2391fd89354017898a3b9028f37b77
 msgid "Overview"
 msgstr "概述"
 
-#: ../../source/2-how_to/10-add_a_robot.md:7 d15c5fac862f4ed2867e64faa8a27460
+#: ../../source/2-how_to/10-add_a_robot.md:7 d014807cd4244ab4847ba30f1654d7a9
 msgid "Adding a robot requires:"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:8 b516faafb9a54a609d72cb79dfae8577
+#: ../../source/2-how_to/10-add_a_robot.md:8 8418fcdbb14447c6a10d4c4904acd070
 msgid "Description package (URDF/xacro + ros2_control config)"
-msgstr "描述 package (URDF/xacro + ros2_control config)"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:9 4638bd576d0343f7a5552e3a3a8737b1
+#: ../../source/2-how_to/10-add_a_robot.md:9 9bbf9e109f344b5586788729988d58e7
 msgid "Hardware interface plugin (if not existing)"
-msgstr "硬件 interface plugin (if not existing)"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:10 a493eee69f414c51a2e38b7cef6887b6
+#: ../../source/2-how_to/10-add_a_robot.md:10 2830f5c8994a409a9364d0b0484e450e
 msgid "Controller configuration"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:11 60e6ca982e3046a699ae9f54460ec91c
+#: ../../source/2-how_to/10-add_a_robot.md:11 e337c4900ec249099a605a8fcc859398
 msgid "Testing progression: mock → simulation → real"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:13 5c113429cbee4b9bbb543fea8a10d403
+#: ../../source/2-how_to/10-add_a_robot.md:13 b764bc9c1c5b476eb281fecace0f9529
 msgid "Step 1: Create Description Package"
-msgstr "Step 1: Create 描述 软件包"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:15 7ba944ee3610451d86666e165aacf00c
+#: ../../source/2-how_to/10-add_a_robot.md:15 060dce426bad4d95a226eea3ef1857b2
 msgid "Package Structure"
-msgstr "软件包 Structure"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:17 b2fd74b462ea4f82bac7b65fdb89f0d3
+#: ../../source/2-how_to/10-add_a_robot.md:17 37167c0aa9254134801365c3d621debf
 msgid ""
 "robot_description_newrobot/\n"
 "├── CMakeLists.txt\n"
@@ -77,11 +77,11 @@ msgid ""
 "    └── display.launch.py\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:33 37f682a42f0b4f4bb9cae76f345db89d
+#: ../../source/2-how_to/10-add_a_robot.md:33 217a087f271d4cdbb522e34c93de8294
 msgid "URDF/Xacro"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:35 ee8e9d93b2024aa288b137b58ebfba1c
+#: ../../source/2-how_to/10-add_a_robot.md:35 d82e81f369354ad48bd879ccd61108f7
 msgid ""
 "<?xml version=\"1.0\"?>\n"
 "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
@@ -118,11 +118,11 @@ msgid ""
 "</robot>\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:65 c2e2fd94f48c43afa02e582e2350884b
+#: ../../source/2-how_to/10-add_a_robot.md:65 1d4c0fa8ae73409d82e97f69e4512cde
 msgid "ros2_control Configuration"
-msgstr "ros2_control 配置"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:67 b114dba934d44ebd932a903d8d42d68b
+#: ../../source/2-how_to/10-add_a_robot.md:67 b28408f673984664a47f6003d50fd447
 #, python-brace-format
 msgid ""
 "<?xml version=\"1.0\"?>\n"
@@ -164,19 +164,19 @@ msgid ""
 "</robot>\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:106 0daf61a72425419bbd135a1b103555a6
+#: ../../source/2-how_to/10-add_a_robot.md:106 e7a70871331044aaa6206d0b9af35534
 msgid "Step 2: Hardware Interface (if needed)"
-msgstr "Step 2: 硬件 Interface (if needed)"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:108 3713c3fbecea473cba1214f4c6b20916
+#: ../../source/2-how_to/10-add_a_robot.md:108 ba15e65b790c45e899afd3b32221755f
 msgid "If using an existing interface (CAN, Modbus, etc.), skip this step."
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:110 bdcbfcfac905405b9a36f2340ddd5786
+#: ../../source/2-how_to/10-add_a_robot.md:110 9e31f5ef523e4eb48d2cac917719522d
 msgid "Plugin Structure"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:112 abd2bec62e8044f1887be24009359ccb
+#: ../../source/2-how_to/10-add_a_robot.md:112 57fc60bccd6448d58c3b93cb4faca268
 #, python-brace-format
 msgid ""
 "// newrobot_hardware_interface.hpp\n"
@@ -205,15 +205,15 @@ msgid ""
 "};\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:130 01b70ec31a78471d932a075e7ca3dbf2
+#: ../../source/2-how_to/10-add_a_robot.md:130 1a09278f136b42838822379fb9f8a594
 msgid "Step 3: Controller Configuration"
-msgstr "Step 3: Controller 配置"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:132 df93ef9228fc4fecae9774cc387e2e94
+#: ../../source/2-how_to/10-add_a_robot.md:132 4a221bc8bc904c608b2b8278ba05fc39
 msgid "OCS2 Arm Config"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:134 3531200b775f4a6f820f18900dbf548e
+#: ../../source/2-how_to/10-add_a_robot.md:134 de5a3d01cd7a4279b8085f1ce7059839
 msgid ""
 "# config/ocs2_arm_config.yaml\n"
 "arm:\n"
@@ -239,15 +239,15 @@ msgid ""
 "  # MPC tuning parameters...\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:159 de46f40517214b9ab39fbeccfa7cbc17
+#: ../../source/2-how_to/10-add_a_robot.md:159 18563760fce047c8adc0b75289e40d67
 msgid "Step 4: Test Progression"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:161 bc511d8fcf95434d8ca4484c0921ecb7
+#: ../../source/2-how_to/10-add_a_robot.md:161 3662f448368b4682906a7b4f27b28903
 msgid "Mock Testing"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:163 5ed7dadc62444a09a48be78a4e3a873b
+#: ../../source/2-how_to/10-add_a_robot.md:163 1b37b01137944fb7a1b2b067dc3adf3c
 msgid ""
 "# Verify URDF\n"
 "check_urdf newrobot.urdf\n"
@@ -260,76 +260,76 @@ msgid ""
 "hardware:=mock\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:174 60591eec8a54430bb267636b8566d704
+#: ../../source/2-how_to/10-add_a_robot.md:174 58cf6face0484486a14a95bb10b83fbe
 msgid "Gazebo Testing"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:176 3013ac6e0a2e427ea413143463a409a3
+#: ../../source/2-how_to/10-add_a_robot.md:176 bad8fc35a11741f98d053193a7836172
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
 "hardware:=gz\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:180 ab9e89d9d87b41ae8b1c57e0681e819d
+#: ../../source/2-how_to/10-add_a_robot.md:180 5579dd61cfe3423d9302e00914fef5b0
 msgid "Real Hardware Testing"
-msgstr "Real 硬件 Testing"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:182 68ea939a76dd462cb063adc2321bf30b
+#: ../../source/2-how_to/10-add_a_robot.md:182 f0bb38eca92748e9a02ee1c234056b35
 msgid ""
 "# Follow the go_real_hardware guide\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
 "hardware:=real\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:187 a12649d37eac40929b38e14f9df0ed62
+#: ../../source/2-how_to/10-add_a_robot.md:187 3a35f805d3bb483697a7af2ccf2734cc
 msgid "Step 5: Integration"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:189 6d08628b5dc94c84a402ee184177073c
+#: ../../source/2-how_to/10-add_a_robot.md:189 b4666807dc7146338a36a77a5283158f
 msgid "Add to robot_descriptions"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:191 5a70502829954c99bb89dc6a68cf09e3
+#: ../../source/2-how_to/10-add_a_robot.md:191 157d65e707104c7495e353dd6fbc1b7b
 msgid "Create package in appropriate location"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:192 45dfaa791dc14514af6602ab16347da9
+#: ../../source/2-how_to/10-add_a_robot.md:192 57aee3cb7b6d4001b35fa55b3de2bf23
 msgid "Add as submodule to `robot_descriptions`"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:193 314128e77e1c48c4889966b56718c7b0
+#: ../../source/2-how_to/10-add_a_robot.md:193 afba904c8431496d8e472011272b4169
 msgid "Update visibility configuration"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:194 37ca59b44e864b68b79c4b71664f9915
+#: ../../source/2-how_to/10-add_a_robot.md:194 045440a39a614fb6b494f35609d3de3a
 msgid "Create PR"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:196 9de6212b5b364675ba83d4bc05cdfc18
+#: ../../source/2-how_to/10-add_a_robot.md:196 a8a7f4b4c0b14e4fb5b41119085ab96c
 msgid "Document"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:198 1a5b8bcac43b4189890d199cc05c4666
+#: ../../source/2-how_to/10-add_a_robot.md:198 23dad78ad2e947d091ed1af59141f144
 msgid "Create or update:"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:199 11d55c7a38f643618e0950b45838ff65
+#: ../../source/2-how_to/10-add_a_robot.md:199 17e90f0033d442f9a28b32e67b70c5d7
 msgid "Package README"
-msgstr "软件包 README"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:200 716318233cda4716aee6107f92d13548
+#: ../../source/2-how_to/10-add_a_robot.md:200 fdc82f6a92e74feb8c6081a2c79acac5
 msgid "Launch file documentation"
-msgstr "启动 file documentation"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:201 f9f9a0cfa0e44f61a18094fe1de823cf
+#: ../../source/2-how_to/10-add_a_robot.md:201 950208681ef94fb6ac3f2c0fea83c966
 msgid "Hardware-specific notes"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:203 54e2d7a0066d4c3a81e560ac481d885e
+#: ../../source/2-how_to/10-add_a_robot.md:203 5076916cfcbc456fb2a34bd0555be676
 msgid "Checklist"
-msgstr ""
+msgstr "检查清单"
 
-#: ../../source/2-how_to/10-add_a_robot.md:205 b731543057f54f6e90a19f78e606cbf9
+#: ../../source/2-how_to/10-add_a_robot.md:205 fedeed83fea34871a14b8cd9d4de4fa7
 msgid "URDF parses without errors"
 msgstr ""
 
@@ -341,105 +341,105 @@ msgstr ""
 #: ../../source/2-how_to/10-add_a_robot.md:210
 #: ../../source/2-how_to/10-add_a_robot.md:211
 #: ../../source/2-how_to/10-add_a_robot.md:212
-#: ../../source/2-how_to/10-add_a_robot.md:213 047b50830b3b4f31b4446538db2f6c44
-#: 0a43e7b3172c495bb24cfb34696f2082 38b2cc167477435f8bbf1283d6e6da3c
-#: 4dc2ea10fc3f462bbc8f9135f79a5ab9 80845843482c4389b2c877436d42011b
-#: 83e9f0a542714cf7bcbd279c056b156d 8d73f05ae5c64539b8d064b508cdd013
-#: a46fb79275b04daca18c43792bfe7916 f9a7c81349fd4259830a36c6c57ef938
+#: ../../source/2-how_to/10-add_a_robot.md:213 04bd0807b0fc4356a7ee3122a7f27829
+#: 1dcf31c6e3b8418585aa73eddbc83087 40462673e97c4088a3edbc81237a5eba
+#: 456c213bd310485db3c09ee0262a661a 4ba6d77e10324cba9f18c66869cf1f95
+#: 51e8e60db84844e0be2da02d4f44dbb0 bb5dda3e9775401cb080db88567f9463
+#: c55ffeeec4d64d36bd08063580175e40 d93cd869dd1f451081e6563a087834dc
 msgid ""
 "<input class=\"task-list-item-checkbox\" disabled=\"disabled\" "
 "type=\"checkbox\">"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:206 f58189d0870f424bbda4f378ad491d72
+#: ../../source/2-how_to/10-add_a_robot.md:206 b5a8b045bddb48b0a369d2d9a8e0916a
 msgid "Meshes display correctly in RViz"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:207 f95669158f5c4b61bf777cb84435b41f
+#: ../../source/2-how_to/10-add_a_robot.md:207 c981ed4bac2f4e5c879b6118383f376b
 msgid "ros2_control configuration valid"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:208 8dc99a15d4f041599240d14e934d96cd
+#: ../../source/2-how_to/10-add_a_robot.md:208 f627af95aa624ed9ae4066ac6875bfb4
 msgid "Mock hardware demo works"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:209 165ee31aa7cb48d69a3f7991dc44c1b4
+#: ../../source/2-how_to/10-add_a_robot.md:209 4a9a46ac010d422290e39fb7a353f11f
 msgid "Gazebo simulation works (if applicable)"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:210 dea920d8fa7446f6a2dda33b30210f16
+#: ../../source/2-how_to/10-add_a_robot.md:210 02901c150efd470bb41f7f5436da0d3d
 msgid "Real hardware works (if applicable)"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:211 1fb7565b03ac4b1cbdf4b03bb1b7549d
+#: ../../source/2-how_to/10-add_a_robot.md:211 3c4d620ded444377be90b881e9e58c02
 msgid "OCS2 controller tracks targets"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:212 aabcdeda229e4d5ba5386095a3bacafb
+#: ../../source/2-how_to/10-add_a_robot.md:212 9e320122ac504dcc88193e03af4adde7
 msgid "Package builds cleanly"
-msgstr "软件包 builds cleanly"
+msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:213 0bcd1ffa7218412a8096f16393a26559
+#: ../../source/2-how_to/10-add_a_robot.md:213 9b15c2f8b5d349cbb532cb95add90abd
 msgid "README documents usage"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:215 6acd200201954a829a16870d66f4065b
+#: ../../source/2-how_to/10-add_a_robot.md:215 e2670b207f5f4a9ca51f39d5fc4f6155
 msgid "Common Issues"
-msgstr ""
+msgstr "常见问题"
 
-#: ../../source/2-how_to/10-add_a_robot.md:217 589467232f1c4bdca11cfc9d07fcb726
+#: ../../source/2-how_to/10-add_a_robot.md:217 e37289dc916847b0b095c9985f8ae10a
 msgid "URDF errors"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:219 ac4ff63d34a24ef8b96eb64601106bd6
+#: ../../source/2-how_to/10-add_a_robot.md:219 8eaf7f4a3bab48feaeb816c8c3ae869b
 msgid ""
 "# Check for syntax errors\n"
 "check_urdf <(xacro newrobot.urdf.xacro)\n"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:224 0a575df7d8e041e3aa92d1b6bdd91751
+#: ../../source/2-how_to/10-add_a_robot.md:224 5abff2ccdc7c4a0192dd0a62e7fb8fa4
 msgid "Controller fails to start"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:226 bab11c9f61514690924ef65274fc1723
+#: ../../source/2-how_to/10-add_a_robot.md:226 b9e369f7607a471b9c53f4610a98906d
 msgid "Verify joint names match between URDF and config"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:227 3328c7e6856640fcab04ec3191100272
+#: ../../source/2-how_to/10-add_a_robot.md:227 03c77840817b40e1ace5fedef984ef84
 msgid "Check ros2_control hardware plugin is found"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:228 6f29a930a6c54884a9cfb17d3faf4b69
+#: ../../source/2-how_to/10-add_a_robot.md:228 d2567d3d862d42d3ae1a84d8e748cbb3
 msgid "Review controller manager logs"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:230 c01d677faa1e417a9adf2d1f6a9de840
+#: ../../source/2-how_to/10-add_a_robot.md:230 7a671f4582fd410780ed0e75897fc9b6
 msgid "Motion incorrect"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:232 208d2a1bf6604f71a940f6ef53ba063b
+#: ../../source/2-how_to/10-add_a_robot.md:232 136e22542dfc4609a4b269a7b83eadd0
 msgid "Verify joint axis directions"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:233 6901e6c3181a41d1a916dd96dbb1b6f8
+#: ../../source/2-how_to/10-add_a_robot.md:233 ae63bf550e634dabae2483dabf96f8b3
 msgid "Check joint limits match physical robot"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:234 23c529d9d8544b53b6a10eef4a49d8aa
+#: ../../source/2-how_to/10-add_a_robot.md:234 43a9e810a79046a7a8c46d6ac4d9abd7
 msgid "Verify inertia parameters"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:236 f0b1474bed004f8d969d46f24c171036
+#: ../../source/2-how_to/10-add_a_robot.md:236 592d2ac756a348f49d65b58edf2425c8
 msgid "Next Steps"
 msgstr "下一步"
 
-#: ../../source/2-how_to/10-add_a_robot.md:238 64eb6ceb35434b9e8495c4912bea7368
+#: ../../source/2-how_to/10-add_a_robot.md:238 08aadc629c6941188c61fd298fb5e408
 msgid ""
 "[ros2_control here](../3-concepts/1-ros2_control_here.md) — Understand "
 "the control architecture"
 msgstr ""
 
-#: ../../source/2-how_to/10-add_a_robot.md:239 6b7ee15f805740b984ab06f046886f3f
+#: ../../source/2-how_to/10-add_a_robot.md:239 5b2870e4c598424985dc522bea68911d
 msgid "[Developer guide](../5-developer/0-index.md) — Contributing guidelines"
 msgstr ""
 

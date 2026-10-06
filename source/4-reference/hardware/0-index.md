@@ -30,14 +30,14 @@ CAN / TCP / Serial / Simulation
 
 | Interface | Bus | Robots |
 |-----------|-----|--------|
-| [arx-ros2-control](1-public_hi.md#arx) | CAN | ARX X5, ACone, Lift2S |
-| [dobot-cr-ros2-control](1-public_hi.md#dobot-cr) | TCP | Dobot CR5, CR10 |
-| [unitree-ros2-control](1-public_hi.md#unitree) | SDK | Unitree quadrupeds |
-| [ht-ros2-control](1-public_hi.md#ht) | Serial | HT Panthera |
-| [marvin-ros2-control](1-public_hi.md#marvin) | Custom | Tianji Marvin |
-| [modbus-ros2-control](1-public_hi.md#modbus) | RS485 | Grippers |
-| [can-ros2-control](1-public_hi.md#can) | CAN | Various hands |
-| [juxie-ros2-control](1-public_hi.md#juxie) | CAN FD | JX CSP |
+| [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, ACone, Lift2S |
+| [dobot-cr-ros2-control](1-public_hi.md) | TCP | Dobot CR5, CR10 |
+| [unitree-ros2-control](1-public_hi.md) | SDK | Unitree quadrupeds |
+| [ht-ros2-control](1-public_hi.md) | Serial | HT Panthera |
+| [marvin-ros2-control](1-public_hi.md) | Custom | Tianji Marvin |
+| [modbus-ros2-control](1-public_hi.md) | RS485 | Grippers |
+| [can-ros2-control](1-public_hi.md) | CAN | Various hands |
+| [juxie-ros2-control](1-public_hi.md) | CAN FD | JX CSP |
 
 ### Private Interfaces
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:32+0000\n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,135 +20,136 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/2-how_to/2-switch_robot.md:1 16772478341d4e1a8f01036a3a5722f7
+#: ../../source/2-how_to/2-switch_robot.md:1 ec5196defe66454f87607a1a8c625f43
 msgid "Switch Robot"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:3 c840a4012982458290bfbb93b72acad4
+#: ../../source/2-how_to/2-switch_robot.md:3 1b294260e43f4a63b8b1a681b37df070
 msgid "Change the robot model in your workspace and launches."
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:5 79b46e229e86402c9784b85a7516db84
+#: ../../source/2-how_to/2-switch_robot.md:5 0df117e6f78944a7b88bc55007c36315
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: ../../source/2-how_to/2-switch_robot.md:7 e4332cad76aa4415abf8150239e90b94
+#: ../../source/2-how_to/2-switch_robot.md:7 928e3bfe5962405899ee45c1045f3f6c
 msgid "Workspace cloned and initialized"
-msgstr "工作空间 cloned and initialized"
+msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:8 6c2c130724914f1d9ab4a3120bb0c127
+#: ../../source/2-how_to/2-switch_robot.md:8 72da8d78e66749958dc3eeb6f0652ff3
 msgid "Target robot's description available"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:10 761e30c01e094e9b9ee4545a11986d7d
+#: ../../source/2-how_to/2-switch_robot.md:10 38715a2eea88425ea166af41a9b65243
 msgid "Steps"
+msgstr "步骤"
+
+#: ../../source/2-how_to/2-switch_robot.md:12 aa52c27d717d48d69ce50a3dc2d64968
+msgid "1. Initialize Robot Description"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:12 64d4dab38a8d49a9bbad4f528eff8e41
-msgid "1. Initialize Robot Description"
-msgstr "1. Initialize Robot 描述"
-
-#: ../../source/2-how_to/2-switch_robot.md:14 8b171fb5ed024e0692820d46e730f534
+#: ../../source/2-how_to/2-switch_robot.md:14 6313d9849e6f4333a07b8d717ec5dd24
 msgid "If the robot description isn't already initialized:"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:16 2944f5e324dd4d98afae6884d9212d05
+#: ../../source/2-how_to/2-switch_robot.md:16 677064ab424642479bb639847530d669
 msgid ""
 "cd ~/open-deploy-ws/src/robot_descriptions\n"
 "git submodule update --init robot-descriptions-<brand>\n"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:21 485581a217c844da97c568a37d123091
+#: ../../source/2-how_to/2-switch_robot.md:21 5e45aa9ab1fd4e21b1c6694f8e342f8c
 msgid "Available brands:"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:22 181ba3abee954bd3995f9aa6b5628667
+#: ../../source/2-how_to/2-switch_robot.md:22 d64c55d262f34a5898e3c2b2f355a82c
 msgid "`robot-descriptions-dobot`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:23 2e8ce6cb90fb4008b346e550b917eb23
+#: ../../source/2-how_to/2-switch_robot.md:23 d6cb2accb67d4e0eb0192733bfc52791
 msgid "`robot-descriptions-arx`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:24 064f45c512534af4be33f847419b7857
+#: ../../source/2-how_to/2-switch_robot.md:24 23d027937c744b2ca3c6128384ada629
 msgid "`robot-descriptions-galbot`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:25 90ed7e6640b8435b8616a3dd4b3508a8
+#: ../../source/2-how_to/2-switch_robot.md:25 1406e84333fe4ac7b7f1098094656b55
 msgid "`robot-descriptions-ht`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:26 66b06cb652ee49d38589b36992865408
+#: ../../source/2-how_to/2-switch_robot.md:26 407f01ed03aa4b3eb98ed48445b5e71e
 msgid "`robot-descriptions-quadruped`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:28 e17f3774a4ba49c7a8c5e6a68e304e61
+#: ../../source/2-how_to/2-switch_robot.md:28 e69b05ee3ebd4fe99d10e822b2b821e9
 msgid "2. Rebuild"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:30 a5f42eab2c4545558eca16e603822600
+#: ../../source/2-how_to/2-switch_robot.md:30 0e9a67bb571144b39a1eb7f05633c61a
 msgid ""
 "cd ~/open-deploy-ws\n"
 "colcon build --packages-up-to robot-descriptions-<brand>\n"
 "source install/setup.bash\n"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:36 325df8300f0140b28d73763f1d3ee20a
+#: ../../source/2-how_to/2-switch_robot.md:36 12703a6d5942444492b61020b1767401
 msgid "3. Launch with New Robot"
-msgstr "3. 启动 with New Robot"
+msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:38 e70aedb0fd664943bd88640e803511c1
+#: ../../source/2-how_to/2-switch_robot.md:38 2afc4f5761414d01b8a75077d239f8bf
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> "
 "hardware:=mock\n"
 msgstr ""
 
 #: ../../source/2-how_to/2-switch_robot.md
-#: ../../source/2-how_to/2-switch_robot.md:42 c84283cc88b847d3a9c3cfd33452a330
+#: ../../source/2-how_to/2-switch_robot.md:42 852c0219c41a48efbc80dcf6928db59f
+#: a65618c435cc41beba5810e4d882992b
 msgid "Robot Names"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 044d205535464c70abe9aa46942bfc2f
+#: ../../source/2-how_to/2-switch_robot.md e2f2ddf2ce6b4ac9a575bf73da97977a
 msgid "Brand"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md c4ccc1e6698a4975af806ecd0567d78b
+#: ../../source/2-how_to/2-switch_robot.md d5cbb8d924494d97bfbb7ba1dc1d9060
 msgid "Dobot"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 057b86da6ccc42d991fb8b1a8b43c889
+#: ../../source/2-how_to/2-switch_robot.md 07d30c7e03d74540b45833d03b5f204d
 msgid "`dobot_cr5`, `dobot_cr10`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 42de8817527741a6a17cee2d390f740f
+#: ../../source/2-how_to/2-switch_robot.md 40af44a8972342bda25e130c845b1481
 msgid "ARX"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 43862c59ceed40218a8f6cc3aa688be5
+#: ../../source/2-how_to/2-switch_robot.md 12163adf1cf04204b9887642ada0c7aa
 msgid "`arx_x5`, `arx_acone`, `arx_lift2s`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 898e46e4d04e4090940c9218987ccc4e
+#: ../../source/2-how_to/2-switch_robot.md 6ca888157ad343ecb5a30af1d100c3d2
 msgid "Galbot"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md 25080f4c3ede467fbf77e2837320619d
+#: ../../source/2-how_to/2-switch_robot.md 73cb9fb7af6641afa52f09f7af40008b
 msgid "`galbot_g1`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md b5a7fec767ce4d18a81a72480bfaefca
+#: ../../source/2-how_to/2-switch_robot.md 57f6dd409bb04b439ecbabe6e5372a87
 msgid "HT"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md a843f5ca3f364142970075c0087db8ec
+#: ../../source/2-how_to/2-switch_robot.md cd950b0963914d0dbc509ed778aa17d5
 msgid "`ht_panthera`"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:51 0fc433886f254bea93b3aae2d167244d
+#: ../../source/2-how_to/2-switch_robot.md:51 935531c417564ca58462391775d4820a
 msgid "Example: Dobot to ARX"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:53 8ad520de2fc648e1a9cdfec59c1b21a3
+#: ../../source/2-how_to/2-switch_robot.md:53 baf2a90415be4d3b956f8b377b5da7be
 msgid ""
 "# Current: Dobot CR5\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
@@ -168,15 +169,15 @@ msgid ""
 "hardware:=mock\n"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:70 1e13ae660f9d4eb59d22e86b3e748ce9
+#: ../../source/2-how_to/2-switch_robot.md:70 2b918108d57a4ffe8365367df300e522
 msgid "With Grippers"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:72 feb00f3a8ac94d4fb8a447d311e67445
+#: ../../source/2-how_to/2-switch_robot.md:72 b1d9226e82714585b9ec08b824f76b40
 msgid "Different robots support different grippers:"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:74 5e8a498ee2f042d0b4222fb403794dc4
+#: ../../source/2-how_to/2-switch_robot.md:74 d07910a0b7004711ad30c143a124d00c
 msgid ""
 "# Dobot with DH AG95\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
@@ -187,49 +188,49 @@ msgid ""
 "gripper:=inspire_rh56 hardware:=mock\n"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:82 b43257d8fdba4315914aeae4326e13fb
+#: ../../source/2-how_to/2-switch_robot.md:82 859d6d6271e6407393428450abae0af9
 msgid "Verification"
-msgstr ""
+msgstr "验证"
 
-#: ../../source/2-how_to/2-switch_robot.md:84 1ac61400d118426aa6405dd6a8c7ed56
+#: ../../source/2-how_to/2-switch_robot.md:84 bde6783ae2a347b8abd331673216454d
 msgid "RViz shows the correct robot model"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:85 233d4e1b159f4ab28ea8aff11ddc068a
+#: ../../source/2-how_to/2-switch_robot.md:85 d826aa21c1b34fc28b462c87163b487e
 msgid "Joint names in `/joint_states` match the new robot"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:86 43527a25b94342c18f098c0c9f61031f
+#: ../../source/2-how_to/2-switch_robot.md:86 9c10400fea2c4bfa94195bf3b70a6208
 msgid "Controller accepts commands appropriate for the robot"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:88 a7e06b215cc6429580b7232a13602d2c
+#: ../../source/2-how_to/2-switch_robot.md:88 83a05cf5d9c541e4b2a528531a05cde4
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/2-how_to/2-switch_robot.md:90 30831f0cb36848ad8cdb449b99ff553b
+#: ../../source/2-how_to/2-switch_robot.md:90 0480e386aaee439d896069be1f4b5d4b
 msgid "Package not found"
-msgstr "软件包 not found"
+msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:92 796c788a852142a9bc48c54e340dbe2f
+#: ../../source/2-how_to/2-switch_robot.md:92 b91643a33da94055b490e2343268ce1e
 msgid ""
 "colcon build --packages-up-to robot-descriptions-<brand>\n"
 "source install/setup.bash\n"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:97 e848a4e53eba4abd856ec967518523cc
+#: ../../source/2-how_to/2-switch_robot.md:97 1a28bd42d30543fd8e0223c58dc531a2
 msgid "URDF errors"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:99 e35230c50b5e4b7d93024bb3209b076e
+#: ../../source/2-how_to/2-switch_robot.md:99 4d590334818e411c8bcddeff8f58373d
 msgid "Check the description package's README for dependencies."
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:101 fc992e7d3002443fa4cb9202821350e5
+#: ../../source/2-how_to/2-switch_robot.md:101 f3530d7f7cc9467d8b1c9b05eafa9037
 msgid "Wrong joint limits"
 msgstr ""
 
-#: ../../source/2-how_to/2-switch_robot.md:103 5c1a22f02fa849b09c6e3a9814b24f76
+#: ../../source/2-how_to/2-switch_robot.md:103 78f658d6f8644b8a9090bf2b9a4676c5
 msgid ""
 "Each robot has its own joint limits in URDF. Verify the target pose is "
 "within limits."
