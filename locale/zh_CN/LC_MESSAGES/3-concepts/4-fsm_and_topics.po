@@ -1,0 +1,612 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:1
+#: e3b001f8d1504c8ca6b56b16476b82aa
+msgid "FSM and Topics"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:3
+#: 3c96886ec73e48bfbc55a29b07799e52
+msgid ""
+"This page explains the finite state machine (FSM) architecture and topic "
+"contracts used for robot control."
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 594133ac5a4848f4bb4fded34cf5eab0
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:7
+#: 5040426310e14fdbb20ace04d953a821
+msgid "The control stack uses FSM patterns for:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:8
+#: 842aa710df4644dba14d7074d24507ba
+msgid "Mode switching (arm control, teleop, walking)"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:9
+#: 0a4d21c6317f46c2829fb1cb1acb9002
+msgid "Safety state management"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:10
+#: 86668a26d5334f219b8d51948da24ec0
+msgid "Coordinated multi-system behavior"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:12
+#: 2f8f5f20ebe64d19b41c4889c478e1b1
+msgid "FSM Topics"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:14
+#: 5689f10b80d1458db690b7f98e68cf90
+msgid "Command Topics"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 5b3a075ed8784f049b9b215eae35b84b
+#: 675c44e1135f4f74b347b1e881e294e0 6ef621f9b2534eb7a164f9d661f2f50e
+#: d52b27d0b3464b60a968393688f99789 e33006fbe7624d83b57809c38468cf2a
+msgid "Topic"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 03ed0a84a783483e98a2c1c9dea570d6
+#: 4e2fa196fb99497e9ee9be7298cdf995 74093be593524cab9d01e8302dd25330
+#: 9903cdfd3f074e8294bcc86b3cd87c76 c03e2f3e179f4c6d97adebe17f04c2ba
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 377e49d73b4e4660b04fab216732a92e
+#: e97d672968eb495881118de8f9dae4e1
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 0e3c8b86761346b4ac5510163417383d
+msgid "`/fsm_command`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 11d0f5fcf88344e089f9e2b1dbe0e17a
+#: e0b513d34cf8480a9832ec22c12170dc
+msgid "`std_msgs/String`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 7b736a5016434dd1b5c7befb607c1c08
+msgid "High-level state commands"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 853a765680b643aba158d54f896a9ce2
+msgid "`/mode_command`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md c74afc5966634e41b6e2f3e87f3961ca
+#: dcea7881d1554cf8a8a769898d4e1927
+msgid "`std_msgs/Int32`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 4f2b0438652a40b3961bc4f76e76d668
+msgid "Numeric mode selection"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:21
+#: 7f5331e7ce334d4ea35b7477d6ba91e4
+msgid "State Topics"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 31bd112f23744e13bf978470b03e801d
+msgid "`/fsm_state`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 4d6c230cf8f442cf9133862aa7b1bea0
+msgid "Current FSM state"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 04f046f87298428eb2e597f200ba063c
+msgid "`/mode_state`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 812192d4cd0b4b238c258045a46a32f0
+msgid "Current mode"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:28
+#: d37d5cea4fde45aa94afa7189a73d8fd
+msgid "Common FSM States"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:30
+#: 0c28da64b7ec4df9bcf2a6f8b21b4fed
+msgid "Arm Controller States"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 174f9c04fe23418b8f50234752332bfe
+#: 766ea664a6eb47349343daa697d95b3c 78353cfafe174273ae95dcd2ab1a6d3d
+msgid "State"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 0ee37ed67ceb4e40b35efeef48d0c90f
+#: 183f4d83c48641b4a1592f98649f7103 2f205ae7955443e0abc9ae44e373ab49
+#: 3580cd36b88a494dbeb5bc9b60f5887a ae3e386b599d41928a3c350976fce31a
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 284bc78c7e20419085fc5906596f4c20
+msgid "`idle`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 960cc19048ca4c73b886993715f3ce4a
+msgid "No active control"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 612d4be36c4a4a76b746cae652ed565f
+msgid "`position_control`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 222cff4be1e6496d9b1a045e75fcca6b
+msgid "Joint position control"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md aa746032866945a887b3059bec1e5ad9
+msgid "`cartesian_control`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 9addf221f23d49158da7a060418ee10f
+msgid "End-effector pose control"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md a2c09573a3ab499995bc0976b5fb0761
+msgid "`teleop`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 32011eff95764a7b8b14124127bcc573
+msgid "Teleoperation mode"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:39
+#: 3feaa51dfe044a9088992504f033ea4a
+msgid "Humanoid States (WBC)"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 94c11af53efe445193ab99eb7f26f01e
+msgid "`stand`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 6942e16ab9ce4aa3be86a852a7390212
+msgid "Standing position"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md c6459b4745f64506a5ab0d5501c65904
+msgid "`walk`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 7bc0d662a4d94f26aedd562dfd025994
+msgid "Walking mode"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 071eaa94985c45cfbe88824483f1b500
+msgid "`arm_teleop`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md d4752facae804a1f91e49b8414428559
+msgid "Arm teleoperation"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 938d8d9f929141aab1d47e18676c29df
+msgid "`full_body_teleop`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 0025462755ab407a8eed8d5db3f0eed4
+msgid "Full body control"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:48
+#: d188dd00752f4a8ab6f2833d32168fe2
+msgid "Mode Commands"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:50
+#: 7383735b027c45e3a2404340e8bb799e
+msgid "Mode commands are typically numeric:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:52
+#: 61f4400fed4c4dff9239efcd7b1b9b2a
+msgid ""
+"# Example mode definitions\n"
+"MODE_IDLE = 0\n"
+"MODE_POSITION = 1\n"
+"MODE_CARTESIAN = 2\n"
+"MODE_TELEOP = 3\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:60
+#: c41fad28aa7344ea9bdf24de63761a7c
+msgid "Send mode command:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:62
+#: d825d7c076b049c189acb21ba54f414e
+#, python-brace-format
+msgid "ros2 topic pub /mode_command std_msgs/msg/Int32 \"{data: 2}\" --once\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:66
+#: 9b0794791d624b29a108460e1abf5d66
+msgid "Target Topics"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:68
+#: a44f03a7099e4a24a7097f39c78b8e02
+msgid "End-Effector Targets"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 04f8fb0de48e4f45aef5b5fdc50e0b90
+msgid "`/target_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 1190963bac15499c86fb23b665909140
+#: 17a9251b68094643998b7c3cd8650b58 456555a2dc114e2585561e4983cb26a3
+#: 93077f6aa5b24c678ce4238e0968c75c cd64f715dc954003bfca42d8ea0bafa4
+#: f392e1ae6ba04a2a890560b76598dddb
+msgid "`PoseStamped`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 9bc0d68c70484b54abf31dfb4e5a3f8a
+msgid "Single arm EE target"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 72717729151d45c2a035f5014ab89003
+msgid "`/left_target_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 799234c4d8784c0b94c640672b6912d0
+msgid "Left arm target"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md d23b26446f4348ee9fea875c7c9c7715
+msgid "`/right_target_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md baf5b437a2b4416eace419c421cdd82b
+msgid "Right arm target"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:76
+#: 470da80864554f68b9ecf6a3ccf4f82a
+msgid "Joint Targets"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md e61e12df9e974a889c984146719db083
+msgid "`/target_joint_positions`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md e5b53cfb308840d08d6f1afbc834c0c3
+msgid "`JointState`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 92a44b7a607e4410b8ffbbcade5f2525
+msgid "Joint position targets"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:82
+#: e947440932424b2ca3e4a980d2a6a112
+msgid "Teleop Targets"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 03b01df4473b4a6e9a08b08140df7fd5
+msgid "`/teleop/left_ee_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 962d807596ff442fa145cf6b61709cd0
+msgid "Left teleop input"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 5a0d9719b2e9482790f0a4ecd5a49b6f
+msgid "`/teleop/right_ee_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 0c62a44d35a6427da294b7c5049b56d2
+msgid "Right teleop input"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 47f45b042c0e4378acf3a79f492d389f
+msgid "`/teleop/head_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md becf54701b6145628023d247bb1efcf2
+msgid "Head tracking input"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:90
+#: 36740334b2684874b88260a636d2df4f
+msgid "Topic Contracts"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:92
+#: 6f7937d1514c41678731a82a2dd98ae9
+msgid "Target Pose Contract"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:94
+#: 3aacddb2ba6a497982559f1df8fa3736
+msgid "Publishers (teleop, planners) must:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:95
+#: c3e91fbbda9549c28bd89b173079abc4
+msgid "Use consistent frame_id (typically `base_link`)"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:96
+#: 6d759eb3f1c148e399daf213ac63e9a1
+msgid "Publish at consistent rate (10-100 Hz typical)"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:97
+#: d8469db279124265b97096ddc36374e2
+msgid "Include valid orientation quaternion"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:99
+#: dd28a75f56e64591928f9de60a2806f7
+msgid ""
+"from geometry_msgs.msg import PoseStamped\n"
+"\n"
+"target = PoseStamped()\n"
+"target.header.frame_id = \"base_link\"\n"
+"target.header.stamp = self.get_clock().now().to_msg()\n"
+"target.pose.position.x = 0.3\n"
+"target.pose.position.y = 0.0\n"
+"target.pose.position.z = 0.4\n"
+"target.pose.orientation.w = 1.0  # Valid quaternion!\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:111
+#: 9ee4dfcdb3c7410b946af98169a402eb
+msgid "Joint State Contract"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:113
+#: f0a7d9f12be44f8a868684510f5fe804
+msgid "Publishers must:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:114
+#: 04f0f14aa652457cbd5588bb9aea65b1
+msgid "Include all joint names"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:115
+#: f379521505b346b4bf7acf8b50fa3123
+msgid "Match joint order to URDF"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:116
+#: 49fb531a59234738aa4ca7645bfb3167
+msgid "Provide positions at minimum (velocity/effort optional)"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:118
+#: 7f702231a703482a9bd57c37be279584
+msgid ""
+"from sensor_msgs.msg import JointState\n"
+"\n"
+"js = JointState()\n"
+"js.header.stamp = self.get_clock().now().to_msg()\n"
+"js.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', "
+"'joint_6']\n"
+"js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:127
+#: 1bede80baba04a1dabc9972506ea2e3a
+msgid "State Transitions"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:129
+#: 3a72bd5f805d4497b67ad609ecef60a8
+msgid "Safe Transitions"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:131
+#: 0d25ccef75de493eb83f030c8ecf3748
+msgid ""
+"idle → position_control → cartesian_control → teleop\n"
+"  ↑                                              ↓\n"
+"  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:137
+#: f4553d806db7450583226df927cf9664
+msgid "Sending Transitions"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:139
+#: f98f5eb3923a47219af00ad7991a617a
+#, python-brace-format
+msgid ""
+"# Enter teleop mode\n"
+"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'teleop'}\" "
+"--once\n"
+"\n"
+"# Return to idle\n"
+"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'idle'}\" --once"
+"\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:147
+#: da77de17c69a48e0a76584f3aa94cb2b
+msgid "QoS Settings"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:149
+#: c5342dd4ed5f4ab4a1d7fab7ab5a0808
+msgid "Recommended QoS for control topics:"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 10abd8e9328e44ec9abafedefb1b6ccd
+msgid "Topic Type"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 71802ae2884748a2955aa26ab52cddef
+msgid "Reliability"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md e26191d3323e4eabae25f38b0ebc20c8
+msgid "Durability"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 11caae586d484a72b915b9277ebe7905
+msgid "History"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 2b214d360e2c452486d2ce94dd6b98c2
+msgid "Commands"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 9608e7a9e13f4cabbde919bba7fea13d
+#: db92edba996f45b9bbef9c2d53a3be04
+msgid "Reliable"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 6cab4e64f518437e8d987436b1e18f34
+#: 84f586049e7e462aab5e3051157ff505 dce9c165a6494cf58718e5e29f2a7605
+msgid "Volatile"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 188d1fd950544c919cf9c22408411baa
+#: 2ea00eb7f52c4c3bbc408047f85683ec 384b1e5f4a87409d93976a1098d85028
+#: 51ca3344501d4936825f27070fb43e6a
+msgid "Keep last 1"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md b5dcd603b1b840bbad0a5a1b573bd066
+msgid "Transient local"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 292be9b944d84cb6bd36da82a99b7a80
+msgid "Targets"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md 159a23f7a75b4759856cdd401e4f519a
+#: 438dc88ab9874116a2ef9b87e17da0f1
+msgid "Best effort"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md bab5ea22159b49d7902b8ef20a87f47d
+msgid "Joint states"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:158
+#: a8b650c498ed4490a3a49502b539c9e1
+msgid "Debugging"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:160
+#: 9682148dc5d1423e8cd3612f2b182f54
+msgid "Monitor FSM State"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:162
+#: 17e08be7e7054f7b8427e0be532f3217
+msgid ""
+"ros2 topic echo /fsm_state\n"
+"ros2 topic echo /mode_state\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:167
+#: 2bc776dee59044a9b60e0df5ff751aba
+msgid "Check Topic Flow"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:169
+#: 82665adf097b4bea8db0c73002efdcd3
+msgid ""
+"# List all topics\n"
+"ros2 topic list\n"
+"\n"
+"# Check publishing rate\n"
+"ros2 topic hz /target_pose\n"
+"\n"
+"# Inspect message\n"
+"ros2 topic echo /target_pose --once\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:180
+#: 8e49dc58d0d84e02a72f3454c017cae2
+msgid "Verify Connections"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:182
+#: 786f6cccc9144eb1be05620a2e56738f
+msgid "ros2 topic info /target_pose\n"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:186
+#: 2c489fb169f5420f930c84f872d57116
+msgid "Integration Example"
+msgstr ""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:188
+#: 8c90f60dc05c4d1bb53d1ab0121ae475
+#, python-brace-format
+msgid ""
+"import rclpy\n"
+"from rclpy.node import Node\n"
+"from std_msgs.msg import String, Int32\n"
+"from geometry_msgs.msg import PoseStamped\n"
+"\n"
+"class ControlClient(Node):\n"
+"    def __init__(self):\n"
+"        super().__init__('control_client')\n"
+"        \n"
+"        self.fsm_pub = self.create_publisher(String, '/fsm_command', 10)\n"
+"        self.mode_pub = self.create_publisher(Int32, '/mode_command', 10)"
+"\n"
+"        self.target_pub = self.create_publisher(PoseStamped, "
+"'/target_pose', 10)\n"
+"        \n"
+"        self.fsm_sub = self.create_subscription(\n"
+"            String, '/fsm_state', self.fsm_callback, 10)\n"
+"    \n"
+"    def set_teleop_mode(self):\n"
+"        msg = String()\n"
+"        msg.data = 'teleop'\n"
+"        self.fsm_pub.publish(msg)\n"
+"    \n"
+"    def send_target(self, x, y, z):\n"
+"        target = PoseStamped()\n"
+"        target.header.frame_id = 'base_link'\n"
+"        target.header.stamp = self.get_clock().now().to_msg()\n"
+"        target.pose.position.x = x\n"
+"        target.pose.position.y = y\n"
+"        target.pose.position.z = z\n"
+"        target.pose.orientation.w = 1.0\n"
+"        self.target_pub.publish(target)\n"
+"    \n"
+"    def fsm_callback(self, msg):\n"
+"        self.get_logger().info(f'FSM state: {msg.data}')\n"
+msgstr ""
+

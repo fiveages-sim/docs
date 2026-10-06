@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:1
+#: 91680ee935e74c63acca9b056518932b
+msgid "wuji-retargeting"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:3
+#: 2f21486458b14c76bd3367525ae6d4af
+msgid "Hand motion retargeting for Wuji hands."
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:5
+#: 23a01afa50384ccdb340a9308069e577
+msgid ""
+"**Repository:** [fiveages-sim/wuji-retargeting](https://github.com"
+"/fiveages-sim/wuji-retargeting)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:7
+#: 9ca669e6e29b49ab9cadb0b4992f44b9
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:9
+#: 23ede177378a42b78d2a212ccbe29e14
+msgid "Retargets hand motion between different hand models:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:10
+#: 22783a8dd92a4202bc6f77df2a24ad5d
+msgid "Human to robot"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:11
+#: ee47d7719e4247e39119872d29408a08
+msgid "Robot to robot"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:12
+#: 4af4661f9a8c4454b6456c7e777b89aa
+msgid "Mirror operations"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:14
+#: c1d68123b7d4402ab8312561fbb4ecf2
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:16
+#: f695d164d5b449bfa7c9d228d6911eaa
+msgid ""
+"git clone https://github.com/fiveages-sim/wuji-retargeting.git\n"
+"cd wuji-retargeting\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:22
+#: bfe900cc89aa4584ac6a66720db81fb0
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:24
+#: c4dbf81c95eb40de837c6d5e6d7159a4
+msgid ""
+"from wuji_retargeting import Retargeter\n"
+"\n"
+"retargeter = Retargeter(\n"
+"    source_model=\"human_hand\",\n"
+"    target_model=\"wuji_hand2\"\n"
+")\n"
+"\n"
+"robot_joints = retargeter.retarget(human_joints)\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:35
+#: 7554e320887c4059adfc4e865eaeffe6
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:37
+#: 51f2594d02cf42fd8ac3c15b21b5209e
+msgid ""
+"retargeting:\n"
+"  source:\n"
+"    model: human_hand\n"
+"    joint_names: [...]\n"
+"  \n"
+"  target:\n"
+"    model: wuji_hand2\n"
+"    joint_names: [...]\n"
+"  \n"
+"  mapping:\n"
+"    # Joint correspondence\n"
+"    human_thumb_mcp: wuji_thumb_1\n"
+"    human_thumb_pip: wuji_thumb_2\n"
+"    # ...\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:54
+#: cb0ddde7b9934348b25ac30d44236f34
+msgid "SDK Preference"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:56
+#: 9128c15b934f4a09af689504871d9ac3
+msgid "For best results, prefer wuji-sdk for direct hand control where available."
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:58
+#: e13b0e1dcc194c05a3a2ab275956ad3b
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:60
+#: 9b58c15aaf404998aa50795ba4b2ace1
+msgid "[wuji_glove_teleop](../teleop/5-wuji_glove.md)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/7-wuji_retargeting.md:61
+#: 8f137a619b7944d2a6092b63a194a455
+msgid "[wuji-ros2-control](../teleop/7-wuji_hand_hi.md)"
+msgstr ""
+

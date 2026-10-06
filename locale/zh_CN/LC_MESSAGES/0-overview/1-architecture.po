@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/0-overview/1-architecture.md:1 d9fb3b50ed394197a0eea4078055996e
+msgid "Architecture"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:3 3284df2143e544d9bad1f6664490e629
+msgid ""
+"This page describes the layered architecture of the FiveAges Sim "
+"ecosystem and how components depend on each other."
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:5 410375609ec94ba69a9cdf8c2b5d3d13
+msgid "Layer Diagram"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:69
+#: 878c1a86a4474a1d962986d5538258c9
+msgid "Layer Descriptions"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:71
+#: 7b51ef8fd94d40e7977dfe945a9f944c
+msgid "Entry Workspaces"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:73
+#: f8e248f2143649de8da258baa41cafb7
+msgid "These are the starting points for building and running the stack:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 2eb27d48b1444a34be68f3c9b44330bd
+msgid "Workspace"
+msgstr "工作空间"
+
+#: ../../source/0-overview/1-architecture.md:7 fe638f4df2ad41648c0447b192c7f795
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/0-overview/1-architecture.md:7 78429a054e2b46699357f40dc85980af
+msgid "Visibility"
+msgstr "可见性"
+
+#: ../../source/0-overview/1-architecture.md:7 b01644e6322e4afb8405681e64c05612
+msgid "`open-deploy-ws`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 d18c119215724634a7cd6aa063ae9006
+msgid "Public quick-start with mock/sim demos"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 145f693a62c448b184342a489c6a19f8
+#: 4886cda3d8244ec6bc1009d15accf7b3
+msgid "Public"
+msgstr "公开"
+
+#: ../../source/0-overview/1-architecture.md:7 8acef77ca409415bb873e69709a4bafa
+msgid "`fa-deploy-ws`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 b6a7bbd46d7e45d8bf0254ccc91cb51f
+msgid "Internal workspace for FA robots"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 881e2a34b0dd4030b5cec008356e19ff
+#: a4dae6364c4e49b09a6a20a2c5713996
+msgid "Private"
+msgstr "私有"
+
+#: ../../source/0-overview/1-architecture.md:7 6f24a7bcc5e5494080738134096fbabd
+msgid "`dexcap_teleop_ws`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 46f78f367d024fd1b72470db5eaa3988
+msgid "DexCap teleoperation deployment"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 e18a0918c50f416b85541e212b84f015
+msgid "`FaSim-Isaac`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:7 52a84172ec1c446d9ef38ac0cc80210d
+msgid "Isaac Sim assets and optional jazzy_ws"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:82
+#: 6f0fce1a6aca47e98cb72c64a915592a
+msgid "L1: Descriptions"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:84
+#: fb35d5d05f6d41d2b1d8fc1c22e4b0a2
+msgid ""
+"Robot descriptions define the URDF/xacro models, visual meshes, and "
+"ros2_control hardware configurations:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:86
+#: 7002dc7e173e49a28198079d550e896e
+msgid ""
+"**robot_descriptions** — Public umbrella that aggregates brand-specific "
+"packages"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:87
+#: 2925132626c241168784e46d86e9f14a
+msgid ""
+"**robot-descriptions-common** — Shared grippers, hands, sensors, and "
+"launch utilities"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:88
+#: d1d76e4910b343e2987b94706c7f0056
+msgid "**robot-descriptions-fiveages** — Private umbrella for FA humanoids"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:89
+#: a4f5f35226ea43e6b9a3ff57089bd09a
+msgid "**Brand packages** — Per-vendor descriptions (dobot, arx, galbot, etc.)"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:91
+#: 690630d74d9243a797e3f81d5fa65e80
+msgid "L2: Hardware Interfaces"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:93
+#: 907f04ea4d264e5083570e049929dd8e
+msgid ""
+"ROS 2 control plugins that communicate with physical or simulated "
+"hardware:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:95
+#: ff9bd985bf1a48e595f460cad8fc5380
+msgid ""
+"Public HIs: `arx-ros2-control`, `dobot-cr-ros2-control`, `unitree-"
+"ros2-control`, etc."
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:96
+#: 29db85449e6e4ede904b9c0cdd1ebb2e
+msgid ""
+"Private HIs: `rokae-ros2-control`, `eyou-ros2-control`, `wuji-"
+"ros2-control`, etc."
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:98
+#: 0709253c7e3743ef8b0d97fb73f7426a
+msgid "L3: Controllers + MPC"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:100
+#: ad369cd03f1f4d94a4a0ab2596568076
+msgid "Motion planning and control algorithms:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:102
+#: 7fa8eda83b3048179d6543628a75340a
+msgid ""
+"**arms_ros2_control** — Main controller package with OCS2 arm controller,"
+" gripper, and teleop plugins"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:103
+#: 80c78791ac6c489d9db959c29d7719b4
+msgid "**ocs2_ros2** — OCS2 MPC library (available as deb: `ros-jazzy-ocs2`)"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:104
+#: e549010bcd814547b2c49411b2a63a4b
+msgid "**ocs2-wbc-controller** — Whole-body control for humanoids (private)"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:105
+#: 6db214a1acbb49ceac93fa511025765f
+msgid "**ocs2-humanoid** — Wheel-humanoid specific library (private)"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:107
+#: 14c88ff70f22418ba610e299bcc5c36d
+msgid "L4: Simulation"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:109
+#: ee87dfcf051142b2bd5b5eb9a982a961
+msgid "Simulation backends and assets:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:111
+#: 409871ec335e4f5eb23d1974a114aa3b
+msgid "**Gazebo Harmonic** — Integrated via launch files in `arms_ros2_control`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:112
+#: 3ac17c5022fa4b63bfe25927eea5c2bc
+msgid "**robot_usds** — USD assets for Isaac Sim (Gen1/2/3, Galbot, Ubtech)"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:113
+#: 7d52494d165b43199bce72b6f6d640fc
+msgid ""
+"**FaSim environments** — Scene assets via `fiveages-env-usds` and `fa-"
+"project-usd`"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:115
+#: ed30348fbce94a98a1a14b48721af095
+msgid "L5: Teleop / Apps / Python"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:117
+#: 21f359f16e334fa8adb78733b3d6435d
+msgid "High-level applications and teleoperation:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:119
+#: 55829ae6d39340ceae0a254bd4e060d0
+msgid ""
+"**fa-py-libraries** — Python utilities including ros2_robot_interface, "
+"viser, vr_pose_publisher"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:120
+#: d5d40662bc8b4500851b17b951311720
+msgid "**Teleop systems** — drag teaching, DexCap, wuji glove, vive tracker"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:121
+#: 0116ff06e7a74757b46470ae36b3728f
+msgid "**Applications** — lerobot_ros2, robot_action_composer, HUG"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:123
+#: f9adde6689604bacbe336f864c4a5111
+msgid "Dependency Rule of Thumb"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:125
+#: b6cdcaf14e27454eb2d4536c0a5f89ed
+msgid ""
+"Descriptions (URDF + ros2_control YAML)\n"
+"    ↓\n"
+"Hardware Interface plugins\n"
+"    ↓\n"
+"Controllers (arm MPC / WBC)\n"
+"    ↓\n"
+"Simulation backends OR Real hardware\n"
+"    ↓\n"
+"Teleop / Apps (same topic/FSM contracts)\n"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:137
+#: 968393f0881d4ad58c39575e7347caca
+msgid "When adding a new robot:"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:138
+#: 5ddb384503be4979aacc5dcd6e0a7c08
+msgid "Create or extend a description package"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:139
+#: 1edc20b590714fb29424fa71f17ff4f8
+msgid "Ensure the hardware interface plugin exists"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:140
+#: 4abe0418bfb54926bf2a36c528792cb8
+msgid "Configure the controller parameters"
+msgstr ""
+
+#: ../../source/0-overview/1-architecture.md:141
+#: 0b1ddfe0a48f4e72bd5605a8da8667a1
+msgid "Test in mock → simulation → real hardware"
+msgstr ""
+

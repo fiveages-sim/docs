@@ -1,0 +1,466 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/1-getting_started/5-faq.md:1 47be2230e16e47e3b87d70c055ddd1f4
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:3 a949a6805f6f46a28fd87af8ff1c733c
+msgid "Frequently asked questions and common troubleshooting solutions."
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:5 06fa98760ba04b58b669041fd1a5413a
+msgid "Installation Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:7 94d0bbc7af6f4327b072fc18a8ceb705
+msgid "Q: rosdep init fails with \"already initialized\""
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:9 7811b8278a314f94abb807a9a76f211b
+msgid "This is normal if you've used ROS 2 before. Just run update:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:11 d44a4344ab4d41749ecd4e9b05b8d3a6
+msgid "rosdep update\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:15 85ae1359efcf4a478ad71c81f16c59c1
+msgid "Q: Package not found after apt install"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:17 221d9aa8cad54f4a8980a0d8aa2a492a
+msgid "Source the ROS 2 setup and update:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:19 0bf55c54884645179e0a2932b83dc964
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"sudo apt update\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:24 ef8a3f0a59a840c38fcc09bf4f9a813d
+msgid "Q: OCS2 Debian package not available"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:26 1901264f38c142ff8bf91d27960e2077
+msgid "The OCS2 Debian package is published to the ROS 2 repositories:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:28 3cee4b09ec0943c994d66f2501ed5779
+msgid ""
+"sudo apt update\n"
+"sudo apt install ros-jazzy-ocs2\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:33 5ffc78b6c6d74d25bcee4dc0a906195d
+msgid ""
+"If still not found, you may need to build from source (choose `s` during "
+"`init_repo.sh`)."
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:35 e6d2a55e8dde4486a3dcde347e66f52f
+msgid "Submodule Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:37 3b1ab201a4fd477498970aa1bd329fe7
+msgid "Q: Submodules are empty after clone"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:39 61c41bbd466a448e86c90725f47233f1
+msgid "Initialize the submodules:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:41 73b072b8c3d642b78b5e268b2804bef2
+msgid "git submodule update --init\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:45 7e536bbb0923438ab6ae38a115cd414d
+msgid "For specific submodules only:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:47 afd9c5071564457e92e39a7e3eaa7303
+msgid "git submodule update --init src/robot_descriptions\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:51 b55c67cc39f14ec78c0a8e4653e2ac10
+msgid "Q: Access denied to submodule"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:53 5e98bcf37fbd4eea88927ab669d420c2
+msgid ""
+"This usually means you're trying to access a private submodule without "
+"proper access."
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:55 a8950fd2470b4224b604abe7a476f463
+msgid ""
+"**For open-deploy-ws:** Only public submodules should be needed. Check "
+"that:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:56 934bd3219a244330b3a28fdc02b29dec
+msgid "You're on the correct branch"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:57 643abe783c97452db0bc2edd8a5d29c9
+msgid "The submodule is listed as public in `submodules_visibility.conf`"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:59 24454217bcb044bfa851485716996b49
+msgid ""
+"**For fa-deploy-ws:** Verify your GitHub SSH key has access to private "
+"repos:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:61 2be26eedd74b442c8dd4bd91f693e0bb
+msgid "ssh -T git@github.com\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:65 5cf7eb038ed341aca16c2e1e3e8211a6
+msgid "Q: Submodule conflicts during update"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:67 353f26cbd17b4b858612ef2fa93e0bc0
+msgid ""
+"git submodule foreach git checkout .\n"
+"git submodule update --init\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:72 66b63d8fc44e48dbb5c1477d897fc2e7
+msgid "Build Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:74 614fa8b6eceb4621a9c73a10a0c71028
+msgid "Q: colcon build fails with missing dependency"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:76 5cb94fc4330c45fc83a58f43711e2377
+msgid "Install dependencies via rosdep:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:78 6ac7e95a985e43b5b86a1fb944e8f31c
+msgid "rosdep install --from-paths src --ignore-src -r -y\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:82 7e48c1456060433d994d423452dbbed1
+msgid "Q: numpy version conflict"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:84 e3657034b87c482d8309930ac01f542d
+msgid "Some packages require numpy < 2:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:86 c9c72385045a4f46b3d7b2cf456786be
+msgid "pip install 'numpy<2'\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:90 3eda0592845e4bf28b95807e2bdf37a3
+msgid "Q: CMake cannot find package"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:92 3e5243fe5e894dc88e48f37e05c0ddf6
+msgid "Ensure ROS 2 is sourced before building:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:94 aed8dd2194b049ea8fa7cda8bbb4a730
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"colcon build\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:99 e943f630779547d29867db68374b3d95
+msgid "Q: Build runs out of memory"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:101 3475d6cea9494f1eac7c2bc9a5267213
+msgid "Limit parallel jobs:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:103 753787404d614a01bac59ba304b5cfe8
+msgid "colcon build --parallel-workers 2\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:107 2b47241927c5472e9656598d87da79e0
+msgid "Or build specific packages:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:109 184c9a38a62f4db7a4d67853100cd8a3
+msgid "colcon build --packages-up-to <package-name>\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:113 5071273863fb4f789bd89bf07a1cd147
+msgid "Runtime Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:115 0a57aac3d1ae4df582066f7679defb0e
+msgid "Q: Node/topic not found"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:117 ccaa43179e3b42379cfa3a7e62c6cf2e
+msgid "Ensure workspace is sourced:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:119 67ac345bdab34cdcbd34edb1deb2285d
+msgid "source install/setup.bash\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:123 c40d2fd124a54a5aaa941689cfec7469
+msgid "Check if the node is running:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:125 93689096e9be444aa497ddf30b9b00be
+msgid ""
+"ros2 node list\n"
+"ros2 topic list\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:130 08f00d63ce9c4b388432a8713d9f8fd4
+msgid "Q: Controller fails to start"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:132 6953f3fb3afa4aba93554f106975159b
+msgid "Check that:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:133 ef4325bbec0e451bb70999b57229d209
+msgid "Hardware parameter matches your setup (`mock`, `gz`, `isaac`, or real)"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:134 29384174a6e241ea8e440b8ba4729045
+msgid "Robot parameter matches available descriptions"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:135 71c067a63ba9463fbc1d306546063fca
+msgid "Required hardware interfaces are initialized"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:137 c577bb9d09394ff3832b4de0459a5558
+msgid ""
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock "
+"robot:=dobot_cr5\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:141 172746d0fc2c4d58a5442d1a58badfbc
+msgid "Q: No communication between machines"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:143 f1a406ce05544dcd9506012d90b17612
+msgid "Verify:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:144 4aabdde5b9024184b260aeb9f5acc659
+msgid "ROS Domain ID matches on both machines"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:145 3955336cef8c4e9a9f4577c1c51da3d7
+msgid "Network connectivity exists"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:146 fe7dabb812ea4ba3932345a30b40d2eb
+msgid "Firewall allows ROS 2 traffic"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:148 2403194ef807416ab07a63cf841e0abf
+msgid ""
+"# Check domain ID\n"
+"echo $ROS_DOMAIN_ID\n"
+"\n"
+"# Test connectivity\n"
+"ros2 topic list  # Should show topics from both machines\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:156 e2410a8d9dca4e5a80b2516994fb9c58
+msgid "CAN Interface Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:158 24963c9d9f654bed98698c50471c6979
+msgid "Q: CAN interface not found"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:160 237047de1002400db1e069d56058011f
+msgid "Check if the interface exists:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:162 a3172acc2d724a53b88437b8b088d1b0
+msgid "ip link show\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:166 6f5c836639b44e6db50b710edc68c2e1
+msgid "If the interface has a different name, rename it:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:168 f0de8e4816b54e55a992497ed486974a
+msgid ""
+"sudo ip link set can0 down\n"
+"sudo ip link set can0 name <expected_name>\n"
+"sudo ip link set <expected_name> up\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:174 3c3a044f5dc248429fb6827d2e9e6c94
+msgid "Q: CAN communication timeout"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:176 3e84e9bcf07e4a128177632e08b63808
+msgid "Verify CAN bus is properly terminated"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:177 9441eb44ffa240dda249fc3517dd953f
+msgid "Check baud rate matches robot configuration"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:178 fa7229081f084f948c2f26b6151f5106
+msgid "Ensure no conflicting CAN traffic"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:180 fa91fe0350934e6e9e429b9546639a75
+msgid "Simulation Issues"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:182 d331e8e32146411fb07b08deac4ce277
+msgid "Q: Gazebo crashes on launch"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:184 fbb77545ca7041f5ba5a28dbc90fef94
+msgid "Install all Gazebo packages:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:186 df8fb1ffc9e34d9e9f211fda7ddb3b95
+msgid "sudo apt install ros-jazzy-gz-*\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:190 78bf626cf67f48d18344edf3f7e603bc
+msgid "Check GPU drivers if using hardware rendering."
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:192 c53bff5019d049009b4a6c1492d53e4a
+msgid "Q: Isaac Sim connection fails"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:194 72753a4c7860442fb9170dffcfb386cf
+msgid "Verify Isaac Sim is running"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:195 8cb35191c78e477da572e64dfc2b8692
+msgid "Check that the topic bridge is active"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:196 277d36c5e9304f8183d30c6ae76484c7
+msgid "Ensure `hardware:=isaac` is set in launch"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:198 0163acc3d4e64c7d8f6124d18c78ac24
+msgid "Network Configuration"
+msgstr "网络配置"
+
+#: ../../source/1-getting_started/5-faq.md:200 c11cc872091d430999b2b0fe68164540
+msgid "Q: How do I find the correct Domain ID?"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:202 5d9f8d671c5942e3a0a1b091708a9beb
+msgid ""
+"The Domain ID is robot-specific. For internal deployments, consult your "
+"robot's documentation or team lead. For development with mock hardware, "
+"any ID works (default is 0)."
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:204 d164d6ce26c44e2082a2c16c8f35e034
+msgid "Q: Zenoh vs DDS?"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:206 72b67db8a9104d20b60b236fccd0f1f9
+msgid "**DDS (default):** Works out of the box for same-network communication"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:207 74ff5ed557604d388f5fc17501a06696
+msgid "**Zenoh:** Better for cross-network, NAT traversal, or high-latency links"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:209 1adfb2135ea24a1fbbf79182689bc04e
+msgid "To use Zenoh:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:211 15519ccfc67b4980b60e863d3ea91300
+msgid ""
+"sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
+"export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:216 810f20724bed47db8fa1804751978b94
+msgid "Getting Help"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:218 e309e5098ddf4a5db9cb03ba67b02738
+msgid "If your issue isn't covered here:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:220 2c2b60f4b12140ef843ab78487a571b3
+msgid "Check the relevant package's README"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:221 be0690393c5d4b8eaccd17f71185f7ea
+msgid "Search existing GitHub issues in the repository"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:222 e183410b3ce64b6e802bf9739ffa1bd3
+msgid "Open a new issue with:"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:223 263bf659f47f4b4e9bf7e8207d6af00c
+msgid "Ubuntu/ROS 2 version"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:224 e647fb11de014e309e4c725171d6f952
+msgid "Steps to reproduce"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:225 8853ffe6e2594fe4abbd8f30d4444376
+msgid "Full error message"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:226 a5da3cc04bcc45b2baffbfd733b801a9
+msgid "Relevant launch command"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:228 310ef5e9f0234d648df753d4562eb442
+msgid "**Issue trackers:**"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:229 8be46399b19148299ca1879eaaa90ac1
+msgid ""
+"Documentation: [fiveages-sim/docs/issues](https://github.com/fiveages-"
+"sim/docs/issues)"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:230 2e8761983cfc4bb6b024ef00ba5008ad
+msgid ""
+"Arms controller: [fiveages-"
+"sim/arms_ros2_control/issues](https://github.com/fiveages-"
+"sim/arms_ros2_control/issues)"
+msgstr ""
+
+#: ../../source/1-getting_started/5-faq.md:231 e61d913b6f474fabaf7e618062f4e5a7
+msgid ""
+"Descriptions: [fiveages-sim/robot_descriptions/issues](https://github.com"
+"/fiveages-sim/robot_descriptions/issues)"
+msgstr ""
+

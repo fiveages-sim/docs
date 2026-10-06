@@ -1,0 +1,407 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:1 184f105008c14001aef300430883bba5
+msgid "DexCap Teleoperation"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:3 1dcc613a67c546228a55dff5bc866960
+msgid "Use DexCap gloves for dexterous hand teleoperation."
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 d9878caa36fe4955970425ad5b4c0898
+msgid "Internal Access Required"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:8 7e16032dc8bc4781b975b7243337ab33
+msgid ""
+"DexCap components require access to private repositories. Contact your "
+"team lead for access."
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:11 6bb0d50899664dd2ac6ba4f816febfd7
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:13 6b7a11c5865a4262821125d6ab4181fe
+msgid "DexCap teleoperation enables:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:14 1e8e9220b05440159e7f8b40e2a34274
+msgid "High-fidelity hand tracking via glove sensors"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:15 cd10ebd809d44e70a94476377c609991
+msgid "Finger joint mapping to robot hands"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:16 242bac8409bb4db3a0fc6db6460860ab
+msgid "Combined arm + hand teleoperation"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:18 a5985cfb645b448cb01ee43e06c69c25
+msgid "Components"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:20 89f8098f7c864a87ad6ca46cfa050aef
+msgid "The DexCap system consists of:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 dcbc4593199841e585d0a5501d8de5d8
+msgid "Component"
+msgstr "组件"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 d1aec06b128d46b0a0f319fde6c4b8c7
+msgid "Repository"
+msgstr "仓库"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 4f2f981568794bafb6cb6c68e2e9644c
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 6fd7a2862dd04f89b45d6bed0fa1a5d7
+msgid "dexcap-ros2-control"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 7ccd3bc9c2bc4e6284bb8af26777e747
+#: aab4d2ddc78d497fa2f89e12aa1aa2ef f52a9a66d5b94dc48567db43710fb94d
+msgid "Private"
+msgstr "私有"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 a63d318adebb44bf85be7e0cda668490
+msgid "DexCap V4 driver"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 a9b3202e5463427b86c307abe8303edc
+msgid "dexcap_teleop_ws"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 b0f22f3c5e4244d3b8932a9788277125
+msgid "Deployment workspace"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 9837f3ce0ed545b58f56411b811c28b6
+msgid "teleop-joint-mapper"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:5 5dd9ce6374274c6b88d82a67400e7130
+msgid "DexCap to robot mapping"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:28 2103e7b877e54167ab383f5091a6e64d
+msgid "Setup"
+msgstr "设置"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:30 819d6599c5ec40aca32de442badca864
+msgid "1. Clone Workspace"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:32 3a151a3ddfa14affa4c53f39fac58914
+msgid ""
+"git clone <internal>/dexcap_teleop_ws.git\n"
+"cd dexcap_teleop_ws\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:37 87fe4c105b854c9f9456a1ca2039707b
+msgid "2. Initialize Environment"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:39 b577b2f23d9b49a885ed511d5715f72d
+msgid ""
+"# Create conda environment\n"
+"conda create -n dexcap python=3.10\n"
+"conda activate dexcap\n"
+"\n"
+"# Deploy firmware\n"
+"bash deploy/deploy_fw.sh\n"
+"\n"
+"# Setup environment\n"
+"source deploy/setup_env.bash\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:51 f177c4567b6e4d35b7a893907de682dd
+msgid "3. Initialize Connection"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:53 acecb0940f1a4ea4b46dd8644adbca31
+msgid "First connection should disable commands for safety:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:55 e8dae2fdb8794c4487c8572d98dd1112
+msgid "ros2 launch dexcap_ros2_control driver.launch.py publish_command:=false\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:59 50a21b74e05646989771f0393a6bd170
+msgid "Launch Order"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 e7beafe31cbf4948b72d1e3f94e33ef6
+msgid "Important"
+msgstr "重要"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:64 7ed46b6bd09e4aea9d296baf69d7981b
+msgid "Launch components in this order:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:65 477e90cab94b4272aa410afc144d0ea7
+msgid "Robot control stack (arm + hand)"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:66 1245eb37ba6643ce9e1c22df284c5f4d
+msgid "DexCap driver"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:67 1e185ecba8514df9aa0f58f028ed96c8
+msgid "Teleop joint mapper"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:70 65945899edde43dbb85653fe142e1141
+msgid "Step 1: Robot Stack"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:72 81f93b46def44331be110c81b9704bcd
+msgid ""
+"# In robot workspace\n"
+"ros2 launch <robot>_bringup bringup.launch.py\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:77 d53fc3ca6d214d61975cd225b8c9e00d
+msgid "Step 2: DexCap Driver"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:79 9dfa5ce0d1e94fe4b8f3eaf2d157f5bb
+msgid ""
+"conda activate dexcap\n"
+"ros2 launch dexcap_ros2_control driver.launch.py\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:84 742214047f9a4b869061d6f259eddbca
+msgid "Step 3: Joint Mapper"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:86 4ee1a633075941ba89d83def396a8819
+msgid "ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:90 4459303b13ac4c679528790a59a7910b
+msgid "Topics"
+msgstr "主题"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 a35f1555717543a187c68f84e141b124
+msgid "Topic"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 f00dc21e81ee41e68f0c93dbdacbbeaf
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 9018eb247d164723834be64bda73fce4
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 157cafcee12b4dff8856cc4bfdb0bb06
+msgid "`/dexcap/joint_states`"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 6cce57992a204b1497a5178d2162e1a1
+#: d52b68e353394e42a1753a4eb4cab206
+msgid "`JointState`"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 443f567b573c4f24942490d3fcfb5d14
+msgid "Raw glove joint angles"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 308a22b94d01467aaa00ab5d445afd0e
+msgid "`/dexcap/hand_pose`"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 ceb0e636c74c4c949207d736ced121dd
+msgid "`PoseStamped`"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 7ac4eaab6dc143b08e4a91846f7d25e6
+msgid "Hand position/orientation"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 86c7bdfe34b84c52b9f92889e7727eca
+msgid "`/teleop/target_hand_joints`"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:61 46ecc3c6bafd4a64a4efa5273be0d85f
+msgid "Mapped robot hand targets"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:98 3235c2e56cc44084bc40213af6243f50
+msgid "Joint Mapping"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:100
+#: 9c12088eb83b47f4b2a62352dbea37ad
+msgid "The mapper translates DexCap joint angles to robot-specific joints:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:102
+#: 23dd7f50e109487aaa667b062a2deb13
+msgid ""
+"# Example mapping config\n"
+"mapping:\n"
+"  dexcap_thumb_mcp: robot_thumb_base\n"
+"  dexcap_thumb_pip: robot_thumb_proximal\n"
+"  dexcap_index_mcp: robot_index_base\n"
+"  # ...\n"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:111
+#: 4d7f7cea36bd457b9969a9f150947606
+msgid "Safety"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:113
+#: deaa3736df104d869ee9265f803215c0
+msgid "Calibration Required"
+msgstr "需要校准"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:116
+#: 0a55caef12f14da58ff38394e68840d1
+msgid "Before each session:"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:117
+#: 8f2919eef60c4b50a041a7f0a5e83769
+msgid "Calibrate gloves in neutral position"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:118
+#: adce1eb22eac459b86162e90c240d12d
+msgid "Verify joint limits are enforced"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:119
+#: 23b4d3b4253a4fe4b7bc8e48f2964fdc
+msgid "Test with mock hardware first"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:122
+#: 978fc4b17b614c429772ad27c6dc8716
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:124
+#: 1a48920a02f64a1dbcb3daa586ae0dbe
+msgid "DexCap driver shows connected status"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:125
+#: 062a1add69174d96aca4d562158cbc8c
+msgid "`/dexcap/joint_states` publishes hand joint angles"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:126
+#: 50e39037d74d40bfb82db58ff84ee162
+msgid "Robot hand follows glove motion"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:127
+#: 8eaf88685d504582b064ef6cb2b28d58
+msgid "Arm follows hand position (if arm teleop enabled)"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:129
+#: e3a05cf13eb844eaa0085f69c611370c
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:131
+#: 66bc7b0e33e3411a9d91aa093ac74ae9
+msgid "Driver fails to connect"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:133
+#: dd42d49d847346e59ecedbda8e3ea504
+msgid "Check USB/Bluetooth connection"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:134
+#: 9500973ee6074e4ba4b797a33ae5386a
+msgid "Verify firmware is deployed"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:135
+#: 7de9c1cdbeeb4e03a767c1fa5bff339d
+msgid "Check device permissions"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:137
+#: f6129461d07440838bf44d7c6243eb02
+msgid "Hand motion reversed"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:139
+#: 2f6846d000d84fb680515237856acdf8
+msgid "Check left/right hand configuration"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:140
+#: a9afef919fb2424699b638b62a71348b
+msgid "Verify joint mapping signs"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:142
+#: 44841cc3f62044059b0412101cf3af24
+msgid "Latency issues"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:144
+#: 0968be8df75b415c8282559a11175104
+msgid "Use wired connection"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:145
+#: 2cb0d4b5c9704e2d93b741230e7d85e8
+msgid "Reduce update rate"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:146
+#: d350675a75b94f4194603ef8da62f82d
+msgid "Check for dropped packets"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:148
+#: 7e098516923d4d228f170945730cd352
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:150
+#: ac151039ecec462abcac00709961204f
+msgid ""
+"[teleop-joint-mapper "
+"reference](../4-reference/teleop/4-teleop_joint_mapper.md)"
+msgstr ""
+
+#: ../../source/2-how_to/8-dexcap_teleop.md:151
+#: c9be0a4b05d94bd58ada858886eccc47
+msgid ""
+"[wuji-ros2-control reference](../4-reference/hardware/2-private_hi.md) "
+"(Hand hardware)"
+msgstr ""
+

@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:1
+#: 0cbd9e077ff9441789c30099fb28fac6
+msgid "lerobot_ros2"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:3
+#: deefaf7000474f47bd80de6a9ac02c7a
+msgid "LeRobot integration for ROS 2."
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:5
+#: 1ade09f7291341908b7efc0fcc2eaf3a
+msgid ""
+"**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
+"sim/lerobot_ros2)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:7
+#: 6612be29a8ab41598550f77cf6538e08
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:9
+#: 75cd9371271d493694965a61a6685df4
+msgid "Integrates LeRobot learning framework with ROS 2:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:10
+#: 612ac4c1db874423a6c62daca97e23bb
+msgid "Data collection"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:11
+#: 76c99bf523ce463d9c158f60d4da920c
+msgid "Policy deployment"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:12
+#: de5423d14479448db0c8a87b531dcdf6
+msgid "Training pipelines"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:14
+#: b618baf5e8e34aa8b1e6023536102a7e
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:16
+#: ce5d1145f23d4b1db458ca0bc476f03c
+msgid ""
+"git clone https://github.com/fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"pip install -e .\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:22
+#: 51a4d84bcdd545fc91b9a9255ff27e92
+msgid "Features"
+msgstr "功能特性"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:24
+#: 17afbbc6fd4340c4aff573876c525bc2
+msgid "Data Collection"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:26
+#: edb7883d9aba47c3940706ce17ce3254
+msgid "Record robot demonstrations:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:28
+#: db6b44b494de49a5860e4b76abf40fd9
+msgid ""
+"from lerobot_ros2 import DataCollector\n"
+"\n"
+"collector = DataCollector(\n"
+"    dataset_name=\"my_task\",\n"
+"    robot_interface=robot\n"
+")\n"
+"\n"
+"collector.start_recording()\n"
+"# ... perform demonstration ...\n"
+"collector.stop_recording()\n"
+"collector.save()\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:42
+#: 2654592bcc4c4282bf9a570ee017d584
+msgid "Policy Deployment"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:44
+#: 6486fee825ec46fcbc6f472239b06c30
+msgid "Run trained policies:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:46
+#: 5bf864f2f5d944cbbd71ecba76a37e0c
+msgid ""
+"from lerobot_ros2 import PolicyRunner\n"
+"\n"
+"runner = PolicyRunner(\n"
+"    model_path=\"path/to/model\",\n"
+"    robot_interface=robot\n"
+")\n"
+"\n"
+"runner.run()\n"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:57
+#: 076c18b694bc476ca79464c96d39b80c
+msgid "Topics"
+msgstr "主题"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 3916e224485c43948e74fe3326c949e7
+msgid "Topic"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: d5a3bd58ca6647739cf23cf2f1d9e4fa
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 4e65d848262748209fac3d3a3cc43707
+msgid "Direction"
+msgstr "方向"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 090e5a02e28a4007bcfb11241361bc2a
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 64423d4870374539a5ccde3423ca897e
+msgid "`/lerobot/episode_start`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 1112383321534017b1b48ac88624283f 9cbdde02d7194b428ac38db2c06b1097
+msgid "`Empty`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 2d1bdfeef98840899cedd7c9f6512db4 d2101187ed4f4e5fb6bdc9456d00927b
+msgid "Subscribe"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: c1a1703411444973872e84806a780cae
+msgid "Start episode"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 673a3b056fb34dd48691e08c336a50f7
+msgid "`/lerobot/episode_end`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 1940cb75268e43e6a462f59567a75034
+msgid "End episode"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 904c5b7d583b49ca9c8f8e2c08d216a0
+msgid "`/lerobot/action`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: d67e8fb2603b435fbfbbafce7948468e
+msgid "`JointState`"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: 14310c19a7e94da9a2f165e9e62e2aef
+msgid "Publish"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
+#: c15e3bd8672d429c8142742986b79b5e
+msgid "Policy output"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:65
+#: 697304b746d244129248ea40875d7ef7
+msgid "Dataset Format"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:67
+#: fcea7e8424cc40b285405fbd5ed98f5e
+msgid "Compatible with LeRobot HuggingFace datasets:"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:68
+#: 0b857cb7f75142a9841da94bcbeb5bd1
+msgid "Episode structure"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:69
+#: a822d8fc42254bdb9b65989be762bde6
+msgid "Observation/action format"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:70
+#: 8983cfbca9324b87951ca374f04be582
+msgid "Metadata"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:72
+#: f8e4bff13be2421398977868e8822f9e
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:74
+#: d64e2a8c87b0408cb37cdf3638a7d4e4
+msgid "[ros2_robot_interface](1-ros2_robot_interface.md)"
+msgstr ""
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:75
+#: 2b0a0c846e084e038f754bacfd8669a1
+msgid "[HUG](6-hug.md)"
+msgstr ""
+

@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:1
+#: 2d77f883c3b64cad868133dc30905504
+msgid "ocs2_ros2"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:3
+#: eaec3386bdaf4f8ab28c7d2c787f1a76
+msgid "OCS2 (Optimal Control for Switched Systems) ROS 2 port."
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:5
+#: 63f31fe7577d429eab2d5fa4bf970291
+msgid ""
+"**Repository:** "
+"[legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) (branch: "
+"`ros2`)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:7
+#: 7d2fd8597ed04db8b9b525ca894e8ed1 e6f05e1d99ac4ea18015859f7356d1d9
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:9
+#: 8d9093de0407479d8d0e1a9560fc8aab
+msgid "OCS2 is a Model Predictive Control (MPC) library providing:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:10
+#: 813871795e414ba1a6a3dd6d30b99bb2
+msgid "Real-time trajectory optimization"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:11
+#: 5df8704fe76d4691bfa11b63eeb1fd02
+msgid "Constraint handling"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:12
+#: 1f00ed3dd0644112accd0dafa5c4f586
+msgid "Multiple robot support (arms, mobile bases, quadrupeds)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:14
+#: 089783a81e2e4bcdb460483bef51a26d
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:16
+#: d692accc6e7c4252850c2800f4564d6f
+msgid "Debian Package (Recommended)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:18
+#: a3804dcdef5846318992bd953292f45e
+msgid "sudo apt install ros-jazzy-ocs2\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:22
+#: dd501751c1794178bf9276a38628da16
+msgid "From Source"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:24
+#: 6cc5c4f7b29d4a9296ba4c02319db1d7
+msgid ""
+"cd ~/your_ws/src\n"
+"git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
+"cd ..\n"
+"colcon build --packages-up-to ocs2\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:31
+#: 8a38083f8b0a4b67b8476b14e4c6cd59
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:33
+#: 24edb316a5844b309497feb94d59f7dc
+msgid ""
+"OCS2 is typically used through higher-level controllers like "
+"`ocs2_arm_controller`. Direct usage:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:35
+#: 2ede4ab43cac43069120a8d85443fcb9
+msgid "Include in Package"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:37
+#: f2a59e3b87a14a51ad45157f1c2029bf
+msgid ""
+"find_package(ocs2_core REQUIRED)\n"
+"find_package(ocs2_mpc REQUIRED)\n"
+"find_package(ocs2_robotic_tools REQUIRED)\n"
+"\n"
+"target_link_libraries(my_controller\n"
+"  ocs2_core::ocs2_core\n"
+"  ocs2_mpc::ocs2_mpc\n"
+")\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:48
+#: 0447f53914b3469ead0bec877d092d29
+msgid "Examples"
+msgstr "示例"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:50
+#: 715f5282786b465393a0c22580c3758f
+msgid "The repository includes example packages:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: d52c26c9db2d42b7909653ba7970faef
+msgid "Example"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: cae520a7c9274f108348e131736a2112
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 83ec978836394d328f14d2617301c549
+msgid "`ocs2_double_integrator`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 5c9bf516fa6943a9872512506a900116
+msgid "Simple 1D system"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 7139b5d9ffd946769d906ba151058ec0
+msgid "`ocs2_cartpole`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 5fc4f658068343b4b48ee509aa5106b4
+msgid "Classic control example"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 483e398d491147e99fd6ee73339f4861
+msgid "`ocs2_ballbot`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 71a3fe1458164c7aadc32df96f7948a0
+msgid "Mobile robot example"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: aa19299b2fbf4ba5a8d41e150a438ea3
+msgid "`ocs2_mobile_manipulator`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 3cc76282c4894883bbc99d5273ff6405
+msgid "Arm + base"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: eb938c3544494666b81944177951dbf7
+msgid "`ocs2_legged_robot`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: a419551e145e4440bd63b7bc74a7aa59
+msgid "Quadruped"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:60
+#: 09f2dd9548a14fe99d85d448fffa421b
+msgid "Run Double Integrator Example"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:62
+#: 0bfed6177f164120b0cb99b867d693de
+msgid "ros2 launch ocs2_double_integrator double_integrator.launch.py\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:66
+#: 736b4b2537654baa9298c8e6c3123025
+msgid "Key Concepts"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:68
+#: 94711ff8922e4a73b772dee9c4bd5beb
+msgid "MPC Problem"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:70
+#: d881574838b64c15868ab335a02c8959
+msgid "OCS2 solves optimal control problems:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:72
+#: 09b8b0a0de204d64a08fe3b25a97254b
+msgid "**State**: Robot configuration (positions, velocities)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:73
+#: 6572fe45242040ccbb7a3fc67aaec804
+msgid "**Input**: Control commands"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:74
+#: 39217dcfaaa44491ac63894210303e37
+msgid "**Cost**: Tracking error + control effort"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:75
+#: 97d2eec4abe841a4b350c9046136589c
+msgid "**Constraints**: Joint limits, collision avoidance"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:77
+#: f2ac5739a5f14b81a26559a2ba1ac449
+msgid "DDP Solver"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:79
+#: a181c07b84c94013bfdf5f340b43c35b
+msgid "Uses Differential Dynamic Programming:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:80
+#: c3906edbf51848a29659ea24dac371c2
+msgid "Forward pass: Simulate trajectory"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:81
+#: 14e91233451d47a39220242b50096ea2
+msgid "Backward pass: Compute optimal gains"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:82
+#: be13daa03e9b4948a54432a908641e3a
+msgid "Iterate until convergence"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:84
+#: b68f76f07e2149e69716bbdb1e50b909
+msgid "Real-time Operation"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:86
+#: 7f633b0548224635aeed4b3066d12e9c
+msgid "The MPC runs in a separate thread:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:87
+#: cf278ec7a16b4d578654298030fc8cbf
+msgid "Configurable update rate"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:88
+#: e17403e6294249b7bffa34ede9a76b40
+msgid "Latest solution always available"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:89
+#: cb007c19c7bc491f80590f6c70e5b017
+msgid "Handles timing variations"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:91
+#: a4a1e24ceebc4b08bfcda2c3e0971587
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:93
+#: b709e73c693a42eba77738e2823eccae
+msgid "MPC Parameters"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:95
+#: 5095ae3654034c309e2037c08dbd3ad3
+msgid ""
+"mpc:\n"
+"  dt: 0.01           # MPC timestep\n"
+"  horizon: 1.0       # Prediction horizon (seconds)\n"
+"  iterations: 1      # DDP iterations per update\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:102
+#: 4d2f3173da024e4387541d2ed833b262
+msgid "Task Configuration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:104
+#: 011799743c7e451288145947b0cabbc4
+msgid ""
+"task:\n"
+"  targetTrackingWeight: [100, 100, 100, 10, 10, 10]  # Position, "
+"orientation\n"
+"  inputWeight: [1, 1, 1, 1, 1, 1]                     # Control effort\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:110
+#: 45030b8c01604fc3a9a1e9727b24441a
+msgid "Related Packages"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 5a43bcd650194af2ac63ac8de3d30205
+msgid "Package"
+msgstr "软件包"
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: d671c98b5ef14465a155970ca878e6ea
+msgid "`ocs2_core`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 0948835281e2446da30c8424599d446d
+msgid "Core algorithms"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 02059557d04d405b91ff93c0ae2be431
+msgid "`ocs2_mpc`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 57539c20271c417d8b62f5db8322f825
+msgid "MPC implementation"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 5c074611078c4a2abf9c09060fe51bb2
+msgid "`ocs2_robotic_tools`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 97052c49866f41c28af08dbc24463041
+msgid "Robot utilities"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: a4b32f5e59fa4cc3878dccd90e8e5bf9
+msgid "`ocs2_pinocchio_interface`"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md
+#: 6522303b0d914952b8d7c8f2d3168d1d
+msgid "Pinocchio integration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:119
+#: f12ce550d7f44cb299ac16ec138c510b
+msgid "References"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:121
+#: 8c62330aed0042af98336956ea75e04c
+msgid "[OCS2 Documentation](https://leggedrobotics.github.io/ocs2/)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/1-ocs2_ros2.md:122
+#: 9c4685bcc1f24ad5b18f0fd341a0afa7
+msgid "[Original OCS2 Repository](https://github.com/leggedrobotics/ocs2)"
+msgstr ""
+

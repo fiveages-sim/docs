@@ -1,0 +1,402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/1-getting_started/2-install_environment.md:1
+#: c1ea44707e5046ccbec5217fb21be3f4
+msgid "Install Environment"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:3
+#: f8e983b3758c45118a34e6163e7cbd40
+msgid ""
+"This page covers installing the base development environment for FiveAges"
+" Sim workspaces."
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:5
+#: 43b61b390e5e47e1a261486821e08a21
+msgid "Operating System"
+msgstr "操作系统"
+
+#: ../../source/1-getting_started/2-install_environment.md:7
+#: 5bca7483b05c4009acd151b31440f45c
+msgid "**Supported:** Ubuntu 24.04 LTS (Noble Numbat)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:9
+#: 39a167d93b544633b873a8a51fb0136d
+msgid "Other platforms are not officially supported but may work:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:10
+#: 5d25ce9d4379458aa1aa8a452f608b2f
+msgid "Ubuntu 22.04 with ROS 2 Humble (limited compatibility)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:11
+#: 0de2b4ec402c439198f014b81ec8dc7a
+msgid "Other Linux distributions with manual ROS 2 installation"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:13
+#: d22ba5fcaf824023b4e5d730ae30312f
+msgid "ROS 2 Jazzy Installation"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:15
+#: 50513dd1597e4171a668b96df1c2ffae
+msgid "Option A: Official Installation (Recommended)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:17
+#: daccc78cde594f3085f9d3051e906dbb
+msgid "Follow the official ROS 2 Jazzy installation guide:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:19
+#: 738c7fea1e98442e9966e7a3db2f6e96
+msgid ""
+"# Set locale\n"
+"sudo apt update && sudo apt install locales\n"
+"sudo locale-gen en_US en_US.UTF-8\n"
+"sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8\n"
+"export LANG=en_US.UTF-8\n"
+"\n"
+"# Add ROS 2 repository\n"
+"sudo apt install software-properties-common\n"
+"sudo add-apt-repository universe\n"
+"sudo apt update && sudo apt install curl -y\n"
+"sudo curl -sSL "
+"https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o "
+"/usr/share/keyrings/ros-archive-keyring.gpg\n"
+"echo \"deb [arch=$(dpkg --print-architecture) signed-"
+"by=/usr/share/keyrings/ros-archive-keyring.gpg] "
+"http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo "
+"$UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > "
+"/dev/null\n"
+"\n"
+"# Install ROS 2 Jazzy\n"
+"sudo apt update\n"
+"sudo apt install ros-jazzy-desktop ros-dev-tools\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:38
+#: 5ee6ad5955a74981ad19ddffc63a4c0d
+msgid "Option B: fishros (Alternative for China)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:40
+#: c0572856a9aa4128911f318bacb05988
+msgid "For users in China with slow access to official mirrors:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:42
+#: b324ef3f102b4ca1a7d53431e1cbcc3e
+msgid "wget http://fishros.com/install -O fishros && bash fishros\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:46
+#: 02df949107714fddac6c200608495587
+msgid "Select ROS 2 Jazzy when prompted."
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:48
+#: 458dd6dfda46459798c615d3e7cda407
+msgid "Development Tools"
+msgstr "开发工具"
+
+#: ../../source/1-getting_started/2-install_environment.md:50
+#: 203791a99be14dec895ee5d7e09d0e39
+msgid "Essential Packages"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:52
+#: 18b2599b42d84653ae68c96106287b2a
+msgid ""
+"sudo apt install -y \\\n"
+"    python3-pip \\\n"
+"    python3-colcon-common-extensions \\\n"
+"    python3-rosdep \\\n"
+"    python3-vcstool \\\n"
+"    git \\\n"
+"    build-essential \\\n"
+"    cmake\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:63
+#: d6b23e27697b4648acab05979a308db4
+msgid "Initialize rosdep"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:65
+#: 20949ab039d9460184f45c92c5ba8f09
+msgid ""
+"sudo rosdep init  # Skip if already done\n"
+"rosdep update\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:70
+#: 677bc193567346c69de8a652ae8649be
+msgid "OCS2 Installation"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:72
+#: 929887054d36403b93bb8d5d713686f7
+msgid "OCS2 (Optimal Control for Switched Systems) is a core dependency."
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:74
+#: 9964b71caf854e75a29c660d364fa9de
+msgid "Option A: Debian Package (Recommended)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:76
+#: cdf32b8d993d41f4a241e2badb9b5943
+msgid "sudo apt install ros-jazzy-ocs2\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:80
+#: f383af3a44e446109b2d790899e326e9
+msgid "Option B: From Source"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:82
+#: 8040e0bac14e4574bf08a5a90af69c4b
+msgid "Clone within workspace (handled by `init_repo.sh` in deploy workspaces):"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:84
+#: 96f8564c1f924d6a8e17d8b7e5cc863b
+msgid ""
+"cd ~/your_ws/src\n"
+"git clone -b ros2 https://github.com/legubiao/ocs2_ros2.git\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:89
+#: 3b63c7cf6e1742fca4f43b448ffb8149
+msgid "Simulation Dependencies"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:91
+#: be78045e2a7c447ba889a8897ff20f05
+msgid "Gazebo Harmonic"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:93
+#: 3d375b65091342f3aeb5b8305818df3e
+msgid "sudo apt install ros-jazzy-gz-*\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:97
+#: d69fbceef9d0471894793662059b5c00
+msgid "Isaac Sim"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:99
+#: 32440d7113ed49f7bd7d1b4dcaecd590
+msgid "Isaac Sim requires:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:100
+#: 63ee69758e6542ce8ddf3f50208518e6
+msgid "NVIDIA GPU with recent drivers"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:101
+#: 8619b00b7eb445038f42ada3570be42c
+msgid "Omniverse Launcher"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:103
+#: abcaab9a8be54e81acb047791360c526
+msgid "See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md) for setup details."
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:105
+#: 0c2d27810c4c4b8eb86a01237be19a2a
+msgid "Network Configuration (Optional)"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:107
+#: 7a9c29294adb4bf39c091252c940602a
+msgid "For multi-machine setups or connecting to real robots:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:109
+#: 90eabc6bbe0f40fdae4c3ddada14f7a2
+msgid "Zenoh Bridge"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:111
+#: 5c7a212f80944435a9577fcf8656fb0b
+msgid "sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:115
+#: 929dda97107549faabf9fb38b42f0870
+msgid "Configure via environment variables:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:116
+#: 2d0288e6b5a7469580cef77d55bbb13d
+msgid "export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:120
+#: 4d46992a30e64b5cb24cda1d701be8f9
+msgid "ROS Domain ID"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:122
+#: 59a02afb45974cb3bc8f540294160271
+msgid "Set a unique Domain ID to isolate your ROS 2 traffic:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:124
+#: 206349a1249b40f6816407005b22c75d
+msgid "export ROS_DOMAIN_ID=<your-id>\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:128
+#: 435abef4af584c9d89b0f8aac3867a32
+msgid "Domain ID Selection"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:131
+#: c921e6191d04453dae3c730c91f1f885
+msgid ""
+"When working with real robots, the Domain ID must match the robot's "
+"configured value. Consult your robot's documentation or team lead for the"
+" correct ID."
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:134
+#: 51b59ca8f73a4e59b2aaeed1646fadeb
+msgid "Shell Configuration"
+msgstr "Shell 配置"
+
+#: ../../source/1-getting_started/2-install_environment.md:136
+#: 7b5bc8cda27f444aa872852395e94534
+msgid "Add to your `~/.bashrc` for convenience:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:138
+#: ecce1bd7926946ae8caa4d6bdeaa28ed
+msgid ""
+"# ROS 2 Jazzy\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"\n"
+"# Workspace (adjust path as needed)\n"
+"if [ -f ~/open-deploy-ws/install/setup.bash ]; then\n"
+"    source ~/open-deploy-ws/install/setup.bash\n"
+"fi\n"
+"\n"
+"# Optional: Zenoh\n"
+"# export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
+"\n"
+"# Optional: Domain ID\n"
+"# export ROS_DOMAIN_ID=42\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:154
+#: 6ca26bf8a3de48fd8853e8903dad42dc
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/1-getting_started/2-install_environment.md:156
+#: 7186b770c1e6474395bb60a263a4cf87
+msgid "Test your installation:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:158
+#: e6c815b6107a4535917282de92ae4a62
+msgid ""
+"# Source ROS 2\n"
+"source /opt/ros/jazzy/setup.bash\n"
+"\n"
+"# Check ROS 2\n"
+"ros2 --help\n"
+"\n"
+"# Check Gazebo\n"
+"gz sim --version\n"
+"\n"
+"# Check OCS2 (if installed via deb)\n"
+"ros2 pkg list | grep ocs2\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:172
+#: 324811660ed545e5b3e3c677b9f5cd86
+msgid "Common Issues"
+msgstr "常见问题"
+
+#: ../../source/1-getting_started/2-install_environment.md:174
+#: 57231ad4656242f7b430b3ecea02c66c
+msgid "Package Not Found After apt install"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:176
+#: 9ef7a687745f477984a8cfeec07729da
+msgid ""
+"sudo apt update\n"
+"source /opt/ros/jazzy/setup.bash\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:181
+#: af89bb98c5d1499783d4ac4be4f4c4c6
+msgid "rosdep Errors"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:183
+#: add5758a1e4b4d7f81d2eed2e79da656
+msgid "rosdep update --include-eol-distros\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:187
+#: 774a537419cd4a5b99ed179f019d029a
+msgid "Colcon Build Warnings"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:189
+#: 5c82d61b083447b780298eb7654d33dd
+msgid "Most warnings can be ignored. For \"missing resource index\" warnings:"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:190
+#: 37e2e287e2d64301888a7751479f161b
+msgid "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release\n"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:194
+#: e40b73a7dcd041979fd81a8449fb192c
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/1-getting_started/2-install_environment.md:196
+#: 83fc435204f84a189e3103d76f37ad05
+msgid "[Quick Demo](1-quick_demo_public.md) — Run your first demo"
+msgstr ""
+
+#: ../../source/1-getting_started/2-install_environment.md:197
+#: 8137f1c15d4946a79b8178b74c1c3d2d
+msgid "[open-deploy-ws Setup](3-open_deploy_ws.md) — Detailed workspace setup"
+msgstr ""
+

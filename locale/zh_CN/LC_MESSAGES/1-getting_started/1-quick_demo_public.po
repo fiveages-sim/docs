@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:1
+#: 55472de51ec44650bdbe91fca76a1ec3
+msgid "Quick Demo (Public Path)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:3
+#: 4d723c518869468691ad350aa9657ac5
+msgid ""
+"This guide gets you from zero to a moving robot in the shortest time "
+"using the public `open-deploy-ws` workspace."
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:5
+#: bfe26d1f2c6e4b30a4f80810c0787e12
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:7
+#: b24ae3e6f476486295fbe7f8e75eb79f
+msgid "Ubuntu 24.04"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:8
+#: 86b549e9c3674dd2a754ef44bb0b2259
+msgid ""
+"ROS 2 Jazzy installed (see [Install "
+"Environment](2-install_environment.md) if needed)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:9
+#: 814b07ffdd2043f3b0c562d0ccef49da
+msgid "Git with GitHub access"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:11
+#: e116df552b724678928ae0346c2c8d34
+msgid "Steps"
+msgstr "步骤"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:13
+#: e6606174b8114e15abda8e1586336828
+msgid "1. Clone the Workspace"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:15
+#: c6648efc0fc6443d8757585284029337
+msgid ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
+"cd open-deploy-ws\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:21
+#: ccab963b7c8a4473be9d93ad517edc4f
+msgid "2. Initialize Repository"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:23
+#: 4366d02e7aef4eae94ec276add4278d6
+msgid "Run the initialization script:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:25
+#: a5e3adb9304c49368b6cce7aac4a8904
+msgid "./init_repo.sh\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:29
+#: 4c122ce1ad2c44448015cdce21c36968
+msgid "The script will prompt you for:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:30
+#: ceeea11b1d4643f6b2d319a52fd39110
+msgid ""
+"**OCS2 installation method**: Choose `d` for Debian package (recommended "
+"for quick start)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:31
+#: 8e7e6a49c3144ad7918cfaa24b78edb3
+msgid "**Submodule visibility**: Automatically configured for public-only access"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:33
+#: ff1d230f90334972a872d69f6cab06ed
+msgid "Debian vs Source"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:36
+#: ba011c95167a4c67bdbb9a2ea20a515d
+msgid ""
+"The Debian package (`ros-jazzy-ocs2`) is faster to install but cannot be "
+"modified. Choose source if you need to develop OCS2 itself."
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:39
+#: a5d18bfdbcfb4f3ba3abd9448c7c7d7c
+msgid "3. Install Dependencies"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:41
+#: 8f653cc7e4084845b9ad2cabfa8c44c8
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"sudo apt update\n"
+"rosdep update\n"
+"rosdep install --from-paths src --ignore-src -r -y\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:48
+#: 78719689a29e42b498a6aef7084b404d
+msgid "4. Build the Workspace"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:50
+#: 6bca891df9b341589f2fc3302aa677bd
+msgid "colcon build --symlink-install\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:54
+#: ac96ba90910b49648456bb1e6bf150ae
+msgid "This typically takes 10-20 minutes on first build."
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:56
+#: 32afca46453a4538a17c0e3ac072e6c9
+msgid "5. Source and Launch"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:58
+#: 46c6b80e117e41adab1cdc5c2f28fce9
+msgid ""
+"source install/setup.bash\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:63
+#: a6db5bbd008b40268c887688e6043ea0
+msgid "6. Observe the Demo"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:65
+#: c1ad7d7770794697ac78c22d128207d1
+msgid "You should see:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:66
+#: 1c3f39ee99474cf5b7389a50494d5975
+msgid "**RViz** window with robot visualization"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:67
+#: 626dca1b18d7478d9b01c795b3b5d8ff
+msgid "**Terminal** output showing controller status"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:68
+#: bf9337836b3b46b8b39e5d5ce70498b2
+msgid "Robot responding to MPC target commands"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:70
+#: 36c2bde39c724039a1edb8dd409dee3f
+msgid "To send a target pose:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:71
+#: c27d29b4bb8d41559f9b5e9a5b525646
+#, python-brace-format
+msgid ""
+"# In a new terminal\n"
+"source install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \"{header: "
+"{frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, "
+"orientation: {w: 1.0}}}\" --once\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:77
+#: a0212efe21bf4e3183f4eb30b7fce4c6
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:79
+#: 1d6712e698ee44aab3752b4f4bd72ac3
+msgid "Build Fails with Missing Packages"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:81
+#: 0c8c6be813f34c21836a19f168c4d612
+msgid "rosdep install --from-paths src --ignore-src -r -y\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:85
+#: 960ecb5121c54bccb39220c64299a6ec
+msgid "OCS2 Package Not Found"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:87
+#: 0b5baa1ddc674d7c9b02437f14d8dd0d
+msgid "If using Debian install:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:88
+#: 1b3a57987c8348e48c19a7757b419400
+msgid "sudo apt install ros-jazzy-ocs2\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:92
+#: ff288e1480444ca58f1175cd526d780d
+msgid "Submodule Errors"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:94
+#: 2dcdd7d4713149cea802f67cc572bbf7
+msgid "git submodule update --init --recursive\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:98
+#: d8b8fc85e3db4d5baf7a85f0569ece97
+msgid "Workspace Not Sourced"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:100
+#: 29eae12b565e41519d9f243d653ec260
+msgid "Always source after opening a new terminal:"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:101
+#: dc92c94a83a54a008ee0e0e2b2b1c340
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:106
+#: 806556b93b544e2e82add2e5bd7aa723
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:108
+#: ec2464e8d2e84468a838e7ec370ca72d
+msgid "[Switch to different robots](../2-how_to/2-switch_robot.md)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:109
+#: 3f031c7385244819b70f4e42e763a0a4
+msgid "[Run Gazebo simulation](../2-how_to/3-gazebo_sim.md)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:110
+#: f986c9aaf1ba4cafbc11e0ef36a5a1f0
+msgid "[Connect Python interface](../2-how_to/5-python_interface.md)"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:112
+#: f5ad4a5e41e64548b81760aa9504fc1c
+msgid "Video Demo"
+msgstr ""
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:114
+#: 35a71f6ed2934bb48b1717b4b65b6c41
+msgid "TODO"
+msgstr "待完成"
+
+#: ../../source/1-getting_started/1-quick_demo_public.md:117
+#: 0b4e2114a1cc40598043f050f4cfa3b9
+msgid ""
+"Video demonstration to be added showing expected RViz output and robot "
+"motion."
+msgstr ""
+

@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:1
+#: 1d1b1284e45f43b08fac8646c3f7269c
+msgid "lina_planning"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:3
+#: 121caa2244f8415eb0033f73745df5b7
+msgid "Trajectory primitive library for motion planning."
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:5
+#: 42b39c3c86e34ebd95c1bbe84aa782af
+msgid "Access Required"
+msgstr "需要访问权限"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:8
+#: 2065f3c76842416aa0a9d31fdbff8a21
+msgid "This package requires private repository access."
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:11
+#: f9373b32fc1d42929a4b83cace22c4b6
+msgid "**Repository:** lina_planning (private)"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:13
+#: d022a356f9bb4abe9aa30fbcc52f7b15
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:15
+#: 72852b9303d14dba8a72b880028f42ae
+msgid "`lina_planning` provides trajectory primitive generators:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:16
+#: f8ee01abd5364437b3857347a3f9fb2a
+msgid "MoveJ — Joint space motion"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:17
+#: 1360471aaa5f45398d13e4aeca38e53c
+msgid "MoveL — Linear Cartesian motion"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:18
+#: 51086be54dda450c9233cbefe036c4e6
+msgid "Circular — Arc motion"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:19
+#: daac55b4f8aa49749bfc8e72c695da7e
+msgid "Bezier — Smooth curves"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:21
+#: 5701617fac0844bea9cb693a725dc9d4
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:23
+#: 7ef2d0701d2747d0b5b4516a50291b6a
+msgid "Build"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:25
+#: b1ebb07d46b14c55a07b4dcb4e04e645
+msgid "colcon build --packages-up-to lina_planning\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:29
+#: aa9be834753c4f7a8fb8375ad4031a8d
+msgid "API"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:31
+#: 71220abdf5b249ca9e00586e363446be
+msgid ""
+"#include <lina_planning/trajectory_primitives.h>\n"
+"\n"
+"// MoveJ: Joint space trajectory\n"
+"auto traj = lina_planning::MoveJ(\n"
+"    start_joints,\n"
+"    end_joints,\n"
+"    duration\n"
+");\n"
+"\n"
+"// MoveL: Linear Cartesian trajectory\n"
+"auto traj = lina_planning::MoveL(\n"
+"    start_pose,\n"
+"    end_pose,\n"
+"    duration\n"
+");\n"
+"\n"
+"// Circular: Arc trajectory\n"
+"auto traj = lina_planning::Circular(\n"
+"    start_pose,\n"
+"    via_pose,\n"
+"    end_pose,\n"
+"    duration\n"
+");\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:57
+#: b2088c69d4974ca0b66c04245533537b
+msgid "Trajectory Types"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:59
+#: 07e952f843d84ac8b4d7cd785e78e240
+msgid "MoveJ"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:61
+#: 5c312c3376774af3bc861dd1de3bdcee
+msgid "Joint space interpolation:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:62
+#: 842d7de01da14d14b448b70956b90a4d
+msgid "Smooth joint motion"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:63
+#: aaacbd192e4648f78790b5c44749b715
+msgid "Respects joint limits"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:64
+#: 624827e2e0524543b9b1f9d6b86ee63b
+msgid "Optional velocity limits"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:66
+#: a049f8a193b348c5ac29b88e6db91c94
+msgid "MoveL"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:68
+#: 241b7f887d354ef29a5bd9475a82b1ba
+msgid "Linear Cartesian interpolation:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:69
+#: b07922f7e9f548e8b08a9d2331da4ec8
+msgid "Straight-line end-effector path"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:70
+#: 89cc087d8d874396a692be911d64d2ff
+msgid "Orientation interpolation"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:71
+#: a3fc8d3f23204d61bdec132c76eb8cd6
+msgid "Collision checking integration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:73
+#: f876c41726bf419bbcea25dc1f6b2e82
+msgid "Circular"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:75
+#: 1e13536d1a3d4697a9fd949d56a4f5d7
+msgid "Arc motion through three points:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:76
+#: 4eb5874cefe145c29092368fb7d6cb16
+msgid "Start, via, end poses"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:77
+#: a2971d502ea8411c938539041c2ebbf1
+msgid "Circular path in Cartesian space"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:79
+#: 9277c35a0cbf459bbb70eb487abc5b99
+msgid "Bezier"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:81
+#: 708583fc6dcd4cd99cf5017db8bc3f30
+msgid "Smooth curves:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:82
+#: f208e2992b0f4ea5913ec265aefe0c3e
+msgid "Multiple control points"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:83
+#: 2012d47d43b3465e9642c0bf01d8ded5
+msgid "Continuous velocity/acceleration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:84
+#: dc8f45d78271436a99664a25dec50c0e
+msgid "Configurable order"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:86
+#: 962c669d024f46fab7d2c12269b703c0
+msgid "Integration"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:88
+#: 5bd54a458a8c4fcab032a60f06f4b466
+msgid "Used by higher-level planners and controllers:"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:90
+#: c10902f92c3349c58b42fc4419ddf78d
+msgid ""
+"// Example integration\n"
+"class MotionExecutor {\n"
+"    void execute_movej(const JointState& target) {\n"
+"        auto traj = lina_planning::MoveJ(current_, target, 2.0);\n"
+"        execute_trajectory(traj);\n"
+"    }\n"
+"};\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:100
+#: 8a0ddaf175b44bc1b2cb60c995b12dac
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:102
+#: aa46e0aab8594e19bbb9c001e017275d
+msgid ""
+"lina_planning:\n"
+"  default_joint_velocity: 1.0  # rad/s\n"
+"  default_cartesian_velocity: 0.1  # m/s\n"
+"  interpolation_dt: 0.01  # seconds\n"
+msgstr ""
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:109
+#: a968f08531414ee7bcae83a1285ffe17
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/controllers/5-lina_planning.md:111
+#: 3579fb2dca33499a822f5d8ebd776420
+msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+msgstr ""
+

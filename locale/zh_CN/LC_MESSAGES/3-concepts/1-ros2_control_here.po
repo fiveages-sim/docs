@@ -1,0 +1,554 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/3-concepts/1-ros2_control_here.md:1
+#: e22b6beb10194f3ebae4fd88c9d9d7da
+msgid "ros2_control in This Stack"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:3
+#: 1b4487c74e0042deae6145f6cca3306e
+msgid "This page explains how FiveAges Sim uses the ROS 2 control framework."
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:5
+#: 4f66601e8c9f4ac1afe9044ee4033153
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/3-concepts/1-ros2_control_here.md:7
+#: fd148a0df2734e8b9d90a8f3d1c70c04
+msgid "The stack uses `ros2_control` as its hardware abstraction layer:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:9
+#: d7ed294979534d2fa78cf5ea53c1c2cb
+msgid ""
+"Controllers (MPC, teleop)\n"
+"        ↓\n"
+"Controller Manager\n"
+"        ↓\n"
+"Hardware Interfaces (plugins)\n"
+"        ↓\n"
+"Physical/Simulated Hardware\n"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:19
+#: e4ca8ffb2ed949a9ad3a40b5167cd4d0
+msgid "Key Components"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:21
+#: a5d56ece1e7d4a7c801afa2670ea128a
+msgid "Controller Manager"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:23
+#: bc643ba907f6477eb5ae2cb0bf29a60d
+msgid ""
+"The Controller Manager loads, configures, and executes controllers. In "
+"this stack:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:25
+#: 1e61f1631fc345218ccc0172649d3fab
+msgid "Controllers are spawned via launch files"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:26
+#: b6bdb0347f5b4dba9eb397558176a3cc
+msgid "Multiple controllers can run simultaneously"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:27
+#: 14229890b18547e9ab92687a6c3abdce
+msgid "Controller switching is handled by the manager"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:29
+#: 662f681efaa64ca083d893f33b9d86c4
+msgid "Hardware Interfaces"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:31
+#: 2903e1c80e584baebf6c0d688008051c
+msgid "Hardware interfaces bridge controllers to actual hardware:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: cb8072271e2d4a02aa0596a2b5b1a321
+msgid "Interface Type"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: c92ce0a6482242e59d2514f24422e985
+msgid "Plugin"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 95e76e87e0c644b88ee02abdb051edd5
+msgid "Example"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: f3779da1c3934641af900b9fed04a140
+msgid "Mock"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: c5f1241b9e014ac883f63dfb613b92f7
+msgid "`mock_components/GenericSystem`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 9411497fc4a64d45b4f3ab9f5a22679b
+msgid "Testing without hardware"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 8ab0d921b99147b7b25d04f6816c76a3
+msgid "Gazebo"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: f67e5f7eb51b4b139628009f12110173
+msgid "`gz_ros2_control/GazeboSimSystem`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 157a228786764f5d94d328f97315db5c
+msgid "Gazebo simulation"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 986d2f03b0ae4fc1b8c20e57c19fb30c
+msgid "Isaac"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: b0ac120e47eb4a569c01550c187d1aea
+msgid "Topic-based interface"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: c63af7aac3fd405c8b65450c2f1fb6be
+msgid "Isaac Sim bridge"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 31f722f4479b40ccae733b859ddcfbbf
+msgid "Real"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 244bd9565f1246428221382be930d5db
+msgid "Vendor-specific plugins"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 94237d36b4d849f0953b447553c7c366
+msgid "CAN, TCP, serial"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:40
+#: 7531ed58fd3145fc991ef4c66765bb47
+msgid "Controllers"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:42
+#: ffc9e46a5fd344d1ad53ca3574a9d490
+msgid "The main controllers in this stack:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 3414eae0fa0c44f3ab1133d49a874980
+msgid "Controller"
+msgstr "控制器"
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 4b9c953eca054afd9334c65bd535d0cf f136702157d84dfb94125873cbbf7f00
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: f661f4852eec4f3dab1247e246073d8e
+msgid "`ocs2_arm_controller`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 804ec7fbc21b4673acce9502c071410c
+msgid "MPC-based arm motion"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 9dba20f1972c4770b00c6673d580f8b8
+msgid "`adaptive_gripper_controller`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: e5c33383c6b6416884203a09711968bf
+msgid "Gripper position/force control"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: ab8606de8376496a970e6df2866eaeea
+msgid "`arms_teleop_controller`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: ef8a107095484000ac4e2421b531361d
+msgid "End-effector target tracking"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 748de1258c214131a3558f47220be3dc
+msgid "`target_manager_controller`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 8340d18cb6f24fb3a1ecd941b6670a05
+msgid "Target pose management"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:51
+#: 3c71193d94a44fff9a3f056071f8eb75
+msgid "The `hardware:=` Parameter"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:53
+#: 7e1323f6e4024747af23e8549b9cc147
+msgid "Launch files use the `hardware` parameter to select the interface:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:55
+#: 1ef9127adf534ab2b006f63c2ac8a06f
+msgid ""
+"# Mock - no hardware, instant response\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+"\n"
+"# Gazebo - physics simulation\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\n"
+"\n"
+"# Isaac - Isaac Sim bridge\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\n"
+"\n"
+"# Real hardware (robot-specific)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=real\n"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:69
+#: ac0e9e529ec14aba9185ce22d360c5bc
+msgid "Configuration Flow"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:71
+#: 221afb070de04a6c9fded9dcd6387296
+msgid "**URDF/xacro** defines the robot model and includes ros2_control tags"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:72
+#: 828a30700a804a14ab7be58a05e07bd1
+msgid ""
+"**ros2_control xacro** specifies hardware interfaces per `hardware:=` "
+"value"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:73
+#: cfe8648b189b418793832558842779e5
+msgid "**Controller config YAML** defines controller parameters"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:74
+#: 5c22f3e1bce24e9298a18124d1b5fb23
+msgid "**Launch file** spawns controller manager and controllers"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:76
+#: f4d57eccbc484b33af114552e22ab5f4
+msgid "Example xacro snippet:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:78
+#: 8ad0095192f746d8aea5629e5d36a8d3
+#, python-brace-format
+msgid ""
+"<ros2_control name=\"ArmSystem\" type=\"system\">\n"
+"  <xacro:if value=\"${hardware_type == 'mock'}\">\n"
+"    <hardware>\n"
+"      <plugin>mock_components/GenericSystem</plugin>\n"
+"    </hardware>\n"
+"  </xacro:if>\n"
+"  \n"
+"  <joint name=\"joint_1\">\n"
+"    <command_interface name=\"position\"/>\n"
+"    <state_interface name=\"position\"/>\n"
+"    <state_interface name=\"velocity\"/>\n"
+"  </joint>\n"
+"</ros2_control>\n"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:94
+#: 492cfbf046bc4f42afde31729213ad01
+msgid "Command and State Interfaces"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:96
+#: 707a6fc5d3a7496087f3ad51252c5956
+msgid "Command Interfaces"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:98
+#: 7d08a749a60743f0935dced26eabe699
+msgid "What controllers can command:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 4f0ad9d600074ab59aa76919ddf4753d c88834cfc119422bb0fe87b09338ef50
+msgid "Interface"
+msgstr "接口"
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: dbfe5731a22742a59ea0c308d03091b2 df3e520bceb14fd698dc7a0aaed841bb
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 3bc0d86db0f64b0e82659d270b6da441 d09d3d21e92a47a28be660f212a39470
+msgid "`position`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 2e7ae23e4c3a476baf0f43ba26537869
+msgid "Joint position (radians)"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 9a4e305cf2d844bdb74b8d08faac0df3 ce4c7bac7d1f4c868766cc5b7dee0474
+msgid "`velocity`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 0d8b35a8ffa844438982dfd8e0380e72
+msgid "Joint velocity (rad/s)"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 9e588ad9d7ad418892f6cbc1b02ad0a7 e97c8e765a874e12af9e8f5ff47d8b65
+msgid "`effort`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 5e2c448f91da48889594c7cb0d4dd0eb
+msgid "Joint torque (Nm)"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:106
+#: 9075e7ff5bdd4fc5825a7ff326995858
+msgid "State Interfaces"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:108
+#: 7e831d635c1f4793a01a9b1afd7faa6e
+msgid "What controllers can read:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: d05e7f9160764c089518544c89eeda65
+msgid "Current joint position"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: b39b5e65427c45b3a540628e36bd8713
+msgid "Current joint velocity"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 75233525b3e84aec9f283124a5f89ede
+msgid "Current joint effort/torque"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:116
+#: 7c8f9ab4bfc84494a124f0288169dfb0
+msgid "Controller Lifecycle"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:118
+#: f68589861bbd48faa0172af2533f1202
+msgid "Controllers follow the ROS 2 lifecycle:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:120
+#: be1d00f639784316835d167fd144a8c9
+msgid "**Unconfigured** — Initial state"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:121
+#: 27139e3eee074f1c9c9d62756da73a3d
+msgid "**Inactive** — Configured but not running"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:122
+#: a6201160e9324e299c90307ff977f189
+msgid "**Active** — Running and commanding hardware"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:123
+#: b34223cc0a164dfc93609873f4666bce
+msgid "**Finalized** — Shutdown"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:125
+#: 2489e7113fd74d8ba71fc927ea6f6123
+msgid "Typical commands:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:127
+#: c41b368f28334bcfabbd0f1c8a8137e3
+msgid ""
+"# List controllers\n"
+"ros2 control list_controllers\n"
+"\n"
+"# Switch controllers\n"
+"ros2 control switch_controllers --activate new_controller --deactivate "
+"old_controller\n"
+"\n"
+"# Check hardware interfaces\n"
+"ros2 control list_hardware_interfaces\n"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:138
+#: 48428374c28642b49bac284148202c92
+msgid "MPC Controller Specifics"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:140
+#: 5996752af00e4ae8ac02be500802c8e9
+msgid "The OCS2 arm controller uses Model Predictive Control:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:142
+#: 59bd6f5510c3480bbf0e0ccf40f96c37
+msgid "**Prediction horizon:** Looks ahead to plan smooth trajectories"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:143
+#: b957dbbe364e4f6aa209cd0c1aebba24
+msgid "**Constraints:** Respects joint limits, velocity limits"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:144
+#: c8a493bfb80044348b8934d678b19d88
+msgid "**Real-time:** Runs at control loop frequency"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:146
+#: f72e964284354b5282ae55c251efd9f7
+msgid "Key topics:"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 3d992917cfc84d0eb8eaa4097b549612
+msgid "Topic"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: ff396d4b025a45f9b9a865d7eb1071a4
+msgid "Direction"
+msgstr "方向"
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: a155b966ebe842d1ab7f0c24d41514c4
+msgid "`/target_pose`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 3a45e9c51e0c442187a11b565e1a989f 43a437349ba249c8b8aea23822f994e0
+msgid "Subscribe"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 255851973c2349e282e3aa1ac23542f4
+msgid "Cartesian target"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 318bfed4db034e6aa62b0fdce07dd89b
+msgid "`/target_joint_positions`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 8c5c760d87f34d17a2cf873f9cf43bda
+msgid "Joint space target"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 74b88b122b974d2fac9774c84635a25e
+msgid "`/joint_states`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 0c1757f13ef349b78c5756e93bf3d217 47dd681b00e841e5a6990dc6abce7f22
+msgid "Publish"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 061af02ced2445cb9597aa2f5e99190e
+msgid "Current state"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: faf63f4cfd014cb0822db45946e5fe14
+msgid "`/mpc_solution`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md
+#: 7db476da967e4818a37ef06eb27f657a
+msgid "Planned trajectory"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:155
+#: 0506370c9cc24ce2b9ec2565857ce362
+msgid "Best Practices"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:157
+#: 30491ac1b4944b2689f72b31c4983100
+msgid "**Always test with mock first** — Verify behavior before simulation/real"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:158
+#: ac809dd980a742d3b4e501f69f2566bb
+msgid ""
+"**Check hardware interfaces** — Use `ros2 control "
+"list_hardware_interfaces`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:159
+#: 7ef71cd0d4234b65a4926c9a17be2da9
+msgid "**Monitor controller state** — Use `ros2 control list_controllers`"
+msgstr ""
+
+#: ../../source/3-concepts/1-ros2_control_here.md:160
+#: 2b0dc9ef8b08483e851ee1b44610c511
+msgid "**Use appropriate QoS** — Match publisher/subscriber QoS settings"
+msgstr ""
+
