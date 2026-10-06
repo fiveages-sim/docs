@@ -39,3 +39,5 @@ The stack supports multiple simulation backends:
 
 Isaac Sim integration requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. See [FaSim-Isaac](2-fasim_isaac.md) for details.
 ```
+
+Isaac **datagen** (USD → orchestration → LeRobot export, no Gazebo): [Synthetic Data](../../6-synthetic_data/0-index.md).

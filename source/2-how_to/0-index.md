@@ -13,6 +13,7 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 - [Gazebo Simulation](3-gazebo_sim.md) — Physics simulation with Gazebo
 - [Isaac Sim](4-isaac_sim.md) — NVIDIA Isaac Sim integration
+- [Synthetic Data](../6-synthetic_data/0-index.md) — Isaac USD → task queue → LeRobot record/export (dedicated chapter, not Gazebo)
 
 ### Programming
 

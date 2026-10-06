@@ -246,6 +246,12 @@ FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Con
 
 See the [Developer Guide](../5-developer/0-index.md) for detailed instructions.
 
+## Optional: Synthetic data (Isaac)
+
+**Goal:** Understand the Isaac datagen path (not Gazebo): USD scene → `ROS2RobotInterface` → composer `task_queue` → LeRobot dataset on disk.
+
+Follow [Synthetic Data](../6-synthetic_data/0-index.md). Documented composer/lerobot branches are `feature/dex-grasp-generator` and `feature/sim-grasp-datagen`. Stop at recording/export; skip training.
+
 ## Tips for Success
 
 1. **Don't skip mock mode** — Always verify behavior in mock before simulation or real hardware

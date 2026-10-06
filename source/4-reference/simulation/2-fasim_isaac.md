@@ -142,3 +142,4 @@ ln -s /your/actual/isaacsim/path ~/isaacsim
 
 - [robot_usds](3-robot_usds.md)
 - [Isaac Sim How-To](../../2-how_to/4-isaac_sim.md)
+- [Synthetic Data](../../6-synthetic_data/0-index.md)

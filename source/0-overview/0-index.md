@@ -12,6 +12,7 @@ FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 - **Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends
 - **Teleoperation** — VR, isomorphic teleop, and glove-based control
 - **Python Applications** — High-level APIs for data collection and autonomous tasks
+- **Synthetic data** — Isaac Sim USD → interface → composer → LeRobot record/export ([Synthetic Data](../6-synthetic_data/0-index.md))
 
 ```{admonition} Terminology
 :class: note
@@ -42,6 +43,7 @@ The ecosystem has two entry points:
 - **[Learning Path](2-learning_path.md)** — Day-by-day onboarding guide
 - **[Repository Map](3-repo_map.md)** — Complete list of repositories by layer
 - **[Public vs Internal](4-public_vs_internal.md)** — Detailed comparison of the two paths
+- **[Synthetic Data](../6-synthetic_data/0-index.md)** — Isaac datagen pipeline (USD → orchestration → LeRobot export)
 
 ## Next Steps
 

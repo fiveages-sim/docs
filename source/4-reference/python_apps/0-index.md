@@ -35,3 +35,5 @@ Python libraries provide high-level interfaces:
 | [robot_action_composer](5-robot_action_composer.md) | Task-queue YAML / motion generation | Public |
 | [HUG](6-hug.md) | Grasp inference | Private |
 | [wuji-retargeting](7-wuji_retargeting.md) | Hand retargeting | Public |
+
+Datagen pipeline (Isaac USD → composer → LeRobot record/export): [Synthetic Data](../../6-synthetic_data/0-index.md).

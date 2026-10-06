@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 16:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:1
+#: 936602a9db61433fb16dc194dcf5228d
+msgid "Isaac Scenes and USD"
+msgstr "Isaac 场景与 USD"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:3
+#: 3d5aa67f40524433912fba87220af212
+msgid ""
+"Synthetic datagen in this stack is an **Isaac Sim** line. Gazebo is not part"
+" of this pipeline."
+msgstr "本栈的合成数据采集是 **Isaac Sim** 线路。Gazebo 不在这条流水线里。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:5
+#: 061c671f75574b629a2f004a532a8178
+msgid ""
+"Scene assets live in **FaSim-Isaac**. Robot USD files are the **robot_usds**"
+" superproject (FaSim submodule `robots/`). Environment and private project "
+"USDs sit beside that tree, not inside it."
+msgstr ""
+"场景资产在 **FaSim-Isaac**。机器人 USD 是 **robot_usds** 超级仓库（FaSim 子模块 "
+"`robots/`）。环境与私有项目 USD 与这棵树并列，不在它内部。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:7
+#: e838b28f27b4417c91132fd150b696f4
+msgid "FaSim-Isaac (scene host)"
+msgstr "FaSim-Isaac（场景宿主）"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:9
+#: ca7af635f2184d29890ad0bb53102ec9
+msgid ""
+"**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-"
+"sim/FaSim-Isaac)"
+msgstr ""
+"**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-"
+"sim/FaSim-Isaac)"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:11
+#: 68c7bc1135f14a1dbb1b409e54aadd2b
+msgid ""
+"FaSim-Isaac is the one-click Isaac asset workspace: it clones USD "
+"submodules, can install the Isaac ROS 2 Jazzy overlay, and starts Sim. "
+"Prefer the scripts; do not hand-assemble the tree."
+msgstr ""
+"FaSim-Isaac 是一键 Isaac 资产工作区：克隆 USD 子模块、可安装 Isaac ROS 2 Jazzy overlay、并启动 "
+"Sim。优先用脚本，不要手拼目录树。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:13
+#: 7292ad57835b458dbaf892cf1f2da356
+msgid ""
+"git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
+"cd FaSim-Isaac\n"
+"./init.sh\n"
+"./run.sh"
+msgstr ""
+"git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
+"cd FaSim-Isaac\n"
+"./init.sh\n"
+"./run.sh"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:20
+#: cfa472e1a49e44ca9788074986d1b127
+msgid "From the FaSim README:"
+msgstr "摘自 FaSim README："
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:22
+#: c20c332fb8c1468a85068ff0c5ac38b8
+msgid ""
+"**`./init.sh` operation 1** — initialize submodules listed in `.gitmodules` "
+"/ `submodules_visibility.conf`. **public** items are selected by default; "
+"**private** items are not (need repo access). Re-runs are additive (`update "
+"--init` on the selection)."
+msgstr ""
+"**`./init.sh` 操作 1** — 初始化 `.gitmodules` / `submodules_visibility.conf` "
+"里的子模块。**public** 默认勾选；**private** 默认不勾（需要仓库权限）。重复运行是追加（只对勾选项 `update "
+"--init`）。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:23
+#: 3f78f33680a3443eb0b8ef35e53a735e
+msgid ""
+"**`./init.sh` operation 2** — optional **Isaac ROS 2 Jazzy workspace**: "
+"download matching Isaac ROS workspaces, extract `jazzy_ws` to "
+"`isaac_jazzy_ws/`, install rosdep/colcon deps, build, and append "
+"`~/.bashrc`. Version menu queries GitHub stable tags; fallback list in "
+"`config/fa_sim.conf` currently includes `6.0.1` / `6.0.0` / `5.1.0`. "
+"Override with `ISAAC_SIM_VERSION=… ./init.sh`."
+msgstr ""
+"**`./init.sh` 操作 2** — 可选 **Isaac ROS 2 Jazzy 工作空间**：下载匹配的 Isaac ROS "
+"workspaces，把 `jazzy_ws` 解到 `isaac_jazzy_ws/`，装 rosdep/colcon 依赖、编译，并写入 "
+"`~/.bashrc`。版本菜单查询 GitHub 稳定 tag；`config/fa_sim.conf` 回退列表目前含 `6.0.1` / "
+"`6.0.0` / `5.1.0`。可用 `ISAAC_SIM_VERSION=… ./init.sh` 覆盖。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:24
+#: 3c0e8a68c76b442e8b847d8c01e9c024
+msgid ""
+"**`./run.sh`** — start Isaac Sim. Default install path is `ISAACSIM_DIR` "
+"(`~/isaacsim` unless you copy `config/fa_sim.local.template.conf` → "
+"`config/fa_sim.local.conf`). The menu is PhysX / Newton / Headless "
+"Streaming."
+msgstr ""
+"**`./run.sh`** — 启动 Isaac Sim。默认安装路径是 `ISAACSIM_DIR`（`~/isaacsim`，除非复制 "
+"`config/fa_sim.local.template.conf` → `config/fa_sim.local.conf`）。菜单为 PhysX "
+"/ Newton / Headless Streaming。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:26
+#: 1f569390cffc40f09444b2e58228b80f
+msgid ""
+"The datagen example README "
+"([`examples/IsaacSim/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/examples/IsaacSim/README.md)"
+" on `feature/sim-grasp-datagen`) currently lists Ubuntu 24.04, ROS 2 Jazzy, "
+"and Isaac Sim 6.0. Keep path/version in FaSim config rather than editing "
+"launch files by hand."
+msgstr ""
+"数据采集示例 README（`feature/sim-grasp-datagen` 上的 "
+"[`examples/IsaacSim/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/examples/IsaacSim/README.md)）目前写的是 Ubuntu 24.04、ROS 2 Jazzy、Isaac "
+"Sim 6.0。路径/版本放在 FaSim 配置里，不要手改 launch。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:28
+#: 14bb057ab76b4a8eb9ebe329c55d3c60
+msgid "Layout from that README:"
+msgstr "该 README 中的布局："
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:30
+#: 5997cf4443604dec87a2291dc62bff3c
+msgid ""
+"FaSim-Isaac/\n"
+"├── init.sh\n"
+"├── run.sh\n"
+"├── config/                 # fa_sim.conf + optional fa_sim.local.conf\n"
+"├── robots/                 # → robot_usds\n"
+"├── environment/\n"
+"│   ├── fiveages_env/       # → fiveages-env-usds (public scenes)\n"
+"│   └── fa-project-usd/     # → fa-project-usd (private project USD)\n"
+"└── isaac_jazzy_ws/         # created by init.sh operation 2"
+msgstr ""
+"FaSim-Isaac/\n"
+"├── init.sh\n"
+"├── run.sh\n"
+"├── config/                 # fa_sim.conf + optional fa_sim.local.conf\n"
+"├── robots/                 # → robot_usds\n"
+"├── environment/\n"
+"│   ├── fiveages_env/       # → fiveages-env-usds (public scenes)\n"
+"│   └── fa-project-usd/     # → fa-project-usd (private project USD)\n"
+"└── isaac_jazzy_ws/         # created by init.sh operation 2"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:42
+#: 7cb123da67eb49688d97d3138b15f737
+msgid ""
+"Open the target robot USD from `robots/` (robot_usds) in Isaac and run the "
+"simulation. Enable Isaac’s ROS 2 simulation-control and prim services as in "
+"the [NVIDIA Isaac ROS 2 workspace "
+"docs](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/install_ros.html#setup-"
+"ros-2-workspaces) linked from the example README (`/set_simulation_state`, "
+"prim service for object pose)."
+msgstr ""
+"在 Isaac 中打开 `robots/`（robot_usds）里目标机器人 USD 并运行仿真。按示例 README 所链的 [NVIDIA "
+"Isaac ROS 2 workspace "
+"文档](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/install_ros.html#setup-"
+"ros-2-workspaces) 启用 ROS 2 simulation-control 与 prim "
+"服务（`/set_simulation_state`、物体位姿 prim service）。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:44
+#: 8e1eacb9ea3746b29690c75d56bdabea
+msgid ""
+"Package details: [FaSim-Isaac "
+"reference](../4-reference/simulation/2-fasim_isaac.md)."
+msgstr "包细节：[FaSim-Isaac 参考](../4-reference/simulation/2-fasim_isaac.md)。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:46
+#: e463aec7710b4cba858904fdd588fe3c
+msgid "robot_usds (robot USD only)"
+msgstr "robot_usds（仅机器人 USD）"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:48
+#: 0d4b07a905ff434e9e0af538eab36e7d
+msgid ""
+"**Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-"
+"sim/robot_usds)"
+msgstr ""
+"**Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-"
+"sim/robot_usds)"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:50
+#: 669fd4bd11e1453984106020bdbbda8e
+msgid ""
+"This chapter documents USD **as referenced by robot_usds** (and as the FaSim"
+" `robots/` submodule). After a plain clone, submodule directories are empty "
+"until:"
+msgstr ""
+"本章只写 **robot_usds 实际引用的** USD（以及作为 FaSim `robots/` 子模块）。普通 clone "
+"之后子模块目录是空的，直到："
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 2d485ff83fd343bfabd5e98e068cbbdb
+msgid ""
+"git clone git@github.com:fiveages-sim/robot_usds.git\n"
+"cd robot_usds\n"
+"git submodule update --init --recursive"
+msgstr ""
+"git clone git@github.com:fiveages-sim/robot_usds.git\n"
+"cd robot_usds\n"
+"git submodule update --init --recursive"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:58
+#: 9ce21fa73bb84d9dbb0164a540bf97c6
+msgid ""
+"Inside FaSim, `./init.sh` does that for you. Paths in `.gitmodules` are "
+"relative to the robot_usds root so USD references resolve."
+msgstr ""
+"在 FaSim 里 `./init.sh` 会替你做。`.gitmodules` 路径相对 robot_usds 根，USD 引用才能解析。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:60
+#: 469838a579be42a0b624a651a8da34c0
+msgid "Git submodules recorded there:"
+msgstr "其中记录的 Git 子模块："
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: fe5bcce3361c41aaac0b36af33dbc1d7
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 170ceedf5937461db8c88fc4c5d1f559
+msgid "Upstream"
+msgstr "上游"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: dc2da9f9e0dd47bbacac2cd87f2fc97c
+msgid "`humanoid/FiveAges/Gen1`"
+msgstr "`humanoid/FiveAges/Gen1`"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 7d74a40f15a3410399eefaae31332731
+msgid "fiveages-gen1-robot-usds"
+msgstr "fiveages-gen1-robot-usds"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 43568893408b4f76afaab492db1b74c3
+msgid "`humanoid/FiveAges/Gen2`"
+msgstr "`humanoid/FiveAges/Gen2`"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 0c3ef8dcd5344c928f4fe351247f4891
+msgid "fiveages-gen2-robot-usds"
+msgstr "fiveages-gen2-robot-usds"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 0990615a371246b1a14b9b8a8b778389
+msgid "`humanoid/FiveAges/Gen3`"
+msgstr "`humanoid/FiveAges/Gen3`"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 61ff65bbe45e4115bf290a6eed6d345f
+msgid "fiveages-gen3-robot-usds"
+msgstr "fiveages-gen3-robot-usds"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 0855053af52a45dd967968b6b011795c
+msgid "`humanoid/Ubtech`"
+msgstr "`humanoid/Ubtech`"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 22fd4a0b8b4041d397bc58ff4e63d2a2
+msgid "ubtech-usds"
+msgstr "ubtech-usds"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 0453f0a9082543b289a00ef88f6d8499
+msgid "`humanoid/Galbot`"
+msgstr "`humanoid/Galbot`"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 6c7cc42245ba4430ab046bffe1f307ee
+msgid "galbot-usds"
+msgstr "galbot-usds"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:70
+#: db2c9e01c531466cabbf249e9c1b4a7d
+msgid ""
+"FaSim `submodules_visibility.conf` marks Galbot **public** and the FiveAges "
+"Gen\\* / Ubtech trees **private**. In-tree (not submodule) categories on "
+"robot_usds include grippers, dexhands, manipulators, mobile bases, mobile "
+"manipulators, and sensors — browse the repo; do not invent extra USD roots."
+msgstr ""
+"FaSim `submodules_visibility.conf` 把 Galbot 标成 **public**，FiveAges Gen\\* / "
+"Ubtech 树标成 **private**。robot_usds 树内（非子模块）类别包括夹爪、灵巧手、机械臂、移动底盘、移动操作臂和传感器 — "
+"去仓库里看；不要发明额外 USD 根。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:72
+#: bb546e5621ec4454bbada4cb5cde56aa
+msgid ""
+"FiveAges **Gen1 / Gen2 / Gen3** are wheeled-arm USD generations under "
+"`humanoid/FiveAges/` (README maps Gen1→W1, Gen2→W2/S2). They are not bipedal"
+" humanoids."
+msgstr ""
+"FiveAges **Gen1 / Gen2 / Gen3** 是 `humanoid/FiveAges/` 下的轮臂 USD "
+"世代（README：Gen1→W1，Gen2→W2/S2）。它们不是双足人形。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:74
+#: 50df92f92fa34110adbc21c74c1404e3
+msgid ""
+"Full tree: [robot_usds "
+"reference](../4-reference/simulation/3-robot_usds.md), [USD "
+"submodules](../4-reference/simulation/4-usd_submodules.md)."
+msgstr ""
+"完整树：[robot_usds 参考](../4-reference/simulation/3-robot_usds.md)、[USD "
+"子模块](../4-reference/simulation/4-usd_submodules.md)。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:76
+#: 718853757c4f4c4087374484a36f0da9
+msgid "Environment and private project USD"
+msgstr "环境与私有项目 USD"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:78
+#: 0c460c7739ee4498b1a96741b57793d7
+msgid ""
+"Environment assets are **siblings** of `robots/`, not robot_usds submodules."
+msgstr "环境资产是 `robots/` 的**同级目录**，不是 robot_usds 子模块。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 2f7d6c8c20704058bf1bdd6883697303
+msgid "Tree"
+msgstr "目录树"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: abba13a7d21243ccb047fc3d7ca1ca52
+msgid "Visibility"
+msgstr "可见性"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: e907131e18b647eabae45ee10260a2e1
+msgid "Role"
+msgstr "角色"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: d058efb469964727a03912b3130008c1
+msgid ""
+"`environment/fiveages_env/` → [fiveages-env-"
+"usds](https://github.com/fiveages-sim/fiveages-env-usds)"
+msgstr ""
+"`environment/fiveages_env/` → [fiveages-env-"
+"usds](https://github.com/fiveages-sim/fiveages-env-usds)"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 99084fe9715e47428117de3bcaf4566c
+msgid "Public"
+msgstr "公开"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 8639c24f959d431b9d3ac9fbdfdc11a0
+msgid ""
+"Shared Isaac scenes: `static/` (tables, shelves, boxes), `moveable/` (small "
+"objects), `articulation/` (drawers, …), `background/`, `tasks/` (composed "
+"task scenes)."
+msgstr ""
+"共享 Isaac "
+"场景：`static/`（桌子、货架、箱子）、`moveable/`（小物体）、`articulation/`（抽屉等）、`background/`、`tasks/`（组合任务场景）。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 19fda1526c004d71854e04a53f37ac81
+msgid "`environment/fa-project-usd/` → fa-project-usd"
+msgstr "`environment/fa-project-usd/` → fa-project-usd"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: d4a35209180d477487a27d4194ca8ce1
+msgid "Private"
+msgstr "私有"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:52
+#: 56cca36879b1461b9fd3eab9213acaa5
+msgid ""
+"Project-specific USD used by internal task scenes. `./init.sh` leaves this "
+"unchecked unless you have access."
+msgstr "内部任务场景用的项目专用 USD。没有权限时 `./init.sh` 默认不勾选。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:85
+#: 42ade323172f4e9dbf2866e38b89732e
+msgid ""
+"robot_usds README: if you use robot_usds **outside** FaSim, put "
+"`environment/fiveages_env` next to `robots/` so scene USDs can reference it."
+msgstr ""
+"robot_usds README：若在 FaSim **之外**用 robot_usds，把 `environment/fiveages_env` "
+"放在 `robots/` 旁边，场景 USD 才能引用。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:87
+#: c8e4bc7cf7864e46be511a64e6ad842a
+msgid ""
+"Do not treat private project USD as a public robot model, and do not "
+"document product codenames that are not in the public robot_usds gallery "
+"text we rely on here."
+msgstr "不要把私有项目 USD 当成公开机器人模型，也不要写本章所依据的公开 robot_usds gallery 文本里没有的产品代号。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:89
+#: e47bff0e732646fb9d330f8a3658e2b4
+msgid ""
+"[Environment assets reference](../4-reference/simulation/5-env_assets.md)."
+msgstr "[环境资产参考](../4-reference/simulation/5-env_assets.md)。"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:91
+#: d592302a52ff412387576e577bec5751
+msgid "Next on the pipeline"
+msgstr "流水线下一步"
+
+#: ../../source/6-synthetic_data/1-isaac_scenes.md:93
+#: 117f308621344208a57c1a268e21e748
+msgid ""
+"With Isaac running and ROS 2 topics/services up, motion and recording talk "
+"to the robot through **ros2_robot_interface**, orchestrated by "
+"**robot_action_composer**. Continue at [Interface and "
+"orchestration](2-orchestration.md)."
+msgstr ""
+"Isaac 在跑且 ROS 2 话题/服务已通时，运动与录制经 **ros2_robot_interface** 与机器人通信，由 "
+"**robot_action_composer** 编排。继续看 [接口与编排](2-orchestration.md)。"

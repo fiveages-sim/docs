@@ -18,6 +18,7 @@ FiveAges Sim provides:
 - **Simulation backends** — Gazebo Harmonic and NVIDIA Isaac Sim integration
 - **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation
 - **Python libraries** — High-level interfaces for robot control and data collection
+- **Synthetic data pipeline** — Isaac USD scenes, task-queue orchestration, LeRobot record/export
 
 ## Two Entry Paths
 
@@ -103,6 +104,16 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 5-developer/1-contributing
 5-developer/2-docs_build
 5-developer/3-packaging_deb
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: Synthetic Data
+
+6-synthetic_data/0-index
+6-synthetic_data/1-isaac_scenes
+6-synthetic_data/2-orchestration
+6-synthetic_data/3-record_export
 ```
 
 ## Quick Links

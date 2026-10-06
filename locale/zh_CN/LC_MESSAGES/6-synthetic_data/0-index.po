@@ -1,0 +1,260 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 16:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/6-synthetic_data/0-index.md:1 896c8f9ad62141b298589fd906b49319
+msgid "Synthetic Data"
+msgstr "合成数据"
+
+#: ../../source/6-synthetic_data/0-index.md:3 4acb975fa6014d90b502a810fef05034
+msgid ""
+"This chapter is the **Isaac Sim datagen pipeline**: USD scenes → ROS 2 "
+"interface → task-queue orchestration → LeRobot recording / export."
+msgstr ""
+"本章讲的是 **Isaac Sim 数据采集流水线**：USD 场景 → ROS 2 接口 → 任务队列编排 → LeRobot 录制 / 导出。"
+
+#: ../../source/6-synthetic_data/0-index.md:5 c1a4c515785641aa92338c448b798b38
+msgid ""
+"It is a dedicated section, not a how-to buried under Gazebo or teleop. "
+"Reference pages stay the source of APIs; this chapter only explains **how "
+"the pieces connect**."
+msgstr "这是独立章节，不是藏在 Gazebo 或遥操作 how-to 里的一篇。API 仍以参考页为准；本章只说明**各部分如何衔接**。"
+
+#: ../../source/6-synthetic_data/0-index.md:7 71df924c1f554babaad714f7ece14b33
+msgid "Documented branches"
+msgstr "文档对应分支"
+
+#: ../../source/6-synthetic_data/0-index.md:10
+#: 46f9f1e3a3614b1dbc08fd41d6781aa9
+msgid ""
+"[robot_action_composer](https://github.com/fiveages-"
+"sim/robot_action_composer/tree/feature/dex-grasp-generator) `@ feature/dex-"
+"grasp-generator`"
+msgstr ""
+"[robot_action_composer](https://github.com/fiveages-"
+"sim/robot_action_composer/tree/feature/dex-grasp-generator) `@ feature/dex-"
+"grasp-generator`"
+
+#: ../../source/6-synthetic_data/0-index.md:11
+#: b2f0e225c0c44544a46930100f6a5028
+msgid ""
+"[lerobot_ros2](https://github.com/fiveages-"
+"sim/lerobot_ros2/tree/feature/sim-grasp-datagen) `@ feature/sim-grasp-"
+"datagen`"
+msgstr ""
+"[lerobot_ros2](https://github.com/fiveages-"
+"sim/lerobot_ros2/tree/feature/sim-grasp-datagen) `@ feature/sim-grasp-"
+"datagen`"
+
+#: ../../source/6-synthetic_data/0-index.md:13
+#: 86a65be282994d35a8fcc9936e9b482b
+msgid "Those branches are newer than `main`. Follow them, not `main`."
+msgstr "这些分支比 `main` 新。请跟它们，不要跟 `main`。"
+
+#: ../../source/6-synthetic_data/0-index.md:16
+#: 44eb6501242a432d95c973815e984ccd
+msgid "Terminology"
+msgstr "术语"
+
+#: ../../source/6-synthetic_data/0-index.md:19
+#: 7c67b0820c974c1dabb6abf728d1235a
+msgid ""
+"**Humanoid** here means a **wheeled-arm humanoid** (mobile base + arms, e.g."
+" FiveAges W2). It does **not** mean a bipedal or footed humanoid."
+msgstr ""
+"这里的 **humanoid** 指 **轮臂人形**（移动底盘 + 手臂，例如 FiveAges W2）。**不是**双足 / 腿足人形。"
+
+#: ../../source/6-synthetic_data/0-index.md:22
+#: e6840303f378413c8b2c820409169c06
+msgid "Pipeline"
+msgstr "流水线"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: d8564ae8c6664347872289505c5fd54e
+msgid ""
+"FaSim-Isaac + robot_usds (+ env / private USD)\n"
+"        ↓  Isaac scene, ROS 2 bridge\n"
+"ros2_robot_interface\n"
+"        ↓  motion / state / gripper / Nav2 client\n"
+"robot_action_composer  (task_queue YAML + skills)\n"
+"        ↓  StageTarget sequences via ROS2RobotInterface\n"
+"lerobot_ros2  (record_datasets.py → LeRobot dataset on disk)"
+msgstr ""
+"FaSim-Isaac + robot_usds (+ env / private USD)\n"
+"        ↓  Isaac scene, ROS 2 bridge\n"
+"ros2_robot_interface\n"
+"        ↓  motion / state / gripper / Nav2 client\n"
+"robot_action_composer  (task_queue YAML + skills)\n"
+"        ↓  StageTarget sequences via ROS2RobotInterface\n"
+"lerobot_ros2  (record_datasets.py → LeRobot dataset on disk)"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 7b456e7152af42938b384ef446ced579
+msgid "Stage"
+msgstr "阶段"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: a90f32f059594519937e759a742ab82b
+msgid "Role in datagen"
+msgstr "在数据采集中的角色"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: aae9396c84ae4ff98402748909012c3c
+msgid "Start here"
+msgstr "从这里开始"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 172fb6ad09654d5988612ff8ff4f2b7f
+msgid "**FaSim-Isaac**"
+msgstr "**FaSim-Isaac**"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 825b1e90e71f4e4fb2663ec2f522d26c
+msgid "Isaac Sim line for synthetic scenes. Scripts pull USD and start Sim."
+msgstr "合成场景的 Isaac Sim 线路。用脚本拉 USD 并启动 Sim。"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: c579e8dc32a34e0896d47c0a5b6fb119
+msgid "[Isaac scenes and USD](1-isaac_scenes.md)"
+msgstr "[Isaac 场景与 USD](1-isaac_scenes.md)"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 3683800aa2b5460ebe7503c3ecbf2889
+msgid "**robot_usds**"
+msgstr "**robot_usds**"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 27fec2a9d4564e12bb800afbdcfcb31a
+msgid "Robot USD superproject used by FaSim (`robots/`)."
+msgstr "FaSim 使用的机器人 USD 超级仓库（`robots/`）。"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 3595ac70425646058f53c60a23668990 397710cf228746ecbd32d6303a31392f
+msgid "same page"
+msgstr "同页"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: bb65721640bb43efbbfcddbb10d2e2e9
+msgid "**ros2_robot_interface**"
+msgstr "**ros2_robot_interface**"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: f7df859c60ad4a3995854771c26c228b
+msgid "Python interface used by motion **and** recording."
+msgstr "运动**和**录制都走的 Python 接口。"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 5dc6d763f4a248d99159d0a6459644d1
+msgid "[Interface and orchestration](2-orchestration.md)"
+msgstr "[接口与编排](2-orchestration.md)"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 5087b85035d14afcb6c6b1bbc5d6d829
+msgid "**robot_action_composer**"
+msgstr "**robot_action_composer**"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 8a5e395eabec4d7d9af902477d83357a
+msgid ""
+"`task_queue` YAML + skill registry; `motion-generation` / `ros2-stack`."
+msgstr "`task_queue` YAML + 技能注册表；`motion-generation` / `ros2-stack`。"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 886274efafc14591bf43de710574e930
+msgid "**lerobot_ros2**"
+msgstr "**lerobot_ros2**"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: dc13a4d0ee134c719c98496a4ad04cb3
+msgid ""
+"Monorepo that hosts the Isaac example workspace and recording plugins. Stop "
+"at **record / export**."
+msgstr "承载 Isaac 示例工作区与录制插件的 monorepo。停在**录制 / 导出**。"
+
+#: ../../source/6-synthetic_data/0-index.md:24
+#: 1f9f3c37af9a41c8b99bad11713bc29a
+msgid "[LeRobot record and export](3-record_export.md)"
+msgstr "[LeRobot 录制与导出](3-record_export.md)"
+
+#: ../../source/6-synthetic_data/0-index.md:42
+#: 71852208a6e3408f9c51261c057b8469
+msgid "In this section"
+msgstr "本节内容"
+
+#: ../../source/6-synthetic_data/0-index.md:52
+#: 4a445f649dc24f20a4c6c133f4d29128
+msgid "Baseline"
+msgstr "基线"
+
+#: ../../source/6-synthetic_data/0-index.md:54
+#: 4dbea1bf54f4402ca5c37da0c96ba6c1
+msgid "**ROS 2 Jazzy**"
+msgstr "**ROS 2 Jazzy**"
+
+#: ../../source/6-synthetic_data/0-index.md:55
+#: c05953ba10e3451e8c86f98f349e9cf0
+msgid ""
+"**Python 3.12** (same baseline as the lerobot_ros2 / composer READMEs on "
+"those branches)"
+msgstr "**Python 3.12**（与那些分支上 lerobot_ros2 / composer README 的基线一致）"
+
+#: ../../source/6-synthetic_data/0-index.md:57
+#: b577a9276be94dadb5b5dc9fdd4eef3c
+msgid "Out of scope"
+msgstr "不在本章范围"
+
+#: ../../source/6-synthetic_data/0-index.md:59
+#: b3657219cffe497a9a268a3beb6f8c96
+msgid "This chapter does **not** cover:"
+msgstr "本章**不**覆盖："
+
+#: ../../source/6-synthetic_data/0-index.md:61
+#: 2049db7f57734e8a8f1b2bae147a4189
+msgid "Gazebo"
+msgstr "Gazebo"
+
+#: ../../source/6-synthetic_data/0-index.md:62
+#: 611d64fe4e8e4bc9b8457bb586419d37
+msgid "ros2-viser or fa-py-libraries"
+msgstr "ros2-viser 或 fa-py-libraries"
+
+#: ../../source/6-synthetic_data/0-index.md:63
+#: be53fbc31ee74866b46783bccb98a2a2
+msgid ""
+"Policy **training**, online **inference**, or dataset consumption "
+"(`examples/IsaacSim/policy_training/train.py`, `inference.py`)"
+msgstr ""
+"策略**训练**、在线**推理**或数据集消费（`examples/IsaacSim/policy_training/train.py`、`inference.py`）"
+
+#: ../../source/6-synthetic_data/0-index.md:65
+#: 8231f47e1d5446ebac9db9a331fa8122
+msgid ""
+"Package-level APIs: "
+"[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md),"
+" "
+"[robot_action_composer](../4-reference/python_apps/5-robot_action_composer.md),"
+" [lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md), [FaSim-"
+"Isaac](../4-reference/simulation/2-fasim_isaac.md), "
+"[robot_usds](../4-reference/simulation/3-robot_usds.md)."
+msgstr ""
+"包级 "
+"API：[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)、[robot_action_composer](../4-reference/python_apps/5-robot_action_composer.md)、[lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md)、[FaSim-"
+"Isaac](../4-reference/simulation/2-fasim_isaac.md)、[robot_usds](../4-reference/simulation/3-robot_usds.md)。"

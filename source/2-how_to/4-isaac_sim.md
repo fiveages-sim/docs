@@ -163,3 +163,4 @@ git submodule update --init --recursive
 
 - [robot_usds reference](../4-reference/simulation/3-robot_usds.md)
 - [FaSim-Isaac reference](../4-reference/simulation/2-fasim_isaac.md)
+- [Synthetic Data](../6-synthetic_data/0-index.md) — datagen pipeline on Isaac (not Gazebo)
