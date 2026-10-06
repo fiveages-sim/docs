@@ -6,21 +6,33 @@ Control robots using a VR headset and controllers.
 
 | Headset | Support Level | Modes | Notes |
 |---------|---------------|-------|-------|
-| **Pico** | **Recommended** | Web, XROtoolkit | Enterprise edition has faster release cadence, enabling lower-latency tracking |
-| **Meta Quest** | Supported | Web, XROtoolkit | Good consumer availability |
+| **Pico Enterprise** | **Recommended** | Web, XRoboToolkit | USB shared networking (USB 网络共享); **its own App**, not the consumer Pico App |
+| **Pico consumer** | Supported | Web, XRoboToolkit | Different headset App from Enterprise; no USB-tether path documented here |
+| **Meta Quest** | Supported | Web, XRoboToolkit | Good consumer availability |
+
+```{admonition} Pico Enterprise vs consumer
+:class: important
+
+Treat **Pico Enterprise** and **Pico consumer** as different SKUs. Do not document one headset App as covering both.
+
+1. **USB shared networking (USB 网络共享)** — Pico Enterprise can share a network with the ROS 2 PC over USB. That is an Enterprise capability; it is not the consumer Pico path.
+2. **Different Apps** — Enterprise and consumer Pico use **different** headset Apps. Install the App that matches the headset edition. The fa-py-libraries README’s XRoboToolkit path is “XRoboToolkit App + PC Service” versus browser WebXR; it does not name a single store listing for both Pico editions.
+
+This page does not invent store links, package names, or ADB steps.
+```
 
 ```{admonition} Pico Recommended
 :class: tip
 
-**Pico headsets have the best support**, especially the enterprise edition which offers faster release updates and lower-latency tracking for more responsive robot control (更跟手).
+**Pico Enterprise** is the preferred Pico SKU for VR teleop (USB 网络共享, matching Enterprise App, lower-latency tracking / 更跟手). Consumer Pico and Meta Quest still work with the WebXR (`./run.sh vr`) and XRoboToolkit (`./run.sh vr-xrt`) backends.
 ```
 
 ## Prerequisites
 
 - Working robot demo (mock, sim, or real)
-- VR headset (**Pico** recommended, or **Meta Quest**)
+- VR headset (**Pico Enterprise** recommended; Pico consumer or **Meta Quest** also used)
 - fa-py-libraries installed
-- Network connectivity between VR device and ROS 2 machine
+- Network between the headset and the ROS 2 machine (Wi-Fi, or **USB 网络共享** on Pico Enterprise)
 
 ## Overview
 
@@ -87,7 +99,7 @@ Native application for lower latency — recommended for production. From the fa
 ./run.sh vr-xrt
 :::
 
-Requires the XRoboToolkit application on the VR device. Provides better tracking responsiveness, especially on Pico enterprise devices.
+Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise App ≠ consumer Pico App) plus PC Service. `./run.sh vr-xrt-service stop` shuts down the PC Service.
 
 ## Topics
 
@@ -136,11 +148,16 @@ VR teleoperation can command rapid motions. When using real hardware:
 
 ## Network Setup
 
-For VR device on different network:
+The headset and the ROS 2 PC must be on a reachable network (same Domain ID; Zenoh or DDS as needed).
 
-1. Ensure both devices can reach each other
-2. Configure ROS 2 domain or Zenoh bridge
-3. Set proper firewall rules for ROS 2 ports
+- **Pico Enterprise:** USB shared networking (USB 网络共享) is supported — tether the headset to the PC over USB so they share a network. Follow the headset’s own USB-network UI; this page does not list ADB or `usb0` commands.
+- **Pico consumer / Meta Quest:** use the usual Wi-Fi (or other IP) path. Do not assume USB 网络共享.
+
+Then:
+
+1. Confirm both devices can reach each other
+2. Configure ROS 2 domain or Zenoh bridge if they are not on one LAN
+3. Set firewall rules for ROS 2 ports
 
 ## Verification
 
@@ -154,13 +171,14 @@ For VR device on different network:
 
 - Check VR device is properly tracked
 - Verify browser/app has WebXR permissions
-- Check network connectivity
+- Check network (Wi-Fi, or USB 网络共享 on Pico Enterprise)
+- Confirm the headset App matches the Pico edition (Enterprise vs consumer)
 
 ### High latency
 
-- Use **Pico enterprise edition** for lowest latency tracking
-- Use **XROtoolkit mode** instead of Web mode
-- Use wired network if possible
+- Prefer **Pico Enterprise** (USB 网络共享 when possible)
+- Use **XRoboToolkit** (`./run.sh vr-xrt`) instead of WebXR
+- Use wired / USB-tethered networking when the headset edition supports it
 - Reduce update rate in configuration
 - Check for network congestion
 

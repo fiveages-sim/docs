@@ -157,17 +157,17 @@ Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM
 
 ### VR Teleoperation
 
-**Supported headsets:** Pico (recommended) and Meta Quest, using Web or XROtoolkit modes.
+**Supported headsets:** Pico Enterprise (recommended; USB 网络共享, Enterprise App), Pico consumer (different App), and Meta Quest. Backends: WebXR (`./run.sh vr`) or XRoboToolkit (`./run.sh vr-xrt`).
 
 ```bash
 cd fa-py-libraries
 ./run.sh vr
 ```
 
-```{admonition} Pico Recommended
+```{admonition} Pico Enterprise vs consumer
 :class: tip
 
-Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control.
+Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Do not install one App for both.
 ```
 
 ### Isomorphic Teleop (HT Panthera)

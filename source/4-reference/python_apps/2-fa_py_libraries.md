@@ -48,6 +48,12 @@ Commands from the fa-py-libraries README (do not invent flags):
 | `./run.sh vr-record` | record `/teleop/*` bags |
 | `./run.sh record` / `playback` | interface joint snapshot JSON |
 
+```{admonition} Pico Enterprise vs consumer
+:class: note
+
+Headset SKU notes live on [VR Teleop](../../2-how_to/6-vr_teleop.md): Pico **Enterprise** supports USB shared networking (USB 网络共享) and uses a **different App** from Pico **consumer**. This page only lists fa-py-libraries README commands (`./run.sh vr` vs `./run.sh vr-xrt` + PC Service). It does not name store listings, package names, or ADB steps.
+```
+
 ## Structure
 
 :::{code-block} none
