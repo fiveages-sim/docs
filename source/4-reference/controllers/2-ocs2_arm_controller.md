@@ -91,6 +91,8 @@ OCS2 files (loaded from `robot_pkg`):
 
 Control mode is auto-detected from hardware interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).
 
+VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compliance is **position commands + vendor HI impedance**, not this MIX table — [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
+
 ## Related
 
 - [basic_joint_controller](7-basic_joint_controller.md)

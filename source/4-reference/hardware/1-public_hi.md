@@ -133,7 +133,9 @@ Interface for Tianji Marvin robots with end-effector matrix support.
 
 ### Configuration
 
-See repository README for detailed configuration options.
+[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md): command interfaces are joint **`position` only**. Compliance is vendor `ctrl_mode` (`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`) plus `joint_k_gains` / `joint_d_gains`. Plugin: `marvin_ros2_control/MarvinHardware`.
+
+Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard` (`scripts/tool_dyn_identify_wizard.py`). VR path comparison: [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
 
 ### End-Effector Matrix
 
