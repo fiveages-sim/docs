@@ -55,6 +55,17 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 ```
 
 ```{toctree}
+:maxdepth: 2
+:caption: More applications
+
+6-more_applications/0-index
+6-more_applications/1-field_commissioning
+6-more_applications/2-classical_algorithm
+6-more_applications/3-vla_collect_train_deploy
+6-more_applications/4-simulation_engineer
+```
+
+```{toctree}
 :maxdepth: 3
 :caption: How-To Guides
 

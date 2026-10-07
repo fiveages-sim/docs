@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 04:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:1
+#: 7f2aae7d76d44869a96b3615b2b97463
+msgid "Simulation engineer"
+msgstr "仿真工程师"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:3
+#: fccf6cafb96f42aaa3032ef9aca968f2
+msgid ""
+"For engineers who import sim assets, configure a robot in this stack, and"
+" compose motions in Isaac (not Gazebo-only beginners)."
+msgstr "面向导入仿真资产、在本栈配置机器人、并在 Isaac 里编排动作的工程师（不是只做 Gazebo 的新手路径）。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:5
+#: d83a845150d249369d103e7cc29d0ed5
+msgid "1. Isaac line and USD assets"
+msgstr "1. Isaac 线与 USD 资产"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:7
+#: 11cde33a75cb44258ea51613484c5764
+msgid ""
+"[Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md) — FaSim-Isaac "
+"`./init.sh` then `./run.sh`; ROS 2 side `hardware:=isaac`."
+msgstr ""
+"[Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md) — FaSim-Isaac `./init.sh` 然后 "
+"`./run.sh`；ROS 2 侧 `hardware:=isaac`。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:8
+#: 4faa6e44602a435f857b80b8904c34ec
+msgid ""
+"[Isaac Scenes and USD](../2-how_to/7-synthetic_data/1-isaac_scenes.md) — "
+"how FaSim pulls [robot_usds](../4-reference/simulation/3-robot_usds.md)."
+msgstr ""
+"[Isaac 场景与 USD](../2-how_to/7-synthetic_data/1-isaac_scenes.md) — FaSim 如何拉取 "
+"[robot_usds](../4-reference/simulation/3-robot_usds.md)。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:9
+#: 1d0f28d704704a85b1fe4e26fe21878b
+msgid ""
+"[robot_usds](../4-reference/simulation/3-robot_usds.md) and [USD "
+"submodules](../4-reference/simulation/4-usd_submodules.md) — brand "
+"folders, public vs private trees."
+msgstr ""
+"[robot_usds](../4-reference/simulation/3-robot_usds.md) 与 [USD "
+"子模块](../4-reference/simulation/4-usd_submodules.md) — 品牌目录、公开与私有树。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:10
+#: 7fac9e4b295340039e268539f775597f
+msgid ""
+"Environment assets: [env "
+"assets](../4-reference/simulation/5-env_assets.md) when the scene needs "
+"more than the robot."
+msgstr "环境资产：场景不只是机器人时见[环境资产](../4-reference/simulation/5-env_assets.md)。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:12
+#: bcc7fbeed30c4d3aa2ce42e011179c2c
+msgid ""
+"Gazebo (different backend): [Gazebo "
+"Simulation](../2-how_to/2-simulation/3-gazebo_sim.md), [Gazebo "
+"reference](../4-reference/simulation/1-gazebo.md). There is **no** "
+"`hardware:=mock`; keys are `mock_components` / `gz` / `isaac` / `real`."
+msgstr ""
+"Gazebo（另一套后端）：[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)、[Gazebo "
+"参考](../4-reference/simulation/1-gazebo.md)。**没有** `hardware:=mock`；键是 "
+"`mock_components` / `gz` / `isaac` / `real`。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:14
+#: 0d93db0a7b034cdd9bb8b7882c870adc
+msgid "2. Robot configuration"
+msgstr "2. 机器人配置"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:16
+#: c07d72fec21c4185a7e294edd708f3e9
+msgid ""
+"[Switch Robot](../2-how_to/1-basic_operations/2-switch_robot.md) — "
+"`robot:=` and EEF `type` / `left_type` / `right_type`."
+msgstr ""
+"[切换机器人](../2-how_to/1-basic_operations/2-switch_robot.md) — `robot:=` 和末端 "
+"`type` / `left_type` / `right_type`。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:17
+#: 7800329c23d74a20b865faa5c67e544f
+msgid ""
+"[robot_common_launch](../4-reference/descriptions/2-common.md) — launch "
+"args, machine profile, merge order."
+msgstr "[robot_common_launch](../4-reference/descriptions/2-common.md) — launch 参数、机台配置、合并顺序。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:18
+#: c47c432ecc224197a7f71a3903bb0596
+msgid "[Naming Conventions](../3-concepts/3-naming_conventions.md)."
+msgstr "[命名约定](../3-concepts/3-naming_conventions.md)。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:19
+#: d23286cf3b2947d78d9743af30ba1775
+msgid ""
+"[Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md) — copy a real "
+"description package; use the plugin class from that robot’s "
+"`xacro/ros2_control/*.xacro`."
+msgstr ""
+"[添加机器人](../2-how_to/6-deployment/10-add_a_robot.md) — 复制真实描述包；插件类用该机器人 "
+"`xacro/ros2_control/*.xacro` 里的。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:20
+#: b09ce7c1aee941eabdc984c18a1675df
+msgid ""
+"Brand packages: [Brand Packages "
+"(Public)](../4-reference/descriptions/3-brand_public.md). FiveAges "
+"wheeled-arm gitlinks: [FiveAges "
+"descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)."
+msgstr ""
+"品牌包：[品牌包（公开）](../4-reference/descriptions/3-brand_public.md)。FiveAges 轮臂 "
+"gitlink：[FiveAges 描述](../4-reference/descriptions/4-fiveages_umbrella.md)。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:22
+#: 381e7239140842edb8c9135eb06ceca4
+msgid "3. Action composition / orchestration"
+msgstr "3. 动作编排"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:24
+#: 35e006eac28d49099fa58f8d59d8684f
+msgid ""
+"Isaac datagen motions are **task_queue YAML skills**, not a Python "
+"`ActionSequence` API."
+msgstr "Isaac 数据生成动作是 **task_queue YAML skill**，不是 Python `ActionSequence` API。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:26
+#: ddbf290f944243bd8376d880f845aa8a
+msgid "[Synthetic Data](../2-how_to/7-synthetic_data/0-index.md) — pipeline map."
+msgstr "[合成数据](../2-how_to/7-synthetic_data/0-index.md) — 流水线总览。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:27
+#: 86fe537cfdfd4adf987213dbfda661c9
+msgid ""
+"[Interface and "
+"Orchestration](../2-how_to/7-synthetic_data/2-orchestration.md) — "
+"`./init.sh all-motion`, `motion-generation`, `ros2-stack`."
+msgstr ""
+"[接口与编排](../2-how_to/7-synthetic_data/2-orchestration.md) — `./init.sh all-motion`、"
+"`motion-generation`、`ros2-stack`。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:28
+#: 9b0640688e104d7db3357b9b14353eea
+msgid ""
+"[robot_action_composer](../4-reference/python_apps/5-robot_action_composer.md)"
+" — documented branch `feature/dex-grasp-generator`; skill names and flags"
+" on that README / `docs/`."
+msgstr ""
+"[robot_action_composer](../4-reference/python_apps/5-robot_action_composer.md)"
+" — 文档分支 `feature/dex-grasp-generator`；skill 名和参数见该 README / `docs/`。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:30
+#: 77ccb29c35374bb2a70480e6f418ba17
+msgid ""
+"Composer `--robot fiveages_w2` is a real key on composer `ROS2_STACK.md`."
+" It is **not** an `./init_repo.sh --robot` flag."
+msgstr ""
+"composer 的 `--robot fiveages_w2` 是 `ROS2_STACK.md` 上的真实键。它 **不是** "
+"`./init_repo.sh --robot` 参数。"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:32
+#: e1e78185c70e4060a145fe4378422a9f
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:34
+#: d54dec41009f44fc98f9d03ef53714e0
+msgid "[FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md)"
+msgstr "[FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md)"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:35
+#: 2750583cf0eb43dcbcb57e9432c3d6fd
+msgid "[ros2_control here](../3-concepts/1-ros2_control_here.md)"
+msgstr "[本栈中的 ros2_control](../3-concepts/1-ros2_control_here.md)"
+
+#: ../../source/6-more_applications/4-simulation_engineer.md:36
+#: 49ad3c658dc44191bf8c0b66d24a8b34
+msgid ""
+"[LeRobot Record and "
+"Export](../2-how_to/7-synthetic_data/3-record_export.md) — stop at the "
+"dataset"
+msgstr "[LeRobot 录制与导出](../2-how_to/7-synthetic_data/3-record_export.md) — 停在数据集"

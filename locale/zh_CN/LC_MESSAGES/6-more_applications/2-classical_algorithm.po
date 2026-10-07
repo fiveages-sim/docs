@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 04:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:1
+#: ebdfdb177bd0496d9274bd3008693147
+msgid "Classical algorithm engineer"
+msgstr "传统方案算法工程师"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:3
+#: e94ba50c76cc4716a8f4be9308061d81
+msgid ""
+"For engineers who keep their own vision, planning, or visual-servoing "
+"stack and need a stable Python / ROS 2 interface to the robot."
+msgstr "面向自带视觉、规划或视觉伺服栈、需要稳定 Python / ROS 2 接口控机器人的工程师。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:5
+#: 56fac98bd1544519ac826390d9dd2b92
+msgid "1. Workspace and a moving robot"
+msgstr "1. 工作空间和能动的机器人"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:7
+#: 0cadb8d64bd74ded82273284977dd3ce
+msgid ""
+"[Install Environment](../1-getting_started/2-install_environment.md) — "
+"Ubuntu 24.04, ROS 2 Jazzy."
+msgstr "[安装环境](../1-getting_started/2-install_environment.md) — Ubuntu 24.04、ROS 2 Jazzy。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:8
+#: 666c52461863485d87fb087bcda5774f
+msgid ""
+"[open-deploy-ws Setup](../1-getting_started/3-open_deploy_ws.md) or a "
+"lean-branch how-to if you are on a single public robot."
+msgstr ""
+"[open-deploy-ws 配置](../1-getting_started/3-open_deploy_ws.md)；若只做一台公开机器人，用对应精简分支操作指南。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:9
+#: ce9af4ce028542618f7bf31b66c2c672
+msgid ""
+"[Run Mock Demo](../2-how_to/1-basic_operations/1-run_mock_demo.md) — "
+"confirm FSM / motion before hardware."
+msgstr ""
+"[运行 Mock 演示](../2-how_to/1-basic_operations/1-run_mock_demo.md) — "
+"上真机前先确认状态机 / 运动。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:10
+#: 32a86015a7f9408bae53319459216b0c
+msgid ""
+"[Switch Robot](../2-how_to/1-basic_operations/2-switch_robot.md) — "
+"`robot:=` key and end-effector `type` / `left_type` / `right_type`."
+msgstr ""
+"[切换机器人](../2-how_to/1-basic_operations/2-switch_robot.md) — `robot:=` 键和末端 "
+"`type` / `left_type` / `right_type`。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:12
+#: d7bd077a0ca54e3b8c2194d1108df33c
+msgid "2. Install the Python interface"
+msgstr "2. 安装 Python 接口"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:14
+#: 85029400b20146e58421f001acd97632
+msgid ""
+"[fa-py-libraries](../4-reference/python_apps/2-fa_py_libraries.md) — "
+"`./init.sh all` (Python 3.12)."
+msgstr "[fa-py-libraries](../4-reference/python_apps/2-fa_py_libraries.md) — `./init.sh all`（Python 3.12）。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:15
+#: 039a77e785d449c9ba4ae329bb0400f8
+msgid ""
+"[Python Interface](../2-how_to/3-programming/5-python_interface.md) — "
+"connect, `move_j` / `move_l`, gripper, read state."
+msgstr ""
+"[Python 接口](../2-how_to/3-programming/5-python_interface.md) — 连接、`move_j` / "
+"`move_l`、夹爪、读状态。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:16
+#: 7ab51d256b6a4093b46e921689ba6d7f
+msgid ""
+"[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
+" — API names used on those pages."
+msgstr ""
+"[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
+" — 上述页面用到的 API 名。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:18
+#: 683acbe15a9946198804235d8de85049
+msgid ""
+"Entry is the fa-py-libraries env, not `pip install ros2-robot-interface` "
+"on system Python."
+msgstr "入口是 fa-py-libraries 环境，不是在系统 Python 上 `pip install ros2-robot-interface`。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:20
+#: 2deaec3cbbcb45979abca847fa7e7f9a
+msgid "3. Hook your own vision or servoing"
+msgstr "3. 接入自有视觉或伺服"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:22
+#: 7d69c0d398764b40b0d1075342ad431b
+msgid ""
+"This site does **not** document a vision-guided or visual-servoing "
+"pipeline (no camera calibration how-to, no servo gain list)."
+msgstr "本站 **没有** 视觉引导或视觉伺服流水线文档（没有相机标定操作指南，也没有伺服增益表）。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:24
+#: 3470243efe6d4844a237c85d9d94cd71
+msgid "Use the interface as the robot side of **your** loop:"
+msgstr "把接口当作 **你自己** 回路的机器人一侧："
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:26
+#: 7eb2f402e58645d9941226cf45b3064f
+msgid ""
+"Cartesian: `move_l` / `get_ee_pose` on "
+"[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
+msgstr ""
+"笛卡尔：`move_l` / `get_ee_pose`，见 "
+"[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:27
+#: e28b3de6dd6c41acb7069cd1cea6c535
+msgid "Joints: `move_j` / `get_joint_positions`"
+msgstr "关节：`move_j` / `get_joint_positions`"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:28
+#: e998f47c8bb5490e952bdf228aa70fb0
+msgid ""
+"FSM: [FSM and Topics](../3-concepts/4-fsm_and_topics.md) (`/fsm_command` "
+"is `std_msgs/Int32`)"
+msgstr "[状态机与话题](../3-concepts/4-fsm_and_topics.md)（`/fsm_command` 是 `std_msgs/Int32`）"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:30
+#: 198d332c7bdf469b80f9905c8ddf914c
+msgid ""
+"Camera plugins under "
+"[lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md) "
+"(`lerobot_camera_ros2`) are for **dataset recording**, not a visual-servo"
+" controller."
+msgstr ""
+"[lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md) 下的相机插件"
+"（`lerobot_camera_ros2`）用于 **数据集录制**，不是视觉伺服控制器。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:32
+#: 99cf6c700a4e45a9821ae10e0a69e623
+msgid "4. Optional: see the robot while you debug"
+msgstr "4. 可选：调试时看机器人"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:34
+#: c3c23d440c37441ebe0a7fd02670b306
+msgid ""
+"[ros2-viser](../4-reference/python_apps/3-ros2_viser.md) — `./run.sh "
+"viser` after the stack is up."
+msgstr "[ros2-viser](../4-reference/python_apps/3-ros2_viser.md) — 栈起来后执行 `./run.sh viser`。"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:36
+#: f3ebc3a18a94455aa115a290127dd1e0
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:38
+#: 94927f490d6b4c8990c6d8822f033c94
+msgid "[Controllers](../4-reference/controllers/0-index.md)"
+msgstr "[控制器](../4-reference/controllers/0-index.md)"
+
+#: ../../source/6-more_applications/2-classical_algorithm.md:39
+#: ef5c4247bf024e1498443954e4af218a
+msgid "[Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"
+msgstr "[使用 basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"

@@ -54,6 +54,8 @@ Each guide follows the same structure:
 
 ## Need Something Else?
 
+Role-based paths after the beginner course: [More applications](../6-more_applications/0-index.md).
+
 If you can't find a guide for your task:
 
 1. Check the [Concepts](../3-concepts/0-index.md) section for understanding
