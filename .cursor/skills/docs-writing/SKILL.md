@@ -60,8 +60,8 @@ Keep **reader-facing product facts**:
 
 - There is **no** `hardware:=mock`. Keys are `mock_components` / `gz` / `isaac` / `real`.
 - `/fsm_command` is `std_msgs/Int32`, not strings such as `stand` / `walk`.
-- Acone / AC One is **arm only**; Lift 2S is the **full-body** mobile manipulator.
-- Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (方舟无限 = ARX, never bare “Ark”; 高擎 = HighTorque / Panthera).
+- Acone / AC One is **dual-arm** (双臂); Lift 2S is the **full-body** mobile manipulator. Do not call Acone arm-only / single-arm / 仅机械臂.
+- Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (方舟无限 = ARX, never bare “Ark”; 高擎 = HighTorque / Panthera). On reader pages, use names naturally (quiet first-mention pairs such as **ARX** (方舟无限) are fine). Do not lecture “方舟无限 = ARX, not bare Ark” on every page.
 
 Rewrite writer-scolding into a positive instruction:
 

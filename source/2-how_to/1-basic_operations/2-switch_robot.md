@@ -34,7 +34,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>
 | Brand | `robot:=` keys used in this docs set | Source |
 |-------|--------------------------------------|--------|
 | Dobot | `cr5` | `demo.launch.py` default |
-| ARX (方舟无限) | `arx_acone` (**arm only**), `arx_lift2s` (**Lift 2S** full-body) | ARX how-to / description packages |
+| ARX (方舟无限) | `arx_acone` (**dual-arm**), `arx_lift2s` (**Lift 2S** full-body) | ARX how-to / description packages |
 | HighTorque (高擎) | `panthera_ht` | [panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) |
 
 Use the key that matches `{key}_description` (the description packages you initialized).
@@ -45,11 +45,11 @@ Use the key that matches `{key}_description` (the description packages you initi
 # Demo default robot key is cr5 (demo.launch.py)
 ros2 launch ocs2_arm_controller demo.launch.py
 
-# After init has ARX descriptions, launch Acone (arm only, not Lift 2S)
+# After init has ARX descriptions, launch Acone (dual-arm, not Lift 2S)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
-`arx_acone` is the manipulator. Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md).
+`arx_acone` is **Acone** (dual-arm). Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md).
 
 ## End-effectors (`type` / `left_type` / `right_type`)
 

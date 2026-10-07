@@ -30,7 +30,7 @@ CAN / TCP / Serial / Simulation
 
 | Interface | Bus | Robots |
 |-----------|-----|--------|
-| [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, Acone (arm), Lift 2S |
+| [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, Acone (dual-arm), Lift 2S |
 | [dobot-cr-ros2-control](1-public_hi.md) | TCP | Dobot CR5, CR10 |
 | [unitree-ros2-control](1-public_hi.md) | SDK | Unitree quadrupeds |
 | [ht-ros2-control](1-public_hi.md) | Serial | HighTorque Panthera HT |
