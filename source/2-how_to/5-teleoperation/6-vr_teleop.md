@@ -55,7 +55,7 @@ What `./init.sh all` does: submodules + Python 3.12 env + `ros2_robot_interface`
 
 ```bash
 source ~/open-deploy-ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
 
 ### 3. Start VR Bridge

@@ -19,25 +19,7 @@ These packages require private repository access.
 
 ## Usage
 
-### Via fa-deploy-ws
-
-```bash
-# Initialize for specific robot
-./init_repo.sh --robot fiveages_w2
-
-# Build
-colcon build
-
-# Launch
-ros2 launch fiveages_bringup bringup.launch.py robot:=fiveages_w2 hardware:=mock
-```
-
-### Launch Parameters
-
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| `robot` | Robot model | `fiveages_w2` |
-| `hardware` | Hardware type | `mock`, `real` |
+These packages are private. After you have access, follow the **package README** and [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md). This page does not invent `fiveages_bringup`, `--robot` flags, or `hardware:=mock`. Public `hardware:=` keys are `mock_components` / `gz` / `isaac` / `real` — [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md).
 
 ## fa-w2-components
 

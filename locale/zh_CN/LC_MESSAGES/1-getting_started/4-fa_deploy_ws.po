@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -45,695 +45,101 @@ msgid ""
 msgstr "该工作空间需要访问私有仓库。如需权限，请联系团队负责人。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:11
+#: 1ddfef2bbc7249f6a0eff5e5f7723ee8
+msgid "Source of truth"
+msgstr "权威来源"
+
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:14
+#: 91d582537e5245daaff2805c613ea97f
+msgid ""
+"The `fa-deploy-ws` README is **not public**. This page does **not** "
+"invent `--robot` flags, `--init-release`, `robot.local.yaml`, "
+"`./quick_start.sh --mock`, `fiveages_bringup`, or a directory tree. After"
+" you have access, follow **that repository’s README** and its init / "
+"quick-start scripts."
+msgstr ""
+"`fa-deploy-ws` 的 README **不公开**。本页**不编造** `--robot`、`--init-release`、`robot.local.yaml`、`./quick_start.sh --mock`、`fiveages_bringup` 或目录树。有权限后，以**该仓库 README** 及其 init / quick-start 脚本为准。"
+
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:17
 #: 546dfa7ce2c348328692fc1ef106bb01
 msgid "Overview"
 msgstr "概述"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:13
-#: a736f09fe3184ed1a9118498da226564
-msgid "`fa-deploy-ws` is the internal deployment workspace for:"
-msgstr "`fa-deploy-ws` 是内部部署工作空间，用于："
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:19
+#: 4f820837aa7d4ec38b8e48f101a66c49
+msgid ""
+"`fa-deploy-ws` is the internal counterpart of [open-deploy-"
+"ws](3-open_deploy_ws.md). Public users stay on `open-deploy-ws`."
+msgstr ""
+"`fa-deploy-ws` 是 [open-deploy-ws](3-open_deploy_ws.md) 的内部对应工作区。公开用户继续用 `open-deploy-ws`。"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:14
-#: ac3727801e3d4b7dbe9e33d29cf3c6e7
-msgid "FiveAges wheeled-arm humanoids: W2, W2R, S2, S2R (and other prototypes)"
-msgstr "FiveAges 轮臂人形：W2、W2R、S2、S2R（以及其他原型机）"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:21
+#: fec2cb4357024d22ac15889b2cd0fad4
+msgid "What is verified on the **public** side and still applies as the pattern:"
+msgstr "在**公开**侧已核实、仍可作为模式的内容："
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:15
-#: 9722f75a6a89405ebfb4ab685aa9733b
-msgid "Dual-arm CCS configurations"
-msgstr "双臂 CCS 配置"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:23
+#: 624ded5912534be5b83be941a6f50ed9
+msgid ""
+"Clone the workspace, then run **`./init_repo.sh`** (same script name as "
+"[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md))."
+msgstr ""
+"克隆工作区，然后运行 **`./init_repo.sh`**（脚本名与 [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) 相同）。"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:16
-#: 2fff048b348a4870aa93241c2c008763
-msgid "Production deployment and release packaging"
-msgstr "生产部署与发行打包"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:24
+#: 4647535cf638477c8e55e238099b81e9
+msgid "Do **not** `git submodule update --init --recursive`."
+msgstr "**不要** `git submodule update --init --recursive`。"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:18
-#: 6b02746b2b91453c95f04a3ad83caa8f
-msgid "Key Differences from open-deploy-ws"
-msgstr "与 open-deploy-ws 的主要差异"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:25
+#: 773212ba772e4b189b74fcec7ac32e3c
+msgid ""
+"After init, `colcon build`, then `source install/setup.bash` in the "
+"launch terminal. Do not hand-write a `~/.bashrc` `source /opt/ros/...` "
+"chain as the documented path."
+msgstr ""
+"初始化后 `colcon build`，再在启动终端 `source install/setup.bash`。不要把手工 `~/.bashrc` `source /opt/ros/...` 链当作文档路径。"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ebd26743cf5c4368806bfa3d675d0dae
-msgid "Aspect"
-msgstr "方面"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: e3e9290dda1644b38d1568b217d93896
-msgid "open-deploy-ws"
-msgstr "open-deploy-ws"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 9a11b098d9634133b22492e00fd8d6a7
-msgid "fa-deploy-ws"
-msgstr "fa-deploy-ws"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ecaa125611aa4ecc81111c067c1c9c70
-msgid "Submodules"
-msgstr "子模块"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: e22c33aa558e46d9b58b73e5b763714b
-msgid "Public only"
-msgstr "仅公开"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 27dd72188e8140a4a1a7f0a797d189ff
-msgid "Public + private"
-msgstr "公开 + 私有"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 5cce6e10dc52486d88b5310715c7879b
-msgid "Robots"
-msgstr "机器人"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 2fc0ae1cdfd44ae6bb9c8c8efb902d7c
-msgid "Community robots"
-msgstr "社区机器人"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 512fc36529824f0da6db277cb6c079c5
-msgid "FA wheeled-arm humanoids"
-msgstr "FA 轮臂人形"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 0e65d8879b7348a588f34d2753a2599a
-msgid "OCS2"
-msgstr "OCS2"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 8a02abe7fc2f40f8921a3f2886074376
-msgid "GitHub Release `.deb` or source"
-msgstr "GitHub Release `.deb` 或源码"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 1ddfef2bbc7249f6a0eff5e5f7723ee8
-msgid "Full source (default)"
-msgstr "完整源码（默认）"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: bd72a368734d47d69f3836929b2a5076
-msgid "WBC"
-msgstr "WBC"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 3249051018e448ab8a2cc50cd91609cd
-msgid "Not included"
-msgstr "不包含"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 8b71f9dc4dd046a2956942f910c11d5d
-msgid "Included"
-msgstr "包含"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 819dc38948114c18a134803e86f6e819
-msgid "Release"
-msgstr "发行包"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 7cb7432854e74402b28e74dadc92a7e8
-msgid "Not available"
-msgstr "不可用"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 0461465afc0145e19310e61330a95b57
-msgid "`./release.sh`"
-msgstr "`./release.sh`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:42
-#: 400fa54013f64dfeb4c406b2ac59db25 9d6e0be78c0e4041aa25f79316e05d2b
-msgid "Initialization"
-msgstr "初始化"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ecf92709661e4194a5f1e4cce70ce0e9
-msgid "`./init_repo.sh`"
-msgstr "`./init_repo.sh`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 94e06c1fd2314d8e9b2ae7db9bd4004f
-msgid "`./init_repo.sh --robot <id>`"
-msgstr "`./init_repo.sh --robot <id>`"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:27
+#: a9c44045c1fd4413a6c9975d5c70a409
+msgid ""
+"Extra flags, robot IDs, and on-robot YAML live in the private README — "
+"copy them from there."
+msgstr "额外参数、机器人 ID 和机上 YAML 在私有 README 中 — 从那里复制。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:29
-#: 3059443673a74b7493c6c4c4c80778c2
-msgid "Prerequisites"
-msgstr "前提条件"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:31
-#: 4c09271acc1c4f6fb1e3a73ee30c7886
-msgid "Access to fiveages-sim private repositories"
-msgstr "可访问 fiveages-sim 私有仓库"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:32
-#: 0e06b203a9ee4b62aa2300e3a45435d3
-msgid "SSH key configured for GitHub"
-msgstr "已为 GitHub 配置 SSH 密钥"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:33
-#: b0997a575a1142c392f0cece6ac2cc28
-msgid "ROS 2 Jazzy environment set up"
-msgstr "已配置 ROS 2 Jazzy 环境"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:35
-#: 13671ae02ab14ff689fc3746af330d9f
-msgid "Cloning"
-msgstr "克隆"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:37
-#: bde0b969eeba4d9e8588306f31b5c622
-msgid ""
-"git clone git@github.com:fiveages-sim/fa-deploy-ws.git\n"
-"cd fa-deploy-ws\n"
-msgstr ""
-"git clone git@github.com:fiveages-sim/fa-deploy-ws.git\n"
-"cd fa-deploy-ws\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:44
-#: 336d6749a3f244c5b1dbdf12959714b3
-msgid "Robot-Specific Init"
-msgstr "按机器人初始化"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:46
-#: a6161e87c0484e71bc2dc6caab483f54
-msgid "./init_repo.sh --robot <robot-id>\n"
-msgstr "./init_repo.sh --robot <robot-id>\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:50
-#: 12f4fa6aab6147029f20cea9ec1dc7b9
-msgid "Available Robot IDs"
-msgstr "可用机器人 ID"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 0c61895025654d358f9b4c7c2039c994
-msgid "ID"
-msgstr "ID"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 1d75adb6bdbb49dea397a94c0221fdd3
-msgid "Robot Type"
-msgstr "机器人 类型"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: c9823ac3ee9745b793770df6d6edb8e8 fd6768f0df8046db83c9a4fdee3b6610
-msgid "Description"
-msgstr "描述"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ffc23a8c782a43659bdc20f6b8cf1d78
-msgid "`fiveages_w2`"
-msgstr "`fiveages_w2`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 371a127070904a78b043760d16451075 6363630458b6420abce18a739abed8eb
-#: ad7ebee67abe4c31b5edf2c5bedb70f1 ebf079d68e9847ee9706cee9737fd78e
-msgid "Humanoid"
-msgstr "人形机器人"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: cc484b01960a459696ef09913fb3e2e6
-msgid "W2 full-size humanoid"
-msgstr "W2 全尺寸人形机器人"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 57ea799d5c3a43b5a03805ce2967a15b
-msgid "`fiveages_w2r`"
-msgstr "`fiveages_w2r`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 74e0994eef95455499b287d972a4f639
-msgid "W2R variant"
-msgstr "W2R 变体"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: ee3cb7a561d94145b9dfe238848c71ca
-msgid "`fiveages_s2`"
-msgstr "`fiveages_s2`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 2534141e82154350ab48e98c01e9149f
-msgid "S2 series"
-msgstr "S2 系列"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 5a3958c6c2934cc8bd7c3074d6f881ae
-msgid "`fiveages_s2r`"
-msgstr "`fiveages_s2r`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: e5dfedd84c1d4bc9894584fb58a4fcaf
-msgid "S2R variant"
-msgstr "S2R 变体"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 21c7579dbd02417a89af189f096bc88b
-msgid "`tianji_m6_ccs`"
-msgstr "`tianji_m6_ccs`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 4bf1674f689f452b901ad10793d58e5d b48bd8ab71974de386984db2cba4cffa
-#: d0d19470e153485397be6ceec952fb1b
-msgid "Dual-arm"
-msgstr "双臂"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: d9fe168436ba45bca6e8c6ea6f381828
-msgid "M6 CCS configuration"
-msgstr "M6 CCS 配置"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 6765b5fbda6c4604849162d015c36a27
-msgid "`tianji_m20s_ccs`"
-msgstr "`tianji_m20s_ccs`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: b1ea8ec00df4462ba235828e26cd5eea
-msgid "M20S CCS"
-msgstr "M20S CCS"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: a87c8fca3e364dd084d059b9022e3672
-msgid "`rokae_ar5_ccs`"
-msgstr "`rokae_ar5_ccs`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 0eb6984f86ae411691ae6b7dc43cf54e
-msgid "Rokae AR5 CCS"
-msgstr "Rokae AR5 CCS"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:62
-#: 90038be39a10421cb674a3505bde74a6
-msgid ""
-"Additional prototype robot IDs may be available — check `presets/` "
-"directory for the full list."
-msgstr "可能还有其他原型机 ID，完整列表请查看 `presets/` 目录。"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:64
-#: d70bd88d0fed410e8e867de2a5cd8b76
-msgid "Init Options"
-msgstr "初始化选项"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:66
-#: 290cacdd9c7c4cf2a030b5fed93f1b62
-msgid ""
-"# Standard initialization\n"
-"./init_repo.sh --robot fiveages_w2\n"
-"\n"
-"# With release packages (pre-built binaries)\n"
-"./init_repo.sh --robot fiveages_w2 --init-release\n"
-msgstr ""
-"# Standard initialization\n"
-"./init_repo.sh --robot fiveages_w2\n"
-"\n"
-"# With release packages (pre-built binaries)\n"
-"./init_repo.sh --robot fiveages_w2 --init-release\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:74
-#: f460f1b0309440ea840625e40d832572
-msgid "Robot Configuration"
-msgstr "机器人 配置"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:76
-#: 743e2d825e594f4eb0afb6c364a069cd
-msgid "robot.local.yaml"
-msgstr "robot.local.yaml"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:78
-#: 0a352465221845e28547697f9885452c
-msgid ""
-"Each robot requires a local configuration file that is **not committed to"
-" version control**:"
-msgstr "每台机器人都需要一份**不会提交到版本控制**的本地配置文件："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:80
-#: 30cf366b1770497babc20f4744928d2e
-msgid "cp robot.local.yaml.template robot.local.yaml\n"
-msgstr "cp robot.local.yaml.template robot.local.yaml\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:84
-#: 11b547fe5784490eb9ca57c5344388e2
-msgid "Edit `robot.local.yaml` with your robot's specific values:"
-msgstr "按你的机器人具体参数编辑 `robot.local.yaml`："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:86
-#: d051490739134246810b2fbccc84d08f
-msgid ""
-"# Structure overview (actual values are robot-specific)\n"
-"network:\n"
-"  domain_id: <robot-specific-id>\n"
-"  interface: <network-interface>\n"
-"  \n"
-"robot:\n"
-"  type: <robot-type>\n"
-"  # Additional robot-specific parameters\n"
-msgstr ""
-"# Structure overview (actual values are robot-specific)\n"
-"network:\n"
-"  domain_id: <robot-specific-id>\n"
-"  interface: <network-interface>\n"
-"  \n"
-"robot:\n"
-"  type: <robot-type>\n"
-"  # Additional robot-specific parameters\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: e721566d4ecd4f7eb67587270f060dee
-msgid "Configuration Security"
-msgstr "配置安全"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:100
-#: 5b4b5dfd2bc94a59becd98de9592a521
-msgid ""
-"Never commit `robot.local.yaml` with actual IP addresses, domain IDs, or "
-"other deployment-specific values. These are considered sensitive and vary"
-" per installation."
-msgstr ""
-"切勿将包含真实 IP 地址、Domain ID 或其他部署特定值的 `robot.local.yaml` "
-"提交到仓库。这些信息视为敏感，且因安装环境而异。"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:103
-#: 6cf0fa94127c4e538082610b811ebdee
-msgid "Parameter Reference"
-msgstr "参数 参考手册"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 387e4169300743b9940c24658eccdab8
-msgid "Parameter"
-msgstr "参数"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 06aef0d08fa54459a0085cd17e972985
-msgid "`domain_id`"
-msgstr "`domain_id`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 2357d1db098c42f1ab497520c0283320
-msgid "ROS 2 Domain ID for network isolation"
-msgstr "用于网络隔离的 ROS 2 Domain ID"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 9ea79d1866db400090d1fa80a4829627
-msgid "`interface`"
-msgstr "`interface`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 838c4b273cd64947b2b409c0e45c80fe
-msgid "Network interface connected to robot"
-msgstr "连接到机器人的网络接口"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 0666583d1c3647d5917f5ada0e216aca
-msgid "`robot.type`"
-msgstr "`robot.type`"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:97
-#: 62dbe5c895804501a0d149d63484ca95
-msgid "Robot model identifier"
-msgstr "机器人型号标识"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:111
-#: b9969ba58848474093474b020629115b
-msgid "Consult your robot's deployment documentation for specific values."
-msgstr "具体取值请查阅该机器人的部署文档。"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:113
-#: 6f079cf2714e48048f2cfa4297c5cd8d
-msgid "Building"
-msgstr "编译"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:115
-#: 0bbc743727c042c088f81bddb97af7af
-msgid "Full Build"
-msgstr "完整编译"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:117
-#: 355624d134454db8930478443cd10e1c
-msgid ""
-"source /opt/ros/jazzy/setup.bash\n"
-"rosdep install --from-paths src --ignore-src -r -y\n"
-"colcon build --symlink-install\n"
-msgstr ""
-"source /opt/ros/jazzy/setup.bash\n"
-"rosdep install --from-paths src --ignore-src -r -y\n"
-"colcon build --symlink-install\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:123
-#: 78e1d006a1f8456e90de1d4faf46d8d4
-msgid "Package-Specific Build"
-msgstr "按软件包编译"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:125
-#: acc78112e2e7483b88f211b50ceccc9f
-msgid "colcon build --packages-up-to ocs2_wbc_controller\n"
-msgstr "colcon build --packages-up-to ocs2_wbc_controller\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:129
-#: 59a1bcc435d945d6affcdff1201be0a6
-msgid "Quick Start Flow"
-msgstr "快速启动流程"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:131
-#: cf578b9a33834aac9b4d77b96cc5b41e
-msgid "Mock Mode (Testing)"
-msgstr "模拟模式（测试）"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:133
-#: b4f5522b29de49ca9624a311c4c6bea0
-msgid ""
-"source install/setup.bash\n"
-"./quick_start.sh --mock\n"
-msgstr ""
-"source install/setup.bash\n"
-"./quick_start.sh --mock\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:138
-#: cae9a81ef3584783957aeb0585403576
-msgid "Real Hardware"
-msgstr "真实硬件"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:140
-#: c5ff0a2b27384c2992063ea6ea4230d2
-msgid "Safety Warning"
-msgstr "安全警告"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:143
-#: 437baad16bd041538844db4728d1b4a6
-msgid "Before running on real hardware:"
-msgstr "在真实硬件上运行之前："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:144
-#: e6e4747248a54ec08b9708ef306b8d39
-msgid "Verify emergency stop is accessible"
-msgstr "确认急停装置可随时触及"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:145
-#: 0a617f02df1d4055b031afbfdab6f3e7
-msgid "Clear the robot's workspace"
-msgstr "清空机器人作业空间内的障碍物"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:146
-#: 4e0fbe7fb4264988863ebb54ce133357
-msgid "Start with low velocities"
-msgstr "从低速开始"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:147
-#: 81cd3217ee63431585ca2fd77f1e34bd
-msgid "Have a trained operator present"
-msgstr "确保有经过培训的操作员在场"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:150
-#: 134e2f3fe481487a8ceeb6fee955d15e
-msgid ""
-"source install/setup.bash\n"
-"./quick_start.sh\n"
-msgstr ""
-"source install/setup.bash\n"
-"./quick_start.sh\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:155
 #: 5c89889bfc5d491cbab0cc1460f5a8f2
-msgid "Release Packages"
+#, fuzzy
+msgid "Related public pages"
 msgstr "发布包"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:157
-#: 1436326a57d14c4dab9e9a7da701b486
-msgid "Generate Release"
-msgstr "生成发行包"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:31
+#: 79420e8da20246ebb1935b5b8169f204
+msgid "[Install Environment](2-install_environment.md)"
+msgstr "[安装环境](2-install_environment.md)"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:159
-#: 03c6706718224f549b45d03bfce90c48
-msgid "./release.sh\n"
-msgstr "./release.sh\n"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:32
+#: 3977e8c81cf043978209a1f107482683
+msgid "[open-deploy-ws Setup](3-open_deploy_ws.md)"
+msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md)"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:163
-#: 1e32afc496604cde868b916ecc9f8bcc
-msgid "This creates a deployable package without source code."
-msgstr "这将生成不含源码的可部署软件包。"
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:33
+#: 3b7a2a8d64234dc29925b656061d81d3
+msgid "[Workspace Layout](../3-concepts/2-workspace_layout.md)"
+msgstr "[工作区布局](../3-concepts/2-workspace_layout.md)"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:165
-#: 18e9203747fe4c77ae30d72532750449
-msgid "Install Release"
-msgstr "安装发行包"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:167
-#: bb2dca9a2f7a4068825d5a2a344f03a9
-msgid "On target machine:"
-msgstr "在目标机器上："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:169
-#: 0bb8e8f675dc48a48a5ac091472828bf
-msgid "./release.sh --install\n"
-msgstr "./release.sh --install\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:173
-#: ad80030523b742f48b96c6126904e296
-msgid "Directory Structure"
-msgstr "目录结构"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:175
-#: eafa0e79df9d4de69ddd20f0f0440007
-msgid ""
-"fa-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/\n"
-"│   ├── robot-descriptions-fiveages/\n"
-"│   ├── ocs2-wbc-controller/\n"
-"│   ├── ocs2-humanoid/\n"
-"│   └── ...\n"
-"├── init_repo.sh\n"
-"├── quick_start.sh\n"
-"├── release.sh\n"
-"├── robot.local.yaml.template\n"
-"└── presets/\n"
-"    ├── fiveages_w2.yaml\n"
-"    ├── fiveages_s2.yaml\n"
-"    └── ..."
-msgstr ""
-"fa-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/\n"
-"│   ├── robot-descriptions-fiveages/\n"
-"│   ├── ocs2-wbc-controller/\n"
-"│   ├── ocs2-humanoid/\n"
-"│   └── ...\n"
-"├── init_repo.sh\n"
-"├── quick_start.sh\n"
-"├── release.sh\n"
-"├── robot.local.yaml.template\n"
-"└── presets/\n"
-"    ├── fiveages_w2.yaml\n"
-"    ├── fiveages_s2.yaml\n"
-"    └── ..."
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:193
-#: c1c7aebc2cc043238a9e2ae35c06aca3
-msgid "Submodule Management"
-msgstr "子模块管理"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:195
-#: 4647535cf638477c8e55e238099b81e9
-msgid ""
-"The workspace nests many private submodules. Never use blind recursive "
-"init:"
-msgstr "该工作空间嵌套了大量私有子模块。切勿盲目执行递归初始化："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:197
-#: a8a652384c764807a99f81f47f98f3c3
-msgid ""
-"# DON'T do this - initializes unnecessary submodules\n"
-"git submodule update --init --recursive  # AVOID\n"
-"\n"
-"# DO use the init script with robot ID\n"
-"./init_repo.sh --robot <id>\n"
-msgstr ""
-"# DON'T do this - initializes unnecessary submodules\n"
-"git submodule update --init --recursive  # AVOID\n"
-"\n"
-"# DO use the init script with robot ID\n"
-"./init_repo.sh --robot <id>\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:205
-#: d9cd6f8d596c4f2a8f502354a9cff2ac
-msgid "Common Issues"
-msgstr "常见问题"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:207
-#: f46a810c4e564b90ae5de8501f816c10
-msgid "Submodule Access Denied"
-msgstr "子模块访问被拒绝"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:209
-#: 13b8841f7d93467c9fdaee883bfaf17f
-msgid "Verify your SSH key has access to the required private repositories:"
-msgstr "确认你的 SSH 密钥有权访问所需的私有仓库："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:211
-#: 63cf4bdfa5294eb1bac1b35a04b7b324
-msgid "ssh -T git@github.com\n"
-msgstr "ssh -T git@github.com\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:215
-#: 730510c0bd27479b8b823957dd84d11b
-msgid "Missing WBC Controller"
-msgstr "缺少 WBC 控制器"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:217
-#: 410714a7396c470a9c802fef4764f0ef
-msgid "Ensure you initialized with the correct robot ID that includes WBC:"
-msgstr "请确认使用包含 WBC 的正确机器人 ID 完成了初始化："
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:219
-#: e6aa728e4cef43b5b764387ed306cba2
-msgid "./init_repo.sh --robot fiveages_w2\n"
-msgstr "./init_repo.sh --robot fiveages_w2\n"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:223
-#: 6e81cc6309db488b95ceb18dece656ed
-msgid "Network Communication Fails"
-msgstr "网络通信失败"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:225
-#: c31e2d6dc13846859bafce38ad96f2b6
-msgid "Verify `robot.local.yaml` has correct domain ID"
-msgstr "确认 `robot.local.yaml` 中的 Domain ID 正确"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:226
-#: 7831c527fc5d42e7ae2de6ec56542a12
-msgid "Check network interface matches robot's network"
-msgstr "确认网络接口与机器人网络一致"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:227
-#: d8ab743285a147ff9546ef3d504444f7
-msgid "Confirm Zenoh/DDS configuration if using multi-machine setup"
-msgstr "若为多机部署，请确认 Zenoh/DDS 配置"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:229
-#: 93208be3b7254059baf5203aaed269cb
-msgid "Next Steps"
-msgstr "下一步"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:231
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:34
 #: 29900fe9f0924fe8b420468357841d8f
 msgid ""
 "[Go to real "
 "hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)"
 msgstr "[部署到真实硬件](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)"
 
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:232
+#: ../../source/1-getting_started/4-fa_deploy_ws.md:35
 #: 94a6841f8fa844d38472861465c7c48e
 msgid "[WBC controller reference](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[WBC 控制器参考](../4-reference/controllers/3-ocs2_wbc.md)"
-
-#: ../../source/1-getting_started/4-fa_deploy_ws.md:233
-#: 4b4217c3e7b74aa7aead865aa45d235b
-msgid "[FA robot descriptions](../4-reference/descriptions/5-fa_robots.md)"
-msgstr "[FA 机器人描述](../4-reference/descriptions/5-fa_robots.md)"
 
 #~ msgid ""
 #~ "fa-deploy-ws/\n"
@@ -771,3 +177,444 @@ msgstr "[FA 机器人描述](../4-reference/descriptions/5-fa_robots.md)"
 #~ msgid "Debian or source"
 #~ msgstr "Debian 或源码"
 
+#~ msgid "`fa-deploy-ws` is the internal deployment workspace for:"
+#~ msgstr "`fa-deploy-ws` 是内部部署工作空间，用于："
+
+#~ msgid "FiveAges wheeled-arm humanoids: W2, W2R, S2, S2R (and other prototypes)"
+#~ msgstr "FiveAges 轮臂人形：W2、W2R、S2、S2R（以及其他原型机）"
+
+#~ msgid "Dual-arm CCS configurations"
+#~ msgstr "双臂 CCS 配置"
+
+#~ msgid "Production deployment and release packaging"
+#~ msgstr "生产部署与发行打包"
+
+#~ msgid "Key Differences from open-deploy-ws"
+#~ msgstr "与 open-deploy-ws 的主要差异"
+
+#~ msgid "Aspect"
+#~ msgstr "方面"
+
+#~ msgid "open-deploy-ws"
+#~ msgstr "open-deploy-ws"
+
+#~ msgid "fa-deploy-ws"
+#~ msgstr "fa-deploy-ws"
+
+#~ msgid "Submodules"
+#~ msgstr "子模块"
+
+#~ msgid "Public only"
+#~ msgstr "仅公开"
+
+#~ msgid "Public + private"
+#~ msgstr "公开 + 私有"
+
+#~ msgid "Robots"
+#~ msgstr "机器人"
+
+#~ msgid "Community robots"
+#~ msgstr "社区机器人"
+
+#~ msgid "FA wheeled-arm humanoids"
+#~ msgstr "FA 轮臂人形"
+
+#~ msgid "OCS2"
+#~ msgstr "OCS2"
+
+#~ msgid "GitHub Release `.deb` or source"
+#~ msgstr "GitHub Release `.deb` 或源码"
+
+#~ msgid "Full source (default)"
+#~ msgstr "完整源码（默认）"
+
+#~ msgid "WBC"
+#~ msgstr "WBC"
+
+#~ msgid "Not included"
+#~ msgstr "不包含"
+
+#~ msgid "Included"
+#~ msgstr "包含"
+
+#~ msgid "Release"
+#~ msgstr "发行包"
+
+#~ msgid "Not available"
+#~ msgstr "不可用"
+
+#~ msgid "`./release.sh`"
+#~ msgstr "`./release.sh`"
+
+#~ msgid "Initialization"
+#~ msgstr "初始化"
+
+#~ msgid "`./init_repo.sh`"
+#~ msgstr "`./init_repo.sh`"
+
+#~ msgid "`./init_repo.sh --robot <id>`"
+#~ msgstr "`./init_repo.sh --robot <id>`"
+
+#~ msgid "Prerequisites"
+#~ msgstr "前提条件"
+
+#~ msgid "Access to fiveages-sim private repositories"
+#~ msgstr "可访问 fiveages-sim 私有仓库"
+
+#~ msgid "SSH key configured for GitHub"
+#~ msgstr "已为 GitHub 配置 SSH 密钥"
+
+#~ msgid "ROS 2 Jazzy environment set up"
+#~ msgstr "已配置 ROS 2 Jazzy 环境"
+
+#~ msgid "Cloning"
+#~ msgstr "克隆"
+
+#~ msgid ""
+#~ "git clone git@github.com:fiveages-sim/fa-deploy-ws.git\n"
+#~ "cd fa-deploy-ws\n"
+#~ msgstr ""
+#~ "git clone git@github.com:fiveages-sim/fa-deploy-ws.git\n"
+#~ "cd fa-deploy-ws\n"
+
+#~ msgid "Robot-Specific Init"
+#~ msgstr "按机器人初始化"
+
+#~ msgid "./init_repo.sh --robot <robot-id>\n"
+#~ msgstr "./init_repo.sh --robot <robot-id>\n"
+
+#~ msgid "Available Robot IDs"
+#~ msgstr "可用机器人 ID"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Robot Type"
+#~ msgstr "机器人 类型"
+
+#~ msgid "Description"
+#~ msgstr "描述"
+
+#~ msgid "`fiveages_w2`"
+#~ msgstr "`fiveages_w2`"
+
+#~ msgid "Humanoid"
+#~ msgstr "人形机器人"
+
+#~ msgid "W2 full-size humanoid"
+#~ msgstr "W2 全尺寸人形机器人"
+
+#~ msgid "`fiveages_w2r`"
+#~ msgstr "`fiveages_w2r`"
+
+#~ msgid "W2R variant"
+#~ msgstr "W2R 变体"
+
+#~ msgid "`fiveages_s2`"
+#~ msgstr "`fiveages_s2`"
+
+#~ msgid "S2 series"
+#~ msgstr "S2 系列"
+
+#~ msgid "`fiveages_s2r`"
+#~ msgstr "`fiveages_s2r`"
+
+#~ msgid "S2R variant"
+#~ msgstr "S2R 变体"
+
+#~ msgid "`tianji_m6_ccs`"
+#~ msgstr "`tianji_m6_ccs`"
+
+#~ msgid "Dual-arm"
+#~ msgstr "双臂"
+
+#~ msgid "M6 CCS configuration"
+#~ msgstr "M6 CCS 配置"
+
+#~ msgid "`tianji_m20s_ccs`"
+#~ msgstr "`tianji_m20s_ccs`"
+
+#~ msgid "M20S CCS"
+#~ msgstr "M20S CCS"
+
+#~ msgid "`rokae_ar5_ccs`"
+#~ msgstr "`rokae_ar5_ccs`"
+
+#~ msgid "Rokae AR5 CCS"
+#~ msgstr "Rokae AR5 CCS"
+
+#~ msgid ""
+#~ "Additional prototype robot IDs may be"
+#~ " available — check `presets/` directory "
+#~ "for the full list."
+#~ msgstr "可能还有其他原型机 ID，完整列表请查看 `presets/` 目录。"
+
+#~ msgid "Init Options"
+#~ msgstr "初始化选项"
+
+#~ msgid ""
+#~ "# Standard initialization\n"
+#~ "./init_repo.sh --robot fiveages_w2\n"
+#~ "\n"
+#~ "# With release packages (pre-built binaries)\n"
+#~ "./init_repo.sh --robot fiveages_w2 --init-release\n"
+#~ msgstr ""
+#~ "# Standard initialization\n"
+#~ "./init_repo.sh --robot fiveages_w2\n"
+#~ "\n"
+#~ "# With release packages (pre-built binaries)\n"
+#~ "./init_repo.sh --robot fiveages_w2 --init-release\n"
+
+#~ msgid "Robot Configuration"
+#~ msgstr "机器人 配置"
+
+#~ msgid "robot.local.yaml"
+#~ msgstr "robot.local.yaml"
+
+#~ msgid ""
+#~ "Each robot requires a local "
+#~ "configuration file that is **not "
+#~ "committed to version control**:"
+#~ msgstr "每台机器人都需要一份**不会提交到版本控制**的本地配置文件："
+
+#~ msgid "cp robot.local.yaml.template robot.local.yaml\n"
+#~ msgstr "cp robot.local.yaml.template robot.local.yaml\n"
+
+#~ msgid "Edit `robot.local.yaml` with your robot's specific values:"
+#~ msgstr "按你的机器人具体参数编辑 `robot.local.yaml`："
+
+#~ msgid ""
+#~ "# Structure overview (actual values are robot-specific)\n"
+#~ "network:\n"
+#~ "  domain_id: <robot-specific-id>\n"
+#~ "  interface: <network-interface>\n"
+#~ "  \n"
+#~ "robot:\n"
+#~ "  type: <robot-type>\n"
+#~ "  # Additional robot-specific parameters\n"
+#~ msgstr ""
+#~ "# Structure overview (actual values are robot-specific)\n"
+#~ "network:\n"
+#~ "  domain_id: <robot-specific-id>\n"
+#~ "  interface: <network-interface>\n"
+#~ "  \n"
+#~ "robot:\n"
+#~ "  type: <robot-type>\n"
+#~ "  # Additional robot-specific parameters\n"
+
+#~ msgid "Configuration Security"
+#~ msgstr "配置安全"
+
+#~ msgid ""
+#~ "Never commit `robot.local.yaml` with actual"
+#~ " IP addresses, domain IDs, or other"
+#~ " deployment-specific values. These are "
+#~ "considered sensitive and vary per "
+#~ "installation."
+#~ msgstr ""
+#~ "切勿将包含真实 IP 地址、Domain ID 或其他部署特定值的 "
+#~ "`robot.local.yaml` 提交到仓库。这些信息视为敏感，且因安装环境而异。"
+
+#~ msgid "Parameter Reference"
+#~ msgstr "参数 参考手册"
+
+#~ msgid "Parameter"
+#~ msgstr "参数"
+
+#~ msgid "`domain_id`"
+#~ msgstr "`domain_id`"
+
+#~ msgid "ROS 2 Domain ID for network isolation"
+#~ msgstr "用于网络隔离的 ROS 2 Domain ID"
+
+#~ msgid "`interface`"
+#~ msgstr "`interface`"
+
+#~ msgid "Network interface connected to robot"
+#~ msgstr "连接到机器人的网络接口"
+
+#~ msgid "`robot.type`"
+#~ msgstr "`robot.type`"
+
+#~ msgid "Robot model identifier"
+#~ msgstr "机器人型号标识"
+
+#~ msgid "Consult your robot's deployment documentation for specific values."
+#~ msgstr "具体取值请查阅该机器人的部署文档。"
+
+#~ msgid "Building"
+#~ msgstr "编译"
+
+#~ msgid "Full Build"
+#~ msgstr "完整编译"
+
+#~ msgid ""
+#~ "source /opt/ros/jazzy/setup.bash\n"
+#~ "rosdep install --from-paths src --ignore-src -r -y\n"
+#~ "colcon build --symlink-install\n"
+#~ msgstr ""
+#~ "source /opt/ros/jazzy/setup.bash\n"
+#~ "rosdep install --from-paths src --ignore-src -r -y\n"
+#~ "colcon build --symlink-install\n"
+
+#~ msgid "Package-Specific Build"
+#~ msgstr "按软件包编译"
+
+#~ msgid "colcon build --packages-up-to ocs2_wbc_controller\n"
+#~ msgstr "colcon build --packages-up-to ocs2_wbc_controller\n"
+
+#~ msgid "Quick Start Flow"
+#~ msgstr "快速启动流程"
+
+#~ msgid "Mock Mode (Testing)"
+#~ msgstr "模拟模式（测试）"
+
+#~ msgid ""
+#~ "source install/setup.bash\n"
+#~ "./quick_start.sh --mock\n"
+#~ msgstr ""
+#~ "source install/setup.bash\n"
+#~ "./quick_start.sh --mock\n"
+
+#~ msgid "Real Hardware"
+#~ msgstr "真实硬件"
+
+#~ msgid "Safety Warning"
+#~ msgstr "安全警告"
+
+#~ msgid "Before running on real hardware:"
+#~ msgstr "在真实硬件上运行之前："
+
+#~ msgid "Verify emergency stop is accessible"
+#~ msgstr "确认急停装置可随时触及"
+
+#~ msgid "Clear the robot's workspace"
+#~ msgstr "清空机器人作业空间内的障碍物"
+
+#~ msgid "Start with low velocities"
+#~ msgstr "从低速开始"
+
+#~ msgid "Have a trained operator present"
+#~ msgstr "确保有经过培训的操作员在场"
+
+#~ msgid ""
+#~ "source install/setup.bash\n"
+#~ "./quick_start.sh\n"
+#~ msgstr ""
+#~ "source install/setup.bash\n"
+#~ "./quick_start.sh\n"
+
+#~ msgid "Generate Release"
+#~ msgstr "生成发行包"
+
+#~ msgid "./release.sh\n"
+#~ msgstr "./release.sh\n"
+
+#~ msgid "This creates a deployable package without source code."
+#~ msgstr "这将生成不含源码的可部署软件包。"
+
+#~ msgid "Install Release"
+#~ msgstr "安装发行包"
+
+#~ msgid "On target machine:"
+#~ msgstr "在目标机器上："
+
+#~ msgid "./release.sh --install\n"
+#~ msgstr "./release.sh --install\n"
+
+#~ msgid "Directory Structure"
+#~ msgstr "目录结构"
+
+#~ msgid ""
+#~ "fa-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/\n"
+#~ "│   ├── robot-descriptions-fiveages/\n"
+#~ "│   ├── ocs2-wbc-controller/\n"
+#~ "│   ├── ocs2-humanoid/\n"
+#~ "│   └── ...\n"
+#~ "├── init_repo.sh\n"
+#~ "├── quick_start.sh\n"
+#~ "├── release.sh\n"
+#~ "├── robot.local.yaml.template\n"
+#~ "└── presets/\n"
+#~ "    ├── fiveages_w2.yaml\n"
+#~ "    ├── fiveages_s2.yaml\n"
+#~ "    └── ..."
+#~ msgstr ""
+#~ "fa-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/\n"
+#~ "│   ├── robot-descriptions-fiveages/\n"
+#~ "│   ├── ocs2-wbc-controller/\n"
+#~ "│   ├── ocs2-humanoid/\n"
+#~ "│   └── ...\n"
+#~ "├── init_repo.sh\n"
+#~ "├── quick_start.sh\n"
+#~ "├── release.sh\n"
+#~ "├── robot.local.yaml.template\n"
+#~ "└── presets/\n"
+#~ "    ├── fiveages_w2.yaml\n"
+#~ "    ├── fiveages_s2.yaml\n"
+#~ "    └── ..."
+
+#~ msgid "Submodule Management"
+#~ msgstr "子模块管理"
+
+#~ msgid ""
+#~ "The workspace nests many private "
+#~ "submodules. Never use blind recursive "
+#~ "init:"
+#~ msgstr "该工作空间嵌套了大量私有子模块。切勿盲目执行递归初始化："
+
+#~ msgid ""
+#~ "# DON'T do this - initializes unnecessary submodules\n"
+#~ "git submodule update --init --recursive  # AVOID\n"
+#~ "\n"
+#~ "# DO use the init script with robot ID\n"
+#~ "./init_repo.sh --robot <id>\n"
+#~ msgstr ""
+#~ "# DON'T do this - initializes unnecessary submodules\n"
+#~ "git submodule update --init --recursive  # AVOID\n"
+#~ "\n"
+#~ "# DO use the init script with robot ID\n"
+#~ "./init_repo.sh --robot <id>\n"
+
+#~ msgid "Common Issues"
+#~ msgstr "常见问题"
+
+#~ msgid "Submodule Access Denied"
+#~ msgstr "子模块访问被拒绝"
+
+#~ msgid "Verify your SSH key has access to the required private repositories:"
+#~ msgstr "确认你的 SSH 密钥有权访问所需的私有仓库："
+
+#~ msgid "ssh -T git@github.com\n"
+#~ msgstr "ssh -T git@github.com\n"
+
+#~ msgid "Missing WBC Controller"
+#~ msgstr "缺少 WBC 控制器"
+
+#~ msgid "Ensure you initialized with the correct robot ID that includes WBC:"
+#~ msgstr "请确认使用包含 WBC 的正确机器人 ID 完成了初始化："
+
+#~ msgid "./init_repo.sh --robot fiveages_w2\n"
+#~ msgstr "./init_repo.sh --robot fiveages_w2\n"
+
+#~ msgid "Network Communication Fails"
+#~ msgstr "网络通信失败"
+
+#~ msgid "Verify `robot.local.yaml` has correct domain ID"
+#~ msgstr "确认 `robot.local.yaml` 中的 Domain ID 正确"
+
+#~ msgid "Check network interface matches robot's network"
+#~ msgstr "确认网络接口与机器人网络一致"
+
+#~ msgid "Confirm Zenoh/DDS configuration if using multi-machine setup"
+#~ msgstr "若为多机部署，请确认 Zenoh/DDS 配置"
+
+#~ msgid "Next Steps"
+#~ msgstr "下一步"
+
+#~ msgid "[FA robot descriptions](../4-reference/descriptions/5-fa_robots.md)"
+#~ msgstr "[FA 机器人描述](../4-reference/descriptions/5-fa_robots.md)"

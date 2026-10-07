@@ -5,7 +5,7 @@ Welcome to the documentation for **FiveAges Sim** — a multi-repository ROS 2 r
 ```{admonition} Getting Started
 :class: tip
 
-New here? Start with the [Learning Path](0-overview/2-learning_path.md) to understand the stack, then follow [Quick Demo (Public Path)](1-getting_started/1-quick_demo_public.md) to get a robot moving in simulation within minutes.
+New here? Start with the [Learning Path](0-overview/2-learning_path.md), then [Install Environment](1-getting_started/2-install_environment.md), then [Quick Demo (Public Path)](1-getting_started/1-quick_demo_public.md). Do not skip install.
 ```
 
 ## About This Ecosystem
@@ -47,8 +47,8 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 :caption: Getting Started
 
 1-getting_started/0-index
-1-getting_started/1-quick_demo_public
 1-getting_started/2-install_environment
+1-getting_started/1-quick_demo_public
 1-getting_started/3-open_deploy_ws
 1-getting_started/4-fa_deploy_ws
 1-getting_started/5-faq

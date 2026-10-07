@@ -8,66 +8,24 @@ This page covers installing the base development environment for FiveAges Sim wo
 
 **Python:** **3.12** only (ROS 2 Jazzy on Ubuntu 24.04). Do not use 3.10/3.11 venvs for this stack.
 
-Other platforms are not officially supported but may work:
-- Ubuntu 22.04 with ROS 2 Humble (limited compatibility)
-- Other Linux distributions with manual ROS 2 installation
+Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. Do not invent a custom `~/.bashrc` overlay; the workspace has **`./init_repo.sh`**, not a setup/env script.
 
-## ROS 2 Jazzy Installation
+## ROS 2 Jazzy + rosdep (open-deploy-ws README)
 
-### Option A: Official Installation (Recommended)
-
-Follow the official ROS 2 Jazzy installation guide:
-
-```bash
-# Set locale
-sudo apt update && sudo apt install locales
-sudo locale-gen en_US en_US.UTF-8
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# Add ROS 2 repository
-sudo apt install software-properties-common
-sudo add-apt-repository universe
-sudo apt update && sudo apt install curl -y
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
-# Install ROS 2 Jazzy
-sudo apt update
-sudo apt install ros-jazzy-desktop ros-dev-tools
-```
-
-### Option B: fishros (Alternative for China)
-
-For users in China with slow access to official mirrors:
-
-```bash
+:::{code-block} bash
+# 1. ROS 2 helper (fishros) — listed first in that README
 wget http://fishros.com/install -O fishros && bash fishros
-```
 
-Select ROS 2 Jazzy when prompted.
+# 2. ROS 2 Jazzy Desktop
+sudo apt update
+sudo apt install ros-jazzy-desktop
 
-## Development Tools
-
-### Essential Packages
-
-```bash
-sudo apt install -y \
-    python3-pip \
-    python3-colcon-common-extensions \
-    python3-rosdep \
-    python3-vcstool \
-    git \
-    build-essential \
-    cmake
-```
-
-### Initialize rosdep
-
-```bash
-sudo rosdep init  # Skip if already done
+# 3. rosdep (first time on this machine)
+sudo rosdep init
 rosdep update
-```
+:::
+
+Official ROS 2 Jazzy install (if you are not using fishros): [docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html). After ROS is installed, **clone a deploy workspace and run `./init_repo.sh`** — do not hand-write `source /opt/ros/...` + workspace overlay into `~/.bashrc` as the documented path.
 
 ## OCS2 Installation
 
@@ -124,72 +82,16 @@ cd FaSim-Isaac
 
 Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` to change `ISAACSIM_DIR` or the default version. See the [Isaac Sim how-to](../2-how_to/2-simulation/4-isaac_sim.md).
 
-## Network Configuration (Optional)
-
-For multi-machine setups or connecting to real robots:
-
-### Zenoh Bridge
-
-```bash
-sudo apt install ros-jazzy-rmw-zenoh-cpp
-```
-
-Configure via environment variables:
-```bash
-export RMW_IMPLEMENTATION=rmw_zenoh_cpp
-```
-
-### ROS Domain ID
-
-Set a unique Domain ID to isolate your ROS 2 traffic:
-
-```bash
-export ROS_DOMAIN_ID=<your-id>
-```
-
-```{admonition} Domain ID Selection
-:class: important
-
-When working with real robots, the Domain ID must match the robot's configured value. Consult your robot's documentation or team lead for the correct ID.
-```
-
-## Shell Configuration
-
-Add to your `~/.bashrc` for convenience:
-
-```bash
-# ROS 2 Jazzy
-source /opt/ros/jazzy/setup.bash
-
-# Workspace (adjust path as needed)
-if [ -f ~/open-deploy-ws/install/setup.bash ]; then
-    source ~/open-deploy-ws/install/setup.bash
-fi
-
-# Optional: Zenoh
-# export RMW_IMPLEMENTATION=rmw_zenoh_cpp
-
-# Optional: Domain ID
-# export ROS_DOMAIN_ID=42
-```
-
 ## Verification
 
-Test your installation:
+After `./init_repo.sh` (and `colcon build` if you already cloned a workspace):
 
-```bash
-# Source ROS 2
-source /opt/ros/jazzy/setup.bash
-
-# Check ROS 2
+:::{code-block} bash
 ros2 --help
+ros2 pkg list | grep ocs2   # after OCS2 deb or source via init
+:::
 
-# Check Gazebo
-gz sim --version
-
-# Check OCS2 (after deploy-ws init / install_core_debs.sh)
-ros2 pkg list | grep ocs2
-```
+`./init_repo.sh` already runs `rosdep` on source paths. Do not add a hand-written `~/.bashrc` `source` chain as the documented setup.
 
 ## Common Issues
 
@@ -199,7 +101,6 @@ This applies to packages that **are** in the ROS apt index (for example `ros-jaz
 
 ```bash
 sudo apt update
-source /opt/ros/jazzy/setup.bash
 ```
 
 ### OCS2 not found after install
@@ -210,7 +111,6 @@ Re-run `./init_repo.sh` in the deploy workspace: choose **1** and `d` for OCS2, 
 
 ```bash
 dpkg-query -W ros-jazzy-ocs2
-source /opt/ros/jazzy/setup.bash
 ```
 
 ### rosdep Errors
@@ -228,5 +128,5 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 ## Next Steps
 
-- [Quick Demo](1-quick_demo_public.md) — Run your first demo
-- [open-deploy-ws Setup](3-open_deploy_ws.md) — Detailed workspace setup
+- [Quick Demo](1-quick_demo_public.md) — Clone `open-deploy-ws`, `./init_repo.sh`, build, launch
+- [open-deploy-ws Setup](3-open_deploy_ws.md) — Workspace details

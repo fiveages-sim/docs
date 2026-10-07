@@ -13,58 +13,40 @@ Change the robot model in your workspace and launches.
 
 If the robot description isn't already initialized:
 
-```bash
-cd ~/open-deploy-ws/src/robot_descriptions
-git submodule update --init robot-descriptions-<brand>
-```
-
-Available brands:
-- `robot-descriptions-dobot`
-- `robot-descriptions-arx`
-- `robot-descriptions-galbot`
-- `robot-descriptions-ht`
-- `robot-descriptions-quadruped`
+Prefer `./init_repo.sh` in `open-deploy-ws` so nested modules under `src/robot-descriptions/` match [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) (`manipulator/Dobot`, `manipulator/ARX`, …). Do not `git submodule update --init --recursive`.
 
 ### 2. Rebuild
 
 ```bash
 cd ~/open-deploy-ws
-colcon build --packages-up-to robot-descriptions-<brand>
+colcon build --symlink-install
 source install/setup.bash
 ```
 
 ### 3. Launch with New Robot
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>
 ```
 
 ## Robot Names
 
-| Brand | Robot Names |
-|-------|-------------|
-| Dobot | `dobot_cr5`, `dobot_cr10` |
-| ARX (方舟无限) | `arx_x5`, `arx_acone` (**arm only**), `arx_lift2s` (**Lift 2S** full-body) |
-| Galbot | `galbot_g1` |
-| HighTorque (高擎) | `panthera_ht` (**Panthera HT**) |
+| Brand | `robot:=` keys used in this docs set | Source |
+|-------|--------------------------------------|--------|
+| Dobot | `cr5` | `demo.launch.py` default |
+| ARX (方舟无限) | `arx_acone` (**arm only**), `arx_lift2s` (**Lift 2S** full-body) | ARX how-to / description packages |
+| HighTorque (高擎) | `panthera_ht` | [panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) |
+
+Use the key that matches `{key}_description`. Do not invent extra names.
 
 ## Example: Dobot to ARX
 
 ```bash
-# Current: Dobot CR5
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
+# Demo default robot key is cr5 (demo.launch.py)
+ros2 launch ocs2_arm_controller demo.launch.py
 
-# Initialize ARX descriptions
-cd src/robot_descriptions
-git submodule update --init robot-descriptions-arx
-
-# Rebuild
-cd ~/open-deploy-ws
-colcon build --packages-up-to robot-descriptions-arx
-source install/setup.bash
-
-# Launch with Acone (arm only, not Lift 2S)
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+# After init has ARX descriptions, launch Acone (arm only, not Lift 2S)
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
 `arx_acone` is the manipulator. Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md).
@@ -102,7 +84,7 @@ Full table: [robot-descriptions-common](../../4-reference/descriptions/2-common.
 ### Package not found
 
 ```bash
-colcon build --packages-up-to robot-descriptions-<brand>
+colcon build --symlink-install
 source install/setup.bash
 ```
 
@@ -112,4 +94,4 @@ Check the description package's README for dependencies.
 
 ### Wrong joint limits
 
-Each robot has its own joint limits in URDF. Verify the target pose is within limits.
+Each robot has its own joint limits in URDF. Verify commanded poses are within limits.

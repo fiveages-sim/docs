@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -40,19 +40,22 @@ msgstr ""
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
 #: 437277b32fbe4f61ba1b6b6f1586b6c2
 msgid "Source of truth"
-msgstr "事实来源"
+msgstr "权威来源"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:8
-#: 22a081def7e44b92b9bb75b01b24e772
+#: 26be79f72ae8492e9a3d70926c6cb89e
 msgid ""
 "`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no "
-"documented `/mode_command`, `/fsm_state` String, or wheeled-arm `stand` /"
-" `walk` / `arm_teleop` contract. Per-controller topics: the controller "
-"pages and package READMEs."
+"documented `/mode_command` or `/fsm_state` **String**, and no wheeled-arm"
+" `stand` / `walk` / `arm_teleop` contract. The [panthera-ht "
+"README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-"
+"ht/README.EN.md) also lists `/fsm_state` as `std_msgs/Int32` (same value "
+"meanings) and EE targets `/left_target` / `/left_target/stamped` — those "
+"are **that branch’s** external interface, not a stack-wide "
+"`/target_pose`. Per-controller topics: the controller pages and package "
+"READMEs."
 msgstr ""
-"`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。没有文档化的 "
-"`/mode_command`、`/fsm_state` String，或轮臂人形的 `stand` / `walk` / "
-"`arm_teleop` 约定。各控制器话题见对应页面和软件包 README。"
+"`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。没有文档化的 `/mode_command` 或 `/fsm_state` **String**，也没有轮式臂 `stand` / `walk` / `arm_teleop` 约定。[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) 另列出 `/fsm_state` 为 `std_msgs/Int32`（取值含义相同）以及末端目标 `/left_target` / `/left_target/stamped` — 那是**该分支**的外部接口，不是全栈 `/target_pose`。各控制器话题见对应页面和包 README。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:11
 #: db9b80d9320f4c4c958bae30b5ddbc7b
@@ -157,7 +160,9 @@ msgid ""
 "describe teleop as a separate FSM state — [Isomorphic "
 "Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
 msgstr ""
-"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** 菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — [同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
+"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** "
+"菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — "
+"[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:29
 #: ffe66e5df1a3412a8c6f676c41c3ec7d
@@ -736,3 +741,16 @@ msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 #~ "[同构遥操作](../2-how_to/7-isomorphic_teleop.md) — 不是本页上的 "
 #~ "`/teleop/left_ee_pose` 约定。"
 
+#~ msgid ""
+#~ "`/fsm_command` is **`std_msgs/Int32`**, not "
+#~ "`String`. There is no documented "
+#~ "`/mode_command`, `/fsm_state` String, or "
+#~ "wheeled-arm `stand` / `walk` / "
+#~ "`arm_teleop` contract. Per-controller topics:"
+#~ " the controller pages and package "
+#~ "READMEs."
+#~ msgstr ""
+#~ "`/fsm_command` 是 **`std_msgs/Int32`**，不是 "
+#~ "`String`。没有文档化的 `/mode_command`、`/fsm_state` String，或轮臂人形的"
+#~ " `stand` / `walk` / `arm_teleop` "
+#~ "约定。各控制器话题见对应页面和软件包 README。"

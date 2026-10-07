@@ -14,10 +14,9 @@ rosdep update
 
 ### Q: Package not found after apt install
 
-Source the ROS 2 setup and update:
+This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). After ROS is installed, clone a deploy workspace and run `./init_repo.sh` — do not treat a hand-written `source /opt/ros/...` in `~/.bashrc` as the documented path.
 
 ```bash
-source /opt/ros/jazzy/setup.bash
 sudo apt update
 ```
 
@@ -82,12 +81,7 @@ pip install 'numpy<2'
 
 ### Q: CMake cannot find package
 
-Ensure ROS 2 is sourced before building:
-
-```bash
-source /opt/ros/jazzy/setup.bash
-colcon build
-```
+Build from a workspace that already ran `./init_repo.sh`. If `ros2` / `colcon` is missing, finish [Install Environment](2-install_environment.md) first. After a successful build, `source install/setup.bash` in the launch terminal.
 
 ### Q: Build runs out of memory
 
@@ -123,12 +117,12 @@ ros2 topic list
 ### Q: Controller fails to start
 
 Check that:
-1. Hardware parameter matches your setup (`mock`, `gz`, `isaac`, or real)
-2. Robot parameter matches available descriptions
+1. Hardware parameter matches your setup (`mock_components`, `gz`, `isaac`, or `real` — there is no `hardware:=mock`)
+2. Robot parameter matches a `{key}_description` package
 3. Required hardware interfaces are initialized
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock robot:=dobot_cr5
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
 
 ### Q: No communication between machines

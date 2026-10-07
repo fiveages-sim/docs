@@ -1,6 +1,6 @@
 # Getting Started
 
-This section guides you through setting up your development environment and running your first robot demos.
+This section guides you through setting up your development environment and running your first robot demos. **Install the environment first**, then run the Quick Demo.
 
 ## Prerequisites
 
@@ -17,8 +17,8 @@ Before you begin, ensure you have:
 
 | If you are... | Start with... |
 |---------------|---------------|
-| New to the ecosystem | [Quick Demo (Public)](1-quick_demo_public.md) |
 | Setting up from scratch | [Install Environment](2-install_environment.md) |
+| Environment already installed | [Quick Demo (Public)](1-quick_demo_public.md) |
 | Using public robots | [open-deploy-ws Setup](3-open_deploy_ws.md) |
 | FiveAges team member | [fa-deploy-ws Setup](4-fa_deploy_ws.md) |
 | Troubleshooting | [FAQ](5-faq.md) |
@@ -31,7 +31,7 @@ flowchart LR
     B -->|Public| C[Clone open-deploy-ws]
     B -->|Internal| D[Clone fa-deploy-ws]
     C --> E[./init_repo.sh]
-    D --> F[./init_repo.sh --robot X]
+    D --> F[./init_repo.sh]
     E --> G[colcon build]
     F --> G
     G --> H[Run demo.launch.py]

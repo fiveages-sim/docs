@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:35+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,95 +20,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/3-concepts/0-index.md:1 d9fddcc96e81405e91a0f212c076f4e4
+#: ../../source/3-concepts/0-index.md:1 982e25db3e6f46f6b64981c022297420
 msgid "Concepts"
 msgstr "核心概念"
 
-#: ../../source/3-concepts/0-index.md:3 24a8d849315c40fcbe4f9aed6c0e7524
+#: ../../source/3-concepts/0-index.md:3 4e1303341c5a4d489d9527bdbfeedd93
 msgid ""
-"This section explains the key concepts and design patterns used "
-"throughout the FiveAges Sim ecosystem."
-msgstr "本节说明 FiveAges Sim 生态系统中使用的关键概念与设计模式。"
+"Stack-specific notes. Concrete names come from repository READMEs / "
+"launch / xacro — not a generic ROS 2 textbook."
+msgstr "本技术栈专用说明。具体名称来自仓库 README / launch / xacro — 不是通用 ROS 2 教材。"
 
-#: ../../source/3-concepts/0-index.md:5 3df3984234ef40cb94518b0f81e4874b
+#: ../../source/3-concepts/0-index.md:5 c7b24d3bc09f4cafb107cd809388177d
 msgid "Topics Covered"
 msgstr "涵盖主题"
 
-#: ../../source/3-concepts/0-index.md:7 50c425a843ef4ca786e3dbc9f7967a86
+#: ../../source/3-concepts/0-index.md:7 41731527b5f94c20ab104ee18084a578
+#, fuzzy
 msgid ""
-"[ros2_control Here](1-ros2_control_here.md) — How the stack uses ROS 2 "
-"control"
+"[ros2_control Here](1-ros2_control_here.md) — `hardware:=` → "
+"`ros2_control_hardware_type`; Acone plugin table"
 msgstr "[本技术栈中的 ros2_control](1-ros2_control_here.md) — 本技术栈如何使用 ROS 2 control"
 
-#: ../../source/3-concepts/0-index.md:8 981b1477fb1d48a986a66160493f9832
-msgid "[Workspace Layout](2-workspace_layout.md) — Structure of deploy workspaces"
+#: ../../source/3-concepts/0-index.md:8 e24ace6a86d64428a761f9ea300e14aa
+#, fuzzy
+msgid ""
+"[Workspace Layout](2-workspace_layout.md) — `open-deploy-ws` tree and "
+"`./init_repo.sh`"
 msgstr "[工作空间布局](2-workspace_layout.md) — 部署工作空间的结构"
 
-#: ../../source/3-concepts/0-index.md:9 492d9903e8164ad2a4972aae78729544
+#: ../../source/3-concepts/0-index.md:9 9c6875dadca341498bc9e479a98c2b6d
+#, fuzzy
 msgid ""
 "[Naming Conventions](3-naming_conventions.md) — Launch `robot` / EEF "
-"`type` / `left_type` / `right_type` (not `gripper:=`)"
+"`type` / `left_type` / `right_type` (not `gripper:=`); `hardware` values"
 msgstr ""
 "[命名规范](3-naming_conventions.md) — launch 的 `robot` / 末端 `type` / "
 "`left_type` / `right_type`（不是 `gripper:=`）"
 
-#: ../../source/3-concepts/0-index.md:10 3856f0f8701c42428e654dbb6afa1a3c
+#: ../../source/3-concepts/0-index.md:10 ff0e93e8f0a74e9dbc7172d6abe07065
 #, fuzzy
 msgid ""
 "[FSM and Topics](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command`; "
 "real states per controller"
 msgstr "[状态机与话题](4-fsm_and_topics.md) — 状态机与话题约定"
 
-#: ../../source/3-concepts/0-index.md:11 b07e38861c58412c95e4b055fbc93282
+#: ../../source/3-concepts/0-index.md:11 5201deafa6314d09bf238971f56abe93
 msgid ""
 "[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body` (ocs2_arm + basic_joint)"
 " vs `full_body` (ocs2_wbc)"
 msgstr ""
-"[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body`（ocs2_arm + basic_joint）vs `full_body`（ocs2_wbc）"
+"[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body`（ocs2_arm + "
+"basic_joint）vs `full_body`（ocs2_wbc）"
 
-#: ../../source/3-concepts/0-index.md:12 bf24c033b81e42c3923151a8b3e151eb
+#: ../../source/3-concepts/0-index.md:12 75bdec75ad5f45b7a50bc2b79c1f3e8d
+#, fuzzy
 msgid ""
-"[Source vs Deb](5-source_vs_deb.md) — When to use GitHub Release `.deb` "
-"files vs source builds"
+"[Source vs Deb](5-source_vs_deb.md) — GitHub Release `.deb` vs source via"
+" `./init_repo.sh`"
 msgstr "[源码与 Deb](5-source_vs_deb.md) — 何时使用 GitHub Release `.deb`、何时从源码编译"
 
-#: ../../source/3-concepts/0-index.md:13 5a8ad9ac78a140e69265bb513d395cfc
+#: ../../source/3-concepts/0-index.md:13 33ebdcea0cf54709852d6088c8c0e822
+#, fuzzy
 msgid ""
-"[Submodules Visibility](6-submodules_visibility.md) — Public and private "
-"submodule management"
+"[Submodules Visibility](6-submodules_visibility.md) — "
+"`parent|path|public|private` and init"
 msgstr "[子模块可见性](6-submodules_visibility.md) — 公开与私有子模块的管理"
 
-#: ../../source/3-concepts/0-index.md:15 3d31c4329c7644b788fde27018c2f619
-msgid "When to Read This"
-msgstr "何时阅读本节"
-
-#: ../../source/3-concepts/0-index.md:17 9eb0b3fe93cc4cfe84875c456203fcd4
-msgid "**Before diving deep** — Understand the \"why\" behind design choices"
-msgstr "**Before diving deep** — Understand the \\\"why\\\" behind design choices"
-
-#: ../../source/3-concepts/0-index.md:18 4eed6d48fa084141b9588f79260c3d35
-msgid "**When confused** — Clarify terminology and conventions"
-msgstr "**感到困惑时** — 厘清术语与约定"
-
-#: ../../source/3-concepts/0-index.md:19 d16465ef22eb4f50bb6da4e1f13976be
-msgid "**Before contributing** — Follow established patterns"
-msgstr "**开始贡献之前** — 遵循既有模式"
-
-#: ../../source/3-concepts/0-index.md:21 eca125dd9c524cf0b7a84e449a72f72e
+#: ../../source/3-concepts/0-index.md:15 a39f8afa6be44822ac91db7666bb7f69
 msgid "Related Sections"
 msgstr "相关章节"
 
-#: ../../source/3-concepts/0-index.md:23 7f35edbdbbc444eea7eda7d206aa41bf
-msgid ""
-"[Reference](../4-reference/descriptions/0-index.md) — Detailed package "
-"documentation"
+#: ../../source/3-concepts/0-index.md:17 1f41a8c2c2ab41a587232098fa321073
+#, fuzzy
+msgid "[Reference](../4-reference/descriptions/0-index.md) — Package pages"
 msgstr "[参考手册](../4-reference/descriptions/0-index.md) — 详细的软件包文档"
 
-#: ../../source/3-concepts/0-index.md:24 23fec989995647a6a6cb819f6680b327
-msgid "[Developer Guide](../5-developer/0-index.md) — Contributing guidelines"
-msgstr "[开发者指南](../5-developer/0-index.md) — 贡献指南"
+#: ../../source/3-concepts/0-index.md:18 1bb6e6976dbe44618e367765c8515032
+msgid "[How-To Guides](../2-how_to/0-index.md)"
+msgstr "[How-To 指南](../2-how_to/0-index.md)"
 
 #~ msgid ""
 #~ "[Naming Conventions](3-naming_conventions.md) — "
 #~ "Parameter and package naming patterns"
 #~ msgstr "[命名规范](3-naming_conventions.md) — 参数与软件包的命名模式"
+
+#~ msgid ""
+#~ "This section explains the key concepts"
+#~ " and design patterns used throughout "
+#~ "the FiveAges Sim ecosystem."
+#~ msgstr "本节说明 FiveAges Sim 生态系统中使用的关键概念与设计模式。"
+
+#~ msgid "When to Read This"
+#~ msgstr "何时阅读本节"
+
+#~ msgid "**Before diving deep** — Understand the \"why\" behind design choices"
+#~ msgstr ""
+#~ "**Before diving deep** — Understand the"
+#~ " \\\"why\\\" behind design choices"
+
+#~ msgid "**When confused** — Clarify terminology and conventions"
+#~ msgstr "**感到困惑时** — 厘清术语与约定"
+
+#~ msgid "**Before contributing** — Follow established patterns"
+#~ msgstr "**开始贡献之前** — 遵循既有模式"
+
+#~ msgid "[Developer Guide](../5-developer/0-index.md) — Contributing guidelines"
+#~ msgstr "[开发者指南](../5-developer/0-index.md) — 贡献指南"

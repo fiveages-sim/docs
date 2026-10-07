@@ -24,9 +24,7 @@ These packages require private repository access.
 
 ### Usage
 
-```bash
-ros2 launch tianji_bringup bringup.launch.py robot:=tianji_m6 hardware:=mock
-```
+See that repository’s README after you have access. Do not invent `tianji_bringup` or `hardware:=mock`. Public `hardware:=` keys: `mock_components` / `gz` / `isaac` / `real`.
 
 ### Features
 
@@ -46,9 +44,7 @@ ros2 launch tianji_bringup bringup.launch.py robot:=tianji_m6 hardware:=mock
 
 ### Usage
 
-```bash
-ros2 launch rokae_bringup bringup.launch.py robot:=rokae_ar5 hardware:=mock
-```
+See that repository’s README after you have access. Do not invent `rokae_bringup` or `hardware:=mock`.
 
 ## Fairino
 

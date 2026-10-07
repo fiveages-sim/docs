@@ -20,7 +20,6 @@ On the public `open-deploy-ws` **`arx-lift2s`** branch, `basic_joint_controller`
 ## Launch (README demo)
 
 :::{code-block} bash
-source /opt/ros/jazzy/setup.bash
 source ~/open-deploy-ws/install/setup.bash   # or your workspace install/
 
 ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1

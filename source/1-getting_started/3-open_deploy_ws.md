@@ -68,19 +68,18 @@ Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [
 
 After initialization:
 
+From the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) (hyphen, not `robot_descriptions`):
+
 :::{code-block} none
 open-deploy-ws/
 ├── src/
-│   ├── arms_ros2_control/       # Controllers + nested HIs
-│   ├── robot_descriptions/      # Description umbrella
-│   │   ├── robot-descriptions-common/
-│   │   ├── robot-descriptions-dobot/
-│   │   ├── robot-descriptions-arx/
-│   │   └── ...
-│   └── ocs2_ros2/              # (if source build)
+│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs
+│   ├── robot-descriptions/    # common / manipulator / humanoid
+│   └── ocs2_ros2/             # only if that module is installed as source
 ├── init_repo.sh
 ├── submodules_visibility.conf
-└── deb_versions.conf
+├── deb_versions.conf
+└── scripts/
 :::
 
 ## Building
@@ -88,9 +87,10 @@ open-deploy-ws/
 `./init_repo.sh` already runs `rosdep install` on source paths. You still need to colcon-build:
 
 ```bash
-source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install
 ```
+
+Then `source install/setup.bash` in the terminal you launch from. The README does not install a workspace env script besides `./init_repo.sh`.
 
 ### Partial Build
 
@@ -128,14 +128,16 @@ colcon build --packages-up-to ocs2_arm_controller
 
 ```bash
 source install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
+
+`demo.launch.py` defaults: `robot:=cr5`, `hardware:=mock_components`. There is **no** `hardware:=mock`.
 
 ### With Specific Robot
 
 ```bash
-# Acone arm mock (not Lift 2S)
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+# Acone arm (not Lift 2S). Omit hardware:= to keep mock_components.
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
 ### End-effector (`type`)
@@ -146,20 +148,14 @@ Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: `left_type:=` / `r
 ros2 launch ocs2_arm_controller demo.launch.py \
   robot:=<robot_name> \
   use_profile_eef:=false \
-  left_type:=rg75 right_type:=linkerhand_o7 \
-  hardware:=mock
+  left_type:=rg75 right_type:=linkerhand_o7
 :::
 
 ## Adding Robot Descriptions
 
 To add a new robot to your workspace:
 
-```bash
-cd src/robot_descriptions
-git submodule update --init robot-descriptions-<brand>
-cd ../..
-colcon build --packages-up-to robot-descriptions-<brand>
-```
+Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf`. Do not `git submodule update --init --recursive`. Then `colcon build` the packages you need.
 
 ## Submodule Management
 
@@ -170,7 +166,7 @@ Prefer `./init_repo.sh` (menu 1 or 2) over a recursive submodule init. Check sta
 | Component | GitHub Release `.deb` | Source Path |
 |-----------|----------------------|-------------|
 | OCS2 | `ros-jazzy-ocs2` ([releases](https://github.com/legubiao/ocs2_ros2/releases)) | `src/ocs2_ros2` |
-| Common descriptions | `ros-jazzy-robot-descriptions-common` ([releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)) | `src/robot_descriptions/robot-descriptions-common` |
+| Common descriptions | `ros-jazzy-robot-descriptions-common` ([releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)) | `src/robot-descriptions/common` |
 | arms_ros2_control | `ros-jazzy-arms-ros2-control` (optional; [releases](https://github.com/fiveages-sim/arms_ros2_control/releases)) | `src/arms_ros2_control` |
 
 Check `deb_versions.conf` for the GitHub repos and release tags used by `scripts/install_core_debs.sh`. These packages are not in the ROS apt index.

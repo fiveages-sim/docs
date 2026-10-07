@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -168,13 +168,12 @@ msgstr "**目标：** 理解生态系统结构，并选择你的入口路径。"
 
 #: ../../source/0-overview/2-learning_path.md:28
 #: ../../source/0-overview/2-learning_path.md:40
-#: ../../source/0-overview/2-learning_path.md:67
-#: ../../source/0-overview/2-learning_path.md:133
-#: ../../source/0-overview/2-learning_path.md:209
-#: ../../source/0-overview/2-learning_path.md:228
-#: 0954235b9f414b71a0ecb585486bc8b4 27397fc2239a46b4a9ab9263e35271a6
-#: 62d3e03e3ba74a19ab30ebb0396cc021 6890dc0276cf4e0b8032e5b56c605f82
-#: bef9d57b1bb6490eb72c126a2b673371 d2fe79e217994b34bef76bb506aa1bbe
+#: ../../source/0-overview/2-learning_path.md:66
+#: ../../source/0-overview/2-learning_path.md:125
+#: ../../source/0-overview/2-learning_path.md:201
+#: ../../source/0-overview/2-learning_path.md:211
+#: 27397fc2239a46b4a9ab9263e35271a6 62d3e03e3ba74a19ab30ebb0396cc021
+#: 6890dc0276cf4e0b8032e5b56c605f82 bef9d57b1bb6490eb72c126a2b673371
 msgid "**Tasks:**"
 msgstr "**任务：**"
 
@@ -211,19 +210,26 @@ msgid "Day 1: First Motion in Simulation"
 msgstr "第 1 天：仿真中的首次运动"
 
 #: ../../source/0-overview/2-learning_path.md:38
-#: 032ccbefb0304481ae98b612c9dcb82d
-msgid "**Goal:** Run a robot demo in mock hardware mode."
-msgstr "**目标：** 在 mock 硬件模式下运行机器人演示。"
+#: 0a34d880b19a408e8acd64735ceb00af
+msgid ""
+"**Goal:** Install the environment, then run a robot demo (`hardware` "
+"default `mock_components`)."
+msgstr "**目标：** 先安装环境，再运行机器人演示（`hardware` 默认为 `mock_components`）。"
 
 #: ../../source/0-overview/2-learning_path.md:41
-#: 1550f9d96fb846d99b7d861a04bd111d
-msgid "Install prerequisites: Ubuntu 24.04, ROS 2 Jazzy"
-msgstr "安装前提条件：Ubuntu 24.04、ROS 2 Jazzy"
+#: d91a74c285dd4cd49679e7ffe736b8e8
+msgid ""
+"[Install Environment](../1-getting_started/2-install_environment.md) — "
+"Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / "
+"`ros-jazzy-desktop`). Do not hand-write `source /opt/ros/...` into "
+"`~/.bashrc`."
+msgstr ""
+"[安装环境](../1-getting_started/2-install_environment.md) — Ubuntu 24.04、ROS 2 Jazzy + rosdep（open-deploy-ws README：fishros / `ros-jazzy-desktop`）。不要手写把 `source /opt/ros/...` 写进 `~/.bashrc`。"
 
 #: ../../source/0-overview/2-learning_path.md:42
-#: ef88434a5b454095b0fdf3c5bd2d412b
-msgid "Clone `open-deploy-ws`:"
-msgstr "克隆 `open-deploy-ws`："
+#: 2be9448e539f437985a8b4e6295b4002
+msgid "Clone `open-deploy-ws` and run the official init script:"
+msgstr "克隆 `open-deploy-ws` 并运行官方初始化脚本："
 
 #: ../../source/0-overview/2-learning_path.md:43
 #: 465e60a510fc4daa83dd3f83b387c2a2
@@ -243,28 +249,29 @@ msgstr "编译工作空间："
 
 #: ../../source/0-overview/2-learning_path.md:49
 #: deee10856d7443be931c23ba37fcc63c
-msgid ""
-"source /opt/ros/jazzy/setup.bash\n"
-"colcon build --symlink-install\n"
+#, fuzzy
+msgid "colcon build --symlink-install\n"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\n"
 "colcon build --symlink-install\n"
+
+#: ../../source/0-overview/2-learning_path.md:52
+#: 2c1cabf40bf045b384955340d7a3b0e2
+msgid ""
+"Launch the demo (defaults: `robot:=cr5`, `hardware:=mock_components` — "
+"omit both; there is no `hardware:=mock`):"
+msgstr "启动演示（默认：`robot:=cr5`、`hardware:=mock_components` — 两者都可省略；没有 `hardware:=mock`）："
 
 #: ../../source/0-overview/2-learning_path.md:53
-#: da26095863f3430d895b6704a57ea027
-msgid "Run a mock demo:"
-msgstr "运行 mock 演示："
-
-#: ../../source/0-overview/2-learning_path.md:54
 #: 7387a851ecf94ac0a20cd41385272be5
+#, fuzzy
 msgid ""
 "source install/setup.bash\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py\n"
 msgstr ""
 "source install/setup.bash\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py\n"
 
-#: ../../source/0-overview/2-learning_path.md:59
+#: ../../source/0-overview/2-learning_path.md:58
 #: a0ee0f292c3f45abb9393f184d6b6bd0
 msgid ""
 "**Primary sources:** [open-deploy-ws](https://github.com/fiveages-sim"
@@ -275,69 +282,61 @@ msgstr ""
 "ws)、[arms_ros2_control](https://github.com/fiveages-"
 "sim/arms_ros2_control)"
 
-#: ../../source/0-overview/2-learning_path.md:61
-#: d3ef0e5d65af4379a005dea44fc0c04b
-msgid "**Outcome:** A robot moves in RViz responding to MPC targets."
-msgstr "**预期结果：** 机器人在 RViz 中响应 MPC 目标并运动。"
+#: ../../source/0-overview/2-learning_path.md:60
+#: 9cef2424a4a14b608def178e1c134139
+msgid ""
+"**Outcome:** RViz opens with the OCS2 demo; FSM starts in HOLD. See "
+"[Quick Demo](../1-getting_started/1-quick_demo_public.md)."
+msgstr ""
+"**结果：** RViz 打开 OCS2 演示；FSM 从 HOLD 开始。见 [快速演示](../1-getting_started/1-quick_demo_public.md)。"
 
-#: ../../source/0-overview/2-learning_path.md:63
+#: ../../source/0-overview/2-learning_path.md:62
 #: a921ac993e8041bea1184a54f73dc6f0
 msgid "Day 2: Switch Robots"
 msgstr "第 2 天：切换机器人"
 
-#: ../../source/0-overview/2-learning_path.md:65
+#: ../../source/0-overview/2-learning_path.md:64
 #: a43bb4f429b0457e97a5f8e631038524
 msgid "**Goal:** Change the robot model and understand the description system."
 msgstr "**目标：** 更换机器人模型，并理解描述系统。"
 
+#: ../../source/0-overview/2-learning_path.md:67
+#: b47c8dba6676458298a6bcacebf9a4f4
+msgid ""
+"Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/`"
+" match `submodules_visibility.conf` (do not recursive-init)."
+msgstr ""
+"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 `submodules_visibility.conf` 一致（不要递归 init）。"
+
 #: ../../source/0-overview/2-learning_path.md:68
-#: 56cab3dce1094e18840ded769dde2a7a
-msgid "Initialize a different robot's description submodule:"
-msgstr "初始化另一台机器人的描述子模块："
+#: 9d32ec7892704230b1b332a569293500
+msgid "Rebuild the packages you need, then `source install/setup.bash`."
+msgstr "重建所需软件包，然后 `source install/setup.bash`。"
 
 #: ../../source/0-overview/2-learning_path.md:69
-#: b8b59854896f43528c1d53cbe1291101
-msgid ""
-"cd src/robot_descriptions\n"
-"git submodule update --init robot-descriptions-arx\n"
+#: 23c86739e9f6406296df7ec42706aae9
+msgid "Launch with the new robot (omit `hardware:=` to keep `mock_components`):"
+msgstr "用新机器人启动（省略 `hardware:=` 以保持 `mock_components`）："
+
+#: ../../source/0-overview/2-learning_path.md:70
+#: 2f755e02c63c45eab0fc3bd8cc72568b
+#, fuzzy
+msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 msgstr ""
-"cd src/robot_descriptions\n"
-"git submodule update --init robot-descriptions-arx\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 
 #: ../../source/0-overview/2-learning_path.md:73
-#: 7aa3a3a266d244a492a1837c73e0fbf0
-msgid "Rebuild packages:"
-msgstr "重新编译软件包："
-
-#: ../../source/0-overview/2-learning_path.md:74
-#: 755b4fa7c10146a5abd17ce4735da0e8
-msgid "colcon build --packages-up-to robot-descriptions-arx\n"
-msgstr "colcon build --packages-up-to robot-descriptions-arx\n"
-
-#: ../../source/0-overview/2-learning_path.md:77
-#: f6fea7f9964d46a2a5de2a3ac329d816
-msgid "Launch with the new robot:"
-msgstr "使用新机器人启动："
-
-#: ../../source/0-overview/2-learning_path.md:78
-#: 2f755e02c63c45eab0fc3bd8cc72568b
-msgid ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
-"hardware:=mock\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
-"hardware:=mock\n"
-
-#: ../../source/0-overview/2-learning_path.md:81
 #: 0bb246923ffd4d7395eaee1870232d97
 msgid ""
 "`arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses"
 " the `arx-lift2s` branch scripts — see [ARX Lift "
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)."
 msgstr ""
-"`arx_acone` 是 **Acone 机械臂**，不是 Lift 2S。全身方舟无限 Lift 2S 使用 `arx-lift2s` 分支脚本 — 见 [方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
+"`arx_acone` 是 **Acone 机械臂**，不是 Lift 2S。全身方舟无限 Lift 2S 使用 `arx-lift2s` "
+"分支脚本 — 见 [方舟无限 Lift "
+"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
 
-#: ../../source/0-overview/2-learning_path.md:83
+#: ../../source/0-overview/2-learning_path.md:75
 #: 3db68e6c7f184a6abda5f7b834f10253
 msgid ""
 "**Primary sources:** [robot_descriptions](https://github.com/fiveages-"
@@ -346,27 +345,27 @@ msgstr ""
 "**主要来源：** [robot_descriptions](https://github.com/fiveages-"
 "sim/robot_descriptions)、各品牌 README"
 
-#: ../../source/0-overview/2-learning_path.md:85
+#: ../../source/0-overview/2-learning_path.md:77
 #: 9294e7914dea47aa96e619dd2462686b
 msgid "**Outcome:** You can switch between Dobot CR5, Acone (arm), Galbot, etc."
 msgstr "**预期结果：** 你可以在 Dobot CR5、Acone（机械臂）、Galbot 等机型之间切换。"
 
-#: ../../source/0-overview/2-learning_path.md:87
+#: ../../source/0-overview/2-learning_path.md:79
 #: e9f2ef330f4441239559f01dc99d4205
 msgid "Day 3: Gazebo and Isaac Simulation"
 msgstr "第 3 天：Gazebo 与 Isaac 仿真"
 
-#: ../../source/0-overview/2-learning_path.md:89
+#: ../../source/0-overview/2-learning_path.md:81
 #: fcd58251c71f4192b8dcfe27ab3c84c2
 msgid "**Goal:** Run physics simulation instead of mock hardware."
 msgstr "**目标：** 运行物理仿真，而不是 mock 硬件。"
 
-#: ../../source/0-overview/2-learning_path.md:91
+#: ../../source/0-overview/2-learning_path.md:83
 #: 1fc47136defc4fadb48c38396f3e44bf
 msgid "Gazebo Harmonic"
 msgstr "Gazebo Harmonic"
 
-#: ../../source/0-overview/2-learning_path.md:93
+#: ../../source/0-overview/2-learning_path.md:85
 #: 57aa63ced6f346508fd9031a55173725
 msgid ""
 "# Install Gazebo packages (if not already)\n"
@@ -381,17 +380,17 @@ msgstr ""
 "# Launch with Gazebo\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz\n"
 
-#: ../../source/0-overview/2-learning_path.md:101
+#: ../../source/0-overview/2-learning_path.md:93
 #: cf2226ceb60d4878a4036941a0bb89c1
 msgid "Isaac Sim"
 msgstr "Isaac Sim"
 
-#: ../../source/0-overview/2-learning_path.md:103
+#: ../../source/0-overview/2-learning_path.md:95
 #: 7382026cfc7d45f6a1d694d03ef3737f
 msgid "FaSim-Isaac scripts"
 msgstr "FaSim-Isaac 脚本"
 
-#: ../../source/0-overview/2-learning_path.md:106
+#: ../../source/0-overview/2-learning_path.md:98
 #: 065a006ddc2846a693e41b2fc7f9644e
 msgid ""
 "Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is "
@@ -404,19 +403,19 @@ msgstr ""
 "`ISAACSIM_DIR`（`~/isaacsim`）；在 `config/fa_sim.local.conf` 中覆盖。可选 ROS 2 "
 "工作空间的版本来自 init 菜单（回退列表见 `config/fa_sim.conf`），不要在文档里写死某个次版本号。"
 
-#: ../../source/0-overview/2-learning_path.md:109
+#: ../../source/0-overview/2-learning_path.md:101
 #: 4e5ef19c9c4447c696335e7ab0764141
 msgid ""
 "Install NVIDIA Isaac Sim (default directory `~/isaacsim`, or set "
 "`ISAACSIM_DIR`)."
 msgstr "安装 NVIDIA Isaac Sim（默认目录 `~/isaacsim`，或设置 `ISAACSIM_DIR`）。"
 
-#: ../../source/0-overview/2-learning_path.md:110
+#: ../../source/0-overview/2-learning_path.md:102
 #: 9b9cdde6ffb6435a85c695ece8cf8655
 msgid "Clone and initialize FaSim-Isaac:"
 msgstr "克隆并初始化 FaSim-Isaac："
 
-#: ../../source/0-overview/2-learning_path.md:111
+#: ../../source/0-overview/2-learning_path.md:103
 #: 0229413c743848cc960bc6a2a4ba3160
 msgid ""
 "git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
@@ -427,27 +426,27 @@ msgstr ""
 "cd FaSim-Isaac\n"
 "./init.sh\n"
 
-#: ../../source/0-overview/2-learning_path.md:116
+#: ../../source/0-overview/2-learning_path.md:108
 #: 44107c71e23549d5a9064b19ca4e811a
 msgid "Start Isaac (`./run.sh` menu: PhysX / Newton / Headless Streaming):"
 msgstr "启动 Isaac（`./run.sh` 菜单：PhysX / Newton / Headless Streaming）："
 
-#: ../../source/0-overview/2-learning_path.md:117
+#: ../../source/0-overview/2-learning_path.md:109
 #: 84a780c64711481eaf658fc803286937
 msgid "./run.sh\n"
 msgstr "./run.sh\n"
 
-#: ../../source/0-overview/2-learning_path.md:120
+#: ../../source/0-overview/2-learning_path.md:112
 #: 3a989392517d405ebc9d1ec196fc9513
 msgid "In another terminal, launch the ROS 2 side with Isaac hardware:"
 msgstr "在另一个终端中，以 Isaac 硬件启动 ROS 2 侧："
 
-#: ../../source/0-overview/2-learning_path.md:121
+#: ../../source/0-overview/2-learning_path.md:113
 #: 3dadea8700f74b97aa7671bba3ceaa94
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\n"
 msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac\n"
 
-#: ../../source/0-overview/2-learning_path.md:125
+#: ../../source/0-overview/2-learning_path.md:117
 #: 4f94c816989a4a8697bc110a5072ed24
 msgid ""
 "**Primary sources:** [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-"
@@ -456,27 +455,27 @@ msgstr ""
 "**主要来源：** [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-"
 "Isaac)、[robot_usds](https://github.com/fiveages-sim/robot_usds)"
 
-#: ../../source/0-overview/2-learning_path.md:127
+#: ../../source/0-overview/2-learning_path.md:119
 #: 3f5c941c17304ac4a01fad80b8e94c2c
 msgid "**Outcome:** Physics-based simulation with Gazebo or Isaac Sim."
 msgstr "**预期结果：** 基于物理的仿真，可使用 Gazebo 或 Isaac Sim。"
 
-#: ../../source/0-overview/2-learning_path.md:129
+#: ../../source/0-overview/2-learning_path.md:121
 #: 07599d0d30ee4cbabe832f604dcce18a
 msgid "Day 4: Python Interface"
 msgstr "第 4 天：Python 接口"
 
-#: ../../source/0-overview/2-learning_path.md:131
+#: ../../source/0-overview/2-learning_path.md:123
 #: 371ce170df834ff39328cffb284d8e4d
 msgid "**Goal:** Control the robot programmatically."
 msgstr "**目标：** 以编程方式控制机器人。"
 
-#: ../../source/0-overview/2-learning_path.md:134
+#: ../../source/0-overview/2-learning_path.md:126
 #: a4d6701af7bc429188514107176d86dc
 msgid "Install fa-py-libraries:"
 msgstr "安装 fa-py-libraries："
 
-#: ../../source/0-overview/2-learning_path.md:135
+#: ../../source/0-overview/2-learning_path.md:127
 #: 7f13cb24511a494c881d9ac6818571f3
 msgid ""
 "cd ~/\n"
@@ -491,12 +490,12 @@ msgstr ""
 "./init.sh all    # Python 3.12 env; installs ros2_robot_interface and "
 "related submodules\n"
 
-#: ../../source/0-overview/2-learning_path.md:141
+#: ../../source/0-overview/2-learning_path.md:133
 #: 2f827f34157b426686ced518ab2ae077
 msgid "Write a simple script:"
 msgstr "编写一个简单脚本："
 
-#: ../../source/0-overview/2-learning_path.md:142
+#: ../../source/0-overview/2-learning_path.md:134
 #: dff8d4c026944f7784529d0290aa597d
 msgid ""
 "from ros2_robot_interface import RobotInterface\n"
@@ -513,7 +512,7 @@ msgstr ""
 "robot.move_j([0.0, -0.5, 0.5, 0.0, 0.0, 0.0])\n"
 "robot.gripper_close()\n"
 
-#: ../../source/0-overview/2-learning_path.md:151
+#: ../../source/0-overview/2-learning_path.md:143
 #: 7e1fda0660c441a0875510fda6157d0a
 msgid ""
 "**Primary sources:** [fa-py-libraries](https://github.com/fiveages-sim"
@@ -524,27 +523,27 @@ msgstr ""
 "libraries)、[ros2_robot_interface](https://github.com/fiveages-"
 "sim/ros2_robot_interface)"
 
-#: ../../source/0-overview/2-learning_path.md:153
+#: ../../source/0-overview/2-learning_path.md:145
 #: 359eca1762de428294c12369296cbe54
 msgid "**Outcome:** You can script robot motions in Python."
 msgstr "**预期结果：** 你可以用 Python 编写机器人运动脚本。"
 
-#: ../../source/0-overview/2-learning_path.md:155
+#: ../../source/0-overview/2-learning_path.md:147
 #: 47b2041b4be4443f9190916eef85527b
 msgid "Day 5: Teleoperation"
 msgstr "第 5 天: 遥操作"
 
-#: ../../source/0-overview/2-learning_path.md:157
+#: ../../source/0-overview/2-learning_path.md:149
 #: ce482ac1a1c94bc2970eb6111a566b5d
 msgid "**Goal:** Control the robot via VR or isomorphic teleop."
 msgstr "**目标：** 通过 VR 或同构遥操作控制机器人。"
 
-#: ../../source/0-overview/2-learning_path.md:159
+#: ../../source/0-overview/2-learning_path.md:151
 #: 8b8954fbfd104b54851d3c29e4faa6b0
 msgid "VR Teleoperation"
 msgstr "VR 遥操作"
 
-#: ../../source/0-overview/2-learning_path.md:161
+#: ../../source/0-overview/2-learning_path.md:153
 #: 45716551a2704621886f2ae161e2a11a
 msgid ""
 "**Supported headsets:** Pico Enterprise (recommended; USB 网络共享, "
@@ -554,7 +553,7 @@ msgstr ""
 "**支持的头显：** Pico 企业版（推荐；USB 网络共享、企业版 App）、Pico 消费版（不同 App）和 Meta "
 "Quest。后端：WebXR（`./run.sh vr`）或 XRoboToolkit（`./run.sh vr-xrt`）。"
 
-#: ../../source/0-overview/2-learning_path.md:163
+#: ../../source/0-overview/2-learning_path.md:155
 #: 7c897a91cffe46f89f7067030ea3edfd
 msgid ""
 "cd fa-py-libraries\n"
@@ -563,12 +562,12 @@ msgstr ""
 "cd fa-py-libraries\n"
 "./run.sh vr\n"
 
-#: ../../source/0-overview/2-learning_path.md:168
+#: ../../source/0-overview/2-learning_path.md:160
 #: d944e59551db4a06909a6a6b2210fc14
 msgid "Pico Enterprise vs consumer"
 msgstr "Pico 企业版与消费版"
 
-#: ../../source/0-overview/2-learning_path.md:171
+#: ../../source/0-overview/2-learning_path.md:163
 #: dc076f612bdd4654a59345ad7ee05445
 msgid ""
 "Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise "
@@ -578,12 +577,12 @@ msgstr ""
 "Pico **企业版** 与 Pico **消费版** 是不同 SKU：企业版支持 USB 网络共享，并使用**不同的 "
 "App**。不要为两者安装同一个 App。"
 
-#: ../../source/0-overview/2-learning_path.md:174
+#: ../../source/0-overview/2-learning_path.md:166
 #: 1e1b39664448426993ddd69302c129c0
 msgid "Isomorphic Teleop (HighTorque Panthera HT)"
 msgstr "同构遥操作（高擎 Panthera HT）"
 
-#: ../../source/0-overview/2-learning_path.md:176
+#: ../../source/0-overview/2-learning_path.md:168
 #: c259d0c382194a659c88f7bfe074c4db
 msgid ""
 "Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, "
@@ -591,9 +590,12 @@ msgid ""
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md). Mock "
 "(package README):"
 msgstr ""
-"主从 **同构遥操作**。在 `panthera-ht` 分支上，真机遥操作是 `./teleop_start.sh` — 见 [高擎 Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。模拟（软件包 README）："
+"主从 **同构遥操作**。在 `panthera-ht` 分支上，真机遥操作是 `./teleop_start.sh` — 见 [高擎 "
+"Panthera "
+"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。模拟（软件包 "
+"README）："
 
-#: ../../source/0-overview/2-learning_path.md:178
+#: ../../source/0-overview/2-learning_path.md:170
 #: 97dbb677f08c4c18a87798531dc05723
 msgid ""
 "ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
@@ -606,7 +608,7 @@ msgstr ""
 "ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
 "  role:=slave hardware:=mock_components\n"
 
-#: ../../source/0-overview/2-learning_path.md:185
+#: ../../source/0-overview/2-learning_path.md:177
 #: 0ab951f29e9d4325ac7ec58c4d45de21
 msgid ""
 "**Primary sources:** VR pose publisher, "
@@ -616,36 +618,36 @@ msgstr ""
 "**主要来源：** VR 位姿发布器、[drag_teleop_controller](https://github.com/fiveages-"
 "sim/drag_teleop_controller)"
 
-#: ../../source/0-overview/2-learning_path.md:187
+#: ../../source/0-overview/2-learning_path.md:179
 #: 1d2c18f0e3db46f08c4b6beca7c5b0e6
 msgid ""
 "**Outcome:** Real-time control via VR headset or master–slave isomorphic "
 "teleop."
 msgstr "**预期结果：** 通过 VR 头显或主从同构遥操作进行实时控制。"
 
-#: ../../source/0-overview/2-learning_path.md:189
+#: ../../source/0-overview/2-learning_path.md:181
 #: 740ad763f5c04458a979c7d40d4bab17
 msgid "Day 6: Real Hardware"
 msgstr "第 6 天：真实硬件"
 
-#: ../../source/0-overview/2-learning_path.md:191
+#: ../../source/0-overview/2-learning_path.md:183
 #: dbcc1e50208e48af81526ca67a1a91cd
 msgid "**Goal:** Deploy to physical robots."
 msgstr "**目标：** 部署到实体机器人。"
 
-#: ../../source/0-overview/2-learning_path.md:193
+#: ../../source/0-overview/2-learning_path.md:185
 #: 1425c5214762499ca8e46752cf615a53
 msgid "Public Path (ARX Lift 2S, Acone arm, HighTorque Panthera HT)"
 msgstr "公开路径（方舟无限 Lift 2S、Acone 机械臂、高擎 Panthera HT）"
 
-#: ../../source/0-overview/2-learning_path.md:195
+#: ../../source/0-overview/2-learning_path.md:187
 #: d81011a623cf42599da5167f2f36540b
 msgid ""
 "Use the matching **branch README** and `./quick_start.sh`. Do not treat "
 "Acone as Lift 2S."
 msgstr "使用对应 **分支 README** 和 `./quick_start.sh`。不要把 Acone 当成 Lift 2S。"
 
-#: ../../source/0-overview/2-learning_path.md:197
+#: ../../source/0-overview/2-learning_path.md:189
 #: a5a8639d7e844e98829cea08f5397226
 msgid ""
 "**[ARX Lift "
@@ -653,9 +655,12 @@ msgid ""
 "full-body including chassis: `git clone -b arx-lift2s …` then "
 "`./init_repo.sh` / `./quick_start.sh`"
 msgstr ""
-"**[方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)** — 全身含底盘：`git clone -b arx-lift2s …` 然后 `./init_repo.sh` / `./quick_start.sh`"
+"**[方舟无限 Lift "
+"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)** — "
+"全身含底盘：`git clone -b arx-lift2s …` 然后 `./init_repo.sh` / "
+"`./quick_start.sh`"
 
-#: ../../source/0-overview/2-learning_path.md:198
+#: ../../source/0-overview/2-learning_path.md:190
 #: 563803eaf9394157a80e07ca82f7f162
 msgid ""
 "**Acone** / **AC One** — **arm only**; same `arx-lift2s` workspace, pick "
@@ -664,7 +669,7 @@ msgstr ""
 "**Acone** / **AC One** — **仅机械臂**；同一 `arx-lift2s` 工作空间，在 `quick_start` 中选"
 " ACone 做联调"
 
-#: ../../source/0-overview/2-learning_path.md:199
+#: ../../source/0-overview/2-learning_path.md:191
 #: 658fe8edc0674e3e97c135a0dc5ecec5
 msgid ""
 "**[HighTorque Panthera "
@@ -672,19 +677,21 @@ msgid ""
 "dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / "
 "`./quick_start.sh`"
 msgstr ""
-"**[高擎 Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)** — 双臂：`git clone -b panthera-ht …` 然后 `./init_repo.sh` / `./quick_start.sh`"
+"**[高擎 Panthera "
+"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)** — "
+"双臂：`git clone -b panthera-ht …` 然后 `./init_repo.sh` / `./quick_start.sh`"
 
-#: ../../source/0-overview/2-learning_path.md:201
+#: ../../source/0-overview/2-learning_path.md:193
 #: ed8c04be4d6a4c958dc4490cadf020cb
 msgid "Internal Path (FA Robots)"
 msgstr "内部路径（FA 机器人）"
 
-#: ../../source/0-overview/2-learning_path.md:203
+#: ../../source/0-overview/2-learning_path.md:195
 #: 01109736a5a04d5fab03630be2fb642a
 msgid "Internal Access Required"
 msgstr "需要内部访问权限"
 
-#: ../../source/0-overview/2-learning_path.md:206
+#: ../../source/0-overview/2-learning_path.md:198
 #: 6bcfcd48231b453ab5add0c017711bc8
 msgid ""
 "FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-"
@@ -692,89 +699,70 @@ msgid ""
 "allocation."
 msgstr "FA 机器人（W2、W2R、S2、S2R、双臂 CCS）需要访问 `fa-deploy-ws`。请联系团队负责人申请仓库权限并分配硬件。"
 
-#: ../../source/0-overview/2-learning_path.md:210
-#: 2be9448e539f437985a8b4e6295b4002
-msgid "Clone `fa-deploy-ws` and initialize for your robot (e.g., W2):"
-msgstr "克隆 `fa-deploy-ws` 并为你的机器人初始化（例如 W2）："
-
-#: ../../source/0-overview/2-learning_path.md:211
-#: e1b4014b93e54709abd50948451f37cb
+#: ../../source/0-overview/2-learning_path.md:202
+#: cec17d3573cf4d88a36a886de00c6ff8
 msgid ""
-"git clone <internal-url>/fa-deploy-ws.git\n"
-"cd fa-deploy-ws\n"
-"./init_repo.sh --robot fiveages_w2\n"
+"Clone `fa-deploy-ws` and run the init / quick-start scripts named in "
+"**that repository’s README** (not public). Do not invent `--robot` flags "
+"or `robot.local.yaml` here."
 msgstr ""
-"git clone <internal-url>/fa-deploy-ws.git\n"
-"cd fa-deploy-ws\n"
-"./init_repo.sh --robot fiveages_w2\n"
+"克隆 `fa-deploy-ws`，并运行**该仓库 README**（非公开）中写明的 init / quick-start 脚本。此处不要编造 `--robot` 参数或 `robot.local.yaml`。"
 
-#: ../../source/0-overview/2-learning_path.md:216
-#: 06ad71f2c7714dab8ed56a93a24f2ae2
+#: ../../source/0-overview/2-learning_path.md:203
+#: a724e84e09194dd4b48067db1afc94fe
+msgid "Follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md)."
+msgstr "见 [fa-deploy-ws 配置](../1-getting_started/4-fa_deploy_ws.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:205
+#: d191a29e3fbe4f5e959f7b10ed147efe
 msgid ""
-"Configure `robot.local.yaml` with your robot's parameters (network "
-"settings, domain ID, etc.)"
-msgstr "在 `robot.local.yaml` 中配置机器人参数（网络设置、Domain ID 等）"
+"**Safety:** Verify in `mock_components` (or that workspace’s documented "
+"sim path) before `hardware:=real`."
+msgstr "**安全：** 先在 `mock_components`（或该工作区文档中的仿真路径）验证，再使用 `hardware:=real`。"
 
-#: ../../source/0-overview/2-learning_path.md:217
-#: 1cb98e8986754eaba82c973ff5e51da4
-msgid "Run the quick start:"
-msgstr "运行快速启动："
-
-#: ../../source/0-overview/2-learning_path.md:218
-#: 6e2d888d1cd84e6f88aa8544cb4f392f
-msgid "./quick_start.sh\n"
-msgstr "./quick_start.sh\n"
-
-#: ../../source/0-overview/2-learning_path.md:222
-#: 8b0d2e467f7440ad80d32e6f8c796edf
-msgid ""
-"**Safety:** Always start with `mock` mode, verify trajectories, then "
-"switch to real hardware."
-msgstr "**安全：** 始终先从 `mock` 模式开始，确认轨迹无误后再切换到真实硬件。"
-
-#: ../../source/0-overview/2-learning_path.md:224
+#: ../../source/0-overview/2-learning_path.md:207
 #: 7284554cfae04f13a15cd42b9536f123
 msgid "Day 7+: Add a Robot"
 msgstr "第 7 天及以后：添加机器人"
 
-#: ../../source/0-overview/2-learning_path.md:226
+#: ../../source/0-overview/2-learning_path.md:209
 #: 6b3507ea17c14cb28fae18ebe156a005
 msgid "**Goal:** Integrate a new robot into the ecosystem."
 msgstr "**目标：** 将新机器人集成到生态系统中。"
 
-#: ../../source/0-overview/2-learning_path.md:229
+#: ../../source/0-overview/2-learning_path.md:212
 #: dd99e083398f403da5915c71df2fcc6c
 msgid "Create a description package with URDF/xacro"
 msgstr "用 URDF/xacro 创建描述包"
 
-#: ../../source/0-overview/2-learning_path.md:230
+#: ../../source/0-overview/2-learning_path.md:213
 #: 096ea59d2551447f866bc5c2ad016131
 msgid "Add ros2_control hardware interface YAML"
 msgstr "添加 ros2_control 硬件接口 YAML"
 
-#: ../../source/0-overview/2-learning_path.md:231
+#: ../../source/0-overview/2-learning_path.md:214
 #: 67b38cad0c1546ab94b8c178a6f185f4
 msgid "Configure OCS2 controller parameters"
 msgstr "配置 OCS2 控制器参数"
 
-#: ../../source/0-overview/2-learning_path.md:232
+#: ../../source/0-overview/2-learning_path.md:215
 #: c035cf058dcb40cf958d93daae3aa6fd
 msgid "Test progression: mock → simulation → real hardware"
 msgstr "测试进阶顺序：mock → 仿真 → 真实硬件"
 
-#: ../../source/0-overview/2-learning_path.md:234
+#: ../../source/0-overview/2-learning_path.md:217
 #: 682a13ff52dc46f9aa2fcb7f9f2cb771
 msgid ""
 "See the [Developer Guide](../5-developer/0-index.md) for detailed "
 "instructions."
 msgstr "详细说明请参阅[开发者指南](../5-developer/0-index.md)。"
 
-#: ../../source/0-overview/2-learning_path.md:236
+#: ../../source/0-overview/2-learning_path.md:219
 #: dcd98ef50d5b4ff89551854aaf811ab2
 msgid "Optional: Synthetic data (Isaac)"
 msgstr "可选：合成数据（Isaac）"
 
-#: ../../source/0-overview/2-learning_path.md:238
+#: ../../source/0-overview/2-learning_path.md:221
 #: 2933e34c43dd41609237f0a371b183c0
 msgid ""
 "**Goal:** Understand the Isaac datagen path (not Gazebo): USD scene → "
@@ -783,42 +771,44 @@ msgstr ""
 "**目标：** 弄清 Isaac 数据采集路径（不是 Gazebo）：USD 场景 → `ROS2RobotInterface` → "
 "composer `task_queue` → 磁盘上的 LeRobot 数据集。"
 
-#: ../../source/0-overview/2-learning_path.md:240
+#: ../../source/0-overview/2-learning_path.md:223
 #: 01ec865d8c8f45759ab5aa64ae540bb2
 msgid ""
 "Follow [Synthetic Data](../2-how_to/7-synthetic_data/0-index.md). "
 "Documented composer/lerobot branches are `feature/dex-grasp-generator` "
 "and `feature/sim-grasp-datagen`. Stop at recording/export; skip training."
 msgstr ""
-"见 [合成数据](../2-how_to/7-synthetic_data/0-index.md)。文档对应的 composer/lerobot 分支是 `feature/dex-grasp-generator` 与 `feature/sim-grasp-datagen`。停在录制/导出；跳过训练。"
+"见 [合成数据](../2-how_to/7-synthetic_data/0-index.md)。文档对应的 composer/lerobot "
+"分支是 `feature/dex-grasp-generator` 与 `feature/sim-grasp-"
+"datagen`。停在录制/导出；跳过训练。"
 
-#: ../../source/0-overview/2-learning_path.md:242
+#: ../../source/0-overview/2-learning_path.md:225
 #: 121163d280514013be94495c07c7951f
 msgid "Tips for Success"
 msgstr "实用建议"
 
-#: ../../source/0-overview/2-learning_path.md:244
+#: ../../source/0-overview/2-learning_path.md:227
 #: ef4f7289d2844d2a8b71f8e5080a033a
 msgid ""
 "**Don't skip mock mode** — Always verify behavior in mock before "
 "simulation or real hardware"
 msgstr "**不要跳过 mock 模式** — 在进入仿真或真实硬件之前，务必先在 mock 中验证行为"
 
-#: ../../source/0-overview/2-learning_path.md:245
+#: ../../source/0-overview/2-learning_path.md:228
 #: 238940c9f4234061a4643dca5629c0f9
 msgid ""
 "**Read the warnings** — The stack logs helpful messages about "
 "configuration issues"
 msgstr "**阅读警告信息** — 技术栈会记录有助于排查配置问题的日志"
 
-#: ../../source/0-overview/2-learning_path.md:246
+#: ../../source/0-overview/2-learning_path.md:229
 #: d262cad9a266426ea29f26e7c34b9da0
 msgid ""
 "**Use lean branches** — `open-deploy-ws` offers `dobot-cr5`, `arx-"
 "lift2s`, and `panthera-ht`"
 msgstr "**使用精简分支** — `open-deploy-ws` 提供 `dobot-cr5`、`arx-lift2s` 和 `panthera-ht`"
 
-#: ../../source/0-overview/2-learning_path.md:247
+#: ../../source/0-overview/2-learning_path.md:230
 #: 313f0fcd9ece4826b9b1436c1718d68c
 msgid ""
 "**Ask questions** — File issues on the relevant repository for bugs or "
@@ -932,3 +922,66 @@ msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库
 #~ "ros2 launch ocs2_arm_controller demo.launch.py "
 #~ "robot:=ht_panthera hardware:=real\n"
 
+#~ msgid "**Goal:** Run a robot demo in mock hardware mode."
+#~ msgstr "**目标：** 在 mock 硬件模式下运行机器人演示。"
+
+#~ msgid "Install prerequisites: Ubuntu 24.04, ROS 2 Jazzy"
+#~ msgstr "安装前提条件：Ubuntu 24.04、ROS 2 Jazzy"
+
+#~ msgid "Clone `open-deploy-ws`:"
+#~ msgstr "克隆 `open-deploy-ws`："
+
+#~ msgid "Run a mock demo:"
+#~ msgstr "运行 mock 演示："
+
+#~ msgid "**Outcome:** A robot moves in RViz responding to MPC targets."
+#~ msgstr "**预期结果：** 机器人在 RViz 中响应 MPC 目标并运动。"
+
+#~ msgid "Initialize a different robot's description submodule:"
+#~ msgstr "初始化另一台机器人的描述子模块："
+
+#~ msgid ""
+#~ "cd src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-arx\n"
+#~ msgstr ""
+#~ "cd src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-arx\n"
+
+#~ msgid "Rebuild packages:"
+#~ msgstr "重新编译软件包："
+
+#~ msgid "colcon build --packages-up-to robot-descriptions-arx\n"
+#~ msgstr "colcon build --packages-up-to robot-descriptions-arx\n"
+
+#~ msgid "Launch with the new robot:"
+#~ msgstr "使用新机器人启动："
+
+#~ msgid "Clone `fa-deploy-ws` and initialize for your robot (e.g., W2):"
+#~ msgstr "克隆 `fa-deploy-ws` 并为你的机器人初始化（例如 W2）："
+
+#~ msgid ""
+#~ "git clone <internal-url>/fa-deploy-ws.git\n"
+#~ "cd fa-deploy-ws\n"
+#~ "./init_repo.sh --robot fiveages_w2\n"
+#~ msgstr ""
+#~ "git clone <internal-url>/fa-deploy-ws.git\n"
+#~ "cd fa-deploy-ws\n"
+#~ "./init_repo.sh --robot fiveages_w2\n"
+
+#~ msgid ""
+#~ "Configure `robot.local.yaml` with your robot's"
+#~ " parameters (network settings, domain ID,"
+#~ " etc.)"
+#~ msgstr "在 `robot.local.yaml` 中配置机器人参数（网络设置、Domain ID 等）"
+
+#~ msgid "Run the quick start:"
+#~ msgstr "运行快速启动："
+
+#~ msgid "./quick_start.sh\n"
+#~ msgstr "./quick_start.sh\n"
+
+#~ msgid ""
+#~ "**Safety:** Always start with `mock` "
+#~ "mode, verify trajectories, then switch "
+#~ "to real hardware."
+#~ msgstr "**安全：** 始终先从 `mock` 模式开始，确认轨迹无误后再切换到真实硬件。"

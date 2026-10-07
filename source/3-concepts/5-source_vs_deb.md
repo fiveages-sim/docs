@@ -81,13 +81,6 @@ You can mix source trees and GitHub Release `.deb` packages, but be careful of v
 | Source | Source | Source | Full stack development |
 | Deb | Deb | Deb | Fastest install; all three from GitHub Releases |
 
-### Avoid
-
-| Combination | Problem |
-|-------------|---------|
-| Source OCS2 + Deb arms | ABI mismatch possible |
-| Newer Deb + Older source | API incompatibility |
-
 ## Version Tracking
 
 ### deb_versions.conf
@@ -148,16 +141,6 @@ The initialization script handles this choice per module (`d` = GitHub Release `
 
 Choosing `d` downloads the prebuilt `.deb` from GitHub Releases via `scripts/install_core_debs.sh`. It does **not** install from packages.ros.org.
 
-## Build Time Comparison
-
-| Configuration | Approximate Build Time |
-|---------------|----------------------|
-| All Deb | Minutes |
-| Deb OCS2 + Source arms | 10-15 minutes |
-| All Source | 20-40 minutes |
-
-Times vary by machine. OCS2 is the largest component.
-
 ## Troubleshooting
 
 ### Symbol/ABI Errors
@@ -179,9 +162,6 @@ These `.deb` files are not in the ROS apt index. `sudo apt update` will not make
 ```bash
 # Confirm the package is installed
 dpkg-query -W ros-jazzy-ocs2
-
-# Re-source ROS
-source /opt/ros/jazzy/setup.bash
 
 # If missing, re-run ./init_repo.sh menu 2 or 3
 ./scripts/install_core_debs.sh --only ocs2

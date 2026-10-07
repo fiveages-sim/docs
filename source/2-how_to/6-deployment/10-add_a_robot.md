@@ -168,7 +168,7 @@ check_urdf newrobot.urdf
 ros2 launch robot_description_newrobot display.launch.py
 
 # Mock demo
-ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot
 ```
 
 ### Gazebo Testing

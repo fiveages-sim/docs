@@ -46,7 +46,6 @@ Path/version overrides: copy `config/fa_sim.local.template.conf` → `config/fa_
 In a new terminal:
 
 :::{code-block} bash
-source /opt/ros/jazzy/setup.bash
 source ~/open-deploy-ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
 :::
@@ -57,8 +56,9 @@ Pass `robot:=…` on this ROS 2 launch as usual. Robot USD selection is done by 
 
 :::{code-block} bash
 ros2 topic list
-# Should see /joint_states, /target_pose, etc.
 :::
+
+Acone `hardware:=isaac` uses `topic_based_ros2_control/TopicBasedSystem` with `/isaac/joint_command` and `/isaac/joint_states` ([xacro](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)). Do not expect a stack-wide `/target_pose`.
 
 ## USD Assets
 

@@ -35,11 +35,11 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 
 ## Day 1: First Motion in Simulation
 
-**Goal:** Run a robot demo in mock hardware mode.
+**Goal:** Install the environment, then run a robot demo (`hardware` default `mock_components`).
 
 **Tasks:**
-1. Install prerequisites: Ubuntu 24.04, ROS 2 Jazzy
-2. Clone `open-deploy-ws`:
+1. [Install Environment](../1-getting_started/2-install_environment.md) — Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / `ros-jazzy-desktop`). Do not hand-write `source /opt/ros/...` into `~/.bashrc`.
+2. Clone `open-deploy-ws` and run the official init script:
    ```bash
    git clone https://github.com/fiveages-sim/open-deploy-ws.git
    cd open-deploy-ws
@@ -47,36 +47,28 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```
 3. Build the workspace:
    ```bash
-   source /opt/ros/jazzy/setup.bash
    colcon build --symlink-install
    ```
-4. Run a mock demo:
+4. Launch the demo (defaults: `robot:=cr5`, `hardware:=mock_components` — omit both; there is no `hardware:=mock`):
    ```bash
    source install/setup.bash
-   ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
+   ros2 launch ocs2_arm_controller demo.launch.py
    ```
 
 **Primary sources:** [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws), [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
 
-**Outcome:** A robot moves in RViz responding to MPC targets.
+**Outcome:** RViz opens with the OCS2 demo; FSM starts in HOLD. See [Quick Demo](../1-getting_started/1-quick_demo_public.md).
 
 ## Day 2: Switch Robots
 
 **Goal:** Change the robot model and understand the description system.
 
 **Tasks:**
-1. Initialize a different robot's description submodule:
+1. Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
+2. Rebuild the packages you need, then `source install/setup.bash`.
+3. Launch with the new robot (omit `hardware:=` to keep `mock_components`):
    ```bash
-   cd src/robot_descriptions
-   git submodule update --init robot-descriptions-arx
-   ```
-2. Rebuild packages:
-   ```bash
-   colcon build --packages-up-to robot-descriptions-arx
-   ```
-3. Launch with the new robot:
-   ```bash
-   ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+   ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
    ```
    `arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 
@@ -207,19 +199,10 @@ FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Con
 ```
 
 **Tasks:**
-1. Clone `fa-deploy-ws` and initialize for your robot (e.g., W2):
-   ```bash
-   git clone <internal-url>/fa-deploy-ws.git
-   cd fa-deploy-ws
-   ./init_repo.sh --robot fiveages_w2
-   ```
-2. Configure `robot.local.yaml` with your robot's parameters (network settings, domain ID, etc.)
-3. Run the quick start:
-   ```bash
-   ./quick_start.sh
-   ```
+1. Clone `fa-deploy-ws` and run the init / quick-start scripts named in **that repository’s README** (not public). Do not invent `--robot` flags or `robot.local.yaml` here.
+2. Follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
 
-**Safety:** Always start with `mock` mode, verify trajectories, then switch to real hardware.
+**Safety:** Verify in `mock_components` (or that workspace’s documented sim path) before `hardware:=real`.
 
 ## Day 7+: Add a Robot
 

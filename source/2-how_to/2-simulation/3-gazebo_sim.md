@@ -17,45 +17,34 @@ sudo apt install ros-jazzy-gz-*
 
 ### 1. Source Workspace
 
+From the workspace root after `./init_repo.sh` and `colcon build`:
+
 ```bash
-source /opt/ros/jazzy/setup.bash
-source ~/open-deploy-ws/install/setup.bash
+source install/setup.bash
 ```
 
 ### 2. Launch with Gazebo
+
+`hardware:=gz` sets xacro `ros2_control_hardware_type` to `gz` and `gazebo` to `true` ([`build_xacro_mappings()`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)). [ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md): install `ros-jazzy-ros-gz` and `ros-jazzy-gz-ros2-control`.
 
 ```bash
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 ```
 
-This launches:
-- Gazebo simulator with robot model
-- ROS 2 controllers
-- RViz visualization
+Acone xacro plugin for this key: `gz_ros2_control/GazeboSimSystem`.
 
 ### 3. Interact
 
-Send commands as usual:
-
-```bash
-ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \
-  "{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, orientation: {w: 1.0}}}" \
-  --once
-```
+FSM: `/fsm_command` (`std_msgs/Int32`). Do **not** publish `/target_pose`. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## Launch Options
 
 ```bash
-# With specific robot
 # Acone arm (not Lift 2S)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz
-
-# Without RViz (Gazebo only)
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz rviz:=false
-
-# Headless mode
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz headless:=true
 ```
+
+`demo.launch.py` declares `world` (default `dart`). It does **not** declare `rviz:=false` or `headless:=true` — do not invent those.
 
 ## Gazebo Features
 
@@ -65,11 +54,7 @@ The default physics parameters work for most robots. For custom tuning, modify t
 
 ### World Files
 
-Custom world files can be loaded:
-
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz world:=custom_world.sdf
-```
+`demo.launch.py` declares `world` (default `dart`). Use only world keys that exist in the description / launch you are running — do not invent a `custom_world.sdf`.
 
 ### Recording
 
@@ -126,6 +111,4 @@ Wait for Gazebo to fully initialize before sending commands. Check for error mes
 
 Reduce physics update rate or run headless:
 
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz headless:=true
-```
+See the Gazebo / `ros-jazzy-ros-gz` docs for renderer settings. This launch file does not document a `headless:=` argument.

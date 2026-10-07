@@ -33,14 +33,14 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=cr5
 ```
 
 ### Parameters
 
 | Parameter | Values |
 |-----------|--------|
-| `robot` | `dobot_cr5`, `dobot_cr10` |
+| `robot` | `cr5` (`demo.launch.py` default). Package: `dobot_cr5_description` |
 
 End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-common.md). Not `gripper:=`.
 
@@ -66,7 +66,7 @@ End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-c
 
 ```bash
 # Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
 ### CAN Configuration
@@ -91,7 +91,7 @@ sudo ip link set can0 up
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1
 ```
 
 ### Features
@@ -119,7 +119,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht
 ```
 
 ### Features

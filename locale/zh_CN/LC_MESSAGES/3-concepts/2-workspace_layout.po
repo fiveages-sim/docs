@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:36+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,461 +21,159 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/2-workspace_layout.md:1
-#: 53b1360332dc4ae0bdbe013b04f1fa3a
+#: 89cd537827404739937987940da3fb62
 msgid "Workspace Layout"
 msgstr "工作空间布局"
 
 #: ../../source/3-concepts/2-workspace_layout.md:3
-#: d5212cb7a50740dd86d75cfe2ece42a4
+#: f58ae2f1d6be4a39ad3480c29022e217
 msgid ""
-"This page explains the structure of the deploy workspaces and how to "
-"navigate them."
-msgstr "本页说明部署工作空间的结构及其浏览方式。"
+"Layout of the **public** deploy workspace, from the [open-deploy-ws "
+"README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md). Do not invent extra top-level scripts."
+msgstr ""
+"**公开**部署工作区布局，来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。不要编造额外的顶层脚本。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:5
-#: 451059d11987454ea0f12a4f41501fcd
-msgid "open-deploy-ws Structure"
-msgstr "open-deploy-ws 结构"
-
-#: ../../source/3-concepts/2-workspace_layout.md:7
-#: ecceccee3d24445f8c80b7739631787d
-#, fuzzy
-msgid ""
-"open-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/           # Main controller package\n"
-"│   │   ├── basic_joint_controller/  # Joint FSM Home / Hold / MoveJ\n"
-"│   │   ├── ocs2_arm_controller/     # MPC controller\n"
-"│   │   ├── adaptive_gripper_controller/\n"
-"│   │   ├── arms_teleop_controller/\n"
-"│   │   └── hardware/                # Nested HI submodules\n"
-"│   │       ├── arx-ros2-control/\n"
-"│   │       ├── dobot-cr-ros2-control/\n"
-"│   │       └── ...\n"
-"│   │\n"
-"│   ├── robot_descriptions/          # Description umbrella\n"
-"│   │   ├── robot-descriptions-common/\n"
-"│   │   ├── robot-descriptions-dobot/\n"
-"│   │   ├── robot-descriptions-arx/\n"
-"│   │   └── ...\n"
-"│   │\n"
-"│   └── ocs2_ros2/                   # (if source build)\n"
-"│\n"
-"├── init_repo.sh                     # Initialization script\n"
-"├── submodules_visibility.conf       # Public/private visibility\n"
-"├── deb_versions.conf                # GitHub Release .deb repos and tags"
-"\n"
-"└── build/, install/, log/           # Build outputs"
-msgstr ""
-"open-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/           # Main controller package\n"
-"│   │   ├── basic_joint_controller/  # Joint FSM Home / Hold / MoveJ\n"
-"│   │   ├── ocs2_arm_controller/     # MPC controller\n"
-"│   │   ├── adaptive_gripper_controller/\n"
-"│   │   ├── arms_teleop_controller/\n"
-"│   │   └── hardware/                # Nested HI submodules\n"
-"│   │       ├── arx-ros2-control/\n"
-"│   │       ├── dobot-cr-ros2-control/\n"
-"│   │       └── ...\n"
-"│   │\n"
-"│   ├── robot_descriptions/          # Description umbrella\n"
-"│   │   ├── robot-descriptions-common/\n"
-"│   │   ├── robot-descriptions-dobot/\n"
-"│   │   ├── robot-descriptions-arx/\n"
-"│   │   └── ...\n"
-"│   │\n"
-"│   └── ocs2_ros2/                   # (if source build)\n"
-"│\n"
-"├── init_repo.sh                     # Initialization script\n"
-"├── submodules_visibility.conf       # Public/private visibility\n"
-"├── deb_versions.conf                # GitHub Release .deb repos and tags\n"
-"└── build/, install/, log/           # Build outputs"
-
-#: ../../source/3-concepts/2-workspace_layout.md:34
-#: de726f1de7d44a0da50b845f14980b2b
-msgid "fa-deploy-ws Structure"
-msgstr "fa-deploy-ws 结构"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: eac22e2c58694aa6a02af5c149956ad7
-msgid ""
-"fa-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/           # Same as open-deploy-ws\n"
-"│   │   └── library/                 # Additional private submodules\n"
-"│   │       ├── ocs2-wbc-controller/\n"
-"│   │       ├── ocs2-humanoid/\n"
-"│   │       └── lina_planning/\n"
-"│   │\n"
-"│   ├── robot-descriptions-fiveages/ # Private FA descriptions\n"
-"│   │   ├── common/\n"
-"│   │   ├── arms/\n"
-"│   │   └── robot/\n"
-"│   │       ├── fa-w2-description/\n"
-"│   │       ├── fa-s2-description/\n"
-"│   │       └── ...\n"
-"│   │\n"
-"│   └── ocs2_ros2/                   # Full source (default)\n"
-"│\n"
-"├── init_repo.sh                     # Robot-specific init\n"
-"├── quick_start.sh                   # Quick launch script\n"
-"├── release.sh                       # Release packaging\n"
-"├── presets/                         # Robot configurations\n"
-"│   ├── fiveages_w2.yaml\n"
-"│   ├── tianji_m6_ccs.yaml\n"
-"│   └── ...\n"
-"└── robot.local.yaml.template        # Local config template"
-msgstr ""
-"fa-deploy-ws/\n"
-"├── src/\n"
-"│   ├── arms_ros2_control/           # Same as open-deploy-ws\n"
-"│   │   └── library/                 # Additional private submodules\n"
-"│   │       ├── ocs2-wbc-controller/\n"
-"│   │       ├── ocs2-humanoid/\n"
-"│   │       └── lina_planning/\n"
-"│   │\n"
-"│   ├── robot-descriptions-fiveages/ # Private FA descriptions\n"
-"│   │   ├── common/\n"
-"│   │   ├── arms/\n"
-"│   │   └── robot/\n"
-"│   │       ├── fa-w2-description/\n"
-"│   │       ├── fa-s2-description/\n"
-"│   │       └── ...\n"
-"│   │\n"
-"│   └── ocs2_ros2/                   # Full source (default)\n"
-"│\n"
-"├── init_repo.sh                     # Robot-specific init\n"
-"├── quick_start.sh                   # Quick launch script\n"
-"├── release.sh                       # Release packaging\n"
-"├── presets/                         # Robot configurations\n"
-"│   ├── fiveages_w2.yaml\n"
-"│   ├── tianji_m6_ccs.yaml\n"
-"│   └── ...\n"
-"└── robot.local.yaml.template        # Local config template"
-
-#: ../../source/3-concepts/2-workspace_layout.md:65
-#: e417601fd23e41ea9bf6a8dc20aa9482
-msgid "Key Differences"
-msgstr "主要区别"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 82ee8924d54c4bf287aea5096616ab00
-msgid "Aspect"
-msgstr "方面"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 0dc1f0cbefd54c7488356233aa1ce196
+#: a5c1c71ae3264949ac7ff6236c5a1b99
 msgid "open-deploy-ws"
 msgstr "open-deploy-ws"
 
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 7842dcb954d9411b954549df4cbf5aee
+#: ../../source/3-concepts/2-workspace_layout.md:7
+#: db6eca8e55f8408586db9e8321d6ee47
+msgid "Source of truth"
+msgstr "权威来源"
+
+#: ../../source/3-concepts/2-workspace_layout.md:10
+#: e58afbf7b378438cacd62814664f7e96
+msgid ""
+"Tree and init flow: [README.EN.md](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/README.EN.md). The repo root has `init_repo.sh`, "
+"`submodules_visibility.conf`, `deb_versions.conf`, and `scripts/` — there"
+" is **no** workspace `setup.bash` / env installer besides "
+"`./init_repo.sh`."
+msgstr ""
+"目录树与初始化流程：[README.EN.md](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。仓库根目录有 `init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和 `scripts/` — 除 `./init_repo.sh` 外**没有**工作区 `setup.bash` / 环境安装脚本。"
+
+#: ../../source/3-concepts/2-workspace_layout.md:13
+#: eb6b5e78ddc24a6d9cd1d3788c22cbac
+msgid ""
+"open-deploy-ws/\n"
+"├── src/\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware "
+"interfaces / shared libs\n"
+"│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)"
+"\n"
+"│   └── ocs2_ros2/             # only if that module is installed as "
+"source\n"
+"├── init_repo.sh\n"
+"├── submodules_visibility.conf\n"
+"├── deb_versions.conf\n"
+"└── scripts/                   # install_core_debs.sh, "
+"uninstall_core_debs.sh"
+msgstr ""
+"open-deploy-ws/\n"
+"├── src/\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs\n"
+"│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)\n"
+"│   └── ocs2_ros2/             # only if that module is installed as source\n"
+"├── init_repo.sh\n"
+"├── submodules_visibility.conf\n"
+"├── deb_versions.conf\n"
+"└── scripts/                   # install_core_debs.sh, uninstall_core_debs.sh"
+
+#: ../../source/3-concepts/2-workspace_layout.md:25
+#: b33a39dd676c4ed09792199af879a101
+msgid ""
+"**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). Do "
+"**not** `git submodule update --init --recursive`. After init, `colcon "
+"build` (the README does not wrap that). Then `source install/setup.bash` "
+"in that workspace — standard ROS 2 overlay, not a FiveAges env script."
+msgstr ""
+"**主路径：** `./init_repo.sh`（可见性 + 按模块 `d`/`s`）。**不要** `git submodule update --init --recursive`。初始化后 `colcon build`（README 没有封装这一步）。然后在该工作区 `source install/setup.bash` — 这是标准 ROS 2 overlay，不是 FiveAges 环境脚本。"
+
+#: ../../source/3-concepts/2-workspace_layout.md:27
+#: a2edfdbb5f434069821be290d1dce9d1
+msgid ""
+"Lean robot branches (`dobot-cr5`, `arx-acone`, plus `arx-lift2s` / "
+"`panthera-ht` used in the how-tos) clone only that scheme’s packages. See"
+" the same README."
+msgstr ""
+"精简机器人分支（`dobot-cr5`、`arx-acone`，以及 how-to 中的 `arx-lift2s` / `panthera-ht`）只克隆该方案所需软件包。见同一 README。"
+
+#: ../../source/3-concepts/2-workspace_layout.md:29
+#: b27be2de2daa4cb09d90a02bd61e6346
+msgid "arms_ros2_control (inside `src/`)"
+msgstr "arms_ros2_control（位于 `src/`）"
+
+#: ../../source/3-concepts/2-workspace_layout.md:31
+#: 8b056383620f44fbba3e4429d4b289d1
+msgid ""
+"From the [arms_ros2_control README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.md):"
+msgstr ""
+"来自 [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)："
+
+#: ../../source/3-concepts/2-workspace_layout.md:33
+#: 42a8a6ce2feb43998b55038e0bb6fdc8
+msgid ""
+"arms_ros2_control/\n"
+"├── controller/\n"
+"│   ├── ocs2_arm_controller/\n"
+"│   ├── ocs2_wbc_controller/      # private nested (visibility conf)\n"
+"│   ├── adaptive_gripper_controller/\n"
+"│   └── basic_joint_controller/   # own package README; Home / Hold / "
+"MoveJ\n"
+"├── libraries/                    # ocs2_humanoid (private), …\n"
+"├── hardwares/                    # topic_based_ros2_control, "
+"unitree_ros2_control, …\n"
+"└── command/                      # msgs, RViz plugin, "
+"arms_target_manager, arms_teleop"
+msgstr ""
+"arms_ros2_control/\n"
+"├── controller/\n"
+"│   ├── ocs2_arm_controller/\n"
+"│   ├── ocs2_wbc_controller/      # private nested (visibility conf)\n"
+"│   ├── adaptive_gripper_controller/\n"
+"│   └── basic_joint_controller/   # own package README; Home / Hold / MoveJ\n"
+"├── libraries/                    # ocs2_humanoid (private), …\n"
+"├── hardwares/                    # topic_based_ros2_control, unitree_ros2_control, …\n"
+"└── command/                      # msgs, RViz plugin, arms_target_manager, arms_teleop"
+
+#: ../../source/3-concepts/2-workspace_layout.md:45
+#: d63f93e436fd403e8a0f57b0148d39c5
+msgid ""
+"Nested public/private lines: [Submodules "
+"Visibility](6-submodules_visibility.md)."
+msgstr "嵌套 public/private 行：[子模块可见性](6-submodules_visibility.md)。"
+
+#: ../../source/3-concepts/2-workspace_layout.md:47
+#: 30b83e37f302458bb5004de38d406f86
 msgid "fa-deploy-ws"
 msgstr "fa-deploy-ws"
 
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: e492faeddc9d49c7a2d3e020c5f795e2
-msgid "Submodules"
-msgstr "子模块"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 53377d51bca74ae6b4f972dab15a5c07
-msgid "Public only"
-msgstr "仅公开"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: c9427c9a6e2a4e7ab335a1f27347bc32
-msgid "Public + private"
-msgstr "公开 + 私有"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 88c62eebd66849d2816cc07d693a0ade
-msgid "Init script"
-msgstr "初始化脚本"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 317cacfb2fea4735b161cdc718b8357f
-msgid "`./init_repo.sh`"
-msgstr "`./init_repo.sh`"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 8f6c2bf42e79481ab1729c07008e6179
-msgid "`./init_repo.sh --robot <id>`"
-msgstr "`./init_repo.sh --robot <id>`"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 8303193f134442faa87b5c3b9c0f179e
-msgid "WBC controller"
-msgstr "WBC 控制器"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 7434b78c14cb40aa8e91f30ebb621bd1
-msgid "Not included"
-msgstr "不包含"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 2cd63672a67b427aa67f034a58c289e4
-msgid "Included in library/"
-msgstr "包含在 library/ 中"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 5b551e1e24484457a766422613d93f9f
-msgid "Release script"
-msgstr "发布脚本"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: d032953ca6f5445e92299cfed6c437c8 ea0ec95a811141ec8e0d81904ce792a8
-msgid "No"
-msgstr "否"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 728a527a3a0f49acbd1d5939aa4e2ea9 c0aea1ce7e0044b3815a6bd89398401b
-msgid "Yes"
-msgstr "是"
-
-#: ../../source/3-concepts/2-workspace_layout.md:36
-#: 0bd40cf4df7f48db94164d7a3031f295
-msgid "Robot presets"
-msgstr "机器人预设"
-
-#: ../../source/3-concepts/2-workspace_layout.md:75
-#: e549b68d10fa4596a5646d8deb44d0e7
-msgid "Submodule Organization"
-msgstr "子模块组织"
-
-#: ../../source/3-concepts/2-workspace_layout.md:77
-#: 99b0e9aaec104f5bb604e86c590d89d5
-msgid "Nested Submodules"
-msgstr "嵌套子模块"
-
-#: ../../source/3-concepts/2-workspace_layout.md:79
-#: 27209dde9cdb42b4999424c4e60c3d48
-msgid "Submodules are organized hierarchically:"
-msgstr "子模块按层级组织："
-
-#: ../../source/3-concepts/2-workspace_layout.md:81
-#: 8329468bc3a8495db9351003e926e7ce
+#: ../../source/3-concepts/2-workspace_layout.md:49
+#: d9a75712ebf84ec8aa85d3503b47dbee
 msgid ""
-"arms_ros2_control/\n"
-"└── hardware/           # Hardware interfaces\n"
-"    ├── arx-ros2-control/      (submodule)\n"
-"    ├── dobot-cr-ros2-control/ (submodule)\n"
-"    └── ...\n"
-"\n"
-"robot_descriptions/\n"
-"├── robot-descriptions-common/ (submodule)\n"
-"├── robot-descriptions-dobot/  (submodule)\n"
-"└── ..."
-msgstr ""
-"arms_ros2_control/\n"
-"└── hardware/           # Hardware interfaces\n"
-"    ├── arx-ros2-control/      (submodule)\n"
-"    ├── dobot-cr-ros2-control/ (submodule)\n"
-"    └── ...\n"
-"\n"
-"robot_descriptions/\n"
-"├── robot-descriptions-common/ (submodule)\n"
-"├── robot-descriptions-dobot/  (submodule)\n"
-"└── ..."
+"Internal workspace (private). This page does **not** invent its tree or "
+"extra flags. Follow that repository’s README after you have access. "
+"Public users stay on `open-deploy-ws`."
+msgstr "内部工作区（私有）。本页**不编造**其目录树或额外参数。有权限后以该仓库 README 为准。公开用户继续用 `open-deploy-ws`。"
 
-#: ../../source/3-concepts/2-workspace_layout.md:94
-#: 4ea0cedc44274263b531f5175a624951
-msgid "Initialization"
-msgstr "初始化"
+#: ../../source/3-concepts/2-workspace_layout.md:51
+#: ab062d8b195b40e68d0ea1f17dd7827f
+msgid "Related"
+msgstr "相关"
 
-#: ../../source/3-concepts/2-workspace_layout.md:96
-#: 41d901977f7a40479d012a760e19ac5f
-msgid "**Don't use blind recursive init:**"
-msgstr "**不要盲目进行递归初始化：**"
+#: ../../source/3-concepts/2-workspace_layout.md:53
+#: ef079e60bd6742d4be7330aa1d8fb308
+msgid "[Source vs Deb](5-source_vs_deb.md) — `./init_repo.sh` menus 1–4"
+msgstr "[源码 vs Deb](5-source_vs_deb.md) — `./init_repo.sh` 菜单 1–4"
 
-#: ../../source/3-concepts/2-workspace_layout.md:98
-#: d84b656cfe724ee6b3255972f1630434
-msgid ""
-"# AVOID - initializes everything including private modules\n"
-"git submodule update --init --recursive\n"
-"\n"
-"# BETTER - use the init script\n"
-"./init_repo.sh\n"
-msgstr ""
-"# AVOID - initializes everything including private modules\n"
-"git submodule update --init --recursive\n"
-"\n"
-"# BETTER - use the init script\n"
-"./init_repo.sh\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:106
-#: 7f64bf5d4381417dbb4aa1df1ee27ffb
-msgid ""
-"The init script respects visibility and only initializes appropriate "
-"submodules."
-msgstr "初始化脚本会遵守可见性配置，只初始化相应的子模块。"
-
-#: ../../source/3-concepts/2-workspace_layout.md:108
-#: ed24c18bad824024bb078de641f90242
-msgid "Build Outputs"
-msgstr "编译产物"
-
-#: ../../source/3-concepts/2-workspace_layout.md:110
-#: cc89cde9528444c083b539f2d30cdc33
-msgid "After building:"
-msgstr "编译完成后："
-
-#: ../../source/3-concepts/2-workspace_layout.md:112
-#: 38991c9a1c0d4ca78d77d0994c60b768
-msgid ""
-"workspace/\n"
-"├── build/              # Build artifacts\n"
-"│   ├── package_a/\n"
-"│   └── package_b/\n"
-"├── install/            # Installed packages\n"
-"│   ├── setup.bash      # Source this!\n"
-"│   ├── package_a/\n"
-"│   └── package_b/\n"
-"└── log/                # Build logs"
-msgstr ""
-"workspace/\n"
-"├── build/              # Build artifacts\n"
-"│   ├── package_a/\n"
-"│   └── package_b/\n"
-"├── install/            # Installed packages\n"
-"│   ├── setup.bash      # Source this!\n"
-"│   ├── package_a/\n"
-"│   └── package_b/\n"
-"└── log/                # Build logs"
-
-#: ../../source/3-concepts/2-workspace_layout.md:124
-#: 0aaf1e9a40504819b90b4dbd4239d8d9
-msgid "**Always source from install:**"
-msgstr "**始终从 install 进行 source：**"
-
-#: ../../source/3-concepts/2-workspace_layout.md:126
-#: 5993de7beab349a98751ed9647f3966f
-msgid ""
-"source install/setup.bash  # Correct\n"
-"source build/...           # Wrong!\n"
-msgstr ""
-"source install/setup.bash  # Correct\n"
-"source build/...           # Wrong!\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:131
-#: f1a9573072cd43b7a0c9acad05298d20
-msgid "Package Dependencies"
-msgstr "软件包依赖"
-
-#: ../../source/3-concepts/2-workspace_layout.md:133
-#: 68ca54379662412da34ff934487bcfe4
-msgid "Dependencies flow downward:"
-msgstr "依赖关系自上而下："
-
-#: ../../source/3-concepts/2-workspace_layout.md:135
-#: 8032bddaad884a1597a24182f1d19c12
-msgid ""
-"Controllers (ocs2_arm_controller)\n"
-"      ↓ depends on\n"
-"Hardware Interfaces (*-ros2-control)\n"
-"      ↓ depends on\n"
-"Descriptions (*-description)\n"
-"      ↓ depends on\n"
-"Common (robot-descriptions-common)"
-msgstr ""
-"Controllers (ocs2_arm_controller)\n"
-"      ↓ depends on\n"
-"Hardware Interfaces (*-ros2-control)\n"
-"      ↓ depends on\n"
-"Descriptions (*-description)\n"
-"      ↓ depends on\n"
-"Common (robot-descriptions-common)"
-
-#: ../../source/3-concepts/2-workspace_layout.md:145
-#: df151d2a8f094cdaa4727f17eab29d75
-msgid "Build with `--packages-up-to` to build a package and its dependencies:"
-msgstr "使用 `--packages-up-to` 编译某个软件包及其依赖："
-
-#: ../../source/3-concepts/2-workspace_layout.md:147
-#: e2784639cfd64931af2253bec1b3024a
-msgid "colcon build --packages-up-to ocs2_arm_controller\n"
-msgstr "colcon build --packages-up-to ocs2_arm_controller\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:151
-#: 4e4245e399d4477ea49818610040cbe3
-msgid "Working with Submodules"
-msgstr "使用子模块"
-
-#: ../../source/3-concepts/2-workspace_layout.md:153
-#: f9132ed800634532889343179fd1f238
-msgid "Check Status"
-msgstr "检查状态"
-
-#: ../../source/3-concepts/2-workspace_layout.md:155
-#: d6a9e12572c3491580690740f876adbe
-msgid "git submodule status\n"
-msgstr "git submodule status\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:159
-#: 383825bf5b604b6eb5ef082ea20b34f6
-msgid "Update One Submodule"
-msgstr "更新单个子模块"
-
-#: ../../source/3-concepts/2-workspace_layout.md:161
-#: be409f85b4274ec598d0574c6d4886b8
-msgid ""
-"cd src/arms_ros2_control\n"
-"git fetch origin\n"
-"git checkout main\n"
-"git pull\n"
-msgstr ""
-"cd src/arms_ros2_control\n"
-"git fetch origin\n"
-"git checkout main\n"
-"git pull\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:168
-#: e7571a0f5195402689a154302c99ba4f
-msgid "Update All (Carefully)"
-msgstr "更新全部（请谨慎）"
-
-#: ../../source/3-concepts/2-workspace_layout.md:170
-#: 8d1fa7b0c1534470b15da1566cf760fb
-msgid "git submodule update --remote\n"
-msgstr "git submodule update --remote\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:174
-#: c03f37c28a82468c98dfe25956793028
-msgid "Reset to Pinned Versions"
-msgstr "重置为锁定版本"
-
-#: ../../source/3-concepts/2-workspace_layout.md:176
-#: cf1d3f6c5fb84547bf784614bfff77fa
-msgid "git submodule update --init\n"
-msgstr "git submodule update --init\n"
-
-#: ../../source/3-concepts/2-workspace_layout.md:180
-#: a966851543ec4ac0ab1f71595fcdb2e1
-msgid "Best Practices"
-msgstr "最佳实践"
-
-#: ../../source/3-concepts/2-workspace_layout.md:182
-#: ab4b8eef4dec4d83a0da2580550cc3d9
-msgid "**Use init scripts** — They handle visibility and dependencies"
-msgstr "**使用初始化脚本** — 它们会处理可见性与依赖"
-
-#: ../../source/3-concepts/2-workspace_layout.md:183
-#: 344fcdf320db405ea44e81cb59703c5f
-msgid ""
-"**Don't commit submodule changes accidentally** — Check `git status` in "
-"root"
-msgstr "**不要意外提交子模块变更** — 在仓库根目录检查 `git status`"
-
-#: ../../source/3-concepts/2-workspace_layout.md:184
-#: 3cdba9154f6f44c5998ad414cf3e2f95
-msgid "**Build incrementally** — Use `--packages-up-to` for faster iteration"
-msgstr "**增量编译** — 使用 `--packages-up-to` 以加快迭代"
-
-#: ../../source/3-concepts/2-workspace_layout.md:185
-#: 95786dcc21e54a0bbf92c59c1af33916
-msgid "**Keep workspaces separate** — Don't mix open-deploy-ws and fa-deploy-ws"
-msgstr "**保持工作空间分离** — 不要混用 open-deploy-ws 与 fa-deploy-ws"
+#: ../../source/3-concepts/2-workspace_layout.md:54
+#: 7edac49c376f4f4c96d39cc601b23691
+msgid "[open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)"
+msgstr "[open-deploy-ws 配置](../1-getting_started/3-open_deploy_ws.md)"
 
 #~ msgid ""
 #~ "open-deploy-ws/\n"
@@ -643,3 +341,346 @@ msgstr "**保持工作空间分离** — 不要混用 open-deploy-ws 与 fa-depl
 #~ "描述文件（*-description）\n"
 #~ "      ↓ 依赖于\n"
 #~ "公共组件（robot-descriptions-common）\n"
+
+#~ msgid ""
+#~ "This page explains the structure of "
+#~ "the deploy workspaces and how to "
+#~ "navigate them."
+#~ msgstr "本页说明部署工作空间的结构及其浏览方式。"
+
+#~ msgid "open-deploy-ws Structure"
+#~ msgstr "open-deploy-ws 结构"
+
+#~ msgid ""
+#~ "open-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/           # Main controller package\n"
+#~ "│   │   ├── basic_joint_controller/  # Joint FSM Home / Hold / MoveJ\n"
+#~ "│   │   ├── ocs2_arm_controller/     # MPC controller\n"
+#~ "│   │   ├── adaptive_gripper_controller/\n"
+#~ "│   │   ├── arms_teleop_controller/\n"
+#~ "│   │   └── hardware/                # Nested HI submodules\n"
+#~ "│   │       ├── arx-ros2-control/\n"
+#~ "│   │       ├── dobot-cr-ros2-control/\n"
+#~ "│   │       └── ...\n"
+#~ "│   │\n"
+#~ "│   ├── robot_descriptions/          # Description umbrella\n"
+#~ "│   │   ├── robot-descriptions-common/\n"
+#~ "│   │   ├── robot-descriptions-dobot/\n"
+#~ "│   │   ├── robot-descriptions-arx/\n"
+#~ "│   │   └── ...\n"
+#~ "│   │\n"
+#~ "│   └── ocs2_ros2/                   # (if source build)\n"
+#~ "│\n"
+#~ "├── init_repo.sh                     # Initialization script\n"
+#~ "├── submodules_visibility.conf       # Public/private visibility\n"
+#~ "├── deb_versions.conf                # GitHub "
+#~ "Release .deb repos and tags\n"
+#~ "└── build/, install/, log/           # Build outputs"
+#~ msgstr ""
+#~ "open-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/           # Main controller package\n"
+#~ "│   │   ├── basic_joint_controller/  # Joint FSM Home / Hold / MoveJ\n"
+#~ "│   │   ├── ocs2_arm_controller/     # MPC controller\n"
+#~ "│   │   ├── adaptive_gripper_controller/\n"
+#~ "│   │   ├── arms_teleop_controller/\n"
+#~ "│   │   └── hardware/                # Nested HI submodules\n"
+#~ "│   │       ├── arx-ros2-control/\n"
+#~ "│   │       ├── dobot-cr-ros2-control/\n"
+#~ "│   │       └── ...\n"
+#~ "│   │\n"
+#~ "│   ├── robot_descriptions/          # Description umbrella\n"
+#~ "│   │   ├── robot-descriptions-common/\n"
+#~ "│   │   ├── robot-descriptions-dobot/\n"
+#~ "│   │   ├── robot-descriptions-arx/\n"
+#~ "│   │   └── ...\n"
+#~ "│   │\n"
+#~ "│   └── ocs2_ros2/                   # (if source build)\n"
+#~ "│\n"
+#~ "├── init_repo.sh                     # Initialization script\n"
+#~ "├── submodules_visibility.conf       # Public/private visibility\n"
+#~ "├── deb_versions.conf                # GitHub "
+#~ "Release .deb repos and tags\n"
+#~ "└── build/, install/, log/           # Build outputs"
+
+#~ msgid "fa-deploy-ws Structure"
+#~ msgstr "fa-deploy-ws 结构"
+
+#~ msgid ""
+#~ "fa-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/           # Same as open-deploy-ws\n"
+#~ "│   │   └── library/                 # Additional private submodules\n"
+#~ "│   │       ├── ocs2-wbc-controller/\n"
+#~ "│   │       ├── ocs2-humanoid/\n"
+#~ "│   │       └── lina_planning/\n"
+#~ "│   │\n"
+#~ "│   ├── robot-descriptions-fiveages/ # Private FA descriptions\n"
+#~ "│   │   ├── common/\n"
+#~ "│   │   ├── arms/\n"
+#~ "│   │   └── robot/\n"
+#~ "│   │       ├── fa-w2-description/\n"
+#~ "│   │       ├── fa-s2-description/\n"
+#~ "│   │       └── ...\n"
+#~ "│   │\n"
+#~ "│   └── ocs2_ros2/                   # Full source (default)\n"
+#~ "│\n"
+#~ "├── init_repo.sh                     # Robot-specific init\n"
+#~ "├── quick_start.sh                   # Quick launch script\n"
+#~ "├── release.sh                       # Release packaging\n"
+#~ "├── presets/                         # Robot configurations\n"
+#~ "│   ├── fiveages_w2.yaml\n"
+#~ "│   ├── tianji_m6_ccs.yaml\n"
+#~ "│   └── ...\n"
+#~ "└── robot.local.yaml.template        # Local config template"
+#~ msgstr ""
+#~ "fa-deploy-ws/\n"
+#~ "├── src/\n"
+#~ "│   ├── arms_ros2_control/           # Same as open-deploy-ws\n"
+#~ "│   │   └── library/                 # Additional private submodules\n"
+#~ "│   │       ├── ocs2-wbc-controller/\n"
+#~ "│   │       ├── ocs2-humanoid/\n"
+#~ "│   │       └── lina_planning/\n"
+#~ "│   │\n"
+#~ "│   ├── robot-descriptions-fiveages/ # Private FA descriptions\n"
+#~ "│   │   ├── common/\n"
+#~ "│   │   ├── arms/\n"
+#~ "│   │   └── robot/\n"
+#~ "│   │       ├── fa-w2-description/\n"
+#~ "│   │       ├── fa-s2-description/\n"
+#~ "│   │       └── ...\n"
+#~ "│   │\n"
+#~ "│   └── ocs2_ros2/                   # Full source (default)\n"
+#~ "│\n"
+#~ "├── init_repo.sh                     # Robot-specific init\n"
+#~ "├── quick_start.sh                   # Quick launch script\n"
+#~ "├── release.sh                       # Release packaging\n"
+#~ "├── presets/                         # Robot configurations\n"
+#~ "│   ├── fiveages_w2.yaml\n"
+#~ "│   ├── tianji_m6_ccs.yaml\n"
+#~ "│   └── ...\n"
+#~ "└── robot.local.yaml.template        # Local config template"
+
+#~ msgid "Key Differences"
+#~ msgstr "主要区别"
+
+#~ msgid "Aspect"
+#~ msgstr "方面"
+
+#~ msgid "Submodules"
+#~ msgstr "子模块"
+
+#~ msgid "Public only"
+#~ msgstr "仅公开"
+
+#~ msgid "Public + private"
+#~ msgstr "公开 + 私有"
+
+#~ msgid "Init script"
+#~ msgstr "初始化脚本"
+
+#~ msgid "`./init_repo.sh`"
+#~ msgstr "`./init_repo.sh`"
+
+#~ msgid "`./init_repo.sh --robot <id>`"
+#~ msgstr "`./init_repo.sh --robot <id>`"
+
+#~ msgid "WBC controller"
+#~ msgstr "WBC 控制器"
+
+#~ msgid "Not included"
+#~ msgstr "不包含"
+
+#~ msgid "Included in library/"
+#~ msgstr "包含在 library/ 中"
+
+#~ msgid "Release script"
+#~ msgstr "发布脚本"
+
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgid "Robot presets"
+#~ msgstr "机器人预设"
+
+#~ msgid "Submodule Organization"
+#~ msgstr "子模块组织"
+
+#~ msgid "Nested Submodules"
+#~ msgstr "嵌套子模块"
+
+#~ msgid "Submodules are organized hierarchically:"
+#~ msgstr "子模块按层级组织："
+
+#~ msgid ""
+#~ "arms_ros2_control/\n"
+#~ "└── hardware/           # Hardware interfaces\n"
+#~ "    ├── arx-ros2-control/      (submodule)\n"
+#~ "    ├── dobot-cr-ros2-control/ (submodule)\n"
+#~ "    └── ...\n"
+#~ "\n"
+#~ "robot_descriptions/\n"
+#~ "├── robot-descriptions-common/ (submodule)\n"
+#~ "├── robot-descriptions-dobot/  (submodule)\n"
+#~ "└── ..."
+#~ msgstr ""
+#~ "arms_ros2_control/\n"
+#~ "└── hardware/           # Hardware interfaces\n"
+#~ "    ├── arx-ros2-control/      (submodule)\n"
+#~ "    ├── dobot-cr-ros2-control/ (submodule)\n"
+#~ "    └── ...\n"
+#~ "\n"
+#~ "robot_descriptions/\n"
+#~ "├── robot-descriptions-common/ (submodule)\n"
+#~ "├── robot-descriptions-dobot/  (submodule)\n"
+#~ "└── ..."
+
+#~ msgid "Initialization"
+#~ msgstr "初始化"
+
+#~ msgid "**Don't use blind recursive init:**"
+#~ msgstr "**不要盲目进行递归初始化：**"
+
+#~ msgid ""
+#~ "# AVOID - initializes everything including private modules\n"
+#~ "git submodule update --init --recursive\n"
+#~ "\n"
+#~ "# BETTER - use the init script\n"
+#~ "./init_repo.sh\n"
+#~ msgstr ""
+#~ "# AVOID - initializes everything including private modules\n"
+#~ "git submodule update --init --recursive\n"
+#~ "\n"
+#~ "# BETTER - use the init script\n"
+#~ "./init_repo.sh\n"
+
+#~ msgid ""
+#~ "The init script respects visibility and"
+#~ " only initializes appropriate submodules."
+#~ msgstr "初始化脚本会遵守可见性配置，只初始化相应的子模块。"
+
+#~ msgid "Build Outputs"
+#~ msgstr "编译产物"
+
+#~ msgid "After building:"
+#~ msgstr "编译完成后："
+
+#~ msgid ""
+#~ "workspace/\n"
+#~ "├── build/              # Build artifacts\n"
+#~ "│   ├── package_a/\n"
+#~ "│   └── package_b/\n"
+#~ "├── install/            # Installed packages\n"
+#~ "│   ├── setup.bash      # Source this!\n"
+#~ "│   ├── package_a/\n"
+#~ "│   └── package_b/\n"
+#~ "└── log/                # Build logs"
+#~ msgstr ""
+#~ "workspace/\n"
+#~ "├── build/              # Build artifacts\n"
+#~ "│   ├── package_a/\n"
+#~ "│   └── package_b/\n"
+#~ "├── install/            # Installed packages\n"
+#~ "│   ├── setup.bash      # Source this!\n"
+#~ "│   ├── package_a/\n"
+#~ "│   └── package_b/\n"
+#~ "└── log/                # Build logs"
+
+#~ msgid "**Always source from install:**"
+#~ msgstr "**始终从 install 进行 source：**"
+
+#~ msgid ""
+#~ "source install/setup.bash  # Correct\n"
+#~ "source build/...           # Wrong!\n"
+#~ msgstr ""
+#~ "source install/setup.bash  # Correct\n"
+#~ "source build/...           # Wrong!\n"
+
+#~ msgid "Package Dependencies"
+#~ msgstr "软件包依赖"
+
+#~ msgid "Dependencies flow downward:"
+#~ msgstr "依赖关系自上而下："
+
+#~ msgid ""
+#~ "Controllers (ocs2_arm_controller)\n"
+#~ "      ↓ depends on\n"
+#~ "Hardware Interfaces (*-ros2-control)\n"
+#~ "      ↓ depends on\n"
+#~ "Descriptions (*-description)\n"
+#~ "      ↓ depends on\n"
+#~ "Common (robot-descriptions-common)"
+#~ msgstr ""
+#~ "Controllers (ocs2_arm_controller)\n"
+#~ "      ↓ depends on\n"
+#~ "Hardware Interfaces (*-ros2-control)\n"
+#~ "      ↓ depends on\n"
+#~ "Descriptions (*-description)\n"
+#~ "      ↓ depends on\n"
+#~ "Common (robot-descriptions-common)"
+
+#~ msgid "Build with `--packages-up-to` to build a package and its dependencies:"
+#~ msgstr "使用 `--packages-up-to` 编译某个软件包及其依赖："
+
+#~ msgid "colcon build --packages-up-to ocs2_arm_controller\n"
+#~ msgstr "colcon build --packages-up-to ocs2_arm_controller\n"
+
+#~ msgid "Working with Submodules"
+#~ msgstr "使用子模块"
+
+#~ msgid "Check Status"
+#~ msgstr "检查状态"
+
+#~ msgid "git submodule status\n"
+#~ msgstr "git submodule status\n"
+
+#~ msgid "Update One Submodule"
+#~ msgstr "更新单个子模块"
+
+#~ msgid ""
+#~ "cd src/arms_ros2_control\n"
+#~ "git fetch origin\n"
+#~ "git checkout main\n"
+#~ "git pull\n"
+#~ msgstr ""
+#~ "cd src/arms_ros2_control\n"
+#~ "git fetch origin\n"
+#~ "git checkout main\n"
+#~ "git pull\n"
+
+#~ msgid "Update All (Carefully)"
+#~ msgstr "更新全部（请谨慎）"
+
+#~ msgid "git submodule update --remote\n"
+#~ msgstr "git submodule update --remote\n"
+
+#~ msgid "Reset to Pinned Versions"
+#~ msgstr "重置为锁定版本"
+
+#~ msgid "git submodule update --init\n"
+#~ msgstr "git submodule update --init\n"
+
+#~ msgid "Best Practices"
+#~ msgstr "最佳实践"
+
+#~ msgid "**Use init scripts** — They handle visibility and dependencies"
+#~ msgstr "**使用初始化脚本** — 它们会处理可见性与依赖"
+
+#~ msgid ""
+#~ "**Don't commit submodule changes "
+#~ "accidentally** — Check `git status` in"
+#~ " root"
+#~ msgstr "**不要意外提交子模块变更** — 在仓库根目录检查 `git status`"
+
+#~ msgid "**Build incrementally** — Use `--packages-up-to` for faster iteration"
+#~ msgstr "**增量编译** — 使用 `--packages-up-to` 以加快迭代"
+
+#~ msgid ""
+#~ "**Keep workspaces separate** — Don't mix"
+#~ " open-deploy-ws and fa-deploy-"
+#~ "ws"
+#~ msgstr "**保持工作空间分离** — 不要混用 open-deploy-ws 与 fa-deploy-ws"

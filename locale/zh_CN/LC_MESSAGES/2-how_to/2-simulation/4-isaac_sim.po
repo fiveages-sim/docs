@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -166,16 +166,15 @@ msgstr "在新终端中："
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:48
 #: d39ed65abd574caeb064c7b67538921d
+#, fuzzy
 msgid ""
-"source /opt/ros/jazzy/setup.bash\n"
 "source ~/open-deploy-ws/install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac"
 msgstr ""
-"source /opt/ros/jazzy/setup.bash\n"
 "source ~/open-deploy-ws/install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:54
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:53
 #: 3410d1fbafae4602a86b56c6b32349cb
 msgid ""
 "Pass `robot:=…` on this ROS 2 launch as usual. Robot USD selection is "
@@ -185,19 +184,27 @@ msgstr ""
 "照常在这条 ROS 2 launch 上传 `robot:=…`。机器人 USD 是在 Isaac 里打开 FaSim "
 "`robots/`（robot_usds）下的资产 — 不是 FaSim `run.sh` 的参数。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:56
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:55
 #: b557475318124468a3346069b2062817
 msgid "5. Verify Connection"
 msgstr "5. 验证连接"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
-#: e3b24d65527849df854ae37e6fdbc8c4
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
+#: 49f52030703b48c6a3af96b500c0d764
+#, fuzzy
+msgid "ros2 topic list"
+msgstr "ros2 topic list"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:61
+#: 4d95db75fe4c40e29fc234ef747d151a
 msgid ""
-"ros2 topic list\n"
-"# Should see /joint_states, /target_pose, etc."
+"Acone `hardware:=isaac` uses `topic_based_ros2_control/TopicBasedSystem` "
+"with `/isaac/joint_command` and `/isaac/joint_states` "
+"([xacro](https://github.com/fiveages-sim/robot-descriptions-"
+"arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)). Do "
+"not expect a stack-wide `/target_pose`."
 msgstr ""
-"ros2 topic list\n"
-"# Should see /joint_states, /target_pose, etc."
+"Acone 的 `hardware:=isaac` 使用 `topic_based_ros2_control/TopicBasedSystem`，话题为 `/isaac/joint_command` 和 `/isaac/joint_states`（[xacro](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)）。不要期待全栈通用的 `/target_pose`。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:63
 #: f95e647b33b64896bc475d29bade3e71
@@ -211,62 +218,62 @@ msgid ""
 "`robot_usds`:"
 msgstr "FaSim-Isaac 使用来自 `robot_usds` 的 USD（Universal Scene Description，通用场景描述）资产："
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 0caf514474da45128ede0e4de712e02e
 msgid "Path"
 msgstr "路径"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 8030291ce9694dc09b965e1d0398682d
 msgid "Content"
 msgstr "内容"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: d04219f3b07547b3b5d1005ab7bea4df
 msgid "`humanoid/FiveAges/Gen1`"
 msgstr "`humanoid/FiveAges/Gen1`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 00fc321a132248b4b53f16069291af48
 msgid "Gen1 wheeled-arm USD"
 msgstr "Gen1 轮臂 USD"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 5ae4f1c98cee43c6ae14903c49fa6344
 msgid "`humanoid/FiveAges/Gen2`"
 msgstr "`humanoid/FiveAges/Gen2`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: d038f5aad61a4d57b63207d7cfc5d034
 msgid "Gen2 wheeled-arm USD"
 msgstr "Gen2 轮臂 USD"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 1ef72affc93b41e0bffcf60b7d19b4b1
 msgid "`humanoid/FiveAges/Gen3`"
 msgstr "`humanoid/FiveAges/Gen3`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 75115e3debfd49b0a28b80df1d950852
 msgid "Gen3 wheeled-arm USD"
 msgstr "Gen3 轮臂 USD"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 560380950e784d41950faa849a3b4a1b
 msgid "`humanoid/Galbot`"
 msgstr "`humanoid/Galbot`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 66382f60c15e404c93f2be05e83d1932
 msgid "Galbot mobile manipulator"
 msgstr "Galbot 移动操作臂"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 9e58c455c73d4336ac1c545d167950d3
 msgid "`humanoid/Ubtech`"
 msgstr "`humanoid/Ubtech`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:57
 #: 58f6ba539a214f16b04d648acaffea86
 msgid "Ubtech humanoid"
 msgstr "Ubtech 人形机器人"
@@ -588,3 +595,9 @@ msgstr "[合成数据](../7-synthetic_data/0-index.md) — Isaac 上的数据采
 #~ "cd FaSim-Isaac\n"
 #~ "git submodule update --init --recursive\n"
 
+#~ msgid ""
+#~ "ros2 topic list\n"
+#~ "# Should see /joint_states, /target_pose, etc."
+#~ msgstr ""
+#~ "ros2 topic list\n"
+#~ "# Should see /joint_states, /target_pose, etc."

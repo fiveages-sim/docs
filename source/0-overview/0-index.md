@@ -49,4 +49,4 @@ The ecosystem has two entry points:
 
 1. Review the [Architecture](1-architecture.md) to understand component relationships
 2. Follow the [Learning Path](2-learning_path.md) for structured onboarding
-3. Jump to [Quick Demo](../1-getting_started/1-quick_demo_public.md) to see a robot move
+3. [Install Environment](../1-getting_started/2-install_environment.md), then [Quick Demo](../1-getting_started/1-quick_demo_public.md)

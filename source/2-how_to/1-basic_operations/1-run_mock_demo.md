@@ -1,53 +1,47 @@
 # Run Mock Demo
 
-Run a robot demonstration in mock hardware mode without physical hardware or simulation.
+Run a robot demonstration with the default `hardware:=mock_components` plugin (`mock_components/GenericSystem` on Acone xacro). No Gazebo / Isaac / physical robot.
 
 ## Prerequisites
 
-- Workspace built and sourced
-- RViz2 installed (`ros-jazzy-rviz2`)
+- [Install Environment](../../1-getting_started/2-install_environment.md) done
+- Workspace initialized with `./init_repo.sh` and `colcon build`
+- In the launch terminal: `source install/setup.bash` (standard overlay; no extra env script)
 
 ## Steps
 
 ### 1. Source Workspace
 
+From the workspace root after a successful build:
+
 ```bash
-source /opt/ros/jazzy/setup.bash
-source ~/open-deploy-ws/install/setup.bash
+source install/setup.bash
 ```
 
 ### 2. Launch Mock Demo
 
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
-```
-
-### 3. Send Target Pose
-
-In a new terminal:
+[`demo.launch.py`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py) defaults `robot:=cr5` and `hardware:=mock_components`. Omit both, or pass them explicitly. There is **no** `hardware:=mock`.
 
 ```bash
-source ~/open-deploy-ws/install/setup.bash
-ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \
-  "{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.1, z: 0.4}, orientation: {w: 1.0}}}" \
-  --once
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
 
-### 4. Observe Motion
+### 3. Observe
 
-Watch RViz — the robot should move to the target pose.
+- RViz (`demo_ocs2.rviz`)
+- `arms_target_manager` when `enable_arms_target_manager` is `true` (default)
+- FSM starts in HOLD — `/fsm_command` `std_msgs/Int32` (`1` HOME, `2` HOLD, `3` OCS2)
+
+Do **not** publish `/target_pose`. That is not a stack-wide API. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md) and [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md).
 
 ## With Different Robots
 
 ```bash
-# Dobot CR5
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
-
 # Acone (arm only, not Lift 2S)
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 
 # HighTorque Panthera HT
-ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht
 ```
 
 ### End-effector (`type`)
@@ -58,38 +52,38 @@ Not `gripper:=`. This launch includes `create_robot_profile_launch_arguments()`.
 ros2 launch ocs2_arm_controller demo.launch.py \
   robot:=<robot_name> \
   use_profile_eef:=false \
-  left_type:=rg75 right_type:=linkerhand_o7 \
-  hardware:=mock
+  left_type:=rg75 right_type:=linkerhand_o7
 :::
 
-## Launch Parameters
+## Launch Parameters (from `demo.launch.py` + `robot_common_launch`)
 
-| Parameter | Options | Default |
-|-----------|---------|---------|
-| `hardware` | `mock`, `gz`, `isaac`, (real) | varies |
-| `robot` | Robot name | `dobot_cr5` |
+| Parameter | Documented values | Default on this launch |
+|-----------|-------------------|------------------------|
+| `hardware` | `mock_components`, `gz`, `isaac`, `real` | `mock_components` |
+| `robot` | Description key (`{key}_description`) | `cr5` |
 | `type` / `left_type` / `right_type` | EEF key, or `type` as `left`/`right`/`dual` topology | profile or xacro |
 | `use_profile_eef` | `true`, `false` | `true` |
+| `enable_arms_target_manager` | `true`, `false` | `true` |
+
+Do not invent `rviz:=` / `headless:=` on this file.
 
 ## Verification
 
-Success indicators:
-- RViz window opens showing robot model
-- Controller logs show "Controller started"
-- Robot responds to target pose commands
+- RViz window opens showing the robot model
+- Controller process is running (HOLD)
+- `/fsm_command` is accepted (`std_msgs/Int32`)
 
 ## Troubleshooting
 
 ### Robot doesn't move
 
-- Check target pose is reachable
-- Verify no error messages in controller output
-- Ensure correct robot parameter
+- FSM must leave HOLD (`/fsm_command` `3` for OCS2 on this controller)
+- Check controller logs; do not assume a `/target_pose` publisher
 
 ### RViz shows broken model
 
 - Rebuild description packages
-- Check URDF for errors: `check_urdf <file>.urdf`
+- Check the description package README for `check_urdf` / visualize launch
 
 ### Command not found
 

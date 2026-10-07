@@ -5,7 +5,7 @@ Finite-state machines in this stack live in [arms_ros2_control](https://github.c
 ```{admonition} Source of truth
 :class: important
 
-`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no documented `/mode_command`, `/fsm_state` String, or wheeled-arm `stand` / `walk` / `arm_teleop` contract. Per-controller topics: the controller pages and package READMEs.
+`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no documented `/mode_command` or `/fsm_state` **String**, and no wheeled-arm `stand` / `walk` / `arm_teleop` contract. The [panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) also lists `/fsm_state` as `std_msgs/Int32` (same value meanings) and EE targets `/left_target` / `/left_target/stamped` — those are **that branch’s** external interface, not a stack-wide `/target_pose`. Per-controller topics: the controller pages and package READMEs.
 ```
 
 ## `/fsm_command` (`std_msgs/Int32`)

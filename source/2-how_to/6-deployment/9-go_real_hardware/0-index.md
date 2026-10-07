@@ -77,7 +77,7 @@ FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R
 ### Verify mock operation
 
 :::{code-block} bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot>
 # Test all planned motions
 :::
 

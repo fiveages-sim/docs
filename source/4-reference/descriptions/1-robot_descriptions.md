@@ -25,22 +25,23 @@ robot_descriptions/
 
 ### Initialize Specific Brand
 
-```bash
-cd robot_descriptions
-git submodule update --init robot-descriptions-<brand>
-```
+In `open-deploy-ws`, prefer `./init_repo.sh` (nested paths under `src/robot-descriptions/`). Do not recursive-init.
 
 ### Build All Descriptions
 
 ```bash
-colcon build --packages-up-to robot_descriptions
+colcon build --symlink-install
 ```
+
+The umbrella directory in `open-deploy-ws` is `src/robot-descriptions/` (hyphen). Nested modules follow `submodules_visibility.conf`.
 
 ### Use in Launch
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
+
+`demo.launch.py` default `robot` is `cr5`. Pass `robot:=<key>` for other `{key}_description` packages.
 
 ## Submodules
 

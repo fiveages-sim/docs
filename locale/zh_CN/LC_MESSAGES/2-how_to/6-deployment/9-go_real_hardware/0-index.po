@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -88,7 +88,7 @@ msgstr "机器人"
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:5
 #: aef4df155d2f46b7a8f33806ae2c5a68
 msgid "Role"
-msgstr "角色"
+msgstr "作用"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:5
 #: 89c559104398469bbcc376bbfb3c88bc
@@ -174,7 +174,8 @@ msgid ""
 "S2, S2R, and dual-arm CCS configurations. See [fa-deploy-ws "
 "setup](../../../1-getting_started/4-fa_deploy_ws.md)."
 msgstr ""
-"FiveAges 团队成员还可以部署到更多机器人，包括 W2、W2R、S2、S2R 以及双臂 CCS 配置。参见 [fa-deploy-ws 配置](../../../1-getting_started/4-fa_deploy_ws.md)。"
+"FiveAges 团队成员还可以部署到更多机器人，包括 W2、W2R、S2、S2R 以及双臂 CCS 配置。参见 [fa-deploy-ws "
+"配置](../../../1-getting_started/4-fa_deploy_ws.md)。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:33
 #: a4eefd16c8bf420ea4447e83268c3a9d
@@ -349,13 +350,12 @@ msgstr "验证 mock 运行"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:79
 #: f525cb0fbbb1472baaeca38e6457e77b
+#, fuzzy
 msgid ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> "
-"hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot>\n"
 "# Test all planned motions"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> "
-"hardware:=mock\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot>\n"
 "# Test all planned motions"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:84
@@ -424,7 +424,9 @@ msgid ""
 "Lift2S: **split body** or **full body** — [ARX Lift 2S](1-arx_lift2s.md),"
 " [分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)"
 msgstr ""
-"Lift2S：**split body** 或 **full body** — [ARX Lift 2S](1-arx_lift2s.md)，[分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)"
+"Lift2S：**split body** 或 **full body** — [ARX Lift "
+"2S](1-arx_lift2s.md)，[分体控制 vs "
+"全身控制](../../../3-concepts/7-split_vs_wbc.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:111
 #: f575a9ac77eb48ea842a155f18f10162
@@ -436,7 +438,11 @@ msgid ""
 "`/{controller}/target_joint_position` (`Float64MultiArray`), not "
 "`/target_joint_positions` `JointState`"
 msgstr ""
-"关节 FSM（Home / Hold / MoveJ）：[使用 basic_joint_controller](../../4-controllers/11-basic_joint.md) — `/fsm_command` 是 `std_msgs/Int32`；MoveJ 目标是 `/{controller}/target_joint_position`（`Float64MultiArray`），不是 `/target_joint_positions` `JointState`"
+"关节 FSM（Home / Hold / MoveJ）：[使用 "
+"basic_joint_controller](../../4-controllers/11-basic_joint.md) — "
+"`/fsm_command` 是 `std_msgs/Int32`；MoveJ 目标是 "
+"`/{controller}/target_joint_position`（`Float64MultiArray`），不是 "
+"`/target_joint_positions` `JointState`"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:113
 #: 3ff41259e3eb4ac8b78e2d792ba92ac1
@@ -451,7 +457,9 @@ msgid ""
 "Topics](../../../3-concepts/4-fsm_and_topics.md)). Do not send invented "
 "string commands such as `stand` / `walk`."
 msgstr ""
-"从 HOLD 开始，再 HOME，再按**正在运行的**控制器允许的范围进入 MOVEJ / OCS2（[状态机与话题](../../../3-concepts/4-fsm_and_topics.md)）。不要发送编造的字符串命令，例如 `stand` / `walk`。"
+"从 HOLD 开始，再 HOME，再按**正在运行的**控制器允许的范围进入 MOVEJ / "
+"OCS2（[状态机与话题](../../../3-concepts/4-fsm_and_topics.md)）。不要发送编造的字符串命令，例如 "
+"`stand` / `walk`。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:117
 #: d9afb563e4b841a9bf5e0a30cc6370cf
@@ -474,7 +482,8 @@ msgid ""
 "**[ARX Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` then "
 "`./init_repo.sh` and `./quick_start.sh`. Full-body including chassis."
 msgstr ""
-"**[方舟无限 Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` 然后 `./init_repo.sh` 和 `./quick_start.sh`。全身含底盘。"
+"**[方舟无限 Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` 然后 "
+"`./init_repo.sh` 和 `./quick_start.sh`。全身含底盘。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:122
 #: e5146e61c8b84767ae950c77d80b38dd
@@ -490,7 +499,9 @@ msgid ""
 "ht …` then `./init_repo.sh` / `./release.sh --install` and "
 "`./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`."
 msgstr ""
-"**[高擎 Panthera HT](2-panthera_ht.md)** — `git clone -b panthera-ht …` 然后 `./init_repo.sh` / `./release.sh --install` 和 `./quick_start.sh`。同构遥操作：`./teleop_start.sh`。"
+"**[高擎 Panthera HT](2-panthera_ht.md)** — `git clone -b panthera-ht …` 然后 "
+"`./init_repo.sh` / `./release.sh --install` 和 "
+"`./quick_start.sh`。同构遥操作：`./teleop_start.sh`。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:125
 #: c4ec8b09356d4c11901cfd80fc733884
@@ -678,7 +689,9 @@ msgstr "成功部署之后："
 msgid ""
 "[ARX Lift 2S](1-arx_lift2s.md) and [HighTorque Panthera "
 "HT](2-panthera_ht.md) for public robots"
-msgstr "公开机器人见 [方舟无限 Lift 2S](1-arx_lift2s.md) 与 [高擎 Panthera HT](2-panthera_ht.md)"
+msgstr ""
+"公开机器人见 [方舟无限 Lift 2S](1-arx_lift2s.md) 与 [高擎 Panthera "
+"HT](2-panthera_ht.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:183
 #: d6ea9bc48e1d48099431e918a30c6c2c
@@ -869,4 +882,3 @@ msgstr "[添加机器人](../10-add_a_robot.md) 用于自定义集成"
 
 #~ msgid "Increase gradually after verifying safe operation."
 #~ msgstr "确认运行安全后再逐步提高。"
-

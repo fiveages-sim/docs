@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -88,35 +88,53 @@ msgid "Initialize Specific Brand"
 msgstr "初始化指定品牌"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:28
-#: d16ed37f897f44bca2978d983395c48f
+#: d1ef10e751bf42bfb0beab9861a492b0
 msgid ""
-"cd robot_descriptions\n"
-"git submodule update --init robot-descriptions-<brand>\n"
+"In `open-deploy-ws`, prefer `./init_repo.sh` (nested paths under `src"
+"/robot-descriptions/`). Do not recursive-init."
 msgstr ""
-"cd robot_descriptions\n"
-"git submodule update --init robot-descriptions-<brand>\n"
+"在 `open-deploy-ws` 中优先用 `./init_repo.sh`（嵌套路径在 `src/robot-descriptions/` 下）。不要递归 init。"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:33
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:30
 #: bcf69e81d9ab42f5882c2c07dce89df1
 msgid "Build All Descriptions"
 msgstr "构建全部描述"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:35
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:32
 #: 86598d57f2d142f8b5d540532855db7a
-msgid "colcon build --packages-up-to robot_descriptions\n"
-msgstr "colcon build --packages-up-to robot_descriptions\n"
+msgid "colcon build --symlink-install\n"
+msgstr ""
+"colcon build --symlink-install\n"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:39
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:36
+#: 742c28594f9d42aa8b12b889e31dc6cc
+msgid ""
+"The umbrella directory in `open-deploy-ws` is `src/robot-descriptions/` "
+"(hyphen). Nested modules follow `submodules_visibility.conf`."
+msgstr ""
+"`open-deploy-ws` 中的伞形目录是 `src/robot-descriptions/`（连字符）。嵌套模块遵循 `submodules_visibility.conf`。"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:38
 #: d605d660daf14106a9b89b0de83a092f
 msgid "Use in Launch"
 msgstr "在启动中使用"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:41
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:40
 #: 1ed1fef6922541c28f81d4148e0e6467
-msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5\n"
-msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5\n"
+#, fuzzy
+msgid "ros2 launch ocs2_arm_controller demo.launch.py\n"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py\n"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:45
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:44
+#: 8220a94c416649e88fb538c7ccd30a55
+#, python-brace-format
+msgid ""
+"`demo.launch.py` default `robot` is `cr5`. Pass `robot:=<key>` for other "
+"`{key}_description` packages."
+msgstr "`demo.launch.py` 默认 `robot` 是 `cr5`。其他 `{key}_description` 包请传 `robot:=<key>`。"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:46
 #: e41e272696bd42edac03a8dd230083ff
 msgid "Submodules"
 msgstr "子模块"
@@ -142,9 +160,7 @@ msgid "robot-descriptions-common"
 msgstr "robot-descriptions-common"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 4147dd06a7c9423bb9afdb2492f11046 6e5d62ea00aa45be929aee466c3e08b0
-#: 76f5a6aec95741afbc50f0911534b4da ce10b00b5ce544dcaa568f0d50ed7bfc
-#: f0a78d5a540f46629fe08f3c8d99abb8 f8bddbb9ba3443dfb59919495b6cb4d2
+#: ce10b00b5ce544dcaa568f0d50ed7bfc
 msgid "Public"
 msgstr "公开"
 
@@ -209,8 +225,7 @@ msgid "robot-descriptions-tianji"
 msgstr "robot-descriptions-tianji"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 7c3fe23c5ba9427da1ff12bc01b39c04 ac637abbd4c64f05bd5fa0e51a917cb0
-#: bca021475d7c4d9393f09e05675f6642 c339a63c176d40f5a3d674cfd4e8f861
+#: 7c3fe23c5ba9427da1ff12bc01b39c04
 msgid "Private"
 msgstr "私有"
 
@@ -249,24 +264,24 @@ msgstr "agibot-g2-description"
 msgid "Agibot G2"
 msgstr "Agibot G2"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:60
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:61
 #: 08d4cd91ecd941ccb016b696be9a3e67
 msgid "Adding a Robot"
 msgstr "添加机器人"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:62
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:63
 #: 3d34e1ac1aa94155af6065eee94d9f90
 msgid ""
 "Create description package (see [Add a "
 "Robot](../../2-how_to/6-deployment/10-add_a_robot.md))"
 msgstr "创建描述软件包（参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)）"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:63
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:64
 #: 7c876d275dc844c28e976b5fc3c41a62
 msgid "Add as submodule:"
 msgstr "添加为子模块："
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:64
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:65
 #: a3ba1827a5814c36bbfa710e551cdf6e
 msgid ""
 "git submodule add https://github.com/fiveages-sim/robot-descriptions-"
@@ -275,27 +290,27 @@ msgstr ""
 "git submodule add https://github.com/fiveages-sim/robot-descriptions-"
 "newbrand.git\n"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:67
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:68
 #: f96522c71a474312b20c37cd0516d0cc
 msgid "Update visibility configuration"
 msgstr "更新可见性配置"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:68
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:69
 #: 2530a6ca1f89419aae6dc9bd04b81c18
 msgid "Create PR"
 msgstr "创建 PR"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:70
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:71
 #: 8a7f60bf036c442f9f926c9185156753
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:72
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:73
 #: 3fe6c0be40b945c99af639e50569818d
 msgid "[robot-descriptions-common](2-common.md)"
 msgstr "[robot-descriptions-common](2-common.md)"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:73
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:74
 #: 132749226103442786275dc9637bfcd8
 msgid "[Brand packages](3-brand_public.md)"
 msgstr "[品牌软件包](3-brand_public.md)"
@@ -319,3 +334,12 @@ msgstr "[品牌软件包](3-brand_public.md)"
 #~ "├── robot-descriptions-quadruped/ # Quadruped robots\n"
 #~ "└── ... (more brands)\n"
 
+#~ msgid ""
+#~ "cd robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-<brand>\n"
+#~ msgstr ""
+#~ "cd robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-<brand>\n"
+
+#~ msgid "colcon build --packages-up-to robot_descriptions\n"
+#~ msgstr "colcon build --packages-up-to robot_descriptions\n"
