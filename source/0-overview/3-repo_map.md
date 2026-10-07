@@ -24,17 +24,16 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | Repository | Visibility | Purpose |
 |------------|------------|---------|
 | [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) | [P] | Public umbrella for all descriptions |
-| [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | [P] | Shared grippers, hands, sensors |
-| robot-descriptions-fiveages | [I] | Private umbrella for FA robots |
+| [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | [P] | Grippers, hands, sensors, `robot_common_launch` (umbrella path `common`) |
 
 ### Brand-Specific (Public)
 
 | Repository | Visibility | Robots |
 |------------|------------|--------|
 | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) | [P] | Dobot CR series |
-| [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) | [P] | ARX X5, Acone (arm), Lift 2s (Ark) |
+| [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) | [P] | ARX X5, Acone (arm), Lift 2S |
 | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) | [P] | Galbot mobile manipulators |
-| [robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht) | [P] | Panthera HT |
+| [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) | [P] | HighTorque Panthera HT (`manipulator/HighTorque/panthera_ht_description`) |
 | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) | [P] | Quadruped robots |
 
 ### Brand-Specific (Private)
@@ -47,11 +46,20 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | robot-descriptions-gento | [I] | Gento robots |
 | robot-descriptions-ubtech | [I] | Ubtech humanoids |
 | agibot-g2-description | [I] | Agibot G2 |
-| fa-w2-description | [I] | FA W2 humanoid |
-| fa-w2r-description | [I] | FA W2R humanoid |
-| fa-s2-description | [I] | FA S2 humanoid |
-| fa-s2r-description | [I] | FA S2R humanoid |
-| fa-w2-components | [I] | Shared W2 components |
+
+### FiveAges (private gitlinks under `robot_descriptions`)
+
+There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes below are from [robot_descriptions `.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). Details: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
+
+| Repository | Visibility | Umbrella path (`main`) |
+|------------|------------|------------------------|
+| fa-w1-description | [I] | `humanoid/FiveAges/fiveages_w1_description` |
+| fa-w2-description | [I] | `humanoid/FiveAges/fiveages_w2_description` |
+| fa-w2r-description | [I] | `humanoid/FiveAges/fiveages_w2r_description` |
+| fa-s2-description | [I] | `humanoid/FiveAges/fiveages_s2_description` |
+| fa-w2-components | [I] | `humanoid/FiveAges/fiveages_w2_common_description` |
+
+`fa-s2r-description` (`fiveages_s2r_description`) and `fa-wce3-description` (`fiveages_wce3_description`) appear only on `robot_descriptions` **`feature/agilex`** (`Gen2` / `Gen3`).
 
 ## L2: Hardware Interfaces
 
@@ -62,7 +70,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) | [P] | ARX CAN interface |
 | [dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control) | [P] | Dobot TCP interface |
 | [unitree-ros2-control](https://github.com/fiveages-sim/unitree-ros2-control) | [P] | Unitree SDK2 |
-| [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) | [P] | Panthera HT serial |
+| [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) | [P] | HighTorque Panthera HT serial |
 | [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control) | [P] | Tianji + EE matrix |
 | [modbus-ros2-control](https://github.com/fiveages-sim/modbus-ros2-control) | [P] | RS485 grippers |
 | [can-ros2-control](https://github.com/fiveages-sim/can-ros2-control) | [P] | CAN/CANFD hands |
@@ -97,9 +105,9 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [robot_usds](https://github.com/fiveages-sim/robot_usds) | [P] | Isaac USD superproject |
 | [galbot-usds](https://github.com/fiveages-sim/galbot-usds) | [P] | Galbot USD assets |
 | [fiveages-env-usds](https://github.com/fiveages-sim/fiveages-env-usds) | [P] | Environment USD assets |
-| fiveages-gen1-robot-usds | [I] | Gen1 USD |
-| fiveages-gen2-robot-usds | [I] | Gen2 USD |
-| fiveages-gen3-robot-usds | [I] | Gen3 USD |
+| fiveages-gen1-robot-usds | [I] | Gen1 USD (W1; named in public `robot_usds` README) |
+| fiveages-gen2-robot-usds | [I] | Gen2 USD (W2 / S2) |
+| fiveages-gen3-robot-usds | [I] | Gen3 USD (WCE3) |
 | fa-project-usd | [I] | FaSim project assets |
 
 ## L5: Teleop and Applications

@@ -1,0 +1,496 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:1
+#: f917dd69dabb4a448071f0ebf14bd6ee
+msgid "Switch Robot"
+msgstr "切换机器人"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:3
+#: 03bcf8cf210a4dd68d9d62df356ebd69
+msgid "Change the robot model in your workspace and launches."
+msgstr "在工作空间和启动文件中更换机器人型号。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:5
+#: a91853cb215a4d9e9d7bc6cb7518e595
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:7
+#: b64ad1db342d4f199fd2228329dad180
+msgid "Workspace cloned and initialized"
+msgstr "工作空间已克隆并初始化"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:8
+#: 248182c183ec4151a47c3a8ef9242d7f
+msgid "Target robot's description available"
+msgstr "目标机器人的描述已可用"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:10
+#: 35a5ff2c41b7477b9ed96354cfb66e03
+msgid "Steps"
+msgstr "步骤"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:12
+#: 5c4768bfc1774737be38e8d992c1c056
+msgid "1. Initialize Robot Description"
+msgstr "1. 初始化机器人描述"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:14
+#: 4754699a7ce0455cb86214abd66b3fcb
+msgid "If the robot description isn't already initialized:"
+msgstr "如果机器人描述尚未初始化："
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:16
+#: bc764499efe94e59981d89210d75d1ba
+msgid ""
+"Prefer `./init_repo.sh` in `open-deploy-ws` so nested modules under `src"
+"/robot-descriptions/` match "
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/submodules_visibility.conf) (`manipulator/Dobot`, "
+"`manipulator/ARX`, …). Do not `git submodule update --init --recursive`."
+msgstr ""
+"在 `open-deploy-ws` 中优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下嵌套模块与 [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) 一致（`manipulator/Dobot`、`manipulator/ARX` 等）。不要 `git submodule update --init --recursive`。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:18
+#: 8049175eef41411389534973aa46f67f
+msgid "2. Rebuild"
+msgstr "2. 重新编译"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:20
+#: 4d20555d9db84b1abe08d9e06fcfba02
+#, fuzzy
+msgid ""
+"cd ~/open-deploy-ws\n"
+"colcon build --symlink-install\n"
+"source install/setup.bash\n"
+msgstr ""
+"cd ~/open-deploy-ws\n"
+"colcon build --symlink-install\n"
+"source install/setup.bash\n"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:26
+#: e5469d6175fa4be88db79f744acff546
+msgid "3. Launch with New Robot"
+msgstr "3. 使用新机器人启动"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:28
+#: 7d43ac419f3542d7a93fa1213e208b0a
+#, fuzzy
+msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:32
+#: 5048a1db8f91424ab4135cc904fbe23e
+msgid "Robot Names"
+msgstr "机器人名称"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 0afb1910272840e2b03bd3fe1c4f0d0a
+msgid "Brand"
+msgstr "品牌"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 4fd23cd2d8234a44aa3233eac8205115
+msgid "`robot:=` keys used in this docs set"
+msgstr "本文档集使用的 `robot:=` 键"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 04325df12dbe42e69a8ac0d1cf9aa286
+msgid "Source"
+msgstr "来源"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 2d2415d7cdaa459a9e3ba933d3f0ebaf
+msgid "Dobot"
+msgstr "Dobot"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: b418049dedc3473186061b1cc9bea820
+msgid "`cr5`"
+msgstr "`cr5`"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: e97d02095288421d86d20409536ce9f0
+msgid "`demo.launch.py` default"
+msgstr "`demo.launch.py` 默认值"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 0691c45be28848e2ab601f4bd9608361
+msgid "ARX (方舟无限)"
+msgstr "方舟无限（ARX）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 3a1705216ecc460a89c85593c4800eba
+#, fuzzy
+msgid "`arx_acone` (**arm only**), `arx_lift2s` (**Lift 2S** full-body)"
+msgstr "`arx_x5`、`arx_acone`（**仅机械臂**）、`arx_lift2s`（**Lift 2S** 全身）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 31b051dc17ea42838246761dd1ab835d
+msgid "ARX how-to / description packages"
+msgstr "ARX how-to / 描述包"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 6ed16198f84949a6a43de1723e5bc103
+msgid "HighTorque (高擎)"
+msgstr "高擎（HighTorque）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 1d3760e855214c278fc93dd0152d7186
+msgid "`panthera_ht`"
+msgstr "`panthera_ht`"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: 87a8da56205342c0962a367862a49468
+msgid ""
+"[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
+"/panthera-ht/README.EN.md)"
+msgstr ""
+"[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md)"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:40
+#: d0b9e843f2bf41deb6c604831bcaee17
+#, python-brace-format
+msgid "Use the key that matches `{key}_description`. Do not invent extra names."
+msgstr "使用与 `{key}_description` 对应的键。不要编造额外名称。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:42
+#: 0d46d179ca7e4e659794bc64e9174e72
+msgid "Example: Dobot to ARX"
+msgstr "示例：从 Dobot 切换到 ARX"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:44
+#: ea479814d60843ca85497fb3a6a476ea
+msgid ""
+"# Demo default robot key is cr5 (demo.launch.py)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py\n"
+"\n"
+"# After init has ARX descriptions, launch Acone (arm only, not Lift 2S)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
+msgstr ""
+"# Demo default robot key is cr5 (demo.launch.py)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py\n"
+"\n"
+"# After init has ARX descriptions, launch Acone (arm only, not Lift 2S)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:52
+#: cdd7ed7abf75488d97b50e5e18dfa594
+msgid ""
+"`arx_acone` is the manipulator. Full-body **ARX Lift 2S** (`arx_lift2s`) "
+"uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` "
+"branch — see [ARX Lift "
+"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). HighTorque "
+"Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera "
+"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)."
+msgstr ""
+"`arx_acone` 是操作臂。全身 **ARX Lift 2S**（`arx_lift2s`）在 `arx-lift2s` 分支上使用 "
+"`split_body.launch.py` / `full_body.launch.py` — 见 [ARX Lift "
+"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md)。高擎 Panthera HT 的 "
+"launch 名是 `panthera_ht` — 见 [高擎 Panthera "
+"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:54
+#: 43733b133f69443f9793759bba94a68d
+msgid "End-effectors (`type` / `left_type` / `right_type`)"
+msgstr "末端执行器（`type` / `left_type` / `right_type`）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:56
+#: ea09d94ddacb4bdaa068e0ccf7760137
+msgid ""
+"There is **no** `gripper:=` argument. End-effectors are selected by "
+"**`robot_common_launch`**:"
+msgstr "没有 **`gripper:=`** 参数。末端由 **`robot_common_launch`** 选择："
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:58
+#: 5743a20e2f66494185dcc43ff2c1569e
+msgid "Symmetric EEF: `type:=<eef_key>`"
+msgstr "对称末端：`type:=<eef_key>`"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:59
+#: 411d9f4626ae407da45cab92256b1d18
+msgid ""
+"Different left / right: `left_type:=` and `right_type:=` together; **do "
+"not pass `type:=`** then (`create_eef_side_launch_arguments()`)"
+msgstr ""
+"左右不同：同时传 `left_type:=` 与 `right_type:=`；此时**不要再传 "
+"`type:=`**（`create_eef_side_launch_arguments()`）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:60
+#: 3a3a3086c47b4ba58f03669ff6c0e2df
+msgid ""
+"`type` may also be arm topology `left` / `right` / `dual` (that does "
+"**not** become `left_type` / `right_type`)"
+msgstr ""
+"`type` 也可以是臂拓扑 `left` / `right` / `dual`（**不会**展开成 `left_type` / "
+"`right_type`）"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:61
+#: f63041cf759a4c1a8cb0d9527a6e6712
+msgid ""
+"OCS2 `demo` / `split_body` / `full_body` declare these via "
+"`create_robot_profile_launch_arguments()`. `basic_joint_controller` "
+"`demo.launch.py` only declares `type`."
+msgstr ""
+"OCS2 的 `demo` / `split_body` / `full_body` 通过 "
+"`create_robot_profile_launch_arguments()` 声明这些参数。`basic_joint_controller`"
+" 的 `demo.launch.py` 只声明 `type`。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:63
+#: 347a6ae4e0dc47b5b4504605e308156c
+msgid ""
+"Profile YAML `defaults.end_effectors` is applied when "
+"`use_profile_eef:=true` (default). Set `use_profile_eef:=false` to force "
+"the CLI keys. Merge order: **CLI > profile > xacro defaults**. FT (`ft` /"
+" `left_ft` / `right_ft`) and TCP offsets are separate and always take the"
+" profile unless CLI overrides them."
+msgstr ""
+"`use_profile_eef:=true`（默认）时应用 profile YAML 的 `defaults.end_effectors`。设 "
+"`use_profile_eef:=false` 以强制使用命令行键。合并顺序：**CLI > profile > xacro "
+"默认值**。力传感器（`ft` / `left_ft` / `right_ft`）和 TCP 偏移是独立项，除非 CLI 覆盖，否则始终使用 "
+"profile。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:65
+#: 91344f71079e4a9394d15f33fa11a5f0
+msgid ""
+"# README: ignore profile EEF, set L/R from CLI\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot:=<robot_name> \\\n"
+"  robot_profile:=/path/to/machine_profile.yaml \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
+msgstr ""
+"# README: ignore profile EEF, set L/R from CLI\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot:=<robot_name> \\\n"
+"  robot_profile:=/path/to/machine_profile.yaml \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:74
+#: 9810c2e7893540c0840871c101c4a492
+msgid ""
+"Full table: [robot-descriptions-"
+"common](../../4-reference/descriptions/2-common.md) "
+"(`robot_common_launch` README)."
+msgstr ""
+"完整表格见 [robot-descriptions-"
+"common](../../4-reference/descriptions/2-common.md)（`robot_common_launch`"
+" README）。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:76
+#: 6dff8ffdf2b341f4b511c01ee9923ae6
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:78
+#: 4f998089342c4ac1830df3bd1079c883
+msgid "RViz shows the correct robot model"
+msgstr "RViz 显示正确的机器人模型"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:79
+#: b84a2d00a2664d1dba07567023be875e
+msgid "Joint names in `/joint_states` match the new robot"
+msgstr "`/joint_states` 中的关节名称与新机器人匹配"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:80
+#: 3e1cca9d6cb84dc6b6524d94448f3994
+msgid "Controller accepts commands appropriate for the robot"
+msgstr "控制器接受适合该机器人的指令"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:82
+#: 591f42d3c8c5438e919550132eed9103
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:84
+#: 15d57ea5851c4d68aa6dcba0ba410125
+msgid "Package not found"
+msgstr "找不到软件包"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:86
+#: c981aa75654f4bf1babb5b7c175947b7
+#, fuzzy
+msgid ""
+"colcon build --symlink-install\n"
+"source install/setup.bash\n"
+msgstr ""
+"colcon build --symlink-install\n"
+"source install/setup.bash\n"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:91
+#: b391860335a64f7f9e5e8d76f4c9d824
+msgid "URDF errors"
+msgstr "URDF 错误"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:93
+#: 83f09cc7bc654b27ae5f94f474f3d8f7
+msgid "Check the description package's README for dependencies."
+msgstr "查看描述软件包的 README 以了解依赖项。"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:95
+#: 88eca8a16b14412ea5c552adb328d2f0
+msgid "Wrong joint limits"
+msgstr "关节限位不正确"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:97
+#: e5dd02a8bd8340298246ffdb6216e19f
+#, fuzzy
+msgid ""
+"Each robot has its own joint limits in URDF. Verify commanded poses are "
+"within limits."
+msgstr "每台机器人在 URDF 中都有自己的关节限位。请确认目标位姿在限位范围内。"
+
+#~ msgid ""
+#~ "# Dobot with DH AG95\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=dobot_cr5 gripper:=dh_ag95 hardware:=mock\n"
+#~ "\n"
+#~ "# ARX with inspire hand\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=arx_x5 gripper:=inspire_rh56 hardware:=mock\n"
+#~ msgstr ""
+#~ "# Dobot with DH AG95\\nros2 launch "
+#~ "ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+#~ "gripper:=dh_ag95 hardware:=mock\\n\\n# ARX with "
+#~ "inspire hand\\nros2 launch ocs2_arm_controller "
+#~ "demo.launch.py robot:=arx_x5 gripper:=inspire_rh56 "
+#~ "hardware:=mock\\n"
+
+#~ msgid "`ht_panthera`"
+#~ msgstr "`ht_panthera`"
+
+#~ msgid "ARX"
+#~ msgstr "ARX"
+
+#~ msgid "HT"
+#~ msgstr "HT"
+
+#~ msgid "With Grippers"
+#~ msgstr "搭配夹爪"
+
+#~ msgid ""
+#~ "Different robots support different grippers."
+#~ " The `gripper:=` parameter specifies the"
+#~ " end-effector."
+#~ msgstr "不同机器人支持不同的夹爪。`gripper:=` 参数用于指定末端执行器。"
+
+#~ msgid "TODO"
+#~ msgstr "待完成"
+
+#~ msgid ""
+#~ "For valid robot + gripper combinations"
+#~ " and exact launch syntax, check the"
+#~ " launch files in `arms_ros2_control` and"
+#~ " the specific robot description packages."
+#~ " Not all combinations are supported."
+#~ msgstr ""
+#~ "有效的机器人与夹爪组合及确切启动语法，请查看 `arms_ros2_control` "
+#~ "中的启动文件以及对应的机器人描述软件包。并非所有组合都受支持。"
+
+#~ msgid ""
+#~ "# General pattern\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=<robot_name> gripper:=<gripper_name> hardware:=mock"
+#~ "\n"
+#~ msgstr ""
+#~ "# General pattern\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=<robot_name> gripper:=<gripper_name> hardware:=mock"
+#~ "\n"
+
+#~ msgid "Different left / right: `left_type:=` and `right_type:=`"
+#~ msgstr "左右不同：`left_type:=` 与 `right_type:=`"
+
+#~ msgid ""
+#~ "cd ~/open-deploy-ws/src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-<brand>\n"
+#~ msgstr ""
+#~ "cd ~/open-deploy-ws/src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-<brand>\n"
+
+#~ msgid "Available brands:"
+#~ msgstr "可用品牌："
+
+#~ msgid "`robot-descriptions-dobot`"
+#~ msgstr "`robot-descriptions-dobot`"
+
+#~ msgid "`robot-descriptions-arx`"
+#~ msgstr "`robot-descriptions-arx`"
+
+#~ msgid "`robot-descriptions-galbot`"
+#~ msgstr "`robot-descriptions-galbot`"
+
+#~ msgid "`robot-descriptions-ht`"
+#~ msgstr "`robot-descriptions-ht`"
+
+#~ msgid "`robot-descriptions-quadruped`"
+#~ msgstr "`robot-descriptions-quadruped`"
+
+#~ msgid "`dobot_cr5`, `dobot_cr10`"
+#~ msgstr "`dobot_cr5`, `dobot_cr10`"
+
+#~ msgid "Galbot"
+#~ msgstr "Galbot"
+
+#~ msgid "`galbot_g1`"
+#~ msgstr "`galbot_g1`"
+
+#~ msgid "`panthera_ht` (**Panthera HT**)"
+#~ msgstr "`panthera_ht`（**Panthera HT**）"
+
+#~ msgid ""
+#~ "# Current: Dobot CR5\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=dobot_cr5 hardware:=mock\n"
+#~ "\n"
+#~ "# Initialize ARX descriptions\n"
+#~ "cd src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-arx\n"
+#~ "\n"
+#~ "# Rebuild\n"
+#~ "cd ~/open-deploy-ws\n"
+#~ "colcon build --packages-up-to robot-descriptions-arx\n"
+#~ "source install/setup.bash\n"
+#~ "\n"
+#~ "# Launch with Acone (arm only, not Lift 2S)\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=arx_acone hardware:=mock\n"
+#~ msgstr ""
+#~ "# Current: Dobot CR5\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=dobot_cr5 hardware:=mock\n"
+#~ "\n"
+#~ "# Initialize ARX descriptions\n"
+#~ "cd src/robot_descriptions\n"
+#~ "git submodule update --init robot-descriptions-arx\n"
+#~ "\n"
+#~ "# Rebuild\n"
+#~ "cd ~/open-deploy-ws\n"
+#~ "colcon build --packages-up-to robot-descriptions-arx\n"
+#~ "source install/setup.bash\n"
+#~ "\n"
+#~ "# Launch with Acone (arm only, not Lift 2S)\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=arx_acone hardware:=mock\n"

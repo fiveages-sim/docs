@@ -9,156 +9,180 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:23+0000\n"
+"POT-Creation-Date: 2026-10-07 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/5-developer/3-packaging_deb.md:1
-#: 55fddb4b618d40f883449502ba4cad79
+#: ce1f017c87e94273a0c8b09839615c43
 msgid "Debian Packaging"
 msgstr "Debian 打包"
 
 #: ../../source/5-developer/3-packaging_deb.md:3
-#: 01976f189fe3408caa7a27357371d89a
+#: 242a0c3063ee4a1691ea5b1b3a1be97b
 msgid "Creating `.deb` packages for FiveAges Sim components."
 msgstr "为 FiveAges Sim 组件创建 `.deb` 包。"
 
 #: ../../source/5-developer/3-packaging_deb.md:5
-#: d54628bf68e240078249ad4322193216
+#: c9f789214c4e4c00a41c76dd9c17404a
 msgid "Overview"
 msgstr "概述"
 
 #: ../../source/5-developer/3-packaging_deb.md:7
-#: 38fbbcbf290f440fbe82f1cc84e47fec
+#: 9bea50734166468880dfee6118c6c8b0
 msgid ""
 "Several components ship prebuilt `.deb` files on GitHub Releases (not on "
 "packages.ros.org / Ubuntu apt):"
 msgstr ""
-"若干组件以预编译 `.deb` 的形式发布在 GitHub Releases 上（不在 packages.ros."
-"org / Ubuntu apt 源中）："
+"若干组件以预编译 `.deb` 的形式发布在 GitHub Releases 上（不在 packages.ros.org / Ubuntu apt"
+" 源中）："
 
 #: ../../source/5-developer/3-packaging_deb.md:8
-#: e022053205ae482c986ac8c7bafcdd09
+#: a50c2308684b4d51a7fed3057a3c4869
 msgid ""
-"OCS2 (`ros-jazzy-ocs2`) — [legubiao/ocs2_ros2 releases](https://github.com/"
-"legubiao/ocs2_ros2/releases)"
+"OCS2 (`ros-jazzy-ocs2`) — [legubiao/ocs2_ros2 "
+"releases](https://github.com/legubiao/ocs2_ros2/releases)"
 msgstr ""
-"OCS2（`ros-jazzy-ocs2`）— [legubiao/ocs2_ros2 发行版](https://github.com/"
-"legubiao/ocs2_ros2/releases)"
+"OCS2（`ros-jazzy-ocs2`）— [legubiao/ocs2_ros2 "
+"发行版](https://github.com/legubiao/ocs2_ros2/releases)"
 
 #: ../../source/5-developer/3-packaging_deb.md:9
-#: cb49a70c53fa4b5fb9fec35a2ecb9c26
+#: 10a7b09150e341fc84e177e56770af18
 msgid ""
 "robot-descriptions-common (`ros-jazzy-robot-descriptions-common`) — "
-"[fiveages-sim/robot-descriptions-common releases](https://github.com/"
-"fiveages-sim/robot-descriptions-common/releases)"
+"[fiveages-sim/robot-descriptions-common releases](https://github.com"
+"/fiveages-sim/robot-descriptions-common/releases)"
 msgstr ""
 "robot-descriptions-common（`ros-jazzy-robot-descriptions-common`）— "
 "[fiveages-sim/robot-descriptions-common 发行版](https://github.com/fiveages-"
 "sim/robot-descriptions-common/releases)"
 
 #: ../../source/5-developer/3-packaging_deb.md:10
-#: dc21c94d58fa495fac7acdaeb7164b6d
+#: 8bab2bccbcd44830aa3d05b7ed5b4fd3
 msgid ""
-"arms_ros2_control (`ros-jazzy-arms-ros2-control`, optional) — [fiveages-sim/"
-"arms_ros2_control releases](https://github.com/fiveages-sim/"
-"arms_ros2_control/releases)"
+"arms_ros2_control (`ros-jazzy-arms-ros2-control`, optional) — [fiveages-"
+"sim/arms_ros2_control releases](https://github.com/fiveages-"
+"sim/arms_ros2_control/releases)"
 msgstr ""
-"arms_ros2_control（`ros-jazzy-arms-ros2-control`，可选）— [fiveages-sim/"
-"arms_ros2_control 发行版](https://github.com/fiveages-sim/arms_ros2_control/"
-"releases)"
+"arms_ros2_control（`ros-jazzy-arms-ros2-control`，可选）— [fiveages-"
+"sim/arms_ros2_control 发行版](https://github.com/fiveages-"
+"sim/arms_ros2_control/releases)"
 
 #: ../../source/5-developer/3-packaging_deb.md:12
-#: 6d0edc9b15e04f688de32f780c5a9675
+#: 3a716c34a44549b2b386b3ead02cff36
 msgid "Package Documentation"
 msgstr "软件包文档"
 
 #: ../../source/5-developer/3-packaging_deb.md:14
-#: 4899b34a89d44e47b33c8134d7451c27
+#: b8b45e1f8dd44375a3da5cb56e0ce396
 msgid ""
-"Detailed packaging instructions are in repository-specific `README.deb.md` "
-"files:"
+"Detailed packaging instructions are in repository-specific "
+"`README.deb.md` files:"
 msgstr "详细打包说明见各仓库中的 `README.deb.md` 文件："
 
 #: ../../source/5-developer/3-packaging_deb.md:16
-#: 7914f27f696c4dc4b95f8fbce06035a1
+#: 24b6785e7eac4e838533837134d80c5e
 msgid "arms_ros2_control"
 msgstr "arms_ros2_control"
 
 #: ../../source/5-developer/3-packaging_deb.md:18
-#: c5034448ae9742ac8208df82c9966eb1
+#: a7881adcc13c48dba31fbad11f500af3
 msgid "See `arms_ros2_control/README.deb.md` for:"
 msgstr "参见 `arms_ros2_control/README.deb.md`，内容包括："
 
 #: ../../source/5-developer/3-packaging_deb.md:19
-#: d9dd4bd401564af6a2f6f7abc6e8fc2a
+#: f2b9d68452c947e5bc7b70353e05d16d
 msgid "Build configuration"
 msgstr "构建配置"
 
 #: ../../source/5-developer/3-packaging_deb.md:20
-#: 9c79d3b5c29b442dacdffada894fc179
+#: f7af10eb35b94ed3bdd6c807561e35ed
 msgid "Dependencies"
 msgstr "依赖"
 
 #: ../../source/5-developer/3-packaging_deb.md:21
-#: d2043a4b13ec4dbab00970cb5be0730e
+#: c5ea4d11587c4dceaa39f86897623550
 msgid "Release process"
 msgstr "发布流程"
 
 #: ../../source/5-developer/3-packaging_deb.md:23
-#: 726e50b2e25642339c2c234eca3e5df1
+#: 8ca9c654184c4a53ad7b361362946044
 msgid "robot-descriptions-common"
 msgstr "robot-descriptions-common"
 
 #: ../../source/5-developer/3-packaging_deb.md:25
-#: 0a9e8875f2bb4ba1a9b25f86f3165b4d
-msgid "See `robot-descriptions-common/README.deb.md` for:"
-msgstr "参见 `robot-descriptions-common/README.deb.md`，内容包括："
-
-#: ../../source/5-developer/3-packaging_deb.md:26
-#: 3020630f7fe44902894bf643b5031ec4
-msgid "URDF packaging"
-msgstr "URDF 打包"
+#: c75fd4098c5e495a8fd8bd4161809eb2
+msgid ""
+"Do not invent a bloom / mesh-packaging recipe here. Official notes: "
+"[README.deb.md](https://github.com/fiveages-sim/robot-descriptions-"
+"common/blob/main/README.deb.md)."
+msgstr ""
+"此处不要编造 bloom / 网格打包流程。官方说明：[README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md)。"
 
 #: ../../source/5-developer/3-packaging_deb.md:27
-#: a06d3458bbc84f83b515947c89f8ce45
-msgid "Mesh handling"
-msgstr "网格处理"
+#: 4aae23aafba54993b50bd14e2e6a80a4
+msgid ""
+"Workflow: [`.github/workflows/build-common-deb.yml`](https://github.com"
+"/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows"
+"/build-common-deb.yml)"
+msgstr ""
+"工作流：[`.github/workflows/build-common-deb.yml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows/build-common-deb.yml)"
 
 #: ../../source/5-developer/3-packaging_deb.md:28
-#: 86eaa0a2aed34d69b4469ea32c959031
-msgid "Version management"
-msgstr "版本管理"
+#: 83bbf3447f714108a43dc86a613de687
+msgid ""
+"PR merge to `main` refreshes rolling Release tag **`pre-release`**; `v*` "
+"tag / `workflow_dispatch` makes a formal release"
+msgstr ""
+"PR 合入 `main` 会刷新滚动 Release 标签 **`pre-release`**；`v*` tag / `workflow_dispatch` 出正式版"
+
+#: ../../source/5-developer/3-packaging_deb.md:29
+#: 126254ed393f42f0ae0221277afca108
+#, python-brace-format
+msgid ""
+"Deb name: `ros-jazzy-robot-descriptions-common_{Version}_{arch}.deb` "
+"(GitHub upload turns `~` into `.`)"
+msgstr ""
+"deb 文件名：`ros-jazzy-robot-descriptions-common_{Version}_{arch}.deb`（GitHub 上传时 `~` 会变成 `.`）"
 
 #: ../../source/5-developer/3-packaging_deb.md:30
-#: b093c0ccb3bc4553b06f6fc66866046e
+#: da6c0f20d1ac4e0589a17b67faac5ed5
+msgid ""
+"Install example in that README: `gh release download pre-release --repo "
+"fiveages-sim/robot-descriptions-common --pattern '*_amd64.deb'` then "
+"`sudo dpkg -i …`"
+msgstr ""
+"该 README 的安装示例：`gh release download pre-release --repo fiveages-sim/robot-descriptions-common --pattern '*_amd64.deb'`，然后 `sudo dpkg -i …`"
+
+#: ../../source/5-developer/3-packaging_deb.md:32
+#: dafe17fa39864dcd8244d4cc9752a285
 msgid "General Process"
 msgstr "通用流程"
 
-#: ../../source/5-developer/3-packaging_deb.md:32
-#: f1254d448799449cba323c4f6eff061d
+#: ../../source/5-developer/3-packaging_deb.md:34
+#: 4e423fe5497e4de6ab468b9fda01f82a
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: ../../source/5-developer/3-packaging_deb.md:34
-#: 247a3afda33546a39fa1c78ab25d4845
+#: ../../source/5-developer/3-packaging_deb.md:36
+#: 0e5d41ceb9174948a19ef12b9d63c0b3
 msgid "sudo apt install python3-bloom fakeroot debhelper\n"
 msgstr "sudo apt install python3-bloom fakeroot debhelper\n"
 
-#: ../../source/5-developer/3-packaging_deb.md:38
-#: c1564d93447348a5b1304af25829c3d3
+#: ../../source/5-developer/3-packaging_deb.md:40
+#: 065e8159facb45fd992d4f5fa34c8c3b
 msgid "Create Package"
 msgstr "创建软件包"
 
-#: ../../source/5-developer/3-packaging_deb.md:40
-#: ce5f75c429a24779bfafeeb1ee17c6e1
+#: ../../source/5-developer/3-packaging_deb.md:42
+#: abf5a16af74b42e3910401df3478adc7
 msgid ""
 "cd <package>\n"
 "bloom-generate rosdebian --ros-distro jazzy\n"
@@ -168,23 +192,23 @@ msgstr ""
 "bloom-generate rosdebian --ros-distro jazzy\n"
 "fakeroot debian/rules binary\n"
 
-#: ../../source/5-developer/3-packaging_deb.md:46
-#: 68648a3798404467833cfed00330e9f9
+#: ../../source/5-developer/3-packaging_deb.md:48
+#: 1ab0bb4a95de4723805144201989424f
 msgid "Resulting Package"
 msgstr "生成的软件包"
 
-#: ../../source/5-developer/3-packaging_deb.md:48
-#: fb05dc94b18842f5953464889aa75368
+#: ../../source/5-developer/3-packaging_deb.md:50
+#: 5df702d0fce94818a3b8c7f3adc13ce6
 msgid "Output: `../<package>_<version>_amd64.deb`"
 msgstr "输出：`../<package>_<version>_amd64.deb`"
 
-#: ../../source/5-developer/3-packaging_deb.md:50
-#: dfa9cf88088a48fca0ebc6e53e4c6b72
+#: ../../source/5-developer/3-packaging_deb.md:52
+#: 71cbd9c836734ccc808729f3af5433e7
 msgid "Install"
 msgstr "安装"
 
-#: ../../source/5-developer/3-packaging_deb.md:52
-#: 2c9fc4140d244c29beefaf30c8bc57df
+#: ../../source/5-developer/3-packaging_deb.md:54
+#: 18048789d1534db2b30b7545823cf915
 msgid ""
 "sudo dpkg -i <package>_<version>_amd64.deb\n"
 "sudo apt install -f  # Fix dependencies\n"
@@ -192,48 +216,48 @@ msgstr ""
 "sudo dpkg -i <package>_<version>_amd64.deb\n"
 "sudo apt install -f  # Fix dependencies\n"
 
-#: ../../source/5-developer/3-packaging_deb.md:57
-#: dea1d776751b49a0b569b23d3d155f18
+#: ../../source/5-developer/3-packaging_deb.md:59
+#: 5db931e3a3af4b08976ba7dbfd55c302
 msgid "Version Management"
 msgstr "版本管理"
 
-#: ../../source/5-developer/3-packaging_deb.md:59
-#: 9b9f7fc3840d4234ad6f30208001db7a
+#: ../../source/5-developer/3-packaging_deb.md:61
+#: ebf2303b24a541cab65a3821f7688251
 msgid "Semantic Versioning"
 msgstr "语义化版本"
 
-#: ../../source/5-developer/3-packaging_deb.md:61
-#: 510d0bcfade04168b32bf3999b7f9202
+#: ../../source/5-developer/3-packaging_deb.md:63
+#: 3dca59e9d44b45a495f7ff1f2a7adfc7
 msgid "Use semantic versioning: `MAJOR.MINOR.PATCH`"
 msgstr "使用语义化版本：`MAJOR.MINOR.PATCH`"
 
-#: ../../source/5-developer/3-packaging_deb.md:63
-#: 0f110f3dc12a484a9d33f797c265484b
+#: ../../source/5-developer/3-packaging_deb.md:65
+#: 905be0db8fac47c5ab216ab39fe40288
 msgid "MAJOR: Breaking changes"
 msgstr "MAJOR：破坏性变更"
 
-#: ../../source/5-developer/3-packaging_deb.md:64
-#: f38ece889d9d4f15b9942ab3d27b3f42
+#: ../../source/5-developer/3-packaging_deb.md:66
+#: 3511c951407243d09454379ef72b0eed
 msgid "MINOR: New features"
 msgstr "MINOR：新功能"
 
-#: ../../source/5-developer/3-packaging_deb.md:65
-#: 4a255ca517ea43bfa11bd7a76bc742aa
+#: ../../source/5-developer/3-packaging_deb.md:67
+#: 655349e9d7ba4fdaa6951c840c296622
 msgid "PATCH: Bug fixes"
 msgstr "PATCH：缺陷修复"
 
-#: ../../source/5-developer/3-packaging_deb.md:67
-#: 86edc2b1eee440fb9a301552fac3e1f1
+#: ../../source/5-developer/3-packaging_deb.md:69
+#: 532c1d3cae3042c2bb1d32adc5c1faa6
 msgid "Changelog"
 msgstr "更新日志"
 
-#: ../../source/5-developer/3-packaging_deb.md:69
-#: ded3adbe84d0418f9cbd695dee2c5799
+#: ../../source/5-developer/3-packaging_deb.md:71
+#: 7cebeead9126412689b2d1988b45ae46
 msgid "Maintain changelog for releases:"
 msgstr "为每次发布维护更新日志："
 
-#: ../../source/5-developer/3-packaging_deb.md:71
-#: 79e7f3174dc743b08cca0add7d3d2d92
+#: ../../source/5-developer/3-packaging_deb.md:73
+#: e8d4ccc21cf9402ab87cc955e9bc90d6
 msgid ""
 "package (1.2.3-1) jazzy; urgency=medium\n"
 "\n"
@@ -249,52 +273,50 @@ msgstr ""
 "\n"
 " -- Maintainer <email>  Date"
 
-#: ../../source/5-developer/3-packaging_deb.md:80
-#: 1839509eca7e4066b766ced0890dec3b
+#: ../../source/5-developer/3-packaging_deb.md:82
+#: b2dc33b0f131431ca67238d88f7c3373
 msgid "CI/CD Integration"
 msgstr "CI/CD 集成"
 
-#: ../../source/5-developer/3-packaging_deb.md:82
-#: ac5b3084ead341e5a77c4792b369bd44
+#: ../../source/5-developer/3-packaging_deb.md:84
+#: edd949d7c5ad4b6f92d009225c212583
 msgid "Packages are built and tested in CI:"
 msgstr "软件包会在 CI 中构建并测试："
 
-#: ../../source/5-developer/3-packaging_deb.md:83
-#: dad8410af7144244930cf585c72ea924
+#: ../../source/5-developer/3-packaging_deb.md:85
+#: 20dd92e0612e4c2b920346660c40a930
 msgid "Build on each release tag"
 msgstr "在每个发布标签上构建"
 
-#: ../../source/5-developer/3-packaging_deb.md:84
-#: 778df7477c5141e0a24c53b3983d4f82
+#: ../../source/5-developer/3-packaging_deb.md:86
+#: c2078a2172574813939ac7eb735f3975
 msgid "Publish `.deb` assets to GitHub Releases"
 msgstr "将 `.deb` 资源发布到 GitHub Releases"
 
-#: ../../source/5-developer/3-packaging_deb.md:85
-#: 7a790772c23f4355ba86263519baa20b
+#: ../../source/5-developer/3-packaging_deb.md:87
+#: 44ba0e543f9c4571b457a37a64aa09ad
 msgid "Test installation"
 msgstr "测试安装"
 
-#: ../../source/5-developer/3-packaging_deb.md:87
-#: 604e8e6bc9224a1ebe639df8292b0af4
+#: ../../source/5-developer/3-packaging_deb.md:89
+#: 7fe8efd28dda4dbb95f7f7bfd51bff35
 msgid "TODO"
 msgstr "待完成"
 
-#: ../../source/5-developer/3-packaging_deb.md:90
-#: 27dd5e9d8c3444ecb64f23f14e7a066b
+#: ../../source/5-developer/3-packaging_deb.md:92
+#: 724970f7f27b4a81ae44fb20b8f01ab7
 msgid ""
 "Document the per-repo GitHub Release workflow (asset names, tags, and "
 "`deb_versions.conf`) in more detail."
-msgstr ""
-"更详细地记录各仓库的 GitHub Release 流程（资源文件名、标签以及 `deb_versions."
-"conf`）。"
+msgstr "更详细地记录各仓库的 GitHub Release 流程（资源文件名、标签以及 `deb_versions.conf`）。"
 
-#: ../../source/5-developer/3-packaging_deb.md:93
-#: aee53cee941e4863af24c1c08e1a4c45
+#: ../../source/5-developer/3-packaging_deb.md:95
+#: 95c5a9c6aaa94998945b997e37d2e7a4
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/5-developer/3-packaging_deb.md:95
-#: fe2f01a1296d48a994357505b2b1c02c
+#: ../../source/5-developer/3-packaging_deb.md:97
+#: 89e39633526841e094dc64edeaf92590
 msgid "[Source vs Deb](../3-concepts/5-source_vs_deb.md)"
 msgstr "[源码与 Debian 包](../3-concepts/5-source_vs_deb.md)"
 
@@ -326,6 +348,18 @@ msgstr "[源码与 Debian 包](../3-concepts/5-source_vs_deb.md)"
 #~ msgstr "发布到软件包仓库"
 
 #~ msgid ""
-#~ "Package repository and automated release process documentation to be "
-#~ "added."
+#~ "Package repository and automated release "
+#~ "process documentation to be added."
 #~ msgstr "软件包仓库与自动化发布流程的文档尚待补充。"
+
+#~ msgid "See `robot-descriptions-common/README.deb.md` for:"
+#~ msgstr "参见 `robot-descriptions-common/README.deb.md`，内容包括："
+
+#~ msgid "URDF packaging"
+#~ msgstr "URDF 打包"
+
+#~ msgid "Mesh handling"
+#~ msgstr "网格处理"
+
+#~ msgid "Version management"
+#~ msgstr "版本管理"

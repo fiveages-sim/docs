@@ -141,6 +141,6 @@ Sim-grasp handoff / EE-align notes also live under `docs/SIM_GRASP_*.md` on this
 
 - [ros2_robot_interface](1-ros2_robot_interface.md)
 - [robot_action_composer](5-robot_action_composer.md)
-- [Synthetic Data](../../6-synthetic_data/0-index.md) — record/export only (no training)
+- [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md) — record/export only (no training)
 - [HUG](6-hug.md)
 - [wuji-retargeting](7-wuji_retargeting.md)

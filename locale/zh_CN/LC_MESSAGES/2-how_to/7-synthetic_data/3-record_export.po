@@ -1,0 +1,389 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:1
+#: 72f41bc48d114149a1c7dce8ad6e5ad8
+msgid "LeRobot Record and Export"
+msgstr "LeRobot 录制与导出"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:3
+#: 8a82c773b38f4cb4a4554b8e2c81752e
+msgid ""
+"This page stops at **LeRobot dataset recording / export**. It does not "
+"document training, online inference, or how a policy consumes the "
+"dataset."
+msgstr "本页停在 **LeRobot 数据集录制 / 导出**。不写训练、在线推理，也不写策略如何消费数据集。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:5
+#: 7ea409517b4546ea88e3c8c861534dff
+msgid ""
+"**Monorepo:** [lerobot_ros2 `@ feature/sim-grasp-"
+"datagen`](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-"
+"grasp-datagen)"
+msgstr ""
+"**Monorepo:** [lerobot_ros2 `@ feature/sim-grasp-"
+"datagen`](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-"
+"grasp-datagen)"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:7
+#: f9aaaf5f42264ac9a04e523325eec855
+msgid ""
+"**README:** [README.md on that branch](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/README.md)"
+msgstr ""
+"**README:** [README.md on that branch](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/README.md)"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:9
+#: bfc9a2317eb94f72a2f2c967d8050e3c
+msgid ""
+"Isaac-side shared steps: "
+"[`examples/IsaacSim/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/examples/IsaacSim/README.md)."
+msgstr ""
+"Isaac 侧共用步骤：[`examples/IsaacSim/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/examples/IsaacSim/README.md)。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:11
+#: 4aa24b3f0c8e43ee93270f3d0a1a7846
+msgid "What recording uses"
+msgstr "录制用到什么"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: cf3111af5aa348c186f3b8686687242a
+msgid "Piece"
+msgstr "组件"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: 33e728c81e7e4d1bb2b9588dd467011e
+msgid "Role"
+msgstr "角色"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: a8bfc8c2ddb049cb942853f818dd8e0b
+msgid "`submodules/ros2_robot_interface`"
+msgstr "`submodules/ros2_robot_interface`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: 8e13563172444581bb1bf397dbe21787
+msgid "Motion / state while an episode runs (`robot.ros2_interface`)"
+msgstr "episode 运行时的运动 / 状态（`robot.ros2_interface`）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: d7078eb25d63432ab5ccf9873b482c27
+msgid "`submodules/robot_action_composer`"
+msgstr "`submodules/robot_action_composer`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: 8fc0a5ec65af458ead6f13c3f02f0156
+msgid ""
+"Same `task_queue` skills as dry `motion-generation`; package "
+"`dataset_recording` + `cli.record_main`"
+msgstr ""
+"与干跑 `motion-generation` 同一套 `task_queue` 技能；包 `dataset_recording` + "
+"`cli.record_main`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: c9dad7a1dd9545368d489d584f4defdc
+msgid "`lerobot_robot_ros2`"
+msgstr "`lerobot_robot_ros2`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: ad2ec2d684c94297a59bc8234b7e87e8
+msgid "LeRobot robot plugin (`ROS2Robot`) that **writes frames**"
+msgstr "负责**写帧**的 LeRobot 机器人插件（`ROS2Robot`）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: e1827cc8c10442748f7c634c18cfb45b
+msgid "`lerobot_camera_ros2`"
+msgstr "`lerobot_camera_ros2`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: 46f883614bf34c08abad17c64bfd7e1b
+msgid "Camera plugin (images for the dataset)"
+msgstr "相机插件（数据集图像）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: d537d5aa03884b308a3bd1b5079a6765
+msgid "PyPI `lerobot`"
+msgstr "PyPI `lerobot`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md
+#: 3a18563128cb402dba6f812344e1cb11
+msgid ""
+"Dataset container (`LeRobotDataset.create` / `add_frame` / "
+"`save_episode`). Default pin `lerobot==0.5.1` in `.fa-env.toml`"
+msgstr ""
+"数据集容器（`LeRobotDataset.create` / `add_frame` / `save_episode`）。默认钉在 `.fa-"
+"env.toml` 的 `lerobot==0.5.1`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:21
+#: 39b5de6735ed48a2bb7d31fd812d00de
+msgid ""
+"Composer `pyproject.toml` extra `[recording]` is `lerobot` + `lerobot-"
+"robot-ros2`. Motion/queue does **not** need it; recording does."
+msgstr ""
+"composer `pyproject.toml` extra `[recording]` 是 `lerobot` + `lerobot-"
+"robot-ros2`。运动/队列**不需要**它；录制需要。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:23
+#: ab03be289ed147f4a65e3f519db56a92
+msgid ""
+"`examples/IsaacSim/record_datasets.py` is a thin wrapper: it calls "
+"`robot_action_composer.cli.record_main.run_record_datasets` with "
+"`isaac_dir` set to that folder."
+msgstr ""
+"`examples/IsaacSim/record_datasets.py` 是薄封装：调用 "
+"`robot_action_composer.cli.record_main.run_record_datasets`，`isaac_dir` "
+"设为该目录。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:25
+#: 795d1a0be84b4ed9b530fd7b809a702d
+msgid "Install (scripts first)"
+msgstr "安装（脚本优先）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:27
+#: 990482afa9eb402597f4888a0e0421b4
+msgid ""
+"From the lerobot_ros2 README. **Python 3.12**, ROS 2 Jazzy, "
+"[uv](https://docs.astral.sh/uv/) recommended."
+msgstr ""
+"摘自 lerobot_ros2 README。**Python 3.12**、ROS 2 Jazzy，推荐 "
+"[uv](https://docs.astral.sh/uv/)。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:29
+#: f33b806f47cf442b8be6468915a86832
+msgid ""
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"./init.sh all\n"
+"# motion / task queue only:     ./init.sh all-motion\n"
+"# recording plugins (if you skipped all):  ./init.sh install-lerobot\n"
+"source .venv/bin/activate"
+msgstr ""
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"./init.sh all\n"
+"# motion / task queue only:     ./init.sh all-motion\n"
+"# recording plugins (if you skipped all):  ./init.sh install-lerobot\n"
+"source .venv/bin/activate"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:38
+#: 74defa243af648eea15dd43694444eb4
+msgid ""
+"`./init.sh all` = submodules + env + task orchestration + LeRobot "
+"plugins. Bare `pip install -e .` at the repo root is not the install "
+"path."
+msgstr ""
+"`./init.sh all` = 子模块 + 环境 + 任务编排 + LeRobot 插件。仓库根目录裸 `pip install -e .` "
+"不是安装路径。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:40
+#: 5d9f2e0dcb884e0b8f2f70b407a77b63
+msgid ""
+"Isaac example README also lists `./init.sh install-plugins` for this "
+"checkout. Use the **lerobot_ros2** `./init.sh`, not a handwritten PyPI "
+"`rclpy` install."
+msgstr ""
+"Isaac 示例 README 还写了本仓的 `./init.sh install-plugins`。用 **lerobot_ros2** 的 "
+"`./init.sh`，不要手写从 PyPI 装 `rclpy`。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:42
+#: f31e78b0b42e4492ad99e965f2ef4085
+msgid "Before you record"
+msgstr "录制前"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:44
+#: f2236e60620547cfb092cfd5303bf45b
+msgid "Isaac scene running ([Isaac scenes and USD](1-isaac_scenes.md))."
+msgstr "Isaac 场景已在跑（[Isaac 场景与 USD](1-isaac_scenes.md)）。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:45
+#: 8e7f0160cc11421292ab39e5f08cae2b
+msgid ""
+"ROS 2 control + (if the task has `nav.*`) official Nav2 via `ros2-stack` "
+"([orchestration](2-orchestration.md))."
+msgstr ""
+"ROS 2 运控 +（若任务含 `nav.*`）经 `ros2-stack` 启动官方 "
+"Nav2（[编排](2-orchestration.md)）。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:46
+#: afc713c7e4cf47999f0da49c6a34136d
+msgid ""
+"Example README: Isaac ROS 2 **simulation state** and **prim** services "
+"enabled so reset / object pose work."
+msgstr ""
+"示例 README：启用 Isaac ROS 2 的 **simulation state** 与 **prim** 服务，reset / "
+"物体位姿才可用。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:47
+#: db4e652cf3674bd19fc862ce1c9b9f1f
+msgid ""
+"Task YAML must include a non-empty **`task_queue`** (the recorder raises "
+"otherwise)."
+msgstr "任务 YAML 必须有非空 **`task_queue`**（否则录制器会报错）。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:49
+#: 633ae5a6f4ce46c8a9aba0aa3b47ba8c
+msgid "Record"
+msgstr "录制"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:51
+#: 94bd492427244173a0b7b93117014894
+msgid ""
+"There is **no** `record-datasets` console script in composer "
+"`pyproject.toml`. The documented entry is the example wrapper:"
+msgstr ""
+"composer `pyproject.toml` 里**没有** `record-datasets` console "
+"script。文档入口是示例包装："
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:53
+#: f8f850e714e5412cace6a44a43b4c2a9
+msgid ""
+"cd examples/IsaacSim\n"
+"python record_datasets.py"
+msgstr ""
+"cd examples/IsaacSim\n"
+"python record_datasets.py"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:58
+#: 419c9a77a6914ed686b1002f5f48310c
+msgid ""
+"Interactive prompts (from `record_main` / `dataset_recording.launcher` on"
+" this branch):"
+msgstr "交互提示（该分支 `record_main` / `dataset_recording.launcher`）："
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:60
+#: d6c1464afd0b40e082e551feeed7ff44
+msgid ""
+"Robot (registry under `examples/IsaacSim/robots`; default `dobot_cr5` if "
+"present)"
+msgstr "机器人（`examples/IsaacSim/robots` 注册表；若有则默认 `dobot_cr5`）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:61
+#: f8cf3a5c2ca54fd28ef96ab45c88d85f
+msgid "Task folder / task (`task_key`)"
+msgstr "任务文件夹 / 任务（`task_key`）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:62
+#: 46b9f5c6c0a949d4a6b075d5ffdf4045
+msgid "Scene preset when the YAML has `scene_presets`"
+msgstr "YAML 含 `scene_presets` 时的场景预设"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:63
+#: 395356a9e8644e79a1ddc81ff83cb5fd
+msgid "Record profile"
+msgstr "录制 profile"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:64
+#: 195fb367d3974b0d8156af128f71ef3d
+msgid "Episode count"
+msgstr "episode 数量"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:65
+#: 2723e7c52c5648a39b6cbd76da500458
+msgid ""
+"Optional depth+pointcloud at keypoints (only if `lerobot_config.py` has "
+"depth topics)"
+msgstr "可选：在关键点采 depth+点云（仅当 `lerobot_config.py` 配了 depth topic）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:66
+#: ef27428eb35f4b1a90b6407ffb3e13f7
+msgid "Optional manual review after return-to-home"
+msgstr "可选：回 home 后人工检查"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:68
+#: 31075f455a144b648cb3d9ab5c31b6ed
+msgid ""
+"Per-robot `lerobot_config.py` (`LEROBOT_CFG`) is the LeRobot side of the "
+"split documented in [ROBOT_CONFIG.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROBOT_CONFIG.md); `robot.yaml` stays the motion/stack "
+"side."
+msgstr ""
+"每台机器人的 `lerobot_config.py`（`LEROBOT_CFG`）是 "
+"[ROBOT_CONFIG.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROBOT_CONFIG.md) 所写拆分的 LeRobot 侧；`robot.yaml` 仍是运动/栈侧。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:70
+#: 02811023a010452ea57a929e2acc3bde
+msgid "Export (what lands on disk)"
+msgstr "导出（落盘内容）"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:72
+#: c4b0607d8f1b46c2935dfe7350ec64d5
+msgid "On this branch the runner creates a local LeRobot dataset:"
+msgstr "该分支上 runner 会创建本地 LeRobot 数据集："
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:74
+#: bc793c4bf4fa4151bcbcc4a647b2930c
+msgid "<cwd>/lerobot_dataset/grasp_record_<unix_time>/"
+msgstr "<cwd>/lerobot_dataset/grasp_record_<unix_time>/"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:78
+#: f4027ce0581d44f69b1b3d1f359e2f21
+msgid ""
+"via `LeRobotDataset.create` (`repo_id` = that path, `use_videos=True`, "
+"fps from the record profile). Episodes are `dataset.add_frame` then "
+"`dataset.save_episode`. That **is** the export this chapter covers. Do "
+"not assume a Hugging Face upload CLI unless a README on this branch says "
+"so."
+msgstr ""
+"通过 `LeRobotDataset.create`（`repo_id` 为该路径，`use_videos=True`，fps 来自录制 "
+"profile）。episode 是 `dataset.add_frame` 再 "
+"`dataset.save_episode`。这**就是**本章覆盖的导出。除非本分支 README 写了，否则不要假设有 Hugging "
+"Face 上传 CLI。"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:80
+#: 3c3556b0d0634bfe9f62d340836e7c6e
+msgid "Stop here"
+msgstr "到此为止"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:82
+#: 35ea9377705d47fb8df9c8dc7f355947
+msgid ""
+"Not in this chapter (they exist on the branch; use the example README if "
+"you need them later):"
+msgstr "不在本章（分支上有这些文件；以后需要再看示例 README）："
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:84
+#: 3102db5d585b47de87d241bf57aaa598
+msgid "`examples/IsaacSim/policy_training/train.py`"
+msgstr "`examples/IsaacSim/policy_training/train.py`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:85
+#: 9e52dd608a0d4b1780990219891ef445
+msgid "`examples/IsaacSim/inference.py` / `online_infer/`"
+msgstr "`examples/IsaacSim/inference.py` / `online_infer/`"
+
+#: ../../source/2-how_to/7-synthetic_data/3-record_export.md:87
+#: e2f680f9789c444b93cb7a84ecea78e4
+msgid ""
+"Package pages: "
+"[lerobot_ros2](../../4-reference/python_apps/4-lerobot_ros2.md), "
+"[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)."
+msgstr ""
+"包页面：[lerobot_ros2](../../4-reference/python_apps/4-lerobot_ros2.md)、[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)。"
+

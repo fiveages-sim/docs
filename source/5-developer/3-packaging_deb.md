@@ -22,10 +22,12 @@ See `arms_ros2_control/README.deb.md` for:
 
 ### robot-descriptions-common
 
-See `robot-descriptions-common/README.deb.md` for:
-- URDF packaging
-- Mesh handling
-- Version management
+Do not invent a bloom / mesh-packaging recipe here. Official notes: [README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md).
+
+- Workflow: [`.github/workflows/build-common-deb.yml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows/build-common-deb.yml)
+- PR merge to `main` refreshes rolling Release tag **`pre-release`**; `v*` tag / `workflow_dispatch` makes a formal release
+- Deb name: `ros-jazzy-robot-descriptions-common_{Version}_{arch}.deb` (GitHub upload turns `~` into `.`)
+- Install example in that README: `gh release download pre-release --repo fiveages-sim/robot-descriptions-common --pattern '*_amd64.deb'` then `sudo dpkg -i …`
 
 ## General Process
 

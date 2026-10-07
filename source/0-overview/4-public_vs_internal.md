@@ -8,8 +8,8 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 |--------|-------------|---------------|
 | **Workspace** | `open-deploy-ws` | `fa-deploy-ws` |
 | **Access** | Anyone (public GitHub) | FiveAges team only |
-| **Robots** | Dobot, ARX, Galbot, HT, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
-| **Real Hardware** | Ark / Lift 2s (full-body), Acone (arm only), Panthera HT | All FA robots |
+| **Robots** | Dobot, ARX, Galbot, HighTorque, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
+| **Real Hardware** | ARX Lift 2S (full-body), Acone (arm only), HighTorque Panthera HT | All FA robots |
 | **Submodules** | Public only | Public + private |
 | **OCS2** | GitHub Release `.deb` or source | Full source (default) |
 | **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
@@ -17,7 +17,7 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**Ark / Lift 2s** is the full-body 方舟 platform (arms + chassis). **Acone** is arm-only. **Panthera HT** is a dual-arm manipulator. Use the branch READMEs: [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md), [Panthera HT](../2-how_to/12-panthera_ht.md).
+**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator (arms + chassis). **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is a dual-arm manipulator. Use the branch READMEs: [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
 ```
 
 ## open-deploy-ws (Public)
@@ -27,8 +27,8 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 ### Features
 
 - All submodules are publicly accessible
-- Supports multiple robots: Dobot CR5, ARX (Acone arm, Lift 2s / Ark full-body), Galbot, Panthera HT
-- **Real hardware:** [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md) via their `open-deploy-ws` branches (`arx-lift2s`, `panthera-ht`)
+- Supports multiple robots: Dobot CR5, ARX (Acone arm, Lift 2S full-body), Galbot, HighTorque Panthera HT
+- **Real hardware:** [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md) via their `open-deploy-ws` branches (`arx-lift2s`, `panthera-ht`)
 - OCS2 available as a GitHub Release `.deb` (`ros-jazzy-ocs2`; not from apt / packages.ros.org)
 - Lean branches: `dobot-cr5`, `arx-lift2s`, `panthera-ht`
 - Good for learning, experimentation, contributing, and real robot deployment
@@ -66,10 +66,10 @@ For minimal builds focusing on a single robot:
 # Dobot CR5 only
 git checkout dobot-cr5
 
-# Ark / Lift 2s (full-body). Acone arm is co-debug in this branch, not a separate platform.
+# ARX Lift 2S (full-body). Acone arm is co-debug in this branch, not a separate platform.
 git checkout arx-lift2s
 
-# Panthera HT
+# HighTorque Panthera HT
 git checkout panthera-ht
 :::
 
@@ -83,73 +83,27 @@ This workspace requires private repository access. Contact your team lead if you
 
 ### Features
 
-- Access to all FiveAges robots: W2, W2R, S2, S2R
-- Dual-arm CCS configurations (M6, M20S, AR5)
-- Full OCS2 + WBC source integration
-- Release package generation (`./release.sh`)
-- Robot-specific initialization presets
+- Internal workspace for FiveAges wheeled-arm humanoids (W2, W2R, S2, S2R) and dual-arm CCS
+- Description remotes live as private gitlinks under [robot_descriptions `humanoid/FiveAges/`](../4-reference/descriptions/4-fiveages_umbrella.md) — not a separate `robot-descriptions-fiveages` umbrella
+- Full OCS2 + WBC source when that workspace’s README says so
+
+```{admonition} Source of truth
+:class: important
+
+The `fa-deploy-ws` README is **not public**. This page does **not** invent `--robot` flags, `robot.local.yaml`, `./quick_start.sh`, `./release.sh`, or robot-ID lists. After access, follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md) and **that repository’s README**.
+```
 
 ### Initialization
 
 ```bash
 git clone <internal-url>/fa-deploy-ws.git
 cd fa-deploy-ws
-./init_repo.sh --robot <robot-id>
+./init_repo.sh
 ```
 
-Available robot IDs include:
-- Wheeled-arm humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`
-- Dual-arm: `tianji_m6_ccs`, `tianji_m20s_ccs`, `rokae_ar5_ccs`
+Same script **name** as `open-deploy-ws`. Extra flags, robot IDs, and on-robot YAML live in the private README — copy them from there.
 
-### Robot Configuration
-
-Each robot requires a `robot.local.yaml` file with deployment-specific settings:
-
-```yaml
-# Example structure (actual values must be configured per-robot)
-network:
-  domain_id: <your-domain-id>
-  interface: <your-network-interface>
-
-hardware:
-  arm_type: <arm-model>
-  gripper_type: <gripper-model>
-```
-
-```{admonition} Configuration Values
-:class: important
-
-The actual values for domain IDs, network interfaces, and device addresses are robot-specific and should not be committed to version control. Consult your robot's setup documentation or team lead for the correct values.
-```
-
-### Quick Start Flow
-
-```bash
-# Initialize for specific robot
-./init_repo.sh --robot fiveages_w2
-
-# Build the workspace
-colcon build --symlink-install
-
-# Configure robot.local.yaml with your values
-cp robot.local.yaml.template robot.local.yaml
-# Edit robot.local.yaml...
-
-# Run quick start
-./quick_start.sh
-```
-
-### Release Packages
-
-For deployment without source builds:
-
-```bash
-# Generate release zip
-./release.sh
-
-# Install on target machine
-./release.sh --install
-```
+Public end-effector selection is launch `type` / `left_type` / `right_type` (and `robot_profile`), not a `gripper:=` argument. See [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 ## Choosing Your Path
 
@@ -164,7 +118,6 @@ For deployment without source builds:
 
 - You're deploying to FA wheeled-arm humanoids (W2/S2 series)
 - You need WBC whole-body control
-- You're building release packages for deployment
 - You have authorized access to private repositories
 
 ## Transitioning Between Paths
@@ -173,13 +126,11 @@ For deployment without source builds:
 
 1. Request access to private repositories
 2. Clone `fa-deploy-ws` fresh (don't try to convert open-deploy-ws)
-3. Follow internal initialization with your robot ID
+3. Follow that repository’s README (not invented flags on this page)
 
 ### Internal Users on Public Hardware
 
-If you have internal access but want to work with public robots:
-- Use `open-deploy-ws` for cleaner builds
-- Or use `fa-deploy-ws` with public-only robot presets
+If you have internal access but want to work with public robots, use `open-deploy-ws` for a public-only checkout.
 
 ## Network Configuration
 

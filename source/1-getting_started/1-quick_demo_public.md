@@ -1,12 +1,14 @@
 # Quick Demo (Public Path)
 
-This guide gets you from zero to a moving robot in the shortest time using the public `open-deploy-ws` workspace.
+This guide gets you from a **finished environment install** to a moving robot using the public `open-deploy-ws` workspace.
 
 ## Prerequisites
 
 - Ubuntu 24.04
-- ROS 2 Jazzy installed (see [Install Environment](2-install_environment.md) if needed)
+- ROS 2 Jazzy + rosdep already installed — do this **first**: [Install Environment](2-install_environment.md)
 - Git with GitHub access
+
+Do not hand-write `source /opt/ros/...` + workspace overlay into `~/.bashrc`. After clone, use **`./init_repo.sh`**. After `colcon build`, source that workspace’s `install/setup.bash` in the terminal you launch from (standard ROS 2 overlay; `open-deploy-ws` has no extra env script).
 
 ## Steps
 
@@ -50,24 +52,26 @@ This typically takes 10-20 minutes on first build.
 
 ### 4. Source and Launch
 
+[`demo.launch.py`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py) defaults: `robot:=cr5`, `hardware:=mock_components`. You can omit both.
+
 ```bash
 source install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py
 ```
+
+There is **no** `hardware:=mock` key. See [ros2_control in This Stack](../3-concepts/1-ros2_control_here.md).
 
 ### 5. Observe the Demo
 
 You should see:
-- **RViz** window with robot visualization
-- **Terminal** output showing controller status
-- Robot responding to MPC target commands
 
-To send a target pose:
-```bash
-# In a new terminal
-source install/setup.bash
-ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped "{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.0, z: 0.4}, orientation: {w: 1.0}}}" --once
-```
+- **RViz** (config `demo_ocs2.rviz` from the same launch)
+- **`arms_target_manager`** when `enable_arms_target_manager` is `true` (launch default)
+- Controller FSM starting in **HOLD** ([ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md))
+
+Switch FSM with `/fsm_command` (`std_msgs/Int32`): `1` HOME, `2` HOLD, `3` OCS2 — [FSM and Topics](../3-concepts/4-fsm_and_topics.md).
+
+Do **not** publish a stack-wide `/target_pose`. That topic is not in the OCS2 arm README or `demo.launch.py`. Branch-specific EE topics (for example `/left_target` on `panthera-ht`) are listed in that branch’s README.
 
 ## Troubleshooting
 
@@ -93,17 +97,19 @@ Re-run `./init_repo.sh` (menu 1) instead of a blind recursive submodule init. Th
 
 ### Workspace Not Sourced
 
-Always source after opening a new terminal:
+In a new terminal, from the workspace root after a successful build:
+
 ```bash
-source /opt/ros/jazzy/setup.bash
-source ~/open-deploy-ws/install/setup.bash
+source install/setup.bash
 ```
+
+`install/setup.bash` overlays ROS. Do not add a hand-written `~/.bashrc` `source /opt/ros/...` chain as the documented path.
 
 ## Next Steps
 
-- [Switch to different robots](../2-how_to/2-switch_robot.md)
-- [Run Gazebo simulation](../2-how_to/3-gazebo_sim.md)
-- [Connect Python interface](../2-how_to/5-python_interface.md)
+- [Switch to different robots](../2-how_to/1-basic_operations/2-switch_robot.md)
+- [Run Gazebo simulation](../2-how_to/2-simulation/3-gazebo_sim.md)
+- [Connect Python interface](../2-how_to/3-programming/5-python_interface.md)
 
 ## Video Demo
 

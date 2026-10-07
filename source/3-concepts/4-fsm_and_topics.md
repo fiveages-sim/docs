@@ -1,222 +1,35 @@
 # FSM and Topics
 
-This page explains the finite state machine (FSM) architecture and topic contracts used for robot control.
+Finite-state machines in this stack live in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). Shared primitives are in `libraries/arms_controller_common/` (`StateHome`, `StateHold`, `StateMoveJ`, `FSMCommandPublisher`).
 
-## Overview
+```{admonition} Source of truth
+:class: important
 
-The control stack uses FSM patterns for:
-- Mode switching (arm control, teleop, walking)
-- Safety state management
-- Coordinated multi-system behavior
-
-## FSM Topics
-
-### Command Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/fsm_command` | `std_msgs/String` | High-level state commands |
-| `/mode_command` | `std_msgs/Int32` | Numeric mode selection |
-
-### State Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/fsm_state` | `std_msgs/String` | Current FSM state |
-| `/mode_state` | `std_msgs/Int32` | Current mode |
-
-## Common FSM States
-
-### Arm Controller States
-
-| State | Description |
-|-------|-------------|
-| `idle` | No active control |
-| `position_control` | Joint position control |
-| `cartesian_control` | End-effector pose control |
-| `teleop` | Teleoperation mode |
-
-### Wheeled-arm humanoid states (WBC)
-
-| State | Description |
-|-------|-------------|
-| `stand` | Standing position |
-| `walk` | Walking mode |
-| `arm_teleop` | Arm teleoperation |
-| `full_body_teleop` | Full body control |
-
-## Mode Commands
-
-Mode commands are typically numeric:
-
-:::{code-block} python
-# Example mode definitions
-MODE_IDLE = 0
-MODE_POSITION = 1
-MODE_CARTESIAN = 2
-MODE_TELEOP = 3
-:::
-
-Send mode command:
-
-```bash
-ros2 topic pub /mode_command std_msgs/msg/Int32 "{data: 2}" --once
+`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no documented `/mode_command` or `/fsm_state` **String**, and no wheeled-arm `stand` / `walk` / `arm_teleop` contract. The [panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) also lists `/fsm_state` as `std_msgs/Int32` (same value meanings) and EE targets `/left_target` / `/left_target/stamped` — those are **that branch’s** external interface, not a stack-wide `/target_pose`. Per-controller topics: the controller pages and package READMEs.
 ```
 
-## Target Topics
+## `/fsm_command` (`std_msgs/Int32`)
 
-### End-Effector Targets
+`FSMCommandPublisher` publishes `std_msgs/Int32` on `/fsm_command`. Header values: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ (`100` switches HOME pose).
 
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/target_pose` | `PoseStamped` | Single arm EE target |
-| `/left_target_pose` | `PoseStamped` | Left arm target |
-| `/right_target_pose` | `PoseStamped` | Right arm target |
+Exact transitions depend on the **running controller**:
 
-### Joint Targets
-
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/target_joint_positions` | `JointState` | Joint position targets |
-
-### Teleop Targets
-
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left teleop input |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right teleop input |
-| `/teleop/head_pose` | `PoseStamped` | Head tracking input |
-
-## Topic Contracts
-
-### Target Pose Contract
-
-Publishers (teleop, planners) must:
-- Use consistent frame_id (typically `base_link`)
-- Publish at consistent rate (10-100 Hz typical)
-- Include valid orientation quaternion
-
-:::{code-block} python
-from geometry_msgs.msg import PoseStamped
-
-target = PoseStamped()
-target.header.frame_id = "base_link"
-target.header.stamp = self.get_clock().now().to_msg()
-target.pose.position.x = 0.3
-target.pose.position.y = 0.0
-target.pose.position.z = 0.4
-target.pose.orientation.w = 1.0  # Valid quaternion!
-:::
-
-### Joint State Contract
-
-Publishers must:
-- Include all joint names
-- Match joint order to URDF
-- Provide positions at minimum (velocity/effort optional)
-
-```python
-from sensor_msgs.msg import JointState
-
-js = JointState()
-js.header.stamp = self.get_clock().now().to_msg()
-js.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
-js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]
-```
-
-## State Transitions
-
-### Safe Transitions
-
-:::{code-block} none
-idle → position_control → cartesian_control → teleop
-  ↑                                              ↓
-  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←
-:::
-
-### Sending Transitions
+| Controller | States | Commands |
+|------------|--------|----------|
+| [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | Home / Hold / MoveJ | README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a legacy MOVEJ alias, and means **OCS2** on mixed OCS2/WBC stacks |
+| [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) | HOME / OCS2 / HOLD | README: `1` HOME, `2` HOLD, `3` OCS2 on `/control_input`; starts in HOLD; OCS2 returns only to HOLD |
+| [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | Whole-body stack | Private package; do not invent states here |
 
 :::{code-block} bash
-# Enter teleop mode
-ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'teleop'}" --once
-
-# Return to idle
-ros2 topic pub /fsm_command std_msgs/msg/String "{data: 'idle'}" --once
+ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 2"   # HOLD
 :::
 
-## QoS Settings
+Split vs whole-body launches (and the Lift2S `quick_start` **split body** / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not describe teleop as a separate FSM state — [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
 
-Recommended QoS for control topics:
+## Related
 
-| Topic Type | Reliability | Durability | History |
-|------------|------------|------------|---------|
-| Commands | Reliable | Volatile | Keep last 1 |
-| State | Reliable | Transient local | Keep last 1 |
-| Targets | Best effort | Volatile | Keep last 1 |
-| Joint states | Best effort | Volatile | Keep last 1 |
-
-## Debugging
-
-### Monitor FSM State
-
-```bash
-ros2 topic echo /fsm_state
-ros2 topic echo /mode_state
-```
-
-### Check Topic Flow
-
-:::{code-block} bash
-# List all topics
-ros2 topic list
-
-# Check publishing rate
-ros2 topic hz /target_pose
-
-# Inspect message
-ros2 topic echo /target_pose --once
-:::
-
-### Verify Connections
-
-```bash
-ros2 topic info /target_pose
-```
-
-## Integration Example
-
-```python
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import String, Int32
-from geometry_msgs.msg import PoseStamped
-
-class ControlClient(Node):
-    def __init__(self):
-        super().__init__('control_client')
-        
-        self.fsm_pub = self.create_publisher(String, '/fsm_command', 10)
-        self.mode_pub = self.create_publisher(Int32, '/mode_command', 10)
-        self.target_pub = self.create_publisher(PoseStamped, '/target_pose', 10)
-        
-        self.fsm_sub = self.create_subscription(
-            String, '/fsm_state', self.fsm_callback, 10)
-    
-    def set_teleop_mode(self):
-        msg = String()
-        msg.data = 'teleop'
-        self.fsm_pub.publish(msg)
-    
-    def send_target(self, x, y, z):
-        target = PoseStamped()
-        target.header.frame_id = 'base_link'
-        target.header.stamp = self.get_clock().now().to_msg()
-        target.pose.position.x = x
-        target.pose.position.y = y
-        target.pose.position.z = z
-        target.pose.orientation.w = 1.0
-        self.target_pub.publish(target)
-    
-    def fsm_callback(self, msg):
-        self.get_logger().info(f'FSM state: {msg.data}')
-```
+- [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)
+- [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)
+- [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)
+- [ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)
+- [Controllers reference](../4-reference/controllers/0-index.md)

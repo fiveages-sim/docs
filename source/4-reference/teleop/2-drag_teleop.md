@@ -1,6 +1,6 @@
 # Isomorphic teleop (`drag_teleop_controller`)
 
-Master–slave **isomorphic teleop** (同构遥操作) for **Panthera HT** dual-arm. The ROS package is still named `drag_teleop_controller`; that is **not** drag teaching.
+Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera HT** dual-arm. The ROS package is still named `drag_teleop_controller`; that is **not** drag teaching.
 
 **Repository:** [fiveages-sim/drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)
 
@@ -69,4 +69,4 @@ Mode × hardware command-interface matrix, control laws, and YAML keys: read the
 
 ## Related
 
-- [Isomorphic Teleop How-To](../../2-how_to/7-isomorphic_teleop.md)
+- [Isomorphic Teleop How-To](../../2-how_to/5-teleoperation/7-isomorphic_teleop.md)

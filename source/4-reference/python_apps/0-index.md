@@ -36,4 +36,4 @@ Python libraries provide high-level interfaces:
 | [HUG](6-hug.md) | Grasp inference | Private |
 | [wuji-retargeting](7-wuji_retargeting.md) | Hand retargeting | Public |
 
-Datagen pipeline (Isaac USD → composer → LeRobot record/export): [Synthetic Data](../../6-synthetic_data/0-index.md).
+Datagen pipeline (Isaac USD → composer → LeRobot record/export): [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md).

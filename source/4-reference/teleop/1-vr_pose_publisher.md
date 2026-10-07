@@ -99,5 +99,5 @@ WebXR requires HTTPS. Certificates are user-generated and should not be committe
 
 ## Related
 
-- [VR Teleop How-To](../../2-how_to/6-vr_teleop.md)
+- [VR Teleop How-To](../../2-how_to/5-teleoperation/6-vr_teleop.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)

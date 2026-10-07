@@ -9,227 +9,155 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:1
-#: 7e0b96edbef94147a8bc32c3ae8588d7
-msgid "ocs2-wbc-controller"
+#: 4a58f82867754f42926df20ab788855d
+#, fuzzy
+msgid "ocs2_wbc_controller"
 msgstr "ocs2-wbc-controller"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:3
-#: 3cbbb03dcc5d400b9b6750826201bdad
-msgid "Whole-body control for FiveAges wheeled-arm humanoid robots."
-msgstr "用于 FiveAges 轮臂人形的全身控制。"
+#: 3ec43d9380034996b03d7aba472fe7d6
+msgid ""
+"Whole-body MPC (**全身控制**) for wheeled dual-arm robots, using "
+"`ocs2_wheel_humanoid`."
+msgstr "轮式双臂的全身 MPC（**全身控制**），使用 `ocs2_wheel_humanoid`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:5
-#: f40ad58579534d23a207f6c61aac2526
+#: 53dab0436a1b44d08694e17cd72f1c1f
 msgid "Access Required"
 msgstr "需要访问权限"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:8
-#: aebba68d523d42b3bfdf0588170974c4
+#: 6240313784504d088ca6a76c2846e580
 msgid ""
-"This package requires private repository access. Contact your team lead for "
-"access."
-msgstr "该软件包需要私有仓库访问权限。请联系团队负责人申请访问。"
+"`controller/ocs2_wbc_controller` in "
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is"
+" a **private** submodule (`ocs2-wbc-controller`). This page does not "
+"invent topics, FSM values, or a standalone `ocs2_wbc_controller` launch "
+"file."
+msgstr ""
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 中的"
+" `controller/ocs2_wbc_controller` 是**私有**子模块（`ocs2-wbc-"
+"controller`）。本页不编造话题、FSM 取值或独立的 `ocs2_wbc_controller` launch 文件。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:11
-#: eaaa7b33e02542dea5a44c11b8025f85
-msgid "**Repository:** ocs2-wbc-controller (private)"
-msgstr "**仓库：** ocs2-wbc-controller（私有）"
+#: 32b89fd786954903843611e43239a5d1
+msgid "Role"
+msgstr "作用"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:13
-#: 6583000fad8f49aab48c79dafe4cd574
-msgid "Purpose"
-msgstr "用途"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:15
-#: f0a4003ae24c447e8fba484f57a6b9ee
+#: 5bfb30574a4044ad99f070e2018e5547
 msgid ""
-"`ocs2-wbc-controller` provides whole-body control capabilities for wheeled-"
-"arm humanoid robots, enabling:"
-msgstr "`ocs2-wbc-controller` 为轮臂人形提供全身控制能力，可实现："
+"Unified **全身控制** stack: one `ocs2_wbc_controller` instead of arm MPC plus"
+" separate body/head joint controllers"
+msgstr "统一的**全身控制**栈：一个 `ocs2_wbc_controller`，而不是手臂 MPC 加独立的身体/头关节控制器"
 
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:16
-#: 3ce2239a527447c686de72030e50021d
-msgid "Full-body motion planning"
-msgstr "全身运动规划"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:17
-#: 863414c49a1440ad93b6ccc00131ad8c
-msgid "Balance and stability control"
-msgstr "平衡与稳定性控制"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:18
-#: 00e159ab22384aae8e682e483c9d0ae9
-msgid "FSM integration"
-msgstr "FSM 集成"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:20
-#: 5b62f66cc06f43b8b93a001168014ac7
-msgid "Usage"
-msgstr "使用方法"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:22
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:38
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:51
-#: 3fb81b3406fd4ca89786ee894dfb44ee db8de69498834e07a931567af0f3ddf5
-#: df1883af09604737adf7278bb6ac5c72
-msgid "TODO"
-msgstr "待完成"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:25
-#: 2e70cf0ea28340e4a6923385682de826
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:14
+#: 5c758dc3221945bdbc62f77970173739
+#, fuzzy
 msgid ""
-"For specific launch commands, available modes, parameters, and configuration"
-" options, refer to the repository's README and documentation. The content "
-"below is a general overview; consult the in-repo docs for accurate details."
-msgstr "具体的启动命令、可用模式、参数和配置选项，请参阅仓库中的 README 与文档。下文仅为概述；请以仓库内文档为准。"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:28
-#: 9a482c2ed01f427b85568ca1f5a93ff5
-msgid "General Launch Pattern"
-msgstr "通用启动方式"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:30
-#: 0d4452b102124b3498d0a74c7a1ff28c
-msgid ""
-"ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id> "
-"hardware:=mock\n"
-msgstr ""
-"ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id> "
-"hardware:=mock\n"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:34
-#: 38b84e95498d4ac18fdec8265c32d2f1
-msgid ""
-"Replace `<launch_file>` and `<robot_id>` with values from the repository "
-"documentation."
-msgstr "请将 `<launch_file>` 和 `<robot_id>` 替换为仓库文档中给出的取值。"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:36
-#: 244acb31175a4e47a79a9515487271a8
-msgid "Topics"
-msgstr "主题"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:41
-#: 0b79def703d84c89a0f379c28b7857fa
-msgid ""
-"Topic names, types, and behaviors are defined in the repository. Check the "
-"package's message definitions and launch files for the current interface."
-msgstr "话题名称、类型与行为在仓库中定义。请查看该软件包的消息定义和启动文件，以了解当前接口。"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:44
-#: 4e854549053c468aa722483b23d048f1
-msgid "The controller typically uses:"
-msgstr "该控制器通常使用："
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:45
-#: c6530112f3af4d26a883fcbaaf93b967
-msgid "FSM command topics for mode switching"
-msgstr "用于模式切换的 FSM 指令话题"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:46
-#: f696218d7434437bab8524e34697e4d2
-msgid "Joint state topics for feedback"
-msgstr "用于反馈的关节状态话题"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:47
-#: 255c4cabd2174fe6a782ac09f83f90c8
-msgid "Target pose topics for teleop integration"
-msgstr "用于遥操作集成的目标位姿话题"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:49
-#: 69bc2ef86ace4de2a31ab95b5e310b07
-msgid "Configuration"
-msgstr "配置"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:54
-#: 39ea64411e70438799616554b14d0e45
-msgid ""
-"Configuration parameters, default values, and YAML schemas are maintained in"
-" the repository. Do not rely on example values shown elsewhere; always use "
-"the actual config files from the repo."
-msgstr "配置参数、默认值以及 YAML 模式均维护在仓库中。不要依赖其他地方给出的示例值；请始终使用仓库中的实际配置文件。"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:57
-#: 9e3debf600664abfaaa752378ad5a88c
-msgid "Safety"
-msgstr "安全"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:59
-#: 946e79bada8b4238a13d0a9f8f5f707e
-msgid "Safety Warning"
-msgstr "安全警告"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:62
-#: 846f6466ba9044e98a2c24341fcac541
-msgid "WBC controls the full body of wheeled-arm humanoid robots. Always:"
-msgstr "WBC 控制轮臂人形的全身。务必："
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:63
-#: 2887e83e3d62465eace72b08f09345f4
-msgid "Verify the robot is in a safe initial state"
-msgstr "确认机器人处于安全的初始状态"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:64
-#: 81bd86024d8341979b3e6a1328863aa8
-msgid "Have emergency stop ready"
-msgstr "确保急停随时可用"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:65
-#: a070c375422a4613a699d8046e497024
-msgid "Monitor joint and balance limits"
-msgstr "监控关节限位与平衡约束"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:66
-#: 9d2a09adac2a416496b2534ad23e9175
-msgid "Follow the safety procedures documented in the repository"
-msgstr "遵守仓库文档中的安全规程"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:69
-#: a6a1629ab7ca4735b9b1567146713a03
-msgid "Integration"
-msgstr "集成"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:71
-#: 1946f4fcd8c446d080ef373730761b92
-msgid "WBC integrates with other components in fa-deploy-ws:"
-msgstr "WBC 与 fa-deploy-ws 中的其他组件集成："
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:72
-#: 7ef533531d0c4ce7800add55b19459d2
-msgid "Arm controllers for manipulation"
-msgstr "用于操作的机械臂控制器"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:73
-#: d52265d7cd6c434f8f599dcaaf4e4ca6
-msgid "Teleop systems for remote control"
-msgstr "用于远程控制的遥操作系统"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:75
-#: 7fdf0e24429349049ef1f6f3b635825b
-msgid "Related"
-msgstr "相关内容"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:77
-#: 314f56e34b8b47e6ba30418ff85eed60
-msgid "[ocs2-humanoid](4-ocs2_humanoid.md)"
+"Motion library: `ocs2_wheel_humanoid` (see "
+"[ocs2-humanoid](4-ocs2_humanoid.md))"
 msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
 
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:78
-#: 226d0ac631c848599966858ae2b4a0c0
-msgid "[FA Robot Descriptions](../descriptions/5-fa_robots.md)"
-msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:16
+#: 63754fd5a54b46188ce857c6c5e8c138
+msgid ""
+"Contrast with **分体控制 (split)**: "
+"[ocs2_arm_controller](2-ocs2_arm_controller.md) + "
+"[basic_joint_controller](7-basic_joint_controller.md) via "
+"`split_body.launch.py`."
+msgstr ""
+"对比**分体控制 (split)**：[ocs2_arm_controller](2-ocs2_arm_controller.md) + "
+"[basic_joint_controller](7-basic_joint_controller.md)，由 "
+"`split_body.launch.py` 启动。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:18
+#: 74872f4a92074227ae647dc22d13d0f1
+msgid "Launch (from `ocs2_arm_controller`)"
+msgstr "启动（来自 `ocs2_arm_controller`）"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:20
+#: f92327c0b6724032b3abddc4d123c588
+msgid ""
+"There is no public README listing a `ros2 launch ocs2_wbc_controller …` "
+"entry point. The in-tree path that loads this controller is:"
+msgstr "公开 README 没有列出 `ros2 launch ocs2_wbc_controller …` 入口。仓库内加载该控制器的路径是："
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:22
+#: 9275f26dd8fb465da853ba6d472d5c90
+#, fuzzy
+msgid "ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>"
+msgstr "ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:26
+#: 2a92d1ff986749bfa35c3fdcf683149c
+msgid ""
+"`full_body.launch.py` (`launch_mode` `full_body`) spawns "
+"`ocs2_wbc_controller` when the robot’s `controller_manager` type is "
+"`ocs2_wbc_controller/Ocs2WbcController`."
+msgstr ""
+"当机器人 `controller_manager` 的 type 为 "
+"`ocs2_wbc_controller/Ocs2WbcController` "
+"时，`full_body.launch.py`（`launch_mode` 为 `full_body`）会拉起 "
+"`ocs2_wbc_controller`。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:28
+#: e73ce5077f55458f81ef5462a76707ac
+msgid ""
+"The same file declares `type` and "
+"`create_robot_profile_launch_arguments()` (`left_type` / `right_type`, "
+"`use_profile_eef`). End-effectors: "
+"[ocs2_arm_controller](2-ocs2_arm_controller.md) and "
+"[robot_common_launch](../descriptions/2-common.md)."
+msgstr ""
+"同一文件声明 `type` 和 `create_robot_profile_launch_arguments()`（`left_type` / `right_type`、`use_profile_eef`）。末端见 [ocs2_arm_controller](2-ocs2_arm_controller.md) 与 [robot_common_launch](../descriptions/2-common.md)。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:30
+#: bc2c1ce5362640d48f34fbbf0f25490f
+msgid "Do not treat `split_body.launch.py` as whole-body control."
+msgstr "不要把 `split_body.launch.py` 当成全身控制。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:32
+#: 32b89fd786954903843611e43239a5d1
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:34
+#: a41b4f2f2c1449e198444dfb94f80eda
+msgid ""
+"[ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / "
+"`split_body.launch.py`"
+msgstr ""
+"[ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / "
+"`split_body.launch.py`"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:35
+#: 5fa9337d037043d3808669372ec69a78
+msgid "[basic_joint_controller](7-basic_joint_controller.md)"
+msgstr "[basic_joint_controller](7-basic_joint_controller.md)"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:36
+#: c840e1d9be194b06aeb64d846ff47a0b
+#, fuzzy
+msgid "[ocs2-humanoid](4-ocs2_humanoid.md) — `ocs2_wheel_humanoid`"
+msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:37
+#: b92df823bf594ee88fc0093a7ab1c0b8
+msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
+msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #~ msgid "Multiple control modes"
 #~ msgstr "Multiple control modes"
@@ -290,18 +218,27 @@ msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
 
 #~ msgid ""
 #~ "# Enter stand mode\n"
-#~ "ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'stand'}\" --once\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'stand'}\" --once\n"
+#~ ""
 #~ "\n"
 #~ "# Enter walk mode\n"
-#~ "ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'walk'}\" --once\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'walk'}\" --once\n"
+#~ ""
 #~ "\n"
 #~ "# Arm teleop\n"
-#~ "ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'arm_teleop'}\" --once\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'arm_teleop'}\" --once"
+#~ "\n"
 #~ msgstr ""
-#~ "# Enter stand mode\\nros2 topic pub /fsm_command std_msgs/msg/String "
-#~ "\\\"{data: 'stand'}\\\" --once\\n\\n# Enter walk mode\\nros2 topic pub "
-#~ "/fsm_command std_msgs/msg/String \\\"{data: 'walk'}\\\" --once\\n\\n# Arm "
-#~ "teleop\\nros2 topic pub /fsm_command std_msgs/msg/String \\\"{data: "
+#~ "# Enter stand mode\\nros2 topic pub "
+#~ "/fsm_command std_msgs/msg/String \\\"{data: "
+#~ "'stand'}\\\" --once\\n\\n# Enter walk "
+#~ "mode\\nros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \\\"{data: 'walk'}\\\" "
+#~ "--once\\n\\n# Arm teleop\\nros2 topic pub "
+#~ "/fsm_command std_msgs/msg/String \\\"{data: "
 #~ "'arm_teleop'}\\\" --once\\n"
 
 #~ msgid "Commands"
@@ -375,8 +312,9 @@ msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
 #~ "  contact_constraints:\n"
 #~ "    friction_coefficient: 0.7\n"
 #~ msgstr ""
-#~ "wbc:\\n  balance_weight: 100.0\\n  tracking_weight: 10.0\\n  \\n  "
-#~ "contact_constraints:\\n    friction_coefficient: 0.7\\n"
+#~ "wbc:\\n  balance_weight: 100.0\\n  tracking_weight:"
+#~ " 10.0\\n  \\n  contact_constraints:\\n    "
+#~ "friction_coefficient: 0.7\\n"
 
 #~ msgid "FSM Configuration"
 #~ msgstr "FSM 配置"
@@ -392,9 +330,10 @@ msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
 #~ "      to: stand\n"
 #~ "      trigger: stand\n"
 #~ msgstr ""
-#~ "fsm:\\n  initial_state: stand\\n  transitions:\\n    - from: stand\\n      "
-#~ "to: walk\\n      trigger: walk\\n    - from: walk\\n      to: stand\\n      "
-#~ "trigger: stand\\n"
+#~ "fsm:\\n  initial_state: stand\\n  transitions:\\n"
+#~ "    - from: stand\\n      to: walk\\n"
+#~ "      trigger: walk\\n    - from: walk\\n"
+#~ "      to: stand\\n      trigger: stand\\n"
 
 #~ msgid "WBC integrates with:"
 #~ msgstr "WBC integrates with:"
@@ -407,3 +346,126 @@ msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"
 
 #~ msgid "Verify balance before walking"
 #~ msgstr "Verify balance before walking"
+
+#~ msgid "Whole-body control for FiveAges wheeled-arm humanoid robots."
+#~ msgstr "用于 FiveAges 轮臂人形的全身控制。"
+
+#~ msgid ""
+#~ "This package requires private repository "
+#~ "access. Contact your team lead for "
+#~ "access."
+#~ msgstr "该软件包需要私有仓库访问权限。请联系团队负责人申请访问。"
+
+#~ msgid "**Repository:** ocs2-wbc-controller (private)"
+#~ msgstr "**仓库：** ocs2-wbc-controller（私有）"
+
+#~ msgid "Purpose"
+#~ msgstr "用途"
+
+#~ msgid ""
+#~ "`ocs2-wbc-controller` provides whole-body "
+#~ "control capabilities for wheeled-arm "
+#~ "humanoid robots, enabling:"
+#~ msgstr "`ocs2-wbc-controller` 为轮臂人形提供全身控制能力，可实现："
+
+#~ msgid "Full-body motion planning"
+#~ msgstr "全身运动规划"
+
+#~ msgid "Balance and stability control"
+#~ msgstr "平衡与稳定性控制"
+
+#~ msgid "FSM integration"
+#~ msgstr "FSM 集成"
+
+#~ msgid "Usage"
+#~ msgstr "使用方法"
+
+#~ msgid "TODO"
+#~ msgstr "待完成"
+
+#~ msgid ""
+#~ "For specific launch commands, available "
+#~ "modes, parameters, and configuration options,"
+#~ " refer to the repository's README and"
+#~ " documentation. The content below is "
+#~ "a general overview; consult the in-"
+#~ "repo docs for accurate details."
+#~ msgstr "具体的启动命令、可用模式、参数和配置选项，请参阅仓库中的 README 与文档。下文仅为概述；请以仓库内文档为准。"
+
+#~ msgid "General Launch Pattern"
+#~ msgstr "通用启动方式"
+
+#~ msgid ""
+#~ "Replace `<launch_file>` and `<robot_id>` with"
+#~ " values from the repository documentation."
+#~ msgstr "请将 `<launch_file>` 和 `<robot_id>` 替换为仓库文档中给出的取值。"
+
+#~ msgid "Topics"
+#~ msgstr "主题"
+
+#~ msgid ""
+#~ "Topic names, types, and behaviors are"
+#~ " defined in the repository. Check the"
+#~ " package's message definitions and launch"
+#~ " files for the current interface."
+#~ msgstr "话题名称、类型与行为在仓库中定义。请查看该软件包的消息定义和启动文件，以了解当前接口。"
+
+#~ msgid "The controller typically uses:"
+#~ msgstr "该控制器通常使用："
+
+#~ msgid "FSM command topics for mode switching"
+#~ msgstr "用于模式切换的 FSM 指令话题"
+
+#~ msgid "Joint state topics for feedback"
+#~ msgstr "用于反馈的关节状态话题"
+
+#~ msgid "Target pose topics for teleop integration"
+#~ msgstr "用于遥操作集成的目标位姿话题"
+
+#~ msgid "Configuration"
+#~ msgstr "配置"
+
+#~ msgid ""
+#~ "Configuration parameters, default values, and"
+#~ " YAML schemas are maintained in the"
+#~ " repository. Do not rely on example"
+#~ " values shown elsewhere; always use "
+#~ "the actual config files from the "
+#~ "repo."
+#~ msgstr "配置参数、默认值以及 YAML 模式均维护在仓库中。不要依赖其他地方给出的示例值；请始终使用仓库中的实际配置文件。"
+
+#~ msgid "Safety"
+#~ msgstr "安全"
+
+#~ msgid "Safety Warning"
+#~ msgstr "安全警告"
+
+#~ msgid "WBC controls the full body of wheeled-arm humanoid robots. Always:"
+#~ msgstr "WBC 控制轮臂人形的全身。务必："
+
+#~ msgid "Verify the robot is in a safe initial state"
+#~ msgstr "确认机器人处于安全的初始状态"
+
+#~ msgid "Have emergency stop ready"
+#~ msgstr "确保急停随时可用"
+
+#~ msgid "Monitor joint and balance limits"
+#~ msgstr "监控关节限位与平衡约束"
+
+#~ msgid "Follow the safety procedures documented in the repository"
+#~ msgstr "遵守仓库文档中的安全规程"
+
+#~ msgid "Integration"
+#~ msgstr "集成"
+
+#~ msgid "WBC integrates with other components in fa-deploy-ws:"
+#~ msgstr "WBC 与 fa-deploy-ws 中的其他组件集成："
+
+#~ msgid "Arm controllers for manipulation"
+#~ msgstr "用于操作的机械臂控制器"
+
+#~ msgid "Teleop systems for remote control"
+#~ msgstr "用于远程控制的遥操作系统"
+
+#~ msgid "[FA Robot Descriptions](../descriptions/5-fa_robots.md)"
+#~ msgstr "[FA 机器人描述](../descriptions/5-fa_robots.md)"

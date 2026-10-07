@@ -78,7 +78,7 @@ See repository README for network discovery, hand configuration, and deployment 
 
 Driver for DexCap teleoperation gloves.
 
-See [DexCap Teleop](../../2-how_to/8-dexcap_teleop.md) for usage guide.
+See [DexCap Teleop](../../2-how_to/5-teleoperation/8-dexcap_teleop.md) for usage guide.
 
 ```{admonition} TODO
 :class: note
@@ -105,7 +105,7 @@ See repository README for SDK setup and network configuration.
 Private interfaces often require deployment-specific parameters that should be:
 
 1. Configured per-installation
-2. Documented in deployment-specific config files (e.g., `robot.local.yaml`)
+2. Documented in that repository’s local / per-install config (the filename lives in its README)
 3. Not committed to version control
 
 ### Debugging

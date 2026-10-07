@@ -40,4 +40,4 @@ The stack supports multiple simulation backends:
 Isaac Sim integration uses **FaSim-Isaac** (`./init.sh`, `./run.sh`). Default path is `ISAACSIM_DIR` (`~/isaacsim`); version comes from FaSim config / the init menu. See [FaSim-Isaac](2-fasim_isaac.md).
 ```
 
-Isaac **datagen** (USD → orchestration → LeRobot export, no Gazebo): [Synthetic Data](../../6-synthetic_data/0-index.md).
+Isaac **datagen** (USD → orchestration → LeRobot export, no Gazebo): [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md).

@@ -9,7 +9,7 @@ The stack supports multiple teleoperation methods:
 | Method | Input Device | Use Case |
 |--------|-------------|----------|
 | VR | VR headset (Pico Enterprise / consumer, Meta Quest) | Remote manipulation |
-| Isomorphic | Master–slave (Panthera HT) | Joint-space following |
+| Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
 | DexCap | Gloves | Dexterous teleop |
 | Vive | Trackers | Arm tracking |
 | Wuji | Gloves | Hand tracking |

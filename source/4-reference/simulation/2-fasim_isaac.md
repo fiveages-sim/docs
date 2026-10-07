@@ -99,5 +99,5 @@ Open robot USD from `robots/` and scene USD from `environment/` in Isaac. Select
 ## Related
 
 - [robot_usds](3-robot_usds.md)
-- [Isaac Sim How-To](../../2-how_to/4-isaac_sim.md)
-- [Synthetic Data](../../6-synthetic_data/0-index.md)
+- [Isaac Sim How-To](../../2-how_to/2-simulation/4-isaac_sim.md)
+- [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md)

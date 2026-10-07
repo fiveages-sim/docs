@@ -1,78 +1,37 @@
-# ocs2-wbc-controller
+# ocs2_wbc_controller
 
-Whole-body control for FiveAges wheeled-arm humanoid robots.
+Whole-body MPC (**全身控制**) for wheeled dual-arm robots, using `ocs2_wheel_humanoid`.
 
 ```{admonition} Access Required
 :class: warning
 
-This package requires private repository access. Contact your team lead for access.
+`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is a **private** submodule (`ocs2-wbc-controller`). This page does not invent topics, FSM values, or a standalone `ocs2_wbc_controller` launch file.
 ```
 
-**Repository:** ocs2-wbc-controller (private)
+## Role
 
-## Purpose
+- Unified **全身控制** stack: one `ocs2_wbc_controller` instead of arm MPC plus separate body/head joint controllers
+- Motion library: `ocs2_wheel_humanoid` (see [ocs2-humanoid](4-ocs2_humanoid.md))
 
-`ocs2-wbc-controller` provides whole-body control capabilities for wheeled-arm humanoid robots, enabling:
-- Full-body motion planning
-- Balance and stability control
-- FSM integration
+Contrast with **分体控制 (split)**: [ocs2_arm_controller](2-ocs2_arm_controller.md) + [basic_joint_controller](7-basic_joint_controller.md) via `split_body.launch.py`.
 
-## Usage
+## Launch (from `ocs2_arm_controller`)
 
-```{admonition} TODO
-:class: note
+There is no public README listing a `ros2 launch ocs2_wbc_controller …` entry point. The in-tree path that loads this controller is:
 
-For specific launch commands, available modes, parameters, and configuration options, refer to the repository's README and documentation. The content below is a general overview; consult the in-repo docs for accurate details.
-```
+:::{code-block} bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>
+:::
 
-### General Launch Pattern
+`full_body.launch.py` (`launch_mode` `full_body`) spawns `ocs2_wbc_controller` when the robot’s `controller_manager` type is `ocs2_wbc_controller/Ocs2WbcController`.
 
-```bash
-ros2 launch ocs2_wbc_controller <launch_file>.launch.py robot:=<robot_id> hardware:=mock
-```
+The same file declares `type` and `create_robot_profile_launch_arguments()` (`left_type` / `right_type`, `use_profile_eef`). End-effectors: [ocs2_arm_controller](2-ocs2_arm_controller.md) and [robot_common_launch](../descriptions/2-common.md).
 
-Replace `<launch_file>` and `<robot_id>` with values from the repository documentation.
-
-## Topics
-
-```{admonition} TODO
-:class: note
-
-Topic names, types, and behaviors are defined in the repository. Check the package's message definitions and launch files for the current interface.
-```
-
-The controller typically uses:
-- FSM command topics for mode switching
-- Joint state topics for feedback
-- Target pose topics for teleop integration
-
-## Configuration
-
-```{admonition} TODO
-:class: note
-
-Configuration parameters, default values, and YAML schemas are maintained in the repository. Do not rely on example values shown elsewhere; always use the actual config files from the repo.
-```
-
-## Safety
-
-```{admonition} Safety Warning
-:class: danger
-
-WBC controls the full body of wheeled-arm humanoid robots. Always:
-1. Verify the robot is in a safe initial state
-2. Have emergency stop ready
-3. Monitor joint and balance limits
-4. Follow the safety procedures documented in the repository
-```
-
-## Integration
-
-WBC integrates with other components in fa-deploy-ws:
-- Arm controllers for manipulation
-- Teleop systems for remote control
+Do not treat `split_body.launch.py` as whole-body control.
 
 ## Related
 
-- [ocs2-humanoid](4-ocs2_humanoid.md)
-- [FA Robot Descriptions](../descriptions/5-fa_robots.md)
+- [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / `split_body.launch.py`
+- [basic_joint_controller](7-basic_joint_controller.md)
+- [ocs2-humanoid](4-ocs2_humanoid.md) — `ocs2_wheel_humanoid`
+- [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)

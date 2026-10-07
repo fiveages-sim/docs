@@ -5,7 +5,7 @@ Welcome to the documentation for **FiveAges Sim** — a multi-repository ROS 2 r
 ```{admonition} Getting Started
 :class: tip
 
-New here? Start with the [Learning Path](0-overview/2-learning_path.md) to understand the stack, then follow [Quick Demo (Public Path)](1-getting_started/1-quick_demo_public.md) to get a robot moving in simulation within minutes.
+New here? Start with the [Learning Path](0-overview/2-learning_path.md), then [Install Environment](1-getting_started/2-install_environment.md), then [Quick Demo (Public Path)](1-getting_started/1-quick_demo_public.md). Do not skip install.
 ```
 
 ## About This Ecosystem
@@ -13,7 +13,7 @@ New here? Start with the [Learning Path](0-overview/2-learning_path.md) to under
 FiveAges Sim provides:
 
 - **Unified robot descriptions** — URDF/xacro packages for wheeled-arm humanoids, manipulators, and mobile robots
-- **Hardware interfaces** — ROS 2 control plugins for various robot platforms (Dobot, ARX, Galbot, HT, and more)
+- **Hardware interfaces** — ROS 2 control plugins for various robot platforms (Dobot, ARX, Galbot, HighTorque, and more)
 - **MPC controllers** — OCS2-based arm and whole-body controllers
 - **Simulation backends** — Gazebo Harmonic and NVIDIA Isaac Sim integration
 - **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation
@@ -47,31 +47,25 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 :caption: Getting Started
 
 1-getting_started/0-index
-1-getting_started/1-quick_demo_public
 1-getting_started/2-install_environment
+1-getting_started/1-quick_demo_public
 1-getting_started/3-open_deploy_ws
 1-getting_started/4-fa_deploy_ws
 1-getting_started/5-faq
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: How-To Guides
 
 2-how_to/0-index
-2-how_to/1-run_mock_demo
-2-how_to/2-switch_robot
-2-how_to/3-gazebo_sim
-2-how_to/4-isaac_sim
-2-how_to/5-python_interface
-2-how_to/6-vr_teleop
-2-how_to/7-isomorphic_teleop
-2-how_to/7-drag_teleop
-2-how_to/8-dexcap_teleop
-2-how_to/9-go_real_hardware
-2-how_to/11-ark_lift2s
-2-how_to/12-panthera_ht
-2-how_to/10-add_a_robot
+2-how_to/1-basic_operations/0-index
+2-how_to/2-simulation/0-index
+2-how_to/3-programming/0-index
+2-how_to/4-controllers/0-index
+2-how_to/5-teleoperation/0-index
+2-how_to/6-deployment/0-index
+2-how_to/7-synthetic_data/0-index
 ```
 
 ```{toctree}
@@ -83,6 +77,7 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 3-concepts/2-workspace_layout
 3-concepts/3-naming_conventions
 3-concepts/4-fsm_and_topics
+3-concepts/7-split_vs_wbc
 3-concepts/5-source_vs_deb
 3-concepts/6-submodules_visibility
 ```
@@ -107,16 +102,6 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 5-developer/1-contributing
 5-developer/2-docs_build
 5-developer/3-packaging_deb
-```
-
-```{toctree}
-:maxdepth: 2
-:caption: Synthetic Data
-
-6-synthetic_data/0-index
-6-synthetic_data/1-isaac_scenes
-6-synthetic_data/2-orchestration
-6-synthetic_data/3-record_export
 ```
 
 ## Quick Links

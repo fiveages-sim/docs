@@ -4,6 +4,8 @@ USD robot asset superproject for Isaac Sim.
 
 **Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-sim/robot_usds)
 
+Brand **EN/ZH** labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (English folder names match that table). Examples: 方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 中科第五纪 = **FiveAges**. Do not invent brands (including bare “Ark”).
+
 ## Purpose
 
 `robot_usds` provides:
@@ -76,27 +78,18 @@ Assets directly in `robot_usds` (not submodules):
 
 ### Gen1/Gen2/Gen3
 
-FiveAges robot generations:
-- **Gen1** — First generation humanoid
-- **Gen2** — Second generation humanoid
-- **Gen3** — Third generation humanoid
+From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table (not invented labels):
 
-These names refer to internal development generations.
+- **Gen1** — W1 (`humanoid/FiveAges/Gen1` → `fiveages-gen1-robot-usds`)
+- **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → `fiveages-gen2-robot-usds`)
+- **Gen3** — WCE3 (`humanoid/FiveAges/Gen3` → `fiveages-gen3-robot-usds`)
 
-## Loading in Isaac Sim
+URDF / deploy: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 
-```python
-from omni.isaac.core.utils.stage import add_reference_to_stage
-
-# Load robot USD
-add_reference_to_stage(
-    usd_path="robot_usds/humanoid/Galbot/galbot.usd",
-    prim_path="/World/Robot"
-)
-```
+Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA — do not invent a `galbot.usd` prim path here.
 
 ## Related
 
 - [USD Submodules](4-usd_submodules.md)
 - [FaSim-Isaac](2-fasim_isaac.md)
-- [Synthetic Data](../../6-synthetic_data/1-isaac_scenes.md)
+- [Synthetic Data](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)

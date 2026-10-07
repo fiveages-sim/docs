@@ -9,728 +9,180 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 17:06+0000\n"
+"POT-Creation-Date: 2026-10-07 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:1
-#: ef93ae02a7894dd9a4b5a6a9f629f837
+#: e8bafcba20b9469c81b37da69b826bdb
 msgid "FSM and Topics"
 msgstr "状态机与话题"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:3
-#: eba08f17b62c4b7a9cb8808b6c546caf
+#: 3bda0882a3fd4babb3e2e3db3540edd7
 msgid ""
-"This page explains the finite state machine (FSM) architecture and topic "
-"contracts used for robot control."
-msgstr "本页说明用于机器人控制的有限状态机（FSM）架构与话题约定。"
+"Finite-state machines in this stack live in "
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). "
+"Shared primitives are in `libraries/arms_controller_common/` "
+"(`StateHome`, `StateHold`, `StateMoveJ`, `FSMCommandPublisher`)."
+msgstr ""
+"本技术栈的有限状态机在 [arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control)。共享原语在 "
+"`libraries/arms_controller_common/`（`StateHome`、`StateHold`、`StateMoveJ`、`FSMCommandPublisher`）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: e058734c60ab4510a39f223e50bef3d0
-msgid "Overview"
-msgstr "概述"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:7
-#: 2cd5a9640cc74479826c8c61de1295f4
-msgid "The control stack uses FSM patterns for:"
-msgstr "控制技术栈将 FSM 模式用于："
+#: 437277b32fbe4f61ba1b6b6f1586b6c2
+msgid "Source of truth"
+msgstr "权威来源"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:8
-#: 0bae607cf6d64479beb906a968907cf3
-msgid "Mode switching (arm control, teleop, walking)"
-msgstr "模式切换（机械臂控制、遥操作、行走）"
+#: 26be79f72ae8492e9a3d70926c6cb89e
+msgid ""
+"`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no "
+"documented `/mode_command` or `/fsm_state` **String**, and no wheeled-arm"
+" `stand` / `walk` / `arm_teleop` contract. The [panthera-ht "
+"README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-"
+"ht/README.EN.md) also lists `/fsm_state` as `std_msgs/Int32` (same value "
+"meanings) and EE targets `/left_target` / `/left_target/stamped` — those "
+"are **that branch’s** external interface, not a stack-wide "
+"`/target_pose`. Per-controller topics: the controller pages and package "
+"READMEs."
+msgstr ""
+"`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。没有文档化的 `/mode_command` 或 `/fsm_state` **String**，也没有轮式臂 `stand` / `walk` / `arm_teleop` 约定。[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) 另列出 `/fsm_state` 为 `std_msgs/Int32`（取值含义相同）以及末端目标 `/left_target` / `/left_target/stamped` — 那是**该分支**的外部接口，不是全栈 `/target_pose`。各控制器话题见对应页面和包 README。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:9
-#: 7e82a8c52a3a413fa0b88cf3d2380531
-msgid "Safety state management"
-msgstr "安全状态管理"
+#: ../../source/3-concepts/4-fsm_and_topics.md:11
+#: db9b80d9320f4c4c958bae30b5ddbc7b
+msgid "`/fsm_command` (`std_msgs/Int32`)"
+msgstr "`/fsm_command`（`std_msgs/Int32`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:10
-#: 77953edde3584766803f5d48bd53261b
-msgid "Coordinated multi-system behavior"
-msgstr "多系统协同行为"
+#: ../../source/3-concepts/4-fsm_and_topics.md:13
+#: d39fa601d73c4c6f9365d0b4e189ddfe
+msgid ""
+"`FSMCommandPublisher` publishes `std_msgs/Int32` on `/fsm_command`. "
+"Header values: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ (`100` switches "
+"HOME pose)."
+msgstr ""
+"`FSMCommandPublisher` 向 `/fsm_command` 发布 `std_msgs/Int32`。头文件中的值：`1` "
+"HOME，`2` HOLD，`3` OCS2，`4` MOVEJ（`100` 切换 HOME 构型）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:12
-#: 987a5cb9b7aa4335a4726b29c9da4f15
-msgid "FSM Topics"
-msgstr "FSM 话题"
+#: ../../source/3-concepts/4-fsm_and_topics.md:15
+#: 73752df6c00541439dadfc14ed3cc3fd
+msgid "Exact transitions depend on the **running controller**:"
+msgstr "具体转换取决于**正在运行的控制器**："
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:14
-#: 8e0151e469bc4caeb5eaff9de006e657
-msgid "Command Topics"
-msgstr "命令话题"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: b8f7ff3d485c4398988f42683600b10b
+msgid "Controller"
+msgstr "控制器"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 41e2082628b94831af9fd47062d54b74 5356913b2d3647eb961d089667615ce5
-#: 5dfb8250a198440dacaa044b6defc56a 7b9324256a2e442a8e5bee6f4a7584e5
-#: f3ad853efd3f436fb6abd132ef822a95
-msgid "Topic"
-msgstr "话题"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 233e41b0cd4f4191b54cf4e06ff1ed3f 3e8f2f83b7e341349312c54e79e5b452
-#: 5aa604a08a2f4fba9027bd3562e9981c 64747456651341b1a5bd34a8e478d41e
-#: 95e297a8303a4d2bb0521301d0a4f8a9
-msgid "Type"
-msgstr "类型"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 3210304471314146b08d7b10213aa7b1 c4bf328b219b4f848da891be69692c4c
-msgid "Purpose"
-msgstr "用途"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 42d43d07b08f445c89be73d2d8432c18
-msgid "`/fsm_command`"
-msgstr "`/fsm_command`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 7843372e73664409b33145a87edcc70f 961f87e995514636a1a8f5f6357bafcb
-msgid "`std_msgs/String`"
-msgstr "`std_msgs/String`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 2cd928a90f514fd5b7fc4b2723aa045b
-msgid "High-level state commands"
-msgstr "高层状态命令"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 09e408f08aae4c549f8dbc86aeb4f107
-msgid "`/mode_command`"
-msgstr "`/mode_command`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 057e11fcbf2044058c0a664618ae0fed 695a1eb56f2144e3b29258598d199355
-msgid "`std_msgs/Int32`"
-msgstr "`std_msgs/Int32`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 0ab63dc527fb418b818f540e1ff8dd86
-msgid "Numeric mode selection"
-msgstr "数字模式选择"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:21
-#: ac5ad58bbb214a2a896ddb1e7de5b4db
-msgid "State Topics"
-msgstr "状态话题"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: a9844adeff7b4b20a7abc135d4dafa8d
-msgid "`/fsm_state`"
-msgstr "`/fsm_state`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 885b117f81374f8a867a62e722ce539b
-msgid "Current FSM state"
-msgstr "当前 FSM 状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: d3f9b76e6a6c440a994e7b7391469447
-msgid "`/mode_state`"
-msgstr "`/mode_state`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: da6e127c60934655abd5b6cf0cc7140c
-msgid "Current mode"
-msgstr "当前模式"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:28
-#: cb673b1f700740a3807d5b9829139115
-msgid "Common FSM States"
-msgstr "常见 FSM 状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:30
-#: 2d7912312c724bc98caebcd2a347784b
-msgid "Arm Controller States"
-msgstr "机械臂控制器状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 4d104a15850d43619ad847db0c81f808 6ab3c47c82124eec99d177b2750e4365
-#: e88ce754ab734283b5e6e7f5ccd400dd
-msgid "State"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: a0aafb46269644069dfb917db58e3dc3
+msgid "States"
 msgstr "状态"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 090564a7bcea4afdb6dfb278075cbae8 14a6425f28454b15890a0536f035564b
-#: 5c303fc1ebe94b97a9c333d8617f480a 9f2b4db03f8040aeaf39ac17f9f2ee83
-#: abc4f183f1304ff68dc929f1b094db65
-msgid "Description"
-msgstr "描述"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 294387a2821146388b0ddc2d1f98f7e2
-msgid "`idle`"
-msgstr "`idle`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: dd26d45a8e9b49aab8adeb5da435fc3d
-msgid "No active control"
-msgstr "无主动控制"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 4d81c10cfe1846809946ca5cff5c6bc1
-msgid "`position_control`"
-msgstr "`position_control`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 6aee272dc0d541d19ee66e0c9f94a1f6
-msgid "Joint position control"
-msgstr "关节位置控制"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 5b769855dde44046940b30f797892bc7
-msgid "`cartesian_control`"
-msgstr "`cartesian_control`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: cce0ed1557ab4030835965dfda3f24ac
-msgid "End-effector pose control"
-msgstr "末端执行器位姿控制"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: ee0b7d51849642eb8d5b116ba1b7aaf1
-msgid "`teleop`"
-msgstr "`teleop`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 307351b24fd3455bb184b78719b3deda
-msgid "Teleoperation mode"
-msgstr "遥操作模式"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:39
-#: 43c57e40ad9949ceb9d8dbc221fd6d0e
-msgid "Wheeled-arm humanoid states (WBC)"
-msgstr "轮臂人形状态（WBC）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 624f29a989f143dd89c6203fa4dfa77c
-msgid "`stand`"
-msgstr "`stand`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: e524acc3355b42d0a689178dc0776460
-msgid "Standing position"
-msgstr "站立姿态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 5bdb3adcf1cb45c3818f95db879c91c1
-msgid "`walk`"
-msgstr "`walk`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 9b85c4d16ea2478199814ca2183ddde7
-msgid "Walking mode"
-msgstr "行走模式"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 0d896981f73f4c69af48c5ddbe854b8c
-msgid "`arm_teleop`"
-msgstr "`arm_teleop`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 7a72f07a97ed41e0b98215b184f02da6
-msgid "Arm teleoperation"
-msgstr "机械臂遥操作"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: 7a85ac98aaa94d65b6f773ba4410fafd
-msgid "`full_body_teleop`"
-msgstr "`full_body_teleop`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md
-#: bcefb89202974525a7830397833fb48f
-msgid "Full body control"
-msgstr "全身控制"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:48
-#: 137acf545cfa43319a3567926fb2352b
-msgid "Mode Commands"
-msgstr "模式 命令"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:50
-#: 8000ffd4552043e3bc46edb1b415323e
-msgid "Mode commands are typically numeric:"
-msgstr "模式命令通常为数字："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 956a4d75aafc440fb3df3416763f6ce8
-msgid ""
-"# Example mode definitions\n"
-"MODE_IDLE = 0\n"
-"MODE_POSITION = 1\n"
-"MODE_CARTESIAN = 2\n"
-"MODE_TELEOP = 3"
-msgstr ""
-"# Example mode definitions\n"
-"MODE_IDLE = 0\n"
-"MODE_POSITION = 1\n"
-"MODE_CARTESIAN = 2\n"
-"MODE_TELEOP = 3"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:60
-#: f9860e6cb723497ab16f28db7fc3f144
-msgid "Send mode command:"
-msgstr "发送模式命令："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:62
-#: cf826b652eca4663a21af734a5c74d8e
-#, python-brace-format
-msgid "ros2 topic pub /mode_command std_msgs/msg/Int32 \"{data: 2}\" --once\n"
-msgstr "ros2 topic pub /mode_command std_msgs/msg/Int32 \"{data: 2}\" --once\n"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:66
-#: caff153329d842f09d320e943eaff24c
-msgid "Target Topics"
-msgstr "目标话题"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:68
-#: 939f631e376c4521a3099d6a4aee1d67
-msgid "End-Effector Targets"
-msgstr "末端执行器目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: dbfd82c905054e5daa6b097db0802939
-msgid "`/target_pose`"
-msgstr "`/target_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 112c8df33e724885a3bf610de7ec2e79 2ac093fd1fdb44a5b35f851967e6b77d
-#: 37c00c06f5ec49de8fd60a9c6cc9953b c3b65df941434d629b19a9f548c0ec73
-#: e1d07ae588e24220b63e604812385dd5 e28ada4e43ee492b82f54098f1d81e61
-msgid "`PoseStamped`"
-msgstr "`PoseStamped`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: c14b90e3421b412ab1988b24b74e6a80
-msgid "Single arm EE target"
-msgstr "单臂末端执行器目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 53283267ee394331a3e16f831f438185
-msgid "`/left_target_pose`"
-msgstr "`/left_target_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 6fc5fdecfce8499aa83a6bff02ac839c
-msgid "Left arm target"
-msgstr "左臂目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 680ec66971f940d79eabb410288ce8fb
-msgid "`/right_target_pose`"
-msgstr "`/right_target_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 7de969050b9049468e477dd1a49ae56a
-msgid "Right arm target"
-msgstr "右臂目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:76
-#: 1ee7748917f24e049c67f513bc69740d
-msgid "Joint Targets"
-msgstr "关节目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 2ba52b47aa4e466197165acec561aa11
-msgid "`/target_joint_positions`"
-msgstr "`/target_joint_positions`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 25bce818815e419abb37b0a1dc65159e
-msgid "`JointState`"
-msgstr "`JointState`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: de8d143c3e1f43b1ae4aa8fd53af9b87
-msgid "Joint position targets"
-msgstr "关节位置目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:82
-#: 10c86d7e06a14a1aa00cfeb328144f1f
-msgid "Teleop Targets"
-msgstr "遥操作目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: d045c675e9e44497b45c67ccd0e7a8ad
-msgid "`/teleop/left_ee_pose`"
-msgstr "`/teleop/left_ee_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 3cdc7609aaa941198bb86b00afb3b5f2
-msgid "Left teleop input"
-msgstr "左侧遥操作输入"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 9b31db5c7cd644c9b9bc3f88e9927ac0
-msgid "`/teleop/right_ee_pose`"
-msgstr "`/teleop/right_ee_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: 91cfc42c141146ef8a809c5af4e39984
-msgid "Right teleop input"
-msgstr "右侧遥操作输入"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: e746b5a315ca47bb920aa0c67bb84fb8
-msgid "`/teleop/head_pose`"
-msgstr "`/teleop/head_pose`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:52
-#: f9f7f510b2414a26a2fd84c6b2338391
-msgid "Head tracking input"
-msgstr "头部跟踪输入"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: d5b90ac8b6644af8b0325408fb345a04
-msgid "Topic Contracts"
-msgstr "话题约定"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:92
-#: a2ee83234eea494ebd4e07dced91bf3c
-msgid "Target Pose Contract"
-msgstr "目标位姿约定"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:94
-#: 00c10612220b47d08daf2da2d46be916
-msgid "Publishers (teleop, planners) must:"
-msgstr "发布者（遥操作、规划器）必须："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:95
-#: 4e0100099fa7409c9d9a439093c34dcf
-msgid "Use consistent frame_id (typically `base_link`)"
-msgstr "使用一致的 frame_id（通常为 `base_link`）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:96
-#: 88cddddf8c0a485fafa16f3884fe57fe
-msgid "Publish at consistent rate (10-100 Hz typical)"
-msgstr "以稳定频率发布（通常 10–100 Hz）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:97
-#: 8b398127f6f34144971711a9227e1a4d
-msgid "Include valid orientation quaternion"
-msgstr "包含有效的姿态四元数"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:99
-#: a19eee8161b84526b35642c7a3438b72
-msgid ""
-"from geometry_msgs.msg import PoseStamped\n"
-"\n"
-"target = PoseStamped()\n"
-"target.header.frame_id = \"base_link\"\n"
-"target.header.stamp = self.get_clock().now().to_msg()\n"
-"target.pose.position.x = 0.3\n"
-"target.pose.position.y = 0.0\n"
-"target.pose.position.z = 0.4\n"
-"target.pose.orientation.w = 1.0  # Valid quaternion!"
-msgstr ""
-"from geometry_msgs.msg import PoseStamped\n"
-"\n"
-"target = PoseStamped()\n"
-"target.header.frame_id = \"base_link\"\n"
-"target.header.stamp = self.get_clock().now().to_msg()\n"
-"target.pose.position.x = 0.3\n"
-"target.pose.position.y = 0.0\n"
-"target.pose.position.z = 0.4\n"
-"target.pose.orientation.w = 1.0  # Valid quaternion!"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:111
-#: c03534a4544b45f4b5a7176156f7b85f
-msgid "Joint State Contract"
-msgstr "关节状态约定"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:113
-#: d64cd8e458e5423386b7498576a40ca4
-msgid "Publishers must:"
-msgstr "发布者必须："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:114
-#: cbccb40e95464108a5835c1608415e1b
-msgid "Include all joint names"
-msgstr "包含所有关节名称"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:115
-#: 26d4575f732f4808aaa2bfaefc279b33
-msgid "Match joint order to URDF"
-msgstr "关节顺序与 URDF 一致"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:116
-#: 6db1e633eea14b6299247ff9568eb9d2
-msgid "Provide positions at minimum (velocity/effort optional)"
-msgstr "至少提供位置（速度/力矩可选）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:118
-#: 3e713fc9a01944a7b857f694ac9a11e0
-msgid ""
-"from sensor_msgs.msg import JointState\n"
-"\n"
-"js = JointState()\n"
-"js.header.stamp = self.get_clock().now().to_msg()\n"
-"js.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']\n"
-"js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]\n"
-msgstr ""
-"from sensor_msgs.msg import JointState\n"
-"\n"
-"js = JointState()\n"
-"js.header.stamp = self.get_clock().now().to_msg()\n"
-"js.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']\n"
-"js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]\n"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:127
-#: f9ced2f14aaf4d258a85c0b763217a8e
-msgid "State Transitions"
-msgstr "状态转换"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:129
-#: cb2c262fdd2145b496d5af0af6bd80b9
-msgid "Safe Transitions"
-msgstr "安全转换"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:131
-#: 781858c214f9432fb8d429ac6ee10228
-msgid ""
-"idle → position_control → cartesian_control → teleop\n"
-"  ↑                                              ↓\n"
-"  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←"
-msgstr ""
-"idle → position_control → cartesian_control → teleop\n"
-"  ↑                                              ↓\n"
-"  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:137
-#: 9c8fbd7f1501427889187d9a1112f377
-msgid "Sending Transitions"
-msgstr "发送转换命令"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: f41f9772deaf4d59825f7227a745c039
-#, python-brace-format
-msgid ""
-"# Enter teleop mode\n"
-"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'teleop'}\" --once\n"
-"\n"
-"# Return to idle\n"
-"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'idle'}\" --once"
-msgstr ""
-"# Enter teleop mode\n"
-"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'teleop'}\" --once\n"
-"\n"
-"# Return to idle\n"
-"ros2 topic pub /fsm_command std_msgs/msg/String \"{data: 'idle'}\" --once"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:147
-#: 85709592b18d4ece87a3d5697caf3eab
-msgid "QoS Settings"
-msgstr "QoS 设置"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:149
-#: 5d14097b131149039328ee728798698e
-msgid "Recommended QoS for control topics:"
-msgstr "控制话题推荐的 QoS："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 036c4b155f1540e78dbf30f03b7c0ee1
-msgid "Topic Type"
-msgstr "话题 类型"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: b3180eac27574ecf83227b05882ed95b
-msgid "Reliability"
-msgstr "可靠性"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: a39e733d3fd84052807a897e11acf206
-msgid "Durability"
-msgstr "持久性"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 348dc835dd6945a18f1d0e39943c5810
-msgid "History"
-msgstr "历史"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 4a9df40899ac4a69b59aa715fb03ddb4
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 0994f9ff81424f58a5a500e7c3e6f4e7
 msgid "Commands"
 msgstr "命令"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 5d971c04da9048a88948bb5f99fdb6d4 768b1698a8f3427887365ba478867e64
-msgid "Reliable"
-msgstr "可靠"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: ../../source/3-concepts/4-fsm_and_topics.md:32
+#: a44df2d0b132448582386d975b2e61ab a77830dea8bd4a41b843bbbf4fea3aa2
+msgid "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
+msgstr "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 2db03d08b0f041ea84cea81ca634a402 56e7b2a6d6fb45b39cc41e65fda90612
-#: cb53f5afb37342d7ac012bcd1e31dd2f
-msgid "Volatile"
-msgstr "易失"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: c0d0f0a8029f46bfb42eed1645c0d6aa
+msgid "Home / Hold / MoveJ"
+msgstr "Home / Hold / MoveJ"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 148e0cccfb7a4487a0ec33041a72baf6 3d5d12cd10504e979d4c5eae4448309a
-#: 601ae9569e2c40e4b1a8747b03651744 aa0d3843a95e438aaebddfed0a972ee3
-msgid "Keep last 1"
-msgstr "只保留最新 1 条"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 3187669bc9a041dbbe723601e41125e4
-msgid "Transient local"
-msgstr "瞬时本地"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: b83ae79bd9df4e9ea13dad68f45de621
-msgid "Targets"
-msgstr "目标"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: 0baafd4460ee449fb37e60288ed754e9 85467a819b0249c0ba44143543c4a489
-msgid "Best effort"
-msgstr "尽力而为"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:139
-#: e35be76367c748d08a29eb6e5b815c82
-msgid "Joint states"
-msgstr "关节状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:158
-#: 5be6d19d65ae4e0ba0067e80f47536be
-msgid "Debugging"
-msgstr "调试"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:160
-#: 98c8d2a897a545bf8e95854a68b8f415
-msgid "Monitor FSM State"
-msgstr "监视 FSM 状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:162
-#: 1d4258eb1b6a4597ad2ce2430f78a1e9
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 29d75bffb57b465e8b44db65bab4da4c
 msgid ""
-"ros2 topic echo /fsm_state\n"
-"ros2 topic echo /mode_state\n"
+"README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a legacy MOVEJ "
+"alias, and means **OCS2** on mixed OCS2/WBC stacks"
 msgstr ""
-"ros2 topic echo /fsm_state\n"
-"ros2 topic echo /mode_state\n"
+"README：`1` HOME，`2` HOLD，`4` MOVEJ（规范命令）；`3` 是独立使用时的旧 MOVEJ 别名，在混合 "
+"OCS2/WBC 栈上表示 **OCS2**"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:167
-#: 59a90a488d1445bda183435167132e35
-msgid "Check Topic Flow"
-msgstr "检查话题流向"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: ../../source/3-concepts/4-fsm_and_topics.md:33
+#: 753cb30653ec4c93a99df63703360f58 f34cc1ac09914710bd4466259e041f05
+msgid "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
+msgstr "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:169
-#: f6a6ecc2be7e4635bda8a85926217933
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 8fb6783656e043a5b1358291866e2c5d
+msgid "HOME / OCS2 / HOLD"
+msgstr "HOME / OCS2 / HOLD"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 65af23e651f54172bab53501cba33227
 msgid ""
-"# List all topics\n"
-"ros2 topic list\n"
-"\n"
-"# Check publishing rate\n"
-"ros2 topic hz /target_pose\n"
-"\n"
-"# Inspect message\n"
-"ros2 topic echo /target_pose --once"
+"README: `1` HOME, `2` HOLD, `3` OCS2 on `/control_input`; starts in HOLD;"
+" OCS2 returns only to HOLD"
 msgstr ""
-"# List all topics\n"
-"ros2 topic list\n"
-"\n"
-"# Check publishing rate\n"
-"ros2 topic hz /target_pose\n"
-"\n"
-"# Inspect message\n"
-"ros2 topic echo /target_pose --once"
+"README：在 `/control_input` 上 `1` HOME、`2` HOLD、`3` OCS2；从 HOLD 启动；OCS2 "
+"只能回到 HOLD"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:180
-#: f52ae32970cb482981228517a01da626
-msgid "Verify Connections"
-msgstr "验证连接"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 329cba2e5e584425b0844fbaa4ded7fd
+msgid "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
+msgstr "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:182
-#: a810c693af4144bdac15d6faccf1bf2b
-msgid "ros2 topic info /target_pose\n"
-msgstr "ros2 topic info /target_pose\n"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 018ccef9f19d40d49a6c25b152f52b49
+msgid "Whole-body stack"
+msgstr "全身栈"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:186
-#: 6a89304a2e3d41b282c0cbb317f51932
-msgid "Integration Example"
-msgstr "集成示例"
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: 15c5e58e4dfb4900a2405adfbfec95df
+msgid "Private package; do not invent states here"
+msgstr "私有软件包；此处不编造状态"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:188
-#: ea31c57a0bc846d3bd5d0667a468dd06
-#, python-brace-format
+#: ../../source/3-concepts/4-fsm_and_topics.md:23
+#: 3f3fd6eadcf1497795fc2f65313ab3b4
+msgid "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
+msgstr "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:27
+#: 94678c4c8594405fba17ab5a57e64f50
 msgid ""
-"import rclpy\n"
-"from rclpy.node import Node\n"
-"from std_msgs.msg import String, Int32\n"
-"from geometry_msgs.msg import PoseStamped\n"
-"\n"
-"class ControlClient(Node):\n"
-"    def __init__(self):\n"
-"        super().__init__('control_client')\n"
-"        \n"
-"        self.fsm_pub = self.create_publisher(String, '/fsm_command', 10)\n"
-"        self.mode_pub = self.create_publisher(Int32, '/mode_command', 10)\n"
-"        self.target_pub = self.create_publisher(PoseStamped, '/target_pose', 10)\n"
-"        \n"
-"        self.fsm_sub = self.create_subscription(\n"
-"            String, '/fsm_state', self.fsm_callback, 10)\n"
-"    \n"
-"    def set_teleop_mode(self):\n"
-"        msg = String()\n"
-"        msg.data = 'teleop'\n"
-"        self.fsm_pub.publish(msg)\n"
-"    \n"
-"    def send_target(self, x, y, z):\n"
-"        target = PoseStamped()\n"
-"        target.header.frame_id = 'base_link'\n"
-"        target.header.stamp = self.get_clock().now().to_msg()\n"
-"        target.pose.position.x = x\n"
-"        target.pose.position.y = y\n"
-"        target.pose.position.z = z\n"
-"        target.pose.orientation.w = 1.0\n"
-"        self.target_pub.publish(target)\n"
-"    \n"
-"    def fsm_callback(self, msg):\n"
-"        self.get_logger().info(f'FSM state: {msg.data}')\n"
+"Split vs whole-body launches (and the Lift2S `quick_start` **split body**"
+" / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not "
+"describe teleop as a separate FSM state — [Isomorphic "
+"Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
 msgstr ""
-"import rclpy\n"
-"from rclpy.node import Node\n"
-"from std_msgs.msg import String, Int32\n"
-"from geometry_msgs.msg import PoseStamped\n"
-"\n"
-"class ControlClient(Node):\n"
-"    def __init__(self):\n"
-"        super().__init__('control_client')\n"
-"        \n"
-"        self.fsm_pub = self.create_publisher(String, '/fsm_command', 10)\n"
-"        self.mode_pub = self.create_publisher(Int32, '/mode_command', 10)\n"
-"        self.target_pub = self.create_publisher(PoseStamped, '/target_pose', 10)\n"
-"        \n"
-"        self.fsm_sub = self.create_subscription(\n"
-"            String, '/fsm_state', self.fsm_callback, 10)\n"
-"    \n"
-"    def set_teleop_mode(self):\n"
-"        msg = String()\n"
-"        msg.data = 'teleop'\n"
-"        self.fsm_pub.publish(msg)\n"
-"    \n"
-"    def send_target(self, x, y, z):\n"
-"        target = PoseStamped()\n"
-"        target.header.frame_id = 'base_link'\n"
-"        target.header.stamp = self.get_clock().now().to_msg()\n"
-"        target.pose.position.x = x\n"
-"        target.pose.position.y = y\n"
-"        target.pose.position.z = z\n"
-"        target.pose.orientation.w = 1.0\n"
-"        self.target_pub.publish(target)\n"
-"    \n"
-"    def fsm_callback(self, msg):\n"
-"        self.get_logger().info(f'FSM state: {msg.data}')\n"
+"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** "
+"菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — "
+"[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:29
+#: ffe66e5df1a3412a8c6f676c41c3ec7d
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:31
+#: bc28151ba1504ca29adf6377357996b9
+msgid "[Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"
+msgstr "[使用 basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:34
+#: e80cf3c7c9c94050b274f3d0e9132017
+msgid "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
+msgstr "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:35
+#: 54a7dfacfa754e92be51d43d4aa5766e
+msgid "[Controllers reference](../4-reference/controllers/0-index.md)"
+msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 
 #~ msgid ""
 #~ "idle → position_control → cartesian_control → teleop\n"
@@ -740,3 +192,565 @@ msgstr ""
 #~ "idle → position_control → cartesian_control → teleop\n"
 #~ "  ↑                                              ↓\n"
 #~ "  ←←←←←←←←←← （任意状态） ←←←←←←←←←←←←←←←←←←←←←←←\n"
+
+#~ msgid ""
+#~ "This page explains the finite state "
+#~ "machine (FSM) architecture and topic "
+#~ "contracts used for robot control."
+#~ msgstr "本页说明用于机器人控制的有限状态机（FSM）架构与话题约定。"
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid "The control stack uses FSM patterns for:"
+#~ msgstr "控制技术栈将 FSM 模式用于："
+
+#~ msgid "Mode switching (arm control, teleop, walking)"
+#~ msgstr "模式切换（机械臂控制、遥操作、行走）"
+
+#~ msgid "Safety state management"
+#~ msgstr "安全状态管理"
+
+#~ msgid "Coordinated multi-system behavior"
+#~ msgstr "多系统协同行为"
+
+#~ msgid "FSM Topics"
+#~ msgstr "FSM 话题"
+
+#~ msgid "Command Topics"
+#~ msgstr "命令话题"
+
+#~ msgid "Topic"
+#~ msgstr "话题"
+
+#~ msgid "Type"
+#~ msgstr "类型"
+
+#~ msgid "Purpose"
+#~ msgstr "用途"
+
+#~ msgid "`/fsm_command`"
+#~ msgstr "`/fsm_command`"
+
+#~ msgid "`std_msgs/String`"
+#~ msgstr "`std_msgs/String`"
+
+#~ msgid "High-level state commands"
+#~ msgstr "高层状态命令"
+
+#~ msgid "`/mode_command`"
+#~ msgstr "`/mode_command`"
+
+#~ msgid "Numeric mode selection"
+#~ msgstr "数字模式选择"
+
+#~ msgid "State Topics"
+#~ msgstr "状态话题"
+
+#~ msgid "`/fsm_state`"
+#~ msgstr "`/fsm_state`"
+
+#~ msgid "Current FSM state"
+#~ msgstr "当前 FSM 状态"
+
+#~ msgid "`/mode_state`"
+#~ msgstr "`/mode_state`"
+
+#~ msgid "Current mode"
+#~ msgstr "当前模式"
+
+#~ msgid "Common FSM States"
+#~ msgstr "常见 FSM 状态"
+
+#~ msgid "Description"
+#~ msgstr "描述"
+
+#~ msgid "`idle`"
+#~ msgstr "`idle`"
+
+#~ msgid "No active control"
+#~ msgstr "无主动控制"
+
+#~ msgid "`position_control`"
+#~ msgstr "`position_control`"
+
+#~ msgid "Joint position control"
+#~ msgstr "关节位置控制"
+
+#~ msgid "`cartesian_control`"
+#~ msgstr "`cartesian_control`"
+
+#~ msgid "End-effector pose control"
+#~ msgstr "末端执行器位姿控制"
+
+#~ msgid "`teleop`"
+#~ msgstr "`teleop`"
+
+#~ msgid "Teleoperation mode"
+#~ msgstr "遥操作模式"
+
+#~ msgid "Wheeled-arm humanoid states (WBC)"
+#~ msgstr "轮臂人形状态（WBC）"
+
+#~ msgid "`stand`"
+#~ msgstr "`stand`"
+
+#~ msgid "Standing position"
+#~ msgstr "站立姿态"
+
+#~ msgid "`walk`"
+#~ msgstr "`walk`"
+
+#~ msgid "Walking mode"
+#~ msgstr "行走模式"
+
+#~ msgid "`arm_teleop`"
+#~ msgstr "`arm_teleop`"
+
+#~ msgid "Arm teleoperation"
+#~ msgstr "机械臂遥操作"
+
+#~ msgid "`full_body_teleop`"
+#~ msgstr "`full_body_teleop`"
+
+#~ msgid "Full body control"
+#~ msgstr "全身控制"
+
+#~ msgid "Mode Commands"
+#~ msgstr "模式 命令"
+
+#~ msgid "Mode commands are typically numeric:"
+#~ msgstr "模式命令通常为数字："
+
+#~ msgid ""
+#~ "# Example mode definitions\n"
+#~ "MODE_IDLE = 0\n"
+#~ "MODE_POSITION = 1\n"
+#~ "MODE_CARTESIAN = 2\n"
+#~ "MODE_TELEOP = 3"
+#~ msgstr ""
+#~ "# Example mode definitions\n"
+#~ "MODE_IDLE = 0\n"
+#~ "MODE_POSITION = 1\n"
+#~ "MODE_CARTESIAN = 2\n"
+#~ "MODE_TELEOP = 3"
+
+#~ msgid "Send mode command:"
+#~ msgstr "发送模式命令："
+
+#~ msgid "Target Topics"
+#~ msgstr "目标话题"
+
+#~ msgid "End-Effector Targets"
+#~ msgstr "末端执行器目标"
+
+#~ msgid "`/target_pose`"
+#~ msgstr "`/target_pose`"
+
+#~ msgid "`PoseStamped`"
+#~ msgstr "`PoseStamped`"
+
+#~ msgid "Single arm EE target"
+#~ msgstr "单臂末端执行器目标"
+
+#~ msgid "`/left_target_pose`"
+#~ msgstr "`/left_target_pose`"
+
+#~ msgid "Left arm target"
+#~ msgstr "左臂目标"
+
+#~ msgid "`/right_target_pose`"
+#~ msgstr "`/right_target_pose`"
+
+#~ msgid "Right arm target"
+#~ msgstr "右臂目标"
+
+#~ msgid "Joint Targets"
+#~ msgstr "关节目标"
+
+#~ msgid "`/target_joint_positions`"
+#~ msgstr "`/target_joint_positions`"
+
+#~ msgid "`JointState`"
+#~ msgstr "`JointState`"
+
+#~ msgid "Joint position targets"
+#~ msgstr "关节位置目标"
+
+#~ msgid "Teleop Targets"
+#~ msgstr "遥操作目标"
+
+#~ msgid "`/teleop/left_ee_pose`"
+#~ msgstr "`/teleop/left_ee_pose`"
+
+#~ msgid "Left teleop input"
+#~ msgstr "左侧遥操作输入"
+
+#~ msgid "`/teleop/right_ee_pose`"
+#~ msgstr "`/teleop/right_ee_pose`"
+
+#~ msgid "Right teleop input"
+#~ msgstr "右侧遥操作输入"
+
+#~ msgid "`/teleop/head_pose`"
+#~ msgstr "`/teleop/head_pose`"
+
+#~ msgid "Head tracking input"
+#~ msgstr "头部跟踪输入"
+
+#~ msgid "Topic Contracts"
+#~ msgstr "话题约定"
+
+#~ msgid "Target Pose Contract"
+#~ msgstr "目标位姿约定"
+
+#~ msgid "Publishers (teleop, planners) must:"
+#~ msgstr "发布者（遥操作、规划器）必须："
+
+#~ msgid "Use consistent frame_id (typically `base_link`)"
+#~ msgstr "使用一致的 frame_id（通常为 `base_link`）"
+
+#~ msgid "Publish at consistent rate (10-100 Hz typical)"
+#~ msgstr "以稳定频率发布（通常 10–100 Hz）"
+
+#~ msgid "Include valid orientation quaternion"
+#~ msgstr "包含有效的姿态四元数"
+
+#~ msgid ""
+#~ "from geometry_msgs.msg import PoseStamped\n"
+#~ "\n"
+#~ "target = PoseStamped()\n"
+#~ "target.header.frame_id = \"base_link\"\n"
+#~ "target.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "target.pose.position.x = 0.3\n"
+#~ "target.pose.position.y = 0.0\n"
+#~ "target.pose.position.z = 0.4\n"
+#~ "target.pose.orientation.w = 1.0  # Valid quaternion!"
+#~ msgstr ""
+#~ "from geometry_msgs.msg import PoseStamped\n"
+#~ "\n"
+#~ "target = PoseStamped()\n"
+#~ "target.header.frame_id = \"base_link\"\n"
+#~ "target.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "target.pose.position.x = 0.3\n"
+#~ "target.pose.position.y = 0.0\n"
+#~ "target.pose.position.z = 0.4\n"
+#~ "target.pose.orientation.w = 1.0  # Valid quaternion!"
+
+#~ msgid "Joint State Contract"
+#~ msgstr "关节状态约定"
+
+#~ msgid "Publishers must:"
+#~ msgstr "发布者必须："
+
+#~ msgid "Include all joint names"
+#~ msgstr "包含所有关节名称"
+
+#~ msgid "Match joint order to URDF"
+#~ msgstr "关节顺序与 URDF 一致"
+
+#~ msgid "Provide positions at minimum (velocity/effort optional)"
+#~ msgstr "至少提供位置（速度/力矩可选）"
+
+#~ msgid ""
+#~ "from sensor_msgs.msg import JointState\n"
+#~ "\n"
+#~ "js = JointState()\n"
+#~ "js.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "js.name = ['joint_1', 'joint_2', 'joint_3',"
+#~ " 'joint_4', 'joint_5', 'joint_6']\n"
+#~ "js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]\n"
+#~ msgstr ""
+#~ "from sensor_msgs.msg import JointState\n"
+#~ "\n"
+#~ "js = JointState()\n"
+#~ "js.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "js.name = ['joint_1', 'joint_2', 'joint_3',"
+#~ " 'joint_4', 'joint_5', 'joint_6']\n"
+#~ "js.position = [0.0, -0.5, 0.5, 0.0, 0.5, 0.0]\n"
+
+#~ msgid "State Transitions"
+#~ msgstr "状态转换"
+
+#~ msgid "Safe Transitions"
+#~ msgstr "安全转换"
+
+#~ msgid ""
+#~ "idle → position_control → cartesian_control → teleop\n"
+#~ "  ↑                                              ↓\n"
+#~ "  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←"
+#~ msgstr ""
+#~ "idle → position_control → cartesian_control → teleop\n"
+#~ "  ↑                                              ↓\n"
+#~ "  ←←←←←←←←←← (any state) ←←←←←←←←←←←←←←←←←←←←←←←"
+
+#~ msgid "Sending Transitions"
+#~ msgstr "发送转换命令"
+
+#~ msgid ""
+#~ "# Enter teleop mode\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'teleop'}\" --once\n"
+#~ ""
+#~ "\n"
+#~ "# Return to idle\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'idle'}\" --once"
+#~ msgstr ""
+#~ "# Enter teleop mode\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'teleop'}\" --once\n"
+#~ ""
+#~ "\n"
+#~ "# Return to idle\n"
+#~ "ros2 topic pub /fsm_command "
+#~ "std_msgs/msg/String \"{data: 'idle'}\" --once"
+
+#~ msgid "QoS Settings"
+#~ msgstr "QoS 设置"
+
+#~ msgid "Recommended QoS for control topics:"
+#~ msgstr "控制话题推荐的 QoS："
+
+#~ msgid "Topic Type"
+#~ msgstr "话题 类型"
+
+#~ msgid "Reliability"
+#~ msgstr "可靠性"
+
+#~ msgid "Durability"
+#~ msgstr "持久性"
+
+#~ msgid "History"
+#~ msgstr "历史"
+
+#~ msgid "Volatile"
+#~ msgstr "易失"
+
+#~ msgid "Keep last 1"
+#~ msgstr "只保留最新 1 条"
+
+#~ msgid "Transient local"
+#~ msgstr "瞬时本地"
+
+#~ msgid "Targets"
+#~ msgstr "目标"
+
+#~ msgid "Best effort"
+#~ msgstr "尽力而为"
+
+#~ msgid "Joint states"
+#~ msgstr "关节状态"
+
+#~ msgid "Debugging"
+#~ msgstr "调试"
+
+#~ msgid "Monitor FSM State"
+#~ msgstr "监视 FSM 状态"
+
+#~ msgid ""
+#~ "ros2 topic echo /fsm_state\n"
+#~ "ros2 topic echo /mode_state\n"
+#~ msgstr ""
+#~ "ros2 topic echo /fsm_state\n"
+#~ "ros2 topic echo /mode_state\n"
+
+#~ msgid "Check Topic Flow"
+#~ msgstr "检查话题流向"
+
+#~ msgid ""
+#~ "# List all topics\n"
+#~ "ros2 topic list\n"
+#~ "\n"
+#~ "# Check publishing rate\n"
+#~ "ros2 topic hz /target_pose\n"
+#~ "\n"
+#~ "# Inspect message\n"
+#~ "ros2 topic echo /target_pose --once"
+#~ msgstr ""
+#~ "# List all topics\n"
+#~ "ros2 topic list\n"
+#~ "\n"
+#~ "# Check publishing rate\n"
+#~ "ros2 topic hz /target_pose\n"
+#~ "\n"
+#~ "# Inspect message\n"
+#~ "ros2 topic echo /target_pose --once"
+
+#~ msgid "Verify Connections"
+#~ msgstr "验证连接"
+
+#~ msgid "ros2 topic info /target_pose\n"
+#~ msgstr "ros2 topic info /target_pose\n"
+
+#~ msgid "Integration Example"
+#~ msgstr "集成示例"
+
+#~ msgid ""
+#~ "import rclpy\n"
+#~ "from rclpy.node import Node\n"
+#~ "from std_msgs.msg import String, Int32\n"
+#~ "from geometry_msgs.msg import PoseStamped\n"
+#~ "\n"
+#~ "class ControlClient(Node):\n"
+#~ "    def __init__(self):\n"
+#~ "        super().__init__('control_client')\n"
+#~ "        \n"
+#~ "        self.fsm_pub = self.create_publisher(String,"
+#~ " '/fsm_command', 10)\n"
+#~ "        self.mode_pub = self.create_publisher(Int32,"
+#~ " '/mode_command', 10)\n"
+#~ "        self.target_pub = "
+#~ "self.create_publisher(PoseStamped, '/target_pose', 10)"
+#~ "\n"
+#~ "        \n"
+#~ "        self.fsm_sub = self.create_subscription(\n"
+#~ "            String, '/fsm_state', self.fsm_callback, 10)\n"
+#~ "    \n"
+#~ "    def set_teleop_mode(self):\n"
+#~ "        msg = String()\n"
+#~ "        msg.data = 'teleop'\n"
+#~ "        self.fsm_pub.publish(msg)\n"
+#~ "    \n"
+#~ "    def send_target(self, x, y, z):\n"
+#~ "        target = PoseStamped()\n"
+#~ "        target.header.frame_id = 'base_link'\n"
+#~ "        target.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "        target.pose.position.x = x\n"
+#~ "        target.pose.position.y = y\n"
+#~ "        target.pose.position.z = z\n"
+#~ "        target.pose.orientation.w = 1.0\n"
+#~ "        self.target_pub.publish(target)\n"
+#~ "    \n"
+#~ "    def fsm_callback(self, msg):\n"
+#~ "        self.get_logger().info(f'FSM state: {msg.data}')\n"
+#~ msgstr ""
+#~ "import rclpy\n"
+#~ "from rclpy.node import Node\n"
+#~ "from std_msgs.msg import String, Int32\n"
+#~ "from geometry_msgs.msg import PoseStamped\n"
+#~ "\n"
+#~ "class ControlClient(Node):\n"
+#~ "    def __init__(self):\n"
+#~ "        super().__init__('control_client')\n"
+#~ "        \n"
+#~ "        self.fsm_pub = self.create_publisher(String,"
+#~ " '/fsm_command', 10)\n"
+#~ "        self.mode_pub = self.create_publisher(Int32,"
+#~ " '/mode_command', 10)\n"
+#~ "        self.target_pub = "
+#~ "self.create_publisher(PoseStamped, '/target_pose', 10)"
+#~ "\n"
+#~ "        \n"
+#~ "        self.fsm_sub = self.create_subscription(\n"
+#~ "            String, '/fsm_state', self.fsm_callback, 10)\n"
+#~ "    \n"
+#~ "    def set_teleop_mode(self):\n"
+#~ "        msg = String()\n"
+#~ "        msg.data = 'teleop'\n"
+#~ "        self.fsm_pub.publish(msg)\n"
+#~ "    \n"
+#~ "    def send_target(self, x, y, z):\n"
+#~ "        target = PoseStamped()\n"
+#~ "        target.header.frame_id = 'base_link'\n"
+#~ "        target.header.stamp = self.get_clock().now().to_msg()\n"
+#~ "        target.pose.position.x = x\n"
+#~ "        target.pose.position.y = y\n"
+#~ "        target.pose.position.z = z\n"
+#~ "        target.pose.orientation.w = 1.0\n"
+#~ "        self.target_pub.publish(target)\n"
+#~ "    \n"
+#~ "    def fsm_callback(self, msg):\n"
+#~ "        self.get_logger().info(f'FSM state: {msg.data}')\n"
+
+#~ msgid "分体控制 vs 全身控制"
+#~ msgstr "分体控制 vs 全身控制"
+
+#~ msgid "Mode"
+#~ msgstr "模式"
+
+#~ msgid "Chinese"
+#~ msgstr "中文"
+
+#~ msgid "What runs"
+#~ msgstr "实际运行"
+
+#~ msgid "Launch"
+#~ msgstr "启动"
+
+#~ msgid "**Split**"
+#~ msgstr "**分体**"
+
+#~ msgid "分体控制"
+#~ msgstr "分体控制"
+
+#~ msgid ""
+#~ "Arm MPC "
+#~ "([ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md))"
+#~ " + body/head (and typically hands) "
+#~ "via "
+#~ "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
+#~ msgstr ""
+#~ "手臂 "
+#~ "MPC（[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)）+"
+#~ " 身体/头（通常还有手）由 "
+#~ "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
+#~ " 控制"
+
+#~ msgid ""
+#~ "`ros2 launch ocs2_arm_controller "
+#~ "split_body.launch.py` (`launch_mode` `split_body`)"
+#~ msgstr ""
+#~ "`ros2 launch ocs2_arm_controller "
+#~ "split_body.launch.py`（`launch_mode` 为 `split_body`）"
+
+#~ msgid "**Whole-body**"
+#~ msgstr "**全身**"
+
+#~ msgid "全身控制"
+#~ msgstr "全身控制"
+
+#~ msgid ""
+#~ "Unified "
+#~ "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) "
+#~ "(`ocs2_wheel_humanoid`)"
+#~ msgstr ""
+#~ "统一的 "
+#~ "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)（`ocs2_wheel_humanoid`）"
+
+#~ msgid ""
+#~ "`ros2 launch ocs2_arm_controller "
+#~ "full_body.launch.py` (`launch_mode` `full_body`) "
+#~ "when the config type is "
+#~ "`ocs2_wbc_controller/Ocs2WbcController`"
+#~ msgstr ""
+#~ "`ros2 launch ocs2_arm_controller "
+#~ "full_body.launch.py` (`launch_mode` `full_body`) "
+#~ "when the config type is "
+#~ "`ocs2_wbc_controller/Ocs2WbcController`"
+
+#~ msgid ""
+#~ "Do not describe teleop as a "
+#~ "separate FSM state. Implemented teleop "
+#~ "is the isomorphic path — [Isomorphic "
+#~ "Teleop](../2-how_to/7-isomorphic_teleop.md) — not a"
+#~ " `/teleop/left_ee_pose` contract on this "
+#~ "page."
+#~ msgstr ""
+#~ "不要把遥操作写成单独的 FSM 状态。已实现的遥操作是同构路径 — "
+#~ "[同构遥操作](../2-how_to/7-isomorphic_teleop.md) — 不是本页上的 "
+#~ "`/teleop/left_ee_pose` 约定。"
+
+#~ msgid ""
+#~ "`/fsm_command` is **`std_msgs/Int32`**, not "
+#~ "`String`. There is no documented "
+#~ "`/mode_command`, `/fsm_state` String, or "
+#~ "wheeled-arm `stand` / `walk` / "
+#~ "`arm_teleop` contract. Per-controller topics:"
+#~ " the controller pages and package "
+#~ "READMEs."
+#~ msgstr ""
+#~ "`/fsm_command` 是 **`std_msgs/Int32`**，不是 "
+#~ "`String`。没有文档化的 `/mode_command`、`/fsm_state` String，或轮臂人形的"
+#~ " `stand` / `walk` / `arm_teleop` "
+#~ "约定。各控制器话题见对应页面和软件包 README。"

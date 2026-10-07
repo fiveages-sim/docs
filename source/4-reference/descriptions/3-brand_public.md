@@ -2,7 +2,24 @@
 
 Public robot description packages for specific brands.
 
-## Dobot
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Do not invent brands. Display names used in this docs set:
+
+| 中文简称 | English brand / identifier |
+|----------|----------------------------|
+| 越疆 | Dobot |
+| 方舟无限 | ARX |
+| 银河通用 | Galbot |
+| 高擎 | HighTorque, Panthera |
+| 中科第五纪 | FiveAges |
+| 天机智能 | Tianji, Gento |
+| 智元 | Agibot |
+| 因时 | Inspire |
+| 舞肌 | Wuji |
+| 法奥 | Fairino |
+| 珞石 | Rokae |
+| 优必选 | Ubtech |
+
+## Dobot (越疆)
 
 **Repository:** [fiveages-sim/robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot)
 
@@ -16,22 +33,18 @@ Public robot description packages for specific brands.
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=cr5
 ```
 
 ### Parameters
 
 | Parameter | Values |
 |-----------|--------|
-| `robot` | `dobot_cr5`, `dobot_cr10` |
+| `robot` | `cr5` (`demo.launch.py` default). Package: `dobot_cr5_description` |
 
-```{admonition} TODO
-:class: note
+End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-common.md). Not `gripper:=`.
 
-For valid gripper options, check the launch files in `arms_ros2_control`.
-```
-
-## ARX
+## ARX (方舟无限)
 
 **Repository:** [fiveages-sim/robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx)
 
@@ -40,20 +53,20 @@ For valid gripper options, check the launch files in `arms_ros2_control`.
 | Robot | Package | Type | Real Hardware |
 |-------|---------|------|---------------|
 | X5 | `arx_x5_description` | Arm | Co-debug in `arx-lift2s` |
-| **Acone** | `arx_acone_description` | **Arm only** | Not Lift 2s; `quick_start` co-debug |
-| **Lift 2s (Ark)** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
+| **Acone** / **AC One** | `arx_acone_description` | **Arm only** | Not Lift 2S; `quick_start` co-debug |
+| **Lift 2S** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
 
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**Ark / Lift 2s** is the full-body 方舟 platform. **Acone** is the arm only. See [Ark / Lift 2s](../../2-how_to/11-ark_lift2s.md).
+**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 ```
 
 ### Usage
 
 ```bash
-# Acone arm mock (not Lift 2s). Full-body Ark / Lift 2s: see the dedicated how-to.
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+# Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
 ### CAN Configuration
@@ -65,7 +78,7 @@ sudo ip link set can0 type can bitrate 1000000
 sudo ip link set can0 up
 ```
 
-## Galbot
+## Galbot (银河通用)
 
 **Repository:** [fiveages-sim/robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot)
 
@@ -78,7 +91,7 @@ sudo ip link set can0 up
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1
 ```
 
 ### Features
@@ -87,9 +100,9 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 - Integrated navigation
 - Multiple arm configurations
 
-## HT
+## HighTorque (高擎)
 
-**Repository:** [fiveages-sim/robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht)
+**Repository:** [fiveages-sim/panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) (umbrella path `manipulator/HighTorque/panthera_ht_description`)
 
 ### Robots
 
@@ -100,13 +113,13 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [Panthera HT](../../2-how_to/12-panthera_ht.md). Launch name in that README is `panthera_ht`.
+**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md). Launch name in that README is `panthera_ht`.
 ```
 
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht
 ```
 
 ### Features
@@ -127,34 +140,6 @@ Quadruped robot descriptions for legged locomotion.
 
 Typically used with separate quadruped controller stacks.
 
-## Package Structure
+## Package layout
 
-Each brand package follows the standard layout:
-
-:::{code-block} none
-robot-descriptions-<brand>/
-├── <robot>_description/
-│   ├── CMakeLists.txt
-│   ├── package.xml
-│   ├── urdf/
-│   │   ├── <robot>.urdf.xacro
-│   │   └── <robot>.ros2_control.xacro
-│   ├── meshes/
-│   │   ├── visual/
-│   │   └── collision/
-│   ├── config/
-│   │   └── ocs2_arm_config.yaml
-│   └── launch/
-│       └── display.launch.py
-└── ...
-:::
-
-## Adding a New Brand
-
-1. Create repository following naming convention
-2. Add description packages for each robot
-3. Include ros2_control configurations
-4. Add as submodule to `robot_descriptions`
-5. Update documentation
-
-See [Add a Robot](../../2-how_to/10-add_a_robot.md) for detailed steps.
+Do not use a generic `urdf/` + `ocs2_arm_config.yaml` + `display.launch.py` tree. Copy a real package (Acone: `xacro/`, `xacro/ros2_control/`, `config/ocs2/`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Umbrella submodule paths: [robot_descriptions](1-robot_descriptions.md).

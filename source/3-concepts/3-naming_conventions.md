@@ -1,167 +1,62 @@
 # Naming Conventions
 
-This page documents the naming patterns used throughout the FiveAges Sim ecosystem.
+Names that this docs set actually uses, from [robot_common_launch](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md) and deploy-ws / controller READMEs.
 
-## Launch Parameters
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限 (not bare “Ark”). **HighTorque** / Panthera is 高擎. Repo and script names stay as quoted (`arx-lift2s`, `./init_repo.sh`).
 
-### Robot Selection
+## Launch arguments (`robot_common_launch`)
 
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| `robot` | Main robot name | `dobot_cr5`, `arx_acone` (arm), `arx_lift2s`, `panthera_ht` |
-| `type` | Robot type/variant | `cr5`, `cr10` |
-| `left_type` | Left arm type (dual-arm) | `tianji_m6` |
-| `right_type` | Right arm type (dual-arm) | `tianji_m6` |
+| Argument | Purpose | Notes |
+|----------|---------|-------|
+| `robot` | Description key | Examples used in READMEs / how-tos: `cr5` (OCS2 demo default), `arx_acone`, `arx_lift2s`, `panthera_ht` |
+| `type` | Symmetric **end-effector** key, **or** arm topology `left` / `right` / `dual` | Topology does **not** expand to `left_type` / `right_type` |
+| `left_type` / `right_type` | Different L/R EEF keys | Example keys: `rg75`, `ag2f90_c`, `linkerhand_o7`. **Do not pass `type:=`** with them |
+| `use_profile_eef` | Apply profile `defaults.end_effectors` (default `true`) | `false` forces CLI EEF |
+| `robot_profile` | Machine-profile YAML path | Merge: **CLI > profile > xacro defaults** |
+| `ft` / `left_ft` / `right_ft` | Force-torque | Not gated by `use_profile_eef`. Example: `kwr75_485` |
+| `hardware` | Plugin / overlay key | See below |
 
-```bash
-# Single arm
+There is no `gripper:=` / `gripper_type:=`. Full merge: [robot_common_launch](../4-reference/descriptions/2-common.md).
+
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5
 
-# Dual arm
-ros2 launch dual_arm_controller demo.launch.py left_type:=tianji_m6 right_type:=tianji_m6
-```
+ros2 launch ocs2_arm_controller demo.launch.py \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7
+:::
 
-### Hardware Mode
+### `hardware:=`
 
-| Parameter | Options | Description |
-|-----------|---------|-------------|
-| `hardware` | `mock`, `gz`, `isaac`, (vendor) | Hardware interface type |
+Passed through as xacro `ros2_control_hardware_type` ([`build_xacro_mappings()`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)).
 
-The actual hardware identifier varies by robot (e.g., `real`, `can`, `tcp`).
+| Value | Meaning |
+|-------|---------|
+| `mock_components` | Default on `ocs2_arm_controller` `demo.launch.py` and `basic_joint_controller` `demo.launch.py` |
+| `gz` | Gazebo |
+| `isaac` | Isaac (`topic_based_ros2_control`); may merge `config/ros2_control/isaac.yaml` if present |
+| `real` | Vendor HI; profile `hardware:` YAML applies only here |
 
-### Gripper
+There is **no** documented `hardware:=mock` key. Plugins: [ros2_control in This Stack](1-ros2_control_here.md).
 
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| `gripper` | Gripper model | `dh_ag95`, `inspire_rh56` |
-| `gripper_type` | Gripper variant | (varies) |
+## Packages (examples that exist)
 
-## Package Naming
+| Kind | Pattern / example | Source |
+|------|-------------------|--------|
+| Description umbrella | `src/robot-descriptions/…` | open-deploy-ws README |
+| Brand descriptions | `robot-descriptions-arx` (`arx_acone_description`, `arx_lift2s_description`, …) | [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) |
+| Controllers | `basic_joint_controller`, `ocs2_arm_controller`, `adaptive_gripper_controller` | arms_ros2_control |
+| Isaac HI | `topic_based_ros2_control` | arms_ros2_control README |
 
-### Description Packages
+Do not invent `arms_teleop_controller` as a controller package name; teleop packages are listed on the teleop reference pages.
 
-Pattern: `robot-descriptions-<brand>` or `<robot>-description`
+## Topics (do not invent extras)
 
-| Package | Robot(s) |
-|---------|----------|
-| `robot-descriptions-dobot` | Dobot CR series |
-| `robot-descriptions-arx` | ARX X5, Acone (arm), Lift 2s (Ark) |
-| `robot-descriptions-common` | Shared components |
-| `fa-w2-description` | FiveAges W2 |
+| Topic | Type | Source |
+|-------|------|--------|
+| `/fsm_command` | `std_msgs/Int32` | `FSMCommandPublisher` / basic_joint README (`1` HOME, `2` HOLD, `3` OCS2 / legacy MOVEJ, `4` MOVEJ) |
+| `/{controller}/target_joint_position` | `std_msgs/Float64MultiArray` | basic_joint MoveJ |
 
-### Hardware Interface Packages
+Per-controller lists: [FSM and Topics](4-fsm_and_topics.md). No `/joint_commands` `JointState` contract and no `/target_pose` universal API in the READMEs cited here.
 
-Pattern: `<brand>-ros2-control`
-
-| Package | Hardware |
-|---------|----------|
-| `arx-ros2-control` | ARX CAN interface |
-| `dobot-cr-ros2-control` | Dobot TCP interface |
-| `ht-ros2-control` | HT serial interface |
-
-### Controller Packages
-
-Pattern: `<function>_controller` or `ocs2_<type>_controller`
-
-| Package | Purpose |
-|---------|---------|
-| `ocs2_arm_controller` | Arm MPC controller |
-| `adaptive_gripper_controller` | Gripper control |
-| `arms_teleop_controller` | Teleop integration |
-
-## Topic Naming
-
-### Joint Topics
-
-| Topic | Type | Publisher |
-|-------|------|-----------|
-| `/joint_states` | `sensor_msgs/JointState` | Hardware interface |
-| `/joint_commands` | `sensor_msgs/JointState` | Controller |
-
-### Target Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/target_pose` | `geometry_msgs/PoseStamped` | Cartesian target |
-| `/target_joint_positions` | `sensor_msgs/JointState` | Joint space target |
-
-### Teleop Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left hand target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right hand target |
-| `/teleop/head_pose` | `PoseStamped` | Head tracking |
-
-### FSM Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/fsm_command` | `std_msgs/String` | State machine command |
-| `/fsm_state` | `std_msgs/String` | Current state |
-| `/mode_command` | `std_msgs/Int32` | Mode selection |
-
-## Frame Naming
-
-### Standard Frames
-
-| Frame | Description |
-|-------|-------------|
-| `base_link` | Robot base (fixed) |
-| `world` | World frame |
-| `odom` | Odometry frame (mobile robots) |
-| `<arm>_base_link` | Arm mounting point |
-| `<arm>_ee_link` | End effector |
-| `<arm>_tool0` | Tool frame |
-
-### Dual-Arm Frames
-
-| Frame | Description |
-|-------|-------------|
-| `left_base_link` | Left arm base |
-| `right_base_link` | Right arm base |
-| `left_ee_link` | Left end effector |
-| `right_ee_link` | Right end effector |
-
-## Configuration Files
-
-### YAML Files
-
-| File | Purpose |
-|------|---------|
-| `config/*.yaml` | Controller parameters |
-| `urdf/*.urdf.xacro` | Robot model |
-| `launch/*.launch.py` | Launch files |
-| `ocs2_arm_config.yaml` | MPC configuration |
-
-### Configuration Naming
-
-```yaml
-# Controller config pattern
-<controller_name>:
-  ros__parameters:
-    joints:
-      - joint_1
-      - joint_2
-    
-    # Nested parameters
-    mpc:
-      dt: 0.01
-      horizon: 1.0
-```
-
-## File Naming
-
-| Pattern | Example | Purpose |
-|---------|---------|---------|
-| `*.urdf.xacro` | `robot.urdf.xacro` | Robot model |
-| `*.ros2_control.xacro` | `robot.ros2_control.xacro` | Hardware config |
-| `*.launch.py` | `demo.launch.py` | Launch file |
-| `*_config.yaml` | `ocs2_arm_config.yaml` | Configuration |
-
-## Best Practices
-
-1. **Use underscores** in Python, launch parameters, and topics
-2. **Use hyphens** in package names and repository names
-3. **Be consistent** — Match existing patterns in the codebase
-4. **Prefix namespaces** — Use robot/arm prefixes for multi-robot setups
+Frame names (`base_link`, `left_ee_link`, …) are **per robot URDF**. Do not assume a stack-wide frame table.
