@@ -1,108 +1,37 @@
 # Vendor Arms (Private)
 
-Private vendor arm descriptions for FiveAges integrations.
+Private brand trees that the public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) lists as submodules. After access, follow **those package READMEs**. Do not invent `*_bringup`, `hardware:=mock`, payload numbers, or a `bringup.launch.py` stub.
 
-```{admonition} Access Required
-:class: warning
+```{admonition} Source of truth
+:class: important
 
-These packages require private repository access.
+- Paths: [robot_descriptions README (`main`)](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) and the [same file on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md) (newer Tianji / Fairino / Gento / Rokae INEX rows)
+- Launch / EEF: [robot_common_launch](2-common.md)
+- How to add a package: [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)
 ```
 
-## Tianji
+| README name | Path | Repository |
+|-------------|------|------------|
+| Tianji | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) |
+| Rokae | `manipulator/Rokae` | [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) |
+| Fairino ART7 | `manipulator/Fairino` | [robot-descriptions-fairino](https://github.com/fiveages-sim/robot-descriptions-fairino) (`feature/agilex` table) |
+| Gento | `humanoid/Gento` | [robot-descriptions-gento](https://github.com/fiveages-sim/robot-descriptions-gento) (`feature/agilex` table) |
+| Agibot G2 | `humanoid/Agibot/agibot_g2_description` | [agibot-g2-description](https://github.com/fiveages-sim/agibot-g2-description) |
+| Rokae INEX | `humanoid/Rokae/rokae_inex_description` | in-tree on `feature/agilex`; `split-chassis-glb` canonical |
 
-**Repository:** robot-descriptions-tianji
+`feature/agilex` README text for those brands (do not add models it does not name):
 
-### Robots
+- Tianji: M6-CCS, M6-SRS, M20S-CCS, Marvin Pro
+- Rokae arms: AR5-SRS, AR5-CCS; INEX is the wheel humanoid at `humanoid/Rokae`
+- Fairino: ART7 dual-arm
+- Gento: Skye, Luna; Linkhou S2 v2 + Tianji M6-CCS / M6S Lite
+- Agibot G2: private humanoid description
 
-| Robot | Description |
-|-------|-------------|
-| M6-SRS | 6-DOF arm, single robot system |
-| M6-CCS | 6-DOF arm, coordinated control |
-| M6S Lite | Lighter M6 variant |
-| M20S-CCS | 20 kg payload, coordinated |
-| Marvin Pro | Mobile manipulator |
-
-### Usage
-
-See that repository’s README after you have access. Do not invent `tianji_bringup` or `hardware:=mock`. Public `hardware:=` keys: `mock_components` / `gz` / `isaac` / `real`.
-
-### Features
-
-- Multiple drive type support
-- Visualization with OCS2
-- Real hardware integration
-
-## Rokae
-
-**Repository:** robot-descriptions-rokae
-
-### Robots
-
-| Robot | Description |
-|-------|-------------|
-| AR5 | 5 kg payload arm |
-
-### Usage
-
-See that repository’s README after you have access. Do not invent `rokae_bringup` or `hardware:=mock`.
-
-## Fairino
-
-**Repository:** robot-descriptions-fairino
-
-Fairino arm descriptions for ART SDK integration.
-
-## Gento
-
-**Repository:** robot-descriptions-gento
-
-Gento robot descriptions.
-
-## Ubtech
-
-**Repository:** robot-descriptions-ubtech
-
-Ubtech humanoid descriptions.
-
-## Agibot G2
-
-**Repository:** agibot-g2-description
-
-Agibot G2 humanoid description.
-
-## Integration Pattern
-
-All vendor descriptions follow the standard pattern:
-
-1. URDF/xacro with ros2_control tags
-2. Hardware-specific interface configuration
-3. OCS2 controller configuration
-4. Launch files
-
-### Example Launch Integration
-
-```python
-# launch/bringup.launch.py
-from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-
-def generate_launch_description():
-    return LaunchDescription([
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([
-                FindPackageShare('ocs2_arm_controller'),
-                '/launch/demo.launch.py'
-            ]),
-            launch_arguments={
-                'robot': 'vendor_robot',
-                'hardware': 'real',
-            }.items(),
-        ),
-    ])
-```
+Public `hardware:=` keys remain `mock_components` / `gz` / `isaac` / `real`.
 
 ## Related
 
-- [Hardware Interfaces](../hardware/2-private_hi.md)
+- [robot_descriptions](1-robot_descriptions.md)
+- [robot_common_launch](2-common.md)
 - [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)
+- [Hardware Interfaces](../hardware/2-private_hi.md)

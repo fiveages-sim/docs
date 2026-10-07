@@ -9,7 +9,7 @@ These packages are **not** published to Debian / ROS apt software sources (`pack
 | Package | `.deb` name | GitHub Releases | Purpose |
 |---------|-------------|-----------------|---------|
 | OCS2 | `ros-jazzy-ocs2` | [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2/releases) | MPC library |
-| Common descriptions | `ros-jazzy-robot-descriptions-common` | [fiveages-sim/robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common/releases) | Shared components |
+| Common descriptions | `ros-jazzy-robot-descriptions-common` | [fiveages-sim/robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common/releases) | Grippers / hands / sensors / `robot_common_launch` |
 | arms_ros2_control | `ros-jazzy-arms-ros2-control` | [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control/releases) | Controllers (optional) |
 
 **Recommended for most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` and choose `d` (deb) for the modules you want. To **switch** an existing module (including OCS2) between source and deb, use menu **2) 切换模块安装方式** — do not hand-edit apt lists or run `dpkg` as the primary path. Deb mode downloads those release assets via `scripts/install_core_debs.sh`.

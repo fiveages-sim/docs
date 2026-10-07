@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:08+0000\n"
+"POT-Creation-Date: 2026-10-07 02:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -33,7 +33,9 @@ msgid ""
 "[robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) "
 "umbrella this repo is the **`common`** submodule."
 msgstr ""
-"共享夹爪、灵巧手、传感器模型，以及 **`robot_common_launch`**。在 [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) 伞形仓下，本仓是 **`common`** 子模块。"
+"共享夹爪、灵巧手、传感器模型，以及 **`robot_common_launch`**。在 "
+"[robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) "
+"伞形仓下，本仓是 **`common`** 子模块。"
 
 #: ../../source/4-reference/descriptions/2-common.md:5
 #: a90a6043136346908a527f3497d7984d
@@ -47,7 +49,7 @@ msgstr ""
 #: ../../source/4-reference/descriptions/2-common.md:7
 #: f7bd30e6ff504d0db7583d4a56fc227f
 msgid "Source of truth"
-msgstr "事实来源"
+msgstr "权威来源"
 
 #: ../../source/4-reference/descriptions/2-common.md:10
 #: 51c2f16dfd964548b0cd140e971bdc53
@@ -125,7 +127,8 @@ msgstr ""
 "├── gripper/                     # one ROS package per brand\n"
 "├── dexhands/\n"
 "├── sensor_models/               # single package: meshes + URDF\n"
-"├── component_models/            # single package: meshes + xacro (not tabulated in the README)\n"
+"├── component_models/            # single package: meshes + xacro (not "
+"tabulated in the README)\n"
 "└── robot_common_launch/\n"
 "    ├── config/                  # RViz, Nav2, …\n"
 "    ├── launch/\n"
@@ -453,7 +456,8 @@ msgid ""
 "  <origin xyz=\"0 0 0\" rpy=\"0 0 0\"/>\n"
 "</xacro:robotiq_gripper>"
 msgstr ""
-"<xacro:include filename=\"$(find robotiq_description)/xacro/gripper.xacro\"/>\n"
+"<xacro:include filename=\"$(find "
+"robotiq_description)/xacro/gripper.xacro\"/>\n"
 "\n"
 "<xacro:robotiq_gripper\n"
 "  parent=\"arm_link_6\"\n"
@@ -475,7 +479,9 @@ msgid ""
 "controller packages generate `robot_description` and planning URDF "
 "through this API."
 msgstr ""
-"跨机器人 launch 入口、xacro 映射，以及 **machine profile** YAML（`robot_profile:=`）。下游可视化 / `controller_manager` / 控制器包通过这套 API 生成 `robot_description` 和规划 URDF。"
+"跨机器人 launch 入口、xacro 映射，以及 **machine profile** "
+"YAML（`robot_profile:=`）。下游可视化 / `controller_manager` / 控制器包通过这套 API 生成 "
+"`robot_description` 和规划 URDF。"
 
 #: ../../source/4-reference/descriptions/2-common.md:93
 #: c578745b68b2433391c2fcc6f4508349
@@ -491,7 +497,10 @@ msgid ""
 "`build_visualization_xacro_mappings`) → xacro → `robot_description` / "
 "planning URDF."
 msgstr ""
-"`robot_profile:=/path/to/profile.yaml` → `load_robot_profile` / `normalize_robot_profile` → `build_xacro_mappings`（或 `build_visualization_xacro_mappings`）→ xacro → `robot_description` / 规划 URDF。"
+"`robot_profile:=/path/to/profile.yaml` → `load_robot_profile` / "
+"`normalize_robot_profile` → `build_xacro_mappings`（或 "
+"`build_visualization_xacro_mappings`）→ xacro → `robot_description` / 规划 "
+"URDF。"
 
 #: ../../source/4-reference/descriptions/2-common.md:98
 #: ca4a57091233405182b4d2ad16595f25
@@ -502,7 +511,11 @@ msgid ""
 " Any launch that forwards `robot_profile` (e.g. "
 "`create_robot_profile_launch_arguments()`) uses the same path."
 msgstr ""
-"实现：[`launch_arg_utils.py`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)。任何转发 `robot_profile` 的 launch（例如 `create_robot_profile_launch_arguments()`）都走同一条路径。"
+"实现：[`launch_arg_utils.py`](https://github.com/fiveages-sim/robot-"
+"descriptions-"
+"common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)。任何转发"
+" `robot_profile` 的 launch（例如 "
+"`create_robot_profile_launch_arguments()`）都走同一条路径。"
 
 #: ../../source/4-reference/descriptions/2-common.md:101
 #: 06c3de851f5041eabf1c136ca61abd58
@@ -838,7 +851,8 @@ msgstr ""
 "common.yaml\n"
 "  → <type>.yaml / ros2_controllers.yaml\n"
 "  → {variant}.yaml          # opt-in: config/ros2_control/<variant>.yaml\n"
-"  → {hardware}.yaml         # opt-in: config/ros2_control/<hardware>.yaml\n"
+"  → {hardware}.yaml         # opt-in: config/ros2_control/<hardware>.yaml"
+"\n"
 "  → EEF compose (if any)\n"
 "  → control.patch (profile)"
 
@@ -850,7 +864,9 @@ msgid ""
 "`hardware:` (serial, `arm_ctrl_mode`) is a different layer and applies "
 "only when `hardware:=real`."
 msgstr ""
-"该 README 里的 `hardware:=` 取值：`mock_components` / `gz` / `isaac` / `real`。overlay YAML **仅当文件存在时**才合并。Profile YAML 的 `hardware:`（串口、`arm_ctrl_mode`）是另一层，只在 `hardware:=real` 时生效。"
+"该 README 里的 `hardware:=` 取值：`mock_components` / `gz` / `isaac` / "
+"`real`。overlay YAML **仅当文件存在时**才合并。Profile YAML 的 "
+"`hardware:`（串口、`arm_ctrl_mode`）是另一层，只在 `hardware:=real` 时生效。"
 
 #: ../../source/4-reference/descriptions/2-common.md:179
 #: 00a3d6b90da44e3ebdb7e5caa547a72d
@@ -864,7 +880,7 @@ msgid "From the repo README (paths under `robot_common_launch/launch/`):"
 msgstr "仓库 README（路径在 `robot_common_launch/launch/` 下）："
 
 #: ../../source/4-reference/descriptions/2-common.md:168
-#: 6a66aa30b97b4cd8bcc2e0b3ab09f563
+#: 6a66aa30b97b4cd8bcc2e0b3ab09f563 94a6417be4a54a2fbe33c40768343b00
 msgid "Kind"
 msgstr "类别"
 
@@ -875,7 +891,7 @@ msgid "Files the README names"
 msgstr "Profile schema（README）："
 
 #: ../../source/4-reference/descriptions/2-common.md:168
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: d6ad4b7166994b48a08fd1c9c72e91ad
 msgid "Visualization"
 msgstr "RViz 可视化"
@@ -889,7 +905,7 @@ msgid ""
 msgstr "`visualize.launch.py` / `humanoid.launch.py` / `manipulator.launch.py`"
 
 #: ../../source/4-reference/descriptions/2-common.md:168
-#: fa08dcea6f1c4b289de82d3c4945e4cb
+#: 14d2b2c74e5d417b83223d6ec33ccc6d fa08dcea6f1c4b289de82d3c4945e4cb
 #, fuzzy
 msgid "Control"
 msgstr "`control.patch`"
@@ -899,8 +915,7 @@ msgstr "`control.patch`"
 msgid ""
 "`control/controller_manager.launch.py`, `control/diff_drive.launch.py`, "
 "`control/hardware_visualize.launch.py`"
-msgstr ""
-"`control/controller_manager.launch.py`、`control/diff_drive.launch.py`、`control/hardware_visualize.launch.py`"
+msgstr "`control/controller_manager.launch.py`、`control/diff_drive.launch.py`、`control/hardware_visualize.launch.py`"
 
 #: ../../source/4-reference/descriptions/2-common.md:168
 #: 61b24899bcc24caaa8211ec3e86a4071
@@ -914,7 +929,7 @@ msgid "`manipulation/manipulator_ocs2.launch.py`"
 msgstr "`manipulation/manipulator_ocs2.launch.py`"
 
 #: ../../source/4-reference/descriptions/2-common.md:168
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 61b24899bcc24caaa8211ec3e86a4071
 msgid "Navigation"
 msgstr "导航"
@@ -924,15 +939,62 @@ msgstr "导航"
 msgid ""
 "`navigation/navigation.launch.py`, `navigation/cartographer.launch.py`, "
 "`navigation/navigation_slam.launch.py`, `navigation/amr_rctk.launch.py`"
-msgstr ""
-"`navigation/navigation.launch.py`、`navigation/cartographer.launch.py`、`navigation/navigation_slam.launch.py`、`navigation/amr_rctk.launch.py`"
+msgstr "`navigation/navigation.launch.py`、`navigation/cartographer.launch.py`、`navigation/navigation_slam.launch.py`、`navigation/amr_rctk.launch.py`"
 
 #: ../../source/4-reference/descriptions/2-common.md:190
+#: 328eea5cf1c54e43b4c3263ccb58467a
+msgid ""
+"Also on `main` under `launch/` (not named in that README table; do not "
+"invent others):"
+msgstr "`main` 的 `launch/` 下还有这些文件（README 表没点名；不要再编造）："
+
+#: ../../source/4-reference/descriptions/2-common.md:168
+#: b3f985a376c54dccb89efffce87dedeb
+msgid "Extra files"
+msgstr "额外文件"
+
+#: ../../source/4-reference/descriptions/2-common.md:168
+#: 3f3cad0ae2d64a8c9239ed60c400328d
+msgid ""
+"`visualize/visualize.launch.py`, `visualize/component.launch.py` (named "
+"in the `robot_common_launch` README invoke table)"
+msgstr ""
+"`visualize/visualize.launch.py`、`visualize/component.launch.py`（`robot_common_launch` README 调用表有写）"
+
+#: ../../source/4-reference/descriptions/2-common.md:168
+#: c391979540e04963844cc5b7b84db8d0
+msgid "`control/cartesian_controller.launch.py`"
+msgstr "`control/cartesian_controller.launch.py`"
+
+#: ../../source/4-reference/descriptions/2-common.md:168
+#: 59ae446fafbc4746932de5aac7ed41f2
+msgid "`manipulation/humanoid_ocs2.launch.py`"
+msgstr "`manipulation/humanoid_ocs2.launch.py`"
+
+#: ../../source/4-reference/descriptions/2-common.md:168
+#: 077995a1fa8940488f64c1ffdf7a4798
+msgid ""
+"`navigation/navigation_cartographer.launch.py`, "
+"`navigation/navigation_isaac_gt.launch.py`"
+msgstr ""
+"`navigation/navigation_cartographer.launch.py`、`navigation/navigation_isaac_gt.launch.py`"
+
+#: ../../source/4-reference/descriptions/2-common.md:199
+#: bfb40b389aed4573804c23a1dfde1364
+msgid ""
+"`navigation_isaac_gt.launch.py` is the default Nav2 launch cited by "
+"[robot_action_composer ROS2_STACK.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROS2_STACK.md)."
+msgstr ""
+"`navigation_isaac_gt.launch.py` 是 [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md) 写的默认 Nav2 launch。"
+
+#: ../../source/4-reference/descriptions/2-common.md:201
 #: f1c89a2ef5fc4f80aecd62fd9e02fa9d
 msgid "`robot_common_launch` README invoke table (same package; install first):"
 msgstr "`robot_common_launch` README 的调用表（同一包；先安装）："
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 0ecf71afee58465dab4720b84801d425
 #, fuzzy
 msgid ""
@@ -940,62 +1002,62 @@ msgid ""
 "source install/setup.bash"
 msgstr "colcon build --packages-up-to robot_common_launch --symlink-install"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 5ea3b8dc79d24f4a97d1cfe8af588ef0
 msgid "Scene"
 msgstr "场景"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 72ad56ea9cbc4d3f82df84bcc62356df
 msgid "Launch"
 msgstr "启动"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 055b3d4926824cc688b3252846c31c9e
 msgid "`visualize.launch.py` / `humanoid.launch.py` / `manipulator.launch.py`"
 msgstr "`visualize.launch.py` / `humanoid.launch.py` / `manipulator.launch.py`"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 8431cabaaeb84df792baed32e7671c3b
 msgid "Gripper / hand"
 msgstr "夹爪"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 59ae446fafbc4746932de5aac7ed41f2
 msgid "`gripper.launch.py` / `hand.launch.py`"
 msgstr "`gripper.launch.py` / `hand.launch.py`"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 7b762f56f0d642df8a8995894cea4ecb
 msgid "Component"
 msgstr "组件"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 2829546ee2f44da9af1c950ef043be2f
 msgid "`component.launch.py`"
 msgstr "`spawn_robot.launch.py`"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: 14d2b2c74e5d417b83223d6ec33ccc6d
 msgid "Controller manager"
 msgstr "控制器管理"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: c391979540e04963844cc5b7b84db8d0
 msgid "`controller_manager.launch.py`"
 msgstr "`controller_manager.launch.py`"
 
-#: ../../source/4-reference/descriptions/2-common.md:192
+#: ../../source/4-reference/descriptions/2-common.md:203
 #: c2c1ba1fbff24ce483afbb7081b55130
 msgid "`navigation*.launch.py`"
 msgstr "`display.launch.py`"
 
-#: ../../source/4-reference/descriptions/2-common.md:205
+#: ../../source/4-reference/descriptions/2-common.md:216
 #: beeef6d1aa544f028b8f4654156bc640
 msgid "Repo README examples:"
 msgstr "仓库 README 示例："
 
-#: ../../source/4-reference/descriptions/2-common.md:207
+#: ../../source/4-reference/descriptions/2-common.md:218
 #: 9596a3c8325244938fbc873047c62daa
 msgid ""
 "ros2 launch robot_common_launch gripper.launch.py\n"
@@ -1006,7 +1068,7 @@ msgstr ""
 "ros2 launch robot_common_launch manipulator_ocs2.launch.py\n"
 "ros2 launch robot_common_launch navigation_slam.launch.py"
 
-#: ../../source/4-reference/descriptions/2-common.md:213
+#: ../../source/4-reference/descriptions/2-common.md:224
 #: 91411e877739463b9e4494d0f455d9a8
 #, fuzzy
 msgid ""
@@ -1018,12 +1080,12 @@ msgstr ""
 "`create_robot_profile_launch_arguments()` / "
 "`create_platform_launch_arguments()` 声明这些一等参数。"
 
-#: ../../source/4-reference/descriptions/2-common.md:215
+#: ../../source/4-reference/descriptions/2-common.md:226
 #: c35c7fbdf7f34843aaf5529d6c580387
 msgid "GitHub Release `.deb`"
 msgstr "GitHub Release `.deb`"
 
-#: ../../source/4-reference/descriptions/2-common.md:217
+#: ../../source/4-reference/descriptions/2-common.md:228
 #: 378cd669c2914acc8e3ef4446f7c7e54
 msgid ""
 "`ros-jazzy-robot-descriptions-common` is **not** on Debian / ROS apt. "
@@ -1032,9 +1094,13 @@ msgid ""
 "/build-common-deb.yml). Rules: [README.deb.md](https://github.com"
 "/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md)."
 msgstr ""
-"`ros-jazzy-robot-descriptions-common` **不在** Debian / ROS apt。工作流：[`.github/workflows/build-common-deb.yml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows/build-common-deb.yml)。规则：[README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md)。"
+"`ros-jazzy-robot-descriptions-common` **不在** Debian / ROS "
+"apt。工作流：[`.github/workflows/build-common-deb.yml`](https://github.com"
+"/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows"
+"/build-common-deb.yml)。规则：[README.deb.md](https://github.com/fiveages-sim"
+"/robot-descriptions-common/blob/main/README.deb.md)。"
 
-#: ../../source/4-reference/descriptions/2-common.md:219
+#: ../../source/4-reference/descriptions/2-common.md:230
 #: 8cc9df1dd6d148148c23ca9f104dcd85
 #, fuzzy
 msgid ""
@@ -1046,43 +1112,44 @@ msgstr ""
 "common 选 `d`，或 `./scripts/install_core_debs.sh --only common`。用菜单 **2) "
 "切换模块安装方式** 在源码 ↔ deb 之间切换。"
 
-#: ../../source/4-reference/descriptions/2-common.md:221
+#: ../../source/4-reference/descriptions/2-common.md:232
 #: b15c2b8dd5ab4d858f428b357e717405
 msgid "README.deb.md example:"
 msgstr "README.deb.md 示例："
 
-#: ../../source/4-reference/descriptions/2-common.md:223
+#: ../../source/4-reference/descriptions/2-common.md:234
 #: a687d297b422494186bd4a3d49260f69
 msgid ""
 "gh release download pre-release --repo fiveages-sim/robot-descriptions-"
 "common --pattern '*_amd64.deb'\n"
 "sudo dpkg -i ros-jazzy-robot-descriptions-common_*.deb"
 msgstr ""
-"gh release download pre-release --repo fiveages-sim/robot-descriptions-common --pattern '*_amd64.deb'\n"
+"gh release download pre-release --repo fiveages-sim/robot-descriptions-"
+"common --pattern '*_amd64.deb'\n"
 "sudo dpkg -i ros-jazzy-robot-descriptions-common_*.deb"
 
-#: ../../source/4-reference/descriptions/2-common.md:228
+#: ../../source/4-reference/descriptions/2-common.md:239
 #: 0e4ec056fa1044e7881547f6feacc07c
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/descriptions/2-common.md:230
+#: ../../source/4-reference/descriptions/2-common.md:241
 #: 3448827f031f4cdbaf2c7e06950c8cf4
 msgid "[robot_descriptions](1-robot_descriptions.md) — umbrella path `common`"
 msgstr "[robot_descriptions](1-robot_descriptions.md) — 伞形仓路径 `common`"
 
-#: ../../source/4-reference/descriptions/2-common.md:231
+#: ../../source/4-reference/descriptions/2-common.md:242
 #: 7e668f7df1f24ab69d1688318e457446
 msgid "[Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)"
 msgstr "[切换机器人](../../2-how_to/1-basic_operations/2-switch_robot.md)"
 
-#: ../../source/4-reference/descriptions/2-common.md:232
+#: ../../source/4-reference/descriptions/2-common.md:243
 #: 7e668f7df1f24ab69d1688318e457446
 #, fuzzy
 msgid "[Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)"
 msgstr "[切换机器人](../../2-how_to/1-basic_operations/2-switch_robot.md)"
 
-#: ../../source/4-reference/descriptions/2-common.md:233
+#: ../../source/4-reference/descriptions/2-common.md:244
 #: c4a861403b674c7ea530494ede9f6b70
 #, fuzzy
 msgid "[ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md)"
@@ -1090,7 +1157,7 @@ msgstr ""
 "[ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md) — `demo` /"
 " `split_body` / `full_body` 声明这些参数"
 
-#: ../../source/4-reference/descriptions/2-common.md:234
+#: ../../source/4-reference/descriptions/2-common.md:245
 #: 7adc867a1dfc4217a681de296ad19e4f
 msgid "[Naming Conventions](../../3-concepts/3-naming_conventions.md)"
 msgstr "[命名规范](../../3-concepts/3-naming_conventions.md)"

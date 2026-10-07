@@ -24,7 +24,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | Repository | Visibility | Purpose |
 |------------|------------|---------|
 | [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) | [P] | Public umbrella for all descriptions |
-| [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | [P] | Shared grippers, hands, sensors |
+| [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | [P] | Grippers, hands, sensors, `robot_common_launch` (umbrella path `common`) |
 | robot-descriptions-fiveages | [I] | Private umbrella for FA robots |
 
 ### Brand-Specific (Public)

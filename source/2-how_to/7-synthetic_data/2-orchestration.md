@@ -52,7 +52,7 @@ From [docs/ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/
 - Do **not** put `ros2_stack` inside task-queue YAML.
 - Merge: `robot.yaml` → `ros2_stack:` then leaf **`.meta/ros2_stack.yaml`**.
 - Motion presets: `ocs2-fullbody` / `ocs2-split-body` / `ocs2-demo` (`ocs2_arm_controller` launches).
-- Navigation: `navigation.profile` `default` or `map_only` expands to **`nav2_profile:=…`**. Default launch: `robot_common_launch` / **`navigation_isaac_gt.launch.py`**.
+- Navigation: `navigation.profile` `default` or `map_only` expands to **`nav2_profile:=…`**. Default launch: `robot_common_launch` / **`navigation/navigation_isaac_gt.launch.py`** (file exists on that repo’s `main`; see [robot-descriptions-common](../../4-reference/descriptions/2-common.md)).
 - `navigation.required: auto` starts Nav2 only when the `task_queue` contains `nav.*` skills.
 
 That is the **official Nav2** install/launch already used by the robot workspace, not a fiveages-specific planner.

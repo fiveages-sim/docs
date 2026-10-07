@@ -187,6 +187,17 @@ From the repo README (paths under `robot_common_launch/launch/`):
 | Manipulation | `manipulation/manipulator_ocs2.launch.py` |
 | Navigation | `navigation/navigation.launch.py`, `navigation/cartographer.launch.py`, `navigation/navigation_slam.launch.py`, `navigation/amr_rctk.launch.py` |
 
+Also on `main` under `launch/` (not named in that README table; do not invent others):
+
+| Kind | Extra files |
+|------|-------------|
+| Visualization | `visualize/visualize.launch.py`, `visualize/component.launch.py` (named in the `robot_common_launch` README invoke table) |
+| Control | `control/cartesian_controller.launch.py` |
+| Manipulation | `manipulation/humanoid_ocs2.launch.py` |
+| Navigation | `navigation/navigation_cartographer.launch.py`, `navigation/navigation_isaac_gt.launch.py` |
+
+`navigation_isaac_gt.launch.py` is the default Nav2 launch cited by [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md).
+
 `robot_common_launch` README invoke table (same package; install first):
 
 :::{code-block} bash
