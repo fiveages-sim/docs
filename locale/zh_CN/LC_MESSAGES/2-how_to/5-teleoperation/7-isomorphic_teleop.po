@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:37+0000\n"
+"POT-Creation-Date: 2026-10-07 05:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:1
@@ -28,32 +28,33 @@ msgstr "同构遥操作"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:3
 #: 5cbefad6052944a7bb8eef97216fc4fb
 msgid ""
-"Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera HT**"
-" dual-arm: move the master arm in joint space and the slave follows."
+"Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera HT** "
+"dual-arm: move the master arm in joint space and the slave follows."
 msgstr "面向 **高擎 Panthera HT** 双臂的主从 **同构遥操作**：在关节空间移动主臂，从臂跟随。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:5
 #: 661f2dcf66b940b4aa04b30f40ace016
 msgid ""
-"**Implemented:** 同构遥操作 via [`drag_teleop_controller`](https://github.com"
-"/fiveages-sim/drag_teleop_controller) (package name is historical). **Not"
-" implemented:** drag teaching (拖动遥操作), trajectory record/playback, or "
+"**Implemented:** 同构遥操作 via "
+"[`drag_teleop_controller`](https://github.com/fiveages-"
+"sim/drag_teleop_controller) (package name is historical). **Not "
+"implemented:** drag teaching (拖动遥操作), trajectory record/playback, or "
 "`enter_teach_mode`."
 msgstr ""
 "**已实现：** 通过 [`drag_teleop_controller`](https://github.com/fiveages-"
-"sim/drag_teleop_controller) 的同构遥操作（包名是历史遗留）。**未实现：** "
-"拖动示教（拖动遥操作）、轨迹录制/回放，或 `enter_teach_mode`。"
+"sim/drag_teleop_controller) 的同构遥操作（包名是历史遗留）。**未实现：** 拖动示教（拖动遥操作）、轨迹录制/回放，或 "
+"`enter_teach_mode`。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:7
 #: 1e441beb33734899a33b23ace92fd25e
 msgid ""
-"On the `panthera-ht` `open-deploy-ws` branch, prefer "
-"**`./teleop_start.sh`** (see [HighTorque Panthera "
+"On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`**"
+" (see [HighTorque Panthera "
 "HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) and that branch "
 "README). The launches below match the `drag_teleop_controller` README."
 msgstr ""
-"在 `open-deploy-ws` 的 `panthera-ht` 分支上，优先使用 **`./teleop_start.sh`**（见 [高擎"
-" Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) 及该分支 "
+"在 `open-deploy-ws` 的 `panthera-ht` 分支上，优先使用 **`./teleop_start.sh`**（见 [高擎 "
+"Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) 及该分支 "
 "README）。下列 launch 与 `drag_teleop_controller` README 一致。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:9
@@ -83,8 +84,7 @@ msgstr "高擎 Panthera HT 描述（`panthera_ht`）"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:15
 #: c0049ca30f95489e9de2021943b3097a
 msgid ""
-"Two launch processes: one `master`, one `slave` (mock or two physical "
-"arms)"
+"Two launch processes: one `master`, one `slave` (mock or two physical arms)"
 msgstr "两个启动进程：一个 `master`、一个 `slave`（mock 或两台实体臂）"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:17
@@ -115,8 +115,8 @@ msgstr "`master`"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md
 #: b8326c7ae5b4433690b5b4cb10d060a3
 msgid ""
-"Operator side. Gravity compensation so you can move the arm in joint "
-"space; publishes mapped joint state."
+"Operator side. Gravity compensation so you can move the arm in joint space; "
+"publishes mapped joint state."
 msgstr "操作者侧。重力补偿，便于在关节空间移动主臂；发布映射后的关节状态。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md
@@ -134,8 +134,8 @@ msgstr "从臂。跟踪映射后的主臂关节（可选 ruckig 平滑）。"
 msgid ""
 "Control modes (`mode`): `position` (slave only), `mit`, `effort`. Master-"
 "only force feedback (`feedback`): `false`, `position`, `effort`. Joint "
-"mapping runs before `teleop_states` is published. Grippers are handled by"
-" `adaptive_gripper_controller` (spawned from the same launch)."
+"mapping runs before `teleop_states` is published. Grippers are handled by "
+"`adaptive_gripper_controller` (spawned from the same launch)."
 msgstr ""
 "控制模式（`mode`）：`position`（仅从臂）、`mit`、`effort`。仅主臂的力反馈（`feedback`）：`false`、`position`、`effort`。关节映射在发布"
 " `teleop_states` 之前完成。夹爪由同一 launch 拉起的 `adaptive_gripper_controller` 控制。"
@@ -193,18 +193,14 @@ msgstr "检查控制器与话题："
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:52
 #: 7b4f3fc8dc664ca59ca624dd8194ca03
 msgid ""
-"ros2 control list_controllers --controller-manager "
-"/drag_teleop_master/controller_manager\n"
-"# drag_teleop_controller / left_gripper_controller / "
-"right_gripper_controller should be active\n"
+"ros2 control list_controllers --controller-manager /drag_teleop_master/controller_manager\n"
+"# drag_teleop_controller / left_gripper_controller / right_gripper_controller should be active\n"
 "\n"
 "ros2 topic echo /drag_teleop_master/teleop_states\n"
 "ros2 topic echo /drag_teleop_slave/teleop_states\n"
 msgstr ""
-"ros2 control list_controllers --controller-manager "
-"/drag_teleop_master/controller_manager\n"
-"# drag_teleop_controller / left_gripper_controller / "
-"right_gripper_controller should be active\n"
+"ros2 control list_controllers --controller-manager /drag_teleop_master/controller_manager\n"
+"# drag_teleop_controller / left_gripper_controller / right_gripper_controller should be active\n"
 "\n"
 "ros2 topic echo /drag_teleop_master/teleop_states\n"
 "ros2 topic echo /drag_teleop_slave/teleop_states\n"
@@ -250,8 +246,8 @@ msgstr ""
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:76
 #: b5417e903c8d410c809f3fbafbce00f5
 msgid ""
-"Optional master with external-effort feedback: add `feedback:=effort` "
-"(see README)."
+"Optional master with external-effort feedback: add `feedback:=effort` (see "
+"README)."
 msgstr "可选：主臂加外部力矩反馈，增加 `feedback:=effort`（见 README）。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:78
@@ -402,11 +398,12 @@ msgstr "主臂可发布 OCS2 moveJ 与夹爪命令"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:101
 #: fa7d90b5186c4c5ba7d958a90f00be1e
 msgid ""
-"Control laws, hardware-interface requirements per `role` × `mode`, and "
-"YAML keys are in the [README](https://github.com/fiveages-"
+"Control laws, hardware-interface requirements per `role` × `mode`, and YAML "
+"keys are in the [README](https://github.com/fiveages-"
 "sim/drag_teleop_controller/blob/main/README.md)."
 msgstr ""
-"各 `role` × `mode` 的控制律、硬件接口要求和 YAML 键见 [README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md)。"
+"各 `role` × `mode` 的控制律、硬件接口要求和 YAML 键见 [README](https://github.com/fiveages-"
+"sim/drag_teleop_controller/blob/main/README.md)。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:103
 #: 26165e07ba4c4c57accab662ec7060e1
@@ -443,8 +440,8 @@ msgstr "缓慢移动；注意关节限位与夹伤点"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:112
 #: 962b980b836343599abd0a71108befda
 msgid ""
-"Confirm both `role` processes are up and `teleop_states` are flowing "
-"before contacting the arm"
+"Confirm both `role` processes are up and `teleop_states` are flowing before "
+"contacting the arm"
 msgstr "接触机械臂前，确认两个 `role` 进程已启动且 `teleop_states` 正在发布"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:115
@@ -460,15 +457,16 @@ msgstr "Mock：两个 controller manager 中 `drag_teleop_controller` 均为 act
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:118
 #: b473def3405a4af39eaada4a082d3991
 msgid ""
-"`/drag_teleop_master/teleop_states` and "
-"`/drag_teleop_slave/teleop_states` publish"
+"`/drag_teleop_master/teleop_states` and `/drag_teleop_slave/teleop_states` "
+"publish"
 msgstr ""
 "`/drag_teleop_master/teleop_states` 与 `/drag_teleop_slave/teleop_states` "
 "正在发布"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:119
 #: 349d553734204b839a4aed452fd8b312
-msgid "Changing master joint state is reflected on the slave (mapped joint names)"
+msgid ""
+"Changing master joint state is reflected on the slave (mapped joint names)"
 msgstr "主臂关节状态变化会反映到从臂（映射后的关节名）"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:121
@@ -489,11 +487,10 @@ msgstr "`role` 必须是 `master` 或 `slave`"
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:126
 #: 6d9d0f0a81704ddf8bdb6282af9aad12
 msgid ""
-"Hardware must export the command interfaces required by `mode` (position "
-"/ velocity / effort). The controller checks this in `on_activate`."
+"Hardware must export the command interfaces required by `mode` (position / "
+"velocity / effort). The controller checks this in `on_activate`."
 msgstr ""
-"硬件必须导出 `mode` 所需的命令接口（position / velocity / effort）。控制器在 `on_activate` "
-"时校验。"
+"硬件必须导出 `mode` 所需的命令接口（position / velocity / effort）。控制器在 `on_activate` 时校验。"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:128
 #: f233a96c2ae44ab7a27739f1301cd07f
@@ -525,8 +522,8 @@ msgstr "DexCap / 关节重映射"
 #: c45a334700f0491b90745558f10907bd
 msgid ""
 "DexCap glove → robot mapping is a **different** package: [teleop-joint-"
-"mapper](../../4-reference/teleop/4-teleop_joint_mapper.md). It is not "
-"this master–slave isomorphic path."
+"mapper](../../4-reference/teleop/4-teleop_joint_mapper.md). It is not this "
+"master–slave isomorphic path."
 msgstr ""
 "DexCap 手套到机器人的映射是 **另一个** 软件包：[teleop-joint-"
 "mapper](../../4-reference/teleop/4-teleop_joint_mapper.md)。不是这条主从同构路径。"
@@ -541,7 +538,8 @@ msgstr "相关"
 msgid ""
 "[drag_teleop_controller "
 "reference](../../4-reference/teleop/2-drag_teleop.md)"
-msgstr "[drag_teleop_controller 参考](../../4-reference/teleop/2-drag_teleop.md)"
+msgstr ""
+"[drag_teleop_controller 参考](../../4-reference/teleop/2-drag_teleop.md)"
 
 #: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:141
 #: 0878adf445304ffda96aa9eb196db2c6
@@ -555,15 +553,19 @@ msgstr "[高擎 Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md
 msgid "[Go to Real Hardware](../6-deployment/9-go_real_hardware/0-index.md)"
 msgstr "[部署到真实机器人](../6-deployment/9-go_real_hardware/0-index.md)"
 
+#: ../../source/2-how_to/5-teleoperation/7-isomorphic_teleop.md:143
+#: 95d590f31f614dc2b94caec136d546a4
+msgid ""
+"[VR Teleoperation](6-vr_teleop.md) — VR pose following uses a different MIT "
+"/ vendor-impedance split; this page is master–slave joint following only"
+msgstr "[VR 遥操作](6-vr_teleop.md) — VR 跟位姿走另一套 MIT / 厂商阻抗划分；本页只讲主从关节跟随"
+
 #~ msgid ""
-#~ "This is **not** drag teaching. There "
-#~ "is no trajectory record/playback and no"
-#~ " `enter_teach_mode` API. The implemented "
-#~ "path is the public package "
+#~ "This is **not** drag teaching. There is no trajectory record/playback and no"
+#~ " `enter_teach_mode` API. The implemented path is the public package "
 #~ "[`drag_teleop_controller`](https://github.com/fiveages-"
 #~ "sim/drag_teleop_controller)."
 #~ msgstr ""
-#~ "这 **不是** 拖动示教。没有轨迹录制/回放，也没有 `enter_teach_mode` "
-#~ "API。已实现路径是公开软件包 [`drag_teleop_controller`](https://github.com"
-#~ "/fiveages-sim/drag_teleop_controller)。"
-
+#~ "这 **不是** 拖动示教。没有轨迹录制/回放，也没有 `enter_teach_mode` API。已实现路径是公开软件包 "
+#~ "[`drag_teleop_controller`](https://github.com/fiveages-"
+#~ "sim/drag_teleop_controller)。"

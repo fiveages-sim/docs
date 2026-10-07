@@ -23,15 +23,14 @@ Internal FA wheeled-arm humanoids: [fa-deploy-ws Setup](../1-getting_started/4-f
 
 ## 3. Arm force control and load identification
 
-There is **no** dedicated force-control or **load-identification** how-to in this docs set (no load-ID CLI, no identified-inertia file format).
+VR teleop uses **two** compliance paths — pick by robot: [VR Teleoperation — Force control and compliance](../2-how_to/5-teleoperation/6-vr_teleop.md).
 
-Closest verified pages:
+- **MIT / force-capable HI** — **Panthera HT** and **ARX** arms: HT `control_mode:=mit`, ARX `full_control` + `joint_k_gains` / `joint_d_gains`. Controller MIX: [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md).
+- **Vendor joint impedance** — **Tianji** (天玑) / **Rokae** (珞石): controller sends **position** only; HI `ctrl_mode` `JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md).
 
-- [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) — YAML `force_gains`; control mode is position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present.
-- [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md) — `mode`: `position` / `mit` / `effort`; master `feedback` includes `effort` (HighTorque Panthera HT).
-- Hardware plugins: [Public hardware interfaces](../4-reference/hardware/1-public_hi.md).
+**Payload identification (负载辨识)** is on the Tianji / Rokae path only. Public wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. Internal on-site flow: [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md) README after access.
 
-For parameters not listed there, use the package README linked from those pages.
+Isomorphic HT `mode:=mit` / `effort` is a different page: [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
 
 ## 4. Sim collection (optional)
 
