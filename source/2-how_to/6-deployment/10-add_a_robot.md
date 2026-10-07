@@ -10,8 +10,7 @@ How a new robot enters this stack. Copy an **existing** description package and 
 - Launch / `hardware:=` / EEF: [robot_common_launch](../../4-reference/descriptions/2-common.md)
 - Workspace init: `./init_repo.sh` in [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) + [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf)
 - Isaac USD: FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (folder `USDA-OCS2-PhysX-Mujoco`) — [skill](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — plus `./init.sh` / `./run.sh` and [robot_usds](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)
-
-**No `.cursor/skills` was found** on `main` for `robot_descriptions`, `robot-descriptions-common`, or `robot_usds`. Use those READMEs plus the FaSim-Isaac skills. Do not invent a description-side skill.
+- Description-side Cursor skills: **`robot_descriptions` branch `feature/agilex`** — [`.cursor/skills/README.md`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md). **`main` has no `.cursor/skills`**. `robot-descriptions-common` and `robot_usds` have none on `main`. Do not invent extra description skills.
 ```
 
 ## 1. ROS description package
@@ -44,6 +43,18 @@ OCS2 files the controller actually loads: `{robot_pkg}/config/ocs2/<info>.info` 
 
 EEF / FT / TCP: `type` / `left_type` / `right_type` (not `gripper:=`).
 
+### Chassis / swerve / `collider:=simple` (`feature/agilex` skill)
+
+On **`feature/agilex` only**, the skills index currently lists one skill: **`split-chassis-glb`** ([SKILL.md](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.cursor/skills/split-chassis-glb/SKILL.md)). Canonical example in that skill: `rokae_inex_description`.
+
+What it does (overview — follow the skill, do not treat this as a substitute):
+
+- Split one assembled chassis GLB into `chassis` / `steer` / `wheel` meshes with joint-ready origins
+- Write swerve xacro (reuse one steer + one wheel at `fl` `fr` `rl` `rr`; right modules yaw 180°, no mesh reflect)
+- Add `collider:=simple` boxes from **glTF-node** AABBs (not raw accessor min/max)
+
+How to add more skills under `.cursor/skills/`: the same [skills README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md). Package layout and submodule paths still come from the [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) (`main`). Use `feature/agilex` when you need this skill or newer AgileX content; do not assume `main` has the skills directory.
+
 ## 2. Wire it into a deploy workspace
 
 In `open-deploy-ws`:
@@ -65,7 +76,7 @@ Do not invent `robot_description_newrobot/display.launch.py` or a `NewRobotHardw
 
 ## 3. Isaac USD (FaSim-Isaac skill)
 
-`robot_descriptions` / `robot-descriptions-common` / `robot_usds` have **no** Cursor skill on `main`. The Isaac import pipeline is the FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**:
+Isaac import is still the FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (not the description-side `split-chassis-glb` skill):
 
 - Skill file: [`.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md)
 - Other skills in that folder (do not invent names): `fasim-robot-mujoco-physics`, `fasim-dexhand-asset`, `fasim-rg75-pad-convert`, `fasim-usd-bake-scale`

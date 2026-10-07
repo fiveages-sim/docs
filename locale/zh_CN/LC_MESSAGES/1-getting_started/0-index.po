@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -27,48 +27,84 @@ msgstr "快速入门"
 #: ../../source/1-getting_started/0-index.md:3 06db0c7d39de4fa2ad77584944d079d7
 msgid ""
 "This section guides you through setting up your development environment "
-"and running your first robot demos. **Install the environment first**, "
-"then run the Quick Demo."
-msgstr "本节将引导你完成开发环境的搭建，并运行第一个机器人演示。**请先安装环境**，再运行快速演示。"
+"and running your first robot demos."
+msgstr "本节将引导你完成开发环境的搭建，并运行第一个机器人演示。"
 
-#: ../../source/1-getting_started/0-index.md:5 73d7741233484bc78f202c0dc6071d65
+#: ../../source/1-getting_started/0-index.md:5 5869076e0a774f6b9c9afcbfb96791fb
+msgid "**Read in this order** (same as the sidebar):"
+msgstr "**请按此顺序阅读**（与侧边栏一致）："
+
+#: ../../source/1-getting_started/0-index.md
+#: ../../source/1-getting_started/0-index.md:7 c2cff616d5344c2282b4a252db5b0304
+msgid "[Install Environment](2-install_environment.md)"
+msgstr "[安装环境](2-install_environment.md)"
+
+#: ../../source/1-getting_started/0-index.md
+#: ../../source/1-getting_started/0-index.md:8 23e6035b0cbe4ba69f25fb99f4c31489
+msgid "[Quick Demo (Public)](1-quick_demo_public.md)"
+msgstr "[快速演示（公开版）](1-quick_demo_public.md)"
+
+#: ../../source/1-getting_started/0-index.md:9 d8d1c0a217bf4b70b96a7c862a557058
+msgid ""
+"[open-deploy-ws Setup](3-open_deploy_ws.md) / [fa-deploy-ws "
+"Setup](4-fa_deploy_ws.md)"
+msgstr ""
+"[open-deploy-ws 配置](3-open_deploy_ws.md) / [fa-deploy-ws "
+"配置](4-fa_deploy_ws.md)"
+
+#: ../../source/1-getting_started/0-index.md:10
+#: 206dd6382fd9457aa95e8d0f64561f2b
+msgid "[FAQ](5-faq.md) if something fails"
+msgstr "[常见问题](5-faq.md)（若出错）"
+
+#: ../../source/1-getting_started/0-index.md:12
+#: 62da35e1c3c2418bae547be550678893
+msgid ""
+"Do not start with the Quick Demo before ROS 2 Jazzy + rosdep are "
+"installed."
+msgstr "在安装 ROS 2 Jazzy + rosdep 之前，不要先做快速演示。"
+
+#: ../../source/1-getting_started/0-index.md:14
+#: 73d7741233484bc78f202c0dc6071d65
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: ../../source/1-getting_started/0-index.md:7 47d9d20e363c4a36bee40305b8aa9233
+#: ../../source/1-getting_started/0-index.md:16
+#: 47d9d20e363c4a36bee40305b8aa9233
 msgid "Before you begin, ensure you have:"
 msgstr "开始之前，请确保已具备："
 
-#: ../../source/1-getting_started/0-index.md:9 c6034ffef6e9473c9e13a8982570d003
+#: ../../source/1-getting_started/0-index.md:18
+#: c6034ffef6e9473c9e13a8982570d003
 msgid "**Ubuntu 24.04** (Jazzy Jalisco target platform)"
 msgstr "**Ubuntu 24.04**（Jazzy Jalisco 目标平台）"
 
-#: ../../source/1-getting_started/0-index.md:10
+#: ../../source/1-getting_started/0-index.md:19
 #: 5b2305462e8c4c7482b4ead6de3874d0
 msgid "**ROS 2 Jazzy** installed"
 msgstr "已安装 **ROS 2 Jazzy**"
 
-#: ../../source/1-getting_started/0-index.md:11
+#: ../../source/1-getting_started/0-index.md:20
 #: 56450d3e1af94c01b82c2154b3dd6722
 msgid "**Python 3.12** (Jazzy baseline; do not mix 3.10/3.11 venvs)"
 msgstr "**Python 3.12**（Jazzy 基线；不要混用 3.10/3.11 虚拟环境）"
 
-#: ../../source/1-getting_started/0-index.md:12
+#: ../../source/1-getting_started/0-index.md:21
 #: 28145133ae944e89b614e0504b010082
 msgid "**Git** with SSH key configured for GitHub"
 msgstr "已为 GitHub 配置 SSH 密钥的 **Git**"
 
-#: ../../source/1-getting_started/0-index.md:13
+#: ../../source/1-getting_started/0-index.md:22
 #: 1875821838e64dd89022d969cd61442b
 msgid "**16GB+ RAM** recommended for builds with simulation"
 msgstr "进行含仿真的编译时，建议配备 **16GB 及以上内存**"
 
-#: ../../source/1-getting_started/0-index.md:14
+#: ../../source/1-getting_started/0-index.md:23
 #: b588c382c3b34ce69c6ff3c575839184
 msgid "**NVIDIA GPU** (optional, required for Isaac Sim)"
 msgstr "**NVIDIA GPU**（可选；使用 Isaac Sim 时必需）"
 
-#: ../../source/1-getting_started/0-index.md:16
+#: ../../source/1-getting_started/0-index.md:25
 #: 52cdf1c79c1447e0a21e2b07eda66fb0
 msgid "Choose Your Path"
 msgstr "选择你的路径"
@@ -85,17 +121,9 @@ msgstr "请从……开始"
 msgid "Setting up from scratch"
 msgstr "从零开始搭建环境"
 
-#: ../../source/1-getting_started/0-index.md c2cff616d5344c2282b4a252db5b0304
-msgid "[Install Environment](2-install_environment.md)"
-msgstr "[安装环境](2-install_environment.md)"
-
 #: ../../source/1-getting_started/0-index.md f7acced1d75a4a6eb2c381f47b16749d
 msgid "Environment already installed"
 msgstr "环境已安装"
-
-#: ../../source/1-getting_started/0-index.md 23e6035b0cbe4ba69f25fb99f4c31489
-msgid "[Quick Demo (Public)](1-quick_demo_public.md)"
-msgstr "[快速演示（公开版）](1-quick_demo_public.md)"
 
 #: ../../source/1-getting_started/0-index.md 5e27c0a3dae6416baf8be4fa07b6513c
 msgid "Using public robots"
@@ -121,89 +149,89 @@ msgstr "故障排除"
 msgid "[FAQ](5-faq.md)"
 msgstr "[常见问题](5-faq.md)"
 
-#: ../../source/1-getting_started/0-index.md:26
+#: ../../source/1-getting_started/0-index.md:35
 #: 27a70ff5d1284ad0985a7ee5275d0c0d
 msgid "Quick Path Summary"
 msgstr "路径速览"
 
-#: ../../source/1-getting_started/0-index.md:40
+#: ../../source/1-getting_started/0-index.md:49
 #: 540e07e99632474f9033f6be42d335a7
 msgid "Time Estimates"
 msgstr "预计耗时"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: ade855d3884b44939e9ae1fdb12fabf2
 msgid "Task"
 msgstr "任务"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: f97dd3557c7a4431b25bea0785810633
 msgid "Time"
 msgstr "时间"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 70216d56c6a7446ebfa60ba5f8e93b80
 msgid "ROS 2 Jazzy installation"
 msgstr "安装 ROS 2 Jazzy"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: fdcd269ca5ac4b329a34b6fc9273deb7
 msgid "15-30 minutes"
 msgstr "15-30 分钟"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 6586baa6043c4fb398cffce8b192a1cd
 msgid "Workspace clone + init"
 msgstr "克隆工作空间并初始化"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 138c49b5a4c94f52af9943d86ba9d259
 msgid "5-10 minutes"
 msgstr "5-10 分钟"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: f05a663d4ceb48b692ab4f113929247d
 msgid "Full workspace build"
 msgstr "完整编译工作空间"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 738eae13b0d0471f84e511b4b62d52ea
 msgid "10-30 minutes"
 msgstr "10-30 分钟"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 781f03e6c9cd426794487a6358eef56f
 msgid "First demo launch"
 msgstr "首次启动演示"
 
-#: ../../source/1-getting_started/0-index.md:28
+#: ../../source/1-getting_started/0-index.md:37
 #: 98789f336b0d40279ff4d861070392e2
 msgid "2-5 minutes"
 msgstr "2-5 分钟"
 
-#: ../../source/1-getting_started/0-index.md:49
+#: ../../source/1-getting_started/0-index.md:58
 #: 7999f02727694b8285dbd2a5c890309b
 msgid "What's Next"
 msgstr "接下来"
 
-#: ../../source/1-getting_started/0-index.md:51
+#: ../../source/1-getting_started/0-index.md:60
 #: 94d860e8d74e4f2480e21780caffe288
 msgid "After completing setup:"
 msgstr "完成环境搭建后："
 
-#: ../../source/1-getting_started/0-index.md:52
+#: ../../source/1-getting_started/0-index.md:61
 #: cf2aff9f53994afc98bf04959829b0c2
 msgid ""
 "Follow the [Learning Path](../0-overview/2-learning_path.md) for "
 "structured learning"
 msgstr "按照[学习路径](../0-overview/2-learning_path.md)进行系统性学习"
 
-#: ../../source/1-getting_started/0-index.md:53
+#: ../../source/1-getting_started/0-index.md:62
 #: 95a90e8036aa4e8a83f855d176db5e38
 msgid "Explore [How-To Guides](../2-how_to/0-index.md) for specific tasks"
 msgstr "查阅[操作指南](../2-how_to/0-index.md)以完成具体任务"
 
-#: ../../source/1-getting_started/0-index.md:54
+#: ../../source/1-getting_started/0-index.md:63
 #: 354187217edb467a8fb96ab82875fb5b
 msgid ""
 "Reference the [Architecture](../0-overview/1-architecture.md) when you "
@@ -212,3 +240,4 @@ msgstr "需要了解整体背景时，请参阅[架构](../0-overview/1-architec
 
 #~ msgid "New to the ecosystem"
 #~ msgstr "刚接触本生态系统"
+

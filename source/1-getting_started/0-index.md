@@ -1,6 +1,15 @@
 # Getting Started
 
-This section guides you through setting up your development environment and running your first robot demos. **Install the environment first**, then run the Quick Demo.
+This section guides you through setting up your development environment and running your first robot demos.
+
+**Read in this order** (same as the sidebar):
+
+1. [Install Environment](2-install_environment.md)
+2. [Quick Demo (Public)](1-quick_demo_public.md)
+3. [open-deploy-ws Setup](3-open_deploy_ws.md) / [fa-deploy-ws Setup](4-fa_deploy_ws.md)
+4. [FAQ](5-faq.md) if something fails
+
+Do not start with the Quick Demo before ROS 2 Jazzy + rosdep are installed.
 
 ## Prerequisites
 
