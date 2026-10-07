@@ -48,6 +48,10 @@ jobs:
         run: |
           make html-zh_CN
 
+      - name: Check zh_CN mixed / missing translations
+        run: |
+          python scripts/check_zh_mix.py --html-root build/html/zh_CN --require-html
+
       - name: Reject literal Markdown fences in built HTML
         run: |
           python scripts/check_html_fences.py build/html

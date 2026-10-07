@@ -74,7 +74,7 @@ msgid ""
 "Header values: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ (`100` switches "
 "HOME pose)."
 msgstr ""
-"`FSMCommandPublisher` 向 `/fsm_command` 发布 `std_msgs/Int32`。头文件中的值：`1` "
+"`FSMCommandPublisher` 向 `/fsm_command` 发布 `std_msgs/Int32`。约定取值：`1` "
 "HOME，`2` HOLD，`3` OCS2，`4` MOVEJ（`100` 切换 HOME 构型）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:15
@@ -159,15 +159,14 @@ msgstr "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HO
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:27
 #: 94678c4c8594405fba17ab5a57e64f50
-#, fuzzy
 msgid ""
 "Split vs whole-body launches (and the Lift2S `quick_start` **split body**"
 " / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Teleop "
 "is a separate interface, not an extra FSM state — [Isomorphic "
 "Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
 msgstr ""
-"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** "
-"菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — "
+"分体与全身 launch（以及 Lift2S `quick_start` 的 **分体** / **全身** "
+"菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。遥操作是另一套接口，不是额外的 FSM 状态 — "
 "[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:29

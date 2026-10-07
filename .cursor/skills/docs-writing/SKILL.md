@@ -94,11 +94,12 @@ make update-po
 make html
 make html-zh_CN
 python3 scripts/check_zh_coverage.py --threshold 95
+python3 scripts/check_zh_mix.py
 ```
 
 `make html-all` is not `.PHONY` — run `html` and `html-zh_CN` separately. Restore wrap-only unrelated `.po` from git after `update-po` if you did not mean to touch them.
 
-zh_CN coverage must stay 100% (CI threshold 95%). Never nest `` ``` `` inside `` ```{admonition} ``; use `:::` colon fences. User-facing docs are bilingual; fill new English strings in `locale/zh_CN`.
+zh_CN coverage must stay 100% (CI threshold 95%). Also run `python3 scripts/check_zh_mix.py` (fuzzy / leftover English — see `.cursor/skills/zh-translation-qa/SKILL.md`). Never nest `` ``` `` inside `` ```{admonition} ``; use `:::` colon fences. User-facing docs are bilingual; fill new English strings in `locale/zh_CN`.
 
 ## Where this skill lives
 
