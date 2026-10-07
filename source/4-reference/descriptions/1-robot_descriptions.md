@@ -19,6 +19,7 @@ robot_descriptions/
 ├── common/                              # robot-descriptions-common
 ├── quadruped/                           # robot-descriptions-quadruped
 ├── humanoid/                            # in-tree wheeled / leg humanoids
+│   ├── FiveAges/                        # private gitlinks (not in README tables)
 │   ├── Galbot/                          # robot-descriptions-galbot
 │   └── Agibot/agibot_g2_description     # private
 ├── manipulator/
@@ -46,6 +47,8 @@ robot_descriptions/
 
 README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Do not invent extra brand folders.
 
+FiveAges URDF packages are **private gitlinks** under `humanoid/FiveAges/` in [`.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). They are **not** in the README brand tables and are **not** a separate `robot-descriptions-fiveages` umbrella. Paths and remotes: [FiveAges robot descriptions](4-fiveages_umbrella.md).
+
 Standalone clone (README). In `open-deploy-ws`, prefer `./init_repo.sh` instead:
 
 :::{code-block} bash
@@ -69,4 +72,5 @@ Copy an existing `{robot}_description` and follow [Add a Robot](../../2-how_to/6
 
 - [robot-descriptions-common](2-common.md)
 - [Brand packages](3-brand_public.md)
+- [FiveAges robot descriptions](4-fiveages_umbrella.md)
 - [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)

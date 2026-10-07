@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:11+0000\n"
+"POT-Creation-Date: 2026-10-07 02:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -28,10 +28,11 @@ msgstr "FiveAges 机器人描述"
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:3
 #: d0425baad9ec43f2a24c07eb1347b104
 msgid ""
-"One page for FiveAges (中科第五纪) wheeled-arm humanoid descriptions and their"
-" public USD mapping. The two older pages (“fiveages umbrella” vs “FA "
-"robot descriptions”) are merged here."
-msgstr "中科第五纪轮式人形描述及其公开 USD 对照的单页。原先「fiveages 伞形仓」和「FA 机器人描述」两页已合并到这里。"
+"One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and "
+"their **public USD** mapping. The older “fiveages” / “FiveAges 机器人描述” "
+"pages are merged here."
+msgstr ""
+"中科第五纪轮臂人形 **URDF** 包及其**公开 USD** 对照的单页。原先的「fiveages」和「FiveAges 机器人描述」已合并到这里。"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:5
 #: bc7b13e1acc64fcf9adcfa5c76bb6035
@@ -41,9 +42,11 @@ msgstr "需要访问权限"
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:8
 #: 34876a42fabe401992d6219434b47812
 msgid ""
-"URDF / xacro packages and `fa-deploy-ws` are **private**. Contact your "
-"team lead. After access, follow **those READMEs** and their init scripts."
-msgstr "URDF / xacro 包和 `fa-deploy-ws` 是**私有**的。请联系组长开通。开通后以**那些 README** 及其 init 脚本为准。"
+"FiveAges URDF remotes and `fa-deploy-ws` are **private** (GitHub 404 "
+"without access). Contact your team lead. After access, follow **those "
+"package READMEs** and that workspace’s init scripts."
+msgstr ""
+"FiveAges 的 URDF 远端和 `fa-deploy-ws` 是**私有**的（无权限 GitHub 404）。请联系组长开通。开通后以**那些包 README** 以及该工作区的 init 脚本为准。"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: 01faf1d5e9d24a3fbcecf91f1a9a028f
@@ -51,69 +54,293 @@ msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:14
-#: de64c9ea871144219c5404f9ebfdbc41
+#: b5b7075445ea45af8c043ae53f777783
 msgid ""
-"Public USD layout: [robot_usds README](https://github.com/fiveages-"
-"sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges"
+"URDF gitlinks: [robot_descriptions `.gitmodules` on "
+"`main`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/.gitmodules) and the [same file on "
+"`feature/agilex`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/.gitmodules)"
 msgstr ""
-"公开 USD 布局：[robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges"
+"URDF gitlink：[robot_descriptions `main` 上的 `.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules) 以及 [`feature/agilex` 上的同一文件](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.gitmodules)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:15
-#: 6ce8630df0ed481d9aaf56cf41f91a31
+#: 767211059e6f4301aac0a5e430e273ef
 msgid ""
-"Workspace pattern (script name only): [fa-deploy-ws "
-"Setup](../../1-getting_started/4-fa_deploy_ws.md) — same `./init_repo.sh`"
-" name as open-deploy-ws"
+"On-disk path: `humanoid/FiveAges/` inside the public "
+"[robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) "
+"umbrella. There is **no** public `robot-descriptions-fiveages` repo (404)"
 msgstr ""
-"工作区模式（只写脚本名）：[fa-deploy-ws 配置](../../1-getting_started/4-fa_deploy_ws.md) — 与 open-deploy-ws 一样是 `./init_repo.sh`"
+"磁盘路径：公开伞形仓 [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) 下的 `humanoid/FiveAges/`。**没有**公开的 `robot-descriptions-fiveages` 仓库（404）"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:16
+#: 2632527294ab480ab4402c85ac016a1d
+msgid ""
+"The public [robot_descriptions README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md) **does not** table these "
+"packages — use `.gitmodules`, not the README brand tables"
+msgstr ""
+"公开的 [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)**没有**把这些包列成表 — 以 `.gitmodules` 为准，不要用 README 品牌表"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:17
+#: de64c9ea871144219c5404f9ebfdbc41
+msgid ""
+"Public USD: [robot_usds README](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges"
+msgstr ""
+"公开 USD：[robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:18
+#: b5d40fb18afe400186c3b2f2cfbd798f
+msgid ""
+"Workspace pattern (script name only): [fa-deploy-ws "
+"Setup](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`. Do "
+"**not** invent `--robot`, `robot.local.yaml`, `./scripts/init-sim.sh`, "
+"`fiveages_bringup`, `ocs2_config.yaml`, `wbc_config.yaml`, or a `common/`"
+" / `arms/` / `robot/` tree"
+msgstr ""
+"工作区模式（只写脚本名）：[fa-deploy-ws 配置](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`。**不要**编造 `--robot`、`robot.local.yaml`、`./scripts/init-sim.sh`、`fiveages_bringup`、`ocs2_config.yaml`、`wbc_config.yaml`，或 `common/` / `arms/` / `robot/` 目录树"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:19
 #: 26d8b98ea43c4ffab281c4033ce17779
 msgid ""
 "Public launch / `hardware:=`: [robot_common_launch](2-common.md) "
 "(`mock_components` / `gz` / `isaac` / `real`)"
 msgstr ""
-"公开 launch / `hardware:=`：[robot_common_launch](2-common.md)（`mock_components` / `gz` / `isaac` / `real`）"
+"公开 launch / "
+"`hardware:=`：[robot_common_launch](2-common.md)（`mock_components` / `gz` "
+"/ `isaac` / `real`）"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:17
-#: 2632527294ab480ab4402c85ac016a1d
-msgid ""
-"The public [robot_descriptions README](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/main/README.md) does **not** list FiveAges "
-"packages"
-msgstr ""
-"公开的 [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)**没有**列出 FiveAges 包"
-
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:18
-#: b5d40fb18afe400186c3b2f2cfbd798f
-msgid ""
-"`robot-descriptions-fiveages` README is **not public** (404 without "
-"access). Do **not** invent `--robot`, `./scripts/init-sim.sh`, "
-"`fiveages_bringup`, `ocs2_config.yaml`, `wbc_config.yaml`, or a `common/`"
-" / `arms/` / `robot/` tree"
-msgstr ""
-"`robot-descriptions-fiveages` README **不公开**（无权限 404）。**不要**编造 `--robot`、`./scripts/init-sim.sh`、`fiveages_bringup`、`ocs2_config.yaml`、`wbc_config.yaml`，或 `common/` / `arms/` / `robot/` 目录树"
-
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:21
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:22
 #: 73345659da1e401aa178e9045703d251
 msgid ""
-"FiveAges **humanoid** platforms in this docs set (W2, W2R, S2, S2R) are "
-"**wheeled-arm humanoids** (mobile base + arms), not bipedal."
-msgstr "本文档里的 FiveAges **人形**平台（W2、W2R、S2、S2R）是**轮式人形**（底盘 + 臂），不是双足。"
+"FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, "
+"WCE3) are **wheeled-arm humanoids** (mobile base + arms), not bipedal."
+msgstr "本文档里的 FiveAges **人形**平台（W1、W2、W2R、S2、S2R、WCE3）是**轮臂人形**（底盘 + 臂），不是双足。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:23
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:24
+#: b8508dfdd4d14596a7ed894b5c511674
+msgid "URDF packages (`robot_descriptions`)"
+msgstr "FiveAges 机器人描述"
+msgstr "URDF 包（`robot_descriptions`）"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:26
+#: f9569f10b4ee40d78833f2905f1212f7
+msgid ""
+"FiveAges descriptions are **private git submodules** of the public "
+"umbrella. Checkout names and remotes below are from `.gitmodules`. The "
+"remotes themselves 404 without access — this page does **not** invent "
+"launch files, xacro trees, or controller YAML."
+msgstr ""
+"FiveAges 描述是公开伞形仓下的**私有 git 子模块**。下面的检出目录名和远端来自 `.gitmodules`。远端本身无权限 404 — 本页**不编造** launch、xacro 树或控制器 YAML。"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:28
+#: 0c99722b9a1946e59de78874058881a1
+msgid "`main` (flat under `humanoid/FiveAges/`)"
+msgstr "`humanoid/FiveAges/Gen3`"
+msgstr "`main`（平铺在 `humanoid/FiveAges/` 下）"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 46b86faa035c4364a6111cd7684b8923 c8d5bf3b5cb9435aa5345e787ae8ca76
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 2a1bac6c3a344c71b6c2792296bfca24 80eddab164f847698ef51a082deab1c6
+msgid "Package dir"
+msgstr "包目录"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 61d3da9d2e144fe68ca33eec67e62750
+msgid "Remote"
+msgstr "远端"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 52f81aa1f7974d41a3099912669dac16
+msgid "`humanoid/FiveAges/fiveages_w1_description`"
+msgstr "`humanoid/FiveAges/fiveages_w1_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 7473fd848bd4470e802ee321150c7c0c d55446693f6d4ba78787d7318400fee7
+msgid "`fiveages_w1_description`"
+msgstr "FiveAges 机器人描述"
+msgstr "`fiveages_w1_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 96b230f4a6af4e05b636a39faab81a44 c66864f59e5f499cb9303bba26f7132f
+msgid "`fa-w1-description`"
+msgstr "`fa-w1-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: ae56f24417a84a268c8e651d7a54d478
+msgid "`humanoid/FiveAges/fiveages_w2_description`"
+msgstr "`humanoid/FiveAges/fiveages_w2_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 50ee15ae48c94384b0837a72e22a2c1e 766264161e0e404d8ae42edf4fd83918
+msgid "`fiveages_w2_description`"
+msgstr "FiveAges 机器人描述"
+msgstr "`fiveages_w2_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 74c43b9845d54504b5ad3b3a136c32eb f0dec73ae41f46fe8f2836998fc7baa7
+msgid "`fa-w2-description`"
+msgstr "`fa-w2-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: d36339d2984344c9b91f0b3a55f83dbf
+msgid "`humanoid/FiveAges/fiveages_w2r_description`"
+msgstr "`humanoid/FiveAges/fiveages_w2r_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 25fbdf12b22d4e3d9bc667dde80763c4 956267d027484c73ac1089f8c6921b26
+msgid "`fiveages_w2r_description`"
+msgstr "FiveAges 机器人描述"
+msgstr "`fiveages_w2r_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: ced7d2a552b4442baad667fd58aa5faf d2b62fa41cf0485e851b46bfc9d7c3da
+msgid "`fa-w2r-description`"
+msgstr "`fa-w2r-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: f1affdb2a74844f1a58ac254aeb61857
+msgid "`humanoid/FiveAges/fiveages_s2_description`"
+msgstr "`humanoid/FiveAges/fiveages_s2_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 1f35567e11ba4317b2dacdcbbfefc39e cbad40ecf7ac44ec875e46c1bcc7efce
+msgid "`fiveages_s2_description`"
+msgstr "`fiveages_s2_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 73832e4691084bd4ae675a080f9af501 8be4f01081724d4a80347bf4ee9e7362
+msgid "`fa-s2-description`"
+msgstr "`fa-s2-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 04b7b7413c0a47dab61d2cfa90b0d6ba
+msgid "`humanoid/FiveAges/fiveages_w2_common_description`"
+msgstr "`humanoid/FiveAges/fiveages_w2_common_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: e45ed64c3ec44f9997dc6e7ed08b67fa fff086cab26d40eca6b323432f5f4289
+msgid "`fiveages_w2_common_description`"
+msgstr "FiveAges 机器人描述"
+msgstr "`fiveages_w2_common_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 6520b584c099461facdc0cef429c56d4 6e2ef52c628546b8a94d885a83971faa
+msgid "`fa-w2-components`"
+msgstr "`fa-w2-components`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:38
+#: 053108bee28c4acdb32e4075b03c917d
+msgid ""
+"`main` has **no** `fiveages_s2r_description` and **no** "
+"`fiveages_wce3_description` gitlink."
+msgstr ""
+"`main` **没有** `fiveages_s2r_description`，也**没有** `fiveages_wce3_description` gitlink。"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:40
+#: 2eb91ea8c8cc4203a6d812a1d16de3d0
+msgid "`feature/agilex` (grouped like USD: Gen1 / Gen2 / Gen3)"
+msgstr "`feature/agilex`（按 USD 一样分代：Gen1 / Gen2 / Gen3）"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: d15d5432d95f498a9212434790a5071a
+msgid "Gen"
+msgstr "代"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: a6310df5e54b45cc8541f019393d77d3
+msgid "Gen1"
+msgstr "Gen1"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 8bcec8bc77a746fabea671e659543b06
+msgid "`humanoid/FiveAges/Gen1/fiveages_w1_description`"
+msgstr "`humanoid/FiveAges/Gen1/fiveages_w1_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 0ea59b843d0a414db35a456e80b4c8f1 9ec3e8b8f76e4c009ec3fe9789dbe490
+#: c8cc511dd25b484d97e7c5f6497228ac ed39f2c916d848fb86c9ac214053bb62
+#: fd9ac23343b047f9b08533e3214f5a9b
+msgid "Gen2"
+msgstr "Gen2"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 4453e53be6c84362832bd377f00cd386
+msgid "`humanoid/FiveAges/Gen2/fiveages_w2_description`"
+msgstr "`humanoid/FiveAges/Gen2/fiveages_w2_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 9f2f12e65cc246c2ae2856d77ddc86d5
+msgid "`humanoid/FiveAges/Gen2/fiveages_w2r_description`"
+msgstr "`humanoid/FiveAges/Gen2/fiveages_w2r_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 9967d321f63e48a5bd9fc0ece67cda46
+msgid "`humanoid/FiveAges/Gen2/fiveages_s2_description`"
+msgstr "`humanoid/FiveAges/Gen2/fiveages_s2_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 3aae9fe00afa4fa996228c3c883037b4
+msgid "`humanoid/FiveAges/Gen2/fiveages_s2r_description`"
+msgstr "`humanoid/FiveAges/Gen2/fiveages_s2r_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 5cfb6e89d2af4afda82ab30c65912d5b
+msgid "`fiveages_s2r_description`"
+msgstr "`fiveages_s2r_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: c16f89c3116046edb9629d6bd38a9b6e
+msgid "`fa-s2r-description`"
+msgstr "`fa-s2r-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 5ef106b70ae041d6ab667b40b172da75
+msgid "`humanoid/FiveAges/Gen2/fiveages_w2_common_description`"
+msgstr "`humanoid/FiveAges/Gen2`"
+msgstr "`humanoid/FiveAges/Gen2/fiveages_w2_common_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 0894278f676d408086ab6bc910b8180d
+msgid "Gen3"
+msgstr "Gen3"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 1aa73a90290443ec92958ac45b65a5d0
+msgid "`humanoid/FiveAges/Gen3/fiveages_wce3_description`"
+msgstr "`humanoid/FiveAges/Gen3/fiveages_wce3_description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 7023ce3b8cc14f009b6afbbd38f23ddd
+msgid "`fiveages_wce3_description`"
+msgstr "FiveAges 机器人描述"
+msgstr "`fiveages_wce3_description`"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
+#: 6afe55de2df341438b44dec34ff2d3b0
+msgid "`fa-wce3-description`"
+msgstr "`fa-wce3-description`"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:52
+#: b0bf4eec1c4243a9b6bae2e6c7a51cf7
+msgid ""
+"Do not recursive-init these from `open-deploy-ws`; visibility is private."
+" After access, init the path named in `.gitmodules` (or let `fa-deploy-"
+"ws` `./init_repo.sh` do it)."
+msgstr ""
+"不要从 `open-deploy-ws` 递归 init 这些；可见性是私有。开通后，按 `.gitmodules` 里的路径初始化（或交给 `fa-deploy-ws` 的 `./init_repo.sh`）。"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:54
 #: e9b80fa628c040a58bd53f609ff3eaae
 msgid "Public: Isaac USD (`robot_usds`)"
 msgstr "公开：Isaac USD（`robot_usds`）"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:25
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:56
 #: 4ed2c6ace89b4b44a1c81a0165c5d9b3
 msgid ""
 "[robot_usds](https://github.com/fiveages-sim/robot_usds) maps FiveAges "
 "assets under `robots/humanoid/FiveAges/` as **Git submodules** (private "
 "USD repos). From that README:"
 msgstr ""
-"[robot_usds](https://github.com/fiveages-sim/robot_usds) 把 FiveAges 资产放在 `robots/humanoid/FiveAges/`，以 **Git 子模块**（私有 USD 仓）接入。摘自该 README："
+"[robot_usds](https://github.com/fiveages-sim/robot_usds) 把 FiveAges 资产放在 "
+"`robots/humanoid/FiveAges/`，以 **Git 子模块**（私有 USD 仓）接入。摘自该 README："
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: 301edcd0a45e436981406ea8bc3bb82f
@@ -141,7 +368,8 @@ msgid ""
 "[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
 "-robot-usds)"
 msgstr ""
-"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds)"
+"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
+"-robot-usds)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: a6310df5e54b45cc8541f019393d77d3
@@ -159,7 +387,8 @@ msgid ""
 "[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
 "-robot-usds)"
 msgstr ""
-"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds)"
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: fbbb97cb5c8f4fee9dc28689446802d7
@@ -177,108 +406,126 @@ msgid ""
 "[fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3"
 "-robot-usds)"
 msgstr ""
-"[fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds)"
+"[fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3"
+"-robot-usds)"
 
 #: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:11
 #: 0894278f676d408086ab6bc910b8180d
 msgid "WCE3 / Gen3"
 msgstr "WCE3 / Gen3"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:33
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:64
 #: 89c5b35d2a2241ed8c5285f5778ac217
 msgid ""
-"Those three USD repos and their READMEs are **not public**. Do not invent"
-" USD prim paths or a `galbot.usd`-style load snippet here."
-msgstr "这三个 USD 仓及其 README **不公开**。此处不要编造 USD prim 路径或 `galbot.usd` 式加载片段。"
+"Those three USD remotes and their READMEs are **not public**. Do not "
+"invent USD prim paths or a `galbot.usd`-style load snippet here."
+msgstr "这三个 USD 远端及其 README **不公开**。此处不要编造 USD prim 路径或 `galbot.usd` 式加载片段。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:35
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:66
 #: d662ac8bc8ff4da8969283886e05782b
 msgid ""
 "Checkout: FaSim-Isaac **`./init.sh`** (operation that inits `robots/` via"
 " `submodules_visibility.conf`), then **`./run.sh`**. See "
 "[robot_usds](../simulation/3-robot_usds.md)."
 msgstr ""
-"检出：FaSim-Isaac **`./init.sh`**（按 `submodules_visibility.conf` 初始化 `robots/` 的那一步），然后 **`./run.sh`**。见 [robot_usds](../simulation/3-robot_usds.md)。"
+"检出：FaSim-Isaac **`./init.sh`**（按 `submodules_visibility.conf` 初始化 "
+"`robots/` 的那一步），然后 **`./run.sh`**。见 "
+"[robot_usds](../simulation/3-robot_usds.md)。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:37
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:68
 #: 783546833b9b4a919e895528000f5074
-msgid "Private: URDF / deploy"
+msgid "Private: deploy"
 msgstr "私有：URDF / 部署"
-
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:39
-#: 3d79a779830148f2af8d5cfac26b77f8
+msgstr "私有：部署"
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:70
+#: 62f3af0691ef4c37b945102f9378e06c
 msgid ""
-"Description packages and `fa-deploy-ws` are internal. This page does "
-"**not** list unverified package names, launch files, or `--robot` IDs."
-msgstr "描述包和 `fa-deploy-ws` 是内部的。本页**不**列出未经核实的包名、launch 文件或 `--robot` ID。"
+"`fa-deploy-ws` is internal. Extra flags and robot IDs live in **that** "
+"README — not here."
+msgstr "`fa-deploy-ws` 是内部工作区。额外参数和机器人 ID 在**那份** README 里 — 不在本页。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:41
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:72
 #: 79c7480feb414518b80a1e61433537b1
 msgid "After access:"
 msgstr "开通权限后："
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:43
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:74
 #: 13fa745ec609463e88cbac70c7ae024a
-msgid "Read the private umbrella / package README (not this page)."
-msgstr "读私有伞形仓 / 包 README（不要以本页为准）。"
+msgid "Read the private package README for the checkout you have (not this page)."
+msgstr "读你已检出的那个私有包 README（不要以本页为准）。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:44
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:75
 #: 85472b61ab1c42c09de8d9b444cc1e0c
 msgid ""
 "In `fa-deploy-ws`, run **`./init_repo.sh`** (do not recursive-init). "
 "Extra flags live in that README."
 msgstr "在 `fa-deploy-ws` 里跑 **`./init_repo.sh`**（不要递归 init）。额外参数以那份 README 为准。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:45
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:76
 #: 8cf23d233468426db8526d4273d486aa
 msgid ""
 "`colcon build`, then `source install/setup.bash` in the launch terminal "
 "(or that repo’s official quick-start script if it has one)."
-msgstr "`colcon build`，然后在启动终端 `source install/setup.bash`（若该仓有官方 quick-start 脚本则优先用脚本）。"
+msgstr ""
+"`colcon build`，然后在启动终端 `source install/setup.bash`（若该仓有官方 quick-start "
+"脚本则优先用脚本）。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:46
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:77
 #: 92b5eca975864505951371fdf2ab0497
 msgid ""
 "EEF / `hardware:=` follow [robot_common_launch](2-common.md). There is no"
 " `gripper:=` and no `hardware:=mock`."
 msgstr ""
-"末端 / `hardware:=` 遵循 [robot_common_launch](2-common.md)。没有 `gripper:=`，也没有 `hardware:=mock`。"
+"末端 / `hardware:=` 遵循 [robot_common_launch](2-common.md)。没有 "
+"`gripper:=`，也没有 `hardware:=mock`。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:48
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:79
+#: f52f8775f1b240f3a441387574620257
+msgid ""
+"Composer `--robot fiveages_w2` is a real key on [robot_action_composer "
+"ROS2_STACK.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROS2_STACK.md). It is **not** a documented `./init_repo.sh"
+" --robot` flag."
+msgstr ""
+"Composer 的 `--robot fiveages_w2` 是 [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md) 上的真实键。它**不是**文档化的 `./init_repo.sh --robot` 参数。"
+
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:81
 #: 95222991f49b4b78b0761662b26c0033
 #, python-brace-format
 msgid ""
 "Copy an existing public `{robot}_description` only as a **layout hint** —"
 " [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)."
 msgstr ""
-"公开 `{robot}_description` 只当**布局提示**来复制 — [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。"
+"公开 `{robot}_description` 只当**布局提示**来复制 — "
+"[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:50
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:83
 #: 61d3da9d2e144fe68ca33eec67e62750
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:52
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:85
 #: 0f5d4f3fae5f4dd0acb011db9160bfb6
 msgid "[fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md)"
 msgstr "[fa-deploy-ws 环境搭建](../../1-getting_started/4-fa_deploy_ws.md)"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:53
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:86
 #: 16b9eb6296a94833af9dae2b9e2287b7
 msgid "[robot_usds](../simulation/3-robot_usds.md)"
 msgstr "[robot_usds](../simulation/3-robot_usds.md)"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:54
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:87
 #: 3f078e21b7d441bb848ced89fdbf06dd
 msgid "[robot_common_launch](2-common.md)"
 msgstr "[robot_common_launch](2-common.md)"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:55
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:88
 #: 7ee05baffa2e47d895427924980945ee
 msgid "[Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)"
 msgstr "[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)"
 
-#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:56
+#: ../../source/4-reference/descriptions/4-fiveages_umbrella.md:89
 #: e218d3156a114ca1995d6b3d0d9bea1a
 msgid "[WBC controller](../controllers/3-ocs2_wbc.md)"
 msgstr "[WBC 控制器](../controllers/3-ocs2_wbc.md)"
@@ -467,3 +714,22 @@ msgstr "[WBC 控制器](../controllers/3-ocs2_wbc.md)"
 
 #~ msgid "[FA Robot Descriptions](5-fa_robots.md)"
 #~ msgstr "[FA 机器人描述](5-fa_robots.md)"
+
+#~ msgid ""
+#~ "Workspace pattern (script name only): "
+#~ "[fa-deploy-ws "
+#~ "Setup](../../1-getting_started/4-fa_deploy_ws.md) — same"
+#~ " `./init_repo.sh` name as open-deploy-"
+#~ "ws"
+#~ msgstr ""
+#~ "工作区模式（只写脚本名）：[fa-deploy-ws "
+#~ "配置](../../1-getting_started/4-fa_deploy_ws.md) — 与 "
+#~ "open-deploy-ws 一样是 `./init_repo.sh`"
+
+#~ msgid ""
+#~ "Description packages and `fa-deploy-ws`"
+#~ " are internal. This page does **not**"
+#~ " list unverified package names, launch "
+#~ "files, or `--robot` IDs."
+#~ msgstr "描述包和 `fa-deploy-ws` 是内部的。本页**不**列出未经核实的包名、launch 文件或 `--robot` ID。"
+

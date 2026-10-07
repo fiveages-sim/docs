@@ -8,33 +8,33 @@ These are the only USD repositories in scope for this documentation (based on `r
 
 | Path | Repository | Description |
 |------|------------|-------------|
-| `humanoid/FiveAges/Gen1` | fiveages-gen1-robot-usds | Gen1 humanoid |
-| `humanoid/FiveAges/Gen2` | fiveages-gen2-robot-usds | Gen2 humanoid |
-| `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | Gen3 humanoid |
+| `humanoid/FiveAges/Gen1` | fiveages-gen1-robot-usds | W1 / Gen1 (private remote) |
+| `humanoid/FiveAges/Gen2` | fiveages-gen2-robot-usds | W2 / S2 / Gen2 (private remote) |
+| `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | WCE3 / Gen3 (private remote) |
 | `humanoid/Galbot` | galbot-usds | Galbot mobile manipulator |
 | `humanoid/Ubtech` | ubtech-usds | Ubtech humanoid |
 
 ## Gen1/Gen2/Gen3
 
-FiveAges robot USD assets organized by development generation.
+FiveAges robot USD assets organized by generation. Names below are from the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table. The remotes are private (404 without access). URDF gitlinks: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 
 ### Gen1
 
 **Repository:** fiveages-gen1-robot-usds
 
-First generation humanoid assets.
+README name: **W1**. Path: `humanoid/FiveAges/Gen1`.
 
 ### Gen2
 
 **Repository:** fiveages-gen2-robot-usds
 
-Second generation humanoid assets.
+README names: **W2 / S2**. Path: `humanoid/FiveAges/Gen2`.
 
 ### Gen3
 
 **Repository:** fiveages-gen3-robot-usds
 
-Third generation humanoid assets.
+README name: **WCE3**. Path: `humanoid/FiveAges/Gen3`.
 
 ## Galbot
 
