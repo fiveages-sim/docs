@@ -68,6 +68,17 @@ make gettext
 sphinx-intl update -p build/gettext -l zh_CN
 ```
 
+### Check translations
+
+A non-empty `msgstr` is not enough. After filling catalogs:
+
+```bash
+python3 scripts/check_zh_coverage.py --threshold 95
+python3 scripts/check_zh_mix.py
+```
+
+`check_zh_mix.py` fails on empty translations, active `#, fuzzy` entries, English prose copied into `msgstr`, and leftover English inside Chinese sentences. How to triage hits: `.cursor/skills/zh-translation-qa/SKILL.md`.
+
 ### Edit Translations
 
 Edit files in `locale/zh_CN/LC_MESSAGES/*.po`:
@@ -224,6 +235,7 @@ GitHub Actions builds documentation on:
 
 CI fails when:
 - zh_CN translation coverage is below 95%
+- `check_zh_mix.py` finds empty, fuzzy, untranslated-prose, or mixed leftover English
 - Source files nest `` ``` `` inside `` ```{admonition} ``
 - Sphinx emits any warning (`SPHINXOPTS=-W`)
 - Built HTML contains a literal `` ``` `` fence (broken MyST nesting)

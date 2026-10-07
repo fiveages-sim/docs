@@ -176,7 +176,32 @@ msgstr ""
 "make gettext\n"
 "sphinx-intl update -p build/gettext -l zh_CN\n"
 
-#: ../../source/5-developer/2-docs_build.md:71 390d5b26c2244a31802428fd4bbd18e3
+#: ../../source/5-developer/2-docs_build.md:71
+msgid "Check translations"
+msgstr "检查译文"
+
+#: ../../source/5-developer/2-docs_build.md:73
+msgid "A non-empty `msgstr` is not enough. After filling catalogs:"
+msgstr "仅有非空 `msgstr` 不够。填完目录后请再跑："
+
+#: ../../source/5-developer/2-docs_build.md:75
+msgid ""
+"python3 scripts/check_zh_coverage.py --threshold 95\n"
+"python3 scripts/check_zh_mix.py\n"
+msgstr ""
+"python3 scripts/check_zh_coverage.py --threshold 95\n"
+"python3 scripts/check_zh_mix.py\n"
+
+#: ../../source/5-developer/2-docs_build.md:80
+msgid ""
+"`check_zh_mix.py` fails on empty translations, active `#, fuzzy` "
+"entries, English prose copied into `msgstr`, and leftover English inside "
+"Chinese sentences. How to triage hits: `.cursor/skills/zh-translation-"
+"qa/SKILL.md`."
+msgstr ""
+"`check_zh_mix.py` 会在空译文、仍带 `#, fuzzy` 的条目、把英文散文原样写入 `msgstr`、以及中文句子里残留英文时失败。如何处理命中：`.cursor/skills/zh-translation-qa/SKILL.md`。"
+
+#: ../../source/5-developer/2-docs_build.md:82 390d5b26c2244a31802428fd4bbd18e3
 msgid "Edit Translations"
 msgstr "编辑译文"
 
@@ -520,6 +545,12 @@ msgstr "出现以下情况时 CI 会失败："
 #: c3ba1091ce2d4b5aa3a61e722f24bfbf
 msgid "zh_CN translation coverage is below 95%"
 msgstr "zh_CN 翻译覆盖率低于 95%"
+
+#: ../../source/5-developer/2-docs_build.md:227
+msgid ""
+"`check_zh_mix.py` finds empty, fuzzy, untranslated-prose, or mixed "
+"leftover English"
+msgstr "`check_zh_mix.py` 发现空译文、fuzzy、未译散文或中英混杂残留"
 
 #: ../../source/5-developer/2-docs_build.md:227
 #: 4dec8af609104229b5c35a588356d10d
