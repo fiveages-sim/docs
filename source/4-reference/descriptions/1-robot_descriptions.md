@@ -9,7 +9,7 @@ Public umbrella repository. Brand trees are **git submodules** at the paths in t
 
 - Paths and submodule table: [README.md](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)
 - In `open-deploy-ws` the checkout is `src/robot-descriptions/` after **`./init_repo.sh`**. Do not recursive-init there.
-- Description-side Cursor skills: **`feature/agilex` only** — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no `.cursor/skills`**.
+- Description-side Cursor skills: **`feature/agilex` only** (`split-chassis-glb`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no `.cursor/skills`**. Newer AgileX / Rokae INEX rows: [README on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md).
 ```
 
 ## Layout (README)

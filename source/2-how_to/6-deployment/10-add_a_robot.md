@@ -6,7 +6,7 @@ How a new robot enters this stack. Copy an **existing** description package and 
 :class: important
 
 - Description layout: an existing `{robot}_description` package (example below: [arx_acone_description](https://github.com/fiveages-sim/robot-descriptions-arx/tree/main/arx_acone_description)) and its package README
-- Umbrella + submodule paths: [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) (e.g. ARX at `manipulator/ARX`)
+- Umbrella + submodule paths: [robot_descriptions README (`main`)](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) (e.g. ARX at `manipulator/ARX`). Newer AgileX / Rokae INEX tables: [same README on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md)
 - Launch / `hardware:=` / EEF: [robot_common_launch](../../4-reference/descriptions/2-common.md)
 - Workspace init: `./init_repo.sh` in [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) + [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf)
 - Isaac USD: FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (folder `USDA-OCS2-PhysX-Mujoco`) — [skill](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — plus `./init.sh` / `./run.sh` and [robot_usds](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)
@@ -53,7 +53,21 @@ What it does (overview — follow the skill, do not treat this as a substitute):
 - Write swerve xacro (reuse one steer + one wheel at `fl` `fr` `rl` `rr`; right modules yaw 180°, no mesh reflect)
 - Add `collider:=simple` boxes from **glTF-node** AABBs (not raw accessor min/max)
 
-How to add more skills under `.cursor/skills/`: the same [skills README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md). Package layout and submodule paths still come from the [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) (`main`). Use `feature/agilex` when you need this skill or newer AgileX content; do not assume `main` has the skills directory.
+How to add more skills under `.cursor/skills/`: the same [skills README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md) (folder [`.cursor/skills/`](https://github.com/fiveages-sim/robot_descriptions/tree/feature/agilex/.cursor/skills)). Do not invent a second description skill — the index lists **only** `split-chassis-glb`.
+
+**Package layout / submodules:** [README on `main`](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) for the shared submodule table (`common`, `manipulator/ARX`, …). Use the [README on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md) when the robot is newer AgileX or Rokae INEX. That branch currently tables (paths as written there):
+
+| Kind | Path on `feature/agilex` |
+|------|--------------------------|
+| Mobile manipulator | `manipulator/AgileX/cobot_magic_v1_description` (Cobot Magic V1) |
+| Mobile manipulator | `manipulator/AgileX/split_aloha_description` (Split Aloha) |
+| Mobile manipulator | `manipulator/AgileX/cobot_magic_v2_description` (Cobot Magic V2) |
+| Manipulator | `manipulator/AgileX/piper_description` (Piper; also on `main`) |
+| Manipulator | `manipulator/AgileX/nero_description` (Nero) |
+| Manipulator | `manipulator/AgileX/open_nero_description` (Open Nero) |
+| Wheel humanoid | `humanoid/Rokae/rokae_inex_description` (INEX; `split-chassis-glb` canonical) |
+
+`main` still lists AgileX Aloha at `manipulator/AgileX/agilex_aloha_description` and does **not** have the `.cursor/skills` directory.
 
 ## 2. Wire it into a deploy workspace
 
