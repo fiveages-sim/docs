@@ -32,12 +32,6 @@ robot_descriptions/                 # umbrella paths from its README
 6-vendor_arms_private
 ```
 
-```{toctree}
-:hidden:
-
-5-fa_robots
-```
-
 ## Quick Reference
 
 | Package | Robots | Visibility |
@@ -45,5 +39,5 @@ robot_descriptions/                 # umbrella paths from its README
 | [robot_descriptions](1-robot_descriptions.md) | Umbrella | Public |
 | [robot-descriptions-common](2-common.md) | Grippers, hands, sensors, `robot_common_launch` (path `common`) | Public |
 | [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HighTorque | Public |
-| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/2/3 USD (merged page) | Private remotes |
+| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/2/3 USD | Private remotes |
 | [Vendor arms](6-vendor_arms_private.md) | Tianji, Rokae, etc. | Private |

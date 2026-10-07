@@ -101,6 +101,10 @@ python3 scripts/check_zh_mix.py
 
 zh_CN coverage must stay 100% (CI threshold 95%). Also run `python3 scripts/check_zh_mix.py` (fuzzy / leftover English — see `.cursor/skills/zh-translation-qa/SKILL.md`). Never nest `` ``` `` inside `` ```{admonition} ``; use `:::` colon fences. User-facing docs are bilingual; fill new English strings in `locale/zh_CN`.
 
+## After a move or merge
+
+Delete the old page. Do **not** leave a stub (“This page is merged into…”, hidden toctree for bookmarks). Checklist: `.cursor/skills/docs-remove-leftovers/SKILL.md`.
+
 ## Where this skill lives
 
 - Primary: `.cursor/skills/docs-writing/SKILL.md` (this file)

@@ -1,6 +1,6 @@
 # FiveAges robot descriptions
 
-One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and their **public USD** mapping. The older “fiveages” / “FiveAges 机器人描述” pages are merged here.
+One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and their **public USD** mapping.
 
 ```{admonition} Access Required
 :class: warning
