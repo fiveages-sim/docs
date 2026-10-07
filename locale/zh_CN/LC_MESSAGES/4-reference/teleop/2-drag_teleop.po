@@ -7,350 +7,543 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FiveAges Sim \n"
+"Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:37+0000\n"
+"POT-Creation-Date: 2026-10-06 17:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:1
-#: 19f065aebf9c4ae2b3a3f479d80fe39f
-msgid "drag_teleop_controller"
-msgstr "drag_teleop_controller"
+#: 9d1717184c494004b84c2391c4a254a9
+msgid "Isomorphic teleop (`drag_teleop_controller`)"
+msgstr "同构遥操作（`drag_teleop_controller`）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:3
-#: ca218e3d34aa4d14b0abfb6214fc7bfd
-msgid "Drag teaching controller for manual robot guidance."
-msgstr "用于手动引导机器人的拖动示教控制器。"
+#: 95bfaa1a9dba437eaa327c915b04b01d
+msgid ""
+"Master–slave **isomorphic teleop** (同构遥操作) for **Panthera HT** dual-arm. The"
+" ROS package is still named `drag_teleop_controller`; that is **not** drag "
+"teaching."
+msgstr ""
+"面向 **Panthera HT** 双臂的主从 **同构遥操作**。ROS 软件包仍名为 `drag_teleop_controller`；这 "
+"**不是** 拖动示教。"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:5
-#: f813fd8e27214d3a8c3aa93dc9f1859a
+#: 75d4656df7d94e778acc4d7f3ce31024
 msgid ""
-"**Repository:** [fiveages-sim/drag_teleop_controller](https://github.com"
-"/fiveages-sim/drag_teleop_controller)"
+"**Repository:** [fiveages-"
+"sim/drag_teleop_controller](https://github.com/fiveages-"
+"sim/drag_teleop_controller)"
 msgstr ""
-"**仓库：** [fiveages-sim/drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)"
+"**仓库：** [fiveages-sim/drag_teleop_controller](https://github.com/fiveages-"
+"sim/drag_teleop_controller)"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:7
-#: 41ba563041c24ca486585f1933d9e3f7
+#: 7823cc3bffa14ebabe61415d148147b1
+msgid ""
+"**README:** [README.md](https://github.com/fiveages-"
+"sim/drag_teleop_controller/blob/main/README.md)"
+msgstr ""
+"**README：** [README.md](https://github.com/fiveages-"
+"sim/drag_teleop_controller/blob/main/README.md)"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:9
+#: d892349849fd4f58b58d87e49021784e
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md:9
-#: e6dc25ed10dd42e1a3d037a5b08da056
-msgid "Enables manual robot guidance:"
-msgstr "支持手动引导机器人："
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:10
-#: fabe28762ee8461ebe13476f8f3b9472
-msgid "Gravity compensation mode"
-msgstr "重力补偿模式"
-
 #: ../../source/4-reference/teleop/2-drag_teleop.md:11
-#: 935e82ca53aa4bb0bf476f06fa11134e
-msgid "Trajectory recording"
-msgstr "轨迹录制"
+#: 7798449568d849a7a2ad1d4a6a47dae1
+msgid "One `ros2_control` controller plugin, started twice:"
+msgstr "同一个 `ros2_control` 控制器插件，启动两次："
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md:12
-#: 7d567b370ecc464aafd2f2729244932c
-msgid "Playback"
-msgstr "回放"
+#: ../../source/4-reference/teleop/2-drag_teleop.md:13
+#: a6d4ed6585e44d128d02f6f4b5be8685
+msgid ""
+"`role:=master` — operator arm with Pinocchio gravity compensation (`τ_G = "
+"rnea(q, 0, 0)`); optional force feedback"
+msgstr "`role:=master` — 操作者臂，Pinocchio 重力补偿（`τ_G = rnea(q, 0, 0)`）；可选力反馈"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:14
-#: 241d2949343c48529ce580c7a247162a
-msgid "Supported Robots"
-msgstr "支持 机器人"
+#: 75199b2c0a3046e99d98f8be67299257
+msgid ""
+"`role:=slave` — follower; tracks mapped master joints (`position` / `mit` / "
+"`effort`)"
+msgstr "`role:=slave` — 从臂；跟踪映射后的主臂关节（`position` / `mit` / `effort`）"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: ba7b9336407a4b1a975fb4f71342a7a8
-msgid "Robot"
-msgstr "机器人"
+#: ../../source/4-reference/teleop/2-drag_teleop.md:16
+#: d820be54785d4cf599a5c3d83a900564
+msgid ""
+"Joint mapping (and effort mapping under power conservation) is applied "
+"**before** publishing `teleop_states`. Arm joints (12) are commanded by this"
+" controller; grippers use `adaptive_gripper_controller`."
+msgstr ""
+"关节映射（以及功率守恒下的力矩映射）在发布 `teleop_states` **之前**完成。12 个臂关节由本控制器命令；夹爪使用 "
+"`adaptive_gripper_controller`。"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3ee37350c8a0490ebdcd4d8373de79ca
-msgid "Support Level"
-msgstr "支持级别"
+#: ../../source/4-reference/teleop/2-drag_teleop.md:18
+#: 1cf98fcee0634425b4c6042a5b25f60d
+msgid ""
+"There is **no** `enter_teach_mode`, `/start_recording`, or `/playback` "
+"service."
+msgstr "**没有** `enter_teach_mode`、`/start_recording` 或 `/playback` 服务。"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3bba3f220adc404884953b710b2faf8f
-msgid "HT Panthera"
-msgstr "HT Panthera"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: f29db27c735a403d9b7f9d9479ef5492
-msgid "Full"
-msgstr "完整"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 28e182f15ada4e1b989ea7ce9839c35b
-msgid "Other compliant arms"
-msgstr "其他柔顺机械臂"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 325822e94fd44f4697515eb9175057ac
-msgid "Partial"
-msgstr "部分"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:21
-#: 855071722bd44b5db26117236bcdb89f
-msgid "Usage"
-msgstr "使用方法"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:23
-#: da5c3692ede841659eabb8341d966497
+#: ../../source/4-reference/teleop/2-drag_teleop.md:20
+#: ccf97b4825fa4387b082f4613d739c09
 msgid "Launch"
 msgstr "启动文件"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md:25
-#: e0201741c9374b0c82c7a5f0f7a3d62f
+#: ../../source/4-reference/teleop/2-drag_teleop.md:22
+#: 52f9253c2e0244f7ab56382a6bcb1e3a
 msgid ""
-"ros2 launch drag_teleop_controller drag_teleop.launch.py "
-"robot:=ht_panthera\n"
-msgstr ""
-"ros2 launch drag_teleop_controller drag_teleop.launch.py robot:=ht_panthera\n"
+"Launch file: `drag_teleop_controller.launch.py` (not "
+"`drag_teleop.launch.py`)."
+msgstr "启动文件：`drag_teleop_controller.launch.py`（不是 `drag_teleop.launch.py`）。"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md:29
-#: b3c180bf23064489bb83f6b47914232e
+#: ../../source/4-reference/teleop/2-drag_teleop.md:24
+#: e225a1b2baee4dc38969a5e1e5a9eb00
+msgid ""
+"# Mock\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=master hardware:=mock_components\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=slave hardware:=mock_components\n"
+"\n"
+"# Real (see README for mode × hardware interface requirements)\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=master hardware:=real mode:=effort \\\n"
+"  hardware_control_mode:=effort\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=slave hardware:=real mode:=mit\n"
+msgstr ""
+"# Mock\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=master hardware:=mock_components\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=slave hardware:=mock_components\n"
+"\n"
+"# Real (see README for mode × hardware interface requirements)\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=master hardware:=real mode:=effort \\\n"
+"  hardware_control_mode:=effort\n"
+"ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \\\n"
+"  role:=slave hardware:=real mode:=mit\n"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:39
+#: 97614719f68b4e04b984164791d8101c
+#, python-brace-format
+msgid ""
+"Default `robot` is `panthera_ht`. Namespaces are `/drag_teleop_{role}`."
+msgstr "默认 `robot` 为 `panthera_ht`。命名空间为 `/drag_teleop_{role}`。"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:41
+#: 76b30f618a1545f7ae17606218e29b41
 msgid "Services"
 msgstr "服务"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 04f26cb1d0ca4d5ab2f3a46f913805dd
+#: 5c189f7a252a4805a41cf088e27638bb
 msgid "Service"
 msgstr "服务"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: bfe90f4aa8694be79b52530433514e3c fea3ab0a1086427abc33c4824790a8f5
+#: 2eea4e2720474a19b7ee855a0234187f
 msgid "Type"
 msgstr "类型"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 33a3f156231f4d1cb75dc589f068baae 5f7bd71f641e4c27a643558254ca6f9f
-#: f2355959b3ae4e92947d13ce3e6f449a
+#: 3bdfe72b8ffc49dc9fd18d0dcf6e3192 ff5514ab93f34876b4bb8f3d25c23f24
 msgid "Description"
 msgstr "描述"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 1e54757ee96743358541f7be3f1e2114
-msgid "`/enter_teach_mode`"
-msgstr "`/enter_teach_mode`"
+#: c7bdbb36ed78429c8650960800206d36
+#, python-brace-format
+msgid "`/drag_teleop_{role}/teleop_mode`"
+msgstr "`/drag_teleop_{role}/teleop_mode`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3f3bf9b8f2c84a95aebc2ed7db4aa1b5 8a9888c9060c4539845a83355bdf4948
-#: 99fdbb383b734c6d9015cb5d851b2901 c0bc5c5a4eba4f6da94ab8ef681c4dc9
-#: ea64561e2c8840f3ac4a2a26be8828b5
-msgid "`Trigger`"
-msgstr "`Trigger`"
+#: f0962a9a8d124951a09e188c47bced41
+msgid "`drag_teleop_controller/srv/TeleopMode`"
+msgstr "`drag_teleop_controller/srv/TeleopMode`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 7ebe8b5d18914c0bb1e3dfbed4dbe7ca
-msgid "Enable gravity compensation"
-msgstr "启用重力补偿"
+#: ce204bd7bf5643e78e0784edfe47bc6c
+msgid "Runtime `position` / `mit` / `effort`"
+msgstr "运行时 `position` / `mit` / `effort`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 284fe4ce583541dab11a20e0a92dc700
-msgid "`/exit_teach_mode`"
-msgstr "`/exit_teach_mode`"
+#: 91ad4b8748844c66865fbd71049b9ca0
+#, python-brace-format
+msgid "`/drag_teleop_{role}/teleop_feedback`"
+msgstr "`/drag_teleop_{role}/teleop_feedback`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: afa4041a78eb483bbb9458f230f87e59
-msgid "Return to normal mode"
-msgstr "返回正常模式"
+#: d3b397c894754b64a8e5d7852516f64c
+msgid "`drag_teleop_controller/srv/TeleopFeedback`"
+msgstr "`drag_teleop_controller/srv/TeleopFeedback`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 2fe490ba2bd640c1b1337f1fe9e1ec7e
-msgid "`/start_recording`"
-msgstr "`/start_recording`"
+#: 609898bd94f3413faab95447d5aa22f3
+msgid "Master-only: `false` / `position` / `effort`"
+msgstr "仅主臂：`false` / `position` / `effort`"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 0f09a7ff0b7f43a283a7433cd86d651c
-msgid "Begin recording"
-msgstr "开始录制"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 2cfdd74791504e82862af30e5670d266
-msgid "`/stop_recording`"
-msgstr "`/stop_recording`"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: f8b234307e5e4ed68ac5f1cccd748980
-msgid "End recording"
-msgstr "结束录制"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 235a1adab583424e8a2fa09b0b489e06
-msgid "`/playback`"
-msgstr "`/playback`"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: b230e71646954ab0a6df8b35834dc08e
-msgid "Play recorded trajectory"
-msgstr "回放已录制轨迹"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:39
-#: ac9aa6ac2d384546b654056f0e341d49
-msgid "Workflow"
-msgstr "工作流程"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:41
-#: 42d3767543d0464280f80be1979bba65
-msgid ""
-"# Enter teach mode\n"
-"ros2 service call /enter_teach_mode std_srvs/srv/Trigger\n"
-"\n"
-"# Record trajectory (manually guide robot)\n"
-"ros2 service call /start_recording std_srvs/srv/Trigger\n"
-"# ... move robot ...\n"
-"ros2 service call /stop_recording std_srvs/srv/Trigger\n"
-"\n"
-"# Playback\n"
-"ros2 service call /playback std_srvs/srv/Trigger\n"
-"\n"
-"# Exit\n"
-"ros2 service call /exit_teach_mode std_srvs/srv/Trigger\n"
-msgstr ""
-"# Enter teach mode\n"
-"ros2 service call /enter_teach_mode std_srvs/srv/Trigger\n"
-"\n"
-"# Record trajectory (manually guide robot)\n"
-"ros2 service call /start_recording std_srvs/srv/Trigger\n"
-"# ... move robot ...\n"
-"ros2 service call /stop_recording std_srvs/srv/Trigger\n"
-"\n"
-"# Playback\n"
-"ros2 service call /playback std_srvs/srv/Trigger\n"
-"\n"
-"# Exit\n"
-"ros2 service call /exit_teach_mode std_srvs/srv/Trigger\n"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:57
-#: 1014186c514f454eb88afe5a3b7030e3
+#: ../../source/4-reference/teleop/2-drag_teleop.md:48
+#: b180515d1c68478d92a40a797d3cddab
 msgid "Topics"
 msgstr "主题"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 444027e0ff0c43b5a4ed0af6684f2ea1
+#: 9a123f3c7dc544818bc708e431adffd0
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c825ad60fa794758af1a78dde216f4dc
+#: a5c53a8067b3404f969857d404a78783
 msgid "Direction"
 msgstr "方向"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: a6fc64412afb4f39b2ce3fca5cd2d489
-msgid "`/recorded_trajectory`"
-msgstr "`/recorded_trajectory`"
+#: 6fcd1e715dd74e00bc9ac44432fad050
+msgid "`/drag_teleop_master/teleop_states`"
+msgstr "`/drag_teleop_master/teleop_states`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3a658974a82b41c581e21dc9c970c6b2
-msgid "`JointTrajectory`"
-msgstr "`JointTrajectory`"
+#: 7f054d1cb7494379a2648fe77ba7e137
+msgid "Publish (master) / Subscribe (slave)"
+msgstr "发布（主）/ 订阅（从）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 8c9d3d828fda4c88a34c214325aa7575
-msgid "Publish"
-msgstr "发布"
+#: 9ff6623b500743748f4dcad031d977a6
+msgid "Forward-mapped master state"
+msgstr "正映射后的主臂状态"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: aa1703540b6d46828f4f54f42e2749dd
-msgid "Recorded path"
-msgstr "已录制路径"
+#: d014d47a80cc4e8394bdfe97c8162425
+msgid "`/drag_teleop_slave/teleop_states`"
+msgstr "`/drag_teleop_slave/teleop_states`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: ea2c2b36c80e47dca73f6752d101c8f9
-msgid "`/joint_states`"
-msgstr "`/joint_states`"
+#: 6652d99122154647badccf1c29c21346
+msgid "Publish (slave) / Subscribe (master)"
+msgstr "发布（从）/ 订阅（主）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 42e3e537c3564b6299e9e1a8ec4edd91
-msgid "`JointState`"
-msgstr "`JointState`"
+#: df1612697ab843b087ce753612f78c1f
+msgid "Inverse-mapped slave state"
+msgstr "逆映射后的从臂状态"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:55
+#: 8a7d7d228ce84eb7a451a840d79e18e5
+msgid "Launch arguments"
+msgstr "启动参数"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 2c96313f84df41efbeb735be716cf0bf
-msgid "Subscribe"
-msgstr "订阅"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: da63b311ee08447999250ce4bee230d1
-msgid "Current state"
-msgstr "当前状态"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md:64
-#: aa7de4b981b64ec4846315e523d68c98
-msgid "Parameters"
+#: 4cb7f79169f14535b2b98ab86bdf173c
+msgid "Argument"
 msgstr "参数"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 66cde5a829f6440d822213ded257b718
-msgid "Parameter"
-msgstr "参数"
-
-#: ../../source/4-reference/teleop/2-drag_teleop.md
-#: b2cc02d70cad4ce5b4e520afddcb82f2
+#: c0534811e7f04804ac6ff0e012550732
 msgid "Default"
 msgstr "默认值"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: c910d1906c144deca8218bfdd7ce006a
-msgid "`gravity_compensation`"
-msgstr "`gravity_compensation`"
+#: 82de9e1805864c5e88ce003d1846e52a
+msgid "Meaning"
+msgstr "含义"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 3e839ada7139445dad882a294dab28e8
-msgid "`true`"
-msgstr "`true`"
+#: 40731423a9bf40179fa5a5176aeb2434
+msgid "`role`"
+msgstr "`role`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 8260be04ddf94a8e93d583c4e667a8e1
-msgid "Enable during teach"
-msgstr "示教时启用"
+#: be19017e9f15459890727b58fd9b71f4
+msgid "(required)"
+msgstr "（必选）"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 7a6e02cd93d540379ffc83821faa6122
-msgid "`recording_rate`"
-msgstr "`recording_rate`"
+#: 5408f00249df426e9d447339afbe92c4
+msgid "`master` | `slave`"
+msgstr "`master` | `slave`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 5e2b77f1131a4a869b4c26fcd5dc3629
-msgid "`100`"
-msgstr "`100`"
+#: 83eaa52d01074657abc69a99a2b4c90e
+msgid "`robot`"
+msgstr "`robot`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: ed16200d1cac44399ff07e6a36a0e072
-msgid "Sample rate (Hz)"
-msgstr "采样率（Hz）"
+#: 48775e75a5f2432793b37cb279692c0a
+msgid "`panthera_ht`"
+msgstr "`panthera_ht`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: 9dd778094c3b4575850d9673de478220
-msgid "`playback_speed`"
-msgstr "`playback_speed`"
+#: af8baa0fa6b24c1b8a75da176b6421ec
+#, python-brace-format
+msgid "`{robot}_description` package"
+msgstr "`{robot}_description` 软件包"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: a7e8c76f88384529b492a9ec69b795f0
-msgid "`1.0`"
-msgstr "`1.0`"
+#: 09dcf86a10984c1982a91dcd55c0e573
+msgid "`type`"
+msgstr "`type`"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md
-#: f41e7910645741ffbf225cb1113d02e9
-msgid "Playback multiplier"
-msgstr "回放倍率"
+#: 8b89d6809bee48c79aa315bfc563507d
+msgid "`dual`"
+msgstr "`dual`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 3f2dab04bc8e4124821ec6cea62a6563
+msgid "`single` | `left` | `right` | `dual`"
+msgstr "`single` | `left` | `right` | `dual`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 746b71ea75104144b006ed77a0aab128
+msgid "`hardware`"
+msgstr "`hardware`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 93060fb4f96447b7b9ae22fd83dd567f
+msgid "`mock_components`"
+msgstr "`mock_components`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 207a90bcff3e42c4b0657f37436065fe
+msgid "`real` | `real_usb` | `mock_components` | `gz` | `isaac`"
+msgstr "`real` | `real_usb` | `mock_components` | `gz` | `isaac`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 498091689896435f9fe86366bad590fb
+msgid "`mode`"
+msgstr "`mode`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 4e54a5d8f4db44979a152510be18c28f e59cc0eb422146c1881614fb27c3c898
+msgid "(yaml)"
+msgstr "（yaml）"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 31675e8cbcaf46bda75a5bd68966fc09
+msgid "`position` (slave only) | `mit` | `effort`"
+msgstr "`position`（仅从臂） | `mit` | `effort`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 5b85af1b5c0a48389fd38a57d53351b0
+msgid "`feedback`"
+msgstr "`feedback`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 30611f8ba3e7423c94b8909403cd4be8
+msgid "`false` | `position` | `effort` (master)"
+msgstr "`false` | `position` | `effort`（主臂）"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: c75685758f414ccea701cef34fd4ff6c
+msgid "`moveJ_pub`"
+msgstr "`moveJ_pub`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 09c328ad19c54953b8c32878d85e3f0b
+msgid "`false`"
+msgstr "`false`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 6d36a36e48b64499a91d830d1fde9de6
+msgid "Master publishes OCS2 moveJ + gripper commands"
+msgstr "主臂发布 OCS2 moveJ 与夹爪命令"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: ad529fe4f74147a1a6a14a54a6941783
+msgid "`controller_params`"
+msgstr "`controller_params`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: 3b5b2b212bd746b39469222d89c3eeb7
+msgid "package yaml"
+msgstr "软件包 yaml"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md
+#: d63060d181464561835c9b1065c4cc5a
+msgid "e.g. `panthera_ht_2_panthera_ht.yaml`"
+msgstr "例如 `panthera_ht_2_panthera_ht.yaml`"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:68
+#: 00eebe5a2d03429199f08f8e2803fa31
+msgid ""
+"Mode × hardware command-interface matrix, control laws, and YAML keys: read "
+"the README. Do not treat DexCap [`teleop-joint-"
+"mapper`](4-teleop_joint_mapper.md) as this package."
+msgstr ""
+"模式 × 硬件命令接口矩阵、控制律和 YAML 键：请读 README。不要把 DexCap 的 [`teleop-joint-"
+"mapper`](4-teleop_joint_mapper.md) 当成本软件包。"
+
+#: ../../source/4-reference/teleop/2-drag_teleop.md:70
+#: 185ae7f0477f4904809ad9e0a3980130
+msgid "Related"
+msgstr "相关"
 
 #: ../../source/4-reference/teleop/2-drag_teleop.md:72
-#: 0c447b3603594edf9f023ff329aa9b76
-msgid "Related"
-msgstr "相关内容"
+#: 9874be1af5b141c1ac5e02b15f517469
+msgid "[Isomorphic Teleop How-To](../../2-how_to/7-isomorphic_teleop.md)"
+msgstr "[同构遥操作指南](../../2-how_to/7-isomorphic_teleop.md)"
 
-#: ../../source/4-reference/teleop/2-drag_teleop.md:74
-#: e9b2fcadfa014a709ccd959369b1b92e
-msgid "[Drag Teleop How-To](../../2-how_to/7-drag_teleop.md)"
-msgstr "[拖动遥操作指南](../../2-how_to/7-drag_teleop.md)"
+#~ msgid "Drag teaching controller for manual robot guidance."
+#~ msgstr "用于手动引导机器人的拖动示教控制器。"
+
+#~ msgid "Enables manual robot guidance:"
+#~ msgstr "支持手动引导机器人："
+
+#~ msgid "Gravity compensation mode"
+#~ msgstr "重力补偿模式"
+
+#~ msgid "Trajectory recording"
+#~ msgstr "轨迹录制"
+
+#~ msgid "Playback"
+#~ msgstr "回放"
+
+#~ msgid "Supported Robots"
+#~ msgstr "支持 机器人"
+
+#~ msgid "Support Level"
+#~ msgstr "支持级别"
+
+#~ msgid "Full"
+#~ msgstr "完整"
+
+#~ msgid "Other compliant arms"
+#~ msgstr "其他柔顺机械臂"
+
+#~ msgid "Partial"
+#~ msgstr "部分"
+
+#~ msgid "Usage"
+#~ msgstr "使用方法"
+
+#~ msgid "`/enter_teach_mode`"
+#~ msgstr "`/enter_teach_mode`"
+
+#~ msgid "`Trigger`"
+#~ msgstr "`Trigger`"
+
+#~ msgid "Enable gravity compensation"
+#~ msgstr "启用重力补偿"
+
+#~ msgid "`/exit_teach_mode`"
+#~ msgstr "`/exit_teach_mode`"
+
+#~ msgid "Return to normal mode"
+#~ msgstr "返回正常模式"
+
+#~ msgid "`/start_recording`"
+#~ msgstr "`/start_recording`"
+
+#~ msgid "Begin recording"
+#~ msgstr "开始录制"
+
+#~ msgid "`/stop_recording`"
+#~ msgstr "`/stop_recording`"
+
+#~ msgid "End recording"
+#~ msgstr "结束录制"
+
+#~ msgid "`/playback`"
+#~ msgstr "`/playback`"
+
+#~ msgid "Play recorded trajectory"
+#~ msgstr "回放已录制轨迹"
+
+#~ msgid "Workflow"
+#~ msgstr "工作流程"
+
+#~ msgid ""
+#~ "# Enter teach mode\n"
+#~ "ros2 service call /enter_teach_mode std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Record trajectory (manually guide robot)\n"
+#~ "ros2 service call /start_recording std_srvs/srv/Trigger\n"
+#~ "# ... move robot ...\n"
+#~ "ros2 service call /stop_recording std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Playback\n"
+#~ "ros2 service call /playback std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Exit\n"
+#~ "ros2 service call /exit_teach_mode std_srvs/srv/Trigger\n"
+#~ msgstr ""
+#~ "# Enter teach mode\n"
+#~ "ros2 service call /enter_teach_mode std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Record trajectory (manually guide robot)\n"
+#~ "ros2 service call /start_recording std_srvs/srv/Trigger\n"
+#~ "# ... move robot ...\n"
+#~ "ros2 service call /stop_recording std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Playback\n"
+#~ "ros2 service call /playback std_srvs/srv/Trigger\n"
+#~ "\n"
+#~ "# Exit\n"
+#~ "ros2 service call /exit_teach_mode std_srvs/srv/Trigger\n"
+
+#~ msgid "`/recorded_trajectory`"
+#~ msgstr "`/recorded_trajectory`"
+
+#~ msgid "`JointTrajectory`"
+#~ msgstr "`JointTrajectory`"
+
+#~ msgid "Publish"
+#~ msgstr "发布"
+
+#~ msgid "Recorded path"
+#~ msgstr "已录制路径"
+
+#~ msgid "`/joint_states`"
+#~ msgstr "`/joint_states`"
+
+#~ msgid "`JointState`"
+#~ msgstr "`JointState`"
+
+#~ msgid "Subscribe"
+#~ msgstr "订阅"
+
+#~ msgid "Current state"
+#~ msgstr "当前状态"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Parameter"
+#~ msgstr "参数"
+
+#~ msgid "`gravity_compensation`"
+#~ msgstr "`gravity_compensation`"
+
+#~ msgid "Enable during teach"
+#~ msgstr "示教时启用"
+
+#~ msgid "`recording_rate`"
+#~ msgstr "`recording_rate`"
+
+#~ msgid "`100`"
+#~ msgstr "`100`"
+
+#~ msgid "Sample rate (Hz)"
+#~ msgstr "采样率（Hz）"
+
+#~ msgid "`playback_speed`"
+#~ msgstr "`playback_speed`"
+
+#~ msgid "`1.0`"
+#~ msgstr "`1.0`"
+
+#~ msgid "Playback multiplier"
+#~ msgstr "回放倍率"

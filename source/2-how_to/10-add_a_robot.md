@@ -14,7 +14,7 @@ Adding a robot requires:
 
 ### Package Structure
 
-```
+:::{code-block} none
 robot_description_newrobot/
 ├── CMakeLists.txt
 ├── package.xml
@@ -28,7 +28,7 @@ robot_description_newrobot/
 │   └── ocs2_arm_config.yaml
 └── launch/
     └── display.launch.py
-```
+:::
 
 ### URDF/Xacro
 
@@ -216,10 +216,10 @@ Create or update:
 
 ### URDF errors
 
-```bash
+:::{code-block} bash
 # Check for syntax errors
 check_urdf <(xacro newrobot.urdf.xacro)
-```
+:::
 
 ### Controller fails to start
 

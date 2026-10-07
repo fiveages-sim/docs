@@ -13,7 +13,7 @@ USD robot asset superproject for Isaac Sim.
 
 ## Structure
 
-```
+:::{code-block} none
 robot_usds/
 ├── humanoid/
 │   ├── FiveAges/
@@ -26,7 +26,7 @@ robot_usds/
 ├── mobile_manipulators/
 ├── grippers/
 └── sensors/
-```
+:::
 
 ## Submodules
 
@@ -42,20 +42,24 @@ The following are managed as Git submodules:
 
 ## Usage
 
-### Initialize
+**Primary path:** inside FaSim-Isaac, `./init.sh` operation 1 initializes `robots/` (this superproject) according to `submodules_visibility.conf`.
 
-```bash
+:::{code-block} bash
+cd FaSim-Isaac
+./init.sh
+:::
+
+:::{admonition} Manual fallback
+:class: note
+
+Standalone clone only if you are not using FaSim:
+
+:::{code-block} bash
 git clone https://github.com/fiveages-sim/robot_usds.git
 cd robot_usds
 git submodule update --init
-```
-
-### With FaSim-Isaac
-
-```bash
-cd FaSim-Isaac
-./init.sh  # Handles robot_usds initialization
-```
+:::
+:::
 
 ## In-Tree Assets
 
@@ -95,3 +99,4 @@ add_reference_to_stage(
 
 - [USD Submodules](4-usd_submodules.md)
 - [FaSim-Isaac](2-fasim_isaac.md)
+- [Synthetic Data](../../6-synthetic_data/1-isaac_scenes.md)

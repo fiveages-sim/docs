@@ -1,268 +1,584 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024-2026, FiveAges
-# This file is distributed under the same license as the FiveAges Sim
-# package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FiveAges Sim \n"
+"Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 14:37+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2026-10-06 16:52+0000\n"
+"PO-Revision-Date: 2026-10-06 16:20+0000\n"
+"Last-Translator: Cursor Agent\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:1
-#: 0cbd9e077ff9441789c30099fb28fac6
+#: cb9a992cc14c4cb7ae47569b10b151b3
 msgid "lerobot_ros2"
 msgstr "lerobot_ros2"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:3
-#: deefaf7000474f47bd80de6a9ac02c7a
-msgid "LeRobot integration for ROS 2."
-msgstr "面向 ROS 2 的 LeRobot 集成。"
+#: 99c6656e15c04036b41f2e9462615369
+msgid ""
+"LeRobot ↔ ROS 2 integration monorepo. LeRobot talks to the robot over ROS 2 "
+"topics."
+msgstr "LeRobot 与 ROS 2 的集成单体仓库。LeRobot 通过 ROS 2 话题与机器人通信。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:5
-#: 1ade09f7291341908b7efc0fcc2eaf3a
-msgid ""
-"**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
-"sim/lerobot_ros2)"
-msgstr ""
-"**仓库：** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2)"
+#: 4fd74dfc077d4abfacc3ea3ce4415192
+msgid "Documented branch"
+msgstr "文档所依据的分支"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:7
-#: 6612be29a8ab41598550f77cf6538e08
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:8
+#: 5660890e2501412e9e2ef093a281731c
+msgid ""
+"Documented against branch `feature/sim-grasp-datagen` (tip 2026-09-20). That"
+" branch is newer than `main`; follow it, not `main`."
+msgstr ""
+"本文档对照分支 `feature/sim-grasp-datagen`（尖端提交 2026-09-20）。该分支新于 `main`；请以它为准，不要跟 "
+"`main`。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:11
+#: 704d2d3295564ccfb232a72c420fc1a7
+msgid ""
+"**Repository:** [fiveages-sim/lerobot_ros2 @ `feature/sim-grasp-"
+"datagen`](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-"
+"grasp-datagen)"
+msgstr ""
+"**仓库：** [fiveages-sim/lerobot_ros2 @ `feature/sim-grasp-"
+"datagen`](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-"
+"grasp-datagen)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:13
+#: ccc75eb645aa448bad22fa70269abca6
+msgid ""
+"**README:** [README.md on this branch](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/README.md)"
+msgstr ""
+"**README：** [README.md on this branch](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/README.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:15
+#: 92167e5be40b4200becd1132d545dd5b
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:9
-#: 75cd9371271d493694965a61a6685df4
-msgid "Integrates LeRobot learning framework with ROS 2:"
-msgstr "将 LeRobot 学习框架与 ROS 2 集成："
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:17
+#: 5b289d4624df4af5b24cf05ce8a65bb9
+msgid ""
+"This checkout is a monorepo, not a single `pip install -e .` package. It "
+"wires:"
+msgstr "本仓库是单体工程，不是在仓库根目录执行一次 `pip install -e .` 就能装好的包。它包含："
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:10
-#: 612ac4c1db874423a6c62daca97e23bb
-msgid "Data collection"
-msgstr "数据采集"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:19
+#: f9fe08c2c18e4e13a2fbb3bdafd73fda
+msgid "`submodules/ros2_robot_interface` — ROS 2 robot interface"
+msgstr "`submodules/ros2_robot_interface`：独立 ROS 2 机器人接口包"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:11
-#: 76c99bf523ce463d9c158f60d4da920c
-msgid "Policy deployment"
-msgstr "策略部署"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:20
+#: 420e0d318e6d48aa964a93488236fb0d
+msgid ""
+"`submodules/robot_action_composer` — task-queue YAML and motion generation "
+"(see [robot_action_composer](5-robot_action_composer.md))"
+msgstr ""
+"`submodules/robot_action_composer`：任务队列 YAML 与运动生成（见 "
+"[robot_action_composer](5-robot_action_composer.md)）"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:12
-#: de5423d14479448db0c8a87b531dcdf6
-msgid "Training pipelines"
-msgstr "训练流水线"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:21
+#: c7882f6184c44f4980c8183f6ac28e60
+msgid ""
+"`lerobot_robot_ros2` — LeRobot ROS 2 robot plugin (`ROS2Robot` / "
+"`ROS2RobotConfig` / `ROS2RobotInterfaceConfig`)"
+msgstr ""
+"`lerobot_robot_ros2`：LeRobot 的 ROS 2 机器人插件（`ROS2Robot` / `ROS2RobotConfig` /"
+" `ROS2RobotInterfaceConfig`）"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:14
-#: b618baf5e8e34aa8b1e6023536102a7e
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:22
+#: 3eb9fcb67cd848bc84dc176dddb9315f
+msgid "`lerobot_camera_ros2` — LeRobot ROS 2 camera plugin"
+msgstr "`lerobot_camera_ros2`：LeRobot 的 ROS 2 相机插件"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:24
+#: 6226d8c8b4054a5c86849da1411c9c05
+msgid ""
+"The LeRobot core library is installed from PyPI. The default pin is "
+"`lerobot==0.5.1` in `.fa-env.toml` (first created from [`.fa-"
+"env.toml.example`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/.fa-env.toml.example))."
+msgstr ""
+"LeRobot 核心库从 PyPI 安装。默认版本钉在 `.fa-env.toml` 中的 `lerobot==0.5.1`（首次由 [`.fa-"
+"env.toml.example`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/.fa-env.toml.example) 生成）。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:26
+#: 8e0d24ac56754997bce2600df948dea6
+msgid "Requirements"
+msgstr "前置要求"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:28
+#: 7fce22763be149ba8f46ccd34c05ceb0
+msgid "ROS 2 (tested: **Jazzy**)"
+msgstr "ROS 2（测试版本：**Jazzy**）"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:29
+#: 223b06496ba54cf8902a5bafc59fbc99
+msgid "**Python 3.12**"
+msgstr "**Python 3.12**"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:30
+#: 5188ffddb18f45e589f1ff7a68dfd23c
+msgid "[uv](https://docs.astral.sh/uv/) (recommended) or Conda"
+msgstr "[uv](https://docs.astral.sh/uv/)（推荐）或 Conda"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:32
+#: 98388c82158b4be48f63c7bc06037a55
 msgid "Installation"
 msgstr "安装"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:16
-#: ce5d1145f23d4b1db458ca0bc476f03c
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:34
+#: 50acca8a6df847b38fe6ec4513cc02bc
 msgid ""
-"git clone https://github.com/fiveages-sim/lerobot_ros2.git\n"
+"Clone with submodules, then use `init.sh`. Do **not** treat `pip install -e "
+".` at the repo root as the install path."
+msgstr "先带 submodule 克隆，再用 `init.sh`。**不要**把仓库根目录的 `pip install -e .` 当作安装路径。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: b65ddfbf55274985b496704b0e5ff4f8
+msgid ""
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
 "cd lerobot_ros2\n"
-"pip install -e .\n"
+"\n"
+"# uv if needed: curl -LsSf https://astral.sh/uv/install.sh | sh\n"
+"\n"
+"./init.sh all\n"
+"# motion / task queue only (no LeRobot):  ./init.sh all-motion\n"
+"# recording / inference plugins:          ./init.sh install-lerobot\n"
+"source .venv/bin/activate   # default backend=uv"
 msgstr ""
-"git clone https://github.com/fiveages-sim/lerobot_ros2.git\n"
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
 "cd lerobot_ros2\n"
-"pip install -e .\n"
+"\n"
+"# uv if needed: curl -LsSf https://astral.sh/uv/install.sh | sh\n"
+"\n"
+"./init.sh all\n"
+"# motion / task queue only (no LeRobot):  ./init.sh all-motion\n"
+"# recording / inference plugins:          ./init.sh install-lerobot\n"
+"source .venv/bin/activate   # default backend=uv"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:22
-#: 51a4d84bcdd545fc91b9a9255ff27e92
-msgid "Features"
-msgstr "功能特性"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:24
-#: 17afbbc6fd4340c4aff573876c525bc2
-msgid "Data Collection"
-msgstr "数据采集"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:26
-#: edb7883d9aba47c3940706ce17ce3254
-msgid "Record robot demonstrations:"
-msgstr "录制机器人示范："
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:28
-#: db6b44b494de49a5860e4b76abf40fd9
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:48
+#: 4d84fbcc25ad4ba9a21dd456a65c1130
 msgid ""
-"from lerobot_ros2 import DataCollector\n"
-"\n"
-"collector = DataCollector(\n"
-"    dataset_name=\"my_task\",\n"
-"    robot_interface=robot\n"
-")\n"
-"\n"
-"collector.start_recording()\n"
-"# ... perform demonstration ...\n"
-"collector.stop_recording()\n"
-"collector.save()\n"
+"`./init.sh` with no arguments opens an interactive menu (submodules, env, "
+"install, backend, ROS 2 workspace). Useful non-interactive commands from the"
+" README:"
 msgstr ""
-"from lerobot_ros2 import DataCollector\n"
-"\n"
-"collector = DataCollector(\n"
-"    dataset_name=\"my_task\",\n"
-"    robot_interface=robot\n"
-")\n"
-"\n"
-"collector.start_recording()\n"
-"# ... perform demonstration ...\n"
-"collector.stop_recording()\n"
-"collector.save()\n"
+"`./init.sh` 不带参数会进入交互菜单（子模块、环境、安装、backend、ROS 2 工作空间）。README 中常用的非交互命令："
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:42
-#: 2654592bcc4c4282bf9a570ee017d584
-msgid "Policy Deployment"
-msgstr "策略部署"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 28cddac9f2c1464da7b03d9c451a0692
+msgid "Command"
+msgstr "命令"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:44
-#: 6486fee825ec46fcbc6f472239b06c30
-msgid "Run trained policies:"
-msgstr "运行已训练的策略："
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 10a9e79d0bef496c9dbff62accc8358b
+msgid "What it does"
+msgstr "作用"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:46
-#: 5bf864f2f5d944cbbd71ecba76a37e0c
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: ca69a79f20ef4efdaf6d349c5b7edb0f
+msgid "`./init.sh all`"
+msgstr "`./init.sh all`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 04c12a75058b45d3847ad874a7f448f6
+msgid "Submodules + env + task orchestration + LeRobot plugins"
+msgstr "子模块 + 环境 + 任务编排 + LeRobot 插件"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 03fdbcdaa8dc4c2487a89b28f5dcd22a
+msgid "`./init.sh all-motion`"
+msgstr "`./init.sh all-motion`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: dbdc5830cbcc49c9881ea62d94e9e638
 msgid ""
-"from lerobot_ros2 import PolicyRunner\n"
-"\n"
-"runner = PolicyRunner(\n"
-"    model_path=\"path/to/model\",\n"
-"    robot_interface=robot\n"
-")\n"
-"\n"
-"runner.run()\n"
+"Submodules + env + `ros2_robot_interface` + `robot_action_composer` only"
+msgstr "仅子模块 + 环境 + `ros2_robot_interface` + `robot_action_composer`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: a104da64dce94c61bb9ea0c69bcb965e
+msgid "`./init.sh install-lerobot`"
+msgstr "`./init.sh install-lerobot`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 1ae23ee778d54e4488dc5f195ed32d5c
+msgid ""
+"PyTorch + PyPI `lerobot` + `lerobot_robot_ros2` / `lerobot_camera_ros2`"
 msgstr ""
-"from lerobot_ros2 import PolicyRunner\n"
-"\n"
-"runner = PolicyRunner(\n"
-"    model_path=\"path/to/model\",\n"
-"    robot_interface=robot\n"
-")\n"
-"\n"
-"runner.run()\n"
+"PyTorch + PyPI `lerobot` + `lerobot_robot_ros2` / `lerobot_camera_ros2`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 72ee4f6e2946442bbc5531c6734548a4
+msgid "`./init.sh set-backend uv`"
+msgstr "`./init.sh set-backend uv`"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 086cac1a459c4705a582758edb4ab828
+msgid "Write `backend` in `.fa-env.toml` (`uv` or `conda`)"
+msgstr "写入 `.fa-env.toml` 中的 `backend`（`uv` 或 `conda`）"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:57
-#: 076c18b694bc476ca79464c96d39b80c
-msgid "Topics"
-msgstr "主题"
+#: d027e2f63d6e497d894ad8e4701b4a6a
+msgid ""
+"Runtime config lives in local `.fa-env.toml` (gitignored; copied from the "
+"example). Keys documented in the README:"
+msgstr "运行时配置在本地 `.fa-env.toml`（已 gitignore；从示例复制）。README 中记录的键："
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 3916e224485c43948e74fe3326c949e7
-msgid "Topic"
-msgstr "话题"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 6f06490656c840c3b3042405c408aac0
+msgid "Key"
+msgstr "配置项"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: d5a3bd58ca6647739cf23cf2f1d9e4fa
-msgid "Type"
-msgstr "类型"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: d6e8374c9a394b4b9dcfbfdd3c62f4a2
+msgid "Meaning"
+msgstr "说明"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 4e65d848262748209fac3d3a3cc43707
-msgid "Direction"
-msgstr "方向"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 6cfe9a168f0648d0b4128305fabd7819
+msgid "`backend`"
+msgstr "`backend`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 090e5a02e28a4007bcfb11241361bc2a
-msgid "Description"
-msgstr "描述"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 52cee5488c36422f961942b5440a8258
+msgid "`uv` or `conda`"
+msgstr "`uv` 或 `conda`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 64423d4870374539a5ccde3423ca897e
-msgid "`/lerobot/episode_start`"
-msgstr "`/lerobot/episode_start`"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 9ebcb726dde34afba2e50d99e4ac3f70
+msgid "`[conda].name`"
+msgstr "`[conda].name`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 1112383321534017b1b48ac88624283f 9cbdde02d7194b428ac38db2c06b1097
-msgid "`Empty`"
-msgstr "`Empty`"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: fdda4758eef0490eaac27cdad7e40ff4
+msgid "Conda env name (default `lerobot-ros2`)"
+msgstr "conda 环境名（默认 `lerobot-ros2`）"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 2d1bdfeef98840899cedd7c9f6512db4 d2101187ed4f4e5fb6bdc9456d00927b
-msgid "Subscribe"
-msgstr "订阅"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: c4511bd81adb4004a246888ae547f180
+msgid "`[uv].venv`"
+msgstr "`[uv].venv`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: c1a1703411444973872e84806a780cae
-msgid "Start episode"
-msgstr "开始回合"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 4c6aaf408609442ebc0bd33d15c2b14a
+msgid "uv venv path (default `.venv`)"
+msgstr "uv 虚拟环境路径（默认 `.venv`）"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 673a3b056fb34dd48691e08c336a50f7
-msgid "`/lerobot/episode_end`"
-msgstr "`/lerobot/episode_end`"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: f3ced24b0d49429fa19bb47828acc8fe
+msgid "`[lerobot].version`"
+msgstr "`[lerobot].version`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 1940cb75268e43e6a462f59567a75034
-msgid "End episode"
-msgstr "结束回合"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 355b09b4eb85401494debf1c726529de
+msgid "PyPI LeRobot version (default `0.5.1`)"
+msgstr "PyPI lerobot 版本（默认 `0.5.1`）"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 904c5b7d583b49ca9c8f8e2c08d216a0
-msgid "`/lerobot/action`"
-msgstr "`/lerobot/action`"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 23cb1f9a6dc6455ebe9ecef92a2c27de
+msgid "`[ros2].workspace`"
+msgstr "`[ros2].workspace`"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: d67e8fb2603b435fbfbbafce7948468e
-msgid "`JointState`"
-msgstr "`JointState`"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: 14310c19a7e94da9a2f165e9e62e2aef
-msgid "Publish"
-msgstr "发布"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md
-#: c15e3bd8672d429c8142742986b79b5e
-msgid "Policy output"
-msgstr "策略输出"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:65
-#: 697304b746d244129248ea40875d7ef7
-msgid "Dataset Format"
-msgstr "数据集格式"
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:36
+#: 04695c3cba9e4f46b06c0f7c2eee6276
+msgid "ROS 2 workspace; sourced when the env is activated"
+msgstr "ROS 2 工作空间；激活环境时自动 source"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:67
-#: fcea7e8424cc40b285405fbd5ed98f5e
-msgid "Compatible with LeRobot HuggingFace datasets:"
-msgstr "兼容 LeRobot HuggingFace 数据集："
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:68
-#: 0b857cb7f75142a9841da94bcbeb5bd1
-msgid "Episode structure"
-msgstr "回合结构"
+#: 73bce62760e64141a27d0d0e0d91e68c
+msgid ""
+"Personal overrides: `.fa-env.local.toml`. Env notes: "
+"[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md). "
+"Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668). Do "
+"not install `ros2-stack` / `grasp-generation` into `submodules/hug/.venv` "
+"(HUG's Python 3.10 env)."
+msgstr ""
+"个人覆盖：`.fa-"
+"env.local.toml`。环境说明：[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/docs/ENV_THIS_CHECKOUT.md)。在本检出的 `.venv` 里用 `uv pip`，不要用系统 `pip`（PEP"
+" 668）。不要把 `ros2-stack` / `grasp-generation` 装进 `submodules/hug/.venv`（HUG 的 "
+"Python 3.10 环境）。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:69
-#: a822d8fc42254bdb9b65989be762bde6
-msgid "Observation/action format"
-msgstr "观测/动作格式"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:70
-#: 8983cfbca9324b87951ca374f04be582
-msgid "Metadata"
-msgstr "元数据"
+#: 3e0357b80e9b4dc3a958af53f32852b4
+msgid "Manual fallback"
+msgstr "手动回退"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:72
-#: f8e4bff13be2421398977868e8822f9e
+#: ca4b9f60021a4f7ea505c2831464bfeb
+msgid ""
+"Skip `init.sh` only if you must. The README uv path: create `.venv` with "
+"`--system-site-packages`, then install local packages with **`--no-deps`** "
+"so pip does not fetch `rclpy` from PyPI. ROS Python packages come from the "
+"sourced Jazzy overlay."
+msgstr ""
+"仅在必须时才跳过 `init.sh`。README 的 uv 路径：用 `--system-site-packages` 创建 `.venv`，本地包加"
+" **`--no-deps`**，避免 pip 从 PyPI 拉 `rclpy`。ROS Python 包来自已 source 的 Jazzy "
+"overlay。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:74
+#: ba11cca7816c48c3b6f7b88c2a4b8697
+msgid ""
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"git submodule update --init --recursive\n"
+"\n"
+"uv venv --python python3.12 --system-site-packages .venv\n"
+"source .venv/bin/activate\n"
+"\n"
+"uv pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 \\\n"
+"  --index-url https://download.pytorch.org/whl/cu128\n"
+"uv pip install \"lerobot==0.5.1\"\n"
+"\n"
+"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
+"uv pip install numpy pyyaml\n"
+"uv pip install -e submodules/robot_action_composer --no-deps\n"
+"uv pip install \"viser>=0.2\"   # optional grasp-generation UI (PyPI viser, not ros2-viser launch)\n"
+"uv pip install -e lerobot_robot_ros2 --no-deps\n"
+"uv pip install -e lerobot_camera_ros2 --no-deps"
+msgstr ""
+"git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git\n"
+"cd lerobot_ros2\n"
+"git submodule update --init --recursive\n"
+"\n"
+"uv venv --python python3.12 --system-site-packages .venv\n"
+"source .venv/bin/activate\n"
+"\n"
+"uv pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 \\\n"
+"  --index-url https://download.pytorch.org/whl/cu128\n"
+"uv pip install \"lerobot==0.5.1\"\n"
+"\n"
+"uv pip install -e submodules/ros2_robot_interface --no-deps\n"
+"uv pip install numpy pyyaml\n"
+"uv pip install -e submodules/robot_action_composer --no-deps\n"
+"uv pip install \"viser>=0.2\"   # optional grasp-generation UI (PyPI viser, not ros2-viser launch)\n"
+"uv pip install -e lerobot_robot_ros2 --no-deps\n"
+"uv pip install -e lerobot_camera_ros2 --no-deps"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:95
+#: 3541b08752f8446496f84c913aefcc35
+msgid "Usage: ROS2Robot"
+msgstr "使用：ROS2Robot"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:97
+#: d3e68d66fc244df6b65f3595011ca9a4
+msgid ""
+"The public robot plugin is `lerobot_robot_ros2`, not a root package named "
+"`lerobot_ros2`. Example from the README:"
+msgstr "对外的机器人插件是 `lerobot_robot_ros2`，不是名为 `lerobot_ros2` 的根包。示例来自 README："
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:99
+#: b611d43d1d504014bdf17f61bcfb05d4
+msgid ""
+"from lerobot_robot_ros2 import ROS2Robot, ROS2RobotConfig, ROS2RobotInterfaceConfig\n"
+"\n"
+"config = ROS2RobotConfig(\n"
+"    id=\"my_robot\",\n"
+"    ros2_interface=ROS2RobotInterfaceConfig(\n"
+"        joint_states_topic=\"/joint_states\",\n"
+"        end_effector_pose_topic=\"/left_current_pose\",\n"
+"        end_effector_target_topic=\"/left_target\",\n"
+"    ),\n"
+")\n"
+"\n"
+"robot = ROS2Robot(config)\n"
+"robot.connect()\n"
+"# ...\n"
+"robot.disconnect()\n"
+msgstr ""
+"from lerobot_robot_ros2 import ROS2Robot, ROS2RobotConfig, ROS2RobotInterfaceConfig\n"
+"\n"
+"config = ROS2RobotConfig(\n"
+"    id=\"my_robot\",\n"
+"    ros2_interface=ROS2RobotInterfaceConfig(\n"
+"        joint_states_topic=\"/joint_states\",\n"
+"        end_effector_pose_topic=\"/left_current_pose\",\n"
+"        end_effector_target_topic=\"/left_target\",\n"
+"    ),\n"
+")\n"
+"\n"
+"robot = ROS2Robot(config)\n"
+"robot.connect()\n"
+"# ...\n"
+"robot.disconnect()\n"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:117
+#: 8f7f8cbf27694d4fb881d7ecf0b46996
+msgid ""
+"More examples are under `examples/` on this branch. `lerobot_robot_ros2` "
+"depends on the local `ros2-robot-interface` install "
+"(`submodules/ros2_robot_interface` first)."
+msgstr ""
+"更多示例见本分支的 `examples/`。`lerobot_robot_ros2` 依赖本地已安装的 `ros2-robot-"
+"interface`（先装 `submodules/ros2_robot_interface`）。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:119
+#: e4a4cd3b1e914d9f89bbcd6f6888c628
+msgid "Camera plugin"
+msgstr "相机插件"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:121
+#: 01515eef0cfc41b2b991a7522c5b19d4
+msgid ""
+"`lerobot_camera_ros2` defaults to **manual image conversion** (no "
+"`cv_bridge`) so it can run with `lerobot==0.5.1` and numpy 2.x. If "
+"`cv_bridge` is usable it may be selected automatically. Force the manual "
+"path with:"
+msgstr ""
+"`lerobot_camera_ros2` 默认使用 **manual 图像转换**（不依赖 `cv_bridge`），以便配合 "
+"`lerobot==0.5.1` 与 numpy 2.x。若环境支持 `cv_bridge`，会自动尝试使用。强制走 manual 路径："
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 2d969b0be34044f1a199163b0d29a17c
+msgid "export LEROBOT_ROS2_DISABLE_CV_BRIDGE=1"
+msgstr "export LEROBOT_ROS2_DISABLE_CV_BRIDGE=1"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:127
+#: bae73fff7c2e49599445b58ed6e8d783
+msgid ""
+"The uv path also expects system `ffmpeg` (for example `sudo apt install "
+"ffmpeg`). `install-plugins` additionally installs `scipy>=1.14` so "
+"`--system-site-packages` does not pick up a system SciPy that is "
+"incompatible with numpy 2.x."
+msgstr ""
+"uv 路径还需系统已安装 `ffmpeg`（例如 `sudo apt install ffmpeg`）。`install-plugins` 会额外安装 "
+"`scipy>=1.14`，避免 `--system-site-packages` 下系统 SciPy 与 numpy 2.x 不兼容。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:129
+#: 54a6f107cf33483aa22b895067c38d66
+msgid "In-repo docs (this branch)"
+msgstr "仓库内文档（本分支）"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: c7d4450770604caea580613ae0715ca9
+msgid "Doc"
+msgstr "文档"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 16886a58c6b0436fa935b075afd909b5
+msgid "Role"
+msgstr "内容"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 413671eda7954b70bcdb6bcbcb7ae15d
+msgid ""
+"[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md)"
+msgstr ""
+"[docs/ENV_THIS_CHECKOUT.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/ENV_THIS_CHECKOUT.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: ba44f6ba82834dedbec7fca2bff0d0de
+msgid "Develop and install only in this checkout's env"
+msgstr "只在本仓库检出环境中开发与安装"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 5675e286a7d14dd09447b91cc750e45b
+msgid ""
+"[docs/HUG_SUBMODULE.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/HUG_SUBMODULE.md)"
+msgstr ""
+"[docs/HUG_SUBMODULE.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/HUG_SUBMODULE.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 59e47c5287fd437eb4c0cf13c64ab297
+msgid "HUG submodule notes"
+msgstr "HUG 子模块说明"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: a82b5890841f44c6a39f282f4682dc8c
+msgid ""
+"[docs/WUJI_RETARGETING.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/WUJI_RETARGETING.md)"
+msgstr ""
+"[docs/WUJI_RETARGETING.md](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-datagen/docs/WUJI_RETARGETING.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: f0eabbcc48f841aab0e5d7b9386a74f1
+msgid "Wuji retargeting"
+msgstr "Wuji 重定向"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 3c2bff0e14454dfcba11bbd9a4352016
+msgid ""
+"Composer [GRASP_GENERATION.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/GRASP_GENERATION.md)"
+msgstr ""
+"Composer [GRASP_GENERATION.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/GRASP_GENERATION.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:123
+#: 5768ff16db794e01b7052b49cb46565f
+msgid "Motion + grasp smoke (linked from the lerobot README)"
+msgstr "运控 + 抓取冒烟（lerobot README 中的链接）"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:138
+#: 7db79e4610bf4e35a35dbef348b69cf0
+msgid ""
+"Sim-grasp handoff / EE-align notes also live under `docs/SIM_GRASP_*.md` on "
+"this branch."
+msgstr "仿真抓取交接 / 末端对齐说明也在本分支的 `docs/SIM_GRASP_*.md`。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:140
+#: 16886a58c6b0436fa935b075afd909b5
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:74
-#: d64e2a8c87b0408cb37cdf3638a7d4e4
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:142
+#: f9fe08c2c18e4e13a2fbb3bdafd73fda
 msgid "[ros2_robot_interface](1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](1-ros2_robot_interface.md)"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:75
-#: 2b0a0c846e084e038f754bacfd8669a1
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:143
+#: b77040c3c8a74669b23346293b016e41
+msgid "[robot_action_composer](5-robot_action_composer.md)"
+msgstr "[robot_action_composer](5-robot_action_composer.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:144
+#: 766fd8fb31db4390afbf11fef5d6d895
+msgid ""
+"[Synthetic Data](../../6-synthetic_data/0-index.md) — record/export only (no"
+" training)"
+msgstr "[合成数据](../../6-synthetic_data/0-index.md) — 仅录制/导出（不含训练）"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:145
+#: 316b9e65a4d64fc293a3471be7fbebd5
 msgid "[HUG](6-hug.md)"
 msgstr "[HUG](6-hug.md)"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:146
+#: cffb557639fc4936b579845d11b1bb15
+msgid "[wuji-retargeting](7-wuji_retargeting.md)"
+msgstr "[wuji-retargeting](7-wuji_retargeting.md)"
+
+#~ msgid "Manual install (uv)"
+#~ msgstr "手动安装（uv）"
+
+#~ msgid ""
+#~ "Use `uv pip` inside this checkout's `.venv`, not system `pip` (PEP 668 / "
+#~ "`externally-managed-environment`). Do not install `ros2-stack` / `grasp-"
+#~ "generation` into `submodules/hug/.venv` (HUG's Python 3.10 env). See the "
+#~ "README section on that pitfall."
+#~ msgstr ""
+#~ "在本仓库的 `.venv` 里用 `uv pip`，不要用系统 `pip`（PEP 668 / `externally-managed-"
+#~ "environment`）。不要把 `ros2-stack` / `grasp-generation` 装进 "
+#~ "`submodules/hug/.venv`（那是 HUG 的 Python 3.10 环境）。见 README 中该常见坑。"

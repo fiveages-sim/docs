@@ -39,19 +39,20 @@ For valid gripper options, check the launch files in `arms_ros2_control`.
 
 | Robot | Package | Type | Real Hardware |
 |-------|---------|------|---------------|
-| X5 | `arx_x5_description` | Arm | Simulation only |
-| **ACone** | `arx_acone_description` | Arm | **Supported** |
-| Lift2S | `arx_lift2s_description` | Mobile manipulator | Simulation only |
+| X5 | `arx_x5_description` | Arm | Co-debug in `arx-lift2s` |
+| **Acone** | `arx_acone_description` | **Arm only** | Not Lift 2s; `quick_start` co-debug |
+| **Lift 2s (Ark)** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
 
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Acone** is fully supported for real hardware deployment. See [Go to Real Hardware](../../2-how_to/9-go_real_hardware.md).
+**Ark / Lift 2s** is the full-body 方舟 platform. **Acone** is the arm only. See [Ark / Lift 2s](../../2-how_to/11-ark_lift2s.md).
 ```
 
 ### Usage
 
 ```bash
+# Acone arm mock (not Lift 2s). Full-body Ark / Lift 2s: see the dedicated how-to.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
@@ -94,26 +95,25 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 
 | Robot | Package | Type | Real Hardware |
 |-------|---------|------|---------------|
-| **Panthera** | `ht_panthera_description` | Arm | **Supported** |
+| **Panthera HT** | `panthera_ht_description` | Dual-arm manipulator | Branch `panthera-ht` |
 
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**HT Panthera** is fully supported for real hardware deployment. See [Go to Real Hardware](../../2-how_to/9-go_real_hardware.md).
+**Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [Panthera HT](../../2-how_to/12-panthera_ht.md). Launch name in that README is `panthera_ht`.
 ```
 
 ### Usage
 
 ```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
+ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
 ```
 
 ### Features
 
-- Drag teaching support (real hardware)
+- Isomorphic master–slave teleop (real hardware)
 - Serial communication
-- Master-slave configuration available
-- Gravity compensation for manual guidance
+- Gravity compensation on the master role
 
 ## Quadruped
 
@@ -131,7 +131,7 @@ Typically used with separate quadruped controller stacks.
 
 Each brand package follows the standard layout:
 
-```
+:::{code-block} none
 robot-descriptions-<brand>/
 ├── <robot>_description/
 │   ├── CMakeLists.txt
@@ -147,7 +147,7 @@ robot-descriptions-<brand>/
 │   └── launch/
 │       └── display.launch.py
 └── ...
-```
+:::
 
 ## Adding a New Brand
 

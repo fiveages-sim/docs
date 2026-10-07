@@ -8,63 +8,72 @@ Python utilities umbrella for FiveAges Sim.
 
 Aggregates Python utilities:
 - ros2_robot_interface
-- viser visualization
+- ros2-viser (Viser 3D visualization)
 - VR pose publisher
-- Common utilities
+
+Default env is **Python 3.12** (`./init.sh env 3.12`). This is also the **primary launcher** for Viser (`./run.sh viser`).
 
 ## Installation
 
-```bash
+:::{code-block} bash
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
-pip install -e .
-```
+./init.sh all
+:::
+
+What `./init.sh all` does: initialize submodules, create a Python **3.12** env (from `.fa-env.toml` `backend`: `uv` or `conda`), then install `ros2_robot_interface`, `ros2-viser`, and `vr_pose_publisher`.
+
+Switch backend with `./init.sh set-backend uv`. Personal overrides: `.fa-env.local.toml`.
 
 ## Usage
 
 ### Interactive Menu
 
-```bash
+:::{code-block} bash
 ./run.sh
-```
+:::
 
-Presents menu:
-1. Robot interface demo
-2. Viser visualization
-3. VR teleoperation
-4. ...
+What `./run.sh` does: activate the env (and source `[ros2].workspace` if set), then the README menu: viser, VR (Vuer / XRoboToolkit), VR bag record/playback, interface joint record/playback, versions.
 
 ### Direct Commands
 
-```bash
-# VR teleoperation
-./run.sh vr
+Commands from the fa-py-libraries README (do not invent flags):
 
-# Viser visualization
-./run.sh viser
+| Command | What it does |
+|---------|----------------|
+| `./run.sh viser` | ros2-viser (primary Viser entry) |
+| `./run.sh vr` | vr_pose_publisher (Vuer/WebXR) |
+| `./run.sh vr-xrt` | vr_pose_publisher (XRoboToolkit SDK) |
+| `./run.sh vr-xrt-service` | start XRoboToolkit PC Service (`stop` to shut down) |
+| `./run.sh vr-record` | record `/teleop/*` bags |
+| `./run.sh record` / `playback` | interface joint snapshot JSON |
 
-# Robot interface
-./run.sh interface
+```{admonition} Pico Enterprise vs consumer
+:class: note
+
+Headset SKU notes live on [VR Teleop](../../2-how_to/6-vr_teleop.md): Pico **Enterprise** supports USB shared networking (USB 网络共享) and uses a **different App** from Pico **consumer**. This page only lists fa-py-libraries README commands (`./run.sh vr` vs `./run.sh vr-xrt` + PC Service). It does not name store listings, package names, or ADB steps.
 ```
 
 ## Structure
 
-```
+:::{code-block} none
 fa-py-libraries/
-├── ros2_robot_interface/    # Robot API
-├── ros2_viser/             # Viser visualization
-├── vr_pose_publisher/      # VR bridge
-├── utils/                  # Common utilities
-├── run.sh                  # Entry point
-└── setup.py
-```
+├── init.sh
+├── run.sh
+├── release.sh
+├── .fa-env.toml
+├── scripts/                 # fa-env.sh, vr-bag.sh
+├── ros2_robot_interface/
+├── ros2_viser/
+└── vr_pose_publisher/
+:::
 
 ## Subpackages
 
 | Package | Purpose |
 |---------|---------|
 | ros2_robot_interface | Robot control API |
-| ros2_viser | Web visualization |
+| ros2_viser | Viser library (start with `./run.sh viser`) |
 | vr_pose_publisher | VR tracking bridge |
 
 ## Related

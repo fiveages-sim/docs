@@ -78,17 +78,21 @@ Utility launch files and helpers:
 | `display.launch.py` | RViz visualization |
 | `spawn_robot.launch.py` | Gazebo spawning |
 
-## Debian Package
+## GitHub Release `.deb`
 
-Available as Debian package:
+`ros-jazzy-robot-descriptions-common` is **not** published to Debian / ROS apt software sources.
 
-```bash
-sudo apt install ros-jazzy-robot-descriptions-common
-```
+**Primary path:** in `open-deploy-ws` / `fa-deploy-ws`, run `./init_repo.sh` and choose `d` for common, or `./scripts/install_core_debs.sh --only common`. Switch source ↔ deb with menu **2) 切换模块安装方式**.
+
+:::{admonition} Manual fallback
+:class: note
+
+Download the matching asset from [robot-descriptions-common Releases](https://github.com/fiveages-sim/robot-descriptions-common/releases), then `sudo dpkg -i ros-jazzy-robot-descriptions-common_*.deb` and `sudo apt-get install -f` if needed.
+:::
 
 ## Package Structure
 
-```
+:::{code-block} none
 robot-descriptions-common/
 ├── dh_ag95_description/
 │   ├── urdf/
@@ -100,7 +104,7 @@ robot-descriptions-common/
 ├── inspire_rh56_description/
 ├── robot_common_launch/
 └── ...
-```
+:::
 
 ## Adding Components
 

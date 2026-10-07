@@ -4,7 +4,7 @@ This page explains the structure of the deploy workspaces and how to navigate th
 
 ## open-deploy-ws Structure
 
-```
+:::{code-block} none
 open-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/           # Main controller package
@@ -26,13 +26,13 @@ open-deploy-ws/
 │
 ├── init_repo.sh                     # Initialization script
 ├── submodules_visibility.conf       # Public/private visibility
-├── deb_versions.txt                 # Compatible Debian versions
+├── deb_versions.conf                # GitHub Release .deb repos and tags
 └── build/, install/, log/           # Build outputs
-```
+:::
 
 ## fa-deploy-ws Structure
 
-```
+:::{code-block} none
 fa-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/           # Same as open-deploy-ws
@@ -59,7 +59,7 @@ fa-deploy-ws/
 │   ├── tianji_m6_ccs.yaml
 │   └── ...
 └── robot.local.yaml.template        # Local config template
-```
+:::
 
 ## Key Differences
 
@@ -77,7 +77,7 @@ fa-deploy-ws/
 
 Submodules are organized hierarchically:
 
-```
+:::{code-block} none
 arms_ros2_control/
 └── hardware/           # Hardware interfaces
     ├── arx-ros2-control/      (submodule)
@@ -88,7 +88,7 @@ robot_descriptions/
 ├── robot-descriptions-common/ (submodule)
 ├── robot-descriptions-dobot/  (submodule)
 └── ...
-```
+:::
 
 ### Initialization
 
@@ -108,7 +108,7 @@ The init script respects visibility and only initializes appropriate submodules.
 
 After building:
 
-```
+:::{code-block} none
 workspace/
 ├── build/              # Build artifacts
 │   ├── package_a/
@@ -118,7 +118,7 @@ workspace/
 │   ├── package_a/
 │   └── package_b/
 └── log/                # Build logs
-```
+:::
 
 **Always source from install:**
 
@@ -131,7 +131,7 @@ source build/...           # Wrong!
 
 Dependencies flow downward:
 
-```
+:::{code-block} none
 Controllers (ocs2_arm_controller)
       ↓ depends on
 Hardware Interfaces (*-ros2-control)
@@ -139,7 +139,7 @@ Hardware Interfaces (*-ros2-control)
 Descriptions (*-description)
       ↓ depends on
 Common (robot-descriptions-common)
-```
+:::
 
 Build with `--packages-up-to` to build a package and its dependencies:
 

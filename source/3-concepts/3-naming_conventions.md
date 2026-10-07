@@ -8,7 +8,7 @@ This page documents the naming patterns used throughout the FiveAges Sim ecosyst
 
 | Parameter | Purpose | Example |
 |-----------|---------|---------|
-| `robot` | Main robot name | `dobot_cr5`, `arx_acone` |
+| `robot` | Main robot name | `dobot_cr5`, `arx_acone` (arm), `arx_lift2s`, `panthera_ht` |
 | `type` | Robot type/variant | `cr5`, `cr10` |
 | `left_type` | Left arm type (dual-arm) | `tianji_m6` |
 | `right_type` | Right arm type (dual-arm) | `tianji_m6` |
@@ -45,7 +45,7 @@ Pattern: `robot-descriptions-<brand>` or `<robot>-description`
 | Package | Robot(s) |
 |---------|----------|
 | `robot-descriptions-dobot` | Dobot CR series |
-| `robot-descriptions-arx` | ARX X5, ACone, Lift2S |
+| `robot-descriptions-arx` | ARX X5, Acone (arm), Lift 2s (Ark) |
 | `robot-descriptions-common` | Shared components |
 | `fa-w2-description` | FiveAges W2 |
 

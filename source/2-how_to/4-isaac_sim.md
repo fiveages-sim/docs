@@ -2,78 +2,63 @@
 
 Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation.
 
-```{admonition} Required Version and Path
-:class: warning
-
-FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. The run scripts assume this exact path. Other versions or paths will not work without modifying the scripts.
-```
+Use **FaSim-Isaac** `./init.sh` and `./run.sh`. Path and version live in that repo’s config — do not hardcode a single Isaac minor version, and do not invent CLI flags.
 
 ## Prerequisites
 
-- **Isaac Sim 6.1 binary** installed at `~/isaacsim`
-- NVIDIA GPU (RTX recommended)
-- NVIDIA drivers compatible with Isaac Sim 6.1
+- NVIDIA Isaac Sim binary installed (GPU + matching NVIDIA drivers)
 - ROS 2 Jazzy workspace
+- Default Isaac directory: `ISAACSIM_DIR` (`~/isaacsim` unless you override it)
 
 ## Steps
 
 ### 1. Clone FaSim-Isaac
 
-```bash
+:::{code-block} bash
 cd ~/
-git clone https://github.com/fiveages-sim/FaSim-Isaac.git
+git clone git@github.com:fiveages-sim/FaSim-Isaac.git
 cd FaSim-Isaac
-```
+:::
 
 ### 2. Initialize
 
-```bash
+:::{code-block} bash
 ./init.sh
-```
+:::
 
-This initializes:
-- `robot_usds` submodule (USD robot assets)
-- Environment assets
-- Configuration files
+What the script does (FaSim README):
+
+1. **Operation 1** — initialize submodules listed in `.gitmodules` / `submodules_visibility.conf` (`public` selected by default; `private` needs access). Re-runs are additive.
+2. **Operation 2** — optional **Isaac ROS 2 Jazzy workspace**: version menu queries GitHub stable tags (fallback list in `config/fa_sim.conf` currently `6.0.1` / `6.0.0` / `5.1.0`). Override with `ISAAC_SIM_VERSION=… ./init.sh`.
 
 ### 3. Start Isaac Sim
 
-```bash
+:::{code-block} bash
 ./run.sh
-```
-
-This launches Isaac Sim with the configured scene. The script expects Isaac Sim 6.1 at `~/isaacsim`.
-
-:::{admonition} Path Verification
-:class: tip
-
-Verify your installation path before running:
-
-```bash
-ls ~/isaacsim/python.sh
-```
-
-If this file doesn't exist, either install Isaac Sim 6.1 to `~/isaacsim` or create a symlink.
 :::
+
+What the script does: optional CPU governor, optional Zenoh router if `RMW_IMPLEMENTATION=rmw_zenoh_cpp`, then an interactive menu — **PhysX** / **Newton** / **Headless Streaming**. There is no `./run.sh --robot` or `./run.sh --headless`.
+
+Path/version overrides: copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` and set `ISAACSIM_DIR` / `ISAAC_SIM_DEFAULT_VERSION`. Env also works: `ISAACSIM_DIR=/path ./run.sh`.
 
 ### 4. Launch ROS 2 Side
 
 In a new terminal:
 
-```bash
+:::{code-block} bash
 source /opt/ros/jazzy/setup.bash
 source ~/open-deploy-ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
-```
+:::
+
+Pass `robot:=…` on this ROS 2 launch as usual. Robot USD selection is done by opening the asset under FaSim `robots/` (robot_usds) in Isaac — not a FaSim `run.sh` flag.
 
 ### 5. Verify Connection
 
-Check topics are bridged:
-
-```bash
+:::{code-block} bash
 ros2 topic list
 # Should see /joint_states, /target_pose, etc.
-```
+:::
 
 ## USD Assets
 
@@ -81,9 +66,9 @@ FaSim-Isaac uses USD (Universal Scene Description) assets from `robot_usds`:
 
 | Path | Content |
 |------|---------|
-| `humanoid/FiveAges/Gen1` | Gen1 humanoid USD |
-| `humanoid/FiveAges/Gen2` | Gen2 humanoid USD |
-| `humanoid/FiveAges/Gen3` | Gen3 humanoid USD |
+| `humanoid/FiveAges/Gen1` | Gen1 wheeled-arm USD |
+| `humanoid/FiveAges/Gen2` | Gen2 wheeled-arm USD |
+| `humanoid/FiveAges/Gen3` | Gen3 wheeled-arm USD |
 | `humanoid/Galbot` | Galbot mobile manipulator |
 | `humanoid/Ubtech` | Ubtech humanoid |
 
@@ -95,31 +80,15 @@ Scene environments are loaded from:
 - `fiveages-env-usds` — Public environment assets
 - `fa-project-usd` — Internal project-specific scenes (private)
 
+Open the scene USD in Isaac. There is no `./run.sh --env`.
+
 ## Hardware Interface
 
 The `hardware:=isaac` parameter uses the topic-based hardware interface that bridges Isaac Sim physics to ROS 2 control.
 
-## Switching Robots
-
-```bash
-# Edit FaSim-Isaac config or use command line
-./run.sh --robot galbot
-
-# Corresponding ROS 2 launch
-ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot hardware:=isaac
-```
-
-## Headless Mode
-
-For training or CI:
-
-```bash
-./run.sh --headless
-```
-
 ## Verification
 
-- Isaac Sim window shows robot in scene
+- Isaac Sim window (or Headless Streaming) is running from `./run.sh`
 - ROS 2 topics from Isaac appear in `ros2 topic list`
 - Robot responds to joint commands
 - Sensor data (if configured) publishes to ROS 2
@@ -128,38 +97,29 @@ For training or CI:
 
 ### Isaac Sim fails to launch
 
-1. **Verify installation path**: `ls ~/isaacsim/python.sh` — must exist
-2. **Check version**: Ensure you have Isaac Sim 6.1 (not older versions)
+1. Confirm `ISAACSIM_DIR` (default `~/isaacsim`) contains the launch scripts named in `config/fa_sim.conf` (`isaac-sim.sh`, `isaac-sim.newton.sh`, `isaac-sim.streaming.sh`)
+2. Set `ISAACSIM_DIR` in `config/fa_sim.local.conf` if Isaac is not at `~/isaacsim`
 3. Verify GPU drivers: `nvidia-smi`
 4. Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`
-
-### Wrong Isaac Sim path
-
-If Isaac Sim is installed elsewhere, create a symlink:
-```bash
-ln -s /path/to/your/isaacsim ~/isaacsim
-```
 
 ### No ROS 2 topics
 
 1. Verify the ROS 2 bridge extension is enabled in Isaac Sim
 2. Check domain ID matches between Isaac and ROS 2
-3. Restart Isaac Sim and the bridge
+3. Restart `./run.sh` and the ROS 2 launch
 
 ### USD asset not found
 
-```bash
-cd FaSim-Isaac
-git submodule update --init --recursive
-```
+Re-run `./init.sh` operation 1 and select the needed submodules (including `robots`).
 
 ### Simulation runs slowly
 
 - Reduce rendering quality in Isaac Sim settings
-- Use headless mode for non-visual testing
+- Use `./run.sh` menu **Headless Streaming** for non-visual testing
 - Check GPU memory usage
 
 ## Next Steps
 
 - [robot_usds reference](../4-reference/simulation/3-robot_usds.md)
 - [FaSim-Isaac reference](../4-reference/simulation/2-fasim_isaac.md)
+- [Synthetic Data](../6-synthetic_data/0-index.md) — datagen pipeline on Isaac (not Gazebo)

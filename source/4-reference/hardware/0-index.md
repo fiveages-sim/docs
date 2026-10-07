@@ -6,13 +6,13 @@ This section documents the ros2_control hardware interface plugins.
 
 Hardware interfaces bridge ROS 2 controllers to physical or simulated hardware:
 
-```
+:::{code-block} none
 Controller Manager
        ↓
 Hardware Interface Plugin
        ↓
 CAN / TCP / Serial / Simulation
-```
+:::
 
 ## In This Section
 
@@ -30,10 +30,10 @@ CAN / TCP / Serial / Simulation
 
 | Interface | Bus | Robots |
 |-----------|-----|--------|
-| [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, ACone, Lift2S |
+| [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, Acone (arm), Lift 2s (Ark) |
 | [dobot-cr-ros2-control](1-public_hi.md) | TCP | Dobot CR5, CR10 |
 | [unitree-ros2-control](1-public_hi.md) | SDK | Unitree quadrupeds |
-| [ht-ros2-control](1-public_hi.md) | Serial | HT Panthera |
+| [ht-ros2-control](1-public_hi.md) | Serial | Panthera HT |
 | [marvin-ros2-control](1-public_hi.md) | Custom | Tianji Marvin |
 | [modbus-ros2-control](1-public_hi.md) | RS485 | Grippers |
 | [can-ros2-control](1-public_hi.md) | CAN | Various hands |

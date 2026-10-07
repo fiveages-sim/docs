@@ -14,32 +14,23 @@ Without careful management, users would encounter access errors when initializin
 
 ### submodules_visibility.conf
 
-The `open-deploy-ws` uses a configuration file to track visibility:
+`open-deploy-ws` (and `fa-deploy-ws`) uses this file for **nested** submodule visibility. Each data line is `parent_dir|relative_path|public` or `private`. Blank lines and `#` comments are ignored. This is not an INI file.
 
-```ini
-# submodules_visibility.conf
-
-[public]
-src/arms_ros2_control
-src/robot_descriptions
-src/robot_descriptions/robot-descriptions-common
-src/robot_descriptions/robot-descriptions-dobot
-src/robot_descriptions/robot-descriptions-arx
-# ... more public modules
-
-[private]
-# These are NOT initialized in open-deploy-ws
-src/robot-descriptions-fiveages
-src/arms_ros2_control/library/ocs2-wbc-controller
-# ... private modules
-```
+:::{code-block} none
+# Format: parent_dir|relative_path|public or private
+src/robot-descriptions|common|public
+src/robot-descriptions|manipulator/Dobot|public
+src/robot-descriptions|manipulator/Tianji|private
+src/arms_ros2_control|controller/ocs2_wbc_controller|private
+src/arms_ros2_control|libraries/ocs2_humanoid|private
+:::
 
 ### How It Works
 
-1. `init_repo.sh` reads the visibility config
-2. Only initializes submodules marked as `[public]`
-3. Skips private submodules silently
-4. Users with access can manually init private modules
+1. `init_repo.sh` reads `submodules_visibility.conf`
+2. Nested submodules marked `public` are initialized for everyone
+3. Nested submodules marked `private` are skipped in `open-deploy-ws`
+4. Users with private-repo access use `fa-deploy-ws` (or init those nested modules manually)
 
 ## Public vs Private Submodules
 
@@ -114,10 +105,10 @@ git ls-remote git@github.com:fiveages-sim/fa-deploy-ws.git
 ### Access Denied During Init
 
 **Symptom:**
-```
+:::{code-block} none
 Permission denied (publickey)
 fatal: Could not read from remote repository
-```
+:::
 
 **Solution:**
 - You don't have access to that private submodule
@@ -127,9 +118,9 @@ fatal: Could not read from remote repository
 ### Submodule Path Conflicts
 
 **Symptom:**
-```
+:::{code-block} none
 fatal: destination path 'src/xxx' already exists
-```
+:::
 
 **Solution:**
 ```bash
@@ -141,9 +132,9 @@ git submodule update --init src/xxx
 ### Detached HEAD Warnings
 
 **Symptom:**
-```
+:::{code-block} none
 HEAD is now at abc123... Commit message
-```
+:::
 
 **This is normal** — submodules are pinned to specific commits.
 
@@ -165,7 +156,7 @@ git pull
 
 Some submodules contain their own submodules:
 
-```
+:::{code-block} none
 arms_ros2_control/
 ├── hardware/
 │   ├── arx-ros2-control/      # Public
@@ -174,7 +165,7 @@ arms_ros2_control/
 └── library/
     ├── ocs2-wbc-controller/   # Private
     └── ...
-```
+:::
 
 The init script handles nested visibility automatically. If manually initializing:
 
@@ -189,19 +180,20 @@ git submodule update --init hardware/arx-ros2-control
 
 ## Updating Visibility Config
 
-If contributing a new submodule:
+If contributing a new **nested** submodule:
 
-1. Add to `.gitmodules`:
-   ```ini
-   [submodule "src/new-package"]
-       path = src/new-package
-       url = https://github.com/fiveages-sim/new-package.git
-   ```
+1. Add it to the parent repository's `.gitmodules` (Git's INI format):
 
-2. Update visibility config:
-   ```ini
-   [public]
-   src/new-package
-   ```
+:::{code-block} ini
+[submodule "path/to/new-package"]
+    path = path/to/new-package
+    url = https://github.com/fiveages-sim/new-package.git
+:::
+
+2. Add a pipe-separated line to `submodules_visibility.conf`:
+
+:::{code-block} none
+src/parent-repo|path/to/new-package|public
+:::
 
 3. Test initialization in a clean clone

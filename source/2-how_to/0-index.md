@@ -13,6 +13,7 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 - [Gazebo Simulation](3-gazebo_sim.md) — Physics simulation with Gazebo
 - [Isaac Sim](4-isaac_sim.md) — NVIDIA Isaac Sim integration
+- [Synthetic Data](../6-synthetic_data/0-index.md) — Isaac USD → task queue → LeRobot record/export (dedicated chapter, not Gazebo)
 
 ### Programming
 
@@ -21,12 +22,15 @@ This section contains task-oriented recipes for common operations. Each guide fo
 ### Teleoperation
 
 - [VR Teleop](6-vr_teleop.md) — VR headset control
-- [Drag Teleop](7-drag_teleop.md) — Manual teaching (HT Panthera)
+- [Isomorphic Teleop](7-isomorphic_teleop.md) — Master–slave isomorphic teleop (同构遥操作, Panthera HT)
+- [Drag teaching is not implemented](7-drag_teleop.md) — 拖动遥操作 is not a supported path
 - [DexCap Teleop](8-dexcap_teleop.md) — DexCap glove (internal)
 
 ### Deployment
 
 - [Go Real Hardware](9-go_real_hardware.md) — Deploy to physical robots
+- [Ark / Lift 2s](11-ark_lift2s.md) — Full-body 方舟 platform (chassis + arms)
+- [Panthera HT](12-panthera_ht.md) — Dual-arm manipulator (`panthera-ht` branch)
 - [Add a Robot](10-add_a_robot.md) — Integrate new robot models
 
 ## Guide Format

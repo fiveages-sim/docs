@@ -6,28 +6,30 @@ Control robots programmatically using the Python interface.
 
 - ROS 2 Jazzy installed
 - Robot demo running (mock, Gazebo, or real)
-- Python 3.10+
+- **Python 3.12** (ROS 2 Jazzy)
 
 ## Install fa-py-libraries
 
-```bash
+:::{code-block} bash
 cd ~/
 git clone https://github.com/fiveages-sim/fa-py-libraries.git
 cd fa-py-libraries
-pip install -e .
-```
+./init.sh all    # Python 3.12 env; installs ros2_robot_interface
+:::
 
-Or install ros2_robot_interface directly:
+`./init.sh all` initializes submodules, creates the env, and installs the Python packages. Then use `./run.sh` (or `./run.sh viser`) for launchers.
 
-```bash
-pip install ros2-robot-interface
-```
+:::{admonition} Manual fallback
+:class: note
+
+`pip install ros2-robot-interface` on system Python is not the documented entry. If you must install the package alone, do it inside the fa-py-libraries env after `./init.sh env 3.12`.
+:::
 
 ## Basic Usage
 
 ### Connect to Robot
 
-```python
+:::{code-block} python
 from ros2_robot_interface import RobotInterface
 
 # Initialize
@@ -36,21 +38,21 @@ robot.connect()
 
 # Check connection
 print(f"Connected: {robot.is_connected()}")
-```
+:::
 
 ### Move Robot
 
-```python
+:::{code-block} python
 # Move to joint position (radians)
 robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])
 
 # Move to Cartesian pose
 robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], [qw,qx,qy,qz]
-```
+:::
 
 ### Gripper Control
 
-```python
+:::{code-block} python
 # Open gripper
 robot.gripper_open()
 
@@ -59,11 +61,11 @@ robot.gripper_close()
 
 # Set position (0.0 = closed, 1.0 = open)
 robot.gripper_move(0.5)
-```
+:::
 
 ### Read State
 
-```python
+:::{code-block} python
 # Joint positions
 joints = robot.get_joint_positions()
 print(f"Joints: {joints}")
@@ -71,11 +73,11 @@ print(f"Joints: {joints}")
 # End-effector pose
 pose = robot.get_ee_pose()
 print(f"EE pose: {pose}")
-```
+:::
 
 ## Example: Pick and Place
 
-```python
+:::{code-block} python
 from ros2_robot_interface import RobotInterface
 import time
 
@@ -116,37 +118,31 @@ time.sleep(0.5)
 
 # Return home
 robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-```
+:::
 
 ## With Viser Visualization
 
-```python
-from ros2_robot_interface import RobotInterface
-from ros2_viser import ViserVisualizer
+Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
 
-robot = RobotInterface()
-robot.connect()
+:::{code-block} bash
+cd ~/fa-py-libraries
+./run.sh viser
+:::
 
-# Start visualizer
-viz = ViserVisualizer()
-viz.start()
-
-# Visualization updates automatically with robot state
-print(f"Open browser to: {viz.get_url()}")
-```
+`ros2_viser` is a library dependency of that command. Embedding `ROS2ViserVisualizer` in your own script is covered on [ros2-viser](../4-reference/python_apps/3-ros2_viser.md).
 
 ## FSM Commands
 
 For whole-body control or complex motions:
 
-```python
+:::{code-block} python
 # Send FSM command
 robot.send_fsm_command("stand")
 robot.send_fsm_command("walk")
 
 # Mode commands
 robot.send_mode_command("arm_teleop")
-```
+:::
 
 See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available commands.
 
@@ -154,7 +150,7 @@ See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available commands.
 
 For non-blocking operations:
 
-```python
+:::{code-block} python
 import asyncio
 from ros2_robot_interface import AsyncRobotInterface
 
@@ -173,11 +169,11 @@ async def main():
     print("Done!")
 
 asyncio.run(main())
-```
+:::
 
 ## Verification
 
-```python
+:::{code-block} python
 # Test script
 from ros2_robot_interface import RobotInterface
 
@@ -192,7 +188,7 @@ print(f"EE Pose: {robot.get_ee_pose()}")
 current = robot.get_joint_positions()
 current[0] += 0.1  # Small rotation of first joint
 robot.move_j(current)
-```
+:::
 
 ## Troubleshooting
 
@@ -210,8 +206,7 @@ robot.move_j(current)
 
 ### Import error
 
-```bash
-pip install -e ~/fa-py-libraries
-# or
-pip install ros2-robot-interface
-```
+:::{code-block} bash
+cd ~/fa-py-libraries
+./init.sh all
+:::

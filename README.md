@@ -8,7 +8,7 @@ Public documentation for the [FiveAges Sim](https://github.com/fiveages-sim) rob
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.12
 - pip
 
 ### Install Dependencies
@@ -45,7 +45,7 @@ make html-all
 python -m http.server -d build/html 8000
 ```
 
-Then open http://localhost:8000
+Then open http://localhost:8000 (Chinese: http://localhost:8000/zh_CN/). The sidebar language dropdown keeps the same page when switching.
 
 ## Translation Workflow
 

@@ -1,6 +1,6 @@
 # ocs2-humanoid
 
-Wheel-humanoid motion library.
+Wheeled-arm humanoid motion library.
 
 ```{admonition} Access Required
 :class: warning
@@ -12,7 +12,7 @@ This package requires private repository access.
 
 ## Purpose
 
-`ocs2-humanoid` provides specialized motion planning for wheel-legged humanoid robots:
+`ocs2-humanoid` provides specialized motion planning for wheeled-arm humanoid robots:
 - Wheeled locomotion
 - Body balancing
 - Arm coordination

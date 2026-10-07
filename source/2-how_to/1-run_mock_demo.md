@@ -43,8 +43,11 @@ Watch RViz — the robot should move to the target pose.
 # Dobot CR5
 ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 
-# ARX ACone
+# Acone (arm only, not Lift 2s)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
+
+# Panthera HT
+ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
 ```
 
 ### With Gripper

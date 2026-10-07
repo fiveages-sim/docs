@@ -1,13 +1,13 @@
 # Debian Packaging
 
-Creating Debian packages for FiveAges Sim components.
+Creating `.deb` packages for FiveAges Sim components.
 
 ## Overview
 
-Several components are available as Debian packages:
-- OCS2 (`ros-jazzy-ocs2`)
-- robot-descriptions-common
-- arms_ros2_control (optional)
+Several components ship prebuilt `.deb` files on GitHub Releases (not on packages.ros.org / Ubuntu apt):
+- OCS2 (`ros-jazzy-ocs2`) — [legubiao/ocs2_ros2 releases](https://github.com/legubiao/ocs2_ros2/releases)
+- robot-descriptions-common (`ros-jazzy-robot-descriptions-common`) — [fiveages-sim/robot-descriptions-common releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)
+- arms_ros2_control (`ros-jazzy-arms-ros2-control`, optional) — [fiveages-sim/arms_ros2_control releases](https://github.com/fiveages-sim/arms_ros2_control/releases)
 
 ## Package Documentation
 
@@ -68,26 +68,26 @@ Use semantic versioning: `MAJOR.MINOR.PATCH`
 
 Maintain changelog for releases:
 
-```
+:::{code-block} none
 package (1.2.3-1) jazzy; urgency=medium
 
   * Fix gripper control bug
   * Add new robot support
 
  -- Maintainer <email>  Date
-```
+:::
 
 ## CI/CD Integration
 
 Packages are built and tested in CI:
 - Build on each release tag
-- Publish to package repository
+- Publish `.deb` assets to GitHub Releases
 - Test installation
 
 ```{admonition} TODO
 :class: warning
 
-Package repository and automated release process documentation to be added.
+Document the per-repo GitHub Release workflow (asset names, tags, and `deb_versions.conf`) in more detail.
 ```
 
 ## Related

@@ -12,19 +12,20 @@ New here? Start with the [Learning Path](0-overview/2-learning_path.md) to under
 
 FiveAges Sim provides:
 
-- **Unified robot descriptions** — URDF/xacro packages for humanoids, manipulators, and mobile robots
+- **Unified robot descriptions** — URDF/xacro packages for wheeled-arm humanoids, manipulators, and mobile robots
 - **Hardware interfaces** — ROS 2 control plugins for various robot platforms (Dobot, ARX, Galbot, HT, and more)
 - **MPC controllers** — OCS2-based arm and whole-body controllers
 - **Simulation backends** — Gazebo Harmonic and NVIDIA Isaac Sim integration
-- **Teleop solutions** — VR, drag teaching, DexCap, and glove-based teleoperation
+- **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation
 - **Python libraries** — High-level interfaces for robot control and data collection
+- **Synthetic data pipeline** — Isaac USD scenes, task-queue orchestration, LeRobot record/export
 
 ## Two Entry Paths
 
 | Path | Workspace | Audience |
 |------|-----------|----------|
 | **Public** | `open-deploy-ws` | External users, OSS contributors; public submodules only |
-| **Internal** | `fa-deploy-ws` | FiveAges team; FA humanoids (W2/W2R/S2/S2R) + dual-arm systems |
+| **Internal** | `fa-deploy-ws` | FiveAges team; FA wheeled-arm humanoids (W2/W2R/S2/S2R) + dual-arm systems |
 
 Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're new. Internal users should read [fa-deploy-ws setup](1-getting_started/4-fa_deploy_ws.md) after getting familiar with the stack.
 
@@ -64,9 +65,12 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 2-how_to/4-isaac_sim
 2-how_to/5-python_interface
 2-how_to/6-vr_teleop
+2-how_to/7-isomorphic_teleop
 2-how_to/7-drag_teleop
 2-how_to/8-dexcap_teleop
 2-how_to/9-go_real_hardware
+2-how_to/11-ark_lift2s
+2-how_to/12-panthera_ht
 2-how_to/10-add_a_robot
 ```
 
@@ -103,6 +107,16 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 5-developer/1-contributing
 5-developer/2-docs_build
 5-developer/3-packaging_deb
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: Synthetic Data
+
+6-synthetic_data/0-index
+6-synthetic_data/1-isaac_scenes
+6-synthetic_data/2-orchestration
+6-synthetic_data/3-record_export
 ```
 
 ## Quick Links

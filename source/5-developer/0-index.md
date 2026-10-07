@@ -6,7 +6,7 @@ This section covers contributing to the FiveAges Sim ecosystem.
 
 - [Contributing](1-contributing.md) — How to contribute code and documentation
 - [Documentation Build](2-docs_build.md) — Building and updating this documentation
-- [Debian Packaging](3-packaging_deb.md) — Creating Debian packages
+- [Debian Packaging](3-packaging_deb.md) — Creating GitHub Release `.deb` packages
 
 ## Getting Started as a Developer
 
@@ -18,7 +18,7 @@ This section covers contributing to the FiveAges Sim ecosystem.
 
 ## Development Workflow
 
-```
+:::{code-block} none
 Fork repository
     ↓
 Create feature branch
@@ -32,7 +32,7 @@ Submit pull request
 Code review
     ↓
 Merge
-```
+:::
 
 ## Key Resources
 

@@ -9,15 +9,15 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 | **Workspace** | `open-deploy-ws` | `fa-deploy-ws` |
 | **Access** | Anyone (public GitHub) | FiveAges team only |
 | **Robots** | Dobot, ARX, Galbot, HT, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
-| **Real Hardware** | ARX Acone, HT Panthera | All FA robots |
+| **Real Hardware** | Ark / Lift 2s (full-body), Acone (arm only), Panthera HT | All FA robots |
 | **Submodules** | Public only | Public + private |
-| **OCS2** | Debian package or source | Full source (default) |
+| **OCS2** | GitHub Release `.deb` or source | Full source (default) |
 | **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
 
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**ARX Acone** and **HT Panthera** are fully supported for real hardware deployment using only public packages. External users can deploy to these robots without needing private repository access.
+**Ark / Lift 2s** is the full-body 方舟 platform (arms + chassis). **Acone** is arm-only. **Panthera HT** is a dual-arm manipulator. Use the branch READMEs: [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md), [Panthera HT](../2-how_to/12-panthera_ht.md).
 ```
 
 ## open-deploy-ws (Public)
@@ -27,10 +27,10 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 ### Features
 
 - All submodules are publicly accessible
-- Supports multiple robots: Dobot CR5, ARX X5/ACone/Lift2S, Galbot, HT Panthera
-- **Real hardware support**: ARX Acone and HT Panthera can be deployed to physical robots
-- OCS2 available as Debian package (`ros-jazzy-ocs2`)
-- Lean branches for minimal builds: `dobot-cr5`, `arx-acone`
+- Supports multiple robots: Dobot CR5, ARX (Acone arm, Lift 2s / Ark full-body), Galbot, Panthera HT
+- **Real hardware:** [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md) via their `open-deploy-ws` branches (`arx-lift2s`, `panthera-ht`)
+- OCS2 available as a GitHub Release `.deb` (`ros-jazzy-ocs2`; not from apt / packages.ros.org)
+- Lean branches: `dobot-cr5`, `arx-lift2s`, `panthera-ht`
 - Good for learning, experimentation, contributing, and real robot deployment
 
 ### Initialization
@@ -43,35 +43,35 @@ cd open-deploy-ws
 
 The init script will:
 1. Configure submodule visibility (only public modules)
-2. Prompt for OCS2 install method: Debian package or source
+2. Prompt per core module: GitHub Release `.deb` (`d`) or source (`s`)
 3. Initialize selected submodules
 
 ### Visibility Configuration
 
-The workspace uses `submodules_visibility.conf` to track which submodules are public or private:
+The workspace uses `submodules_visibility.conf` to control which **nested** submodules are public or private. The file is pipe-separated (`parent_dir|relative_path|visibility`); blank lines and `#` comments are ignored. It is not an INI file with `[public]` / `[private]` sections.
 
-```ini
-# Example visibility config
-[public]
-arms_ros2_control
-robot_descriptions
-robot-descriptions-common
-
-[private]
-# Private submodules are not cloned in open-deploy-ws
-```
+:::{code-block} none
+# Format: parent_dir|relative_path|public or private
+src/robot-descriptions|common|public
+src/robot-descriptions|manipulator/Dobot|public
+src/robot-descriptions|manipulator/Tianji|private
+src/arms_ros2_control|controller/ocs2_wbc_controller|private
+:::
 
 ### Lean Branches
 
 For minimal builds focusing on a single robot:
 
-```bash
+:::{code-block} bash
 # Dobot CR5 only
 git checkout dobot-cr5
 
-# ARX ACone only
-git checkout arx-acone
-```
+# Ark / Lift 2s (full-body). Acone arm is co-debug in this branch, not a separate platform.
+git checkout arx-lift2s
+
+# Panthera HT
+git checkout panthera-ht
+:::
 
 ## fa-deploy-ws (Internal)
 
@@ -98,7 +98,7 @@ cd fa-deploy-ws
 ```
 
 Available robot IDs include:
-- Humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`
+- Wheeled-arm humanoids: `fiveages_w2`, `fiveages_w2r`, `fiveages_s2`, `fiveages_s2r`
 - Dual-arm: `tianji_m6_ccs`, `tianji_m20s_ccs`, `rokae_ar5_ccs`
 
 ### Robot Configuration
@@ -162,7 +162,7 @@ For deployment without source builds:
 
 ### Use the Internal Path If:
 
-- You're deploying to FA humanoids (W2/S2 series)
+- You're deploying to FA wheeled-arm humanoids (W2/S2 series)
 - You need WBC whole-body control
 - You're building release packages for deployment
 - You have authorized access to private repositories

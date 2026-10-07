@@ -18,7 +18,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 ```{admonition} Real Hardware for External Users
 :class: tip
 
-**ARX Acone** and **HT Panthera** are available for real hardware deployment on the public path. You don't need internal access to deploy to these robots.
+**Ark / Lift 2s** is the full-body 方舟 platform (including chassis). **Acone** is the **arm only**, not Lift 2s. **Panthera HT** is the dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
 ```
 
 ## Day 0: Map the Stack
@@ -78,10 +78,11 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
    ```
+   `arx_acone` is the **Acone arm**, not Lift 2s. Full-body Ark / Lift 2s uses the `arx-lift2s` branch scripts — see [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md).
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You can switch between Dobot CR5, ARX ACone, Galbot, etc.
+**Outcome:** You can switch between Dobot CR5, Acone (arm), Galbot, etc.
 
 ## Day 3: Gazebo and Isaac Simulation
 
@@ -99,20 +100,20 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 
 ### Isaac Sim
 
-```{admonition} Isaac Sim 6.1 Required
+```{admonition} FaSim-Isaac scripts
 :class: warning
 
-FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify with: `ls ~/isaacsim/python.sh`
+Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`. Version for the optional ROS 2 workspace comes from the init menu (fallback list in `config/fa_sim.conf`), not a hardcoded minor version in these docs.
 ```
 
-1. Install Isaac Sim 6.1 to `~/isaacsim`
+1. Install NVIDIA Isaac Sim (default directory `~/isaacsim`, or set `ISAACSIM_DIR`).
 2. Clone and initialize FaSim-Isaac:
    ```bash
-   git clone https://github.com/fiveages-sim/FaSim-Isaac.git
+   git clone git@github.com:fiveages-sim/FaSim-Isaac.git
    cd FaSim-Isaac
    ./init.sh
    ```
-3. Run the Isaac environment:
+3. Start Isaac (`./run.sh` menu: PhysX / Newton / Headless Streaming):
    ```bash
    ./run.sh
    ```
@@ -135,7 +136,7 @@ FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify wit
    cd ~/
    git clone https://github.com/fiveages-sim/fa-py-libraries.git
    cd fa-py-libraries
-   pip install -e .
+   ./init.sh all    # Python 3.12 env; installs ros2_robot_interface and related submodules
    ```
 2. Write a simple script:
    ```python
@@ -153,57 +154,49 @@ FaSim-Isaac requires **Isaac Sim 6.1** installed at **`~/isaacsim`**. Verify wit
 
 ## Day 5: Teleoperation
 
-**Goal:** Control the robot via VR or manual teaching.
+**Goal:** Control the robot via VR or isomorphic teleop.
 
 ### VR Teleoperation
 
-**Supported headsets:** Pico (recommended) and Meta Quest, using Web or XROtoolkit modes.
+**Supported headsets:** Pico Enterprise (recommended; USB 网络共享, Enterprise App), Pico consumer (different App), and Meta Quest. Backends: WebXR (`./run.sh vr`) or XRoboToolkit (`./run.sh vr-xrt`).
 
 ```bash
 cd fa-py-libraries
 ./run.sh vr
 ```
 
-```{admonition} Pico Recommended
+```{admonition} Pico Enterprise vs consumer
 :class: tip
 
-Pico headsets have better support. The enterprise edition offers lower-latency tracking for more responsive control.
+Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Do not install one App for both.
 ```
 
-### Drag Teaching (HT Panthera)
+### Isomorphic Teleop (Panthera HT)
+
+Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [Panthera HT](../2-how_to/12-panthera_ht.md). Mock (package README):
+
 ```bash
-ros2 launch drag_teleop_controller drag_teleop.launch.py
+ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
+  role:=master hardware:=mock_components
+ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
+  role:=slave hardware:=mock_components
 ```
 
 **Primary sources:** VR pose publisher, [drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)
 
-**Outcome:** Real-time control via VR headset or manual guidance.
+**Outcome:** Real-time control via VR headset or master–slave isomorphic teleop.
 
 ## Day 6: Real Hardware
 
 **Goal:** Deploy to physical robots.
 
-### Public Path (ARX Acone, HT Panthera)
+### Public Path (Ark / Lift 2s, Acone arm, Panthera HT)
 
-External users can deploy to **ARX Acone** and **HT Panthera** using only public packages:
+Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2s.
 
-**ARX Acone (CAN bus):**
-```bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Configure CAN interface
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
-```
-
-**HT Panthera (Serial):**
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
-```
+- **[Ark / Lift 2s](../2-how_to/11-ark_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
+- **Acone** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
+- **[Panthera HT](../2-how_to/12-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
 ### Internal Path (FA Robots)
 
@@ -240,9 +233,15 @@ FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Con
 
 See the [Developer Guide](../5-developer/0-index.md) for detailed instructions.
 
+## Optional: Synthetic data (Isaac)
+
+**Goal:** Understand the Isaac datagen path (not Gazebo): USD scene → `ROS2RobotInterface` → composer `task_queue` → LeRobot dataset on disk.
+
+Follow [Synthetic Data](../6-synthetic_data/0-index.md). Documented composer/lerobot branches are `feature/dex-grasp-generator` and `feature/sim-grasp-datagen`. Stop at recording/export; skip training.
+
 ## Tips for Success
 
 1. **Don't skip mock mode** — Always verify behavior in mock before simulation or real hardware
 2. **Read the warnings** — The stack logs helpful messages about configuration issues
-3. **Use lean branches** — `open-deploy-ws` offers `dobot-cr5` and `arx-acone` branches for minimal builds
+3. **Use lean branches** — `open-deploy-ws` offers `dobot-cr5`, `arx-lift2s`, and `panthera-ht`
 4. **Ask questions** — File issues on the relevant repository for bugs or unclear documentation

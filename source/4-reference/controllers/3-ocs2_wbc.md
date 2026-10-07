@@ -1,6 +1,6 @@
 # ocs2-wbc-controller
 
-Whole-body control for FiveAges humanoid robots.
+Whole-body control for FiveAges wheeled-arm humanoid robots.
 
 ```{admonition} Access Required
 :class: warning
@@ -12,7 +12,7 @@ This package requires private repository access. Contact your team lead for acce
 
 ## Purpose
 
-`ocs2-wbc-controller` provides whole-body control capabilities for humanoid robots, enabling:
+`ocs2-wbc-controller` provides whole-body control capabilities for wheeled-arm humanoid robots, enabling:
 - Full-body motion planning
 - Balance and stability control
 - FSM integration
@@ -59,7 +59,7 @@ Configuration parameters, default values, and YAML schemas are maintained in the
 ```{admonition} Safety Warning
 :class: danger
 
-WBC controls the full body of humanoid robots. Always:
+WBC controls the full body of wheeled-arm humanoid robots. Always:
 1. Verify the robot is in a safe initial state
 2. Have emergency stop ready
 3. Monitor joint and balance limits

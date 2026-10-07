@@ -12,13 +12,19 @@ Available through fa-py-libraries (public) or as standalone (private).
 
 | Headset | Support Level | Notes |
 |---------|---------------|-------|
-| **Pico** | **Recommended** | Enterprise edition offers lower-latency tracking |
+| **Pico Enterprise** | **Recommended** | USB 网络共享; **different App** from consumer Pico |
+| **Pico consumer** | Supported | Own App (not the Enterprise App); no USB-tether path here |
 | **Meta Quest** | Supported | Good consumer availability |
 
-```{admonition} Pico Recommended
-:class: tip
+```{admonition} Pico Enterprise vs consumer
+:class: important
 
-**Pico headsets have the best support.** The enterprise edition has a faster release cadence, enabling lower-latency tracking for more responsive control (更跟手).
+Pico **Enterprise** and Pico **consumer** are not the same SKU:
+
+1. Enterprise supports **USB shared networking (USB 网络共享)**.
+2. They use **different headset Apps** — do not install one App and expect it to cover both.
+
+fa-py-libraries documents XRoboToolkit as “XRoboToolkit App + PC Service” vs browser WebXR (`./run.sh vr` / `./run.sh vr-xrt`). It does not publish store links or ADB steps for either Pico edition.
 ```
 
 ## Purpose
@@ -30,28 +36,29 @@ Bridges VR tracking data to ROS 2 topics:
 
 ## Modes
 
-Both Pico and Meta Quest support **Web** and **XROtoolkit** modes.
+Both Pico and Meta Quest support **WebXR (Vuer)** and **XRoboToolkit** backends. Launch from **fa-py-libraries** (`./init.sh all` first). There is no `./run.sh vr --mode` flag.
 
 ### Web Mode (WebXR/Vuer)
 
-Browser-based VR — easy setup, works on both headsets:
-
-```bash
+:::{code-block} bash
 cd fa-py-libraries
-./run.sh vr --mode vuer
-```
+./run.sh vr
+:::
 
-Opens WebXR session accessible from VR headset browser.
+Opens a WebXR session accessible from the VR headset browser.
 
-### XROtoolkit Mode
+### XRoboToolkit Mode
 
 Native application — lower latency, recommended for production:
 
-```bash
-./run.sh vr --mode xrt
-```
+:::{code-block} bash
+./init.sh install-xrobotoolkit-pc-service
+./init.sh install-xrobotoolkit
+./run.sh vr-xrt-service
+./run.sh vr-xrt
+:::
 
-Requires XROtoolkit app on VR device. Provides better tracking responsiveness.
+Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise ≠ consumer Pico App). `./run.sh vr-xrt-service stop` shuts down the PC Service.
 
 ## Topics Published
 
@@ -77,11 +84,10 @@ vr_pose_publisher:
 
 ## Network Setup
 
-For VR device on different network:
+- **Pico Enterprise:** USB shared networking (USB 网络共享) can put the headset and PC on one network. Use the headset UI; no ADB steps here.
+- **Pico consumer / Quest:** Wi-Fi (or other IP) only for this doc.
 
-1. Configure Zenoh or DDS discovery
-2. Ensure firewall allows ROS 2 traffic
-3. Match domain IDs
+If the VR device is on a different network: Zenoh or DDS discovery, firewall, matching Domain IDs.
 
 ## Certificates
 

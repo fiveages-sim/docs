@@ -10,8 +10,15 @@ FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 - **Hardware Control** — Interface plugins for real robot hardware
 - **MPC Controllers** — OCS2-based motion planning and control
 - **Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends
-- **Teleoperation** — VR, drag teaching, and glove-based control
+- **Teleoperation** — VR, isomorphic teleop, and glove-based control
 - **Python Applications** — High-level APIs for data collection and autonomous tasks
+- **Synthetic data** — Isaac Sim USD → interface → composer → LeRobot record/export ([Synthetic Data](../6-synthetic_data/0-index.md))
+
+```{admonition} Terminology
+:class: note
+
+In this documentation, **humanoid** means a **wheeled-arm humanoid** (mobile base + arms, e.g. FiveAges W2/W2R). It does **not** mean a bipedal or footed humanoid.
+```
 
 ## Public vs Internal
 
@@ -19,7 +26,7 @@ The ecosystem has two entry points:
 
 | Path | Workspace | Audience | Robots |
 |------|-----------|----------|--------|
-| **Public** | [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws) | Open source users | Dobot CR5, ARX ACone, Galbot, HT Panthera, etc. |
+| **Public** | [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws) | Open source users | Dobot CR5, Ark / Lift 2s, Acone (arm), Galbot, Panthera HT, etc. |
 | **Internal** | fa-deploy-ws | FiveAges team | W2, W2R, S2, S2R, dual-arm CCS |
 
 **If you're new**, start with the public path. It uses only public submodules and can run demos without special access.
@@ -27,7 +34,7 @@ The ecosystem has two entry points:
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**ARX Acone** and **HT Panthera** are fully supported for real hardware deployment on the public path. External users can deploy to these physical robots without needing private repository access.
+**Ark / Lift 2s** (full-body, including chassis) and **Panthera HT** (dual-arm manipulator) have dedicated `open-deploy-ws` branches. **Acone** is the **arm only**, not the Lift 2s platform. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md).
 ```
 
 ## Documentation Map
@@ -36,6 +43,7 @@ The ecosystem has two entry points:
 - **[Learning Path](2-learning_path.md)** — Day-by-day onboarding guide
 - **[Repository Map](3-repo_map.md)** — Complete list of repositories by layer
 - **[Public vs Internal](4-public_vs_internal.md)** — Detailed comparison of the two paths
+- **[Synthetic Data](../6-synthetic_data/0-index.md)** — Isaac datagen pipeline (USD → orchestration → LeRobot export)
 
 ## Next Steps
 

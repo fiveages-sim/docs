@@ -6,7 +6,7 @@ This page explains how FiveAges Sim uses the ROS 2 control framework.
 
 The stack uses `ros2_control` as its hardware abstraction layer:
 
-```
+:::{code-block} none
 Controllers (MPC, teleop)
         ↓
 Controller Manager
@@ -14,7 +14,7 @@ Controller Manager
 Hardware Interfaces (plugins)
         ↓
 Physical/Simulated Hardware
-```
+:::
 
 ## Key Components
 

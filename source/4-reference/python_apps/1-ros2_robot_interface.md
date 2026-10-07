@@ -14,17 +14,21 @@ Simplifies robot control from Python:
 
 ## Installation
 
-```bash
-pip install ros2-robot-interface
-```
+Install through **fa-py-libraries** (Python 3.12 env). That repo’s `./init.sh all` installs `ros2_robot_interface` among the other submodules.
 
-Or from source:
+:::{code-block} bash
+git clone https://github.com/fiveages-sim/fa-py-libraries.git
+cd fa-py-libraries
+./init.sh all
+:::
 
-```bash
-git clone https://github.com/fiveages-sim/ros2_robot_interface.git
-cd ros2_robot_interface
-pip install -e .
-```
+Datagen / motion-queue path: from a **lerobot_ros2** checkout, `./init.sh all-motion` (or `./init.sh all`) installs the same package as `submodules/ros2_robot_interface`.
+
+:::{admonition} Manual fallback
+:class: note
+
+Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside a project venv; `--no-deps` on uv so `rclpy` is not fetched from PyPI) is only for package development outside those umbrellas. Do not treat `pip install ros2-robot-interface` on system Python as the stack entry.
+:::
 
 ## Quick Start
 

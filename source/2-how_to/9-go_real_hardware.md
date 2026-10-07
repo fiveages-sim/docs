@@ -16,12 +16,13 @@ Working with real robots requires:
 
 ### Public Path (open-deploy-ws)
 
-The following robots can be deployed to real hardware using only public packages:
+The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`); do not treat Acone as the full Lift 2s.
 
-| Robot | Hardware Interface | Communication |
-|-------|-------------------|---------------|
-| **ARX Acone** | arx-ros2-control | CAN bus |
-| **HT Panthera** | ht-ros2-control | Serial |
+| Robot | Role | Branch | How-to |
+|-------|------|--------|--------|
+| **Ark / Lift 2s** | Full-body (arms + lift + **chassis**) | `arx-lift2s` | [Ark / Lift 2s](11-ark_lift2s.md) |
+| **Acone** | **Arm only** (same 方舟 description tree; not Lift 2s) | `arx-lift2s` (`quick_start` co-debug) | [Ark / Lift 2s](11-ark_lift2s.md) |
+| **Panthera HT** | Dual-arm manipulator | `panthera-ht` | [Panthera HT](12-panthera_ht.md) |
 
 These robots are fully supported for external users without requiring private repository access.
 
@@ -64,60 +65,62 @@ FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R
 
 ## Deployment Steps
 
-### 1. Verify Mock Operation
+### Verify mock operation
 
-```bash
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=mock
 # Test all planned motions
-```
+:::
 
-### 2. Configure Hardware Interface
+### Configure hardware interface
 
 Set hardware-specific parameters in your configuration.
 
 For CAN-based robots:
-```bash
+
+:::{code-block} bash
 # Verify CAN interface
 ip link show can0
 
 # Set CAN bitrate if needed
 sudo ip link set can0 type can bitrate 1000000
 sudo ip link set can0 up
-```
+:::
 
 For Ethernet-based robots:
-```bash
+
+:::{code-block} bash
 # Verify network interface
 ip addr show eth0
-```
+:::
 
-### 3. Test Connection
+### Test connection
 
-```bash
+:::{code-block} bash
 # Start with hardware detection only
 ros2 launch <robot>_bringup hardware_test.launch.py
-```
+:::
 
-### 4. Enable Motors
+### Enable motors
 
-```bash
+:::{code-block} bash
 # Robot-specific enable command
 ros2 service call /enable_motors std_srvs/srv/Trigger
-```
+:::
 
-### 5. First Motion
+### First motion
 
 Start with minimal motion:
 
-```bash
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=real
 
 # Send small joint space command
 ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
   "{position: [0.01, 0.0, 0.0, 0.0, 0.0, 0.0]}" --once
-```
+:::
 
-### 6. Gradual Testing
+### Gradual testing
 
 1. Small joint motions
 2. Larger joint motions
@@ -129,56 +132,27 @@ ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
 
 Start with conservative speed limits:
 
-```yaml
+:::{code-block} yaml
 # Example launch parameter
 velocity_scaling: 0.1  # 10% of max speed
 acceleration_scaling: 0.1
-```
+:::
 
 Increase gradually after verifying safe operation.
 
 ## Public Robot Deployment (open-deploy-ws)
 
-### ARX Acone
+Use the matching **branch** and its README scripts. Do not treat `demo.launch.py robot:=arx_acone` as Lift 2s, and do not use the invented name `ht_panthera` (README launch name is `panthera_ht`).
 
-```bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Verify CAN interface
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-
-# Test with mock first
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=real
-```
-
-### HT Panthera
-
-```bash
-cd ~/open-deploy-ws
-source install/setup.bash
-
-# Verify serial port (typically /dev/ttyACM0 or /dev/ttyUSB0)
-ls /dev/ttyACM* /dev/ttyUSB*
-
-# Test with mock first
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=mock
-
-# Deploy to real hardware
-ros2 launch ocs2_arm_controller demo.launch.py robot:=ht_panthera hardware:=real
-```
-
-HT Panthera also supports drag teaching mode for manual guidance.
+- **[Ark / Lift 2s](11-ark_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
+- **Acone** — arm-only; pick ACone in that same `quick_start` menu for co-debug.
+- **[Panthera HT](12-panthera_ht.md)** — `git clone -b panthera-ht …` then `./init_repo.sh` / `./release.sh --install` and `./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`.
 
 ## Internal Deployment (fa-deploy-ws)
 
 For FiveAges robots:
 
-```bash
+:::{code-block} bash
 cd ~/fa-deploy-ws
 ./init_repo.sh --robot <robot_id>
 
@@ -187,7 +161,7 @@ vim robot.local.yaml
 
 # Quick start (includes safety checks)
 ./quick_start.sh
-```
+:::
 
 ## Common Hardware Issues
 
@@ -231,6 +205,5 @@ vim robot.local.yaml
 ## Next Steps
 
 After successful deployment:
+- [Ark / Lift 2s](11-ark_lift2s.md) and [Panthera HT](12-panthera_ht.md) for public robots
 - [Add a Robot](10-add_a_robot.md) for custom integrations
-- Document your robot's specific parameters
-- Create robot-specific launch files

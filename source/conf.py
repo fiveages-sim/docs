@@ -1,6 +1,19 @@
 # Configuration file for the Sphinx documentation builder.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+from typing import Any
+
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+_SCRIPTS = _REPO_ROOT / "scripts"
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+from language_switcher import switcher_hrefs  # noqa: E402
+
 # -- Project information -----------------------------------------------------
 project = 'FiveAges Sim'
 copyright = '2024-2026, FiveAges'
@@ -59,14 +72,14 @@ html_theme_options = {
 # Custom CSS
 html_css_files = ['custom.css']
 
-# Custom sidebar templates
+# Custom sidebar templates (UniLab order: brand, language dropdown, search, nav)
 html_sidebars = {
     "**": [
         "sidebar/brand.html",
+        "sidebar/lang_switcher.html",
         "sidebar/search.html",
         "sidebar/scroll-start.html",
         "sidebar/navigation.html",
-        "sidebar/languages.html",
         "sidebar/scroll-end.html",
     ],
 }
@@ -80,13 +93,28 @@ gettext_additional_targets = ['literal-block', 'raw']
 
 # -- Language switcher for Furo ----------------------------------------------
 # GitHub Pages project site is served at /docs/, not the domain root.
+# The sidebar dropdown uses *relative* counterpart hrefs so that:
+#   https://fiveages-sim.github.io/docs/foo.html
+#     ↔ https://fiveages-sim.github.io/docs/zh_CN/foo.html
+# Domain-root ``/zh_CN/`` 404s (missing the /docs prefix). Absolute
+# ``/docs/zh_CN/`` works on Pages but breaks local ``http.server`` previews.
 html_baseurl = "https://fiveages-sim.github.io/docs/"
 
-# Custom sidebar template provides language switching.
-# Paths must include the /docs/ prefix for the project site.
-html_context = {
-    "languages": [
-        ("English", "/docs/"),
-        ("简体中文", "/docs/zh_CN/"),
-    ],
-}
+
+def _inject_language_switcher(
+    app: Any,
+    pagename: str,
+    templatename: str,
+    context: dict[str, Any],
+    doctree: Any,
+) -> None:
+    lang = app.config.language or "en"
+    if lang not in ("en", "zh_CN"):
+        lang = "en"
+    context["current_language"] = lang
+    context["language_switcher_hrefs"] = switcher_hrefs(pagename, lang)
+
+
+def setup(app: Any) -> dict[str, Any]:
+    app.connect("html-page-context", _inject_language_switcher)
+    return {"parallel_read_safe": True}

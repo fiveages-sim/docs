@@ -11,7 +11,7 @@ Detailed setup guide for the public `open-deploy-ws` workspace.
 - Pre-configured submodule structure
 - Public-only visibility by default
 - Lean branches for minimal builds
-- Debian package integration for OCS2
+- GitHub Release `.deb` integration for OCS2 (and optionally common / arms)
 
 ## Cloning
 
@@ -22,45 +22,53 @@ cd open-deploy-ws
 
 ## Initialization
 
-### Basic Initialization
-
 ```bash
 ./init_repo.sh
 ```
 
-The script will:
-1. Configure submodule visibility (public only)
-2. Prompt for OCS2 installation method
-3. Initialize selected submodules
+What the script does (open-deploy-ws README). Interactive menu:
 
-### OCS2 Options
+| Menu | Role |
+|------|------|
+| **1) 初始化工作空间（推荐）** | Nested visibility (`public` / `private`), then per-module `d` (GitHub Release `.deb`) or `s` (source). Then submodule sync, `rosdep install` on source paths, and install chosen debs. |
+| **2) 切换模块安装方式** | Switch source ↔ deb for a module (OCS2, arms, common). Cleans conflicting source or uninstalls the matching deb, then re-syncs. |
+| **3) 仅安装/更新核心 deb** | Skip Git. `./scripts/install_core_debs.sh --only ocs2` (or `common`, `arms`, comma-separated). |
+| **4) 卸载核心 deb** | `./scripts/uninstall_core_debs.sh --only ocs2` |
+| **5) 仅运行 rosdep** | `rosdep install --from-paths src --ignore-src -r -y` — no Git, no debs |
 
-When prompted, choose:
+You still **colcon-build** after init. Do not start with `git submodule update --init --recursive`; the script already initializes the modules you selected.
+
+### Core module options (OCS2, arms, common)
+
+When prompted (`d=deb`, `s=source`; Enter accepts the default):
 
 | Option | Description | When to Use |
 |--------|-------------|-------------|
-| `d` | Debian package | Quick start, no OCS2 development |
-| `s` | Source build | OCS2 development, debugging |
+| `d` | GitHub Release `.deb` | Quick start; no need to build that module from source |
+| `s` | Source build | Development, debugging, or contributing |
+
+Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does **not** install from packages.ros.org.
 
 ### Lean Branches
 
-For minimal builds with a single robot:
+For a single product, clone the matching branch (README directory names):
 
-```bash
-# Dobot CR5 only
-git checkout dobot-cr5
-./init_repo.sh
+:::{code-block} bash
+# Dobot CR5
+git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git dobot_cr5_ws
+# Ark / Lift 2s (full-body). Acone arm is co-debug in this workspace, not a separate platform.
+git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
+# Panthera HT
+git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws
+:::
 
-# ARX ACone only  
-git checkout arx-acone
-./init_repo.sh
-```
+Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md).
 
 ## Directory Structure
 
 After initialization:
 
-```
+:::{code-block} none
 open-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/       # Controllers + nested HIs
@@ -72,21 +80,15 @@ open-deploy-ws/
 │   └── ocs2_ros2/              # (if source build)
 ├── init_repo.sh
 ├── submodules_visibility.conf
-└── deb_versions.txt
-```
+└── deb_versions.conf
+:::
 
 ## Building
 
-### Install Dependencies
+`./init_repo.sh` already runs `rosdep install` on source paths. You still need to colcon-build:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-### Full Build
-
-```bash
 colcon build --symlink-install
 ```
 
@@ -104,20 +106,20 @@ colcon build --packages-up-to ocs2_arm_controller
 
 ## Supported Robots
 
-| Robot | Description Package | Hardware Interface | Real Hardware |
-|-------|--------------------|--------------------|---------------|
-| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | Simulation only |
-| ARX X5 | robot-descriptions-arx | arx-ros2-control | Simulation only |
-| **ARX ACone** | robot-descriptions-arx | arx-ros2-control | **Supported** |
-| ARX Lift2S | robot-descriptions-arx | arx-ros2-control | Simulation only |
-| Galbot | robot-descriptions-galbot | (varies) | Simulation only |
-| **HT Panthera** | robot-descriptions-ht | ht-ros2-control | **Supported** |
-| Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation only |
+| Robot | Description Package | Hardware Interface | Notes |
+|-------|--------------------|--------------------|-------|
+| Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | `dobot-cr5` branch |
+| ARX X5 | robot-descriptions-arx | arx-ros2-control | Co-debug in `arx-lift2s` |
+| **Acone** | robot-descriptions-arx | arx-ros2-control | **Arm only** (not Lift 2s) |
+| **Ark / Lift 2s** | robot-descriptions-arx | arx-ros2-control | **Full-body** (arms + lift + chassis); branch `arx-lift2s` |
+| Galbot | robot-descriptions-galbot | (varies) | Simulation-oriented |
+| **Panthera HT** | robot-descriptions-ht | ht-ros2-control | Dual-arm; branch `panthera-ht` |
+| Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation-oriented |
 
 ```{admonition} Real Hardware Deployment
 :class: tip
 
-**ARX Acone** and **HT Panthera** can be deployed to real hardware using only public packages. See [Go to Real Hardware](../2-how_to/9-go_real_hardware.md) for deployment instructions.
+**Ark / Lift 2s** is the full-body 方舟 platform. **Acone** is arm-only. **Panthera HT** is the dual-arm manipulator. See [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md), [Panthera HT](../2-how_to/12-panthera_ht.md), and [Go to Real Hardware](../2-how_to/9-go_real_hardware.md).
 ```
 
 ## Launch Examples
@@ -132,6 +134,7 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
 ### With Specific Robot
 
 ```bash
+# Acone arm mock (not Lift 2s)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
@@ -161,42 +164,23 @@ colcon build --packages-up-to robot-descriptions-<brand>
 
 ## Submodule Management
 
-### Check Status
+Prefer `./init_repo.sh` (menu 1 or 2) over a recursive submodule init. Check status with `git submodule status`. To update a specific source tree you already initialized, pull that module then rebuild.
 
-```bash
-git submodule status
-```
+## GitHub Release `.deb` vs Source Matrix
 
-### Update All
+| Component | GitHub Release `.deb` | Source Path |
+|-----------|----------------------|-------------|
+| OCS2 | `ros-jazzy-ocs2` ([releases](https://github.com/legubiao/ocs2_ros2/releases)) | `src/ocs2_ros2` |
+| Common descriptions | `ros-jazzy-robot-descriptions-common` ([releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)) | `src/robot_descriptions/robot-descriptions-common` |
+| arms_ros2_control | `ros-jazzy-arms-ros2-control` (optional; [releases](https://github.com/fiveages-sim/arms_ros2_control/releases)) | `src/arms_ros2_control` |
 
-```bash
-git submodule update --init --recursive
-```
-
-### Update Specific
-
-```bash
-cd src/arms_ros2_control
-git pull origin main
-```
-
-## Debian vs Source Matrix
-
-| Component | Debian Package | Source Path |
-|-----------|---------------|-------------|
-| OCS2 | `ros-jazzy-ocs2` | `src/ocs2_ros2` |
-| Common descriptions | `ros-jazzy-robot-descriptions-common` | `src/robot_descriptions/robot-descriptions-common` |
-| arms_ros2_control | (optional) | `src/arms_ros2_control` |
-
-Check `deb_versions.txt` for compatible Debian versions when mixing source and packages.
+Check `deb_versions.conf` for the GitHub repos and release tags used by `scripts/install_core_debs.sh`. These packages are not in the ROS apt index.
 
 ## Common Issues
 
 ### Submodules Empty
 
-```bash
-git submodule update --init --recursive
-```
+Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init --recursive` as the primary recovery path.
 
 ### Access Denied to Submodule
 
@@ -225,4 +209,6 @@ sudo ip link set <expected_name> up
 
 - [Run mock demo](../2-how_to/1-run_mock_demo.md)
 - [Switch robots](../2-how_to/2-switch_robot.md)
+- [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md)
+- [Panthera HT](../2-how_to/12-panthera_ht.md)
 - [Gazebo simulation](../2-how_to/3-gazebo_sim.md)

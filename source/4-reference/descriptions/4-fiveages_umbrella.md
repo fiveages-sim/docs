@@ -10,14 +10,14 @@ This package requires private repository access. Contact your team lead for acce
 
 ## Purpose
 
-`robot-descriptions-fiveages` aggregates all FiveAges humanoid and arm descriptions:
-- FA humanoids (W2, W2R, S2, S2R)
+`robot-descriptions-fiveages` aggregates all FiveAges wheeled-arm humanoid and arm descriptions:
+- FA wheeled-arm humanoids (W2, W2R, S2, S2R)
 - FA-specific components
 - Vendor arm integrations (Tianji, Rokae)
 
 ## Structure
 
-```
+:::{code-block} none
 robot-descriptions-fiveages/
 ├── common/                    # Shared FA components
 │   └── fa-w2-components/
@@ -30,7 +30,7 @@ robot-descriptions-fiveages/
     ├── fa-w2r-description/
     ├── fa-s2-description/
     └── fa-s2r-description/
-```
+:::
 
 ## Usage
 
@@ -74,13 +74,13 @@ git submodule update --init robot/fa-w2-description
 
 Each robot description may include additional submodules:
 
-```
+:::{code-block} none
 fa-w2-description/
 ├── urdf/
 ├── meshes/
 ├── config/
 └── components/          # Nested component references
-```
+:::
 
 ## Launch Integration
 
