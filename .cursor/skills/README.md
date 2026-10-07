@@ -24,4 +24,5 @@ Do not put skills in `~/.cursor/skills-cursor/` (Cursor internals).
 | Skill | Use when |
 |-------|----------|
 | [docs-writing](docs-writing/SKILL.md) | Writing or editing Sphinx/MyST pages in this repo — keep facts sourced, keep reader pages free of agent-meta phrasing |
+| [docs-remove-leftovers](docs-remove-leftovers/SKILL.md) | After a move/merge — delete the old page, toctree, and `.po`; do not leave “merged into” stubs |
 | [zh-translation-qa](zh-translation-qa/SKILL.md) | After gettext/update-po or when zh pages look mixed — scan fuzzy / leftover English (`check_zh_mix.py`; coverage % is not enough) |
