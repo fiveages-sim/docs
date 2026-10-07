@@ -222,6 +222,10 @@ See the [Developer Guide](../5-developer/0-index.md) for detailed instructions.
 
 Follow [Synthetic Data](../2-how_to/7-synthetic_data/0-index.md). Documented composer/lerobot branches are `feature/dex-grasp-generator` and `feature/sim-grasp-datagen`. Stop at recording/export; skip training.
 
+## After the beginner path
+
+Continue by **role** in [More applications](../6-more_applications/0-index.md): field commissioning, classical algorithm, VLA collect / train / deploy, simulation.
+
 ## Tips for Success
 
 1. **Don't skip mock mode** — Always verify behavior in mock before simulation or real hardware
