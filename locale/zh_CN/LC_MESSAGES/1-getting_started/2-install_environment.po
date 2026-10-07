@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -53,13 +53,16 @@ msgstr ""
 
 #: ../../source/1-getting_started/2-install_environment.md:11
 #: 5e597e81a4ee4c8891cb54fe67eb956e
+#, fuzzy
 msgid ""
 "Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-"
-"deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. Do not invent a "
-"custom `~/.bashrc` overlay; the workspace has **`./init_repo.sh`**, not a"
-" setup/env script."
+"deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. The workspace entry"
+" is **`./init_repo.sh`**; after `colcon build`, `source "
+"install/setup.bash` in the launch terminal."
 msgstr ""
-"ROS 2 + rosdep 按 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。不要自造 `~/.bashrc` overlay；工作区只有 **`./init_repo.sh`**，没有 setup/env 脚本。"
+"ROS 2 + rosdep 按 [open-deploy-ws README](https://github.com/fiveages-sim"
+"/open-deploy-ws/blob/main/README.EN.md)。不要自造 `~/.bashrc` overlay；工作区只有 "
+"**`./init_repo.sh`**，没有 setup/env 脚本。"
 
 #: ../../source/1-getting_started/2-install_environment.md:13
 #: 70308dfe25014cd1b06cd44e45df3593
@@ -93,14 +96,18 @@ msgstr ""
 
 #: ../../source/1-getting_started/2-install_environment.md:28
 #: d4bd97d14f0541af95f0a648dffbec26
+#, fuzzy
 msgid ""
 "Official ROS 2 Jazzy install (if you are not using fishros): "
 "[docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html). "
 "After ROS is installed, **clone a deploy workspace and run "
-"`./init_repo.sh`** — do not hand-write `source /opt/ros/...` + workspace "
-"overlay into `~/.bashrc` as the documented path."
+"`./init_repo.sh`**, then `source install/setup.bash` after `colcon "
+"build`."
 msgstr ""
-"若不用 fishros，官方 ROS 2 Jazzy 安装见 [docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html)。装好 ROS 后，**克隆部署工作区并运行 `./init_repo.sh`** — 不要把手工 `source /opt/ros/...` + 工作区 overlay 写进 `~/.bashrc` 当作文档路径。"
+"若不用 fishros，官方 ROS 2 Jazzy 安装见 [docs.ros.org — "
+"Jazzy](https://docs.ros.org/en/jazzy/Installation.html)。装好 ROS "
+"后，**克隆部署工作区并运行 `./init_repo.sh`** — 不要把手工 `source /opt/ros/...` + 工作区 "
+"overlay 写进 `~/.bashrc` 当作文档路径。"
 
 #: ../../source/1-getting_started/2-install_environment.md:30
 #: 881a831242a04c93a30807e5153de764
@@ -337,9 +344,10 @@ msgstr ""
 
 #: ../../source/1-getting_started/2-install_environment.md:94
 #: 41da97267616434797812419b1d12771
+#, fuzzy
 msgid ""
-"`./init_repo.sh` already runs `rosdep` on source paths. Do not add a "
-"hand-written `~/.bashrc` `source` chain as the documented setup."
+"`./init_repo.sh` already runs `rosdep` on source paths. After `colcon "
+"build`, `source install/setup.bash` in the launch terminal."
 msgstr "`./init_repo.sh` 已在源码路径上跑过 `rosdep`。不要把手工 `~/.bashrc` `source` 链当作文档推荐配置。"
 
 #: ../../source/1-getting_started/2-install_environment.md:96
@@ -362,8 +370,7 @@ msgstr "这适用于**确实**在 ROS apt 索引中的包（例如 `ros-jazzy-de
 #: ../../source/1-getting_started/2-install_environment.md:102
 #: 02d1c2af750b4ad7a2e102f1300326ad
 msgid "sudo apt update\n"
-msgstr ""
-"sudo apt update\n"
+msgstr "sudo apt update\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:106
 #: 408ac3a58a874a7d93233817b2d515be
@@ -433,7 +440,9 @@ msgstr "下一步"
 msgid ""
 "[Quick Demo](1-quick_demo_public.md) — Clone `open-deploy-ws`, "
 "`./init_repo.sh`, build, launch"
-msgstr "[快速演示](1-quick_demo_public.md) — 克隆 `open-deploy-ws`，`./init_repo.sh`，构建并启动"
+msgstr ""
+"[快速演示](1-quick_demo_public.md) — 克隆 `open-deploy-"
+"ws`，`./init_repo.sh`，构建并启动"
 
 #: ../../source/1-getting_started/2-install_environment.md:132
 #: ce9f051d0cc7410ebbe02574b09fa856
@@ -781,3 +790,4 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间�
 
 #~ msgid "[Quick Demo](1-quick_demo_public.md) — Run your first demo"
 #~ msgstr "[快速演示](1-quick_demo_public.md) — 运行你的第一个演示"
+

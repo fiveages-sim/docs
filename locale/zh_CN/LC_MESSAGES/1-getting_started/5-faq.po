@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -49,19 +49,20 @@ msgid "Q: Package not found after apt install"
 msgstr "问：apt install 后找不到软件包"
 
 #: ../../source/1-getting_started/5-faq.md:17 3840a8531b024a3697232884c17b4953
+#, fuzzy
 msgid ""
 "This applies to packages that **are** in the ROS apt index (for example "
 "`ros-jazzy-desktop`). After ROS is installed, clone a deploy workspace "
-"and run `./init_repo.sh` — do not treat a hand-written `source "
-"/opt/ros/...` in `~/.bashrc` as the documented path."
+"and run `./init_repo.sh`, then `source install/setup.bash` after `colcon "
+"build`."
 msgstr ""
-"这适用于**确实**在 ROS apt 索引中的软件包（例如 `ros-jazzy-desktop`）。装好 ROS 后，克隆部署工作区并运行 `./init_repo.sh` — 不要把手工写进 `~/.bashrc` 的 `source /opt/ros/...` 当作文档路径。"
+"这适用于**确实**在 ROS apt 索引中的软件包（例如 `ros-jazzy-desktop`）。装好 ROS 后，克隆部署工作区并运行 "
+"`./init_repo.sh` — 不要把手工写进 `~/.bashrc` 的 `source /opt/ros/...` 当作文档路径。"
 
 #: ../../source/1-getting_started/5-faq.md:19 afd9f8916f2c4091bb930be2ed3602f5
 #, fuzzy
 msgid "sudo apt update\n"
-msgstr ""
-"sudo apt update\n"
+msgstr "sudo apt update\n"
 
 #: ../../source/1-getting_started/5-faq.md:23 c76c6b8646214ef9b58af318c4efb43c
 msgid "Q: OCS2 `.deb` not found via apt"
@@ -208,7 +209,8 @@ msgid ""
 "Environment](2-install_environment.md) first. After a successful build, "
 "`source install/setup.bash` in the launch terminal."
 msgstr ""
-"在已经跑过 `./init_repo.sh` 的工作区构建。若缺少 `ros2` / `colcon`，先完成 [安装环境](2-install_environment.md)。构建成功后，在启动终端 `source install/setup.bash`。"
+"在已经跑过 `./init_repo.sh` 的工作区构建。若缺少 `ros2` / `colcon`，先完成 "
+"[安装环境](2-install_environment.md)。构建成功后，在启动终端 `source install/setup.bash`。"
 
 #: ../../source/1-getting_started/5-faq.md:86 c9ba008ae5c445619af0645e77f27cf8
 msgid "Q: Build runs out of memory"
@@ -285,8 +287,7 @@ msgstr "所需硬件接口已初始化"
 #: ../../source/1-getting_started/5-faq.md:124 2fd8f00d458b4b67a8ed38f5b60c76ed
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
 #: ../../source/1-getting_started/5-faq.md:128 7c5a5dc465a34cd2b9ad406f41f69f96
 msgid "Q: No communication between machines"
@@ -644,3 +645,4 @@ msgstr ""
 #~ msgstr ""
 #~ "source /opt/ros/jazzy/setup.bash\n"
 #~ "colcon build\n"
+

@@ -1,4 +1,4 @@
-# Overview
+# Introduction
 
 This section introduces the FiveAges Sim ecosystem — what it is, how its components fit together, and how to navigate the documentation.
 

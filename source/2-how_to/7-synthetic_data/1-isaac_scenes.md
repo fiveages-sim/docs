@@ -71,7 +71,7 @@ Git submodules recorded there:
 | `humanoid/Ubtech` | ubtech-usds |
 | `humanoid/Galbot` | galbot-usds |
 
-FaSim `submodules_visibility.conf` marks Galbot **public** and the FiveAges Gen\* / Ubtech trees **private**. In-tree (not submodule) categories on robot_usds include grippers, dexhands, manipulators, mobile bases, mobile manipulators, and sensors — browse the repo; do not invent extra USD roots.
+FaSim `submodules_visibility.conf` marks Galbot **public** and the FiveAges Gen\* / Ubtech trees **private**. In-tree (not submodule) categories on robot_usds include grippers, dexhands, manipulators, mobile bases, mobile manipulators, and sensors — browse the repo for the current roots.
 
 FiveAges **Gen1 / Gen2 / Gen3** are wheeled-arm USD generations under `humanoid/FiveAges/` (README maps Gen1→W1, Gen2→W2/S2). They are not bipedal humanoids.
 
@@ -88,7 +88,7 @@ Environment assets are **siblings** of `robots/`, not robot_usds submodules.
 
 robot_usds README: if you use robot_usds **outside** FaSim, put `environment/fiveages_env` next to `robots/` so scene USDs can reference it.
 
-Do not treat private project USD as a public robot model, and do not document product codenames that are not in the public robot_usds gallery text we rely on here.
+`fa-project-usd` is a private project scene tree, not a public robot model. Product names on this page follow the public robot_usds gallery text.
 
 [Environment assets reference](../../4-reference/simulation/5-env_assets.md).
 

@@ -10,7 +10,7 @@ How FiveAges Sim **selects a hardware plugin** and **loads controllers**. This i
 - Plugin names below are from [`arx_acone_description/xacro/ros2_control/robot.xacro`](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro). Other robots use the same `hardware` keys; the **real** plugin class is that robot’s own xacro.
 ```
 
-Upstream lifecycle / QoS / “how Controller Manager works in general”: [ros2_control documentation](https://control.ros.org/). Do not treat those pages as this stack’s topic or argument list.
+Upstream lifecycle / QoS / “how Controller Manager works in general”: [ros2_control documentation](https://control.ros.org/). This stack’s launch arguments and topics are the rows and READMEs on this page.
 
 ## What the launch argument does
 
@@ -23,7 +23,7 @@ Documented launch values ([robot_common_launch](https://github.com/fiveages-sim/
 | `mock_components` (**default**) | `mock_components/GenericSystem` | No Gazebo / Isaac. There is **no** `hardware:=mock` branch in this xacro. |
 | `gz` | `gz_ros2_control/GazeboSimSystem` | [ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md): install `ros-jazzy-ros-gz` and `ros-jazzy-gz-ros2-control` |
 | `isaac` | `topic_based_ros2_control/TopicBasedSystem` | Acone params: `/isaac/joint_command`, `/isaac/joint_states`. Build `topic_based_ros2_control` ([arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)) |
-| `real` | Vendor plugin (Acone: `arx_ros2_control/ArxX5Hardware`) | Other brands: that description’s `xacro/ros2_control/*.xacro`. Do not invent class names. |
+| `real` | Vendor plugin (Acone: `arx_ros2_control/ArxX5Hardware`) | Other brands: use the plugin class from that description’s `xacro/ros2_control/*.xacro`. |
 
 `REAL_HARDWARE` in `launch_arg_utils.py` is only `real`.
 
@@ -31,7 +31,7 @@ Optional controller overlay: if `<robot>_description/config/ros2_control/<hardwa
 
 ## Controllers (this repo)
 
-From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READMEs / launches — do not invent names:
+From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READMEs / launches:
 
 | Package | Role |
 |---------|------|
@@ -51,7 +51,7 @@ From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READ
 | Position (default) | `position` | `position`, `velocity` |
 | Force (auto) | `position`, `velocity`, `effort`, `kp`, `kd` | `position`, `velocity`, `effort` |
 
-Do not invent a universal `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`) — [FSM and Topics](4-fsm_and_topics.md).
+There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`) — [FSM and Topics](4-fsm_and_topics.md).
 
 ## Related
 

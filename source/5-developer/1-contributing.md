@@ -36,6 +36,7 @@ Open an issue describing:
 - Fix typos or unclear explanations
 - Add missing documentation
 - Improve examples
+- When editing this Sphinx site, follow `.cursor/skills/docs-writing/SKILL.md` (facts from linked READMEs; keep agent-meta out of reader pages)
 
 ## Development Setup
 

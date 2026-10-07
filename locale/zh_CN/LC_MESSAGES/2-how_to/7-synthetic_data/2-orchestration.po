@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:13+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -39,11 +39,13 @@ msgstr ""
 
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:5
 #: 6b86db25c51841cba9dc6511b713a88c
+#, fuzzy
 msgid ""
 "APIs below are from [robot_action_composer `@ feature/dex-grasp-"
 "generator`](https://github.com/fiveages-"
 "sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) and"
-" its `docs/`. Do not invent `ActionSequence` / `actions.MoveJ` classes."
+" its `docs/`. YAML `skill:` values are registered names from that README "
+"(not a Python `ActionSequence` / `actions.MoveJ` class)."
 msgstr ""
 "下列 API 来自 [robot_action_composer `@ feature/dex-grasp-"
 "generator`](https://github.com/fiveages-"
@@ -337,7 +339,10 @@ msgid ""
 "repo’s `main`; see [robot-descriptions-"
 "common](../../4-reference/descriptions/2-common.md))."
 msgstr ""
-"导航：`navigation.profile` 为 `default` 或 `map_only`，展开成 **`nav2_profile:=…`**。默认 launch：`robot_common_launch` / **`navigation/navigation_isaac_gt.launch.py`**（该仓 `main` 上有此文件；见 [robot-descriptions-common](../../4-reference/descriptions/2-common.md)）。"
+"导航：`navigation.profile` 为 `default` 或 `map_only`，展开成 "
+"**`nav2_profile:=…`**。默认 launch：`robot_common_launch` / "
+"**`navigation/navigation_isaac_gt.launch.py`**（该仓 `main` 上有此文件；见 [robot-"
+"descriptions-common](../../4-reference/descriptions/2-common.md)）。"
 
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:56
 #: 53322da21138496390efa067f33b4077
@@ -454,3 +459,4 @@ msgid ""
 msgstr ""
 "录制是叠在这条队列上的 extra：同一套 YAML `task_queue`，再加上 LeRobot 插件。继续看 [LeRobot "
 "录制与导出](3-record_export.md)。"
+

@@ -90,7 +90,7 @@ This workspace requires private repository access. Contact your team lead if you
 ```{admonition} Source of truth
 :class: important
 
-The `fa-deploy-ws` README is **not public**. This page does **not** invent `--robot` flags, `robot.local.yaml`, `./quick_start.sh`, `./release.sh`, or robot-ID lists. After access, follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md) and **that repository’s README**.
+The `fa-deploy-ws` README is **not public**. Flags, robot IDs, and on-robot YAML are documented only in that README after you have access. Public-side pattern: [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
 ```
 
 ### Initialization
@@ -126,7 +126,7 @@ Public end-effector selection is launch `type` / `left_type` / `right_type` (and
 
 1. Request access to private repositories
 2. Clone `fa-deploy-ws` fresh (don't try to convert open-deploy-ws)
-3. Follow that repository’s README (not invented flags on this page)
+3. Follow that repository’s README
 
 ### Internal Users on Public Hardware
 

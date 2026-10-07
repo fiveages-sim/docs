@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -118,18 +118,19 @@ msgstr "同一菜单 → **full body**"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:12
 #: 321fc6304f7846a8974f55d4bd273025
+#, fuzzy
 msgid ""
-"Do not treat `split_body.launch.py` as whole-body control. There is no "
-"public README that lists a standalone `ros2 launch ocs2_wbc_controller …`"
-" entry; `full_body.launch.py` is the in-tree loader."
+"`split_body.launch.py` is the split (分体) path. Whole-body control uses "
+"`full_body.launch.py` (there is no public standalone `ros2 launch "
+"ocs2_wbc_controller …` entry)."
 msgstr ""
 "不要把 `split_body.launch.py` 当成全身控制。公开 README 没有单独的 `ros2 launch "
 "ocs2_wbc_controller …` 入口；`full_body.launch.py` 才是树内加载器。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:14
-#: 1334ba50a462495da52b9ec7718decc0
-msgid "Packages (do not invent)"
-msgstr "软件包（不要编造）"
+#: 2a3230b9ecd34e80805d0cc4cb8df3ae
+msgid "Packages"
+msgstr "软件包"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:16
 #: 599f238661fc42eebaa74cc23ad43db5
@@ -138,7 +139,9 @@ msgid ""
 "`/fsm_command` is `std_msgs/Int32`. How-to: [Use "
 "basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)."
 msgstr ""
-"**basic_joint_controller** — 关节 FSM Home / Hold / MoveJ；`/fsm_command` 是 `std_msgs/Int32`。操作指南：[使用 basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)。"
+"**basic_joint_controller** — 关节 FSM Home / Hold / MoveJ；`/fsm_command` 是 "
+"`std_msgs/Int32`。操作指南：[使用 "
+"basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:17
 #: c9326347714f4968b70d194d0bdef1d7
@@ -148,9 +151,9 @@ msgstr "**ocs2_arm_controller** — 手臂 MPC FSM HOME / OCS2 / HOLD（软件�
 #: ../../source/3-concepts/7-split_vs_wbc.md:18
 #: 5ce4b3b57f5f4d46a325726227554049
 msgid ""
-"**ocs2_wbc_controller** — private submodule; whole-body MPC. This docs "
-"set does not invent its states or topics."
-msgstr "**ocs2_wbc_controller** — 私有子模块；全身 MPC。本文档不编造其状态或话题。"
+"**ocs2_wbc_controller** — private submodule; whole-body MPC. States and "
+"topics are in that package README after access."
+msgstr "**ocs2_wbc_controller** — 私有子模块；全身 MPC。状态和话题在开通后的包 README 里。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:20
 #: 8e103c1ebcd846dab4c31b6aba5125a9
@@ -160,4 +163,7 @@ msgid ""
 msgstr ""
 "FSM "
 "命令值：[状态机与话题](4-fsm_and_topics.md)。控制器索引：[控制器参考](../4-reference/controllers/0-index.md)。"
+
+#~ msgid "Packages (do not invent)"
+#~ msgstr "软件包（不要编造）"
 

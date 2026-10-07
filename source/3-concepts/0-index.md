@@ -1,4 +1,4 @@
-# Concepts
+# Introduction
 
 Stack-specific notes. Concrete names come from repository READMEs / launch / xacro — not a generic ROS 2 textbook.
 

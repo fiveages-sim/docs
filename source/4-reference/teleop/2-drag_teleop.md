@@ -65,7 +65,7 @@ Default `robot` is `panthera_ht`. Namespaces are `/drag_teleop_{role}`.
 | `moveJ_pub` | `false` | Master publishes OCS2 moveJ + gripper commands |
 | `controller_params` | package yaml | e.g. `panthera_ht_2_panthera_ht.yaml` |
 
-Mode × hardware command-interface matrix, control laws, and YAML keys: read the README. Do not treat DexCap [`teleop-joint-mapper`](4-teleop_joint_mapper.md) as this package.
+Mode × hardware command-interface matrix, control laws, and YAML keys: read the README. DexCap mapping is a separate package: [`teleop-joint-mapper`](4-teleop_joint_mapper.md).
 
 ## Related
 

@@ -8,7 +8,7 @@ This page covers installing the base development environment for FiveAges Sim wo
 
 **Python:** **3.12** only (ROS 2 Jazzy on Ubuntu 24.04). Do not use 3.10/3.11 venvs for this stack.
 
-Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. Do not invent a custom `~/.bashrc` overlay; the workspace has **`./init_repo.sh`**, not a setup/env script.
+Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. The workspace entry is **`./init_repo.sh`**; after `colcon build`, `source install/setup.bash` in the launch terminal.
 
 ## ROS 2 Jazzy + rosdep (open-deploy-ws README)
 
@@ -25,7 +25,7 @@ sudo rosdep init
 rosdep update
 :::
 
-Official ROS 2 Jazzy install (if you are not using fishros): [docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html). After ROS is installed, **clone a deploy workspace and run `./init_repo.sh`** — do not hand-write `source /opt/ros/...` + workspace overlay into `~/.bashrc` as the documented path.
+Official ROS 2 Jazzy install (if you are not using fishros): [docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html). After ROS is installed, **clone a deploy workspace and run `./init_repo.sh`**, then `source install/setup.bash` after `colcon build`.
 
 ## OCS2 Installation
 
@@ -91,7 +91,7 @@ ros2 --help
 ros2 pkg list | grep ocs2   # after OCS2 deb or source via init
 :::
 
-`./init_repo.sh` already runs `rosdep` on source paths. Do not add a hand-written `~/.bashrc` `source` chain as the documented setup.
+`./init_repo.sh` already runs `rosdep` on source paths. After `colcon build`, `source install/setup.bash` in the launch terminal.
 
 ## Common Issues
 

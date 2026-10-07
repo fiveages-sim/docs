@@ -22,7 +22,7 @@ See `arms_ros2_control/README.deb.md` for:
 
 ### robot-descriptions-common
 
-Do not invent a bloom / mesh-packaging recipe here. Official notes: [README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md).
+Official notes: [README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md).
 
 - Workflow: [`.github/workflows/build-common-deb.yml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/.github/workflows/build-common-deb.yml)
 - PR merge to `main` refreshes rolling Release tag **`pre-release`**; `v*` tag / `workflow_dispatch` makes a formal release

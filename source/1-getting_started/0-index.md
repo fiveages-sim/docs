@@ -1,4 +1,4 @@
-# Getting Started
+# Introduction
 
 This section guides you through setting up your development environment and running your first robot demos.
 

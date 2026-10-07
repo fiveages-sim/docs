@@ -48,9 +48,9 @@ There is **no** documented `hardware:=mock` key. Plugins: [ros2_control in This 
 | Controllers | `basic_joint_controller`, `ocs2_arm_controller`, `adaptive_gripper_controller` | arms_ros2_control |
 | Isaac HI | `topic_based_ros2_control` | arms_ros2_control README |
 
-Do not invent `arms_teleop_controller` as a controller package name; teleop packages are listed on the teleop reference pages.
+Teleop packages are listed on the teleop reference pages (there is no `arms_teleop_controller` package in those READMEs).
 
-## Topics (do not invent extras)
+## Topics
 
 | Topic | Type | Source |
 |-------|------|--------|

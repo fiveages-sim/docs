@@ -45,7 +45,7 @@ Do **not** `git submodule update --init --recursive` as the primary path.
 | `manipulator/Tianji`, `manipulator/Rokae`, FiveAges `fiveages_w*` descriptions, `humanoid/Ubtech` | `private` |
 | `arms_ros2_control` `ocs2_wbc_controller`, `ocs2_humanoid`, `lina_planning` | `private` |
 
-If you need private nested modules, use a workspace/README that documents private access (`fa-deploy-ws`). This page does not invent that repo’s extra flags.
+If you need private nested modules, use a workspace/README that documents private access (`fa-deploy-ws`). Extra flags for that workspace are in its README after access.
 
 ## Adding a nested submodule (contributors)
 

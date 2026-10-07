@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:02+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -72,10 +72,12 @@ msgstr "公开路径（open-deploy-ws）"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:19
 #: 0ee0f1364efa428cbe236df373a21dd2
+#, fuzzy
 msgid ""
 "The following robots can be deployed to real hardware from **lean `open-"
 "deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / "
-"`./quick_start.sh`); do not treat Acone as the full Lift 2S."
+"`./quick_start.sh`). **Acone** / **AC One** is arm-only; **Lift 2S** is "
+"the full-body platform."
 msgstr ""
 "下列机器人可通过 **精简 `open-deploy-ws` 分支** 部署到真机。遵循各分支 README（`./init_repo.sh` /"
 " `./quick_start.sh`）；不要把 Acone 当成完整的 Lift 2S。"
@@ -452,12 +454,12 @@ msgstr "逐步测试"
 msgid ""
 "Start from HOLD, then HOME, then MOVEJ / OCS2 as the **running** "
 "controller allows ([FSM and "
-"Topics](../../../3-concepts/4-fsm_and_topics.md)). Do not send invented "
-"string commands such as `stand` / `walk`."
+"Topics](../../../3-concepts/4-fsm_and_topics.md)). `/fsm_command` is "
+"`std_msgs/Int32` (not strings such as `stand` / `walk`)."
 msgstr ""
 "从 HOLD 开始，再 HOME，再按**正在运行的**控制器允许的范围进入 MOVEJ / "
-"OCS2（[状态机与话题](../../../3-concepts/4-fsm_and_topics.md)）。不要发送编造的字符串命令，例如 "
-"`stand` / `walk`。"
+"OCS2（[状态机与话题](../../../3-concepts/4-fsm_and_topics.md)）。`/fsm_command` 是 "
+"`std_msgs/Int32`（不是 `stand` / `walk` 这类字符串）。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:117
 #: d9afb563e4b841a9bf5e0a30cc6370cf
@@ -466,10 +468,11 @@ msgstr "公开机器人部署（open-deploy-ws）"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:119
 #: 9a40cc84a0b841338b3cd65ac63fc268
+#, fuzzy
 msgid ""
-"Use the matching **branch** and its README scripts. Do not treat "
-"`demo.launch.py robot:=arx_acone` as Lift 2S, and do not use the invented"
-" name `ht_panthera` (README launch name is `panthera_ht`)."
+"Use the matching **branch** and its README scripts. `demo.launch.py "
+"robot:=arx_acone` is Acone (arm only), not Lift 2S. The HighTorque launch"
+" key is `panthera_ht`."
 msgstr ""
 "使用对应 **分支** 及其 README 脚本。不要把 `demo.launch.py robot:=arx_acone` 当成 Lift "
 "2S，也不要使用杜撰的名称 `ht_panthera`（README 中的 launch 名是 `panthera_ht`）。"
@@ -508,14 +511,16 @@ msgstr "内部部署（fa-deploy-ws）"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:127
 #: e49192a216474e719bfff4d3e68fe70f
+#, fuzzy
 msgid ""
 "The `fa-deploy-ws` README is not public. After you have access, run the "
-"**init / quick-start scripts named in that README**. This page does not "
-"invent `--robot`, `robot.local.yaml`, or extra flags. Pattern on the "
-"public side: [fa-deploy-ws "
+"**init / quick-start scripts named in that README**. Flags and robot IDs "
+"are documented only there. Public-side pattern: [fa-deploy-ws "
 "Setup](../../../1-getting_started/4-fa_deploy_ws.md)."
 msgstr ""
-"`fa-deploy-ws` 的 README 不公开。有权限后，运行**该 README 中写明的 init / quick-start 脚本**。本页不编造 `--robot`、`robot.local.yaml` 或额外参数。公开侧模式见 [fa-deploy-ws 配置](../../../1-getting_started/4-fa_deploy_ws.md)。"
+"`fa-deploy-ws` 的 README 不公开。有权限后，运行**该 README 中写明的 init / quick-start "
+"脚本**。参数和机器人 ID 只写在那里。公开侧模式见 [fa-deploy-ws "
+"配置](../../../1-getting_started/4-fa_deploy_ws.md)。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/0-index.md:129
 #: a27a9d0fb62f46cc859906c522e2b3c4
@@ -887,3 +892,4 @@ msgstr "[添加机器人](../10-add_a_robot.md) 用于自定义集成"
 #~ "\n"
 #~ "# Quick start (includes safety checks)\n"
 #~ "./quick_start.sh"
+

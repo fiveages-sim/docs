@@ -108,6 +108,8 @@ docs/
 
 ## Writing Guidelines
 
+Author constraints (what you may claim, how to handle private repos, keep agent-meta out of reader pages): `.cursor/skills/docs-writing/SKILL.md`.
+
 ### Markdown (MyST)
 
 Use MyST-flavored Markdown. **Never nest `` ``` `` fences inside `` ```{admonition} ``** — that breaks zh_CN rendering. Use colon fences (`:::`) when an admonition must contain a code block, and wrap examples of fences in a 4-backtick outer fence:

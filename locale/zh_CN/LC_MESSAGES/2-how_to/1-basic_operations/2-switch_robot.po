@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -69,7 +69,11 @@ msgid ""
 "deploy-ws/blob/main/submodules_visibility.conf) (`manipulator/Dobot`, "
 "`manipulator/ARX`, …). Do not `git submodule update --init --recursive`."
 msgstr ""
-"在 `open-deploy-ws` 中优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下嵌套模块与 [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) 一致（`manipulator/Dobot`、`manipulator/ARX` 等）。不要 `git submodule update --init --recursive`。"
+"在 `open-deploy-ws` 中优先用 `./init_repo.sh`，让 `src/robot-descriptions/` "
+"下嵌套模块与 [`submodules_visibility.conf`](https://github.com/fiveages-sim"
+"/open-deploy-ws/blob/main/submodules_visibility.conf) "
+"一致（`manipulator/Dobot`、`manipulator/ARX` 等）。不要 `git submodule update "
+"--init --recursive`。"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:18
 #: 8049175eef41411389534973aa46f67f
@@ -97,8 +101,7 @@ msgstr "3. 使用新机器人启动"
 #: 7d43ac419f3542d7a93fa1213e208b0a
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:32
 #: 5048a1db8f91424ab4135cc904fbe23e
@@ -167,13 +170,16 @@ msgid ""
 "[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
 "/panthera-ht/README.EN.md)"
 msgstr ""
-"[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md)"
+"[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
+"/panthera-ht/README.EN.md)"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:40
 #: d0b9e843f2bf41deb6c604831bcaee17
 #, python-brace-format
-msgid "Use the key that matches `{key}_description`. Do not invent extra names."
-msgstr "使用与 `{key}_description` 对应的键。不要编造额外名称。"
+msgid ""
+"Use the key that matches `{key}_description` (the description packages "
+"you initialized)."
+msgstr "使用与你已初始化的 `{key}_description` 对应的键。"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:42
 #: 0d46d179ca7e4e659794bc64e9174e72
@@ -494,3 +500,4 @@ msgstr "每台机器人在 URDF 中都有自己的关节限位。请确认目标
 #~ "# Launch with Acone (arm only, not Lift 2S)\n"
 #~ "ros2 launch ocs2_arm_controller demo.launch.py "
 #~ "robot:=arx_acone hardware:=mock\n"
+

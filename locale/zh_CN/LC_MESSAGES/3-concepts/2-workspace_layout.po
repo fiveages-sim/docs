@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -26,13 +26,15 @@ msgid "Workspace Layout"
 msgstr "工作空间布局"
 
 #: ../../source/3-concepts/2-workspace_layout.md:3
-#: f58ae2f1d6be4a39ad3480c29022e217
+#: 309aa2f53eab465f8e89c7c1160ca01b
 msgid ""
 "Layout of the **public** deploy workspace, from the [open-deploy-ws "
 "README](https://github.com/fiveages-sim/open-deploy-"
-"ws/blob/main/README.EN.md). Do not invent extra top-level scripts."
+"ws/blob/main/README.EN.md). Top-level scripts and config files are those "
+"listed in that README (`./init_repo.sh`, `submodules_visibility.conf`, "
+"`deb_versions.conf`, and `scripts/`)."
 msgstr ""
-"**公开**部署工作区布局，来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。不要编造额外的顶层脚本。"
+"公开部署工作区的布局，摘自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。顶层脚本和配置就是该 README 列出的那些（`./init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和 `scripts/`）。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:5
 #: a5c1c71ae3264949ac7ff6236c5a1b99
@@ -53,7 +55,10 @@ msgid ""
 " is **no** workspace `setup.bash` / env installer besides "
 "`./init_repo.sh`."
 msgstr ""
-"目录树与初始化流程：[README.EN.md](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。仓库根目录有 `init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和 `scripts/` — 除 `./init_repo.sh` 外**没有**工作区 `setup.bash` / 环境安装脚本。"
+"目录树与初始化流程：[README.EN.md](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md)。仓库根目录有 "
+"`init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和 "
+"`scripts/` — 除 `./init_repo.sh` 外**没有**工作区 `setup.bash` / 环境安装脚本。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:13
 #: eb6b5e78ddc24a6d9cd1d3788c22cbac
@@ -74,13 +79,17 @@ msgid ""
 msgstr ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs\n"
-"│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)\n"
-"│   └── ocs2_ros2/             # only if that module is installed as source\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware "
+"interfaces / shared libs\n"
+"│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)"
+"\n"
+"│   └── ocs2_ros2/             # only if that module is installed as "
+"source\n"
 "├── init_repo.sh\n"
 "├── submodules_visibility.conf\n"
 "├── deb_versions.conf\n"
-"└── scripts/                   # install_core_debs.sh, uninstall_core_debs.sh"
+"└── scripts/                   # install_core_debs.sh, "
+"uninstall_core_debs.sh"
 
 #: ../../source/3-concepts/2-workspace_layout.md:25
 #: b33a39dd676c4ed09792199af879a101
@@ -90,7 +99,9 @@ msgid ""
 "build` (the README does not wrap that). Then `source install/setup.bash` "
 "in that workspace — standard ROS 2 overlay, not a FiveAges env script."
 msgstr ""
-"**主路径：** `./init_repo.sh`（可见性 + 按模块 `d`/`s`）。**不要** `git submodule update --init --recursive`。初始化后 `colcon build`（README 没有封装这一步）。然后在该工作区 `source install/setup.bash` — 这是标准 ROS 2 overlay，不是 FiveAges 环境脚本。"
+"**主路径：** `./init_repo.sh`（可见性 + 按模块 `d`/`s`）。**不要** `git submodule update"
+" --init --recursive`。初始化后 `colcon build`（README 没有封装这一步）。然后在该工作区 `source "
+"install/setup.bash` — 这是标准 ROS 2 overlay，不是 FiveAges 环境脚本。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:27
 #: a2edfdbb5f434069821be290d1dce9d1
@@ -99,7 +110,8 @@ msgid ""
 "`panthera-ht` used in the how-tos) clone only that scheme’s packages. See"
 " the same README."
 msgstr ""
-"精简机器人分支（`dobot-cr5`、`arx-acone`，以及 how-to 中的 `arx-lift2s` / `panthera-ht`）只克隆该方案所需软件包。见同一 README。"
+"精简机器人分支（`dobot-cr5`、`arx-acone`，以及 how-to 中的 `arx-lift2s` / `panthera-"
+"ht`）只克隆该方案所需软件包。见同一 README。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:29
 #: b27be2de2daa4cb09d90a02bd61e6346
@@ -112,7 +124,8 @@ msgid ""
 "From the [arms_ros2_control README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/README.md):"
 msgstr ""
-"来自 [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)："
+"来自 [arms_ros2_control README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.md)："
 
 #: ../../source/3-concepts/2-workspace_layout.md:33
 #: 42a8a6ce2feb43998b55038e0bb6fdc8
@@ -135,10 +148,13 @@ msgstr ""
 "│   ├── ocs2_arm_controller/\n"
 "│   ├── ocs2_wbc_controller/      # private nested (visibility conf)\n"
 "│   ├── adaptive_gripper_controller/\n"
-"│   └── basic_joint_controller/   # own package README; Home / Hold / MoveJ\n"
+"│   └── basic_joint_controller/   # own package README; Home / Hold / "
+"MoveJ\n"
 "├── libraries/                    # ocs2_humanoid (private), …\n"
-"├── hardwares/                    # topic_based_ros2_control, unitree_ros2_control, …\n"
-"└── command/                      # msgs, RViz plugin, arms_target_manager, arms_teleop"
+"├── hardwares/                    # topic_based_ros2_control, "
+"unitree_ros2_control, …\n"
+"└── command/                      # msgs, RViz plugin, "
+"arms_target_manager, arms_teleop"
 
 #: ../../source/3-concepts/2-workspace_layout.md:45
 #: d63f93e436fd403e8a0f57b0148d39c5
@@ -155,10 +171,10 @@ msgstr "fa-deploy-ws"
 #: ../../source/3-concepts/2-workspace_layout.md:49
 #: d9a75712ebf84ec8aa85d3503b47dbee
 msgid ""
-"Internal workspace (private). This page does **not** invent its tree or "
-"extra flags. Follow that repository’s README after you have access. "
-"Public users stay on `open-deploy-ws`."
-msgstr "内部工作区（私有）。本页**不编造**其目录树或额外参数。有权限后以该仓库 README 为准。公开用户继续用 `open-deploy-ws`。"
+"Internal workspace (private). Tree and extra flags are in that "
+"repository’s README after you have access. Public users stay on `open-"
+"deploy-ws`."
+msgstr "内部工作区（私有）。目录树和额外参数在开通后的该仓库 README 里。公开用户继续用 `open-deploy-ws`。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:51
 #: ab062d8b195b40e68d0ea1f17dd7827f
@@ -684,3 +700,4 @@ msgstr "[open-deploy-ws 配置](../1-getting_started/3-open_deploy_ws.md)"
 #~ " open-deploy-ws and fa-deploy-"
 #~ "ws"
 #~ msgstr "**保持工作空间分离** — 不要混用 open-deploy-ws 与 fa-deploy-ws"
+

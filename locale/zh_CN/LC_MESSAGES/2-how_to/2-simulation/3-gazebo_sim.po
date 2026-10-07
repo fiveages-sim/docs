@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -73,8 +73,7 @@ msgstr "在 `./init_repo.sh` 和 `colcon build` 之后，从工作区根目录�
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:22
 #: 17f35e47ccec41559ffc834671afa611
 msgid "source install/setup.bash\n"
-msgstr ""
-"source install/setup.bash\n"
+msgstr "source install/setup.bash\n"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:26
 #: 2f5b5589300847b4901840984541699a
@@ -92,7 +91,13 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md):"
 " install `ros-jazzy-ros-gz` and `ros-jazzy-gz-ros2-control`."
 msgstr ""
-"`hardware:=gz` 将 xacro `ros2_control_hardware_type` 设为 `gz`，并将 `gazebo` 设为 `true`（[`build_xacro_mappings()`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)）。[ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：安装 `ros-jazzy-ros-gz` 和 `ros-jazzy-gz-ros2-control`。"
+"`hardware:=gz` 将 xacro `ros2_control_hardware_type` 设为 `gz`，并将 `gazebo` "
+"设为 `true`（[`build_xacro_mappings()`](https://github.com/fiveages-sim"
+"/robot-descriptions-"
+"common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)）。[ocs2_arm"
+" README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：安装"
+" `ros-jazzy-ros-gz` 和 `ros-jazzy-gz-ros2-control`。"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:30
 #: 3813696467f840ceae8f2948a9dc3362
@@ -116,7 +121,8 @@ msgid ""
 "`/target_pose`. See [FSM and "
 "Topics](../../3-concepts/4-fsm_and_topics.md)."
 msgstr ""
-"FSM：`/fsm_command`（`std_msgs/Int32`）。**不要**发布 `/target_pose`。见 [FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+"FSM：`/fsm_command`（`std_msgs/Int32`）。**不要**发布 `/target_pose`。见 [FSM "
+"与话题](../../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:40
 #: 3149bcad1fee4305af408bc0992b48b3
@@ -132,15 +138,16 @@ msgid ""
 "hardware:=gz\n"
 msgstr ""
 "# Acone arm (not Lift 2S)\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
+"hardware:=gz\n"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:47
 #: 86af9acc1d2a430fb20648b19209c254
 msgid ""
 "`demo.launch.py` declares `world` (default `dart`). It does **not** "
-"declare `rviz:=false` or `headless:=true` — do not invent those."
+"declare `rviz:=false` or `headless:=true`."
 msgstr ""
-"`demo.launch.py` 声明了 `world`（默认 `dart`）。**没有**声明 `rviz:=false` 或 `headless:=true` — 不要编造。"
+"`demo.launch.py` 声明了 `world`（默认 `dart`）。它**没有**声明 `rviz:=false` 或 `headless:=true`。"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:49
 #: 93c442b203504d08be571c508481cc58
@@ -168,10 +175,8 @@ msgstr "世界文件"
 #: e5cff5d84ca34ac7a64b5e4af86bce1f
 msgid ""
 "`demo.launch.py` declares `world` (default `dart`). Use only world keys "
-"that exist in the description / launch you are running — do not invent a "
-"`custom_world.sdf`."
-msgstr ""
-"`demo.launch.py` 声明了 `world`（默认 `dart`）。只使用当前描述 / launch 中存在的 world 键 — 不要编造 `custom_world.sdf`。"
+"that exist in the description / launch you are running."
+msgstr "`demo.launch.py` 声明了 `world`（默认 `dart`）。只用当前描述 / launch 里存在的 world 键。"
 
 #: ../../source/2-how_to/2-simulation/3-gazebo_sim.md:59
 #: 1c8e73b1ad0744ae8a20987e3879a04f
@@ -462,3 +467,4 @@ msgstr "渲染设置见 Gazebo / `ros-jazzy-ros-gz` 文档。此 launch 文件�
 #~ msgstr ""
 #~ "ros2 launch ocs2_arm_controller demo.launch.py "
 #~ "hardware:=gz headless:=true\n"
+

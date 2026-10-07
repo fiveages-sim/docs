@@ -1,4 +1,4 @@
-# Developer Guide
+# Introduction
 
 This section covers contributing to the FiveAges Sim ecosystem.
 

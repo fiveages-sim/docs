@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -58,13 +58,15 @@ msgstr "可访问 GitHub 的 Git"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:11
 #: 68bbb6483e9c4354a63567524de08e70
+#, fuzzy
 msgid ""
-"Do not hand-write `source /opt/ros/...` + workspace overlay into "
-"`~/.bashrc`. After clone, use **`./init_repo.sh`**. After `colcon build`,"
-" source that workspace’s `install/setup.bash` in the terminal you launch "
-"from (standard ROS 2 overlay; `open-deploy-ws` has no extra env script)."
+"After clone, use **`./init_repo.sh`**. After `colcon build`, source that "
+"workspace’s `install/setup.bash` in the terminal you launch from "
+"(standard ROS 2 overlay; `open-deploy-ws` has no extra env script)."
 msgstr ""
-"不要把手写的 `source /opt/ros/...` + 工作区 overlay 写进 `~/.bashrc`。克隆后使用 **`./init_repo.sh`**。`colcon build` 之后，在启动终端里 source 该工作区的 `install/setup.bash`（标准 ROS 2 overlay；`open-deploy-ws` 没有额外的环境脚本）。"
+"不要把手写的 `source /opt/ros/...` + 工作区 overlay 写进 `~/.bashrc`。克隆后使用 "
+"**`./init_repo.sh`**。`colcon build` 之后，在启动终端里 source 该工作区的 "
+"`install/setup.bash`（标准 ROS 2 overlay；`open-deploy-ws` 没有额外的环境脚本）。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:13
 #: 64a7248f08ac46c5a4199e9f56bc1354
@@ -175,7 +177,9 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)"
 " defaults: `robot:=cr5`, `hardware:=mock_components`. You can omit both."
 msgstr ""
-"[`demo.launch.py`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py) 默认：`robot:=cr5`、`hardware:=mock_components`。两者都可省略。"
+"[`demo.launch.py`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)"
+" 默认：`robot:=cr5`、`hardware:=mock_components`。两者都可省略。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:57
 #: ace32cd7f3de41279df9e431e6dede10
@@ -193,7 +197,8 @@ msgid ""
 "There is **no** `hardware:=mock` key. See [ros2_control in This "
 "Stack](../3-concepts/1-ros2_control_here.md)."
 msgstr ""
-"**没有** `hardware:=mock` 这个键。见 [本技术栈中的 ros2_control](../3-concepts/1-ros2_control_here.md)。"
+"**没有** `hardware:=mock` 这个键。见 [本技术栈中的 "
+"ros2_control](../3-concepts/1-ros2_control_here.md)。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:64
 #: 0bfe92cf1d3c401c8a56d21056ed3818
@@ -215,7 +220,9 @@ msgstr "**RViz**（同一 launch 中的配置 `demo_ocs2.rviz`）"
 msgid ""
 "**`arms_target_manager`** when `enable_arms_target_manager` is `true` "
 "(launch default)"
-msgstr "当 `enable_arms_target_manager` 为 `true`（launch 默认）时会启动 **`arms_target_manager`**"
+msgstr ""
+"当 `enable_arms_target_manager` 为 `true`（launch 默认）时会启动 "
+"**`arms_target_manager`**"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:70
 #: 63ebe5688b8c48b88aff7d0352da5710
@@ -224,7 +231,8 @@ msgid ""
 "/fiveages-"
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md))"
 msgstr ""
-"控制器 FSM 从 **HOLD** 开始（[ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)）"
+"控制器 FSM 从 **HOLD** 开始（[ocs2_arm README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)）"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:72
 #: 9d056f6407624db699e83fd32fd69297
@@ -232,7 +240,8 @@ msgid ""
 "Switch FSM with `/fsm_command` (`std_msgs/Int32`): `1` HOME, `2` HOLD, "
 "`3` OCS2 — [FSM and Topics](../3-concepts/4-fsm_and_topics.md)."
 msgstr ""
-"用 `/fsm_command`（`std_msgs/Int32`）切换 FSM：`1` HOME、`2` HOLD、`3` OCS2 — [FSM 与话题](../3-concepts/4-fsm_and_topics.md)。"
+"用 `/fsm_command`（`std_msgs/Int32`）切换 FSM：`1` HOME、`2` HOLD、`3` OCS2 — "
+"[FSM 与话题](../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:74
 #: 72f3db00d1af423484ece378a97af857
@@ -242,7 +251,8 @@ msgid ""
 "example `/left_target` on `panthera-ht`) are listed in that branch’s "
 "README."
 msgstr ""
-"**不要**发布所谓全栈通用的 `/target_pose`。OCS2 arm README 和 `demo.launch.py` 里都没有该话题。分支专用末端话题（例如 `panthera-ht` 的 `/left_target`）见该分支 README。"
+"**不要**发布所谓全栈通用的 `/target_pose`。OCS2 arm README 和 `demo.launch.py` "
+"里都没有该话题。分支专用末端话题（例如 `panthera-ht` 的 `/left_target`）见该分支 README。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:76
 #: 28727d6bddcf42e994b24cdb037e599e
@@ -308,16 +318,12 @@ msgstr "构建成功后，在新终端中从工作区根目录："
 #: ../../source/1-getting_started/1-quick_demo_public.md:102
 #: 3eea7deac55e494d932b8311c7cd128d
 msgid "source install/setup.bash\n"
-msgstr ""
-"source install/setup.bash\n"
+msgstr "source install/setup.bash\n"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:106
 #: 0004c9258ec940d8ad50f748efe81dc4
-msgid ""
-"`install/setup.bash` overlays ROS. Do not add a hand-written `~/.bashrc` "
-"`source /opt/ros/...` chain as the documented path."
-msgstr ""
-"`install/setup.bash` 会 overlay ROS。不要把手工写的 `~/.bashrc` `source /opt/ros/...` 链当作文档推荐路径。"
+msgid "`install/setup.bash` overlays ROS (standard ROS 2 overlay)."
+msgstr "`install/setup.bash` 会 overlay ROS（标准 ROS 2 overlay）。"
 
 #: ../../source/1-getting_started/1-quick_demo_public.md:108
 #: 39c4d938b4494993b70d0d70896b728d
@@ -445,3 +451,13 @@ msgstr "将补充视频演示，展示预期的 RViz 画面与机器人运动。
 #~ msgstr ""
 #~ "source /opt/ros/jazzy/setup.bash\n"
 #~ "source ~/open-deploy-ws/install/setup.bash\n"
+
+#~ msgid ""
+#~ "`install/setup.bash` overlays ROS. Do not "
+#~ "add a hand-written `~/.bashrc` `source"
+#~ " /opt/ros/...` chain as the documented "
+#~ "path."
+#~ msgstr ""
+#~ "`install/setup.bash` 会 overlay ROS。不要把手工写的 "
+#~ "`~/.bashrc` `source /opt/ros/...` 链当作文档推荐路径。"
+

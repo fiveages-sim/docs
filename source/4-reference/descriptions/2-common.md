@@ -10,14 +10,14 @@ Shared grippers, dexterous hands, sensor models, and **`robot_common_launch`**. 
 - Repo inventory / xacro include / launch file list: [README.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.md)
 - Launch args / profile merge / `hardware:=`: [`robot_common_launch/README.md`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)
 - GitHub Release `.deb`: [README.deb.md](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/README.deb.md)
-- **No** `.cursor/skills` on `main`. Do not invent extra common skills or package names.
+- **No** `.cursor/skills` on `main`. Package names are the folders in that README / repo tree.
 ```
 
 There is no `gripper:=` launch argument. Attach an end-effector with `type` / `left_type` / `right_type` (below).
 
 ## Layout
 
-Folders on `main` (browse the repo; do not invent extra package names):
+Folders on `main` (browse the repo):
 
 :::{code-block} none
 common/                          # umbrella checkout path
@@ -74,7 +74,7 @@ README lists URDF + meshes for:
 
 ## Use a component from xacro
 
-README example (Robotiq). Copy an **existing** include from a real `{robot}_description` rather than inventing macros:
+README example (Robotiq). Copy an **existing** include from a real `{robot}_description`:
 
 :::{code-block} xml
 <xacro:include filename="$(find robotiq_description)/xacro/gripper.xacro"/>
@@ -187,7 +187,7 @@ From the repo README (paths under `robot_common_launch/launch/`):
 | Manipulation | `manipulation/manipulator_ocs2.launch.py` |
 | Navigation | `navigation/navigation.launch.py`, `navigation/cartographer.launch.py`, `navigation/navigation_slam.launch.py`, `navigation/amr_rctk.launch.py` |
 
-Also on `main` under `launch/` (not named in that README table; do not invent others):
+Also on `main` under `launch/` (not named in that README table):
 
 | Kind | Extra files |
 |------|-------------|

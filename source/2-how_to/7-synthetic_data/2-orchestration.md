@@ -2,7 +2,7 @@
 
 After the Isaac USD scene is up, datagen does **not** call OCS2 or Nav2 servers from Python by name. YAML `task_queue` blocks resolve to **registered skills**; skills emit **`StageTarget`** sequences and send them through **`ROS2RobotInterface`**.
 
-APIs below are from [robot_action_composer `@ feature/dex-grasp-generator`](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) and its `docs/`. Do not invent `ActionSequence` / `actions.MoveJ` classes.
+APIs below are from [robot_action_composer `@ feature/dex-grasp-generator`](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) and its `docs/`. YAML `skill:` values are registered names from that README (not a Python `ActionSequence` / `actions.MoveJ` class).
 
 ## ros2_robot_interface (motion and recording)
 

@@ -2,7 +2,7 @@
 
 Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation.
 
-Use **FaSim-Isaac** `./init.sh` and `./run.sh`. Path and version live in that repo’s config — do not hardcode a single Isaac minor version, and do not invent CLI flags.
+Use **FaSim-Isaac** `./init.sh` and `./run.sh`. Path and version live in that repo’s config; CLI flags are those named in its README.
 
 ## Prerequisites
 

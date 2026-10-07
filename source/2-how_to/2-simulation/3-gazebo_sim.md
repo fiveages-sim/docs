@@ -44,7 +44,7 @@ FSM: `/fsm_command` (`std_msgs/Int32`). Do **not** publish `/target_pose`. See [
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz
 ```
 
-`demo.launch.py` declares `world` (default `dart`). It does **not** declare `rviz:=false` or `headless:=true` — do not invent those.
+`demo.launch.py` declares `world` (default `dart`). It does **not** declare `rviz:=false` or `headless:=true`.
 
 ## Gazebo Features
 
@@ -54,7 +54,7 @@ The default physics parameters work for most robots. For custom tuning, modify t
 
 ### World Files
 
-`demo.launch.py` declares `world` (default `dart`). Use only world keys that exist in the description / launch you are running — do not invent a `custom_world.sdf`.
+`demo.launch.py` declares `world` (default `dart`). Use only world keys that exist in the description / launch you are running.
 
 ### Recording
 

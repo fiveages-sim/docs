@@ -15,7 +15,7 @@ FiveAges URDF remotes and `fa-deploy-ws` are **private** (GitHub 404 without acc
 - On-disk path: `humanoid/FiveAges/` inside the public [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) umbrella. There is **no** public `robot-descriptions-fiveages` repo (404)
 - The public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) **does not** table these packages — use `.gitmodules`, not the README brand tables
 - Public USD: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges
-- Workspace pattern (script name only): [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`. Do **not** invent `--robot`, `robot.local.yaml`, `./scripts/init-sim.sh`, `fiveages_bringup`, `ocs2_config.yaml`, `wbc_config.yaml`, or a `common/` / `arms/` / `robot/` tree
+- Workspace pattern (script name only): [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`. Extra flags and robot IDs are in that private README after access.
 - Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `real`)
 ```
 
@@ -23,7 +23,7 @@ FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, WCE3) ar
 
 ## URDF packages (`robot_descriptions`)
 
-FiveAges descriptions are **private git submodules** of the public umbrella. Checkout names and remotes below are from `.gitmodules`. The remotes themselves 404 without access — this page does **not** invent launch files, xacro trees, or controller YAML.
+FiveAges descriptions are **private git submodules** of the public umbrella. Checkout names and remotes below are from `.gitmodules`. The remotes themselves 404 without access; launch files, xacro trees, and controller YAML are in those package READMEs.
 
 ### `main` (flat under `humanoid/FiveAges/`)
 
@@ -61,7 +61,7 @@ Do not recursive-init these from `open-deploy-ws`; visibility is private. After 
 | `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 |
 | `humanoid/FiveAges/Gen3` | [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | WCE3 / Gen3 |
 
-Those three USD remotes and their READMEs are **not public**. Do not invent USD prim paths or a `galbot.usd`-style load snippet here.
+Those three USD remotes and their READMEs are **not public**. Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA.
 
 Checkout: FaSim-Isaac **`./init.sh`** (operation that inits `robots/` via `submodules_visibility.conf`), then **`./run.sh`**. See [robot_usds](../simulation/3-robot_usds.md).
 

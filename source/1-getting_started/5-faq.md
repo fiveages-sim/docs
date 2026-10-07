@@ -14,7 +14,7 @@ rosdep update
 
 ### Q: Package not found after apt install
 
-This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). After ROS is installed, clone a deploy workspace and run `./init_repo.sh` — do not treat a hand-written `source /opt/ros/...` in `~/.bashrc` as the documented path.
+This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). After ROS is installed, clone a deploy workspace and run `./init_repo.sh`, then `source install/setup.bash` after `colcon build`.
 
 ```bash
 sudo apt update

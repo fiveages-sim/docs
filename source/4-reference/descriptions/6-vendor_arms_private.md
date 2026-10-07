@@ -1,6 +1,6 @@
 # Vendor Arms (Private)
 
-Private brand trees that the public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) lists as submodules. After access, follow **those package READMEs**. Do not invent `*_bringup`, `hardware:=mock`, payload numbers, or a `bringup.launch.py` stub.
+Private brand trees that the public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) lists as submodules. After access, follow **those package READMEs**. Public `hardware:=` keys remain `mock_components` / `gz` / `isaac` / `real` (there is **no** `hardware:=mock`).
 
 ```{admonition} Source of truth
 :class: important
@@ -19,15 +19,13 @@ Private brand trees that the public [robot_descriptions README](https://github.c
 | Agibot G2 | `humanoid/Agibot/agibot_g2_description` | [agibot-g2-description](https://github.com/fiveages-sim/agibot-g2-description) |
 | Rokae INEX | `humanoid/Rokae/rokae_inex_description` | in-tree on `feature/agilex`; `split-chassis-glb` canonical |
 
-`feature/agilex` README text for those brands (do not add models it does not name):
+`feature/agilex` README text for those brands:
 
 - Tianji: M6-CCS, M6-SRS, M20S-CCS, Marvin Pro
 - Rokae arms: AR5-SRS, AR5-CCS; INEX is the wheel humanoid at `humanoid/Rokae`
 - Fairino: ART7 dual-arm
 - Gento: Skye, Luna; Linkhou S2 v2 + Tianji M6-CCS / M6S Lite
 - Agibot G2: private humanoid description
-
-Public `hardware:=` keys remain `mock_components` / `gz` / `isaac` / `real`.
 
 ## Related
 

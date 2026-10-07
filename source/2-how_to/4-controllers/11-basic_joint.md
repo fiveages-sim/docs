@@ -5,7 +5,7 @@ Run the joint-position controller (Home / Hold / MoveJ) from [arms_ros2_control]
 ```{admonition} Source of truth
 :class: important
 
-Steps and topics below are from [basic_joint_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md) (and [README_zh.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)). Do not invent extra launches or command types.
+Steps and topics below are from [basic_joint_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md) (and [README_zh.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)).
 
 `/fsm_command` is **`std_msgs/Int32`**, not `String`.
 ```

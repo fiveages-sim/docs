@@ -5,7 +5,7 @@ ROS 2 control controller for arm MPC via OCS2.
 ```{admonition} Source of truth
 :class: important
 
-FSM and launch names below come from [ocs2_arm_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md) and the package `launch/` files. Do not invent extra topics.
+FSM and launch names below come from [ocs2_arm_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md) and the package `launch/` files.
 
 - README: FSM **HOME** / **OCS2** / **HOLD**
 - Shared MoveJ / Home / Hold primitives: `libraries/arms_controller_common/`

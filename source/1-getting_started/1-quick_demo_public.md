@@ -8,7 +8,7 @@ This guide gets you from a **finished environment install** to a moving robot us
 - ROS 2 Jazzy + rosdep already installed — do this **first**: [Install Environment](2-install_environment.md)
 - Git with GitHub access
 
-Do not hand-write `source /opt/ros/...` + workspace overlay into `~/.bashrc`. After clone, use **`./init_repo.sh`**. After `colcon build`, source that workspace’s `install/setup.bash` in the terminal you launch from (standard ROS 2 overlay; `open-deploy-ws` has no extra env script).
+After clone, use **`./init_repo.sh`**. After `colcon build`, source that workspace’s `install/setup.bash` in the terminal you launch from (standard ROS 2 overlay; `open-deploy-ws` has no extra env script).
 
 ## Steps
 
@@ -103,7 +103,7 @@ In a new terminal, from the workspace root after a successful build:
 source install/setup.bash
 ```
 
-`install/setup.bash` overlays ROS. Do not add a hand-written `~/.bashrc` `source /opt/ros/...` chain as the documented path.
+`install/setup.bash` overlays ROS (standard ROS 2 overlay).
 
 ## Next Steps
 

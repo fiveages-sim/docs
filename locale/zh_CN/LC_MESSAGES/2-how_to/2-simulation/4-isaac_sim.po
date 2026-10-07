@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -32,10 +32,10 @@ msgstr "使用 NVIDIA Isaac Sim 运行高保真仿真机器人演示。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:5
 #: 092c32e433ad455fbf7d7851df0c29d4
+#, fuzzy
 msgid ""
 "Use **FaSim-Isaac** `./init.sh` and `./run.sh`. Path and version live in "
-"that repo’s config — do not hardcode a single Isaac minor version, and do"
-" not invent CLI flags."
+"that repo’s config; CLI flags are those named in its README."
 msgstr ""
 "使用 **FaSim-Isaac** 的 `./init.sh` 和 `./run.sh`。路径和版本写在该仓库配置里 — 不要写死某一个 "
 "Isaac 次版本号，也不要发明 CLI 参数。"
@@ -204,7 +204,12 @@ msgid ""
 "arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)). Do "
 "not expect a stack-wide `/target_pose`."
 msgstr ""
-"Acone 的 `hardware:=isaac` 使用 `topic_based_ros2_control/TopicBasedSystem`，话题为 `/isaac/joint_command` 和 `/isaac/joint_states`（[xacro](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)）。不要期待全栈通用的 `/target_pose`。"
+"Acone 的 `hardware:=isaac` 使用 "
+"`topic_based_ros2_control/TopicBasedSystem`，话题为 `/isaac/joint_command` 和 "
+"`/isaac/joint_states`（[xacro](https://github.com/fiveages-sim/robot-"
+"descriptions-"
+"arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)）。不要期待全栈通用的"
+" `/target_pose`。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:63
 #: f95e647b33b64896bc475d29bade3e71
@@ -601,3 +606,4 @@ msgstr "[合成数据](../7-synthetic_data/0-index.md) — Isaac 上的数据采
 #~ msgstr ""
 #~ "ros2 topic list\n"
 #~ "# Should see /joint_states, /target_pose, etc."
+

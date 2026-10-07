@@ -1,4 +1,4 @@
-# How-To Guides
+# Introduction
 
 This section contains task-oriented recipes for common operations. Each guide focuses on a specific task and assumes you have a working workspace.
 

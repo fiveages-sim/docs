@@ -45,7 +45,7 @@ robot_descriptions/
 | Agibot G2 | `humanoid/Agibot/agibot_g2_description` | [agibot-g2-description](https://github.com/fiveages-sim/agibot-g2-description) (private) |
 | Panthera HT | `manipulator/HighTorque/panthera_ht_description` | [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) |
 
-README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Do not invent extra brand folders.
+README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Brand folders are those listed there.
 
 FiveAges URDF packages are **private gitlinks** under `humanoid/FiveAges/` in [`.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). They are **not** in the README brand tables and are **not** a separate `robot-descriptions-fiveages` umbrella. Paths and remotes: [FiveAges robot descriptions](4-fiveages_umbrella.md).
 
@@ -66,7 +66,7 @@ ros2 launch ocs2_arm_controller demo.launch.py
 
 ## Adding a robot
 
-Copy an existing `{robot}_description` and follow [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Do not invent a `robot-descriptions-newbrand` remote or a top-level folder that the README does not list.
+Copy an existing `{robot}_description` and follow [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). New remotes and top-level folders should match the README submodule table.
 
 ## Related
 

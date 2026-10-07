@@ -7,7 +7,7 @@ Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveag
 ```{admonition} Source of truth
 :class: important
 
-Follow the branch README. Do not invent extra launch flags.
+Follow the branch README. Launch flags are those listed there.
 
 - Chinese: [open-deploy-ws `panthera-ht` README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.md)
 - English: [README.EN.md](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md)
