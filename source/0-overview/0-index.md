@@ -34,7 +34,7 @@ The ecosystem has two entry points:
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**ARX Lift 2S** (full-body mobile manipulator, including chassis) and **HighTorque Panthera HT** (dual-arm manipulator) have dedicated `open-deploy-ws` branches. **Acone** / **AC One** is the **arm only**, not the Lift 2S platform. Brand: ARX = 方舟无限, HighTorque = 高擎. See [ARX Lift 2S](../2-how_to/11-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md).
+**ARX Lift 2S** (full-body mobile manipulator, including chassis) and **HighTorque Panthera HT** (dual-arm manipulator) have dedicated `open-deploy-ws` branches. **Acone** / **AC One** is the **arm only**, not the Lift 2S platform. Brand: ARX = 方舟无限, HighTorque = 高擎. See [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md).
 ```
 
 ## Documentation Map

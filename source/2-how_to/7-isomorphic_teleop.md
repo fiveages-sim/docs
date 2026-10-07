@@ -4,7 +4,7 @@ Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera
 
 **Implemented:** 同构遥操作 via [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller) (package name is historical). **Not implemented:** drag teaching (拖动遥操作), trajectory record/playback, or `enter_teach_mode`.
 
-On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`** (see [HighTorque Panthera HT](12-panthera_ht.md) and that branch README). The launches below match the `drag_teleop_controller` README.
+On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`** (see [HighTorque Panthera HT](9-go_real_hardware/2-panthera_ht.md) and that branch README). The launches below match the `drag_teleop_controller` README.
 
 **README:** [drag_teleop_controller README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md)
 
@@ -138,5 +138,5 @@ DexCap glove → robot mapping is a **different** package: [teleop-joint-mapper]
 ## Related
 
 - [drag_teleop_controller reference](../4-reference/teleop/2-drag_teleop.md)
-- [HighTorque Panthera HT](12-panthera_ht.md)
-- [Go to Real Hardware](9-go_real_hardware.md)
+- [HighTorque Panthera HT](9-go_real_hardware/2-panthera_ht.md)
+- [Go to Real Hardware](9-go_real_hardware/0-index.md)

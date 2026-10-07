@@ -42,11 +42,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 |-----------|--------|
 | `robot` | `dobot_cr5`, `dobot_cr10` |
 
-```{admonition} TODO
-:class: note
-
-For valid gripper options, check the launch files in `arms_ros2_control`.
-```
+End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-common.md). Not `gripper:=`.
 
 ## ARX (方舟无限)
 
@@ -63,7 +59,7 @@ For valid gripper options, check the launch files in `arms_ros2_control`.
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/11-arx_lift2s.md).
+**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/9-go_real_hardware/1-arx_lift2s.md).
 ```
 
 ### Usage
@@ -117,7 +113,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/12-panthera_ht.md). Launch name in that README is `panthera_ht`.
+**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/9-go_real_hardware/2-panthera_ht.md). Launch name in that README is `panthera_ht`.
 ```
 
 ### Usage

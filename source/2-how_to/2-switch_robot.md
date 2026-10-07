@@ -67,22 +67,28 @@ source install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
-`arx_acone` is the manipulator. Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](11-arx_lift2s.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](12-panthera_ht.md).
+`arx_acone` is the manipulator. Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](9-go_real_hardware/1-arx_lift2s.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](9-go_real_hardware/2-panthera_ht.md).
 
-## With Grippers
+## End-effectors (`type` / `left_type` / `right_type`)
 
-Different robots support different grippers. The `gripper:=` parameter specifies the end-effector.
+There is **no** `gripper:=` argument. End-effectors are selected by **`robot_common_launch`**:
 
-```{admonition} TODO
-:class: note
+- Symmetric EEF: `type:=<eef_key>`
+- Different left / right: `left_type:=` and `right_type:=`
+- `type` may also be arm topology `left` / `right` / `dual` (that does **not** become `left_type` / `right_type`)
 
-For valid robot + gripper combinations and exact launch syntax, check the launch files in `arms_ros2_control` and the specific robot description packages. Not all combinations are supported.
-```
+Profile YAML `defaults.end_effectors` is applied when `use_profile_eef:=true` (default). Set `use_profile_eef:=false` to force the CLI keys. Merge order: **CLI > profile > xacro defaults**. FT (`ft` / `left_ft` / `right_ft`) and TCP offsets are separate and always take the profile unless CLI overrides them.
 
-```bash
-# General pattern
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
-```
+:::{code-block} bash
+# README: ignore profile EEF, set L/R from CLI
+ros2 launch ocs2_arm_controller demo.launch.py \
+  robot:=<robot_name> \
+  robot_profile:=/path/to/machine_profile.yaml \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7
+:::
+
+Full table: [robot-descriptions-common](../4-reference/descriptions/2-common.md) (`robot_common_launch` README).
 
 ## Verification
 

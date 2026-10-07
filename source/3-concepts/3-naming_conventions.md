@@ -11,17 +11,22 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 | Parameter | Purpose | Example |
 |-----------|---------|---------|
 | `robot` | Main robot name | `dobot_cr5`, `arx_acone` (arm), `arx_lift2s`, `panthera_ht` |
-| `type` | Robot type/variant | `cr5`, `cr10` |
-| `left_type` | Left arm type (dual-arm) | `tianji_m6` |
-| `right_type` | Right arm type (dual-arm) | `tianji_m6` |
+| `type` | Symmetric **end-effector** key, **or** arm topology `left` / `right` / `dual` (topology does not expand to `left_type` / `right_type`) | `rg75`, `dual` |
+| `left_type` / `right_type` | Different L/R end-effector keys | `rg75`, `linkerhand_o7` |
+| `use_profile_eef` | Apply profile `defaults.end_effectors` (default `true`) | `false` to force CLI EEF |
+| `robot_profile` | Machine-profile YAML path | `/path/to/machine_profile.yaml` |
+| `ft` / `left_ft` / `right_ft` | Force-torque (not gated by `use_profile_eef`) | `kwr75_485` |
 
-```bash
-# Single arm
+There is no `gripper:=` / `gripper_type:=` launch argument. Merge: **CLI > profile > xacro defaults**. See [robot_common_launch](../4-reference/descriptions/2-common.md).
+
+:::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5
 
-# Dual arm
-ros2 launch dual_arm_controller demo.launch.py left_type:=tianji_m6 right_type:=tianji_m6
-```
+# README: different L/R end-effectors, ignore profile EEF
+ros2 launch ocs2_arm_controller demo.launch.py \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7
+:::
 
 ### Hardware Mode
 
@@ -30,13 +35,6 @@ ros2 launch dual_arm_controller demo.launch.py left_type:=tianji_m6 right_type:=
 | `hardware` | `mock`, `gz`, `isaac`, (vendor) | Hardware interface type |
 
 The actual hardware identifier varies by robot (e.g., `real`, `can`, `tcp`).
-
-### Gripper
-
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| `gripper` | Gripper model | `dh_ag95`, `inspire_rh56` |
-| `gripper_type` | Gripper variant | (varies) |
 
 ## Package Naming
 
@@ -80,28 +78,13 @@ Pattern: `<function>_controller` or `ocs2_<type>_controller`
 | `/joint_states` | `sensor_msgs/JointState` | Hardware interface |
 | `/joint_commands` | `sensor_msgs/JointState` | Controller |
 
-### Target Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/target_pose` | `geometry_msgs/PoseStamped` | Cartesian target |
-| `/target_joint_positions` | `sensor_msgs/JointState` | Joint space target |
-
-### Teleop Topics
-
-| Topic | Type | Purpose |
-|-------|------|---------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left hand target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right hand target |
-| `/teleop/head_pose` | `PoseStamped` | Head tracking |
-
 ### FSM Topics
 
 | Topic | Type | Purpose |
 |-------|------|---------|
-| `/fsm_command` | `std_msgs/String` | State machine command |
-| `/fsm_state` | `std_msgs/String` | Current state |
-| `/mode_command` | `std_msgs/Int32` | Mode selection |
+| `/fsm_command` | `std_msgs/Int32` | FSM command (`1` HOME, `2` HOLD, `3` OCS2 / legacy MOVEJ, `4` MOVEJ). Not `String`. |
+
+Per-controller states and topics: [FSM and Topics](4-fsm_and_topics.md). Do not invent `/mode_command` or `/fsm_state` String contracts.
 
 ## Frame Naming
 

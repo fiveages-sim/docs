@@ -10,18 +10,7 @@ Position and force control for adaptive grippers.
 
 ### Usage
 
-Loaded automatically when a gripper is specified in the launch command.
-
-```{admonition} TODO
-:class: note
-
-For valid robot + gripper combinations, check the launch files in `arms_ros2_control`.
-```
-
-```bash
-# General pattern
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
-```
+The launch stack does **not** take `gripper:=`. Attach an end-effector with `type` / `left_type` / `right_type` (and optional `robot_profile` / `use_profile_eef`) from [robot_common_launch](../descriptions/2-common.md). Hands and grippers that this controller can load are spawned from those EEF keys, not a separate `gripper` argument.
 
 ### Topics
 

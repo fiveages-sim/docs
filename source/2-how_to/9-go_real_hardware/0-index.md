@@ -20,15 +20,24 @@ The following robots can be deployed to real hardware from **lean `open-deploy-w
 
 | Robot | Role | Branch | How-to |
 |-------|------|--------|--------|
-| **ARX Lift 2S** | Full-body (arms + lift + **chassis**) | `arx-lift2s` | [ARX Lift 2S](11-arx_lift2s.md) |
-| **Acone** / **AC One** | **Arm only** (same ARX description tree; not Lift 2S) | `arx-lift2s` (`quick_start` co-debug) | [ARX Lift 2S](11-arx_lift2s.md) |
-| **HighTorque Panthera HT** | Dual-arm manipulator | `panthera-ht` | [HighTorque Panthera HT](12-panthera_ht.md) |
+| **ARX Lift 2S** | Full-body (arms + lift + **chassis**) | `arx-lift2s` | [ARX Lift 2S](1-arx_lift2s.md) |
+| **Acone** / **AC One** | **Arm only** (same ARX description tree; not Lift 2S) | `arx-lift2s` (`quick_start` co-debug) | [ARX Lift 2S](1-arx_lift2s.md) |
+| **HighTorque Panthera HT** | Dual-arm manipulator | `panthera-ht` | [HighTorque Panthera HT](2-panthera_ht.md) |
 
 These robots are fully supported for external users without requiring private repository access.
 
 ### Internal Path (fa-deploy-ws)
 
-FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R, and dual-arm CCS configurations. See [fa-deploy-ws setup](../1-getting_started/4-fa_deploy_ws.md).
+FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R, and dual-arm CCS configurations. See [fa-deploy-ws setup](../../1-getting_started/4-fa_deploy_ws.md).
+
+## In this section
+
+```{toctree}
+:maxdepth: 1
+
+1-arx_lift2s
+2-panthera_ht
+```
 
 ## Prerequisites
 
@@ -144,9 +153,9 @@ Increase gradually after verifying safe operation.
 
 Use the matching **branch** and its README scripts. Do not treat `demo.launch.py robot:=arx_acone` as Lift 2S, and do not use the invented name `ht_panthera` (README launch name is `panthera_ht`).
 
-- **[ARX Lift 2S](11-arx_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
+- **[ARX Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
 - **Acone** / **AC One** — arm-only; pick ACone in that same `quick_start` menu for co-debug.
-- **[HighTorque Panthera HT](12-panthera_ht.md)** — `git clone -b panthera-ht …` then `./init_repo.sh` / `./release.sh --install` and `./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`.
+- **[HighTorque Panthera HT](2-panthera_ht.md)** — `git clone -b panthera-ht …` then `./init_repo.sh` / `./release.sh --install` and `./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`.
 
 ## Internal Deployment (fa-deploy-ws)
 
@@ -205,5 +214,5 @@ vim robot.local.yaml
 ## Next Steps
 
 After successful deployment:
-- [ARX Lift 2S](11-arx_lift2s.md) and [HighTorque Panthera HT](12-panthera_ht.md) for public robots
-- [Add a Robot](10-add_a_robot.md) for custom integrations
+- [ARX Lift 2S](1-arx_lift2s.md) and [HighTorque Panthera HT](2-panthera_ht.md) for public robots
+- [Add a Robot](../10-add_a_robot.md) for custom integrations

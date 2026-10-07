@@ -50,18 +50,17 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
 ```
 
-### With Gripper
+### End-effector (`type`)
 
-```{admonition} TODO
-:class: note
+Not `gripper:=`. Use `type` (symmetric EEF) or `left_type` / `right_type` (different L/R). Profile `defaults.end_effectors` applies unless `use_profile_eef:=false`. See [Switch Robot](2-switch_robot.md) and [robot_common_launch](../4-reference/descriptions/2-common.md).
 
-For valid robot + gripper combinations, check the launch files in `arms_ros2_control`.
-```
-
-```bash
-# General pattern
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
-```
+:::{code-block} bash
+ros2 launch ocs2_arm_controller demo.launch.py \
+  robot:=<robot_name> \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7 \
+  hardware:=mock
+:::
 
 ## Launch Parameters
 
@@ -69,8 +68,8 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gri
 |-----------|---------|---------|
 | `hardware` | `mock`, `gz`, `isaac`, (real) | varies |
 | `robot` | Robot name | `dobot_cr5` |
-| `gripper` | Gripper name | none |
-| `rviz` | `true`, `false` | `true` |
+| `type` / `left_type` / `right_type` | EEF key, or `type` as `left`/`right`/`dual` topology | profile or xacro |
+| `use_profile_eef` | `true`, `false` | `true` |
 
 ## Verification
 

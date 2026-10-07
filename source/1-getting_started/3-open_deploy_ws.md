@@ -62,7 +62,7 @@ git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
 git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws
 :::
 
-Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/11-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md).
+Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md).
 
 ## Directory Structure
 
@@ -119,7 +119,7 @@ colcon build --packages-up-to ocs2_arm_controller
 ```{admonition} Real Hardware Deployment
 :class: tip
 
-**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. See [ARX Lift 2S](../2-how_to/11-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md), and [Go to Real Hardware](../2-how_to/9-go_real_hardware.md).
+**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. See [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md), and [Go to Real Hardware](../2-how_to/9-go_real_hardware/0-index.md).
 ```
 
 ## Launch Examples
@@ -138,18 +138,17 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
-### With Gripper
+### End-effector (`type`)
 
-```{admonition} TODO
-:class: note
+Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: `left_type:=` / `right_type:=`. Profile `defaults.end_effectors` is used when `use_profile_eef:=true` (default). See [robot_common_launch](../4-reference/descriptions/2-common.md).
 
-For valid robot + gripper combinations, check the launch files in `arms_ros2_control`. Not all combinations are supported.
-```
-
-```bash
-# General pattern
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name> gripper:=<gripper_name> hardware:=mock
-```
+:::{code-block} bash
+ros2 launch ocs2_arm_controller demo.launch.py \
+  robot:=<robot_name> \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7 \
+  hardware:=mock
+:::
 
 ## Adding Robot Descriptions
 
@@ -209,6 +208,6 @@ sudo ip link set <expected_name> up
 
 - [Run mock demo](../2-how_to/1-run_mock_demo.md)
 - [Switch robots](../2-how_to/2-switch_robot.md)
-- [ARX Lift 2S](../2-how_to/11-arx_lift2s.md)
-- [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md)
+- [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md)
+- [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md)
 - [Gazebo simulation](../2-how_to/3-gazebo_sim.md)

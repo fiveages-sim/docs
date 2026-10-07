@@ -7,7 +7,7 @@ This section contains task-oriented recipes for common operations. Each guide fo
 ### Basic Operations
 
 - [Run Mock Demo](1-run_mock_demo.md) — Test without hardware
-- [Switch Robot](2-switch_robot.md) — Change robot model
+- [Switch Robot](2-switch_robot.md) — Change robot model; EEF via `type` / `left_type` / `right_type`
 
 ### Simulation
 
@@ -28,9 +28,9 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 ### Deployment
 
-- [Go Real Hardware](9-go_real_hardware.md) — Deploy to physical robots
-- [ARX Lift 2S](11-arx_lift2s.md) — Full-body ARX (方舟无限) mobile manipulator
-- [HighTorque Panthera HT](12-panthera_ht.md) — Dual-arm manipulator (`panthera-ht` branch)
+- [Go Real Hardware](9-go_real_hardware/0-index.md) — Deploy to physical robots
+  - [ARX Lift 2S](9-go_real_hardware/1-arx_lift2s.md) — Full-body ARX (方舟无限) mobile manipulator
+  - [HighTorque Panthera HT](9-go_real_hardware/2-panthera_ht.md) — Dual-arm manipulator (`panthera-ht` branch)
 - [Add a Robot](10-add_a_robot.md) — Integrate new robot models
 
 ## Guide Format

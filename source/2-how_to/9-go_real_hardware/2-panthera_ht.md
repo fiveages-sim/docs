@@ -48,7 +48,7 @@ cd ~/ht-deploy-ws
 
 README: **Build** (simulation vs real-hardware packages), then **Launch** (single / dual arm, simulation or real). Real hardware uses serial (`/dev/ttyACM*`); the script prompts for permissions.
 
-Isomorphic teleop (同构遥操作) on this branch is `./teleop_start.sh` (master / slave). See [Isomorphic Teleop](7-isomorphic_teleop.md) and the same README section on `teleop_start.sh`. Drag teaching (拖动遥操作) is **not** a separate implemented stack.
+Isomorphic teleop (同构遥操作) on this branch is `./teleop_start.sh` (master / slave). See [Isomorphic Teleop](../7-isomorphic_teleop.md) and the same README section on `teleop_start.sh`. Drag teaching (拖动遥操作) is **not** a separate implemented stack.
 
 ## Optional README launch lines
 
@@ -66,7 +66,7 @@ Zenoh: same as other deploy hosts — `ros-jazzy-rmw-zenoh-cpp` and `RMW_IMPLEME
 
 ## Related
 
-- [Go to Real Hardware](9-go_real_hardware.md)
-- [ARX Lift 2S](11-arx_lift2s.md)
-- [Isomorphic Teleop](7-isomorphic_teleop.md)
-- [open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)
+- [Go to Real Hardware](0-index.md)
+- [ARX Lift 2S](1-arx_lift2s.md)
+- [Isomorphic Teleop](../7-isomorphic_teleop.md)
+- [open-deploy-ws setup](../../1-getting_started/3-open_deploy_ws.md)

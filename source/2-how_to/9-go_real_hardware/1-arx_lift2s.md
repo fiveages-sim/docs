@@ -63,6 +63,6 @@ Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and `export RM
 
 ## Related
 
-- [Go to Real Hardware](9-go_real_hardware.md)
-- [HighTorque Panthera HT](12-panthera_ht.md)
-- [open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)
+- [Go to Real Hardware](0-index.md)
+- [HighTorque Panthera HT](2-panthera_ht.md)
+- [open-deploy-ws setup](../../1-getting_started/3-open_deploy_ws.md)

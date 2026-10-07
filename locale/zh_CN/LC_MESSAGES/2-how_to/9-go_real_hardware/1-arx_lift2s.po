@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:1
+#: 8f81caa09c964b93b30e5bc119907dd6
+msgid "ARX Lift 2S"
+msgstr "方舟无限 Lift 2S"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:3
+#: fafdb07db14c4a8f8847ec3aad3f7a16
+msgid ""
+"**ARX** (方舟无限) is the brand. **Lift 2S** is that brand’s full-body "
+"**mobile manipulator**: arms **plus** lift axis and **mobile base / "
+"chassis**, not an arm-only robot."
+msgstr ""
+"**方舟无限**（ARX）是品牌。**Lift 2S** 是该品牌的全身 **移动操作臂**：手臂 **加上** 升降轴和 "
+"**移动底盘**，不是仅机械臂的机器人。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:5
+#: 403cd99a21244a85a1fc075b44d739d1
+msgid ""
+"**Acone** / **AC One** is the **arm portion** of the same stack "
+"(manipulator only). It is not the Lift 2S platform. The `arx-lift2s` "
+"workspace can launch Acone from `quick_start` for co-debug; the product "
+"focus of that branch is Lift 2S."
+msgstr ""
+"**Acone** / **AC One** 是同一套栈中的 **机械臂部分**（仅操作臂）。它不是 Lift 2S 整机。`arx-"
+"lift2s` 工作空间可在 `quick_start` 中启动 Acone 做联调；该分支的产品重点是 Lift 2S。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:7
+#: 54f67136a169465ea9d3d4009327b01a
+msgid ""
+"Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com"
+"/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照): 方舟无限 "
+"= ARX. Do not use bare “Ark” as the brand name."
+msgstr ""
+"品牌标注遵循 [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照)：方舟无限 = "
+"ARX。不要用单独的 “Ark” 当品牌名。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:9
+#: 2ebd5a00b9eb40a0b5ddf31cc5be3c07
+msgid "Source of truth"
+msgstr "以源仓库为准"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:12
+#: 954a01a9dfc9493c86b8ea7d192bd850
+msgid "Follow the branch README. Do not invent extra launch flags."
+msgstr "遵循分支 README。不要编造额外的 launch 参数。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:14
+#: bae1faab9524446fa597513fe01ad9e0
+msgid ""
+"Chinese: [open-deploy-ws `arx-lift2s` README](https://github.com"
+"/fiveages-sim/open-deploy-ws/blob/arx-lift2s/README.md)"
+msgstr ""
+"中文：[open-deploy-ws `arx-lift2s` README](https://github.com/fiveages-sim"
+"/open-deploy-ws/blob/arx-lift2s/README.md)"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:15
+#: 2ce8240a77f146159e63edaede75a6f9
+msgid ""
+"English: [README.EN.md](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/arx-lift2s/README.EN.md)"
+msgstr ""
+"英文：[README.EN.md](https://github.com/fiveages-sim/open-deploy-ws/blob"
+"/arx-lift2s/README.EN.md)"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:18
+#: a07502239a1c4d038a41e6379e5c2b57
+msgid "Clone and init"
+msgstr "克隆与初始化"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:20
+#: ee072f90a8b84c54be9c3c561eee32bf
+msgid "From the README (directory name `lift2s-ws` is the example):"
+msgstr "来自 README（目录名 `lift2s-ws` 为示例）："
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:22
+#: ad0ba90e298c4f1893c7cfa9202b62c1
+msgid ""
+"cd ~\n"
+"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git "
+"lift2s-ws\n"
+"cd ~/lift2s-ws\n"
+"./init_repo.sh"
+msgstr ""
+"cd ~\n"
+"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git "
+"lift2s-ws\n"
+"cd ~/lift2s-ws\n"
+"./init_repo.sh"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:29
+#: 4dec53f300874d0b83e5d36b862bcfea
+msgid ""
+"Field zip (README): unzip, then `./release.sh --install`, then "
+"`./quick_start.sh`. Descriptions stay as source; controllers / hardware "
+"interface come from `.deb`."
+msgstr ""
+"现场 zip（README）：解压后执行 `./release.sh --install`，再执行 "
+"`./quick_start.sh`。描述保持源码；控制器 / 硬件接口来自 `.deb`。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:31
+#: b12c177802a246cc87be59c890a60d97
+msgid "Build and launch (scripts first)"
+msgstr "编译与启动（脚本优先）"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:33
+#: 314e960fac364a6a9496b09b20484fbf
+msgid ""
+"Primary path is `./quick_start.sh` (scenario build + Lift2S split/full "
+"body, simulation or real):"
+msgstr "主路径是 `./quick_start.sh`（按场景编译 + Lift2S 分身/全身，仿真或真机）："
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:35
+#: 87a0eeecaa084d249147889ae0a5a1e3
+msgid ""
+"cd ~/lift2s-ws\n"
+"./quick_start.sh"
+msgstr ""
+"cd ~/lift2s-ws\n"
+"./quick_start.sh"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:40
+#: 3d158d5c866140e3a8ad7b23ac45f9f7
+msgid "README menu:"
+msgstr "README 菜单："
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:42
+#: 058960c66bf143f4a5e4564c8eae1690
+msgid ""
+"**Build** — simulation packages, or real-hardware packages (includes "
+"`arx_ros2_control`)"
+msgstr "**编译** — 仿真软件包，或真机软件包（含 `arx_ros2_control`）"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:43
+#: 8f3d34598a2148428a6cbaab2b7f7a6d
+msgid ""
+"**Launch** — choose **Lift2S**, then **split body** or **full body**, "
+"then simulation (`mock_components`) or **real hardware**"
+msgstr "**启动** — 选择 **Lift2S**，再选 **分身** 或 **全身**，然后仿真（`mock_components`）或 **真机**"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:45
+#: 8862e4e6ade047a185aa258fed2ce250
+msgid ""
+"CAN (README): left/right arms `can1` / `can3`; no network IP. Lift axis "
+"defaults to `hybrid` (change to `soft_p` in `quick_start`)."
+msgstr ""
+"CAN（README）：左右臂 `can1` / `can3`；没有网络 IP。升降轴默认 `hybrid`（可在 `quick_start` "
+"中改为 `soft_p`）。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:47
+#: 53dfa4cae20f4686b15440c5c708c950
+msgid ""
+"X5 / R5 / **ACone** / Lift / X7S in the same menu are `robot-"
+"descriptions-arx` models for **co-debug**. Pick **ACone** only when you "
+"want the **arm**, not the full Lift 2S chassis."
+msgstr ""
+"同一菜单中的 X5 / R5 / **ACone** / Lift / X7S 是用于 **联调** 的 `robot-descriptions-"
+"arx` 模型。只有在需要 **机械臂**、而不是完整 Lift 2S 底盘时才选 **ACone**。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:49
+#: a1531bc37e02422884b7b7f6b7e093a1
+msgid "Optional README launch lines"
+msgstr "README 中的可选 launch 行"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:51
+#: 4d9fc10fd6ba4c7a86843e9253e45ba4
+msgid ""
+"Prefer the script. These are the README’s optional equivalents for "
+"**Lift2S**:"
+msgstr "优先用脚本。以下是 README 中 **Lift2S** 的可选等价命令："
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:53
+#: 5d79158d46a74e0d971c61ccb4823309
+msgid ""
+"source ~/lift2s-ws/install/setup.bash\n"
+"# Visualization\n"
+"ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift2s\n"
+"# Split body / full body (add hardware:=real for the robot)\n"
+"ros2 launch ocs2_arm_controller split_body.launch.py robot:=arx_lift2s\n"
+"ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s"
+msgstr ""
+"source ~/lift2s-ws/install/setup.bash\n"
+"# Visualization\n"
+"ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift2s\n"
+"# Split body / full body (add hardware:=real for the robot)\n"
+"ros2 launch ocs2_arm_controller split_body.launch.py robot:=arx_lift2s\n"
+"ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:62
+#: 0551d61b4c51419998b94294cb3d357f
+msgid ""
+"Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and "
+"`export RMW_IMPLEMENTATION=rmw_zenoh_cpp` on the deploy host."
+msgstr ""
+"Zenoh：README 要求在部署主机上执行 `sudo apt install ros-jazzy-rmw-zenoh-cpp` 并 "
+"`export RMW_IMPLEMENTATION=rmw_zenoh_cpp`。"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:64
+#: b784ad6b62664b5e90f5987ccf6ccb0f
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:66
+#: 3a7fdeeae1b641f886d566942da33231
+#, fuzzy
+msgid "[Go to Real Hardware](0-index.md)"
+msgstr "[部署到真实机器人](9-go_real_hardware.md)"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:67
+#: c08e0e6c3fcb45f3b141a0baf299a4b4
+#, fuzzy
+msgid "[HighTorque Panthera HT](2-panthera_ht.md)"
+msgstr "[高擎 Panthera HT](12-panthera_ht.md)"
+
+#: ../../source/2-how_to/9-go_real_hardware/1-arx_lift2s.md:68
+#: 083b7584977a4bfeaebebdd285acb1ae
+#, fuzzy
+msgid "[open-deploy-ws setup](../../1-getting_started/3-open_deploy_ws.md)"
+msgstr "[open-deploy-ws 设置](../1-getting_started/3-open_deploy_ws.md)"
+

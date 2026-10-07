@@ -133,18 +133,7 @@ cd ~/fa-py-libraries
 
 ## FSM Commands
 
-For whole-body control or complex motions:
-
-:::{code-block} python
-# Send FSM command
-robot.send_fsm_command("stand")
-robot.send_fsm_command("walk")
-
-# Mode commands
-robot.send_mode_command("arm_teleop")
-:::
-
-See [FSM and Topics](../3-concepts/4-fsm_and_topics.md) for available commands.
+`/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / `walk`). Values and legal transitions depend on the running controller. See [FSM and Topics](../3-concepts/4-fsm_and_topics.md).
 
 ## Async Interface
 

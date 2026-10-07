@@ -1,178 +1,80 @@
 # ocs2_arm_controller
 
-MPC-based arm controller for the FiveAges Sim stack.
+ROS 2 control controller for arm MPC via OCS2.
 
-**Repository:** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
+```{admonition} Source of truth
+:class: important
 
-## Purpose
+FSM and launch names below come from [ocs2_arm_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md) and the package `launch/` files. Do not invent extra topics.
 
-`ocs2_arm_controller` provides:
-- End-effector pose tracking
-- Joint position control
-- Smooth trajectory generation
-- Multiple hardware backend support
-
-## Installation
-
-Included in `arms_ros2_control` package:
-
-```bash
-colcon build --packages-up-to ocs2_arm_controller
+- README: FSM **HOME** / **OCS2** / **HOLD**
+- Shared MoveJ / Home / Hold primitives: `libraries/arms_controller_common/`
 ```
 
-## Usage
+**Repository:** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) (`controller/ocs2_arm_controller/`)
 
-### Basic Launch
+## FSM
 
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock
-```
+README states:
 
-### With Parameters
+| State | Role |
+|-------|------|
+| **HOME** (`StateHome`) | Move the arm to a predefined home position |
+| **OCS2** (`StateOCS2`) | OCS2 MPC optimal control |
+| **HOLD** (`StateHold`) | Hold the position recorded when entering the state |
 
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py \
-  robot:=<robot_name> \
-  hardware:=mock \
-  rviz:=true
-```
+The controller starts in **HOLD**. OCS2 can only return to HOLD.
 
-```{admonition} TODO
-:class: note
+README transition commands (received on `/control_input`):
 
-For valid `robot` and `gripper` parameter values, check the launch files in `arms_ros2_control` and the corresponding description packages.
-```
+| Command | Transition |
+|---------|------------|
+| `1` | HOLD → HOME |
+| `2` | HOME → HOLD, or OCS2 → HOLD |
+| `3` | HOLD → OCS2 |
 
-## Launch Parameters
+`arms_controller_common` also implements **MoveJ** (`StateMoveJ`) and `FSMCommandPublisher`, which publishes **`std_msgs/Int32`** on `/fsm_command` (values in that header: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ). On mixed OCS2/WBC stacks, `basic_joint_controller` treats `3` as OCS2 and `4` as MOVEJ — see [basic_joint_controller](7-basic_joint_controller.md).
 
-| Parameter | Values | Default | Description |
-|-----------|--------|---------|-------------|
-| `robot` | Robot names | `dobot_cr5` | Robot model |
-| `hardware` | `mock`, `gz`, `isaac`, etc. | varies | Hardware type |
-| `gripper` | Gripper names | none | Attached gripper |
-| `rviz` | `true`, `false` | `true` | Launch RViz |
+## Split-body launch (分体控制)
 
-## Topics
+`split_body.launch.py` is the **分体控制** path (`launch_mode` `split_body`):
 
-### Subscribed
+- Arms: `ocs2_arm_controller`
+- Body and head: `basic_joint_controller` (`setup_body_controllers` for `body` and `head`, e.g. `body_joint_controller`)
+- Optional hands / FT broadcasters from the same launch helper
 
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/target_pose` | `PoseStamped` | Cartesian target |
-| `/target_joint_positions` | `JointState` | Joint targets |
+:::{code-block} bash
+ros2 launch ocs2_arm_controller split_body.launch.py robot:=<robot>
+:::
 
-### Published
+The same package also has `full_body.launch.py` (`launch_mode` `full_body`), which spawns **`ocs2_wbc_controller`** when the robot config type is `ocs2_wbc_controller/Ocs2WbcController`. That is **全身控制** — see [ocs2-wbc-controller](3-ocs2_wbc.md).
 
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/joint_states` | `JointState` | Current state |
-| `/mpc_solution` | Custom | MPC trajectory |
-| `/ee_pose` | `PoseStamped` | End-effector pose |
+## Demo launch (README)
 
-## Configuration
+:::{code-block} bash
+ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx5 type:=r5
+ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F120S
+ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac type:=AG2F90-C
+:::
 
-### OCS2 Config
+Build (README): `colcon build --packages-up-to ocs2_arm_controller --symlink-install`.
 
-Located in description packages:
+## Configuration (README)
 
-```yaml
-# config/ocs2_arm_config.yaml
-arm:
-  dof: 6
-  joint_names: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]
+YAML: `config/ocs2_arm_controller.yaml`. README lists `joints`, `home_pos`, `zero_pos`, `robot_pkg`, `update_rate`, `force_gains`.
 
-mpc:
-  dt: 0.01
-  horizon: 1.0
+OCS2 files (loaded from `robot_pkg`):
 
-task:
-  targetTrackingWeight: [100, 100, 100, 10, 10, 10]
-  inputWeight: [1, 1, 1, 1, 1, 1]
-```
+- Task: `{robot_pkg}/config/ocs2/task.info`
+- Planning URDF: xacro cache via `robot_common_launch` (`planning_urdf_path`)
+- Generated library: `{robot_pkg}/config/ocs2/generated`
 
-### Controller Config
-
-```yaml
-ocs2_arm_controller:
-  ros__parameters:
-    joints:
-      - joint_1
-      - joint_2
-      - joint_3
-      - joint_4
-      - joint_5
-      - joint_6
-    
-    command_interfaces:
-      - position
-    
-    state_interfaces:
-      - position
-      - velocity
-```
-
-## Python Interface
-
-```python
-from geometry_msgs.msg import PoseStamped
-import rclpy
-
-rclpy.init()
-node = rclpy.create_node('target_sender')
-pub = node.create_publisher(PoseStamped, '/target_pose', 10)
-
-target = PoseStamped()
-target.header.frame_id = 'base_link'
-target.pose.position.x = 0.3
-target.pose.position.y = 0.0
-target.pose.position.z = 0.4
-target.pose.orientation.w = 1.0
-
-pub.publish(target)
-```
-
-## Modes
-
-### Cartesian Mode
-
-Target end-effector pose:
-
-```bash
-ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \
-  "{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0, z: 0.4}, orientation: {w: 1}}}" --once
-```
-
-### Joint Mode
-
-Target joint positions:
-
-```bash
-ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
-  "{position: [0, -0.5, 0.5, 0, 0.5, 0]}" --once
-```
-
-## Debugging
-
-### Check Controller Status
-
-```bash
-ros2 control list_controllers
-```
-
-### Monitor MPC
-
-```bash
-ros2 topic echo /mpc_solution
-```
-
-### Visualize Trajectory
-
-RViz displays:
-- Current robot state
-- Target marker
-- Planned trajectory (if published)
+Control mode is auto-detected from hardware interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).
 
 ## Related
 
+- [basic_joint_controller](7-basic_joint_controller.md)
+- [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
-- [Gripper and Teleop Plugins](6-gripper_teleop_plugins.md)
+- [ocs2-wbc-controller](3-ocs2_wbc.md)

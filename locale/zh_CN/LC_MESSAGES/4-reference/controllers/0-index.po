@@ -9,142 +9,237 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/0-index.md:1
-#: 33c54800945f4c82ac3976620846e8ed
+#: b1584c341718474d891f677c19dc4a74
 msgid "Controllers Reference"
 msgstr "控制器参考"
 
 #: ../../source/4-reference/controllers/0-index.md:3
-#: 097728796ff7481a910335bd30a6575a
-msgid "This section documents the ROS 2 controllers used in the stack."
-msgstr "本节介绍本技术栈中使用的 ROS 2 控制器。"
+#: 01e6c5a9777740efa06ee5284f56338a
+msgid ""
+"ROS 2 controllers in [arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control)."
+msgstr ""
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 中的 ROS 2 控制器。"
 
 #: ../../source/4-reference/controllers/0-index.md:5
-#: e3a066a1877b4ad79161e85d64639413
-msgid "Overview"
-msgstr "概述"
+#: 0e0ea51747084e22a02b116672908a40
+msgid "分体控制 vs 全身控制"
+msgstr "分体控制 vs 全身控制"
 
-#: ../../source/4-reference/controllers/0-index.md:7
-#: aa5ac87ef8fe4d909264853c6bd1ac81
-msgid "Controllers receive commands and produce joint/actuator outputs:"
-msgstr "控制器接收指令，并输出关节/执行器命令："
+#: ../../source/4-reference/controllers/0-index.md
+#: 40f492788f434b999e112d7923287c3d
+msgid "Mode"
+msgstr "模式"
 
-#: ../../source/4-reference/controllers/0-index.md:9
-#: f7519dbafeaf4deda68aa150deb47013
-msgid "Target Pose/Joints → Controller → Command Interfaces → Hardware"
-msgstr "Target Pose/Joints → Controller → Command Interfaces → Hardware"
+#: ../../source/4-reference/controllers/0-index.md
+#: c0e5ac22902c40b4b5276a471665585c
+msgid "Chinese"
+msgstr "中文"
 
-#: ../../source/4-reference/controllers/0-index.md:13
-#: 442c6ef133b04a8fb9218266966348fb
+#: ../../source/4-reference/controllers/0-index.md
+#: eeb99577d130414893af3b1a6b6131f1
+#, fuzzy
+msgid "Controllers"
+msgstr "控制器"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: d0ab219998ea4f26926fa0769aa0520b
+msgid "Launch"
+msgstr "启动"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: 66449feefd32470897a7f76e1ecc2d05
+msgid "**Split**"
+msgstr "**分体**"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: f4443abfa0d945d0a3249202c2eb616e
+msgid "分体控制"
+msgstr "分体控制"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: 5ef173ce75d449f8b463d79fe2879116
+msgid ""
+"Arm MPC: [ocs2_arm_controller](2-ocs2_arm_controller.md). Body / head / "
+"hands: [basic_joint_controller](7-basic_joint_controller.md)"
+msgstr ""
+"手臂 MPC：[ocs2_arm_controller](2-ocs2_arm_controller.md)。身体 / 头 / 手：[basic_joint_controller](7-basic_joint_controller.md)"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: 3bef6bd9752b4c528a41039bf75d04d3
+msgid "`ocs2_arm_controller` `split_body.launch.py` (`launch_mode` `split_body`)"
+msgstr "`ocs2_arm_controller` 的 `split_body.launch.py`（`launch_mode` 为 `split_body`）"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: cb82bc1dd8fc444a898ebd09abf020bd
+#, fuzzy
+msgid "**Whole-body**"
+msgstr "全身控制"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: 583a2f88092b4791ae96934defba0e7e
+msgid "全身控制"
+msgstr "全身控制"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: fa8e4175d91f4d94b117e86f6846bd5a
+#, fuzzy
+msgid "Unified [ocs2_wbc_controller](3-ocs2_wbc.md) (`ocs2_wheel_humanoid`)"
+msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md)"
+
+#: ../../source/4-reference/controllers/0-index.md
+#: 8f651ab357c24ae9adef7f5bf18a27f0
+msgid "`ocs2_arm_controller` `full_body.launch.py` (`launch_mode` `full_body`)"
+msgstr "`ocs2_arm_controller` 的 `full_body.launch.py`（`launch_mode` 为 `full_body`）"
+
+#: ../../source/4-reference/controllers/0-index.md:12
+#: 2625ae988193443b9387ecb181513da6
+msgid ""
+"FSM command type and per-controller states: [FSM and "
+"Topics](../../3-concepts/4-fsm_and_topics.md). `/fsm_command` is "
+"`std_msgs/Int32`."
+msgstr ""
+"FSM 命令类型与各控制器状态见 [FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。`/fsm_command` 是 `std_msgs/Int32`。"
+
+#: ../../source/4-reference/controllers/0-index.md:14
+#: 2e3088c52651480e8e0907523f97b6ae
 msgid "In This Section"
 msgstr "本节内容"
 
-#: ../../source/4-reference/controllers/0-index.md:26
-#: 3b8708af5fb74aaa9007abaaa83a32ba
+#: ../../source/4-reference/controllers/0-index.md:28
+#: 48a1950730c34403a4029afc8714f0b2
 msgid "Quick Reference"
 msgstr "快速参考"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: b456c758d9b2443786551df60168fa22
+#: ../../source/4-reference/controllers/0-index.md:16
+#: eeb99577d130414893af3b1a6b6131f1
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 351194f228774b2d96d34099ad2123b1
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 835ebd185f424184bd14ef3c169c13ed
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 4a2d5f0e42f141fda3b26b5b76903c9d
+#: ../../source/4-reference/controllers/0-index.md:16
+#: edfac965d2aa45f898b85ff7da949905
 msgid "Visibility"
 msgstr "可见性"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 3d6860731bef4891bd6e035aeb1453f0
-msgid "[ocs2_ros2](1-ocs2_ros2.md)"
-msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
-
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 0d011f49523b4d6da0015d40df2eb4f7
-msgid "MPC library"
-msgstr "MPC 库"
-
-#: ../../source/4-reference/controllers/0-index.md:15
-#: a6198cfdf2b7420c91b9194840c82a62
-msgid "External"
-msgstr "外部"
-
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 05c8ec7cebe24b428d7f66af85c2ac12
-msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 392b4232bb8a493bbb0b528c16808bd1
+#, fuzzy
+msgid "[basic_joint_controller](7-basic_joint_controller.md)"
 msgstr "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 0dc1f342565b42b1bc8c2c156bd56769
-msgid "Arm MPC"
-msgstr "机械臂 MPC"
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 85a23cbe142d4757bd3aafef1dff7580
+msgid "Joint FSM (Home / Hold / MoveJ); body/head/hands in split-body"
+msgstr "关节 FSM（Home / Hold / MoveJ）；分体控制中的身体/头/手"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 0acd11032db849c2ad0336c52238036c ab2bce53daa34e2dbe5b004589884cce
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 11b0d3b06e9f4e899a3a8523817888a2
 msgid "Public"
 msgstr "公开"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 087db475bf6f4e1f830ebf4697e31542
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 3bede958d6e74931bc69b42033e01267
+msgid "[ocs2_ros2](1-ocs2_ros2.md)"
+msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
+
+#: ../../source/4-reference/controllers/0-index.md:16
+#: e819c020966c445a8c5436703905aead
+msgid "MPC library"
+msgstr "MPC 库"
+
+#: ../../source/4-reference/controllers/0-index.md:16
+#: b03f28de423f4f749af33e6f19b270e9
+msgid "External"
+msgstr "外部"
+
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 392b4232bb8a493bbb0b528c16808bd1
+msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+msgstr "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+
+#: ../../source/4-reference/controllers/0-index.md:16
+#: d54b550e859048068cda6782d003ea33
+msgid "Arm MPC; 分体控制 with basic_joint"
+msgstr "手臂 MPC；与 basic_joint 组成分体控制"
+
+#: ../../source/4-reference/controllers/0-index.md:16
+#: da12a197ae1246e188955ec378b98816
 msgid "[ocs2-wbc-controller](3-ocs2_wbc.md)"
 msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md)"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 748cc5a6b078452994c8c3bd18527591
-msgid "Whole-body control"
+#: ../../source/4-reference/controllers/0-index.md:16
+#: c55f4a5160b0463982bb2089241a579f
+#, fuzzy
+msgid "全身控制 (whole-body MPC)"
 msgstr "全身控制"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 6ab0019f88f643fea6703013cabd72f4 a4a8cc5629234ad297910c456177520e
-#: b0a1c59cf8c14517ba4775e7fda56397
+#: ../../source/4-reference/controllers/0-index.md:16
+#: af38427f092344038728228d4a5880f6
 msgid "Private"
 msgstr "私有"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 0caeb150c4734162b4d5826be4a9bef4
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 9f6556c4bf004129a4e41f13feda90c0
 msgid "[ocs2-humanoid](4-ocs2_humanoid.md)"
 msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 257d752e74544753be8b9586f2f3c670
-msgid "Wheeled-arm humanoid library"
+#: ../../source/4-reference/controllers/0-index.md:16
+#: b02cd1d3a52f4f9c8b7055dedbd6c930
+#, fuzzy
+msgid "`ocs2_wheel_humanoid` library"
 msgstr "轮臂人形库"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: 5cf14e8e0cd346b8886f85bb7879cafc
+#: ../../source/4-reference/controllers/0-index.md:16
+#: f970a88a36c248968b1cbf992ac17d8b
 msgid "[lina_planning](5-lina_planning.md)"
 msgstr "[lina_planning](5-lina_planning.md)"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: e9c7593b0d1d4dbb93872acf5fb3d081
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 36faaf25bc2a4e4f9a147263941e18ce
 msgid "Trajectory primitives"
 msgstr "轨迹原语"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: b1b91958274442f581a72b3f412d593a
+#: ../../source/4-reference/controllers/0-index.md:16
+#: d68ac7a3c12547bf967a13326b74f715
 msgid "[Plugins](6-gripper_teleop_plugins.md)"
 msgstr "[插件](6-gripper_teleop_plugins.md)"
 
-#: ../../source/4-reference/controllers/0-index.md:15
-#: eb24ec3734fb4f4ca6f3e309a4784e71
+#: ../../source/4-reference/controllers/0-index.md:16
+#: 6ba10838e6c4462e9b0cf16d52fc6297
 msgid "Gripper, teleop"
 msgstr "夹爪、遥操作"
 
 #~ msgid "Target Pose/Joints → Controller → Command Interfaces → Hardware\n"
 #~ msgstr "目标位姿/关节 → 控制器 → 命令接口 → 硬件\n"
+
+#~ msgid "This section documents the ROS 2 controllers used in the stack."
+#~ msgstr "本节介绍本技术栈中使用的 ROS 2 控制器。"
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid "Controllers receive commands and produce joint/actuator outputs:"
+#~ msgstr "控制器接收指令，并输出关节/执行器命令："
+
+#~ msgid "Target Pose/Joints → Controller → Command Interfaces → Hardware"
+#~ msgstr "Target Pose/Joints → Controller → Command Interfaces → Hardware"
+
+#~ msgid "Arm MPC"
+#~ msgstr "机械臂 MPC"

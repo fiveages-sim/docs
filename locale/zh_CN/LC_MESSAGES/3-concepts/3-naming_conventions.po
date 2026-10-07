@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:22+0000\n"
+"POT-Creation-Date: 2026-10-07 01:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/3-naming_conventions.md:1
@@ -37,8 +37,9 @@ msgstr "本页记录 FiveAges Sim 生态系统中使用的命名模式。"
 msgid ""
 "Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md "
 "§3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-"
-"CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限 (not bare “Ark”). **HighTorque** / "
-"Panthera is 高擎. Package paths such as `arx-lift2s` stay as quoted commands."
+"CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限 (not bare “Ark”). **HighTorque** /"
+" Panthera is 高擎. Package paths such as `arx-lift2s` stay as quoted "
+"commands."
 msgstr ""
 "品牌中英对照遵循 [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-"
 "sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照)。**ARX** "
@@ -56,16 +57,19 @@ msgid "Robot Selection"
 msgstr "机器人选择"
 
 #: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 19170288744e417aaf4f5ac0c0cfa052
 msgid "Parameter"
 msgstr "参数"
 
 #: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 8512e3770c6b4d849d07ee8201b1f064
 msgid "Purpose"
 msgstr "用途"
 
 #: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: a0df97a657094abe99c78cc28ac0880d
 msgid "Example"
 msgstr "示例"
@@ -91,622 +95,554 @@ msgid "`type`"
 msgstr "`type`"
 
 #: ../../source/3-concepts/3-naming_conventions.md
-#: 841eb911ebd94c3a867df31cdbf3f999
-msgid "Robot type/variant"
-msgstr "机器人类型/变体"
+#: bcd9c11dc17641da9b7ca4606e51e80e
+msgid ""
+"Symmetric **end-effector** key, **or** arm topology `left` / `right` / "
+"`dual` (topology does not expand to `left_type` / `right_type`)"
+msgstr "对称**末端**键，**或**臂拓扑 `left` / `right` / `dual`（拓扑不会展开成 `left_type` / `right_type`）"
 
 #: ../../source/3-concepts/3-naming_conventions.md
 #: 342b555992b74e619a849850a92134bf
-msgid "`cr5`, `cr10`"
-msgstr "`cr5`、`cr10`"
+msgid "`rg75`, `dual`"
+msgstr "`rg75`, `dual`"
 
 #: ../../source/3-concepts/3-naming_conventions.md
-#: 855f3ada5f2846af9bc2d09641d298d7
-msgid "`left_type`"
-msgstr "`left_type`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: f0dca1e006c744f59e11322345bac718
-msgid "Left arm type (dual-arm)"
-msgstr "左臂类型（双臂）"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 4fb46e0d86054d08afc8673b631118fb
-msgid "`tianji_m6`"
-msgstr "`tianji_m6`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: b9d6cf0cc9b44d6fa3589eca73061272
-msgid "`right_type`"
+#: 99181d0e03fa4e2db19ed4bba60ae34a
+#, fuzzy
+msgid "`left_type` / `right_type`"
 msgstr "`right_type`"
 
 #: ../../source/3-concepts/3-naming_conventions.md
-#: 020153359226447a8ad708b312c1571e
-msgid "Right arm type (dual-arm)"
-msgstr "右臂类型（双臂）"
+#: 77d27d104b294e2ca3621152569bba51
+msgid "Different L/R end-effector keys"
+msgstr "左右不同的末端键"
 
-#: ../../source/3-concepts/3-naming_conventions.md:18
-#: 53f8bc4773f94d3f940c0a7a4bc057f5
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 6741e78a9c354b10b042d17a1fce555f
+msgid "`rg75`, `linkerhand_o7`"
+msgstr "`rg75`, `linkerhand_o7`"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 7cd1754bbd474da4a6f3c071b35eb2cc
+msgid "`use_profile_eef`"
+msgstr "`use_profile_eef`"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 6d9759aadfad456e843232da71f1ddb8
+msgid "Apply profile `defaults.end_effectors` (default `true`)"
+msgstr "应用 profile 的 `defaults.end_effectors`（默认 `true`）"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 368a6b8f8c74491698ed8ff076b5964c
+msgid "`false` to force CLI EEF"
+msgstr "`false` 以强制使用命令行末端"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 89e9095b728f4143bddef4b997490a2b
+#, fuzzy
+msgid "`robot_profile`"
+msgstr "`robot`"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 42c197f83da44ab594be39a7a39f9480
+msgid "Machine-profile YAML path"
+msgstr "整机 profile YAML 路径"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 071ca79a79044ef8b19126d8a8f44549
+msgid "`/path/to/machine_profile.yaml`"
+msgstr "`/path/to/machine_profile.yaml`"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 22840bfd680347a88cc643b20fc9ad57
+msgid "`ft` / `left_ft` / `right_ft`"
+msgstr "`ft` / `left_ft` / `right_ft`"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 3b1b42c9c1e348a7af534a4268857b6b
+msgid "Force-torque (not gated by `use_profile_eef`)"
+msgstr "力传感器（不受 `use_profile_eef` 门控）"
+
+#: ../../source/3-concepts/3-naming_conventions.md
+#: 008eac6e69724016aed093350b3a9fa8
+msgid "`kwr75_485`"
+msgstr "`kwr75_485`"
+
+#: ../../source/3-concepts/3-naming_conventions.md:20
+#: 3708ca9a6e4a44ff9aa0cfd74b241b11
 msgid ""
-"# Single arm\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5\n"
-"\n"
-"# Dual arm\n"
-"ros2 launch dual_arm_controller demo.launch.py left_type:=tianji_m6 right_type:=tianji_m6\n"
+"There is no `gripper:=` / `gripper_type:=` launch argument. Merge: **CLI "
+"> profile > xacro defaults**. See "
+"[robot_common_launch](../4-reference/descriptions/2-common.md)."
 msgstr ""
-"# Single arm\n"
+"没有 `gripper:=` / `gripper_type:=` launch 参数。合并：**CLI > profile > xacro 默认值**。见 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
+
+#: ../../source/3-concepts/3-naming_conventions.md:22
+#: 2d3d8ec17a33484d83a843475ea7e276
+#, fuzzy
+msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5\n"
 "\n"
-"# Dual arm\n"
-"ros2 launch dual_arm_controller demo.launch.py left_type:=tianji_m6 right_type:=tianji_m6\n"
+"# README: different L/R end-effectors, ignore profile EEF\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5\n"
+"\n"
+"# README: different L/R end-effectors, ignore profile EEF\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
 
-#: ../../source/3-concepts/3-naming_conventions.md:26
+#: ../../source/3-concepts/3-naming_conventions.md:31
 #: 949c03621583443db6abef271fe85e4a
 msgid "Hardware Mode"
 msgstr "硬件 模式"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: ff298bbc550e4ddca687bb370819d814
 msgid "Options"
 msgstr "选项"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 06e34a6d203f4037a4c552a1a52cd697
 msgid "Description"
 msgstr "描述"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 5510c2fa458542ceb9e9def25488e29c
 msgid "`hardware`"
 msgstr "`hardware`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 27ae8de61833453f9541084e1ec01f47
 msgid "`mock`, `gz`, `isaac`, (vendor)"
 msgstr "`mock`、`gz`、`isaac`、（厂商）"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: be6243293f664842bf763c1c8ab33f9b
 msgid "Hardware interface type"
 msgstr "硬件接口类型"
 
-#: ../../source/3-concepts/3-naming_conventions.md:32
+#: ../../source/3-concepts/3-naming_conventions.md:37
 #: bd660265e1104084b6fbffa4a948ddbb
 msgid ""
-"The actual hardware identifier varies by robot (e.g., `real`, `can`, `tcp`)."
+"The actual hardware identifier varies by robot (e.g., `real`, `can`, "
+"`tcp`)."
 msgstr "实际的硬件标识符因机器人而异（例如 `real`、`can`、`tcp`）。"
 
-#: ../../source/3-concepts/3-naming_conventions.md:34
-#: 43bba518600b4243825e76b17dd018d3
-msgid "Gripper"
-msgstr "夹爪"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: fdc2d14b698248739e4aa92654153382
-msgid "`gripper`"
-msgstr "`gripper`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: c863e87b776d44c39da261e08744063d
-msgid "Gripper model"
-msgstr "夹爪型号"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 6741e78a9c354b10b042d17a1fce555f
-msgid "`dh_ag95`, `inspire_rh56`"
-msgstr "`dh_ag95`、`inspire_rh56`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 61d338e4e4664675bd8046c2c8328de5
-msgid "`gripper_type`"
-msgstr "`gripper_type`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: b0db5337d31d439a867246390f5d3530
-msgid "Gripper variant"
-msgstr "夹爪变体"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 5f208b854e4b4f7c90fd560dcbc6bce5
-msgid "(varies)"
-msgstr "（视情况而定）"
-
-#: ../../source/3-concepts/3-naming_conventions.md:41
+#: ../../source/3-concepts/3-naming_conventions.md:39
 #: 7efc7df15a2249a8bd9d60f286de4340
 msgid "Package Naming"
 msgstr "软件包命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:43
+#: ../../source/3-concepts/3-naming_conventions.md:41
 #: 3caafe8013ea4bdb9b58f15e11e99fb0
 msgid "Description Packages"
 msgstr "描述软件包"
 
-#: ../../source/3-concepts/3-naming_conventions.md:45
+#: ../../source/3-concepts/3-naming_conventions.md:43
 #: 12d0a866b154476dafa725deaf2f96e5
 msgid "Pattern: `robot-descriptions-<brand>` or `<robot>-description`"
 msgstr "模式：`robot-descriptions-<brand>` 或 `<robot>-description`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 1b6a7174442447578a067e2543df11be
 msgid "Package"
 msgstr "软件包"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 936887c5a26f4542bb120e62cc3f0dc0
 msgid "Robot(s)"
 msgstr "机器人(s)"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 291b35829dcf44a3a424a55ac30172b4
 msgid "`robot-descriptions-dobot`"
 msgstr "`robot-descriptions-dobot`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 5678f273aa4744379851e476f85b1b45
 msgid "Dobot CR series"
 msgstr "Dobot CR 系列"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 5a68ac82bf904892b1752d1a8a21b8b0
 msgid "`robot-descriptions-arx`"
 msgstr "`robot-descriptions-arx`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 86928531a7524358b564ea75affca046
 msgid "ARX X5, Acone (arm), Lift 2S"
 msgstr "方舟无限 X5、Acone（机械臂）、Lift 2S"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: bbe4366cbbd0412b89e8d8b6b0337267
 msgid "`robot-descriptions-common`"
 msgstr "`robot-descriptions-common`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 4c333e4f6c1c4869b13e34b9f7f6ddb5
 msgid "Shared components"
 msgstr "共享组件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 3a282a69ee474736b94d5bebeab08ee6
 msgid "`fa-w2-description`"
 msgstr "`fa-w2-description`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: c733ded78cfc48598bc4b016e6a6850c
 msgid "FiveAges W2"
 msgstr "FiveAges W2"
 
-#: ../../source/3-concepts/3-naming_conventions.md:54
+#: ../../source/3-concepts/3-naming_conventions.md:52
 #: ee04eaf2d0ac4e88b2b3850c622aca7d
 msgid "Hardware Interface Packages"
 msgstr "硬件接口软件包"
 
-#: ../../source/3-concepts/3-naming_conventions.md:56
+#: ../../source/3-concepts/3-naming_conventions.md:54
 #: bbb3a946eab5434a88b4845d800f7acc
 msgid "Pattern: `<brand>-ros2-control`"
 msgstr "模式：`<brand>-ros2-control`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 3a0144ef2a564dedad92f776dceea947
 msgid "Hardware"
 msgstr "硬件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 47335c51a59248d3935decd7f8540b83
 msgid "`arx-ros2-control`"
 msgstr "`arx-ros2-control`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: f010f7cc1745405b9f93bbfb3bb7bbb0
 msgid "ARX CAN interface"
 msgstr "ARX CAN 接口"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 30152675cbcc4a03aca1991097737fa7
 msgid "`dobot-cr-ros2-control`"
 msgstr "`dobot-cr-ros2-control`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: b0460fb56b534fbca19ce0b71d17bbea
 msgid "Dobot TCP interface"
 msgstr "Dobot TCP 接口"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 74e034ca31cd4e8f88d56d2f90088347
 msgid "`ht-ros2-control`"
 msgstr "`ht-ros2-control`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 104d092839ba4c5f87b8290cbbb5bd27
 msgid "HighTorque serial interface"
 msgstr "高擎串口接口"
 
-#: ../../source/3-concepts/3-naming_conventions.md:64
+#: ../../source/3-concepts/3-naming_conventions.md:62
 #: 74e0e4ae6a044b8590aea6d3e74f3030
 msgid "Controller Packages"
 msgstr "控制器软件包"
 
-#: ../../source/3-concepts/3-naming_conventions.md:66
+#: ../../source/3-concepts/3-naming_conventions.md:64
 #: 7176674aa3da43c9901debc80a4fdea6
 msgid "Pattern: `<function>_controller` or `ocs2_<type>_controller`"
 msgstr "模式：`<function>_controller` 或 `ocs2_<type>_controller`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 0c3c094c2fa54af7836b35c4be9b6cf3
 msgid "`ocs2_arm_controller`"
 msgstr "`ocs2_arm_controller`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: b0d748e179074256be9d66b3df83ac4a
 msgid "Arm MPC controller"
 msgstr "机械臂 MPC 控制器"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 7899768ad90243888888bf0cc7eb6e1e
 msgid "`adaptive_gripper_controller`"
 msgstr "`adaptive_gripper_controller`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 638d28c679f345caaa171cb98156aacd
 msgid "Gripper control"
 msgstr "夹爪控制"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: a6a9eb9fbc4b483da90e4faa84cee432
 msgid "`arms_teleop_controller`"
 msgstr "`arms_teleop_controller`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: e2c6d57d17f54eedbedfaabd358c34dc
 msgid "Teleop integration"
 msgstr "遥操作集成"
 
-#: ../../source/3-concepts/3-naming_conventions.md:74
+#: ../../source/3-concepts/3-naming_conventions.md:72
 #: 81b9096a0933426ea081a84bddc135c3
 msgid "Topic Naming"
 msgstr "话题命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:76
+#: ../../source/3-concepts/3-naming_conventions.md:74
 #: 5802220293484380be37c09f123f76b2
 msgid "Joint Topics"
 msgstr "关节话题"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 72bae083b31a4b279e012bc7b4161f9e
 msgid "Topic"
 msgstr "话题"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 78bb52b3dab04adba7c5be728b3c0f50
 msgid "Type"
 msgstr "类型"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: d261f6c7418b40888420bf738c4275dd
 msgid "Publisher"
 msgstr "发布者"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 30e32daa268e4ba6bdb79d68173eea25
 msgid "`/joint_states`"
 msgstr "`/joint_states`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 2f409e805be0413d9a63009eda39a7d2
 msgid "`sensor_msgs/JointState`"
 msgstr "`sensor_msgs/JointState`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 86c6b50b14fc48b4a31c656e0b9afa0d
 msgid "Hardware interface"
 msgstr "硬件接口"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: f9687a7e81c74083a144dfd172cc046d
 msgid "`/joint_commands`"
 msgstr "`/joint_commands`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 7eaa6754566c4e09b7920b85fde35421
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/3-concepts/3-naming_conventions.md:83
-#: 66e1a5f5571142a88c829ebc1a161975
-msgid "Target Topics"
-msgstr "目标话题"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: dd81d8e02571481782eaa1be0947e1a4
-msgid "`/target_pose`"
-msgstr "`/target_pose`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 6760d935def74cf2a7da8ce7efa2808f
-msgid "`geometry_msgs/PoseStamped`"
-msgstr "`geometry_msgs/PoseStamped`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 65a764672f9c4d3889322f0d85307d64
-msgid "Cartesian target"
-msgstr "笛卡尔空间目标"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 8dc326547f944bf985f1a26356f03da6
-msgid "`/target_joint_positions`"
-msgstr "`/target_joint_positions`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 3404ae65da04405583fdccefb6c92054
-msgid "Joint space target"
-msgstr "关节空间目标"
-
-#: ../../source/3-concepts/3-naming_conventions.md:90
-#: 2ed0fc464a60416aa89a5cdfe57200e1
-msgid "Teleop Topics"
-msgstr "遥操作话题"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 7cd1754bbd474da4a6f3c071b35eb2cc
-msgid "`/teleop/left_ee_pose`"
-msgstr "`/teleop/left_ee_pose`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: e97c236d2b964ac6a07e3a3f978d9df2
-msgid "`PoseStamped`"
-msgstr "`PoseStamped`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 314a0cd53c6c4cf99f3bdd7a7d0daa13
-msgid "Left hand target"
-msgstr "左手目标"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 4548f2ea60d346c8a2bfb7ff9f79c171
-msgid "`/teleop/right_ee_pose`"
-msgstr "`/teleop/right_ee_pose`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 50086eca07c8408d93b0bc3d1a7b51bb
-msgid "Right hand target"
-msgstr "右手目标"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: c93575d10d4c47a89da6c4a4c0ba879d
-msgid "`/teleop/head_pose`"
-msgstr "`/teleop/head_pose`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 3b2b35f13e504cfd8bf0710ca92becbb
-msgid "Head tracking"
-msgstr "头部追踪"
-
-#: ../../source/3-concepts/3-naming_conventions.md:98
+#: ../../source/3-concepts/3-naming_conventions.md:81
 #: 6bcc0f895efd4e089b4646b6134b2923
 msgid "FSM Topics"
 msgstr "FSM 话题"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: e929d2c62c2f43aabe633477b945ec4f
 msgid "`/fsm_command`"
 msgstr "`/fsm_command`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 816f16b9c9da49858ab887bfda120542
-msgid "`std_msgs/String`"
-msgstr "`std_msgs/String`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 80b3ef0fcfe34132bfa31951cdb0fb7d
-msgid "State machine command"
-msgstr "状态机命令"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 39db2b2402d4428eaef424df7a634fa8
-msgid "`/fsm_state`"
-msgstr "`/fsm_state`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 96498dd3b18247448a7b858fd017288b
-msgid "Current state"
-msgstr "当前状态"
-
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 38ec3ea666c3444ba68421ce0707ece5
-msgid "`/mode_command`"
-msgstr "`/mode_command`"
-
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 871dbe3132cd4957bbe64344b5faf250
 msgid "`std_msgs/Int32`"
 msgstr "`std_msgs/Int32`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
-#: 5262ec0cd342428f99aad55c0195e5d5
-msgid "Mode selection"
-msgstr "模式选择"
+#: ../../source/3-concepts/3-naming_conventions.md:22
+#: 7cda1efd2e0c46caa9f4851a265fcbdf
+msgid ""
+"FSM command (`1` HOME, `2` HOLD, `3` OCS2 / legacy MOVEJ, `4` MOVEJ). Not"
+" `String`."
+msgstr "FSM 命令（`1` HOME，`2` HOLD，`3` OCS2 / 旧版 MOVEJ，`4` MOVEJ）。不是 `String`。"
 
-#: ../../source/3-concepts/3-naming_conventions.md:106
+#: ../../source/3-concepts/3-naming_conventions.md:87
+#: e78180aa03dc4c809493791901b03ea4
+msgid ""
+"Per-controller states and topics: [FSM and Topics](4-fsm_and_topics.md). "
+"Do not invent `/mode_command` or `/fsm_state` String contracts."
+msgstr ""
+"各控制器状态与话题见 [FSM 与话题](4-fsm_and_topics.md)。不要编造 `/mode_command` 或 `/fsm_state` 的 String 约定。"
+
+#: ../../source/3-concepts/3-naming_conventions.md:89
 #: ec2991f952da4ef1a59b5f9c9be89e1b
 msgid "Frame Naming"
 msgstr "坐标系命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:108
+#: ../../source/3-concepts/3-naming_conventions.md:91
 #: 3761c4b2803d4fe69daa3f1cad5e1f08
 msgid "Standard Frames"
 msgstr "标准坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 9e0769e883f940cd9c322c87d56d0d94
 msgid "Frame"
 msgstr "坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: fb8fee102cde4d3789fad1a0eec3d264
 msgid "`base_link`"
 msgstr "`base_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: a2d5d94466db4dbfbccb64e650c2832f
 msgid "Robot base (fixed)"
 msgstr "机器人基座（固定）"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 738dc500666c40e5a002c67e1b50a67f
 msgid "`world`"
 msgstr "`world`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 6c3de5da10d64fd6b6783e5746c4a73f
 msgid "World frame"
 msgstr "世界坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 5a92d2c9e62146b6a1180d3bb588c4ab
 msgid "`odom`"
 msgstr "`odom`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 0d7d50ec14f346f8b6c04015a1bfb0b3
 msgid "Odometry frame (mobile robots)"
 msgstr "里程计坐标系（移动机器人）"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: f3cc72a90cf540e9bb34539b2ee73b21
 msgid "`<arm>_base_link`"
 msgstr "`<arm>_base_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: ebe84620520f47b8ac9fac1edbe4b6b5
 msgid "Arm mounting point"
 msgstr "机械臂安装点"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 3909203654224080994dfe50cd99aa2a
 msgid "`<arm>_ee_link`"
 msgstr "`<arm>_ee_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: fd581773b35d448e859b0c3242206dc6
 msgid "End effector"
 msgstr "末端执行器"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 9d7990792d4e4548ae43de492eb91397
 msgid "`<arm>_tool0`"
 msgstr "`<arm>_tool0`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 341c0f1c95f240f4b20faa16e81def00
 msgid "Tool frame"
 msgstr "工具坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md:119
+#: ../../source/3-concepts/3-naming_conventions.md:102
 #: 40086563861e4299904fa9d8eaaf6ae0
 msgid "Dual-Arm Frames"
 msgstr "双臂坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: cb849d14a12d44d8a6045330daf2f301
 msgid "`left_base_link`"
 msgstr "`left_base_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 0b4537ec1e9d456791c5dcc282c56395
 msgid "Left arm base"
 msgstr "左臂基座"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 97f692de9dab48be9ff2abf4d06749dd
 msgid "`right_base_link`"
 msgstr "`right_base_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: fb6942f5f9d44bf0af1c617f3d5348e7
 msgid "Right arm base"
 msgstr "右臂基座"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 7cc8869017cd489fa99acd14d60e536c
 msgid "`left_ee_link`"
 msgstr "`left_ee_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 691c658375664d008039beac0438d122
 msgid "Left end effector"
 msgstr "左臂末端执行器"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 980879e708054ad4b092fcefda16b670
 msgid "`right_ee_link`"
 msgstr "`right_ee_link`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 0e89221d70a744a1af29c6a3da610052
 msgid "Right end effector"
 msgstr "右臂末端执行器"
 
-#: ../../source/3-concepts/3-naming_conventions.md:128
+#: ../../source/3-concepts/3-naming_conventions.md:111
 #: ef7d973230c44c17874ee92921b87bb9
 msgid "Configuration Files"
 msgstr "配置文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md:130
+#: ../../source/3-concepts/3-naming_conventions.md:113
 #: f7263a0c451843eb9b3f0c285911debf
 msgid "YAML Files"
 msgstr "YAML 文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 499f067e8c0844d5ab413564ee73fdca
 msgid "File"
 msgstr "文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 3de7b962968941da8e8832c5056d3e8d
 msgid "`config/*.yaml`"
 msgstr "`config/*.yaml`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 80e89692dd344f6d9b06d1b9c2e2d1bf
 msgid "Controller parameters"
 msgstr "控制器参数"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: ff5760679c9344ccb669411a81773405
 msgid "`urdf/*.urdf.xacro`"
 msgstr "`urdf/*.urdf.xacro`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 5ef6fd3376ed42c7a86eb4355fb3e89c
 msgid "Robot model"
 msgstr "机器人模型"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 57fa8e6eb54b4f62bc995cd8481d2682
 msgid "`launch/*.launch.py`"
 msgstr "`launch/*.launch.py`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: bfd2bc5016044515a401d93dff96b3ab
 msgid "Launch files"
 msgstr "启动文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 2800a4aa36b74fe2849579b6f49cf645
 msgid "`ocs2_arm_config.yaml`"
 msgstr "`ocs2_arm_config.yaml`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 38790f693da64a2b919ceb319ea78ae8
 msgid "MPC configuration"
 msgstr "MPC 配置"
 
-#: ../../source/3-concepts/3-naming_conventions.md:139
+#: ../../source/3-concepts/3-naming_conventions.md:122
 #: 1e4d8956d98149a889f2081b3a413a4d
 msgid "Configuration Naming"
 msgstr "配置命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:141
+#: ../../source/3-concepts/3-naming_conventions.md:124
 #: b197b0d037f441a287259a7fccc466d2
 msgid ""
 "# Controller config pattern\n"
@@ -733,90 +669,189 @@ msgstr ""
 "      dt: 0.01\n"
 "      horizon: 1.0\n"
 
-#: ../../source/3-concepts/3-naming_conventions.md:155
+#: ../../source/3-concepts/3-naming_conventions.md:138
 #: 9e1ca763df884ad4b851c650c3f7bbe0
 msgid "File Naming"
 msgstr "文件命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 9e0cf408cd9b4852b2be06f713083845
 msgid "Pattern"
 msgstr "模式"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: b613be25eebc4e3e9a844252fcfb4f67
 msgid "`*.urdf.xacro`"
 msgstr "`*.urdf.xacro`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 89e9095b728f4143bddef4b997490a2b
 msgid "`robot.urdf.xacro`"
 msgstr "`robot.urdf.xacro`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 58d6b112ee67430fa5cbfcdb12c0664c
 msgid "`*.ros2_control.xacro`"
 msgstr "`*.ros2_control.xacro`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 1d0f89dacca94a7a9fc8cdc3663ba419
 msgid "`robot.ros2_control.xacro`"
 msgstr "`robot.ros2_control.xacro`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: d35e8d9d51134a9493bb904c87f14e05
 msgid "Hardware config"
 msgstr "硬件配置"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 6744de48ee8449fb99bbe982da318567
 msgid "`*.launch.py`"
 msgstr "`*.launch.py`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 8db71f4412364057a82bb9d18f78d6a6
 msgid "`demo.launch.py`"
 msgstr "`demo.launch.py`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: eb09667e06964df38f55bc1569aa3f5b
 msgid "Launch file"
 msgstr "启动文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: fba0de9a9c4644f1842732b781090824
 msgid "`*_config.yaml`"
 msgstr "`*_config.yaml`"
 
-#: ../../source/3-concepts/3-naming_conventions.md
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: eed2a2d657e742d08ff180e9113a9e10
 msgid "Configuration"
 msgstr "配置"
 
-#: ../../source/3-concepts/3-naming_conventions.md:164
+#: ../../source/3-concepts/3-naming_conventions.md:147
 #: 9694068cd421481faa9d02a322ed3129
 msgid "Best Practices"
 msgstr "最佳实践"
 
-#: ../../source/3-concepts/3-naming_conventions.md:166
+#: ../../source/3-concepts/3-naming_conventions.md:149
 #: 2f84dd5440c74b66bf57ebbc3ca2a4cb
 msgid "**Use underscores** in Python, launch parameters, and topics"
 msgstr "**使用下划线** 命名 Python 代码、启动参数和话题"
 
-#: ../../source/3-concepts/3-naming_conventions.md:167
+#: ../../source/3-concepts/3-naming_conventions.md:150
 #: 8968218b7af146b780661307e0ba8075
 msgid "**Use hyphens** in package names and repository names"
 msgstr "**使用连字符** 命名软件包和仓库"
 
-#: ../../source/3-concepts/3-naming_conventions.md:168
+#: ../../source/3-concepts/3-naming_conventions.md:151
 #: 25141ace44b148d8a2e1857020647481
 msgid "**Be consistent** — Match existing patterns in the codebase"
 msgstr "**保持一致** — 与代码库中的既有模式对齐"
 
-#: ../../source/3-concepts/3-naming_conventions.md:169
+#: ../../source/3-concepts/3-naming_conventions.md:152
 #: db99ce2a9f404eb8a6de4898c742f25b
 msgid "**Prefix namespaces** — Use robot/arm prefixes for multi-robot setups"
 msgstr "**为命名空间加前缀** — 多机器人场景使用机器人/机械臂前缀"
 
 #~ msgid "`dobot_cr5`, `arx_acone`"
 #~ msgstr "`dobot_cr5`、`arx_acone`"
+
+#~ msgid "Robot type/variant"
+#~ msgstr "机器人类型/变体"
+
+#~ msgid "`cr5`, `cr10`"
+#~ msgstr "`cr5`、`cr10`"
+
+#~ msgid "`left_type`"
+#~ msgstr "`left_type`"
+
+#~ msgid "Left arm type (dual-arm)"
+#~ msgstr "左臂类型（双臂）"
+
+#~ msgid "`tianji_m6`"
+#~ msgstr "`tianji_m6`"
+
+#~ msgid "Right arm type (dual-arm)"
+#~ msgstr "右臂类型（双臂）"
+
+#~ msgid "Gripper"
+#~ msgstr "夹爪"
+
+#~ msgid "`gripper`"
+#~ msgstr "`gripper`"
+
+#~ msgid "Gripper model"
+#~ msgstr "夹爪型号"
+
+#~ msgid "`dh_ag95`, `inspire_rh56`"
+#~ msgstr "`dh_ag95`、`inspire_rh56`"
+
+#~ msgid "`gripper_type`"
+#~ msgstr "`gripper_type`"
+
+#~ msgid "Gripper variant"
+#~ msgstr "夹爪变体"
+
+#~ msgid "(varies)"
+#~ msgstr "（视情况而定）"
+
+#~ msgid "Target Topics"
+#~ msgstr "目标话题"
+
+#~ msgid "`/target_pose`"
+#~ msgstr "`/target_pose`"
+
+#~ msgid "`geometry_msgs/PoseStamped`"
+#~ msgstr "`geometry_msgs/PoseStamped`"
+
+#~ msgid "Cartesian target"
+#~ msgstr "笛卡尔空间目标"
+
+#~ msgid "`/target_joint_positions`"
+#~ msgstr "`/target_joint_positions`"
+
+#~ msgid "Joint space target"
+#~ msgstr "关节空间目标"
+
+#~ msgid "Teleop Topics"
+#~ msgstr "遥操作话题"
+
+#~ msgid "`/teleop/left_ee_pose`"
+#~ msgstr "`/teleop/left_ee_pose`"
+
+#~ msgid "`PoseStamped`"
+#~ msgstr "`PoseStamped`"
+
+#~ msgid "Left hand target"
+#~ msgstr "左手目标"
+
+#~ msgid "`/teleop/right_ee_pose`"
+#~ msgstr "`/teleop/right_ee_pose`"
+
+#~ msgid "Right hand target"
+#~ msgstr "右手目标"
+
+#~ msgid "`/teleop/head_pose`"
+#~ msgstr "`/teleop/head_pose`"
+
+#~ msgid "Head tracking"
+#~ msgstr "头部追踪"
+
+#~ msgid "`std_msgs/String`"
+#~ msgstr "`std_msgs/String`"
+
+#~ msgid "State machine command"
+#~ msgstr "状态机命令"
+
+#~ msgid "`/fsm_state`"
+#~ msgstr "`/fsm_state`"
+
+#~ msgid "Current state"
+#~ msgstr "当前状态"
+
+#~ msgid "`/mode_command`"
+#~ msgstr "`/mode_command`"
+
+#~ msgid "Mode selection"
+#~ msgstr "模式选择"

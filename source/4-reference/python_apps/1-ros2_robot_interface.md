@@ -100,11 +100,7 @@ robot.get_gripper_position()  # -> float
 
 ### FSM
 
-```python
-robot.set_mode(mode: str)
-robot.get_mode()  # -> str
-robot.send_fsm_command(command: str)
-```
+Controller FSM on `/fsm_command` is **`std_msgs/Int32`**. Do not send invented strings such as `stand` / `walk`. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## Async Interface
 
