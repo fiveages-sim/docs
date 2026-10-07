@@ -59,6 +59,8 @@ ros2 launch ocs2_arm_controller split_body.launch.py robot:=arx_lift2s
 ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
 :::
 
+Those OCS2 launches also take `type` / `left_type` / `right_type` from [robot_common_launch](../../4-reference/descriptions/2-common.md) (`create_robot_profile_launch_arguments()`). Different L/R: `left_type:=` and `right_type:=` together; **do not pass `type:=`** then. Visualization `manipulator.launch.py` uses the same first-class args.
+
 Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and `export RMW_IMPLEMENTATION=rmw_zenoh_cpp` on the deploy host.
 
 ## Related

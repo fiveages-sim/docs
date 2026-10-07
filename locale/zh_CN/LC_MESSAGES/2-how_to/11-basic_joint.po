@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:35+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -29,7 +29,8 @@ msgid ""
 "Run the joint-position controller (Home / Hold / MoveJ) from "
 "[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)."
 msgstr ""
-"从 [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 运行关节位置控制器（Home / Hold / MoveJ）。"
+"从 [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) "
+"运行关节位置控制器（Home / Hold / MoveJ）。"
 
 #: ../../source/2-how_to/11-basic_joint.md:5 53ce9da0da7840f0a79006d37614f316
 msgid "Source of truth"
@@ -44,7 +45,12 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md))."
 " Do not invent extra launches or command types."
 msgstr ""
-"下列步骤和话题均来自 [basic_joint_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md)（以及 [README_zh.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)）。不要编造额外的 launch 或命令类型。"
+"下列步骤和话题均来自 [basic_joint_controller/README.md](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md)（以及"
+" [README_zh.md](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)）。不要编造额外的"
+" launch 或命令类型。"
 
 #: ../../source/2-how_to/11-basic_joint.md:10 7c2de4497ea844e5b6e290f9eb1d3e62
 msgid "`/fsm_command` is **`std_msgs/Int32`**, not `String`."
@@ -59,7 +65,11 @@ msgid ""
 "2S](9-go_real_hardware/1-arx_lift2s.md) and [分体控制 vs "
 "全身控制](../3-concepts/7-split_vs_wbc.md)."
 msgstr ""
-"在公开的 `open-deploy-ws` **`arx-lift2s`** 分支上，`basic_joint_controller` 出现在 README 的 `colcon build --packages-up-to` 列表中（仿真与真机）。Lift2S 的 **split body** / **full body** 在 `./quick_start.sh` 中选择 — 见 [ARX Lift 2S](9-go_real_hardware/1-arx_lift2s.md) 和 [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)。"
+"在公开的 `open-deploy-ws` **`arx-lift2s`** 分支上，`basic_joint_controller` 出现在 "
+"README 的 `colcon build --packages-up-to` 列表中（仿真与真机）。Lift2S 的 **split "
+"body** / **full body** 在 `./quick_start.sh` 中选择 — 见 [ARX Lift "
+"2S](9-go_real_hardware/1-arx_lift2s.md) 和 [分体控制 vs "
+"全身控制](../3-concepts/7-split_vs_wbc.md)。"
 
 #: ../../source/2-how_to/11-basic_joint.md:15 87bec610493e44af9aae8deefd51be06
 msgid "Prerequisites"
@@ -75,7 +85,9 @@ msgstr "工作空间中已有 `arms_ros2_control`（例如执行 `./init_repo.sh
 msgid ""
 "Package built: `colcon build --packages-up-to basic_joint_controller "
 "--symlink-install`"
-msgstr "已编译该软件包：`colcon build --packages-up-to basic_joint_controller --symlink-install`"
+msgstr ""
+"已编译该软件包：`colcon build --packages-up-to basic_joint_controller --symlink-"
+"install`"
 
 #: ../../source/2-how_to/11-basic_joint.md:20 0074e9bf21f143e28a98ccfaa0cdd1c4
 msgid "Launch (README demo)"
@@ -96,21 +108,25 @@ msgid ""
 "enable_head:=false"
 msgstr ""
 "source /opt/ros/jazzy/setup.bash\n"
-"source ~/open-deploy-ws/install/setup.bash   # or your workspace install/\n"
+"source ~/open-deploy-ws/install/setup.bash   # or your workspace install/"
+"\n"
 "\n"
 "ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1\n"
 "# Head only\n"
-"ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_body:=false\n"
+"ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 "
+"enable_body:=false\n"
 "# Body only\n"
-"ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_head:=false"
+"ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 "
+"enable_head:=false"
 
 #: ../../source/2-how_to/11-basic_joint.md:22 f499da258d5949e88613e7c61d6baba1
 msgid "Argument"
 msgstr "参数"
 
 #: ../../source/2-how_to/11-basic_joint.md:22 545e430ec5154d329b1f7ed57bc5cd73
-msgid "Default (README)"
-msgstr "默认值（README）"
+#, fuzzy
+msgid "Default (README / launch)"
+msgstr "默认值（README / launch）"
 
 #: ../../source/2-how_to/11-basic_joint.md:22 8ddb045a62634e6ea99aa40f34e8c833
 msgid "`robot`"
@@ -119,6 +135,15 @@ msgstr "`robot`"
 #: ../../source/2-how_to/11-basic_joint.md:22 1723212e44f744cbb525f716fdb65759
 msgid "`fiveages_w1`"
 msgstr "`fiveages_w1`"
+
+#: ../../source/2-how_to/11-basic_joint.md:22 93f067c744ac4844810d8268deebaf3d
+#, fuzzy
+msgid "`type`"
+msgstr "`type`"
+
+#: ../../source/2-how_to/11-basic_joint.md:22 f9ed4a8dbcc24f209f16ce0542495a91
+msgid "empty (do not pass a type arg to xacro)"
+msgstr "空（不向 xacro 传 type）"
 
 #: ../../source/2-how_to/11-basic_joint.md:22 342d4745504f44acb462f2625bf184cc
 msgid "`hardware`"
@@ -136,11 +161,20 @@ msgstr "`enable_head` / `enable_body`"
 msgid "`true`"
 msgstr "`true`"
 
-#: ../../source/2-how_to/11-basic_joint.md:39 1921bc523e5846188323819263fb5b0c
+#: ../../source/2-how_to/11-basic_joint.md:40 81ac59b2ab3e44c4b5ef6a6ce0af2b7d
+msgid ""
+"This demo declares **`type` only**. It does not declare `left_type` / "
+"`right_type`. Mixed L/R EEF is on OCS2 `demo` / `split_body` / "
+"`full_body` via "
+"[robot_common_launch](../4-reference/descriptions/2-common.md)."
+msgstr ""
+"此 demo **只声明 `type`**，没有 `left_type` / `right_type`。左右不同末端在 OCS2 的 `demo` / `split_body` / `full_body` 上，见 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
+
+#: ../../source/2-how_to/11-basic_joint.md:42 1921bc523e5846188323819263fb5b0c
 msgid "Switch FSM"
 msgstr "切换 FSM"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 a60df3e55a3847de8aca3bb166ee99df
+#: ../../source/2-how_to/11-basic_joint.md:44 a60df3e55a3847de8aca3bb166ee99df
 msgid ""
 "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 1\"   # "
 "HOLD → HOME\n"
@@ -149,69 +183,73 @@ msgid ""
 "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 4\"   # "
 "HOLD → MOVEJ (canonical)"
 msgstr ""
-"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 1\"   # HOLD → HOME\n"
-"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # → HOLD\n"
-"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 4\"   # HOLD → MOVEJ (canonical)"
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 1\"   # "
+"HOLD → HOME\n"
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # → "
+"HOLD\n"
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 4\"   # "
+"HOLD → MOVEJ (canonical)"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 2ae7c79dcc36419590971bc12cb9a893
+#: ../../source/2-how_to/11-basic_joint.md:44 2ae7c79dcc36419590971bc12cb9a893
 msgid "Value"
 msgstr "值"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 9b7d881382a44b1cb96060372c33d559
+#: ../../source/2-how_to/11-basic_joint.md:44 9b7d881382a44b1cb96060372c33d559
 msgid "Action (README)"
 msgstr "动作（README）"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 9047a3ec57854801a04cf0c9f819f253
+#: ../../source/2-how_to/11-basic_joint.md:44 9047a3ec57854801a04cf0c9f819f253
 msgid "`1`"
 msgstr "`1`"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 6b1814f7324a4b74893e8245bd728257
+#: ../../source/2-how_to/11-basic_joint.md:44 6b1814f7324a4b74893e8245bd728257
 msgid "HOME (only from HOLD)"
 msgstr "HOME（仅能从 HOLD 进入）"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 66a57b3818c04b2b8157ba453bbcd02a
+#: ../../source/2-how_to/11-basic_joint.md:44 66a57b3818c04b2b8157ba453bbcd02a
 msgid "`2`"
 msgstr "`2`"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 664628a0d187406d83b518510829cbfc
+#: ../../source/2-how_to/11-basic_joint.md:44 664628a0d187406d83b518510829cbfc
 msgid "HOLD (from HOME / MOVEJ)"
 msgstr "HOLD（从 HOME / MOVEJ 进入）"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 84fe1e656e7743359eb17671b051cecd
+#: ../../source/2-how_to/11-basic_joint.md:44 84fe1e656e7743359eb17671b051cecd
 msgid "`4`"
 msgstr "`4`"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 6f838ebbeb724d15a0a1806d68b8042f
+#: ../../source/2-how_to/11-basic_joint.md:44 6f838ebbeb724d15a0a1806d68b8042f
 msgid "MOVEJ (only from HOLD; same canonical value as the whole-body stack)"
 msgstr "MOVEJ（仅能从 HOLD 进入；与全身栈相同的规范值）"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 412997679c384d07bb7bf9fa0bfb1c64
+#: ../../source/2-how_to/11-basic_joint.md:44 412997679c384d07bb7bf9fa0bfb1c64
 msgid "`3`"
 msgstr "`3`"
 
-#: ../../source/2-how_to/11-basic_joint.md:41 801c8a05041443bdab1b0cc05bfcbc25
+#: ../../source/2-how_to/11-basic_joint.md:44 801c8a05041443bdab1b0cc05bfcbc25
 msgid ""
 "MOVEJ if this controller is standalone; on mixed OCS2/WBC stacks `3` "
 "means **OCS2**"
 msgstr "本控制器独立运行时为 MOVEJ；在混合 OCS2/WBC 栈上 `3` 表示 **OCS2**"
 
-#: ../../source/2-how_to/11-basic_joint.md:54 e9b77ce209dd4122b6578c2cd3d41764
+#: ../../source/2-how_to/11-basic_joint.md:57 e9b77ce209dd4122b6578c2cd3d41764
 msgid ""
 "MOVEJ returns only to HOLD (`2`). Full table and home-config `100`+ "
 "commands: [basic_joint_controller "
 "reference](../4-reference/controllers/7-basic_joint_controller.md)."
 msgstr ""
-"MOVEJ 只能回到 HOLD（`2`）。完整表与 home 构型 `100`+ 命令见 [basic_joint_controller 参考](../4-reference/controllers/7-basic_joint_controller.md)。"
+"MOVEJ 只能回到 HOLD（`2`）。完整表与 home 构型 `100`+ 命令见 [basic_joint_controller "
+"参考](../4-reference/controllers/7-basic_joint_controller.md)。"
 
-#: ../../source/2-how_to/11-basic_joint.md:56 2196591964c24332b2a28c52bbd2529e
+#: ../../source/2-how_to/11-basic_joint.md:59 2196591964c24332b2a28c52bbd2529e
 msgid "Command joints in MOVEJ"
 msgstr "在 MOVEJ 中命令关节"
 
-#: ../../source/2-how_to/11-basic_joint.md:58 5ea416cce6ed404791de4a1fd58af216
+#: ../../source/2-how_to/11-basic_joint.md:61 5ea416cce6ed404791de4a1fd58af216
 msgid "Topics are namespaced to the controller name. README example:"
 msgstr "话题带控制器名称空间。README 示例："
 
-#: ../../source/2-how_to/11-basic_joint.md:60 2948208c1f164c828ddcffadfdfdec6f
+#: ../../source/2-how_to/11-basic_joint.md:63 2948208c1f164c828ddcffadfdfdec6f
 #, python-brace-format
 msgid ""
 "ros2 topic pub --once /my_controller/target_joint_position \\\n"
@@ -220,7 +258,7 @@ msgstr ""
 "ros2 topic pub --once /my_controller/target_joint_position \\\n"
 "  std_msgs/msg/Float64MultiArray \"{data: [0.1, 0.2, 0.3]}\""
 
-#: ../../source/2-how_to/11-basic_joint.md:65 14df300b85c143d5a5b69b48d5ddb8b9
+#: ../../source/2-how_to/11-basic_joint.md:68 14df300b85c143d5a5b69b48d5ddb8b9
 #, python-brace-format
 msgid ""
 "Type is `std_msgs/Float64MultiArray`, not `sensor_msgs/JointState`. "
@@ -228,27 +266,30 @@ msgid ""
 "(`trajectory_msgs/JointTrajectory`). Hand / waist topics: the reference "
 "page (README §5–6)."
 msgstr ""
-"类型是 `std_msgs/Float64MultiArray`，不是 `sensor_msgs/JointState`。可选轨迹：`/{controller}/target_joint_trajectory`（`trajectory_msgs/JointTrajectory`）。手 / 腰话题见参考页（README §5–6）。"
+"类型是 `std_msgs/Float64MultiArray`，不是 "
+"`sensor_msgs/JointState`。可选轨迹：`/{controller}/target_joint_trajectory`（`trajectory_msgs/JointTrajectory`）。手"
+" / 腰话题见参考页（README §5–6）。"
 
-#: ../../source/2-how_to/11-basic_joint.md:67 8fff4d04f3c640cbaf66ce003a4e4393
+#: ../../source/2-how_to/11-basic_joint.md:70 8fff4d04f3c640cbaf66ce003a4e4393
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/2-how_to/11-basic_joint.md:69 103d0942fa7c4e09aec8066bf4f9d48b
+#: ../../source/2-how_to/11-basic_joint.md:72 103d0942fa7c4e09aec8066bf4f9d48b
 msgid ""
 "[basic_joint_controller "
 "reference](../4-reference/controllers/7-basic_joint_controller.md)"
 msgstr ""
-"[basic_joint_controller 参考](../4-reference/controllers/7-basic_joint_controller.md)"
+"[basic_joint_controller "
+"参考](../4-reference/controllers/7-basic_joint_controller.md)"
 
-#: ../../source/2-how_to/11-basic_joint.md:70 4ae75c60382142e6a26a54e9d1f95d57
+#: ../../source/2-how_to/11-basic_joint.md:73 4ae75c60382142e6a26a54e9d1f95d57
 msgid "[FSM and Topics](../3-concepts/4-fsm_and_topics.md)"
 msgstr "[状态机与话题](../3-concepts/4-fsm_and_topics.md)"
 
-#: ../../source/2-how_to/11-basic_joint.md:71 7dd58bfa34a24070a9b8322c56886099
+#: ../../source/2-how_to/11-basic_joint.md:74 7dd58bfa34a24070a9b8322c56886099
 msgid "[分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)"
 
-#: ../../source/2-how_to/11-basic_joint.md:72 4190873eb1eb4c1685bc0af831df5e58
+#: ../../source/2-how_to/11-basic_joint.md:75 4190873eb1eb4c1685bc0af831df5e58
 msgid "[ARX Lift 2S](9-go_real_hardware/1-arx_lift2s.md)"
 msgstr "[ARX Lift 2S](9-go_real_hardware/1-arx_lift2s.md)"

@@ -32,7 +32,7 @@ Select the **end-effector** with launch arguments (not `gripper:=`):
 | Argument | Meaning |
 |----------|---------|
 | `type` | Symmetric end-effector key, **or** arm topology `left` / `right` / `dual`. Topology does **not** expand into `left_type` / `right_type`. |
-| `left_type` / `right_type` | Different left / right end-effector keys |
+| `left_type` / `right_type` | Per-side EEF keys. `create_eef_side_launch_arguments()` lists example keys `rg75`, `ag2f90_c`, `linkerhand_o7`. Use together for asymmetric setups; **do not pass `type:=`** then. |
 | `use_profile_eef` | Apply `defaults.end_effectors` from the profile (default `true`) |
 | `robot_profile` | Path to a machine-profile YAML |
 
@@ -108,5 +108,6 @@ Download the matching asset from [robot-descriptions-common Releases](https://gi
 ## Related
 
 - [Switch Robot](../../2-how_to/2-switch_robot.md)
+- [ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md) — `demo` / `split_body` / `full_body` declare these args
 - [Naming Conventions](../../3-concepts/3-naming_conventions.md)
 - [Brand packages](3-brand_public.md)

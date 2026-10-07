@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -31,7 +31,9 @@ msgid ""
 "Shared end-effector, hand, and sensor descriptions, plus "
 "**`robot_common_launch`** (common launch entry, xacro mappings, machine-"
 "profile merge)."
-msgstr "共享的末端、手与传感器描述，以及 **`robot_common_launch`**（共用 launch 入口、xacro 映射、整机 profile 合并）。"
+msgstr ""
+"共享的末端、手与传感器描述，以及 **`robot_common_launch`**（共用 launch 入口、xacro 映射、整机 "
+"profile 合并）。"
 
 #: ../../source/4-reference/descriptions/2-common.md:5
 #: 7c845f39f2c142d881200ea88821d3dd
@@ -55,7 +57,9 @@ msgid ""
 "descriptions-common/blob/main/robot_common_launch/README.md). There is no"
 " `gripper:=` launch argument."
 msgstr ""
-"末端 / `type` 行为依据 [`robot_common_launch/README.md`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)。没有 `gripper:=` launch 参数。"
+"末端 / `type` 行为依据 [`robot_common_launch/README.md`](https://github.com"
+"/fiveages-sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/README.md)。没有 `gripper:=` launch 参数。"
 
 #: ../../source/4-reference/descriptions/2-common.md:13
 #: af29b531ae0a40189ff751aa1e23d864
@@ -63,8 +67,7 @@ msgid ""
 "In-tree folders (browse the repo; do not invent extra package names): "
 "`gripper/`, `dexhands/`, `sensor_models/`, `component_models/`, "
 "`robot_common_launch/`."
-msgstr ""
-"仓库内目录（请浏览仓库，不要编造额外包名）：`gripper/`、`dexhands/`、`sensor_models/`、`component_models/`、`robot_common_launch/`。"
+msgstr "仓库内目录（请浏览仓库，不要编造额外包名）：`gripper/`、`dexhands/`、`sensor_models/`、`component_models/`、`robot_common_launch/`。"
 
 #: ../../source/4-reference/descriptions/2-common.md:15
 #: ee8104100a9649e6b265d9ee8eac458e
@@ -196,14 +199,16 @@ msgstr "含义"
 #: da922c9037204d3fa731128e831af863
 #, fuzzy
 msgid "`type`"
-msgstr "类型"
+msgstr "`type`"
 
 #: ../../source/4-reference/descriptions/2-common.md:7
 #: 61f43b23a3bb402d88fe268354f1f359
 msgid ""
 "Symmetric end-effector key, **or** arm topology `left` / `right` / "
 "`dual`. Topology does **not** expand into `left_type` / `right_type`."
-msgstr "对称末端键，**或**臂拓扑 `left` / `right` / `dual`。拓扑**不会**展开成 `left_type` / `right_type`。"
+msgstr ""
+"对称末端键，**或**臂拓扑 `left` / `right` / `dual`。拓扑**不会**展开成 `left_type` / "
+"`right_type`。"
 
 #: ../../source/4-reference/descriptions/2-common.md:7
 #: ce7f8fd03a764822b12afe437aebf9c6
@@ -211,9 +216,13 @@ msgid "`left_type` / `right_type`"
 msgstr "`left_type` / `right_type`"
 
 #: ../../source/4-reference/descriptions/2-common.md:7
-#: b22bc5d283fc409aba7b8c7868bf2a14
-msgid "Different left / right end-effector keys"
-msgstr "左右不同的末端键"
+#: 5d707921e30a4449bb6b3d4f1fa1b43a
+msgid ""
+"Per-side EEF keys. `create_eef_side_launch_arguments()` lists example "
+"keys `rg75`, `ag2f90_c`, `linkerhand_o7`. Use together for asymmetric "
+"setups; **do not pass `type:=`** then."
+msgstr ""
+"分侧末端键。`create_eef_side_launch_arguments()` 列出的示例键为 `rg75`、`ag2f90_c`、`linkerhand_o7`。左右不同时一起使用；此时**不要再传 `type:=`**。"
 
 #: ../../source/4-reference/descriptions/2-common.md:7
 #: af296ee1ab234d9293201e96c67674a0
@@ -265,7 +274,8 @@ msgid ""
 "`type` / `left_type` / `right_type`. `platform`, `ft`, and `tcp_offset` "
 "from the profile still apply."
 msgstr ""
-"设 **`use_profile_eef:=false`** 可忽略该段，强制使用命令行 `type` / `left_type` / `right_type`。profile 中的 `platform`、`ft`、`tcp_offset` 仍然生效。"
+"设 **`use_profile_eef:=false`** 可忽略该段，强制使用命令行 `type` / `left_type` / "
+"`right_type`。profile 中的 `platform`、`ft`、`tcp_offset` 仍然生效。"
 
 #: ../../source/4-reference/descriptions/2-common.md:50
 #: f0275112be7948e6b5a630ba657e99c4
@@ -334,7 +344,8 @@ msgid ""
 " that expands to both sides; a missing side falls back to the symmetric "
 "value."
 msgstr ""
-"Profile 的 `defaults.ft.type`：`none` | `kwr75_485` | `kwr75_usb`（或 left / right）。`end_effectors` / `ft` / `tcp_offset` 都支持对称键并展开到左右；缺侧回退对称值。"
+"Profile 的 `defaults.ft.type`：`none` | `kwr75_485` | `kwr75_usb`（或 left / "
+"right）。`end_effectors` / `ft` / `tcp_offset` 都支持对称键并展开到左右；缺侧回退对称值。"
 
 #: ../../source/4-reference/descriptions/2-common.md:71
 #: 675993be9ed746ddabf27b4fd76fef16
@@ -345,7 +356,10 @@ msgid ""
 "silently. Virtual tip also needs `left_ee_frame` / `right_ee_frame` in "
 "`control.patch` (or controller params), e.g. `left_tcp_offset`."
 msgstr ""
-"TCP 字符串在写入 xacro **之前**求值（`${PI/2}`、`pi/2`、`radians(90)`、纯数字）。求值失败会报错，不会静默写入。选用虚拟 tip 时，还需在 `control.patch`（或控制器参数）中设置 `left_ee_frame` / `right_ee_frame`（例如 `left_tcp_offset`）。"
+"TCP 字符串在写入 xacro "
+"**之前**求值（`${PI/2}`、`pi/2`、`radians(90)`、纯数字）。求值失败会报错，不会静默写入。选用虚拟 tip "
+"时，还需在 `control.patch`（或控制器参数）中设置 `left_ee_frame` / `right_ee_frame`（例如 "
+"`left_tcp_offset`）。"
 
 #: ../../source/4-reference/descriptions/2-common.md:73
 #: a41686af2d8e4dda92497cfd9d46a0a2
@@ -357,7 +371,8 @@ msgid ""
 "  ft:=kwr75_485 \\\n"
 "  tcp_offset_rpy:=\"0 0 ${PI/2}\""
 msgstr ""
-"ros2 launch robot_common_launch humanoid.launch.py robot:=<robot_name> \\\n"
+"ros2 launch robot_common_launch humanoid.launch.py robot:=<robot_name> \\"
+"\n"
 "  robot_profile:=/path/to/machine_profile.yaml \\\n"
 "  ft:=kwr75_485 \\\n"
 "  tcp_offset_rpy:=\"0 0 ${PI/2}\""
@@ -380,7 +395,7 @@ msgstr "场景"
 #: ../../source/4-reference/descriptions/2-common.md:82
 #: 9466840d18424915afd6f09744bdb187
 msgid "Launch"
-msgstr "启动文件"
+msgstr "启动"
 
 #: ../../source/4-reference/descriptions/2-common.md:82
 #: cd0af09bb2db45e5a6fd22af512431fb
@@ -444,7 +459,9 @@ msgid ""
 "arguments via `create_robot_profile_launch_arguments()` / "
 "`create_platform_launch_arguments()`."
 msgstr ""
-"OCS2 的 `demo` / `split_body` / `full_body` 也通过 `create_robot_profile_launch_arguments()` / `create_platform_launch_arguments()` 声明这些一等参数。"
+"OCS2 的 `demo` / `split_body` / `full_body` 也通过 "
+"`create_robot_profile_launch_arguments()` / "
+"`create_platform_launch_arguments()` 声明这些一等参数。"
 
 #: ../../source/4-reference/descriptions/2-common.md:96
 #: b4072da9e25f4201967b642758e5551e
@@ -490,7 +507,7 @@ msgstr ""
 #: ../../source/4-reference/descriptions/2-common.md:108
 #: 3ad7397b06294f72acd6b59950c1a2a3
 msgid "Related"
-msgstr "相关内容"
+msgstr "相关"
 
 #: ../../source/4-reference/descriptions/2-common.md:110
 #: c09fc57c794e4c4cb88d3e36ebaeb3fe
@@ -498,11 +515,19 @@ msgid "[Switch Robot](../../2-how_to/2-switch_robot.md)"
 msgstr "[切换机器人](../../2-how_to/2-switch_robot.md)"
 
 #: ../../source/4-reference/descriptions/2-common.md:111
+#: b3b7a25cb03046e784f167d5cc29b8e4
+msgid ""
+"[ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md) — `demo` /"
+" `split_body` / `full_body` declare these args"
+msgstr ""
+"[ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md) — `demo` / `split_body` / `full_body` 声明这些参数"
+
+#: ../../source/4-reference/descriptions/2-common.md:112
 #: 60154738b91846709a99fc89f13d4ce4
 msgid "[Naming Conventions](../../3-concepts/3-naming_conventions.md)"
 msgstr "[命名规范](../../3-concepts/3-naming_conventions.md)"
 
-#: ../../source/4-reference/descriptions/2-common.md:112
+#: ../../source/4-reference/descriptions/2-common.md:113
 #: 15935108fcbc4034a0503a7f15e481ad
 msgid "[Brand packages](3-brand_public.md)"
 msgstr "[品牌软件包](3-brand_public.md)"
@@ -781,3 +806,6 @@ msgstr "[品牌软件包](3-brand_public.md)"
 
 #~ msgid "[robot_descriptions](1-robot_descriptions.md)"
 #~ msgstr "[robot_descriptions](1-robot_descriptions.md)"
+
+#~ msgid "Different left / right end-effector keys"
+#~ msgstr "左右不同的末端键"

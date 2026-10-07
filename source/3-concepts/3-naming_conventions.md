@@ -17,7 +17,7 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 | `robot_profile` | Machine-profile YAML path | `/path/to/machine_profile.yaml` |
 | `ft` / `left_ft` / `right_ft` | Force-torque (not gated by `use_profile_eef`) | `kwr75_485` |
 
-There is no `gripper:=` / `gripper_type:=` launch argument. Merge: **CLI > profile > xacro defaults**. See [robot_common_launch](../4-reference/descriptions/2-common.md).
+There is no `gripper:=` / `gripper_type:=` launch argument. Merge: **CLI > profile > xacro defaults**. With `left_type` / `right_type`, **do not pass `type:=`**. See [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 :::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:35+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -459,6 +459,22 @@ msgid "Robot name"
 msgstr "机器人名称"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:64
+#: dc94328bcd6741d2ad0015280aa9899d
+#, fuzzy
+msgid "`type`"
+msgstr "`type`"
+
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:64
+#: 733c22f29f5b437593f31deb89bb0efc
+msgid "empty"
+msgstr "空"
+
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:64
+#: 869d97bf49684008a5e820e5d8fa64ec
+msgid "Robot type; empty means do not pass `type` to xacro (launch file)"
+msgstr "机器人 type；为空表示不向 xacro 传 `type`（launch 文件）"
+
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:64
 #: c833861497664b64af92bd63e452f337
 msgid "`hardware`"
 msgstr "`hardware`"
@@ -509,7 +525,16 @@ msgstr "`use_rviz`"
 msgid "Launch RViz"
 msgstr "启动 RViz"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:78
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:79
+#: 746db86ac16347eb82f5b2ddb2c6646a
+msgid ""
+"This demo does **not** declare `left_type` / `right_type`. Those first-"
+"class args come from `create_robot_profile_launch_arguments()` on OCS2 "
+"launches — [ocs2_arm_controller](2-ocs2_arm_controller.md)."
+msgstr ""
+"此 demo **不**声明 `left_type` / `right_type`。那些一等参数来自 OCS2 launch 上的 `create_robot_profile_launch_arguments()` — [ocs2_arm_controller](2-ocs2_arm_controller.md)。"
+
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:81
 #: 9dfc324497e147fe9359b9421200c9e1
 msgid ""
 "Build (README): `colcon build --packages-up-to basic_joint_controller "
@@ -518,27 +543,27 @@ msgstr ""
 "编译（README）：`colcon build --packages-up-to basic_joint_controller "
 "--symlink-install`。"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:80
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:83
 #: a49fcc287d5b4d088f41adeae38c3fed
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:82
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:85
 #: 5efb321fecc842e2b35bd2230876f952
 msgid "[Use basic_joint_controller](../../2-how_to/11-basic_joint.md)"
 msgstr "[使用 basic_joint_controller](../../2-how_to/11-basic_joint.md)"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:83
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:86
 #: 1292e511f0864b25a1c6bfa46478dcde
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:84
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:87
 #: 1292e511f0864b25a1c6bfa46478dcde
 msgid "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:85
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:88
 #: aaf689bdc8f244a0b3027e1af817d2e7
 msgid ""
 "[ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 "
@@ -547,7 +572,7 @@ msgstr ""
 "[ocs2_arm_controller](2-ocs2_arm_controller.md) — "
 "分体控制（`split_body.launch.py`）用本控制器驱动身体/头部"
 
-#: ../../source/4-reference/controllers/7-basic_joint_controller.md:86
+#: ../../source/4-reference/controllers/7-basic_joint_controller.md:89
 #: 8050bbde78fe4006902bd7eb5303faa9
 msgid "[ocs2-wbc-controller](3-ocs2_wbc.md) — 全身控制"
 msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md) — 全身控制"

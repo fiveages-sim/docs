@@ -60,6 +60,25 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac type:=AG2F90-C
 
 Build (README): `colcon build --packages-up-to ocs2_arm_controller --symlink-install`.
 
+## End-effectors (`type` / `left_type` / `right_type`)
+
+`demo.launch.py`, `split_body.launch.py`, and `full_body.launch.py` declare `type` and also call `create_robot_profile_launch_arguments()` from [`robot_common_launch`](../descriptions/2-common.md). That helper adds **`left_type` / `right_type`** (and `use_profile_eef` / `robot_profile`). There is no `gripper:=` argument.
+
+From `create_eef_side_launch_arguments()`: `left_type` is a left EEF key (`rg75`, `ag2f90_c`, `linkerhand_o7`, …). Use with `right_type` for asymmetric setups; **do not pass `type:=`** in that case.
+
+:::{code-block} bash
+# Symmetric EEF (package README)
+ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C
+
+# Different L/R (robot_common_launch README)
+ros2 launch ocs2_arm_controller demo.launch.py \
+  robot_profile:=/path/to/machine_profile.yaml \
+  use_profile_eef:=false \
+  left_type:=rg75 right_type:=linkerhand_o7
+:::
+
+`type` may also be arm topology `left` / `right` / `dual` (does **not** expand to `left_type` / `right_type`). Full merge rules: [robot_common_launch](../descriptions/2-common.md).
+
 ## Configuration (README)
 
 YAML: `config/ocs2_arm_controller.yaml`. README lists `joints`, `home_pos`, `zero_pos`, `robot_pkg`, `update_rate`, `force_gains`.
@@ -75,6 +94,8 @@ Control mode is auto-detected from hardware interfaces (position-only vs force/`
 ## Related
 
 - [basic_joint_controller](7-basic_joint_controller.md)
+- [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
+- [Switch Robot](../../2-how_to/2-switch_robot.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
 - [ocs2-wbc-controller](3-ocs2_wbc.md)

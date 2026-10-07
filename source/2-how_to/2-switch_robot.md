@@ -74,8 +74,9 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 There is **no** `gripper:=` argument. End-effectors are selected by **`robot_common_launch`**:
 
 - Symmetric EEF: `type:=<eef_key>`
-- Different left / right: `left_type:=` and `right_type:=`
+- Different left / right: `left_type:=` and `right_type:=` together; **do not pass `type:=`** then (`create_eef_side_launch_arguments()`)
 - `type` may also be arm topology `left` / `right` / `dual` (that does **not** become `left_type` / `right_type`)
+- OCS2 `demo` / `split_body` / `full_body` declare these via `create_robot_profile_launch_arguments()`. `basic_joint_controller` `demo.launch.py` only declares `type`.
 
 Profile YAML `defaults.end_effectors` is applied when `use_profile_eef:=true` (default). Set `use_profile_eef:=false` to force the CLI keys. Merge order: **CLI > profile > xacro defaults**. FT (`ft` / `left_ft` / `right_ft`) and TCP offsets are separate and always take the profile unless CLI overrides them.
 

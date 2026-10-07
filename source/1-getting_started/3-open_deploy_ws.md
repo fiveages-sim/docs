@@ -140,7 +140,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 
 ### End-effector (`type`)
 
-Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: `left_type:=` / `right_type:=`. Profile `defaults.end_effectors` is used when `use_profile_eef:=true` (default). See [robot_common_launch](../4-reference/descriptions/2-common.md).
+Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: `left_type:=` / `right_type:=` together (**do not pass `type:=`** then). Profile `defaults.end_effectors` is used when `use_profile_eef:=true` (default). See [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 :::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py \

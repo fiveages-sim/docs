@@ -62,6 +62,8 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht type:=single h
 ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht type:=dual hardware:=real
 :::
 
+README `type:=dual` / `type:=single` is **arm topology**, not an end-effector key, and does **not** expand to `left_type` / `right_type`. Different L/R EEF keys use `left_type:=` / `right_type:=` (do not also pass `type:=`) — [robot_common_launch](../../4-reference/descriptions/2-common.md).
+
 Zenoh: same as other deploy hosts — `ros-jazzy-rmw-zenoh-cpp` and `RMW_IMPLEMENTATION=rmw_zenoh_cpp` (README).
 
 ## Related

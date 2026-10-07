@@ -25,6 +25,8 @@ ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>
 
 `full_body.launch.py` (`launch_mode` `full_body`) spawns `ocs2_wbc_controller` when the robot’s `controller_manager` type is `ocs2_wbc_controller/Ocs2WbcController`.
 
+The same file declares `type` and `create_robot_profile_launch_arguments()` (`left_type` / `right_type`, `use_profile_eef`). End-effectors: [ocs2_arm_controller](2-ocs2_arm_controller.md) and [robot_common_launch](../descriptions/2-common.md).
+
 Do not treat `split_body.launch.py` as whole-body control.
 
 ## Related

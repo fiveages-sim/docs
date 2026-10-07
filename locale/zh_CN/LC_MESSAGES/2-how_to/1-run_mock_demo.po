@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -132,13 +132,16 @@ msgid "End-effector (`type`)"
 msgstr "末端执行器（`type`）"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:55 71ba5470d8e649289222fb4445488bb4
+#, fuzzy
 msgid ""
-"Not `gripper:=`. Use `type` (symmetric EEF) or `left_type` / `right_type`"
-" (different L/R). Profile `defaults.end_effectors` applies unless "
+"Not `gripper:=`. This launch includes "
+"`create_robot_profile_launch_arguments()`. Symmetric EEF: `type:=`. "
+"Different L/R: `left_type:=` and `right_type:=` together (**do not pass "
+"`type:=`** then). Profile `defaults.end_effectors` applies unless "
 "`use_profile_eef:=false`. See [Switch Robot](2-switch_robot.md) and "
 "[robot_common_launch](../4-reference/descriptions/2-common.md)."
 msgstr ""
-"不是 `gripper:=`。对称末端用 `type`，左右不同用 `left_type` / `right_type`。除非 `use_profile_eef:=false`，否则使用 profile 的 `defaults.end_effectors`。见 [切换机器人](2-switch_robot.md) 与 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
+"不是 `gripper:=`。此 launch 包含 `create_robot_profile_launch_arguments()`。对称末端：`type:=`。左右不同：同时传 `left_type:=` 与 `right_type:=`（此时**不要再传 `type:=`**）。除非 `use_profile_eef:=false`，否则使用 profile 的 `defaults.end_effectors`。见 [切换机器人](2-switch_robot.md) 与 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
 
 #: ../../source/2-how_to/1-run_mock_demo.md:57 efd54dbe4ea14403be618983781d5054
 #, fuzzy

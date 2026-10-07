@@ -52,7 +52,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht hardware:=mock
 
 ### End-effector (`type`)
 
-Not `gripper:=`. Use `type` (symmetric EEF) or `left_type` / `right_type` (different L/R). Profile `defaults.end_effectors` applies unless `use_profile_eef:=false`. See [Switch Robot](2-switch_robot.md) and [robot_common_launch](../4-reference/descriptions/2-common.md).
+Not `gripper:=`. This launch includes `create_robot_profile_launch_arguments()`. Symmetric EEF: `type:=`. Different L/R: `left_type:=` and `right_type:=` together (**do not pass `type:=`** then). Profile `defaults.end_effectors` applies unless `use_profile_eef:=false`. See [Switch Robot](2-switch_robot.md) and [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 :::{code-block} bash
 ros2 launch ocs2_arm_controller demo.launch.py \

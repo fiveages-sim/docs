@@ -30,11 +30,14 @@ ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_body
 ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_head:=false
 :::
 
-| Argument | Default (README) |
-|----------|------------------|
+| Argument | Default (README / launch) |
+|----------|---------------------------|
 | `robot` | `fiveages_w1` |
+| `type` | empty (do not pass a type arg to xacro) |
 | `hardware` | `mock_components` (`gz` / `isaac` / `mock_components`) |
 | `enable_head` / `enable_body` | `true` |
+
+This demo declares **`type` only**. It does not declare `left_type` / `right_type`. Mixed L/R EEF is on OCS2 `demo` / `split_body` / `full_body` via [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 ## Switch FSM
 

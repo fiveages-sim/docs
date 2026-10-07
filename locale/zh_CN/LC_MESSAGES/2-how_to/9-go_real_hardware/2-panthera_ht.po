@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -49,7 +49,7 @@ msgstr ""
 #: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:7
 #: 5f0ecc90d9844966ae2916e34925f8eb
 msgid "Source of truth"
-msgstr "以源仓库为准"
+msgstr "事实来源"
 
 #: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:10
 #: 3062644b0e454c978b6f3928ad61f107
@@ -200,6 +200,17 @@ msgstr ""
 "type:=dual hardware:=real"
 
 #: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:65
+#: 2edd053b5f4a4c93a437430072862509
+msgid ""
+"README `type:=dual` / `type:=single` is **arm topology**, not an end-"
+"effector key, and does **not** expand to `left_type` / `right_type`. "
+"Different L/R EEF keys use `left_type:=` / `right_type:=` (do not also "
+"pass `type:=`) — "
+"[robot_common_launch](../../4-reference/descriptions/2-common.md)."
+msgstr ""
+"README 里的 `type:=dual` / `type:=single` 是**臂拓扑**，不是末端键，也**不会**展开成 `left_type` / `right_type`。左右不同末端用 `left_type:=` / `right_type:=`（不要同时再传 `type:=`）— [robot_common_launch](../../4-reference/descriptions/2-common.md)。"
+
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:67
 #: faec3b86e07844b59021eea20c081834
 msgid ""
 "Zenoh: same as other deploy hosts — `ros-jazzy-rmw-zenoh-cpp` and "
@@ -208,32 +219,31 @@ msgstr ""
 "Zenoh：与其他部署主机相同 — `ros-jazzy-rmw-zenoh-cpp` 和 "
 "`RMW_IMPLEMENTATION=rmw_zenoh_cpp`（README）。"
 
-#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:67
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:69
 #: 3fd3ed7e4a6e4b3f9729fedfdb086c98
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:69
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:71
 #: ea60241413df4ab3a3fe8c15672d7ae3
 #, fuzzy
 msgid "[Go to Real Hardware](0-index.md)"
 msgstr "[部署到真实机器人](9-go_real_hardware.md)"
 
-#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:70
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:72
 #: 9e616f125770486bb24dd12e7be25cdf
 #, fuzzy
 msgid "[ARX Lift 2S](1-arx_lift2s.md)"
 msgstr "[方舟无限 Lift 2S](11-arx_lift2s.md)"
 
-#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:71
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:73
 #: 64498fa598c8463dab69b70367639a18
 #, fuzzy
 msgid "[Isomorphic Teleop](../7-isomorphic_teleop.md)"
 msgstr "[同构遥操作](7-isomorphic_teleop.md)"
 
-#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:72
+#: ../../source/2-how_to/9-go_real_hardware/2-panthera_ht.md:74
 #: 39e8bed3a333459d96b6436538263c4b
 #, fuzzy
 msgid "[open-deploy-ws setup](../../1-getting_started/3-open_deploy_ws.md)"
 msgstr "[open-deploy-ws 设置](../1-getting_started/3-open_deploy_ws.md)"
-

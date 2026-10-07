@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -44,7 +44,10 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)"
 " and the package `launch/` files. Do not invent extra topics."
 msgstr ""
-"下列 FSM 与 launch 名称来自 [ocs2_arm_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md) 及软件包 `launch/`。不要编造额外话题。"
+"下列 FSM 与 launch 名称来自 [ocs2_arm_controller/README.md](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)"
+" 及软件包 `launch/`。不要编造额外话题。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:10
 #: 596b39892fd741e5b40b7f066214f8f0
@@ -178,7 +181,11 @@ msgid ""
 "OCS2 and `4` as MOVEJ — see "
 "[basic_joint_controller](7-basic_joint_controller.md)."
 msgstr ""
-"`arms_controller_common` 还实现 **MoveJ**（`StateMoveJ`）和 `FSMCommandPublisher`，后者向 `/fsm_command` 发布 **`std_msgs/Int32`**（该头文件中的值：`1` HOME，`2` HOLD，`3` OCS2，`4` MOVEJ）。在混合 OCS2/WBC 栈上，`basic_joint_controller` 把 `3` 当作 OCS2、`4` 当作 MOVEJ — 见 [basic_joint_controller](7-basic_joint_controller.md)。"
+"`arms_controller_common` 还实现 **MoveJ**（`StateMoveJ`）和 "
+"`FSMCommandPublisher`，后者向 `/fsm_command` 发布 "
+"**`std_msgs/Int32`**（该头文件中的值：`1` HOME，`2` HOLD，`3` OCS2，`4` MOVEJ）。在混合 "
+"OCS2/WBC 栈上，`basic_joint_controller` 把 `3` 当作 OCS2、`4` 当作 MOVEJ — 见 "
+"[basic_joint_controller](7-basic_joint_controller.md)。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:38
 #: 6546bc87c21a4f29b520108f0d03e05d
@@ -202,7 +209,8 @@ msgid ""
 "Body and head: `basic_joint_controller` (`setup_body_controllers` for "
 "`body` and `head`, e.g. `body_joint_controller`)"
 msgstr ""
-"身体和头部：`basic_joint_controller`（`setup_body_controllers` 处理 `body` 与 `head`，例如 `body_joint_controller`）"
+"身体和头部：`basic_joint_controller`（`setup_body_controllers` 处理 `body` 与 "
+"`head`，例如 `body_joint_controller`）"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:44
 #: 039fd7187f454f9ab4ed43e1452f551c
@@ -223,7 +231,10 @@ msgid ""
 "config type is `ocs2_wbc_controller/Ocs2WbcController`. That is **全身控制** "
 "— see [ocs2-wbc-controller](3-ocs2_wbc.md)."
 msgstr ""
-"同一软件包还有 `full_body.launch.py`（`launch_mode` 为 `full_body`）：当机器人配置 type 为 `ocs2_wbc_controller/Ocs2WbcController` 时会拉起 **`ocs2_wbc_controller`**。那是**全身控制** — 见 [ocs2-wbc-controller](3-ocs2_wbc.md)。"
+"同一软件包还有 `full_body.launch.py`（`launch_mode` 为 `full_body`）：当机器人配置 type 为 "
+"`ocs2_wbc_controller/Ocs2WbcController` 时会拉起 "
+"**`ocs2_wbc_controller`**。那是**全身控制** — 见 [ocs2-wbc-"
+"controller](3-ocs2_wbc.md)。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:52
 #: 168d0cf8562a47699156fa63a78581e3
@@ -242,8 +253,10 @@ msgid ""
 msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx5 type:=r5\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F120S\n"
-"ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac type:=AG2F90-C"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz "
+"type:=AG2F120S\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac "
+"type:=AG2F90-C"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:61
 #: a0762c85e1ff4509a2349e71caf8460d
@@ -254,77 +267,146 @@ msgid ""
 msgstr "colcon build --packages-up-to ocs2_arm_controller\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:63
+#: 3a3ad39d21f54c119f60f067fbb921ad
+msgid "End-effectors (`type` / `left_type` / `right_type`)"
+msgstr "末端执行器（`type` / `left_type` / `right_type`）"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:65
+#: 3d82cde1e19f4eb1a8dd8c5439ac1983
+msgid ""
+"`demo.launch.py`, `split_body.launch.py`, and `full_body.launch.py` "
+"declare `type` and also call `create_robot_profile_launch_arguments()` "
+"from [`robot_common_launch`](../descriptions/2-common.md). That helper "
+"adds **`left_type` / `right_type`** (and `use_profile_eef` / "
+"`robot_profile`). There is no `gripper:=` argument."
+msgstr ""
+"`demo.launch.py`、`split_body.launch.py` 和 `full_body.launch.py` 声明 `type`，并调用 [`robot_common_launch`](../descriptions/2-common.md) 的 `create_robot_profile_launch_arguments()`。该辅助函数增加 **`left_type` / `right_type`**（以及 `use_profile_eef` / `robot_profile`）。没有 `gripper:=` 参数。"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:67
+#: 2648a80444054fe69645ef03f1838050
+msgid ""
+"From `create_eef_side_launch_arguments()`: `left_type` is a left EEF key "
+"(`rg75`, `ag2f90_c`, `linkerhand_o7`, …). Use with `right_type` for "
+"asymmetric setups; **do not pass `type:=`** in that case."
+msgstr ""
+"出自 `create_eef_side_launch_arguments()`：`left_type` 是左侧末端键（`rg75`、`ag2f90_c`、`linkerhand_o7` 等）。与 `right_type` 一起用于左右不同的配置；此时**不要再传 `type:=`**。"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:69
+#: 36921cdd19354e2dadd02310b373c6c0
+msgid ""
+"# Symmetric EEF (package README)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C\n"
+"\n"
+"# Different L/R (robot_common_launch README)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot_profile:=/path/to/machine_profile.yaml \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
+msgstr ""
+"# Symmetric EEF (package README)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C\n"
+"\n"
+"# Different L/R (robot_common_launch README)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot_profile:=/path/to/machine_profile.yaml \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:80
+#: c4ecf2f48238423abee8363d35f59fb1
+msgid ""
+"`type` may also be arm topology `left` / `right` / `dual` (does **not** "
+"expand to `left_type` / `right_type`). Full merge rules: "
+"[robot_common_launch](../descriptions/2-common.md)."
+msgstr ""
+"`type` 也可以是臂拓扑 `left` / `right` / `dual`（**不会**展开成 `left_type` / `right_type`）。完整合并规则见 [robot_common_launch](../descriptions/2-common.md)。"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:82
 #: 86284f50aff341ee80707f9344eb71a4
 #, fuzzy
 msgid "Configuration (README)"
 msgstr "配置"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:65
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:84
 #: 4e6d554be7f84587bbf55a05fc41429a
 msgid ""
 "YAML: `config/ocs2_arm_controller.yaml`. README lists `joints`, "
 "`home_pos`, `zero_pos`, `robot_pkg`, `update_rate`, `force_gains`."
 msgstr ""
-"YAML：`config/ocs2_arm_controller.yaml`。README 列出 `joints`、`home_pos`、`zero_pos`、`robot_pkg`、`update_rate`、`force_gains`。"
+"YAML：`config/ocs2_arm_controller.yaml`。README 列出 "
+"`joints`、`home_pos`、`zero_pos`、`robot_pkg`、`update_rate`、`force_gains`。"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:67
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:86
 #: 6ef456f62659450fa5ce46fd122388ba
 msgid "OCS2 files (loaded from `robot_pkg`):"
 msgstr "OCS2 文件（从 `robot_pkg` 加载）："
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:69
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:88
 #: 20a4a0c2e03b435e921c8800041eca1a
 #, python-brace-format
 msgid "Task: `{robot_pkg}/config/ocs2/task.info`"
 msgstr "任务：`{robot_pkg}/config/ocs2/task.info`"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:70
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:89
 #: e9855011f21742faa9dda24c2733a357
 msgid ""
 "Planning URDF: xacro cache via `robot_common_launch` "
 "(`planning_urdf_path`)"
 msgstr "规划 URDF：经 `robot_common_launch` 的 xacro 缓存（`planning_urdf_path`）"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:71
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:90
 #: b04bf44b57d4472c89f14f39a1eff3ad
 #, python-brace-format
 msgid "Generated library: `{robot_pkg}/config/ocs2/generated`"
 msgstr "生成库：`{robot_pkg}/config/ocs2/generated`"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:73
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:92
 #: 9ea4f38a22d94309b9649a2c114ed9c0
 msgid ""
 "Control mode is auto-detected from hardware interfaces (position-only vs "
 "force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all "
 "present)."
 msgstr ""
-"控制模式由硬件接口自动检测（仅 position，或当 `position`、`velocity`、`effort`、`kp`、`kd` 齐全时为力控/`MIX`）。"
+"控制模式由硬件接口自动检测（仅 position，或当 `position`、`velocity`、`effort`、`kp`、`kd` "
+"齐全时为力控/`MIX`）。"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:75
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:94
 #: f7f452a2f2044f5b9f9ee51fb1c67dfd
 msgid "Related"
-msgstr "相关内容"
+msgstr "相关"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:77
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:96
 #: 9b79ce4cae7b4d94b7d817cadc5143ee
 msgid "[basic_joint_controller](7-basic_joint_controller.md)"
 msgstr "[basic_joint_controller](7-basic_joint_controller.md)"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:78
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:97
+#: 1a5d8c85520c474e9e01aa37b094f230
+msgid ""
+"[robot_common_launch](../descriptions/2-common.md) — `type` / `left_type`"
+" / `right_type`"
+msgstr ""
+"[robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:98
+#: 0f21ee9b55cd4c1b9da8e270af62c3b7
+msgid "[Switch Robot](../../2-how_to/2-switch_robot.md)"
+msgstr "[切换机器人](../../2-how_to/2-switch_robot.md)"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:99
 #: 0f21ee9b55cd4c1b9da8e270af62c3b7
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:79
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:100
 #: 92b1136a51bd411a982bd7691a20bd8d
 msgid "[ocs2_ros2](1-ocs2_ros2.md)"
 msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:80
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:101
 #: 6aadc96b56b547c7ad3aa4f64997a5d3
-#, fuzzy
 msgid "[ocs2-wbc-controller](3-ocs2_wbc.md)"
-msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
+msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md)"
 
 #~ msgid "MPC-based arm controller for the FiveAges Sim stack."
 #~ msgstr "用于 FiveAges Sim 技术栈的基于 MPC 的机械臂控制器。"
