@@ -59,6 +59,6 @@ flowchart LR
 
 After completing setup:
 1. Follow the [Learning Path](../0-overview/2-learning_path.md) for structured learning
-2. Continue by role in [More applications](../6-more_applications/0-index.md) (field, algorithm, VLA, simulation)
+2. Continue by role in [More applications](../6-more_applications/0-index.md) (现场调试, 传统方案算法工程师, VLA 采训推, 仿真工程师)
 3. Explore [How-To Guides](../2-how_to/0-index.md) for specific tasks
 4. Reference the [Architecture](../0-overview/1-architecture.md) when you need context

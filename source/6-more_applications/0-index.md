@@ -1,17 +1,26 @@
-# More applications
+# Introduction
 
 After the [Learning Path](../0-overview/2-learning_path.md) and [Getting Started](../1-getting_started/0-index.md), continue by **role**. This chapter is a set of short learning paths: who you are, then ordered links into existing How-To, Concepts, and Reference pages.
 
 It does not repeat the beginner day-by-day path. Task recipes stay under [How-To](../2-how_to/0-index.md).
+
+Whatever role you follow, carefully learning how to use the **motion-control / robot control stack** (运控系统) helps later work:
+
+- [ros2_control in This Stack](../3-concepts/1-ros2_control_here.md) — `hardware:=` and how this stack loads controllers
+- [FSM and Topics](../3-concepts/4-fsm_and_topics.md) — `/fsm_command` is `std_msgs/Int32`
+- [Controllers](../4-reference/controllers/0-index.md) — `basic_joint_controller`, OCS2, 分体 / 全身
+- [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)
+
+Hands-on: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 ## Roles
 
 | Role | Start here |
 |------|------------|
 | **Field commissioning** (现场调试) | [Field commissioning](1-field_commissioning.md) — zip deploy, fa-py-libraries, VR teleop, Viser |
-| **Classical algorithm engineer** (传统方案算法) | [Classical algorithm engineer](2-classical_algorithm.md) — Python API for your own vision / control loop |
+| **Classical algorithm engineer** (传统方案算法工程师) | [Classical algorithm engineer](2-classical_algorithm.md) — Python API for your own vision / control loop |
 | **VLA collect / train / deploy** (VLA 采训推) | [VLA collect / train / deploy](3-vla_collect_train_deploy.md) — VR collection, whole-body + waist, force-related pages |
-| **Simulation engineer** (仿真) | [Simulation engineer](4-simulation_engineer.md) — USD / Isaac assets, robot config, action composition |
+| **Simulation engineer** (仿真工程师) | [Simulation engineer](4-simulation_engineer.md) — USD / Isaac assets, robot config, action composition |
 
 ## How to use this chapter
 
