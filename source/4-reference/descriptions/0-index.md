@@ -42,7 +42,7 @@ robot_descriptions (umbrella)
 |---------|--------|------------|
 | [robot_descriptions](1-robot_descriptions.md) | Umbrella | Public |
 | [robot-descriptions-common](2-common.md) | Grippers, sensors | Public |
-| [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HT | Public |
+| [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HighTorque | Public |
 | [robot-descriptions-fiveages](4-fiveages_umbrella.md) | FA robots | Private |
 | [FA robot descriptions](5-fa_robots.md) | W2, S2, etc. | Private |
 | [Vendor arms](6-vendor_arms_private.md) | Tianji, Rokae, etc. | Private |

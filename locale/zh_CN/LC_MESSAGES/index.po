@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:31+0000\n"
+"POT-Creation-Date: 2026-10-07 01:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -20,36 +20,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/index.md:33
+#: ../../source/index.md:34
 msgid "Overview"
 msgstr "概述"
 
-#: ../../source/index.md:5 ../../source/index.md:44
-#: 1e6fa08265be46f9beffa7676b5757c9
+#: ../../source/index.md:5 ../../source/index.md:45
+#: 2e2470d0e6fd4917a93a3b2822f61315
 msgid "Getting Started"
 msgstr "快速入门"
 
-#: ../../source/index.md:56
+#: ../../source/index.md:57
 msgid "How-To Guides"
 msgstr "操作指南"
 
-#: ../../source/index.md:73
+#: ../../source/index.md:77
 msgid "Concepts"
 msgstr "核心概念"
 
-#: ../../source/index.md:86
+#: ../../source/index.md:90
 msgid "Reference"
 msgstr "参考手册"
 
-#: ../../source/index.md:98
+#: ../../source/index.md:102
 msgid "Developer Guide"
 msgstr "开发者指南"
 
-#: ../../source/index.md:1 d6b4c084a18f47b1aed2b8f912dfb703
+#: ../../source/index.md:112
+msgid "Synthetic Data"
+msgstr "合成数据"
+
+#: ../../source/index.md:1 03ea19de645e4cddaeb0e9a6e8908971
 msgid "FiveAges Sim Documentation"
 msgstr "FiveAges Sim 文档"
 
-#: ../../source/index.md:3 51217948828f490cb1895d34b8c5108b
+#: ../../source/index.md:3 a492d5ca9790426e80b52c068f8b4624
 msgid ""
 "Welcome to the documentation for **FiveAges Sim** — a multi-repository ROS 2"
 " robotics ecosystem for control, simulation, and deployment developed by "
@@ -58,7 +62,7 @@ msgstr ""
 "欢迎阅读 **FiveAges Sim** 文档 — 这是由 [FiveAges](https://github.com/fiveages-sim) "
 "开发的多仓库 ROS 2 机器人生态系统，覆盖控制、仿真与部署。"
 
-#: ../../source/index.md:8 e5c24e3da3604274a98e716bc5bfbb42
+#: ../../source/index.md:8 23197c9aa9fb422281130d631e085384
 msgid ""
 "New here? Start with the [Learning Path](0-overview/2-learning_path.md) to "
 "understand the stack, then follow [Quick Demo (Public "
@@ -67,89 +71,95 @@ msgid ""
 msgstr ""
 "第一次来？请先阅读[学习路径](0-overview/2-learning_path.md)以了解技术栈，然后按照[快速演示（公开路径）](1-getting_started/1-quick_demo_public.md)操作，几分钟内即可在仿真中让机器人动起来。"
 
-#: ../../source/index.md:11 0db652fba869443ba4e6f286f5cca0d6
+#: ../../source/index.md:11 17677ddf90d641c2aa4bcc94b95f29ef
 msgid "About This Ecosystem"
 msgstr "关于本生态系统"
 
-#: ../../source/index.md:13 26b9af0e90bb47c983d48f16f291fd98
+#: ../../source/index.md:13 e3ab7f57e4cc41e5bd48a3a68d67e88a
 msgid "FiveAges Sim provides:"
 msgstr "FiveAges Sim 提供："
 
-#: ../../source/index.md:15 9249cbb0e466416e9396f7183697cc2a
+#: ../../source/index.md:15 e437796aee7b410182a8ef7dad7375fb
 msgid ""
 "**Unified robot descriptions** — URDF/xacro packages for wheeled-arm "
 "humanoids, manipulators, and mobile robots"
 msgstr "**统一的机器人描述** — 覆盖轮臂人形、机械臂和移动机器人的 URDF/xacro 软件包"
 
-#: ../../source/index.md:16 f34fdfb43de0453f9eb7309a771f99a3
+#: ../../source/index.md:16 423b30434d85407f85ab3b2f4187f2d5
 msgid ""
 "**Hardware interfaces** — ROS 2 control plugins for various robot platforms "
-"(Dobot, ARX, Galbot, HT, and more)"
-msgstr "**硬件接口** — 适用于多种机器人平台（Dobot、ARX、Galbot、HT 等）的 ROS 2 control 插件"
+"(Dobot, ARX, Galbot, HighTorque, and more)"
+msgstr "**硬件接口** — 面向多款机器人平台的 ROS 2 control 插件（越疆、方舟无限、银河通用、高擎等）"
 
-#: ../../source/index.md:17 4913af9293d5430f83a2f60c22f8e5b2
+#: ../../source/index.md:17 8e7b5480477749e5b162afe896263a0d
 msgid "**MPC controllers** — OCS2-based arm and whole-body controllers"
 msgstr "**MPC 控制器** — 基于 OCS2 的机械臂与全身控制器"
 
-#: ../../source/index.md:18 d73c262adab341fab5cfa51030756bbd
+#: ../../source/index.md:18 5b360293d5d7454086cf5201eccc3a00
 msgid ""
 "**Simulation backends** — Gazebo Harmonic and NVIDIA Isaac Sim integration"
 msgstr "**仿真后端** — 集成 Gazebo Harmonic 与 NVIDIA Isaac Sim"
 
-#: ../../source/index.md:19 c401eb78da414b028224080ce74b8133
+#: ../../source/index.md:19 04133b94dc2e478299c9e26de08e3249
 msgid ""
 "**Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based "
 "teleoperation"
 msgstr "**遥操作方案** — VR、同构遥操作、DexCap 以及基于手套的遥操作"
 
-#: ../../source/index.md:20 69dd37bc12c144f390b9babe4812d8dc
+#: ../../source/index.md:20 b2b8657ca7d04a1e9a931c38ff3febe4
 msgid ""
 "**Python libraries** — High-level interfaces for robot control and data "
 "collection"
 msgstr "**Python 库** — 用于机器人控制与数据采集的高层接口"
 
-#: ../../source/index.md:22 2c759d69d14147dd831ac596b3ac66b7
+#: ../../source/index.md:21 e231137a8be749a8b8aa0fc02456fbd8
+msgid ""
+"**Synthetic data pipeline** — Isaac USD scenes, task-queue orchestration, "
+"LeRobot record/export"
+msgstr "**合成数据流水线** — Isaac USD 场景、任务队列编排、LeRobot 录制/导出"
+
+#: ../../source/index.md:23 0e4d8a5506c747a393d3e669245f79f1
 msgid "Two Entry Paths"
 msgstr "两条入口路径"
 
-#: ../../source/index.md:5 af9f00e81e97469ab179bef4462cd49e
+#: ../../source/index.md:5 6e1b4bbabd4b445c96e52c6a0cc01bf0
 msgid "Path"
 msgstr "路径"
 
-#: ../../source/index.md:5 05f7ac0fa5b549a0b5a4dedd5d1aa554
+#: ../../source/index.md:5 d4dcee1fa50e484385ebf80b8df3e833
 msgid "Workspace"
 msgstr "工作空间"
 
-#: ../../source/index.md:5 b6549a447bbd4340b4be143bb4ad09e2
+#: ../../source/index.md:5 e968900bc2c44946983eb5014e3b19c7
 msgid "Audience"
 msgstr "目标用户"
 
-#: ../../source/index.md:5 0db09c7232c54d65bfcf20d665c250bd
+#: ../../source/index.md:5 5fb404acdba7458689f9473223f4b86c
 msgid "**Public**"
 msgstr "**公开**"
 
-#: ../../source/index.md:5 741f7e5a890d4c8f952af416af3e26f2
+#: ../../source/index.md:5 566b598cb476469b93d3332dac1b3733
 msgid "`open-deploy-ws`"
 msgstr "`open-deploy-ws`"
 
-#: ../../source/index.md:5 0635bd4de38948aeb0f02e9c27141477
+#: ../../source/index.md:5 89caf333d18d4e45a73599311a2b2465
 msgid "External users, OSS contributors; public submodules only"
 msgstr "外部用户、开源贡献者；仅公开子模块"
 
-#: ../../source/index.md:5 804f78d9412e4ff1b34189e87852b3d7
+#: ../../source/index.md:5 ef338c1e6bcc4fcdbfe6f45695e56d56
 msgid "**Internal**"
 msgstr "**内部**"
 
-#: ../../source/index.md:5 949436e047924df4861f911077e5a411
+#: ../../source/index.md:5 1c1c1c7d7e3f40d7a0c039b835bc5660
 msgid "`fa-deploy-ws`"
 msgstr "`fa-deploy-ws`"
 
-#: ../../source/index.md:5 b0a8cccfd8364cee9924bf1f140e3f18
+#: ../../source/index.md:5 c617b4186f8544da91908473f0478f73
 msgid ""
 "FiveAges team; FA wheeled-arm humanoids (W2/W2R/S2/S2R) + dual-arm systems"
 msgstr "FiveAges 团队；FA 轮臂人形（W2/W2R/S2/S2R）+ 双臂系统"
 
-#: ../../source/index.md:29 1d72481bbaf948d5b3167efcee0695c4
+#: ../../source/index.md:30 2e9efec246a248d98bfa73fc4889811d
 msgid ""
 "Start with the [public path](1-getting_started/3-open_deploy_ws.md) if "
 "you're new. Internal users should read [fa-deploy-ws "
@@ -159,33 +169,23 @@ msgstr ""
 "如果你是新用户，请从[公开路径](1-getting_started/3-open_deploy_ws.md)开始。内部用户在熟悉技术栈之后，应阅读 "
 "[fa-deploy-ws 配置](1-getting_started/4-fa_deploy_ws.md)。"
 
-#: ../../source/index.md:31 f76701a62e004da4bfed257c4698572f
+#: ../../source/index.md:32 1bad7093e4bd421882f3dd67829e4c4f
 msgid "Documentation Structure"
 msgstr "文档结构"
 
-#: ../../source/index.md:108 bd1e719b31d946ac9b1cbd9bf1352724
+#: ../../source/index.md:122 018d10150fdd4b30994d6b88cd976e63
 msgid "Quick Links"
 msgstr "快速链接"
 
-#: ../../source/index.md:110 6398cc8fa9b046c89bb6753cc68224a0
+#: ../../source/index.md:124 0b2d3f67f95e475bb2c7a7cd033eb3f1
 msgid "[GitHub Organization](https://github.com/fiveages-sim)"
 msgstr "[GitHub 组织](https://github.com/fiveages-sim)"
 
-#: ../../source/index.md:111 a25f83a42bfd4f9580d78d14b5ff055f
+#: ../../source/index.md:125 aa69d8445edb43c4af1c979b6abd6462
 msgid "[OCS2 ROS 2 Port](https://github.com/legubiao/ocs2_ros2)"
 msgstr "[OCS2 ROS 2 移植](https://github.com/legubiao/ocs2_ros2)"
 
-#: ../../source/index.md:112 d591b1e408ac4363a0632d08cf35f790
+#: ../../source/index.md:126 763864906fc74a719386e44cc863293e
 msgid ""
 "[Report Documentation Issues](https://github.com/fiveages-sim/docs/issues)"
 msgstr "[报告文档问题](https://github.com/fiveages-sim/docs/issues)"
-
-#: ../../source/index.md:109
-msgid "Synthetic Data"
-msgstr "合成数据"
-
-#: ../../source/index.md:21 ad6d8b22db234008861d4503f025ba1c
-msgid ""
-"**Synthetic data pipeline** — Isaac USD scenes, task-queue orchestration, "
-"LeRobot record/export"
-msgstr "**合成数据流水线** — Isaac USD 场景、任务队列编排、LeRobot 录制/导出"

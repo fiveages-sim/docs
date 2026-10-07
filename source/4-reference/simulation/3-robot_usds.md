@@ -4,6 +4,8 @@ USD robot asset superproject for Isaac Sim.
 
 **Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-sim/robot_usds)
 
+Brand **EN/ZH** labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (English folder names match that table). Examples: 方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 中科第五纪 = **FiveAges**. Do not invent brands (including bare “Ark”).
+
 ## Purpose
 
 `robot_usds` provides:

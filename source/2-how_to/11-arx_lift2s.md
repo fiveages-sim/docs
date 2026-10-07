@@ -1,8 +1,10 @@
-# Ark / Lift 2s
+# ARX Lift 2S
 
-**Ark (方舟)** is **Lift 2s**: the full-body platform (arms **plus** lift axis and **mobile base / chassis**), not an arm-only robot.
+**ARX** (方舟无限) is the brand. **Lift 2S** is that brand’s full-body **mobile manipulator**: arms **plus** lift axis and **mobile base / chassis**, not an arm-only robot.
 
-**Acone** is the **arm portion** of the same stack (manipulator only). It is not the Lift 2s platform. The `arx-lift2s` workspace can launch Acone from `quick_start` for co-debug; the product focus of that branch is Lift 2s.
+**Acone** / **AC One** is the **arm portion** of the same stack (manipulator only). It is not the Lift 2S platform. The `arx-lift2s` workspace can launch Acone from `quick_start` for co-debug; the product focus of that branch is Lift 2S.
+
+Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照): 方舟无限 = ARX. Do not use bare “Ark” as the brand name.
 
 ```{admonition} Source of truth
 :class: important
@@ -42,7 +44,7 @@ README menu:
 
 CAN (README): left/right arms `can1` / `can3`; no network IP. Lift axis defaults to `hybrid` (change to `soft_p` in `quick_start`).
 
-X5 / R5 / **ACone** / Lift / X7S in the same menu are `robot-descriptions-arx` models for **co-debug**. Pick **ACone** only when you want the **arm**, not the full Lift 2s chassis.
+X5 / R5 / **ACone** / Lift / X7S in the same menu are `robot-descriptions-arx` models for **co-debug**. Pick **ACone** only when you want the **arm**, not the full Lift 2S chassis.
 
 ## Optional README launch lines
 
@@ -62,5 +64,5 @@ Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and `export RM
 ## Related
 
 - [Go to Real Hardware](9-go_real_hardware.md)
-- [Panthera HT](12-panthera_ht.md)
+- [HighTorque Panthera HT](12-panthera_ht.md)
 - [open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)

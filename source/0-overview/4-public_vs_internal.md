@@ -8,8 +8,8 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 |--------|-------------|---------------|
 | **Workspace** | `open-deploy-ws` | `fa-deploy-ws` |
 | **Access** | Anyone (public GitHub) | FiveAges team only |
-| **Robots** | Dobot, ARX, Galbot, HT, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
-| **Real Hardware** | Ark / Lift 2s (full-body), Acone (arm only), Panthera HT | All FA robots |
+| **Robots** | Dobot, ARX, Galbot, HighTorque, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
+| **Real Hardware** | ARX Lift 2S (full-body), Acone (arm only), HighTorque Panthera HT | All FA robots |
 | **Submodules** | Public only | Public + private |
 | **OCS2** | GitHub Release `.deb` or source | Full source (default) |
 | **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
@@ -17,7 +17,7 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 ```{admonition} Real Hardware on Public Path
 :class: tip
 
-**Ark / Lift 2s** is the full-body 方舟 platform (arms + chassis). **Acone** is arm-only. **Panthera HT** is a dual-arm manipulator. Use the branch READMEs: [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md), [Panthera HT](../2-how_to/12-panthera_ht.md).
+**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator (arms + chassis). **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is a dual-arm manipulator. Use the branch READMEs: [ARX Lift 2S](../2-how_to/11-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md).
 ```
 
 ## open-deploy-ws (Public)
@@ -27,8 +27,8 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 ### Features
 
 - All submodules are publicly accessible
-- Supports multiple robots: Dobot CR5, ARX (Acone arm, Lift 2s / Ark full-body), Galbot, Panthera HT
-- **Real hardware:** [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md) and [Panthera HT](../2-how_to/12-panthera_ht.md) via their `open-deploy-ws` branches (`arx-lift2s`, `panthera-ht`)
+- Supports multiple robots: Dobot CR5, ARX (Acone arm, Lift 2S full-body), Galbot, HighTorque Panthera HT
+- **Real hardware:** [ARX Lift 2S](../2-how_to/11-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md) via their `open-deploy-ws` branches (`arx-lift2s`, `panthera-ht`)
 - OCS2 available as a GitHub Release `.deb` (`ros-jazzy-ocs2`; not from apt / packages.ros.org)
 - Lean branches: `dobot-cr5`, `arx-lift2s`, `panthera-ht`
 - Good for learning, experimentation, contributing, and real robot deployment
@@ -66,10 +66,10 @@ For minimal builds focusing on a single robot:
 # Dobot CR5 only
 git checkout dobot-cr5
 
-# Ark / Lift 2s (full-body). Acone arm is co-debug in this branch, not a separate platform.
+# ARX Lift 2S (full-body). Acone arm is co-debug in this branch, not a separate platform.
 git checkout arx-lift2s
 
-# Panthera HT
+# HighTorque Panthera HT
 git checkout panthera-ht
 :::
 

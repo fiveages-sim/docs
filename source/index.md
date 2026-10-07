@@ -13,7 +13,7 @@ New here? Start with the [Learning Path](0-overview/2-learning_path.md) to under
 FiveAges Sim provides:
 
 - **Unified robot descriptions** — URDF/xacro packages for wheeled-arm humanoids, manipulators, and mobile robots
-- **Hardware interfaces** — ROS 2 control plugins for various robot platforms (Dobot, ARX, Galbot, HT, and more)
+- **Hardware interfaces** — ROS 2 control plugins for various robot platforms (Dobot, ARX, Galbot, HighTorque, and more)
 - **MPC controllers** — OCS2-based arm and whole-body controllers
 - **Simulation backends** — Gazebo Harmonic and NVIDIA Isaac Sim integration
 - **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation
@@ -69,7 +69,7 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 2-how_to/7-drag_teleop
 2-how_to/8-dexcap_teleop
 2-how_to/9-go_real_hardware
-2-how_to/11-ark_lift2s
+2-how_to/11-arx_lift2s
 2-how_to/12-panthera_ht
 2-how_to/10-add_a_robot
 ```

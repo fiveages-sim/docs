@@ -1,6 +1,8 @@
-# Panthera HT
+# HighTorque Panthera HT
 
-**Panthera HT** (HighTorque) is a dual-arm **manipulator** workspace on `open-deploy-ws` branch `panthera-ht`. It is not Ark / Lift 2s (no mobile chassis).
+**HighTorque** (高擎) is the brand. **Panthera HT** is that brand’s dual-arm **manipulator**. Workspace: `open-deploy-ws` branch `panthera-ht`. It is not ARX Lift 2S (no mobile chassis).
+
+Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照): 高擎 = HighTorque / Panthera.
 
 ```{admonition} Source of truth
 :class: important
@@ -65,6 +67,6 @@ Zenoh: same as other deploy hosts — `ros-jazzy-rmw-zenoh-cpp` and `RMW_IMPLEME
 ## Related
 
 - [Go to Real Hardware](9-go_real_hardware.md)
-- [Ark / Lift 2s](11-ark_lift2s.md)
+- [ARX Lift 2S](11-arx_lift2s.md)
 - [Isomorphic Teleop](7-isomorphic_teleop.md)
 - [open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)

@@ -2,6 +2,8 @@
 
 This page documents the naming patterns used throughout the FiveAges Sim ecosystem.
 
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限 (not bare “Ark”). **HighTorque** / Panthera is 高擎. Package paths such as `arx-lift2s` stay as quoted commands.
+
 ## Launch Parameters
 
 ### Robot Selection
@@ -45,7 +47,7 @@ Pattern: `robot-descriptions-<brand>` or `<robot>-description`
 | Package | Robot(s) |
 |---------|----------|
 | `robot-descriptions-dobot` | Dobot CR series |
-| `robot-descriptions-arx` | ARX X5, Acone (arm), Lift 2s (Ark) |
+| `robot-descriptions-arx` | ARX X5, Acone (arm), Lift 2S |
 | `robot-descriptions-common` | Shared components |
 | `fa-w2-description` | FiveAges W2 |
 
@@ -57,7 +59,7 @@ Pattern: `<brand>-ros2-control`
 |---------|----------|
 | `arx-ros2-control` | ARX CAN interface |
 | `dobot-cr-ros2-control` | Dobot TCP interface |
-| `ht-ros2-control` | HT serial interface |
+| `ht-ros2-control` | HighTorque serial interface |
 
 ### Controller Packages
 

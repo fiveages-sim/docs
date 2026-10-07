@@ -5,16 +5,16 @@ Public ros2_control hardware interface plugins.
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**Ark / Lift 2s** (full-body) and **Acone** (arm only) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [Ark / Lift 2s](../../2-how_to/11-ark_lift2s.md) and [Panthera HT](../../2-how_to/12-panthera_ht.md).
+**ARX Lift 2S** (full-body) and **Acone** / **AC One** (arm only) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **HighTorque Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [ARX Lift 2S](../../2-how_to/11-arx_lift2s.md) and [HighTorque Panthera HT](../../2-how_to/12-panthera_ht.md).
 ```
 
-## ARX
+## ARX (方舟无限)
 
 **Repository:** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control)
 
 ### Purpose
 
-CAN bus interface for ARX robots (X5, Acone arm, Lift 2s / Ark full-body).
+CAN bus interface for ARX robots (X5, Acone arm, Lift 2S full-body).
 
 ### Configuration
 
@@ -99,13 +99,13 @@ SDK2 interface for Unitree quadruped robots.
 | `simulation` | SDK simulation mode |
 | `real` | Physical hardware |
 
-## HT
+## HighTorque (高擎)
 
 **Repository:** [fiveages-sim/ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control)
 
 ### Purpose
 
-Serial interface for **Panthera HT** robots.
+Serial interface for **HighTorque Panthera HT** robots.
 
 ### Configuration
 

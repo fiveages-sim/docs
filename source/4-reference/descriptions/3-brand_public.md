@@ -2,7 +2,24 @@
 
 Public robot description packages for specific brands.
 
-## Dobot
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Do not invent brands. Display names used in this docs set:
+
+| 中文简称 | English brand / identifier |
+|----------|----------------------------|
+| 越疆 | Dobot |
+| 方舟无限 | ARX |
+| 银河通用 | Galbot |
+| 高擎 | HighTorque, Panthera |
+| 中科第五纪 | FiveAges |
+| 天机智能 | Tianji, Gento |
+| 智元 | Agibot |
+| 因时 | Inspire |
+| 舞肌 | Wuji |
+| 法奥 | Fairino |
+| 珞石 | Rokae |
+| 优必选 | Ubtech |
+
+## Dobot (越疆)
 
 **Repository:** [fiveages-sim/robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot)
 
@@ -31,7 +48,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 hardware:=mock
 For valid gripper options, check the launch files in `arms_ros2_control`.
 ```
 
-## ARX
+## ARX (方舟无限)
 
 **Repository:** [fiveages-sim/robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx)
 
@@ -40,19 +57,19 @@ For valid gripper options, check the launch files in `arms_ros2_control`.
 | Robot | Package | Type | Real Hardware |
 |-------|---------|------|---------------|
 | X5 | `arx_x5_description` | Arm | Co-debug in `arx-lift2s` |
-| **Acone** | `arx_acone_description` | **Arm only** | Not Lift 2s; `quick_start` co-debug |
-| **Lift 2s (Ark)** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
+| **Acone** / **AC One** | `arx_acone_description` | **Arm only** | Not Lift 2S; `quick_start` co-debug |
+| **Lift 2S** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
 
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**Ark / Lift 2s** is the full-body 方舟 platform. **Acone** is the arm only. See [Ark / Lift 2s](../../2-how_to/11-ark_lift2s.md).
+**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/11-arx_lift2s.md).
 ```
 
 ### Usage
 
 ```bash
-# Acone arm mock (not Lift 2s). Full-body Ark / Lift 2s: see the dedicated how-to.
+# Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
 ```
 
@@ -65,7 +82,7 @@ sudo ip link set can0 type can bitrate 1000000
 sudo ip link set can0 up
 ```
 
-## Galbot
+## Galbot (银河通用)
 
 **Repository:** [fiveages-sim/robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot)
 
@@ -87,7 +104,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 - Integrated navigation
 - Multiple arm configurations
 
-## HT
+## HighTorque (高擎)
 
 **Repository:** [fiveages-sim/robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht)
 
@@ -100,7 +117,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [Panthera HT](../../2-how_to/12-panthera_ht.md). Launch name in that README is `panthera_ht`.
+**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/12-panthera_ht.md). Launch name in that README is `panthera_ht`.
 ```
 
 ### Usage

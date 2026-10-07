@@ -18,7 +18,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 ```{admonition} Real Hardware for External Users
 :class: tip
 
-**Ark / Lift 2s** is the full-body 方舟 platform (including chassis). **Acone** is the **arm only**, not Lift 2s. **Panthera HT** is the dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
+**ARX Lift 2S** is the full-body ARX (方舟无限) mobile manipulator (including chassis). **Acone** / **AC One** is the **arm only**, not Lift 2S. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
 ```
 
 ## Day 0: Map the Stack
@@ -78,7 +78,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
    ```
-   `arx_acone` is the **Acone arm**, not Lift 2s. Full-body Ark / Lift 2s uses the `arx-lift2s` branch scripts — see [Ark / Lift 2s](../2-how_to/11-ark_lift2s.md).
+   `arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/11-arx_lift2s.md).
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
@@ -171,9 +171,9 @@ cd fa-py-libraries
 Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Do not install one App for both.
 ```
 
-### Isomorphic Teleop (Panthera HT)
+### Isomorphic Teleop (HighTorque Panthera HT)
 
-Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [Panthera HT](../2-how_to/12-panthera_ht.md). Mock (package README):
+Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [HighTorque Panthera HT](../2-how_to/12-panthera_ht.md). Mock (package README):
 
 ```bash
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
@@ -190,13 +190,13 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 
 **Goal:** Deploy to physical robots.
 
-### Public Path (Ark / Lift 2s, Acone arm, Panthera HT)
+### Public Path (ARX Lift 2S, Acone arm, HighTorque Panthera HT)
 
-Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2s.
+Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2S.
 
-- **[Ark / Lift 2s](../2-how_to/11-ark_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
-- **Acone** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
-- **[Panthera HT](../2-how_to/12-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
+- **[ARX Lift 2S](../2-how_to/11-arx_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
+- **Acone** / **AC One** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
+- **[HighTorque Panthera HT](../2-how_to/12-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
 ### Internal Path (FA Robots)
 

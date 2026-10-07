@@ -1,17 +1,17 @@
 # Isomorphic Teleop
 
-Master–slave **isomorphic teleop** (同构遥操作) for **Panthera HT** dual-arm: move the master arm in joint space and the slave follows.
+Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera HT** dual-arm: move the master arm in joint space and the slave follows.
 
 **Implemented:** 同构遥操作 via [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller) (package name is historical). **Not implemented:** drag teaching (拖动遥操作), trajectory record/playback, or `enter_teach_mode`.
 
-On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`** (see [Panthera HT](12-panthera_ht.md) and that branch README). The launches below match the `drag_teleop_controller` README.
+On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`** (see [HighTorque Panthera HT](12-panthera_ht.md) and that branch README). The launches below match the `drag_teleop_controller` README.
 
 **README:** [drag_teleop_controller README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md)
 
 ## Prerequisites
 
 - Workspace that includes `drag_teleop_controller` (public)
-- Panthera HT description (`panthera_ht`)
+- HighTorque Panthera HT description (`panthera_ht`)
 - Two launch processes: one `master`, one `slave` (mock or two physical arms)
 
 ## Overview
@@ -57,7 +57,7 @@ ros2 topic echo /drag_teleop_master/teleop_states
 ros2 topic echo /drag_teleop_slave/teleop_states
 ```
 
-## Real hardware (Panthera HT)
+## Real hardware (HighTorque Panthera HT)
 
 Prefer `./teleop_start.sh` on the `panthera-ht` branch. Launch file and argument names below match the package README. Default `robot` is `panthera_ht`. Use `hardware:=real` (or `real_usb`).
 
@@ -138,5 +138,5 @@ DexCap glove → robot mapping is a **different** package: [teleop-joint-mapper]
 ## Related
 
 - [drag_teleop_controller reference](../4-reference/teleop/2-drag_teleop.md)
-- [Panthera HT](12-panthera_ht.md)
+- [HighTorque Panthera HT](12-panthera_ht.md)
 - [Go to Real Hardware](9-go_real_hardware.md)
