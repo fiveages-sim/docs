@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -26,632 +26,361 @@ msgid "Add a Robot"
 msgstr "添加机器人"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:3
-#: bd953228506c44b7ad7728c03a9c337c
-msgid "Integrate a new robot into the FiveAges Sim ecosystem."
-msgstr "将新机器人集成到 FiveAges Sim 生态系统中。"
+#: 3f6458ac189943d58b837f2294ccd896
+msgid ""
+"How a new robot enters this stack. Copy an **existing** description "
+"package and the launch/xacro patterns already in the repo. Do not invent "
+"package trees, `hardware:=mock`, MPC horizon YAML, or a "
+"`display.launch.py` that no package README lists."
+msgstr ""
+"新机器人如何进入本技术栈。复制**已有**描述包以及仓库里已有的 launch/xacro 模式。不要编造包目录树、`hardware:=mock`、MPC 时域 YAML，或任何包 README 都没有的 `display.launch.py`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:5
-#: bc53f9ae587b4af2a998854697f45b20
-msgid "Overview"
-msgstr "概述"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:7
-#: 0b4820910b264c508af1e8fef7234e73
-msgid "Adding a robot requires:"
-msgstr "添加机器人需要："
+#: 43d2b0381aa4470795efe30d5f96b727
+msgid "Source of truth"
+msgstr "权威来源"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:8
-#: dcfa768c74ff4405801be84be6b72d41
-msgid "Description package (URDF/xacro + ros2_control config)"
-msgstr "描述软件包（URDF/xacro + ros2_control 配置）"
+#: ff118f7ed24a4369ae67072ac7c8c445
+#, python-brace-format
+msgid ""
+"Description layout: an existing `{robot}_description` package (example "
+"below: [arx_acone_description](https://github.com/fiveages-sim/robot-"
+"descriptions-arx/tree/main/arx_acone_description)) and its package README"
+msgstr ""
+"描述包布局：已有 `{robot}_description` 包（下例：[arx_acone_description](https://github.com/fiveages-sim/robot-descriptions-arx/tree/main/arx_acone_description)）及其包 README"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:9
-#: f003f388872442d9ade5f0cab092b8ca
-msgid "Hardware interface plugin (if not existing)"
-msgstr "硬件接口插件（如尚不存在）"
+#: 1d88076b15f1490fb8b92f5bf467fbb7
+msgid ""
+"Umbrella + submodule paths: [robot_descriptions "
+"README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md) (e.g. ARX at "
+"`manipulator/ARX`)"
+msgstr ""
+"伞形仓与子模块路径：[robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)（例如 ARX 在 `manipulator/ARX`）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:10
-#: 9d11327f816e4719a686cb48199dae9a
-msgid "Controller configuration"
-msgstr "控制器配置"
+#: 623bb34a6e3046528d659c1e827723c5
+msgid ""
+"Launch / `hardware:=` / EEF: "
+"[robot_common_launch](../../4-reference/descriptions/2-common.md)"
+msgstr ""
+"Launch / `hardware:=` / 末端：[robot_common_launch](../../4-reference/descriptions/2-common.md)"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:11
-#: faf283a833264ada997404d493027327
-msgid "Testing progression: mock → simulation → real"
-msgstr "Testing progression: mock → simulation → real"
+#: 593b37604bd349a5b70938f551c0ddab
+msgid ""
+"Workspace init: `./init_repo.sh` in [open-deploy-ws](https://github.com"
+"/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) + "
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/submodules_visibility.conf)"
+msgstr ""
+"工作区初始化：[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) 的 `./init_repo.sh` + [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:13
-#: 0ee2d5e66e7d4329b792dd29879f5bd7
-msgid "Step 1: Create Description Package"
-msgstr "步骤 1：创建描述软件包"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:12
+#: ae8622e47e66469e81540ee965911aab
+msgid ""
+"Isaac USD: FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (folder `USDA-"
+"OCS2-PhysX-Mujoco`) — [skill](https://github.com/fiveages-sim/FaSim-"
+"Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — plus "
+"`./init.sh` / `./run.sh` and [robot_usds](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README.md)"
+msgstr ""
+"Isaac USD：FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**（目录 `USDA-OCS2-PhysX-Mujoco`）— [skill](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — 以及 `./init.sh` / `./run.sh` 和 [robot_usds](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:15
-#: 4c21c779c3b14a0c921c846cd5d533a8
-msgid "Package Structure"
-msgstr "软件包结构"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:14
+#: 3d83ccce56414ff491fc76d04b7c0dbe
+msgid ""
+"**No `.cursor/skills` was found** on `main` for `robot_descriptions`, "
+"`robot-descriptions-common`, or `robot_usds`. Use those READMEs plus the "
+"FaSim-Isaac skills. Do not invent a description-side skill."
+msgstr ""
+"在 `main` 上**没有找到** `robot_descriptions`、`robot-descriptions-common` 或 `robot_usds` 的 `.cursor/skills`。请用这些 README 加上 FaSim-Isaac skills。不要编造描述侧 skill。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:17
-#: 6f14a8343eb74960a6a9b4cff06e6fbb
-msgid ""
-"robot_description_newrobot/\n"
-"├── CMakeLists.txt\n"
-"├── package.xml\n"
-"├── urdf/\n"
-"│   ├── newrobot.urdf.xacro\n"
-"│   └── newrobot.ros2_control.xacro\n"
-"├── meshes/\n"
-"│   ├── visual/\n"
-"│   └── collision/\n"
-"├── config/\n"
-"│   └── ocs2_arm_config.yaml\n"
-"└── launch/\n"
-"    └── display.launch.py"
-msgstr ""
-"robot_description_newrobot/\n"
-"├── CMakeLists.txt\n"
-"├── package.xml\n"
-"├── urdf/\n"
-"│   ├── newrobot.urdf.xacro\n"
-"│   └── newrobot.ros2_control.xacro\n"
-"├── meshes/\n"
-"│   ├── visual/\n"
-"│   └── collision/\n"
-"├── config/\n"
-"│   └── ocs2_arm_config.yaml\n"
-"└── launch/\n"
-"    └── display.launch.py"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:33
-#: 724b6805fc6d46a8b7308ea76d585865
-msgid "URDF/Xacro"
-msgstr "URDF/Xacro"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:35
-#: b1d391559eba4dc69c1c9200ab803799
-msgid ""
-"<?xml version=\"1.0\"?>\n"
-"<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
-"  \n"
-"  <!-- Include ros2_control -->\n"
-"  <xacro:include filename=\"$(find "
-"robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
-"  \n"
-"  <!-- Base link -->\n"
-"  <link name=\"base_link\">\n"
-"    <visual>\n"
-"      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
-"\n"
-"      </geometry>\n"
-"    </visual>\n"
-"    <collision>\n"
-"      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
-"\n"
-"      </geometry>\n"
-"    </collision>\n"
-"    <inertial>\n"
-"      <mass value=\"5.0\"/>\n"
-"      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" "
-"izz=\"0.01\"/>\n"
-"    </inertial>\n"
-"  </link>\n"
-"  \n"
-"  <!-- Joints and links... -->\n"
-"  \n"
-"</robot>\n"
-msgstr ""
-"<?xml version=\"1.0\"?>\n"
-"<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
-"  \n"
-"  <!-- Include ros2_control -->\n"
-"  <xacro:include filename=\"$(find "
-"robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
-"  \n"
-"  <!-- Base link -->\n"
-"  <link name=\"base_link\">\n"
-"    <visual>\n"
-"      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
-"\n"
-"      </geometry>\n"
-"    </visual>\n"
-"    <collision>\n"
-"      <geometry>\n"
-"        <mesh "
-"filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
-"\n"
-"      </geometry>\n"
-"    </collision>\n"
-"    <inertial>\n"
-"      <mass value=\"5.0\"/>\n"
-"      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" "
-"izz=\"0.01\"/>\n"
-"    </inertial>\n"
-"  </link>\n"
-"  \n"
-"  <!-- Joints and links... -->\n"
-"  \n"
-"</robot>\n"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:65
-#: 807afe5d94704934bfad6ee03200a8a4
-msgid "ros2_control Configuration"
-msgstr "ros2_control 配置"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:67
-#: 3eab0eecde1d423d97c99802a936d726
-#, python-brace-format
-msgid ""
-"<?xml version=\"1.0\"?>\n"
-"<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
-"  \n"
-"  <xacro:macro name=\"newrobot_ros2_control\" params=\"hardware_type\">\n"
-"    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
-"        <hardware>\n"
-"          <plugin>mock_components/GenericSystem</plugin>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'gz'}\">\n"
-"        <hardware>\n"
-"          <plugin>gz_ros2_control/GazeboSimSystem</plugin>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'real'}\">\n"
-"        <hardware>\n"
-"          "
-"<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
-"          <param name=\"device\">can0</param>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <joint name=\"joint_1\">\n"
-"        <command_interface name=\"position\"/>\n"
-"        <state_interface name=\"position\"/>\n"
-"        <state_interface name=\"velocity\"/>\n"
-"      </joint>\n"
-"      <!-- More joints... -->\n"
-"      \n"
-"    </ros2_control>\n"
-"  </xacro:macro>\n"
-"  \n"
-"</robot>\n"
-msgstr ""
-"<?xml version=\"1.0\"?>\n"
-"<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
-"  \n"
-"  <xacro:macro name=\"newrobot_ros2_control\" params=\"hardware_type\">\n"
-"    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
-"        <hardware>\n"
-"          <plugin>mock_components/GenericSystem</plugin>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'gz'}\">\n"
-"        <hardware>\n"
-"          <plugin>gz_ros2_control/GazeboSimSystem</plugin>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <xacro:if value=\"${hardware_type == 'real'}\">\n"
-"        <hardware>\n"
-"          "
-"<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
-"          <param name=\"device\">can0</param>\n"
-"        </hardware>\n"
-"      </xacro:if>\n"
-"      \n"
-"      <joint name=\"joint_1\">\n"
-"        <command_interface name=\"position\"/>\n"
-"        <state_interface name=\"position\"/>\n"
-"        <state_interface name=\"velocity\"/>\n"
-"      </joint>\n"
-"      <!-- More joints... -->\n"
-"      \n"
-"    </ros2_control>\n"
-"  </xacro:macro>\n"
-"  \n"
-"</robot>\n"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:106
-#: 7c31a18a7419455bb5c469c7f5beab88
-msgid "Step 2: Hardware Interface (if needed)"
-msgstr "步骤 2：硬件接口（如需要）"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:108
-#: b1380628bed5433eb4caf59e94de8a88
-msgid "If using an existing interface (CAN, Modbus, etc.), skip this step."
-msgstr "如果使用现有接口（CAN、Modbus 等），可跳过此步骤。"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:110
-#: 1cc44d03f5a94ad9b5896b5999d4151d
-msgid "Plugin Structure"
-msgstr "插件结构"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:112
-#: 9b9e983f0c7a411d8f6869c51e77dcd4
-#, python-brace-format
-msgid ""
-"// newrobot_hardware_interface.hpp\n"
-"class NewRobotHardwareInterface : public "
-"hardware_interface::SystemInterface\n"
-"{\n"
-"public:\n"
-"  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) "
-"override;\n"
-"  CallbackReturn on_configure(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  CallbackReturn on_activate(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  \n"
-"  std::vector<hardware_interface::StateInterface> "
-"export_state_interfaces() override;\n"
-"  std::vector<hardware_interface::CommandInterface> "
-"export_command_interfaces() override;\n"
-"  \n"
-"  return_type read(const rclcpp::Time & time, const rclcpp::Duration & "
-"period) override;\n"
-"  return_type write(const rclcpp::Time & time, const rclcpp::Duration & "
-"period) override;\n"
-"};\n"
-msgstr ""
-"// newrobot_hardware_interface.hpp\n"
-"class NewRobotHardwareInterface : public "
-"hardware_interface::SystemInterface\n"
-"{\n"
-"public:\n"
-"  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) "
-"override;\n"
-"  CallbackReturn on_configure(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  CallbackReturn on_activate(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & "
-"previous_state) override;\n"
-"  \n"
-"  std::vector<hardware_interface::StateInterface> "
-"export_state_interfaces() override;\n"
-"  std::vector<hardware_interface::CommandInterface> "
-"export_command_interfaces() override;\n"
-"  \n"
-"  return_type read(const rclcpp::Time & time, const rclcpp::Duration & "
-"period) override;\n"
-"  return_type write(const rclcpp::Time & time, const rclcpp::Duration & "
-"period) override;\n"
-"};\n"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:130
-#: 7415df6c2761431f8f3857cce2faad30
-msgid "Step 3: Controller Configuration"
-msgstr "步骤 3：控制器配置"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:132
-#: 4451fdc2d8ea4692a1cb225919601e6e
-msgid "OCS2 Arm Config"
-msgstr "OCS2 机械臂配置"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:134
-#: 0fea9253683e43d5bd57f1a61e71aa44
-msgid ""
-"# config/ocs2_arm_config.yaml\n"
-"arm:\n"
-"  dof: 6\n"
-"  joint_names:\n"
-"    - joint_1\n"
-"    - joint_2\n"
-"    - joint_3\n"
-"    - joint_4\n"
-"    - joint_5\n"
-"    - joint_6\n"
-"\n"
-"  joint_limits:\n"
-"    position:\n"
-"      lower: [-3.14, -2.0, -2.5, -3.14, -2.0, -3.14]\n"
-"      upper: [3.14, 2.0, 2.5, 3.14, 2.0, 3.14]\n"
-"    velocity: [2.0, 2.0, 2.0, 2.5, 2.5, 2.5]\n"
-"    effort: [100, 100, 80, 50, 50, 30]\n"
-"\n"
-"mpc:\n"
-"  dt: 0.01\n"
-"  horizon: 1.0\n"
-"  # MPC tuning parameters...\n"
-msgstr ""
-"# config/ocs2_arm_config.yaml\n"
-"arm:\n"
-"  dof: 6\n"
-"  joint_names:\n"
-"    - joint_1\n"
-"    - joint_2\n"
-"    - joint_3\n"
-"    - joint_4\n"
-"    - joint_5\n"
-"    - joint_6\n"
-"\n"
-"  joint_limits:\n"
-"    position:\n"
-"      lower: [-3.14, -2.0, -2.5, -3.14, -2.0, -3.14]\n"
-"      upper: [3.14, 2.0, 2.5, 3.14, 2.0, 3.14]\n"
-"    velocity: [2.0, 2.0, 2.0, 2.5, 2.5, 2.5]\n"
-"    effort: [100, 100, 80, 50, 50, 30]\n"
-"\n"
-"mpc:\n"
-"  dt: 0.01\n"
-"  horizon: 1.0\n"
-"  # MPC tuning parameters...\n"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:159
-#: a172c81a23374041bd83da63074b41ec
-msgid "Step 4: Test Progression"
-msgstr "步骤 4：测试递进"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:161
-#: 4f6d593fc5f24fefaea53b375affa593
-msgid "Mock Testing"
-msgstr "模拟测试"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:163
-#: bbd416a95daa4f63bea3d31dd15e3221
+#: 0ee2d5e66e7d4329b792dd29879f5bd7
 #, fuzzy
+msgid "1. ROS description package"
+msgstr "步骤 1：创建描述软件包"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:19
+#: 4382a3da5d424461ade8e62847046cd9
 msgid ""
-"# Verify URDF\n"
-"check_urdf newrobot.urdf\n"
-"\n"
-"# Display in RViz\n"
-"ros2 launch robot_description_newrobot display.launch.py\n"
-"\n"
-"# Mock demo\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot\n"
+"Public brand trees live as submodules under "
+"[robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) "
+"(`common`, `manipulator/ARX`, `manipulator/Dobot`, …). In `open-deploy-"
+"ws` the same tree is `src/robot-descriptions/` after "
+"**`./init_repo.sh`**. Do not recursive-init."
 msgstr ""
-"# Verify URDF\n"
-"check_urdf newrobot.urdf\n"
-"\n"
-"# Display in RViz\n"
-"ros2 launch robot_description_newrobot display.launch.py\n"
-"\n"
-"# Mock demo\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot\n"
+"公开品牌树作为子模块挂在 [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) 下（`common`、`manipulator/ARX`、`manipulator/Dobot` 等）。在 `open-deploy-ws` 中，**`./init_repo.sh`** 之后同一棵树是 `src/robot-descriptions/`。不要递归 init。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:174
-#: e86453016c0341ddb33d40de2e57f21a
-msgid "Gazebo Testing"
-msgstr "Gazebo 测试"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:21
+#: 512de4da08724a6bbbcfb0da65adeb57
+msgid "Copy a real package. Acone (from that repo) looks like:"
+msgstr "复制真实的包。Acone（该仓库）大致是："
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:176
-#: df2b323461a647b69f2fdecff4d1ffbb
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:23
+#: 11d733a4505b412cbf8bff352fefc188
+#, python-brace-format
 msgid ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=gz\n"
+"arx_acone_description/\n"
+"├── CMakeLists.txt\n"
+"├── package.xml\n"
+"├── README.md\n"
+"├── xacro/\n"
+"│   ├── robot.xacro\n"
+"│   ├── arm_mount.xacro\n"
+"│   ├── component.xacro\n"
+"│   └── ros2_control/          # hardware plugin branches\n"
+"├── config/\n"
+"│   ├── ocs2/                  # task .info (not an invented "
+"ocs2_arm_config.yaml)\n"
+"│   └── ros2_control/          # optional {hardware}.yaml overlay\n"
+"└── meshes/"
 msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=gz\n"
+"arx_acone_description/\n"
+"├── CMakeLists.txt\n"
+"├── package.xml\n"
+"├── README.md\n"
+"├── xacro/\n"
+"│   ├── robot.xacro\n"
+"│   ├── arm_mount.xacro\n"
+"│   ├── component.xacro\n"
+"│   └── ros2_control/          # hardware plugin branches\n"
+"├── config/\n"
+"│   ├── ocs2/                  # task .info (not an invented ocs2_arm_config.yaml)\n"
+"│   └── ros2_control/          # optional {hardware}.yaml overlay\n"
+"└── meshes/"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:180
-#: 77c6d4e00a9e423d8cf52d306f45fe47
-msgid "Real Hardware Testing"
-msgstr "真实硬件测试"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:182
-#: 3bae09ec2bd247bc92a7be1c518ce214
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:39
+#: 3d81845f5c984ff98231dbfa8985eb15
+#, python-brace-format
 msgid ""
-"# Follow the go_real_hardware guide\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=real\n"
+"Launch key is `robot:=<key>` where the package is `{key}_description` "
+"([robot_common_launch](../../4-reference/descriptions/2-common.md)). "
+"`demo.launch.py` default is `cr5`."
 msgstr ""
-"# Follow the go_real_hardware guide\n"
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
-"hardware:=real\n"
+"启动键是 `robot:=<key>`，对应包名 `{key}_description`（[robot_common_launch](../../4-reference/descriptions/2-common.md)）。`demo.launch.py` 默认是 `cr5`。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:187
-#: 25c62ee6ca0141cb9db517d163135bb4
-msgid "Step 5: Integration"
-msgstr "步骤 5：集成"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:41
+#: 0401da3c7e404b47a67a806e37d33314
+msgid ""
+"`hardware:=` values that exist in Acone xacro / common launch: "
+"`mock_components` (default), `gz`, `isaac`, `real`. There is **no** "
+"`hardware:=mock`. Plugins: [ros2_control in This "
+"Stack](../../3-concepts/1-ros2_control_here.md). Do not invent a new HI "
+"class name here — use that robot’s `xacro/ros2_control/*.xacro` or an "
+"existing vendor HI README ([arx-ros2-control](https://github.com"
+"/fiveages-sim/arx-ros2-control) for ARX `hardware:=real`)."
+msgstr ""
+"Acone xacro / common launch 中存在的 `hardware:=` 取值：`mock_components`（默认）、`gz`、`isaac`、`real`。**没有** `hardware:=mock`。插件见 [本技术栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)。此处不要编造新的 HI 类名 — 用该机器人的 `xacro/ros2_control/*.xacro` 或已有厂商 HI README（ARX `hardware:=real` 见 [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control)）。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:189
-#: f26a33c6216b418f94bf3436862ee53c
-msgid "Add to robot_descriptions"
-msgstr "添加到 robot_descriptions"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:43
+#: fdbd30bc2d9f404d8b3426d880d964c0
+#, python-brace-format
+msgid ""
+"OCS2 files the controller actually loads: "
+"`{robot_pkg}/config/ocs2/<info>.info` ([ocs2_arm "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md))."
+" Planning URDF comes from the same xacro via `robot_common_launch`, not a"
+" static `urdf/*.urdf`."
+msgstr ""
+"控制器实际加载的 OCS2 文件：`{robot_pkg}/config/ocs2/<info>.info`（[ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)）。规划 URDF 由同一套 xacro 经 `robot_common_launch` 生成，不是静态 `urdf/*.urdf`。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:191
-#: 5c18d527c08d438ba186b995dafddf7c
-msgid "Create package in appropriate location"
-msgstr "在合适的位置创建软件包"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:45
+#: 31c7da2619a24cccb90e10f248684451
+msgid "EEF / FT / TCP: `type` / `left_type` / `right_type` (not `gripper:=`)."
+msgstr "末端 / 力传感器 / TCP：`type` / `left_type` / `right_type`（不是 `gripper:=`）。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:192
-#: ffa5d20318704063b0ffbb1ddcf9a056
-msgid "Add as submodule to `robot_descriptions`"
-msgstr "作为子模块添加到 `robot_descriptions`"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:47
+#: 75af88e598c04415a729a5d9279e5403
+msgid "2. Wire it into a deploy workspace"
+msgstr "2. 接到部署工作区"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:193
-#: 115246a5e63d4e4e921784288534d559
-msgid "Update visibility configuration"
-msgstr "更新可见性配置"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:49
+#: e31e9b027dad4525967efc7bd13a7fb4
+msgid "In `open-deploy-ws`:"
+msgstr "在 `open-deploy-ws` 中："
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:194
-#: 29a7341490104594be04c516ca891472
-msgid "Create PR"
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:51
+#: d460f844849141f2a7b941696c721433
+msgid "`./init_repo.sh` so nested modules match `submodules_visibility.conf`."
+msgstr "`./init_repo.sh`，让嵌套模块与 `submodules_visibility.conf` 一致。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:52
+#: da510fa49fb04363b5edcf4851d7f069
+msgid ""
+"If you added a **new** nested submodule: add the Git submodule on the "
+"parent, then one pipe line `parent_dir|relative_path|public` or `private`"
+" — [Submodules Visibility](../../3-concepts/6-submodules_visibility.md)."
+msgstr ""
+"若新增**嵌套**子模块：先在父仓加 Git submodule，再在 conf 加一行 `parent_dir|relative_path|public` 或 `private` — [子模块可见性](../../3-concepts/6-submodules_visibility.md)。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:53
+#: 923a788843bf412daab3d994a6a9031b
+msgid ""
+"`colcon build --symlink-install`. Lean branches (`arx-lift2s`, `panthera-"
+"ht`): prefer **`./quick_start.sh`** (it sources `install/setup.bash` "
+"after a successful build). On `main`, after colcon, `source "
+"install/setup.bash` in the launch terminal (standard ROS overlay; no "
+"extra env script)."
+msgstr ""
+"`colcon build --symlink-install`。精简分支（`arx-lift2s`、`panthera-ht`）：优先 **`./quick_start.sh`**（构建成功后它会 source `install/setup.bash`）。在 `main` 上，colcon 之后在启动终端 `source install/setup.bash`（标准 ROS overlay；没有额外环境脚本）。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:55
+#: f606d9a6e3e048d186c400463798aeb9
+msgid ""
+"[robot-descriptions-arx README](https://github.com/fiveages-sim/robot-"
+"descriptions-arx/blob/main/README.md) also shows adding the brand repo as"
+" `src/robot-descriptions-arx` or `git submodule update --init "
+"manipulator/ARX` under the umbrella. Prefer the deploy-ws init script "
+"when you are in `open-deploy-ws`."
+msgstr ""
+"[robot-descriptions-arx README](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/README.md) 也写了把品牌仓加为 `src/robot-descriptions-arx`，或在伞形仓下 `git submodule update --init manipulator/ARX`。在 `open-deploy-ws` 里优先用部署工作区的 init 脚本。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:57
+#: 24301dbaac8f4931b4291961c0ac174d
+msgid ""
+"Controllers already in [arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control): `ocs2_arm_controller` `demo.launch.py` / "
+"`split_body.launch.py` / `full_body.launch.py`, plus "
+"`basic_joint_controller`. Example from the Acone README (after the "
+"workspace overlay):"
+msgstr ""
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 里已有的控制器：`ocs2_arm_controller` 的 `demo.launch.py` / `split_body.launch.py` / `full_body.launch.py`，以及 `basic_joint_controller`。Acone README 示例（工作区 overlay 之后）："
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:59
+#: bbd416a95daa4f63bea3d31dd15e3221
+msgid ""
+"ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone"
+msgstr ""
+"ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:64
+#: 2c85c9df0d3d4b8f8bf02f0344a99368
+msgid ""
+"Do not invent `robot_description_newrobot/display.launch.py` or a "
+"`NewRobotHardwareInterface` C++ stub."
+msgstr ""
+"不要编造 `robot_description_newrobot/display.launch.py` 或 `NewRobotHardwareInterface` C++ 桩。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:66
+#: 0809f2b0a3de4c54af646e59c11a9a7e
+msgid "3. Isaac USD (FaSim-Isaac skill)"
+msgstr "3. Isaac USD（FaSim-Isaac skill）"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:68
+#: 2f0925178ccd4a248ba8a815dbac206f
+msgid ""
+"`robot_descriptions` / `robot-descriptions-common` / `robot_usds` have "
+"**no** Cursor skill on `main`. The Isaac import pipeline is the FaSim-"
+"Isaac skill **`isaac-urdf-usda-ocs2`**:"
+msgstr ""
+"`robot_descriptions` / `robot-descriptions-common` / `robot_usds` 在 `main` 上**没有** Cursor skill。Isaac 导入流程是 FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**："
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:70
+#: 5d8f59bf9e1b48e3bcf83def41b2471c
+msgid ""
+"Skill file: [`.cursor/skills/USDA-OCS2-PhysX-"
+"Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-"
+"Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md)"
+msgstr ""
+"Skill 文件：[`.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md)"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:71
+#: 007d8b9064be403d9859d24ca9206c64
+msgid ""
+"Other skills in that folder (do not invent names): `fasim-robot-mujoco-"
+"physics`, `fasim-dexhand-asset`, `fasim-rg75-pad-convert`, `fasim-usd-"
+"bake-scale`"
+msgstr ""
+"该目录下其他 skill（不要编造名称）：`fasim-robot-mujoco-physics`、`fasim-dexhand-asset`、`fasim-rg75-pad-convert`、`fasim-usd-bake-scale`"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:73
+#: bd04bdaf7b254f18b88c1770454171d9
+msgid ""
+"What that skill covers (overview only — follow the skill, do not treat "
+"this list as a substitute):"
+msgstr "该 skill 覆盖的内容（仅概览 — 以 skill 为准，不要把下面列表当替代文档）："
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:75
+#: 00cc6f9295c24bdaaee2c1f7f947b7a3
+msgid "Split / expand URDF or xacro; record mount poses."
+msgstr "拆分 / 展开 URDF 或 xacro；记录安装位姿。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:76
+#: a5a2ad244e7b42c09d5c7a7294a11265
+msgid "Isaac 5: Import URDF → USD. Isaac 6: Asset Transformer → USDA."
+msgstr "Isaac 5：Import URDF → USD。Isaac 6：Asset Transformer → USDA。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:77
+#: 3dcaaebd7c3a40648492c54103f526d5
+msgid "Robot Assembler (child → parent; one articulation root)."
+msgstr "Robot Assembler（子 → 父；一个 articulation root）。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:78
+#: fb8423026d654b2ebdbd83c06b5f8d61
+#, python-brace-format
+msgid ""
+"Root `variantSets` + **local** adapter payloads "
+"(`payloads/Physics/{none,physics,physx,mujoco}.usda`, …)."
+msgstr ""
+"根 `variantSets` + **本地** adapter payload（`payloads/Physics/{none,physics,physx,mujoco}.usda` 等）。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:79
+#: d54755c3f8df442ca50fd5dd04ae694f
+msgid ""
+"PhysX vs Newton/MuJoCo layers kept separate; host side "
+"`topic_based_ros2_control` + `hardware:=isaac`."
+msgstr "PhysX 与 Newton/MuJoCo 层分开；主机侧 `topic_based_ros2_control` + `hardware:=isaac`。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:81
+#: 16dab3a32581462084dfd9d144c19da8
+msgid ""
+"Asset layout: [robot_usds README](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README.md) (`robots/manipulators/…`, "
+"`robots/mobile_manipulator/…`). FaSim-Isaac checkout: **`./init.sh`** "
+"(submodules + optional Isaac ROS 2 workspace), then **`./run.sh`**. Do "
+"not hand-write Isaac `PATH` or a `~/.bashrc` overlay. See [Isaac "
+"Sim](../2-simulation/4-isaac_sim.md)."
+msgstr ""
+"资产布局：[robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)（`robots/manipulators/…`、`robots/mobile_manipulator/…`）。FaSim-Isaac 检出后：**`./init.sh`**（子模块 + 可选 Isaac ROS 2 工作区），然后 **`./run.sh`**。不要手写 Isaac `PATH` 或 `~/.bashrc` overlay。见 [Isaac Sim](../2-simulation/4-isaac_sim.md)。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:83
+#: f981d622a5c842198e89b5acc0eafdaf
+#, fuzzy
+msgid "Related"
 msgstr "创建 PR"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:196
-#: e48b8466d7d54de0a5c57ce9d631407b
-msgid "Document"
-msgstr "编写文档"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:198
-#: ed12cd6d5d5f4edc99f0492778ef36e6
-msgid "Create or update:"
-msgstr "创建或更新："
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:199
-#: 4344a32153ba46afa9faed2c44754ee3
-msgid "Package README"
-msgstr "软件包 README"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:200
-#: ca123af9e060493c9d56e9bc3c25c2bc
-msgid "Launch file documentation"
-msgstr "启动文件文档"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:201
-#: 75f73fb0f3eb4c3192af54ae17f3d45d
-msgid "Hardware-specific notes"
-msgstr "硬件相关说明"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:203
-#: 9c1f15db1cb644828e9ed2d87f09a6f9
-msgid "Checklist"
-msgstr "检查清单"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:205
-#: d4161d9da96d4b09be9b41c7b17983b1
-msgid "URDF parses without errors"
-msgstr "URDF 解析无错误"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:205
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:206
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:207
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:208
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:209
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:210
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:211
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:212
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:213
-#: 24e95ed5816b4550b1b4150c1716c439 2576b60c93134b0cbfbfdbcd9abc009e
-#: 26fa7e51fd314ad3801f342b99437d24 350043d1589644d392461f7b2159613d
-#: 445c047e15db46d6b15cbbbc65ba4e2a 9ff6156003f748d39c14ad1db46b03b4
-#: d59b16e0633949419934555670ed0656 d8a36174330a4b7c90459add9e0725ae
-#: ded352bd8fa34d648afefe9d21f31be2
-msgid ""
-"<input class=\"task-list-item-checkbox\" disabled=\"disabled\" "
-"type=\"checkbox\">"
-msgstr ""
-"<input class=\"task-list-item-checkbox\" disabled=\"disabled\" "
-"type=\"checkbox\">"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:206
-#: c7a5943fa1a44707a205f3171574738f
-msgid "Meshes display correctly in RViz"
-msgstr "网格在 RViz 中正确显示"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:207
-#: 19bdd78a46864763974288bcac5d0790
-msgid "ros2_control configuration valid"
-msgstr "ros2_control 配置有效"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:208
-#: 47ad3474904e4593b4fcd1f308712dcd
-msgid "Mock hardware demo works"
-msgstr "模拟硬件演示可以运行"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:209
-#: d10db08c4181445c9e679a46fba61d94
-msgid "Gazebo simulation works (if applicable)"
-msgstr "Gazebo 仿真可以运行（如适用）"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:210
-#: 30a57510c2db4e789fcc3c1c3a46fde4
-msgid "Real hardware works (if applicable)"
-msgstr "真实硬件可以运行（如适用）"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:211
-#: dd04886177c94712b79928b6bec68a3d
-msgid "OCS2 controller tracks targets"
-msgstr "OCS2 控制器能够跟踪目标"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:212
-#: 795bcb0e07f8446287458cddd8f60ec1
-msgid "Package builds cleanly"
-msgstr "软件包能够干净地编译"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:213
-#: 85ceb38acf424f808b71bc951218b9d5
-msgid "README documents usage"
-msgstr "README 说明了用法"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:215
-#: ad0df25b29984098bfcf42101972df8a
-msgid "Common Issues"
-msgstr "常见问题"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:217
-#: b21419592b044b579f717ac952015805
-msgid "URDF errors"
-msgstr "URDF 错误"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:219
-#: 65de7eec091748bc82ce2a7694647d01
-msgid ""
-"# Check for syntax errors\n"
-"check_urdf <(xacro newrobot.urdf.xacro)"
-msgstr ""
-"# Check for syntax errors\n"
-"check_urdf <(xacro newrobot.urdf.xacro)\n"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:224
-#: 2b1122cf316a4083b362e2f883d666f5
-msgid "Controller fails to start"
-msgstr "控制器启动失败"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:226
-#: 3767744cbc354f039db19b0d66c4f163
-msgid "Verify joint names match between URDF and config"
-msgstr "确认 URDF 与配置中的关节名称一致"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:227
-#: 2c503655624548a9b287a0de32cb6977
-msgid "Check ros2_control hardware plugin is found"
-msgstr "确认能够找到 ros2_control 硬件插件"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:228
-#: fc816985d24f47fb96d48b6e805e35b9
-msgid "Review controller manager logs"
-msgstr "查看 controller manager 日志"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:230
-#: 035e62c2ef0e4032ab528d31b06364a2
-msgid "Motion incorrect"
-msgstr "运动不正确"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:232
-#: 70141f364932465abd4c9d1d04897e95
-msgid "Verify joint axis directions"
-msgstr "确认关节轴向"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:233
-#: d40ee8fb3c094bbcb28d2a69213277fa
-msgid "Check joint limits match physical robot"
-msgstr "确认关节限位与实体机器人一致"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:234
-#: d404d8ff287b4a3880a20691545238b2
-msgid "Verify inertia parameters"
-msgstr "确认惯性参数"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:236
-#: ca68692c0620449fb5061582199949cb
-msgid "Next Steps"
-msgstr "下一步"
-
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:238
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:85
 #: e761a8b081794802aa0fa649775c6007
-msgid ""
-"[ros2_control here](../../3-concepts/1-ros2_control_here.md) — Understand"
-" the control architecture"
+#, fuzzy
+msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
 msgstr "[ros2_control 在本项目中](../../3-concepts/1-ros2_control_here.md) — 理解控制架构"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:239
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:86
+#: a653907290514d96a49b14b7793cbd2d
+msgid "[Workspace Layout](../../3-concepts/2-workspace_layout.md)"
+msgstr "[工作区布局](../../3-concepts/2-workspace_layout.md)"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:87
+#: fb382824b3a64562bd0be3260c3f1256
+msgid "[robot_common_launch](../../4-reference/descriptions/2-common.md)"
+msgstr "[robot_common_launch](../../4-reference/descriptions/2-common.md)"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:88
+#: cb9d654c41584956964114067f8c36b3
+msgid "[Go to Real Hardware](9-go_real_hardware/0-index.md)"
+msgstr "[部署到真实机器人](9-go_real_hardware/0-index.md)"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:89
 #: dbf037f39d3046739112f46afe90f488
-msgid "[Developer guide](../../5-developer/0-index.md) — Contributing guidelines"
+#, fuzzy
+msgid "[Developer guide](../../5-developer/0-index.md)"
 msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 
 #~ msgid ""
@@ -682,3 +411,497 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "│   └── ocs2_arm_config.yaml\n"
 #~ "└── launch/\n"
 #~ "    └── display.launch.py\n"
+
+#~ msgid "Integrate a new robot into the FiveAges Sim ecosystem."
+#~ msgstr "将新机器人集成到 FiveAges Sim 生态系统中。"
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid "Adding a robot requires:"
+#~ msgstr "添加机器人需要："
+
+#~ msgid "Description package (URDF/xacro + ros2_control config)"
+#~ msgstr "描述软件包（URDF/xacro + ros2_control 配置）"
+
+#~ msgid "Hardware interface plugin (if not existing)"
+#~ msgstr "硬件接口插件（如尚不存在）"
+
+#~ msgid "Controller configuration"
+#~ msgstr "控制器配置"
+
+#~ msgid "Testing progression: mock → simulation → real"
+#~ msgstr "Testing progression: mock → simulation → real"
+
+#~ msgid "Package Structure"
+#~ msgstr "软件包结构"
+
+#~ msgid ""
+#~ "robot_description_newrobot/\n"
+#~ "├── CMakeLists.txt\n"
+#~ "├── package.xml\n"
+#~ "├── urdf/\n"
+#~ "│   ├── newrobot.urdf.xacro\n"
+#~ "│   └── newrobot.ros2_control.xacro\n"
+#~ "├── meshes/\n"
+#~ "│   ├── visual/\n"
+#~ "│   └── collision/\n"
+#~ "├── config/\n"
+#~ "│   └── ocs2_arm_config.yaml\n"
+#~ "└── launch/\n"
+#~ "    └── display.launch.py"
+#~ msgstr ""
+#~ "robot_description_newrobot/\n"
+#~ "├── CMakeLists.txt\n"
+#~ "├── package.xml\n"
+#~ "├── urdf/\n"
+#~ "│   ├── newrobot.urdf.xacro\n"
+#~ "│   └── newrobot.ros2_control.xacro\n"
+#~ "├── meshes/\n"
+#~ "│   ├── visual/\n"
+#~ "│   └── collision/\n"
+#~ "├── config/\n"
+#~ "│   └── ocs2_arm_config.yaml\n"
+#~ "└── launch/\n"
+#~ "    └── display.launch.py"
+
+#~ msgid "URDF/Xacro"
+#~ msgstr "URDF/Xacro"
+
+#~ msgid ""
+#~ "<?xml version=\"1.0\"?>\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" "
+#~ "name=\"newrobot\">\n"
+#~ "  \n"
+#~ "  <!-- Include ros2_control -->\n"
+#~ "  <xacro:include filename=\"$(find "
+#~ "robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
+#~ ""
+#~ "  \n"
+#~ "  <!-- Base link -->\n"
+#~ "  <link name=\"base_link\">\n"
+#~ "    <visual>\n"
+#~ "      <geometry>\n"
+#~ "        <mesh "
+#~ "filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
+#~ "\n"
+#~ "      </geometry>\n"
+#~ "    </visual>\n"
+#~ "    <collision>\n"
+#~ "      <geometry>\n"
+#~ "        <mesh "
+#~ "filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
+#~ "\n"
+#~ "      </geometry>\n"
+#~ "    </collision>\n"
+#~ "    <inertial>\n"
+#~ "      <mass value=\"5.0\"/>\n"
+#~ "      <inertia ixx=\"0.01\" ixy=\"0\" "
+#~ "ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
+#~ ""
+#~ "    </inertial>\n"
+#~ "  </link>\n"
+#~ "  \n"
+#~ "  <!-- Joints and links... -->\n"
+#~ "  \n"
+#~ "</robot>\n"
+#~ msgstr ""
+#~ "<?xml version=\"1.0\"?>\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" "
+#~ "name=\"newrobot\">\n"
+#~ "  \n"
+#~ "  <!-- Include ros2_control -->\n"
+#~ "  <xacro:include filename=\"$(find "
+#~ "robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
+#~ ""
+#~ "  \n"
+#~ "  <!-- Base link -->\n"
+#~ "  <link name=\"base_link\">\n"
+#~ "    <visual>\n"
+#~ "      <geometry>\n"
+#~ "        <mesh "
+#~ "filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
+#~ "\n"
+#~ "      </geometry>\n"
+#~ "    </visual>\n"
+#~ "    <collision>\n"
+#~ "      <geometry>\n"
+#~ "        <mesh "
+#~ "filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
+#~ "\n"
+#~ "      </geometry>\n"
+#~ "    </collision>\n"
+#~ "    <inertial>\n"
+#~ "      <mass value=\"5.0\"/>\n"
+#~ "      <inertia ixx=\"0.01\" ixy=\"0\" "
+#~ "ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
+#~ ""
+#~ "    </inertial>\n"
+#~ "  </link>\n"
+#~ "  \n"
+#~ "  <!-- Joints and links... -->\n"
+#~ "  \n"
+#~ "</robot>\n"
+
+#~ msgid "ros2_control Configuration"
+#~ msgstr "ros2_control 配置"
+
+#~ msgid ""
+#~ "<?xml version=\"1.0\"?>\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
+#~ "  \n"
+#~ "  <xacro:macro name=\"newrobot_ros2_control\" "
+#~ "params=\"hardware_type\">\n"
+#~ "    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
+#~ "        <hardware>\n"
+#~ "          <plugin>mock_components/GenericSystem</plugin>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'gz'}\">\n"
+#~ "        <hardware>\n"
+#~ "          <plugin>gz_ros2_control/GazeboSimSystem</plugin>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'real'}\">\n"
+#~ "        <hardware>\n"
+#~ "          "
+#~ "<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
+#~ ""
+#~ "          <param name=\"device\">can0</param>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <joint name=\"joint_1\">\n"
+#~ "        <command_interface name=\"position\"/>\n"
+#~ "        <state_interface name=\"position\"/>\n"
+#~ "        <state_interface name=\"velocity\"/>\n"
+#~ "      </joint>\n"
+#~ "      <!-- More joints... -->\n"
+#~ "      \n"
+#~ "    </ros2_control>\n"
+#~ "  </xacro:macro>\n"
+#~ "  \n"
+#~ "</robot>\n"
+#~ msgstr ""
+#~ "<?xml version=\"1.0\"?>\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
+#~ "  \n"
+#~ "  <xacro:macro name=\"newrobot_ros2_control\" "
+#~ "params=\"hardware_type\">\n"
+#~ "    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
+#~ "        <hardware>\n"
+#~ "          <plugin>mock_components/GenericSystem</plugin>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'gz'}\">\n"
+#~ "        <hardware>\n"
+#~ "          <plugin>gz_ros2_control/GazeboSimSystem</plugin>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <xacro:if value=\"${hardware_type == 'real'}\">\n"
+#~ "        <hardware>\n"
+#~ "          "
+#~ "<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
+#~ ""
+#~ "          <param name=\"device\">can0</param>\n"
+#~ "        </hardware>\n"
+#~ "      </xacro:if>\n"
+#~ "      \n"
+#~ "      <joint name=\"joint_1\">\n"
+#~ "        <command_interface name=\"position\"/>\n"
+#~ "        <state_interface name=\"position\"/>\n"
+#~ "        <state_interface name=\"velocity\"/>\n"
+#~ "      </joint>\n"
+#~ "      <!-- More joints... -->\n"
+#~ "      \n"
+#~ "    </ros2_control>\n"
+#~ "  </xacro:macro>\n"
+#~ "  \n"
+#~ "</robot>\n"
+
+#~ msgid "Step 2: Hardware Interface (if needed)"
+#~ msgstr "步骤 2：硬件接口（如需要）"
+
+#~ msgid "If using an existing interface (CAN, Modbus, etc.), skip this step."
+#~ msgstr "如果使用现有接口（CAN、Modbus 等），可跳过此步骤。"
+
+#~ msgid "Plugin Structure"
+#~ msgstr "插件结构"
+
+#~ msgid ""
+#~ "// newrobot_hardware_interface.hpp\n"
+#~ "class NewRobotHardwareInterface : public "
+#~ "hardware_interface::SystemInterface\n"
+#~ "{\n"
+#~ "public:\n"
+#~ "  CallbackReturn on_init(const "
+#~ "hardware_interface::HardwareInfo & info) override;"
+#~ "\n"
+#~ "  CallbackReturn on_configure(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  CallbackReturn on_activate(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  CallbackReturn on_deactivate(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  \n"
+#~ "  std::vector<hardware_interface::StateInterface> "
+#~ "export_state_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::CommandInterface> "
+#~ "export_command_interfaces() override;\n"
+#~ "  \n"
+#~ "  return_type read(const rclcpp::Time & "
+#~ "time, const rclcpp::Duration & period) "
+#~ "override;\n"
+#~ "  return_type write(const rclcpp::Time & "
+#~ "time, const rclcpp::Duration & period) "
+#~ "override;\n"
+#~ "};\n"
+#~ msgstr ""
+#~ "// newrobot_hardware_interface.hpp\n"
+#~ "class NewRobotHardwareInterface : public "
+#~ "hardware_interface::SystemInterface\n"
+#~ "{\n"
+#~ "public:\n"
+#~ "  CallbackReturn on_init(const "
+#~ "hardware_interface::HardwareInfo & info) override;"
+#~ "\n"
+#~ "  CallbackReturn on_configure(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  CallbackReturn on_activate(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  CallbackReturn on_deactivate(const "
+#~ "rclcpp_lifecycle::State & previous_state) override;"
+#~ "\n"
+#~ "  \n"
+#~ "  std::vector<hardware_interface::StateInterface> "
+#~ "export_state_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::CommandInterface> "
+#~ "export_command_interfaces() override;\n"
+#~ "  \n"
+#~ "  return_type read(const rclcpp::Time & "
+#~ "time, const rclcpp::Duration & period) "
+#~ "override;\n"
+#~ "  return_type write(const rclcpp::Time & "
+#~ "time, const rclcpp::Duration & period) "
+#~ "override;\n"
+#~ "};\n"
+
+#~ msgid "Step 3: Controller Configuration"
+#~ msgstr "步骤 3：控制器配置"
+
+#~ msgid "OCS2 Arm Config"
+#~ msgstr "OCS2 机械臂配置"
+
+#~ msgid ""
+#~ "# config/ocs2_arm_config.yaml\n"
+#~ "arm:\n"
+#~ "  dof: 6\n"
+#~ "  joint_names:\n"
+#~ "    - joint_1\n"
+#~ "    - joint_2\n"
+#~ "    - joint_3\n"
+#~ "    - joint_4\n"
+#~ "    - joint_5\n"
+#~ "    - joint_6\n"
+#~ "\n"
+#~ "  joint_limits:\n"
+#~ "    position:\n"
+#~ "      lower: [-3.14, -2.0, -2.5, -3.14, -2.0, -3.14]\n"
+#~ "      upper: [3.14, 2.0, 2.5, 3.14, 2.0, 3.14]\n"
+#~ "    velocity: [2.0, 2.0, 2.0, 2.5, 2.5, 2.5]\n"
+#~ "    effort: [100, 100, 80, 50, 50, 30]\n"
+#~ "\n"
+#~ "mpc:\n"
+#~ "  dt: 0.01\n"
+#~ "  horizon: 1.0\n"
+#~ "  # MPC tuning parameters...\n"
+#~ msgstr ""
+#~ "# config/ocs2_arm_config.yaml\n"
+#~ "arm:\n"
+#~ "  dof: 6\n"
+#~ "  joint_names:\n"
+#~ "    - joint_1\n"
+#~ "    - joint_2\n"
+#~ "    - joint_3\n"
+#~ "    - joint_4\n"
+#~ "    - joint_5\n"
+#~ "    - joint_6\n"
+#~ "\n"
+#~ "  joint_limits:\n"
+#~ "    position:\n"
+#~ "      lower: [-3.14, -2.0, -2.5, -3.14, -2.0, -3.14]\n"
+#~ "      upper: [3.14, 2.0, 2.5, 3.14, 2.0, 3.14]\n"
+#~ "    velocity: [2.0, 2.0, 2.0, 2.5, 2.5, 2.5]\n"
+#~ "    effort: [100, 100, 80, 50, 50, 30]\n"
+#~ "\n"
+#~ "mpc:\n"
+#~ "  dt: 0.01\n"
+#~ "  horizon: 1.0\n"
+#~ "  # MPC tuning parameters...\n"
+
+#~ msgid "Step 4: Test Progression"
+#~ msgstr "步骤 4：测试递进"
+
+#~ msgid "Mock Testing"
+#~ msgstr "模拟测试"
+
+#~ msgid ""
+#~ "# Verify URDF\n"
+#~ "check_urdf newrobot.urdf\n"
+#~ "\n"
+#~ "# Display in RViz\n"
+#~ "ros2 launch robot_description_newrobot display.launch.py\n"
+#~ "\n"
+#~ "# Mock demo\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot\n"
+#~ msgstr ""
+#~ "# Verify URDF\n"
+#~ "check_urdf newrobot.urdf\n"
+#~ "\n"
+#~ "# Display in RViz\n"
+#~ "ros2 launch robot_description_newrobot display.launch.py\n"
+#~ "\n"
+#~ "# Mock demo\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot\n"
+
+#~ msgid "Gazebo Testing"
+#~ msgstr "Gazebo 测试"
+
+#~ msgid ""
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=newrobot hardware:=gz\n"
+#~ msgstr ""
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=newrobot hardware:=gz\n"
+
+#~ msgid "Real Hardware Testing"
+#~ msgstr "真实硬件测试"
+
+#~ msgid ""
+#~ "# Follow the go_real_hardware guide\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=newrobot hardware:=real\n"
+#~ msgstr ""
+#~ "# Follow the go_real_hardware guide\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py "
+#~ "robot:=newrobot hardware:=real\n"
+
+#~ msgid "Step 5: Integration"
+#~ msgstr "步骤 5：集成"
+
+#~ msgid "Add to robot_descriptions"
+#~ msgstr "添加到 robot_descriptions"
+
+#~ msgid "Create package in appropriate location"
+#~ msgstr "在合适的位置创建软件包"
+
+#~ msgid "Add as submodule to `robot_descriptions`"
+#~ msgstr "作为子模块添加到 `robot_descriptions`"
+
+#~ msgid "Update visibility configuration"
+#~ msgstr "更新可见性配置"
+
+#~ msgid "Document"
+#~ msgstr "编写文档"
+
+#~ msgid "Create or update:"
+#~ msgstr "创建或更新："
+
+#~ msgid "Package README"
+#~ msgstr "软件包 README"
+
+#~ msgid "Launch file documentation"
+#~ msgstr "启动文件文档"
+
+#~ msgid "Hardware-specific notes"
+#~ msgstr "硬件相关说明"
+
+#~ msgid "Checklist"
+#~ msgstr "检查清单"
+
+#~ msgid "URDF parses without errors"
+#~ msgstr "URDF 解析无错误"
+
+#~ msgid ""
+#~ "<input class=\"task-list-item-checkbox\" "
+#~ "disabled=\"disabled\" type=\"checkbox\">"
+#~ msgstr ""
+#~ "<input class=\"task-list-item-checkbox\" "
+#~ "disabled=\"disabled\" type=\"checkbox\">"
+
+#~ msgid "Meshes display correctly in RViz"
+#~ msgstr "网格在 RViz 中正确显示"
+
+#~ msgid "ros2_control configuration valid"
+#~ msgstr "ros2_control 配置有效"
+
+#~ msgid "Mock hardware demo works"
+#~ msgstr "模拟硬件演示可以运行"
+
+#~ msgid "Gazebo simulation works (if applicable)"
+#~ msgstr "Gazebo 仿真可以运行（如适用）"
+
+#~ msgid "Real hardware works (if applicable)"
+#~ msgstr "真实硬件可以运行（如适用）"
+
+#~ msgid "OCS2 controller tracks targets"
+#~ msgstr "OCS2 控制器能够跟踪目标"
+
+#~ msgid "Package builds cleanly"
+#~ msgstr "软件包能够干净地编译"
+
+#~ msgid "README documents usage"
+#~ msgstr "README 说明了用法"
+
+#~ msgid "Common Issues"
+#~ msgstr "常见问题"
+
+#~ msgid "URDF errors"
+#~ msgstr "URDF 错误"
+
+#~ msgid ""
+#~ "# Check for syntax errors\n"
+#~ "check_urdf <(xacro newrobot.urdf.xacro)"
+#~ msgstr ""
+#~ "# Check for syntax errors\n"
+#~ "check_urdf <(xacro newrobot.urdf.xacro)\n"
+
+#~ msgid "Controller fails to start"
+#~ msgstr "控制器启动失败"
+
+#~ msgid "Verify joint names match between URDF and config"
+#~ msgstr "确认 URDF 与配置中的关节名称一致"
+
+#~ msgid "Check ros2_control hardware plugin is found"
+#~ msgstr "确认能够找到 ros2_control 硬件插件"
+
+#~ msgid "Review controller manager logs"
+#~ msgstr "查看 controller manager 日志"
+
+#~ msgid "Motion incorrect"
+#~ msgstr "运动不正确"
+
+#~ msgid "Verify joint axis directions"
+#~ msgstr "确认关节轴向"
+
+#~ msgid "Check joint limits match physical robot"
+#~ msgstr "确认关节限位与实体机器人一致"
+
+#~ msgid "Verify inertia parameters"
+#~ msgstr "确认惯性参数"
+
+#~ msgid "Next Steps"
+#~ msgstr "下一步"

@@ -124,18 +124,7 @@ Use the matching **branch** and its README scripts. Do not treat `demo.launch.py
 
 ## Internal Deployment (fa-deploy-ws)
 
-For FiveAges robots:
-
-:::{code-block} bash
-cd ~/fa-deploy-ws
-./init_repo.sh --robot <robot_id>
-
-# Configure robot.local.yaml with your values
-vim robot.local.yaml
-
-# Quick start (includes safety checks)
-./quick_start.sh
-:::
+The `fa-deploy-ws` README is not public. After you have access, run the **init / quick-start scripts named in that README**. This page does not invent `--robot`, `robot.local.yaml`, or extra flags. Pattern on the public side: [fa-deploy-ws Setup](../../../1-getting_started/4-fa_deploy_ws.md).
 
 ## Common Hardware Issues
 

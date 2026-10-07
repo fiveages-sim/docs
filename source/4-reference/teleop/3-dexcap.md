@@ -51,21 +51,7 @@ Deployment workspace for DexCap teleoperation.
 
 ### Setup
 
-```bash
-# Conda environment
-conda create -n dexcap python=3.12
-conda activate dexcap
-
-# Deploy
-bash deploy/deploy_fw.sh
-source deploy/setup_env.bash
-```
-
-### Dependencies
-
-- Separate conda environment (`dexcap`)
-- Robot workspace (sibling)
-- DexCap hardware
+Follow the **private workspace README** for its init / setup scripts. This page does not invent `conda create -n dexcap`, `deploy/deploy_fw.sh`, or `deploy/setup_env.bash`.
 
 ## Related
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -153,182 +153,139 @@ msgid "2. Initialize Environment"
 msgstr "2. 初始化环境"
 
 #: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:39
-#: f885311e505b45df9026d5c61c814c1b
+#: 3767aa80c94744e7a3ffd62eff37a58d
 msgid ""
-"# Create conda environment\n"
-"conda create -n dexcap python=3.12\n"
-"conda activate dexcap\n"
-"\n"
-"# Deploy firmware\n"
-"bash deploy/deploy_fw.sh\n"
-"\n"
-"# Setup environment\n"
-"source deploy/setup_env.bash\n"
+"Follow that **private workspace’s README** for its init / setup scripts. "
+"This page does not invent `conda create -n dexcap`, "
+"`deploy/deploy_fw.sh`, or `deploy/setup_env.bash`."
 msgstr ""
-"# Create conda environment\n"
-"conda create -n dexcap python=3.12\n"
-"conda activate dexcap\n"
-"\n"
-"# Deploy firmware\n"
-"bash deploy/deploy_fw.sh\n"
-"\n"
-"# Setup environment\n"
-"source deploy/setup_env.bash\n"
+"按该**私有工作区 README** 中的 init / setup 脚本。本页不编造 `conda create -n dexcap`、`deploy/deploy_fw.sh` 或 `deploy/setup_env.bash`。"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:41
 #: 887ca06d61bc4b05ace22ae7ccff5598
 msgid "3. Initialize Connection"
 msgstr "3. 初始化连接"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:53
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:43
 #: 3c20fcd9a1de4b988a4e28f2c4d8353a
 msgid "First connection should disable commands for safety:"
 msgstr "首次连接应禁用指令以确保安全："
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:55
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:45
 #: 630494255019488595abcd46a76cd6c5
 msgid "ros2 launch dexcap_ros2_control driver.launch.py publish_command:=false\n"
 msgstr "ros2 launch dexcap_ros2_control driver.launch.py publish_command:=false\n"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:59
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:49
 #: 9541202566474850bd84b5b6e72c9f83
 msgid "Launch Order"
 msgstr "启动顺序"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 5fb902250c57467d9a736f52b0476670
 msgid "Important"
 msgstr "重要"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:64
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:54
 #: 3f5fdfe7109d48debb4171744cbc2695
 msgid "Launch components in this order:"
 msgstr "按此顺序启动各组件："
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:65
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:55
 #: fb1c03c4264b4c1f8ffb5793ca8f3153
 msgid "Robot control stack (arm + hand)"
 msgstr "机器人控制栈（机械臂 + 手）"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:66
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:56
 #: 6207e5a23c8d4fdc9b2bf7e4761e476b
 msgid "DexCap driver"
 msgstr "DexCap 驱动"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:67
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:57
 #: 27bfba0f169d46f6b1c5efc52c76aa7a
 msgid "Teleop joint mapper"
 msgstr "遥操作关节映射器"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:70
-#: 3e3baad21f5e4effb57ae5720c77a0da
-msgid "Step 1: Robot Stack"
-msgstr "步骤 1：机器人控制栈"
-
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:72
-#: 531e0f36bb794fba826191dbdde8e67a
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:60
+#: 5096879568ac42db881c1e2f30748029
 msgid ""
-"# In robot workspace\n"
-"ros2 launch <robot>_bringup bringup.launch.py\n"
+"Launch order, package names, and topics: the **private README**. Do not "
+"invent `<robot>_bringup`, a hand-written `conda activate`, or extra "
+"launch files here."
 msgstr ""
-"# In robot workspace\n"
-"ros2 launch <robot>_bringup bringup.launch.py\n"
+"启动顺序、包名和话题：以**私有 README** 为准。此处不要编造 `<robot>_bringup`、手写 `conda activate` 或额外 launch 文件。"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:77
-#: 6f7f4a83257d4decb3705c1ebbdd5958
-msgid "Step 2: DexCap Driver"
-msgstr "步骤 2：DexCap 驱动"
-
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:79
-#: de918e4968b745a99eae5c9327b91dda
-msgid ""
-"conda activate dexcap\n"
-"ros2 launch dexcap_ros2_control driver.launch.py\n"
-msgstr ""
-"conda activate dexcap\n"
-"ros2 launch dexcap_ros2_control driver.launch.py\n"
-
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:84
-#: fc3c33d1a7154dafb1b57eda6157f8ff
-msgid "Step 3: Joint Mapper"
-msgstr "步骤 3：关节映射器"
-
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:86
-#: db5589d6165c4016a06f9319085f3bab
-msgid "ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6\n"
-msgstr "ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6\n"
-
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:90
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:62
 #: 793749c1890748689a91be81a4a4faf4
 msgid "Topics"
 msgstr "主题"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 74fe3057ff4d487baa7a55d28850f734
 msgid "Topic"
 msgstr "话题"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 90fda2e10bd84548bed8f2ccfda6c578
 msgid "Type"
 msgstr "类型"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: b39b3e4e70324eb5aab1f1e650a2b2aa
 msgid "Description"
 msgstr "描述"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 86e21a6ed9f243c3b72a590ba02b1622
 msgid "`/dexcap/joint_states`"
 msgstr "`/dexcap/joint_states`"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
-#: 1057fcb56d124608a22788452f5e1c6d 5f627bf46c21454c9c9611f0ead5881d
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 5f627bf46c21454c9c9611f0ead5881d
 msgid "`JointState`"
 msgstr "`JointState`"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: bca203b73b1941e28c491b305b6c17d0
 msgid "Raw glove joint angles"
 msgstr "手套原始关节角"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: f8b012e2c9dd42d8867960853a7b7cb0
 msgid "`/dexcap/hand_pose`"
 msgstr "`/dexcap/hand_pose`"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 9a3595fe4aa94941be1fc7dda31c13d8
 msgid "`PoseStamped`"
 msgstr "`PoseStamped`"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: ef101cdd8e3c43acaf910036c4a13b9a
 msgid "Hand position/orientation"
 msgstr "手部位姿/朝向"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: 3779db7f91374675ba29737479f38296
 msgid "`/teleop/target_hand_joints`"
 msgstr "`/teleop/target_hand_joints`"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
 #: d14ada90f5da4fda8db00f13500178ad
 msgid "Mapped robot hand targets"
 msgstr "映射后的机器人手部目标"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:98
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:70
 #: 51629474c3a54f3ba1e494c1ece22558
 msgid "Joint Mapping"
 msgstr "关节映射"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:100
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:72
 #: ffeea9556e3e4a5d85e55efd3aae4e39
 msgid "The mapper translates DexCap joint angles to robot-specific joints:"
 msgstr "映射器将 DexCap 关节角转换为机器人专用关节："
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:102
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:74
 #: 53d72d0ae2ef47cda6dfd9483ed2c414
 msgid ""
 "# Example mapping config\n"
@@ -345,137 +302,185 @@ msgstr ""
 "  dexcap_index_mcp: robot_index_base\n"
 "  # ...\n"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:111
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:83
 #: 285c4cb506ab495b82e0b98cfb192fe7
 msgid "Safety"
 msgstr "安全"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:113
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:85
 #: 72d5185c8afc40a99911235ba43a6ac2
 msgid "Calibration Required"
 msgstr "需要校准"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:116
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:88
 #: 4be0211fc6ec49eeb8e855cb0c3aa92f
 msgid "Before each session:"
 msgstr "每次会话开始前："
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:117
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:89
 #: 193a7eef300948279f9ef90fec85a21c
 msgid "Calibrate gloves in neutral position"
 msgstr "在中立位置校准手套"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:118
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:90
 #: 2b704fa567504d59982b6fd66657c4c1
 msgid "Verify joint limits are enforced"
 msgstr "确认已强制执行关节限位"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:119
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:91
 #: f88a40bb99514f63b4cf1517605cc86e
 msgid "Test with mock hardware first"
 msgstr "先在模拟硬件上测试"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:122
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:94
 #: f2b6274825924501838d92346f3036ee
 msgid "Verification"
 msgstr "验证"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:124
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:96
 #: 2fd370ce0cc24c3f83194ae0a87bc9eb
 msgid "DexCap driver shows connected status"
 msgstr "DexCap 驱动显示已连接状态"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:125
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:97
 #: bce2d34897284209851641414efbe853
 msgid "`/dexcap/joint_states` publishes hand joint angles"
 msgstr "`/dexcap/joint_states` 发布手部关节角"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:126
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:98
 #: 511a00e1d4de426d92247b05c12e146e
 msgid "Robot hand follows glove motion"
 msgstr "机器人手跟随手套运动"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:127
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:99
 #: 263039f76be1456b9dc4d8d5cd2a47e8
 msgid "Arm follows hand position (if arm teleop enabled)"
 msgstr "机械臂跟随手部位置（若已启用手臂遥操作）"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:129
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:101
 #: 97c0e6808694473e809434461a937578
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:131
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:103
 #: 1740c351f151472d9fa9e2938a01a2e2
 msgid "Driver fails to connect"
 msgstr "驱动连接失败"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:133
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:105
 #: 64603b244eb54e22bdfb81c1561fe5b4
 msgid "Check USB/Bluetooth connection"
 msgstr "检查 USB/蓝牙连接"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:134
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:106
 #: 3bfe616dd25743a5a74464a4beab92f4
 msgid "Verify firmware is deployed"
 msgstr "确认固件已部署"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:135
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:107
 #: d830d1484928427d8b84f35f3d483b93
 msgid "Check device permissions"
 msgstr "检查设备权限"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:137
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:109
 #: 1f7e86f795ce4a7c8962fb6d6d5b51d2
 msgid "Hand motion reversed"
 msgstr "手部运动方向相反"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:139
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:111
 #: 6864e871fc9f4401aa0d68247a7a6197
 msgid "Check left/right hand configuration"
 msgstr "检查左/右手配置"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:140
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:112
 #: 87a5024012a64a2bb4966136e12420f0
 msgid "Verify joint mapping signs"
 msgstr "确认关节映射符号"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:142
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:114
 #: 420f02e3c09745cbad1d0c00d9e26dea
 msgid "Latency issues"
 msgstr "延迟问题"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:144
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:116
 #: 336e030bf6374e0aa9baffd2dd8ad7fc
 msgid "Use wired connection"
 msgstr "使用有线连接"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:145
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:117
 #: 8fb3b12cde3645c5a7ce1310ad21de09
 msgid "Reduce update rate"
 msgstr "降低更新频率"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:146
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:118
 #: 457b5a644cf740c4b4716eb46ad46782
 msgid "Check for dropped packets"
 msgstr "检查是否有丢包"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:148
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:120
 #: 63217dd0bcbd4148aa3a307b46eb96c3
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:150
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:122
 #: c8254f078e4a4a7d947009d49109649f
 msgid ""
 "[teleop-joint-mapper "
 "reference](../../4-reference/teleop/4-teleop_joint_mapper.md)"
-msgstr "[teleop-joint-mapper 参考](../../4-reference/teleop/4-teleop_joint_mapper.md)"
+msgstr ""
+"[teleop-joint-mapper "
+"参考](../../4-reference/teleop/4-teleop_joint_mapper.md)"
 
-#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:151
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:123
 #: 21a2578223e04240b694bf4f84856fd3
 msgid ""
 "[wuji-ros2-control reference](../../4-reference/hardware/2-private_hi.md)"
 " (Hand hardware)"
 msgstr "[wuji-ros2-control 参考](../../4-reference/hardware/2-private_hi.md)（手部硬件）"
 
+#~ msgid ""
+#~ "# Create conda environment\n"
+#~ "conda create -n dexcap python=3.12\n"
+#~ "conda activate dexcap\n"
+#~ "\n"
+#~ "# Deploy firmware\n"
+#~ "bash deploy/deploy_fw.sh\n"
+#~ "\n"
+#~ "# Setup environment\n"
+#~ "source deploy/setup_env.bash\n"
+#~ msgstr ""
+#~ "# Create conda environment\n"
+#~ "conda create -n dexcap python=3.12\n"
+#~ "conda activate dexcap\n"
+#~ "\n"
+#~ "# Deploy firmware\n"
+#~ "bash deploy/deploy_fw.sh\n"
+#~ "\n"
+#~ "# Setup environment\n"
+#~ "source deploy/setup_env.bash\n"
+
+#~ msgid "Step 1: Robot Stack"
+#~ msgstr "步骤 1：机器人控制栈"
+
+#~ msgid ""
+#~ "# In robot workspace\n"
+#~ "ros2 launch <robot>_bringup bringup.launch.py\n"
+#~ msgstr ""
+#~ "# In robot workspace\n"
+#~ "ros2 launch <robot>_bringup bringup.launch.py\n"
+
+#~ msgid "Step 2: DexCap Driver"
+#~ msgstr "步骤 2：DexCap 驱动"
+
+#~ msgid ""
+#~ "conda activate dexcap\n"
+#~ "ros2 launch dexcap_ros2_control driver.launch.py\n"
+#~ msgstr ""
+#~ "conda activate dexcap\n"
+#~ "ros2 launch dexcap_ros2_control driver.launch.py\n"
+
+#~ msgid "Step 3: Joint Mapper"
+#~ msgstr "步骤 3：关节映射器"
+
+#~ msgid "ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6\n"
+#~ msgstr "ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6\n"

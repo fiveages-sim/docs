@@ -6,7 +6,7 @@ Run a robot demonstration with the default `hardware:=mock_components` plugin (`
 
 - [Install Environment](../../1-getting_started/2-install_environment.md) done
 - Workspace initialized with `./init_repo.sh` and `colcon build`
-- In the launch terminal: `source install/setup.bash` (standard overlay; no extra env script)
+- Lean branches (`arx-lift2s`, `panthera-ht`): `./quick_start.sh` (it sources `install/` after a successful build). On `open-deploy-ws` `main`, after `colcon build`, `source install/setup.bash` in the launch terminal (standard ROS overlay; no extra env script).
 
 ## Steps
 

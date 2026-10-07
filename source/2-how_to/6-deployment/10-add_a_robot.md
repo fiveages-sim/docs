@@ -1,239 +1,89 @@
 # Add a Robot
 
-Integrate a new robot into the FiveAges Sim ecosystem.
+How a new robot enters this stack. Copy an **existing** description package and the launch/xacro patterns already in the repo. Do not invent package trees, `hardware:=mock`, MPC horizon YAML, or a `display.launch.py` that no package README lists.
 
-## Overview
+```{admonition} Source of truth
+:class: important
 
-Adding a robot requires:
-1. Description package (URDF/xacro + ros2_control config)
-2. Hardware interface plugin (if not existing)
-3. Controller configuration
-4. Testing progression: mock → simulation → real
+- Description layout: an existing `{robot}_description` package (example below: [arx_acone_description](https://github.com/fiveages-sim/robot-descriptions-arx/tree/main/arx_acone_description)) and its package README
+- Umbrella + submodule paths: [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) (e.g. ARX at `manipulator/ARX`)
+- Launch / `hardware:=` / EEF: [robot_common_launch](../../4-reference/descriptions/2-common.md)
+- Workspace init: `./init_repo.sh` in [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) + [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf)
+- Isaac USD: FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (folder `USDA-OCS2-PhysX-Mujoco`) — [skill](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — plus `./init.sh` / `./run.sh` and [robot_usds](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)
 
-## Step 1: Create Description Package
+**No `.cursor/skills` was found** on `main` for `robot_descriptions`, `robot-descriptions-common`, or `robot_usds`. Use those READMEs plus the FaSim-Isaac skills. Do not invent a description-side skill.
+```
 
-### Package Structure
+## 1. ROS description package
+
+Public brand trees live as submodules under [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) (`common`, `manipulator/ARX`, `manipulator/Dobot`, …). In `open-deploy-ws` the same tree is `src/robot-descriptions/` after **`./init_repo.sh`**. Do not recursive-init.
+
+Copy a real package. Acone (from that repo) looks like:
 
 :::{code-block} none
-robot_description_newrobot/
+arx_acone_description/
 ├── CMakeLists.txt
 ├── package.xml
-├── urdf/
-│   ├── newrobot.urdf.xacro
-│   └── newrobot.ros2_control.xacro
-├── meshes/
-│   ├── visual/
-│   └── collision/
+├── README.md
+├── xacro/
+│   ├── robot.xacro
+│   ├── arm_mount.xacro
+│   ├── component.xacro
+│   └── ros2_control/          # hardware plugin branches
 ├── config/
-│   └── ocs2_arm_config.yaml
-└── launch/
-    └── display.launch.py
+│   ├── ocs2/                  # task .info (not an invented ocs2_arm_config.yaml)
+│   └── ros2_control/          # optional {hardware}.yaml overlay
+└── meshes/
 :::
 
-### URDF/Xacro
+Launch key is `robot:=<key>` where the package is `{key}_description` ([robot_common_launch](../../4-reference/descriptions/2-common.md)). `demo.launch.py` default is `cr5`.
 
-```xml
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="newrobot">
-  
-  <!-- Include ros2_control -->
-  <xacro:include filename="$(find robot_description_newrobot)/urdf/newrobot.ros2_control.xacro"/>
-  
-  <!-- Base link -->
-  <link name="base_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://robot_description_newrobot/meshes/visual/base.stl"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="package://robot_description_newrobot/meshes/collision/base.stl"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="5.0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-  </link>
-  
-  <!-- Joints and links... -->
-  
-</robot>
-```
+`hardware:=` values that exist in Acone xacro / common launch: `mock_components` (default), `gz`, `isaac`, `real`. There is **no** `hardware:=mock`. Plugins: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). Do not invent a new HI class name here — use that robot’s `xacro/ros2_control/*.xacro` or an existing vendor HI README ([arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) for ARX `hardware:=real`).
 
-### ros2_control Configuration
+OCS2 files the controller actually loads: `{robot_pkg}/config/ocs2/<info>.info` ([ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)). Planning URDF comes from the same xacro via `robot_common_launch`, not a static `urdf/*.urdf`.
 
-```xml
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  
-  <xacro:macro name="newrobot_ros2_control" params="hardware_type">
-    <ros2_control name="NewRobotSystem" type="system">
-      
-      <xacro:if value="${hardware_type == 'mock'}">
-        <hardware>
-          <plugin>mock_components/GenericSystem</plugin>
-        </hardware>
-      </xacro:if>
-      
-      <xacro:if value="${hardware_type == 'gz'}">
-        <hardware>
-          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
-        </hardware>
-      </xacro:if>
-      
-      <xacro:if value="${hardware_type == 'real'}">
-        <hardware>
-          <plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>
-          <param name="device">can0</param>
-        </hardware>
-      </xacro:if>
-      
-      <joint name="joint_1">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-      <!-- More joints... -->
-      
-    </ros2_control>
-  </xacro:macro>
-  
-</robot>
-```
+EEF / FT / TCP: `type` / `left_type` / `right_type` (not `gripper:=`).
 
-## Step 2: Hardware Interface (if needed)
+## 2. Wire it into a deploy workspace
 
-If using an existing interface (CAN, Modbus, etc.), skip this step.
+In `open-deploy-ws`:
 
-### Plugin Structure
+1. `./init_repo.sh` so nested modules match `submodules_visibility.conf`.
+2. If you added a **new** nested submodule: add the Git submodule on the parent, then one pipe line `parent_dir|relative_path|public` or `private` — [Submodules Visibility](../../3-concepts/6-submodules_visibility.md).
+3. `colcon build --symlink-install`. Lean branches (`arx-lift2s`, `panthera-ht`): prefer **`./quick_start.sh`** (it sources `install/setup.bash` after a successful build). On `main`, after colcon, `source install/setup.bash` in the launch terminal (standard ROS overlay; no extra env script).
 
-```cpp
-// newrobot_hardware_interface.hpp
-class NewRobotHardwareInterface : public hardware_interface::SystemInterface
-{
-public:
-  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override;
-  CallbackReturn on_configure(const rclcpp_lifecycle::State & previous_state) override;
-  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override;
-  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;
-  
-  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
-  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
-  
-  return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;
-  return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
-};
-```
+[robot-descriptions-arx README](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/README.md) also shows adding the brand repo as `src/robot-descriptions-arx` or `git submodule update --init manipulator/ARX` under the umbrella. Prefer the deploy-ws init script when you are in `open-deploy-ws`.
 
-## Step 3: Controller Configuration
-
-### OCS2 Arm Config
-
-```yaml
-# config/ocs2_arm_config.yaml
-arm:
-  dof: 6
-  joint_names:
-    - joint_1
-    - joint_2
-    - joint_3
-    - joint_4
-    - joint_5
-    - joint_6
-
-  joint_limits:
-    position:
-      lower: [-3.14, -2.0, -2.5, -3.14, -2.0, -3.14]
-      upper: [3.14, 2.0, 2.5, 3.14, 2.0, 3.14]
-    velocity: [2.0, 2.0, 2.0, 2.5, 2.5, 2.5]
-    effort: [100, 100, 80, 50, 50, 30]
-
-mpc:
-  dt: 0.01
-  horizon: 1.0
-  # MPC tuning parameters...
-```
-
-## Step 4: Test Progression
-
-### Mock Testing
-
-```bash
-# Verify URDF
-check_urdf newrobot.urdf
-
-# Display in RViz
-ros2 launch robot_description_newrobot display.launch.py
-
-# Mock demo
-ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot
-```
-
-### Gazebo Testing
-
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=gz
-```
-
-### Real Hardware Testing
-
-```bash
-# Follow the go_real_hardware guide
-ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=real
-```
-
-## Step 5: Integration
-
-### Add to robot_descriptions
-
-1. Create package in appropriate location
-2. Add as submodule to `robot_descriptions`
-3. Update visibility configuration
-4. Create PR
-
-### Document
-
-Create or update:
-- Package README
-- Launch file documentation
-- Hardware-specific notes
-
-## Checklist
-
-- [ ] URDF parses without errors
-- [ ] Meshes display correctly in RViz
-- [ ] ros2_control configuration valid
-- [ ] Mock hardware demo works
-- [ ] Gazebo simulation works (if applicable)
-- [ ] Real hardware works (if applicable)
-- [ ] OCS2 controller tracks targets
-- [ ] Package builds cleanly
-- [ ] README documents usage
-
-## Common Issues
-
-### URDF errors
+Controllers already in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control): `ocs2_arm_controller` `demo.launch.py` / `split_body.launch.py` / `full_body.launch.py`, plus `basic_joint_controller`. Example from the Acone README (after the workspace overlay):
 
 :::{code-block} bash
-# Check for syntax errors
-check_urdf <(xacro newrobot.urdf.xacro)
+ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 :::
 
-### Controller fails to start
+Do not invent `robot_description_newrobot/display.launch.py` or a `NewRobotHardwareInterface` C++ stub.
 
-- Verify joint names match between URDF and config
-- Check ros2_control hardware plugin is found
-- Review controller manager logs
+## 3. Isaac USD (FaSim-Isaac skill)
 
-### Motion incorrect
+`robot_descriptions` / `robot-descriptions-common` / `robot_usds` have **no** Cursor skill on `main`. The Isaac import pipeline is the FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**:
 
-- Verify joint axis directions
-- Check joint limits match physical robot
-- Verify inertia parameters
+- Skill file: [`.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md)
+- Other skills in that folder (do not invent names): `fasim-robot-mujoco-physics`, `fasim-dexhand-asset`, `fasim-rg75-pad-convert`, `fasim-usd-bake-scale`
 
-## Next Steps
+What that skill covers (overview only — follow the skill, do not treat this list as a substitute):
 
-- [ros2_control here](../../3-concepts/1-ros2_control_here.md) — Understand the control architecture
-- [Developer guide](../../5-developer/0-index.md) — Contributing guidelines
+1. Split / expand URDF or xacro; record mount poses.
+2. Isaac 5: Import URDF → USD. Isaac 6: Asset Transformer → USDA.
+3. Robot Assembler (child → parent; one articulation root).
+4. Root `variantSets` + **local** adapter payloads (`payloads/Physics/{none,physics,physx,mujoco}.usda`, …).
+5. PhysX vs Newton/MuJoCo layers kept separate; host side `topic_based_ros2_control` + `hardware:=isaac`.
+
+Asset layout: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) (`robots/manipulators/…`, `robots/mobile_manipulator/…`). FaSim-Isaac checkout: **`./init.sh`** (submodules + optional Isaac ROS 2 workspace), then **`./run.sh`**. Do not hand-write Isaac `PATH` or a `~/.bashrc` overlay. See [Isaac Sim](../2-simulation/4-isaac_sim.md).
+
+## Related
+
+- [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)
+- [Workspace Layout](../../3-concepts/2-workspace_layout.md)
+- [robot_common_launch](../../4-reference/descriptions/2-common.md)
+- [Go to Real Hardware](9-go_real_hardware/0-index.md)
+- [Developer guide](../../5-developer/0-index.md)

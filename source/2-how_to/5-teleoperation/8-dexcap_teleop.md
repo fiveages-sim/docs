@@ -36,17 +36,7 @@ cd dexcap_teleop_ws
 
 ### 2. Initialize Environment
 
-```bash
-# Create conda environment
-conda create -n dexcap python=3.12
-conda activate dexcap
-
-# Deploy firmware
-bash deploy/deploy_fw.sh
-
-# Setup environment
-source deploy/setup_env.bash
-```
+Follow that **private workspace’s README** for its init / setup scripts. This page does not invent `conda create -n dexcap`, `deploy/deploy_fw.sh`, or `deploy/setup_env.bash`.
 
 ### 3. Initialize Connection
 
@@ -67,25 +57,7 @@ Launch components in this order:
 3. Teleop joint mapper
 ```
 
-### Step 1: Robot Stack
-
-```bash
-# In robot workspace
-ros2 launch <robot>_bringup bringup.launch.py
-```
-
-### Step 2: DexCap Driver
-
-```bash
-conda activate dexcap
-ros2 launch dexcap_ros2_control driver.launch.py
-```
-
-### Step 3: Joint Mapper
-
-```bash
-ros2 launch teleop_joint_mapper mapper.launch.py robot:=tianji_m6
-```
+Launch order, package names, and topics: the **private README**. Do not invent `<robot>_bringup`, a hand-written `conda activate`, or extra launch files here.
 
 ## Topics
 
