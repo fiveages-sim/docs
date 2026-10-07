@@ -8,6 +8,7 @@ This page explains the structure of the deploy workspaces and how to navigate th
 open-deploy-ws/
 ├── src/
 │   ├── arms_ros2_control/           # Main controller package
+│   │   ├── basic_joint_controller/  # Joint FSM Home / Hold / MoveJ
 │   │   ├── ocs2_arm_controller/     # MPC controller
 │   │   ├── adaptive_gripper_controller/
 │   │   ├── arms_teleop_controller/

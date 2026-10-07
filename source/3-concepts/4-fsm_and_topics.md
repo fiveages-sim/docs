@@ -24,17 +24,11 @@ Exact transitions depend on the **running controller**:
 ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 2"   # HOLD
 :::
 
-## 分体控制 vs 全身控制
-
-| Mode | Chinese | What runs | Launch |
-|------|---------|-----------|--------|
-| **Split** | 分体控制 | Arm MPC ([ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)) + body/head (and typically hands) via [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | `ros2 launch ocs2_arm_controller split_body.launch.py` (`launch_mode` `split_body`) |
-| **Whole-body** | 全身控制 | Unified [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) (`ocs2_wheel_humanoid`) | `ros2 launch ocs2_arm_controller full_body.launch.py` (`launch_mode` `full_body`) when the config type is `ocs2_wbc_controller/Ocs2WbcController` |
-
-Do not describe teleop as a separate FSM state. Implemented teleop is the isomorphic path — [Isomorphic Teleop](../2-how_to/7-isomorphic_teleop.md) — not a `/teleop/left_ee_pose` contract on this page.
+Split vs whole-body launches (and the Lift2S `quick_start` **split body** / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not describe teleop as a separate FSM state — [Isomorphic Teleop](../2-how_to/7-isomorphic_teleop.md).
 
 ## Related
 
+- [Use basic_joint_controller](../2-how_to/11-basic_joint.md)
 - [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)
 - [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)
 - [ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)

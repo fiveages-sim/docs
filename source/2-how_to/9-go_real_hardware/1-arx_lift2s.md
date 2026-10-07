@@ -40,7 +40,7 @@ cd ~/lift2s-ws
 README menu:
 
 1. **Build** — simulation packages, or real-hardware packages (includes `arx_ros2_control`)
-2. **Launch** — choose **Lift2S**, then **split body** or **full body**, then simulation (`mock_components`) or **real hardware**
+2. **Launch** — choose **Lift2S**, then **split body** (分体控制) or **full body** (全身控制), then simulation (`mock_components`) or **real hardware**. See [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md).
 
 CAN (README): left/right arms `can1` / `can3`; no network IP. Lift axis defaults to `hybrid` (change to `soft_p` in `quick_start`).
 
@@ -64,5 +64,7 @@ Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and `export RM
 ## Related
 
 - [Go to Real Hardware](0-index.md)
+- [Use basic_joint_controller](../11-basic_joint.md)
+- [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
 - [HighTorque Panthera HT](2-panthera_ht.md)
 - [open-deploy-ws setup](../../1-getting_started/3-open_deploy_ws.md)

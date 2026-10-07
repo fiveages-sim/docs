@@ -65,6 +65,7 @@ Pattern: `<function>_controller` or `ocs2_<type>_controller`
 
 | Package | Purpose |
 |---------|---------|
+| `basic_joint_controller` | Joint FSM Home / Hold / MoveJ |
 | `ocs2_arm_controller` | Arm MPC controller |
 | `adaptive_gripper_controller` | Gripper control |
 | `arms_teleop_controller` | Teleop integration |

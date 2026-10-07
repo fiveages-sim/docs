@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:29+0000\n"
+"POT-Creation-Date: 2026-10-07 01:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -99,7 +99,9 @@ msgstr "`type`"
 msgid ""
 "Symmetric **end-effector** key, **or** arm topology `left` / `right` / "
 "`dual` (topology does not expand to `left_type` / `right_type`)"
-msgstr "对称**末端**键，**或**臂拓扑 `left` / `right` / `dual`（拓扑不会展开成 `left_type` / `right_type`）"
+msgstr ""
+"对称**末端**键，**或**臂拓扑 `left` / `right` / `dual`（拓扑不会展开成 `left_type` / "
+"`right_type`）"
 
 #: ../../source/3-concepts/3-naming_conventions.md
 #: 342b555992b74e619a849850a92134bf
@@ -175,7 +177,8 @@ msgid ""
 "> profile > xacro defaults**. See "
 "[robot_common_launch](../4-reference/descriptions/2-common.md)."
 msgstr ""
-"没有 `gripper:=` / `gripper_type:=` launch 参数。合并：**CLI > profile > xacro 默认值**。见 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
+"没有 `gripper:=` / `gripper_type:=` launch 参数。合并：**CLI > profile > xacro "
+"默认值**。见 [robot_common_launch](../4-reference/descriptions/2-common.md)。"
 
 #: ../../source/3-concepts/3-naming_conventions.md:22
 #: 2d3d8ec17a33484d83a843475ea7e276
@@ -353,6 +356,16 @@ msgid "Pattern: `<function>_controller` or `ocs2_<type>_controller`"
 msgstr "模式：`<function>_controller` 或 `ocs2_<type>_controller`"
 
 #: ../../source/3-concepts/3-naming_conventions.md:22
+#: 7899768ad90243888888bf0cc7eb6e1e
+msgid "`basic_joint_controller`"
+msgstr "`basic_joint_controller`"
+
+#: ../../source/3-concepts/3-naming_conventions.md:22
+#: eaf4ea43f35e4cc7a61cb71b29246245
+msgid "Joint FSM Home / Hold / MoveJ"
+msgstr "关节 FSM Home / Hold / MoveJ"
+
+#: ../../source/3-concepts/3-naming_conventions.md:22
 #: 0c3c094c2fa54af7836b35c4be9b6cf3
 msgid "`ocs2_arm_controller`"
 msgstr "`ocs2_arm_controller`"
@@ -382,12 +395,12 @@ msgstr "`arms_teleop_controller`"
 msgid "Teleop integration"
 msgstr "遥操作集成"
 
-#: ../../source/3-concepts/3-naming_conventions.md:72
+#: ../../source/3-concepts/3-naming_conventions.md:73
 #: 81b9096a0933426ea081a84bddc135c3
 msgid "Topic Naming"
 msgstr "话题命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:74
+#: ../../source/3-concepts/3-naming_conventions.md:75
 #: 5802220293484380be37c09f123f76b2
 msgid "Joint Topics"
 msgstr "关节话题"
@@ -432,7 +445,7 @@ msgstr "`/joint_commands`"
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/3-concepts/3-naming_conventions.md:81
+#: ../../source/3-concepts/3-naming_conventions.md:82
 #: 6bcc0f895efd4e089b4646b6134b2923
 msgid "FSM Topics"
 msgstr "FSM 话题"
@@ -454,20 +467,21 @@ msgid ""
 " `String`."
 msgstr "FSM 命令（`1` HOME，`2` HOLD，`3` OCS2 / 旧版 MOVEJ，`4` MOVEJ）。不是 `String`。"
 
-#: ../../source/3-concepts/3-naming_conventions.md:87
+#: ../../source/3-concepts/3-naming_conventions.md:88
 #: e78180aa03dc4c809493791901b03ea4
 msgid ""
 "Per-controller states and topics: [FSM and Topics](4-fsm_and_topics.md). "
 "Do not invent `/mode_command` or `/fsm_state` String contracts."
 msgstr ""
-"各控制器状态与话题见 [FSM 与话题](4-fsm_and_topics.md)。不要编造 `/mode_command` 或 `/fsm_state` 的 String 约定。"
+"各控制器状态与话题见 [FSM 与话题](4-fsm_and_topics.md)。不要编造 `/mode_command` 或 "
+"`/fsm_state` 的 String 约定。"
 
-#: ../../source/3-concepts/3-naming_conventions.md:89
+#: ../../source/3-concepts/3-naming_conventions.md:90
 #: ec2991f952da4ef1a59b5f9c9be89e1b
 msgid "Frame Naming"
 msgstr "坐标系命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:91
+#: ../../source/3-concepts/3-naming_conventions.md:92
 #: 3761c4b2803d4fe69daa3f1cad5e1f08
 msgid "Standard Frames"
 msgstr "标准坐标系"
@@ -537,7 +551,7 @@ msgstr "`<arm>_tool0`"
 msgid "Tool frame"
 msgstr "工具坐标系"
 
-#: ../../source/3-concepts/3-naming_conventions.md:102
+#: ../../source/3-concepts/3-naming_conventions.md:103
 #: 40086563861e4299904fa9d8eaaf6ae0
 msgid "Dual-Arm Frames"
 msgstr "双臂坐标系"
@@ -582,12 +596,12 @@ msgstr "`right_ee_link`"
 msgid "Right end effector"
 msgstr "右臂末端执行器"
 
-#: ../../source/3-concepts/3-naming_conventions.md:111
+#: ../../source/3-concepts/3-naming_conventions.md:112
 #: ef7d973230c44c17874ee92921b87bb9
 msgid "Configuration Files"
 msgstr "配置文件"
 
-#: ../../source/3-concepts/3-naming_conventions.md:113
+#: ../../source/3-concepts/3-naming_conventions.md:114
 #: f7263a0c451843eb9b3f0c285911debf
 msgid "YAML Files"
 msgstr "YAML 文件"
@@ -637,12 +651,12 @@ msgstr "`ocs2_arm_config.yaml`"
 msgid "MPC configuration"
 msgstr "MPC 配置"
 
-#: ../../source/3-concepts/3-naming_conventions.md:122
+#: ../../source/3-concepts/3-naming_conventions.md:123
 #: 1e4d8956d98149a889f2081b3a413a4d
 msgid "Configuration Naming"
 msgstr "配置命名"
 
-#: ../../source/3-concepts/3-naming_conventions.md:124
+#: ../../source/3-concepts/3-naming_conventions.md:125
 #: b197b0d037f441a287259a7fccc466d2
 msgid ""
 "# Controller config pattern\n"
@@ -669,7 +683,7 @@ msgstr ""
 "      dt: 0.01\n"
 "      horizon: 1.0\n"
 
-#: ../../source/3-concepts/3-naming_conventions.md:138
+#: ../../source/3-concepts/3-naming_conventions.md:139
 #: 9e1ca763df884ad4b851c650c3f7bbe0
 msgid "File Naming"
 msgstr "文件命名"
@@ -729,27 +743,27 @@ msgstr "`*_config.yaml`"
 msgid "Configuration"
 msgstr "配置"
 
-#: ../../source/3-concepts/3-naming_conventions.md:147
+#: ../../source/3-concepts/3-naming_conventions.md:148
 #: 9694068cd421481faa9d02a322ed3129
 msgid "Best Practices"
 msgstr "最佳实践"
 
-#: ../../source/3-concepts/3-naming_conventions.md:149
+#: ../../source/3-concepts/3-naming_conventions.md:150
 #: 2f84dd5440c74b66bf57ebbc3ca2a4cb
 msgid "**Use underscores** in Python, launch parameters, and topics"
 msgstr "**使用下划线** 命名 Python 代码、启动参数和话题"
 
-#: ../../source/3-concepts/3-naming_conventions.md:150
+#: ../../source/3-concepts/3-naming_conventions.md:151
 #: 8968218b7af146b780661307e0ba8075
 msgid "**Use hyphens** in package names and repository names"
 msgstr "**使用连字符** 命名软件包和仓库"
 
-#: ../../source/3-concepts/3-naming_conventions.md:151
+#: ../../source/3-concepts/3-naming_conventions.md:152
 #: 25141ace44b148d8a2e1857020647481
 msgid "**Be consistent** — Match existing patterns in the codebase"
 msgstr "**保持一致** — 与代码库中的既有模式对齐"
 
-#: ../../source/3-concepts/3-naming_conventions.md:152
+#: ../../source/3-concepts/3-naming_conventions.md:153
 #: db99ce2a9f404eb8a6de4898c742f25b
 msgid "**Prefix namespaces** — Use robot/arm prefixes for multi-robot setups"
 msgstr "**为命名空间加前缀** — 多机器人场景使用机器人/机械臂前缀"

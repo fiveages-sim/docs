@@ -9,7 +9,7 @@ ROS 2 controllers in [arms_ros2_control](https://github.com/fiveages-sim/arms_ro
 | **Split** | 分体控制 | Arm MPC: [ocs2_arm_controller](2-ocs2_arm_controller.md). Body / head / hands: [basic_joint_controller](7-basic_joint_controller.md) | `ocs2_arm_controller` `split_body.launch.py` (`launch_mode` `split_body`) |
 | **Whole-body** | 全身控制 | Unified [ocs2_wbc_controller](3-ocs2_wbc.md) (`ocs2_wheel_humanoid`) | `ocs2_arm_controller` `full_body.launch.py` (`launch_mode` `full_body`) |
 
-FSM command type and per-controller states: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). `/fsm_command` is `std_msgs/Int32`.
+Concepts: [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../../2-how_to/11-basic_joint.md). `/fsm_command` is `std_msgs/Int32` — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## In This Section
 

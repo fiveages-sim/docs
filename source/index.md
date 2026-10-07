@@ -69,6 +69,7 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 2-how_to/7-drag_teleop
 2-how_to/8-dexcap_teleop
 2-how_to/9-go_real_hardware/0-index
+2-how_to/11-basic_joint
 2-how_to/10-add_a_robot
 ```
 
@@ -81,6 +82,7 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 3-concepts/2-workspace_layout
 3-concepts/3-naming_conventions
 3-concepts/4-fsm_and_topics
+3-concepts/7-split_vs_wbc
 3-concepts/5-source_vs_deb
 3-concepts/6-submodules_visibility
 ```

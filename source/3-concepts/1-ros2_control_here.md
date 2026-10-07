@@ -39,14 +39,16 @@ Hardware interfaces bridge controllers to actual hardware:
 
 ### Controllers
 
-The main controllers in this stack:
+Controllers documented from [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READMEs / launches (do not invent names):
 
 | Controller | Purpose |
 |------------|---------|
-| `ocs2_arm_controller` | MPC-based arm motion |
-| `adaptive_gripper_controller` | Gripper position/force control |
-| `arms_teleop_controller` | End-effector target tracking |
-| `target_manager_controller` | Target pose management |
+| [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | Joint FSM Home / Hold / MoveJ; body/head/hands in 分体控制 |
+| [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) | Arm MPC; 分体控制 with basic_joint (`split_body.launch.py`) |
+| [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 (`full_body.launch.py`) |
+| `adaptive_gripper_controller` | Gripper plugin (same repo) |
+
+分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../2-how_to/11-basic_joint.md).
 
 ## The `hardware:=` Parameter
 
@@ -143,14 +145,7 @@ The OCS2 arm controller uses Model Predictive Control:
 - **Constraints:** Respects joint limits, velocity limits
 - **Real-time:** Runs at control loop frequency
 
-Key topics:
-
-| Topic | Direction | Purpose |
-|-------|-----------|---------|
-| `/target_pose` | Subscribe | Cartesian target |
-| `/target_joint_positions` | Subscribe | Joint space target |
-| `/joint_states` | Publish | Current state |
-| `/mpc_solution` | Publish | Planned trajectory |
+Do not invent `/target_pose` or `/target_joint_positions` (`JointState`) as a universal contract. Joint MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM is `/fsm_command` (`std_msgs/Int32`). Per-controller lists: [FSM and Topics](4-fsm_and_topics.md) and the controller pages.
 
 ## Best Practices
 

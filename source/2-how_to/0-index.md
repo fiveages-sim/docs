@@ -19,6 +19,10 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 - [Python Interface](5-python_interface.md) — Control robots from Python
 
+### Controllers
+
+- [Use basic_joint_controller](11-basic_joint.md) — Home / Hold / MoveJ (`std_msgs/Int32` `/fsm_command`)
+
 ### Teleoperation
 
 - [VR Teleop](6-vr_teleop.md) — VR headset control

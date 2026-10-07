@@ -103,51 +103,16 @@ For Ethernet-based robots:
 ip addr show eth0
 :::
 
-### Test connection
-
-:::{code-block} bash
-# Start with hardware detection only
-ros2 launch <robot>_bringup hardware_test.launch.py
-:::
-
-### Enable motors
-
-:::{code-block} bash
-# Robot-specific enable command
-ros2 service call /enable_motors std_srvs/srv/Trigger
-:::
-
 ### First motion
 
-Start with minimal motion:
+Use the **branch README** / `./quick_start.sh`. There is no documented `<robot>_bringup hardware_test.launch.py` or `/enable_motors` service.
 
-:::{code-block} bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot> hardware:=real
-
-# Send small joint space command
-ros2 topic pub /target_joint_positions sensor_msgs/msg/JointState \
-  "{position: [0.01, 0.0, 0.0, 0.0, 0.0, 0.0]}" --once
-:::
+- Lift2S: **split body** or **full body** — [ARX Lift 2S](1-arx_lift2s.md), [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
+- Joint FSM (Home / Hold / MoveJ): [Use basic_joint_controller](../11-basic_joint.md) — `/fsm_command` is `std_msgs/Int32`; MoveJ targets are `/{controller}/target_joint_position` (`Float64MultiArray`), not `/target_joint_positions` `JointState`
 
 ### Gradual testing
 
-1. Small joint motions
-2. Larger joint motions
-3. Cartesian motions
-4. Full trajectories
-5. Gripper operations
-
-## Speed Limits
-
-Start with conservative speed limits:
-
-:::{code-block} yaml
-# Example launch parameter
-velocity_scaling: 0.1  # 10% of max speed
-acceleration_scaling: 0.1
-:::
-
-Increase gradually after verifying safe operation.
+Start from HOLD, then HOME, then MOVEJ / OCS2 as the **running** controller allows ([FSM and Topics](../../3-concepts/4-fsm_and_topics.md)). Do not send invented string commands such as `stand` / `walk`.
 
 ## Public Robot Deployment (open-deploy-ws)
 
