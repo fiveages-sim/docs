@@ -13,7 +13,7 @@ Do not treat `split_body.launch.py` as whole-body control. There is no public RE
 
 ## Packages (do not invent)
 
-- **basic_joint_controller** — joint FSM Home / Hold / MoveJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use basic_joint_controller](../2-how_to/11-basic_joint.md).
+- **basic_joint_controller** — joint FSM Home / Hold / MoveJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
 - **ocs2_arm_controller** — arm MPC FSM HOME / OCS2 / HOLD (package README).
 - **ocs2_wbc_controller** — private submodule; whole-body MPC. This docs set does not invent its states or topics.
 

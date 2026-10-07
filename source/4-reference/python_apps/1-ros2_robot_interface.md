@@ -128,5 +128,5 @@ robot = RobotInterface(
 
 ## Related
 
-- [Python Interface How-To](../../2-how_to/5-python_interface.md)
+- [Python Interface How-To](../../2-how_to/3-programming/5-python_interface.md)
 - [fa-py-libraries](2-fa_py_libraries.md)

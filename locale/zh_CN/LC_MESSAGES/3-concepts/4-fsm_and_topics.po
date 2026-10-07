@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:35+0000\n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:1
-#: f780e8309e874cf4a174c1c06724f8d0
+#: e8bafcba20b9469c81b37da69b826bdb
 msgid "FSM and Topics"
 msgstr "状态机与话题"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:3
-#: 01e2b2b8756144319e4e89d62b835181
+#: 3bda0882a3fd4babb3e2e3db3540edd7
 msgid ""
 "Finite-state machines in this stack live in "
 "[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). "
@@ -38,12 +38,12 @@ msgstr ""
 "`libraries/arms_controller_common/`（`StateHome`、`StateHold`、`StateMoveJ`、`FSMCommandPublisher`）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 94f2df069d0b4cc99eb75dd59d609bfe
+#: 437277b32fbe4f61ba1b6b6f1586b6c2
 msgid "Source of truth"
 msgstr "事实来源"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:8
-#: 2e7286b5681b47b29773479407793fe3
+#: 22a081def7e44b92b9bb75b01b24e772
 msgid ""
 "`/fsm_command` is **`std_msgs/Int32`**, not `String`. There is no "
 "documented `/mode_command`, `/fsm_state` String, or wheeled-arm `stand` /"
@@ -55,13 +55,12 @@ msgstr ""
 "`arm_teleop` 约定。各控制器话题见对应页面和软件包 README。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:11
-#: b0bbea7b24ed40558a9ef5a4e3f7e623
-#, fuzzy
+#: db9b80d9320f4c4c958bae30b5ddbc7b
 msgid "`/fsm_command` (`std_msgs/Int32`)"
 msgstr "`/fsm_command`（`std_msgs/Int32`）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:13
-#: 8753448bf1e04baebbb67762e16a75c6
+#: d39fa601d73c4c6f9365d0b4e189ddfe
 msgid ""
 "`FSMCommandPublisher` publishes `std_msgs/Int32` on `/fsm_command`. "
 "Header values: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ (`100` switches "
@@ -71,40 +70,38 @@ msgstr ""
 "HOME，`2` HOLD，`3` OCS2，`4` MOVEJ（`100` 切换 HOME 构型）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:15
-#: d38e8b3f5b96486e892072472160ffc6
+#: 73752df6c00541439dadfc14ed3cc3fd
 msgid "Exact transitions depend on the **running controller**:"
 msgstr "具体转换取决于**正在运行的控制器**："
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 231683f2a9df483e835dd47f1e96c03a
-#, fuzzy
+#: b8f7ff3d485c4398988f42683600b10b
 msgid "Controller"
 msgstr "控制器"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 0377243c19bb4ff88e1ed5be5a3c50e8
-#, fuzzy
+#: a0aafb46269644069dfb917db58e3dc3
 msgid "States"
 msgstr "状态"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: a49c715ab33a480cb180ab17a3591487
+#: 0994f9ff81424f58a5a500e7c3e6f4e7
 msgid "Commands"
 msgstr "命令"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
 #: ../../source/3-concepts/4-fsm_and_topics.md:32
-#: 2b54e164b6ce493b9f659a1b95d8d69a e7f9f725c6ac4df896b5c467ba66b983
+#: a44df2d0b132448582386d975b2e61ab a77830dea8bd4a41b843bbbf4fea3aa2
 msgid "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 msgstr "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 808ed94c202a433bac3a6c8e40df861e
+#: c0d0f0a8029f46bfb42eed1645c0d6aa
 msgid "Home / Hold / MoveJ"
 msgstr "Home / Hold / MoveJ"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 24af3278bc864330a9d13b4946e8442f
+#: 29d75bffb57b465e8b44db65bab4da4c
 msgid ""
 "README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a legacy MOVEJ "
 "alias, and means **OCS2** on mixed OCS2/WBC stacks"
@@ -114,17 +111,17 @@ msgstr ""
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
 #: ../../source/3-concepts/4-fsm_and_topics.md:33
-#: 4cb88334dab24c8ebf653646258847a1 88548649deef46a7bbf177ba4127cd04
+#: 753cb30653ec4c93a99df63703360f58 f34cc1ac09914710bd4466259e041f05
 msgid "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 msgstr "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: c384084a1c19482b8252626f0f2a8cb1
+#: 8fb6783656e043a5b1358291866e2c5d
 msgid "HOME / OCS2 / HOLD"
 msgstr "HOME / OCS2 / HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: d2eba285507c4ddbad1cfc47ccef08f2
+#: 65af23e651f54172bab53501cba33227
 msgid ""
 "README: `1` HOME, `2` HOLD, `3` OCS2 on `/control_input`; starts in HOLD;"
 " OCS2 returns only to HOLD"
@@ -133,55 +130,52 @@ msgstr ""
 "只能回到 HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 07dd09a0521b4a188ec67449fddc17f8
+#: 329cba2e5e584425b0844fbaa4ded7fd
 msgid "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: ca1c353b17b84de89b6de731b4c9cc66
+#: 018ccef9f19d40d49a6c25b152f52b49
 msgid "Whole-body stack"
 msgstr "全身栈"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: fce4ea38f75549e380079e6ab25a987d
+#: 15c5e58e4dfb4900a2405adfbfec95df
 msgid "Private package; do not invent states here"
 msgstr "私有软件包；此处不编造状态"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:23
-#: 40a31a3867124878a5856efbcfa28e8a
-#, fuzzy
+#: 3f3fd6eadcf1497795fc2f65313ab3b4
 msgid "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
 msgstr "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:27
-#: e472b1513b8d43fb9aa334b8f9867c5e
+#: 94678c4c8594405fba17ab5a57e64f50
 msgid ""
 "Split vs whole-body launches (and the Lift2S `quick_start` **split body**"
 " / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not "
 "describe teleop as a separate FSM state — [Isomorphic "
-"Teleop](../2-how_to/7-isomorphic_teleop.md)."
+"Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
 msgstr ""
-"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** 菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — [同构遥操作](../2-how_to/7-isomorphic_teleop.md)。"
+"分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** 菜单）见 [分体控制 vs 全身控制](7-split_vs_wbc.md)。不要把遥操作写成单独的 FSM 状态 — [同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:29
-#: 5cb8d76fdcd84d22bb22c96db1494e14
-#, fuzzy
+#: ffe66e5df1a3412a8c6f676c41c3ec7d
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:31
-#: e7f9f725c6ac4df896b5c467ba66b983
-#, fuzzy
-msgid "[Use basic_joint_controller](../2-how_to/11-basic_joint.md)"
-msgstr "[使用 basic_joint_controller](../2-how_to/11-basic_joint.md)"
+#: bc28151ba1504ca29adf6377357996b9
+msgid "[Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"
+msgstr "[使用 basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:34
-#: 9777535f716344fc8f7cba8ab3ff862b
+#: e80cf3c7c9c94050b274f3d0e9132017
 msgid "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:35
-#: 4d48dd45a1884164b9ec89197c3a2de7
+#: 54a7dfacfa754e92be51d43d4aa5766e
 msgid "[Controllers reference](../4-reference/controllers/0-index.md)"
 msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 
@@ -741,3 +735,4 @@ msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 #~ "不要把遥操作写成单独的 FSM 状态。已实现的遥操作是同构路径 — "
 #~ "[同构遥操作](../2-how_to/7-isomorphic_teleop.md) — 不是本页上的 "
 #~ "`/teleop/left_ee_pose` 约定。"
+

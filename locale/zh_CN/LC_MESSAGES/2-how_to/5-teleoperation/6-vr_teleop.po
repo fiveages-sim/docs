@@ -1,0 +1,810 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:1
+#: ace4cab006f747248603a2799761747f
+msgid "VR Teleoperation"
+msgstr "VR 遥操作"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:3
+#: f7c13dfc591345a8946ae36d1e3ae82f
+msgid "Control robots using a VR headset and controllers."
+msgstr "使用 VR 头显和手柄控制机器人。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:5
+#: 2bdb055461164d868cc545607a624720
+msgid "Supported Headsets"
+msgstr "支持的头显"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: d70bef16bae24d41af4bd11ded89db71
+msgid "Headset"
+msgstr "头显"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 5b3fa31e601240b389af3b047ae8749c
+msgid "Support Level"
+msgstr "支持级别"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: c90354e93e324607ac73fcc2b6204637
+msgid "Modes"
+msgstr "模式"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 7fe219789a744ecfb78476ff9712cecf
+msgid "Notes"
+msgstr "说明"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 630d5492b8bc4d469224899d862bea20
+msgid "**Pico Enterprise**"
+msgstr "**Pico 企业版**"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: db887bba934247f581342d8ad8e0a5a1
+msgid "**Recommended**"
+msgstr "**推荐**"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: bbcec8dd26f342a7b68bfbb3c40ffedb ed9cfdae820f4a698c7bc4e5a1f9787f
+#: f188614447c24eaab32b570c1b740e03
+msgid "Web, XRoboToolkit"
+msgstr "Web、XRoboToolkit"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 2c68174886f84346800778c2c9c9eae6
+msgid ""
+"USB shared networking (USB 网络共享); **its own App**, not the consumer Pico "
+"App"
+msgstr "USB 网络共享；**使用自己的 App**，不是消费版 Pico App"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 93c09e6c273f409a869138a081da6a1f
+msgid "**Pico consumer**"
+msgstr "**Pico 消费版**"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 4d075ac7f39343e7b7c1a94f1e2241db 871d719ac07942c9a5341d04bf14ec0b
+msgid "Supported"
+msgstr "支持"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: 4e5dd3b028cb489cb94ce2a3f6b82397
+msgid "Different headset App from Enterprise; no USB-tether path documented here"
+msgstr "头显 App 与企业版不同；本文不记录 USB 网络共享路径"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: b2cecdfb62814bfdbcebfe76a6124537
+msgid "**Meta Quest**"
+msgstr "**Meta Quest**"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
+#: a972e2716ab1414d9be4282cb35071cd
+msgid "Good consumer availability"
+msgstr "消费级产品更容易买到"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:13
+#: 584afe8ff440407b9e1b70f8a627fad8
+msgid "Pico Enterprise vs consumer"
+msgstr "Pico 企业版与消费版"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:16
+#: e9b32a6262e74ad6bdef771ab2bd4ae5
+msgid ""
+"Treat **Pico Enterprise** and **Pico consumer** as different SKUs. Do not"
+" document one headset App as covering both."
+msgstr "将 **Pico 企业版** 和 **Pico 消费版** 视为不同 SKU。不要把同一个头显 App 写成同时覆盖两者。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:18
+#: 7d673efb5d8f476c9bd8b3d0bfa0f20b
+msgid ""
+"**USB shared networking (USB 网络共享)** — Pico Enterprise can share a "
+"network with the ROS 2 PC over USB. That is an Enterprise capability; it "
+"is not the consumer Pico path."
+msgstr "**USB 网络共享** — Pico 企业版可通过 USB 与 ROS 2 主机共享网络。这是企业版能力，不是消费版 Pico 的路径。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:19
+#: 8be91ccf39b64c4c9debd5931a6ce832
+msgid ""
+"**Different Apps** — Enterprise and consumer Pico use **different** "
+"headset Apps. Install the App that matches the headset edition. The fa-"
+"py-libraries README’s XRoboToolkit path is “XRoboToolkit App + PC "
+"Service” versus browser WebXR; it does not name a single store listing "
+"for both Pico editions."
+msgstr ""
+"**不同的 App** — 企业版与消费版 Pico 使用**不同的**头显 App。请安装与头显版本匹配的 App。fa-py-"
+"libraries README 的 XRoboToolkit 路径是「XRoboToolkit App + PC Service」对比浏览器 "
+"WebXR；它没有给出同时覆盖两个 Pico 版本的商店条目。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:21
+#: cbcf7a85c5294ba2aa2df79ea342ed3a
+msgid "This page does not invent store links, package names, or ADB steps."
+msgstr "本页不编造商店链接、软件包名或 ADB 步骤。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:24
+#: 96de00c5a1854b95bd885e11f37817ab
+msgid "Pico Recommended"
+msgstr "推荐 Pico"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:27
+#: d2463d30314e45b482184e0f9dd35a47
+msgid ""
+"**Pico Enterprise** is the preferred Pico SKU for VR teleop (USB 网络共享, "
+"matching Enterprise App, lower-latency tracking / 更跟手). Consumer Pico and"
+" Meta Quest still work with the WebXR (`./run.sh vr`) and XRoboToolkit "
+"(`./run.sh vr-xrt`) backends."
+msgstr ""
+"**Pico 企业版** 是 VR 遥操作首选的 Pico SKU（USB 网络共享、匹配的企业版 App、更低延迟追踪 / 更跟手）。消费版 "
+"Pico 和 Meta Quest 仍可使用 WebXR（`./run.sh vr`）和 XRoboToolkit（`./run.sh vr-"
+"xrt`）后端。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:30
+#: 89256ecd56ae4116b2848c3da77a18e5
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:32
+#: 2e609994c6954b62a7b33258f7354780
+msgid "Working robot demo (mock, sim, or real)"
+msgstr "可用的机器人演示（mock、仿真或真实硬件）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:33
+#: 7576a025eaca48b690994588ec9c879d
+msgid ""
+"VR headset (**Pico Enterprise** recommended; Pico consumer or **Meta "
+"Quest** also used)"
+msgstr "VR 头显（**推荐 Pico 企业版**；也可用 Pico 消费版或 **Meta Quest**）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:34
+#: 3831256eb9904a37b80d33754f563d2a
+msgid "fa-py-libraries installed"
+msgstr "已安装 fa-py-libraries"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:35
+#: 2fa3c594a1ec44d7a430754ae69a97d3
+msgid ""
+"Network between the headset and the ROS 2 machine (Wi-Fi, or **USB 网络共享**"
+" on Pico Enterprise)"
+msgstr "头显与 ROS 2 主机之间的网络（Wi-Fi，或 Pico 企业版上的 **USB 网络共享**）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:37
+#: bbc1ff7bdaf949068ec959dedad29d0b
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:39
+#: 5240e899b64d4a1fb5366c83095c23d9
+msgid ""
+"VR teleoperation publishes end-effector pose targets from VR controller "
+"tracking. The MPC controller then generates joint trajectories to follow "
+"these targets."
+msgstr "VR 遥操作根据 VR 手柄追踪发布末端执行器位姿目标。随后由 MPC 控制器生成关节轨迹以跟随这些目标。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:41
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 0ad0232cf1754006b494401fb8334226 5cc9f40229f9423eada90bfd51461bce
+msgid "Setup"
+msgstr "设置"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:43
+#: b6726f17702c49aa9e42b78a9bfdbeec
+msgid "1. Install fa-py-libraries"
+msgstr "1. 安装 fa-py-libraries"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:45
+#: cabf9bc4d70e48d0acfc5b315589d7aa
+msgid ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all"
+msgstr ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:52
+#: ed0afcc56bfa42d2b9cf936016b9a8a0
+msgid ""
+"What `./init.sh all` does: submodules + Python 3.12 env + "
+"`ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher`."
+msgstr ""
+"`./init.sh all` 做什么：子模块 + Python 3.12 环境 + `ros2_robot_interface` / "
+"`ros2-viser` / `vr_pose_publisher`。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:54
+#: 6b51446200974631b95582ecd7acaeb4
+msgid "2. Start Robot Demo"
+msgstr "2. 启动机器人演示"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:56
+#: 6b089b1aed45474bb6953bac69e9d00a
+msgid ""
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+msgstr ""
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:61
+#: f2cbd62a00cc4c3590bf7169f01ec882
+msgid "3. Start VR Bridge"
+msgstr "3. 启动 VR 桥接"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:63
+#: 68db954d1afa4472bcf0009db36f03e7
+msgid ""
+"In a new terminal, from fa-py-libraries (README commands — there is no "
+"`./run.sh vr --mode`):"
+msgstr "在新终端中，于 fa-py-libraries 内执行（README 命令 — 没有 `./run.sh vr --mode`）："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: b855afb8115048859b7dabff25635932
+msgid ""
+"cd ~/fa-py-libraries\n"
+"./run.sh vr"
+msgstr ""
+"cd ~/fa-py-libraries\n"
+"./run.sh vr"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:70
+#: 8d07eaf974854aacb312f3cae83d1d25
+msgid "This starts the Vuer/WebXR VR pose publisher."
+msgstr "这会启动 Vuer/WebXR 的 VR 位姿发布器。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:72
+#: c04ea6e9ab99417c8e7f609d41dcab9c
+msgid "VR Modes"
+msgstr "VR 模式"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:74
+#: 1b5cd20978474622a10733faa35f91a7
+msgid "Both **Pico** and **Meta Quest** support two connection modes:"
+msgstr "**Pico** 和 **Meta Quest** 都支持两种连接模式："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 3f1314be82fe46a79c3f5d02a6e9aaac
+msgid "Mode"
+msgstr "模式"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 701ad7d26d90464d8314494262343ce1
+msgid "Connection"
+msgstr "连接"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: f5ea1cdebf69486f98515e9db922970a
+msgid "Latency"
+msgstr "延迟"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: df2576f4013f45f7986b5dcdfa3faee1
+msgid "Command"
+msgstr "命令"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: b51ad3e9e9f846169414b83a96567eff
+msgid "**Web** (WebXR)"
+msgstr "**Web**（WebXR）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: a80590022b7f429d96c056342c45c0b7
+msgid "Browser-based"
+msgstr "基于浏览器"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 78fd5d28554042a48b58bec5a522a13c
+msgid "Easy"
+msgstr "简单"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 75fd30cb35564e4581522f3b3598f5ab
+msgid "Higher"
+msgstr "较高"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 8b33f7c42c4f41188f99250b9c2d7484
+msgid "`./run.sh vr`"
+msgstr "`./run.sh vr`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 827468bf80394a44afdc32391b00f96e
+msgid "**XRoboToolkit**"
+msgstr "**XRoboToolkit**"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 5970cc7cd01546ef82c50ede0b3e5085
+msgid "Native app + PC Service"
+msgstr "原生应用 + PC Service"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: a3245f3998674f5e9a4a007796bcfbe1
+msgid "Requires app install"
+msgstr "需要安装应用"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 1e26e5f228194ff183bafbb2c212270d
+msgid "Lower"
+msgstr "较低"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:65
+#: 8db49e30871845d6a62ffb60766609b4
+msgid "`./run.sh vr-xrt-service` then `./run.sh vr-xrt`"
+msgstr "先 `./run.sh vr-xrt-service`，再 `./run.sh vr-xrt`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:81
+#: 61133461c57f43aeb0d61bea91aa4086
+msgid "Web Mode (WebXR)"
+msgstr "Web 模式（WebXR）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:83
+#: 420afd00cd114d4384ae07ad43f682a8
+msgid "Browser-based VR using Vuer — works on both Pico and Meta Quest:"
+msgstr "基于浏览器、使用 Vuer 的 VR — Pico 和 Meta Quest 均可使用："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:85
+#: dc790d965a9e4df78f4d96d515797a60
+msgid "./run.sh vr"
+msgstr "./run.sh vr"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:89
+#: 0f0525f7501146ba9a5f03b32f1fdcb4
+msgid ""
+"Open the displayed URL on your VR headset's browser. No app installation "
+"required."
+msgstr "在 VR 头显的浏览器中打开显示的 URL。无需安装应用。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:91
+#: 3ce2856c074341e19537101e88f42e45
+msgid "XRoboToolkit Mode"
+msgstr "XRoboToolkit 模式"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:93
+#: 2780079ad8004ac4990c25e4f1989d29
+msgid ""
+"Native application for lower latency — recommended for production. From "
+"the fa-py-libraries README:"
+msgstr "更低延迟的原生应用 — 推荐用于生产环境。摘自 fa-py-libraries README："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 5207ff9bdf0e45e48b02f41144107e44
+msgid ""
+"./init.sh install-xrobotoolkit-pc-service\n"
+"./init.sh install-xrobotoolkit\n"
+"./run.sh vr-xrt-service\n"
+"./run.sh vr-xrt"
+msgstr ""
+"./init.sh install-xrobotoolkit-pc-service\n"
+"./init.sh install-xrobotoolkit\n"
+"./run.sh vr-xrt-service\n"
+"./run.sh vr-xrt"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:102
+#: 842dfa533e544c18860e708676f4d4c6
+msgid ""
+"Requires the **edition-matching** XRoboToolkit App on the headset "
+"(Enterprise App ≠ consumer Pico App) plus PC Service. `./run.sh vr-xrt-"
+"service stop` shuts down the PC Service."
+msgstr ""
+"需要在头显上安装**与版本匹配**的 XRoboToolkit App（企业版 App ≠ 消费版 Pico App），以及 PC "
+"Service。`./run.sh vr-xrt-service stop` 关闭 PC Service。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:104
+#: b7eab8d497bb4506af120c2c8b9ba9a7
+msgid "Topics"
+msgstr "主题"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:106
+#: 3b74b7ac0c584e71a4e88d17a1a1a7bc
+msgid "VR teleoperation publishes to:"
+msgstr "VR 遥操作发布到："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 7eb815701ae244078026840c3a9ff439
+msgid "Topic"
+msgstr "话题"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: fc24c7e2834a4ccdada20d338957a943
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 5881d87581304f028deae1157ae80cf6
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 9e1e0f85165841b6aea0aadd860e114a
+msgid "`/teleop/left_ee_pose`"
+msgstr "`/teleop/left_ee_pose`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 41a765c6e4f545f4bb1e176ea0f20218 cc4fcfb123234d8394262d247dbee6d2
+#: e5025336959e4592a6d9ceacea4ac8a3
+msgid "`PoseStamped`"
+msgstr "`PoseStamped`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 9e6d489935644177b10ea2fa8ab3602f
+msgid "Left hand target pose"
+msgstr "左手目标位姿"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 24acd6db6e624c6e84d2fa9f978753de
+msgid "`/teleop/right_ee_pose`"
+msgstr "`/teleop/right_ee_pose`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 3f3d804bceaa4adfab774cc02b191343
+msgid "Right hand target pose"
+msgstr "右手目标位姿"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 2f87f4cedc3749138c5e3023f6847e17
+msgid "`/teleop/head_pose`"
+msgstr "`/teleop/head_pose`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 31f9d348496f4cc3b77c19f4f467b360
+msgid "Head tracking"
+msgstr "头部追踪"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 47abef4afb3744008dd5a71504b5360c
+msgid "`/teleop/trigger`"
+msgstr "`/teleop/trigger`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 2e153538d0114b9cbe61cce3b266f367
+msgid "`Bool`"
+msgstr "`Bool`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 4f09a948e39a41198d723797a6ae4ff2
+msgid "Controller trigger state"
+msgstr "手柄扳机状态"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:115
+#: a8183a3e5e57458c9e450c644f2cbc67
+msgid "Arm Following"
+msgstr "机械臂跟随"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:117
+#: a1f97783d1e04ef0bfe16ba01d3bb62d
+msgid "Configure which arm follows which controller:"
+msgstr "配置哪条机械臂跟随哪个手柄："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:119
+#: 282d227b95554e1e88f00670dd898a37
+msgid ""
+"# In configuration or launch\n"
+"teleop_config:\n"
+"  left_arm: \"left_controller\"\n"
+"  right_arm: \"right_controller\"\n"
+"  # or for single arm:\n"
+"  right_arm: \"any_controller\"\n"
+msgstr ""
+"# In configuration or launch\n"
+"teleop_config:\n"
+"  left_arm: \"left_controller\"\n"
+"  right_arm: \"right_controller\"\n"
+"  # or for single arm:\n"
+"  right_arm: \"any_controller\"\n"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:128
+#: d5d05c9e07de4465a415a9b7cad4da1f
+msgid "Gripper Control"
+msgstr "夹爪控制"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:130
+#: 4bc5fd94ed574309aa4c558ef0ef20bd
+msgid "VR controller buttons map to gripper:"
+msgstr "VR 手柄按键映射到夹爪："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 21525d151cce449da0275f1609572e3c
+msgid "Button"
+msgstr "按键"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 84201158d038488ea656991c29210439
+msgid "Action"
+msgstr "动作"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: d69e684940c14d9f9275319a2828c131
+msgid "Trigger"
+msgstr "扳机"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: f2ca1717a35c401b90efba7e92ba322f
+msgid "Close gripper (proportional)"
+msgstr "闭合夹爪（比例控制）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: fe569f0ec01349d5a94dc215f1e1bf04
+msgid "Grip"
+msgstr "握持键"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:95
+#: 52ead1d11b3c4fa1b40be8c3f1ede4a3
+msgid "Toggle gripper state"
+msgstr "切换夹爪状态"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:137
+#: 264af420c6d344cabf15c193fc8431c9
+msgid "Safety"
+msgstr "安全"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:139
+#: 0108a2e119aa4c21997d4dd3f79207d7
+msgid "Motion Limits"
+msgstr "运动限制"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:142
+#: 44ac51345027437b845a7592c3881e5d
+msgid "VR teleoperation can command rapid motions. When using real hardware:"
+msgstr "VR 遥操作可能发出快速运动指令。使用真实硬件时："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:143
+#: cf6df0a4285443f1bfd672d88d192e0a
+msgid "Start with low speed limits"
+msgstr "从较低速度限制开始"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:144
+#: b016407edd6f41a58ca5d3d5b3d5a275
+msgid "Keep hand on emergency stop"
+msgstr "手放在急停开关上"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:145
+#: 8c00d8d7a0564192abbd2e9127e7a2a1
+msgid "Clear the robot workspace"
+msgstr "清空机器人工作空间"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:146
+#: 9003930443874af9a52e0fc87604dbc7
+msgid "Use workspace limits in software"
+msgstr "在软件中使用工作空间限位"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:149
+#: cdca850e149d45d699819940df848a18
+msgid "Network Setup"
+msgstr "网络设置"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:151
+#: 21121abe36284e3d89ad8007b3b6e4cd
+msgid ""
+"The headset and the ROS 2 PC must be on a reachable network (same Domain "
+"ID; Zenoh or DDS as needed)."
+msgstr "头显与 ROS 2 主机必须处于可达网络（相同 Domain ID；按需使用 Zenoh 或 DDS）。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:153
+#: 415ded1af944457781d1a7c3af401f6f
+msgid ""
+"**Pico Enterprise:** USB shared networking (USB 网络共享) is supported — "
+"tether the headset to the PC over USB so they share a network. Follow the"
+" headset’s own USB-network UI; this page does not list ADB or `usb0` "
+"commands."
+msgstr ""
+"**Pico 企业版：** 支持 USB 网络共享 — 用 USB 将头显连接到电脑以共享网络。按头显自带的 USB 网络界面操作；本页不列出 "
+"ADB 或 `usb0` 命令。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:154
+#: 839aba8742e54e799fd74fe77d76ad02
+msgid ""
+"**Pico consumer / Meta Quest:** use the usual Wi-Fi (or other IP) path. "
+"Do not assume USB 网络共享."
+msgstr "**Pico 消费版 / Meta Quest：** 使用常规 Wi-Fi（或其他 IP）路径。不要假定有 USB 网络共享。"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:156
+#: bf820b2130344fdb96e6f48bc3ad9a24
+msgid "Then:"
+msgstr "然后："
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:158
+#: ecd87dffa9fd49df8c93bfb7468c9925
+msgid "Confirm both devices can reach each other"
+msgstr "确认两台设备能够互相访问"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:159
+#: 0e602b31f40b494e96d47b6f4ae58071
+msgid "Configure ROS 2 domain or Zenoh bridge if they are not on one LAN"
+msgstr "若不在同一局域网，配置 ROS 2 Domain 或 Zenoh 桥接"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:160
+#: 02f603b25fcd4ba9ac454a83f48d2d31
+msgid "Set firewall rules for ROS 2 ports"
+msgstr "为 ROS 2 端口设置防火墙规则"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:162
+#: 103be02a84e4494699b1bff176470d0e
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:164
+#: 32af3deb23eb437a9a672d50e294167e
+msgid "VR bridge logs show tracking data"
+msgstr "VR 桥接日志显示追踪数据"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:165
+#: 5802348128e44efbac2fa1c696439f6a
+msgid "`ros2 topic echo /teleop/right_ee_pose` shows updates"
+msgstr "`ros2 topic echo /teleop/right_ee_pose` 有更新"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:166
+#: 74d3b792a35e43e5bb4563bee13d1eed
+msgid "Robot follows VR controller motion"
+msgstr "机器人跟随 VR 手柄运动"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:168
+#: 79cd30e6917042b191a2f5384e965084
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:170
+#: 7a8237e8c0584348ae8290a8da24841b
+msgid "No tracking data"
+msgstr "没有追踪数据"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:172
+#: d5642ba34a514c08a55b3cbb8e980286
+msgid "Check VR device is properly tracked"
+msgstr "确认 VR 设备追踪正常"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:173
+#: 36c74ed4846b42248da240002b6cab03
+msgid "Verify browser/app has WebXR permissions"
+msgstr "确认浏览器/应用已获得 WebXR 权限"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:174
+#: 3b17fd6b5f9d48a0b47054a41d31dee9
+msgid "Check network (Wi-Fi, or USB 网络共享 on Pico Enterprise)"
+msgstr "检查网络（Wi-Fi，或 Pico 企业版上的 USB 网络共享）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:175
+#: eae2923602a54cc0b050a8f31fc43383
+msgid "Confirm the headset App matches the Pico edition (Enterprise vs consumer)"
+msgstr "确认头显 App 与 Pico 版本匹配（企业版 vs 消费版）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:177
+#: 3527fa2cac9c4098b98e0958f1dca874
+msgid "High latency"
+msgstr "延迟较高"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:179
+#: 0335e764d37b429fab5936e74d4a2b7e
+msgid "Prefer **Pico Enterprise** (USB 网络共享 when possible)"
+msgstr "优先使用 **Pico 企业版**（尽可能用 USB 网络共享）"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:180
+#: 230253bf47f04057832660de1780d194
+msgid "Use **XRoboToolkit** (`./run.sh vr-xrt`) instead of WebXR"
+msgstr "使用 **XRoboToolkit**（`./run.sh vr-xrt`）而不是 WebXR"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:181
+#: f5813cb40c404f6faaf2f01b787d8fa5
+msgid "Use wired / USB-tethered networking when the headset edition supports it"
+msgstr "在头显版本支持时，使用有线 / USB 共享网络"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:182
+#: 09b3b5a7ed8d4430b4fbad96183fc75a
+msgid "Reduce update rate in configuration"
+msgstr "在配置中降低更新频率"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:183
+#: 89596cfbf4564ee09c215e82f29fa22f
+msgid "Check for network congestion"
+msgstr "检查是否存在网络拥塞"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:185
+#: e261ba82b89d430f9d665d6455897b25
+msgid "Robot doesn't follow"
+msgstr "机器人不跟随"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:187
+#: 6a7144c2ffbc42a080d73e4152188ff4
+msgid "Verify controller is in teleop mode"
+msgstr "确认控制器处于遥操作模式"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:188
+#: 18dc3a50b36a4de899c22e96095f716c
+msgid "Check target poses are within workspace"
+msgstr "确认目标位姿在工作空间内"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:189
+#: 74f586fc02ad4d7a9cd5eeab99aaa794
+msgid "Ensure no safety limits are triggered"
+msgstr "确认没有触发安全限位"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:191
+#: 6893f40fa1a54946bb3f4d96c9995007
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:193
+#: 1f9977a7f4d04cec888072fae1e458ab
+msgid ""
+"[Isomorphic Teleop](7-isomorphic_teleop.md) for master–slave joint "
+"following"
+msgstr "[同构遥操作](7-isomorphic_teleop.md) 用于主从关节跟随"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:194
+#: d7a76701852947ca8b98b2268bb21281
+msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md) for mode control"
+msgstr "[状态机与话题](../../3-concepts/4-fsm_and_topics.md) 用于模式控制"
+
+#~ msgid "VR headset (Meta Quest, HTC Vive, etc.)"
+#~ msgstr "VR headset (Meta Quest, HTC Vive, etc.)"
+
+#~ msgid "For native VR application integration:"
+#~ msgstr "For native VR application integration:"
+
+#~ msgid "Requires XRoboToolkit application on the VR device."
+#~ msgstr "Requires XRoboToolkit application on the VR device."
+
+#~ msgid "[Drag Teleop](7-drag_teleop.md) for manual teaching"
+#~ msgstr "[拖动遥操作](7-drag_teleop.md) 用于手动示教"
+
+#~ msgid "In a new terminal:"
+#~ msgstr "在新终端中："
+
+#~ msgid "./run.sh vr --mode vuer\n"
+#~ msgstr "./run.sh vr --mode vuer\n"
+
+#~ msgid ""
+#~ "Enterprise edition has faster release "
+#~ "cadence, enabling lower-latency tracking"
+#~ msgstr "企业版发布节奏更快，可实现更低延迟的追踪"
+
+#~ msgid ""
+#~ "**Pico headsets have the best support**,"
+#~ " especially the enterprise edition which"
+#~ " offers faster release updates and "
+#~ "lower-latency tracking for more responsive"
+#~ " robot control (更跟手)."
+#~ msgstr "**Pico 头显的支持最好**，尤其是企业版，更新更快、追踪延迟更低，机器人控制更跟手。"
+
+#~ msgid "Network connectivity between VR device and ROS 2 machine"
+#~ msgstr "VR 设备与 ROS 2 主机之间网络连通"
+
+#~ msgid ""
+#~ "Requires the XRoboToolkit application on "
+#~ "the VR device. Provides better tracking"
+#~ " responsiveness, especially on Pico "
+#~ "enterprise devices."
+#~ msgstr "需要在 VR 设备上安装 XRoboToolkit 应用。追踪更跟手，在 Pico 企业版设备上尤其明显。"
+
+#~ msgid "For VR device on different network:"
+#~ msgstr "若 VR 设备位于不同网络："
+
+#~ msgid "Check network connectivity"
+#~ msgstr "检查网络连通性"
+
+#~ msgid "Use **Pico enterprise edition** for lowest latency tracking"
+#~ msgstr "使用 **Pico 企业版** 以获得最低延迟追踪"
+
+#~ msgid "Use wired network if possible"
+#~ msgstr "尽可能使用有线网络"
+

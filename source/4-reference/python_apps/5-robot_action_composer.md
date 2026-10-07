@@ -138,5 +138,5 @@ Isaac Sim env / USD / workspace steps, when present, are in the monorepo `exampl
 
 - [lerobot_ros2](4-lerobot_ros2.md)
 - [ros2_robot_interface](1-ros2_robot_interface.md)
-- [Python Interface How-To](../../2-how_to/5-python_interface.md)
-- [Synthetic Data](../../6-synthetic_data/0-index.md) — pipeline story for Isaac datagen
+- [Python Interface How-To](../../2-how_to/3-programming/5-python_interface.md)
+- [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md) — pipeline story for Isaac datagen

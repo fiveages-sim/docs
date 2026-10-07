@@ -73,4 +73,4 @@ Uses ruckig for smooth trajectories:
 ## Related
 
 - [DexCap System](3-dexcap.md)
-- [DexCap Teleop How-To](../../2-how_to/8-dexcap_teleop.md)
+- [DexCap Teleop How-To](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)

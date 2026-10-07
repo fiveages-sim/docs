@@ -1,0 +1,455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:1
+#: b41caa057a004c3ab0b2a8f5268950d4
+msgid "Interface and Orchestration"
+msgstr "接口与编排"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:3
+#: c4a5c975bf5e407ea25e32b0db7aa4a8
+msgid ""
+"After the Isaac USD scene is up, datagen does **not** call OCS2 or Nav2 "
+"servers from Python by name. YAML `task_queue` blocks resolve to "
+"**registered skills**; skills emit **`StageTarget`** sequences and send "
+"them through **`ROS2RobotInterface`**."
+msgstr ""
+"Isaac USD 场景起来之后，数据采集**不会**在 Python 里按名字去调 OCS2 或 Nav2 服务端。YAML "
+"`task_queue` 块解析成**已注册技能**；技能产出 **`StageTarget`** 序列，再经 "
+"**`ROS2RobotInterface`** 发出。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:5
+#: 6b86db25c51841cba9dc6511b713a88c
+msgid ""
+"APIs below are from [robot_action_composer `@ feature/dex-grasp-"
+"generator`](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) and"
+" its `docs/`. Do not invent `ActionSequence` / `actions.MoveJ` classes."
+msgstr ""
+"下列 API 来自 [robot_action_composer `@ feature/dex-grasp-"
+"generator`](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) 及其 "
+"`docs/`。不要发明 `ActionSequence` / `actions.MoveJ` 这类类。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:7
+#: bb5b2d70fe164d72b17016e91c246bb7
+msgid "ros2_robot_interface (motion and recording)"
+msgstr "ros2_robot_interface（运动与录制）"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:9
+#: c0a95a854bd9406c8c3629d68b9a5959
+msgid ""
+"**Repository:** [fiveages-sim/ros2_robot_interface](https://github.com"
+"/fiveages-sim/ros2_robot_interface)"
+msgstr ""
+"**Repository:** [fiveages-sim/ros2_robot_interface](https://github.com"
+"/fiveages-sim/ros2_robot_interface)"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:11
+#: 4515b7624a7449fe99a450c787a927e4
+msgid ""
+"Composer’s README: the pure motion / queue path depends on "
+"**`ROS2RobotInterface`** (`ctx.interface`), not LeRobot’s `ROS2Robot` "
+"class. Recording still **moves** the robot through that same interface; "
+"the LeRobot plugin is only the episode writer ([next "
+"page](3-record_export.md))."
+msgstr ""
+"composer README：纯运动 / 队列路径依赖 "
+"**`ROS2RobotInterface`**（`ctx.interface`），不依赖 LeRobot 的 `ROS2Robot` "
+"类。录制时机器人**运动**仍走同一接口；LeRobot 插件只负责写 episode（[下一页](3-record_export.md)）。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:13
+#: dcf24ef397d041019c5a3712507a011a
+msgid ""
+"Typical install is the lerobot_ros2 script, not a one-off `pip` on system"
+" Python:"
+msgstr "典型安装用 lerobot_ros2 脚本，不要在系统 Python 上随手 `pip`："
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: d6af1f53ab2d4e81b9f76a4c26563923
+msgid ""
+"cd lerobot_ros2\n"
+"./init.sh all-motion    # ros2_robot_interface + robot_action_composer"
+msgstr ""
+"cd lerobot_ros2\n"
+"./init.sh all-motion    # ros2_robot_interface + robot_action_composer"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:20
+#: f9bcda691f93479da9aa89687b039661
+msgid ""
+"Reference: "
+"[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md),"
+" [Python Interface how-to](../3-programming/5-python_interface.md)."
+msgstr ""
+"参考：[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)、[Python 接口操作指南](../3-programming/5-python_interface.md)。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:22
+#: fabb46b13cde4530a7720f0d93523cb9
+msgid "robot_action_composer (task_queue + skills)"
+msgstr "robot_action_composer（task_queue + 技能）"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:24
+#: ac36cfa95c8f4c929bdf58c079641648
+msgid ""
+"**Branch:** [`feature/dex-grasp-generator`](https://github.com/fiveages-"
+"sim/robot_action_composer/tree/feature/dex-grasp-generator)"
+msgstr ""
+"**Branch:** [`feature/dex-grasp-generator`](https://github.com/fiveages-"
+"sim/robot_action_composer/tree/feature/dex-grasp-generator)"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:26
+#: ef8d7bc24004476f91edff016b42ee00
+msgid ""
+"In the lerobot_ros2 monorepo this package is "
+"`submodules/robot_action_composer`. Two layers:"
+msgstr "在 lerobot_ros2 monorepo 里这个包是 `submodules/robot_action_composer`。两层："
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: f16af0c4e8fc43aa85fc706e063ddb87
+msgid "Layer"
+msgstr "层"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: d84798b6e93149318876e5af3e613ef5
+msgid "Job"
+msgstr "职责"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 6082e705d6624f68a78d124fd2d550c7
+msgid "**`motion_generation`**"
+msgstr "**`motion_generation`**"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 9adb744e649940b997873c38f67cbc94
+msgid ""
+"Geometry → `StageTarget` / `ArmTarget` sequences; "
+"`execute_stage_sequence` calls `ROS2RobotInterface` (Cartesian, dual-arm,"
+" MoveJ, gripper timing)."
+msgstr ""
+"几何 → `StageTarget` / `ArmTarget` 序列；`execute_stage_sequence` 调用 "
+"`ROS2RobotInterface`（笛卡尔、双臂、MoveJ、夹爪节拍）。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: cb0bd32513844770a3184238a74b39fd
+msgid "**`task_runtime`**"
+msgstr "**`task_runtime`**"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 93a1661d9d6d4d7b8c81682ea53dbe1c
+msgid ""
+"`runner.run_task_queue`: connect → FSM → optional Isaac reset → each YAML"
+" block → `get_skill` → execute. Unknown `skill:` names raise `KeyError` "
+"with the registered list."
+msgstr ""
+"`runner.run_task_queue`：连接 → FSM → 可选 Isaac reset → 每个 YAML 块 → "
+"`get_skill` → 执行。未知 `skill:` 名会抛带已注册列表的 `KeyError`。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:33
+#: 737c934079c04707a2b8ad6022318de8
+msgid ""
+"YAML lives under `robots/<Robot>/task_configs/**/*.yaml` (optional vendor"
+" grouping `robots/<Vendor>/<Robot>/`). Discovery, merge rules, and "
+"`robot.yaml`: [TASK_CONFIG_YAML.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/TASK_CONFIG_YAML.md), [ROBOT_CONFIG.md](https://github.com"
+"/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROBOT_CONFIG.md)."
+msgstr ""
+"YAML 在 `robots/<Robot>/task_configs/**/*.yaml`（可选厂商分组 "
+"`robots/<Vendor>/<Robot>/`）。发现、合并规则与 "
+"`robot.yaml`：[TASK_CONFIG_YAML.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/TASK_CONFIG_YAML.md)、[ROBOT_CONFIG.md](https://github.com"
+"/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROBOT_CONFIG.md)。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:35
+#: 5f5df5e7d46c44fca7ba74d3722f9500
+msgid ""
+"Skill names (examples from the README index; parameters in "
+"[SKILLS_REFERENCE.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/SKILLS_REFERENCE.md)):"
+msgstr ""
+"技能名（README 索引中的例子；参数见 [SKILLS_REFERENCE.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/SKILLS_REFERENCE.md)）："
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: d6c170593ac44dffa997a61965518d24
+msgid "Category"
+msgstr "类别"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 3a30275a012a4ee1872e84821ceb40d6
+msgid "Registered `skill:` names"
+msgstr "已注册的 `skill:` 名"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 4e080db42a214df2911e8c3a0a3fe3bb
+msgid "Single arm"
+msgstr "单臂"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: ee1a7ea3316d4615b5cab252472dd35b
+msgid ""
+"`single_arm.pick`, `single_arm.place`, `single_arm.move_to_pose`, "
+"`single_arm.move_relative`, `single_arm.move_to_object`, "
+"`single_arm.goto_cache_pose`, `single_arm.drawer.pull_open`, "
+"`single_arm.drawer.close_push`"
+msgstr ""
+"`single_arm.pick`, `single_arm.place`, `single_arm.move_to_pose`, "
+"`single_arm.move_relative`, `single_arm.move_to_object`, "
+"`single_arm.goto_cache_pose`, `single_arm.drawer.pull_open`, "
+"`single_arm.drawer.close_push`"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 3952127d32fd4db8902a135dc3656be0
+msgid "Dual arm"
+msgstr "双臂"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 10aa70b9606142dfac850f902a610bf0
+msgid ""
+"`dual_arm.carry`, `dual_arm.parallel_pick`, `dual_arm.handover`, "
+"`dual_arm.place`, `dual_arm.bimanual_align`, `dual_arm.goto_cache_pose`"
+msgstr ""
+"`dual_arm.carry`, `dual_arm.parallel_pick`, `dual_arm.handover`, "
+"`dual_arm.place`, `dual_arm.bimanual_align`, `dual_arm.goto_cache_pose`"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: d508c054677b47419a7170a821b5614e
+msgid "Navigation"
+msgstr "导航"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: da5f09a00fbc4b2db59144c5463db931
+msgid ""
+"`nav.navigate_to_pose`, `nav.navigate_to_object`, "
+"`nav.navigate_relative`, `nav.send_nav_goal`, `nav.wait_nav_arrived`"
+msgstr ""
+"`nav.navigate_to_pose`, `nav.navigate_to_object`, "
+"`nav.navigate_relative`, `nav.send_nav_goal`, `nav.wait_nav_arrived`"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 0d6cc8c7f33a428d97acda966fea07c4
+msgid "Joint / session / env"
+msgstr "关节 / 会话 / 环境"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:15
+#: 991ae843d48a466492eef967455b2e9d
+msgid ""
+"`joint.movej_to_config`, `joint.goto_cached_joints`, "
+"`robot.cache_ee_pose`, `robot.send_mode_command`, "
+"`env.randomize_object_local_xyz`, …"
+msgstr ""
+"`joint.movej_to_config`, `joint.goto_cached_joints`, "
+"`robot.cache_ee_pose`, `robot.send_mode_command`, "
+"`env.randomize_object_local_xyz`, …"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:44
+#: 79aed2be57bb4109905a13e2a2773c64
+msgid ""
+"Datagen workspace used in the README is **`examples/IsaacSim`** inside "
+"lerobot_ros2 (contains `robots/`). Robot-specific notes, including "
+"wheeled-arm **FiveAges W2** dual-arm tasks, are next to those trees (e.g."
+" [`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/examples/IsaacSim/robots/FiveAges_W2/README.md))."
+msgstr ""
+"README 使用的数据采集工作区是 lerobot_ros2 里的 **`examples/IsaacSim`**（含 "
+"`robots/`）。机型说明（含轮臂 **FiveAges W2** 双臂任务）就在那些目录旁（例如 "
+"[`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/feature/sim-grasp-"
+"datagen/examples/IsaacSim/robots/FiveAges_W2/README.md)）。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:46
+#: 59f066afdd6c402595c61091489057e2
+msgid "Official Nav2, not a custom nav stack"
+msgstr "官方 Nav2，不是自研导航栈"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:48
+#: 38c55141b1134ef5ac768600ead2e133
+msgid ""
+"Composer **does not implement Nav2 servers**. `nav.*` skills wrap "
+"**`ROS2RobotInterface`’s Nav2 client API**. Scene-level launch is "
+"separate from the task YAML."
+msgstr ""
+"composer **不实现 Nav2 服务端**。`nav.*` 技能封装的是 **`ROS2RobotInterface` 的 Nav2 "
+"客户端 API**。场景级 launch 与任务 YAML 分开。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:50
+#: b590bd62483548f2a77dfd8eb479df8b
+msgid ""
+"From [docs/ROS2_STACK.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROS2_STACK.md):"
+msgstr ""
+"摘自 [docs/ROS2_STACK.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/ROS2_STACK.md)："
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:52
+#: 08ea0ea56b5b476aaa44611f376c34a7
+msgid "Do **not** put `ros2_stack` inside task-queue YAML."
+msgstr "**不要**在任务队列 YAML 里写 `ros2_stack`。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:53
+#: dd33bdc8314e476182eac50460199e3d
+msgid "Merge: `robot.yaml` → `ros2_stack:` then leaf **`.meta/ros2_stack.yaml`**."
+msgstr "合并：`robot.yaml` → `ros2_stack:`，再叠叶子目录 **`.meta/ros2_stack.yaml`**。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:54
+#: fbfa0d1809d54306b3efecac12f2e312
+msgid ""
+"Motion presets: `ocs2-fullbody` / `ocs2-split-body` / `ocs2-demo` "
+"(`ocs2_arm_controller` launches)."
+msgstr ""
+"运控 preset：`ocs2-fullbody` / `ocs2-split-body` / "
+"`ocs2-demo`（`ocs2_arm_controller` 的 launch）。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:55
+#: 937acb48031a4391a8e99e7ba17afa3d
+msgid ""
+"Navigation: `navigation.profile` `default` or `map_only` expands to "
+"**`nav2_profile:=…`**. Default launch: `robot_common_launch` / "
+"**`navigation_isaac_gt.launch.py`**."
+msgstr ""
+"导航：`navigation.profile` 为 `default` 或 `map_only`，展开成 "
+"**`nav2_profile:=…`**。默认 launch：`robot_common_launch` / "
+"**`navigation_isaac_gt.launch.py`**。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:56
+#: 53322da21138496390efa067f33b4077
+msgid ""
+"`navigation.required: auto` starts Nav2 only when the `task_queue` "
+"contains `nav.*` skills."
+msgstr "`navigation.required: auto` 仅当 `task_queue` 含 `nav.*` 技能时才启动 Nav2。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:58
+#: 8e8e60bed2ee47429f71830b2050aa86
+msgid ""
+"That is the **official Nav2** install/launch already used by the robot "
+"workspace, not a fiveages-specific planner."
+msgstr "这就是机器人工作区已经在用的**官方 Nav2** 安装/启动方式，不是 FiveAges 自研规划器。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:60
+#: ddac3146c53445faa38806898f1a78a3
+msgid "CLIs (after `./init.sh`)"
+msgstr "CLI（跑完 `./init.sh` 之后）"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:62
+#: 93890e36fce04d5fbaac1404db5df0b6
+msgid ""
+"Console scripts from composer `pyproject.toml`: `motion-generation`, "
+"`ros2-stack`, `grasp-generation`, `check-isaac-pose`, `check-robot-"
+"status`."
+msgstr ""
+"composer `pyproject.toml` 中的 console scripts：`motion-"
+"generation`、`ros2-stack`、`grasp-generation`、`check-isaac-pose`、`check-"
+"robot-status`。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:64
+#: 229a21e230d844149dda905d9cae7beb
+msgid ""
+"Run from a directory that contains `robots/` (usually "
+"`examples/IsaacSim`):"
+msgstr "在包含 `robots/` 的目录下运行（通常是 `examples/IsaacSim`）："
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:66
+#: a470e04ba5484cd38fbe0d43ea777f0d
+msgid ""
+"cd examples/IsaacSim\n"
+"\n"
+"# Scene-level OCS2 + Nav2 (background logs under .ros2_stack/<robot>/)\n"
+"ros2-stack --lang zh launch\n"
+"ros2-stack status\n"
+"ros2-stack stop\n"
+"\n"
+"# Task queue (dry motion; optional --ensure-ros2-stack)\n"
+"motion-generation\n"
+"motion-generation --robot dobot_cr5 --task-key pick_place --scene default"
+"\n"
+"motion-generation --robot fiveages_w2 --task-key transfer_blade --ensure-"
+"ros2-stack"
+msgstr ""
+"cd examples/IsaacSim\n"
+"\n"
+"# Scene-level OCS2 + Nav2 (background logs under .ros2_stack/<robot>/)\n"
+"ros2-stack --lang zh launch\n"
+"ros2-stack status\n"
+"ros2-stack stop\n"
+"\n"
+"# Task queue (dry motion; optional --ensure-ros2-stack)\n"
+"motion-generation\n"
+"motion-generation --robot dobot_cr5 --task-key pick_place --scene default"
+"\n"
+"motion-generation --robot fiveages_w2 --task-key transfer_blade --ensure-"
+"ros2-stack"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:80
+#: 2d7c274964c6450b922258fde8d7d0d0
+msgid ""
+"`grasp-generation serve …` is an optional grasp-setup UI on this branch "
+"([GRASP_GENERATION.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/GRASP_GENERATION.md)); it is **not** the recording entry "
+"and is **not** ros2-viser."
+msgstr ""
+"`grasp-generation serve …` 是该分支上可选的抓取配置 "
+"UI（[GRASP_GENERATION.md](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/feature/dex-grasp-"
+"generator/docs/GRASP_GENERATION.md)）；它**不是**录制入口，也**不是** ros2-viser。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:82
+#: 3abe89a756364930a9cda566fa12a8a3
+msgid ""
+"Isaac entity pose / joint dump helpers (`check-isaac-pose`, `check-robot-"
+"status`) need the sim and `/get_entity_state` as documented in the "
+"composer README."
+msgstr ""
+"Isaac 实体位姿 / 关节转储助手（`check-isaac-pose`、`check-robot-status`）需要仿真以及 "
+"composer README 所写的 `/get_entity_state`。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:84
+#: d110e60bc17243d7a8353c018d53c90f
+msgid ""
+"Full CLI flag lists: [robot_action_composer "
+"reference](../../4-reference/python_apps/5-robot_action_composer.md)."
+msgstr ""
+"完整 CLI 参数列表：[robot_action_composer 参考](../../4-reference/python_apps/5-robot_action_composer.md)。"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:86
+#: 0155a0f0b8c9479d826d41fcb5fe8885
+msgid "Next on the pipeline"
+msgstr "流水线下一步"
+
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:88
+#: 00b97b961bf6440aa92fe1479df06413
+msgid ""
+"Recording is an extra on top of this queue: same YAML `task_queue`, plus "
+"LeRobot plugins. Continue at [LeRobot record and "
+"export](3-record_export.md)."
+msgstr ""
+"录制是叠在这条队列上的 extra：同一套 YAML `task_queue`，再加上 LeRobot 插件。继续看 [LeRobot "
+"录制与导出](3-record_export.md)。"
+

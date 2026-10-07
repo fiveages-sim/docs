@@ -48,4 +48,4 @@ vive_tracker_teleop:
 ## Related
 
 - [wuji_glove_teleop](5-wuji_glove.md)
-- [VR Teleop How-To](../../2-how_to/6-vr_teleop.md)
+- [VR Teleop How-To](../../2-how_to/5-teleoperation/6-vr_teleop.md)

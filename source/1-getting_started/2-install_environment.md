@@ -122,7 +122,7 @@ cd FaSim-Isaac
 ./run.sh     # menu: PhysX / Newton / Headless Streaming
 :::
 
-Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` to change `ISAACSIM_DIR` or the default version. See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md).
+Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` to change `ISAACSIM_DIR` or the default version. See the [Isaac Sim how-to](../2-how_to/2-simulation/4-isaac_sim.md).
 
 ## Network Configuration (Optional)
 

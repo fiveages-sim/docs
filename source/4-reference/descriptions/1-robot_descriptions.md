@@ -59,7 +59,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5
 
 ## Adding a Robot
 
-1. Create description package (see [Add a Robot](../../2-how_to/10-add_a_robot.md))
+1. Create description package (see [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md))
 2. Add as submodule:
    ```bash
    git submodule add https://github.com/fiveages-sim/robot-descriptions-newbrand.git

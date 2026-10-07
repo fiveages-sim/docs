@@ -101,9 +101,9 @@ source ~/open-deploy-ws/install/setup.bash
 
 ## Next Steps
 
-- [Switch to different robots](../2-how_to/2-switch_robot.md)
-- [Run Gazebo simulation](../2-how_to/3-gazebo_sim.md)
-- [Connect Python interface](../2-how_to/5-python_interface.md)
+- [Switch to different robots](../2-how_to/1-basic_operations/2-switch_robot.md)
+- [Run Gazebo simulation](../2-how_to/2-simulation/3-gazebo_sim.md)
+- [Connect Python interface](../2-how_to/3-programming/5-python_interface.md)
 
 ## Video Demo
 

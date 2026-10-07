@@ -9,79 +9,80 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:52+0000\n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:1
-#: b48d8fffa7a642b5aeeed3a820b46f64
+#: 04d0e49d229e460daa5d1c6bc22ca41c
 msgid "Install Environment"
 msgstr "环境安装"
 
 #: ../../source/1-getting_started/2-install_environment.md:3
-#: 5547beb40ffb4048ba2dee2405f13366
+#: 0aa10e74cf194678b682305f28f409c9
 msgid ""
-"This page covers installing the base development environment for FiveAges "
-"Sim workspaces."
+"This page covers installing the base development environment for FiveAges"
+" Sim workspaces."
 msgstr "本页介绍如何安装 FiveAges Sim 工作空间所需的基础开发环境。"
 
 #: ../../source/1-getting_started/2-install_environment.md:5
-#: 2637fb05f7284471a46e697c5af8ce1f
+#: c86cd628a8604a2aa48ee997c2fddae8
 msgid "Operating System"
 msgstr "操作系统"
 
 #: ../../source/1-getting_started/2-install_environment.md:7
-#: 553c569200aa481bb460447d8a435780
+#: c77d73521477434c91b8dd6e50a90a96
 msgid "**Supported:** Ubuntu 24.04 LTS (Noble Numbat)"
 msgstr "**支持：** Ubuntu 24.04 LTS（Noble Numbat）"
 
 #: ../../source/1-getting_started/2-install_environment.md:9
-#: 9f0bf9f3122d4b9f8983e20eef6b7bfc
+#: f1ee8ec6d4be4aadb9e9525bfe59f835
 msgid ""
 "**Python:** **3.12** only (ROS 2 Jazzy on Ubuntu 24.04). Do not use "
 "3.10/3.11 venvs for this stack."
 msgstr ""
-"**Python：** 仅 **3.12**（Ubuntu 24.04 上的 ROS 2 Jazzy）。本技术栈不要使用 3.10/3.11 虚拟环境。"
+"**Python：** 仅 **3.12**（Ubuntu 24.04 上的 ROS 2 Jazzy）。本技术栈不要使用 3.10/3.11 "
+"虚拟环境。"
 
 #: ../../source/1-getting_started/2-install_environment.md:11
-#: e6028edd1e2a4b15a7d1ba3307b55b18
+#: d9ae127540d84b82b3b714fb8afb753a
 msgid "Other platforms are not officially supported but may work:"
 msgstr "其他平台未经官方支持，但可能可用："
 
 #: ../../source/1-getting_started/2-install_environment.md:12
-#: c480f12d9e704bd9b3802bff040aa7f2
+#: 212cc1d819f64b499a0b261d998553af
 msgid "Ubuntu 22.04 with ROS 2 Humble (limited compatibility)"
 msgstr "Ubuntu 22.04 搭配 ROS 2 Humble（兼容性有限）"
 
 #: ../../source/1-getting_started/2-install_environment.md:13
-#: 090675034d65462baa8a3450a2f2404a
+#: 066a32ab7996424d99e3ce15c7e24f3a
 msgid "Other Linux distributions with manual ROS 2 installation"
 msgstr "其他 Linux 发行版（需手动安装 ROS 2）"
 
 #: ../../source/1-getting_started/2-install_environment.md:15
-#: a7945ba5f1024e0387f0dd40ac774391
+#: b94a28dea6824c47be4e10d5f438f45b
 msgid "ROS 2 Jazzy Installation"
 msgstr "安装 ROS 2 Jazzy"
 
 #: ../../source/1-getting_started/2-install_environment.md:17
-#: 15ae4e8e80ab4b98ad11d70d78adc47b
+#: 40b9612fe10b45d3998263f5aa5aa22e
 msgid "Option A: Official Installation (Recommended)"
 msgstr "方案 A：官方安装（推荐）"
 
 #: ../../source/1-getting_started/2-install_environment.md:19
-#: 4add9e69221f45e4b83073698c98922f
+#: 494f86a36a4e4bf8a1ccd2673ff4fe7f
 msgid "Follow the official ROS 2 Jazzy installation guide:"
 msgstr "请按照官方 ROS 2 Jazzy 安装指南操作："
 
 #: ../../source/1-getting_started/2-install_environment.md:21
-#: f098196c57fc4b11b7e5ecaeeca42720
+#: 7ad20a6527b647e093d1e2fb62b70c0f
 msgid ""
 "# Set locale\n"
 "sudo apt update && sudo apt install locales\n"
@@ -93,8 +94,14 @@ msgid ""
 "sudo apt install software-properties-common\n"
 "sudo add-apt-repository universe\n"
 "sudo apt update && sudo apt install curl -y\n"
-"sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg\n"
-"echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null\n"
+"sudo curl -sSL "
+"https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o "
+"/usr/share/keyrings/ros-archive-keyring.gpg\n"
+"echo \"deb [arch=$(dpkg --print-architecture) signed-"
+"by=/usr/share/keyrings/ros-archive-keyring.gpg] "
+"http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo "
+"$UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > "
+"/dev/null\n"
 "\n"
 "# Install ROS 2 Jazzy\n"
 "sudo apt update\n"
@@ -110,45 +117,51 @@ msgstr ""
 "sudo apt install software-properties-common\n"
 "sudo add-apt-repository universe\n"
 "sudo apt update && sudo apt install curl -y\n"
-"sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg\n"
-"echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null\n"
+"sudo curl -sSL "
+"https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o "
+"/usr/share/keyrings/ros-archive-keyring.gpg\n"
+"echo \"deb [arch=$(dpkg --print-architecture) signed-"
+"by=/usr/share/keyrings/ros-archive-keyring.gpg] "
+"http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo "
+"$UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > "
+"/dev/null\n"
 "\n"
 "# Install ROS 2 Jazzy\n"
 "sudo apt update\n"
 "sudo apt install ros-jazzy-desktop ros-dev-tools\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:40
-#: 707723940b9949f8accce1093fb7d297
+#: f39aed8339ee45729a821e7382810253
 msgid "Option B: fishros (Alternative for China)"
 msgstr "方案 B：fishros（国内备选）"
 
 #: ../../source/1-getting_started/2-install_environment.md:42
-#: 7fdae73eb5ba4f11aac7475f19cd2a23
+#: ccf3c52862ac433689fa97c8bf6e2490
 msgid "For users in China with slow access to official mirrors:"
 msgstr "面向访问官方镜像较慢的国内用户："
 
 #: ../../source/1-getting_started/2-install_environment.md:44
-#: 54a41d33de6f49cab6f0690df8bb9dc4
+#: 3157515c14934fb0adc76911db6742bd
 msgid "wget http://fishros.com/install -O fishros && bash fishros\n"
 msgstr "wget http://fishros.com/install -O fishros && bash fishros\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:48
-#: f14dd563ea9744c6baa98a5c665e4089
+#: 91fe385ddc854be6985477a1c84785b7
 msgid "Select ROS 2 Jazzy when prompted."
 msgstr "按提示选择 ROS 2 Jazzy。"
 
 #: ../../source/1-getting_started/2-install_environment.md:50
-#: bad42b4fdd144caba4bf4f198c6286fd
+#: 672c935c7e614227a69ad285e8d49d64
 msgid "Development Tools"
 msgstr "开发工具"
 
 #: ../../source/1-getting_started/2-install_environment.md:52
-#: 8100153ab6da48d786f1d9ccde86b592
+#: a1e65d6833374e3a91db08a45f31ab0b
 msgid "Essential Packages"
 msgstr "必要软件包"
 
 #: ../../source/1-getting_started/2-install_environment.md:54
-#: 7dade0379e7541a2972c9dc9d32cdf52
+#: 513e9bd247274b2bb5a319a3e749296c
 msgid ""
 "sudo apt install -y \\\n"
 "    python3-pip \\\n"
@@ -169,12 +182,12 @@ msgstr ""
 "    cmake\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:65
-#: 4add997e111a43eb913447ffb712c07c
+#: 2d608b67b53f4cf688945fcb6b46e092
 msgid "Initialize rosdep"
 msgstr "初始化 rosdep"
 
 #: ../../source/1-getting_started/2-install_environment.md:67
-#: 83683b796fef4cb1900784d984600df9
+#: dddcd52bb82540b5aa7b3862c9039fae
 msgid ""
 "sudo rosdep init  # Skip if already done\n"
 "rosdep update\n"
@@ -183,36 +196,36 @@ msgstr ""
 "rosdep update\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:72
-#: 0cb101a3f8514cbdacf3d02bb6b6f49f
+#: 881a831242a04c93a30807e5153de764
 msgid "OCS2 Installation"
 msgstr "安装 OCS2"
 
 #: ../../source/1-getting_started/2-install_environment.md:74
-#: 02118ef89b374fab81353ffe4b57661f
+#: 86b0ab213aa3417a85d447f0b6e8be3f
 msgid "OCS2 (Optimal Control for Switched Systems) is a core dependency."
 msgstr "OCS2（切换系统最优控制，Optimal Control for Switched Systems）是核心依赖。"
 
 #: ../../source/1-getting_started/2-install_environment.md:76
-#: f21ff0c5ebb04189a79ad44f811bec40
+#: 85a94cd0dd7b448b9fac12e9fbf1ec47
 msgid ""
-"OCS2 is **not** published to Debian / ROS apt software sources. The `.deb` "
-"package name is still `ros-jazzy-ocs2`. **Do not** treat `sudo apt install` "
-"or a hand-run `dpkg -i` as the primary path."
+"OCS2 is **not** published to Debian / ROS apt software sources. The "
+"`.deb` package name is still `ros-jazzy-ocs2`. **Do not** treat `sudo apt"
+" install` or a hand-run `dpkg -i` as the primary path."
 msgstr ""
 "OCS2 **没有**发布到 Debian / ROS apt 软件源。`.deb` 包名仍是 `ros-jazzy-ocs2`。**不要**把 "
 "`sudo apt install` 或手跑 `dpkg -i` 当作主路径。"
 
 #: ../../source/1-getting_started/2-install_environment.md:78
-#: dd414c6162ea4dfdb9c760e9aa0eb3c4
+#: a08c739b39c6480d94b1a72ddef624e3
 msgid ""
-"Use the deploy-workspace scripts in `open-deploy-ws` or `fa-deploy-ws`. They"
-" already switch and install OCS2 (GitHub Release `.deb` or source)."
+"Use the deploy-workspace scripts in `open-deploy-ws` or `fa-deploy-ws`. "
+"They already switch and install OCS2 (GitHub Release `.deb` or source)."
 msgstr ""
 "使用 `open-deploy-ws` 或 `fa-deploy-ws` 的部署工作空间脚本。它们已经负责切换并安装 OCS2（GitHub "
 "Release `.deb` 或源码）。"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 6b4794d264484e548ac7c6ac3f1c6e0a
+#: 657d1e3cd233494186abbfba7904bca7
 msgid ""
 "cd ~/open-deploy-ws   # or fa-deploy-ws\n"
 "./init_repo.sh"
@@ -221,77 +234,77 @@ msgstr ""
 "./init_repo.sh"
 
 #: ../../source/1-getting_started/2-install_environment.md:85
-#: 2b247190d20d4fde8ac1d3329e997d32
+#: 70308dfe25014cd1b06cd44e45df3593
 msgid "What the script does (from the open-deploy-ws README):"
 msgstr "脚本做什么（摘自 open-deploy-ws README）："
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: ab19c71bd27c4adab1bbecc020880cca
+#: 3c8dee35376445468aafca7eb7911661
 msgid "Menu"
 msgstr "菜单"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 3cb072f9d3cd4e9781f1566b14c5d5dd
+#: 8628c02cd9bc405aa4fff2a6434aa514
 msgid "Role"
 msgstr "作用"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: d2304ee51ade4f428d786a7bbe3d2a03
+#: 78f47f9c45cb45518b80a9ad603f1c28
 msgid "**1) 初始化工作空间**"
 msgstr "**1) 初始化工作空间**"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 557285cbf6b3462189d2ef101280b3b1
+#: 462dcae952ec44ea9356f78b2821d25a
 msgid ""
 "Nested visibility, then per-module `d` (GitHub Release `.deb`) or `s` "
 "(source). OCS2 default is **deb**."
 msgstr "先选嵌套可见性，再按模块选 `d`（GitHub Release `.deb`）或 `s`（源码）。OCS2 默认是 **deb**。"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 0e344c03f58c4a25b8f6ff6ec0f9894b
+#: 44339690846e4674b4c2417912ffa85d
 msgid "**2) 切换模块安装方式**"
 msgstr "**2) 切换模块安装方式**"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 503dfda2b5aa4f0ab7221aae113c3675
+#: 6ad249b032df4ae3817ddf3184602f65
 msgid ""
-"Switch an already-initialized module **source ↔ deb** (cleans conflicting "
-"source or uninstalls the matching deb). Use this to change the OCS2 install "
-"path."
+"Switch an already-initialized module **source ↔ deb** (cleans conflicting"
+" source or uninstalls the matching deb). Use this to change the OCS2 "
+"install path."
 msgstr "把已初始化模块在 **源码 ↔ deb** 之间切换（清理冲突源码或卸载对应 deb）。用这个改 OCS2 安装路径。"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: e9503fcae64445c789a9a177adaea0e1
+#: 362062010da442b9af08bc395db0980e
 msgid "**3) 仅安装/更新核心 deb**"
 msgstr "**3) 仅安装/更新核心 deb**"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: b3e291988ff0443591c5f7213f4503dd
+#: 34a252f53b604a55b2c34a3025c8d647
 msgid "Skip Git; e.g. `./scripts/install_core_debs.sh --only ocs2`"
 msgstr "跳过 Git；例如 `./scripts/install_core_debs.sh --only ocs2`"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 075699289d3b4865b95bd8115124297b
+#: 4ad03bf6337a4de58990affb8af93392
 msgid "**4) 卸载核心 deb**"
 msgstr "**4) 卸载核心 deb**"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: fa945e7997d848f1b835e4dc4bd92adc
+#: c46a5dc8eb3942e18eb0794a23a32a5b
 msgid "e.g. `./scripts/uninstall_core_debs.sh --only ocs2`"
 msgstr "例如 `./scripts/uninstall_core_debs.sh --only ocs2`"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: baf4416d61c14f3098d945e3afc7bf4a
+#: a2a1ca4d0b7c4b68bb6401209c4eeb23
 msgid "**5) 仅运行 rosdep**"
 msgstr "**5) 仅运行 rosdep**"
 
 #: ../../source/1-getting_started/2-install_environment.md:80
-#: 7ae469ff977745ccb2f2767533fa6856
+#: e444754d7e5b4b00a12fb5e2a5d9b3be
 msgid "`rosdep install` on `src/` only"
 msgstr "只对 `src/` 跑 `rosdep install`"
 
 #: ../../source/1-getting_started/2-install_environment.md:95
-#: 9dbbd7c1b2da4b1597a569daa369cc25
+#: f1b891f2e366439694cc374441e06c44
 msgid ""
 "Choosing `d` downloads the matching GitHub Release asset via "
 "`scripts/install_core_debs.sh`. It does **not** install from "
@@ -301,75 +314,77 @@ msgstr ""
 "packages.ros.org 安装。init 之后仍需 `colcon build`。"
 
 #: ../../source/1-getting_started/2-install_environment.md:97
-#: 46fb6479d45e4e2b8d92ed0f62388b7f
+#: f482309af9184b54bb3510ced11d15c0
 msgid "Manual fallback"
 msgstr "手动回退"
 
 #: ../../source/1-getting_started/2-install_environment.md:100
-#: 3eae542b48c74ea783d85361aac8f5b3
+#: f7166ab0e8704d06aa1464097a1be3ec
 msgid ""
-"Only if you are not using a deploy workspace. Download the matching asset "
-"for your architecture and ROS distro from [ocs2_ros2 "
-"Releases](https://github.com/legubiao/ocs2_ros2/releases) (filename pattern "
-"`ros-jazzy-ocs2_*_<arch>.deb`), then `sudo dpkg -i ros-jazzy-ocs2_*.deb` and"
-" `sudo apt-get install -f` if dpkg reports missing dependencies. For source:"
-" clone branch `ros2` into `src/` — or choose `s` in `./init_repo.sh`."
+"Only if you are not using a deploy workspace. Download the matching asset"
+" for your architecture and ROS distro from [ocs2_ros2 "
+"Releases](https://github.com/legubiao/ocs2_ros2/releases) (filename "
+"pattern `ros-jazzy-ocs2_*_<arch>.deb`), then `sudo dpkg -i ros-jazzy-"
+"ocs2_*.deb` and `sudo apt-get install -f` if dpkg reports missing "
+"dependencies. For source: clone branch `ros2` into `src/` — or choose `s`"
+" in `./init_repo.sh`."
 msgstr ""
 "仅当你没有使用部署工作空间时。从 [ocs2_ros2 "
 "Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配架构和 ROS "
 "发行版的资源（文件名形如 `ros-jazzy-ocs2_*_<arch>.deb`），然后 `sudo dpkg -i ros-jazzy-"
-"ocs2_*.deb`；若 dpkg 报缺依赖再 `sudo apt-get install -f`。源码：把 `ros2` 分支克隆进 `src/` "
-"— 或在 `./init_repo.sh` 里选 `s`。"
+"ocs2_*.deb`；若 dpkg 报缺依赖再 `sudo apt-get install -f`。源码：把 `ros2` 分支克隆进 "
+"`src/` — 或在 `./init_repo.sh` 里选 `s`。"
 
 #: ../../source/1-getting_started/2-install_environment.md:103
-#: 59db1ed7c6784be6901a76b61230fc79
+#: e3d9aaf2b2d8419391790c75dfb31617
 msgid "Simulation Dependencies"
 msgstr "仿真依赖"
 
 #: ../../source/1-getting_started/2-install_environment.md:105
-#: 3c3ee0615bcc42e388804a0c69fb3333
+#: 0c30210083d64e12b71edbf2d983bb5c
 msgid "Gazebo Harmonic"
 msgstr "Gazebo Harmonic"
 
 #: ../../source/1-getting_started/2-install_environment.md:107
-#: 3d86866a9b494bd5917af26ca15904fb
+#: c282881e6adb4532bca622049a0bf094
 msgid "sudo apt install ros-jazzy-gz-*\n"
 msgstr "sudo apt install ros-jazzy-gz-*\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:111
-#: 33a8e60207624e028cdbd57fcc9b280d
+#: f49c9a6f0b894e48aad4e0ea4cbbb4b8
 msgid "Isaac Sim"
 msgstr "Isaac Sim"
 
 #: ../../source/1-getting_started/2-install_environment.md:113
-#: c6bed492867c4e579de84179be3035f2
+#: 0d036bdf6e6f40ad9754f90afd54e0e8
 msgid ""
 "Use **FaSim-Isaac** scripts. Path and version live in config, not in a "
 "hardcoded minor version in these docs."
 msgstr "使用 **FaSim-Isaac** 脚本。路径和版本写在配置里，不要在这些文档里写死某一个次版本号。"
 
 #: ../../source/1-getting_started/2-install_environment.md:115
-#: cbc9bb566b814ab9897dd1806943ccf6
+#: 113fde0c620b4933a8e9e8d428498ea9
 msgid ""
-"Default install directory: `ISAACSIM_DIR` (`~/isaacsim` unless you set it in"
-" `config/fa_sim.local.conf` or the environment)"
+"Default install directory: `ISAACSIM_DIR` (`~/isaacsim` unless you set it"
+" in `config/fa_sim.local.conf` or the environment)"
 msgstr ""
 "默认安装目录：`ISAACSIM_DIR`（除非在 `config/fa_sim.local.conf` 或环境变量里设置，否则为 "
 "`~/isaacsim`）"
 
 #: ../../source/1-getting_started/2-install_environment.md:116
-#: ff709b08f7544d858538f251a2fcaabc
+#: 4cac607f90334e5995fba8f27793e2db
 msgid ""
-"Optional Isaac ROS 2 Jazzy workspace version: `./init.sh` operation 2 menu "
-"(queries GitHub stable tags; fallback list in `config/fa_sim.conf` currently"
-" `6.0.1` / `6.0.0` / `5.1.0`). Override with `ISAAC_SIM_VERSION=… ./init.sh`"
+"Optional Isaac ROS 2 Jazzy workspace version: `./init.sh` operation 2 "
+"menu (queries GitHub stable tags; fallback list in `config/fa_sim.conf` "
+"currently `6.0.1` / `6.0.0` / `5.1.0`). Override with "
+"`ISAAC_SIM_VERSION=… ./init.sh`"
 msgstr ""
 "可选 Isaac ROS 2 Jazzy 工作空间版本：`./init.sh` 操作 2 菜单（查询 GitHub 稳定 tag；回退列表见 "
-"`config/fa_sim.conf`，目前是 `6.0.1` / `6.0.0` / `5.1.0`）。用 `ISAAC_SIM_VERSION=…"
-" ./init.sh` 覆盖。"
+"`config/fa_sim.conf`，目前是 `6.0.1` / `6.0.0` / `5.1.0`）。用 "
+"`ISAAC_SIM_VERSION=… ./init.sh` 覆盖。"
 
 #: ../../source/1-getting_started/2-install_environment.md:118
-#: 602010487cf94ff58bc2c55aa782847b
+#: 6e1622e20f6349c1b93bf3f037e0f2e0
 msgid ""
 "git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
@@ -382,85 +397,84 @@ msgstr ""
 "./run.sh     # menu: PhysX / Newton / Headless Streaming"
 
 #: ../../source/1-getting_started/2-install_environment.md:125
-#: cb919b87a8e341589afdf5ab3e9de9a1
+#: 0e5a9dabfcd14a0dbf445da8fd6d53b9
 msgid ""
 "Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` to "
 "change `ISAACSIM_DIR` or the default version. See the [Isaac Sim how-"
-"to](../2-how_to/4-isaac_sim.md)."
+"to](../2-how_to/2-simulation/4-isaac_sim.md)."
 msgstr ""
-"复制 `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` 以修改 "
-"`ISAACSIM_DIR` 或默认版本。见 [Isaac Sim 操作指南](../2-how_to/4-isaac_sim.md)。"
+"复制 `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` 以修改 `ISAACSIM_DIR` 或默认版本。见 [Isaac Sim 操作指南](../2-how_to/2-simulation/4-isaac_sim.md)。"
 
 #: ../../source/1-getting_started/2-install_environment.md:127
-#: 46bbafdfede84957b4f5d7409458fb4a
+#: 8a296ce931ba4a88ae52440602530f6f
 msgid "Network Configuration (Optional)"
 msgstr "网络配置（可选）"
 
 #: ../../source/1-getting_started/2-install_environment.md:129
-#: 03f1cf6b58d94f91a574881511921e16
+#: cd509819c2a342d080aefc26e444cf56
 msgid "For multi-machine setups or connecting to real robots:"
 msgstr "对于多机部署或连接真实机器人："
 
 #: ../../source/1-getting_started/2-install_environment.md:131
-#: a3daccd84afd4c718879cbb3ec5455ba
+#: 33018f1e4cdb4ee5be692a38be5a2551
 msgid "Zenoh Bridge"
 msgstr "Zenoh 网桥"
 
 #: ../../source/1-getting_started/2-install_environment.md:133
-#: 164cc572085d498898cb963de3b2ef25
+#: 9daeec7b36fd4546ae10e10a9ec5609f
 msgid "sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
 msgstr "sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:137
-#: f5234ba1cb4b4a9f8b474c8ba6d368b1
+#: 98751095f34443378888ce620bc0e1bf
 msgid "Configure via environment variables:"
 msgstr "通过环境变量配置："
 
 #: ../../source/1-getting_started/2-install_environment.md:138
-#: e20cfea7c41e4be2abd553296c6e8999
+#: c596254f340f4fd79368151b2a8aeee2
 msgid "export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
 msgstr "export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:142
-#: 433ab04e2feb4a2d804e273faccd75ab
+#: 6832f4c95a7b4f52ae172434bdfa7f1c
 msgid "ROS Domain ID"
 msgstr "ROS Domain ID"
 
 #: ../../source/1-getting_started/2-install_environment.md:144
-#: df4fc585882e46adabc5a60fe4d9fbd7
+#: db1c7e792d954420adc7f9417c53eb6e
 msgid "Set a unique Domain ID to isolate your ROS 2 traffic:"
 msgstr "设置唯一的 Domain ID，以隔离你的 ROS 2 通信："
 
 #: ../../source/1-getting_started/2-install_environment.md:146
-#: 4616bc3e62f94b7bb1bd6d41c4d1cc8f
+#: b1bedede018946749f01b9d6d231e06b
 msgid "export ROS_DOMAIN_ID=<your-id>\n"
 msgstr "export ROS_DOMAIN_ID=<your-id>\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:150
-#: 15be5d76f9dd401183485e46a99ba682
+#: 47e39559cb5447589bc880693dc5935f
 msgid "Domain ID Selection"
 msgstr "选择 Domain ID"
 
 #: ../../source/1-getting_started/2-install_environment.md:153
-#: 31bd8fcf685b4f19a5290398d0a75e9d
+#: 904397d2775e493fb338595655adc61a
 msgid ""
 "When working with real robots, the Domain ID must match the robot's "
-"configured value. Consult your robot's documentation or team lead for the "
-"correct ID."
+"configured value. Consult your robot's documentation or team lead for the"
+" correct ID."
 msgstr "连接真实机器人时，Domain ID 必须与机器人上配置的值一致。请查阅机器人文档或向团队负责人确认正确的 ID。"
 
 #: ../../source/1-getting_started/2-install_environment.md:156
-#: 920900b9b01b45c98813b7f5387922aa
+#: 9d565d558c884f6eaeccdfa8ca17764c
 msgid "Shell Configuration"
 msgstr "Shell 配置"
 
 #: ../../source/1-getting_started/2-install_environment.md:158
-#: 5578895a1df84e2a880e44d86194ef42
+#: 4201742060a940beb686ca523792fced
 msgid "Add to your `~/.bashrc` for convenience:"
 msgstr "为方便使用，可添加到 `~/.bashrc`："
 
 #: ../../source/1-getting_started/2-install_environment.md:160
-#: f9a02e3eaf3f4acb90266815f1684726
+#: 9535e05fe05544d1a11cf8746d9133bc
 msgid ""
 "# ROS 2 Jazzy\n"
 "source /opt/ros/jazzy/setup.bash\n"
@@ -491,17 +505,17 @@ msgstr ""
 "# export ROS_DOMAIN_ID=42\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:176
-#: 0db2f1e8341c4c0cb81371fc98a3a38b
+#: 6797927d56f947938290a9a5b514acc6
 msgid "Verification"
 msgstr "验证"
 
 #: ../../source/1-getting_started/2-install_environment.md:178
-#: 0a6670dee8e84decbf729904135727cc
+#: 3edca6dfabcd437a9048cfe35cdf6d54
 msgid "Test your installation:"
 msgstr "测试安装是否成功："
 
 #: ../../source/1-getting_started/2-install_environment.md:180
-#: 0c69b5b7286143758a30978c290721be
+#: 265cc38f5164422db360a25acc75c1ea
 msgid ""
 "# Source ROS 2\n"
 "source /opt/ros/jazzy/setup.bash\n"
@@ -528,24 +542,24 @@ msgstr ""
 "ros2 pkg list | grep ocs2\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:194
-#: 32c6a7b59fbd45c7892bbb4c883e98fb
+#: fe1f3013b23548fca625394985b3b2ff
 msgid "Common Issues"
 msgstr "常见问题"
 
 #: ../../source/1-getting_started/2-install_environment.md:196
-#: 194a939dbb5847639d1e829429aaec10
+#: 6ea0b01468eb4dcab46b80dfe857f134
 msgid "Package Not Found After apt install"
 msgstr "软件包 Not Found After apt install"
 
 #: ../../source/1-getting_started/2-install_environment.md:198
-#: fcad553d635d425b8e0c02fe52a7839e
+#: 2fac8183368f4cd0baa7e8ef06bf3294
 msgid ""
 "This applies to packages that **are** in the ROS apt index (for example "
 "`ros-jazzy-desktop`). It does **not** apply to OCS2."
 msgstr "这适用于**确实**在 ROS apt 索引中的包（例如 `ros-jazzy-desktop`）。它**不适用于** OCS2。"
 
 #: ../../source/1-getting_started/2-install_environment.md:200
-#: 5907c6a883f044d3b178ca4fff3ba6aa
+#: 94a2963f8ee44d7283aa77d80722acd5
 msgid ""
 "sudo apt update\n"
 "source /opt/ros/jazzy/setup.bash\n"
@@ -554,12 +568,12 @@ msgstr ""
 "source /opt/ros/jazzy/setup.bash\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:205
-#: 9b9fc7f0ee1d4840a683b97abb891cf3
+#: 408ac3a58a874a7d93233817b2d515be
 msgid "OCS2 not found after install"
 msgstr "安装后找不到 OCS2"
 
 #: ../../source/1-getting_started/2-install_environment.md:207
-#: dcabf7d3b6ad467eb047b22392c39812
+#: 308bea234fbe4056825741019b42dcab
 msgid ""
 "OCS2 is not in packages.ros.org / Ubuntu apt. `sudo apt update` will not "
 "make `ros-jazzy-ocs2` appear."
@@ -568,18 +582,18 @@ msgstr ""
 "ocs2` 出现。"
 
 #: ../../source/1-getting_started/2-install_environment.md:209
-#: a51f897604734328a6b5c11a4cbc7b99
+#: 52ba7b4cee544a11956c505b7346bd43
 msgid ""
-"Re-run `./init_repo.sh` in the deploy workspace: choose **1** and `d` for "
-"OCS2, or **3** (`./scripts/install_core_debs.sh --only ocs2`). To change an "
-"existing install, use menu **2) 切换模块安装方式**."
+"Re-run `./init_repo.sh` in the deploy workspace: choose **1** and `d` for"
+" OCS2, or **3** (`./scripts/install_core_debs.sh --only ocs2`). To change"
+" an existing install, use menu **2) 切换模块安装方式**."
 msgstr ""
 "在部署工作空间再跑 `./init_repo.sh`：选 **1** 并为 OCS2 选 `d`，或选 "
 "**3**（`./scripts/install_core_debs.sh --only ocs2`）。要改已有安装，用菜单 **2) "
 "切换模块安装方式**。"
 
 #: ../../source/1-getting_started/2-install_environment.md:211
-#: f7d50f0f8359451aad1f1cc00c04084b
+#: fb9d2a22c7f7469c978047b82dbcdf0d
 msgid ""
 "dpkg-query -W ros-jazzy-ocs2\n"
 "source /opt/ros/jazzy/setup.bash\n"
@@ -588,43 +602,42 @@ msgstr ""
 "source /opt/ros/jazzy/setup.bash\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:216
-#: 2d014a63486848e28a92c87010a2ebfa
+#: 648dba3814ec4d92993390119b37b8a0
 msgid "rosdep Errors"
 msgstr "rosdep 错误"
 
 #: ../../source/1-getting_started/2-install_environment.md:218
-#: 9e05196d0cb44a2280f40182acf4dd8a
+#: 16c1ade0e08543e7bbf34c01e265f408
 msgid "rosdep update --include-eol-distros\n"
 msgstr "rosdep update --include-eol-distros\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:222
-#: 28375e6d5ba6495aa297c2dffd668435
+#: 133d51464f1441788cbd364faebc797c
 msgid "Colcon Build Warnings"
 msgstr "Colcon Build Warnings"
 
 #: ../../source/1-getting_started/2-install_environment.md:224
-#: 6a39da7c88bc4e47b569347c38f6c1af
+#: ff4b2c12798744759e6519e5d27e87f9
 msgid "Most warnings can be ignored. For \"missing resource index\" warnings:"
 msgstr "Most warnings can be ignored. For \\\"missing resource index\\\" warnings:"
 
 #: ../../source/1-getting_started/2-install_environment.md:225
-#: 3ffcdaa693fd443ab9a9a6f296c21100
+#: 531daa944c4e43138dffeddb010e9660
 msgid "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release\n"
-msgstr ""
-"colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release\n"
+msgstr "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release\n"
 
 #: ../../source/1-getting_started/2-install_environment.md:229
-#: 0b1f24316fd94504961e32b862d535cd
+#: 46c2387cf71c4662ad16768cbc61a777
 msgid "Next Steps"
 msgstr "下一步"
 
 #: ../../source/1-getting_started/2-install_environment.md:231
-#: c3c011ff0e58447d8533f13b6a151ce7
+#: 30d0af9b096c4ac59a9159091c550869
 msgid "[Quick Demo](1-quick_demo_public.md) — Run your first demo"
 msgstr "[快速演示](1-quick_demo_public.md) — 运行你的第一个演示"
 
 #: ../../source/1-getting_started/2-install_environment.md:232
-#: 56d81fed15c4454b8608acda8688b140
+#: ce9f051d0cc7410ebbe02574b09fa856
 msgid "[open-deploy-ws Setup](3-open_deploy_ws.md) — Detailed workspace setup"
 msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间搭建"
 
@@ -644,12 +657,16 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间�
 #~ msgstr "方案 A：GitHub Release `.deb`（推荐）"
 
 #~ msgid ""
-#~ "**Most users:** run `./init_repo.sh` in `open-deploy-ws` or `fa-deploy-ws` "
-#~ "and choose `d` (deb) for OCS2. That downloads and installs the release "
-#~ "`.deb` via `scripts/install_core_debs.sh`."
+#~ "**Most users:** run `./init_repo.sh` in "
+#~ "`open-deploy-ws` or `fa-deploy-ws`"
+#~ " and choose `d` (deb) for OCS2. "
+#~ "That downloads and installs the release"
+#~ " `.deb` via `scripts/install_core_debs.sh`."
 #~ msgstr ""
-#~ "**大多数用户：** 在 `open-deploy-ws` 或 `fa-deploy-ws` 中运行 `./init_repo.sh`，并为 OCS2 "
-#~ "选择 `d`（deb）。该路径会通过 `scripts/install_core_debs.sh` 下载并安装发行版 `.deb`。"
+#~ "**大多数用户：** 在 `open-deploy-ws` 或 "
+#~ "`fa-deploy-ws` 中运行 `./init_repo.sh`，并为 OCS2"
+#~ " 选择 `d`（deb）。该路径会通过 `scripts/install_core_debs.sh` "
+#~ "下载并安装发行版 `.deb`。"
 
 #~ msgid ""
 #~ "sudo dpkg -i ros-jazzy-ocs2_*.deb\n"
@@ -665,7 +682,8 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间�
 #~ msgstr "方案 B：从源码安装"
 
 #~ msgid ""
-#~ "Clone within workspace (handled by `init_repo.sh` in deploy workspaces when "
+#~ "Clone within workspace (handled by "
+#~ "`init_repo.sh` in deploy workspaces when "
 #~ "you choose `s`):"
 #~ msgstr "在工作空间内克隆（在部署工作空间中选择 `s` 时由 `init_repo.sh` 处理）："
 
@@ -680,10 +698,12 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间�
 #~ msgstr "所需版本与路径"
 
 #~ msgid ""
-#~ "FaSim-Isaac requires **Isaac Sim 6.1 binary** installed at **`~/isaacsim`**."
-#~ " The run scripts assume this exact path."
+#~ "FaSim-Isaac requires **Isaac Sim 6.1 "
+#~ "binary** installed at **`~/isaacsim`**. The"
+#~ " run scripts assume this exact path."
 #~ msgstr ""
-#~ "FaSim-Isaac 要求将 **Isaac Sim 6.1 二进制包**安装到 **`~/isaacsim`**。运行脚本假定使用该精确路径。"
+#~ "FaSim-Isaac 要求将 **Isaac Sim 6.1 "
+#~ "二进制包**安装到 **`~/isaacsim`**。运行脚本假定使用该精确路径。"
 
 #~ msgid "**Requirements:**"
 #~ msgstr "**要求：**"
@@ -716,15 +736,22 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 详细的工作空间�
 #~ msgstr "ln -s /your/actual/path ~/isaacsim\n"
 
 #~ msgid ""
-#~ "See the [Isaac Sim how-to](../2-how_to/4-isaac_sim.md) for usage details."
+#~ "See the [Isaac Sim how-"
+#~ "to](../2-how_to/4-isaac_sim.md) for usage details."
 #~ msgstr "用法详情请参阅 [Isaac Sim 操作指南](../2-how_to/4-isaac_sim.md)。"
 
 #~ msgid ""
-#~ "If the package is missing, re-run `./init_repo.sh` and choose `d` for OCS2, "
-#~ "or download the matching `.deb` from [ocs2_ros2 "
-#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases) and install with "
-#~ "`sudo dpkg -i ros-jazzy-ocs2_*.deb`."
+#~ "If the package is missing, re-run"
+#~ " `./init_repo.sh` and choose `d` for "
+#~ "OCS2, or download the matching `.deb`"
+#~ " from [ocs2_ros2 "
+#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases) and"
+#~ " install with `sudo dpkg -i ros-"
+#~ "jazzy-ocs2_*.deb`."
 #~ msgstr ""
-#~ "如果包缺失，请重新运行 `./init_repo.sh` 并为 OCS2 选择 `d`；或从 [ocs2_ros2 "
-#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配的 `.deb`，然后用 "
-#~ "`sudo dpkg -i ros-jazzy-ocs2_*.deb` 安装。"
+#~ "如果包缺失，请重新运行 `./init_repo.sh` 并为 OCS2 选择 "
+#~ "`d`；或从 [ocs2_ros2 "
+#~ "Releases](https://github.com/legubiao/ocs2_ros2/releases) 下载匹配的"
+#~ " `.deb`，然后用 `sudo dpkg -i ros-"
+#~ "jazzy-ocs2_*.deb` 安装。"
+

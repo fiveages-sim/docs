@@ -48,7 +48,7 @@ Controllers documented from [arms_ros2_control](https://github.com/fiveages-sim/
 | [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 (`full_body.launch.py`) |
 | `adaptive_gripper_controller` | Gripper plugin (same repo) |
 
-分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../2-how_to/11-basic_joint.md).
+分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 ## The `hardware:=` Parameter
 

@@ -62,7 +62,7 @@ git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
 git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws
 :::
 
-Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md).
+Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
 
 ## Directory Structure
 
@@ -119,7 +119,7 @@ colcon build --packages-up-to ocs2_arm_controller
 ```{admonition} Real Hardware Deployment
 :class: tip
 
-**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. See [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md), and [Go to Real Hardware](../2-how_to/9-go_real_hardware/0-index.md).
+**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / **AC One** is arm-only. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. See [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md), [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), and [Go to Real Hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md).
 ```
 
 ## Launch Examples
@@ -206,8 +206,8 @@ sudo ip link set <expected_name> up
 
 ## Next Steps
 
-- [Run mock demo](../2-how_to/1-run_mock_demo.md)
-- [Switch robots](../2-how_to/2-switch_robot.md)
-- [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md)
-- [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md)
-- [Gazebo simulation](../2-how_to/3-gazebo_sim.md)
+- [Run mock demo](../2-how_to/1-basic_operations/1-run_mock_demo.md)
+- [Switch robots](../2-how_to/1-basic_operations/2-switch_robot.md)
+- [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)
+- [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)
+- [Gazebo simulation](../2-how_to/2-simulation/3-gazebo_sim.md)

@@ -78,7 +78,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=mock
    ```
-   `arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md).
+   `arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
@@ -173,7 +173,7 @@ Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise support
 
 ### Isomorphic Teleop (HighTorque Panthera HT)
 
-Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md). Mock (package README):
+Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md). Mock (package README):
 
 ```bash
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
@@ -194,9 +194,9 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 
 Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2S.
 
-- **[ARX Lift 2S](../2-how_to/9-go_real_hardware/1-arx_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
+- **[ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
 - **Acone** / **AC One** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
-- **[HighTorque Panthera HT](../2-how_to/9-go_real_hardware/2-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
+- **[HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
 ### Internal Path (FA Robots)
 
@@ -237,7 +237,7 @@ See the [Developer Guide](../5-developer/0-index.md) for detailed instructions.
 
 **Goal:** Understand the Isaac datagen path (not Gazebo): USD scene → `ROS2RobotInterface` → composer `task_queue` → LeRobot dataset on disk.
 
-Follow [Synthetic Data](../6-synthetic_data/0-index.md). Documented composer/lerobot branches are `feature/dex-grasp-generator` and `feature/sim-grasp-datagen`. Stop at recording/export; skip training.
+Follow [Synthetic Data](../2-how_to/7-synthetic_data/0-index.md). Documented composer/lerobot branches are `feature/dex-grasp-generator` and `feature/sim-grasp-datagen`. Stop at recording/export; skip training.
 
 ## Tips for Success
 

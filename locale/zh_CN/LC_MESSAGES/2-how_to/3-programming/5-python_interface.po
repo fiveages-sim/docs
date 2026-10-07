@@ -1,0 +1,561 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:1
+#: 2be422d3bf5742759b41310024e2fffc
+msgid "Python Interface"
+msgstr "Python 接口"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:3
+#: c86fc946d4244b5d90ae1e44ee957659
+msgid "Control robots programmatically using the Python interface."
+msgstr "使用 Python 接口以编程方式控制机器人。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:5
+#: cf5bc51573604dbc8b5eb7ab49f41b5e
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:7
+#: 9d720f6a1b384718b2ec12beec126197
+msgid "ROS 2 Jazzy installed"
+msgstr "已安装 ROS 2 Jazzy"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:8
+#: 6ad6ae71e2fe4e5aa80e8124fec7506a
+msgid "Robot demo running (mock, Gazebo, or real)"
+msgstr "机器人演示正在运行（mock、Gazebo 或真实硬件）"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:9
+#: 30f858ab8f04481e84c0061282260860
+msgid "**Python 3.12** (ROS 2 Jazzy)"
+msgstr "**Python 3.12**（ROS 2 Jazzy）"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:11
+#: e377e0e6748242ce8f30188e275a89d1
+msgid "Install fa-py-libraries"
+msgstr "安装 fa-py-libraries"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:13
+#: 395c4cea5bc144c7a9ba76cc3dcab581
+msgid ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all    # Python 3.12 env; installs ros2_robot_interface"
+msgstr ""
+"cd ~/\n"
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all    # Python 3.12 env; installs ros2_robot_interface"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:20
+#: b27c7ca3697544bf9ad3b32e7be62118
+msgid ""
+"`./init.sh all` initializes submodules, creates the env, and installs the"
+" Python packages. Then use `./run.sh` (or `./run.sh viser`) for "
+"launchers."
+msgstr ""
+"`./init.sh all` 会初始化子模块、创建环境并安装 Python 包。然后用 `./run.sh`（或 `./run.sh "
+"viser`）启动。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:22
+#: f6c31de00b30401cb2cdb24c5a1f3377
+msgid "Manual fallback"
+msgstr "手动回退"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:25
+#: e708dd8a524b4fda9f0eb7166472009b
+msgid ""
+"`pip install ros2-robot-interface` on system Python is not the documented"
+" entry. If you must install the package alone, do it inside the fa-py-"
+"libraries env after `./init.sh env 3.12`."
+msgstr ""
+"在系统 Python 上 `pip install ros2-robot-interface` 不是文档主入口。若必须单独装这个包，请在 "
+"`./init.sh env 3.12` 之后的 fa-py-libraries 环境内安装。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:28
+#: c08a00c2f2e74c7080c3a6140d4e595e
+msgid "Basic Usage"
+msgstr "基本用法"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:30
+#: 7cad4aa6d0e74baca3c4096697f65ffe
+msgid "Connect to Robot"
+msgstr "连接到机器人"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:32
+#: 42420b0f3811418eaac471d880214baf
+#, python-brace-format
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"# Initialize\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Check connection\n"
+"print(f\"Connected: {robot.is_connected()}\")"
+msgstr ""
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"# Initialize\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Check connection\n"
+"print(f\"Connected: {robot.is_connected()}\")"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:43
+#: 13d2e170f5ab46a49cc42e724fefc81c
+msgid "Move Robot"
+msgstr "移动机器人"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:45
+#: e6782280363b43c4a9607c8ecf578d96
+msgid ""
+"# Move to joint position (radians)\n"
+"robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"\n"
+"# Move to Cartesian pose\n"
+"robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], "
+"[qw,qx,qy,qz]"
+msgstr ""
+"# Move to joint position (radians)\n"
+"robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"\n"
+"# Move to Cartesian pose\n"
+"robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], "
+"[qw,qx,qy,qz]"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:53
+#: d52b560b94134b308e696870e01d7dff
+msgid "Gripper Control"
+msgstr "夹爪控制"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:55
+#: d8fe3dfbe0bf47e4a43f5752a27704e7
+msgid ""
+"# Open gripper\n"
+"robot.gripper_open()\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"\n"
+"# Set position (0.0 = closed, 1.0 = open)\n"
+"robot.gripper_move(0.5)"
+msgstr ""
+"# Open gripper\n"
+"robot.gripper_open()\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"\n"
+"# Set position (0.0 = closed, 1.0 = open)\n"
+"robot.gripper_move(0.5)"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:66
+#: 53c2d12b13b041188162e0aba19dedf7
+msgid "Read State"
+msgstr "读取状态"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:68
+#: a80177958b3149839adb257d2d87512c
+#, python-brace-format
+msgid ""
+"# Joint positions\n"
+"joints = robot.get_joint_positions()\n"
+"print(f\"Joints: {joints}\")\n"
+"\n"
+"# End-effector pose\n"
+"pose = robot.get_ee_pose()\n"
+"print(f\"EE pose: {pose}\")"
+msgstr ""
+"# Joint positions\n"
+"joints = robot.get_joint_positions()\n"
+"print(f\"Joints: {joints}\")\n"
+"\n"
+"# End-effector pose\n"
+"pose = robot.get_ee_pose()\n"
+"print(f\"EE pose: {pose}\")"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:78
+#: 56dbaf20ab6b4ae990f2a786fa423f54
+msgid "Example: Pick and Place"
+msgstr "示例：抓取与放置"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:80
+#: ea98d20e76b34d938cc36e6c8168ce1d
+msgid ""
+"from ros2_robot_interface import RobotInterface\n"
+"import time\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Move to home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(1)\n"
+"\n"
+"# Move above pick location\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move down to pick\n"
+"robot.move_l([0.3, 0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lift\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move to place\n"
+"robot.move_l([0.3, -0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lower\n"
+"robot.move_l([0.3, -0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Release\n"
+"robot.gripper_open()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Return home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])"
+msgstr ""
+"from ros2_robot_interface import RobotInterface\n"
+"import time\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Move to home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(1)\n"
+"\n"
+"# Move above pick location\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move down to pick\n"
+"robot.move_l([0.3, 0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Close gripper\n"
+"robot.gripper_close()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lift\n"
+"robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Move to place\n"
+"robot.move_l([0.3, -0.1, 0.3], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Lower\n"
+"robot.move_l([0.3, -0.1, 0.15], [1.0, 0.0, 0.0, 0.0])\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Release\n"
+"robot.gripper_open()\n"
+"time.sleep(0.5)\n"
+"\n"
+"# Return home\n"
+"robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:123
+#: f1eb545026e54903bc9cb483cacf88c1
+msgid "With Viser Visualization"
+msgstr "结合 Viser 可视化"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:125
+#: d53f187950414c058494bd0399a1b207
+msgid ""
+"Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the "
+"primary entry; do not start it from lerobot_ros2 or treat `pip install "
+"ros2-viser` as the product launcher."
+msgstr ""
+"从 **fa-py-libraries** 启动 Viser（`./run.sh viser`）。这是主入口；不要从 lerobot_ros2 "
+"启动，也不要把 `pip install ros2-viser` 当成产品启动方式。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:127
+#: af380ca6b27047fba21a37c048acc8ab
+msgid ""
+"cd ~/fa-py-libraries\n"
+"./run.sh viser"
+msgstr ""
+"cd ~/fa-py-libraries\n"
+"./run.sh viser"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:132
+#: 5a3011b3632044c88f0aebcf0a7c8ee1
+msgid ""
+"`ros2_viser` is a library dependency of that command. Embedding "
+"`ROS2ViserVisualizer` in your own script is covered on "
+"[ros2-viser](../../4-reference/python_apps/3-ros2_viser.md)."
+msgstr ""
+"`ros2_viser` 是该命令的库依赖。在自己的脚本里嵌入 `ROS2ViserVisualizer` 见 [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md)。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:134
+#: e229eb991694471685c7c63e6b115254
+msgid "FSM Commands"
+msgstr "FSM 命令"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:136
+#: db1f586957b7418d984855983c94f9d6
+msgid ""
+"`/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / "
+"`walk`). Values and legal transitions depend on the running controller. "
+"See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)."
+msgstr ""
+"`/fsm_command` 是 **`std_msgs/Int32`**（不是 `stand` / `walk` 这类字符串）。取值与合法转换取决于正在运行的控制器。见 [FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:138
+#: 2e6f1149b0db41b7bf56081e0fb67700
+msgid "Async Interface"
+msgstr "异步接口"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:140
+#: fb457d073f264125b8c4a47637520705
+msgid "For non-blocking operations:"
+msgstr "用于非阻塞操作："
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:142
+#: c5a9765aef6d462a9a5d3378f6080be1
+msgid ""
+"import asyncio\n"
+"from ros2_robot_interface import AsyncRobotInterface\n"
+"\n"
+"async def main():\n"
+"    robot = AsyncRobotInterface()\n"
+"    await robot.connect()\n"
+"    \n"
+"    # Non-blocking motion\n"
+"    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"    \n"
+"    # Do other things while moving\n"
+"    while robot.is_moving():\n"
+"        print(\"Moving...\")\n"
+"        await asyncio.sleep(0.1)\n"
+"    \n"
+"    print(\"Done!\")\n"
+"\n"
+"asyncio.run(main())"
+msgstr ""
+"import asyncio\n"
+"from ros2_robot_interface import AsyncRobotInterface\n"
+"\n"
+"async def main():\n"
+"    robot = AsyncRobotInterface()\n"
+"    await robot.connect()\n"
+"    \n"
+"    # Non-blocking motion\n"
+"    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])\n"
+"    \n"
+"    # Do other things while moving\n"
+"    while robot.is_moving():\n"
+"        print(\"Moving...\")\n"
+"        await asyncio.sleep(0.1)\n"
+"    \n"
+"    print(\"Done!\")\n"
+"\n"
+"asyncio.run(main())"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:163
+#: d133ee5660b1402193569cd3f2c0c787
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:165
+#: a1a24d03a2cd4681a69bb3386dfe258e
+#, python-brace-format
+msgid ""
+"# Test script\n"
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Read current state\n"
+"print(f\"Joints: {robot.get_joint_positions()}\")\n"
+"print(f\"EE Pose: {robot.get_ee_pose()}\")\n"
+"\n"
+"# Small motion test\n"
+"current = robot.get_joint_positions()\n"
+"current[0] += 0.1  # Small rotation of first joint\n"
+"robot.move_j(current)"
+msgstr ""
+"# Test script\n"
+"from ros2_robot_interface import RobotInterface\n"
+"\n"
+"robot = RobotInterface()\n"
+"robot.connect()\n"
+"\n"
+"# Read current state\n"
+"print(f\"Joints: {robot.get_joint_positions()}\")\n"
+"print(f\"EE Pose: {robot.get_ee_pose()}\")\n"
+"\n"
+"# Small motion test\n"
+"current = robot.get_joint_positions()\n"
+"current[0] += 0.1  # Small rotation of first joint\n"
+"robot.move_j(current)"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:182
+#: 4008cb7a667e4b80b1728aef3868b2bc
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:184
+#: 0934c45c011243a6819d19df9d7f75e0
+msgid "Connection fails"
+msgstr "连接失败"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:186
+#: dc633b57637e4534b00dde2be4335fde
+msgid "Ensure robot demo is running"
+msgstr "确认机器人演示正在运行"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:187
+#: 0274017dca1e43d9afbd7dc6cb33273d
+msgid "Check ROS 2 domain ID matches"
+msgstr "确认 ROS 2 的 Domain ID 一致"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:188
+#: 4e97301b4698424cab52e001b7aabcfc
+msgid "Verify topics are publishing: `ros2 topic list`"
+msgstr "确认话题正在发布：`ros2 topic list`"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:190
+#: c7c5f7b948864f1e94de7477a4eeab78
+msgid "Motion commands ignored"
+msgstr "运动指令被忽略"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:192
+#: 80b2ee2aeeab4bb2a6cef267dca89d70
+msgid "Check controller is in correct mode"
+msgstr "确认控制器处于正确模式"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:193
+#: 37c8a40dc8fc44ea987ab214deab0c85
+msgid "Verify target is within joint limits"
+msgstr "确认目标在关节限位范围内"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:194
+#: d472c8f56a6448d4945071713bec75ff
+msgid "Check for collision detection blocks"
+msgstr "检查是否被碰撞检测阻断"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:196
+#: a6e5436b4324426787e1b6b4bbb5a1a9
+msgid "Import error"
+msgstr "导入错误"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:198
+#: 123e730e92394b1a9f059b4c244d15a8
+msgid ""
+"cd ~/fa-py-libraries\n"
+"./init.sh all"
+msgstr ""
+"cd ~/fa-py-libraries\n"
+"./init.sh all"
+
+#~ msgid "Python 3.10+"
+#~ msgstr "Python 3.10+"
+
+#~ msgid ""
+#~ "from ros2_robot_interface import RobotInterface\n"
+#~ "from ros2_viser import ViserVisualizer\n"
+#~ "\n"
+#~ "robot = RobotInterface()\n"
+#~ "robot.connect()\n"
+#~ "\n"
+#~ "# Start visualizer\n"
+#~ "viz = ViserVisualizer()\n"
+#~ "viz.start()\n"
+#~ "\n"
+#~ "# Visualization updates automatically with robot state\n"
+#~ "print(f\"Open browser to: {viz.get_url()}\")\n"
+#~ msgstr ""
+#~ "from ros2_robot_interface import RobotInterface\n"
+#~ "from ros2_viser import ViserVisualizer\n"
+#~ "\n"
+#~ "robot = RobotInterface()\n"
+#~ "robot.connect()\n"
+#~ "\n"
+#~ "# Start visualizer\n"
+#~ "viz = ViserVisualizer()\n"
+#~ "viz.start()\n"
+#~ "\n"
+#~ "# Visualization updates automatically with robot state\n"
+#~ "print(f\"Open browser to: {viz.get_url()}\")\n"
+
+#~ msgid "Or install ros2_robot_interface directly:"
+#~ msgstr "或直接安装 ros2_robot_interface："
+
+#~ msgid "pip install ros2-robot-interface"
+#~ msgstr "pip install ros2-robot-interface"
+
+#~ msgid ""
+#~ "cd ~/fa-py-libraries\n"
+#~ "./init.sh all\n"
+#~ "# or, inside that env:\n"
+#~ "pip install -e ~/fa-py-libraries\n"
+#~ "# or\n"
+#~ "pip install ros2-robot-interface"
+#~ msgstr ""
+#~ "cd ~/fa-py-libraries\n"
+#~ "./init.sh all\n"
+#~ "# or, inside that env:\n"
+#~ "pip install -e ~/fa-py-libraries\n"
+#~ "# or\n"
+#~ "pip install ros2-robot-interface"
+
+#~ msgid "For whole-body control or complex motions:"
+#~ msgstr "用于全身控制或复杂运动："
+
+#~ msgid ""
+#~ "# Send FSM command\n"
+#~ "robot.send_fsm_command(\"stand\")\n"
+#~ "robot.send_fsm_command(\"walk\")\n"
+#~ "\n"
+#~ "# Mode commands\n"
+#~ "robot.send_mode_command(\"arm_teleop\")"
+#~ msgstr ""
+#~ "# Send FSM command\n"
+#~ "robot.send_fsm_command(\"stand\")\n"
+#~ "robot.send_fsm_command(\"walk\")\n"
+#~ "\n"
+#~ "# Mode commands\n"
+#~ "robot.send_mode_command(\"arm_teleop\")"
+
+#~ msgid ""
+#~ "See [FSM and "
+#~ "Topics](../3-concepts/4-fsm_and_topics.md) for available"
+#~ " commands."
+#~ msgstr "可用命令见[状态机与话题](../3-concepts/4-fsm_and_topics.md)。"
+

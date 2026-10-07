@@ -78,7 +78,7 @@ See repository README for network discovery, hand configuration, and deployment 
 
 Driver for DexCap teleoperation gloves.
 
-See [DexCap Teleop](../../2-how_to/8-dexcap_teleop.md) for usage guide.
+See [DexCap Teleop](../../2-how_to/5-teleoperation/8-dexcap_teleop.md) for usage guide.
 
 ```{admonition} TODO
 :class: note

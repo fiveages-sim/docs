@@ -82,7 +82,7 @@ Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-
 
 ## Related
 
-- [Use basic_joint_controller](../../2-how_to/11-basic_joint.md)
+- [Use basic_joint_controller](../../2-how_to/4-controllers/11-basic_joint.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
 - [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 (`split_body.launch.py`) uses this controller for body/head

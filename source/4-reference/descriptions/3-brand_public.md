@@ -59,7 +59,7 @@ End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-c
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/9-go_real_hardware/1-arx_lift2s.md).
+**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 ```
 
 ### Usage
@@ -113,7 +113,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1 hardware:=mock
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/9-go_real_hardware/2-panthera_ht.md). Launch name in that README is `panthera_ht`.
+**HighTorque Panthera HT** real-hardware deploy is the `panthera-ht` branch. See [HighTorque Panthera HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md). Launch name in that README is `panthera_ht`.
 ```
 
 ### Usage
@@ -170,4 +170,4 @@ robot-descriptions-<brand>/
 4. Add as submodule to `robot_descriptions`
 5. Update documentation
 
-See [Add a Robot](../../2-how_to/10-add_a_robot.md) for detailed steps.
+See [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md) for detailed steps.

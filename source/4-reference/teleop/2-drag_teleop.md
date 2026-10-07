@@ -69,4 +69,4 @@ Mode × hardware command-interface matrix, control laws, and YAML keys: read the
 
 ## Related
 
-- [Isomorphic Teleop How-To](../../2-how_to/7-isomorphic_teleop.md)
+- [Isomorphic Teleop How-To](../../2-how_to/5-teleoperation/7-isomorphic_teleop.md)

@@ -24,11 +24,11 @@ Exact transitions depend on the **running controller**:
 ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 2"   # HOLD
 :::
 
-Split vs whole-body launches (and the Lift2S `quick_start` **split body** / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not describe teleop as a separate FSM state — [Isomorphic Teleop](../2-how_to/7-isomorphic_teleop.md).
+Split vs whole-body launches (and the Lift2S `quick_start` **split body** / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not describe teleop as a separate FSM state — [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
 
 ## Related
 
-- [Use basic_joint_controller](../2-how_to/11-basic_joint.md)
+- [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)
 - [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)
 - [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)
 - [ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)

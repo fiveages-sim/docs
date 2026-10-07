@@ -107,7 +107,7 @@ Download the matching asset from [robot-descriptions-common Releases](https://gi
 
 ## Related
 
-- [Switch Robot](../../2-how_to/2-switch_robot.md)
+- [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
 - [ocs2_arm_controller](../controllers/2-ocs2_arm_controller.md) — `demo` / `split_body` / `full_body` declare these args
 - [Naming Conventions](../../3-concepts/3-naming_conventions.md)
 - [Brand packages](3-brand_public.md)

@@ -101,4 +101,4 @@ add_reference_to_stage(
 
 - [USD Submodules](4-usd_submodules.md)
 - [FaSim-Isaac](2-fasim_isaac.md)
-- [Synthetic Data](../../6-synthetic_data/1-isaac_scenes.md)
+- [Synthetic Data](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)

@@ -109,4 +109,4 @@ def generate_launch_description():
 ## Related
 
 - [Hardware Interfaces](../hardware/2-private_hi.md)
-- [Add a Robot](../../2-how_to/10-add_a_robot.md)
+- [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)

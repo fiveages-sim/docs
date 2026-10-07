@@ -95,7 +95,7 @@ Control mode is auto-detected from hardware interfaces (position-only vs force/`
 
 - [basic_joint_controller](7-basic_joint_controller.md)
 - [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
-- [Switch Robot](../../2-how_to/2-switch_robot.md)
+- [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
 - [ocs2-wbc-controller](3-ocs2_wbc.md)

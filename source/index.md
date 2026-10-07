@@ -55,22 +55,17 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: How-To Guides
 
 2-how_to/0-index
-2-how_to/1-run_mock_demo
-2-how_to/2-switch_robot
-2-how_to/3-gazebo_sim
-2-how_to/4-isaac_sim
-2-how_to/5-python_interface
-2-how_to/6-vr_teleop
-2-how_to/7-isomorphic_teleop
-2-how_to/7-drag_teleop
-2-how_to/8-dexcap_teleop
-2-how_to/9-go_real_hardware/0-index
-2-how_to/11-basic_joint
-2-how_to/10-add_a_robot
+2-how_to/1-basic_operations/0-index
+2-how_to/2-simulation/0-index
+2-how_to/3-programming/0-index
+2-how_to/4-controllers/0-index
+2-how_to/5-teleoperation/0-index
+2-how_to/6-deployment/0-index
+2-how_to/7-synthetic_data/0-index
 ```
 
 ```{toctree}
@@ -107,16 +102,6 @@ Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're ne
 5-developer/1-contributing
 5-developer/2-docs_build
 5-developer/3-packaging_deb
-```
-
-```{toctree}
-:maxdepth: 2
-:caption: Synthetic Data
-
-6-synthetic_data/0-index
-6-synthetic_data/1-isaac_scenes
-6-synthetic_data/2-orchestration
-6-synthetic_data/3-record_export
 ```
 
 ## Quick Links

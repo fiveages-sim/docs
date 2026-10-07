@@ -69,5 +69,5 @@ source deploy/setup_env.bash
 
 ## Related
 
-- [DexCap Teleop How-To](../../2-how_to/8-dexcap_teleop.md)
+- [DexCap Teleop How-To](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)
 - [teleop-joint-mapper](4-teleop_joint_mapper.md)

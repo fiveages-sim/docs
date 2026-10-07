@@ -228,6 +228,6 @@ Ensure you initialized with the correct robot ID that includes WBC:
 
 ## Next Steps
 
-- [Go to real hardware](../2-how_to/9-go_real_hardware/0-index.md)
+- [Go to real hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)
 - [WBC controller reference](../4-reference/controllers/3-ocs2_wbc.md)
 - [FA robot descriptions](../4-reference/descriptions/5-fa_robots.md)

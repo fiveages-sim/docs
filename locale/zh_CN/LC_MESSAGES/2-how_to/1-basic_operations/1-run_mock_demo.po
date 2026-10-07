@@ -1,0 +1,357 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:1
+#: 75fd8d8321894e5abd7f9887c7562499
+msgid "Run Mock Demo"
+msgstr "运行模拟演示"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:3
+#: 1bb1b654047d4700b0dca08b0182be44
+msgid ""
+"Run a robot demonstration in mock hardware mode without physical hardware"
+" or simulation."
+msgstr "在模拟硬件模式下运行机器人演示，无需实体硬件或仿真。"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:5
+#: d4be377c030e4529813c66d9444b69a7
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:7
+#: 164f5c235cc748ac9dceab63f8e7c1a6
+msgid "Workspace built and sourced"
+msgstr "工作空间已编译并已执行 source"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:8
+#: 4ed1bec0b0054dcbad4a9a6c3a68bb93
+msgid "RViz2 installed (`ros-jazzy-rviz2`)"
+msgstr "已安装 RViz2（`ros-jazzy-rviz2`）"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:10
+#: 1c4ee0a1fed140649ae7c902fa2a8f16
+msgid "Steps"
+msgstr "步骤"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:12
+#: fae6b6853f804762971a0c1be2e6d4c1
+msgid "1. Source Workspace"
+msgstr "1. 源 工作空间"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:14
+#: b02668bc9ac24b87b635eb76ed2693db
+msgid ""
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
+msgstr ""
+"source /opt/ros/jazzy/setup.bash\n"
+"source ~/open-deploy-ws/install/setup.bash\n"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:19
+#: 9676e017301349e98fc4d5bc74d8395e
+msgid "2. Launch Mock Demo"
+msgstr "2. 启动模拟演示"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:21
+#: cbff524b58d84de8a792ec1cb06cf3a3
+msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=mock\n"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:25
+#: 57152ce001a04da9b5159eb132aa4049
+msgid "3. Send Target Pose"
+msgstr "3. 发送目标位姿"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:27
+#: a67b9978bb4a4d69a7da25b828ad2223
+msgid "In a new terminal:"
+msgstr "在新终端中："
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:29
+#: c6518bd349804acf8aa20c61f5666ba5
+#, python-brace-format
+msgid ""
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\n"
+"  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.1, "
+"z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
+"  --once\n"
+msgstr ""
+"source ~/open-deploy-ws/install/setup.bash\n"
+"ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped \\\n"
+"  \"{header: {frame_id: 'base_link'}, pose: {position: {x: 0.3, y: 0.1, "
+"z: 0.4}, orientation: {w: 1.0}}}\" \\\n"
+"  --once\n"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:36
+#: 83ae59155aac4e08bbc6a175ab0f5462
+msgid "4. Observe Motion"
+msgstr "4. 观察运动"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:38
+#: bd2b41d1816446859bd899ae868f90d4
+msgid "Watch RViz — the robot should move to the target pose."
+msgstr "观察 RViz — 机器人应移动到目标位姿。"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:40
+#: ff92d8d92773446080705d3a572b89c2
+msgid "With Different Robots"
+msgstr "使用不同机器人"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:42
+#: f741ac1ac53e4416b66f05f685ee8539
+msgid ""
+"# Dobot CR5\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"hardware:=mock\n"
+"\n"
+"# Acone (arm only, not Lift 2S)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
+"hardware:=mock\n"
+"\n"
+"# HighTorque Panthera HT\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht "
+"hardware:=mock\n"
+msgstr ""
+"# Dobot CR5\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=dobot_cr5 "
+"hardware:=mock\n"
+"\n"
+"# Acone (arm only, not Lift 2S)\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
+"hardware:=mock\n"
+"\n"
+"# HighTorque Panthera HT\n"
+"ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht "
+"hardware:=mock\n"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:53
+#: 10238239c3d94ba1aff90845bde0362d
+msgid "End-effector (`type`)"
+msgstr "末端执行器（`type`）"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:55
+#: b68ebcf05996466bbbddaee7155b8b20
+msgid ""
+"Not `gripper:=`. This launch includes "
+"`create_robot_profile_launch_arguments()`. Symmetric EEF: `type:=`. "
+"Different L/R: `left_type:=` and `right_type:=` together (**do not pass "
+"`type:=`** then). Profile `defaults.end_effectors` applies unless "
+"`use_profile_eef:=false`. See [Switch Robot](2-switch_robot.md) and "
+"[robot_common_launch](../../4-reference/descriptions/2-common.md)."
+msgstr ""
+"不是 `gripper:=`。此 launch 包含 `create_robot_profile_launch_arguments()`。对称末端：`type:=`。左右不同：同时传 `left_type:=` 与 `right_type:=`（此时**不要再传 `type:=`**）。除非 `use_profile_eef:=false`，否则使用 profile 的 `defaults.end_effectors`。见 [切换机器人](2-switch_robot.md) 与 [robot_common_launch](../../4-reference/descriptions/2-common.md)。"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 157f62858cc34ee492a61de4331b5b95
+msgid ""
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot:=<robot_name> \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7 \\\n"
+"  hardware:=mock"
+msgstr ""
+"ros2 launch ocs2_arm_controller demo.launch.py \\\n"
+"  robot:=<robot_name> \\\n"
+"  use_profile_eef:=false \\\n"
+"  left_type:=rg75 right_type:=linkerhand_o7 \\\n"
+"  hardware:=mock"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:65
+#: 8de28b7da4884dd8892cf05ed2403ccc
+msgid "Launch Parameters"
+msgstr "启动参数"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 896a7d68e7fd40fbadea9dad4745f267
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: c35d11dd30d546b6a46e220f4ffa2245
+msgid "Options"
+msgstr "选项"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 7979c84b0591495a858be1298c97a42d
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: cab29a8e6ed04f7488b12f12d27e5be6
+msgid "`hardware`"
+msgstr "`hardware`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 537792e828df40ddb1f497a8bc557db3
+msgid "`mock`, `gz`, `isaac`, (real)"
+msgstr "`mock`, `gz`, `isaac`, (real)"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 73ac2c07bee245eb9b5e0de7c44b8f27
+msgid "varies"
+msgstr "视情况而定"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: fb2906d7a44a4eb89dd7a8024a920751
+msgid "`robot`"
+msgstr "`robot`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 0e7d8c194dbb4780b3e35497f3ea1184
+msgid "Robot name"
+msgstr "机器人名称"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 68f475af76714236abca337d520a61ac
+msgid "`dobot_cr5`"
+msgstr "`dobot_cr5`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 4f9ca17c3c73498f88b2e2716f18c4c6
+msgid "`type` / `left_type` / `right_type`"
+msgstr "`type` / `left_type` / `right_type`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 5910ba93ac9847a78feb2006f1dde690
+msgid "EEF key, or `type` as `left`/`right`/`dual` topology"
+msgstr "末端键，或把 `type` 用作 `left`/`right`/`dual` 臂拓扑"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: bc9ac2ab4e5d4bb8982b92885da68e28
+msgid "profile or xacro"
+msgstr "profile 或 xacro"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 29cf3f03559d446295878fdb0a7a0ddf
+msgid "`use_profile_eef`"
+msgstr "`use_profile_eef`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: 76192b4e20c04bf6b303fd8310a4078e
+msgid "`true`, `false`"
+msgstr "`true`, `false`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:57
+#: dba18fdd2b7e4e439f96fcb3e76b6269
+msgid "`true`"
+msgstr "`true`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:74
+#: 59158e8bd82b4458a7132a92e7497ef6
+msgid "Verification"
+msgstr "验证"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:76
+#: 029100515d364f06a58684345b4763f6
+msgid "Success indicators:"
+msgstr "成功标志："
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:77
+#: 75f6df58ee7a470f9e8574454a48e329
+msgid "RViz window opens showing robot model"
+msgstr "RViz 窗口打开并显示机器人模型"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:78
+#: 8a3d039f854c4b7cbc954330ed46aab4
+msgid "Controller logs show \"Controller started\""
+msgstr "控制器 logs show \\\"控制器 started\\\""
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:79
+#: c18017eeeb8c43d4a4415309c51d30c7
+msgid "Robot responds to target pose commands"
+msgstr "机器人响应目标位姿指令"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:81
+#: d9df6f6ab357479d83aad151dd5bca67
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:83
+#: 6bf2dd0e32a1411c863e26ff8fe98c4e
+msgid "Robot doesn't move"
+msgstr "机器人不运动"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:85
+#: 376b58eeeae542d7863875aa99864a18
+msgid "Check target pose is reachable"
+msgstr "检查目标位姿是否可达"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:86
+#: 2be1f325ca8f4f9b82588688df753e08
+msgid "Verify no error messages in controller output"
+msgstr "确认控制器输出中没有错误信息"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:87
+#: 85cc19184b8e403db4233d79137785e6
+msgid "Ensure correct robot parameter"
+msgstr "确认机器人参数正确"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:89
+#: e1911555f1b0426eb6e088bc45156908
+msgid "RViz shows broken model"
+msgstr "RViz 中模型显示异常"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:91
+#: 7ac33613b5414a6b84ace6d5b4de7d91
+msgid "Rebuild description packages"
+msgstr "重新编译描述软件包"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:92
+#: 53679ee6f75f411988f344011ee12067
+msgid "Check URDF for errors: `check_urdf <file>.urdf`"
+msgstr "检查 URDF 是否有错误：`check_urdf <file>.urdf`"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:94
+#: 05a91e7a012b4689a67d631f1917c1d9
+msgid "Command not found"
+msgstr "找不到命令"
+
+#: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:96
+#: b877e881ec114304b1258e0837c0a552
+msgid "source install/setup.bash  # Must source after building\n"
+msgstr "source install/setup.bash  # Must source after building\n"
+
+#~ msgid "With Gripper"
+#~ msgstr "带夹爪"
+
+#~ msgid "TODO"
+#~ msgstr "待完成"
+
+#~ msgid ""
+#~ "For valid robot + gripper combinations,"
+#~ " check the launch files in "
+#~ "`arms_ros2_control`."
+#~ msgstr "有效的机器人与夹爪组合，请查看 `arms_ros2_control` 中的启动文件。"
+
+#~ msgid "`gripper`"
+#~ msgstr "`gripper`"
+
+#~ msgid "Gripper name"
+#~ msgstr "夹爪名称"
+
+#~ msgid "none"
+#~ msgstr "无"
+
+#~ msgid "`rviz`"
+#~ msgstr "`rviz`"
+

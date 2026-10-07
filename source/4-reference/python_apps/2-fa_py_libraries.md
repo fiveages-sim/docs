@@ -51,7 +51,7 @@ Commands from the fa-py-libraries README (do not invent flags):
 ```{admonition} Pico Enterprise vs consumer
 :class: note
 
-Headset SKU notes live on [VR Teleop](../../2-how_to/6-vr_teleop.md): Pico **Enterprise** supports USB shared networking (USB 网络共享) and uses a **different App** from Pico **consumer**. This page only lists fa-py-libraries README commands (`./run.sh vr` vs `./run.sh vr-xrt` + PC Service). It does not name store listings, package names, or ADB steps.
+Headset SKU notes live on [VR Teleop](../../2-how_to/5-teleoperation/6-vr_teleop.md): Pico **Enterprise** supports USB shared networking (USB 网络共享) and uses a **different App** from Pico **consumer**. This page only lists fa-py-libraries README commands (`./run.sh vr` vs `./run.sh vr-xrt` + PC Service). It does not name store listings, package names, or ADB steps.
 ```
 
 ## Structure
@@ -80,4 +80,4 @@ fa-py-libraries/
 
 - [ros2_robot_interface](1-ros2_robot_interface.md)
 - [ros2-viser](3-ros2_viser.md)
-- [VR Teleop How-To](../../2-how_to/6-vr_teleop.md)
+- [VR Teleop How-To](../../2-how_to/5-teleoperation/6-vr_teleop.md)
