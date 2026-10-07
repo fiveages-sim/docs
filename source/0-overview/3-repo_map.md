@@ -34,7 +34,7 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) | [P] | Dobot CR series |
 | [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) | [P] | ARX X5, Acone (arm), Lift 2S |
 | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) | [P] | Galbot mobile manipulators |
-| [robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht) | [P] | HighTorque Panthera HT |
+| [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) | [P] | HighTorque Panthera HT (`manipulator/HighTorque/panthera_ht_description`) |
 | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) | [P] | Quadruped robots |
 
 ### Brand-Specific (Private)

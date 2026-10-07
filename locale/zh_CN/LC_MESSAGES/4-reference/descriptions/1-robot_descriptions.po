@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -26,9 +26,12 @@ msgid "robot_descriptions"
 msgstr "robot_descriptions"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:3
-#: e874e23f20c74efa98dd5f80666aa773
-msgid "Public umbrella repository for all robot descriptions."
-msgstr "收录全部机器人描述的公开聚合仓库。"
+#: fd0fbbd2c5a544da9403981fd63b1c30
+msgid ""
+"Public umbrella repository. Brand trees are **git submodules** at the "
+"paths in the official README (not a flat list of `robot-descriptions-*` "
+"folders)."
+msgstr "公开伞形仓。品牌树是官方 README 里那些路径上的 **git 子模块**（不是一排扁平的 `robot-descriptions-*` 目录）。"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:5
 #: 65bef59e69ee42de8c2b306d14670215
@@ -40,280 +43,367 @@ msgstr ""
 "sim/robot_descriptions)"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:7
-#: ac5d84a4fdf348f5a93db26bfff37c8e
-msgid "Purpose"
-msgstr "用途"
+#: be337534f4fb4ae08a7a8f194b208bb6
+msgid "Source of truth"
+msgstr "权威来源"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:9
-#: f366c507be3b4572ad3938e037b56a6d
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:10
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
 msgid ""
-"`robot_descriptions` aggregates brand-specific description packages as "
-"submodules, providing a single entry point for all robot models."
-msgstr "`robot_descriptions` 将各品牌描述软件包作为子模块聚合在一起，为所有机器人模型提供统一入口。"
+"Paths and submodule table: [README.md](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md)"
+msgstr ""
+"git submodule add https://github.com/fiveages-sim/robot-descriptions-"
+"newbrand.git\n"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:11
-#: 39f82b7c29a8413ea70d38a09921fbce
-msgid "Structure"
-msgstr "结构"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 1ddf1ca55fa449a7b940bd86e9c22928
-msgid ""
-"robot_descriptions/\n"
-"├── robot-descriptions-common/    # Shared components\n"
-"├── robot-descriptions-dobot/     # Dobot robots\n"
-"├── robot-descriptions-arx/       # ARX robots\n"
-"├── robot-descriptions-galbot/    # Galbot robots\n"
-"├── robot-descriptions-ht/        # HT robots\n"
-"├── robot-descriptions-quadruped/ # Quadruped robots\n"
-"└── ... (more brands)"
-msgstr ""
-"robot_descriptions/\n"
-"├── robot-descriptions-common/    # Shared components\n"
-"├── robot-descriptions-dobot/     # Dobot robots\n"
-"├── robot-descriptions-arx/       # ARX robots\n"
-"├── robot-descriptions-galbot/    # Galbot robots\n"
-"├── robot-descriptions-ht/        # HT robots\n"
-"├── robot-descriptions-quadruped/ # Quadruped robots\n"
-"└── ... (more brands)"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:24
-#: 1bb0ac7de118466cbb273b601b6a1241
-msgid "Usage"
-msgstr "使用方法"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:26
-#: 5f64721224034a7ca5a87b4b25cf2d7d
-msgid "Initialize Specific Brand"
-msgstr "初始化指定品牌"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:28
 #: d1ef10e751bf42bfb0beab9861a492b0
+#, fuzzy
 msgid ""
-"In `open-deploy-ws`, prefer `./init_repo.sh` (nested paths under `src"
-"/robot-descriptions/`). Do not recursive-init."
+"In `open-deploy-ws` the checkout is `src/robot-descriptions/` after "
+"**`./init_repo.sh`**. Do not recursive-init there."
 msgstr ""
-"在 `open-deploy-ws` 中优先用 `./init_repo.sh`（嵌套路径在 `src/robot-descriptions/` 下）。不要递归 init。"
+"在 `open-deploy-ws` 中优先用 `./init_repo.sh`（嵌套路径在 `src/robot-descriptions/` "
+"下）。不要递归 init。"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:30
-#: bcf69e81d9ab42f5882c2c07dce89df1
-msgid "Build All Descriptions"
-msgstr "构建全部描述"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:32
-#: 86598d57f2d142f8b5d540532855db7a
-msgid "colcon build --symlink-install\n"
-msgstr ""
-"colcon build --symlink-install\n"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:36
-#: 742c28594f9d42aa8b12b889e31dc6cc
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:12
+#: 9857430151d14fa2bc1a0555d1143f99
+#, fuzzy
 msgid ""
-"The umbrella directory in `open-deploy-ws` is `src/robot-descriptions/` "
-"(hyphen). Nested modules follow `submodules_visibility.conf`."
-msgstr ""
-"`open-deploy-ws` 中的伞形目录是 `src/robot-descriptions/`（连字符）。嵌套模块遵循 `submodules_visibility.conf`。"
+"Description-side Cursor skills: **`feature/agilex` only** — [Add a "
+"Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no "
+"`.cursor/skills`**."
+msgstr "创建描述软件包（参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)）"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:38
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:15
+#: fa6c70fc9aaf42a097bd21f9e10443d3
+msgid "Layout (README)"
+msgstr "布局（README）"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: d94db46183304cd098e7cf1d7efbbaa4
+msgid ""
+"robot_descriptions/\n"
+"├── common/                              # robot-descriptions-common\n"
+"├── quadruped/                           # robot-descriptions-quadruped\n"
+"├── humanoid/                            # in-tree wheeled / leg "
+"humanoids\n"
+"│   ├── Galbot/                          # robot-descriptions-galbot\n"
+"│   └── Agibot/agibot_g2_description     # private\n"
+"├── manipulator/\n"
+"│   ├── Dobot/                           # robot-descriptions-dobot\n"
+"│   ├── ARX/                             # robot-descriptions-arx\n"
+"│   ├── Tianji/                          # robot-descriptions-tianji\n"
+"│   ├── Rokae/                           # robot-descriptions-rokae\n"
+"│   └── HighTorque/panthera_ht_description\n"
+"└── … in-tree packages (see README tables)"
+msgstr ""
+"robot_descriptions/\n"
+"├── common/                              # robot-descriptions-common\n"
+"├── quadruped/                           # robot-descriptions-quadruped\n"
+"├── humanoid/                            # in-tree wheeled / leg humanoids\n"
+"│   ├── Galbot/                          # robot-descriptions-galbot\n"
+"│   └── Agibot/agibot_g2_description     # private\n"
+"├── manipulator/\n"
+"│   ├── Dobot/                           # robot-descriptions-dobot\n"
+"│   ├── ARX/                             # robot-descriptions-arx\n"
+"│   ├── Tianji/                          # robot-descriptions-tianji\n"
+"│   ├── Rokae/                           # robot-descriptions-rokae\n"
+"│   └── HighTorque/panthera_ht_description\n"
+"└── … in-tree packages (see README tables)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:33
+#: 1a7b224b1b7d4b1f88e52b5a87a0629d
+#, fuzzy
+msgid "Submodules (README)"
+msgstr "子模块"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 1bb0ac7de118466cbb273b601b6a1241
+msgid "Name"
+msgstr "名称"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 7c3fe23c5ba9427da1ff12bc01b39c04
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 6532379add10431bb42093237edb6c23
+msgid "Repository"
+msgstr "仓库"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 04eb985cc36d4c139c773637de11cf4f
+msgid "Common Components"
+msgstr "公共组件"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 79ab267a5db94a03814f29c21d87afa5
+msgid "`common`"
+msgstr "`common`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-common](https://github.com/fiveages-sim/robot-"
+"descriptions-common)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: b894c5a0ed7f48fcaa3b71474ef9d5a9
+#, fuzzy
+msgid "Quadruped Robots"
+msgstr "四足机器人"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: b894c5a0ed7f48fcaa3b71474ef9d5a9
+#, fuzzy
+msgid "`quadruped`"
+msgstr "四足机器人"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-"
+"descriptions-quadruped)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: f12d4994e10e49568e25071912b19b0c
+msgid "Dobot CR5"
+msgstr "越疆 CR5"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: ed7e8d37194943a1b0736fc796e73776
+msgid "`manipulator/Dobot`"
+msgstr "`manipulator/Dobot`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-dobot](https://github.com/fiveages-sim/robot-"
+"descriptions-dobot)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: c0c3d3c5dcd84c9b90c77b778012b1f6
+msgid "Tianji M6"
+msgstr "天机 M6"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: cbe7511276db46269ccd806fa41ebb42
+msgid "`manipulator/Tianji`"
+msgstr "`manipulator/Tianji`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-tianji](https://github.com/fiveages-sim/robot-"
+"descriptions-tianji)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: d09c469a28024b639aee8c5e19ec8412
+#, fuzzy
+msgid "Rokae AR5"
+msgstr "Rokae 机械臂"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: c638f9cd61db432989bb3513179d631b
+msgid "`manipulator/Rokae`"
+msgstr "`manipulator/Rokae`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-rokae](https://github.com/fiveages-sim/robot-"
+"descriptions-rokae)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 08d4cd91ecd941ccb016b696be9a3e67
+#, fuzzy
+msgid "ARX Robots"
+msgstr "机器人"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 5333d419c0724f67a952cde8e79b60be
+msgid "`manipulator/ARX`"
+msgstr "`manipulator/ARX`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-arx](https://github.com/fiveages-sim/robot-"
+"descriptions-arx)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 08d4cd91ecd941ccb016b696be9a3e67
+#, fuzzy
+msgid "Galbot Robots"
+msgstr "机器人"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a41cb8b3a91748f8abf7717438057200
+msgid "`humanoid/Galbot`"
+msgstr "`humanoid/Galbot`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[robot-descriptions-galbot](https://github.com/fiveages-sim/robot-"
+"descriptions-galbot)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: e6dde2ce64b94316881e3033421070c3
+msgid "Agibot G2"
+msgstr "Agibot G2"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 659850a0dd9943e4a865ef54578b99bb
+#, fuzzy
+msgid "`humanoid/Agibot/agibot_g2_description`"
+msgstr "agibot-g2-description"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[agibot-g2-description](https://github.com/fiveages-"
+"sim/agibot-g2-description) (private)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: 142bdd5877f948d28cdeede60d3dd35e
+#, fuzzy
+msgid "Panthera HT"
+msgstr "高擎 Panthera HT"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: e874e23f20c74efa98dd5f80666aa773
+msgid "`manipulator/HighTorque/panthera_ht_description`"
+msgstr "`manipulator/HighTorque/panthera_ht_description`"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:17
+#: a3ba1827a5814c36bbfa710e551cdf6e
+#, fuzzy
+msgid ""
+"[panthera_ht_description](https://github.com/fiveages-"
+"sim/panthera_ht_description)"
+msgstr ""
+"**仓库：** [fiveages-sim/robot_descriptions](https://github.com/fiveages-"
+"sim/robot_descriptions)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:47
+#: f079adbdaeb841cf9549a791627f86d4
+msgid ""
+"README also tables **in-tree** wheeled humanoids, mobile manipulators, "
+"manipulators (including HighTorque Panthera HT path above), and leg "
+"humanoids. Do not invent extra brand folders."
+msgstr "README 还用表格列出了**仓内**轮式人形、移动操作臂、操作臂（含上面的高擎 Panthera HT 路径）和足式人形。不要编造额外品牌目录。"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:49
+#: 36a0f3ff8d1746d2a69a30123a156c02
+msgid ""
+"Standalone clone (README). In `open-deploy-ws`, prefer `./init_repo.sh` "
+"instead:"
+msgstr "独立克隆（README）。在 `open-deploy-ws` 里请改用 `./init_repo.sh`："
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:51
+#: be6b908b135f4a078e7927b3231654d1
+msgid ""
+"git submodule update --init common\n"
+"git submodule update --init manipulator/ARX"
+msgstr ""
+"git submodule update --init common\n"
+"git submodule update --init manipulator/ARX"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:56
 #: d605d660daf14106a9b89b0de83a092f
-msgid "Use in Launch"
+#, fuzzy
+msgid "Launch"
 msgstr "在启动中使用"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:40
-#: 1ed1fef6922541c28f81d4148e0e6467
-#, fuzzy
-msgid "ros2 launch ocs2_arm_controller demo.launch.py\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py\n"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:44
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:58
 #: 8220a94c416649e88fb538c7ccd30a55
 #, python-brace-format
 msgid ""
 "`demo.launch.py` default `robot` is `cr5`. Pass `robot:=<key>` for other "
 "`{key}_description` packages."
-msgstr "`demo.launch.py` 默认 `robot` 是 `cr5`。其他 `{key}_description` 包请传 `robot:=<key>`。"
+msgstr ""
+"`demo.launch.py` 默认 `robot` 是 `cr5`。其他 `{key}_description` 包请传 "
+"`robot:=<key>`。"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:46
-#: e41e272696bd42edac03a8dd230083ff
-msgid "Submodules"
-msgstr "子模块"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 09b1e4f824a648de9d0ad6ca96d7f04e
-msgid "Submodule"
-msgstr "子模块"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 4ada9835e34644acab7d4c52642e7460
-msgid "Visibility"
-msgstr "可见性"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 23305da477f648fa8c3ec1b090fd2948
-msgid "Robots"
-msgstr "机器人"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: fafd2804df9449d499b034b9d7678642
-msgid "robot-descriptions-common"
-msgstr "robot-descriptions-common"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: ce10b00b5ce544dcaa568f0d50ed7bfc
-msgid "Public"
-msgstr "公开"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: e084157f8fcb456c8c040991bc189b9a
-msgid "Grippers, sensors, hands"
-msgstr "夹爪、传感器、灵巧手"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 7b7c33edee1843619530fcd6084638f7
-msgid "robot-descriptions-dobot"
-msgstr "robot-descriptions-dobot"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 27e465c46f104b4d8969831a0a3c9e0f
-msgid "CR5, CR10"
-msgstr "CR5, CR10"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: e97bbccb18404d12905925a82f2963e8
-msgid "robot-descriptions-arx"
-msgstr "robot-descriptions-arx"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 627b3697ab284d53ba5cdea7496d5084
-msgid "X5, Acone (arm), Lift 2S"
-msgstr "X5、Acone（机械臂）、Lift 2S"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 40c026ee1e124abf84827552b9a8ed70
-msgid "robot-descriptions-galbot"
-msgstr "robot-descriptions-galbot"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 2cf83d4a845c4c078372b4ae3a889b6c
-msgid "G1 mobile manipulator"
-msgstr "G1 移动操作臂"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: bdd7837387504acbb8a9fbc47caf6a32
-msgid "robot-descriptions-ht"
-msgstr "robot-descriptions-ht"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 142bdd5877f948d28cdeede60d3dd35e
-msgid "HighTorque Panthera HT"
-msgstr "高擎 Panthera HT"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: ad05561a36d44bd9b281476d7a2e1089
-msgid "robot-descriptions-quadruped"
-msgstr "robot-descriptions-quadruped"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: b894c5a0ed7f48fcaa3b71474ef9d5a9
-msgid "Quadrupeds"
-msgstr "四足机器人"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: b6acd2505cb94ad4ae02989d7bcb9c8e
-msgid "robot-descriptions-tianji"
-msgstr "robot-descriptions-tianji"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 7c3fe23c5ba9427da1ff12bc01b39c04
-msgid "Private"
-msgstr "私有"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: c736ebe0ae9c4e8bbfeb100dc2f64ab5
-msgid "M6, M6S, M20S"
-msgstr "M6, M6S, M20S"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 87141d1e89524248900ae980a860101a
-msgid "robot-descriptions-rokae"
-msgstr "robot-descriptions-rokae"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: d09c469a28024b639aee8c5e19ec8412
-msgid "Rokae arms"
-msgstr "Rokae 机械臂"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: 80486ea1c51b48fd9297f93fc31332eb
-msgid "robot-descriptions-ubtech"
-msgstr "robot-descriptions-ubtech"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: cca44752b2b147e4a03b407539301a65
-msgid "Ubtech humanoids"
-msgstr "Ubtech 人形机器人"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: f1653ee084584437825d2fe38be89ce5
-msgid "agibot-g2-description"
-msgstr "agibot-g2-description"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:13
-#: e6dde2ce64b94316881e3033421070c3
-msgid "Agibot G2"
-msgstr "Agibot G2"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:61
-#: 08d4cd91ecd941ccb016b696be9a3e67
-msgid "Adding a Robot"
-msgstr "添加机器人"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:63
-#: 3d34e1ac1aa94155af6065eee94d9f90
-msgid ""
-"Create description package (see [Add a "
-"Robot](../../2-how_to/6-deployment/10-add_a_robot.md))"
-msgstr "创建描述软件包（参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)）"
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:60
+#: 1ed1fef6922541c28f81d4148e0e6467
+#, fuzzy
+msgid "ros2 launch ocs2_arm_controller demo.launch.py"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:64
-#: 7c876d275dc844c28e976b5fc3c41a62
-msgid "Add as submodule:"
-msgstr "添加为子模块："
+#: 08d4cd91ecd941ccb016b696be9a3e67
+#, fuzzy
+msgid "Adding a robot"
+msgstr "添加机器人"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:65
-#: a3ba1827a5814c36bbfa710e551cdf6e
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:66
+#: 5c2498d94c3245a9b10c46d84d19eea0
+#, python-brace-format
 msgid ""
-"git submodule add https://github.com/fiveages-sim/robot-descriptions-"
-"newbrand.git\n"
+"Copy an existing `{robot}_description` and follow [Add a "
+"Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Do not invent a "
+"`robot-descriptions-newbrand` remote or a top-level folder that the "
+"README does not list."
 msgstr ""
-"git submodule add https://github.com/fiveages-sim/robot-descriptions-"
-"newbrand.git\n"
+"复制已有 `{robot}_description`，并遵循[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。不要编造 `robot-descriptions-newbrand` 远程仓或 README 没写的顶层目录。"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:68
-#: f96522c71a474312b20c37cd0516d0cc
-msgid "Update visibility configuration"
-msgstr "更新可见性配置"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:69
-#: 2530a6ca1f89419aae6dc9bd04b81c18
-msgid "Create PR"
-msgstr "创建 PR"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:71
 #: 8a7f60bf036c442f9f926c9185156753
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:73
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:70
 #: 3fe6c0be40b945c99af639e50569818d
 msgid "[robot-descriptions-common](2-common.md)"
 msgstr "[robot-descriptions-common](2-common.md)"
 
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:74
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:71
 #: 132749226103442786275dc9637bfcd8
 msgid "[Brand packages](3-brand_public.md)"
 msgstr "[品牌软件包](3-brand_public.md)"
+
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:72
+#: 3d34e1ac1aa94155af6065eee94d9f90
+#, fuzzy
+msgid "[Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)"
+msgstr "创建描述软件包（参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)）"
 
 #~ msgid ""
 #~ "robot_descriptions/\n"
@@ -343,3 +433,125 @@ msgstr "[品牌软件包](3-brand_public.md)"
 
 #~ msgid "colcon build --packages-up-to robot_descriptions\n"
 #~ msgstr "colcon build --packages-up-to robot_descriptions\n"
+
+#~ msgid "Public umbrella repository for all robot descriptions."
+#~ msgstr "收录全部机器人描述的公开聚合仓库。"
+
+#~ msgid "Purpose"
+#~ msgstr "用途"
+
+#~ msgid ""
+#~ "`robot_descriptions` aggregates brand-specific "
+#~ "description packages as submodules, providing"
+#~ " a single entry point for all "
+#~ "robot models."
+#~ msgstr "`robot_descriptions` 将各品牌描述软件包作为子模块聚合在一起，为所有机器人模型提供统一入口。"
+
+#~ msgid "Structure"
+#~ msgstr "结构"
+
+#~ msgid ""
+#~ "robot_descriptions/\n"
+#~ "├── robot-descriptions-common/    # Shared components\n"
+#~ "├── robot-descriptions-dobot/     # Dobot robots\n"
+#~ "├── robot-descriptions-arx/       # ARX robots\n"
+#~ "├── robot-descriptions-galbot/    # Galbot robots\n"
+#~ "├── robot-descriptions-ht/        # HT robots\n"
+#~ "├── robot-descriptions-quadruped/ # Quadruped robots\n"
+#~ "└── ... (more brands)"
+#~ msgstr ""
+#~ "robot_descriptions/\n"
+#~ "├── robot-descriptions-common/    # Shared components\n"
+#~ "├── robot-descriptions-dobot/     # Dobot robots\n"
+#~ "├── robot-descriptions-arx/       # ARX robots\n"
+#~ "├── robot-descriptions-galbot/    # Galbot robots\n"
+#~ "├── robot-descriptions-ht/        # HT robots\n"
+#~ "├── robot-descriptions-quadruped/ # Quadruped robots\n"
+#~ "└── ... (more brands)"
+
+#~ msgid "Usage"
+#~ msgstr "使用方法"
+
+#~ msgid "Initialize Specific Brand"
+#~ msgstr "初始化指定品牌"
+
+#~ msgid "Build All Descriptions"
+#~ msgstr "构建全部描述"
+
+#~ msgid "colcon build --symlink-install\n"
+#~ msgstr "colcon build --symlink-install\n"
+
+#~ msgid ""
+#~ "The umbrella directory in `open-"
+#~ "deploy-ws` is `src/robot-descriptions/` "
+#~ "(hyphen). Nested modules follow "
+#~ "`submodules_visibility.conf`."
+#~ msgstr ""
+#~ "`open-deploy-ws` 中的伞形目录是 `src/robot-"
+#~ "descriptions/`（连字符）。嵌套模块遵循 `submodules_visibility.conf`。"
+
+#~ msgid "Submodule"
+#~ msgstr "子模块"
+
+#~ msgid "Visibility"
+#~ msgstr "可见性"
+
+#~ msgid "robot-descriptions-common"
+#~ msgstr "robot-descriptions-common"
+
+#~ msgid "Public"
+#~ msgstr "公开"
+
+#~ msgid "Grippers, sensors, hands"
+#~ msgstr "夹爪、传感器、灵巧手"
+
+#~ msgid "robot-descriptions-dobot"
+#~ msgstr "robot-descriptions-dobot"
+
+#~ msgid "CR5, CR10"
+#~ msgstr "CR5, CR10"
+
+#~ msgid "robot-descriptions-arx"
+#~ msgstr "robot-descriptions-arx"
+
+#~ msgid "X5, Acone (arm), Lift 2S"
+#~ msgstr "X5、Acone（机械臂）、Lift 2S"
+
+#~ msgid "robot-descriptions-galbot"
+#~ msgstr "robot-descriptions-galbot"
+
+#~ msgid "G1 mobile manipulator"
+#~ msgstr "G1 移动操作臂"
+
+#~ msgid "robot-descriptions-ht"
+#~ msgstr "robot-descriptions-ht"
+
+#~ msgid "robot-descriptions-quadruped"
+#~ msgstr "robot-descriptions-quadruped"
+
+#~ msgid "robot-descriptions-tianji"
+#~ msgstr "robot-descriptions-tianji"
+
+#~ msgid "Private"
+#~ msgstr "私有"
+
+#~ msgid "M6, M6S, M20S"
+#~ msgstr "M6, M6S, M20S"
+
+#~ msgid "robot-descriptions-rokae"
+#~ msgstr "robot-descriptions-rokae"
+
+#~ msgid "robot-descriptions-ubtech"
+#~ msgstr "robot-descriptions-ubtech"
+
+#~ msgid "Ubtech humanoids"
+#~ msgstr "Ubtech 人形机器人"
+
+#~ msgid "Add as submodule:"
+#~ msgstr "添加为子模块："
+
+#~ msgid "Update visibility configuration"
+#~ msgstr "更新可见性配置"
+
+#~ msgid "Create PR"
+#~ msgstr "创建 PR"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -311,7 +311,8 @@ msgid ""
 "From the [open-deploy-ws README](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/README.EN.md) (hyphen, not `robot_descriptions`):"
 msgstr ""
-"来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)（连字符，不是 `robot_descriptions`）："
+"来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md)（连字符，不是 `robot_descriptions`）："
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:73
 #: ea484edae04f4d63a5f9ecb9006e4483
@@ -331,9 +332,11 @@ msgid ""
 msgstr ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware "
+"interfaces / shared libs\n"
 "│   ├── robot-descriptions/    # common / manipulator / humanoid\n"
-"│   └── ocs2_ros2/             # only if that module is installed as source\n"
+"│   └── ocs2_ros2/             # only if that module is installed as "
+"source\n"
 "├── init_repo.sh\n"
 "├── submodules_visibility.conf\n"
 "├── deb_versions.conf\n"
@@ -355,15 +358,16 @@ msgstr "`./init_repo.sh` 已经对源码路径跑过 `rosdep install`。你仍�
 #: 460bd311404e4436a60fb050ece804bf
 #, fuzzy
 msgid "colcon build --symlink-install\n"
-msgstr ""
-"colcon build --symlink-install\n"
+msgstr "colcon build --symlink-install\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:93
 #: ce193d05e0a145efb9e6cff8c2d7fc95
 msgid ""
 "Then `source install/setup.bash` in the terminal you launch from. The "
 "README does not install a workspace env script besides `./init_repo.sh`."
-msgstr "然后在启动终端执行 `source install/setup.bash`。README 除 `./init_repo.sh` 外没有工作区环境脚本。"
+msgstr ""
+"然后在启动终端执行 `source install/setup.bash`。README 除 `./init_repo.sh` "
+"外没有工作区环境脚本。"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:95
 #: f7f6a16cebc2443aa6c0e414fb186712
@@ -501,9 +505,10 @@ msgid "**HighTorque Panthera HT**"
 msgstr "**高擎 Panthera HT**"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 63554ef0932a49f0a808447b26faeb48
-msgid "robot-descriptions-ht"
-msgstr "robot-descriptions-ht"
+#: f1d9396557754e36acae94d52ac8ae0f
+#, fuzzy
+msgid "`panthera_ht_description`"
+msgstr "描述"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:73
 #: 57b38e4ef8dc4462ae1dd58039ce729a
@@ -511,9 +516,11 @@ msgid "ht-ros2-control"
 msgstr "ht-ros2-control"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: dd796b6719364b2aa87f80c1fc8576e3
-msgid "Dual-arm; branch `panthera-ht`"
-msgstr "双臂；分支 `panthera-ht`"
+#: 3a8c1dbe01784c878526219a8abc529a
+msgid ""
+"Dual-arm; branch `panthera-ht`; umbrella path "
+"`manipulator/HighTorque/panthera_ht_description`"
+msgstr "双臂；分支 `panthera-ht`；伞形仓路径 `manipulator/HighTorque/panthera_ht_description`"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:73
 #: 5219070d9dea49b494fd8d2430ff91b8
@@ -580,7 +587,8 @@ msgid ""
 "`demo.launch.py` defaults: `robot:=cr5`, `hardware:=mock_components`. "
 "There is **no** `hardware:=mock`."
 msgstr ""
-"`demo.launch.py` 默认：`robot:=cr5`、`hardware:=mock_components`。**没有** `hardware:=mock`。"
+"`demo.launch.py` 默认：`robot:=cr5`、`hardware:=mock_components`。**没有** "
+"`hardware:=mock`。"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:136
 #: 7ab7097a83444e3e8fda8c8ad9c14a13
@@ -647,7 +655,9 @@ msgid ""
 " match `submodules_visibility.conf`. Do not `git submodule update --init "
 "--recursive`. Then `colcon build` the packages you need."
 msgstr ""
-"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下嵌套模块与 `submodules_visibility.conf` 一致。不要 `git submodule update --init --recursive`。然后 `colcon build` 所需软件包。"
+"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下嵌套模块与 "
+"`submodules_visibility.conf` 一致。不要 `git submodule update --init "
+"--recursive`。然后 `colcon build` 所需软件包。"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:160
 #: 5f37c09bafcc4a2aa0e531b8322f52bc
@@ -1026,3 +1036,9 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ "git submodule update --init robot-descriptions-<brand>\n"
 #~ "cd ../..\n"
 #~ "colcon build --packages-up-to robot-descriptions-<brand>\n"
+
+#~ msgid "robot-descriptions-ht"
+#~ msgstr "robot-descriptions-ht"
+
+#~ msgid "Dual-arm; branch `panthera-ht`"
+#~ msgstr "双臂；分支 `panthera-ht`"

@@ -102,7 +102,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1
 
 ## HighTorque (高擎)
 
-**Repository:** [fiveages-sim/robot-descriptions-ht](https://github.com/fiveages-sim/robot-descriptions-ht)
+**Repository:** [fiveages-sim/panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) (umbrella path `manipulator/HighTorque/panthera_ht_description`)
 
 ### Robots
 
@@ -140,34 +140,6 @@ Quadruped robot descriptions for legged locomotion.
 
 Typically used with separate quadruped controller stacks.
 
-## Package Structure
+## Package layout
 
-Each brand package follows the standard layout:
-
-:::{code-block} none
-robot-descriptions-<brand>/
-├── <robot>_description/
-│   ├── CMakeLists.txt
-│   ├── package.xml
-│   ├── urdf/
-│   │   ├── <robot>.urdf.xacro
-│   │   └── <robot>.ros2_control.xacro
-│   ├── meshes/
-│   │   ├── visual/
-│   │   └── collision/
-│   ├── config/
-│   │   └── ocs2_arm_config.yaml
-│   └── launch/
-│       └── display.launch.py
-└── ...
-:::
-
-## Adding a New Brand
-
-1. Create repository following naming convention
-2. Add description packages for each robot
-3. Include ros2_control configurations
-4. Add as submodule to `robot_descriptions`
-5. Update documentation
-
-See [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md) for detailed steps.
+Do not use a generic `urdf/` + `ocs2_arm_config.yaml` + `display.launch.py` tree. Copy a real package (Acone: `xacro/`, `xacro/ros2_control/`, `config/ocs2/`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Umbrella submodule paths: [robot_descriptions](1-robot_descriptions.md).

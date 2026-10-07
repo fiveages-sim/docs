@@ -13,14 +13,11 @@ FiveAges **humanoid** descriptions (W2, W2R, S2, S2R) are **wheeled-arm humanoid
 Robot descriptions are organized in a hierarchy:
 
 :::{code-block} none
-robot_descriptions (umbrella)
-├── robot-descriptions-common
-├── robot-descriptions-dobot
-├── robot-descriptions-arx
-├── robot-descriptions-galbot
-├── robot-descriptions-ht
-├── robot-descriptions-quadruped
-└── ... (brand packages)
+robot_descriptions/                 # umbrella paths from its README
+├── common/                         # robot-descriptions-common
+├── quadruped/
+├── humanoid/                       # in-tree + Galbot submodule
+└── manipulator/                    # Dobot, ARX, Tianji, Rokae, HighTorque, …
 :::
 
 ## In This Section
@@ -41,7 +38,7 @@ robot_descriptions (umbrella)
 | Package | Robots | Visibility |
 |---------|--------|------------|
 | [robot_descriptions](1-robot_descriptions.md) | Umbrella | Public |
-| [robot-descriptions-common](2-common.md) | Grippers, sensors | Public |
+| [robot-descriptions-common](2-common.md) | Grippers, hands, sensors, `robot_common_launch` (path `common`) | Public |
 | [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HighTorque | Public |
 | [robot-descriptions-fiveages](4-fiveages_umbrella.md) | FA robots | Private |
 | [FA robot descriptions](5-fa_robots.md) | W2, S2, etc. | Private |

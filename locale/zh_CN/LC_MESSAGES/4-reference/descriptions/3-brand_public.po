@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -271,8 +271,7 @@ msgstr "使用方法"
 #: 97addfa0f15d479d8964b3b2a49a1f8f
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=cr5\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=cr5\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=cr5\n"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:39
 #: 334a739431844c5185a94ea3f251bfe3
@@ -419,7 +418,8 @@ msgid ""
 "how-to.\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 msgstr ""
-"# Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.\n"
+"# Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated "
+"how-to.\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:72
@@ -474,8 +474,7 @@ msgstr "移动操作臂"
 #: 987adfa540374fc694336077d8ff30a9
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=galbot_g1\n"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:97
 #: ../../source/4-reference/descriptions/3-brand_public.md:125
@@ -504,13 +503,15 @@ msgid "HighTorque (高擎)"
 msgstr "高擎（HighTorque）"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:105
-#: c2e241c272684951829043dd0c0c3a13
+#: 6fc0fdea8a164247a7ce4e45c610da5f
 msgid ""
-"**Repository:** [fiveages-sim/robot-descriptions-ht](https://github.com"
-"/fiveages-sim/robot-descriptions-ht)"
+"**Repository:** [fiveages-sim/panthera_ht_description](https://github.com"
+"/fiveages-sim/panthera_ht_description) (umbrella path "
+"`manipulator/HighTorque/panthera_ht_description`)"
 msgstr ""
-"**仓库：** [fiveages-sim/robot-descriptions-ht](https://github.com/fiveages-"
-"sim/robot-descriptions-ht)"
+"**仓库：** [fiveages-sim/panthera_ht_description](https://github.com"
+"/fiveages-sim/panthera_ht_description)（伞形仓路径 "
+"`manipulator/HighTorque/panthera_ht_description`）"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:59
 #: 7513b11cf3934a35a36165908b00c4ce
@@ -548,8 +549,7 @@ msgstr ""
 #: 4a9ae6f93263416cbd3dfb57b62a0eba
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=panthera_ht\n"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:127
 #: 393ae56486e547ce802dcb35a08cfbb7
@@ -592,85 +592,20 @@ msgstr "通常与独立的四足控制器技术栈配合使用。"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:143
 #: d577de7a837f4c23955a444371a8d75b
-msgid "Package Structure"
-msgstr "软件包结构"
+#, fuzzy
+msgid "Package layout"
+msgstr "软件包"
 
 #: ../../source/4-reference/descriptions/3-brand_public.md:145
-#: 25c9baeb09fe44ae99b1db284a39bcc7
-msgid "Each brand package follows the standard layout:"
-msgstr "每个品牌软件包都遵循标准布局："
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:147
-#: 8c0a0bf0cff845f383b538d777a5c83a
+#: 22b1d943a0f944cf9464345cbad4c66a
 msgid ""
-"robot-descriptions-<brand>/\n"
-"├── <robot>_description/\n"
-"│   ├── CMakeLists.txt\n"
-"│   ├── package.xml\n"
-"│   ├── urdf/\n"
-"│   │   ├── <robot>.urdf.xacro\n"
-"│   │   └── <robot>.ros2_control.xacro\n"
-"│   ├── meshes/\n"
-"│   │   ├── visual/\n"
-"│   │   └── collision/\n"
-"│   ├── config/\n"
-"│   │   └── ocs2_arm_config.yaml\n"
-"│   └── launch/\n"
-"│       └── display.launch.py\n"
-"└── ..."
+"Do not use a generic `urdf/` + `ocs2_arm_config.yaml` + "
+"`display.launch.py` tree. Copy a real package (Acone: `xacro/`, "
+"`xacro/ros2_control/`, `config/ocs2/`) — [Add a "
+"Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Umbrella submodule"
+" paths: [robot_descriptions](1-robot_descriptions.md)."
 msgstr ""
-"robot-descriptions-<brand>/\n"
-"├── <robot>_description/\n"
-"│   ├── CMakeLists.txt\n"
-"│   ├── package.xml\n"
-"│   ├── urdf/\n"
-"│   │   ├── <robot>.urdf.xacro\n"
-"│   │   └── <robot>.ros2_control.xacro\n"
-"│   ├── meshes/\n"
-"│   │   ├── visual/\n"
-"│   │   └── collision/\n"
-"│   ├── config/\n"
-"│   │   └── ocs2_arm_config.yaml\n"
-"│   └── launch/\n"
-"│       └── display.launch.py\n"
-"└── ..."
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:165
-#: a718b2dff0454e54b76ad704046e3f41
-msgid "Adding a New Brand"
-msgstr "添加新品牌"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:167
-#: 4044b206235947d5b3586cacb28d9e31
-msgid "Create repository following naming convention"
-msgstr "按命名约定创建仓库"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:168
-#: 82f6378361f94ae884d1c93a12a074ea
-msgid "Add description packages for each robot"
-msgstr "为每台机器人添加描述软件包"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:169
-#: 6b496ee810cc4a13873be4b3bb07c07d
-msgid "Include ros2_control configurations"
-msgstr "加入 ros2_control 配置"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:170
-#: ef53a267a752498abc5ded466f959cae
-msgid "Add as submodule to `robot_descriptions`"
-msgstr "作为子模块添加到 `robot_descriptions`"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:171
-#: 401aaa65bc934baf9fe60fa7fd8be90d
-msgid "Update documentation"
-msgstr "更新文档"
-
-#: ../../source/4-reference/descriptions/3-brand_public.md:173
-#: 8053f1369f2c42bb90d37e3168732bf6
-msgid ""
-"See [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md) for "
-"detailed steps."
-msgstr "详细步骤参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。"
+"不要用通用的 `urdf/` + `ocs2_arm_config.yaml` + `display.launch.py` 目录树。复制真实的包（Acone：`xacro/`、`xacro/ros2_control/`、`config/ocs2/`）— [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。伞形仓子模块路径：[robot_descriptions](1-robot_descriptions.md)。"
 
 #~ msgid ""
 #~ "robot-descriptions-<brand>/\n"
@@ -758,3 +693,66 @@ msgstr "详细步骤参见 [添加机器人](../../2-how_to/6-deployment/10-add_
 
 #~ msgid "`dobot_cr5`, `dobot_cr10`"
 #~ msgstr "`dobot_cr5`, `dobot_cr10`"
+
+#~ msgid "Package Structure"
+#~ msgstr "软件包结构"
+
+#~ msgid "Each brand package follows the standard layout:"
+#~ msgstr "每个品牌软件包都遵循标准布局："
+
+#~ msgid ""
+#~ "robot-descriptions-<brand>/\n"
+#~ "├── <robot>_description/\n"
+#~ "│   ├── CMakeLists.txt\n"
+#~ "│   ├── package.xml\n"
+#~ "│   ├── urdf/\n"
+#~ "│   │   ├── <robot>.urdf.xacro\n"
+#~ "│   │   └── <robot>.ros2_control.xacro\n"
+#~ "│   ├── meshes/\n"
+#~ "│   │   ├── visual/\n"
+#~ "│   │   └── collision/\n"
+#~ "│   ├── config/\n"
+#~ "│   │   └── ocs2_arm_config.yaml\n"
+#~ "│   └── launch/\n"
+#~ "│       └── display.launch.py\n"
+#~ "└── ..."
+#~ msgstr ""
+#~ "robot-descriptions-<brand>/\n"
+#~ "├── <robot>_description/\n"
+#~ "│   ├── CMakeLists.txt\n"
+#~ "│   ├── package.xml\n"
+#~ "│   ├── urdf/\n"
+#~ "│   │   ├── <robot>.urdf.xacro\n"
+#~ "│   │   └── <robot>.ros2_control.xacro\n"
+#~ "│   ├── meshes/\n"
+#~ "│   │   ├── visual/\n"
+#~ "│   │   └── collision/\n"
+#~ "│   ├── config/\n"
+#~ "│   │   └── ocs2_arm_config.yaml\n"
+#~ "│   └── launch/\n"
+#~ "│       └── display.launch.py\n"
+#~ "└── ..."
+
+#~ msgid "Adding a New Brand"
+#~ msgstr "添加新品牌"
+
+#~ msgid "Create repository following naming convention"
+#~ msgstr "按命名约定创建仓库"
+
+#~ msgid "Add description packages for each robot"
+#~ msgstr "为每台机器人添加描述软件包"
+
+#~ msgid "Include ros2_control configurations"
+#~ msgstr "加入 ros2_control 配置"
+
+#~ msgid "Add as submodule to `robot_descriptions`"
+#~ msgstr "作为子模块添加到 `robot_descriptions`"
+
+#~ msgid "Update documentation"
+#~ msgstr "更新文档"
+
+#~ msgid ""
+#~ "See [Add a "
+#~ "Robot](../../2-how_to/6-deployment/10-add_a_robot.md) for "
+#~ "detailed steps."
+#~ msgstr "详细步骤参见 [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。"

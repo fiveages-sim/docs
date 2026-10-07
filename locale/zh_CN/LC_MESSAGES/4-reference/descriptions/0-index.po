@@ -9,169 +9,164 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:22+0000\n"
+"POT-Creation-Date: 2026-10-07 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/descriptions/0-index.md:1
-#: 5ceec22b3f904c23a6ebbaee11aa6af4
+#: d9a5121436f943b3ab0767c00004eaa1
 msgid "Robot Descriptions Reference"
 msgstr "机器人描述参考"
 
 #: ../../source/4-reference/descriptions/0-index.md:3
-#: 57b61e137d3144339d20693f01877f82
+#: 56e307f2c3644c4685733628f26e643c
 msgid ""
-"This section documents the robot description packages — URDF/xacro models, "
-"meshes, and ros2_control configurations."
+"This section documents the robot description packages — URDF/xacro "
+"models, meshes, and ros2_control configurations."
 msgstr "本节介绍机器人描述软件包——URDF/xacro 模型、网格模型以及 ros2_control 配置。"
 
 #: ../../source/4-reference/descriptions/0-index.md:5
-#: d0efd392aa7d457e8db60d9914d2ab2e
+#: 1b739a3f2a1d4e3995faec8b1986e5a7
 msgid "Terminology"
 msgstr "术语"
 
 #: ../../source/4-reference/descriptions/0-index.md:8
-#: 72ca13b353044aa59ef8cdfa84e629f9
+#: a5cf4ee7326c4ef2b0334ea84d771fee
 msgid ""
 "FiveAges **humanoid** descriptions (W2, W2R, S2, S2R) are **wheeled-arm "
 "humanoids** (mobile base + arms). They are **not** bipedal or footed "
 "humanoids."
 msgstr ""
-"FiveAges 的 **humanoid / 人形** 描述（W2、W2R、S2、S2R）是 **轮臂人形**（移动底盘 + 双臂），**不是** "
-"双足或足式人形。"
+"FiveAges 的 **humanoid / 人形** 描述（W2、W2R、S2、S2R）是 **轮臂人形**（移动底盘 + "
+"双臂），**不是** 双足或足式人形。"
 
 #: ../../source/4-reference/descriptions/0-index.md:11
-#: 439fd5e174d94e37952a2b47c5028716
+#: 7b884923b7ce4829a6fe8f806f543212
 msgid "Overview"
 msgstr "概述"
 
 #: ../../source/4-reference/descriptions/0-index.md:13
-#: 6baad303935f40e1ad8ea2fa6ec6abec
+#: 18a0c4d1bb5b4144bd38fa17760aeb1b
 msgid "Robot descriptions are organized in a hierarchy:"
 msgstr "机器人描述按层级组织："
 
 #: ../../source/4-reference/descriptions/0-index.md:15
-#: bf5a327f9a524045b7b12098f7a7a073
+#: a284c9af12f044f29969e5cbcbc150d9
 msgid ""
-"robot_descriptions (umbrella)\n"
-"├── robot-descriptions-common\n"
-"├── robot-descriptions-dobot\n"
-"├── robot-descriptions-arx\n"
-"├── robot-descriptions-galbot\n"
-"├── robot-descriptions-ht\n"
-"├── robot-descriptions-quadruped\n"
-"└── ... (brand packages)"
+"robot_descriptions/                 # umbrella paths from its README\n"
+"├── common/                         # robot-descriptions-common\n"
+"├── quadruped/\n"
+"├── humanoid/                       # in-tree + Galbot submodule\n"
+"└── manipulator/                    # Dobot, ARX, Tianji, Rokae, "
+"HighTorque, …"
 msgstr ""
-"robot_descriptions (umbrella)\n"
-"├── robot-descriptions-common\n"
-"├── robot-descriptions-dobot\n"
-"├── robot-descriptions-arx\n"
-"├── robot-descriptions-galbot\n"
-"├── robot-descriptions-ht\n"
-"├── robot-descriptions-quadruped\n"
-"└── ... (brand packages)"
+"robot_descriptions/                 # umbrella paths from its README\n"
+"├── common/                         # robot-descriptions-common\n"
+"├── quadruped/\n"
+"├── humanoid/                       # in-tree + Galbot submodule\n"
+"└── manipulator/                    # Dobot, ARX, Tianji, Rokae, HighTorque, …"
 
-#: ../../source/4-reference/descriptions/0-index.md:26
-#: 9155ca0329434c9a89c83c761f7fb9aa
+#: ../../source/4-reference/descriptions/0-index.md:23
+#: cde1efb5d3f2473b9de7777c01d05563
 msgid "In This Section"
 msgstr "本节内容"
 
-#: ../../source/4-reference/descriptions/0-index.md:39
-#: 6d958a86917a4e829c43e316478944d4
+#: ../../source/4-reference/descriptions/0-index.md:36
+#: 755f17cc6d52493eaf44e4b92d5528da
 msgid "Quick Reference"
 msgstr "快速参考"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: ba7bef3a04404fb896bfcf695e7c7d06
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 1fada054efda4cffb93ad9513ec189ab
 msgid "Package"
 msgstr "软件包"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 09fab362feec4ebdac32be04237b13a1
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 9866b98f71e640c6aab277d3fa683dc6
 msgid "Robots"
 msgstr "机器人"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 20cab037a6154c5e99685589162076c8
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 95a93a400677486aa7c2ff8b5235e1e6
 msgid "Visibility"
 msgstr "可见性"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: d5cfeb65764f4c7a9cb7692c85973c4e
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: f844fe758c164048a70b709fdbe18c29
 msgid "[robot_descriptions](1-robot_descriptions.md)"
 msgstr "[robot_descriptions](1-robot_descriptions.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: a93b36b80b6d461cbac4039f5996d368
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 298cc75ee8a64ab5ae58fed9f5161cd3
 msgid "Umbrella"
 msgstr "聚合仓库"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 6cd1732862c746a7a0dfac9bc7e0627d 7918390305604b16af723197ef76f563
-#: 9c24343c8e0c4439bbcd6247f8cd13dd
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 395f13838cd349888ca693b9c7cf4909 d017b6faf55249279ffcc88c427f12a2
+#: f238dd6b7c3c4c42942625c4a39434db
 msgid "Public"
 msgstr "公开"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: c7a00556b85447c79742135f466b16d8
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 60e1c12c25a4430886366851c164233d
 msgid "[robot-descriptions-common](2-common.md)"
 msgstr "[robot-descriptions-common](2-common.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: dd2a3e82ea344f2ea6040951630142cb
-msgid "Grippers, sensors"
-msgstr "夹爪、传感器"
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 2746aaa0b344450297e99f2b0a525a41
+msgid "Grippers, hands, sensors, `robot_common_launch` (path `common`)"
+msgstr "夹爪、灵巧手、传感器、`robot_common_launch`（路径 `common`）"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 879cda0540fe4819bce80dce63b45278
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 5672da237ad94546b9cd5bca9359e414
 msgid "[Brand packages](3-brand_public.md)"
 msgstr "[品牌软件包](3-brand_public.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 906dd2df3e93470583734f51f6e978de
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: ee47d98fba39493c97fca2037b995ba3
 msgid "Dobot, ARX, Galbot, HighTorque"
 msgstr "越疆、方舟无限、银河通用、高擎"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 233fcd52a83e42e8a12e58335074fc91
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: d256c395e98541c88b0c60aa8d724a59
 msgid "[robot-descriptions-fiveages](4-fiveages_umbrella.md)"
 msgstr "[robot-descriptions-fiveages](4-fiveages_umbrella.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 09d6bd3e353844e48fd76d52e728af1e
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 8f5523112830498d979629afbc1cbecd
 msgid "FA robots"
 msgstr "FA 机器人"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 2af09ced473846069895f2b3d2e4cd09 c0d650e7e2434219bec072fccf41b90a
-#: f10b83a4ebfa4147af0c83cd5b910bda
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 0119459b3c5e4390ade91b02d6ac39b2 84d1322e4d7646d2aafa211da9e139ed
+#: d0af710c158d448a94aaac66d6349a6b
 msgid "Private"
 msgstr "私有"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: d31175f38e3b4247b76d3aff56336f84
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 0cc8206fdba04b44917886670756cfef
 msgid "[FA robot descriptions](5-fa_robots.md)"
 msgstr "[FA 机器人描述](5-fa_robots.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 48f6b98b1a934ddbb7068e889c43e360
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: c57296971d984c4086e88b5fd82982e1
 msgid "W2, S2, etc."
 msgstr "W2、S2 等"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: d5bb7ef3c41648bdafcbee53ce1ee58f
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 014f40b819db47db897725219aaef158
 msgid "[Vendor arms](6-vendor_arms_private.md)"
 msgstr "[厂商机械臂](6-vendor_arms_private.md)"
 
-#: ../../source/4-reference/descriptions/0-index.md:28
-#: 91e4f9d3d42844bc8656f49da5739fb5
+#: ../../source/4-reference/descriptions/0-index.md:25
+#: 5bc5be730b424b7db0c8091479477980
 msgid "Tianji, Rokae, etc."
 msgstr "Tianji、Rokae 等"
 
@@ -193,3 +188,25 @@ msgstr "Tianji、Rokae 等"
 #~ "├── robot-descriptions-ht\n"
 #~ "├── robot-descriptions-quadruped\n"
 #~ "└── ... (brand packages)\n"
+
+#~ msgid ""
+#~ "robot_descriptions (umbrella)\n"
+#~ "├── robot-descriptions-common\n"
+#~ "├── robot-descriptions-dobot\n"
+#~ "├── robot-descriptions-arx\n"
+#~ "├── robot-descriptions-galbot\n"
+#~ "├── robot-descriptions-ht\n"
+#~ "├── robot-descriptions-quadruped\n"
+#~ "└── ... (brand packages)"
+#~ msgstr ""
+#~ "robot_descriptions (umbrella)\n"
+#~ "├── robot-descriptions-common\n"
+#~ "├── robot-descriptions-dobot\n"
+#~ "├── robot-descriptions-arx\n"
+#~ "├── robot-descriptions-galbot\n"
+#~ "├── robot-descriptions-ht\n"
+#~ "├── robot-descriptions-quadruped\n"
+#~ "└── ... (brand packages)"
+
+#~ msgid "Grippers, sensors"
+#~ msgstr "夹爪、传感器"

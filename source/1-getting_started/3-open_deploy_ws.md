@@ -113,7 +113,7 @@ colcon build --packages-up-to ocs2_arm_controller
 | **Acone** / **AC One** | robot-descriptions-arx | arx-ros2-control | **Arm only** (not Lift 2S) |
 | **ARX Lift 2S** | robot-descriptions-arx | arx-ros2-control | **Full-body** (arms + lift + chassis); branch `arx-lift2s` |
 | Galbot | robot-descriptions-galbot | (varies) | Simulation-oriented |
-| **HighTorque Panthera HT** | robot-descriptions-ht | ht-ros2-control | Dual-arm; branch `panthera-ht` |
+| **HighTorque Panthera HT** | `panthera_ht_description` | ht-ros2-control | Dual-arm; branch `panthera-ht`; umbrella path `manipulator/HighTorque/panthera_ht_description` |
 | Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation-oriented |
 
 ```{admonition} Real Hardware Deployment

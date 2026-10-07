@@ -1,74 +1,72 @@
 # robot_descriptions
 
-Public umbrella repository for all robot descriptions.
+Public umbrella repository. Brand trees are **git submodules** at the paths in the official README (not a flat list of `robot-descriptions-*` folders).
 
 **Repository:** [fiveages-sim/robot_descriptions](https://github.com/fiveages-sim/robot_descriptions)
 
-## Purpose
+```{admonition} Source of truth
+:class: important
 
-`robot_descriptions` aggregates brand-specific description packages as submodules, providing a single entry point for all robot models.
+- Paths and submodule table: [README.md](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)
+- In `open-deploy-ws` the checkout is `src/robot-descriptions/` after **`./init_repo.sh`**. Do not recursive-init there.
+- Description-side Cursor skills: **`feature/agilex` only** — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no `.cursor/skills`**.
+```
 
-## Structure
+## Layout (README)
 
 :::{code-block} none
 robot_descriptions/
-├── robot-descriptions-common/    # Shared components
-├── robot-descriptions-dobot/     # Dobot robots
-├── robot-descriptions-arx/       # ARX robots
-├── robot-descriptions-galbot/    # Galbot robots
-├── robot-descriptions-ht/        # HT robots
-├── robot-descriptions-quadruped/ # Quadruped robots
-└── ... (more brands)
+├── common/                              # robot-descriptions-common
+├── quadruped/                           # robot-descriptions-quadruped
+├── humanoid/                            # in-tree wheeled / leg humanoids
+│   ├── Galbot/                          # robot-descriptions-galbot
+│   └── Agibot/agibot_g2_description     # private
+├── manipulator/
+│   ├── Dobot/                           # robot-descriptions-dobot
+│   ├── ARX/                             # robot-descriptions-arx
+│   ├── Tianji/                          # robot-descriptions-tianji
+│   ├── Rokae/                           # robot-descriptions-rokae
+│   └── HighTorque/panthera_ht_description
+└── … in-tree packages (see README tables)
 :::
 
-## Usage
+## Submodules (README)
 
-### Initialize Specific Brand
+| Name | Path | Repository |
+|------|------|------------|
+| Common Components | `common` | [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) |
+| Quadruped Robots | `quadruped` | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) |
+| Dobot CR5 | `manipulator/Dobot` | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) |
+| Tianji M6 | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) |
+| Rokae AR5 | `manipulator/Rokae` | [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) |
+| ARX Robots | `manipulator/ARX` | [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) |
+| Galbot Robots | `humanoid/Galbot` | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) |
+| Agibot G2 | `humanoid/Agibot/agibot_g2_description` | [agibot-g2-description](https://github.com/fiveages-sim/agibot-g2-description) (private) |
+| Panthera HT | `manipulator/HighTorque/panthera_ht_description` | [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) |
 
-In `open-deploy-ws`, prefer `./init_repo.sh` (nested paths under `src/robot-descriptions/`). Do not recursive-init.
+README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Do not invent extra brand folders.
 
-### Build All Descriptions
+Standalone clone (README). In `open-deploy-ws`, prefer `./init_repo.sh` instead:
 
-```bash
-colcon build --symlink-install
-```
+:::{code-block} bash
+git submodule update --init common
+git submodule update --init manipulator/ARX
+:::
 
-The umbrella directory in `open-deploy-ws` is `src/robot-descriptions/` (hyphen). Nested modules follow `submodules_visibility.conf`.
-
-### Use in Launch
-
-```bash
-ros2 launch ocs2_arm_controller demo.launch.py
-```
+## Launch
 
 `demo.launch.py` default `robot` is `cr5`. Pass `robot:=<key>` for other `{key}_description` packages.
 
-## Submodules
+:::{code-block} bash
+ros2 launch ocs2_arm_controller demo.launch.py
+:::
 
-| Submodule | Visibility | Robots |
-|-----------|------------|--------|
-| robot-descriptions-common | Public | Grippers, sensors, hands |
-| robot-descriptions-dobot | Public | CR5, CR10 |
-| robot-descriptions-arx | Public | X5, Acone (arm), Lift 2S |
-| robot-descriptions-galbot | Public | G1 mobile manipulator |
-| robot-descriptions-ht | Public | HighTorque Panthera HT |
-| robot-descriptions-quadruped | Public | Quadrupeds |
-| robot-descriptions-tianji | Private | M6, M6S, M20S |
-| robot-descriptions-rokae | Private | Rokae arms |
-| robot-descriptions-ubtech | Private | Ubtech humanoids |
-| agibot-g2-description | Private | Agibot G2 |
+## Adding a robot
 
-## Adding a Robot
-
-1. Create description package (see [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md))
-2. Add as submodule:
-   ```bash
-   git submodule add https://github.com/fiveages-sim/robot-descriptions-newbrand.git
-   ```
-3. Update visibility configuration
-4. Create PR
+Copy an existing `{robot}_description` and follow [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Do not invent a `robot-descriptions-newbrand` remote or a top-level folder that the README does not list.
 
 ## Related
 
 - [robot-descriptions-common](2-common.md)
 - [Brand packages](3-brand_public.md)
+- [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)
