@@ -224,7 +224,7 @@ Follow [Synthetic Data](../2-how_to/7-synthetic_data/0-index.md). Documented com
 
 ## After the beginner path
 
-Continue by **role** in [More applications](../6-more_applications/0-index.md): field commissioning, classical algorithm, VLA collect / train / deploy, simulation.
+Continue by **role** in [More applications](../6-more_applications/0-index.md): field commissioning (现场调试), classical algorithm (传统方案算法工程师), VLA collect / train / deploy (VLA 采训推), simulation (仿真工程师).
 
 ## Tips for Success
 

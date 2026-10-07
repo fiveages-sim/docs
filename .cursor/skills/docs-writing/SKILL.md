@@ -3,9 +3,10 @@ name: docs-writing
 description: >-
   Write and edit fiveages-sim/docs without fabricating APIs, scripts, or
   private-repo trees. Use when adding or changing Sphinx/MyST pages, zh_CN
-  .po files, Overview / How-To / Concepts / Reference, or when tempted to
-  list unverified flags. 文档撰写、不要编造、do not invent、Sphinx、sphinx-intl、
-  reader-facing vs agent guidelines.
+  .po files, Overview / How-To / Concepts / Reference / More applications,
+  sidebar 导读 / Introduction landings, or when tempted to list unverified
+  flags. 文档撰写、不要编造、do not invent、导读、章节规范、运控系统、Sphinx、
+  sphinx-intl、reader-facing vs agent guidelines.
 ---
 
 # Docs writing (fiveages-sim/docs)
@@ -100,6 +101,26 @@ python3 scripts/check_zh_mix.py
 `make html-all` is not `.PHONY` — run `html` and `html-zh_CN` separately. Restore wrap-only unrelated `.po` from git after `update-po` if you did not mean to touch them.
 
 zh_CN coverage must stay 100% (CI threshold 95%). Also run `python3 scripts/check_zh_mix.py` (fuzzy / leftover English — see `.cursor/skills/zh-translation-qa/SKILL.md`). Never nest `` ``` `` inside `` ```{admonition} ``; use `:::` colon fences. User-facing docs are bilingual; fill new English strings in `locale/zh_CN`.
+
+## Sidebar chapters and 导读
+
+Every top-level sidebar chapter in `source/index.md` that has a single landing `0-index` as the first toctree entry:
+
+- `:caption:` = the **section name** (Overview, Getting Started, More applications / 更多应用, How-To Guides, Concepts, Developer Guide)
+- Landing H1 = **Introduction** (zh **导读**) — a clickable title, **not** a repeat of the caption
+
+The 导读 is a short real intro: what the chapter is, how to pick the next page, links into the chapter. Not a stub redirect and not a leftover “this page moved” note.
+
+**Reference** is split into subsection landings (`4-reference/*/0-index.md`). Do not invent a new umbrella Reference 导读 unless you add that page.
+
+### More applications (更多应用)
+
+Role-based paths **after** Getting Started — not more generic How-To chapters that repeat the beginner path.
+
+- 导读: who this chapter is for, how to pick a role, table/links to the four role pages
+- Shared foundation on the 导读: carefully learning the **motion-control / robot control stack** (运控系统) helps later work on every role path. Link only existing pages — [ros2_control in This Stack](../../../source/3-concepts/1-ros2_control_here.md), [FSM and Topics](../../../source/3-concepts/4-fsm_and_topics.md), [Controllers](../../../source/4-reference/controllers/0-index.md), [分体控制 vs 全身控制](../../../source/3-concepts/7-split_vs_wbc.md). Do not invent a 运控系统 API, flag list, or extra how-to
+- Role pages (现场调试 / 传统方案算法工程师 / VLA 采训推 / 仿真工程师): ordered links to verified How-To / Concepts / Reference / official READMEs; name gaps instead of inventing zip flags, Viser host/port, force/load-ID, or VLA train/infer APIs
+- No leftover stubs after moves — `.cursor/skills/docs-remove-leftovers/SKILL.md`
 
 ## After a move or merge
 
