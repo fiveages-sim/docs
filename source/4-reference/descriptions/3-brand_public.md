@@ -2,7 +2,7 @@
 
 Public robot description packages for specific brands.
 
-Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Display names used in this docs set (方舟无限 = **ARX**, not bare “Ark”):
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Display names used in this docs set (方舟无限 = **ARX**):
 
 | 中文简称 | English brand / identifier |
 |----------|----------------------------|
@@ -53,19 +53,19 @@ End-effectors: `type` / `left_type` / `right_type` via [robot_common_launch](2-c
 | Robot | Package | Type | Real Hardware |
 |-------|---------|------|---------------|
 | X5 | `arx_x5_description` | Arm | Co-debug in `arx-lift2s` |
-| **Acone** / **AC One** | `arx_acone_description` | **Arm only** | Not Lift 2S; `quick_start` co-debug |
+| **Acone** / **AC One** | `arx_acone_description` | **Dual-arm** | Not Lift 2S; `quick_start` co-debug |
 | **Lift 2S** | `arx_lift2s_description` | Full-body (arms + lift + chassis) | Branch `arx-lift2s` |
 
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is the arm only. See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+**ARX Lift 2S** is the full-body mobile manipulator. **Acone** / **AC One** is **dual-arm**. See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 ```
 
 ### Usage
 
 ```bash
-# Acone arm mock (not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.
+# Acone (dual-arm, not Lift 2S). Full-body ARX Lift 2S: see the dedicated how-to.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 

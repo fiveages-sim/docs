@@ -18,7 +18,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 ```{admonition} Real Hardware for External Users
 :class: tip
 
-**ARX Lift 2S** is the full-body ARX (方舟无限) mobile manipulator (including chassis). **Acone** / **AC One** is the **arm only**, not Lift 2S. **HighTorque Panthera HT** (高擎) is the dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
+**ARX Lift 2S** is the full-body ARX (方舟无限) mobile manipulator (including chassis). **Acone** / **AC One** is **dual-arm**, not Lift 2S. **HighTorque Panthera HT** (高擎) is a dual-arm manipulator. Prefer the dedicated how-to pages. You don't need internal access for those `open-deploy-ws` branches.
 ```
 
 ## Day 0: Map the Stack
@@ -70,11 +70,11 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ```bash
    ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
    ```
-   `arx_acone` is the **Acone arm**, not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+   `arx_acone` is **Acone** (dual-arm), not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You can switch between Dobot CR5, Acone (arm), Galbot, etc.
+**Outcome:** You can switch between Dobot CR5, Acone (dual-arm), Galbot, etc.
 
 ## Day 3: Gazebo and Isaac Simulation
 
@@ -182,12 +182,12 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 
 **Goal:** Deploy to physical robots.
 
-### Public Path (ARX Lift 2S, Acone arm, HighTorque Panthera HT)
+### Public Path (ARX Lift 2S, Acone, HighTorque Panthera HT)
 
-Use the matching **branch README** and `./quick_start.sh`. **Acone** / **AC One** is arm-only; **Lift 2S** is the full-body platform.
+Use the matching **branch README** and `./quick_start.sh`. **Acone** / **AC One** is **dual-arm**; **Lift 2S** is the full-body platform.
 
 - **[ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
-- **Acone** / **AC One** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
+- **Acone** / **AC One** — **dual-arm**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
 - **[HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
 ### Internal Path (FA Robots)

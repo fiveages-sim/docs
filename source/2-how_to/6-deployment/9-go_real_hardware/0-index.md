@@ -16,12 +16,12 @@ Working with real robots requires:
 
 ### Public Path (open-deploy-ws)
 
-The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`). **Acone** / **AC One** is arm-only; **Lift 2S** is the full-body platform.
+The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`). **Acone** / **AC One** is **dual-arm**; **Lift 2S** is the full-body platform.
 
 | Robot | Role | Branch | How-to |
 |-------|------|--------|--------|
 | **ARX Lift 2S** | Full-body (arms + lift + **chassis**) | `arx-lift2s` | [ARX Lift 2S](1-arx_lift2s.md) |
-| **Acone** / **AC One** | **Arm only** (same ARX description tree; not Lift 2S) | `arx-lift2s` (`quick_start` co-debug) | [ARX Lift 2S](1-arx_lift2s.md) |
+| **Acone** / **AC One** | **Dual-arm** (same ARX description tree; not Lift 2S) | `arx-lift2s` (`quick_start` co-debug) | [ARX Lift 2S](1-arx_lift2s.md) |
 | **HighTorque Panthera HT** | Dual-arm manipulator | `panthera-ht` | [HighTorque Panthera HT](2-panthera_ht.md) |
 
 These robots are fully supported for external users without requiring private repository access.
@@ -116,10 +116,10 @@ Start from HOLD, then HOME, then MOVEJ / OCS2 as the **running** controller allo
 
 ## Public Robot Deployment (open-deploy-ws)
 
-Use the matching **branch** and its README scripts. `demo.launch.py robot:=arx_acone` is Acone (arm only), not Lift 2S. The HighTorque launch key is `panthera_ht`.
+Use the matching **branch** and its README scripts. `demo.launch.py robot:=arx_acone` is Acone (dual-arm), not Lift 2S. The HighTorque launch key is `panthera_ht`.
 
 - **[ARX Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
-- **Acone** / **AC One** — arm-only; pick ACone in that same `quick_start` menu for co-debug.
+- **Acone** / **AC One** — **dual-arm**; pick ACone in that same `quick_start` menu for co-debug.
 - **[HighTorque Panthera HT](2-panthera_ht.md)** — `git clone -b panthera-ht …` then `./init_repo.sh` / `./release.sh --install` and `./quick_start.sh`. Isomorphic teleop: `./teleop_start.sh`.
 
 ## Internal Deployment (fa-deploy-ws)

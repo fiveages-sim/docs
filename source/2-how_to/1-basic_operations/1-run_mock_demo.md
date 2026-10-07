@@ -37,7 +37,7 @@ Do **not** publish `/target_pose`. That is not a stack-wide API. See [FSM and To
 ## With Different Robots
 
 ```bash
-# Acone (arm only, not Lift 2S)
+# Acone (dual-arm, not Lift 2S)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 
 # HighTorque Panthera HT

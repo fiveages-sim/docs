@@ -2,7 +2,7 @@
 
 Names that this docs set actually uses, from [robot_common_launch](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md) and deploy-ws / controller READMEs.
 
-Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限 (not bare “Ark”). **HighTorque** / Panthera is 高擎. Repo and script names stay as quoted (`arx-lift2s`, `./init_repo.sh`).
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). **ARX** is 方舟无限. **HighTorque** / Panthera is 高擎. Repo and script names stay as quoted (`arx-lift2s`, `./init_repo.sh`).
 
 ## Launch arguments (`robot_common_launch`)
 

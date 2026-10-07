@@ -2,9 +2,7 @@
 
 **ARX** (方舟无限) is the brand. **Lift 2S** is that brand’s full-body **mobile manipulator**: arms **plus** lift axis and **mobile base / chassis**, not an arm-only robot.
 
-**Acone** / **AC One** is the **arm portion** of the same stack (manipulator only). It is not the Lift 2S platform. The `arx-lift2s` workspace can launch Acone from `quick_start` for co-debug; the product focus of that branch is Lift 2S.
-
-Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照): 方舟无限 = ARX. Do not use bare “Ark” as the brand name.
+**Acone** / **AC One** is **dual-arm**. It is not the Lift 2S platform. The `arx-lift2s` workspace can launch Acone from `quick_start` for co-debug; the product focus of that branch is Lift 2S.
 
 ```{admonition} Source of truth
 :class: important

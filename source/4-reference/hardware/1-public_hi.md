@@ -5,7 +5,7 @@ Public ros2_control hardware interface plugins.
 ```{admonition} Real Hardware Ready
 :class: tip
 
-**ARX Lift 2S** (full-body) and **Acone** / **AC One** (arm only) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **HighTorque Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
+**ARX Lift 2S** (full-body) and **Acone** / **AC One** (dual-arm) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **HighTorque Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
 ```
 
 ## ARX (方舟无限)
@@ -14,7 +14,7 @@ Public ros2_control hardware interface plugins.
 
 ### Purpose
 
-CAN bus interface for ARX robots (X5, Acone arm, Lift 2S full-body).
+CAN bus interface for ARX robots (X5, Acone dual-arm, Lift 2S full-body).
 
 ### Configuration
 

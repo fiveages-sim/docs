@@ -40,7 +40,7 @@ FSM: `/fsm_command` (`std_msgs/Int32`). Do **not** publish `/target_pose`. See [
 ## Launch Options
 
 ```bash
-# Acone arm (not Lift 2S)
+# Acone (dual-arm, not Lift 2S)
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=gz
 ```
 
