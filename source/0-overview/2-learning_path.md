@@ -38,7 +38,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 **Goal:** Install the environment, then run a robot demo (`hardware` default `mock_components`).
 
 **Tasks:**
-1. [Install Environment](../1-getting_started/2-install_environment.md) — Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / `ros-jazzy-desktop`). Do not hand-write `source /opt/ros/...` into `~/.bashrc`.
+1. [Install Environment](../1-getting_started/2-install_environment.md) — Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / `ros-jazzy-desktop`). Workspace entry is `./init_repo.sh`, then `source install/setup.bash`.
 2. Clone `open-deploy-ws` and run the official init script:
    ```bash
    git clone https://github.com/fiveages-sim/open-deploy-ws.git
@@ -160,7 +160,7 @@ cd fa-py-libraries
 ```{admonition} Pico Enterprise vs consumer
 :class: tip
 
-Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Do not install one App for both.
+Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Install the App that matches the headset edition.
 ```
 
 ### Isomorphic Teleop (HighTorque Panthera HT)
@@ -184,7 +184,7 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 
 ### Public Path (ARX Lift 2S, Acone arm, HighTorque Panthera HT)
 
-Use the matching **branch README** and `./quick_start.sh`. Do not treat Acone as Lift 2S.
+Use the matching **branch README** and `./quick_start.sh`. **Acone** / **AC One** is arm-only; **Lift 2S** is the full-body platform.
 
 - **[ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)** — full-body including chassis: `git clone -b arx-lift2s …` then `./init_repo.sh` / `./quick_start.sh`
 - **Acone** / **AC One** — **arm only**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
@@ -199,7 +199,7 @@ FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Con
 ```
 
 **Tasks:**
-1. Clone `fa-deploy-ws` and run the init / quick-start scripts named in **that repository’s README** (not public). Do not invent `--robot` flags or `robot.local.yaml` here.
+1. Clone `fa-deploy-ws` and run the init / quick-start scripts named in **that repository’s README** (not public). Flags and robot IDs are documented only there.
 2. Follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
 
 **Safety:** Verify in `mock_components` (or that workspace’s documented sim path) before `hardware:=real`.

@@ -11,7 +11,7 @@ This workspace requires access to private repositories. Contact your team lead f
 ```{admonition} Source of truth
 :class: important
 
-The `fa-deploy-ws` README is **not public**. This page does **not** invent `--robot` flags, `--init-release`, `robot.local.yaml`, `./quick_start.sh --mock`, `fiveages_bringup`, or a directory tree. After you have access, follow **that repository’s README** and its init / quick-start scripts.
+The `fa-deploy-ws` README is **not public**. After you have access, follow **that repository’s README** and its init / quick-start scripts. Flags, robot IDs, and on-robot YAML are documented only there.
 ```
 
 ## Overview
@@ -22,7 +22,7 @@ What is verified on the **public** side and still applies as the pattern:
 
 - Clone the workspace, then run **`./init_repo.sh`** (same script name as [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)).
 - Do **not** `git submodule update --init --recursive`.
-- After init, `colcon build`, then `source install/setup.bash` in the launch terminal. Do not hand-write a `~/.bashrc` `source /opt/ros/...` chain as the documented path.
+- After init, `colcon build`, then `source install/setup.bash` in the launch terminal (standard ROS overlay).
 
 Extra flags, robot IDs, and on-robot YAML live in the private README — copy them from there.
 

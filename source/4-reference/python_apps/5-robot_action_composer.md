@@ -74,7 +74,7 @@ YAML discovery scans `task_configs/**/*.yaml` and `robots/*/` (optional vendor g
 
 ## Skills (registered names)
 
-Do not invent a Python `MoveJ` / `GripperOpen` action class. YAML blocks set `skill:` to a **registered name**. Categories (examples from the README index; parameters live in SKILLS_REFERENCE):
+YAML blocks set `skill:` to a **registered name** (not a Python `MoveJ` / `GripperOpen` action class). Categories (examples from the README index; parameters live in SKILLS_REFERENCE):
 
 | Category | Example skills |
 |----------|----------------|
@@ -122,7 +122,7 @@ check-robot-status --wait 3.0 --show-joint-names
 
 ## In-repo docs (this branch)
 
-Do not treat this Sphinx page as a substitute for the package docs:
+Package docs for parameters and CLI (follow these for the full list):
 
 | Doc | Content |
 |-----|---------|

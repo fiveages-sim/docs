@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -218,13 +218,16 @@ msgstr "**目标：** 先安装环境，再运行机器人演示（`hardware` �
 
 #: ../../source/0-overview/2-learning_path.md:41
 #: d91a74c285dd4cd49679e7ffe736b8e8
+#, fuzzy
 msgid ""
 "[Install Environment](../1-getting_started/2-install_environment.md) — "
 "Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / "
-"`ros-jazzy-desktop`). Do not hand-write `source /opt/ros/...` into "
-"`~/.bashrc`."
+"`ros-jazzy-desktop`). Workspace entry is `./init_repo.sh`, then `source "
+"install/setup.bash`."
 msgstr ""
-"[安装环境](../1-getting_started/2-install_environment.md) — Ubuntu 24.04、ROS 2 Jazzy + rosdep（open-deploy-ws README：fishros / `ros-jazzy-desktop`）。不要手写把 `source /opt/ros/...` 写进 `~/.bashrc`。"
+"[安装环境](../1-getting_started/2-install_environment.md) — Ubuntu 24.04、ROS "
+"2 Jazzy + rosdep（open-deploy-ws README：fishros / `ros-jazzy-"
+"desktop`）。不要手写把 `source /opt/ros/...` 写进 `~/.bashrc`。"
 
 #: ../../source/0-overview/2-learning_path.md:42
 #: 2be9448e539f437985a8b4e6295b4002
@@ -251,15 +254,16 @@ msgstr "编译工作空间："
 #: deee10856d7443be931c23ba37fcc63c
 #, fuzzy
 msgid "colcon build --symlink-install\n"
-msgstr ""
-"colcon build --symlink-install\n"
+msgstr "colcon build --symlink-install\n"
 
 #: ../../source/0-overview/2-learning_path.md:52
 #: 2c1cabf40bf045b384955340d7a3b0e2
 msgid ""
 "Launch the demo (defaults: `robot:=cr5`, `hardware:=mock_components` — "
 "omit both; there is no `hardware:=mock`):"
-msgstr "启动演示（默认：`robot:=cr5`、`hardware:=mock_components` — 两者都可省略；没有 `hardware:=mock`）："
+msgstr ""
+"启动演示（默认：`robot:=cr5`、`hardware:=mock_components` — 两者都可省略；没有 "
+"`hardware:=mock`）："
 
 #: ../../source/0-overview/2-learning_path.md:53
 #: 7387a851ecf94ac0a20cd41385272be5
@@ -288,7 +292,8 @@ msgid ""
 "**Outcome:** RViz opens with the OCS2 demo; FSM starts in HOLD. See "
 "[Quick Demo](../1-getting_started/1-quick_demo_public.md)."
 msgstr ""
-"**结果：** RViz 打开 OCS2 演示；FSM 从 HOLD 开始。见 [快速演示](../1-getting_started/1-quick_demo_public.md)。"
+"**结果：** RViz 打开 OCS2 演示；FSM 从 HOLD 开始。见 "
+"[快速演示](../1-getting_started/1-quick_demo_public.md)。"
 
 #: ../../source/0-overview/2-learning_path.md:62
 #: a921ac993e8041bea1184a54f73dc6f0
@@ -306,7 +311,8 @@ msgid ""
 "Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/`"
 " match `submodules_visibility.conf` (do not recursive-init)."
 msgstr ""
-"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 `submodules_visibility.conf` 一致（不要递归 init）。"
+"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 "
+"`submodules_visibility.conf` 一致（不要递归 init）。"
 
 #: ../../source/0-overview/2-learning_path.md:68
 #: 9d32ec7892704230b1b332a569293500
@@ -322,8 +328,7 @@ msgstr "用新机器人启动（省略 `hardware:=` 以保持 `mock_components`�
 #: 2f755e02c63c45eab0fc3bd8cc72568b
 #, fuzzy
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
-msgstr ""
-"ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
+msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 
 #: ../../source/0-overview/2-learning_path.md:73
 #: 0bb246923ffd4d7395eaee1870232d97
@@ -569,10 +574,11 @@ msgstr "Pico 企业版与消费版"
 
 #: ../../source/0-overview/2-learning_path.md:163
 #: dc076f612bdd4654a59345ad7ee05445
+#, fuzzy
 msgid ""
 "Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise "
-"supports USB 网络共享 and uses a **different App**. Do not install one App "
-"for both."
+"supports USB 网络共享 and uses a **different App**. Install the App that "
+"matches the headset edition."
 msgstr ""
 "Pico **企业版** 与 Pico **消费版** 是不同 SKU：企业版支持 USB 网络共享，并使用**不同的 "
 "App**。不要为两者安装同一个 App。"
@@ -641,10 +647,11 @@ msgid "Public Path (ARX Lift 2S, Acone arm, HighTorque Panthera HT)"
 msgstr "公开路径（方舟无限 Lift 2S、Acone 机械臂、高擎 Panthera HT）"
 
 #: ../../source/0-overview/2-learning_path.md:187
-#: d81011a623cf42599da5167f2f36540b
+#: a32c38e7c798406db5bb995a6b39773f
+#, fuzzy
 msgid ""
-"Use the matching **branch README** and `./quick_start.sh`. Do not treat "
-"Acone as Lift 2S."
+"Use the matching **branch README** and `./quick_start.sh`. **Acone** / "
+"**AC One** is arm-only; **Lift 2S** is the full-body platform."
 msgstr "使用对应 **分支 README** 和 `./quick_start.sh`。不要把 Acone 当成 Lift 2S。"
 
 #: ../../source/0-overview/2-learning_path.md:189
@@ -701,12 +708,14 @@ msgstr "FA 机器人（W2、W2R、S2、S2R、双臂 CCS）需要访问 `fa-deplo
 
 #: ../../source/0-overview/2-learning_path.md:202
 #: cec17d3573cf4d88a36a886de00c6ff8
+#, fuzzy
 msgid ""
 "Clone `fa-deploy-ws` and run the init / quick-start scripts named in "
-"**that repository’s README** (not public). Do not invent `--robot` flags "
-"or `robot.local.yaml` here."
+"**that repository’s README** (not public). Flags and robot IDs are "
+"documented only there."
 msgstr ""
-"克隆 `fa-deploy-ws`，并运行**该仓库 README**（非公开）中写明的 init / quick-start 脚本。此处不要编造 `--robot` 参数或 `robot.local.yaml`。"
+"克隆 `fa-deploy-ws`，并运行**该仓库 README**（非公开）中写明的 init / quick-start 脚本。参数和机器人 "
+"ID 只写在那里。"
 
 #: ../../source/0-overview/2-learning_path.md:203
 #: a724e84e09194dd4b48067db1afc94fe
@@ -985,3 +994,4 @@ msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库
 #~ "mode, verify trajectories, then switch "
 #~ "to real hardware."
 #~ msgstr "**安全：** 始终先从 `mock` 模式开始，确认轨迹无误后再切换到真实硬件。"
+

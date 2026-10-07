@@ -65,7 +65,7 @@ ros2 launch ocs2_arm_controller demo.launch.py \
 | `use_profile_eef` | `true`, `false` | `true` |
 | `enable_arms_target_manager` | `true`, `false` | `true` |
 
-Do not invent `rviz:=` / `headless:=` on this file.
+`demo.launch.py` does not declare `rviz:=` or `headless:=`. Use only the arguments in the table above.
 
 ## Verification
 

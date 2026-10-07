@@ -4,7 +4,7 @@ USD robot asset superproject for Isaac Sim.
 
 **Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-sim/robot_usds)
 
-Brand **EN/ZH** labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (English folder names match that table). Examples: 方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 中科第五纪 = **FiveAges**. Do not invent brands (including bare “Ark”).
+Brand **EN/ZH** labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (English folder names match that table). Examples: 方舟无限 = **ARX** (not bare “Ark”); 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 中科第五纪 = **FiveAges**.
 
 ## Purpose
 
@@ -78,7 +78,7 @@ Assets directly in `robot_usds` (not submodules):
 
 ### Gen1/Gen2/Gen3
 
-From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table (not invented labels):
+From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table:
 
 - **Gen1** — W1 (`humanoid/FiveAges/Gen1` → `fiveages-gen1-robot-usds`)
 - **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → `fiveages-gen2-robot-usds`)
@@ -86,7 +86,7 @@ From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/mai
 
 URDF / deploy: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 
-Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA — do not invent a `galbot.usd` prim path here.
+Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA.
 
 ## Related
 

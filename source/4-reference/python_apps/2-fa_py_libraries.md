@@ -37,7 +37,7 @@ What `./run.sh` does: activate the env (and source `[ros2].workspace` if set), t
 
 ### Direct Commands
 
-Commands from the fa-py-libraries README (do not invent flags):
+Commands from the fa-py-libraries README:
 
 | Command | What it does |
 |---------|----------------|

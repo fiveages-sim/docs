@@ -36,7 +36,7 @@ cd dexcap_teleop_ws
 
 ### 2. Initialize Environment
 
-Follow that **private workspace’s README** for its init / setup scripts. This page does not invent `conda create -n dexcap`, `deploy/deploy_fw.sh`, or `deploy/setup_env.bash`.
+Follow that **private workspace’s README** for its init / setup scripts.
 
 ### 3. Initialize Connection
 
@@ -57,7 +57,7 @@ Launch components in this order:
 3. Teleop joint mapper
 ```
 
-Launch order, package names, and topics: the **private README**. Do not invent `<robot>_bringup`, a hand-written `conda activate`, or extra launch files here.
+Launch order, package names, and topics: the **private README**.
 
 ## Topics
 

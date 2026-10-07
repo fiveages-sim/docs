@@ -5,7 +5,7 @@ Joint-position controller with a three-state FSM (Home / Hold / MoveJ). Optional
 ```{admonition} Source of truth
 :class: important
 
-Documented from the package READMEs only. Do not invent extra topics or command types.
+Documented from the package READMEs only. Topics and command types are those listed there.
 
 - English: [basic_joint_controller/README.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md)
 - Chinese: [README_zh.md](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)

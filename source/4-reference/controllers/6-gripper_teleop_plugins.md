@@ -8,9 +8,9 @@ Controller plugins for grippers and teleoperation.
 
 Listed in the [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md). The launch stack does **not** take `gripper:=`. Attach an end-effector with `type` / `left_type` / `right_type` (and optional `robot_profile` / `use_profile_eef`) from [robot_common_launch](../descriptions/2-common.md).
 
-Topics, plugin class names, and command examples: see that package’s README. This page does not invent `/gripper/command`, `/target_pose`, or an `arms_teleop_controller` package.
+Topics, plugin class names, and command examples: see that package’s README.
 
-The command package in the same repo is `command/` (`arms_target_manager`, `arms_teleop`, …) — not a fabricated `arms_teleop_controller` / `target_manager_controller`. Demo launch starts `arms_target_manager` when `enable_arms_target_manager` is `true`.
+The command package in the same repo is `command/` (`arms_target_manager`, `arms_teleop`, …). There is no `arms_teleop_controller` / `target_manager_controller`. Demo launch starts `arms_target_manager` when `enable_arms_target_manager` is `true`.
 
 ## Related
 

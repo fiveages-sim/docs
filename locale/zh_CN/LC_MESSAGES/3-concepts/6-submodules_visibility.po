@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -43,7 +43,10 @@ msgid ""
 "[`./init_repo.sh`](https://github.com/fiveages-sim/open-deploy-"
 "ws/blob/main/init_repo.sh). Format is pipe-separated, not INI."
 msgstr ""
-"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) 与 [`./init_repo.sh`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/init_repo.sh)。格式是竖线分隔，不是 INI。"
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/submodules_visibility.conf) 与 "
+"[`./init_repo.sh`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/init_repo.sh)。格式是竖线分隔，不是 INI。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:11
 #: a2cac4eb62f340e996544f8c83969295
@@ -102,7 +105,8 @@ msgid ""
 "From the [open-deploy-ws README](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/README.EN.md):"
 msgstr ""
-"来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)："
+"来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md)："
 
 #: ../../source/3-concepts/6-submodules_visibility.md:33
 #: 5ff266872fc04522b612b97cf5ddadb9
@@ -118,7 +122,8 @@ msgid ""
 "(source). Top-level `ocs2_ros2`, `arms_ros2_control`, and `robot-"
 "descriptions/common` are initialized when you pick **source**."
 msgstr ""
-"**核心模块模式：** 按模块选 `d`（GitHub Release `.deb`）或 `s`（源码）。选择**源码**时才会初始化顶层 `ocs2_ros2`、`arms_ros2_control` 和 `robot-descriptions/common`。"
+"**核心模块模式：** 按模块选 `d`（GitHub Release `.deb`）或 `s`（源码）。选择**源码**时才会初始化顶层 "
+"`ocs2_ros2`、`arms_ros2_control` 和 `robot-descriptions/common`。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:36
 #: 591c57c8abec45bb8e39d3680061ee63
@@ -126,7 +131,9 @@ msgid ""
 "Then the script inits nested modules according to visibility (skipped if "
 "the parent or common is deb), checks out configured branches, runs "
 "`rosdep` on source paths, and installs chosen debs."
-msgstr "随后脚本按可见性初始化嵌套模块（父模块或 common 为 deb 时跳过），检出配置的分支，在源码路径上运行 `rosdep`，并安装所选 deb。"
+msgstr ""
+"随后脚本按可见性初始化嵌套模块（父模块或 common 为 deb 时跳过），检出配置的分支，在源码路径上运行 `rosdep`，并安装所选 "
+"deb。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:38
 #: 331a1f2f13a2476ebb9c616f2f2299d4
@@ -157,7 +164,8 @@ msgid ""
 "`robot-descriptions` `common`, `manipulator/Dobot`, `manipulator/ARX`, "
 "`quadruped`, `humanoid/Galbot`"
 msgstr ""
-"`robot-descriptions` 的 `common`、`manipulator/Dobot`、`manipulator/ARX`、`quadruped`、`humanoid/Galbot`"
+"`robot-descriptions` 的 "
+"`common`、`manipulator/Dobot`、`manipulator/ARX`、`quadruped`、`humanoid/Galbot`"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
 #: 935d1be15151414f91d5adc5b0aa64b7
@@ -170,7 +178,8 @@ msgid ""
 "`manipulator/Tianji`, `manipulator/Rokae`, FiveAges `fiveages_w*` "
 "descriptions, `humanoid/Ubtech`"
 msgstr ""
-"`manipulator/Tianji`、`manipulator/Rokae`、FiveAges `fiveages_w*` 描述、`humanoid/Ubtech`"
+"`manipulator/Tianji`、`manipulator/Rokae`、FiveAges `fiveages_w*` "
+"描述、`humanoid/Ubtech`"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
 #: 199b094fa86445d78013781e4ae6738e ef9a5ffecb5147788c545caa527dad4d
@@ -189,9 +198,10 @@ msgstr "ocs2-wbc-controller, ocs2-humanoid, lina_planning"
 #: d3d63f2854384c8480f05b66aca7343d
 msgid ""
 "If you need private nested modules, use a workspace/README that documents"
-" private access (`fa-deploy-ws`). This page does not invent that repo’s "
-"extra flags."
-msgstr "若需要私有嵌套模块，使用文档写明私有权限的工作区/README（`fa-deploy-ws`）。本页不编造该仓库的额外参数。"
+" private access (`fa-deploy-ws`). Extra flags for that workspace are in "
+"its README after access."
+msgstr ""
+"若需要私有嵌套模块，使用文档写明私有权限的工作区/README（`fa-deploy-ws`）。该工作区的额外参数在开通后的 README 里。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:50
 #: 3848f88d059440d2bbbf3df9e865207d
@@ -636,3 +646,4 @@ msgstr "[源码 vs Deb](5-source_vs_deb.md)"
 
 #~ msgid "src/parent-repo|path/to/new-package|public"
 #~ msgstr "src/parent-repo|path/to/new-package|public"
+

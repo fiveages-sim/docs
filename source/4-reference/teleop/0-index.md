@@ -17,7 +17,7 @@ The stack supports multiple teleoperation methods:
 ```{admonition} VR Headset Recommendation
 :class: tip
 
-For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headsets. Both can use **WebXR** (`./run.sh vr`) and **XRoboToolkit** (`./run.sh vr-xrt`). **Pico Enterprise** is the preferred Pico SKU: it supports **USB shared networking (USB 网络共享)** and uses a **different headset App** from Pico consumer — do not treat one App as covering both editions.
+For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headsets. Both can use **WebXR** (`./run.sh vr`) and **XRoboToolkit** (`./run.sh vr-xrt`). **Pico Enterprise** is the preferred Pico SKU: it supports **USB shared networking (USB 网络共享)** and uses a **different headset App** from Pico consumer.
 ```
 
 ## In This Section

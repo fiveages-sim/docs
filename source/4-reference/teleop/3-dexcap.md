@@ -51,7 +51,7 @@ Deployment workspace for DexCap teleoperation.
 
 ### Setup
 
-Follow the **private workspace README** for its init / setup scripts. This page does not invent `conda create -n dexcap`, `deploy/deploy_fw.sh`, or `deploy/setup_env.bash`.
+Follow the **private workspace README** for its init / setup scripts.
 
 ## Related
 

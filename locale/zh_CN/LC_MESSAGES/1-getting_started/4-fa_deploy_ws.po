@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -50,15 +50,13 @@ msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:14
-#: 91d582537e5245daaff2805c613ea97f
+#: 5366d98ac05c48f88f18dabe6f451502
 msgid ""
-"The `fa-deploy-ws` README is **not public**. This page does **not** "
-"invent `--robot` flags, `--init-release`, `robot.local.yaml`, "
-"`./quick_start.sh --mock`, `fiveages_bringup`, or a directory tree. After"
-" you have access, follow **that repository’s README** and its init / "
-"quick-start scripts."
+"The `fa-deploy-ws` README is **not public**. After you have access, "
+"follow **that repository’s README** and its init / quick-start scripts. "
+"Flags, robot IDs, and on-robot YAML are documented only there."
 msgstr ""
-"`fa-deploy-ws` 的 README **不公开**。本页**不编造** `--robot`、`--init-release`、`robot.local.yaml`、`./quick_start.sh --mock`、`fiveages_bringup` 或目录树。有权限后，以**该仓库 README** 及其 init / quick-start 脚本为准。"
+"`fa-deploy-ws` 的 README **不公开**。开通后以**该仓库 README** 及其 init / quick-start 脚本为准。参数、机器人 ID 和机上 YAML 只写在那里。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:17
 #: 546dfa7ce2c348328692fc1ef106bb01
@@ -71,7 +69,8 @@ msgid ""
 "`fa-deploy-ws` is the internal counterpart of [open-deploy-"
 "ws](3-open_deploy_ws.md). Public users stay on `open-deploy-ws`."
 msgstr ""
-"`fa-deploy-ws` 是 [open-deploy-ws](3-open_deploy_ws.md) 的内部对应工作区。公开用户继续用 `open-deploy-ws`。"
+"`fa-deploy-ws` 是 [open-deploy-ws](3-open_deploy_ws.md) 的内部对应工作区。公开用户继续用 "
+"`open-deploy-ws`。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:21
 #: fec2cb4357024d22ac15889b2cd0fad4
@@ -85,7 +84,8 @@ msgid ""
 "[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-"
 "ws/blob/main/README.EN.md))."
 msgstr ""
-"克隆工作区，然后运行 **`./init_repo.sh`**（脚本名与 [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) 相同）。"
+"克隆工作区，然后运行 **`./init_repo.sh`**（脚本名与 [open-deploy-ws](https://github.com"
+"/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) 相同）。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:24
 #: 4647535cf638477c8e55e238099b81e9
@@ -94,12 +94,13 @@ msgstr "**不要** `git submodule update --init --recursive`。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:25
 #: 773212ba772e4b189b74fcec7ac32e3c
+#, fuzzy
 msgid ""
 "After init, `colcon build`, then `source install/setup.bash` in the "
-"launch terminal. Do not hand-write a `~/.bashrc` `source /opt/ros/...` "
-"chain as the documented path."
+"launch terminal (standard ROS overlay)."
 msgstr ""
-"初始化后 `colcon build`，再在启动终端 `source install/setup.bash`。不要把手工 `~/.bashrc` `source /opt/ros/...` 链当作文档路径。"
+"初始化后 `colcon build`，再在启动终端 `source install/setup.bash`。不要把手工 `~/.bashrc` "
+"`source /opt/ros/...` 链当作文档路径。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:27
 #: a9c44045c1fd4413a6c9975d5c70a409
@@ -618,3 +619,20 @@ msgstr "[WBC 控制器参考](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #~ msgid "[FA robot descriptions](../4-reference/descriptions/5-fa_robots.md)"
 #~ msgstr "[FA 机器人描述](../4-reference/descriptions/5-fa_robots.md)"
+
+#~ msgid ""
+#~ "The `fa-deploy-ws` README is **not"
+#~ " public**. This page does **not** "
+#~ "invent `--robot` flags, `--init-release`, "
+#~ "`robot.local.yaml`, `./quick_start.sh --mock`, "
+#~ "`fiveages_bringup`, or a directory tree. "
+#~ "After you have access, follow **that "
+#~ "repository’s README** and its init / "
+#~ "quick-start scripts."
+#~ msgstr ""
+#~ "`fa-deploy-ws` 的 README "
+#~ "**不公开**。本页**不编造** `--robot`、`--init-"
+#~ "release`、`robot.local.yaml`、`./quick_start.sh "
+#~ "--mock`、`fiveages_bringup` 或目录树。有权限后，以**该仓库 README** "
+#~ "及其 init / quick-start 脚本为准。"
+

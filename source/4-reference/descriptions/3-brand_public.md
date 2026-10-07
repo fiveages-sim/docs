@@ -2,7 +2,7 @@
 
 Public robot description packages for specific brands.
 
-Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Do not invent brands. Display names used in this docs set:
+Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). Display names used in this docs set (方舟无限 = **ARX**, not bare “Ark”):
 
 | 中文简称 | English brand / identifier |
 |----------|----------------------------|
@@ -142,4 +142,4 @@ Typically used with separate quadruped controller stacks.
 
 ## Package layout
 
-Do not use a generic `urdf/` + `ocs2_arm_config.yaml` + `display.launch.py` tree. Copy a real package (Acone: `xacro/`, `xacro/ros2_control/`, `config/ocs2/`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Umbrella submodule paths: [robot_descriptions](1-robot_descriptions.md).
+Copy a real package (Acone: `xacro/`, `xacro/ros2_control/`, `config/ocs2/`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). Umbrella submodule paths: [robot_descriptions](1-robot_descriptions.md).

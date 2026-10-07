@@ -1,6 +1,6 @@
 # Workspace Layout
 
-Layout of the **public** deploy workspace, from the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md). Do not invent extra top-level scripts.
+Layout of the **public** deploy workspace, from the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md). Top-level scripts and config files are those listed in that README (`./init_repo.sh`, `submodules_visibility.conf`, `deb_versions.conf`, and `scripts/`).
 
 ## open-deploy-ws
 
@@ -46,7 +46,7 @@ Nested public/private lines: [Submodules Visibility](6-submodules_visibility.md)
 
 ## fa-deploy-ws
 
-Internal workspace (private). This page does **not** invent its tree or extra flags. Follow that repository’s README after you have access. Public users stay on `open-deploy-ws`.
+Internal workspace (private). Tree and extra flags are in that repository’s README after you have access. Public users stay on `open-deploy-ws`.
 
 ## Related
 

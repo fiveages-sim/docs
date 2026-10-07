@@ -36,7 +36,7 @@ colcon build --packages-up-to lina_planning
 ```{admonition} TODO
 :class: note
 
-API details, function signatures, and code examples should be taken from the repository's documentation and header files. Do not rely on examples shown elsewhere.
+API details, function signatures, and code examples are in that repository’s documentation and header files.
 ```
 
 ## Configuration

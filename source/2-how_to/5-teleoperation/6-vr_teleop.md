@@ -13,12 +13,12 @@ Control robots using a VR headset and controllers.
 ```{admonition} Pico Enterprise vs consumer
 :class: important
 
-Treat **Pico Enterprise** and **Pico consumer** as different SKUs. Do not document one headset App as covering both.
+Treat **Pico Enterprise** and **Pico consumer** as different SKUs. Each edition has its own headset App.
 
 1. **USB shared networking (USB 网络共享)** — Pico Enterprise can share a network with the ROS 2 PC over USB. That is an Enterprise capability; it is not the consumer Pico path.
 2. **Different Apps** — Enterprise and consumer Pico use **different** headset Apps. Install the App that matches the headset edition. The fa-py-libraries README’s XRoboToolkit path is “XRoboToolkit App + PC Service” versus browser WebXR; it does not name a single store listing for both Pico editions.
 
-This page does not invent store links, package names, or ADB steps.
+Store listings, extra package names, and ADB steps are in the headset / fa-py-libraries READMEs when they document them.
 ```
 
 ```{admonition} Pico Recommended

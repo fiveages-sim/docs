@@ -37,7 +37,7 @@ cd ros2_viser
 pip install -e .
 ```
 
-Requires `ros2-robot-interface`. Do not treat `pip install ros2-viser` from a random venv as the stack’s main entry.
+Requires `ros2-robot-interface`. The stack entry is the deploy workspace / `fa-py-libraries`, not `pip install ros2-viser` from an arbitrary venv.
 
 ## Embedding (README API)
 

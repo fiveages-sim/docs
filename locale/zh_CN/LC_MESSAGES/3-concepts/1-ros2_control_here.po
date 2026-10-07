@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -47,7 +47,13 @@ msgid ""
 "sim/robot-descriptions-"
 "common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)"
 msgstr ""
-"Launch `hardware:=` → xacro `ros2_control_hardware_type`：[`robot_common_launch` README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md) 与 [`launch_arg_utils.build_xacro_mappings()`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)"
+"Launch `hardware:=` → xacro "
+"`ros2_control_hardware_type`：[`robot_common_launch` "
+"README](https://github.com/fiveages-sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/README.md) 与 "
+"[`launch_arg_utils.build_xacro_mappings()`](https://github.com/fiveages-"
+"sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:9
 #: 3991de69cced40af970d68f080c7d068
@@ -58,7 +64,10 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)"
 " (`mock_components`)"
 msgstr ""
-"OCS2 演示的默认 `hardware`：[`ocs2_arm_controller/launch/demo.launch.py`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)（`mock_components`）"
+"OCS2 演示的默认 "
+"`hardware`：[`ocs2_arm_controller/launch/demo.launch.py`](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)（`mock_components`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:10
 #: 6b686a7c12a04b3d941c534c6ff18c08
@@ -70,16 +79,22 @@ msgid ""
 "Other robots use the same `hardware` keys; the **real** plugin class is "
 "that robot’s own xacro."
 msgstr ""
-"下列插件名来自 [`arx_acone_description/xacro/ros2_control/robot.xacro`](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)。其他机器人使用相同的 `hardware` 键；**真实**插件类以该机器人自己的 xacro 为准。"
+"下列插件名来自 "
+"[`arx_acone_description/xacro/ros2_control/robot.xacro`](https://github.com"
+"/fiveages-sim/robot-descriptions-"
+"arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)。其他机器人使用相同的"
+" `hardware` 键；**真实**插件类以该机器人自己的 xacro 为准。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:13
 #: 63f7baa11ffc42128df1637aab79f4f1
+#, fuzzy
 msgid ""
 "Upstream lifecycle / QoS / “how Controller Manager works in general”: "
-"[ros2_control documentation](https://control.ros.org/). Do not treat "
-"those pages as this stack’s topic or argument list."
+"[ros2_control documentation](https://control.ros.org/). This stack’s "
+"launch arguments and topics are the rows and READMEs on this page."
 msgstr ""
-"上游生命周期 / QoS /「Controller Manager 一般如何工作」见 [ros2_control 文档](https://control.ros.org/)。不要把那些页面当作本技术栈的话题或参数列表。"
+"上游生命周期 / QoS /「Controller Manager 一般如何工作」见 [ros2_control "
+"文档](https://control.ros.org/)。不要把那些页面当作本技术栈的话题或参数列表。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:15
 #: d2854ce7244c44d2afa3b274c3622dff
@@ -94,7 +109,9 @@ msgid ""
 "`true`. Profile YAML `hardware:` (serial, `arm_ctrl_mode`, …) is injected"
 " **only** when `hardware:=real`."
 msgstr ""
-"`build_xacro_mappings()` 始终把 `ros2_control_hardware_type` 设为 launch 的 `hardware` 字符串。当 `hardware:=gz` 时还会把 `gazebo` 设为 `true`。Profile YAML 的 `hardware:`（串口、`arm_ctrl_mode` 等）**仅**在 `hardware:=real` 时注入。"
+"`build_xacro_mappings()` 始终把 `ros2_control_hardware_type` 设为 launch 的 "
+"`hardware` 字符串。当 `hardware:=gz` 时还会把 `gazebo` 设为 `true`。Profile YAML 的 "
+"`hardware:`（串口、`arm_ctrl_mode` 等）**仅**在 `hardware:=real` 时注入。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:19
 #: f4bc40aeac794691b58c375d6beed78d
@@ -104,7 +121,9 @@ msgid ""
 "common/blob/main/robot_common_launch/README.md), Acone xacro, "
 "`demo.launch.py`):"
 msgstr ""
-"已文档化的 launch 取值（[robot_common_launch](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)、Acone xacro、`demo.launch.py`）："
+"已文档化的 launch 取值（[robot_common_launch](https://github.com/fiveages-sim"
+"/robot-descriptions-common/blob/main/robot_common_launch/README.md)、Acone"
+" xacro、`demo.launch.py`）："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: 53bfddd27a69492b8c5500f1f0b4da69
@@ -154,7 +173,9 @@ msgid ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md):"
 " install `ros-jazzy-ros-gz` and `ros-jazzy-gz-ros2-control`"
 msgstr ""
-"[ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：安装 `ros-jazzy-ros-gz` 和 `ros-jazzy-gz-ros2-control`"
+"[ocs2_arm README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：安装"
+" `ros-jazzy-ros-gz` 和 `ros-jazzy-gz-ros2-control`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: f9ba422c0edf45afa31b8e522c798892
@@ -175,7 +196,9 @@ msgid ""
 "`topic_based_ros2_control` ([arms_ros2_control README](https://github.com"
 "/fiveages-sim/arms_ros2_control/blob/main/README.md))"
 msgstr ""
-"Acone 参数：`/isaac/joint_command`、`/isaac/joint_states`。需构建 `topic_based_ros2_control`（[arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)）"
+"Acone 参数：`/isaac/joint_command`、`/isaac/joint_states`。需构建 "
+"`topic_based_ros2_control`（[arms_ros2_control README](https://github.com"
+"/fiveages-sim/arms_ros2_control/blob/main/README.md)）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: 335fc1146dfc49cd819773afb7d4768a
@@ -191,9 +214,9 @@ msgstr "厂商插件（Acone：`arx_ros2_control/ArxX5Hardware`）"
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: 6916713e8b7546d689254f7f4970e078
 msgid ""
-"Other brands: that description’s `xacro/ros2_control/*.xacro`. Do not "
-"invent class names."
-msgstr "其他品牌：见该描述包的 `xacro/ros2_control/*.xacro`。不要编造类名。"
+"Other brands: use the plugin class from that description’s "
+"`xacro/ros2_control/*.xacro`."
+msgstr "其他品牌：使用该描述包 `xacro/ros2_control/*.xacro` 中的插件类。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:28
 #: 70f8f94149af4968b702da350cf08b13
@@ -209,7 +232,10 @@ msgid ""
 "`arx_lift2s` + `hardware:=isaac` merges `isaac.yaml`. No file → no "
 "overlay."
 msgstr ""
-"可选控制器 overlay：若存在 `<robot>_description/config/ros2_control/<hardware>.yaml`，`load_robot_config` 会合并它。common README 示例：`arx_lift2s` + `hardware:=isaac` 合并 `isaac.yaml`。没有文件则不 overlay。"
+"可选控制器 overlay：若存在 "
+"`<robot>_description/config/ros2_control/<hardware>.yaml`，`load_robot_config`"
+" 会合并它。common README 示例：`arx_lift2s` + `hardware:=isaac` 合并 "
+"`isaac.yaml`。没有文件则不 overlay。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:32
 #: 5667d77b530e4a1884e77c008aec0a22
@@ -219,13 +245,11 @@ msgstr "控制器"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:34
 #: 8477ff280c8142d592ce636ff40d4bd1
-#, fuzzy
 msgid ""
 "From [arms_ros2_control](https://github.com/fiveages-"
-"sim/arms_ros2_control) READMEs / launches — do not invent names:"
+"sim/arms_ros2_control) READMEs / launches:"
 msgstr ""
-"此处控制器均按 [arms_ros2_control](https://github.com/fiveages-"
-"sim/arms_ros2_control) 的 README / launch 记录（不要编造名称）："
+"摘自 [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 的 README / launch："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: 86d038c7d6d1482ab9268969201cdb4c
@@ -305,7 +329,9 @@ msgid ""
 " the controller **detects** the mode from interfaces present in the robot"
 " config."
 msgstr ""
-"[ocs2_arm_controller README — Interface Configuration](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：控制器根据机器人配置中存在的接口**检测**模式。"
+"[ocs2_arm_controller README — Interface Configuration](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：控制器根据机器人配置中存在的接口**检测**模式。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
 #: 886497797c3b493a99c2edeb4b28d255
@@ -357,7 +383,7 @@ msgstr "`position`, `velocity`, `effort`"
 #: 6267b9a4620c4d1faf2b419686188864
 #, fuzzy, python-brace-format
 msgid ""
-"Do not invent a universal `/target_pose` or `/target_joint_positions` "
+"There is no stack-wide `/target_pose` or `/target_joint_positions` "
 "(`JointState`). MoveJ on `basic_joint_controller` is "
 "`/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). "
 "FSM: `/fsm_command` (`std_msgs/Int32`) — [FSM and "
@@ -381,7 +407,8 @@ msgid ""
 "[robot_common_launch](../4-reference/descriptions/2-common.md) — `type` /"
 " `left_type` / `right_type`, profile merge"
 msgstr ""
-"[robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`，profile 合并"
+"[robot_common_launch](../4-reference/descriptions/2-common.md) — `type` /"
+" `left_type` / `right_type`，profile 合并"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:59
 #: 6f193031c1404effb1e53698d5c251d0
@@ -751,3 +778,4 @@ msgstr "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #~ msgid "**Use appropriate QoS** — Match publisher/subscriber QoS settings"
 #~ msgstr "**使用合适的 QoS** — 匹配发布者/订阅者的 QoS 设置"
+

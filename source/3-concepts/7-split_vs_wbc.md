@@ -9,12 +9,12 @@ Two real launch paths in [ocs2_arm_controller](https://github.com/fiveages-sim/a
 | Launch | `ros2 launch ocs2_arm_controller split_body.launch.py` (`launch_mode` `split_body`) | `ros2 launch ocs2_arm_controller full_body.launch.py` (`launch_mode` `full_body`) when the robot config type is `ocs2_wbc_controller/Ocs2WbcController` |
 | Lift2S menu | `./quick_start.sh` → Launch → Lift2S → **split body** | same menu → **full body** |
 
-Do not treat `split_body.launch.py` as whole-body control. There is no public README that lists a standalone `ros2 launch ocs2_wbc_controller …` entry; `full_body.launch.py` is the in-tree loader.
+`split_body.launch.py` is the split (分体) path. Whole-body control uses `full_body.launch.py` (there is no public standalone `ros2 launch ocs2_wbc_controller …` entry).
 
-## Packages (do not invent)
+## Packages
 
 - **basic_joint_controller** — joint FSM Home / Hold / MoveJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
 - **ocs2_arm_controller** — arm MPC FSM HOME / OCS2 / HOLD (package README).
-- **ocs2_wbc_controller** — private submodule; whole-body MPC. This docs set does not invent its states or topics.
+- **ocs2_wbc_controller** — private submodule; whole-body MPC. States and topics are in that package README after access.
 
 FSM command values: [FSM and Topics](4-fsm_and_topics.md). Controllers index: [Controllers reference](../4-reference/controllers/0-index.md).

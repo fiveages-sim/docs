@@ -5,7 +5,7 @@ Whole-body MPC (**全身控制**) for wheeled dual-arm robots, using `ocs2_wheel
 ```{admonition} Access Required
 :class: warning
 
-`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is a **private** submodule (`ocs2-wbc-controller`). This page does not invent topics, FSM values, or a standalone `ocs2_wbc_controller` launch file.
+`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is a **private** submodule (`ocs2-wbc-controller`). Topics, FSM values, and launch names are in that package README after access. The in-tree loader on the public side is `full_body.launch.py`.
 ```
 
 ## Role
@@ -27,7 +27,7 @@ ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>
 
 The same file declares `type` and `create_robot_profile_launch_arguments()` (`left_type` / `right_type`, `use_profile_eef`). End-effectors: [ocs2_arm_controller](2-ocs2_arm_controller.md) and [robot_common_launch](../descriptions/2-common.md).
 
-Do not treat `split_body.launch.py` as whole-body control.
+`split_body.launch.py` is the split (分体) path; whole-body control uses `full_body.launch.py`.
 
 ## Related
 

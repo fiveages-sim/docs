@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -112,11 +112,13 @@ msgstr "手动回退"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:30
 #: 127a87761c99464784b852e76440f1f6
+#, fuzzy
 msgid ""
 "Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside"
 " a project venv; `--no-deps` on uv so `rclpy` is not fetched from PyPI) "
-"is only for package development outside those umbrellas. Do not treat "
-"`pip install ros2-robot-interface` on system Python as the stack entry."
+"is only for package development outside those umbrellas. The stack entry "
+"is the deploy workspace / `fa-py-libraries`, not `pip install ros2-robot-"
+"interface` on system Python."
 msgstr ""
 "单独克隆 `ros2_robot_interface` 并 `pip install -e .`（在项目虚拟环境内；uv 加 `--no-"
 "deps` 以免从 PyPI 拉 `rclpy`）只用于这些伞仓之外的包开发。不要把系统 Python 上的 `pip install ros2"
@@ -267,12 +269,12 @@ msgstr "FSM"
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:103
 #: 2601591b3fb941dcb7ec94802dd6fcd4
 msgid ""
-"Controller FSM on `/fsm_command` is **`std_msgs/Int32`**. Do not send "
-"invented strings such as `stand` / `walk`. See [FSM and "
+"Controller FSM on `/fsm_command` is **`std_msgs/Int32`** (not strings "
+"such as `stand` / `walk`). See [FSM and "
 "Topics](../../3-concepts/4-fsm_and_topics.md)."
 msgstr ""
-"`/fsm_command` 上的控制器 FSM 是 **`std_msgs/Int32`**。不要发送编造的 `stand` / `walk` "
-"字符串。见 [FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+"`/fsm_command` 上的控制器 FSM 是 **`std_msgs/Int32`**（不是 `stand` / `walk` "
+"这类字符串）。见 [FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:105
 #: 72923bd8f33e49cd95146fad4473e9c5

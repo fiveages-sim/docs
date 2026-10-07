@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:57+0000\n"
+"POT-Creation-Date: 2026-10-07 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -55,7 +55,12 @@ msgid ""
 "`/target_pose`. Per-controller topics: the controller pages and package "
 "READMEs."
 msgstr ""
-"`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。没有文档化的 `/mode_command` 或 `/fsm_state` **String**，也没有轮式臂 `stand` / `walk` / `arm_teleop` 约定。[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) 另列出 `/fsm_state` 为 `std_msgs/Int32`（取值含义相同）以及末端目标 `/left_target` / `/left_target/stamped` — 那是**该分支**的外部接口，不是全栈 `/target_pose`。各控制器话题见对应页面和包 README。"
+"`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。没有文档化的 `/mode_command` "
+"或 `/fsm_state` **String**，也没有轮式臂 `stand` / `walk` / `arm_teleop` 约定"
+"。[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
+"/panthera-ht/README.EN.md) 另列出 `/fsm_state` 为 "
+"`std_msgs/Int32`（取值含义相同）以及末端目标 `/left_target` / `/left_target/stamped` — "
+"那是**该分支**的外部接口，不是全栈 `/target_pose`。各控制器话题见对应页面和包 README。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:11
 #: db9b80d9320f4c4c958bae30b5ddbc7b
@@ -143,9 +148,9 @@ msgid "Whole-body stack"
 msgstr "全身栈"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 15c5e58e4dfb4900a2405adfbfec95df
-msgid "Private package; do not invent states here"
-msgstr "私有软件包；此处不编造状态"
+#: 4e7093c2def84fe4812ecdf499554d58
+msgid "Private package; states and topics are in that README after access"
+msgstr "私有包；状态和话题在开通后的 README 里"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:23
 #: 3f3fd6eadcf1497795fc2f65313ab3b4
@@ -154,10 +159,11 @@ msgstr "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HO
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:27
 #: 94678c4c8594405fba17ab5a57e64f50
+#, fuzzy
 msgid ""
 "Split vs whole-body launches (and the Lift2S `quick_start` **split body**"
-" / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Do not "
-"describe teleop as a separate FSM state — [Isomorphic "
+" / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Teleop "
+"is a separate interface, not an extra FSM state — [Isomorphic "
 "Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
 msgstr ""
 "分体与全身 launch（以及 Lift2S `quick_start` 的 **split body** / **full body** "
@@ -754,3 +760,7 @@ msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 #~ "`String`。没有文档化的 `/mode_command`、`/fsm_state` String，或轮臂人形的"
 #~ " `stand` / `walk` / `arm_teleop` "
 #~ "约定。各控制器话题见对应页面和软件包 README。"
+
+#~ msgid "Private package; do not invent states here"
+#~ msgstr "私有软件包；此处不编造状态"
+

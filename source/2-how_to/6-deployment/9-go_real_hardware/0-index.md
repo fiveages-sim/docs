@@ -16,7 +16,7 @@ Working with real robots requires:
 
 ### Public Path (open-deploy-ws)
 
-The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`); do not treat Acone as the full Lift 2S.
+The following robots can be deployed to real hardware from **lean `open-deploy-ws` branches**. Follow each branch README (`./init_repo.sh` / `./quick_start.sh`). **Acone** / **AC One** is arm-only; **Lift 2S** is the full-body platform.
 
 | Robot | Role | Branch | How-to |
 |-------|------|--------|--------|
@@ -112,11 +112,11 @@ Use the **branch README** / `./quick_start.sh`. There is no documented `<robot>_
 
 ### Gradual testing
 
-Start from HOLD, then HOME, then MOVEJ / OCS2 as the **running** controller allows ([FSM and Topics](../../../3-concepts/4-fsm_and_topics.md)). Do not send invented string commands such as `stand` / `walk`.
+Start from HOLD, then HOME, then MOVEJ / OCS2 as the **running** controller allows ([FSM and Topics](../../../3-concepts/4-fsm_and_topics.md)). `/fsm_command` is `std_msgs/Int32` (not strings such as `stand` / `walk`).
 
 ## Public Robot Deployment (open-deploy-ws)
 
-Use the matching **branch** and its README scripts. Do not treat `demo.launch.py robot:=arx_acone` as Lift 2S, and do not use the invented name `ht_panthera` (README launch name is `panthera_ht`).
+Use the matching **branch** and its README scripts. `demo.launch.py robot:=arx_acone` is Acone (arm only), not Lift 2S. The HighTorque launch key is `panthera_ht`.
 
 - **[ARX Lift 2S](1-arx_lift2s.md)** — `git clone -b arx-lift2s …` then `./init_repo.sh` and `./quick_start.sh`. Full-body including chassis.
 - **Acone** / **AC One** — arm-only; pick ACone in that same `quick_start` menu for co-debug.
@@ -124,7 +124,7 @@ Use the matching **branch** and its README scripts. Do not treat `demo.launch.py
 
 ## Internal Deployment (fa-deploy-ws)
 
-The `fa-deploy-ws` README is not public. After you have access, run the **init / quick-start scripts named in that README**. This page does not invent `--robot`, `robot.local.yaml`, or extra flags. Pattern on the public side: [fa-deploy-ws Setup](../../../1-getting_started/4-fa_deploy_ws.md).
+The `fa-deploy-ws` README is not public. After you have access, run the **init / quick-start scripts named in that README**. Flags and robot IDs are documented only there. Public-side pattern: [fa-deploy-ws Setup](../../../1-getting_started/4-fa_deploy_ws.md).
 
 ## Common Hardware Issues
 

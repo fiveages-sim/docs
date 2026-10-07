@@ -37,7 +37,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>
 | ARX (方舟无限) | `arx_acone` (**arm only**), `arx_lift2s` (**Lift 2S** full-body) | ARX how-to / description packages |
 | HighTorque (高擎) | `panthera_ht` | [panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob/panthera-ht/README.EN.md) |
 
-Use the key that matches `{key}_description`. Do not invent extra names.
+Use the key that matches `{key}_description` (the description packages you initialized).
 
 ## Example: Dobot to ARX
 

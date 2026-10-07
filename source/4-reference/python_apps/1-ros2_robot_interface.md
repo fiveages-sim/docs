@@ -27,7 +27,7 @@ Datagen / motion-queue path: from a **lerobot_ros2** checkout, `./init.sh all-mo
 :::{admonition} Manual fallback
 :class: note
 
-Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside a project venv; `--no-deps` on uv so `rclpy` is not fetched from PyPI) is only for package development outside those umbrellas. Do not treat `pip install ros2-robot-interface` on system Python as the stack entry.
+Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside a project venv; `--no-deps` on uv so `rclpy` is not fetched from PyPI) is only for package development outside those umbrellas. The stack entry is the deploy workspace / `fa-py-libraries`, not `pip install ros2-robot-interface` on system Python.
 :::
 
 ## Quick Start
@@ -100,7 +100,7 @@ robot.get_gripper_position()  # -> float
 
 ### FSM
 
-Controller FSM on `/fsm_command` is **`std_msgs/Int32`**. Do not send invented strings such as `stand` / `walk`. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+Controller FSM on `/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / `walk`). See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## Async Interface
 
