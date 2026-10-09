@@ -67,7 +67,7 @@ sudo rosdep init   # first time on this machine; skip if already initialized
 rosdep update
 :::
 
-After this, clone a deploy workspace and run **`./init_repo.sh`**. CI / no TTY (after [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8), or once you pull that script): `./init_repo.sh --public --ocs2=deb --arms=source --common=source`. Details: [open-deploy-ws Setup](3-open_deploy_ws.md). Then `source install/setup.bash` after `colcon build`.
+After this, clone a deploy workspace and run **`./init_repo.sh`**. CI / no TTY: `./init_repo.sh --public --ocs2=deb --arms=source --common=source` (current `main`; `./init_repo.sh --help` lists the flags). Details: [open-deploy-ws Setup](3-open_deploy_ws.md). Then `source install/setup.bash` after `colcon build`.
 
 ### Optional shortcut: fishros
 
