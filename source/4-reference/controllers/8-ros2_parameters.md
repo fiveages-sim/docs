@@ -20,6 +20,7 @@ Three columns: **Parameter**, **Type / default**, **Meaning** (the **When** tag 
 
 `config/ocs2/*.info` is **not** the ROS 2 parameter server. `robot_name` selects `{robot_name}_description`; the task file is `{pkg}/config/ocs2/task.info` unless launch YAML sets `info_file_name`.
 
+(basic-joint-controller)=
 ## Basic Joint Controller
 
 Plugin `basic_joint_controller/BasicJointController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters). Home keys: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/basic_joint_controller/README.md) / [README_zh](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).

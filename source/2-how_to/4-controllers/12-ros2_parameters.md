@@ -44,6 +44,7 @@ A YAML value is always applied when the controller or 硬件接口 plugin **star
 
 These Runtime paths are **not** instant callbacks.
 
+(framework-common-parameters)=
 ## Framework-common parameters
 
 **Basic Joint Controller** and **OCS2 Arm Controller** both use the same ros2_control `ControllerInterface` / `controller_manager` keys. They are listed **once** here. Per-controller tables keep package-specific keys only.
@@ -62,7 +63,7 @@ Unload and reload the controller to change these.
 
 ## Shared mechanisms
 
-One place for behavior that several controllers share in `libraries/arms_controller_common/`. **MoveJ YAML keys are documented on [Basic Joint Controller](../../4-reference/controllers/8-ros2_parameters.md#basic-joint-controller)** — that is the primary MoveJ parameter page. **OCS2 Arm Controller** README FSM is HOME / HOLD / OCS2; it constructs `StateMoveJ` for canonical command `4` (and IK MoveL when `lina_planning` is present) but does not treat MoveJ as a README first-class mode.
+One place for behavior that several controllers share in `libraries/arms_controller_common/`. MoveJ YAML keys are on the [Basic Joint Controller](../../4-reference/controllers/8-ros2_parameters.md) parameter table (the primary MoveJ page). **OCS2 Arm Controller** README FSM is HOME / HOLD / OCS2; it constructs `StateMoveJ` for canonical command `4` (and IK MoveL when `lina_planning` is present) but does not treat MoveJ as a README first-class mode.
 
 运控 layering (controller vs 硬件接口 vs 真机驱动层, 分体 vs 全身) stays on the existing pages — [ros2_control here](../../3-concepts/1-ros2_control_here.md), [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md), [Hardware Interfaces](../../4-reference/hardware/0-index.md). The internal Feishu 运控架构图 is whiteboard-only and is not redrawn here.
 
@@ -77,6 +78,7 @@ One place for behavior that several controllers share in `libraries/arms_control
 
 Do not send `3` expecting MOVEJ on the arm / WBC controller. Full integer table: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
+(home-statehome)=
 ### Home (`StateHome`)
 
 Both **Basic Joint Controller** and **OCS2 Arm Controller** use `arms_controller_common::StateHome`. Names, defaults, and **When** tags: [`arms_controller_common` README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/libraries/arms_controller_common/README.md).
