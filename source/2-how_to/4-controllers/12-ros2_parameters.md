@@ -30,7 +30,7 @@ ros2 param get /ocs2_arm_controller movel_duration
 ros2 param get /left_gripper_controller force_threshold
 :::
 
-Hardware `<param>` values do **not** appear on `ros2 param list`. They are baked into `/robot_description` when xacro runs. Confirm the plugin with `ros2 control list_hardware_interfaces` and the xacro under `xacro/ros2_control/`.
+Most hardware `<param>` values do **not** appear on `ros2 param list` — they are baked into `/robot_description` when xacro runs. Some public driver-layer plugins also `declare_parameter` the same names as node params (ARX, HighTorque, Marvin, some 灵巧手); those rows are marked **Runtime** on [Driver layer parameters](../../4-reference/hardware/4-ros2_parameters.md). Confirm the plugin with `ros2 control list_hardware_interfaces` and the xacro under `xacro/ros2_control/`.
 
 ## Startup vs runtime
 

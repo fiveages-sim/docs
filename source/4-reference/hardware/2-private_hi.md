@@ -10,7 +10,7 @@ These packages require private repository access. Contact your team lead for acc
 
 ## Overview
 
-The following private driver-layer plugins are available for internal deployments. For specific configuration parameters, API details, and usage instructions, refer to each repository's README and documentation.
+The following private driver-layer packages are available for internal deployments. After access, use that repository’s README for configuration keys, API details, and setup.
 
 ## Rokae
 
