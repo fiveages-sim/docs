@@ -46,7 +46,7 @@ Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedb
 
 The command package in the same repo is `command/` (`arms_target_manager`, `arms_teleop`, …). There is no `arms_teleop_controller` / `target_manager_controller`. Demo launch starts `arms_target_manager` when `enable_arms_target_manager` is `true`.
 
-`arms_target_manager` owns `/left_target` / `/stamped` / `/twist` / `/relative` (and right / dual / WBC body-head). Tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). README: [arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md).
+`arms_target_manager` owns `/left_target` / `/stamped` / `/twist` / `/relative` (and right / dual / WBC body-head). Tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). README: [arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md). WBC body/head Cartesian topics need `ocs2_wbc_controller` and 全身 launch/config — not default mock / 分体.
 
 ## Related
 

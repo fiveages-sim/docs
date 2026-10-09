@@ -57,7 +57,7 @@ EE goals are **not** listed as a full topic table in this controller’s README.
 
 On this controller, MOVEJ + `/left_target/stamped` (and right / dual) can run IK **MoveL** via [lina_planning](5-lina_planning.md) (`StateMoveJ.startLinearTrajectory`). Without that library the MOVEJ Cartesian side is a no-op. **`ocs2_wbc_controller` MOVEJ has no IK MoveL** (joint arrays only); `full_body.launch.py` sets `enable_movej_cartesian_markers:=false`. Body / head Cartesian (`/body_target…`, `/head_target…`) are WBC-only — 分体 uses `basic_joint_controller` for those joints.
 
-Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). Parameterized **MoveL / MoveC / MoveJ** also exist as actions (`ExecuteLinear`, `MovecUseIK`, `JointTrajectory`) on this controller; Python: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md). Types: [`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md).
 
 ## Demo launch (README)
 
@@ -109,6 +109,8 @@ VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compl
 - [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
 - [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
+- [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md) — Action / Service Python map
 - [Gripper and teleop plugins](6-gripper_teleop_plugins.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
 - [ocs2-wbc-controller](3-ocs2_wbc.md)
+- [arms_ros2_control_msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)

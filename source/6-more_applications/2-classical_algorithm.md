@@ -25,7 +25,8 @@ Use the interface as the robot side of **your** loop:
 
 - Cartesian: `left_arm_handler.send_target_stamped` / `get_pose` on [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)
 - Joints: `left_arm_handler.send_joint_positions` / `get_joint_state`
-- FSM: [FSM and Topics](../3-concepts/4-fsm_and_topics.md) (`/fsm_command` is `std_msgs/Int32`)
+- Blocking MoveL / MoveJ: `execute_movel_action` / `execute_joint_trajectory_action` (Action, not the topic rows)
+- FSM: [FSM and Topics](../3-concepts/4-fsm_and_topics.md) (`/fsm_command` is `std_msgs/Int32`; WBC `/mode_command` needs 全身)
 
 Camera plugins under [lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md) (`lerobot_camera_ros2`) are for **dataset recording**, not a visual-servo controller.
 

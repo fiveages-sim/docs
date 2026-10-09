@@ -28,7 +28,7 @@ Python libraries provide high-level interfaces:
 
 | Package | Purpose | Visibility |
 |---------|---------|------------|
-| [ros2_robot_interface](1-ros2_robot_interface.md) | `ROS2RobotInterface` topic / action client | Public |
+| [ros2_robot_interface](1-ros2_robot_interface.md) | `ROS2RobotInterface` topic / action / `ExecutePath` client | Public |
 | [fa-py-libraries](2-fa_py_libraries.md) | Utilities umbrella | Public |
 | [ros2-viser](3-ros2_viser.md) | Viser library (launch via fa-py-libraries) | Public |
 | [lerobot_ros2](4-lerobot_ros2.md) | LeRobot ↔ ROS 2 monorepo | Public |

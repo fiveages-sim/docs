@@ -64,7 +64,7 @@ interface.send_fsm_command(FSM_HOLD)
 interface.disconnect()
 :::
 
-`right_arm_handler` / `right_gripper_handler` exist in dual-arm mode after `connect()` sees `/right_current_pose`. Cartesian vs joint vs gripper topics (including `*/twist`, `*/relative`, `target_percent`, and waist `waist_*`): [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md) (Topic ↔ API map).
+`right_arm_handler` / `right_gripper_handler` exist in dual-arm mode after `connect()` sees `/right_current_pose`. Cartesian vs joint vs gripper topics (including `*/twist`, `*/relative`, `target_percent`, and waist `waist_*`), plus `execute_*_action` and `execute_path`: [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md) (Topic / Action / Service ↔ API map).
 
 ## With Viser visualization
 
@@ -81,7 +81,9 @@ cd ~/fa-py-libraries
 
 `/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / `walk`). Send integers with `send_fsm_command` (`1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ, `5` COMPLIANCE). Values and legal transitions depend on the running controller. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
-WBC body / arm / base strings go to `/mode_command` via `send_mode_command`, which is a different topic from `/fsm_command`.
+WBC body / arm / base strings go to `/mode_command` via `send_mode_command`, which is a different topic from `/fsm_command`. That path needs `ocs2_wbc_controller` and 全身 launch/config — default mock / 分体 demos do not imply it.
+
+Parameterized MoveL / MoveC / MoveJ wait for a result with `execute_movel_action`, `execute_movec_action_*`, and `execute_joint_trajectory_action`. Dual-arm Cartesian path uses the `execute_path` **service** (not the deprecated `/target_path` topic).
 
 ## Full method list
 

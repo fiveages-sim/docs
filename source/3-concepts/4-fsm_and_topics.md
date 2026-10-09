@@ -60,6 +60,7 @@ Names below are those the public [ros2_robot_interface](https://github.com/fivea
 | `/body_current_pose` | `geometry_msgs/PoseStamped` | WBC current body pose |
 | `/body_current_target` | `geometry_msgs/PoseStamped` | WBC body command echo (`body_target_enabled`) |
 | `/head_current_target` | `geometry_msgs/PoseStamped` | WBC Head 6D final-target echo; `arms_target_manager` subscribes only |
+| `/ocs2_wbc_controller/current_state` | `arms_ros2_control_msgs/WbcCurrentState` | WBC constraint snapshot; used to confirm `/mode_command` |
 
 ```bash
 ros2 topic echo /joint_states
@@ -84,19 +85,38 @@ Unstamped `/left_target` replaces the current EE goal with **one** pose (VR / hi
 
 `relative` uses **TwistStamped**: `twist` is a displacement increment, not a velocity. Non-base `frame_id` rotates `linear` / `angular` into base before composing. `twist` stays a bare `Twist` (velocity, base only). `angular.{x,y,z}` is roll / pitch / yaw (`R' = RΔ(yaw)·RΔ(pitch)·RΔ(roll)·R`).
 
-### WBC body / head Cartesian
+### Body targets (全身 OCS2)
 
-These topics are on the **全身 / WBC** path (`full_body.launch.py`, `body_target_enabled` / WBC Head marker). **分体** (`split_body.launch.py`) drives body and head with [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) joint topics, not this Cartesian set. `split_body` does not turn on the WBC Head 6D marker.
+:::{admonition} Whole-body (WBC) availability
+:class: warning
+
+`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` (`/ocs2_wbc_controller/current_state`) need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config (`full_body.launch.py` when the controller type is `ocs2_wbc_controller/Ocs2WbcController`). Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply these features are present.
+
+The controller is a **private** submodule; extra FSM states stay in that README after access. Which constraints are live is machine-dependent (`WbcCapability` in the [msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md): mobile base, body relative, head 6D, midpoint gaze, …). Public Taku mock (`robot:=taku` on `demo.launch.py`) is arm-controller, not WBC; even on 全身, head 6D tracking is only there when the controller reports `head_tracking_ee_enabled`.
+:::
+
+These Cartesian body topics are on the **全身 / WBC** path (`full_body.launch.py`, `body_target_enabled`). **分体** (`split_body.launch.py`) drives the waist with [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) joint topics (`/body_joint_controller/target_joint_position`, …), not this set.
 
 | Topic | Type | Typical use |
 |-------|------|-------------|
-| `/body_target` | `geometry_msgs/Pose` | Immediate absolute body pose (`body_target_enabled`) |
+| `/body_target` | `geometry_msgs/Pose` | Immediate absolute body pose |
 | `/body_target/stamped` | `geometry_msgs/PoseStamped` | Absolute body **MoveL** (RViz TRACKING) |
 | `/body_target/relative` | `geometry_msgs/TwistStamped` | One-shot relative body increment + MoveL (`frame_id` = base / `body_frame`) |
+| `/body_current_target` | `geometry_msgs/PoseStamped` | Active body command echo |
+
+Python `send_body_target*` / `send_body_relative` also publish `/mode_command` `BODY_TRACKING` (skipped if already in that mode). Dual-arm `/dual_target/stamped` may carry a **third** body pose on WBC only; MOVEJ dual send ignores a body pose if three are present.
+
+### Head 6D targets (全身 OCS2)
+
+WBC Head XYZ+RPY. `arms_target_manager` inserts the 6D marker when FSM is **OCS2** and `WbcCurrentState.head_state` is **`HEAD_TRACKING`**. Leaving that mode removes the marker. `HEAD_GAZE` (midpoint gaze) uses the same gate and hides the marker. `split_body` does not turn this marker on. 分体 head joints stay on `/head_joint_controller/target_joint_position`.
+
+| Topic | Type | Typical use |
+|-------|------|-------------|
 | `/head_target` | `geometry_msgs/Pose` | WBC Head 6D final target, continuous |
 | `/head_target/stamped` | `geometry_msgs/PoseStamped` | WBC Head 6D interpolated target, one-shot |
+| `/head_current_target` | `geometry_msgs/PoseStamped` | Final-target echo; `arms_target_manager` subscribes only |
 
-Python methods for body Cartesian: [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md). Head 6D topics are documented on the target-manager README; API_REFERENCE maps head **joints**, not `/head_target`.
+API_REFERENCE maps head **joints** (`send_head_joint_positions`), not `/head_target`. `head_state` constants: msgs README (`HEAD_DISABLED` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`).
 
 ### MOVEJ + stamped → IK MoveL
 
@@ -158,6 +178,73 @@ Python method names for every row that API_REFERENCE documents: [ros2_robot_inte
 ARX Lift 2S vendor chassis/lift (`/body_control`) is a **different** stack from these OCS2 / `basic_joint_controller` topics. `ros2_robot_interface` uses the body joint topics in the MoveJ table, not that vendor command.
 :::
 
+## Topic vs Action vs Service
+
+Same motion can exist as a **topic** (fire-and-forget), an **action** (goal, progress feedback, result), and sometimes a **service** (one-shot RPC). Definitions: [`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md). Which names a controller actually advertises is on that controller; the tables below list the types in that README.
+
+| Kind | Behaviour | Example |
+|------|-----------|---------|
+| Topic | Publish and continue; no result | `/left_target/stamped`, `/{controller}/target_joint_trajectory` |
+| Action | Send a goal; wait for result (and optional `progress`) | `ExecuteLinear`, `JointTrajectory`, `WaistLiftingPose` |
+| Service | One request / response | `ExecutePath`, `KinematicsService` |
+
+Python wrappers: [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md). Several srv types in the msgs README have **no** Python method.
+
+## Whole-body mode (`/mode_command`)
+
+`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is not `/fsm_command`. Same availability as the body/head Cartesian topics above: 分体 and default mock demos do not start this path. Typical Python: `send_mode_command`, then `wait_until_mode_commands_applied` against `/ocs2_wbc_controller/current_state` (`arms_ros2_control_msgs/WbcCurrentState`). API_REFERENCE: FSM is usually already **OCS2**, or the controller may ignore the mode. API_REFERENCE does **not** map `HEAD_*` strings onto `send_mode_command`; head 6D is gated by `WbcCurrentState.head_state`.
+
+Documented command strings and the `WbcCurrentState` fields they check ([API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) `MODE_COMMAND_TO_WBC_EXPECT`):
+
+| `/mode_command` | `WbcCurrentState` field |
+|-----------------|-------------------------|
+| `BODY_*` (examples: `BODY_TRACKING`, `BODY_FREE`; `BODY_VERTICAL` is an alias) | `body_state` |
+| `ARMS_COUPLED` / `ARMS_INDEPENDENT` | `bimanual_state` |
+| `BASE_LOCK` / `BASE_UNLOCK` | `base_state` |
+
+`WbcCurrentState` constants from the msgs README (not extra FSM integers on `/fsm_command`):
+
+| Field | Values |
+|-------|--------|
+| `base_state` | `BASE_LOCKED=0` / `BASE_UNLOCKED=1` |
+| `body_state` | `BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2` / `LOCKED=3` / `CUSTOM_LOCKED=5` (`4` was a former lock-head value and is no longer published) |
+| `bimanual_state` | `BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1` |
+| `left_arm_state` / `right_arm_state` | `ARM_DISABLED=0` / `ARM_ENABLED=1` |
+| `head_state` | `HEAD_DISABLED=0` / `HEAD_TRACKING=1` / `HEAD_GAZE=2` / `HEAD_FORWARD=3` |
+
+Capability bits (`WbcCapability`: mobile base, body relative, head 6D, midpoint gaze, …) are in the same README. Extra WBC **FSM** states stay in the private `ocs2_wbc_controller` README after access.
+
+## Actions
+
+From the msgs README. Default **arm** action names on `ROS2RobotInterfaceConfig` point at `ocs2_arm_controller`; override the config if the controller has a namespace. Waist action name is auto-detected (`/ocs2_wbc_controller/waist_lifting_pose` or `/body_joint_controller/waist_lifting_pose`).
+
+| Name | Type | Typical path | Role |
+|------|------|--------------|------|
+| `ExecuteLinear` | action | `/ocs2_arm_controller/execute_linear` | Parameterized MoveL (`LinearMessage` goal) |
+| `MovecUseIK` | action | `/ocs2_arm_controller/execute_circle_use_ik` | MoveC (`CircleMessage`; three-point or parametric) |
+| `JointTrajectory` | action | `/ocs2_arm_controller/joint_trajectory_with_para` | Parameterized MoveJ (`JointWaypoint[]`) |
+| `WaistLiftingPose` | action | `…/waist_lifting_pose` | Waist pose; goal `MODE_ABSOLUTE=0` / `MODE_RELATIVE=1` |
+
+Python: `execute_movel_action`, `execute_movec_action_three_point` / `execute_movec_action_parametric`, `execute_joint_trajectory_action` / `execute_dual_arm_movej_action`, `execute_waist_lifting_pose_absolute_action` / `execute_waist_lifting_pose_relative_action`. These block until a result or timeout. The matching topics (`*/stamped`, `target_joint_trajectory`, `waist_lifting_pose_*`) have **no** result.
+
+`execute_movel_action` with `auto_switch_fsm=True` switches FSM to **MOVEJ**. Unstamped / stamped **topics** switch to **OCS2**.
+
+## Services
+
+From the msgs README. Service is a single request/response; action adds progress. Names a running controller advertises win.
+
+| Name | Type | Role |
+|------|------|------|
+| `ExecuteLinear` | srv | Same `LinearMessage` as the action, without progress |
+| `ExecuteCircle` | srv | `CircleMessage` |
+| `MovecUseIK` | srv | `CircleMessage` (action of the same name has duration + progress) |
+| `JointTrajectory` | srv | `joint_names` + `JointWaypoint[]` |
+| `ExecutePath` | srv | Left/right `nav_msgs/Path` + `trajectory_duration` |
+| `CartesianPath` | srv | Left/right `Path` + `duration` |
+| `KinematicsService` | srv | FK / IK (`operation_type` `"fk"` / `"ik"`) |
+
+Python wraps **`ExecutePath`** as `execute_path` / `execute_left_path` / `execute_right_path` (service name `execute_path`). The other srv types in that README have no `ros2_robot_interface` method — call them with ROS 2 clients if the controller advertises them.
+
 ## Related
 
 - [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)
@@ -168,3 +255,4 @@ ARX Lift 2S vendor chassis/lift (`/body_control`) is a **different** stack from 
 - [Controllers reference](../4-reference/controllers/0-index.md)
 - [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)
 - [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)
+- [arms_ros2_control_msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md) — msg / srv / action types

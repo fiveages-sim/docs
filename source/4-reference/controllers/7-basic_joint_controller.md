@@ -51,7 +51,7 @@ Command topics are namespaced to the controller name (README example: `/left_han
 
 Hand `target_command` / `target_percent` need `target_command_enabled`. Waist topics need `waist_lifting_enabled`. Absolute-pose defaults match **FiveAges W2** (`base_footprint` / `body_base`). README example for **ARX Lift / Lift 2S**: `waist_lifting_type: single_joint` with `base_link` / `lift_link`. Height-only commands (`waist_lifting`, `waist_lifting_command`, `target_joint_position`) do **not** use those frames.
 
-On **分体**, the body instance is typically `/body_joint_controller/…`. On **全身**, [API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) maps the same waist names under `/ocs2_wbc_controller/…`. Cartesian EE `*/twist` and `*/relative` are **not** this controller — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+On **分体**, the body instance is typically `/body_joint_controller/…`. On **全身**, [API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) maps the same waist names under `/ocs2_wbc_controller/…`. Cartesian EE `*/twist` and `*/relative` are **not** this controller — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). Waist pose also has a `WaistLiftingPose` **action** (`…/waist_lifting_pose`); Python prefers `execute_waist_lifting_pose_*_action` when a result is needed.
 
 ## Demo launch (README)
 
