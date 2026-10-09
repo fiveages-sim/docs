@@ -19,4 +19,4 @@ Two real launch paths in [ocs2_arm_controller](https://github.com/fiveages-sim/a
 
 FSM command values, Action / Service tables, and WBC Cartesian topics: [FSM and Topics](4-fsm_and_topics.md). Controllers index: [Controllers reference](../4-reference/controllers/0-index.md).
 
-`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 do **not** imply those features are present; capability bits are machine-dependent.
+`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 do **not** imply those features are present; capability bits are machine-dependent. Public Taku mock uses `split_body.launch.py robot:=taku`; `full_body.launch.py robot:=taku` still needs the private `ocs2_wbc_controller` submodule (shipping `config/ocs2/fixed_base_tcp.info` is not enough).

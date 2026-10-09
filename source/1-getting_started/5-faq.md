@@ -88,7 +88,7 @@ Public init leaves private nested modules empty (`controller/ocs2_wbc_controller
 
 ### Q: Where is Taku?
 
-On `robot_descriptions` branch **`feature/agilex`** at `humanoid/Dyna/taku_description` — not on the default `main` submodule pin. Launch: `ros2 launch robot_common_launch humanoid.launch.py robot:=taku` ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)). There is no lean `open-deploy-ws` Taku branch. Checkout steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
+On `robot_descriptions` branch **`feature/agilex`** at `humanoid/Dyna/taku_description` — not on the default `main` submodule pin. Visualize: `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`. Control: `split_body.launch.py` / `full_body.launch.py` with `robot:=taku` ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md) §3.1 / §3.2). Public mock is **`split_body.launch.py`**; **`full_body.launch.py`** needs the private `ocs2_wbc_controller` submodule. There is no lean `open-deploy-ws` Taku branch. Checkout steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
 
 ### Q: colcon build fails with missing dependency
 

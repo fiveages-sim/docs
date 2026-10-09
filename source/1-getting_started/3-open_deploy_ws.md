@@ -150,17 +150,33 @@ source install/setup.bash
 ros2 launch robot_common_launch humanoid.launch.py robot:=taku
 :::
 
-Mock demo with the same `robot:=` key (after descriptions on `feature/agilex`):
+Control launches from that package README §3.1 / §3.2 (after descriptions on `feature/agilex`). Default `hardware:=mock_components`. Layout has no chassis or per-arm basic controllers. Dynaclaw uses `adaptive_gripper_controller` (`left/right_gripper_controller`; joints `*_gripper_joint` with a mimic jaw in URDF). Meshes live under `meshes/{chassis,body,head,arm,dynaclaw}/`.
 
 :::{code-block} bash
 colcon build --packages-up-to ocs2_arm_controller taku_description
 source install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
+# 分体 — public mock path (arm MPC + body/head basic + grippers)
+ros2 launch ocs2_arm_controller split_body.launch.py robot:=taku
+# 全身 — needs the private ocs2_wbc_controller submodule
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=taku
 :::
 
-In RViz, set **Fixed Frame** to **`base_link`** (or the coincident `base_footprint`). OCS2 `baseFrame` / markers use `base_link`. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path.
+```{admonition} Public mock vs private WBC
+:class: warning
 
-`ocs2_arm_controller demo.launch.py` uses the same `robot:=<key>` → `{key}_description` lookup. Taku ships `config/ocs2/` and a ros2_control yaml that names `ocs2_arm_controller`, so `robot:=taku` is the same convention — not a special-cased flag.
+Shipping `config/ocs2/fixed_base_tcp.info` in the public description does **not** mean public mock can run `ocs2_wbc_controller`. Public mock uses **`split_body.launch.py`**. **`full_body.launch.py`** needs the private WBC submodule.
+```
+
+| Launch | Controllers |
+|--------|-------------|
+| `split_body.launch.py` | `ocs2_arm_controller` (dual-arm MPC, `info_file_name: task`) + `body_joint_controller` (`folding_low/high` + `waist_pitch/yaw`) + `head_joint_controller` (`head_yaw/pitch/roll`) + grippers |
+| `full_body.launch.py` | `ocs2_wbc_controller` (body + dual arms + head, `info_file_name: fixed_base_tcp`) + grippers |
+
+When that config and the private module are present, full-body default `headMode` is **`HEAD_GAZE`** (gaze on `head_camera_mid_optical_frame`). `target_manager.yaml` has `enable_head_control: false`, so the head follows OCS2 rather than a joint-space marker. Split-body still teleops the head through `head_joint_controller` (RViz joint panel). Taku body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`.
+
+In RViz, set **Fixed Frame** to **`base_link`** (or the coincident `base_footprint`). OCS2 `baseFrame` / markers use `base_link`. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path. The package README also lists `hardware:=isaac` on the same split / full launches.
+
+`ocs2_arm_controller` `split_body.launch.py` / `full_body.launch.py` use the same `robot:=<key>` → `{key}_description` lookup. Taku ships `config/ocs2/` (`task.info` for split, `fixed_base_tcp.info` for full-body) and a ros2_control yaml that names `ocs2_arm_controller` / `ocs2_wbc_controller`, so `robot:=taku` is the same convention — not a special-cased flag.
 
 The description is **inferred** (public Dyna kinematics; not official Dyna specs). That is stated in the package README.
 
@@ -210,7 +226,7 @@ colcon build --packages-up-to ocs2_arm_controller
 | **ARX Lift 2S** | robot-descriptions-arx | arx-ros2-control | **Full-body** (arms + lift + chassis); branch `arx-lift2s` |
 | Galbot | robot-descriptions-galbot | (varies) | Simulation-oriented |
 | **HighTorque Panthera HT** | `panthera_ht_description` | ht-ros2-control | Dual-arm; branch `panthera-ht`; umbrella path `manipulator/HighTorque/panthera_ht_description` |
-| **Taku** (Dyna / DVT1) | `taku_description` | mock / gz / isaac in package xacro | In-tree on `robot_descriptions` **`feature/agilex`** at `humanoid/Dyna/taku_description`; `robot:=taku` on `humanoid.launch.py` |
+| **Taku** (Dyna / DVT1) | `taku_description` | mock / gz / isaac in package xacro | In-tree on `robot_descriptions` **`feature/agilex`** at `humanoid/Dyna/taku_description`; visualize `humanoid.launch.py`; control `split_body.launch.py` / `full_body.launch.py` |
 | Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation-oriented |
 
 ```{admonition} Real Hardware Deployment
@@ -237,10 +253,10 @@ ros2 launch ocs2_arm_controller demo.launch.py
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 
 # Taku (descriptions on feature/agilex). RViz Fixed Frame: base_link (or base_footprint).
-ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
+ros2 launch ocs2_arm_controller split_body.launch.py robot:=taku
 ```
 
-Taku visualize path (package README): `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`. See [Taku / `feature/agilex`](#taku--featureagilex) for the build and Fixed Frame notes.
+Taku visualize path (package README): `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`. Control is `split_body.launch.py` / `full_body.launch.py` — see [Taku / `feature/agilex`](#taku--featureagilex) for the build, WBC, and Fixed Frame notes.
 
 ### End-effector (`type`)
 
