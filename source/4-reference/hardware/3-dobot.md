@@ -6,7 +6,7 @@ TCP hardware interface plugin for Dobot CR. Dashboard / real-time TCP (README: 2
 
 **Plugin:** `dobot_ros2_control/DobotHardware`. No `on_set_parameters`.
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## Parameters
 

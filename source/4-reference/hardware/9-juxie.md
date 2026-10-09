@@ -6,7 +6,7 @@ CAN FD hardware interface plugin for JX motors in cyclic synchronous position (C
 
 **Plugin:** `juxie_ros2_control/JxHardware`. No `on_set_parameters`. README lists `max_position_step_nct` `25` and `max_position_accel_nct` `5`; **source `on_init` fallbacks are `90` and `10`**.
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## Parameters
 

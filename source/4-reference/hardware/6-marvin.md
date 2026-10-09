@@ -12,7 +12,7 @@ Tianji control SDK (`TJ_FX_ROBOT_CONTRL_SDK`, private submodule) is a pre-built 
 
 Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. VR path: [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## Startup (bus / tool type)
 

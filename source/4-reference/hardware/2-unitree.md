@@ -8,7 +8,7 @@ unitree_sdk2 hardware interface plugin.
 
 That README’s launch examples use `hardware:=unitree_sim` / `unitree_real` with `robot:=unitree_g1`. README xacro shows `domain` and `network_interface`. The rest of the table is from `HardwareUnitree::on_init`.
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## Parameters
 

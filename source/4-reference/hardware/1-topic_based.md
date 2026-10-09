@@ -6,7 +6,7 @@ In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). ROS 2 top
 
 **README:** [topic_based_ros2_control](https://github.com/fiveages-sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/README.md). Source: [`topic_based_system.cpp`](https://github.com/fiveages-sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/src/topic_based_system.cpp) at [`d50933d`](https://github.com/fiveages-sim/arms_ros2_control/tree/d50933d6862ad35ec7633ef522a134924827b115).
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables). Isaac Sim: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md). Isaac Sim: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md).
 
 :::{code-block} xml
 <ros2_control name="my_system" type="system">

@@ -11,7 +11,7 @@ CAN hardware interface plugins for **ARX** X5 / Acone (dual-arm) and Lift 2S lif
 
 Acone `hardware:=real` xacro uses `arx_ros2_control/ArxX5Hardware` ([ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)). Field how-to: [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
 
-URDF `<param>` are also declared as node parameters so rqt / `ros2 param set` can change the **Runtime** rows. How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+URDF `<param>` are also declared as node parameters so rqt / `ros2 param set` can change the **Runtime** rows. How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## `arx_ros2_control/ArxX5Hardware`
 

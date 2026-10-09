@@ -6,7 +6,7 @@ SocketCAN / CAN FD hardware interface plugins for 灵巧手. Freedom V2 and 夹�
 
 **Plugins:** `O6CanHardware`, `L6CanHardware`, `O7CanHardware`, `FreedomCanHardware`, `InspireCanfdHardware`.
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## LinkerHand `O6CanHardware` / `L6CanHardware` / `O7CanHardware`
 

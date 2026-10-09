@@ -6,7 +6,7 @@ RS485 / Modbus RTU hardware interface plugins for 夹爪, 灵巧手, and KWR75.
 
 **Plugins:** `ModbusHardware`, `DexterousHandHardware`, `InspireHandHardware`, `FreedomRS485Hardware`, `XHand1RS485Hardware`, `TheoHandModbusHardware`, `Kwr75ForceTorqueSensor`.
 
-Default **Startup only** except the tool-scale rows with `on_set_parameters`. How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+Default **Startup only** except the tool-scale rows with `on_set_parameters`. How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## `modbus_ros2_control/ModbusHardware`
 

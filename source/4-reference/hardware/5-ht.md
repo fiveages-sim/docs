@@ -10,7 +10,7 @@ Features from that README: isomorphic master–slave teleop path on the descript
 
 `joint_kp` / `joint_kd` / `gripper_kp` / `gripper_kd` are exposed as node parameters. README: IO thread syncs about every 200 ms — `ros2 param set` / rqt takes effect without reload. No `on_set_parameters` callback; the poll is the Runtime path.
 
-How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md#how-to-read-the-tables).
+How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 
 ## Parameters
 
