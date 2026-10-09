@@ -63,7 +63,7 @@ FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R
 - [ ] Robot cables are properly connected
 - [ ] Power supply is adequate
 - [ ] CAN/Ethernet interfaces are up
-- [ ] Driver-layer plugins are loaded
+- [ ] Hardware interface plugins are loaded
 
 ### Configuration
 
@@ -81,7 +81,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=<your_robot>
 # Test all planned motions
 :::
 
-### Configure the driver layer
+### Configure the hardware interface
 
 Set hardware-specific parameters in your configuration.
 

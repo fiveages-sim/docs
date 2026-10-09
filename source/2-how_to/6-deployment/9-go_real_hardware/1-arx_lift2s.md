@@ -25,7 +25,7 @@ git clone -b arx-lift2s https://github.com/fiveages-sim/open-deploy-ws.git lift2
 cd ~/lift2s-ws
 :::
 
-Then follow the branch README: `./init_repo.sh`, or a field zip plus `./release.sh --install` then `./quick_start.sh`. Descriptions stay as source; controllers / driver layer come from `.deb`.
+Then follow the branch README: `./init_repo.sh`, or a field zip plus `./release.sh --install` then `./quick_start.sh`. Descriptions stay as source; controllers / hardware interfaces come from `.deb`.
 
 **Developer SSH** (nested private modules when you have keys):
 

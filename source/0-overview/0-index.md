@@ -7,7 +7,7 @@ This section introduces the FiveAges Sim ecosystem — what it is, how its compo
 FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 
 - **Robot Description** — URDF/xacro models with ros2_control integration
-- **Driver layer** (驱动层) — ros2_control hardware plugins for real or simulated robots
+- **Hardware interfaces** — ros2_control hardware plugins for real or simulated robots
 - **MPC Controllers** — OCS2-based motion planning and control (分体控制 / 全身控制)
 - **Simulation** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity + the same ROS 2 运控 as the real robot, plus simulation ground truth)
 - **Teleoperation** — VR, isomorphic teleop, and glove-based control
@@ -40,6 +40,7 @@ The ecosystem has two entry points:
 ## Documentation Map
 
 - **[Architecture](1-architecture.md)** — Layer diagram and dependency relationships
+- **[Terminology](../3-concepts/8-terminology.md)** — 驱动层 ↔ Hardware Interface, 分体 / 全身, 夹爪 / 灵巧手, simulation keys
 - **[Learning Path](2-learning_path.md)** — Day-by-day onboarding guide
 - **[Repository Map](3-repo_map.md)** — Complete list of repositories by layer
 - **[Public vs Internal](4-public_vs_internal.md)** — Detailed comparison of the two paths

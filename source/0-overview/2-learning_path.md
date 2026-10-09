@@ -212,7 +212,7 @@ FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Con
 
 **Tasks:**
 1. Create a description package with URDF/xacro
-2. Add ros2_control driver-layer YAML
+2. Add ros2_control hardware-interface YAML
 3. Configure OCS2 controller parameters
 4. Test progression: mock → simulation → real hardware
 

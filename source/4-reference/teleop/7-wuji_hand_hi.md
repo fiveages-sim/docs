@@ -1,6 +1,6 @@
 # wuji-ros2-control
 
-Driver-layer plugin for Wuji Hand2.
+Hardware interface plugin for Wuji Hand2.
 
 ```{admonition} Access Required
 :class: warning
@@ -12,7 +12,7 @@ This package requires private repository access.
 
 ## Purpose
 
-Ethernet driver-layer plugin for Wuji Hand2 dexterous hands.
+Ethernet hardware interface plugin for Wuji Hand2 dexterous hands.
 
 ## Features
 
@@ -54,4 +54,4 @@ Hands are discovered via network scan. Configuration involves:
 ## Related
 
 - [wuji_glove_teleop](5-wuji_glove.md)
-- [Private driver layer](../hardware/2-private_hi.md)
+- [Hardware Interfaces](../hardware/0-index.md) — private names on the landing

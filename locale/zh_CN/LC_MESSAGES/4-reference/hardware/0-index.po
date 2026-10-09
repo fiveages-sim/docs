@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:50+0000\n"
+"POT-Creation-Date: 2026-10-09 12:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,410 +21,727 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/hardware/0-index.md:1
-#: 6d5ece1cac784a3d8cbaee4388fb65a2
-msgid "Driver layer"
+#: 5e2f7747af6d4927ad6c7e2cac28688e
+msgid "Hardware Interfaces"
 msgstr "驱动层"
 
 #: ../../source/4-reference/hardware/0-index.md:3
-#: 9cccc2194e154181a599ab3f5f31cd0f
+#: ee1618578b5a4dfeb9a4975f10c70314
 msgid ""
-"This section documents the **driver layer** (驱动层) — ros2_control hardware"
-" plugins (Hardware Interface)."
-msgstr "本节记录 **驱动层** — ros2_control 硬件插件（`Hardware Interface`）。"
+"This section documents ros2_control **hardware interfaces** — plugins "
+"that talk to the bus, vendor SDK, or simulation. Chinese **驱动层** is this "
+"same layer."
+msgstr "本节记录 ros2_control **驱动层** — 对接总线、厂商 SDK 或仿真的插件。中文 **驱动层** 就是这一层。"
 
 #: ../../source/4-reference/hardware/0-index.md:5
-#: 47cdefd2b3494f1b85a1f69d184e7434
+#: 95ad2cd1e35f4567aee45451e7d0e5a0
+msgid ""
+"Public plugins live under [arms_ros2_control "
+"`hardwares/`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/.gitmodules) (plus in-tree "
+"`topic_based_ros2_control`). Use the plugin class from that robot’s "
+"`xacro/ros2_control/*.xacro`. Each public driver page has the intro "
+"(plugin class, repo) and its `<param>` tables."
+msgstr ""
+"公开插件在 [arms_ros2_control `hardwares/`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/.gitmodules) 下（另有树内 "
+"`topic_based_ros2_control`）。插件类以该机型 `xacro/ros2_control/*.xacro` "
+"为准。每个公开驱动页含简介（插件类、仓库）及其 `<param>` 表。"
+
+#: ../../source/4-reference/hardware/0-index.md:7
+#: cf004ebb18b54fc58043535bb2ea951a
+msgid "Terminology"
+msgstr "术语对照"
+
+#: ../../source/4-reference/hardware/0-index.md:9
+#: 4a5fd186b7284212bc3b04916f3b7efe
+msgid "Full mapping: [Terminology](../../3-concepts/8-terminology.md)."
+msgstr "完整对照：[术语对照](../../3-concepts/8-terminology.md)。"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: d33e9045350e4589a1224294dcf88975
+msgid "Chinese"
+msgstr "中文"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 462a9121197a48ed9b87da12357101d5
+msgid "English"
+msgstr "英文"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 5a94524e54a844268f0e1d32b89f98e5
+msgid "驱动层"
+msgstr "驱动层"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: f42ff7d2c67d47938eccdffce9557d82
+msgid "Hardware Interface (ros2_control official)"
+msgstr "Hardware Interface (ros2_control official)"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 3cde25d3ab0142e09f3a833793b70319
+msgid "控制器"
+msgstr "控制器"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 0239c3c723e1490ea4625c07ccd3bb7a
+msgid "Controller"
+msgstr "Controller"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 9aeee4fd19a64976b160b588c9b48314
+msgid "分体控制"
+msgstr "分体控制"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: ae88442837aa4b78b523adc71b121dd2
+msgid "Split body"
+msgstr "Split body"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: ea61eaaf799d450cb069f6c5e2a8f2eb
+msgid "全身控制"
+msgstr "全身控制"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: d381cf5e8b694d22a58a5c9802a153f8
+msgid "Full body / WBC"
+msgstr "Full body / WBC"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 3064643f677442918021fa023efb600b
+msgid "夹爪"
+msgstr "夹爪"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 85287e2b61794b7f83eeee16981af07a
+msgid "gripper"
+msgstr "gripper"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 8593ad300c304b87a90fd0d764f5c2e2
+msgid "灵巧手"
+msgstr "灵巧手"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 148fa77c0f5a4154884daa9f9a10f3a8
+msgid "dexterous hand"
+msgstr "dexterous hand"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: b06aa036c2c64cd8a2fabc8e5701cc49
+msgid "仿真路径"
+msgstr "仿真路径"
+
+#: ../../source/4-reference/hardware/0-index.md
+#: 5b76f7c1cf174e719d6ba760b631f27b
+msgid ""
+"`mock_components` / `isaac` / `gz` (launch keys, not `hardwares/` "
+"packages)"
+msgstr "`mock_components` / `isaac` / `gz`（launch 键，不是 `hardwares/` 软件包）"
+
+#: ../../source/4-reference/hardware/0-index.md:21
+#: bed1736236294738a4af97330075314e
+msgid ""
+"Plugin class names, `type` / `left_type` / `right_type`, and `hardware:=`"
+" stay as code."
+msgstr "插件类名、`type` / `left_type` / `right_type` 和 `hardware:=` 保持代码写法。"
+
+#: ../../source/4-reference/hardware/0-index.md:23
+#: f3fc0386778a44beb134586cfe19deea
 msgid "Overview"
 msgstr "概述"
 
-#: ../../source/4-reference/hardware/0-index.md:7
-#: 8a367315e7324d26937390bf49d76824
-msgid "The driver layer bridges ROS 2 controllers to the bus or vendor SDK:"
+#: ../../source/4-reference/hardware/0-index.md:25
+#: 76e4d3b90a764c20ade5ffd55dd47a15
+msgid "Hardware interfaces bridge ROS 2 controllers to the bus or vendor SDK:"
 msgstr "驱动层把 ROS 2 控制器接到总线或厂商 SDK："
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: efccfa678fa1408c802a90a317856b13
+#: ../../source/4-reference/hardware/0-index.md:27
+#: d14213fa2f5148da9d6d143d3c7c8287
 msgid ""
 "Controller Manager\n"
 "       ↓\n"
-"Driver layer plugin\n"
+"Hardware Interface Plugin\n"
 "       ↓\n"
 "CAN / TCP / Serial / Vendor SDK"
 msgstr ""
 "Controller Manager\n"
 "       ↓\n"
-"Driver layer plugin\n"
+"Hardware Interface Plugin\n"
 "       ↓\n"
 "CAN / TCP / Serial / Vendor SDK"
 
-#: ../../source/4-reference/hardware/0-index.md:17
-#: fcc3e4b77234494a845d78a84b8713c4
+#: ../../source/4-reference/hardware/0-index.md:35
+#: 997cb60c604d4eb69d0e623b84917d47
 msgid ""
 "Launch `hardware:=` chooses which plugin the robot xacro instantiates: "
-"[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). "
-"URDF / xacro `<param>` tables: [Driver layer "
-"parameters](4-ros2_parameters.md)."
+"[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)."
 msgstr ""
-"launch 的 `hardware:=` 决定机型 xacro 实例化哪个插件：[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)。URDF "
-"/ xacro `<param>` 表：[驱动层参数](4-ros2_parameters.md)。"
+"launch 的 `hardware:=` 决定机型 xacro 实例化哪个插件：[本栈中的 "
+"ros2_control](../../3-concepts/1-ros2_control_here.md)。"
 
-#: ../../source/4-reference/hardware/0-index.md:19
-#: 5420a3aa75e54303b64102927d70d310
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 5e2f7747af6d4927ad6c7e2cac28688e
+msgid "Real hardware ready"
+msgstr "真实硬件可用"
+
+#: ../../source/4-reference/hardware/0-index.md:40
+#: 3cf5e0caa4444cb097422417891857ad
+msgid ""
+"**ARX Lift 2S** (full-body) and **Acone** / **AC One** (dual-arm) use "
+"[arx-ros2-control](4-arx.md) (CAN). **HighTorque Panthera HT** uses [ht-"
+"ros2-control](5-ht.md) (serial). See [ARX Lift "
+"2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and "
+"[HighTorque Panthera "
+"HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)."
+msgstr ""
+"**ARX Lift 2S**（全身）和 **Acone** / **AC One**（双臂）使用 [arx-"
+"ros2-control](4-arx.md)（CAN）。**HighTorque Panthera HT** 使用 [ht-"
+"ros2-control](5-ht.md)（串口）。见 [ARX Lift "
+"2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) 与 "
+"[HighTorque Panthera "
+"HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
+
+#: ../../source/4-reference/hardware/0-index.md:44
+#: b57841e5352c47a0b713d4ac4a2c7429
+msgid "How to read the tables"
+msgstr "如何读这些表"
+
+#: ../../source/4-reference/hardware/0-index.md:46
+#: 868b3bd30c3f4a178c1de813d52fd627
+msgid ""
+"These are URDF / xacro `<param>` entries under "
+"`<ros2_control><hardware>`, loaded in the plugin `on_init`. They are "
+"**not** the same API as `ros2 param list` on a controller node, unless "
+"that plugin also `declare_parameter`s them (ARX, HighTorque, Marvin, some"
+" 灵巧手)."
+msgstr ""
+"这些是 `<ros2_control><hardware>` 下的 URDF / xacro `<param>`，在插件 `on_init` "
+"加载。它们**不是**控制器节点上 `ros2 param list` 的同一套 API，除非该插件也 `declare_parameter` "
+"了同名项（ARX、HighTorque、Marvin、部分灵巧手）。"
+
+#: ../../source/4-reference/hardware/0-index.md:48
+#: 6b0dd6723fcc4ab097be95452eecaf95
+msgid ""
+"**Startup only** vs **Runtime** appears **once** per table: a **When** "
+"column on mixed tables, a section heading (`Startup` / `Runtime`), or a "
+"one-line note above a uniform table. **Meaning** is the parameter’s "
+"actual meaning — not a repeat of that tag."
+msgstr ""
+"**仅启动** vs **运行时** 在每张表里只出现**一次**：混合表用 **时机** 列，或用分节标题（`Startup` / "
+"`Runtime`），或在整表均为同一类时写在表前一行。**含义**只写参数本身的意思，不再重复该标记。"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 89240387448e4994ab4e1afea5d99399
+msgid "Tag"
+msgstr "标记"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 5cc402a7e74a43b8a72b10b141f743ce
+msgid "Evidence"
+msgstr "依据"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 726891c884ec403a8236f7a2adc71b26
+msgid "**Startup only**"
+msgstr "**仅启动**"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: cb3428733d60484f824bb6a64409a587
+msgid ""
+"Read in `on_init` from `info_.hardware_parameters`. No "
+"`add_on_set_parameters_callback` (or README does not claim a hot update)."
+" Change the xacro and restart the hardware / `controller_manager`."
+msgstr ""
+"在 `on_init` 从 `info_.hardware_parameters` 读取。没有 "
+"`add_on_set_parameters_callback`（或 README 未声明可热更新）。改 xacro 并重启硬件 / "
+"`controller_manager`。"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 6b702670f22b42d7b03d1789b4019760
+msgid "**Runtime**"
+msgstr "**运行时**"
+
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 73fcce58e7f541f4afba570b5666baa1
+msgid ""
+"`add_on_set_parameters_callback`, or a README + source path that re-reads"
+" `ros2 param set` without reload (HighTorque kp/kd poll)."
+msgstr ""
+"`add_on_set_parameters_callback`，或 README + 源码路径表明 `ros2 param set` "
+"无需重载即可生效（HighTorque 的 kp/kd 轮询）。"
+
+#: ../../source/4-reference/hardware/0-index.md:55
+#: 3371f842f70f49a68b8dde8d3a55e840
+msgid ""
+"The in-tree [`hardwares/README.md`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/README.md)"
+" is **build-only** (`colcon build --packages-up-to …`). Names on the "
+"driver pages come from each public README and from `on_init` / plugin XML"
+" in that repository."
+msgstr ""
+"树内 [`hardwares/README.md`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/README.md)"
+" **只讲编译**（`colcon build --packages-up-to …`）。各驱动页上的名称来自对应公开 README，以及该仓库的"
+" `on_init` / 插件 XML。"
+
+#: ../../source/4-reference/hardware/0-index.md:57
+#: 0479179c57f24f96a9597a15c57e8045
+msgid ""
+"How to inspect: [Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)."
+msgstr "如何查看：[配置 ROS 2 控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md)。"
+
+#: ../../source/4-reference/hardware/0-index.md:59
+#: 7cb7321094064c24b6aee683f670f161
 msgid "Simulation keys"
 msgstr "仿真键"
 
-#: ../../source/4-reference/hardware/0-index.md:21
-#: 9300806b11184db99766a5d8d031d7b7
+#: ../../source/4-reference/hardware/0-index.md:61
+#: a5be1dc339004642b060705a78e0468a
 msgid ""
 "`mock_components`, `gz`, and `isaac` are launch / xacro keys. They are "
 "**not** gitmodules under `arms_ros2_control/hardwares/`."
 msgstr ""
-"`mock_components`、`gz`、`isaac` 是 launch / xacro 键，**不是** `arms_ros2_control/hardwares/` "
-"下的 gitmodule。"
+"`mock_components`、`gz`、`isaac` 是 launch / xacro 键，**不是** "
+"`arms_ros2_control/hardwares/` 下的 gitmodule。"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 3b86168622df423f9087473fef9813c1
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 94d91059bbd44daeb688134bb83df224
 msgid "`hardware:=`"
 msgstr "`hardware:=`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 5c644997086e4aefa455d0d2e841ecf7
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 8d6c3fb1bc9a4a16a4a31bc2df43ec8e
 msgid "Plugin"
 msgstr "插件"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 44e39ef6d4c246969bfac26b8a59d5f0
+#: ../../source/4-reference/hardware/0-index.md:37
+#: c7b3f484419d46f3a1c492a673cf50d3
 msgid "Where it lives"
 msgstr "所在位置"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: d3f33814226341f396c1eecceeba627c
+#: ../../source/4-reference/hardware/0-index.md:37
+#: bab500c2fc2e4d1ea496efa7f170f212
 msgid "`mock_components`"
 msgstr "`mock_components`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 597fbe885b2945099a7632e396eafb75
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 399e8f9f93904b259f6ae26bfd49b300
 msgid "`mock_components/GenericSystem`"
 msgstr "`mock_components/GenericSystem`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 6e3ccd9eb70a41ada6297baf4b97951e
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 27a723c1e2cf4eb1bfa55ea6efb43b88
 msgid "ros2_control; Acone xacro"
 msgstr "ros2_control；Acone xacro"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: b5cc87adb18f452c8125f560bef87570
+#: ../../source/4-reference/hardware/0-index.md:37
+#: ca2a43c2d3754e669e42ac656484a488
 msgid "`gz`"
 msgstr "`gz`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 9b1e189234724c688eb18359e871af0e
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 3794e2d6e4914175a81c642fd3902175
 msgid "`gz_ros2_control/GazeboSimSystem`"
 msgstr "`gz_ros2_control/GazeboSimSystem`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 7d7c0d8168c048ae954c3ccd155272b4
+#: ../../source/4-reference/hardware/0-index.md:37
+#: bfc663febc7b41749f992f078539b466
 msgid "`ros-jazzy-gz-ros2-control`"
 msgstr "`ros-jazzy-gz-ros2-control`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 6ef822611ce04bd8b1d56e09e693870f
+#: ../../source/4-reference/hardware/0-index.md:37
+#: cf3a450d152d4d9bb8c4473a67ffa9b5
 msgid "`isaac`"
 msgstr "`isaac`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: f7605e23d2d041d6b108e4641dd8cc5e
+#: ../../source/4-reference/hardware/0-index.md:37
+#: d16d6b57f29d402a99bc9cfa47f38e95
 msgid "`topic_based_ros2_control/TopicBasedSystem`"
 msgstr "`topic_based_ros2_control/TopicBasedSystem`"
 
-#: ../../source/4-reference/hardware/0-index.md:9
-#: 326957f6f8754b1e89031eb6318a38ac
+#: ../../source/4-reference/hardware/0-index.md:37
+#: 0790035cd662438ea3734a13c3aa59dc
 msgid ""
 "in-tree under `hardwares/topic_based_ros2_control` (not a nested vendor "
 "repo)"
 msgstr "树内 `hardwares/topic_based_ros2_control`（不是嵌套的厂商仓库）"
 
-#: ../../source/4-reference/hardware/0-index.md:29
-#: a3583db8a1cf4dedaec3219007b746c8
+#: ../../source/4-reference/hardware/0-index.md:69
+#: 15cbe335f2d14b1a8ae315d2ade66f02
 msgid ""
 "How-to: [Gazebo Simulation](../../2-how_to/2-simulation/3-gazebo_sim.md),"
 " [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md). Joint layout "
-"and topic names come from that robot’s `xacro/ros2_control/*.xacro`."
+"and topic names come from that robot’s `xacro/ros2_control/*.xacro`. "
+"Isaac topic `<param>` table: "
+"[topic_based_ros2_control](1-topic_based.md)."
 msgstr ""
-"操作指南：[Gazebo 仿真](../../2-how_to/2-simulation/3-gazebo_sim.md)、[Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。关节布局和话题名以该机型的 "
-"`xacro/ros2_control/*.xacro` 为准。"
+"操作指南：[Gazebo 仿真](../../2-how_to/2-simulation/3-gazebo_sim.md)、[Isaac "
+"Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。关节布局与话题名来自该机型 "
+"`xacro/ros2_control/*.xacro`。Isaac 话题 `<param>` "
+"表：[topic_based_ros2_control](1-topic_based.md)。"
 
-#: ../../source/4-reference/hardware/0-index.md:31
-#: a1ab366822c744e39f974ae4bc39cd09
+#: ../../source/4-reference/hardware/0-index.md:71
+#: 2bc0e9308f634428a68aa88fcf56a205
 msgid "In This Section"
 msgstr "本节内容"
 
-#: ../../source/4-reference/hardware/0-index.md:42
-#: 868f356b5f7244a2b76e98bf263156cb
-msgid "Quick Reference"
-msgstr "快速参考"
-
-#: ../../source/4-reference/hardware/0-index.md:44
-#: 4bffbecb64d742c5ab7c962128ca7449
-msgid "Public driver layer"
+#: ../../source/4-reference/hardware/0-index.md:87
+#: 5e2f7747af6d4927ad6c7e2cac28688e
+msgid "Public Hardware Interfaces"
 msgstr "公开驱动层"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 30d94288a4cc42f385f26358141f2d92 907da3e05d214603ac77f739eec6c221
+#: ../../source/4-reference/hardware/0-index.md:73
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 85731009682a467aa0cdb77f5a50764c
 msgid "Package"
 msgstr "软件包"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 3d752e1c42bc4a4781f8074402cc387c 601d14c65430440bbbc19a54b356369a
+#: ../../source/4-reference/hardware/0-index.md:73
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 2eb42e4c8bf94dcdb4467a64227eb35f
 msgid "Bus"
 msgstr "总线"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 55010b92516747b88e8c24bcbd00882d
+#: ../../source/4-reference/hardware/0-index.md:73
+#: eaf8d854a24b412fa3d8650063678aaf
 msgid "Plugins / robots"
 msgstr "插件 / 机型"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 4d7c052ca56f4396a9aede5f99ff17e1
-msgid "[topic_based_ros2_control](4-ros2_parameters.md)"
-msgstr "[topic_based_ros2_control](4-ros2_parameters.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: d051ca7b80da4a93b7c24d61f0297dce
+msgid "[topic_based_ros2_control](1-topic_based.md)"
+msgstr "[topic_based_ros2_control](1-topic_based.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 591d0d8a530d4820b3d40b29078d1575
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 02264397fc0d47b8a185a08c06a39196
 msgid "ROS 2 topics"
 msgstr "ROS 2 话题"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 2c20fb3fb6114bccb8aca8edee4e5d9c
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 1c3ea9ed88274c62ac16a6ddcf7241a3
 msgid "Isaac (`hardware:=isaac`)"
 msgstr "Isaac（`hardware:=isaac`）"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 47c0f60ba01143698c7bdf83bc2559cf
-msgid "[arx-ros2-control](1-public_hi.md)"
-msgstr "[arx-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 7ce34854abec4ef689f2785d33419669
+msgid "[unitree-ros2-control](2-unitree.md)"
+msgstr "[unitree-ros2-control](2-unitree.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 98c122fbe15a4016a5bc5dd2b4b1ee6d
-msgid "CAN"
-msgstr "CAN"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: df333352d0134224b839ed3e667887be
-msgid "ARX X5, Acone (dual-arm), Lift 2S"
-msgstr "方舟无限 X5、Acone（双臂）、Lift 2S"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 5ed5b513e41e466380e092187cd9a62b
-msgid "[dobot-cr-ros2-control](1-public_hi.md)"
-msgstr "[dobot-cr-ros2-control](1-public_hi.md)"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 0de4999e3d5d419db52070f2d4892bfd 2fe76bd1278e4e178875d08ac6b1a38c
-msgid "TCP"
-msgstr "TCP"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 155ec1c895ee4e928a73ef26b4ebc621
-msgid "Dobot CR"
-msgstr "Dobot CR"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 8bbed56f922542bda19cd4b03bc52608
-msgid "[unitree-ros2-control](1-public_hi.md)"
-msgstr "[unitree-ros2-control](1-public_hi.md)"
-
-#: ../../source/4-reference/hardware/0-index.md:33
-#: ce7331e37d8d4275846cf99e6123944b
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 8ccbf061efb94c2194b2ca8731f43a90
 msgid "unitree_sdk2"
 msgstr "unitree_sdk2"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 008437855fd1481eae0e9532dc9df05a
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 4f77802192c44fdb93aa7d3f596a558c
 msgid "Unitree G1 / quadruped"
 msgstr "Unitree G1 / 四足"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 47c0f60ba01143698c7bdf83bc2559cf
-msgid "[ht-ros2-control](1-public_hi.md)"
-msgstr "[ht-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: b10c77abaad04aa1bb7128eddc2b45c1
+msgid "[dobot-cr-ros2-control](3-dobot.md)"
+msgstr "[dobot-cr-ros2-control](3-dobot.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 9e43086123c74455afed234c7163c2a7
+#: ../../source/4-reference/hardware/0-index.md:73
+#: ../../source/4-reference/hardware/0-index.md:105
+#: af1cb17b140841d898be04aedb67ab1e
+msgid "TCP"
+msgstr "TCP"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 3b5f87d5eb6042b1ac605eb9f30ac5eb
+msgid "Dobot CR"
+msgstr "Dobot CR"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: dd3b17b22f5a47a59085fd98bb5a22b8
+msgid "[arx-ros2-control](4-arx.md)"
+msgstr "[arx-ros2-control](4-arx.md)"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: ef16bb18d90a4ab9badc4b86f2b5bacb
+msgid "CAN"
+msgstr "CAN"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 6adf3b7395a64cbbb069a0f73bcbdb33
+msgid "ARX X5, Acone (dual-arm), Lift 2S"
+msgstr "方舟无限 X5、Acone（双臂）、Lift 2S"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 51b4fda5831b4702988f8ae7172a6f18
+msgid "[ht-ros2-control](5-ht.md)"
+msgstr "[ht-ros2-control](5-ht.md)"
+
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 6e82663636e4498b9ae990825f47e693
 msgid "Serial (`ttyACM`)"
 msgstr "串口（`ttyACM`）"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 3b8c5988bf3c4607a7b2740de98d8d99
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 5dddc850f3c84faab10fd8d694ce3ccb
 msgid "HighTorque Panthera HT"
 msgstr "高擎 Panthera HT"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: f3cd7ec04c1244079faa17d9c372e5bd
-msgid "[marvin-ros2-control](1-public_hi.md)"
-msgstr "[marvin-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 3b802aa3446440c9a636205a7c576ede
+msgid "[marvin-ros2-control](6-marvin.md)"
+msgstr "[marvin-ros2-control](6-marvin.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 9ad22515d3c642009435426322eca043
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 9877f50953c143c4a458a2efe5fc976d
 msgid "Marvin SDK + RS485/CAN tools"
 msgstr "Marvin SDK + RS485/CAN 工具"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: d55596e2d0004a31bd35c9f7354935f2
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 79577cf6d75549d58879ed7ba97ad748
 msgid "Tianji Marvin"
 msgstr "Tianji Marvin"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 4ec0931d57e049e58aae45a403c7cb4b
-msgid "[modbus-ros2-control](1-public_hi.md)"
-msgstr "[modbus-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 51479d66d534482f9f0126c5485dd4bf
+msgid "[modbus-ros2-control](7-modbus.md)"
+msgstr "[modbus-ros2-control](7-modbus.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: e66405690f95423f8dc1d90e06cf33fb
+#: ../../source/4-reference/hardware/0-index.md:73
+#: aae490f77ba942a9b0f23687880c91f0
 msgid "RS485 / Modbus RTU"
 msgstr "RS485 / Modbus RTU"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 56a431a945a349feb3f23aa78ad43e22
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 8403eae56f094a3c966f598e017bfd10
 msgid "Grippers, 灵巧手, KWR75"
 msgstr "夹爪、灵巧手、KWR75"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: e2f36cf9b0ce45388e23911a263a76a9
-msgid "[can-ros2-control](1-public_hi.md)"
-msgstr "[can-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 96a031a76430428780551c44afbaa9eb
+msgid "[can-ros2-control](8-can.md)"
+msgstr "[can-ros2-control](8-can.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 10cbec05442e4135bf5a94a34b14357e
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 0e1b8a82a7024500bf10d11ffca80004
 msgid "SocketCAN / CAN FD"
 msgstr "SocketCAN / CAN FD"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: c6e72223bab2439a9962f85be6e5a8ef
+#: ../../source/4-reference/hardware/0-index.md:73
+#: 92c627086371467885d6dc4d909dc7e7
 msgid "LinkerHand, Freedom V1, Inspire RH56"
 msgstr "LinkerHand、Freedom V1、Inspire RH56"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: aa656aa9293a486aa97c433024604d2a
-msgid "[juxie-ros2-control](1-public_hi.md)"
-msgstr "[juxie-ros2-control](1-public_hi.md)"
+#: ../../source/4-reference/hardware/0-index.md:73
+#: e1008779de83434ca34f9349433230de
+msgid "[juxie-ros2-control](9-juxie.md)"
+msgstr "[juxie-ros2-control](9-juxie.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 81652c30352a40ca954c1e4381370196 ade875b4548b4d3781d110299695d1b8
+#: ../../source/4-reference/hardware/0-index.md:73
+#: ../../source/4-reference/hardware/0-index.md:105
+#: ac41d97feb0d4abbbc2e42a2752e9197
 msgid "CAN FD"
 msgstr "CAN FD"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 0a57eb85a2ba412bbdd2d5aeea409917
+#: ../../source/4-reference/hardware/0-index.md:73
+#: e07c5a6140114b1c8b7477d707dbf12c
 msgid "JX CSP"
 msgstr "JX CSP"
 
-#: ../../source/4-reference/hardware/0-index.md:58
-#: 6425d0dc504d4a75a820356b6a0e7e41
-msgid "Private driver layer"
+#: ../../source/4-reference/hardware/0-index.md:101
+#: 49332636a5af4928944941a31eea8565
+msgid "Private Hardware Interfaces"
 msgstr "私有驱动层"
 
-#: ../../source/4-reference/hardware/0-index.md:60
-#: c76d1aabb6d14dee8a2c5b592175ecbd
+#: ../../source/4-reference/hardware/0-index.md:103
+#: 1dde28d06d6e4cd5a4073459b0677576
 msgid ""
-"Names only — parameters stay in that repository’s README after access: "
-"[Private driver layer](2-private_hi.md)."
-msgstr "只列名称；开通后参数见该仓库 README：[私有驱动层](2-private_hi.md)。"
+"Names only — configuration keys, API details, and SDK env vars stay in "
+"**that repository’s README after access**."
+msgstr "仅列名称 — 配置键、API 细节与 SDK 环境变量见开通后**该仓库 README**。"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 160a507cbdff4c9a82b8a7c4d322554a
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 736e160ae2d0413ab3ba6fda69fa9d16
+msgid "Access Required"
+msgstr "需要访问权限"
+
+#: ../../source/4-reference/hardware/0-index.md:108
+#: b4e98e9292404d09a9210b48d3589ed4
+msgid ""
+"These packages require private repository access. Contact your team lead "
+"for access."
+msgstr "这些软件包需要私有仓库访问权限。请联系团队负责人申请访问。"
+
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 63ba680cb7cd40dfa491b0b9d9772950
 msgid "Robots"
 msgstr "机器人"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: c8f1053dfbc44daaa433c596b4b4c4a6
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 0c019daed12c48889eb7ddf01445bebb
 msgid "rokae-ros2-control"
 msgstr "rokae-ros2-control"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: bbec11d651474c8c93df70ac000e6933
-msgid "Rokae arms"
-msgstr "Rokae 机械臂"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 96512f56035845979f839571adf61108
+msgid "Rokae collaborative arms"
+msgstr "珞石协作臂"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 685327b96bd14c16990cd99d2c822f8c
+#: ../../source/4-reference/hardware/0-index.md:105
+#: beffb3805c634f439d77c79fc48e6dec
 msgid "eyou-ros2-control"
 msgstr "eyou-ros2-control"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 79e940c012c34626892b7b0cba11edca
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 833623e8a9aa47b2b3543ee3f0652cb1
 msgid "CANopen"
 msgstr "CANopen"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 397a4114644c488484cbeb443b5621c4
-msgid "Harmonic drives"
-msgstr "谐波减速器"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: ec1a12d1f022465b9d0caff6963ffb99
+msgid "Eyou harmonic drives"
+msgstr "Eyou 谐波减速器"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 6b79c268d0a842a48111a03a998eb3cc
+#: ../../source/4-reference/hardware/0-index.md:105
+#: dae07849d91749a4967fdf6fd5d3e667
 msgid "eyou_canfd_ros2_control"
 msgstr "eyou_canfd_ros2_control"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: c0b21b304e324d439148f0ad81c4ad3d
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 7e18f2cd10bd4ae592109956c4d62861
 msgid "PHU CSP"
 msgstr "PHU CSP"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 47c80823ea4f489199d3362c82a8f293
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 6b1e13b5e0b043ef9082c7d8402919e2
 msgid "inex-ros2-control"
 msgstr "inex-ros2-control"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: cfde1393565843d1a8b92fdbf58526d8 ebfaaf6d95404a47a264370d593be205
+#: ../../source/4-reference/hardware/0-index.md:105
+#: d96ec3119eb948fa9dd997c0f4b458c4
 msgid "Custom"
 msgstr "自定义"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 218312c51ff649c7991a774e129d9cc1
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 9a2f61cb563449cc9503b78d2933d34b
 msgid "iNexus + LinkerHand"
 msgstr "iNexus + LinkerHand"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 40564f0dd18a4f55b6269845900cf84c
-msgid "wuji-ros2-control"
-msgstr "wuji-ros2-control"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: e1008779de83434ca34f9349433230de
+msgid "[wuji-ros2-control](../teleop/7-wuji_hand_hi.md)"
+msgstr "[wuji-ros2-control](../teleop/7-wuji_hand_hi.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: e4e1086952304a7dba24ad221ae1b887
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 14aef467d28c4d969e8d62d4ec8d69c5
 msgid "Ethernet"
 msgstr "以太网"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 4e532c8b433045a58bd8df2630be41c3
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 418a3c4c17f34ea698412bb0aa750b8a
 msgid "Wuji Hand2"
 msgstr "Wuji Hand2"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 54688d7642164a05b094a90e793f178a
-msgid "dexcap-ros2-control"
-msgstr "dexcap-ros2-control"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: ff206696d7a341e4a205033b66fe6dd1
+msgid "[dexcap-ros2-control](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)"
+msgstr "[dexcap-ros2-control](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 32164c732af94ac4bfdeae0635a7ce09
+#: ../../source/4-reference/hardware/0-index.md:105
+#: c171f6b10cf049ff85cdf1807d521e73
 msgid "DexCap V4"
 msgstr "DexCap V4"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: 30b3232ab48b4898911c97d7b9c6f8fa
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 1838eb399548447f9ea6d81f56b527b5
 msgid "fairino-ros2-control"
 msgstr "fairino-ros2-control"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: edcc5b9703b94726a978cd95f8337969
-msgid "SDK"
-msgstr "SDK"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 351c2eb247f64236ae4a9e5a236e4a50
+msgid "ART SDK"
+msgstr "ART SDK"
 
-#: ../../source/4-reference/hardware/0-index.md:33
-#: f09666a3decc4e55b875b0aa62805ecf
-msgid "Fairino ART"
-msgstr "Fairino ART"
+#: ../../source/4-reference/hardware/0-index.md:105
+#: 9f37a576d49d4f24bc95c4167bba0980
+msgid "Fairino arms"
+msgstr "Fairino 机械臂"
+
+#: ../../source/4-reference/hardware/0-index.md:121
+#: 07a586060189401b925f5131a1768b64
+msgid ""
+"`fairino-ros2-control` wraps the Fairino ART SDK (install and network "
+"setup are in that README after access)."
+msgstr "`fairino-ros2-control` 封装 Fairino ART SDK（安装与组网见开通后该 README）。"
+
+#: ../../source/4-reference/hardware/0-index.md:123
+#: 2f9ac78fcb68414eb99088680fd4a2f4
+msgid "Common operations"
+msgstr "常用操作"
+
+#: ../../source/4-reference/hardware/0-index.md:125
+#: 4c61aafc98724b3ea941dfd4bbb9979f
+msgid ""
+"ros2 control list_hardware_interfaces\n"
+"ros2 control list_controllers\n"
+"ros2 topic echo /joint_states\n"
+msgstr ""
+"ros2 control list_hardware_interfaces\n"
+"ros2 control list_controllers\n"
+"ros2 topic echo /joint_states\n"
+
+#: ../../source/4-reference/hardware/0-index.md:131
+#: 88dc74b06ffd445b852029a73729a09a
+msgid ""
+"Hardware `<param>` values do **not** appear on `ros2 param list` unless "
+"that plugin also `declare_parameter`s them. Confirm the plugin and xacro "
+"as in [Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)."
+msgstr ""
+"硬件 `<param>` **不会**出现在 `ros2 param list` 上，除非该插件也 `declare_parameter` "
+"了同名项。按 [配置 ROS 2 "
+"控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md) 核对插件和 xacro。"
+
+#: ../../source/4-reference/hardware/0-index.md:133
+#: 05e25183d3ec49069f3de0d01efe5e85
+#, python-brace-format
+msgid ""
+"`{robot}_description/config/ocs2/*.info` are **OCS2 task / model files**,"
+" not ROS 2 parameters. `robot_name` chooses the description package at "
+"startup — [Controller ROS 2 "
+"parameters](../controllers/8-ros2_parameters.md)."
+msgstr ""
+"`{robot}_description/config/ocs2/*.info` 是 **OCS2 任务 / 模型文件**，不是 ROS 2 "
+"参数。启动时由 `robot_name` 选择描述包 — [控制器 ROS 2 "
+"参数](../controllers/8-ros2_parameters.md)。"
+
+#: ../../source/4-reference/hardware/0-index.md:135
+#: 5c2dc025f95a4aca9931241141dc5963
+msgid "Related"
+msgstr "相关内容"
+
+#: ../../source/4-reference/hardware/0-index.md:137
+#: 5322f120b85e4bf2a5d3a4be85406dc1
+msgid ""
+"[Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
+msgstr ""
+"[Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
+
+#: ../../source/4-reference/hardware/0-index.md:138
+#: 8425f2be0dbc426dba8b8c37958bafce
+msgid "[Controller ROS 2 parameters](../controllers/8-ros2_parameters.md)"
+msgstr "[控制器 ROS 2 参数](../controllers/8-ros2_parameters.md)"
+
+#: ../../source/4-reference/hardware/0-index.md:139
+#: 57dc793702e54374ab1c2892be8168cf
+msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
+msgstr "[ros2_control 在本项目中](../../3-concepts/1-ros2_control_here.md) — 理解控制架构"
+
+#: ../../source/4-reference/hardware/0-index.md:140
+#: 4a5fd186b7284212bc3b04916f3b7efe
+msgid "[Terminology](../../3-concepts/8-terminology.md)"
+msgstr "[术语对照](../../3-concepts/8-terminology.md)"
 
 #~ msgid ""
 #~ "Controller Manager\n"
@@ -443,7 +760,7 @@ msgstr "Fairino ART"
 #~ msgstr "本节介绍 ros2_control 硬件接口插件。"
 
 #~ msgid "Hardware Interfaces Reference"
-#~ msgstr "硬件接口参考"
+#~ msgstr "驱动层"
 
 #~ msgid ""
 #~ "This section documents the ros2_control "
@@ -474,4 +791,34 @@ msgstr "Fairino ART"
 
 #~ msgid "Various hands"
 #~ msgstr "多种灵巧手"
+
+#~ msgid "Driver layer"
+#~ msgstr "驱动层"
+
+#~ msgid ""
+#~ "This section documents the **driver "
+#~ "layer** (驱动层) — ros2_control hardware "
+#~ "plugins (Hardware Interface)."
+#~ msgstr "本节记录 **驱动层** — ros2_control 硬件插件（`Hardware Interface`）。"
+
+#~ msgid "Quick Reference"
+#~ msgstr "快速参考"
+
+#~ msgid "[topic_based_ros2_control](4-ros2_parameters.md)"
+#~ msgstr "[topic_based_ros2_control](4-ros2_parameters.md)"
+
+#~ msgid ""
+#~ "Names only — parameters stay in "
+#~ "that repository’s README after access: "
+#~ "[Private Hardware Interfaces](2-private_hi.md)."
+#~ msgstr "只列名称；开通后参数见该仓库 README：[私有驱动层](2-private_hi.md)。"
+
+#~ msgid "Rokae arms"
+#~ msgstr "Rokae 机械臂"
+
+#~ msgid "wuji-ros2-control"
+#~ msgstr "wuji-ros2-control"
+
+#~ msgid "dexcap-ros2-control"
+#~ msgstr "dexcap-ros2-control"
 

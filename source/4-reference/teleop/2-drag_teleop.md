@@ -28,7 +28,7 @@ ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
   role:=slave hardware:=mock_components
 
-# Real (see README for mode × driver-layer requirements)
+# Real (see README for mode × hardware-interface requirements)
 ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
   role:=master hardware:=real mode:=effort \
   hardware_control_mode:=effort

@@ -4,7 +4,7 @@ For on-site engineers who unpack a workspace, bring up the robot, and run teleop
 
 ## 1. Deploy from a field zip (deploy-ws)
 
-Public lean branches document a **zip** path: unzip, then `./release.sh --install`, then `./quick_start.sh`. Descriptions stay as source; controllers and the driver layer come from `.deb`.
+Public lean branches document a **zip** path: unzip, then `./release.sh --install`, then `./quick_start.sh`. Descriptions stay as source; controllers and hardware interfaces come from `.deb`.
 
 1. [Go to Real Hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md) — safety, robot table, which branch to use.
 2. [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) — field zip, then `./quick_start.sh` (split body / full body).

@@ -98,7 +98,7 @@ ros2 service call /drag_teleop_master/teleop_feedback \
 | `feedback` | (yaml) | `false` / `position` / `effort` (master only) |
 | `moveJ_pub` | `false` | Master can publish OCS2 moveJ + gripper commands |
 
-Control laws, driver-layer requirements per `role` × `mode`, and YAML keys are in the [README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md).
+Control laws, hardware-interface requirements per `role` × `mode`, and YAML keys are in the [README](https://github.com/fiveages-sim/drag_teleop_controller/blob/main/README.md).
 
 ## Safety
 

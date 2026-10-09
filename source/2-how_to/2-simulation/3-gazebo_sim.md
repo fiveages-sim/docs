@@ -31,7 +31,7 @@ source install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 ```
 
-Acone xacro plugin for this key: `gz_ros2_control/GazeboSimSystem`. `gz` is a launch key, not a vendor driver-layer package — [Driver layer](../../4-reference/hardware/0-index.md).
+Acone xacro plugin for this key: `gz_ros2_control/GazeboSimSystem`. `gz` is a launch key, not a vendor hardware-interface package — [Hardware Interfaces](../../4-reference/hardware/0-index.md).
 
 ### 3. Interact
 
