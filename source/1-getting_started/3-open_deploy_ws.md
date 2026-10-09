@@ -162,6 +162,16 @@ source install/setup.bash
 ros2 launch robot_common_launch humanoid.launch.py robot:=taku
 :::
 
+Mock demo with the same `robot:=` key (after descriptions on `feature/agilex`):
+
+:::{code-block} bash
+colcon build --packages-up-to ocs2_arm_controller taku_description
+source install/setup.bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
+:::
+
+In RViz, set **Fixed Frame** to **`agv_base`** (package root link). Default `demo.rviz` / `base_link` makes the model look missing. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path.
+
 `ocs2_arm_controller demo.launch.py` uses the same `robot:=<key>` → `{key}_description` lookup. Taku ships `config/ocs2/` and a ros2_control yaml that names `ocs2_arm_controller`, so `robot:=taku` is the same convention — not a special-cased flag.
 
 The description is **inferred** (public Dyna kinematics; not official Dyna specs). That is stated in the package README.
@@ -245,9 +255,12 @@ ros2 launch ocs2_arm_controller demo.launch.py
 ```bash
 # Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
+
+# Taku (descriptions on feature/agilex). RViz Fixed Frame must be agv_base.
+ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
 ```
 
-Taku visualize path (package README): `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`.
+Taku visualize path (package README): `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`. See [Taku / `feature/agilex`](#taku--featureagilex) for the build and Fixed Frame notes.
 
 ### End-effector (`type`)
 

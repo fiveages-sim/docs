@@ -15,7 +15,19 @@ Follow the branch README. Launch flags are those listed there.
 
 ## Clone and init
 
-From the README (directory name `lift2s-ws` is the example):
+Directory name `lift2s-ws` is the example. The workspace repo is public.
+
+**Public HTTPS** (no SSH key for the top-level clone):
+
+:::{code-block} bash
+cd ~
+git clone -b arx-lift2s https://github.com/fiveages-sim/open-deploy-ws.git lift2s-ws
+cd ~/lift2s-ws
+:::
+
+Then follow the branch README: `./init_repo.sh`, or a field zip plus `./release.sh --install` then `./quick_start.sh`. Descriptions stay as source; controllers / hardware interface come from `.deb`.
+
+**Developer SSH** (nested private modules when you have keys):
 
 :::{code-block} bash
 cd ~
@@ -23,8 +35,6 @@ git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
 cd ~/lift2s-ws
 ./init_repo.sh
 :::
-
-Field zip (README): unzip, then `./release.sh --install`, then `./quick_start.sh`. Descriptions stay as source; controllers / hardware interface come from `.deb`.
 
 ## Build and launch (scripts first)
 
@@ -46,15 +56,18 @@ X5 / R5 / **ACone** / Lift / X7S in the same menu are `robot-descriptions-arx` m
 
 ## Optional README launch lines
 
-Prefer the script. These are the README’s optional equivalents for **Lift2S**:
+Prefer the script. These are the README’s optional equivalents for **Lift2S**. Omit `hardware:=` for simulation — the launch default is `mock_components`. Pass `hardware:=real` on the robot.
 
 :::{code-block} bash
 source ~/lift2s-ws/install/setup.bash
 # Visualization
 ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift2s
-# Split body / full body (add hardware:=real for the robot)
+# Simulation / mock_components default — omit hardware:=
 ros2 launch ocs2_arm_controller split_body.launch.py robot:=arx_lift2s
 ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
+# Real robot
+ros2 launch ocs2_arm_controller split_body.launch.py robot:=arx_lift2s hardware:=real
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s hardware:=real
 :::
 
 Those OCS2 launches also take `type` / `left_type` / `right_type` from [robot_common_launch](../../../4-reference/descriptions/2-common.md) (`create_robot_profile_launch_arguments()`). Different L/R: `left_type:=` and `right_type:=` together; **do not pass `type:=`** then. Visualization `manipulator.launch.py` uses the same first-class args.

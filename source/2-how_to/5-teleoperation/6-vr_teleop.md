@@ -33,6 +33,9 @@ Store listings, extra package names, and ADB steps are in the headset / fa-py-li
 - VR headset (**Pico Enterprise** recommended; Pico consumer or **Meta Quest** also used)
 - fa-py-libraries installed
 - Network between the headset and the ROS 2 machine (Wi-Fi, or **USB 网络共享** on Pico Enterprise)
+- **`enable_vr: true`** in the robot description’s `config/ocs2/target_manager.yaml` (most robots default off)
+
+Before the controller will consume VR targets, set `enable_vr: true` in that YAML. Related fields on the same file: `vr_update_rate` (used when VR is on) and `vr_follow_frame` (full-body follow frame; see [Troubleshooting](#troubleshooting)).
 
 ## Overview
 
@@ -114,6 +117,8 @@ cd fa-py-libraries
 ./init.sh all
 :::
 
+HTTPS is the public clone. SSH (`git clone git@github.com:fiveages-sim/fa-py-libraries.git`) is optional if you already have keys.
+
 What `./init.sh all` does: submodules + Python 3.12 env + `ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher`.
 
 ### 2. Start Robot Demo
@@ -190,14 +195,26 @@ teleop_config:
   right_arm: "any_controller"
 ```
 
-## Gripper Control
+## Controller buttons (分体 vs 全身)
 
-VR controller buttons map to gripper:
+Bindings depend on whether the robot is running **分体** (`split_body.launch.py`) or **全身** (`full_body.launch.py`). Shared on both:
 
-| Button | Action |
-|--------|--------|
-| Trigger | Close gripper (proportional) |
-| Grip | Toggle gripper state |
+| Control | Action |
+|---------|--------|
+| Trigger | Gripper — pull for proportional open/close; in open/close mode, tap toggles |
+| Right **A** / left **X** | FSM forward (`HOLD`→`OCS2`, `HOME`→`HOLD`) / back (`OCS2`→`HOLD`, `HOLD`→`HOME`) |
+| Left stick click | Mirror |
+| Right stick click | `STORAGE` ↔ `UPDATE` (**OCS2 only**) |
+| Grip (short press) | Toggle stick plane (`XY` ↔ `Z+Yaw`) |
+
+**全身** adds grip + stick (ignored in 分体; FSM must already be **OCS2**):
+
+| Control | Action |
+|---------|--------|
+| Left grip + left stick | Body: up = upright, down = lock waist, left = follow, right = custom lock |
+| Right grip + right stick | WBC: up = dual-arm couple on/off, down = chassis unlock/lock, left = reserved, right = reference-joint track |
+
+Grip + same-hand trigger switches that trigger’s gripper between percent and open/close. Left **Y** + right **B** is scale-align (turns mirror off and returns to `STORAGE`). Both sticks together toggle chassis teleop ↔ end-effector control.
 
 ## Safety
 
@@ -249,9 +266,14 @@ Then:
 
 ### Robot doesn't follow
 
-- Verify controller is in teleop mode
+- Confirm `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off)
+- Verify controller is in teleop mode (`UPDATE` after entering OCS2)
 - Check target poses are within workspace
 - Ensure no safety limits are triggered
+
+### `base_footprint` missing (全身 / FULL_BODY)
+
+FULL_BODY may warn that `base_footprint` does not exist (`lookupTransform` target_frame). Default `vr_follow_frame` is `base_footprint`. Set `vr_follow_frame` in `config/ocs2/target_manager.yaml` to the robot’s real base (for example `base_link`).
 
 ## Next Steps
 
@@ -259,3 +281,4 @@ Then:
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md) for mode control
 - [ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md) — `force_gains` and MIX detection
 - [marvin-ros2-control](../../4-reference/hardware/1-public_hi.md) — Tianji position + `JOINT_IMPEDANCE`
+- [vr_pose_publisher](../../4-reference/teleop/1-vr_pose_publisher.md) — published `/teleop/*` topics
