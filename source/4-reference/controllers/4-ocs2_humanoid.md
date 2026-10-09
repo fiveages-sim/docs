@@ -47,5 +47,5 @@ Root-level README documentation is limited. See WBC controller for usage.
 
 ## Related
 
-- [ocs2-wbc-controller](3-ocs2_wbc.md)
+- [OCS2 WBC Controller](3-ocs2_wbc.md)
 - [ocs2_ros2](1-ocs2_ros2.md)

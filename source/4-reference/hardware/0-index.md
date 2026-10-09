@@ -25,7 +25,7 @@ CAN / TCP / Serial / Simulation
 4-ros2_parameters
 ```
 
-URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware interface parameters](4-ros2_parameters.md).
+URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware Interface parameters](4-ros2_parameters.md).
 
 ## Quick Reference
 
@@ -38,8 +38,8 @@ URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware 
 | [unitree-ros2-control](1-public_hi.md) | SDK | Unitree quadrupeds |
 | [ht-ros2-control](1-public_hi.md) | Serial | HighTorque Panthera HT |
 | [marvin-ros2-control](1-public_hi.md) | Custom | Tianji Marvin |
-| [modbus-ros2-control](1-public_hi.md) | RS485 | Grippers |
-| [can-ros2-control](1-public_hi.md) | CAN | Various hands |
+| [modbus-ros2-control](1-public_hi.md) | RS485 | Grippers (夹爪) |
+| [can-ros2-control](1-public_hi.md) | CAN | Dexterous hands (灵巧手) |
 | [juxie-ros2-control](1-public_hi.md) | CAN FD | JX CSP |
 
 ### Private Interfaces

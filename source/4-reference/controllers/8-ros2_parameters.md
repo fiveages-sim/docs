@@ -19,9 +19,9 @@ Names, types, and defaults come from the linked README or from `auto_declare` / 
 
 `config/ocs2/*.info` (task file, generated library path, default frames) is **not** the ROS 2 parameter server. `info_file_name` / `robot_name` select which files to load at startup.
 
-## basic_joint_controller
+## Basic Joint Controller
 
-Package README §3: [English](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README.md) / [Chinese](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README_zh.md). Topics: [basic_joint_controller](7-basic_joint_controller.md). How-to: [Use basic_joint_controller](../../2-how_to/4-controllers/11-basic_joint.md).
+Package README §3: [English](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README.md) / [Chinese](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md) (`basic_joint_controller`). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).
 
 | Parameter | Type / default (README) | Meaning (README) | Startup / runtime |
 |-----------|-------------------------|------------------|-------------------|
@@ -66,9 +66,9 @@ Lift 2S example from the same README (`body_joint_controller`): `waist_lifting_e
 
 Also declared in `BasicJointController::on_init` (not in README §3): `command_prefix`, `hold_first_check_position_threshold` (`0.1`), `hold_position_threshold` (`0.1`), `target_command_hold_joints` (`[]`), `waist_turning_direction` (`1.0`). `StateHome` also declares `home_max_velocity` / `home_max_acceleration` / `home_max_jerk` (`2.0` / `4.0` / `20.0`). All **未核实**.
 
-## adaptive_gripper_controller
+## Adaptive Gripper Controller
 
-README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md). Command channels (not parameters): [Gripper and teleop plugins](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`, not from these keys.
+README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md) for `adaptive_gripper_controller`. Command channels (not parameters): [Gripper and teleop plugins](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`, not from these keys.
 
 | Parameter | Type / default | Meaning (README) | Startup / runtime |
 |-----------|----------------|------------------|-------------------|
@@ -79,9 +79,9 @@ README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1
 
 `on_init` stores those four values in members; there is no `on_set_parameters` callback in the public source.
 
-## ocs2_arm_controller
+## OCS2 Arm Controller
 
-README: [ocs2_arm_controller](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/README.md). FSM / launch: [ocs2_arm_controller](2-ocs2_arm_controller.md). Public YAML example: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml) (`robot:=cr5` is the demo default). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
+README: [ocs2_arm_controller](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md) (`ocs2_arm_controller`). Public YAML example: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml) (`robot:=cr5` is the demo default). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
 
 README key list vs this pin’s `auto_declare`:
 
@@ -187,18 +187,18 @@ YAML: package [`config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_
 
 Controller frame parameters (`base_frame`, `left_ee_frame`, `right_ee_frame`, WBC `body_frame`) are documented on the OCS2 table above; they belong to the **controller** node, not this marker node.
 
-## ocs2_wbc_controller
+## OCS2 WBC Controller
 
-`controller/ocs2_wbc_controller` is a **private** submodule. Parameter names after access: that package README. Public launch: `ros2 launch ocs2_arm_controller full_body.launch.py` — [ocs2_wbc_controller](3-ocs2_wbc.md).
+`controller/ocs2_wbc_controller` is a **private** submodule. Parameter names after access: that package README. Public launch: `ros2 launch ocs2_arm_controller full_body.launch.py` — [OCS2 WBC Controller](3-ocs2_wbc.md).
 
 Public YAML may still list an `ocs2_wbc_controller:` block (Lift 2S `home_3` / `home_4`; Taku on `feature/agilex`). Treat those keys as machine overlays; the private README is the parameter list.
 
 ## Related
 
 - [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)
-- [Hardware interface parameters](../hardware/4-ros2_parameters.md)
-- [basic_joint_controller](7-basic_joint_controller.md)
-- [ocs2_arm_controller](2-ocs2_arm_controller.md)
+- [Hardware Interface parameters](../hardware/4-ros2_parameters.md)
+- [Basic Joint Controller](7-basic_joint_controller.md)
+- [OCS2 Arm Controller](2-ocs2_arm_controller.md)
 - [Gripper and teleop plugins](6-gripper_teleop_plugins.md)
-- [ocs2_wbc_controller](3-ocs2_wbc.md)
+- [OCS2 WBC Controller](3-ocs2_wbc.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)

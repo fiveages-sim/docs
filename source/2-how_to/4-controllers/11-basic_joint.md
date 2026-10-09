@@ -1,6 +1,6 @@
-# Use basic_joint_controller
+# Use Basic Joint Controller
 
-Run the joint-position controller (Home / Hold / MoveJ) from [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control).
+Run Basic Joint Controller (`basic_joint_controller`) — joint-position FSM (HOME / HOLD / MOVEJ) — from [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control).
 
 ```{admonition} Source of truth
 :class: important
@@ -53,7 +53,7 @@ ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 4"   # HOLD → MOV
 | `4` | MOVEJ (only from HOLD; same canonical value as the whole-body stack) |
 | `3` | MOVEJ if this controller is standalone; on mixed OCS2/WBC stacks `3` means **OCS2** |
 
-MOVEJ returns only to HOLD (`2`). Full table and home-config `100`+ commands: [basic_joint_controller reference](../../4-reference/controllers/7-basic_joint_controller.md).
+MOVEJ returns only to HOLD (`2`). Full table and home-config `100`+ commands: [Basic Joint Controller reference](../../4-reference/controllers/7-basic_joint_controller.md).
 
 ## Command joints in MOVEJ
 
@@ -69,7 +69,7 @@ Type is `std_msgs/Float64MultiArray`, not `sensor_msgs/JointState`. Optional tra
 ## Related
 
 - [Configure ROS 2 controller parameters](12-ros2_parameters.md) — YAML keys and startup vs runtime
-- [basic_joint_controller reference](../../4-reference/controllers/7-basic_joint_controller.md)
+- [Basic Joint Controller reference](../../4-reference/controllers/7-basic_joint_controller.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
 - [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md)

@@ -14,7 +14,7 @@ Public ros2_control hardware interface plugins.
 
 ### Purpose
 
-CAN bus interface for ARX robots (X5, Acone dual-arm, Lift 2S full-body).
+ARX 硬件接口 (CAN driver) for X5, Acone (dual-arm), and Lift 2S (full-body).
 
 ### Configuration
 
@@ -213,7 +213,7 @@ See repository README for configuration details.
 Product mapping documentation to be expanded.
 ```
 
-Parameter names on this page are xacro `<param>` values loaded when the hardware plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware interface parameters](4-ros2_parameters.md).
+Parameter names on this page are xacro `<param>` values loaded when the 硬件接口 starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware Interface parameters](4-ros2_parameters.md).
 
 ## Common Operations
 

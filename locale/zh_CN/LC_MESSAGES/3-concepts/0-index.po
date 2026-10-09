@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 07:59+0000\n"
+"POT-Creation-Date: 2026-10-09 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,33 +20,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/3-concepts/0-index.md:1 091ddd52a0814cc281144608ec00d869
+#: ../../source/3-concepts/0-index.md:1 5e5c6bae400b423cb00e80222c93b71f
 msgid "Introduction"
 msgstr "导读"
 
-#: ../../source/3-concepts/0-index.md:3 9c2e59db65cc4d8e90c77512bc4d83bf
+#: ../../source/3-concepts/0-index.md:3 d51c79b02bab4a3ea25af50f35d0a48e
 msgid ""
 "Stack-specific notes. Concrete names come from repository READMEs / "
 "launch / xacro — not a generic ROS 2 textbook."
 msgstr "本技术栈专用说明。具体名称来自仓库 README / launch / xacro — 不是通用 ROS 2 教材。"
 
-#: ../../source/3-concepts/0-index.md:5 8226567e4d0945088c50fde3ce305341
+#: ../../source/3-concepts/0-index.md:5 52a3a70eef594e1482d9e18ca8540847
 msgid "Topics Covered"
 msgstr "涵盖主题"
 
-#: ../../source/3-concepts/0-index.md:7 c8ca85585c2042c8b75c79d6d03e2f15
+#: ../../source/3-concepts/0-index.md:7 2c9cb2c9ba734db890f683bde944b6b2
 msgid ""
 "[ros2_control Here](1-ros2_control_here.md) — `hardware:=` → "
 "`ros2_control_hardware_type`; Acone plugin table"
 msgstr "[本技术栈中的 ros2_control](1-ros2_control_here.md) — 本技术栈如何使用 ROS 2 control"
 
-#: ../../source/3-concepts/0-index.md:8 6bdbc9de0d6741e184fcac857b512d29
+#: ../../source/3-concepts/0-index.md:8 bab8223decc44569b5a3a5d2b09a70e3
 msgid ""
 "[Workspace Layout](2-workspace_layout.md) — `open-deploy-ws` tree and "
 "`./init_repo.sh`"
 msgstr "[工作空间布局](2-workspace_layout.md) — 部署工作空间的结构"
 
-#: ../../source/3-concepts/0-index.md:9 4824f6908076404da4bd2974a51b171a
+#: ../../source/3-concepts/0-index.md:9 3eeb04407ae94f3c96a285c9bca1404f
 msgid ""
 "[Naming Conventions](3-naming_conventions.md) — Launch `robot` / EEF "
 "`type` / `left_type` / `right_type` (not `gripper:=`); `hardware` values"
@@ -54,42 +54,45 @@ msgstr ""
 "[命名规范](3-naming_conventions.md) — launch 的 `robot` / 末端 `type` / "
 "`left_type` / `right_type`（不是 `gripper:=`）"
 
-#: ../../source/3-concepts/0-index.md:10 eb22d9901ba24b01b90df92f4a6d6510
+#: ../../source/3-concepts/0-index.md:10 8f7c47f994424a0b9cf28ca6aeae3418
 #, #
 msgid ""
 "[FSM and Topics](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command`; "
 "Topic vs Action vs Service; WBC body/head + `/mode_command`"
-msgstr "[FSM 与话题](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command`；话题 vs Action vs Service；WBC 身体/头部 + `/mode_command`"
-
-#: ../../source/3-concepts/0-index.md:11 d59bcb24c8d44bce8ae01cf9a20adb04
-msgid ""
-"[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body` (ocs2_arm + basic_joint)"
-" vs `full_body` (ocs2_wbc)"
 msgstr ""
-"[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body`（ocs2_arm + "
-"basic_joint）vs `full_body`（ocs2_wbc）"
+"[FSM 与话题](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command`；话题 vs "
+"Action vs Service；WBC 身体/头部 + `/mode_command`"
 
-#: ../../source/3-concepts/0-index.md:12 23fe139b7a144f3f926211d7ec989bf0
+#: ../../source/3-concepts/0-index.md:11 cd69bb3820c2484282d5190d310a6700
+msgid ""
+"[分体控制 vs 全身控制](7-split_vs_wbc.md) — 分体控制 (`split_body.launch.py`, OCS2 "
+"Arm + Basic Joint) vs 全身控制 (`full_body.launch.py`, OCS2 WBC)"
+msgstr ""
+"[分体控制 vs 全身控制](7-split_vs_wbc.md) — 分体控制（`split_body.launch.py`，`OCS2 Arm"
+" Controller` + `Basic Joint Controller`）vs "
+"全身控制（`full_body.launch.py`，`OCS2 WBC Controller`）"
+
+#: ../../source/3-concepts/0-index.md:12 303cdf51b9484510b655121f8a12dd18
 msgid ""
 "[Source vs Deb](5-source_vs_deb.md) — GitHub Release `.deb` vs source via"
 " `./init_repo.sh`"
 msgstr "[源码与 Deb](5-source_vs_deb.md) — 何时使用 GitHub Release `.deb`、何时从源码编译"
 
-#: ../../source/3-concepts/0-index.md:13 08a4bb2671d242a69001611f9fa9b65c
+#: ../../source/3-concepts/0-index.md:13 33610ee0d4424c80bfd490a6b5d88bfb
 msgid ""
 "[Submodules Visibility](6-submodules_visibility.md) — "
 "`parent|path|public|private` and init"
 msgstr "[子模块可见性](6-submodules_visibility.md) — 公开与私有子模块的管理"
 
-#: ../../source/3-concepts/0-index.md:15 c9a830000e374c48b0305c41dd0e4194
+#: ../../source/3-concepts/0-index.md:15 539aca7151504feaa9cc44f70e08ae59
 msgid "Related Sections"
 msgstr "相关章节"
 
-#: ../../source/3-concepts/0-index.md:17 672b673fc965449eada735aba4d20cb3
+#: ../../source/3-concepts/0-index.md:17 15e929d5f47e42bb8c5cfde5f27b595b
 msgid "[Reference](../4-reference/descriptions/0-index.md) — Package pages"
 msgstr "[参考手册](../4-reference/descriptions/0-index.md) — 详细的软件包文档"
 
-#: ../../source/3-concepts/0-index.md:18 3e998b2a972b413ba12baa6fba7ff494
+#: ../../source/3-concepts/0-index.md:18 e9cf6f4666fc40e89d7c8390c9a00928
 msgid "[How-To Guides](../2-how_to/0-index.md)"
 msgstr "[How-To 指南](../2-how_to/0-index.md)"
 

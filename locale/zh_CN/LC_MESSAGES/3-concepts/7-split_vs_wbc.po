@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 09:38+0000\n"
+"POT-Creation-Date: 2026-10-09 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md:1 65a56a2fe3ab4687828d38fb74256277
+#: ../../source/3-concepts/7-split_vs_wbc.md:1 72577a9dae7843fe85e50daa7fe798ef
 msgid "分体控制 vs 全身控制"
 msgstr "分体控制 vs 全身控制"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md:3 51fa90c2ca404ffcbd3073acc247708f
+#: ../../source/3-concepts/7-split_vs_wbc.md:3 d2f0e890eec94cb3ab8fd99802852857
 msgid ""
 "Two real launch paths in [ocs2_arm_controller](https://github.com"
 "/fiveages-"
@@ -39,55 +39,59 @@ msgstr ""
 "README](https://github.com/fiveages-sim/open-deploy-ws/blob/arx-"
 "lift2s/README.EN.md) 中也对应 **分体** / **全身**。"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 840c33ef1fea4490bb9ecadcfd2a808a
-msgid "**分体控制** (split)"
-msgstr "**分体控制**（split）"
+#: ../../source/3-concepts/7-split_vs_wbc.md c1437964490e4cc094b2976bfafd7cc8
+msgid "**分体控制** (Split Body)"
+msgstr "**分体控制**"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 3cec2a142a7746648b9b18e2f18d909d
-msgid "**全身控制** (whole-body)"
-msgstr "**全身控制**（whole-body）"
+#: ../../source/3-concepts/7-split_vs_wbc.md f31e04a758384057a1e222afeddd139f
+msgid "**全身控制** (Full Body)"
+msgstr "**全身控制**"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 7600a3ec113146f688bbbe8df883cd88
+#: ../../source/3-concepts/7-split_vs_wbc.md 5e4dc4fa7d084710af7c9821a7ec069d
 msgid "Meaning"
 msgstr "含义"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 6114767a5bf44fe7a9427b9bb605926d
-msgid "Arms and body/head (and typically hands) run as **separate** controllers"
-msgstr "手臂与身体/头（通常还有手）由**各自独立**的控制器运行"
+#: ../../source/3-concepts/7-split_vs_wbc.md b0d552fbb13f480786703e28f6ea9bc6
+msgid ""
+"Arms and body/head (and typically dexterous hands) run as **separate** "
+"controllers"
+msgstr "手臂与身体/头（通常还有灵巧手）由**各自独立**的控制器运行"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 0a15f989e30b4bbfaf193d46856eaa08
+#: ../../source/3-concepts/7-split_vs_wbc.md b568a77a4b104f9b9b435ef1501f614a
 msgid "One **unified** whole-body MPC controller"
 msgstr "一个**统一**的全身 MPC 控制器"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 50093837c35e4924b03d4d53dfbfeb1d
+#: ../../source/3-concepts/7-split_vs_wbc.md 2b791d2eeb584744b5cd446e42845c83
 msgid "Arm / body"
 msgstr "手臂 / 身体"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 1b1c05f55a694c949ea55e8e119b3c49
+#: ../../source/3-concepts/7-split_vs_wbc.md 1568e14a41ad42139893f8cff35133fc
 msgid ""
-"[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
-" + "
-"[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
-" (`setup_body_controllers` for `body` and `head`)"
+"[OCS2 Arm "
+"Controller](../4-reference/controllers/2-ocs2_arm_controller.md) + [Basic"
+" Joint "
+"Controller](../4-reference/controllers/7-basic_joint_controller.md) "
+"(`setup_body_controllers` for `body` and `head`)"
 msgstr ""
-"[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
-" + "
-"[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)（`setup_body_controllers`"
+"[OCS2 Arm "
+"Controller](../4-reference/controllers/2-ocs2_arm_controller.md) + "
+"[`Basic Joint "
+"Controller`](../4-reference/controllers/7-basic_joint_controller.md)（`setup_body_controllers`"
 " 用于 `body` 和 `head`）"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 8c17062960d44d5787cb7df810e0d81f
+#: ../../source/3-concepts/7-split_vs_wbc.md 9d20bf5a310c4ad8882bbdd7b95d6097
 msgid ""
-"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) using "
+"[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md) using "
 "`ocs2_wheel_humanoid`"
 msgstr ""
-"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)，使用 "
+"[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md)，使用 "
 "`ocs2_wheel_humanoid`"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md f2566855006e4b0f98d0aa6617aaeb13
+#: ../../source/3-concepts/7-split_vs_wbc.md 0f95f2ac103b458c8fe66152f15969ad
 msgid "Launch"
 msgstr "启动"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 8cf7f4c1a6234ca3949fa94bce7a8d25
+#: ../../source/3-concepts/7-split_vs_wbc.md 46361cce94314ad3abfaa6ca954dbbc1
 msgid ""
 "`ros2 launch ocs2_arm_controller split_body.launch.py` (`launch_mode` "
 "`split_body`)"
@@ -95,7 +99,7 @@ msgstr ""
 "`ros2 launch ocs2_arm_controller split_body.launch.py`（`launch_mode` "
 "`split_body`）"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md ac95847c17ac4a669376eba7c6b18b73
+#: ../../source/3-concepts/7-split_vs_wbc.md 23709189322f4d72953452e2cf2d3865
 msgid ""
 "`ros2 launch ocs2_arm_controller full_body.launch.py` (`launch_mode` "
 "`full_body`) when the robot config type is "
@@ -104,58 +108,64 @@ msgstr ""
 "当机器人配置 type 为 `ocs2_wbc_controller/Ocs2WbcController` 时：`ros2 launch "
 "ocs2_arm_controller full_body.launch.py`（`launch_mode` `full_body`）"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md a76f1b482f6e413292e24490ce0fc5b7
+#: ../../source/3-concepts/7-split_vs_wbc.md ee9001ca83624d149e1c80e638d9e735
 msgid "Lift2S menu"
 msgstr "Lift2S 菜单"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md 1645b6ae008a4e1986c40a2757c1c562
+#: ../../source/3-concepts/7-split_vs_wbc.md f1f628c0a74343d1b1e01082c400102e
 msgid "`./quick_start.sh` → Launch → Lift2S → **split body**"
 msgstr "`./quick_start.sh` → Launch → Lift2S → **分体**（菜单：`split body`）"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md bd3867889d4944e49ef5983446ab185b
+#: ../../source/3-concepts/7-split_vs_wbc.md 95806075b08a42e6b10bf6bba3f0cb33
 msgid "same menu → **full body**"
 msgstr "同一菜单 → **全身**（菜单：`full body`）"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:12
-#: 1322982b861f488ea12b6753223bfeac
+#: cd0494b5cc514b2381496b84a41fb40d
 msgid ""
-"`split_body.launch.py` is the split (分体) path. Whole-body control uses "
+"`split_body.launch.py` is the 分体控制 (Split Body) path. 全身控制 uses "
 "`full_body.launch.py` (there is no public standalone `ros2 launch "
 "ocs2_wbc_controller …` entry)."
 msgstr ""
-"`split_body.launch.py` 是分体路径。全身控制用 `full_body.launch.py`（没有公开的单独 `ros2 "
+"`split_body.launch.py` 是分体控制路径。全身控制用 `full_body.launch.py`（没有公开的单独 `ros2 "
 "launch ocs2_wbc_controller …` 入口）。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:14
-#: a7be830ee49a4fa1a8ce6e87746b1ff0
+#: cef9af9d98b447dba3f892703f0f2505
 msgid "Packages"
 msgstr "软件包"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:16
-#: cbe5f9036c3e41e5aa446761b0fa1fef
+#: 20b5e12e022a4b7a92a6818e201c21d0
 msgid ""
-"**basic_joint_controller** — joint FSM Home / Hold / MoveJ; "
-"`/fsm_command` is `std_msgs/Int32`. How-to: [Use "
-"basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)."
+"**Basic Joint Controller** (`basic_joint_controller`) — joint FSM HOME / "
+"HOLD / MOVEJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use Basic "
+"Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)."
 msgstr ""
-"**basic_joint_controller** — 关节 FSM Home / Hold / MoveJ；`/fsm_command` 是 "
-"`std_msgs/Int32`。操作指南：[使用 "
-"basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)。"
+"**`Basic Joint Controller`**（`basic_joint_controller`）— 关节 FSM HOME / "
+"HOLD / MOVEJ；`/fsm_command` 是 `std_msgs/Int32`。操作指南：[`Use Basic Joint "
+"Controller`](../2-how_to/4-controllers/11-basic_joint.md)。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:17
-#: c0265012d8e54c70aaf7aec990d88c8b
-msgid "**ocs2_arm_controller** — arm MPC FSM HOME / OCS2 / HOLD (package README)."
-msgstr "**ocs2_arm_controller** — 手臂 MPC FSM HOME / OCS2 / HOLD（软件包 README）。"
+#: f6372fb05d284b0c9b8f1c207a867bce
+msgid ""
+"**OCS2 Arm Controller** (`ocs2_arm_controller`) — arm MPC FSM HOME / OCS2"
+" / HOLD (package README)."
+msgstr ""
+"**`OCS2 Arm Controller`**（`ocs2_arm_controller`）— 手臂 MPC FSM HOME / OCS2 "
+"/ HOLD（软件包 README）。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:18
-#: f74f498d29ec4db8a1b2bd18e0b855ad
+#: c3b3d29584114a4e9263da753f123b58
 msgid ""
-"**ocs2_wbc_controller** — private submodule; whole-body MPC. States and "
-"topics are in that package README after access."
-msgstr "**ocs2_wbc_controller** — 私有子模块；全身 MPC。状态和话题在开通后的包 README 里。"
+"**OCS2 WBC Controller** (`ocs2_wbc_controller`) — private submodule; "
+"全身控制. States and topics are in that package README after access."
+msgstr ""
+"**`OCS2 WBC Controller`**（`ocs2_wbc_controller`）— 私有子模块；全身控制。状态和话题在开通后的包 "
+"README 里。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:20
-#: 0e6b357660314f80b07ac1b4f6321179
+#: 0467a4ecf31643459f478f948c59a1ed
 #, #
 msgid ""
 "FSM command values, Action / Service tables, and WBC Cartesian topics: "
@@ -166,7 +176,7 @@ msgstr ""
 "与话题](4-fsm_and_topics.md)。控制器索引：[控制器参考](../4-reference/controllers/0-index.md)。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:22
-#: 654ad6e3a90849a5a865d905f081643a
+#: 73f85cfeae4c4f0d858b113c7c1ff7b5
 msgid ""
 "`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` "
 "need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default"

@@ -1,6 +1,6 @@
 # ros2_control in This Stack
 
-How FiveAges Sim **selects a hardware plugin** and **loads controllers**. This is not a generic ros2_control tutorial.
+How FiveAges Sim **selects a 硬件接口** (Hardware Interface) and **loads controllers**. This is not a generic ros2_control tutorial.
 
 ```{admonition} Source of truth
 :class: important
@@ -33,14 +33,14 @@ Optional controller overlay: if `<robot>_description/config/ros2_control/<hardwa
 
 From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READMEs / launches:
 
-| Package | Role |
-|---------|------|
-| [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | Home / Hold / MoveJ; body/head in 分体控制 |
-| [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) | Arm MPC; `demo.launch.py` / `split_body.launch.py` |
-| [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 via `full_body.launch.py` |
-| `adaptive_gripper_controller` | Gripper (same repo README) |
+| Controller | Role |
+|------------|------|
+| [Basic Joint Controller](../4-reference/controllers/7-basic_joint_controller.md) | HOME / HOLD / MOVEJ; body/head in 分体控制 |
+| [OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md) | Arm MPC; 分体控制 via `split_body.launch.py` |
+| [OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 via `full_body.launch.py` |
+| [Adaptive Gripper Controller](../4-reference/controllers/6-gripper_teleop_plugins.md) | 夹爪 (`adaptive_gripper_controller`) |
 
-分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
+分体控制 vs 全身控制: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 ## Command / state interfaces (OCS2 arm README)
 
@@ -60,5 +60,5 @@ There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`
 - [robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`, profile merge
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs xacro `<param>`
 - [Controller ROS 2 parameters](../4-reference/controllers/8-ros2_parameters.md)
-- [Hardware interface parameters](../4-reference/hardware/4-ros2_parameters.md)
+- [Hardware Interface parameters](../4-reference/hardware/4-ros2_parameters.md)
 - [Controllers reference](../4-reference/controllers/0-index.md)

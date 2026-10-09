@@ -1,6 +1,6 @@
 # Configure ROS 2 controller parameters
 
-Where controller and hardware-interface parameters live, how to inspect them, and how this stack treats **startup vs runtime** changes. Per-parameter tables: [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md) and [Hardware interface parameters](../../4-reference/hardware/4-ros2_parameters.md).
+Where controller and 硬件接口 (Hardware Interface) parameters live, how to inspect them, and how this stack treats **startup vs runtime** changes. Per-parameter tables: [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md) and [Hardware Interface parameters](../../4-reference/hardware/4-ros2_parameters.md).
 
 Topic lists and FSM integers stay on the existing controller pages — this guide is **parameters only**.
 
@@ -10,7 +10,7 @@ Topic lists and FSM integers stay on the existing controller pages — this guid
 |-------|------------|------------------|
 | `{robot}_description/config/ros2_control/ros2_controllers.yaml` | Loaded by `controller_manager` (merged with `common.yaml` / `{hardware}.yaml` / EEF compose / profile `control.patch` — [robot_common_launch](../../4-reference/descriptions/2-common.md)) | Controller plugin types, `joints`, Home poses, MoveL limits, gripper force keys |
 | `ros2 param set` / node CLI | Live ROS 2 parameter API on a running node | Same names as YAML once the node is up |
-| URDF / xacro `<ros2_control>` `<param>` | Hardware **plugin** arguments, not `ros2 param` | CAN device, topic names, `initialize_commands_from_state`, vendor IP |
+| URDF / xacro `<ros2_control>` `<param>` | Hardware Interface arguments, not `ros2 param` | CAN device, topic names, `initialize_commands_from_state`, vendor IP |
 | `{robot}_description/config/ocs2/*.info` | OCS2 **task files** | `baseFrame` / `eeFrame` defaults, MPC model. **Not** ROS 2 parameters |
 
 The `ocs2_arm_controller` README names `config/ocs2_arm_controller.yaml`. At [arms_ros2_control `9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/config) that folder only has `demo.rviz`. Machine values are in the description YAML (example: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml)).
@@ -49,7 +49,7 @@ Everything else on the tables, including `basic_joint_controller` and `adaptive_
 ## Related
 
 - [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md)
-- [Hardware interface parameters](../../4-reference/hardware/4-ros2_parameters.md)
-- [Use basic_joint_controller](11-basic_joint.md)
+- [Hardware Interface parameters](../../4-reference/hardware/4-ros2_parameters.md)
+- [Use Basic Joint Controller](11-basic_joint.md)
 - [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)
 - [robot_common_launch](../../4-reference/descriptions/2-common.md) — YAML merge order

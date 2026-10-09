@@ -1,8 +1,8 @@
-# Hardware interface parameters
+# Hardware Interface parameters
 
-ros2_control **hardware plugin** arguments. These are URDF / xacro `<param>` entries under `<ros2_control><hardware>`, loaded in the plugin `on_init`. They are **not** the same API as `ros2 param list` on a controller node.
+ros2_control **硬件接口** (Hardware Interface) arguments. These are URDF / xacro `<param>` entries under `<ros2_control><hardware>`, loaded in the plugin `on_init`. They are **not** the same API as `ros2 param list` on a controller node.
 
-How the launch `hardware:=` key selects a plugin: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). How to inspect controllers vs hardware: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
+How the launch `hardware:=` key selects a 硬件接口: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). How to inspect controllers vs hardware: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
 
 The in-tree [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md) is **build-only** (`colcon build --packages-up-to …`). Parameter names live in each hardware-interface README and in the robot xacro.
 

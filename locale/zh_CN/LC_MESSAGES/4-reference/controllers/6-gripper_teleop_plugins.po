@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-09 10:11+0000\n"
+"POT-Creation-Date: 2026-10-09 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,17 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:1
-#: 602538be040c43ffbb03711da6e7fbd2
+#: 9562b571dbad4c0396d7d27a78d612bd
 msgid "Gripper and Teleop Plugins"
 msgstr "夹爪与遥操作插件"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:3
-#: d4841d342a0a4a7caa09555efae86807
-msgid "Controller plugins for grippers and teleoperation."
+#: 0fc91c07580a41d5889d4311ce29a479
+msgid "Controller plugins for grippers (夹爪) and teleoperation."
 msgstr "用于夹爪和遥操作的控制器插件。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:5
-#: 0c57e5e5cc2d468c88d63859cb6d8c67
+#: d88fdcbb42b54b5c96e82e14d21427a6
 msgid ""
 "**Repository:** [fiveages-sim/arms_ros2_control](https://github.com"
 "/fiveages-sim/arms_ros2_control)"
@@ -37,26 +37,32 @@ msgstr ""
 "sim/arms_ros2_control)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:7
-#: f8b435ff17594daba229e639e184564e
-msgid "adaptive_gripper_controller"
-msgstr "adaptive_gripper_controller"
+#: 48702f3512dc49cd873c90bdc6843ceb
+msgid "Adaptive Gripper Controller"
+msgstr "Adaptive Gripper Controller"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:9
-#: 549ba521538d49e7808173f982c1bc8d
+#: 99a12c4b92d242c48c37c9ede67e0f8f
 msgid ""
-"Listed in the [arms_ros2_control README](https://github.com/fiveages-"
+"Adaptive Gripper Controller (`adaptive_gripper_controller`) drives 夹爪 "
+"such as RG75. Dexterous hands (灵巧手, LinkerHand) use [Basic Joint "
+"Controller](7-basic_joint_controller.md). Listed in the "
+"[arms_ros2_control README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/README.md). The launch stack does **not**"
 " take `gripper:=`. Attach an end-effector with `type` / `left_type` / "
 "`right_type` (and optional `robot_profile` / `use_profile_eef`) from "
 "[robot_common_launch](../descriptions/2-common.md)."
 msgstr ""
-"launch 栈**没有** `gripper:=`。用 "
+"`Adaptive Gripper Controller`（`adaptive_gripper_controller`）驱动夹爪（如 "
+"RG75）。灵巧手（LinkerHand）走 [`Basic Joint "
+"Controller`](7-basic_joint_controller.md)。见 [arms_ros2_control "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.md)。launch 栈**没有** `gripper:=`。用 "
 "[robot_common_launch](../descriptions/2-common.md) 的 `type` / `left_type`"
-" / `right_type`（以及可选的 `robot_profile` / "
-"`use_profile_eef`）挂载末端。本控制器能加载的手/夹爪由这些末端键拉起，而不是单独的 `gripper` 参数。"
+" / `right_type`（以及可选的 `robot_profile` / `use_profile_eef`）挂载末端。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:11
-#: 2e067e3a7cb44376843924ebb7371b28
+#: f39fd0fb56d64ce18989bbbe9e0ff9e2
 msgid ""
 "Pin: [`9a1da3ba`](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md)."
@@ -70,12 +76,12 @@ msgstr ""
 "#vendored-upstream-readme)。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:13
-#: acabb33a3e474f29bfe71c81f91b21bb
+#: bb036c01f0944675a5d5571a46c14ed6
 msgid "Three command channels"
 msgstr "三条命令通道"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:15
-#: 4662730b6aaf48669e14ecdc0034a117
+#: 0c42f515c55d48399c3f366a04c582a9
 msgid ""
 "Each channel takes effect immediately. Joint limits and open/close "
 "positions come from `/robot_description` (closer URDF limit to the "
@@ -86,196 +92,196 @@ msgstr ""
 "`left_gripper_controller`，关节 `left_gripper_joint`。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 34acc10a751e43e7a8f0fbb0fbbfa43e
+#: b15756535fc841d79494efd2a6e57727
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 18e45d4b32a34beb9fc154ec3c8cf1ba
+#: 81df876af40d4ad6bc2e852a58b221dd
 msgid "Type"
 msgstr "类型"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:30
-#: 0a0e08444eab45f7b8fbe8fa40e272c7 e5ebca99e8d04ba48a40a4e255761e5f
+#: 028d87bc80744a47a650b5b4fc36b19b 978f8436ede2485792ba098e5fcf9f96
 msgid "Force feedback"
 msgstr "力反馈"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 952ed6f2559047a181b4d96d1ce8c11b
+#: ef42457ec4b0444195b58f08a770bed4
 msgid "Typical use"
 msgstr "典型用途"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 83c046b8a9844f399e6fe9845ed4523f f5a7a2bdb6d545dab87ceec252f82713
+#: 610c2fd1a77c409c9781bcb7e352031d 9172114bdad34a678f3e45fd3c0dbce5
 msgid "`/left_gripper_joint/position_command`"
 msgstr "`/left_gripper_joint/position_command`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 3329785e5fbf4394b7fcb83164f0444b
+#: f0f15cbe691844d583d9cfcc01430353
 msgid "`std_msgs/Float64`"
 msgstr "`std_msgs/Float64`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: ba823aa25e52406495113f353eba6fee
+#: e8d58aea749b4b44b89ddf2fc5ab6c50
 msgid "Off"
 msgstr "关"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: dc28ef9922ff43cf8f85fe6246bd1cd2
+#: eedd4d0aa06b4fdfa158f5f68060e210
 msgid "Direct stroke (rad or m), clamped to URDF limits"
 msgstr "直接行程（弧度或米），截断到 URDF 限位"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 99d55ab1c2ce414ebdf1a22717be489a a962ef59cdb6402ab2fc70d89678a254
+#: 4c9a8e800adf4ce2b1a567eabcd1e4a9 8ad36af294994eeba59d436e851ed117
 msgid "`/left_gripper_controller/target_command`"
 msgstr "`/left_gripper_controller/target_command`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: d2931b09fe79426b9a187dd8ff135df2
+#: ec9d68175c9b42e29d04d69a08098d4d
 msgid "`std_msgs/Int32`"
 msgstr "`std_msgs/Int32`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 83063bfabcca40f1b72fe560e1c42fb3
+#: 06b96f1ddf4e4d6593b654a923cbc544
 msgid "On when closing (`0`)"
 msgstr "关闭（`0`）时启用"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 09ed6aca9b75468396e652c779dad12e
+#: 455fbdae78c047468d6c2d8dd6c62dfc
 msgid "`0` fully closed; `1` fully open (no feedback)"
 msgstr "`0` fully closed; `1` fully open (no feedback)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 89a987ebf7524a9e96f0ac9bc88e280d d6a29bf0576e46bf908dd32d09043a6f
+#: 81316a1ce0c74129bda58059f21148a3 fefd86ff1bf64f4d8aae55361378f5a5
 msgid "`/left_gripper_controller/target_percent`"
 msgstr "`/left_gripper_controller/target_percent`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: d6e52c1f92724c60b6e10e939d2e47ef
+#: 54ecc335b2804378a1ea05826e00dfa2
 msgid "`std_msgs/Float64` (`0.0`–`1.0`)"
 msgstr "`std_msgs/Float64` (`0.0`–`1.0`)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: 9d422766bc884c67b19e5adc849b5928
+#: dec3eff6b6b449a59f9e0dde5dcac402
 msgid "Auto: on while closing, off while opening"
 msgstr "自动：关闭时启用，打开时关闭"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
-#: b48c66fa2bd14878a975bef0edd79002
+#: 68c1f97619de49c49e72afc1620333ad
 msgid "Linear blend closed↔open"
 msgstr "关闭↔打开线性混合"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:23
-#: 1935911bb4284d16a46e50673a230631
+#: ebdd4d0bcb254a9eacdd092646c9bc03
 msgid "The README topic summary (Chinese source, same commit):"
 msgstr "README 话题汇总（中文原文，同一提交）："
 
 #: ../../source/_vendored/arms_ros2_control/adaptive_gripper_controller/README.md:172
-#: b09ba870cf4e4cd394c0c396b9bfcd24
+#: fbc0a37028c0408da88dc889b62852c6
 msgid "以下假设控制器名称为 `left_gripper_controller`，关节名称为 `left_gripper_joint`："
 msgstr "以下假设控制器名称为 `left_gripper_controller`，关节名称为 `left_gripper_joint`："
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 8e30e5482e0842698fbfd714119c61a8
+#: ea2a3ede6b5d4c809ff48893cde1d641
 msgid "话题"
 msgstr "话题"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 705c5dbf0d184e528b7a52c052ef4834
+#: b06de06d03db400ba4bc7151d92b1807
 msgid "消息类型"
 msgstr "消息类型"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 107df5c48d214385885dcc7adb36863c
+#: c79f86b205e848a68be1e0c4c5d35c1d
 msgid "方向"
 msgstr "方向"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: a9bc451bdce646989bfe918164836cd6
+#: 33fb6b571f25479d9b316ab1256f4efc
 msgid "说明"
 msgstr "说明"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 966bc5d8cc414f57a01c96d313a07322 be67d99b26ff4410becb54c402e378dc
+#: 3db1070d11714cc3a40d6b60ca821782 60d13265f93641a39d225562e034d993
 msgid "`Float64`"
 msgstr "`Float64`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 15a029b9cb0e498b87ff5f65c83c0743 783633b125d84f3a973abc5834d31267
-#: c6abc275c1044dd99b1cc4e61762069a df767260b06d42ad92655bff6ca4d222
+#: 3fe24edd4a6c47148f185ce5dbdd1a2d 58d003ab42414d4a99b2db67c7aa89b6
+#: 6051d82eef954b0793fb89fb9c779fd2 e0c3e45d9ef449568e0ce4ff2bab46da
 msgid "订阅"
 msgstr "订阅"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: b1e384869fad444bbe732aa844a85b1a
+#: de1dd3608cb4408a9e08ba7baf8a256f
 msgid "直接位置控制（无力反馈）"
 msgstr "直接位置控制（无力反馈）"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 94927b43b8c24330bddf52daeb94f0eb
+#: 021f6b72b556430a8411c679751f58d2
 msgid "`Int32`"
 msgstr "`Int32`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 70b744c23a3d405a8db5c2cba24170bb
+#: 890819db5e634ea78586f3bc7a38d10d
 msgid "开关控制（0=关/力反馈，1=开）"
 msgstr "开关控制（0=关/力反馈，1=开）"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 56d65ce3b6ab4c8fafdf5057dcb5f76f
+#: 915331f495104875b3a62d573297e071
 msgid "比例控制（0.0~1.0，自动力反馈）"
 msgstr "比例控制（0.0~1.0，自动力反馈）"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 52e4fe892ab74698b9b80fa0d54d3995
+#: 1d7022cfbbad4d1e84541af7f02ba1d0
 msgid "`/robot_description`"
 msgstr "`/robot_description`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: c112c4c9c2354818bc14804504bbdc68
+#: 5a2a4e24111b4c53800abcf6586ec9aa
 msgid "`String`"
 msgstr "`String`"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:25
-#: 6a704618f6114d3d895436caac04a4e9
+#: 79edd2758a824fc9a4e8e2dad708d24f
 msgid "自动解析限位和初始值"
 msgstr "自动解析限位和初始值"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:32
-#: c34b67b5346f4dbd966e90c1f9052e17
+#: a56bf285206d48de8e836fd43bc49ad9
 msgid "Applies only when all of these hold (README):"
 msgstr "仅当同时满足以下条件时生效（README）："
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:34
-#: dded71e099cf4b2fbaf39054c02c1d42
+#: 82d91a16f3c548cd82d3ede7a773f480
 msgid ""
 "The command used the switch or percent channel (not direct "
 "`position_command`)"
 msgstr "命令走的是开关或比例通道（不是直接 `position_command`）"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:35
-#: 9afd04786cd44922b0602c221ded2885
+#: 2ccc26b41c514a0ab5c41bf5fee318b4
 msgid "`use_effort_interface: true` and the hardware effort interface is bound"
 msgstr "`use_effort_interface: true` 且硬件 effort 接口已绑定"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:36
-#: 8a357b06e1e74eaa808d922193c2a56a
+#: 61699ab2b0c24edf89e6e41c57b98d00
 msgid "Motion is in the **closing** direction"
 msgstr "运动方向为**关闭**"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:37
-#: b955114e3d7246728c9b082856cc097f
+#: 23b5e9d7f50f4c38b2be376f44f78568
 msgid ""
 "Feedback has not already fired for this command (a new command resets the"
 " flag)"
 msgstr "本条命令尚未触发过力反馈（新命令会重置该标志）"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:39
-#: 2230c0d9e66448c18c1d9f60dfd667c8
+#: 4b8179a694d04b6daa1c49f054f90fb6
 msgid ""
 "Trigger: `|current_effort| > force_threshold`. New target = current + "
 "(original − current) × `force_feedback_ratio`. `0.0` stops here; `1.0` "
@@ -285,7 +291,7 @@ msgstr ""
 "`force_feedback_ratio`。`0.0` 停在此处；`1.0` 继续到原始目标；默认 `0.5`。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:41
-#: 920c69598a844a12885c9eceff29218f
+#: aba8a0c163e84df2a71e08789c6b6201
 msgid ""
 "YAML keys in the README: `joint`, `use_effort_interface` (default "
 "`true`), `force_threshold` (default `0.1`), `force_feedback_ratio` "
@@ -293,31 +299,32 @@ msgid ""
 "parameters](8-ros2_parameters.md)."
 msgstr ""
 "README 中的 YAML 键：`joint`、`use_effort_interface`（默认 "
-"`true`）、`force_threshold`（默认 `0.1`）、`force_feedback_ratio`（默认 `0.5`）。"
-"启动时 vs 运行时：[控制器 ROS 2 参数](8-ros2_parameters.md)。"
+"`true`）、`force_threshold`（默认 `0.1`）、`force_feedback_ratio`（默认 `0.5`）。启动时 "
+"vs 运行时：[控制器 ROS 2 参数](8-ros2_parameters.md)。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:43
-#: e2b7ee9c1caa408db270357e1697ff16
+#: c979b43ae51a483f8824d827a3ec7fa0
 msgid ""
 "Python: `left_gripper_handler.send_joint_positions` (direct stroke, "
 "**no** feedback), `send_target_command` (0/1), `send_position_percent` "
 "(0–1). Same `target_command` / `target_percent` names on a dexterous "
-"**hand** go to [basic_joint_controller](7-basic_joint_controller.md) "
-"Home-config blend, not this force path. Map: "
+"**hand** (灵巧手) go to [Basic Joint "
+"Controller](7-basic_joint_controller.md) Home-config blend, not this "
+"force path. Map: "
 "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)."
 msgstr ""
-"Python：`left_gripper_handler.send_joint_positions`（直接行程，**无力反馈**）、`send_target_command`（0/1）、`send_position_percent`（0–1）。灵巧**手**上同名的"
-" `target_command` / `target_percent` 走 "
-"[basic_joint_controller](7-basic_joint_controller.md) 的 Home "
-"构型混合，而不是这条力反馈路径。对照表：[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)。"
+"Python：`left_gripper_handler.send_joint_positions`（直接行程，**无**反馈）、`send_target_command`（0/1）、`send_position_percent`（0–1）。灵巧手上同名的"
+" `target_command` / `target_percent` 走 [`Basic Joint "
+"Controller`](7-basic_joint_controller.md) 的 Home "
+"构型混合，不是这条力反馈路径。映射：[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:45
-#: 2388710d131142f69143f8c58bf044de
+#: 2d8440779f6648e2b724f797a14c3fca
 msgid "Teleop command nodes"
 msgstr "遥操作命令节点"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:47
-#: f522ea33be3c40b4985567848f51b6b4
+#: 4d532b16d1dd46c1b227d437b1346cd4
 msgid ""
 "The command package in the same repo is `command/` "
 "(`arms_target_manager`, `arms_teleop`, …). There is no "
@@ -330,7 +337,7 @@ msgstr ""
 "`arms_target_manager`。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:49
-#: 0d0dae464b374d04bdb57645ff3d104e
+#: 2bdf6954338344c29f1400932a3669a9
 #, #
 msgid ""
 "`arms_target_manager` owns `/left_target` / `/stamped` / `/twist` / "
@@ -349,40 +356,39 @@ msgstr ""
 " 身体/头部笛卡尔话题需要 `ocs2_wbc_controller` 以及全身启动/配置——不是默认 mock / 分体。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:51
-#: 7753be3c90ec43f49d94c6da4df2a3ae
+#: 8edd0dce64ce47bab08a83a9074993c6
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:53
-#: 222d61ef9e8b47afb6a5aca49c85c583
+#: 728b23894f3a4400ba3aaf256b9d8647
 msgid ""
 "[Controller ROS 2 parameters](8-ros2_parameters.md) — gripper keys and "
 "`arms_target_manager` node params"
-msgstr ""
-"[控制器 ROS 2 参数](8-ros2_parameters.md) — 夹爪键与 `arms_target_manager` 节点参数"
+msgstr "[控制器 ROS 2 参数](8-ros2_parameters.md) — 夹爪键与 `arms_target_manager` 节点参数"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:54
-#: 6ed5264466c1421fb259a04f68c2b860
-msgid "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
-msgstr "[ocs2_arm_controller](2-ocs2_arm_controller.md)"
+#: 9e1ae567b0c04d1a82eb10325db9a4cb
+msgid "[OCS2 Arm Controller](2-ocs2_arm_controller.md)"
+msgstr "[OCS2 Arm Controller](2-ocs2_arm_controller.md)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:55
-#: ab4d9c6f5961491f82be5bbda297e33a
-msgid "[basic_joint_controller](7-basic_joint_controller.md)"
-msgstr "[basic_joint_controller](7-basic_joint_controller.md)"
+#: c0923edaf69e494d834d46ceb5e15318
+msgid "[Basic Joint Controller](7-basic_joint_controller.md)"
+msgstr "[Basic Joint Controller](7-basic_joint_controller.md)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:56
-#: 4113aadbefe5423ab999f85266ecb318
+#: fa80e392b22c4088b41010acb767b2bb
 msgid "[ros2_control here](../../3-concepts/1-ros2_control_here.md)"
 msgstr "[本技术栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:57
-#: 6deee8952e744feb986ec529f806c66c
+#: 0dced40aeeee4fe4b38891a7980fec30
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:58
-#: 00e7f49675b14454a3af904434a25cdb
+#: 579c368825d0440b9a228112fd161488
 msgid "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)"
 

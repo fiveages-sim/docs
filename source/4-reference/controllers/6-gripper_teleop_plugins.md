@@ -1,12 +1,12 @@
 # Gripper and Teleop Plugins
 
-Controller plugins for grippers and teleoperation.
+Controller plugins for grippers (夹爪) and teleoperation.
 
 **Repository:** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
 
-## adaptive_gripper_controller
+## Adaptive Gripper Controller
 
-Listed in the [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md). The launch stack does **not** take `gripper:=`. Attach an end-effector with `type` / `left_type` / `right_type` (and optional `robot_profile` / `use_profile_eef`) from [robot_common_launch](../descriptions/2-common.md).
+Adaptive Gripper Controller (`adaptive_gripper_controller`) drives 夹爪 such as RG75. Dexterous hands (灵巧手, LinkerHand) use [Basic Joint Controller](7-basic_joint_controller.md). Listed in the [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md). The launch stack does **not** take `gripper:=`. Attach an end-effector with `type` / `left_type` / `right_type` (and optional `robot_profile` / `use_profile_eef`) from [robot_common_launch](../descriptions/2-common.md).
 
 Pin: [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md). How to refresh the pin (and recompute `:start-line:` / `:end-line:`): [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
@@ -40,7 +40,7 @@ Trigger: `|current_effort| > force_threshold`. New target = current + (original 
 
 YAML keys in the README: `joint`, `use_effort_interface` (default `true`), `force_threshold` (default `0.1`), `force_feedback_ratio` (default `0.5`). Startup vs runtime: [Controller ROS 2 parameters](8-ros2_parameters.md).
 
-Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedback), `send_target_command` (0/1), `send_position_percent` (0–1). Same `target_command` / `target_percent` names on a dexterous **hand** go to [basic_joint_controller](7-basic_joint_controller.md) Home-config blend, not this force path. Map: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md).
+Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedback), `send_target_command` (0/1), `send_position_percent` (0–1). Same `target_command` / `target_percent` names on a dexterous **hand** (灵巧手) go to [Basic Joint Controller](7-basic_joint_controller.md) Home-config blend, not this force path. Map: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md).
 
 ## Teleop command nodes
 
@@ -51,8 +51,8 @@ The command package in the same repo is `command/` (`arms_target_manager`, `arms
 ## Related
 
 - [Controller ROS 2 parameters](8-ros2_parameters.md) — gripper keys and `arms_target_manager` node params
-- [ocs2_arm_controller](2-ocs2_arm_controller.md)
-- [basic_joint_controller](7-basic_joint_controller.md)
+- [OCS2 Arm Controller](2-ocs2_arm_controller.md)
+- [Basic Joint Controller](7-basic_joint_controller.md)
 - [ros2_control here](../../3-concepts/1-ros2_control_here.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)

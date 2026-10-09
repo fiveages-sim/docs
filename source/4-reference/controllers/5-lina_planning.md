@@ -53,4 +53,4 @@ Configuration parameters and default values are maintained in the repository. Ch
 
 ## Related
 
-- [ocs2_arm_controller](2-ocs2_arm_controller.md)
+- [OCS2 Arm Controller](2-ocs2_arm_controller.md)

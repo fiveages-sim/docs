@@ -1,6 +1,6 @@
-# ocs2_arm_controller
+# OCS2 Arm Controller
 
-ROS 2 control controller for arm MPC via OCS2.
+OCS2 Arm Controller (`ocs2_arm_controller`) runs arm MPC via OCS2. It is the 分体控制 (Split Body) arm controller for single-arm, dual-arm, and dual-arm-with-waist setups.
 
 ```{admonition} Source of truth
 :class: important
@@ -35,11 +35,11 @@ README integers (package README still lists them as received on `/control_input`
 
 Operators and `ros2_robot_interface` send those same integers on **`/fsm_command`** (`std_msgs/Int32`). That is the stack-wide FSM topic — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). Joystick `control_input` (`arms_ros2_control_msgs/Inputs`) on `arms_target_manager` is a different message, scaled into `/left_target/twist`.
 
-`arms_controller_common` also implements **MoveJ** (`StateMoveJ`) and `FSMCommandPublisher`, which publishes **`std_msgs/Int32`** on `/fsm_command` (values in that header: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ). On mixed OCS2/WBC stacks, `basic_joint_controller` treats `3` and `4` as MOVEJ, while this controller treats `3` as OCS2 and `4` as MOVEJ — see [basic_joint_controller](7-basic_joint_controller.md).
+`arms_controller_common` also implements **MoveJ** (`StateMoveJ`) and `FSMCommandPublisher`, which publishes **`std_msgs/Int32`** on `/fsm_command` (values in that header: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ). On mixed OCS2/WBC stacks, `basic_joint_controller` treats `3` and `4` as MOVEJ, while this controller treats `3` as OCS2 and `4` as MOVEJ — see [Basic Joint Controller](7-basic_joint_controller.md).
 
-## Split-body launch (分体控制)
+## 分体控制 launch (Split Body)
 
-`split_body.launch.py` is the **分体控制** path (`launch_mode` `split_body`):
+`split_body.launch.py` is the **分体控制** (Split Body) path (`launch_mode` `split_body`):
 
 - Arms: `ocs2_arm_controller`
 - Body and head: `basic_joint_controller` (`setup_body_controllers` for `body` and `head`, e.g. `body_joint_controller`)
@@ -49,7 +49,7 @@ Operators and `ros2_robot_interface` send those same integers on **`/fsm_command
 ros2 launch ocs2_arm_controller split_body.launch.py robot:=<robot>
 :::
 
-The same package also has `full_body.launch.py` (`launch_mode` `full_body`), which spawns **`ocs2_wbc_controller`** when the robot config type is `ocs2_wbc_controller/Ocs2WbcController`. That is **全身控制** — see [ocs2-wbc-controller](3-ocs2_wbc.md).
+The same package also has `full_body.launch.py` (`launch_mode` `full_body`), which spawns **`ocs2_wbc_controller`** when the robot config type is `ocs2_wbc_controller/Ocs2WbcController`. That is **全身控制** (Full Body) — see [OCS2 WBC Controller](3-ocs2_wbc.md).
 
 ## Cartesian topics (`arms_target_manager`)
 
@@ -106,12 +106,12 @@ VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compl
 ## Related
 
 - [Controller ROS 2 parameters](8-ros2_parameters.md)
-- [basic_joint_controller](7-basic_joint_controller.md)
+- [Basic Joint Controller](7-basic_joint_controller.md)
 - [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
 - [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md) — Action / Service Python map
 - [Gripper and teleop plugins](6-gripper_teleop_plugins.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
-- [ocs2-wbc-controller](3-ocs2_wbc.md)
+- [OCS2 WBC Controller](3-ocs2_wbc.md)
 - [arms_ros2_control_msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)
