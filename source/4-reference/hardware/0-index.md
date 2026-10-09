@@ -22,7 +22,10 @@ CAN / TCP / Serial / Simulation
 1-public_hi
 2-private_hi
 3-sdk_notes
+4-ros2_parameters
 ```
+
+URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware interface parameters](4-ros2_parameters.md).
 
 ## Quick Reference
 

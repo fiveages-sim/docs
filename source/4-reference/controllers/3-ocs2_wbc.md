@@ -45,6 +45,7 @@ These topics need **`ocs2_wbc_controller`** and that robot’s 全身 launch/con
 
 ## Related
 
+- [Controller ROS 2 parameters](8-ros2_parameters.md) — public overlay keys; full list is the private package README
 - [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / `split_body.launch.py`
 - [basic_joint_controller](7-basic_joint_controller.md)
 - [ocs2-humanoid](4-ocs2_humanoid.md) — `ocs2_wheel_humanoid`

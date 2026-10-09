@@ -38,7 +38,7 @@ Applies only when all of these hold (README):
 
 Trigger: `|current_effort| > force_threshold`. New target = current + (original − current) × `force_feedback_ratio`. `0.0` stops here; `1.0` continues to the original target; default `0.5`.
 
-YAML keys in the README: `joint`, `use_effort_interface` (default `true`), `force_threshold` (default `0.1`), `force_feedback_ratio` (default `0.5`).
+YAML keys in the README: `joint`, `use_effort_interface` (default `true`), `force_threshold` (default `0.1`), `force_feedback_ratio` (default `0.5`). Startup vs runtime: [Controller ROS 2 parameters](8-ros2_parameters.md).
 
 Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedback), `send_target_command` (0/1), `send_position_percent` (0–1). Same `target_command` / `target_percent` names on a dexterous **hand** go to [basic_joint_controller](7-basic_joint_controller.md) Home-config blend, not this force path. Map: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md).
 
@@ -50,6 +50,7 @@ The command package in the same repo is `command/` (`arms_target_manager`, `arms
 
 ## Related
 
+- [Controller ROS 2 parameters](8-ros2_parameters.md) — gripper keys and `arms_target_manager` node params
 - [ocs2_arm_controller](2-ocs2_arm_controller.md)
 - [basic_joint_controller](7-basic_joint_controller.md)
 - [ros2_control here](../../3-concepts/1-ros2_control_here.md)

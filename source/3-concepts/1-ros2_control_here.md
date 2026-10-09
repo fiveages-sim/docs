@@ -58,4 +58,7 @@ There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`
 ## Related
 
 - [robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`, profile merge
+- [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs xacro `<param>`
+- [Controller ROS 2 parameters](../4-reference/controllers/8-ros2_parameters.md)
+- [Hardware interface parameters](../4-reference/hardware/4-ros2_parameters.md)
 - [Controllers reference](../4-reference/controllers/0-index.md)
