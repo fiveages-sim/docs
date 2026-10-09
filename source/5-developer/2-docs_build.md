@@ -109,7 +109,8 @@ docs/
 │   ├── 4-reference/         # Reference
 │   ├── 5-developer/         # Developer guide
 │   ├── _static/             # Static files (CSS, images)
-│   └── _templates/          # Custom templates
+│   ├── _templates/          # Custom templates
+│   └── _vendored/           # Pinned upstream README copies (see below)
 ├── locale/
 │   └── zh_CN/
 │       └── LC_MESSAGES/     # Chinese translations
@@ -164,7 +165,7 @@ ros2 launch package launch.py
 ```
 
 ```python
-from ros2_robot_interface import RobotInterface
+from ros2_robot_interface import ROS2RobotInterface
 ```
 ````
 
@@ -227,6 +228,31 @@ flowchart LR
 ```
 ````
 
+## Vendored upstream README
+
+`source/_vendored/` holds **pinned commit** copies of public upstream Markdown so Sphinx can `{include}` a short slice. This site vendors **README.md** files only: `ros2_robot_interface`, plus `basic_joint_controller` and `adaptive_gripper_controller` from [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). [ros2_robot_interface API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) stays a GitHub link and is not copied into `_vendored/`.
+
+Pins: `source/_vendored/SOURCES.json` (`repo`, `path`, full commit `sha`, `dest`).
+
+```bash
+# Re-fetch every pin in SOURCES.json
+python3 scripts/vendor_upstream_md.py --sync
+make vendor-upstream
+
+# Verify header SHA / sha256 (CI; no network)
+python3 scripts/vendor_upstream_md.py --check
+make vendor-check
+
+# Move one pin to latest main, or to a SHA
+python3 scripts/vendor_upstream_md.py --bump ros2_robot_interface
+python3 scripts/vendor_upstream_md.py --bump basic_joint_controller --sha <full-sha>
+python3 scripts/vendor_upstream_md.py --bump adaptive_gripper_controller --sha <full-sha>
+```
+
+Commit `SOURCES.json` and the vendored markdown together. Relative / private images are stripped on fetch so the HTML build does not depend on missing files. After a bump, confirm the `{include}` `:start-after:` / `:end-before:` strings on [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md) still match the README (omit `#` in those option values — Docutils treats `#` as a comment).
+
+`conf.py` lists `_vendored/` in `exclude_patterns` so the copy is not a sidebar page.
+
 ## CI/CD
 
 GitHub Actions builds documentation on:
@@ -234,6 +260,7 @@ GitHub Actions builds documentation on:
 - Pull requests (check build)
 
 CI fails when:
+- vendored README pin in `source/_vendored/SOURCES.json` does not match the committed file
 - zh_CN translation coverage is below 95%
 - `check_zh_mix.py` finds empty, fuzzy, untranslated-prose, or mixed leftover English
 - Source files nest `` ``` `` inside `` ```{admonition} ``

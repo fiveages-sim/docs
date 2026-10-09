@@ -53,7 +53,7 @@ From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READ
 
 That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji** (天玑) / **Rokae** (珞石) keep the controller on **position** commands; joint impedance is a vendor `ctrl_mode` on the hardware interface (`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)). VR comparison: [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md).
 
-There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`) — [FSM and Topics](4-fsm_and_topics.md).
+There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`). Action / Service types and WBC body/head topics: [FSM and Topics](4-fsm_and_topics.md).
 
 ## Related
 

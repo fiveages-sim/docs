@@ -12,7 +12,7 @@ For engineers who keep their own vision, planning, or visual-servoing stack and 
 ## 2. Install the Python interface
 
 1. [fa-py-libraries](../4-reference/python_apps/2-fa_py_libraries.md) — `./init.sh all` (Python 3.12).
-2. [Python Interface](../2-how_to/3-programming/5-python_interface.md) — connect, `move_j` / `move_l`, gripper, read state.
+2. [Python Interface](../2-how_to/3-programming/5-python_interface.md) — `ROS2RobotInterface`, handlers, read state.
 3. [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md) — API names used on those pages.
 
 Entry is the fa-py-libraries env, not `pip install ros2-robot-interface` on system Python.
@@ -23,9 +23,10 @@ This site does **not** document a vision-guided or visual-servoing pipeline (no 
 
 Use the interface as the robot side of **your** loop:
 
-- Cartesian: `move_l` / `get_ee_pose` on [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)
-- Joints: `move_j` / `get_joint_positions`
-- FSM: [FSM and Topics](../3-concepts/4-fsm_and_topics.md) (`/fsm_command` is `std_msgs/Int32`)
+- Cartesian: `left_arm_handler.send_target_stamped` / `get_pose` on [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)
+- Joints: `left_arm_handler.send_joint_positions` / `get_joint_state`
+- Blocking MoveL / MoveJ: `execute_movel_action` / `execute_joint_trajectory_action` (Action, not the topic rows)
+- FSM: [FSM and Topics](../3-concepts/4-fsm_and_topics.md) (`/fsm_command` is `std_msgs/Int32`; WBC `/mode_command` needs 全身)
 
 Camera plugins under [lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md) (`lerobot_camera_ros2`) are for **dataset recording**, not a visual-servo controller.
 

@@ -132,12 +132,12 @@ Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM
    ```
 2. Write a simple script:
    ```python
-   from ros2_robot_interface import RobotInterface
-   
-   robot = RobotInterface()
-   robot.connect()
-   robot.move_j([0.0, -0.5, 0.5, 0.0, 0.0, 0.0])
-   robot.gripper_close()
+   from ros2_robot_interface import ROS2RobotInterface, ROS2RobotInterfaceConfig
+
+   interface = ROS2RobotInterface(ROS2RobotInterfaceConfig())
+   interface.connect()
+   joint_state = interface.get_joint_state()
+   pose = interface.left_arm_handler.get_pose()
    ```
 
 **Primary sources:** [fa-py-libraries](https://github.com/fiveages-sim/fa-py-libraries), [ros2_robot_interface](https://github.com/fiveages-sim/ros2_robot_interface)

@@ -14,6 +14,8 @@ FENCE_RE = re.compile(r"^(\s*)(`{3,})(.*)$")
 def find_nested_admonition_fences(root: Path) -> list[str]:
     issues: list[str] = []
     for path in sorted(root.rglob("*.md")):
+        if "_vendored" in path.parts:
+            continue
         lines = path.read_text(encoding="utf-8").splitlines()
         stack: list[tuple[str, int, int]] = []
         for n, line in enumerate(lines, 1):

@@ -29,9 +29,25 @@ The same file declares `type` and `create_robot_profile_launch_arguments()` (`le
 
 `split_body.launch.py` is the split (分体) path; whole-body control uses `full_body.launch.py`.
 
+## Public command surface
+
+Extra FSM states stay in the private package README after access. From public sources, 全身 uses:
+
+- Cartesian body / head: `/body_target*`, `/head_target*` ([arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md))
+- `/mode_command` (`std_msgs/String`) and `/ocs2_wbc_controller/current_state` (`WbcCurrentState`)
+- Shared action / service types: [`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)
+
+:::{admonition} Whole-body (WBC) availability
+:class: warning
+
+These topics need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply they are present. Capability bits (`WbcCapability`) are machine-dependent — public Taku mock (`robot:=taku` on `demo.launch.py`) is arm-controller, not WBC; even on 全身, head 6D tracking is only there when `head_tracking_ee_enabled` is true. Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+:::
+
 ## Related
 
 - [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / `split_body.launch.py`
 - [basic_joint_controller](7-basic_joint_controller.md)
 - [ocs2-humanoid](4-ocs2_humanoid.md) — `ocs2_wheel_humanoid`
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
+- [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)
+- [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)

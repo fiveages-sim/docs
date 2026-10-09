@@ -27,7 +27,9 @@ extensions = [
 ]
 
 templates_path = ['_templates']
-exclude_patterns = []
+# Vendored upstream README copies are included from other pages; they are
+# not standalone Sphinx documents.
+exclude_patterns = ['_vendored', '_vendored/**']
 
 # Source file suffixes
 source_suffix = {
