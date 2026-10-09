@@ -7,42 +7,42 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FiveAges Sim \n"
+"Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:37+0000\n"
+"POT-Creation-Date: 2026-10-09 01:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:1
-#: d38ac92d1a194af3a6e9c3e33db0d81b
+#: 0b2f385007354d918eb95bb0b4251cd1
 msgid "Add a Robot"
 msgstr "添加机器人"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:3
-#: 3f6458ac189943d58b837f2294ccd896
+#: b58ced7363fd4e0190af297a41b70939
 msgid ""
-"How a new robot enters this stack. Copy an **existing** description "
-"package and the launch/xacro patterns already in the repo. There is "
-"**no** `hardware:=mock`. Launch files and config names are those listed "
-"in that package’s README."
+"How a new robot enters this stack. Copy an **existing** description package "
+"and the launch/xacro patterns already in the repo. There is **no** "
+"`hardware:=mock`. Launch files and config names are those listed in that "
+"package’s README."
 msgstr ""
-"新机器人如何进入本技术栈。复制**已有**描述包以及仓库里已有的 launch/xacro "
-"模式。**没有** `hardware:=mock`。launch 文件和配置名以该包 README 列出的为准。"
+"新机器人如何进入本技术栈。复制**已有**描述包以及仓库里已有的 launch/xacro 模式。**没有** "
+"`hardware:=mock`。launch 文件和配置名以该包 README 列出的为准。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:5
-#: 43d2b0381aa4470795efe30d5f96b727
+#: 941a49a2fe7a47519535132a82b185fd
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:8
-#: ff118f7ed24a4369ae67072ac7c8c445
+#: b91090c71c6f48768654112472aa4d6b
 #, python-brace-format
 msgid ""
 "Description layout: an existing `{robot}_description` package (example "
@@ -54,23 +54,23 @@ msgstr ""
 "descriptions-arx/tree/main/arx_acone_description)）及其包 README"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:9
-#: c45fbf1ae99b4b7880cebb1a4751fd5a
+#: 73b70093a3ca4e16993ff05ca71cafb9
 msgid ""
 "Umbrella + submodule paths: [robot_descriptions README "
 "(`main`)](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/main/README.md) (e.g. ARX at "
-"`manipulator/ARX`). Newer AgileX / Rokae INEX tables: [same README on "
+"sim/robot_descriptions/blob/main/README.md) (e.g. ARX at `manipulator/ARX`)."
+" Newer AgileX / Rokae INEX tables: [same README on "
 "`feature/agilex`](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/README.md)"
 msgstr ""
-"伞形仓与子模块路径：[robot_descriptions README（`main`）](https://github.com"
-"/fiveages-sim/robot_descriptions/blob/main/README.md)（例如 ARX 在 "
-"`manipulator/ARX`）。更新的 AgileX / 珞石 INEX 表：[同一 README 的 "
+"伞形仓与子模块路径：[robot_descriptions README（`main`）](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md)（例如 ARX 在 `manipulator/ARX`）。更新的 "
+"AgileX / 珞石 INEX 表：[同一 README 的 "
 "`feature/agilex`](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/README.md)"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:10
-#: 623bb34a6e3046528d659c1e827723c5
+#: c0437fc5ff9249c0b892fa7fd3fe9a92
 msgid ""
 "Launch / `hardware:=` / EEF: "
 "[robot_common_launch](../../4-reference/descriptions/2-common.md)"
@@ -79,20 +79,20 @@ msgstr ""
 "末端：[robot_common_launch](../../4-reference/descriptions/2-common.md)"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:11
-#: 593b37604bd349a5b70938f551c0ddab
+#: dfbd45ae0426476899f69a9c0278aca7
 msgid ""
-"Workspace init: `./init_repo.sh` in [open-deploy-ws](https://github.com"
-"/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) + "
-"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
-"deploy-ws/blob/main/submodules_visibility.conf)"
+"Workspace init: `./init_repo.sh` in [open-deploy-"
+"ws](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) +"
+" [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/submodules_visibility.conf)"
 msgstr ""
 "工作区初始化：[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-"
 "ws/blob/main/README.EN.md) 的 `./init_repo.sh` + "
-"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
-"deploy-ws/blob/main/submodules_visibility.conf)"
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/submodules_visibility.conf)"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:12
-#: ae8622e47e66469e81540ee965911aab
+#: 5034572b0dce4004894deff795b4fd7c
 msgid ""
 "Isaac USD: FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (folder `USDA-"
 "OCS2-PhysX-Mujoco`) — [skill](https://github.com/fiveages-sim/FaSim-"
@@ -100,18 +100,18 @@ msgid ""
 "`./init.sh` / `./run.sh` and [robot_usds](https://github.com/fiveages-"
 "sim/robot_usds/blob/main/README.md)"
 msgstr ""
-"Isaac USD：FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**（目录 `USDA-OCS2"
-"-PhysX-Mujoco`）— [skill](https://github.com/fiveages-sim/FaSim-"
+"Isaac USD：FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**（目录 `USDA-OCS2-PhysX-"
+"Mujoco`）— [skill](https://github.com/fiveages-sim/FaSim-"
 "Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md) — 以及 "
 "`./init.sh` / `./run.sh` 和 [robot_usds](https://github.com/fiveages-"
 "sim/robot_usds/blob/main/README.md)"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:13
-#: 7b4c13860c524f178c95bf5c2b1dff63
+#: 474e010031df4dba92cd6503e7844d41
 msgid ""
 "Description-side Cursor skills: **`robot_descriptions` branch "
-"`feature/agilex`** — [`.cursor/skills/README.md`](https://github.com"
-"/fiveages-"
+"`feature/agilex`** — "
+"[`.cursor/skills/README.md`](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md). "
 "**`main` has no `.cursor/skills`**. `robot-descriptions-common` and "
 "`robot_usds` have none on `main`. The agilex index lists **only** `split-"
@@ -120,22 +120,22 @@ msgstr ""
 "描述侧 Cursor skill：在 **`robot_descriptions` 的 `feature/agilex` 分支** — "
 "[`.cursor/skills/README.md`](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md)。**`main`"
-" 没有 `.cursor/skills`**。`robot-descriptions-common` 和 `robot_usds` 在 "
-"`main` 上也没有。agilex 索引目前**只有** `split-chassis-glb`。"
+" 没有 `.cursor/skills`**。`robot-descriptions-common` 和 `robot_usds` 在 `main` "
+"上也没有。agilex 索引目前**只有** `split-chassis-glb`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:16
-#: 0ee2d5e66e7d4329b792dd29879f5bd7
+#: 220a73f5ad134fc7bd75f4611a42f75b
 msgid "1. ROS description package"
 msgstr "1. ROS 描述包"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:18
-#: 4382a3da5d424461ade8e62847046cd9
+#: 5094206b19d24129ba68074ef3af5db6
 msgid ""
 "Public brand trees live as submodules under "
 "[robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) "
-"(`common`, `manipulator/ARX`, `manipulator/Dobot`, …). In `open-deploy-"
-"ws` the same tree is `src/robot-descriptions/` after "
-"**`./init_repo.sh`**. Do not recursive-init."
+"(`common`, `manipulator/ARX`, `manipulator/Dobot`, …). In `open-deploy-ws` "
+"the same tree is `src/robot-descriptions/` after **`./init_repo.sh`**. Do "
+"not recursive-init."
 msgstr ""
 "公开品牌树作为子模块挂在 [robot_descriptions](https://github.com/fiveages-"
 "sim/robot_descriptions) 下（`common`、`manipulator/ARX`、`manipulator/Dobot` "
@@ -143,12 +143,12 @@ msgstr ""
 "descriptions/`。不要递归 init。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:20
-#: 512de4da08724a6bbbcfb0da65adeb57
+#: e7643953c5b84c508a455f56fdc97dab
 msgid "Copy a real package. Acone (from that repo) looks like:"
 msgstr "复制真实的包。Acone（该仓库）大致是："
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: 11d733a4505b412cbf8bff352fefc188
+#: c038c06e4958467cb380a6cf0da84897
 #, python-brace-format
 msgid ""
 "arx_acone_description/\n"
@@ -161,8 +161,7 @@ msgid ""
 "│   ├── component.xacro\n"
 "│   └── ros2_control/          # hardware plugin branches\n"
 "├── config/\n"
-"│   ├── ocs2/                  # task .info (controller loads these, not "
-"a separate ocs2_arm_config.yaml)\n"
+"│   ├── ocs2/                  # task .info (controller loads these, not a separate ocs2_arm_config.yaml)\n"
 "│   └── ros2_control/          # optional {hardware}.yaml overlay\n"
 "└── meshes/"
 msgstr ""
@@ -176,13 +175,12 @@ msgstr ""
 "│   ├── component.xacro\n"
 "│   └── ros2_control/          # hardware plugin branches\n"
 "├── config/\n"
-"│   ├── ocs2/                  # task .info (not an invented "
-"ocs2_arm_config.yaml)\n"
+"│   ├── ocs2/                  # task .info (not an invented ocs2_arm_config.yaml)\n"
 "│   └── ros2_control/          # optional {hardware}.yaml overlay\n"
 "└── meshes/"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:38
-#: 3d81845f5c984ff98231dbfa8985eb15
+#: 42b5828d8bfb44ee95bed58717cf2f83
 #, python-brace-format
 msgid ""
 "Launch key is `robot:=<key>` where the package is `{key}_description` "
@@ -194,33 +192,32 @@ msgstr ""
 " 默认是 `cr5`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:40
-#: 0401da3c7e404b47a67a806e37d33314
+#: 88e47ab86309458dbdfd2ec93b28031d
 msgid ""
 "`hardware:=` values that exist in Acone xacro / common launch: "
 "`mock_components` (default), `gz`, `isaac`, `real`. There is **no** "
 "`hardware:=mock`. Plugins: [ros2_control in This "
-"Stack](../../3-concepts/1-ros2_control_here.md). Use the plugin class "
-"from that robot’s `xacro/ros2_control/*.xacro` or an existing vendor HI "
-"README ([arx-ros2-control](https://github.com/fiveages-sim/arx-"
-"ros2-control) for ARX `hardware:=real`)."
+"Stack](../../3-concepts/1-ros2_control_here.md). Use the plugin class from "
+"that robot’s `xacro/ros2_control/*.xacro` or an existing vendor HI README "
+"([arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) for "
+"ARX `hardware:=real`)."
 msgstr ""
 "Acone xacro / common launch 中存在的 `hardware:=` "
 "取值：`mock_components`（默认）、`gz`、`isaac`、`real`。**没有** `hardware:=mock`。插件见 "
 "[本技术栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)。使用该机器人 "
-"`xacro/ros2_control/*.xacro` 中的插件类或已有厂商 HI README（ARX "
-"`hardware:=real` 见 [arx-ros2-control](https://github.com/fiveages-sim"
-"/arx-ros2-control)）。"
+"`xacro/ros2_control/*.xacro` 中的插件类或已有厂商 HI README（ARX `hardware:=real` 见 "
+"[arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control)）。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:42
-#: fdbd30bc2d9f404d8b3426d880d964c0
+#: ecf279d9c17c45bba6213f95f3c1d91b
 #, python-brace-format
 msgid ""
 "OCS2 files the controller actually loads: "
 "`{robot_pkg}/config/ocs2/<info>.info` ([ocs2_arm "
 "README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md))."
-" Planning URDF comes from the same xacro via `robot_common_launch`, not a"
-" static `urdf/*.urdf`."
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)). "
+"Planning URDF comes from the same xacro via `robot_common_launch`, not a "
+"static `urdf/*.urdf`."
 msgstr ""
 "控制器实际加载的 OCS2 文件：`{robot_pkg}/config/ocs2/<info>.info`（[ocs2_arm "
 "README](https://github.com/fiveages-"
@@ -228,23 +225,22 @@ msgstr ""
 " URDF 由同一套 xacro 经 `robot_common_launch` 生成，不是静态 `urdf/*.urdf`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:44
-#: 31c7da2619a24cccb90e10f248684451
+#: 5ad201d88d854292909694926925778b
 msgid "EEF / FT / TCP: `type` / `left_type` / `right_type` (not `gripper:=`)."
 msgstr "末端 / 力传感器 / TCP：`type` / `left_type` / `right_type`（不是 `gripper:=`）。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:46
-#: 95cb67b0fe074703ab1f8d06d48cd39e
+#: a35147fd3f0f40df9291072b6ea83e4e
 msgid "Chassis / swerve / `collider:=simple` (`feature/agilex` skill)"
 msgstr "底盘 / 舵轮 / `collider:=simple`（`feature/agilex` skill）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:48
-#: 3a48d7b829b340a5b6e8fa2e387cf02a
+#: 5b6add0e2fe74271a0081fc8ff19e7e5
 msgid ""
-"On **`feature/agilex` only**, the skills index currently lists one skill:"
-" **`split-chassis-glb`** ([SKILL.md](https://github.com/fiveages-"
+"On **`feature/agilex` only**, the skills index currently lists one skill: "
+"**`split-chassis-glb`** ([SKILL.md](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/.cursor/skills/split-chassis-"
-"glb/SKILL.md)). Canonical example in that skill: "
-"`rokae_inex_description`."
+"glb/SKILL.md)). Canonical example in that skill: `rokae_inex_description`."
 msgstr ""
 "**仅在 `feature/agilex` 上**，skills 索引目前只列了一个 skill： **`split-chassis-"
 "glb`**（[SKILL.md](https://github.com/fiveages-"
@@ -252,131 +248,132 @@ msgstr ""
 "glb/SKILL.md)）。该 skill 的规范示例是 `rokae_inex_description`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:50
-#: bd04bdaf7b254f18b88c1770454171d9
+#: c9369f0f54f04fb9abb6591d6fb25855
 msgid "What it does (overview; follow the skill for the full procedure):"
 msgstr "它做什么（概览；完整步骤以 skill 为准）："
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:52
-#: 698a01455e9648ec9be12f67815fe261
+#: 54d176c90881455587baa8fca89ba8d0
 msgid ""
-"Split one assembled chassis GLB into `chassis` / `steer` / `wheel` meshes"
-" with joint-ready origins"
+"Split one assembled chassis GLB into `chassis` / `steer` / `wheel` meshes "
+"with joint-ready origins"
 msgstr "把一个装配好的底盘 GLB 拆成 `chassis` / `steer` / `wheel` 网格，原点已对齐关节"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:53
-#: 2223c2b291d14d349bf1373d80688e7f
+#: 70729e7c53954610b152276a46c1627b
 msgid ""
 "Write swerve xacro (reuse one steer + one wheel at `fl` `fr` `rl` `rr`; "
 "right modules yaw 180°, no mesh reflect)"
-msgstr "写舵轮 xacro（在 `fl` `fr` `rl` `rr` 复用同一套 steer + wheel；右侧模块 yaw 180°，不镜像网格）"
+msgstr ""
+"写舵轮 xacro（在 `fl` `fr` `rl` `rr` 复用同一套 steer + wheel；右侧模块 yaw 180°，不镜像网格）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:54
-#: 30c11534d5a04ebdbe104df0adfac921
+#: f4ea77c62fb346ab9b06370c7f042706
 msgid ""
 "Add `collider:=simple` boxes from **glTF-node** AABBs (not raw accessor "
 "min/max)"
 msgstr "用 **glTF 节点** AABB 加 `collider:=simple` 盒子（不是 accessor 的原始 min/max）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:56
-#: 1b61efa0a50a44f49809a1bfea4915fd
+#: 9463ef7f478c4798b415b828480e24ed
 msgid ""
 "How to add more skills under `.cursor/skills/`: the same [skills "
 "README](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md) "
-"(folder [`.cursor/skills/`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md) (folder"
+" [`.cursor/skills/`](https://github.com/fiveages-"
 "sim/robot_descriptions/tree/feature/agilex/.cursor/skills)). The index "
 "currently lists **only** `split-chassis-glb`."
 msgstr ""
-"如何在 `.cursor/skills/` 下加更多 skill：同一份 [skills README](https://github.com"
-"/fiveages-"
+"如何在 `.cursor/skills/` 下加更多 skill：同一份 [skills "
+"README](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/.cursor/skills/README.md)（目录 "
 "[`.cursor/skills/`](https://github.com/fiveages-"
 "sim/robot_descriptions/tree/feature/agilex/.cursor/skills)）。索引目前**只有** "
 "`split-chassis-glb`。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:58
-#: 1b61efa0a50a44f49809a1bfea4915fd
+#: 44e1bc34c9974fd790787d657e290635
 msgid ""
-"**Package layout / submodules:** [README on `main`](https://github.com"
-"/fiveages-sim/robot_descriptions/blob/main/README.md) for the shared "
-"submodule table (`common`, `manipulator/ARX`, …). Use the [README on "
+"**Package layout / submodules:** [README on "
+"`main`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md) for the shared submodule table "
+"(`common`, `manipulator/ARX`, …). Use the [README on "
 "`feature/agilex`](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/README.md) when the robot is "
-"newer AgileX or Rokae INEX. That branch currently tables (paths as "
-"written there):"
+"newer AgileX or Rokae INEX. That branch currently tables (paths as written "
+"there):"
 msgstr ""
 "**包布局 / 子模块：** 共用子模块表看 [README（`main`）](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/main/README.md)（`common`、`manipulator/ARX` "
-"等）。新 AgileX 或珞石 INEX 用 [README（`feature/agilex`）](https://github.com"
-"/fiveages-"
+"sim/robot_descriptions/blob/main/README.md)（`common`、`manipulator/ARX` 等）。新 "
+"AgileX 或珞石 INEX 用 [README（`feature/agilex`）](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/README.md)。该分支目前列出的路径（按原文）："
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: 4fad0b22f3a249e1834998bf2fb13d11
+#: 9ecb0d5050f041d498e21fd03f7eb268
 msgid "Kind"
 msgstr "类别"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: d44463aa2724437ca877e70516c65d1a
+#: 2e99b94195254be79bc4a757989c3929
 msgid "Path on `feature/agilex`"
 msgstr "`feature/agilex` 上的路径"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: 65cd88c0b61d4657a4df62eab5a1f37a ccacb81df894449383729b70359986e1
-#: e6f68b652e0f4730b3b581650d3a13d6
+#: 0c775a0853714efd90075bff5494b158 366b902626f04759932a1d20e75849e6
+#: 558306efbeb24ab4a82ba4038661cba5
 msgid "Mobile manipulator"
 msgstr "移动操作臂"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: c25a17908ef5444789de1cd0678f12ea
+#: e9aac20925d44192aa5f49aa6d312d42
 msgid "`manipulator/AgileX/cobot_magic_v1_description` (Cobot Magic V1)"
 msgstr "`manipulator/AgileX/cobot_magic_v1_description`（Cobot Magic V1）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: bc2a0420798c4f22a6ecbe08a7c0147c
+#: 150e3c582a1b4fbbae3b5362ac163778
 msgid "`manipulator/AgileX/split_aloha_description` (Split Aloha)"
 msgstr "`manipulator/AgileX/split_aloha_description`（Split Aloha）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: 74b28060a50343cb8a2b174faefbaa8b
+#: f9281ca5e08240f2a91405739e078d77
 msgid "`manipulator/AgileX/cobot_magic_v2_description` (Cobot Magic V2)"
 msgstr "`manipulator/AgileX/cobot_magic_v2_description`（Cobot Magic V2）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: b00ba81fa4524b2ebe72c2bc559a5212 ec3898329b6044f6be93529f2ec9c3fc
-#: f2811c2c053041ad9ee53acef23195f3
+#: 198c836da3ae47a2af9756dafd974640 536c860be740429dba10b57248f4745b
+#: a991f9f1f9b94a0fa4cadf94dd5fd20c
 msgid "Manipulator"
 msgstr "操作臂"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: 2cf46b1152d24ba48d6dce864f819b49
+#: f4d3c3cefb724d0ea29932606146aad2
 msgid "`manipulator/AgileX/piper_description` (Piper; also on `main`)"
 msgstr "`manipulator/AgileX/piper_description`（Piper；`main` 上也有）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: e7bcd4229f0b4c818c44d2f81c56548f
+#: 9ee9234a36ae47c7956bd4dfa8acf030
 msgid "`manipulator/AgileX/nero_description` (Nero)"
 msgstr "`manipulator/AgileX/nero_description`（Nero）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: bd48a9f0129d4e2b88e6aa1a6298551a
+#: b5d4e63bf07f401789477f03ebda50c2
 msgid "`manipulator/AgileX/open_nero_description` (Open Nero)"
 msgstr "`manipulator/AgileX/open_nero_description`（Open Nero）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: b8c2e94f1a044a698fd523c312ccf2ca
+#: fde6f01c466c49cf9b06869a29138186
 msgid "Wheel humanoid"
 msgstr "轮式人形"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:22
-#: d4bdc45b19c74760aadf21f830c4a0a1
+#: 24bd2b088e3e484b94cb46a06564eb27
 msgid ""
 "`humanoid/Rokae/rokae_inex_description` (INEX; `split-chassis-glb` "
 "canonical)"
 msgstr "`humanoid/Rokae/rokae_inex_description`（INEX；`split-chassis-glb` 规范例）"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:70
-#: d874e13d198c419792198e2dbdfb1bfa
+#: 8fe9f0975e8842ea95455101c77f363d
 msgid ""
 "`main` still lists AgileX Aloha at "
 "`manipulator/AgileX/agilex_aloha_description` and does **not** have the "
@@ -387,74 +384,95 @@ msgstr ""
 "`.cursor/skills` 目录。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:72
-#: 75af88e598c04415a729a5d9279e5403
+#: 5893091f302c45aa93d45931ecc602ab
+msgid ""
+"**Taku** (Dyna / DVT1) is also in-tree on `feature/agilex` at "
+"[`humanoid/Dyna/taku_description`](https://github.com/fiveages-"
+"sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description), "
+"with launch `robot:=taku` on `robot_common_launch humanoid.launch.py` "
+"([package README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md))."
+" It is **not** a row in that branch’s README brand tables. There is no lean "
+"`open-deploy-ws` Taku branch — [open-deploy-ws "
+"Setup](../../1-getting_started/3-open_deploy_ws.md)."
+msgstr ""
+"**Taku**（Dyna / DVT1）也在 `feature/agilex` 仓内 "
+"[`humanoid/Dyna/taku_description`](https://github.com/fiveages-"
+"sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description)，启动为"
+" `robot_common_launch humanoid.launch.py` 的 `robot:=taku`（[包 "
+"README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)）。它**不是**该分支"
+" README 品牌表中的一行。没有精简的 `open-deploy-ws` Taku 分支 — [open-deploy-ws "
+"配置](../../1-getting_started/3-open_deploy_ws.md)。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:74
+#: 3e9a0fa7252a4effa213b987afa41c83
 msgid "2. Wire it into a deploy workspace"
 msgstr "2. 接到部署工作区"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:74
-#: e31e9b027dad4525967efc7bd13a7fb4
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:76
+#: 06d6475bd8544daf8e312db8e6e473cf
 msgid "In `open-deploy-ws`:"
 msgstr "在 `open-deploy-ws` 中："
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:76
-#: d460f844849141f2a7b941696c721433
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:78
+#: a8011b53e23046bab26096fc6da835c5
 msgid "`./init_repo.sh` so nested modules match `submodules_visibility.conf`."
 msgstr "`./init_repo.sh`，让嵌套模块与 `submodules_visibility.conf` 一致。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:77
-#: da510fa49fb04363b5edcf4851d7f069
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:79
+#: 340cbf41059d4bb186767bd3697b5f04
 msgid ""
 "If you added a **new** nested submodule: add the Git submodule on the "
-"parent, then one pipe line `parent_dir|relative_path|public` or `private`"
-" — [Submodules Visibility](../../3-concepts/6-submodules_visibility.md)."
+"parent, then one pipe line `parent_dir|relative_path|public` or `private` — "
+"[Submodules Visibility](../../3-concepts/6-submodules_visibility.md)."
 msgstr ""
 "若新增**嵌套**子模块：先在父仓加 Git submodule，再在 conf 加一行 "
 "`parent_dir|relative_path|public` 或 `private` — "
 "[子模块可见性](../../3-concepts/6-submodules_visibility.md)。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:78
-#: 923a788843bf412daab3d994a6a9031b
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:80
+#: 1f46e90898db46a0a681336f94814f7e
 msgid ""
 "`colcon build --symlink-install`. Lean branches (`arx-lift2s`, `panthera-"
-"ht`): prefer **`./quick_start.sh`** (it sources `install/setup.bash` "
-"after a successful build). On `main`, after colcon, `source "
-"install/setup.bash` in the launch terminal (standard ROS overlay; no "
-"extra env script)."
+"ht`): prefer **`./quick_start.sh`** (it sources `install/setup.bash` after a"
+" successful build). On `main`, after colcon, `source install/setup.bash` in "
+"the launch terminal (standard ROS overlay; no extra env script)."
 msgstr ""
 "`colcon build --symlink-install`。精简分支（`arx-lift2s`、`panthera-ht`）：优先 "
 "**`./quick_start.sh`**（构建成功后它会 source `install/setup.bash`）。在 `main` "
 "上，colcon 之后在启动终端 `source install/setup.bash`（标准 ROS overlay；没有额外环境脚本）。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:80
-#: f606d9a6e3e048d186c400463798aeb9
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:82
+#: b1816e112f8e4cb08166f384dad88328
 msgid ""
 "[robot-descriptions-arx README](https://github.com/fiveages-sim/robot-"
-"descriptions-arx/blob/main/README.md) also shows adding the brand repo as"
-" `src/robot-descriptions-arx` or `git submodule update --init "
-"manipulator/ARX` under the umbrella. Prefer the deploy-ws init script "
-"when you are in `open-deploy-ws`."
+"descriptions-arx/blob/main/README.md) also shows adding the brand repo as "
+"`src/robot-descriptions-arx` or `git submodule update --init "
+"manipulator/ARX` under the umbrella. Prefer the deploy-ws init script when "
+"you are in `open-deploy-ws`."
 msgstr ""
 "[robot-descriptions-arx README](https://github.com/fiveages-sim/robot-"
 "descriptions-arx/blob/main/README.md) 也写了把品牌仓加为 `src/robot-descriptions-"
-"arx`，或在伞形仓下 `git submodule update --init manipulator/ARX`。在 `open-deploy-"
-"ws` 里优先用部署工作区的 init 脚本。"
+"arx`，或在伞形仓下 `git submodule update --init manipulator/ARX`。在 `open-deploy-ws`"
+" 里优先用部署工作区的 init 脚本。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:82
-#: 24301dbaac8f4931b4291961c0ac174d
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:84
+#: 9028c893eca741c8a8e15a24bb6363a1
 msgid ""
 "Controllers already in [arms_ros2_control](https://github.com/fiveages-"
 "sim/arms_ros2_control): `ocs2_arm_controller` `demo.launch.py` / "
 "`split_body.launch.py` / `full_body.launch.py`, plus "
-"`basic_joint_controller`. Example from the Acone README (after the "
-"workspace overlay):"
+"`basic_joint_controller`. Example from the Acone README (after the workspace"
+" overlay):"
 msgstr ""
 "[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) "
-"里已有的控制器：`ocs2_arm_controller` 的 `demo.launch.py` / `split_body.launch.py`"
-" / `full_body.launch.py`，以及 `basic_joint_controller`。Acone README 示例（工作区 "
+"里已有的控制器：`ocs2_arm_controller` 的 `demo.launch.py` / `split_body.launch.py` / "
+"`full_body.launch.py`，以及 `basic_joint_controller`。Acone README 示例（工作区 "
 "overlay 之后）："
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:84
-#: bbd416a95daa4f63bea3d31dd15e3221
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:86
+#: 9a30879382134812a7eff58b68eb63de
 msgid ""
 "ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone"
@@ -462,29 +480,29 @@ msgstr ""
 "ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:89
-#: 84293788d8f4464dbdb00b95e1976f6c
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:91
+#: c0605c00388a430bba8bd8e79799a975
 msgid ""
-"Launch files and hardware-interface class names come from the package you"
-" copied and its vendor HI README."
+"Launch files and hardware-interface class names come from the package you "
+"copied and its vendor HI README."
 msgstr "launch 文件和硬件接口类名来自你复制的那个包及其厂商 HI README。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:91
-#: 0809f2b0a3de4c54af646e59c11a9a7e
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:93
+#: dc61060377c4408c8e7aa608ece76c96
 msgid "3. Isaac USD (FaSim-Isaac skill)"
 msgstr "3. Isaac USD（FaSim-Isaac skill）"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:93
-#: f69d5face3e549dbb491dc6aa05b741e
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:95
+#: a3f37255da404eedaee3f11800d8f20f
 msgid ""
-"Isaac import is still the FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** "
-"(not the description-side `split-chassis-glb` skill):"
+"Isaac import is still the FaSim-Isaac skill **`isaac-urdf-usda-ocs2`** (not "
+"the description-side `split-chassis-glb` skill):"
 msgstr ""
 "Isaac 导入仍走 FaSim-Isaac skill **`isaac-urdf-usda-ocs2`**（不是描述侧的 `split-"
 "chassis-glb` skill）："
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:95
-#: 5d8f59bf9e1b48e3bcf83def41b2471c
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:97
+#: afacb5ebd70b46e6b34241709417b805
 msgid ""
 "Skill file: [`.cursor/skills/USDA-OCS2-PhysX-"
 "Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-"
@@ -494,39 +512,38 @@ msgstr ""
 "Mujoco/SKILL.md`](https://github.com/fiveages-sim/FaSim-"
 "Isaac/blob/main/.cursor/skills/USDA-OCS2-PhysX-Mujoco/SKILL.md)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:96
-#: 007d8b9064be403d9859d24ca9206c64
-msgid ""
-"Other skills in that folder: `fasim-robot-mujoco-physics`, `fasim-"
-"dexhand-asset`, `fasim-rg75-pad-convert`, `fasim-usd-bake-scale`"
-msgstr ""
-"该目录下其他 skill：`fasim-robot-mujoco-physics`、`fasim-dexhand-asset"
-"`、`fasim-rg75-pad-convert`、`fasim-usd-bake-scale`"
-
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:98
-#: bd04bdaf7b254f18b88c1770454171d9
+#: 194d545007894c8f8a8b790ae7b0d534
 msgid ""
-"What that skill covers (overview; follow the skill for the full "
-"procedure):"
-msgstr "该 skill 覆盖的内容（概览；完整步骤以 skill 为准）："
+"Other skills in that folder: `fasim-robot-mujoco-physics`, `fasim-dexhand-"
+"asset`, `fasim-rg75-pad-convert`, `fasim-usd-bake-scale`"
+msgstr ""
+"该目录下其他 skill：`fasim-robot-mujoco-physics`、`fasim-dexhand-asset`、`fasim-"
+"rg75-pad-convert`、`fasim-usd-bake-scale`"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:100
-#: 00cc6f9295c24bdaaee2c1f7f947b7a3
+#: 0060f42b858f40889a1c00780e9981f0
+msgid ""
+"What that skill covers (overview; follow the skill for the full procedure):"
+msgstr "该 skill 覆盖的内容（概览；完整步骤以 skill 为准）："
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:102
+#: d159fdd6e4124dcd86e619f1ec79a1e1
 msgid "Split / expand URDF or xacro; record mount poses."
 msgstr "拆分 / 展开 URDF 或 xacro；记录安装位姿。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:101
-#: a5a2ad244e7b42c09d5c7a7294a11265
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:103
+#: 2e18c46911b54fa8991e70efbbfa2407
 msgid "Isaac 5: Import URDF → USD. Isaac 6: Asset Transformer → USDA."
 msgstr "Isaac 5：Import URDF → USD。Isaac 6：Asset Transformer → USDA。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:102
-#: 3dcaaebd7c3a40648492c54103f526d5
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:104
+#: b00e224e2c3b47ff8db79e03f8949c0e
 msgid "Robot Assembler (child → parent; one articulation root)."
 msgstr "Robot Assembler（子 → 父；一个 articulation root）。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:103
-#: fb8423026d654b2ebdbd83c06b5f8d61
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:105
+#: aef16e131e2e48b0a2860352b249b2a7
 #, python-brace-format
 msgid ""
 "Root `variantSets` + **local** adapter payloads "
@@ -535,8 +552,8 @@ msgstr ""
 "根 `variantSets` + **本地** adapter "
 "payload（`payloads/Physics/{none,physics,physx,mujoco}.usda` 等）。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:104
-#: d54755c3f8df442ca50fd5dd04ae694f
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:106
+#: 4819fa50801349f1822a9ed381b44884
 msgid ""
 "PhysX vs Newton/MuJoCo layers kept separate; host side "
 "`topic_based_ros2_control` + `hardware:=isaac`."
@@ -544,8 +561,8 @@ msgstr ""
 "PhysX 与 Newton/MuJoCo 层分开；主机侧 `topic_based_ros2_control` + "
 "`hardware:=isaac`。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:106
-#: 16dab3a32581462084dfd9d144c19da8
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:108
+#: 35d9c31c573944199be6f491250cf065
 msgid ""
 "Asset layout: [robot_usds README](https://github.com/fiveages-"
 "sim/robot_usds/blob/main/README.md) (`robots/manipulators/…`, "
@@ -554,38 +571,39 @@ msgid ""
 "[Isaac Sim](../2-simulation/4-isaac_sim.md)."
 msgstr ""
 "资产布局：[robot_usds README](https://github.com/fiveages-"
-"sim/robot_usds/blob/main/README.md)（`robots/manipulators/…`、`robots/mobile_manipulator"
-"/…`）。FaSim-Isaac 检出后：**`./init.sh`**（子模块 + 可选 Isaac ROS 2 工作区），然后 "
-"**`./run.sh`**。不要手写 Isaac `PATH` 或 `~/.bashrc` overlay。见 [Isaac "
+"sim/robot_usds/blob/main/README.md)（`robots/manipulators/…`、`robots/mobile_manipulator/…`）。FaSim-"
+"Isaac 检出后：**`./init.sh`**（子模块 + 可选 Isaac ROS 2 工作区），然后 **`./run.sh`**。不要手写 "
+"Isaac `PATH` 或 `~/.bashrc` overlay。见 [Isaac "
 "Sim](../2-simulation/4-isaac_sim.md)。"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:108
-#: f981d622a5c842198e89b5acc0eafdaf
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:110
+#: 009e616b5add43639512417cf3a9292c
 msgid "Related"
 msgstr "创建 PR"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:110
-#: e761a8b081794802aa0fa649775c6007
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:112
+#: 083cf20763b74d9fa2dd96ba09572a24
 msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
-msgstr "[ros2_control 在本项目中](../../3-concepts/1-ros2_control_here.md) — 理解控制架构"
+msgstr ""
+"[ros2_control 在本项目中](../../3-concepts/1-ros2_control_here.md) — 理解控制架构"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:111
-#: a653907290514d96a49b14b7793cbd2d
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:113
+#: 06ac2268f1db4cc7b52347cdd663b2fc
 msgid "[Workspace Layout](../../3-concepts/2-workspace_layout.md)"
 msgstr "[工作区布局](../../3-concepts/2-workspace_layout.md)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:112
-#: fb382824b3a64562bd0be3260c3f1256
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:114
+#: 5fa5d81406f84e9284cf35f5780d89e5
 msgid "[robot_common_launch](../../4-reference/descriptions/2-common.md)"
 msgstr "[robot_common_launch](../../4-reference/descriptions/2-common.md)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:113
-#: cb9d654c41584956964114067f8c36b3
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:115
+#: c0a46ab17c3344c5958e9cbacc7eb7da
 msgid "[Go to Real Hardware](9-go_real_hardware/0-index.md)"
 msgstr "[部署到真实机器人](9-go_real_hardware/0-index.md)"
 
-#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:114
-#: dbf037f39d3046739112f46afe90f488
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md:116
+#: ae6b4e382f0e41d098af0c97fc3117b6
 msgid "[Developer guide](../../5-developer/0-index.md)"
 msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 
@@ -676,35 +694,26 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 
 #~ msgid ""
 #~ "<?xml version=\"1.0\"?>\n"
-#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" "
-#~ "name=\"newrobot\">\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
 #~ "  \n"
 #~ "  <!-- Include ros2_control -->\n"
-#~ "  <xacro:include filename=\"$(find "
-#~ "robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
-#~ ""
+#~ "  <xacro:include filename=\"$(find robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
 #~ "  \n"
 #~ "  <!-- Base link -->\n"
 #~ "  <link name=\"base_link\">\n"
 #~ "    <visual>\n"
 #~ "      <geometry>\n"
-#~ "        <mesh "
-#~ "filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
-#~ "\n"
+#~ "        <mesh filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>\n"
 #~ "      </geometry>\n"
 #~ "    </visual>\n"
 #~ "    <collision>\n"
 #~ "      <geometry>\n"
-#~ "        <mesh "
-#~ "filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
-#~ "\n"
+#~ "        <mesh filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>\n"
 #~ "      </geometry>\n"
 #~ "    </collision>\n"
 #~ "    <inertial>\n"
 #~ "      <mass value=\"5.0\"/>\n"
-#~ "      <inertia ixx=\"0.01\" ixy=\"0\" "
-#~ "ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
-#~ ""
+#~ "      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
 #~ "    </inertial>\n"
 #~ "  </link>\n"
 #~ "  \n"
@@ -713,35 +722,26 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "</robot>\n"
 #~ msgstr ""
 #~ "<?xml version=\"1.0\"?>\n"
-#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" "
-#~ "name=\"newrobot\">\n"
+#~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\" name=\"newrobot\">\n"
 #~ "  \n"
 #~ "  <!-- Include ros2_control -->\n"
-#~ "  <xacro:include filename=\"$(find "
-#~ "robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
-#~ ""
+#~ "  <xacro:include filename=\"$(find robot_description_newrobot)/urdf/newrobot.ros2_control.xacro\"/>\n"
 #~ "  \n"
 #~ "  <!-- Base link -->\n"
 #~ "  <link name=\"base_link\">\n"
 #~ "    <visual>\n"
 #~ "      <geometry>\n"
-#~ "        <mesh "
-#~ "filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>"
-#~ "\n"
+#~ "        <mesh filename=\"package://robot_description_newrobot/meshes/visual/base.stl\"/>\n"
 #~ "      </geometry>\n"
 #~ "    </visual>\n"
 #~ "    <collision>\n"
 #~ "      <geometry>\n"
-#~ "        <mesh "
-#~ "filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>"
-#~ "\n"
+#~ "        <mesh filename=\"package://robot_description_newrobot/meshes/collision/base.stl\"/>\n"
 #~ "      </geometry>\n"
 #~ "    </collision>\n"
 #~ "    <inertial>\n"
 #~ "      <mass value=\"5.0\"/>\n"
-#~ "      <inertia ixx=\"0.01\" ixy=\"0\" "
-#~ "ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
-#~ ""
+#~ "      <inertia ixx=\"0.01\" ixy=\"0\" ixz=\"0\" iyy=\"0.01\" iyz=\"0\" izz=\"0.01\"/>\n"
 #~ "    </inertial>\n"
 #~ "  </link>\n"
 #~ "  \n"
@@ -756,8 +756,7 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "<?xml version=\"1.0\"?>\n"
 #~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
 #~ "  \n"
-#~ "  <xacro:macro name=\"newrobot_ros2_control\" "
-#~ "params=\"hardware_type\">\n"
+#~ "  <xacro:macro name=\"newrobot_ros2_control\" params=\"hardware_type\">\n"
 #~ "    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
 #~ "      \n"
 #~ "      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
@@ -774,9 +773,7 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "      \n"
 #~ "      <xacro:if value=\"${hardware_type == 'real'}\">\n"
 #~ "        <hardware>\n"
-#~ "          "
-#~ "<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
-#~ ""
+#~ "          <plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
 #~ "          <param name=\"device\">can0</param>\n"
 #~ "        </hardware>\n"
 #~ "      </xacro:if>\n"
@@ -796,8 +793,7 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "<?xml version=\"1.0\"?>\n"
 #~ "<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">\n"
 #~ "  \n"
-#~ "  <xacro:macro name=\"newrobot_ros2_control\" "
-#~ "params=\"hardware_type\">\n"
+#~ "  <xacro:macro name=\"newrobot_ros2_control\" params=\"hardware_type\">\n"
 #~ "    <ros2_control name=\"NewRobotSystem\" type=\"system\">\n"
 #~ "      \n"
 #~ "      <xacro:if value=\"${hardware_type == 'mock'}\">\n"
@@ -814,9 +810,7 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ "      \n"
 #~ "      <xacro:if value=\"${hardware_type == 'real'}\">\n"
 #~ "        <hardware>\n"
-#~ "          "
-#~ "<plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
-#~ ""
+#~ "          <plugin>newrobot_ros2_control/NewRobotHardwareInterface</plugin>\n"
 #~ "          <param name=\"device\">can0</param>\n"
 #~ "        </hardware>\n"
 #~ "      </xacro:if>\n"
@@ -844,65 +838,35 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 
 #~ msgid ""
 #~ "// newrobot_hardware_interface.hpp\n"
-#~ "class NewRobotHardwareInterface : public "
-#~ "hardware_interface::SystemInterface\n"
+#~ "class NewRobotHardwareInterface : public hardware_interface::SystemInterface\n"
 #~ "{\n"
 #~ "public:\n"
-#~ "  CallbackReturn on_init(const "
-#~ "hardware_interface::HardwareInfo & info) override;"
-#~ "\n"
-#~ "  CallbackReturn on_configure(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
-#~ "  CallbackReturn on_activate(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
-#~ "  CallbackReturn on_deactivate(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
+#~ "  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override;\n"
+#~ "  CallbackReturn on_configure(const rclcpp_lifecycle::State & previous_state) override;\n"
+#~ "  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override;\n"
+#~ "  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;\n"
 #~ "  \n"
-#~ "  std::vector<hardware_interface::StateInterface> "
-#~ "export_state_interfaces() override;\n"
-#~ "  std::vector<hardware_interface::CommandInterface> "
-#~ "export_command_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;\n"
 #~ "  \n"
-#~ "  return_type read(const rclcpp::Time & "
-#~ "time, const rclcpp::Duration & period) "
-#~ "override;\n"
-#~ "  return_type write(const rclcpp::Time & "
-#~ "time, const rclcpp::Duration & period) "
-#~ "override;\n"
+#~ "  return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
+#~ "  return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
 #~ "};\n"
 #~ msgstr ""
 #~ "// newrobot_hardware_interface.hpp\n"
-#~ "class NewRobotHardwareInterface : public "
-#~ "hardware_interface::SystemInterface\n"
+#~ "class NewRobotHardwareInterface : public hardware_interface::SystemInterface\n"
 #~ "{\n"
 #~ "public:\n"
-#~ "  CallbackReturn on_init(const "
-#~ "hardware_interface::HardwareInfo & info) override;"
-#~ "\n"
-#~ "  CallbackReturn on_configure(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
-#~ "  CallbackReturn on_activate(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
-#~ "  CallbackReturn on_deactivate(const "
-#~ "rclcpp_lifecycle::State & previous_state) override;"
-#~ "\n"
+#~ "  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override;\n"
+#~ "  CallbackReturn on_configure(const rclcpp_lifecycle::State & previous_state) override;\n"
+#~ "  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override;\n"
+#~ "  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;\n"
 #~ "  \n"
-#~ "  std::vector<hardware_interface::StateInterface> "
-#~ "export_state_interfaces() override;\n"
-#~ "  std::vector<hardware_interface::CommandInterface> "
-#~ "export_command_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;\n"
+#~ "  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;\n"
 #~ "  \n"
-#~ "  return_type read(const rclcpp::Time & "
-#~ "time, const rclcpp::Duration & period) "
-#~ "override;\n"
-#~ "  return_type write(const rclcpp::Time & "
-#~ "time, const rclcpp::Duration & period) "
-#~ "override;\n"
+#~ "  return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
+#~ "  return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;\n"
 #~ "};\n"
 
 #~ msgid "Step 3: Controller Configuration"
@@ -987,23 +951,21 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ msgstr "Gazebo 测试"
 
 #~ msgid ""
-#~ "ros2 launch ocs2_arm_controller demo.launch.py "
-#~ "robot:=newrobot hardware:=gz\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
+#~ "hardware:=gz\n"
 #~ msgstr ""
-#~ "ros2 launch ocs2_arm_controller demo.launch.py "
-#~ "robot:=newrobot hardware:=gz\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot "
+#~ "hardware:=gz\n"
 
 #~ msgid "Real Hardware Testing"
 #~ msgstr "真实硬件测试"
 
 #~ msgid ""
 #~ "# Follow the go_real_hardware guide\n"
-#~ "ros2 launch ocs2_arm_controller demo.launch.py "
-#~ "robot:=newrobot hardware:=real\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=real\n"
 #~ msgstr ""
 #~ "# Follow the go_real_hardware guide\n"
-#~ "ros2 launch ocs2_arm_controller demo.launch.py "
-#~ "robot:=newrobot hardware:=real\n"
+#~ "ros2 launch ocs2_arm_controller demo.launch.py robot:=newrobot hardware:=real\n"
 
 #~ msgid "Step 5: Integration"
 #~ msgstr "步骤 5：集成"
@@ -1041,12 +1003,8 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ msgid "URDF parses without errors"
 #~ msgstr "URDF 解析无错误"
 
-#~ msgid ""
-#~ "<input class=\"task-list-item-checkbox\" "
-#~ "disabled=\"disabled\" type=\"checkbox\">"
-#~ msgstr ""
-#~ "<input class=\"task-list-item-checkbox\" "
-#~ "disabled=\"disabled\" type=\"checkbox\">"
+#~ msgid "<input class=\"task-list-item-checkbox\" disabled=\"disabled\" type=\"checkbox\">"
+#~ msgstr "<input class=\"task-list-item-checkbox\" disabled=\"disabled\" type=\"checkbox\">"
 
 #~ msgid "Meshes display correctly in RViz"
 #~ msgstr "网格在 RViz 中正确显示"
@@ -1113,35 +1071,26 @@ msgstr "[开发者指南](../../5-developer/0-index.md) — 贡献规范"
 #~ msgstr "下一步"
 
 #~ msgid ""
-#~ "**No `.cursor/skills` was found** on "
-#~ "`main` for `robot_descriptions`, `robot-"
-#~ "descriptions-common`, or `robot_usds`. Use "
-#~ "those READMEs plus the FaSim-Isaac "
-#~ "skills. Do not invent a description-"
-#~ "side skill."
+#~ "**No `.cursor/skills` was found** on `main` for `robot_descriptions`, "
+#~ "`robot-descriptions-common`, or `robot_usds`. Use those READMEs plus the "
+#~ "FaSim-Isaac skills. Do not invent a description-side skill."
 #~ msgstr ""
-#~ "在 `main` 上**没有找到** `robot_descriptions`、`robot-"
-#~ "descriptions-common` 或 `robot_usds` 的 "
-#~ "`.cursor/skills`。请用这些 README 加上 FaSim-Isaac"
-#~ " skills。不要编造描述侧 skill。"
+#~ "在 `main` 上**没有找到** `robot_descriptions`、`robot-descriptions-common` 或 "
+#~ "`robot_usds` 的 `.cursor/skills`。请用这些 README 加上 FaSim-Isaac skills。不要编造描述侧 "
+#~ "skill。"
 
 #~ msgid ""
-#~ "`robot_descriptions` / `robot-descriptions-"
-#~ "common` / `robot_usds` have **no** "
-#~ "Cursor skill on `main`. The Isaac "
-#~ "import pipeline is the FaSim-Isaac "
+#~ "`robot_descriptions` / `robot-descriptions-common` / `robot_usds` have "
+#~ "**no** Cursor skill on `main`. The Isaac import pipeline is the FaSim-Isaac "
 #~ "skill **`isaac-urdf-usda-ocs2`**:"
 #~ msgstr ""
-#~ "`robot_descriptions` / `robot-descriptions-"
-#~ "common` / `robot_usds` 在 `main` 上**没有**"
-#~ " Cursor skill。Isaac 导入流程是 FaSim-Isaac "
-#~ "skill **`isaac-urdf-usda-ocs2`**："
+#~ "`robot_descriptions` / `robot-descriptions-common` / `robot_usds` 在 `main` "
+#~ "上**没有** Cursor skill。Isaac 导入流程是 FaSim-Isaac skill **`isaac-urdf-usda-"
+#~ "ocs2`**："
 
 #~ msgid ""
-#~ "Do not invent "
-#~ "`robot_description_newrobot/display.launch.py` or a "
+#~ "Do not invent `robot_description_newrobot/display.launch.py` or a "
 #~ "`NewRobotHardwareInterface` C++ stub."
 #~ msgstr ""
 #~ "不要编造 `robot_description_newrobot/display.launch.py` 或 "
 #~ "`NewRobotHardwareInterface` C++ 桩。"
-

@@ -18,7 +18,7 @@ Before you begin, ensure you have:
 - **Ubuntu 24.04** (Jazzy Jalisco target platform)
 - **ROS 2 Jazzy** installed
 - **Python 3.12** (Jazzy baseline; do not mix 3.10/3.11 venvs)
-- **Git** with SSH key configured for GitHub
+- **Git** with GitHub access (SSH key, or HTTPS / `gh` auth — `.gitmodules` remotes are SSH)
 - **16GB+ RAM** recommended for builds with simulation
 - **NVIDIA GPU** (optional, required for Isaac Sim)
 

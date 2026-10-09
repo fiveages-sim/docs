@@ -4,6 +4,10 @@ Frequently asked questions and common troubleshooting solutions.
 
 ## Installation Issues
 
+### Q: `apt` cannot find `python3-colcon-common-extensions` / `python3-rosdep` / `python3-vcstool`
+
+Those packages are in the ROS 2 apt index, not stock Ubuntu. On a bare 24.04 host or container, add the ROS key + Noble ROS 2 source, then `apt update`, **before** installing them. Full order: [Install Environment](2-install_environment.md). fishros is an optional shortcut, not the only path.
+
 ### Q: rosdep init fails with "already initialized"
 
 This is normal if you've used ROS 2 before. Just run update:
@@ -14,7 +18,7 @@ rosdep update
 
 ### Q: Package not found after apt install
 
-This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). After ROS is installed, clone a deploy workspace and run `./init_repo.sh`, then `source install/setup.bash` after `colcon build`.
+This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`) after the ROS 2 apt source exists. After ROS is installed, clone a deploy workspace and run `./init_repo.sh`, then `source install/setup.bash` after `colcon build`.
 
 ```bash
 sudo apt update
@@ -40,13 +44,26 @@ Download the matching asset from [ocs2_ros2 Releases](https://github.com/legubia
 
 In `open-deploy-ws` / `fa-deploy-ws`, re-run `./init_repo.sh` (menu 1). In FaSim-Isaac / fa-py-libraries / lerobot_ros2, re-run that repo’s `./init.sh` (or `./init.sh all`). Do not start with a recursive `git submodule update --init --recursive`.
 
+### Q: `error: cannot run ssh: No such file or directory`
+
+[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/.gitmodules) uses `git@github.com:…`. You need an `ssh` binary plus a GitHub key, **or** clone public modules over HTTPS / `gh repo clone`. `git config url.https://github.com/.insteadOf git@github.com:` alone does **not** fix `git submodule update`. Steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
+
+If a later `init_repo.sh` adds an HTTPS fallback, prefer that.
+
+### Q: How do I run `init_repo.sh` in CI / a container (no TTY)?
+
+**Today** the script is interactive (public/private, then per-module `d`/`s`). There are no committed non-interactive flags yet. Use the HTTPS public clone path that matches the defaults (ocs2=deb, arms/common=source) on [open-deploy-ws Setup](3-open_deploy_ws.md).
+
+**Coming / if supported:** flags such as `./init_repo.sh --public --ocs2=deb --arms=source --common=source`. Check `./init_repo.sh --help` after you pull; do not invent names that are not there.
+
 ### Q: Access denied to submodule
 
-This usually means you're trying to access a private submodule without proper access.
+This usually means you're trying to access a private submodule without proper access, or the remote is still SSH and this machine has no key.
 
 **For open-deploy-ws:** Only public submodules should be needed. Check that:
 1. You're on the correct branch
 2. The submodule is listed as public in `submodules_visibility.conf`
+3. You have `ssh` + a key, or you used the HTTPS / `gh` workaround
 
 **For fa-deploy-ws:** Verify your GitHub SSH key has access to private repos:
 
@@ -62,6 +79,14 @@ git submodule update --init
 ```
 
 ## Build Issues
+
+### Q: colcon fails on an empty directory under `arms_ros2_control`
+
+Public init leaves private nested modules empty (`controller/ocs2_wbc_controller`, `libraries/lina_planning`, `libraries/ocs2_humanoid`, …). **Today:** `touch <empty-dir>/COLCON_IGNORE`. **Coming / if supported:** `init_repo.sh` should add those files in public mode. Details: [open-deploy-ws Setup](3-open_deploy_ws.md).
+
+### Q: Where is Taku?
+
+On `robot_descriptions` branch **`feature/agilex`** at `humanoid/Dyna/taku_description` — not on the default `main` submodule pin. Launch: `ros2 launch robot_common_launch humanoid.launch.py robot:=taku` ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)). There is no lean `open-deploy-ws` Taku branch. Checkout steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
 
 ### Q: colcon build fails with missing dependency
 

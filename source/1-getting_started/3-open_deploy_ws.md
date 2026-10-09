@@ -13,6 +13,8 @@ Detailed setup guide for the public `open-deploy-ws` workspace.
 - Lean branches for minimal builds
 - GitHub Release `.deb` integration for OCS2 (and optionally common / arms)
 
+Finish [Install Environment](2-install_environment.md) first (ROS apt source → Jazzy + rosdep). Then use **`./init_repo.sh`**. After `colcon build`, `source install/setup.bash` in the launch terminal.
+
 ## Cloning
 
 ```bash
@@ -20,13 +22,37 @@ git clone https://github.com/fiveages-sim/open-deploy-ws.git
 cd open-deploy-ws
 ```
 
+The top-level clone can use HTTPS. Nested remotes in [`.gitmodules`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/.gitmodules) are still `git@github.com:…` (same for nested `.gitmodules` in `arms_ros2_control` and `robot_descriptions`).
+
+### SSH remotes vs HTTPS / `gh`
+
+Machines without an `ssh` binary or GitHub SSH keys fail submodule fetch with `error: cannot run ssh: No such file or directory`.
+
+**Today:** prefer `./init_repo.sh` when you have `ssh` plus a key (or an `ssh-agent`). The script still drives `git submodule update --init` against those SSH URLs — it does **not** yet rewrite them to HTTPS.
+
+`git config url.https://github.com/.insteadOf git@github.com:` **alone is not enough** for `git submodule update`. Git keeps the SSH URL in the submodule’s recorded remote.
+
+Workaround that works today (public modules only): clone those remotes over HTTPS, or `gh repo clone <org/name>` with GitHub CLI auth:
+
+:::{code-block} bash
+# after the HTTPS clone of open-deploy-ws — matches init defaults (ocs2=deb, arms/common=source)
+git clone https://github.com/fiveages-sim/arms_ros2_control.git src/arms_ros2_control
+git clone https://github.com/fiveages-sim/robot_descriptions.git src/robot-descriptions
+git clone https://github.com/fiveages-sim/robot-descriptions-common.git src/robot-descriptions/common
+./scripts/install_core_debs.sh --only ocs2
+:::
+
+For **Taku**, clone descriptions on `feature/agilex` instead of the default `main` (see [Taku / `feature/agilex`](#taku--featureagilex)).
+
+If a later `init_repo.sh` adds an HTTPS fallback, use that and drop the hand clones. Check `./init_repo.sh --help` / the [README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for what landed.
+
 ## Initialization
 
 ```bash
 ./init_repo.sh
 ```
 
-What the script does (open-deploy-ws README). Interactive menu:
+What the script does (open-deploy-ws README). **Today this menu is interactive** (`read` prompts: public/private, then per-module `d`/`s`):
 
 | Menu | Role |
 |------|------|
@@ -49,9 +75,21 @@ When prompted (`d=deb`, `s=source`; Enter accepts the default):
 
 Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does **not** install from packages.ros.org.
 
+### CI / non-interactive init
+
+`init_repo.sh` currently has **no** non-interactive flags. Piping menu answers can work for a one-off and is brittle if the menu order changes — not the primary path.
+
+**Coming / if supported** (check `./init_repo.sh --help` after you pull; do not assume these exist yet), the intended shape is flags that match today’s defaults, for example:
+
+```bash
+./init_repo.sh --public --ocs2=deb --arms=source --common=source
+```
+
+**Today** in a container or CI job without a TTY: use the HTTPS public clone steps above (same defaults: ocs2=deb, arms/common=source), then `colcon build`. That is a workaround, not a replacement for `./init_repo.sh` on a normal Ubuntu 24.04 desktop.
+
 ### Lean Branches
 
-For a single product, clone the matching branch (README directory names):
+For a single product, clone the matching branch (README directory names). Use a lean branch when you only need that robot’s packages (smaller clone). **Taku has no lean `open-deploy-ws` branch** — stay on `main` and switch descriptions to `feature/agilex`.
 
 :::{code-block} bash
 # Dobot CR5
@@ -62,7 +100,7 @@ git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws
 git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws
 :::
 
-Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
+The [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) also lists `arx-acone`. Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. See [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
 
 ## Directory Structure
 
@@ -81,6 +119,55 @@ open-deploy-ws/
 ├── deb_versions.conf
 └── scripts/
 :::
+
+## Taku / `feature/agilex`
+
+[`open-deploy-ws` `.gitmodules`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/.gitmodules) pins `src/robot-descriptions` to **`main`**. **Taku is not on `main`.**
+
+The in-tree package lives at [`humanoid/Dyna/taku_description`](https://github.com/fiveages-sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description) on **`feature/agilex`** ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)). After a normal init (or the HTTPS clone of `robot_descriptions` on `main`):
+
+:::{code-block} bash
+cd src/robot-descriptions
+git fetch origin
+git checkout feature/agilex
+# common is required (sensor_models / robot_common_launch)
+git clone https://github.com/fiveages-sim/robot-descriptions-common.git common
+# or, if SSH works: git submodule update --init common
+:::
+
+If you are starting from a clean HTTPS tree, clone descriptions on that branch in one step: `git clone -b feature/agilex https://github.com/fiveages-sim/robot_descriptions.git src/robot-descriptions`.
+
+Verified launch keys from that package README (`robot:=taku` → `taku_description`):
+
+:::{code-block} bash
+colcon build --packages-up-to taku_description sensor_models --symlink-install
+source install/setup.bash
+ros2 launch robot_common_launch humanoid.launch.py robot:=taku
+:::
+
+`ocs2_arm_controller demo.launch.py` uses the same `robot:=<key>` → `{key}_description` lookup. Taku ships `config/ocs2/` and a ros2_control yaml that names `ocs2_arm_controller`, so `robot:=taku` is the same convention — not a special-cased flag.
+
+The description is **inferred** (public Dyna kinematics; not official Dyna specs). That is stated in the package README.
+
+## Empty private directories and `COLCON_IGNORE`
+
+In **public** mode, `./init_repo.sh` skips private nested modules listed in [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf). Under `src/arms_ros2_control` those placeholders stay empty, including:
+
+- `controller/ocs2_wbc_controller`
+- `libraries/lina_planning`
+- `libraries/ocs2_humanoid`
+
+Empty private nested dirs can make `colcon build` fail (colcon still walks them). **Today:** drop a `COLCON_IGNORE` file in each empty private dir:
+
+:::{code-block} bash
+touch src/arms_ros2_control/controller/ocs2_wbc_controller/COLCON_IGNORE
+touch src/arms_ros2_control/libraries/lina_planning/COLCON_IGNORE
+touch src/arms_ros2_control/libraries/ocs2_humanoid/COLCON_IGNORE
+:::
+
+Other empty nested submodule dirs under `arms_ros2_control` (uninited hardware interfaces) get the same treatment if colcon errors on that path: `touch <empty-dir>/COLCON_IGNORE`.
+
+**Coming / if supported:** `init_repo.sh` should write those `COLCON_IGNORE` files in public mode. After that lands, you can skip the manual `touch`.
 
 ## Building
 
@@ -114,6 +201,7 @@ colcon build --packages-up-to ocs2_arm_controller
 | **ARX Lift 2S** | robot-descriptions-arx | arx-ros2-control | **Full-body** (arms + lift + chassis); branch `arx-lift2s` |
 | Galbot | robot-descriptions-galbot | (varies) | Simulation-oriented |
 | **HighTorque Panthera HT** | `panthera_ht_description` | ht-ros2-control | Dual-arm; branch `panthera-ht`; umbrella path `manipulator/HighTorque/panthera_ht_description` |
+| **Taku** (Dyna / DVT1) | `taku_description` | mock / gz / isaac in package xacro | In-tree on `robot_descriptions` **`feature/agilex`** at `humanoid/Dyna/taku_description`; `robot:=taku` on `humanoid.launch.py` |
 | Quadruped | robot-descriptions-quadruped | unitree-ros2-control | Simulation-oriented |
 
 ```{admonition} Real Hardware Deployment
@@ -139,6 +227,8 @@ ros2 launch ocs2_arm_controller demo.launch.py
 # Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
+
+Taku visualize path (package README): `ros2 launch robot_common_launch humanoid.launch.py robot:=taku`.
 
 ### End-effector (`type`)
 
@@ -177,12 +267,15 @@ Check `deb_versions.conf` for the GitHub repos and release tags used by `scripts
 
 Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init --recursive` as the primary recovery path.
 
-### Access Denied to Submodule
+### `cannot run ssh` / Access Denied to Submodule
 
-Some submodules are private. In `open-deploy-ws`, only public submodules should be required. If you see access errors:
+`.gitmodules` URLs are SSH. You need an `ssh` binary plus a GitHub key, **or** the HTTPS / `gh` clone workaround above. `insteadOf` HTTPS rewrite alone does not fix `git submodule update`.
+
+Some nested modules are private. In `open-deploy-ws`, only public nested modules should be required. If you see access errors:
 
 1. Check you're on the correct branch (not accidentally on a private branch)
 2. Verify the submodule is listed as public in `submodules_visibility.conf`
+3. For empty private dirs that break colcon, add `COLCON_IGNORE` as above
 
 ### Build Fails with numpy
 

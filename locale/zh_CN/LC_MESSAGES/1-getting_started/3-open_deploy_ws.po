@@ -9,34 +9,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 04:26+0000\n"
+"POT-Creation-Date: 2026-10-09 01:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:1
-#: 1dd9b5006740438ea01f6788378a274d
+#: 0aca8163224141fe81236d9f67d5bcee
 msgid "open-deploy-ws Setup"
 msgstr "open-deploy-ws 配置"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:3
-#: eb9c056c249047ca8c13aa3b6ae2986b
+#: bcde5219fa11427c90bd64ffab4e171c
 msgid "Detailed setup guide for the public `open-deploy-ws` workspace."
 msgstr "公开工作空间 `open-deploy-ws` 的详细配置指南。"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:5
-#: 207b8adc305b4dc8a95ddc8ff125b2ef
+#: 9c46313877b0438ab4f24c6c8065ea88
 msgid "Repository Overview"
 msgstr "仓库 概述"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:7
-#: 9b17930261864ce5944cab59eb7fa812
+#: ecb7ed5d04bb4c93a2f742c11cd2cfa7
 msgid ""
 "**URL:** [https://github.com/fiveages-sim/open-deploy-"
 "ws](https://github.com/fiveages-sim/open-deploy-ws)"
@@ -45,39 +45,50 @@ msgstr ""
 "ws](https://github.com/fiveages-sim/open-deploy-ws)"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:9
-#: 1a8a2aa119ee49a290f9e623cf3070b3
+#: b385b43dfe4c4072b5c22d7a15552d81
 msgid ""
-"`open-deploy-ws` is the public entry point for the FiveAges Sim "
-"ecosystem. It provides:"
+"`open-deploy-ws` is the public entry point for the FiveAges Sim ecosystem. "
+"It provides:"
 msgstr "`open-deploy-ws` 是 FiveAges Sim 生态系统的公开入口，提供："
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:11
-#: 20120f1f51024684bc3d1c165b81b546
+#: 27ca4347b7fd40d39c30da143e321ddb
 msgid "Pre-configured submodule structure"
 msgstr "预配置的子模块结构"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:12
-#: 19171127ff9345f2a63e793f64ff719f
+#: 5d00a53f3d244d20b3445fc79555b0bf
 msgid "Public-only visibility by default"
 msgstr "默认仅公开可见"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:13
-#: 1b90be4ed2884796bbe9ca9bece1018f
+#: 61d5d13601d44105be9de99f2770fad5
 msgid "Lean branches for minimal builds"
 msgstr "便于最小化编译的精简分支"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:14
-#: b415018219d442a9a3886dfcc26f5c87
-msgid "GitHub Release `.deb` integration for OCS2 (and optionally common / arms)"
+#: 4d70944fcd294784b0770c948274d046
+msgid ""
+"GitHub Release `.deb` integration for OCS2 (and optionally common / arms)"
 msgstr "OCS2（以及可选的 common / arms）的 GitHub Release `.deb` 集成"
 
 #: ../../source/1-getting_started/3-open_deploy_ws.md:16
-#: 704e15a228a6436ca3f3461fc0f70b5d
+#: b5d32804922d442d956e1a53f481fdce
+msgid ""
+"Finish [Install Environment](2-install_environment.md) first (ROS apt source"
+" → Jazzy + rosdep). Then use **`./init_repo.sh`**. After `colcon build`, "
+"`source install/setup.bash` in the launch terminal."
+msgstr ""
+"先完成 [环境安装](2-install_environment.md)（ROS apt 源 → Jazzy + rosdep）。然后用 "
+"**`./init_repo.sh`**。`colcon build` 之后，在启动终端 `source install/setup.bash`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:18
+#: 9013a45349a3412b868789b2a03a3fdb
 msgid "Cloning"
 msgstr "克隆"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:18
-#: 5b42b73940014e88aa225cba28d2ccea
+#: ../../source/1-getting_started/3-open_deploy_ws.md:20
+#: 0c56a33af36848a590b0c85fce3c16cc
 msgid ""
 "git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
 "cd open-deploy-ws\n"
@@ -85,228 +96,362 @@ msgstr ""
 "git clone https://github.com/fiveages-sim/open-deploy-ws.git\n"
 "cd open-deploy-ws\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:23
-#: 6aa350ca2d6647d2922210ba8a5f94c9
+#: ../../source/1-getting_started/3-open_deploy_ws.md:25
+#: f27a3f21b0854e48a79a7feae8acc9ce
+msgid ""
+"The top-level clone can use HTTPS. Nested remotes in "
+"[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/.gitmodules) are still `git@github.com:…` (same for nested "
+"`.gitmodules` in `arms_ros2_control` and `robot_descriptions`)."
+msgstr ""
+"顶层克隆可以用 HTTPS。[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/.gitmodules) 里的嵌套远程仍是 `git@github.com:…`（`arms_ros2_control` 和 "
+"`robot_descriptions` 的嵌套 `.gitmodules` 同样如此）。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:27
+#: 477b1beea0ff4b1ea45e8b924907a7ee
+msgid "SSH remotes vs HTTPS / `gh`"
+msgstr "SSH 远程 vs HTTPS / `gh`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:29
+#: 61148efc50464a678ad0a56d8c052b3f
+msgid ""
+"Machines without an `ssh` binary or GitHub SSH keys fail submodule fetch "
+"with `error: cannot run ssh: No such file or directory`."
+msgstr ""
+"没有 `ssh` 可执行文件或 GitHub SSH 密钥的机器，拉取子模块会失败：`error: cannot run ssh: No such "
+"file or directory`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:31
+#: 0ca804aa529747789ebaa8639cd8a7c8
+msgid ""
+"**Today:** prefer `./init_repo.sh` when you have `ssh` plus a key (or an "
+"`ssh-agent`). The script still drives `git submodule update --init` against "
+"those SSH URLs — it does **not** yet rewrite them to HTTPS."
+msgstr ""
+"**今天：** 若已有 `ssh` 和密钥（或 `ssh-agent`），优先 `./init_repo.sh`。脚本仍对那些 SSH URL 执行 "
+"`git submodule update --init` — **尚未**把它们改写成 HTTPS。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:33
+#: a00ae229a27e4f7490533744a4320dd6
+msgid ""
+"`git config url.https://github.com/.insteadOf git@github.com:` **alone is "
+"not enough** for `git submodule update`. Git keeps the SSH URL in the "
+"submodule’s recorded remote."
+msgstr ""
+"仅设置 `git config url.https://github.com/.insteadOf git@github.com:` **不够**让 "
+"`git submodule update` 走通。Git 会把 SSH URL 留在子模块已记录的远程里。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:35
+#: c8c2cc7b576a4ffa9cbd010e794f91c4
+msgid ""
+"Workaround that works today (public modules only): clone those remotes over "
+"HTTPS, or `gh repo clone <org/name>` with GitHub CLI auth:"
+msgstr ""
+"今天可用的变通（仅公开模块）：用 HTTPS 克隆这些远程，或用已登录的 GitHub CLI 执行 `gh repo clone "
+"<org/name>`："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 83d46c587aa847319d713083b1932a9f
+msgid ""
+"# after the HTTPS clone of open-deploy-ws — matches init defaults (ocs2=deb, arms/common=source)\n"
+"git clone https://github.com/fiveages-sim/arms_ros2_control.git src/arms_ros2_control\n"
+"git clone https://github.com/fiveages-sim/robot_descriptions.git src/robot-descriptions\n"
+"git clone https://github.com/fiveages-sim/robot-descriptions-common.git src/robot-descriptions/common\n"
+"./scripts/install_core_debs.sh --only ocs2"
+msgstr ""
+"# after the HTTPS clone of open-deploy-ws — matches init defaults (ocs2=deb, arms/common=source)\n"
+"git clone https://github.com/fiveages-sim/arms_ros2_control.git src/arms_ros2_control\n"
+"git clone https://github.com/fiveages-sim/robot_descriptions.git src/robot-descriptions\n"
+"git clone https://github.com/fiveages-sim/robot-descriptions-common.git src/robot-descriptions/common\n"
+"./scripts/install_core_debs.sh --only ocs2"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:45
+#: 411a400f44e34b2895b08097f298f9fa
+msgid ""
+"For **Taku**, clone descriptions on `feature/agilex` instead of the default "
+"`main` (see [Taku / `feature/agilex`](#taku--featureagilex))."
+msgstr ""
+"若要 **Taku**，把描述仓克隆到 `feature/agilex`，不要用默认的 `main`（见 [Taku / "
+"`feature/agilex`](#taku--featureagilex)）。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:47
+#: 01860e1f311546aca02c4e1984e8c73b
+msgid ""
+"If a later `init_repo.sh` adds an HTTPS fallback, use that and drop the hand"
+" clones. Check `./init_repo.sh --help` / the "
+"[README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md) for what landed."
+msgstr ""
+"若之后的 `init_repo.sh` 增加了 HTTPS 回退，改用脚本，不再手工克隆。拉取后看 `./init_repo.sh --help` / "
+"[README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md) 确认已落地的行为。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:49
+#: 91d8dfbf3a7246be8543596561e55388
 msgid "Initialization"
 msgstr "初始化"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:25
-#: 3fe0016224ce469c9e13bfa54bb7b19f
+#: ../../source/1-getting_started/3-open_deploy_ws.md:51
+#: 50cdc9f6453d4c5e9a3f3c1c1152159a
 msgid "./init_repo.sh\n"
 msgstr "./init_repo.sh\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:29
-#: f5ecc2987e4d47cba91f17b0dc0b83b2
-msgid "What the script does (open-deploy-ws README). Interactive menu:"
-msgstr "脚本做什么（open-deploy-ws README）。交互菜单："
+#: ../../source/1-getting_started/3-open_deploy_ws.md:55
+#: b6aeb61861c54c209efac6a7a37e895c
+msgid ""
+"What the script does (open-deploy-ws README). **Today this menu is "
+"interactive** (`read` prompts: public/private, then per-module `d`/`s`):"
+msgstr ""
+"脚本做什么（open-deploy-ws README）。**今天这个菜单是交互式的**（`read` 提示：public/private，再按模块选 "
+"`d`/`s`）："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 47b4f4ef4dd24da4acc4a1c926635524
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 6416b96785054ee3b725b53f85a4fd5b
 msgid "Menu"
 msgstr "菜单"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: fc66b98ab5a4441384cc7293673ef5e5
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 98bdb6c3d35942c3aad682bd2c52048e
 msgid "Role"
 msgstr "作用"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: f0f7812d41da4e9db812081d99d27097
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 43dbaafe511946efadee744d89c781d3
 msgid "**1) 初始化工作空间（推荐）**"
 msgstr "**1) 初始化工作空间（推荐）**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 1256098a241c4be1bce0dc20ec4ef5e7
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 80978108e94444e6af34201205f21a99
 msgid ""
 "Nested visibility (`public` / `private`), then per-module `d` (GitHub "
-"Release `.deb`) or `s` (source). Then submodule sync, `rosdep install` on"
-" source paths, and install chosen debs."
+"Release `.deb`) or `s` (source). Then submodule sync, `rosdep install` on "
+"source paths, and install chosen debs."
 msgstr ""
 "嵌套可见性（`public` / `private`），再按模块选 `d`（GitHub Release `.deb`）或 "
 "`s`（源码）。随后同步子模块，对源码路径跑 `rosdep install`，并安装所选 deb。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: e4bfbe8c6b0a4293a5c4737750df0aab
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: f4a9fccfa15445c79557019e08429c0b
 msgid "**2) 切换模块安装方式**"
 msgstr "**2) 切换模块安装方式**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: ec4e7aecb210448ba34ebb43334d59af
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: bab9882e427e402aac92f3966a2aeb4d
 msgid ""
-"Switch source ↔ deb for a module (OCS2, arms, common). Cleans conflicting"
-" source or uninstalls the matching deb, then re-syncs."
+"Switch source ↔ deb for a module (OCS2, arms, common). Cleans conflicting "
+"source or uninstalls the matching deb, then re-syncs."
 msgstr "按模块（OCS2、arms、common）在源码 ↔ deb 之间切换。清理冲突源码或卸载对应 deb，然后重新同步。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: edb7150340b840d2a00c81ef41c79a7e
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 4e51aeb2d7b6412c9fc051e27b9bc955
 msgid "**3) 仅安装/更新核心 deb**"
 msgstr "**3) 仅安装/更新核心 deb**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: dc960789a02d4241b14f5a7cb3557abd
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 5e8c2b818c4d40b5a1e9859775dc750b
 msgid ""
-"Skip Git. `./scripts/install_core_debs.sh --only ocs2` (or `common`, "
-"`arms`, comma-separated)."
+"Skip Git. `./scripts/install_core_debs.sh --only ocs2` (or `common`, `arms`,"
+" comma-separated)."
 msgstr ""
-"跳过 Git。`./scripts/install_core_debs.sh --only ocs2`（或 "
-"`common`、`arms`，逗号分隔）。"
+"跳过 Git。`./scripts/install_core_debs.sh --only ocs2`（或 `common`、`arms`，逗号分隔）。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 4951b8aa32ae4888843c12e3e3994287
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 7a81f682ab174f5f821a7628cc2ff3da
 msgid "**4) 卸载核心 deb**"
 msgstr "**4) 卸载核心 deb**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 60c58075208647379318b6d6d1bc7511
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: c8a82a52540148709f38f66133066a53
 msgid "`./scripts/uninstall_core_debs.sh --only ocs2`"
 msgstr "`./scripts/uninstall_core_debs.sh --only ocs2`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: d3568b6fd4b7475fb4183f99c1edafa2
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: e31c3500a9f44fe9b4dd44282c19737a
 msgid "**5) 仅运行 rosdep**"
 msgstr "**5) 仅运行 rosdep**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: c7469dd49e6b487880e56c9c9ca0b93e
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 8451b6fe06904d049ef1f49887d94c16
 msgid "`rosdep install --from-paths src --ignore-src -r -y` — no Git, no debs"
 msgstr "`rosdep install --from-paths src --ignore-src -r -y` — 不拉 Git、不装 deb"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:39
-#: 178ce44b49a648fc9228cfb7c6e02b3c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:65
+#: df062ce4a0c24c65a4b24013905397ae
 msgid ""
 "You still **colcon-build** after init. Do not start with `git submodule "
-"update --init --recursive`; the script already initializes the modules "
-"you selected."
+"update --init --recursive`; the script already initializes the modules you "
+"selected."
 msgstr ""
 "init 之后仍需 **colcon build**。不要从 `git submodule update --init --recursive` "
 "开始；脚本已经初始化你选中的模块。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:41
-#: 871f8c334f6148f68019a24a7bc7278f
+#: ../../source/1-getting_started/3-open_deploy_ws.md:67
+#: 385ce99b9ae142f094082effce68e9aa
 msgid "Core module options (OCS2, arms, common)"
 msgstr "核心模块选项（OCS2、arms、common）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:43
-#: a0c0dd25a6894d96a0d120240529f45d
+#: ../../source/1-getting_started/3-open_deploy_ws.md:69
+#: cb1a285b62564ea0a1fd8664996480d5
 msgid "When prompted (`d=deb`, `s=source`; Enter accepts the default):"
 msgstr "出现提示时（`d=deb`，`s=source`；直接回车使用默认值）："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 1f197cfbc8384ff08d525f730896d299
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 145c45f42f6f4172967fc896e7f64fbd
 msgid "Option"
 msgstr "选项"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 8774c75c50ca4f369094adeb6dc8a8c0
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: e79687ed3668455880f51a8ba1b2eb84
 msgid "Description"
 msgstr "描述"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: cc71f565c3714866b87a6960de061dec
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: e2913f08d94a493b88d02e8b7af38757
 msgid "When to Use"
 msgstr "适用场景"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 92779e8d779d489a93961546fa675d7d
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 59b2c3d43aad450db5572a2bdf122877
 msgid "`d`"
 msgstr "`d`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 3872e77d4d894cc3b50f814ad1dd1e8f c672e479240e4fbca92f764ba746e574
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 4165308518b34e24a09ea24de611f817 8cd408c5ce114f1cbcbd179192eb1739
 msgid "GitHub Release `.deb`"
 msgstr "GitHub Release `.deb`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 44c091dacfba4f84ad6657b1a84a58ac
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 99a258f28ad140feb8809d4281d89390
 msgid "Quick start; no need to build that module from source"
 msgstr "快速入门；无需从源码编译该模块"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: e4e26751a69044e9aab884465cddc8fa
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: acdbab54f3d24ca1b7ae9ffc33d5a9c6
 msgid "`s`"
 msgstr "`s`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 19bcce137bcf4794b543d5a88cff344b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 4656d27b14b840a9be0741dbac1fb314
 msgid "Source build"
 msgstr "源码编译"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md
-#: 529ee216cb984e9eaa25245deb10fd50
+#: ../../source/1-getting_started/3-open_deploy_ws.md:37
+#: 1fb39dd5d8ef4f7a96458c5135cae338
 msgid "Development, debugging, or contributing"
 msgstr "开发、调试或贡献代码"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:50
-#: be43fbd3ebab4062a6a15256e0465d2a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:76
+#: 99f15dc536f4430c8faba145b5e21545
 msgid ""
-"Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode "
-"does **not** install from packages.ros.org."
+"Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does "
+"**not** install from packages.ros.org."
 msgstr ""
 "`open-deploy-ws` 的默认值：OCS2=`d`，arms=`s`，common=`s`。Deb 模式**不会**从 "
 "packages.ros.org 安装。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:52
-#: 1b566f4d6a0546acab1648ce9b00d9d9
+#: ../../source/1-getting_started/3-open_deploy_ws.md:78
+#: 38d8bb6a91f54a1287944e32eaf50110
+msgid "CI / non-interactive init"
+msgstr "CI / 非交互初始化"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:80
+#: 3c5e7d0c192f4fa6911d6bb156983f86
+msgid ""
+"`init_repo.sh` currently has **no** non-interactive flags. Piping menu "
+"answers can work for a one-off and is brittle if the menu order changes — "
+"not the primary path."
+msgstr "`init_repo.sh` 目前**没有**非交互参数。把菜单答案管道进去可以应付一次性任务，但菜单顺序一变就脆 — 不是主路径。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:82
+#: 48f9d6d2b3e34d5ca3937ddc68db1c2c
+msgid ""
+"**Coming / if supported** (check `./init_repo.sh --help` after you pull; do "
+"not assume these exist yet), the intended shape is flags that match today’s "
+"defaults, for example:"
+msgstr ""
+"**即将 / 若已支持**（拉取后看 `./init_repo.sh "
+"--help`，不要假定这些参数已经存在），预期形态是与今天默认值对应的参数，例如："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:84
+#: 46bd6320f1414bb9824062b4223eaa2e
+msgid "./init_repo.sh --public --ocs2=deb --arms=source --common=source\n"
+msgstr "./init_repo.sh --public --ocs2=deb --arms=source --common=source\n"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:88
+#: 2bfae4fd97c94007961387fa65a99941
+msgid ""
+"**Today** in a container or CI job without a TTY: use the HTTPS public clone"
+" steps above (same defaults: ocs2=deb, arms/common=source), then `colcon "
+"build`. That is a workaround, not a replacement for `./init_repo.sh` on a "
+"normal Ubuntu 24.04 desktop."
+msgstr ""
+"**今天**在没有 TTY 的容器或 CI 任务里：用上面的 HTTPS "
+"公开克隆步骤（同样的默认：ocs2=deb，arms/common=source），然后 `colcon build`。这是变通，不是普通 Ubuntu"
+" 24.04 桌面上 `./init_repo.sh` 的替代。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:90
+#: 79ae0b69628244d08f9e7f7c47784ab4
 msgid "Lean Branches"
 msgstr "精简分支"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:54
-#: ddb5aaf58f4a410384d4b88f5507ad60
-msgid "For a single product, clone the matching branch (README directory names):"
-msgstr "针对单一产品，克隆对应分支（README 中的目录名）："
+#: ../../source/1-getting_started/3-open_deploy_ws.md:92
+#: b6e8e6b5892d41f2a2644c20b2b48996
+msgid ""
+"For a single product, clone the matching branch (README directory names). "
+"Use a lean branch when you only need that robot’s packages (smaller clone). "
+"**Taku has no lean `open-deploy-ws` branch** — stay on `main` and switch "
+"descriptions to `feature/agilex`."
+msgstr ""
+"单一机型时，克隆对应分支（README 里的目录名）。只需要该机器人的包时用精简分支（克隆更小）。**Taku 没有精简的 `open-deploy-"
+"ws` 分支** — 留在 `main`，把描述切到 `feature/agilex`。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:56
-#: 797f067de6d5463dbce1c917f3665d9e
+#: ../../source/1-getting_started/3-open_deploy_ws.md:94
+#: 93f9188aee9c4b6da823d2f537a8c51c
 msgid ""
 "# Dobot CR5\n"
-"git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git "
-"dobot_cr5_ws\n"
-"# ARX Lift 2S (full-body). Acone (dual-arm) is co-debug in this "
-"workspace, not a separate platform.\n"
-"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git "
-"lift2s-ws\n"
+"git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git dobot_cr5_ws\n"
+"# ARX Lift 2S (full-body). Acone (dual-arm) is co-debug in this workspace, not a separate platform.\n"
+"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws\n"
 "# HighTorque Panthera HT\n"
-"git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git "
-"ht-deploy-ws"
+"git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws"
 msgstr ""
 "# Dobot CR5\n"
-"git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git "
-"dobot_cr5_ws\n"
-"# ARX Lift 2S (full-body). Acone (dual-arm) is co-debug in this "
-"workspace, not a separate platform.\n"
-"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git "
-"lift2s-ws\n"
+"git clone -b dobot-cr5 git@github.com:fiveages-sim/open-deploy-ws.git dobot_cr5_ws\n"
+"# ARX Lift 2S (full-body). Acone (dual-arm) is co-debug in this workspace, not a separate platform.\n"
+"git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git lift2s-ws\n"
 "# HighTorque Panthera HT\n"
-"git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git "
-"ht-deploy-ws"
+"git clone -b panthera-ht git@github.com:fiveages-sim/open-deploy-ws.git ht-deploy-ws"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:65
-#: 75ce68592f6644b6a416c7e9db7ff884
+#: ../../source/1-getting_started/3-open_deploy_ws.md:103
+#: 9e87930755b74fc5aa0b407da31275fb
 msgid ""
-"Then `./init_repo.sh` and `./quick_start.sh` as in that branch’s README. "
-"See [ARX Lift "
+"The [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md) also lists `arx-acone`. Then `./init_repo.sh` and"
+" `./quick_start.sh` as in that branch’s README. See [ARX Lift "
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and "
 "[HighTorque Panthera "
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)."
 msgstr ""
-"然后按该分支 README 运行 `./init_repo.sh` 和 `./quick_start.sh`。见 [方舟无限 Lift "
-"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) 与 [高擎 "
-"Panthera "
-"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
+"[open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/README.EN.md) 也列出了 `arx-acone`。然后按该分支 README 运行 "
+"`./init_repo.sh` 和 `./quick_start.sh`。见 [ARX Lift "
+"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) 和 [高擎 "
+"Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:67
-#: 616b2f1e08564f45b72b578e57d44f6a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:105
+#: 4286be5bb10645a7b01eab9cbf3249a3
 msgid "Directory Structure"
 msgstr "目录结构"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:69
-#: e5be6018f93547ae96df5a133e8e157c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:107
+#: 6cbae8c764b54f9dbccb03277e742612
 msgid "After initialization:"
 msgstr "初始化完成后："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:71
-#: 166515d364854dc3b1ecb9308fe490b6
+#: ../../source/1-getting_started/3-open_deploy_ws.md:109
+#: f3607ec56d784407979ef12cda51b838
 msgid ""
 "From the [open-deploy-ws README](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/README.EN.md) (hyphen, not `robot_descriptions`):"
@@ -314,16 +459,14 @@ msgstr ""
 "来自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-"
 "ws/blob/main/README.EN.md)（连字符，不是 `robot_descriptions`）："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: ea484edae04f4d63a5f9ecb9006e4483
+#: ../../source/1-getting_started/3-open_deploy_ws.md:111
+#: e5d352a2d0b9414da2aedc2cb94d4a0e
 msgid ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware "
-"interfaces / shared libs\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs\n"
 "│   ├── robot-descriptions/    # common / manipulator / humanoid\n"
-"│   └── ocs2_ros2/             # only if that module is installed as "
-"source\n"
+"│   └── ocs2_ros2/             # only if that module is installed as source\n"
 "├── init_repo.sh\n"
 "├── submodules_visibility.conf\n"
 "├── deb_versions.conf\n"
@@ -331,54 +474,223 @@ msgid ""
 msgstr ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware "
-"interfaces / shared libs\n"
+"│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs\n"
 "│   ├── robot-descriptions/    # common / manipulator / humanoid\n"
-"│   └── ocs2_ros2/             # only if that module is installed as "
-"source\n"
+"│   └── ocs2_ros2/             # only if that module is installed as source\n"
 "├── init_repo.sh\n"
 "├── submodules_visibility.conf\n"
 "├── deb_versions.conf\n"
 "└── scripts/"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:85
-#: 388a043858a34b79bca0065666a03815
+#: ../../source/1-getting_started/3-open_deploy_ws.md:123
+#: 3ba7e775d1e94a4cbc7bb3ec76bb8936
+msgid "Taku / `feature/agilex`"
+msgstr "Taku / `feature/agilex`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:125
+#: 124917569f6241e3be853b2e8ed46554
+msgid ""
+"[`open-deploy-ws` `.gitmodules`](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/.gitmodules) pins `src/robot-descriptions` to "
+"**`main`**. **Taku is not on `main`.**"
+msgstr ""
+"[`open-deploy-ws` 的 `.gitmodules`](https://github.com/fiveages-sim/open-"
+"deploy-ws/blob/main/.gitmodules) 把 `src/robot-descriptions` 钉在 "
+"**`main`**。**Taku 不在 `main` 上。**"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:127
+#: d2b2f724cd7a4678b047b0718b73aa73
+msgid ""
+"The in-tree package lives at "
+"[`humanoid/Dyna/taku_description`](https://github.com/fiveages-"
+"sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description) "
+"on **`feature/agilex`** ([package README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md))."
+" After a normal init (or the HTTPS clone of `robot_descriptions` on `main`):"
+msgstr ""
+"仓内包在 **`feature/agilex`** 的 "
+"[`humanoid/Dyna/taku_description`](https://github.com/fiveages-"
+"sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description)（[包"
+" README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)）。常规初始化之后（或"
+" HTTPS 克隆了 `main` 上的 `robot_descriptions` 之后）："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:129
+#: 59d5c5317ccb426fa10a1d41af29e265
+msgid ""
+"cd src/robot-descriptions\n"
+"git fetch origin\n"
+"git checkout feature/agilex\n"
+"# common is required (sensor_models / robot_common_launch)\n"
+"git clone https://github.com/fiveages-sim/robot-descriptions-common.git common\n"
+"# or, if SSH works: git submodule update --init common"
+msgstr ""
+"cd src/robot-descriptions\n"
+"git fetch origin\n"
+"git checkout feature/agilex\n"
+"# common is required (sensor_models / robot_common_launch)\n"
+"git clone https://github.com/fiveages-sim/robot-descriptions-common.git common\n"
+"# or, if SSH works: git submodule update --init common"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:138
+#: 0139b0797e14418c95ffb3cc09a4b132
+msgid ""
+"If you are starting from a clean HTTPS tree, clone descriptions on that "
+"branch in one step: `git clone -b feature/agilex "
+"https://github.com/fiveages-sim/robot_descriptions.git src/robot-"
+"descriptions`."
+msgstr ""
+"若从干净的 HTTPS 树开始，一步克隆该分支的描述：`git clone -b feature/agilex "
+"https://github.com/fiveages-sim/robot_descriptions.git src/robot-"
+"descriptions`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:140
+#: 5c5b7bc72f9e4f679901ab51de56f5c2
+msgid ""
+"Verified launch keys from that package README (`robot:=taku` → "
+"`taku_description`):"
+msgstr "该包 README 中已核实的启动键（`robot:=taku` → `taku_description`）："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:142
+#: fffcb7184a824f81aa1fbf9aad81e657
+msgid ""
+"colcon build --packages-up-to taku_description sensor_models --symlink-install\n"
+"source install/setup.bash\n"
+"ros2 launch robot_common_launch humanoid.launch.py robot:=taku"
+msgstr ""
+"colcon build --packages-up-to taku_description sensor_models --symlink-install\n"
+"source install/setup.bash\n"
+"ros2 launch robot_common_launch humanoid.launch.py robot:=taku"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:148
+#: 3d3392410d3c45d8a4d1689a17565b9f
+#, python-brace-format
+msgid ""
+"`ocs2_arm_controller demo.launch.py` uses the same `robot:=<key>` → "
+"`{key}_description` lookup. Taku ships `config/ocs2/` and a ros2_control "
+"yaml that names `ocs2_arm_controller`, so `robot:=taku` is the same "
+"convention — not a special-cased flag."
+msgstr ""
+"`ocs2_arm_controller demo.launch.py` 使用同一套 `robot:=<key>` → "
+"`{key}_description` 查找。Taku 带有 `config/ocs2/` 以及点名 `ocs2_arm_controller` 的 "
+"ros2_control yaml，因此 `robot:=taku` 是同一约定 — 不是单独特判的参数。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:150
+#: edf7a40de9a04685bf3b411a48955cde
+msgid ""
+"The description is **inferred** (public Dyna kinematics; not official Dyna "
+"specs). That is stated in the package README."
+msgstr "该描述是**推断**的（公开的 Dyna 运动学；不是官方 Dyna 规格）。包 README 写明了这一点。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:152
+#: 9980d81cc476483ea47826e9387e4234
+msgid "Empty private directories and `COLCON_IGNORE`"
+msgstr "空的私有目录与 `COLCON_IGNORE`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:154
+#: 65c1d85c54114e43b3a6006d0ca72c15
+msgid ""
+"In **public** mode, `./init_repo.sh` skips private nested modules listed in "
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/submodules_visibility.conf). Under `src/arms_ros2_control` "
+"those placeholders stay empty, including:"
+msgstr ""
+"**public** 模式下，`./init_repo.sh` 会跳过 "
+"[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-"
+"ws/blob/main/submodules_visibility.conf) 里列出的私有嵌套模块。在 "
+"`src/arms_ros2_control` 下这些占位目录会保持为空，包括："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:156
+#: 9a66f6d125b34520bed0fa785f8aa318
+msgid "`controller/ocs2_wbc_controller`"
+msgstr "`controller/ocs2_wbc_controller`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:157
+#: a83dcae174f149dbabe8bcfe8eec338f
+msgid "`libraries/lina_planning`"
+msgstr "`libraries/lina_planning`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:158
+#: 85e74484291243eebac89f2267413a9b
+msgid "`libraries/ocs2_humanoid`"
+msgstr "`libraries/ocs2_humanoid`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:160
+#: 48c60354be7340a7909807b551da0eac
+msgid ""
+"Empty private nested dirs can make `colcon build` fail (colcon still walks "
+"them). **Today:** drop a `COLCON_IGNORE` file in each empty private dir:"
+msgstr ""
+"空的私有嵌套目录会让 `colcon build` 失败（colcon 仍会走进去）。**今天：** 在每个空的私有目录里放一个 "
+"`COLCON_IGNORE` 文件："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: d02e088d7d3249c9ab457115b5f56120
+msgid ""
+"touch src/arms_ros2_control/controller/ocs2_wbc_controller/COLCON_IGNORE\n"
+"touch src/arms_ros2_control/libraries/lina_planning/COLCON_IGNORE\n"
+"touch src/arms_ros2_control/libraries/ocs2_humanoid/COLCON_IGNORE"
+msgstr ""
+"touch src/arms_ros2_control/controller/ocs2_wbc_controller/COLCON_IGNORE\n"
+"touch src/arms_ros2_control/libraries/lina_planning/COLCON_IGNORE\n"
+"touch src/arms_ros2_control/libraries/ocs2_humanoid/COLCON_IGNORE"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:168
+#: b8f1c30a5a4d4ee38080a307d6c0be47
+msgid ""
+"Other empty nested submodule dirs under `arms_ros2_control` (uninited "
+"hardware interfaces) get the same treatment if colcon errors on that path: "
+"`touch <empty-dir>/COLCON_IGNORE`."
+msgstr ""
+"`arms_ros2_control` 下其他空的嵌套子模块目录（未初始化的硬件接口）若 colcon 在该路径报错，同样处理：`touch "
+"<empty-dir>/COLCON_IGNORE`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:170
+#: bf78eed3f05644d7978fa9ec5810b1d4
+msgid ""
+"**Coming / if supported:** `init_repo.sh` should write those `COLCON_IGNORE`"
+" files in public mode. After that lands, you can skip the manual `touch`."
+msgstr ""
+"**即将 / 若已支持：** `init_repo.sh` 应在 public 模式下自动写入这些 `COLCON_IGNORE` "
+"文件。落地后可以不再手工 `touch`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:172
+#: 775a6a41217447c4839354e821aaa173
 msgid "Building"
 msgstr "编译"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:87
-#: 39ade5eeee284e198d20c305c3ffe7b3
+#: ../../source/1-getting_started/3-open_deploy_ws.md:174
+#: 352c29ea7edc4b5db1c0ef1899b46eea
 msgid ""
-"`./init_repo.sh` already runs `rosdep install` on source paths. You still"
-" need to colcon-build:"
+"`./init_repo.sh` already runs `rosdep install` on source paths. You still "
+"need to colcon-build:"
 msgstr "`./init_repo.sh` 已经对源码路径跑过 `rosdep install`。你仍需 colcon 编译："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:89
-#: 460bd311404e4436a60fb050ece804bf
+#: ../../source/1-getting_started/3-open_deploy_ws.md:176
+#: 950aa8216f4b4e7cb11a436b3c2ad184
 msgid "colcon build --symlink-install\n"
 msgstr "colcon build --symlink-install\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:93
-#: ce193d05e0a145efb9e6cff8c2d7fc95
+#: ../../source/1-getting_started/3-open_deploy_ws.md:180
+#: c4f246419dfa4af8b0c898c96199b96c
 msgid ""
-"Then `source install/setup.bash` in the terminal you launch from. The "
-"README does not install a workspace env script besides `./init_repo.sh`."
+"Then `source install/setup.bash` in the terminal you launch from. The README"
+" does not install a workspace env script besides `./init_repo.sh`."
 msgstr ""
-"然后在启动终端执行 `source install/setup.bash`。README 除 `./init_repo.sh` "
-"外没有工作区环境脚本。"
+"然后在启动终端执行 `source install/setup.bash`。README 除 `./init_repo.sh` 外没有工作区环境脚本。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:95
-#: f7f6a16cebc2443aa6c0e414fb186712
+#: ../../source/1-getting_started/3-open_deploy_ws.md:182
+#: 9a5d5df8f5aa48f5bd1ce97f821168e5
 msgid "Partial Build"
 msgstr "部分编译"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:97
-#: a88dd154f73d4b49ae2c112c03c4673b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:184
+#: eeb92c9471ee48b880f285e7dfe2447c
 msgid "Build only specific packages:"
 msgstr "仅编译指定软件包："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:99
-#: cda0adb21d884ced99c3d89148e90a8c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:186
+#: b593f66023e545518b23ab263bc0ef63
 msgid ""
 "# Just descriptions\n"
 "colcon build --packages-select robot-descriptions-dobot\n"
@@ -392,184 +704,209 @@ msgstr ""
 "# Up to a specific package\n"
 "colcon build --packages-up-to ocs2_arm_controller\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:107
-#: 109e41235ccc4866ad4bedade2c62164
+#: ../../source/1-getting_started/3-open_deploy_ws.md:194
+#: 80869f5857a446f9a4eb2ea0a94654ca
 msgid "Supported Robots"
 msgstr "支持 机器人"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 382a9d9f6a854a0399a131d01df848db
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 0a4e9de746cf4a2ead384a28cfdd8840
 msgid "Robot"
 msgstr "机器人"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 9b0a7749cc704e419b1a5ee3edc3fefb
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: aba3e6ed8a0348e4af78f1bca7c9cbab
 msgid "Description Package"
 msgstr "描述 软件包"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 9c4be5313abf4f77b7481be0ce671a0c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 2f092d866d51420ebe283e11f5b446c6
 msgid "Hardware Interface"
 msgstr "硬件接口"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 135d121fafc147728f7bbc427de28d21
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 817b5a0a28194d60a4cca42af8a4ec8a
 msgid "Notes"
 msgstr "说明"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 561c41f8ace54dc7b3bfce9088570fbf
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 92e4e4eedb65435bb6eecbfd5159ea80
 msgid "Dobot CR5"
 msgstr "Dobot CR5"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 996a92f07c7244428339f4ec14a319a7
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: cd8616896d074e67bae3664870aed38f
 msgid "robot-descriptions-dobot"
 msgstr "robot-descriptions-dobot"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: beb23211478f440d8713027c5446e5a2
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 492fa340c98047db926c2a057c6bfb6c
 msgid "dobot-cr-ros2-control"
 msgstr "dobot-cr-ros2-control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 58e4688175f743e3bae7d653ff1ed28a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: a99fd3d6ff8d4cb4bde9f48c40aa5687
 msgid "`dobot-cr5` branch"
 msgstr "`dobot-cr5` 分支"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 2b0412a8aa3842b2b0044f522573fe41
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: de1af2dbb3f24b4697062c197137fc57
 msgid "ARX X5"
 msgstr "ARX X5"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 6a0960ed394845b6b05545d071493c5b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 15065d9b3677423ea0907d5290c1809f 3c51fa26e1f644c0aacc032cde2cabc2
+#: d9a2c8214df44c84a81dd5663d77bd23
 msgid "robot-descriptions-arx"
 msgstr "robot-descriptions-arx"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 15fce554ed304033975f5e669876eb6d
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 14ece60a3718411f848709419c45fadf 8e09d336544140809bffd17b6ff0b0f0
+#: f0f8fd5ecb7a48728018e77cbd190712
 msgid "arx-ros2-control"
 msgstr "arx-ros2-control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 4e9cf1e6c8c24b118609e00f9c1e5985
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 22a25226bcd443bf9cb77e20f149e4ce
 msgid "Co-debug in `arx-lift2s`"
 msgstr "在 `arx-lift2s` 中联调"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 92a64f4385154f7084194a9d70176921
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 0a55aefd1dc04ae7b272bd58bf58b8a8
 msgid "**Acone** / **AC One**"
 msgstr "**Acone** / **AC One**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 906b88710fb24b9fa35473997d7a13b5
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: f82771f8f2194b0cb51eeb95f3a276e0
 msgid "**Dual-arm** (not Lift 2S)"
 msgstr "**双臂**（不是 Lift 2S）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: b72854e620d74ca599998b9cfba36701
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: ef2d216b3e3945c1b1dc58ac30419ddb
 msgid "**ARX Lift 2S**"
 msgstr "**方舟无限 Lift 2S**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 9413383f696f4d9eb0a6374a8b2c1923
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 8277bd8079944d2e8ce4f9da38972d51
 msgid "**Full-body** (arms + lift + chassis); branch `arx-lift2s`"
 msgstr "**全身**（手臂 + 升降 + 底盘）；分支 `arx-lift2s`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 03f8e206cf284240a7396a2ad92c0c25
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 2c4ddc4340da4cb8b24c506e530c954c
 msgid "Galbot"
 msgstr "Galbot"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 8a2b317eb707400999e03f53924d2355
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: bb5a930b483d4447818fd22d4913b10c
 msgid "robot-descriptions-galbot"
 msgstr "robot-descriptions-galbot"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 940935aa06cb44ef82dc9c2f98f5c5a4
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 9c8a1cef04d147219503f53f8822559a
 msgid "(varies)"
 msgstr "（视情况而定）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 5875b24dfeba40b082da91842e782a15
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 0f8f64b07306419dacb7f8bb9155bf8c 37b36832974b47db87ff6dddde272978
 msgid "Simulation-oriented"
 msgstr "面向仿真"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: ad15af2c537b4b888aaf95cd314f9c9a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 42755c5af28345b9833a7d3ad2936863
 msgid "**HighTorque Panthera HT**"
 msgstr "**高擎 Panthera HT**"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: f1d9396557754e36acae94d52ac8ae0f
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: c891e699c22b4f8f8605c66e9888038d
 msgid "`panthera_ht_description`"
 msgstr "描述"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 57b38e4ef8dc4462ae1dd58039ce729a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: a41b251f7fd14f4b8911add27409debd
 msgid "ht-ros2-control"
 msgstr "ht-ros2-control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 3a8c1dbe01784c878526219a8abc529a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: fff580d27d1e4ac9a3f145b8258bcab9
 msgid ""
 "Dual-arm; branch `panthera-ht`; umbrella path "
 "`manipulator/HighTorque/panthera_ht_description`"
-msgstr "双臂；分支 `panthera-ht`；伞形仓路径 `manipulator/HighTorque/panthera_ht_description`"
+msgstr ""
+"双臂；分支 `panthera-ht`；伞形仓路径 `manipulator/HighTorque/panthera_ht_description`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 5219070d9dea49b494fd8d2430ff91b8
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 203ef8cf4d754e45904cbcb308f649ed
+msgid "**Taku** (Dyna / DVT1)"
+msgstr "**Taku**（Dyna / DVT1）"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 00748aa12bc541a3b81430e73e95912d
+msgid "`taku_description`"
+msgstr "`taku_description`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 85510e3f562d44158d6e4374efce7386
+msgid "mock / gz / isaac in package xacro"
+msgstr "包内 xacro 的 mock / gz / isaac"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 257646deba664dd6b71f36d4508af1ec
+msgid ""
+"In-tree on `robot_descriptions` **`feature/agilex`** at "
+"`humanoid/Dyna/taku_description`; `robot:=taku` on `humanoid.launch.py`"
+msgstr ""
+"`robot_descriptions` **`feature/agilex`** 仓内路径 "
+"`humanoid/Dyna/taku_description`；在 `humanoid.launch.py` 上用 `robot:=taku`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 9e7b87b075ed4864812155aef156e569
 msgid "Quadruped"
 msgstr "四足机器人"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: a2e6ee8c3ccf4cf2a00415e4f7797fad
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 0a5878395ed44138b76fe0125c711927
 msgid "robot-descriptions-quadruped"
 msgstr "robot-descriptions-quadruped"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:73
-#: 9a0b6ac0a0d94364b3dcf27b404eebdc
+#: ../../source/1-getting_started/3-open_deploy_ws.md:162
+#: 21b0169fc9fe43ad8cd590c877852aec
 msgid "unitree-ros2-control"
 msgstr "unitree-ros2-control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:119
-#: ad8ae9b278714fccab001c5d6d8bb53b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:207
+#: ff2564670f484f77b068d0261defb466
 msgid "Real Hardware Deployment"
 msgstr "真实硬件部署"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:122
-#: 8b346146fcdb4a72b2b9c519a149c7b3
+#: ../../source/1-getting_started/3-open_deploy_ws.md:210
+#: 83adb80b6b6445cf90f2c45523dad89f
 msgid ""
-"**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / "
-"**AC One** is **dual-arm**. **HighTorque Panthera HT** (高擎) is a dual-arm"
-" manipulator. See [ARX Lift "
+"**ARX Lift 2S** (方舟无限) is the full-body mobile manipulator. **Acone** / **AC"
+" One** is **dual-arm**. **HighTorque Panthera HT** (高擎) is a dual-arm "
+"manipulator. See [ARX Lift "
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md), "
 "[HighTorque Panthera "
-"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), and "
-"[Go to Real "
-"Hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)."
+"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), and [Go "
+"to Real Hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)."
 msgstr ""
-"**方舟无限 Lift 2S** 是全身移动操作臂。**Acone** / **AC One** 是 **双臂**。**高擎 Panthera HT** "
-"是双臂操作臂。见 [方舟无限 Lift "
+"**方舟无限 Lift 2S** 是全身移动操作臂。**Acone** / **AC One** 是 **双臂**。**高擎 Panthera HT**"
+" 是双臂操作臂。见 [方舟无限 Lift "
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)、[高擎 "
-"Panthera "
-"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md) 和 "
-"[部署到真实机器人](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)。"
+"Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md) 和"
+" [部署到真实机器人](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:125
-#: d5bcfa3c057a47bd805c17def8d2d84c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:213
+#: 1a83a5317ce14e4db1ae68146e26f13c
 msgid "Launch Examples"
 msgstr "启动示例"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:127
-#: ca590ee3d20140728e736e02c5e88d27
+#: ../../source/1-getting_started/3-open_deploy_ws.md:215
+#: 8716449debf84294ab0b995e801f6697
 msgid "Mock Hardware Demo"
 msgstr "模拟硬件演示"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:129
-#: d3b760f475f945d79494fcca22c43e98
+#: ../../source/1-getting_started/3-open_deploy_ws.md:217
+#: cf60521a3e91486cbf1dc3e67ffe19fd
 msgid ""
 "source install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
@@ -577,51 +914,58 @@ msgstr ""
 "source install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:134
-#: db9bb2864882491b94f4102bd61e00ad
+#: ../../source/1-getting_started/3-open_deploy_ws.md:222
+#: f1aaa247426741de94c935308b54a322
 msgid ""
-"`demo.launch.py` defaults: `robot:=cr5`, `hardware:=mock_components`. "
-"There is **no** `hardware:=mock`."
+"`demo.launch.py` defaults: `robot:=cr5`, `hardware:=mock_components`. There "
+"is **no** `hardware:=mock`."
 msgstr ""
 "`demo.launch.py` 默认：`robot:=cr5`、`hardware:=mock_components`。**没有** "
 "`hardware:=mock`。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:136
-#: 7ab7097a83444e3e8fda8c8ad9c14a13
+#: ../../source/1-getting_started/3-open_deploy_ws.md:224
+#: 2ebe0e8b103148e89b3f0c73834a9ce8
 msgid "With Specific Robot"
 msgstr "指定机器人"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:138
-#: 249507b75f1740ad876a64905dcce280
+#: ../../source/1-getting_started/3-open_deploy_ws.md:226
+#: 5938b482e63f41959a70c4516210a2e1
 msgid ""
-"# Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components."
-"\n"
+"# Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components.\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 msgstr ""
 "# Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components.\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:143
-#: 75adafdc3144438990e7fb694c2fe72e
+#: ../../source/1-getting_started/3-open_deploy_ws.md:231
+#: e1aba02526c54426a896ca3efb2a27c5
+msgid ""
+"Taku visualize path (package README): `ros2 launch robot_common_launch "
+"humanoid.launch.py robot:=taku`."
+msgstr ""
+"Taku 可视化路径（包 README）：`ros2 launch robot_common_launch humanoid.launch.py "
+"robot:=taku`。"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:233
+#: e8d3fc1d34d34fafa835a617fe0ccdaf
 msgid "End-effector (`type`)"
 msgstr "末端执行器（`type`）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:145
-#: ca68fd8c879143e8925919e0d62d576d
+#: ../../source/1-getting_started/3-open_deploy_ws.md:235
+#: 3791c781205f4ddd9ca42b746362e7a3
 msgid ""
-"Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: "
-"`left_type:=` / `right_type:=` together (**do not pass `type:=`** then). "
-"Profile `defaults.end_effectors` is used when `use_profile_eef:=true` "
-"(default). See "
-"[robot_common_launch](../4-reference/descriptions/2-common.md)."
+"Not `gripper:=`. Symmetric: `type:=<eef_key>`. Different L/R: `left_type:=` "
+"/ `right_type:=` together (**do not pass `type:=`** then). Profile "
+"`defaults.end_effectors` is used when `use_profile_eef:=true` (default). See"
+" [robot_common_launch](../4-reference/descriptions/2-common.md)."
 msgstr ""
 "不是 `gripper:=`。对称末端：`type:=<eef_key>`。左右不同：同时传 `left_type:=` / "
-"`right_type:=`（此时**不要再传 `type:=`**）。`use_profile_eef:=true`（默认）时使用 "
-"profile 的 `defaults.end_effectors`。见 "
+"`right_type:=`（此时**不要再传 `type:=`**）。`use_profile_eef:=true`（默认）时使用 profile 的"
+" `defaults.end_effectors`。见 "
 "[robot_common_launch](../4-reference/descriptions/2-common.md)。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 2cd1a1354f7a4b3b9ca6a2c6a11a356b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 399aabaa6447456cba14f24d96afeeea
 msgid ""
 "ros2 launch ocs2_arm_controller demo.launch.py \\\n"
 "  robot:=<robot_name> \\\n"
@@ -633,185 +977,203 @@ msgstr ""
 "  use_profile_eef:=false \\\n"
 "  left_type:=rg75 right_type:=linkerhand_o7"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:154
-#: 47d407aa5ae54133a930e9cad81a9d1d
+#: ../../source/1-getting_started/3-open_deploy_ws.md:244
+#: d5e65852b3124fe7b1a0983c9c68d4a3
 msgid "Adding Robot Descriptions"
 msgstr "添加机器人描述"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:156
-#: b4700d4708be4f96a4bce78c572d8c24
+#: ../../source/1-getting_started/3-open_deploy_ws.md:246
+#: beb4badf4ccd4713938eff070875d64e
 msgid "To add a new robot to your workspace:"
 msgstr "向工作空间添加新机器人："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:158
-#: 577639ec885a476ab752589cfb46315a
+#: ../../source/1-getting_started/3-open_deploy_ws.md:248
+#: 3787d6a9ca8141fd9d082841ab3df4f7
 msgid ""
-"Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/`"
-" match `submodules_visibility.conf`. Do not `git submodule update --init "
+"Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` "
+"match `submodules_visibility.conf`. Do not `git submodule update --init "
 "--recursive`. Then `colcon build` the packages you need."
 msgstr ""
 "优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下嵌套模块与 "
 "`submodules_visibility.conf` 一致。不要 `git submodule update --init "
 "--recursive`。然后 `colcon build` 所需软件包。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:160
-#: 5f37c09bafcc4a2aa0e531b8322f52bc
+#: ../../source/1-getting_started/3-open_deploy_ws.md:250
+#: 87162779c60a42b7bf0388aea8f9943b
 msgid "Submodule Management"
 msgstr "子模块管理"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:162
-#: cfd81cd058684f6594fce37ca474fe42
+#: ../../source/1-getting_started/3-open_deploy_ws.md:252
+#: 49a0046592d44aaa8493e7acf19a1fe1
 msgid ""
-"Prefer `./init_repo.sh` (menu 1 or 2) over a recursive submodule init. "
-"Check status with `git submodule status`. To update a specific source "
-"tree you already initialized, pull that module then rebuild."
+"Prefer `./init_repo.sh` (menu 1 or 2) over a recursive submodule init. Check"
+" status with `git submodule status`. To update a specific source tree you "
+"already initialized, pull that module then rebuild."
 msgstr ""
 "优先用 `./init_repo.sh`（菜单 1 或 2），不要递归初始化子模块。用 `git submodule status` "
 "查看状态。要更新已经初始化的某个源码树，pull 该模块再编译。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:164
-#: f71a2f8e5ebc4aa6a8454b5eb386e025
+#: ../../source/1-getting_started/3-open_deploy_ws.md:254
+#: 81b0df733db3434b82a45e34ca1475f8
 msgid "GitHub Release `.deb` vs Source Matrix"
 msgstr "GitHub Release `.deb` 与源码对照表"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 6a300e5c5c434efc9aae2296c3a1d835
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: ac75e13f61154beda01f1122d2308ccb
 msgid "Component"
 msgstr "组件"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 116b9f9e4d0e432aa5ed481b69c70a48
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: e123e127148247759fda6bfc789d57bf
 msgid "Source Path"
 msgstr "源 路径"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 8e0fb23553774fdc977a87d81d359880
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 1c099e3a7ba942df8b7dec538c2a7965
 msgid "OCS2"
 msgstr "OCS2"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 0412f93aa0ea46f99ea68f1cf81dfe76
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 7acbeebc58e44b6f96823d847d4f5f5a
 msgid ""
 "`ros-jazzy-ocs2` "
 "([releases](https://github.com/legubiao/ocs2_ros2/releases))"
-msgstr "`ros-jazzy-ocs2`（[发行版](https://github.com/legubiao/ocs2_ros2/releases)）"
+msgstr ""
+"`ros-jazzy-ocs2`（[发行版](https://github.com/legubiao/ocs2_ros2/releases)）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 9802ad8321c645b7941f223412a13d08
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 830f7f7c15a04d03ab9658f8187ce0ee
 msgid "`src/ocs2_ros2`"
 msgstr "`src/ocs2_ros2`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 84778650ff654bb2b2f9308579fdc890
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 722840f4fae34d6faadbc7cf21021fc8
 msgid "Common descriptions"
 msgstr "通用描述包"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 3bc0b246da3b48f0a95977c0da396046
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 7b954a94d11f42c69bfe32d4bd631410
 msgid ""
-"`ros-jazzy-robot-descriptions-common` ([releases](https://github.com"
-"/fiveages-sim/robot-descriptions-common/releases))"
+"`ros-jazzy-robot-descriptions-common` "
+"([releases](https://github.com/fiveages-sim/robot-descriptions-"
+"common/releases))"
 msgstr ""
 "`ros-jazzy-robot-descriptions-common`（[发行版](https://github.com/fiveages-"
 "sim/robot-descriptions-common/releases)）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: fdf87228d2de499d9074468ac21680fb
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: a70807200980481489946b6d22d65329
 msgid "`src/robot-descriptions/common`"
 msgstr "`src/robot_descriptions/robot-descriptions-common`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: 2d522d0cbd2840559cb8041a4db9e51f
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 09fc371ffb9c4f1f9bd322ecff02e8c2
 msgid "arms_ros2_control"
 msgstr "arms_ros2_control"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: e204dbef7e404d0f9ac3bc961f5e9062
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: 8ddad1b5af1449bd823dcb5fb84ec395
 msgid ""
-"`ros-jazzy-arms-ros2-control` (optional; [releases](https://github.com"
-"/fiveages-sim/arms_ros2_control/releases))"
+"`ros-jazzy-arms-ros2-control` (optional; "
+"[releases](https://github.com/fiveages-sim/arms_ros2_control/releases))"
 msgstr ""
 "`ros-jazzy-arms-ros2-control`（可选；[发行版](https://github.com/fiveages-"
 "sim/arms_ros2_control/releases)）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:147
-#: e3cab11a598241a4afc695818f2fa5bb
+#: ../../source/1-getting_started/3-open_deploy_ws.md:237
+#: ea3188e048154f05acc63b8e7b1ac148
 msgid "`src/arms_ros2_control`"
 msgstr "`src/arms_ros2_control`"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:172
-#: d72b9443e4cf40cfa6841e879fe1d63b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:262
+#: 111d798e19e24372885b811e65ec8533
 msgid ""
 "Check `deb_versions.conf` for the GitHub repos and release tags used by "
-"`scripts/install_core_debs.sh`. These packages are not in the ROS apt "
-"index."
+"`scripts/install_core_debs.sh`. These packages are not in the ROS apt index."
 msgstr ""
 "查看 `deb_versions.conf` 以了解 `scripts/install_core_debs.sh` 使用的 GitHub "
 "仓库与发行标签。这些包不在 ROS apt 索引中。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:174
-#: 503ec3c694c448e1be64e5f9762cb67b
+#: ../../source/1-getting_started/3-open_deploy_ws.md:264
+#: 39a9bddc11b9495b8582a342d9f45c0f
 msgid "Common Issues"
 msgstr "常见问题"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:176
-#: 5c1f2b3f4092417a807e26d2f13e4080
+#: ../../source/1-getting_started/3-open_deploy_ws.md:266
+#: b86f254b1b9f46418fd3e75866aed311
 msgid "Submodules Empty"
 msgstr "子模块为空"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:178
-#: c13535c6e6484dccb5fea6ff4e673ff8
+#: ../../source/1-getting_started/3-open_deploy_ws.md:268
+#: bc831591858943eaa01484ed35a310a3
 msgid ""
-"Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init"
-" --recursive` as the primary recovery path."
+"Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init "
+"--recursive` as the primary recovery path."
 msgstr ""
 "再跑 `./init_repo.sh`（菜单 1）。不要把 `git submodule update --init --recursive` "
 "当作主要恢复手段。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:180
-#: 67e812801263413eab9747c1bba6598f
-msgid "Access Denied to Submodule"
-msgstr "子模块访问被拒绝"
+#: ../../source/1-getting_started/3-open_deploy_ws.md:270
+#: 92cb42e1b1c8498d8d4b6c81f4a0ad2b
+msgid "`cannot run ssh` / Access Denied to Submodule"
+msgstr "`cannot run ssh` / 子模块拒绝访问"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:182
-#: 3e12b1cf6ba84bcbbcf3d4c7ff9832f0
+#: ../../source/1-getting_started/3-open_deploy_ws.md:272
+#: 4fcb9db09f7d4629a0eb68951d34fcf2
 msgid ""
-"Some submodules are private. In `open-deploy-ws`, only public submodules "
-"should be required. If you see access errors:"
-msgstr "部分子模块为私有。在 `open-deploy-ws` 中只需公开子模块。若出现访问错误："
+"`.gitmodules` URLs are SSH. You need an `ssh` binary plus a GitHub key, "
+"**or** the HTTPS / `gh` clone workaround above. `insteadOf` HTTPS rewrite "
+"alone does not fix `git submodule update`."
+msgstr ""
+"`.gitmodules` 的 URL 是 SSH。需要 `ssh` 可执行文件加 GitHub 密钥，**或**上面的 HTTPS / `gh` "
+"克隆变通。仅靠 `insteadOf` 改写成 HTTPS 不能修好 `git submodule update`。"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:184
-#: c70d43f06cb24d8ebd279bc17bee6f6a
-msgid "Check you're on the correct branch (not accidentally on a private branch)"
+#: ../../source/1-getting_started/3-open_deploy_ws.md:274
+#: 153ef72fe6d5414999754d7642b523d4
+msgid ""
+"Some nested modules are private. In `open-deploy-ws`, only public nested "
+"modules should be required. If you see access errors:"
+msgstr "部分嵌套模块是私有的。在 `open-deploy-ws` 中只需公开嵌套模块。若出现访问错误："
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:276
+#: 07211bd177394040bcf17ea819510c7b
+msgid ""
+"Check you're on the correct branch (not accidentally on a private branch)"
 msgstr "确认当前位于正确的分支（不要误入私有分支）"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:185
-#: e701182f1aa04c459825621c2963bc34
-msgid "Verify the submodule is listed as public in `submodules_visibility.conf`"
+#: ../../source/1-getting_started/3-open_deploy_ws.md:277
+#: 9020229b41b54e4ebbdfcde9eb2643da
+msgid ""
+"Verify the submodule is listed as public in `submodules_visibility.conf`"
 msgstr "确认该子模块在 `submodules_visibility.conf` 中列为公开"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:187
-#: d86d89349ef345d5a19f4bfb87a968aa
+#: ../../source/1-getting_started/3-open_deploy_ws.md:278
+#: d40405778c2c44d488a3be65c088dfd7
+msgid "For empty private dirs that break colcon, add `COLCON_IGNORE` as above"
+msgstr "空的私有目录导致 colcon 失败时，按上面添加 `COLCON_IGNORE`"
+
+#: ../../source/1-getting_started/3-open_deploy_ws.md:280
+#: 085ac66bdbe14ce6a3b5298a731a6da2
 msgid "Build Fails with numpy"
 msgstr "因 numpy 导致编译失败"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:189
-#: 10b577a5d77c48f1945be76addcd26f7
+#: ../../source/1-getting_started/3-open_deploy_ws.md:282
+#: b37c3af383de49678114ba76caac9e02
 msgid "pip install 'numpy<2'\n"
 msgstr "pip install 'numpy<2'\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:193
-#: 76fe72b8f7d941e7933b216793567758
+#: ../../source/1-getting_started/3-open_deploy_ws.md:286
+#: 514ce4766e23485598579eed96c074ea
 msgid "CAN Interface Rename Needed"
 msgstr "需要重命名 CAN 接口"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:195
-#: f5c52832389b4547b17eed41ac496090
+#: ../../source/1-getting_started/3-open_deploy_ws.md:288
+#: 9d185be36ef04a28bd6844d579e9dfbd
 msgid "For CAN-based robots, you may need to rename the interface:"
 msgstr "对于基于 CAN 的机器人，可能需要重命名接口："
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:197
-#: cb8558453f844b339e4b9df95bbd3aeb
+#: ../../source/1-getting_started/3-open_deploy_ws.md:290
+#: deaa2b155f5a4d5b841979d86050f5bd
 msgid ""
 "sudo ip link set can0 down\n"
 "sudo ip link set can0 name <expected_name>\n"
@@ -821,30 +1183,30 @@ msgstr ""
 "sudo ip link set can0 name <expected_name>\n"
 "sudo ip link set <expected_name> up\n"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:203
-#: 4fb001be535c454caa4b8df9831c9856
+#: ../../source/1-getting_started/3-open_deploy_ws.md:296
+#: a916fd9523dc49f98e763aab9df4f4dc
 msgid "Next Steps"
 msgstr "下一步"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:205
-#: 285d8cd053e34bd9900d8daf2c605ee0
+#: ../../source/1-getting_started/3-open_deploy_ws.md:298
+#: 1ea458bddc544fab90c626f0a0a31d39
 msgid "[Run mock demo](../2-how_to/1-basic_operations/1-run_mock_demo.md)"
 msgstr "[运行模拟演示](../2-how_to/1-basic_operations/1-run_mock_demo.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:206
-#: eeb2ebbe2aee4ce9aa379926a5d8b5b2
+#: ../../source/1-getting_started/3-open_deploy_ws.md:299
+#: d2ae59c8490642c4af79977802317047
 msgid "[Switch robots](../2-how_to/1-basic_operations/2-switch_robot.md)"
 msgstr "[切换机器人](../2-how_to/1-basic_operations/2-switch_robot.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:207
-#: 10eca90341894d3d884067dc49c5d6cd
-msgid "[ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)"
+#: ../../source/1-getting_started/3-open_deploy_ws.md:300
+#: f9eb3d989094454faee9698282bc5568
+msgid ""
+"[ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)"
 msgstr ""
-"[方舟无限 Lift "
-"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)"
+"[方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:208
-#: 7a85fcca51ec46fab701781d9d801fdf
+#: ../../source/1-getting_started/3-open_deploy_ws.md:301
+#: 3503beebe61841ad9f2c7a878a0c3b67
 msgid ""
 "[HighTorque Panthera "
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)"
@@ -852,8 +1214,8 @@ msgstr ""
 "[高擎 Panthera "
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)"
 
-#: ../../source/1-getting_started/3-open_deploy_ws.md:209
-#: 04038a80abd542a7b848c1b945bcc94c
+#: ../../source/1-getting_started/3-open_deploy_ws.md:302
+#: 3ea30e25b2ab4eb59fd11bb76d0f4780
 msgid "[Gazebo simulation](../2-how_to/2-simulation/3-gazebo_sim.md)"
 msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 
@@ -918,9 +1280,8 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ msgstr "（可选）"
 
 #~ msgid ""
-#~ "Check `deb_versions.txt` for compatible Debian"
-#~ " versions when mixing source and "
-#~ "packages."
+#~ "Check `deb_versions.txt` for compatible Debian versions when mixing source "
+#~ "and packages."
 #~ msgstr "在混用源码与软件包时，请查看 `deb_versions.txt` 以确认兼容的 Debian 版本。"
 
 #~ msgid "Basic Initialization"
@@ -936,8 +1297,8 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ msgstr "按核心模块提示选择 `d`（GitHub Release `.deb`）或 `s`（源码）"
 
 #~ msgid ""
-#~ "Initialize selected submodules; deb mode "
-#~ "calls `scripts/install_core_debs.sh`"
+#~ "Initialize selected submodules; deb mode calls "
+#~ "`scripts/install_core_debs.sh`"
 #~ msgstr "初始化所选子模块；deb 模式会调用 `scripts/install_core_debs.sh`"
 
 #~ msgid "Install Dependencies"
@@ -995,11 +1356,9 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ msgstr "**支持**"
 
 #~ msgid ""
-#~ "**ARX Acone** and **HT Panthera** can"
-#~ " be deployed to real hardware using"
-#~ " only public packages. See [Go to "
-#~ "Real Hardware](../2-how_to/9-go_real_hardware.md) for "
-#~ "deployment instructions."
+#~ "**ARX Acone** and **HT Panthera** can be deployed to real hardware using "
+#~ "only public packages. See [Go to Real "
+#~ "Hardware](../2-how_to/9-go_real_hardware.md) for deployment instructions."
 #~ msgstr ""
 #~ "**ARX Acone** 和 **HT Panthera** "
 #~ "仅使用公开软件包即可部署到真实硬件。部署说明请参阅[部署到真实硬件](../2-how_to/9-go_real_hardware.md)。"
@@ -1014,10 +1373,8 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ msgstr "待完成"
 
 #~ msgid ""
-#~ "For valid robot + gripper combinations,"
-#~ " check the launch files in "
-#~ "`arms_ros2_control`. Not all combinations are"
-#~ " supported."
+#~ "For valid robot + gripper combinations, check the launch files in "
+#~ "`arms_ros2_control`. Not all combinations are supported."
 #~ msgstr "有效的机器人与夹爪组合，请查看 `arms_ros2_control` 中的 launch 文件。并非所有组合都受支持。"
 
 #~ msgid ""
@@ -1037,3 +1394,6 @@ msgstr "[Gazebo 仿真](../2-how_to/2-simulation/3-gazebo_sim.md)"
 #~ msgid "Dual-arm; branch `panthera-ht`"
 #~ msgstr "双臂；分支 `panthera-ht`"
 
+#~ msgid ""
+#~ "For a single product, clone the matching branch (README directory names):"
+#~ msgstr "针对单一产品，克隆对应分支（README 中的目录名）："

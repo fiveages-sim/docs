@@ -9,7 +9,7 @@ Public umbrella repository. Brand trees are **git submodules** at the paths in t
 
 - Paths and submodule table: [README.md](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md)
 - In `open-deploy-ws` the checkout is `src/robot-descriptions/` after **`./init_repo.sh`**. Do not recursive-init there.
-- Description-side Cursor skills: **`feature/agilex` only** (`split-chassis-glb`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no `.cursor/skills`**. Newer AgileX / Rokae INEX rows: [README on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md).
+- Description-side Cursor skills: **`feature/agilex` only** (`split-chassis-glb`) — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md). **`main` has no `.cursor/skills`**. Newer AgileX / Rokae INEX rows: [README on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md). **Taku** is in-tree on that branch at `humanoid/Dyna/taku_description` ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)); it is not on `main` and is not a row in that branch’s brand tables.
 ```
 
 ## Layout (README)
@@ -20,6 +20,7 @@ robot_descriptions/
 ├── quadruped/                           # robot-descriptions-quadruped
 ├── humanoid/                            # in-tree wheeled / leg humanoids
 │   ├── FiveAges/                        # private gitlinks (not in README tables)
+│   ├── Dyna/taku_description            # in-tree on feature/agilex only
 │   ├── Galbot/                          # robot-descriptions-galbot
 │   └── Agibot/agibot_g2_description     # private
 ├── manipulator/
