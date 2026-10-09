@@ -82,6 +82,8 @@ vr_pose_publisher:
     right: right_ee
 ```
 
+Robot-side VR insertion is separate: set `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off). Same file: `vr_update_rate`, `vr_follow_frame`. Button map and follow-frame troubleshooting: [VR Teleop How-To](../../2-how_to/5-teleoperation/6-vr_teleop.md).
+
 ## Network Setup
 
 - **Pico Enterprise:** USB shared networking (USB 网络共享) can put the headset and PC on one network. Use the headset UI; no ADB steps here.

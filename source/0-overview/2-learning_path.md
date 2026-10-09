@@ -38,7 +38,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 **Goal:** Install the environment, then run a robot demo (`hardware` default `mock_components`).
 
 **Tasks:**
-1. [Install Environment](../1-getting_started/2-install_environment.md) — Ubuntu 24.04, ROS 2 Jazzy + rosdep (open-deploy-ws README: fishros / `ros-jazzy-desktop`). Workspace entry is `./init_repo.sh`, then `source install/setup.bash`.
+1. [Install Environment](../1-getting_started/2-install_environment.md) — Ubuntu 24.04, ROS 2 Jazzy + rosdep. On a bare host: add the ROS apt source, then `ros-jazzy-desktop` / `ros-dev-tools` (fishros is optional). Workspace entry is `./init_repo.sh`, then `source install/setup.bash`.
 2. Clone `open-deploy-ws` and run the official init script:
    ```bash
    git clone https://github.com/fiveages-sim/open-deploy-ws.git

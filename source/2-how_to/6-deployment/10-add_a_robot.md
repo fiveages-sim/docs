@@ -69,6 +69,8 @@ How to add more skills under `.cursor/skills/`: the same [skills README](https:/
 
 `main` still lists AgileX Aloha at `manipulator/AgileX/agilex_aloha_description` and does **not** have the `.cursor/skills` directory.
 
+**Taku** (Dyna / DVT1) is also in-tree on `feature/agilex` at [`humanoid/Dyna/taku_description`](https://github.com/fiveages-sim/robot_descriptions/tree/feature/agilex/humanoid/Dyna/taku_description), with launch `robot:=taku` on `robot_common_launch humanoid.launch.py` ([package README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)). It is **not** a row in that branch’s README brand tables. There is no lean `open-deploy-ws` Taku branch — [open-deploy-ws Setup](../../1-getting_started/3-open_deploy_ws.md).
+
 ## 2. Wire it into a deploy workspace
 
 In `open-deploy-ws`:

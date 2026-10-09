@@ -4,28 +4,84 @@ This page covers installing the base development environment for FiveAges Sim wo
 
 ## Operating System
 
-**Supported:** Ubuntu 24.04 LTS (Noble Numbat)
+**Supported host:** Ubuntu 24.04 LTS (Noble Numbat) + **ROS 2 Jazzy**.
 
 **Python:** **3.12** only (ROS 2 Jazzy on Ubuntu 24.04). Do not use 3.10/3.11 venvs for this stack.
 
-Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for ROS 2 + rosdep. The workspace entry is **`./init_repo.sh`**; after `colcon build`, `source install/setup.bash` in the launch terminal.
+Other Linux distros (for example Debian 13) are **not** supported natively. An `ubuntu:24.04` container on that host is a workable approach for the same apt steps below. `open-deploy-ws` does not publish an official Docker image or extra container flags; use a stock Ubuntu 24.04 userspace and the official ROS 2 Jazzy Ubuntu install.
 
-## ROS 2 Jazzy + rosdep (open-deploy-ws README)
+Follow the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) after ROS 2 + rosdep are in place. The workspace entry is **`./init_repo.sh`**; after `colcon build`, `source install/setup.bash` in the launch terminal.
+
+## ROS 2 Jazzy on a bare host or container
+
+On a **bare** Ubuntu 24.04 machine or container, `python3-colcon-common-extensions`, `python3-rosdep`, and `python3-vcstool` are **not** in the default Ubuntu index. `apt install` of those packages fails with “Unable to locate package” until the ROS 2 apt source is added and `apt update` has run.
+
+Source of truth: [Ubuntu (deb packages) — ROS 2 Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html). Order:
+
+1. Add the ROS key + Noble ROS 2 apt source
+2. `apt update`
+3. Install `ros-jazzy-desktop`, `ros-dev-tools`, and the colcon / rosdep / vcstool tools
+4. `rosdep init` / `rosdep update`
+
+### 1. Enable Universe, then add the ROS 2 apt source
+
+Official current method — the `ros2-apt-source` package installs the signing key and the Noble `packages.ros.org` source:
 
 :::{code-block} bash
-# 1. ROS 2 helper (fishros) — listed first in that README
-wget http://fishros.com/install -O fishros && bash fishros
+sudo apt update
+sudo apt install software-properties-common curl -y
+sudo add-apt-repository universe
 
-# 2. ROS 2 Jazzy Desktop
+export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F'"' '{print $4}')
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
+:::
+
+Equivalent **hand-added** source (same idea: `ros.key` + Noble ROS 2 list), if you are not using `ros2-apt-source`:
+
+:::{code-block} bash
+sudo apt install curl gnupg lsb-release -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}}) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+:::
+
+On some Ubuntu 24.04 images, `/etc/apt/sources.list.d/ubuntu.sources` only lists the base `noble` suite. Official Jazzy docs: include `noble-updates` and `noble-backports` before installing `ros-dev-tools`, then `sudo apt clean && sudo apt update && sudo apt full-upgrade -y`.
+
+In a container or CI job, `export DEBIAN_FRONTEND=noninteractive` is the usual apt setting (not an `open-deploy-ws` flag).
+
+### 2. Update, then install desktop + dev tools
+
+:::{code-block} bash
+sudo apt update
+sudo apt install ros-jazzy-desktop ros-dev-tools
+sudo apt install python3-colcon-common-extensions python3-rosdep python3-vcstool
+:::
+
+`ros-dev-tools` usually already pulls colcon / rosdep / vcstool. The second line is harmless if they are installed, and it is the check that those names resolve **after** the ROS apt source exists.
+
+### 3. Overlay and rosdep
+
+:::{code-block} bash
+source /opt/ros/jazzy/setup.bash
+sudo rosdep init   # first time on this machine; skip if already initialized
+rosdep update
+:::
+
+After this, clone a deploy workspace and run **`./init_repo.sh`**. CI / no TTY (after [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8), or once you pull that script): `./init_repo.sh --public --ocs2=deb --arms=source --common=source`. Details: [open-deploy-ws Setup](3-open_deploy_ws.md). Then `source install/setup.bash` after `colcon build`.
+
+### Optional shortcut: fishros
+
+The [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) lists **fishros** first. That helper can add the ROS apt source and install Jazzy for you. It is an optional shortcut, not the only path, and it is a poor fit for a non-interactive container (the installer is a menu).
+
+:::{code-block} bash
+wget http://fishros.com/install -O fishros && bash fishros
 sudo apt update
 sudo apt install ros-jazzy-desktop
-
-# 3. rosdep (first time on this machine)
 sudo rosdep init
 rosdep update
 :::
 
-Official ROS 2 Jazzy install (if you are not using fishros): [docs.ros.org — Jazzy](https://docs.ros.org/en/jazzy/Installation.html). After ROS is installed, **clone a deploy workspace and run `./init_repo.sh`**, then `source install/setup.bash` after `colcon build`.
+If fishros is not available, or `apt` still cannot see `python3-colcon-common-extensions` / `ros-jazzy-desktop`, use the official apt-source order above.
 
 ## OCS2 Installation
 
@@ -95,9 +151,13 @@ ros2 pkg list | grep ocs2   # after OCS2 deb or source via init
 
 ## Common Issues
 
+### Unable to locate package (colcon / rosdep / vcstool / ros-jazzy-desktop)
+
+The ROS 2 apt source is missing, or `apt update` was not run after adding it. Use the official order in [ROS 2 Jazzy on a bare host or container](#ros-2-jazzy-on-a-bare-host-or-container). `sudo apt update` alone does not add `packages.ros.org`.
+
 ### Package Not Found After apt install
 
-This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`). It does **not** apply to OCS2.
+This applies to packages that **are** in the ROS apt index (for example `ros-jazzy-desktop`) after the source is configured. It does **not** apply to OCS2.
 
 ```bash
 sudo apt update
@@ -129,4 +189,4 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ## Next Steps
 
 - [Quick Demo](1-quick_demo_public.md) — Clone `open-deploy-ws`, `./init_repo.sh`, build, launch
-- [open-deploy-ws Setup](3-open_deploy_ws.md) — Workspace details
+- [open-deploy-ws Setup](3-open_deploy_ws.md) — Workspace details, SSH / CI init, Taku
