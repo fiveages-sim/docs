@@ -6,6 +6,16 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-09 07:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:1
 #: 168ceccbb75540e3b08d6f0f41cd0c59
@@ -93,7 +103,9 @@ msgid ""
 "`left_arm_handler`) is on "
 "[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)."
 msgstr ""
-"类名是 `ROS2RobotInterface` 与 `ROS2RobotInterfaceConfig`。README「Basic Example」（配置、`connect()`、`get_joint_state()`、`left_arm_handler`）在 [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)。"
+"类名是 `ROS2RobotInterface` 与 `ROS2RobotInterfaceConfig`。README「Basic "
+"Example」（配置、`connect()`、`get_joint_state()`、`left_arm_handler`）在 "
+"[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)。"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:32
 #: e97f0fbca479414ebcf00f3774e09327
@@ -131,19 +143,50 @@ msgid ""
 "interface.send_fsm_command(FSM_HOLD)\n"
 "interface.disconnect()"
 msgstr ""
-"from geometry_msgs.msg import Pose\nfrom ros2_robot_interface import (\n    FSM_HOLD,\n    ROS2RobotInterface,\n    ROS2RobotInterfaceConfig,\n)\n\nconfig = ROS2RobotInterfaceConfig(\n    joint_states_topic=\"/joint_states\",\n    end_effector_pose_topic=\"/left_current_pose\",\n    end_effector_target_topic=\"/left_target\",\n)\ninterface = ROS2RobotInterface(config)\ninterface.connect()\n\njoint_state = interface.get_joint_state()\nif joint_state:\n    print(joint_state[\"positions\"])\n\npose = interface.left_arm_handler.get_pose()\n\ntarget = Pose()\ntarget.position.x = 0.5\ntarget.position.z = 0.3\ntarget.orientation.w = 1.0\ninterface.left_arm_handler.send_target(target)\n\n# Stroke in hardware units (not a 0–1 percent)\ninterface.left_gripper_handler.send_joint_positions(0.01)\n\ninterface.send_fsm_command(FSM_HOLD)\ninterface.disconnect()"
+"from geometry_msgs.msg import Pose\n"
+"from ros2_robot_interface import (\n"
+"    FSM_HOLD,\n"
+"    ROS2RobotInterface,\n"
+"    ROS2RobotInterfaceConfig,\n"
+")\n"
+"\n"
+"config = ROS2RobotInterfaceConfig(\n"
+"    joint_states_topic=\"/joint_states\",\n"
+"    end_effector_pose_topic=\"/left_current_pose\",\n"
+"    end_effector_target_topic=\"/left_target\",\n"
+")\n"
+"interface = ROS2RobotInterface(config)\n"
+"interface.connect()\n"
+"\n"
+"joint_state = interface.get_joint_state()\n"
+"if joint_state:\n"
+"    print(joint_state[\"positions\"])\n"
+"\n"
+"pose = interface.left_arm_handler.get_pose()\n"
+"\n"
+"target = Pose()\n"
+"target.position.x = 0.5\n"
+"target.position.z = 0.3\n"
+"target.orientation.w = 1.0\n"
+"interface.left_arm_handler.send_target(target)\n"
+"\n"
+"# Stroke in hardware units (not a 0–1 percent)\n"
+"interface.left_gripper_handler.send_joint_positions(0.01)\n"
+"\n"
+"interface.send_fsm_command(FSM_HOLD)\n"
+"interface.disconnect()"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:67
 #: 33f95207323a49b1847d002593afbf2d
+#, #
 msgid ""
 "`right_arm_handler` / `right_gripper_handler` exist in dual-arm mode "
 "after `connect()` sees `/right_current_pose`. Cartesian vs joint vs "
 "gripper topics (including `*/twist`, `*/relative`, `target_percent`, and "
-"waist `waist_*`): "
+"waist `waist_*`), plus `execute_*_action` and `execute_path`: "
 "[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)"
-" (Topic ↔ API map)."
-msgstr ""
-"双臂模式下，`connect()` 看到 `/right_current_pose` 后会有 `right_arm_handler` / `right_gripper_handler`。笛卡尔 / 关节 / 夹爪话题（含 `*/twist`、`*/relative`、`target_percent` 以及腰部 `waist_*`）：[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)（话题 ↔ API 对照表）。"
+" (Topic / Action / Service ↔ API map)."
+msgstr "`connect()` 看到 `/right_current_pose` 后，双臂模式下才有 `right_arm_handler` / `right_gripper_handler`。笛卡尔 / 关节 / 夹爪话题（含 `*/twist`、`*/relative`、`target_percent` 以及腰部 `waist_*`），以及 `execute_*_action` 与 `execute_path`：[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)（话题 / Action / Service ↔ API 对照）。"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:69
 #: c464a2f81276427da3944f4975d52ae1
@@ -193,95 +236,112 @@ msgid ""
 "the running controller. See [FSM and "
 "Topics](../../3-concepts/4-fsm_and_topics.md)."
 msgstr ""
-"`/fsm_command` 是 **`std_msgs/Int32`**（不是 `stand` / `walk` 这类字符串）。用 `send_fsm_command` 发送整数（`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ、`5` COMPLIANCE）。取值与合法转换取决于正在运行的控制器。见 [状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
+"`/fsm_command` 是 **`std_msgs/Int32`**（不是 `stand` / `walk` 这类字符串）。用 "
+"`send_fsm_command` 发送整数（`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ、`5` "
+"COMPLIANCE）。取值与合法转换取决于正在运行的控制器。见 "
+"[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:84
-#: f4f3dbdabd444a4b8380586e1a2ff127
+#: 9724c5ce79024d439b7feea0b10973a0
+#, #
 msgid ""
 "WBC body / arm / base strings go to `/mode_command` via "
-"`send_mode_command`, which is a different topic from `/fsm_command`."
-msgstr ""
-"WBC 的身体 / 手臂 / 底盘字符串经 `send_mode_command` 发到 `/mode_command`，与 `/fsm_command` 不是同一条话题。"
+"`send_mode_command`, which is a different topic from `/fsm_command`. That"
+" path needs `ocs2_wbc_controller` and 全身 launch/config — default mock / "
+"分体 demos do not imply it."
+msgstr "WBC 的身体 / 手臂 / 底盘字符串经 `send_mode_command` 发到 `/mode_command`，与 `/fsm_command` 不是同一条话题。该路径需要 `ocs2_wbc_controller` 以及全身启动/配置——默认 mock / 分体演示并不表示它可用。"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:86
+#: 51bfb379025c4163af0452f64e657661
+msgid ""
+"Parameterized MoveL / MoveC / MoveJ wait for a result with "
+"`execute_movel_action`, `execute_movec_action_*`, and "
+"`execute_joint_trajectory_action`. Dual-arm Cartesian path uses the "
+"`execute_path` **service** (not the deprecated `/target_path` topic)."
+msgstr "带参数的 MoveL / MoveC / MoveJ 用 `execute_movel_action`、`execute_movec_action_*` 和 `execute_joint_trajectory_action` 等待结果。双臂笛卡尔路径走 `execute_path` **服务**（不是已弃用的 `/target_path` 话题）。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:88
 #: 280b07e8ff7e4beba3028053aee3b322
 msgid "Full method list"
 msgstr "Full method list"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:88
+#: ../../source/2-how_to/3-programming/5-python_interface.md:90
 #: 82fc1028f5b24363805335f0a734f83a
 msgid ""
 "Method signatures, arrival checks, and actions: "
 "[API_REFERENCE.md](https://github.com/fiveages-"
 "sim/ros2_robot_interface/blob/main/API_REFERENCE.md)."
 msgstr ""
-"方法签名、到位检查与 Action 见 [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
+"方法签名、到位检查与 Action 见 [API_REFERENCE.md](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:90
+#: ../../source/2-how_to/3-programming/5-python_interface.md:92
 #: fb2a4f6361294a77b18b499e92fa4b6a
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:92
+#: ../../source/2-how_to/3-programming/5-python_interface.md:94
 #: 0d5f4e6d40ff4dd1a182a67c5a0164db
 msgid "Connection fails"
 msgstr "连接失败"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:94
+#: ../../source/2-how_to/3-programming/5-python_interface.md:96
 #: 33c62ebc34dc4c26841e4048297af195
 msgid "Ensure the robot demo is running"
 msgstr "确认机器人演示正在运行"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:95
+#: ../../source/2-how_to/3-programming/5-python_interface.md:97
 #: a976958ac736444d8fbd7a0344d086e1
 msgid "Check ROS 2 domain ID matches"
 msgstr "确认 ROS 2 的 Domain ID 一致"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:96
+#: ../../source/2-how_to/3-programming/5-python_interface.md:98
 #: 2c3498caefee4b139108ade8eb25f048
 msgid "Verify topics are publishing: `ros2 topic list`"
 msgstr "确认话题正在发布：`ros2 topic list`"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:97
+#: ../../source/2-how_to/3-programming/5-python_interface.md:99
 #: b7063947230544c9a6aed275f605b439
 msgid ""
 "`get_joint_state()` / `get_pose()` return `None` until the first message;"
 " command methods raise `ROS2NotConnectedError` if you never called "
 "`connect()`"
 msgstr ""
-"首条消息到来前，`get_joint_state()` / `get_pose()` 返回 `None`；若从未调用 `connect()`，下发方法会抛出 `ROS2NotConnectedError`"
+"首条消息到来前，`get_joint_state()` / `get_pose()` 返回 `None`；若从未调用 "
+"`connect()`，下发方法会抛出 `ROS2NotConnectedError`"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:99
+#: ../../source/2-how_to/3-programming/5-python_interface.md:101
 #: d3761cd53dd541c5b55744f26d3f2184
 msgid "Motion commands ignored"
 msgstr "运动指令被忽略"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:101
+#: ../../source/2-how_to/3-programming/5-python_interface.md:103
 #: 59da7258fb6842aba784f8659edba0eb
 msgid ""
 "Check the controller FSM (`get_fsm_state()` / `ros2 topic echo "
 "/fsm_state`)"
 msgstr ""
-"Check the controller FSM (`get_fsm_state()` / `ros2 topic echo /fsm_state`)"
+"Check the controller FSM (`get_fsm_state()` / `ros2 topic echo "
+"/fsm_state`)"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:102
+#: ../../source/2-how_to/3-programming/5-python_interface.md:104
 #: b5289b5a396e41db8bd4091874d9523b
 msgid ""
 "Pose targets need OCS2; joint targets need MOVEJ (the interface can "
 "switch these for you)"
 msgstr "位姿目标需要 OCS2；关节目标需要 MOVEJ（接口可替你切换）"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:103
+#: ../../source/2-how_to/3-programming/5-python_interface.md:105
 #: 46c8d326b66a42d5a67ca1e796ecb672
 msgid "Verify the target is within joint limits"
 msgstr "确认目标在关节限位范围内"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:105
+#: ../../source/2-how_to/3-programming/5-python_interface.md:107
 #: ead3414d85d546eab286abf8a1764e28
 msgid "Import error"
 msgstr "导入错误"
 
-#: ../../source/2-how_to/3-programming/5-python_interface.md:107
+#: ../../source/2-how_to/3-programming/5-python_interface.md:109
 #: 973877e588f74a0984ed0f2ac945f1bd
 msgid ""
 "cd ~/fa-py-libraries\n"

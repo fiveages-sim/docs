@@ -6,6 +6,16 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-09 07:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:1
 #: 0aa49d18921e446d9a5beb4432c2f4c6
@@ -53,7 +63,9 @@ msgid ""
 " How to refresh: [Documentation Build](../../5-developer/2-docs_build.md"
 "#vendored-upstream-readme)."
 msgstr ""
-"钉选：[`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md)。如何刷新：[文档构建](../../5-developer/2-docs_build.md#vendored-upstream-readme)。"
+"钉选：[`9a1da3ba`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md)。如何刷新：[文档构建](../../5-developer/2-docs_build.md"
+"#vendored-upstream-readme)。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:13
 #: 21d10f5ff53d44ac81deef46386915fd
@@ -68,7 +80,8 @@ msgid ""
 "initial position = closed). Example names: controller "
 "`left_gripper_controller`, joint `left_gripper_joint`."
 msgstr ""
-"每条通道立即生效。关节限位与开合位置来自 `/robot_description`（距初始值更近的 URDF 限位 = 关闭）。示例名称：控制器 `left_gripper_controller`，关节 `left_gripper_joint`。"
+"每条通道立即生效。关节限位与开合位置来自 `/robot_description`（距初始值更近的 URDF 限位 = 关闭）。示例名称：控制器 "
+"`left_gripper_controller`，关节 `left_gripper_joint`。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md
 #: b69dfb7ee405422095864423539563b2
@@ -266,7 +279,8 @@ msgid ""
 "(original − current) × `force_feedback_ratio`. `0.0` stops here; `1.0` "
 "continues to the original target; default `0.5`."
 msgstr ""
-"触发：`|current_effort| > force_threshold`。新目标 = 当前位置 +（原始目标 − 当前位置）× `force_feedback_ratio`。`0.0` 停在此处；`1.0` 继续到原始目标；默认 `0.5`。"
+"触发：`|current_effort| > force_threshold`。新目标 = 当前位置 +（原始目标 − 当前位置）× "
+"`force_feedback_ratio`。`0.0` 停在此处；`1.0` 继续到原始目标；默认 `0.5`。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:41
 #: 3bd5ae31dbce4ac593f8c0ac32130339
@@ -275,7 +289,8 @@ msgid ""
 "`true`), `force_threshold` (default `0.1`), `force_feedback_ratio` "
 "(default `0.5`)."
 msgstr ""
-"README 中的 YAML 键：`joint`、`use_effort_interface`（默认 `true`）、`force_threshold`（默认 `0.1`）、`force_feedback_ratio`（默认 `0.5`）。"
+"README 中的 YAML 键：`joint`、`use_effort_interface`（默认 "
+"`true`）、`force_threshold`（默认 `0.1`）、`force_feedback_ratio`（默认 `0.5`）。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:43
 #: a81218ec72ab422c96f18558cc44f01a
@@ -287,7 +302,10 @@ msgid ""
 "Home-config blend, not this force path. Map: "
 "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)."
 msgstr ""
-"Python：`left_gripper_handler.send_joint_positions`（直接行程，**无力反馈**）、`send_target_command`（0/1）、`send_position_percent`（0–1）。灵巧**手**上同名的 `target_command` / `target_percent` 走 [basic_joint_controller](7-basic_joint_controller.md) 的 Home 构型混合，而不是这条力反馈路径。对照表：[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)。"
+"Python：`left_gripper_handler.send_joint_positions`（直接行程，**无力反馈**）、`send_target_command`（0/1）、`send_position_percent`（0–1）。灵巧**手**上同名的"
+" `target_command` / `target_percent` 走 "
+"[basic_joint_controller](7-basic_joint_controller.md) 的 Home "
+"构型混合，而不是这条力反馈路径。对照表：[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:45
 #: 85a2096df1b5405d883c8045aed66323
@@ -309,14 +327,16 @@ msgstr ""
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:49
 #: fb0fb0d7b9a042e9a2c879429648478f
+#, #
 msgid ""
 "`arms_target_manager` owns `/left_target` / `/stamped` / `/twist` / "
 "`/relative` (and right / dual / WBC body-head). Tables: [FSM and "
 "Topics](../../3-concepts/4-fsm_and_topics.md). README: "
 "[arms_target_manager](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)."
-msgstr ""
-"`arms_target_manager` 持有 `/left_target` / `/stamped` / `/twist` / `/relative`（以及右侧 / 双臂 / WBC 身体-头部）。表格：[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。README：[arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)。"
+" WBC body/head Cartesian topics need `ocs2_wbc_controller` and 全身 "
+"launch/config — not default mock / 分体."
+msgstr "`arms_target_manager` 拥有 `/left_target` / `/stamped` / `/twist` / `/relative`（以及右侧 / 双臂 / WBC 身体-头部）。表格：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。README：[arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)。WBC 身体/头部笛卡尔话题需要 `ocs2_wbc_controller` 以及全身启动/配置——不是默认 mock / 分体。"
 
 #: ../../source/4-reference/controllers/6-gripper_teleop_plugins.md:51
 #: 150e316688f04cafbf8e72b676217c7c

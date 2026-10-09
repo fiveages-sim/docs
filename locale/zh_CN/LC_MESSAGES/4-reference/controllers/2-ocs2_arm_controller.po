@@ -6,6 +6,16 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-09 07:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:1
 #: cc17550b03d04698a18b9603f4748541
@@ -166,7 +176,11 @@ msgid ""
 "`arms_target_manager` is a different message, scaled into "
 "`/left_target/twist`."
 msgstr ""
-"操作员与 `ros2_robot_interface` 把同样的整数发到 **`/fsm_command`**（`std_msgs/Int32`）。这才是全栈 FSM 话题——[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。`arms_target_manager` 上的手柄 `control_input`（`arms_ros2_control_msgs/Inputs`）是另一种消息，按比例映射到 `/left_target/twist`。"
+"操作员与 `ros2_robot_interface` 把同样的整数发到 "
+"**`/fsm_command`**（`std_msgs/Int32`）。这才是全栈 FSM "
+"话题——[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。`arms_target_manager` "
+"上的手柄 `control_input`（`arms_ros2_control_msgs/Inputs`）是另一种消息，按比例映射到 "
+"`/left_target/twist`。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:38
 #: ed4de08a92944b0fb02bd0c743bef0b9
@@ -178,7 +192,12 @@ msgid ""
 " `4` as MOVEJ, while this controller treats `3` as OCS2 and `4` as MOVEJ "
 "— see [basic_joint_controller](7-basic_joint_controller.md)."
 msgstr ""
-"`arms_controller_common` 还实现了 **MoveJ**（`StateMoveJ`）和 `FSMCommandPublisher`，后者向 `/fsm_command` 发布 **`std_msgs/Int32`**（头文件取值：`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ）。混合 OCS2/WBC 栈上，`basic_joint_controller` 把 `3` 和 `4` 当作 MOVEJ，而本控制器把 `3` 当作 OCS2、`4` 当作 MOVEJ——见 [basic_joint_controller](7-basic_joint_controller.md)。"
+"`arms_controller_common` 还实现了 **MoveJ**（`StateMoveJ`）和 "
+"`FSMCommandPublisher`，后者向 `/fsm_command` 发布 "
+"**`std_msgs/Int32`**（头文件取值：`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ）。混合 "
+"OCS2/WBC 栈上，`basic_joint_controller` 把 `3` 和 `4` 当作 MOVEJ，而本控制器把 `3` 当作 "
+"OCS2、`4` 当作 MOVEJ——见 "
+"[basic_joint_controller](7-basic_joint_controller.md)。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:40
 #: e2b5741354cf47029690780408aa8b09
@@ -242,7 +261,10 @@ msgid ""
 "`/left_target/twist`, `/left_target/relative`, plus right / dual "
 "counterparts and `/left_current_target`."
 msgstr ""
-"本控制器 README **没有**完整列出末端目标话题表。它们在 [`arms_target_manager`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)（`PoseBasedReferenceManager`）：`/left_target`、`/left_target/stamped`、`/left_target/twist`、`/left_target/relative`，以及右侧 / 双臂对应话题和 `/left_current_target`。"
+"本控制器 README **没有**完整列出末端目标话题表。它们在 "
+"[`arms_target_manager`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)（`PoseBasedReferenceManager`）：`/left_target`、`/left_target/stamped`、`/left_target/twist`、`/left_target/relative`，以及右侧"
+" / 双臂对应话题和 `/left_current_target`。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:58
 #: b150dddb37174369b04f1ce7e401c74a
@@ -256,12 +278,25 @@ msgid ""
 "(`/body_target…`, `/head_target…`) are WBC-only — 分体 uses "
 "`basic_joint_controller` for those joints."
 msgstr ""
-"在本控制器上，MOVEJ + `/left_target/stamped`（以及右侧 / 双臂）可通过 [lina_planning](5-lina_planning.md) 跑 IK **MoveL**（`StateMoveJ.startLinearTrajectory`）。没有该库时 MOVEJ 笛卡尔侧为空操作。**`ocs2_wbc_controller` 的 MOVEJ 没有 IK MoveL**（只有关节数组）；`full_body.launch.py` 会设 `enable_movej_cartesian_markers:=false`。身体 / 头部笛卡尔（`/body_target…`、`/head_target…`）仅 WBC——分体用 `basic_joint_controller` 管这些关节。"
+"在本控制器上，MOVEJ + `/left_target/stamped`（以及右侧 / 双臂）可通过 "
+"[lina_planning](5-lina_planning.md) 跑 IK "
+"**MoveL**（`StateMoveJ.startLinearTrajectory`）。没有该库时 MOVEJ "
+"笛卡尔侧为空操作。**`ocs2_wbc_controller` 的 MOVEJ 没有 IK "
+"MoveL**（只有关节数组）；`full_body.launch.py` 会设 "
+"`enable_movej_cartesian_markers:=false`。身体 / "
+"头部笛卡尔（`/body_target…`、`/head_target…`）仅 WBC——分体用 `basic_joint_controller`"
+" 管这些关节。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:60
-#: 7770cd55661a4d77b78aafeb105204ea
-msgid "Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)."
-msgstr "完整表格：[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
+#: 6515eb59a7ff443787f21306efc48af9
+msgid ""
+"Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). "
+"Parameterized **MoveL / MoveC / MoveJ** also exist as actions "
+"(`ExecuteLinear`, `MovecUseIK`, `JointTrajectory`) on this controller; "
+"Python: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)."
+" Types: [`arms_ros2_control_msgs` README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)."
+msgstr "完整表格：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。参数化 **MoveL / MoveC / MoveJ** 在本控制器上也有 Action（`ExecuteLinear`、`MovecUseIK`、`JointTrajectory`）；Python：[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)。类型：[`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)。"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:62
 #: 80b1ed17838f4cd78744914690b6301c
@@ -443,19 +478,33 @@ msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:112
+#: ee75125205064ea9b74ac52657fd1cd1
+msgid ""
+"[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md) — Action"
+" / Service Python map"
+msgstr "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md) — Action / Service 的 Python 对照"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:113
 #: aab586393bf04466b267f731d300c5ad
 msgid "[Gripper and teleop plugins](6-gripper_teleop_plugins.md)"
 msgstr "[夹爪与遥操作插件](6-gripper_teleop_plugins.md)"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:113
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:114
 #: d1e8410b83284966bf2d8a7f97646e11
 msgid "[ocs2_ros2](1-ocs2_ros2.md)"
 msgstr "[ocs2_ros2](1-ocs2_ros2.md)"
 
-#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:114
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:115
 #: 7fa77c58e55b4cdf95398e0983548c83
 msgid "[ocs2-wbc-controller](3-ocs2_wbc.md)"
 msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md)"
+
+#: ../../source/4-reference/controllers/2-ocs2_arm_controller.md:116
+#: 0de8eb87737a42b2a7698b9f78109395
+msgid ""
+"[arms_ros2_control_msgs README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
+msgstr "[arms_ros2_control_msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
 
 #~ msgid "MPC-based arm controller for the FiveAges Sim stack."
 #~ msgstr "用于 FiveAges Sim 技术栈的基于 MPC 的机械臂控制器。"
@@ -794,4 +843,7 @@ msgstr "[ocs2-wbc-controller](3-ocs2_wbc.md)"
 
 #~ msgid "[Gripper and Teleop Plugins](6-gripper_teleop_plugins.md)"
 #~ msgstr "[夹爪与遥操作插件](6-gripper_teleop_plugins.md)"
+
+#~ msgid "Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)."
+#~ msgstr "完整表格：[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
 

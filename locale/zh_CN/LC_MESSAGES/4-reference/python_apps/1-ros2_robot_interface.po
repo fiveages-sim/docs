@@ -6,6 +6,16 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-09 07:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:1
 #: 7749896f72bf4faab732a291c421d761
@@ -37,7 +47,10 @@ msgid ""
 "Exhaustive method docs: [API_REFERENCE.md](https://github.com/fiveages-"
 "sim/ros2_robot_interface/blob/main/API_REFERENCE.md) on GitHub."
 msgstr ""
-"公开导出：`ROS2RobotInterface`、`ROS2RobotInterfaceConfig`、`ControlType`、FSM 常量（`FSM_HOME`、`FSM_HOLD`、`FSM_OCS2`、`FSM_MOVEJ`、`FSM_COMPLIANCE`）以及 `ROS2*Error` 异常。完整方法文档见 GitHub 上的 [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
+"公开导出：`ROS2RobotInterface`、`ROS2RobotInterfaceConfig`、`ControlType`、FSM "
+"常量（`FSM_HOME`、`FSM_HOLD`、`FSM_OCS2`、`FSM_MOVEJ`、`FSM_COMPLIANCE`）以及 "
+"`ROS2*Error` 异常。完整方法文档见 GitHub 上的 [API_REFERENCE.md](https://github.com"
+"/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:9
 #: 010c957754754d6eb6226cf01572a2ea
@@ -107,7 +120,10 @@ msgid ""
 " How to refresh the pin: [Documentation "
 "Build](../../5-developer/2-docs_build.md#vendored-upstream-readme)."
 msgstr ""
-"下面的示例是软件包 README 的「Basic Example」，钉在提交 [`200ea42`](https://github.com/fiveages-sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md)。如何刷新钉选：[文档构建](../../5-developer/2-docs_build.md#vendored-upstream-readme)。"
+"下面的示例是软件包 README 的「Basic Example」，钉在提交 [`200ea42`](https://github.com"
+"/fiveages-"
+"sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md)。如何刷新钉选：[文档构建](../../5-developer/2-docs_build.md"
+"#vendored-upstream-readme)。"
 
 #: ../../source/_vendored/ros2_robot_interface/README.md:1015
 #: 9aa280222eb140fe98eaeb3f9d722495
@@ -158,7 +174,50 @@ msgid ""
 "# Disconnect\n"
 "interface.disconnect()\n"
 msgstr ""
-"from ros2_robot_interface import ROS2RobotInterface, ROS2RobotInterfaceConfig\nfrom geometry_msgs.msg import Pose\n\n# Create configuration\nconfig = ROS2RobotInterfaceConfig(\n    joint_states_topic=\"/joint_states\",\n    end_effector_pose_topic=\"/left_current_pose\",\n    end_effector_target_topic=\"/left_target\",\n    joint_names=[\"joint1\", \"joint2\", \"joint3\", \"joint4\", \"joint5\", \"joint6\"]\n)\n\n# Create and connect interface\ninterface = ROS2RobotInterface(config)\ninterface.connect()\n\n# Get joint state\njoint_state = interface.get_joint_state()\nif joint_state:\n    print(f\"Joint positions: {joint_state['positions']}\")\n\n# Get end-effector pose (returns None if not connected)\npose = interface.left_arm_handler.get_pose()\nif pose:\n    print(f\"End-effector position: ({pose.position.x}, {pose.position.y}, {pose.position.z})\")\nelse:\n    print(\"Interface not connected or pose not available\")\n\n# Send target pose\ntarget_pose = Pose()\ntarget_pose.position.x = 0.5\ntarget_pose.position.y = 0.0\ntarget_pose.position.z = 0.3\ntarget_pose.orientation.w = 1.0\ninterface.left_arm_handler.send_target(target_pose)\n\n# Control gripper\ninterface.left_gripper_handler.send_joint_positions(0.5)  # 行程/开度目标值为 0.5（非“50%百分比”语义）\n\n# Disconnect\ninterface.disconnect()\n"
+"from ros2_robot_interface import ROS2RobotInterface, "
+"ROS2RobotInterfaceConfig\n"
+"from geometry_msgs.msg import Pose\n"
+"\n"
+"# Create configuration\n"
+"config = ROS2RobotInterfaceConfig(\n"
+"    joint_states_topic=\"/joint_states\",\n"
+"    end_effector_pose_topic=\"/left_current_pose\",\n"
+"    end_effector_target_topic=\"/left_target\",\n"
+"    joint_names=[\"joint1\", \"joint2\", \"joint3\", \"joint4\", "
+"\"joint5\", \"joint6\"]\n"
+")\n"
+"\n"
+"# Create and connect interface\n"
+"interface = ROS2RobotInterface(config)\n"
+"interface.connect()\n"
+"\n"
+"# Get joint state\n"
+"joint_state = interface.get_joint_state()\n"
+"if joint_state:\n"
+"    print(f\"Joint positions: {joint_state['positions']}\")\n"
+"\n"
+"# Get end-effector pose (returns None if not connected)\n"
+"pose = interface.left_arm_handler.get_pose()\n"
+"if pose:\n"
+"    print(f\"End-effector position: ({pose.position.x}, "
+"{pose.position.y}, {pose.position.z})\")\n"
+"else:\n"
+"    print(\"Interface not connected or pose not available\")\n"
+"\n"
+"# Send target pose\n"
+"target_pose = Pose()\n"
+"target_pose.position.x = 0.5\n"
+"target_pose.position.y = 0.0\n"
+"target_pose.position.z = 0.3\n"
+"target_pose.orientation.w = 1.0\n"
+"interface.left_arm_handler.send_target(target_pose)\n"
+"\n"
+"# Control gripper\n"
+"interface.left_gripper_handler.send_joint_positions(0.5)  # 行程/开度目标值为 "
+"0.5（非“50%百分比”语义）\n"
+"\n"
+"# Disconnect\n"
+"interface.disconnect()\n"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:36
 #: 9569cc8d8f1949c9a991133dd240750f
@@ -169,7 +228,10 @@ msgid ""
 "sends go through handlers (`left_arm_handler`, `right_arm_handler`, "
 "`left_gripper_handler`, …), not a `move_j` / `move_l` wrapper."
 msgstr ""
-"当这些话题已在 ROS 图中时，`connect()` 会自动检测双臂位姿话题、夹爪 / 手控制器，以及分体 vs 全身关节话题。`is_connected` 是**属性**。笛卡尔与关节下发走 handler（`left_arm_handler`、`right_arm_handler`、`left_gripper_handler` 等），不是 `move_j` / `move_l` 封装。"
+"当这些话题已在 ROS 图中时，`connect()` 会自动检测双臂位姿话题、夹爪 / 手控制器，以及分体 vs "
+"全身关节话题。`is_connected` 是**属性**。笛卡尔与关节下发走 "
+"handler（`left_arm_handler`、`right_arm_handler`、`left_gripper_handler` "
+"等），不是 `move_j` / `move_l` 封装。"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:38
 #: d66c3f937ff3495b867ea8141ed49d6f
@@ -178,7 +240,8 @@ msgid ""
 "publishes switch the controller to OCS2 and joint publishes switch it to "
 "MOVEJ via `/fsm_command`."
 msgstr ""
-"当 `auto_switch_fsm_before_control=True`（配置默认）时，发布位姿会经 `/fsm_command` 把控制器切到 OCS2，发布关节会切到 MOVEJ。"
+"当 `auto_switch_fsm_before_control=True`（配置默认）时，发布位姿会经 `/fsm_command` "
+"把控制器切到 OCS2，发布关节会切到 MOVEJ。"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:40
 #: 1219682cee3e4efea83c86c6cae4a129
@@ -196,7 +259,11 @@ msgid ""
 "全身控制](../../3-concepts/7-split_vs_wbc.md). Int32 FSM values: [FSM and "
 "Topics](../../3-concepts/4-fsm_and_topics.md)."
 msgstr ""
-"运行中的 OCS2 / `basic_joint_controller` 栈上操作员面对的话题，以及发布或读取它们的 Python 调用。下表行名来自 [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。分体 vs 全身前缀：[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)。Int32 FSM 取值：[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
+"运行中的 OCS2 / `basic_joint_controller` 栈上操作员面对的话题，以及发布或读取它们的 Python "
+"调用。下表行名来自 [API_REFERENCE.md](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。分体 vs 全身前缀：[分体控制 vs "
+"全身控制](../../3-concepts/7-split_vs_wbc.md)。Int32 FSM "
+"取值：[状态机与话题](../../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:44
 #: 79c49e6e4588416e90b18a67a79bca4c
@@ -204,22 +271,25 @@ msgid "State"
 msgstr "状态"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
-#: 061398a89f444886b933b3420388363d 4c8c230e0945499189cd49fed87cfcd4
-#: 9df39bb485734b50981a0f759f5273dc
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 061398a89f444886b933b3420388363d 9df39bb485734b50981a0f759f5273dc
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 44a55701a4fb416d98e6b4bce6f02a2e b54152daf3f74b63845640f7999be9d3
 msgid "Message"
 msgstr "消息"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 9cb111caecb24b53bc8219eac1fd99a6 b2773936ec3e46669c3f57549a6273ae
 msgid "Python"
 msgstr "Python"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 44084b906ea64cde914ca3a58582396a ed03f192ad3f4261ababc30f548bab80
 msgid "Notes"
 msgstr "说明"
@@ -250,6 +320,7 @@ msgid "`/left_current_pose`, `/right_current_pose`"
 msgstr "`/left_current_pose`, `/right_current_pose`"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 47358a9c001e45c0b0d8252fd5c2b0d6 f2c64dc8604b48cea9b5f1d0c1b1ecce
 #: faa8a3b7b93c44fc827d091776dd2de8
 msgid "`geometry_msgs/PoseStamped`"
@@ -310,79 +381,118 @@ msgstr "`get_body_current_target_pose()`"
 msgid "WBC body command echo"
 msgstr "WBC 身体指令回写"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:54
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: 40f9d8c3924843a4b586a9aff410196d
+#, #
+msgid "`/ocs2_wbc_controller/current_state`"
+msgstr "`/ocs2_wbc_controller/current_state`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: 2299f91e1a07436995329803271b9176
+msgid "`arms_ros2_control_msgs/WbcCurrentState`"
+msgstr "`arms_ros2_control_msgs/WbcCurrentState`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: 51fa9551a3a84f6387cc71ae7fd554b6
+msgid "`wait_until_mode_commands_applied(...)`"
+msgstr "`wait_until_mode_commands_applied(...)`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: 0608122df8af48a7aa0be59b099dabad
+msgid "WBC constraint snapshot; confirms `/mode_command`"
+msgstr "WBC 约束快照；确认 `/mode_command`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: e0df9bb57d30431d9b742495552239e5
+msgid "Whole-body (WBC) availability"
+msgstr "全身控制（WBC）可用性"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:58
+#: c9c9ebee411d44259499d55bc098783e
+msgid ""
+"`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` "
+"need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default"
+" mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not**"
+" imply these features are present. The controller is a **private** "
+"submodule; capability bits are machine-dependent (`WbcCapability`). "
+"Public Taku mock (`robot:=taku` on `demo.launch.py`) is arm-controller, "
+"not WBC. Details: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)."
+msgstr "`/body_target*`、`/head_target*`、`/mode_command` 以及 `WbcCurrentState` 需要 **`ocs2_wbc_controller`** 以及该机型的全身启动/配置。默认 mock 演示（`demo.launch.py`）和分体（`split_body.launch.py`）**并不表示**这些能力可用。该控制器是**私有**子模块；能力位取决于机型（`WbcCapability`）。公开的 Taku mock（`demo.launch.py` 上 `robot:=taku`）走臂控制器，不是 WBC。细节：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:61
 #: e02f71b3d5874e0498a4b85bf25bc0da
 msgid "FSM and WBC mode"
 msgstr "FSM 与 WBC 模式"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 1bc3ce06e4e549ffa62d4e00100393f4
 msgid "`/fsm_command`"
 msgstr "`/fsm_command`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 3818f1230bcd499b977f2183401253ca
 msgid "`std_msgs/Int32`"
 msgstr "`std_msgs/Int32`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: bbd235fa0d9444bfad6a5e5c34ccd484
 msgid "`send_fsm_command(command)`"
 msgstr "`send_fsm_command(command)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 18a53cf5bbb54f63832f8c836642491d
 msgid ""
 "`1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ, `5` COMPLIANCE (`FSM_*` "
 "constants). Not strings such as `stand` / `walk`."
 msgstr ""
-"`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ、`5` COMPLIANCE（`FSM_*` 常量）。不是 `stand` / `walk` 这类字符串。"
+"`1` HOME、`2` HOLD、`3` OCS2、`4` MOVEJ、`5` COMPLIANCE（`FSM_*` 常量）。不是 "
+"`stand` / `walk` 这类字符串。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 14d5a748a4504f888275fde2d73bdfe5
 msgid "`/fsm_state`"
 msgstr "`/fsm_state`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 2e0c5d17c8bc4f10bec7db3aaee32e4f
 msgid "`get_fsm_state()`"
 msgstr "`get_fsm_state()`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 316651237b964ac896192a0224982e8c
 msgid "Latched; same integer meanings"
 msgstr "锁存；整数含义相同"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 1ad77b9a943941618933874fa01172c4
 msgid "`/mode_command`"
 msgstr "`/mode_command`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 9f288c11dae743eba2760c2b71af3f54
 msgid "`std_msgs/String`"
 msgstr "`std_msgs/String`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 3d1be1ce44944ec9822ca8e59976504d
 msgid "`send_mode_command(command)`"
 msgstr "`send_mode_command(command)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: de95ac8fe13d40e989360bcee631caf6
+#, #
 msgid ""
 "WBC strings such as `BODY_TRACKING`, `ARMS_COUPLED`, `BASE_LOCK`. Confirm"
-" with `wait_until_mode_commands_applied` against "
-"`/ocs2_wbc_controller/current_state`."
-msgstr ""
-"WBC 字符串，如 `BODY_TRACKING`、`ARMS_COUPLED`、`BASE_LOCK`。用 `wait_until_mode_commands_applied` 对照 `/ocs2_wbc_controller/current_state` 确认。"
+" with `wait_until_mode_commands_applied`. API_REFERENCE maps `BODY_*` / "
+"`ARMS_*` / `BASE_*` only — not `HEAD_*` via this method."
+msgstr "WBC 字符串，例如 `BODY_TRACKING`、`ARMS_COUPLED`、`BASE_LOCK`。用 `wait_until_mode_commands_applied` 确认。API_REFERENCE 只映射 `BODY_*` / `ARMS_*` / `BASE_*` —— 不能经此方法发 `HEAD_*`。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:62
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:69
 #: d1127b14e1aa424997a9a3394ef67910
 msgid "Cartesian targets (OCS2)"
 msgstr "笛卡尔目标（OCS2）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:64
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:71
 #: 6e03e987198d4849a75f36f7a625a4ca
 msgid ""
 "Unstamped `/left_target` replaces the current EE goal with **one** pose "
@@ -394,9 +504,12 @@ msgid ""
 "integrates each Twist; **0.2 s without a new message stops**; keep "
 "publishing at ≥5 Hz to move continuously."
 msgstr ""
-"不带 stamp 的 `/left_target` 用**一个**位姿替换当前末端目标（典型于 VR / 高频率遥操作）。带 stamp 的 `/left_target/stamped` 会经 TF 变换到控制器坐标系并插值成 **MoveL** 序列（典型于视觉抓取）。未 stamp 的远距离跳变可能产生冲击。`send_relative` 是**一次性增量**，不是该坐标系下的绝对位姿。`send_velocity` 是**锁存速度流**：控制器对每条 Twist 积分；**0.2 秒内没有新消息会停止**；持续运动需以 ≥5 Hz 循环发布。"
+"不带 stamp 的 `/left_target` 用**一个**位姿替换当前末端目标（典型于 VR / 高频率遥操作）。带 stamp 的 "
+"`/left_target/stamped` 会经 TF 变换到控制器坐标系并插值成 **MoveL** 序列（典型于视觉抓取）。未 stamp "
+"的远距离跳变可能产生冲击。`send_relative` 是**一次性增量**，不是该坐标系下的绝对位姿。`send_velocity` "
+"是**锁存速度流**：控制器对每条 Twist 积分；**0.2 秒内没有新消息会停止**；持续运动需以 ≥5 Hz 循环发布。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:66
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:73
 #: 784ad7568d0f4ef3b8c71a724c409000
 msgid ""
 "On `ocs2_arm_controller`, the same `/left_target/stamped` topic in "
@@ -405,369 +518,398 @@ msgid ""
 "at MOVEJ; turn off pose auto-switch to OCS2). WBC MOVEJ has no IK MoveL "
 "path."
 msgstr ""
-"在 `ocs2_arm_controller` 上，同一条 `/left_target/stamped` 在 **MOVEJ** 下可在有 [lina_planning](../controllers/5-lina_planning.md) 时跑 IK MoveL（保持 FSM=MOVEJ；关闭位姿类自动切 OCS2）。WBC 的 MOVEJ 没有 IK MoveL 路径。"
+"在 `ocs2_arm_controller` 上，同一条 `/left_target/stamped` 在 **MOVEJ** 下可在有 "
+"[lina_planning](../controllers/5-lina_planning.md) 时跑 IK MoveL（保持 "
+"FSM=MOVEJ；关闭位姿类自动切 OCS2）。WBC 的 MOVEJ 没有 IK MoveL 路径。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 76c2f5187ca14d5cbd5ca728e4399200
 msgid "`/left_target`, `/right_target`"
 msgstr "`/left_target`, `/right_target`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 3bda033411f943eb8720ce43fff4e0f3
 msgid "`geometry_msgs/Pose`"
 msgstr "`geometry_msgs/Pose`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 529636a1a9c44ea1a6901bbe1199dca9
 msgid "`left_arm_handler.send_target(pose)`"
 msgstr "`left_arm_handler.send_target(pose)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 58256702aac64153b14456b26225568f
 msgid "Pose already in controller `base_frame`; no TF; no MoveL interpolation"
 msgstr "位姿已在控制器 `base_frame`；无 TF；无 MoveL 插值"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 700393b9c35e40099b14bbb239e375ec
 msgid "`/left_target/stamped`, `/right_target/stamped`"
 msgstr "`/left_target/stamped`, `/right_target/stamped`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 8006dc6ad1444b0da5c432e059a95177
 msgid "`left_arm_handler.send_target_stamped(frame_id, pose)`"
 msgstr "`left_arm_handler.send_target_stamped(frame_id, pose)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c7b37deea44645a390c4549867983883
 msgid ""
 "TF to `base_frame`; also `send_target_stamped(pose)` when `frame_id` is "
 "already cached"
 msgstr "TF 到 `base_frame`；若已缓存 `frame_id` 也可 `send_target_stamped(pose)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 700393b9c35e40099b14bbb239e375ec
 msgid "`/left_target/relative`, `/right_target/relative`"
 msgstr "`/left_target/relative`, `/right_target/relative`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: faa8a3b7b93c44fc827d091776dd2de8
 msgid "`geometry_msgs/TwistStamped`"
 msgstr "`geometry_msgs/TwistStamped`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: b30ffe5b3c28421e81f26a54f966a9d0
 msgid ""
 "`left_arm_handler.send_relative(dx, dy, dz, droll=0, dpitch=0, dyaw=0, "
 "frame_id=\"\")`"
-msgstr "`left_arm_handler.send_relative(dx, dy, dz, droll=0, dpitch=0, dyaw=0, frame_id=\"\")`"
+msgstr ""
+"`left_arm_handler.send_relative(dx, dy, dz, droll=0, dpitch=0, dyaw=0, "
+"frame_id=\"\")`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c86a32de08c544e2814a6f1970677aad
 msgid ""
 "One-shot increment (m, rad) + MoveL. Empty `frame_id` → controller "
 "`base_frame`"
 msgstr "一次性增量（m、rad）再走 MoveL。空 `frame_id` → 控制器 `base_frame`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 700393b9c35e40099b14bbb239e375ec
 msgid "`/left_target/twist`, `/right_target/twist`"
 msgstr "`/left_target/twist`, `/right_target/twist`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 3bda033411f943eb8720ce43fff4e0f3
 msgid "`geometry_msgs/Twist`"
 msgstr "`geometry_msgs/Twist`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: acdd61a644f54cb8b6a0507e97498fa5
 msgid "`left_arm_handler.send_velocity(linear, angular)`"
 msgstr "`left_arm_handler.send_velocity(linear, angular)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 4e9afc7a83254ae5a711ccc6ca07f131
 msgid ""
 "Velocity `(vx,vy,vz)` m/s and `(wx,wy,wz)` rad/s in `base_frame`. Zero "
 "Twist stops. Not `send_cartesian_velocity` (that method is unimplemented)"
 msgstr ""
-"`base_frame` 下的速度 `(vx,vy,vz)` m/s 与 `(wx,wy,wz)` rad/s。全零 Twist 停止。不是 `send_cartesian_velocity`（该方法未实现）"
+"`base_frame` 下的速度 `(vx,vy,vz)` m/s 与 `(wx,wy,wz)` rad/s。全零 Twist 停止。不是 "
+"`send_cartesian_velocity`（该方法未实现）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 40d4aa64b5a34e0487ca4714fc2fa3ed
 msgid "`/dual_target/stamped`"
 msgstr "`/dual_target/stamped`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: a03511844d434989b247336e9998243f
 msgid "`nav_msgs/Path`"
 msgstr "`nav_msgs/Path`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 10216f7f31ff4f44beaace82f4bd59b4
 msgid "`send_dual_arm_target_stamped(left_pose, right_pose, frame_id=...)`"
 msgstr "`send_dual_arm_target_stamped(left_pose, right_pose, frame_id=...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: b463131c9d4946f2b960bb4926de4ba2
 msgid "Path length **2** (`[left, right]`); WBC may append a third `body` pose"
 msgstr "Path 长度为 **2**（`[left, right]`）；WBC 可能再附第三个 `body` 位姿"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: f02df47f705244ac9cad7a86dd59d6af
 msgid "`/target_path`"
 msgstr "`/target_path`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 60d6e68cc57f47f6ad44efaa99aa62fa
 msgid "`send_target_path(left_poses, right_poses, ...)`"
 msgstr "`send_target_path(left_poses, right_poses, ...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 000401c31d4149ac85a387eb8eddb48e
 msgid ""
 "Dual-arm Cartesian waypoints. **Deprecated** in the Python API; new code "
 "uses `execute_path` (`ExecutePath` service)"
 msgstr "双臂笛卡尔路点。Python API 中**已弃用**；新代码使用 `execute_path`（`ExecutePath` 服务）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 40d4aa64b5a34e0487ca4714fc2fa3ed
 msgid "`/body_target`"
 msgstr "`/body_target`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 529636a1a9c44ea1a6901bbe1199dca9
 msgid "`send_body_target(pose)`"
 msgstr "`send_body_target(pose)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: cae61e0dea964061a179391ccfffacd0
 msgid ""
 "WBC; immediate absolute in `base_frame`. Also switches `/mode_command` to"
 " `BODY_TRACKING`"
 msgstr "WBC；在 `base_frame` 下立即采用绝对位姿。同时把 `/mode_command` 切到 `BODY_TRACKING`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 40d4aa64b5a34e0487ca4714fc2fa3ed
 msgid "`/body_target/stamped`"
 msgstr "`/body_target/stamped`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 8006dc6ad1444b0da5c432e059a95177
 msgid "`send_body_target_stamped(frame_id, pose)`"
 msgstr "`send_body_target_stamped(frame_id, pose)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 4006140bfc0a4e3cae3fe100c6afeb19
 msgid "WBC body MoveL"
 msgstr "WBC 身体 MoveL"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 40d4aa64b5a34e0487ca4714fc2fa3ed
 msgid "`/body_target/relative`"
 msgstr "`/body_target/relative`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 60d6e68cc57f47f6ad44efaa99aa62fa
 msgid "`send_body_relative(dx, dy, dz, ...)`"
 msgstr "`send_body_relative(dx, dy, dz, ...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c3d8cf6f340c43b4b36a32722b175e21
 msgid "WBC one-shot body increment + MoveL"
 msgstr "WBC 身体一次性增量再走 MoveL"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:80
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 700393b9c35e40099b14bbb239e375ec
+#, #
+msgid "`/head_target`, `/head_target/stamped`"
+msgstr "`/head_target`、`/head_target/stamped`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: faa8a3b7b93c44fc827d091776dd2de8
+#, #
+msgid "`geometry_msgs/Pose` / `PoseStamped`"
+msgstr "`geometry_msgs/Pose` / `PoseStamped`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: b20117d7e3dd4f249c066cf5f20883d1
+msgid "—"
+msgstr "—"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 9c8800b740a6487f8705994ce78aae96
+msgid ""
+"WBC Head 6D on `arms_target_manager`. API_REFERENCE maps head **joints** "
+"(`send_head_joint_positions`), not these Cartesian topics"
+msgstr "WBC 头部 6D 在 `arms_target_manager` 上。API_REFERENCE 映射的是头部**关节**（`send_head_joint_positions`），不是这些笛卡尔话题"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:88
 #: 851689db8bd2406faac871090ed493d8
 msgid "MoveJ joint targets"
 msgstr "MoveJ 关节目标"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:82
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:90
 #: 6b20c84897d54e3b9b582ba1e9b2c7b0
 msgid ""
 "`std_msgs/Float64MultiArray`. `connect()` prefers WBC topics when both "
 "exist. Implicit FSM → MOVEJ."
-msgstr ""
-"`std_msgs/Float64MultiArray`。两者都在时 `connect()` 优先 WBC 话题。隐式 FSM → MOVEJ。"
+msgstr "`std_msgs/Float64MultiArray`。两者都在时 `connect()` 优先 WBC 话题。隐式 FSM → MOVEJ。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 7a1d91faee3f413e9298d930817c00cb
 msgid "When"
 msgstr "何时"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 4ec4b75a2f354b499e4421842b54f9ac
 msgid "`/ocs2_wbc_controller/target_joint_position/left` (or `/right`)"
 msgstr "`/ocs2_wbc_controller/target_joint_position/left` (or `/right`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: acdd61a644f54cb8b6a0507e97498fa5
 msgid "`left_arm_handler.send_joint_positions(...)`"
 msgstr "`left_arm_handler.send_joint_positions(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 17981596080b4f0c8a941324ff5ba11a
 msgid "全身 / `full_body.launch.py`"
 msgstr "全身 / `full_body.launch.py`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 6ed5f9467aa04114a002273c22f26366
 msgid "`/ocs2_arm_controller/target_joint_position/left` (or `/right`)"
 msgstr "`/ocs2_arm_controller/target_joint_position/left` (or `/right`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 9b9cac7a02e5467596df5f359d84da4d
 msgid "same handler"
 msgstr "同一 handler"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 27211d86fea24d8db6de334c58653cfe
 msgid "分体 / `split_body.launch.py`"
 msgstr "分体 / `split_body.launch.py`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 5e4b8163dbdf43419cefd1f76b58c80d
 msgid "`/ocs2_arm_controller/target_joint_position`"
 msgstr "`/ocs2_arm_controller/target_joint_position`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c3ab9ec4a9b1407bba29d7f03a950830
 msgid "same, single-arm"
 msgstr "同上，单臂"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 65cbcb57a1234641bdb323a6deb2e3bf
 msgid "Single-arm OCS2 (no `/left` suffix)"
 msgstr "单臂 OCS2（无 `/left` 后缀）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 40f9d8c3924843a4b586a9aff410196d
 msgid "`/ocs2_wbc_controller/target_joint_position`"
 msgstr "`/ocs2_wbc_controller/target_joint_position`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: b97aab935f6d40998d9ee0fc4d9d0ba3
 msgid "`send_dual_arm_joint_positions(...)`"
 msgstr "`send_dual_arm_joint_positions(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 44e3b0bf301d4ca898166f87e4e2bd0d
 msgid "Unified dual-arm + body on WBC"
 msgstr "WBC 上统一的双臂 + 身体"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: ee0df68ca85e42ff81446327c5f5b477
 msgid "`/ocs2_wbc_controller/target_joint_position/body`"
 msgstr "`/ocs2_wbc_controller/target_joint_position/body`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 5d215bf5d5864ed5a722b446f0574589
 msgid "`send_body_joint_positions(...)`"
 msgstr "`send_body_joint_positions(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 06dcf5e19acd46cfa9cf92625a2cf73f
 msgid "全身 waist / body"
 msgstr "全身 waist / body"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 2299f91e1a07436995329803271b9176
 msgid "`/body_joint_controller/target_joint_position`"
 msgstr "`/body_joint_controller/target_joint_position`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 0282980d59ce4d00889237998ae3a9eb
 msgid "分体 waist (`basic_joint_controller`)"
 msgstr "分体 waist (`basic_joint_controller`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 55a997a8a14542f7b80232bb12aebb02
 msgid "`/ocs2_wbc_controller/target_joint_position/head`"
 msgstr "`/ocs2_wbc_controller/target_joint_position/head`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c02db1d9193849979f1bf56e61543bf4
 msgid "`send_head_joint_positions(...)`"
 msgstr "`send_head_joint_positions(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 7b43ba47248a4a6a9342c9938955dc31
 msgid "全身 head"
 msgstr "全身 head"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 16809119882f48eaaf781da6fca34c40
 msgid "`/head_joint_controller/target_joint_position`"
 msgstr "`/head_joint_controller/target_joint_position`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: eda9822ab93f493faae64b25ce2ba917
 msgid "分体 / always-on head `basic_joint_controller`"
 msgstr "分体 / always-on head `basic_joint_controller`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 5e4b8163dbdf43419cefd1f76b58c80d
 #, python-brace-format
 msgid "`/{arm_controller}/target_joint_trajectory`"
 msgstr "`/{arm_controller}/target_joint_trajectory`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: b4b1afffe78745c9880169ca930b86c9
 msgid "`send_joint_trajectory(joint_names, waypoints, …)`"
 msgstr "`send_joint_trajectory(joint_names, waypoints, …)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 8b35893580dc43cf847e5a42403ab6a3
 msgid ""
 "e.g. `/ocs2_wbc_controller/target_joint_trajectory`; controller name from"
 " the arm joint topic"
 msgstr "例如 `/ocs2_wbc_controller/target_joint_trajectory`；控制器名从手臂关节话题解析"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 2299f91e1a07436995329803271b9176
 msgid "`/body_joint_controller/target_joint_trajectory`"
 msgstr "`/body_joint_controller/target_joint_trajectory`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 5d215bf5d5864ed5a722b446f0574589
 msgid "`send_body_joint_trajectory(...)`"
 msgstr "`send_body_joint_trajectory(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 180a59f553244637b3b8c7db424dcbc0
 msgid ""
 "分体 waist trajectory. WBC: same `send_joint_trajectory` with body joint "
 "names"
 msgstr "分体腰部轨迹。WBC：同样用 `send_joint_trajectory`，关节名选躯干"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 16809119882f48eaaf781da6fca34c40
 msgid "`/head_joint_controller/target_joint_trajectory`"
 msgstr "`/head_joint_controller/target_joint_trajectory`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: c02db1d9193849979f1bf56e61543bf4
 msgid "`send_head_joint_trajectory(...)`"
 msgstr "`send_head_joint_trajectory(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 3ba5877629df467c863259d2cf24496e
 msgid "分体 head trajectory"
 msgstr "分体头部轨迹"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:98
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:106
 #: fcb20d0da8d34ac6b3b8bfdae8840649
 msgid "Gripper and hand"
 msgstr "夹爪与手"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:100
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:108
 #: 2d403afcb2174cceabcf7361093df3e4
 msgid ""
 "`connect()` picks `hand_controller` vs `gripper_controller` (and "
 "left/right names). Discrete open/close is the RViz-style topic; Float64 "
 "position is the Python stroke command; `target_percent` is 0–1."
 msgstr ""
-"`connect()` 会选择 `hand_controller` 或 `gripper_controller`（以及左/右名称）。离散开合是 RViz 风格话题；Float64 位置是 Python 行程命令；`target_percent` 为 0–1。"
+"`connect()` 会选择 `hand_controller` 或 `gripper_controller`（以及左/右名称）。离散开合是 "
+"RViz 风格话题；Float64 位置是 Python 行程命令；`target_percent` 为 0–1。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:102
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:110
 #: 7553516b7d2d4822a42231eec56c0804
 msgid ""
 "On **adaptive_gripper_controller**, `send_joint_positions` is direct "
@@ -777,142 +919,153 @@ msgid ""
 "percent/switch topics blend Home open/close configs "
 "(`target_command_enabled`)."
 msgstr ""
-"在 **adaptive_gripper_controller** 上，`send_joint_positions` 是直接位置模式（**无力反馈**）。`send_target_command` / `send_position_percent` 走开关 / 比例通道（关闭时有力反馈）。在 **basic_joint_controller** 手上，同样的比例/开关话题混合 Home 开合构型（`target_command_enabled`）。"
+"在 **adaptive_gripper_controller** 上，`send_joint_positions` "
+"是直接位置模式（**无力反馈**）。`send_target_command` / `send_position_percent` 走开关 / "
+"比例通道（关闭时有力反馈）。在 **basic_joint_controller** 手上，同样的比例/开关话题混合 Home "
+"开合构型（`target_command_enabled`）。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: d05ff2bec7b64280b88aa8f4afd22234
 msgid ""
 "`/left_gripper_controller/target_command` (also `/right_…`, "
 "`/gripper_controller/…`)"
-msgstr "`/left_gripper_controller/target_command` (also `/right_…`, `/gripper_controller/…`)"
+msgstr ""
+"`/left_gripper_controller/target_command` (also `/right_…`, "
+"`/gripper_controller/…`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 868a84b16c1848ba944e04e26b443fdc
 msgid "`std_msgs/Int32` (`0` close / `1` open)"
 msgstr "`std_msgs/Int32` (`0` close / `1` open)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: e6b8af68edde4b8a882b6a86818cfbf3
 msgid "`left_gripper_handler.send_target_command(0|1)`"
 msgstr "`left_gripper_handler.send_target_command(0|1)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 6e6e336e375a42cfb40ffbe70d59c9be
 msgid "Adaptive gripper switch"
 msgstr "自适应夹爪开关"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 49131b74b62049e19bcf53344d3b6715
 msgid ""
 "`/left_gripper_joint/position_command` (also `/right_…`, config "
 "`gripper_command_topic`)"
-msgstr "`/left_gripper_joint/position_command` (also `/right_…`, config `gripper_command_topic`)"
+msgstr ""
+"`/left_gripper_joint/position_command` (also `/right_…`, config "
+"`gripper_command_topic`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 67c9ec6cb27643d09ef15a6f9256bffa
 msgid "`std_msgs/Float64`"
 msgstr "`std_msgs/Float64`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 6b9f9f8bc6eb4554b694b0c1f5faaffc
 msgid "`left_gripper_handler.send_joint_positions(position)`"
 msgstr "`left_gripper_handler.send_joint_positions(position)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 1c73704040264ec8955a0d2c351f4d05
 msgid ""
 "Stroke in hardware units, **not** a 0–1 percent. Clamp with "
 "`gripper_min_position` / `gripper_max_position`. No adaptive force "
 "feedback"
 msgstr ""
-"硬件单位行程，**不是** 0–1 百分比。用 `gripper_min_position` / `gripper_max_position` 限幅。无自适应力反馈"
+"硬件单位行程，**不是** 0–1 百分比。用 `gripper_min_position` / `gripper_max_position` "
+"限幅。无自适应力反馈"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: d05ff2bec7b64280b88aa8f4afd22234
 msgid ""
 "`/left_gripper_controller/target_percent` (also `/right_…`, "
 "`/gripper_controller/…`)"
-msgstr "`/left_gripper_controller/target_percent` (also `/right_…`, `/gripper_controller/…`)"
+msgstr ""
+"`/left_gripper_controller/target_percent` (also `/right_…`, "
+"`/gripper_controller/…`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 45d9d6adfc58421c99f29796ecd0470f
 msgid "`std_msgs/Float64` (`0.0`–`1.0`)"
 msgstr "`std_msgs/Float64` (`0.0`–`1.0`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 6b9f9f8bc6eb4554b694b0c1f5faaffc
 msgid "`left_gripper_handler.send_position_percent(percent)`"
 msgstr "`left_gripper_handler.send_position_percent(percent)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 416d3faab2834365928a8b33ea3a25bf
 msgid "Percent channel; raises if the publisher was not detected"
 msgstr "比例通道；未检测到 publisher 时抛错"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 113a9cf6cbd547189bea3d84d2eba749
 msgid ""
 "`/left_hand_controller/target_command` (also `/right_…`, "
 "`/hand_controller/…`)"
 msgstr ""
-"`/left_hand_controller/target_command` (also `/right_…`, `/hand_controller/…`)"
+"`/left_hand_controller/target_command` (also `/right_…`, "
+"`/hand_controller/…`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 45d9d6adfc58421c99f29796ecd0470f
 msgid "`std_msgs/Int32` (`0`/`1`)"
 msgstr "`std_msgs/Int32` (`0`/`1`)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: fe8268caf99242cabfcf3fff89d871bc
 msgid "same `send_target_command` after the hand controller is detected"
 msgstr "检测到手控制器后同样用 `send_target_command`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 771995b83afa49fca7d1d25e704db439
 msgid "Dexterous hand open/close when `target_command_enabled` is on"
 msgstr "`target_command_enabled` 开启时的灵巧手开合"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 2c43b9856bf943f681e48b0453492dfb
 msgid "`/left_hand_controller/target_percent`"
 msgstr "`/left_hand_controller/target_percent`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: fe8268caf99242cabfcf3fff89d871bc
 msgid "same `send_position_percent` after the hand controller is detected"
 msgstr "检测到手控制器后同样用 `send_position_percent`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: eda9822ab93f493faae64b25ce2ba917
 msgid "Home-config blend on `basic_joint_controller`"
 msgstr "`basic_joint_controller` 上的 Home 构型混合"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 2c43b9856bf943f681e48b0453492dfb
 msgid "`/left_hand_controller/target_joint_position`"
 msgstr "`/left_hand_controller/target_joint_position`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 14b2dd41a483423fa61a81e75fd4c6d4
 msgid "`std_msgs/Float64MultiArray`"
 msgstr "`std_msgs/Float64MultiArray`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 56f282ef9dc64df7b771f5d897f708f4
 msgid "`send_left_hand_joint_positions(...)`"
 msgstr "`send_left_hand_joint_positions(...)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 90aa976fe4824b1b96411b6e3f0bb77f
 msgid "Per-joint hand MoveJ"
 msgstr "按关节的手部 MoveJ"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:113
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:121
 #: 0282980d59ce4d00889237998ae3a9eb
 msgid "Waist (`basic_joint_controller` / WBC body)"
 msgstr "腰部（`basic_joint_controller` / WBC 身体）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:115
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:123
 #: b36428dc89504e6b92c9f1aa9408472d
 msgid ""
 "Implicit FSM → MOVEJ. Split prefix `/body_joint_controller/…`; WBC prefix"
@@ -920,150 +1073,301 @@ msgid ""
 "API_REFERENCE prefers `execute_waist_lifting_pose_*_action` when you need"
 " a result."
 msgstr ""
-"隐式 FSM → MOVEJ。分体前缀 `/body_joint_controller/…`；WBC 前缀 `/ocs2_wbc_controller/…`。话题方法发出即走；需要执行结果时 API_REFERENCE 更推荐 `execute_waist_lifting_pose_*_action`。"
+"隐式 FSM → MOVEJ。分体前缀 `/body_joint_controller/…`；WBC 前缀 "
+"`/ocs2_wbc_controller/…`。话题方法发出即走；需要执行结果时 API_REFERENCE 更推荐 "
+"`execute_waist_lifting_pose_*_action`。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 9f288c11dae743eba2760c2b71af3f54
 msgid "`…/waist_lifting`"
 msgstr "`…/waist_lifting`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 56f282ef9dc64df7b771f5d897f708f4
 msgid "`send_waist_lifting_relative_position(dz)`"
 msgstr "`send_waist_lifting_relative_position(dz)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 65cbcb57a1234641bdb323a6deb2e3bf
 msgid "Single-axis height delta (m)"
 msgstr "单轴高度增量（米）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: e9a987d5c9ed4ab4888c2537c5becbc8
 msgid "`…/waist_lifting_pose_relative`"
 msgstr "`…/waist_lifting_pose_relative`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 14b2dd41a483423fa61a81e75fd4c6d4
 msgid "`std_msgs/Float64MultiArray` `[dx, dz, dphi]`"
 msgstr "`std_msgs/Float64MultiArray` `[dx, dz, dphi]`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 0949c347921542e9ac95893f61ffb81b
 msgid "`send_waist_lifting_pose_relative(dx, dz, dphi)`"
 msgstr "`send_waist_lifting_pose_relative(dx, dz, dphi)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: cf9d65f8f7314b8ba96442f062f9d95d
 msgid "Local relative motion"
 msgstr "局部相对运动"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: ed9398361d8344f69ccc9c3337a6a291
 msgid "`…/waist_lifting_pose_absolute`"
 msgstr "`…/waist_lifting_pose_absolute`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 14b2dd41a483423fa61a81e75fd4c6d4
 msgid "`std_msgs/Float64MultiArray` `[x, z, phi]`"
 msgstr "`std_msgs/Float64MultiArray` `[x, z, phi]`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 60d6e68cc57f47f6ad44efaa99aa62fa
 msgid "`send_waist_lifting_pose_absolute(x, z, phi)`"
 msgstr "`send_waist_lifting_pose_absolute(x, z, phi)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: a46c665ee94246acbc2d9d6ea86b0fba
 msgid "Absolute `[x, z, phi]` (TF frames on the controller)"
 msgstr "绝对 `[x, z, phi]`（控制器上的 TF 坐标系）"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: bbd235fa0d9444bfad6a5e5c34ccd484
 msgid "`…/waist_lifting_command`"
 msgstr "`…/waist_lifting_command`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 4d6462148c3d4b99af30b131225c3c8c
 msgid "`send_waist_lifting_velocity_scale(scale)`"
 msgstr "`send_waist_lifting_velocity_scale(scale)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: eeac53fe98c14adea454fa1eb2a0fdbe
 msgid "Velocity factor `[-1, 1]`"
 msgstr "速度系数 `[-1, 1]`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: bbd235fa0d9444bfad6a5e5c34ccd484
 msgid "`…/waist_turning_command`"
 msgstr "`…/waist_turning_command`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 66d84e6418c547f9a68444967d066ac2
 msgid "`send_waist_turning_velocity_scale(scale)`"
 msgstr "`send_waist_turning_velocity_scale(scale)`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:31
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
 #: 1f312ee04c174d0ead52f58c83e86271
 msgid "Turning velocity factor `[-1, 1]`"
 msgstr "转向速度系数 `[-1, 1]`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:125
-#: dce52c6dadc04418b06e9b144f38fab2
-msgid "Actions (high level)"
-msgstr "Action（高层）"
-
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:127
-#: aef8c934074f41ea84e063ab66f5fe23
-msgid ""
-"Parameterized **MoveJ / MoveL / MoveC** actions are in the package "
-"README. Default action names on `ROS2RobotInterfaceConfig`:"
-msgstr ""
-"参数化 **MoveJ / MoveL / MoveC** Action 见软件包 README。`ROS2RobotInterfaceConfig` 上的默认 Action 名："
-
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:129
-#: 8b35893580dc43cf847e5a42403ab6a3
-msgid ""
-"`/ocs2_arm_controller/joint_trajectory_with_para` — "
-"`execute_joint_trajectory_action` / `execute_dual_arm_movej_action`"
-msgstr "`/ocs2_arm_controller/joint_trajectory_with_para` — `execute_joint_trajectory_action` / `execute_dual_arm_movej_action`"
-
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:130
-#: 62a40d25028e412ea646ad4394ade579
-msgid "`/ocs2_arm_controller/execute_linear` — `execute_movel_action`"
-msgstr "`/ocs2_arm_controller/execute_linear` — `execute_movel_action`"
-
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:131
-#: 3c20f3d7d0fe4d348b5c89925901932f
-msgid ""
-"`/ocs2_arm_controller/execute_circle_use_ik` — "
-"`execute_movec_action_three_point` / `execute_movec_action_parametric`"
-msgstr "`/ocs2_arm_controller/execute_circle_use_ik` — `execute_movec_action_three_point` / `execute_movec_action_parametric`"
-
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:133
-#: 936f931256434575897585216f939bd5
-msgid ""
-"Waist pose actions (`execute_waist_lifting_pose_relative_action` / "
-"`execute_waist_lifting_pose_absolute_action`) wait for planning / "
-"arrival; they are not the waist **topic** rows above."
-msgstr ""
-"腰部位姿 Action（`execute_waist_lifting_pose_relative_action` / `execute_waist_lifting_pose_absolute_action`）会等待规划 / 到位；它们不是上面的腰部**话题**行。"
+#: dce52c6dadc04418b06e9b144f38fab2
+#, #
+msgid "Action ↔ API map"
+msgstr "Action ↔ API 对照"
 
 #: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:135
-#: 043a6be334d94e93992d02338d7f7ee5
+#: 09d9293fca674ca7bef37e07af20c4bb
 msgid ""
-"These wait for an action result (or timeout). They are not the topic "
-"table above. Signatures and `max_*` fallbacks: "
+"These wait for an action result (or timeout). They are not the topic rows"
+" above. Default **arm** names on `ROS2RobotInterfaceConfig` point at "
+"`ocs2_arm_controller`; override the config if the controller is "
+"namespaced. Waist action name is auto-detected "
+"(`/ocs2_wbc_controller/waist_lifting_pose` or "
+"`/body_joint_controller/waist_lifting_pose`). Type definitions: "
+"[`arms_ros2_control_msgs` README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)."
+" Topic vs Action vs Service: [FSM and "
+"Topics](../../3-concepts/4-fsm_and_topics.md)."
+msgstr "这些会等待 Action 结果（或超时）。不是上面的话题行。`ROS2RobotInterfaceConfig` 上默认的**手臂**名指向 `ocs2_arm_controller`；控制器带命名空间时请覆盖配置。腰部 Action 名会自动检测（`/ocs2_wbc_controller/waist_lifting_pose` 或 `/body_joint_controller/waist_lifting_pose`）。类型定义：[`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)。话题 vs Action vs Service：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: b2773936ec3e46669c3f57549a6273ae
+msgid "Action"
+msgstr "Action"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: cf7a23561987476ab138975a20d22477
+msgid "Typical path"
+msgstr "典型路径"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 19c257e394584352af243c908fc9f430
+msgid "`ExecuteLinear`"
+msgstr "`ExecuteLinear`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 62a40d25028e412ea646ad4394ade579
+#, #
+msgid "`/ocs2_arm_controller/execute_linear`"
+msgstr "`/ocs2_arm_controller/execute_linear`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 62a40d25028e412ea646ad4394ade579
+msgid "`execute_movel_action`"
+msgstr "`execute_movel_action`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 44e5450acdb14e52bec5d6ec6cf50651
+msgid ""
+"Parameterized MoveL (`LinearMessage`). `auto_switch_fsm=True` (default) "
+"switches FSM to **MOVEJ**"
+msgstr "参数化 MoveL（`LinearMessage`）。`auto_switch_fsm=True`（默认）把 FSM 切到 **MOVEJ**"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 4b8b699c8b9348ca98b077f83073ffe0
+msgid "`MovecUseIK`"
+msgstr "`MovecUseIK`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 62a40d25028e412ea646ad4394ade579
+#, #
+msgid "`/ocs2_arm_controller/execute_circle_use_ik`"
+msgstr "`/ocs2_arm_controller/execute_circle_use_ik`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 3c20f3d7d0fe4d348b5c89925901932f
+#, #
+msgid "`execute_movec_action_three_point` / `execute_movec_action_parametric`"
+msgstr "`execute_movec_action_three_point` / `execute_movec_action_parametric`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 110a9cccb5f444b098bf467f0c486b7d
+msgid "MoveC (`CircleMessage`; three-point or parametric). Default FSM → MOVEJ"
+msgstr "MoveC（`CircleMessage`；三点法或参数法）。默认 FSM → MOVEJ"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 5d215bf5d5864ed5a722b446f0574589
+#, #
+msgid "`JointTrajectory`"
+msgstr "`JointTrajectory`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 6ed5f9467aa04114a002273c22f26366
+#, python-brace-format
+msgid "`/ocs2_arm_controller/joint_trajectory_with_para`"
+msgstr "`/ocs2_arm_controller/joint_trajectory_with_para`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 8b35893580dc43cf847e5a42403ab6a3
+#, #
+msgid "`execute_joint_trajectory_action` / `execute_dual_arm_movej_action`"
+msgstr "`execute_joint_trajectory_action` / `execute_dual_arm_movej_action`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 69524e2a53e64b5f97416fc378cd2b76
+msgid ""
+"Parameterized MoveJ (`JointWaypoint[]`). Topic `send_joint_trajectory` "
+"has **no** result"
+msgstr "参数化 MoveJ（`JointWaypoint[]`）。话题 `send_joint_trajectory` **没有**结果"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: bbd235fa0d9444bfad6a5e5c34ccd484
+#, #
+msgid "`WaistLiftingPose`"
+msgstr "`WaistLiftingPose`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: bbd235fa0d9444bfad6a5e5c34ccd484
+#, #
+msgid "`…/waist_lifting_pose`"
+msgstr "`…/waist_lifting_pose`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 936f931256434575897585216f939bd5
+msgid ""
+"`execute_waist_lifting_pose_absolute_action` / "
+"`execute_waist_lifting_pose_relative_action`"
+msgstr "`execute_waist_lifting_pose_absolute_action` / `execute_waist_lifting_pose_relative_action`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: f8c00947c1994b7eb2aee1d6555fa18f
+msgid ""
+"Goal `MODE_ABSOLUTE=0` / `MODE_RELATIVE=1`. Topic "
+"`send_waist_lifting_pose_*` is fire-and-forget"
+msgstr "目标 `MODE_ABSOLUTE=0` / `MODE_RELATIVE=1`。话题 `send_waist_lifting_pose_*` 发出即走"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:144
+#: 043a6be334d94e93992d02338d7f7ee5
+#, #
+msgid ""
+"`wait_for_*_action_server` helpers exist for each. Unstamped / stamped "
+"**topics** switch to **OCS2**; these Cartesian / joint actions default to"
+" **MOVEJ**. Signatures and `max_*` fallbacks: "
 "[API_REFERENCE.md](https://github.com/fiveages-"
 "sim/ros2_robot_interface/blob/main/API_REFERENCE.md)."
-msgstr ""
-"它们会等待 Action 结果（或超时）。不是上面的话题表。签名与 `max_*` 回退见 [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
+msgstr "每项都有 `wait_for_*_action_server` 辅助函数。无 stamp / 有 stamp 的**话题**切到 **OCS2**；这些笛卡尔 / 关节 Action 默认切到 **MOVEJ**。签名与 `max_*` 回退见 [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md)。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:137
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:146
+#: 1dd252fe02ac4af9be555fa1dfd94915
+#, #
+msgid "Service ↔ API map"
+msgstr "Service ↔ API 对照"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:148
+#: aa69ff9b9fc7449e865dfd81ad665752
+msgid ""
+"Python wraps **`ExecutePath`** among the msgs README srv types. Service "
+"is a single request/response (no `progress`)."
+msgstr "在 msgs README 的 srv 类型里，Python 封装了 **`ExecutePath`**。Service 是一次请求/响应（没有 `progress`）。"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: d8c62fbde2b545d8ac042e0ecb050678
+msgid "Service"
+msgstr "Service"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: ed03f192ad3f4261ababc30f548bab80
+msgid "Name"
+msgstr "名称"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: f02df47f705244ac9cad7a86dd59d6af
+msgid "`ExecutePath`"
+msgstr "`ExecutePath`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: f02df47f705244ac9cad7a86dd59d6af
+#, #
+msgid "`execute_path`"
+msgstr "`execute_path`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 62a40d25028e412ea646ad4394ade579
+msgid "`execute_path` / `execute_left_path` / `execute_right_path`"
+msgstr "`execute_path` / `execute_left_path` / `execute_right_path`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:55
+#: 3ed57d78fc024fe09c0348fd9326c198
+msgid ""
+"Left/right `nav_msgs/Path` + `trajectory_duration`; implicit FSM → OCS2. "
+"Replaces deprecated `/target_path`"
+msgstr "左右臂 `nav_msgs/Path` + `trajectory_duration`；隐式 FSM → OCS2。取代已弃用的 `/target_path`"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:154
+#: bfaca05bf2774f70959191a940cb34b2
+msgid ""
+"The msgs README also defines srv `ExecuteLinear`, `ExecuteCircle`, "
+"`MovecUseIK`, `JointTrajectory`, `CartesianPath`, and "
+"`KinematicsService`. Those have **no** `ros2_robot_interface` method — "
+"call them with ROS 2 clients if the running controller advertises them."
+msgstr "msgs README 还定义了 srv `ExecuteLinear`、`ExecuteCircle`、`MovecUseIK`、`JointTrajectory`、`CartesianPath` 和 `KinematicsService`。它们**没有** `ros2_robot_interface` 方法——若正在运行的控制器 advertise 了它们，请用 ROS 2 客户端直接调用。"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:156
+#: 6c459afab7504b768d97f00ce0f7dd35
+msgid ""
+"`call_compliance_zero_wrench()` is a separate FT zeroing service in "
+"API_REFERENCE, not one of the cartesian msgs types above."
+msgstr "`call_compliance_zero_wrench()` 是 API_REFERENCE 里单独的力传感器调零服务，不是上面那些笛卡尔 msgs 类型。"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:158
 #: 54abd1824cd142c68de25caf23fe38df
 msgid "Lift 2S vendor `/body_control`"
 msgstr "Lift 2S 厂商 `/body_control`"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:140
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:161
 #: 84a423b8731747b3b7ef5efca0434aa7
 msgid ""
 "ARX Lift 2S has a separate vendor chassis/lift command path "
@@ -1074,34 +1378,46 @@ msgid ""
 "[ARX Lift "
 "2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)."
 msgstr ""
-"ARX Lift 2S 另有厂商底盘/升降命令路径（`/body_control`）。那套栈**不是** `ros2_robot_interface`，也不是表中的 OCS2 身体话题（`/body_joint_controller/target_joint_position` 或 `/ocs2_wbc_controller/target_joint_position/body`）。硬件接入：[ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
+"ARX Lift 2S 另有厂商底盘/升降命令路径（`/body_control`）。那套栈**不是** "
+"`ros2_robot_interface`，也不是表中的 OCS2 "
+"身体话题（`/body_joint_controller/target_joint_position` 或 "
+"`/ocs2_wbc_controller/target_joint_position/body`）。硬件接入：[ARX Lift "
+"2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:143
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:164
 #: 5d37dc68dbb5495dbe57e626c011f075
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:145
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:166
 #: 0dc5702c20a248de84c0f8602ab43082
 msgid ""
 "[Python Interface How-"
 "To](../../2-how_to/3-programming/5-python_interface.md)"
 msgstr "[Python 接口操作指南](../../2-how_to/3-programming/5-python_interface.md)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:146
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:167
 #: 2f041231042f4e7299bb73e17257b65e
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:147
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:168
 #: 70c5a993da2842c7837410daac1a59e5
 msgid "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 
-#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:148
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:169
 #: 7d545eb97fc4424fb94c303111ac6fe9
 msgid "[fa-py-libraries](2-fa_py_libraries.md)"
 msgstr "[fa-py-libraries](2-fa_py_libraries.md)"
+
+#: ../../source/4-reference/python_apps/1-ros2_robot_interface.md:170
+#: 56cb9ba64f974b488110047f37a1073f
+msgid ""
+"[arms_ros2_control_msgs README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
+" — msg / srv / action types"
+msgstr "[arms_ros2_control_msgs README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md) — msg / srv / action 类型"
 
 #~ msgid "pip install ros2-robot-interface\n"
 #~ msgstr "pip install ros2-robot-interface\n"
@@ -1338,4 +1654,28 @@ msgstr "[fa-py-libraries](2-fa_py_libraries.md)"
 #~ "`target_command_enabled` is on; MOVEJ / "
 #~ "OCS2"
 #~ msgstr ""
+
+#~ msgid "Actions (high level)"
+#~ msgstr "Action（高层）"
+
+#~ msgid ""
+#~ "Parameterized **MoveJ / MoveL / MoveC**"
+#~ " actions are in the package README."
+#~ " Default action names on "
+#~ "`ROS2RobotInterfaceConfig`:"
+#~ msgstr ""
+#~ "参数化 **MoveJ / MoveL / MoveC** "
+#~ "Action 见软件包 README。`ROS2RobotInterfaceConfig` 上的默认"
+#~ " Action 名："
+
+#~ msgid ""
+#~ "Waist pose actions "
+#~ "(`execute_waist_lifting_pose_relative_action` / "
+#~ "`execute_waist_lifting_pose_absolute_action`) wait for "
+#~ "planning / arrival; they are not "
+#~ "the waist **topic** rows above."
+#~ msgstr ""
+#~ "腰部位姿 Action（`execute_waist_lifting_pose_relative_action` /"
+#~ " `execute_waist_lifting_pose_absolute_action`）会等待规划 / "
+#~ "到位；它们不是上面的腰部**话题**行。"
 
