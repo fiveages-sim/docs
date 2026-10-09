@@ -26,11 +26,11 @@ Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside a proj
 
 ## Quick start
 
-The following example is the package README “Basic Example”, pinned at commit [`200ea42`](https://github.com/fiveages-sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md). How to refresh the pin: [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
+The following example is the package README “Basic Example”, pinned at commit [`200ea42`](https://github.com/fiveages-sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md). How to refresh the pin (and recompute `:start-line:` / `:end-line:`): [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
 ```{include} ../../_vendored/ros2_robot_interface/README.md
-:start-after: Basic Example
-:end-before: Center of Mass
+:start-line: 30
+:end-line: 73
 ```
 
 `connect()` auto-detects dual-arm pose topics, gripper / hand controllers, and split vs whole-body joint topics when they are already in the ROS graph. `is_connected` is a **property**. Cartesian and joint sends go through handlers (`left_arm_handler`, `right_arm_handler`, `left_gripper_handler`, …), not a `move_j` / `move_l` wrapper.

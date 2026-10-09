@@ -149,7 +149,7 @@ Admonition content.
 
 ### Code Blocks
 
-Use fenced code blocks with language. **Do not use unlabeled** `` ``` `` **fences** for ASCII diagrams or directory trees — sphinx-intl turns those into RST `::` and Chinese HTML leaks a bare `::`. Use a colon fence instead:
+Use fenced code blocks with a language tag (or `{code-block} none` for trees). Unlabeled `` ``` `` fences become RST `::` and zh_CN HTML can leak a bare `::`. Keep the matching `.po` `msgstr` **identical** to `msgid` for every code or tree block: a translated comment, extra line, or dropped line is re-parsed as RST `::`, and MyST `colon_fence` then drops the real block.
 
 :::{code-block} none
 Controllers
@@ -249,7 +249,11 @@ python3 scripts/vendor_upstream_md.py --bump basic_joint_controller --sha <full-
 python3 scripts/vendor_upstream_md.py --bump adaptive_gripper_controller --sha <full-sha>
 ```
 
-Commit `SOURCES.json` and the vendored markdown together. Relative / private images are stripped on fetch so the HTML build does not depend on missing files. After a bump, confirm the `{include}` `:start-after:` / `:end-before:` strings on [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md) still match the README (omit `#` in those option values — Docutils treats `#` as a comment).
+Commit `SOURCES.json` and the vendored markdown together. Relative / private images are stripped on fetch so the HTML build does not depend on missing files.
+
+After a bump, recompute `{include}` **`:start-line:` / `:end-line:`** on the pages that slice a vendored README ([basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md), [gripper plugins](../4-reference/controllers/6-gripper_teleop_plugins.md), [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)). Line numbers are 1-based. Set `:end-line:` to the last line of the slice — typically the blank line or `---` **before** the next heading — then rebuild and confirm that heading is not in the HTML.
+
+Do **not** cut a slice with `:end-before:` / `:start-after:` against heading text. Those options truncate **mid-line**, so a marker such as `Demo Launch` against `## 7. Demo Launch` leaves `## 7.` as an empty-ish heading. You also cannot put `#` in those option values — Docutils treats `#` as a comment.
 
 `conf.py` lists `_vendored/` in `exclude_patterns` so the copy is not a sidebar page.
 

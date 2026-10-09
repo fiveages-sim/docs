@@ -102,6 +102,10 @@ python3 scripts/check_zh_mix.py
 
 zh_CN coverage must stay 100% (CI threshold 95%). Also run `python3 scripts/check_zh_mix.py` (fuzzy / leftover English — see `.cursor/skills/zh-translation-qa/SKILL.md`). Never nest `` ``` `` inside `` ```{admonition} ``; use `:::` colon fences. User-facing docs are bilingual; fill new English strings in `locale/zh_CN`.
 
+For `{include}` slices of `_vendored/` READMEs, prefer `:start-line:` / `:end-line:` (1-based). Set `:end-line:` to the last line of the slice (the blank line or `---` **before** the next heading) and recompute after a vendor bump. Docutils `:end-before:` / `:start-after:` cut **mid-line**: a marker such as `Demo Launch` against `## 7. Demo Launch` leaves `## 7.` as a heading. You cannot put `#` in those option values (Docutils comment).
+
+Code / tree `literal-block` catalog entries must keep `msgstr` identical to `msgid`. A translated comment or an extra/missing line is re-parsed as RST `::`, and MyST `colon_fence` leaks a bare `::` in zh_CN HTML.
+
 ## Sidebar chapters and 导读
 
 Every top-level sidebar chapter in `source/index.md` that has a single landing `0-index` as the first toctree entry:

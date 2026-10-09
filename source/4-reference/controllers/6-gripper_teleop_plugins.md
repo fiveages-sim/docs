@@ -8,7 +8,7 @@ Controller plugins for grippers and teleoperation.
 
 Listed in the [arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md). The launch stack does **not** take `gripper:=`. Attach an end-effector with `type` / `left_type` / `right_type` (and optional `robot_profile` / `use_profile_eef`) from [robot_common_launch](../descriptions/2-common.md).
 
-Pin: [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md). How to refresh: [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
+Pin: [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md). How to refresh the pin (and recompute `:start-line:` / `:end-line:`): [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
 ### Three command channels
 
@@ -23,8 +23,8 @@ Each channel takes effect immediately. Joint limits and open/close positions com
 The README topic summary (Chinese source, same commit):
 
 ```{include} ../../_vendored/arms_ros2_control/adaptive_gripper_controller/README.md
-:start-after: 话题汇总
-:end-before: 调试命令
+:start-line: 170
+:end-line: 181
 ```
 
 ### Force feedback
