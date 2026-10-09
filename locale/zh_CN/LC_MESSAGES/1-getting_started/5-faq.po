@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 01:35+0000\n"
+"POT-Creation-Date: 2026-10-09 01:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -147,91 +147,104 @@ msgstr ""
 msgid "Q: `error: cannot run ssh: No such file or directory`"
 msgstr "问：`error: cannot run ssh: No such file or directory`"
 
-#: ../../source/1-getting_started/5-faq.md:49 7e0b3be043d54571955f3c4ea7097245
+#: ../../source/1-getting_started/5-faq.md:49 494ebb961610474bb3f23c582a446994
 msgid ""
 "[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
-"ws/blob/main/.gitmodules) uses `git@github.com:…`. You need an `ssh` binary "
-"plus a GitHub key, **or** clone public modules over HTTPS / `gh repo clone`."
-" `git config url.https://github.com/.insteadOf git@github.com:` alone does "
-"**not** fix `git submodule update`. Steps: [open-deploy-ws "
-"Setup](3-open_deploy_ws.md)."
+"ws/blob/main/.gitmodules) uses `git@github.com:…`. `git config "
+"url.https://github.com/.insteadOf git@github.com:` alone does **not** fix "
+"`git submodule update` (nested repos read their own `.gitmodules` and call "
+"`ssh`). After [open-deploy-ws#8](https://github.com/fiveages-sim/open-"
+"deploy-ws/pull/8) — or once you pull an `init_repo.sh` that has `--https` — "
+"the script temporarily rewrites those URLs to HTTPS. Force with `--https` / "
+"`OPEN_DEPLOY_GIT_HTTPS=1`. Older init: clone public modules over HTTPS / `gh"
+" repo clone`. Steps: [open-deploy-ws Setup](3-open_deploy_ws.md)."
 msgstr ""
 "[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
-"ws/blob/main/.gitmodules) 使用 `git@github.com:…`。需要 `ssh` 可执行文件加 GitHub "
-"密钥，**或**用 HTTPS / `gh repo clone` 克隆公开模块。仅设置 `git config "
+"ws/blob/main/.gitmodules) 使用 `git@github.com:…`。仅设置 `git config "
 "url.https://github.com/.insteadOf git@github.com:` **不能**修好 `git submodule "
-"update`。步骤：[open-deploy-ws 配置](3-open_deploy_ws.md)。"
+"update`（嵌套仓读自己的 `.gitmodules` 并直接调 `ssh`）。[open-deploy-"
+"ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) 合入后 — 或已拉到带 "
+"`--https` 的 `init_repo.sh` — 脚本会临时把这些 URL 改写成 HTTPS。用 `--https` / "
+"`OPEN_DEPLOY_GIT_HTTPS=1` 强制。旧版 init：用 HTTPS / `gh repo clone` "
+"克隆公开模块。步骤：[open-deploy-ws 配置](3-open_deploy_ws.md)。"
 
-#: ../../source/1-getting_started/5-faq.md:51 c655e64930494fce8fb637491bba108c
-msgid "If a later `init_repo.sh` adds an HTTPS fallback, prefer that."
-msgstr "若之后的 `init_repo.sh` 增加了 HTTPS 回退，优先用脚本。"
-
-#: ../../source/1-getting_started/5-faq.md:53 c96cb90fe3f142edbc9a60247a1056b6
+#: ../../source/1-getting_started/5-faq.md:51 c96cb90fe3f142edbc9a60247a1056b6
 msgid "Q: How do I run `init_repo.sh` in CI / a container (no TTY)?"
 msgstr "问：如何在 CI / 容器（无 TTY）里运行 `init_repo.sh`？"
 
-#: ../../source/1-getting_started/5-faq.md:55 1c9847420c2a43049e37c839aa2975cc
+#: ../../source/1-getting_started/5-faq.md:53 a5c6f8ad9e6c4e9eba0e5e2afd4c31c9
 msgid ""
-"**Today** the script is interactive (public/private, then per-module "
-"`d`/`s`). There are no committed non-interactive flags yet. Use the HTTPS "
-"public clone path that matches the defaults (ocs2=deb, arms/common=source) "
-"on [open-deploy-ws Setup](3-open_deploy_ws.md)."
+"After [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-"
+"ws/pull/8) merges, or once you pull an `init_repo.sh` that has these flags:"
 msgstr ""
-"**今天**脚本是交互式的（public/private，再按模块 `d`/`s`）。仓库里还没有已提交的非交互参数。用 [open-deploy-ws"
-" 配置](3-open_deploy_ws.md) 上与默认值一致的 HTTPS "
-"公开克隆路径（ocs2=deb，arms/common=source）。"
+"[open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) "
+"合入后，或已拉到带这些参数的 `init_repo.sh`："
 
-#: ../../source/1-getting_started/5-faq.md:57 cae2eb859ae64ca3a787213de1fe8c2b
+#: ../../source/1-getting_started/5-faq.md:55 c71bded629d94afba2d041f7e6f4e95b
+msgid "./init_repo.sh --public --ocs2=deb --arms=source --common=source\n"
+msgstr "./init_repo.sh --public --ocs2=deb --arms=source --common=source\n"
+
+#: ../../source/1-getting_started/5-faq.md:59 e86c9ef4394f44a0853669c9c398c724
 msgid ""
-"**Coming / if supported:** flags such as `./init_repo.sh --public --ocs2=deb"
-" --arms=source --common=source`. Check `./init_repo.sh --help` after you "
-"pull; do not invent names that are not there."
+"Same defaults as the interactive menu. Also: `--https` / "
+"`OPEN_DEPLOY_GIT_HTTPS=1`, `-y` / `--yes`, and env `OPEN_DEPLOY_VISIBILITY`,"
+" `OPEN_DEPLOY_OCS2`, `OPEN_DEPLOY_ARMS`, `OPEN_DEPLOY_COMMON`. "
+"`./init_repo.sh --help` lists the rest."
 msgstr ""
-"**即将 / 若已支持：** 例如 `./init_repo.sh --public --ocs2=deb --arms=source "
-"--common=source`。拉取后先看 `./init_repo.sh --help`，只使用脚本里已有的参数名。"
+"默认值与交互菜单相同。另外还有：`--https` / `OPEN_DEPLOY_GIT_HTTPS=1`、`-y` / `--yes`，以及环境变量 "
+"`OPEN_DEPLOY_VISIBILITY`、`OPEN_DEPLOY_OCS2`、`OPEN_DEPLOY_ARMS`、`OPEN_DEPLOY_COMMON`。其余见"
+" `./init_repo.sh --help`。"
 
-#: ../../source/1-getting_started/5-faq.md:59 78b09e6d38c24b2fbfa4471cf70b1685
+#: ../../source/1-getting_started/5-faq.md:61 1c9847420c2a43049e37c839aa2975cc
+msgid ""
+"**Older interactive-only `init_repo.sh`:** HTTPS / `gh` public clone "
+"fallback on [open-deploy-ws Setup](3-open_deploy_ws.md)."
+msgstr ""
+"**旧版仅交互的 `init_repo.sh`：** 用 [open-deploy-ws 配置](3-open_deploy_ws.md) 上的 "
+"HTTPS / `gh` 公开克隆回退。"
+
+#: ../../source/1-getting_started/5-faq.md:63 78b09e6d38c24b2fbfa4471cf70b1685
 msgid "Q: Access denied to submodule"
 msgstr "问：子模块访问被拒绝"
 
-#: ../../source/1-getting_started/5-faq.md:61 604057c4013140f1b6891a003d36a961
+#: ../../source/1-getting_started/5-faq.md:65 604057c4013140f1b6891a003d36a961
 msgid ""
 "This usually means you're trying to access a private submodule without "
 "proper access, or the remote is still SSH and this machine has no key."
 msgstr "这通常表示正在访问没有权限的私有子模块，或远程仍是 SSH 而本机没有密钥。"
 
-#: ../../source/1-getting_started/5-faq.md:63 e0bb0f4fbf7c463da2c8a1ca0fcdc097
+#: ../../source/1-getting_started/5-faq.md:67 e0bb0f4fbf7c463da2c8a1ca0fcdc097
 msgid ""
 "**For open-deploy-ws:** Only public submodules should be needed. Check that:"
 msgstr "**对于 open-deploy-ws：** 只需公开子模块。请确认："
 
-#: ../../source/1-getting_started/5-faq.md:64 9d9669a24a22439886548cf6e50d3633
+#: ../../source/1-getting_started/5-faq.md:68 9d9669a24a22439886548cf6e50d3633
 msgid "You're on the correct branch"
 msgstr "当前位于正确的分支"
 
-#: ../../source/1-getting_started/5-faq.md:65 1fb62d268eb64dee821e96d87ac76d1f
+#: ../../source/1-getting_started/5-faq.md:69 1fb62d268eb64dee821e96d87ac76d1f
 msgid "The submodule is listed as public in `submodules_visibility.conf`"
 msgstr "该子模块在 `submodules_visibility.conf` 中列为公开"
 
-#: ../../source/1-getting_started/5-faq.md:66 c37aa8c3c09141d1bf0d52b1986d9bba
+#: ../../source/1-getting_started/5-faq.md:70 c37aa8c3c09141d1bf0d52b1986d9bba
 msgid "You have `ssh` + a key, or you used the HTTPS / `gh` workaround"
 msgstr "已有 `ssh` + 密钥，或已使用 HTTPS / `gh` 变通"
 
-#: ../../source/1-getting_started/5-faq.md:68 8ce25cba36b34c10addbf843c24c41ed
+#: ../../source/1-getting_started/5-faq.md:72 8ce25cba36b34c10addbf843c24c41ed
 msgid ""
 "**For fa-deploy-ws:** Verify your GitHub SSH key has access to private "
 "repos:"
 msgstr "**对于 fa-deploy-ws：** 确认你的 GitHub SSH 密钥有权访问私有仓库："
 
-#: ../../source/1-getting_started/5-faq.md:70 79fab09aa5704d538597806c90537b50
+#: ../../source/1-getting_started/5-faq.md:74 79fab09aa5704d538597806c90537b50
 msgid "ssh -T git@github.com\n"
 msgstr "ssh -T git@github.com\n"
 
-#: ../../source/1-getting_started/5-faq.md:74 0fe7455e5f7d432b9dfdfd93b6c086a7
+#: ../../source/1-getting_started/5-faq.md:78 0fe7455e5f7d432b9dfdfd93b6c086a7
 msgid "Q: Submodule conflicts during update"
 msgstr "问：更新时出现子模块冲突"
 
-#: ../../source/1-getting_started/5-faq.md:76 2c9796d943c74895908e435df5d55e49
+#: ../../source/1-getting_started/5-faq.md:80 2c9796d943c74895908e435df5d55e49
 msgid ""
 "git submodule foreach git checkout .\n"
 "git submodule update --init\n"
@@ -239,32 +252,36 @@ msgstr ""
 "git submodule foreach git checkout .\n"
 "git submodule update --init\n"
 
-#: ../../source/1-getting_started/5-faq.md:81 d3185baa1be2478a8e786d8361440897
+#: ../../source/1-getting_started/5-faq.md:85 d3185baa1be2478a8e786d8361440897
 msgid "Build Issues"
 msgstr "编译问题"
 
-#: ../../source/1-getting_started/5-faq.md:83 390068cfac6b4d5ab76a62eeece944be
+#: ../../source/1-getting_started/5-faq.md:87 390068cfac6b4d5ab76a62eeece944be
 msgid "Q: colcon fails on an empty directory under `arms_ros2_control`"
 msgstr "问：colcon 在 `arms_ros2_control` 下的空目录失败"
 
-#: ../../source/1-getting_started/5-faq.md:85 cda17a57462b498b894876c998fc075e
+#: ../../source/1-getting_started/5-faq.md:89 cda17a57462b498b894876c998fc075e
 msgid ""
 "Public init leaves private nested modules empty "
 "(`controller/ocs2_wbc_controller`, `libraries/lina_planning`, "
-"`libraries/ocs2_humanoid`, …). **Today:** `touch <empty-dir>/COLCON_IGNORE`."
-" **Coming / if supported:** `init_repo.sh` should add those files in public "
-"mode. Details: [open-deploy-ws Setup](3-open_deploy_ws.md)."
+"`libraries/ocs2_humanoid`, and uninitialized `hardwares/*`). After [open-"
+"deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) — or "
+"once you pull that `init_repo.sh` — public mode writes `COLCON_IGNORE` on "
+"those empty dirs. **Older init:** `touch <empty-dir>/COLCON_IGNORE`. "
+"Details: [open-deploy-ws Setup](3-open_deploy_ws.md)."
 msgstr ""
 "public "
-"初始化会把私有嵌套模块留空（`controller/ocs2_wbc_controller`、`libraries/lina_planning`、`libraries/ocs2_humanoid`"
-" 等）。**今天：** `touch <empty-dir>/COLCON_IGNORE`。**即将 / 若已支持：** `init_repo.sh` "
-"应在 public 模式下写入这些文件。细节：[open-deploy-ws 配置](3-open_deploy_ws.md)。"
+"初始化会把私有嵌套模块留空（`controller/ocs2_wbc_controller`、`libraries/lina_planning`、`libraries/ocs2_humanoid`，以及未初始化的"
+" `hardwares/*`）。[open-deploy-ws#8](https://github.com/fiveages-sim/open-"
+"deploy-ws/pull/8) 合入后 — 或已拉到该 `init_repo.sh` — public 模式会给这些空目录写入 "
+"`COLCON_IGNORE`。**旧版 init：** `touch <empty-dir>/COLCON_IGNORE`。细节：[open-"
+"deploy-ws 配置](3-open_deploy_ws.md)。"
 
-#: ../../source/1-getting_started/5-faq.md:87 661b52e119364e6bbab8bc19494d91be
+#: ../../source/1-getting_started/5-faq.md:91 661b52e119364e6bbab8bc19494d91be
 msgid "Q: Where is Taku?"
 msgstr "问：Taku 在哪里？"
 
-#: ../../source/1-getting_started/5-faq.md:89 c008ccdeb6c84116a13faee6aa6def82
+#: ../../source/1-getting_started/5-faq.md:93 c008ccdeb6c84116a13faee6aa6def82
 msgid ""
 "On `robot_descriptions` branch **`feature/agilex`** at "
 "`humanoid/Dyna/taku_description` — not on the default `main` submodule pin. "
@@ -281,38 +298,39 @@ msgstr ""
 "sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)）。没有精简的"
 " `open-deploy-ws` Taku 分支。检出步骤：[open-deploy-ws 配置](3-open_deploy_ws.md)。"
 
-#: ../../source/1-getting_started/5-faq.md:91 10179e234df947ea81eb21e82fa4a7b7
+#: ../../source/1-getting_started/5-faq.md:95 10179e234df947ea81eb21e82fa4a7b7
 msgid "Q: colcon build fails with missing dependency"
 msgstr "问：colcon build 因缺少依赖而失败"
 
-#: ../../source/1-getting_started/5-faq.md:93 cfb8bd4b22814014b57290a4b76c5164
+#: ../../source/1-getting_started/5-faq.md:97 cfb8bd4b22814014b57290a4b76c5164
 msgid "Install dependencies via rosdep:"
 msgstr "通过 rosdep 安装依赖："
 
-#: ../../source/1-getting_started/5-faq.md:95 9575d1d1d81d4bd5807cf935256be2fe
+#: ../../source/1-getting_started/5-faq.md:99 9575d1d1d81d4bd5807cf935256be2fe
 msgid "rosdep install --from-paths src --ignore-src -r -y\n"
 msgstr "rosdep install --from-paths src --ignore-src -r -y\n"
 
-#: ../../source/1-getting_started/5-faq.md:99 01f2508093f14ff98474ec680fca7e29
+#: ../../source/1-getting_started/5-faq.md:103
+#: 01f2508093f14ff98474ec680fca7e29
 msgid "Q: numpy version conflict"
 msgstr "问：numpy 版本冲突"
 
-#: ../../source/1-getting_started/5-faq.md:101
+#: ../../source/1-getting_started/5-faq.md:105
 #: 19679456c1fd41f9863586b7f05d9662
 msgid "Some packages require numpy < 2:"
 msgstr "部分软件包要求 numpy < 2："
 
-#: ../../source/1-getting_started/5-faq.md:103
+#: ../../source/1-getting_started/5-faq.md:107
 #: 520f52500bfb41bbbeffa4f093b99253
 msgid "pip install 'numpy<2'\n"
 msgstr "pip install 'numpy<2'\n"
 
-#: ../../source/1-getting_started/5-faq.md:107
+#: ../../source/1-getting_started/5-faq.md:111
 #: 09ee6b4b6cc24df69ee5c157ac81ba96
 msgid "Q: CMake cannot find package"
 msgstr "问：CMake 找不到软件包"
 
-#: ../../source/1-getting_started/5-faq.md:109
+#: ../../source/1-getting_started/5-faq.md:113
 #: 59942755ea36411ca7dd6a15add9934b
 msgid ""
 "Build from a workspace that already ran `./init_repo.sh`. If `ros2` / "
@@ -323,57 +341,57 @@ msgstr ""
 "在已经跑过 `./init_repo.sh` 的工作区构建。若缺少 `ros2` / `colcon`，先完成 "
 "[安装环境](2-install_environment.md)。构建成功后，在启动终端 `source install/setup.bash`。"
 
-#: ../../source/1-getting_started/5-faq.md:111
+#: ../../source/1-getting_started/5-faq.md:115
 #: 9ed3d078a0db472fa131fdd71433a07d
 msgid "Q: Build runs out of memory"
 msgstr "问：编译时内存不足"
 
-#: ../../source/1-getting_started/5-faq.md:113
+#: ../../source/1-getting_started/5-faq.md:117
 #: 26619dd560414b2ab42f1df76d4be1dc
 msgid "Limit parallel jobs:"
 msgstr "限制并行任务数："
 
-#: ../../source/1-getting_started/5-faq.md:115
+#: ../../source/1-getting_started/5-faq.md:119
 #: 1560d370b6644c629c3a249565dc316b
 msgid "colcon build --parallel-workers 2\n"
 msgstr "colcon build --parallel-workers 2\n"
 
-#: ../../source/1-getting_started/5-faq.md:119
+#: ../../source/1-getting_started/5-faq.md:123
 #: 82fbdccd067d4378a67074298b1fbbaf
 msgid "Or build specific packages:"
 msgstr "或者只编译指定软件包："
 
-#: ../../source/1-getting_started/5-faq.md:121
+#: ../../source/1-getting_started/5-faq.md:125
 #: 2267c7b7ae2747d08048beeff9f92c1e
 msgid "colcon build --packages-up-to <package-name>\n"
 msgstr "colcon build --packages-up-to <package-name>\n"
 
-#: ../../source/1-getting_started/5-faq.md:125
+#: ../../source/1-getting_started/5-faq.md:129
 #: 3e43139dc17f47deae40bbd442583b07
 msgid "Runtime Issues"
 msgstr "运行时问题"
 
-#: ../../source/1-getting_started/5-faq.md:127
+#: ../../source/1-getting_started/5-faq.md:131
 #: 78723b0eddef403fbf4a84cb25e2021e
 msgid "Q: Node/topic not found"
 msgstr "问：找不到节点/话题"
 
-#: ../../source/1-getting_started/5-faq.md:129
+#: ../../source/1-getting_started/5-faq.md:133
 #: 269d850cac8643d2850b868aeb98cd42
 msgid "Ensure workspace is sourced:"
 msgstr "确认已加载工作空间环境："
 
-#: ../../source/1-getting_started/5-faq.md:131
+#: ../../source/1-getting_started/5-faq.md:135
 #: 555cd6a634f3452db1385788def96a25
 msgid "source install/setup.bash\n"
 msgstr "source install/setup.bash\n"
 
-#: ../../source/1-getting_started/5-faq.md:135
+#: ../../source/1-getting_started/5-faq.md:139
 #: 66f192f27cde45f1accbcee071d20595
 msgid "Check if the node is running:"
 msgstr "检查节点是否在运行："
 
-#: ../../source/1-getting_started/5-faq.md:137
+#: ../../source/1-getting_started/5-faq.md:141
 #: b15b0dbd3c4a4f4f8f29d01a970514f6
 msgid ""
 "ros2 node list\n"
@@ -382,65 +400,65 @@ msgstr ""
 "ros2 node list\n"
 "ros2 topic list\n"
 
-#: ../../source/1-getting_started/5-faq.md:142
+#: ../../source/1-getting_started/5-faq.md:146
 #: 108f5bcce2c040c69b20c82278a08cae
 msgid "Q: Controller fails to start"
 msgstr "问：控制器无法启动"
 
-#: ../../source/1-getting_started/5-faq.md:144
+#: ../../source/1-getting_started/5-faq.md:148
 #: fe1989c6ad554cd3a513be0dae97606c
 msgid "Check that:"
 msgstr "请检查："
 
-#: ../../source/1-getting_started/5-faq.md:145
+#: ../../source/1-getting_started/5-faq.md:149
 #: 840cd2e3493940bfaf6a2322dda1e7ec
 msgid ""
 "Hardware parameter matches your setup (`mock_components`, `gz`, `isaac`, or "
 "`real` — there is no `hardware:=mock`)"
 msgstr "硬件参数与当前环境匹配（`mock`、`gz`、`isaac` 或真实硬件）"
 
-#: ../../source/1-getting_started/5-faq.md:146
+#: ../../source/1-getting_started/5-faq.md:150
 #: 478d15972418453faf5e637aa082c40a
 #, python-brace-format
 msgid "Robot parameter matches a `{key}_description` package"
 msgstr "机器人参数与可用描述包匹配"
 
-#: ../../source/1-getting_started/5-faq.md:147
+#: ../../source/1-getting_started/5-faq.md:151
 #: fae8f758984b4ca5809d0dab9f3b25c5
 msgid "Required hardware interfaces are initialized"
 msgstr "所需硬件接口已初始化"
 
-#: ../../source/1-getting_started/5-faq.md:149
+#: ../../source/1-getting_started/5-faq.md:153
 #: 7c5ac8ec11334058a9bf3baecc3719d4
 msgid "ros2 launch ocs2_arm_controller demo.launch.py\n"
 msgstr "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
-#: ../../source/1-getting_started/5-faq.md:153
+#: ../../source/1-getting_started/5-faq.md:157
 #: 00ef58b3bebe4bd0ae5f7a788f5a52c8
 msgid "Q: No communication between machines"
 msgstr "问：机器之间无法通信"
 
-#: ../../source/1-getting_started/5-faq.md:155
+#: ../../source/1-getting_started/5-faq.md:159
 #: ff5d9150e05a4e6bbfe7fdf94c35dbcc
 msgid "Verify:"
 msgstr "请确认："
 
-#: ../../source/1-getting_started/5-faq.md:156
+#: ../../source/1-getting_started/5-faq.md:160
 #: 000b3961cac64338b239fd2561c81d87
 msgid "ROS Domain ID matches on both machines"
 msgstr "两台机器上的 ROS Domain ID 一致"
 
-#: ../../source/1-getting_started/5-faq.md:157
+#: ../../source/1-getting_started/5-faq.md:161
 #: f1e1c62b9e7d49a1a11a7e3109a832ec
 msgid "Network connectivity exists"
 msgstr "网络连通正常"
 
-#: ../../source/1-getting_started/5-faq.md:158
+#: ../../source/1-getting_started/5-faq.md:162
 #: 3ca14e097f994a748541703c96475a2c
 msgid "Firewall allows ROS 2 traffic"
 msgstr "防火墙允许 ROS 2 通信"
 
-#: ../../source/1-getting_started/5-faq.md:160
+#: ../../source/1-getting_started/5-faq.md:164
 #: e94cfbb5453a4cb8aa84bf88c3e87ae1
 msgid ""
 "# Check domain ID\n"
@@ -455,32 +473,32 @@ msgstr ""
 "# Test connectivity\n"
 "ros2 topic list  # Should show topics from both machines\n"
 
-#: ../../source/1-getting_started/5-faq.md:168
+#: ../../source/1-getting_started/5-faq.md:172
 #: 39227fde89a642e99732840ae5413b5e
 msgid "CAN Interface Issues"
 msgstr "CAN 接口问题"
 
-#: ../../source/1-getting_started/5-faq.md:170
+#: ../../source/1-getting_started/5-faq.md:174
 #: 949214077da643e1b2a89b5f46f960c3
 msgid "Q: CAN interface not found"
 msgstr "问：找不到 CAN 接口"
 
-#: ../../source/1-getting_started/5-faq.md:172
+#: ../../source/1-getting_started/5-faq.md:176
 #: a09df3739e0444bdbd141f8957a07dc9
 msgid "Check if the interface exists:"
 msgstr "检查接口是否存在："
 
-#: ../../source/1-getting_started/5-faq.md:174
+#: ../../source/1-getting_started/5-faq.md:178
 #: a9692eaf5c354098aba6513240fa76c3
 msgid "ip link show\n"
 msgstr "ip link show\n"
 
-#: ../../source/1-getting_started/5-faq.md:178
+#: ../../source/1-getting_started/5-faq.md:182
 #: 42486ddf57fb4aeba4b5a0d3c76531ba
 msgid "If the interface has a different name, rename it:"
 msgstr "若接口名称不同，请将其重命名："
 
-#: ../../source/1-getting_started/5-faq.md:180
+#: ../../source/1-getting_started/5-faq.md:184
 #: edbe70d292894353b8fbbce2c72f17e3
 msgid ""
 "sudo ip link set can0 down\n"
@@ -491,57 +509,57 @@ msgstr ""
 "sudo ip link set can0 name <expected_name>\n"
 "sudo ip link set <expected_name> up\n"
 
-#: ../../source/1-getting_started/5-faq.md:186
+#: ../../source/1-getting_started/5-faq.md:190
 #: e0b3c34697e7475f8ded8d3ec3e6795a
 msgid "Q: CAN communication timeout"
 msgstr "问：CAN 通信超时"
 
-#: ../../source/1-getting_started/5-faq.md:188
+#: ../../source/1-getting_started/5-faq.md:192
 #: 7f497d35b5f5430687ce2287fc77734d
 msgid "Verify CAN bus is properly terminated"
 msgstr "确认 CAN 总线已正确端接"
 
-#: ../../source/1-getting_started/5-faq.md:189
+#: ../../source/1-getting_started/5-faq.md:193
 #: 38065026b3824a519ecc801ebda07d63
 msgid "Check baud rate matches robot configuration"
 msgstr "确认波特率与机器人配置一致"
 
-#: ../../source/1-getting_started/5-faq.md:190
+#: ../../source/1-getting_started/5-faq.md:194
 #: 7e16820f4f45412193fca89a46337db8
 msgid "Ensure no conflicting CAN traffic"
 msgstr "确保没有冲突的 CAN 通信"
 
-#: ../../source/1-getting_started/5-faq.md:192
+#: ../../source/1-getting_started/5-faq.md:196
 #: 2b384f3200e5432c9213c7a4a51dd85a
 msgid "Simulation Issues"
 msgstr "仿真问题"
 
-#: ../../source/1-getting_started/5-faq.md:194
+#: ../../source/1-getting_started/5-faq.md:198
 #: 34ca39aeda1e460db7395c30dbe9e16c
 msgid "Q: Gazebo crashes on launch"
 msgstr "问：Gazebo 启动时崩溃"
 
-#: ../../source/1-getting_started/5-faq.md:196
+#: ../../source/1-getting_started/5-faq.md:200
 #: ebd8f469afa640d6b2f625a4a63a3fc5
 msgid "Install all Gazebo packages:"
 msgstr "安装全部 Gazebo 软件包："
 
-#: ../../source/1-getting_started/5-faq.md:198
+#: ../../source/1-getting_started/5-faq.md:202
 #: f165f93cd6dd4c0ba5462c6ced0fac49
 msgid "sudo apt install ros-jazzy-gz-*\n"
 msgstr "sudo apt install ros-jazzy-gz-*\n"
 
-#: ../../source/1-getting_started/5-faq.md:202
+#: ../../source/1-getting_started/5-faq.md:206
 #: 255047b98f7e43cd8302594be0e78204
 msgid "Check GPU drivers if using hardware rendering."
 msgstr "若使用硬件渲染，请检查 GPU 驱动。"
 
-#: ../../source/1-getting_started/5-faq.md:204
+#: ../../source/1-getting_started/5-faq.md:208
 #: 581734b7b32a43e4bbc10d51730cc7c9
 msgid "Q: Isaac Sim won't start or scripts fail"
 msgstr "问：Isaac Sim 无法启动或脚本失败"
 
-#: ../../source/1-getting_started/5-faq.md:206
+#: ../../source/1-getting_started/5-faq.md:210
 #: 8e2a6f8b399145fb942d9d16d3539a9f
 msgid ""
 "Use **FaSim-Isaac** `./init.sh` / `./run.sh`. Default Isaac path is "
@@ -556,7 +574,7 @@ msgstr ""
 "ROS 2 工作空间版本来自 `./init.sh` 操作 2 菜单（GitHub tag；回退见 "
 "`config/fa_sim.conf`：`6.0.1` / `6.0.0` / `5.1.0`）— 不要假定某一个写死的次版本号。"
 
-#: ../../source/1-getting_started/5-faq.md:208
+#: ../../source/1-getting_started/5-faq.md:212
 #: 6729840b7e2c4c6cb8aa83be2740c301
 msgid ""
 "Confirm the directory in `ISAACSIM_DIR` exists and contains the launch "
@@ -564,7 +582,7 @@ msgid ""
 msgstr ""
 "确认 `ISAACSIM_DIR` 目录存在，且包含 `config/fa_sim.conf` 中的启动脚本（`isaac-sim.sh` 等）"
 
-#: ../../source/1-getting_started/5-faq.md:209
+#: ../../source/1-getting_started/5-faq.md:213
 #: 9e7a9f82ab83465f8cde1bba8b4adafd
 msgid ""
 "Copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` if "
@@ -573,7 +591,7 @@ msgstr ""
 "若 Isaac 不在 `~/isaacsim`，复制 `config/fa_sim.local.template.conf` → "
 "`config/fa_sim.local.conf`"
 
-#: ../../source/1-getting_started/5-faq.md:210
+#: ../../source/1-getting_started/5-faq.md:214
 #: 4b25e92df06d464a97e414f914a4f2c4
 msgid ""
 "Re-run `./run.sh` and pick PhysX / Newton / Headless Streaming from the menu"
@@ -582,42 +600,42 @@ msgstr ""
 "再跑 `./run.sh`，从菜单选 PhysX / Newton / Headless Streaming（`./run.sh` 没有 "
 "`--headless` / `--robot` 参数）"
 
-#: ../../source/1-getting_started/5-faq.md:212
+#: ../../source/1-getting_started/5-faq.md:216
 #: 9d12252ada234755941d22f71b0014e1
 msgid "Q: Isaac Sim connection fails"
 msgstr "问：Isaac Sim 连接失败"
 
-#: ../../source/1-getting_started/5-faq.md:214
+#: ../../source/1-getting_started/5-faq.md:218
 #: 80c33ae131094833b65de6e60761244f
 msgid "Verify Isaac Sim is running (`./run.sh` from FaSim-Isaac)"
 msgstr "确认 Isaac Sim 正在运行（从 FaSim-Isaac 执行 `./run.sh`）"
 
-#: ../../source/1-getting_started/5-faq.md:215
+#: ../../source/1-getting_started/5-faq.md:219
 #: e6d78bdda31f4188aa27d36981c884c7
 msgid "Check that the topic bridge is active"
 msgstr "确认话题桥接已激活"
 
-#: ../../source/1-getting_started/5-faq.md:216
+#: ../../source/1-getting_started/5-faq.md:220
 #: 78e86fc8ccda476b889b44e8b67e6900
 msgid "Ensure `hardware:=isaac` is set in launch"
 msgstr "确认 launch 中已设置 `hardware:=isaac`"
 
-#: ../../source/1-getting_started/5-faq.md:217
+#: ../../source/1-getting_started/5-faq.md:221
 #: f9a774dd1bec40748767448270363720
 msgid "Check Domain ID matches between Isaac and ROS 2"
 msgstr "确认 Isaac 与 ROS 2 的 Domain ID 一致"
 
-#: ../../source/1-getting_started/5-faq.md:219
+#: ../../source/1-getting_started/5-faq.md:223
 #: 6d56ad13434a4d939d61babd143f2a48
 msgid "Network Configuration"
 msgstr "网络配置"
 
-#: ../../source/1-getting_started/5-faq.md:221
+#: ../../source/1-getting_started/5-faq.md:225
 #: 41a7aa89d54246eb9a31bc3a3e4db5ee
 msgid "Q: How do I find the correct Domain ID?"
 msgstr "问：如何查找正确的 Domain ID？"
 
-#: ../../source/1-getting_started/5-faq.md:223
+#: ../../source/1-getting_started/5-faq.md:227
 #: 607cf51d05314fc6a3ada006ee0184cc
 msgid ""
 "The Domain ID is robot-specific. For internal deployments, consult your "
@@ -625,28 +643,28 @@ msgid ""
 "ID works (default is 0)."
 msgstr "Domain ID 因机器人而异。内部部署请查阅机器人文档或向团队负责人确认。使用模拟硬件开发时，任意 ID 均可（默认为 0）。"
 
-#: ../../source/1-getting_started/5-faq.md:225
+#: ../../source/1-getting_started/5-faq.md:229
 #: d2a39807266c471caed226667793864b
 msgid "Q: Zenoh vs DDS?"
 msgstr "问：Zenoh 与 DDS 如何选择？"
 
-#: ../../source/1-getting_started/5-faq.md:227
+#: ../../source/1-getting_started/5-faq.md:231
 #: a16af55ef9504de2812fb5876282ebf8
 msgid "**DDS (default):** Works out of the box for same-network communication"
 msgstr "**DDS（默认）：** 同网通信即开即用"
 
-#: ../../source/1-getting_started/5-faq.md:228
+#: ../../source/1-getting_started/5-faq.md:232
 #: 9bea442de2c54fc78ada4332602a3d4f
 msgid ""
 "**Zenoh:** Better for cross-network, NAT traversal, or high-latency links"
 msgstr "**Zenoh：** 更适合跨网络、NAT 穿透或高延迟链路"
 
-#: ../../source/1-getting_started/5-faq.md:230
+#: ../../source/1-getting_started/5-faq.md:234
 #: bc91f94637aa428d86d6eb5bb8956117
 msgid "To use Zenoh:"
 msgstr "使用 Zenoh："
 
-#: ../../source/1-getting_started/5-faq.md:232
+#: ../../source/1-getting_started/5-faq.md:236
 #: f158b0b384db45178daeb355eece56ac
 msgid ""
 "sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
@@ -655,57 +673,57 @@ msgstr ""
 "sudo apt install ros-jazzy-rmw-zenoh-cpp\n"
 "export RMW_IMPLEMENTATION=rmw_zenoh_cpp\n"
 
-#: ../../source/1-getting_started/5-faq.md:237
+#: ../../source/1-getting_started/5-faq.md:241
 #: 0cac8d203b564e7f94dcbe59cba8b32b
 msgid "Getting Help"
 msgstr "获取帮助"
 
-#: ../../source/1-getting_started/5-faq.md:239
+#: ../../source/1-getting_started/5-faq.md:243
 #: 4af4fbdfe74d46e98c9d5e302fb09521
 msgid "If your issue isn't covered here:"
 msgstr "如果这里没有覆盖你的问题："
 
-#: ../../source/1-getting_started/5-faq.md:241
+#: ../../source/1-getting_started/5-faq.md:245
 #: 35f1af7c262346c292977551a055b7be
 msgid "Check the relevant package's README"
 msgstr "查看相关软件包的 README"
 
-#: ../../source/1-getting_started/5-faq.md:242
+#: ../../source/1-getting_started/5-faq.md:246
 #: 045412327415471584844afb81c5b358
 msgid "Search existing GitHub issues in the repository"
 msgstr "在仓库中搜索已有的 GitHub issues"
 
-#: ../../source/1-getting_started/5-faq.md:243
+#: ../../source/1-getting_started/5-faq.md:247
 #: 816f1c5c783b4ee7a3a4d0f0786dfbc0
 msgid "Open a new issue with:"
 msgstr "新建 issue，并提供："
 
-#: ../../source/1-getting_started/5-faq.md:244
+#: ../../source/1-getting_started/5-faq.md:248
 #: b5180298752843eab2d0ff717c364544
 msgid "Ubuntu/ROS 2 version"
 msgstr "Ubuntu/ROS 2 版本"
 
-#: ../../source/1-getting_started/5-faq.md:245
+#: ../../source/1-getting_started/5-faq.md:249
 #: 294ee7e6a3804091b4fd21a5358c8218
 msgid "Steps to reproduce"
 msgstr "复现步骤"
 
-#: ../../source/1-getting_started/5-faq.md:246
+#: ../../source/1-getting_started/5-faq.md:250
 #: 54005f59c1cd413e81a87a8708014960
 msgid "Full error message"
 msgstr "完整错误信息"
 
-#: ../../source/1-getting_started/5-faq.md:247
+#: ../../source/1-getting_started/5-faq.md:251
 #: 7b5e8f1bc54f4a62a39433a3a52a88c4
 msgid "Relevant launch command"
 msgstr "相关的 launch 命令"
 
-#: ../../source/1-getting_started/5-faq.md:249
+#: ../../source/1-getting_started/5-faq.md:253
 #: 90d7ea3b9a6c4da7ac6d60b85c46fdda
 msgid "**Issue trackers:**"
 msgstr "**问题跟踪：**"
 
-#: ../../source/1-getting_started/5-faq.md:250
+#: ../../source/1-getting_started/5-faq.md:254
 #: d8c541cd73264d09af8082185697732b
 msgid ""
 "Documentation: [fiveages-sim/docs/issues](https://github.com/fiveages-"
@@ -713,7 +731,7 @@ msgid ""
 msgstr ""
 "文档：[fiveages-sim/docs/issues](https://github.com/fiveages-sim/docs/issues)"
 
-#: ../../source/1-getting_started/5-faq.md:251
+#: ../../source/1-getting_started/5-faq.md:255
 #: 3ac37f498165464981f12bd52e7d0aae
 msgid ""
 "Arms controller: [fiveages-"
@@ -723,7 +741,7 @@ msgstr ""
 "手臂控制器：[fiveages-sim/arms_ros2_control/issues](https://github.com/fiveages-"
 "sim/arms_ros2_control/issues)"
 
-#: ../../source/1-getting_started/5-faq.md:252
+#: ../../source/1-getting_started/5-faq.md:256
 #: 07a3deeff6a84e13b64cc27908a47db9
 msgid ""
 "Descriptions: [fiveages-"
@@ -816,3 +834,38 @@ msgstr ""
 #~ msgstr ""
 #~ "source /opt/ros/jazzy/setup.bash\n"
 #~ "colcon build\n"
+
+#~ msgid ""
+#~ "[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
+#~ "ws/blob/main/.gitmodules) uses `git@github.com:…`. You need an `ssh` binary "
+#~ "plus a GitHub key, **or** clone public modules over HTTPS / `gh repo clone`."
+#~ " `git config url.https://github.com/.insteadOf git@github.com:` alone does "
+#~ "**not** fix `git submodule update`. Steps: [open-deploy-ws "
+#~ "Setup](3-open_deploy_ws.md)."
+#~ msgstr ""
+#~ "[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-"
+#~ "ws/blob/main/.gitmodules) 使用 `git@github.com:…`。需要 `ssh` 可执行文件加 GitHub "
+#~ "密钥，**或**用 HTTPS / `gh repo clone` 克隆公开模块。仅设置 `git config "
+#~ "url.https://github.com/.insteadOf git@github.com:` **不能**修好 `git submodule "
+#~ "update`。步骤：[open-deploy-ws 配置](3-open_deploy_ws.md)。"
+
+#~ msgid "If a later `init_repo.sh` adds an HTTPS fallback, prefer that."
+#~ msgstr "若之后的 `init_repo.sh` 增加了 HTTPS 回退，优先用脚本。"
+
+#~ msgid ""
+#~ "**Today** the script is interactive (public/private, then per-module "
+#~ "`d`/`s`). There are no committed non-interactive flags yet. Use the HTTPS "
+#~ "public clone path that matches the defaults (ocs2=deb, arms/common=source) "
+#~ "on [open-deploy-ws Setup](3-open_deploy_ws.md)."
+#~ msgstr ""
+#~ "**今天**脚本是交互式的（public/private，再按模块 `d`/`s`）。仓库里还没有已提交的非交互参数。用 [open-deploy-ws"
+#~ " 配置](3-open_deploy_ws.md) 上与默认值一致的 HTTPS "
+#~ "公开克隆路径（ocs2=deb，arms/common=source）。"
+
+#~ msgid ""
+#~ "**Coming / if supported:** flags such as `./init_repo.sh --public --ocs2=deb"
+#~ " --arms=source --common=source`. Check `./init_repo.sh --help` after you "
+#~ "pull; do not invent names that are not there."
+#~ msgstr ""
+#~ "**即将 / 若已支持：** 例如 `./init_repo.sh --public --ocs2=deb --arms=source "
+#~ "--common=source`。拉取后先看 `./init_repo.sh --help`，只使用脚本里已有的参数名。"

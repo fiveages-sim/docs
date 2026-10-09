@@ -46,15 +46,19 @@ In `open-deploy-ws` / `fa-deploy-ws`, re-run `./init_repo.sh` (menu 1). In FaSim
 
 ### Q: `error: cannot run ssh: No such file or directory`
 
-[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/.gitmodules) uses `git@github.com:…`. You need an `ssh` binary plus a GitHub key, **or** clone public modules over HTTPS / `gh repo clone`. `git config url.https://github.com/.insteadOf git@github.com:` alone does **not** fix `git submodule update`. Steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
-
-If a later `init_repo.sh` adds an HTTPS fallback, prefer that.
+[`.gitmodules`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/.gitmodules) uses `git@github.com:…`. `git config url.https://github.com/.insteadOf git@github.com:` alone does **not** fix `git submodule update` (nested repos read their own `.gitmodules` and call `ssh`). After [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) — or once you pull an `init_repo.sh` that has `--https` — the script temporarily rewrites those URLs to HTTPS. Force with `--https` / `OPEN_DEPLOY_GIT_HTTPS=1`. Older init: clone public modules over HTTPS / `gh repo clone`. Steps: [open-deploy-ws Setup](3-open_deploy_ws.md).
 
 ### Q: How do I run `init_repo.sh` in CI / a container (no TTY)?
 
-**Today** the script is interactive (public/private, then per-module `d`/`s`). There are no committed non-interactive flags yet. Use the HTTPS public clone path that matches the defaults (ocs2=deb, arms/common=source) on [open-deploy-ws Setup](3-open_deploy_ws.md).
+After [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) merges, or once you pull an `init_repo.sh` that has these flags:
 
-**Coming / if supported:** flags such as `./init_repo.sh --public --ocs2=deb --arms=source --common=source`. Check `./init_repo.sh --help` after you pull; do not invent names that are not there.
+```bash
+./init_repo.sh --public --ocs2=deb --arms=source --common=source
+```
+
+Same defaults as the interactive menu. Also: `--https` / `OPEN_DEPLOY_GIT_HTTPS=1`, `-y` / `--yes`, and env `OPEN_DEPLOY_VISIBILITY`, `OPEN_DEPLOY_OCS2`, `OPEN_DEPLOY_ARMS`, `OPEN_DEPLOY_COMMON`. `./init_repo.sh --help` lists the rest.
+
+**Older interactive-only `init_repo.sh`:** HTTPS / `gh` public clone fallback on [open-deploy-ws Setup](3-open_deploy_ws.md).
 
 ### Q: Access denied to submodule
 
@@ -82,7 +86,7 @@ git submodule update --init
 
 ### Q: colcon fails on an empty directory under `arms_ros2_control`
 
-Public init leaves private nested modules empty (`controller/ocs2_wbc_controller`, `libraries/lina_planning`, `libraries/ocs2_humanoid`, …). **Today:** `touch <empty-dir>/COLCON_IGNORE`. **Coming / if supported:** `init_repo.sh` should add those files in public mode. Details: [open-deploy-ws Setup](3-open_deploy_ws.md).
+Public init leaves private nested modules empty (`controller/ocs2_wbc_controller`, `libraries/lina_planning`, `libraries/ocs2_humanoid`, and uninitialized `hardwares/*`). After [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) — or once you pull that `init_repo.sh` — public mode writes `COLCON_IGNORE` on those empty dirs. **Older init:** `touch <empty-dir>/COLCON_IGNORE`. Details: [open-deploy-ws Setup](3-open_deploy_ws.md).
 
 ### Q: Where is Taku?
 

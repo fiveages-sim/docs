@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 01:35+0000\n"
+"POT-Creation-Date: 2026-10-09 01:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -244,13 +244,20 @@ msgstr ""
 "rosdep update"
 
 #: ../../source/1-getting_started/2-install_environment.md:70
-#: e7544c58a8ba4e90a1657950779d7327
+#: b3048b12760a43bda8a6f72373c839b9
 msgid ""
-"After this, clone a deploy workspace and run **`./init_repo.sh`**, then "
-"`source install/setup.bash` after `colcon build`."
+"After this, clone a deploy workspace and run **`./init_repo.sh`**. CI / no "
+"TTY (after [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-"
+"ws/pull/8), or once you pull that script): `./init_repo.sh --public "
+"--ocs2=deb --arms=source --common=source`. Details: [open-deploy-ws "
+"Setup](3-open_deploy_ws.md). Then `source install/setup.bash` after `colcon "
+"build`."
 msgstr ""
-"完成后，克隆部署工作区并运行 **`./init_repo.sh`**，`colcon build` 之后再 `source "
-"install/setup.bash`。"
+"完成后，克隆部署工作区并运行 **`./init_repo.sh`**。CI / 无 TTY（[open-deploy-"
+"ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) "
+"合入后，或已拉到带这些参数的脚本）：`./init_repo.sh --public --ocs2=deb --arms=source "
+"--common=source`。细节：[open-deploy-ws 配置](3-open_deploy_ws.md)。`colcon build` "
+"之后再 `source install/setup.bash`。"
 
 #: ../../source/1-getting_started/2-install_environment.md:72
 #: 3791f3cd7da2482e93021aee7475be29
@@ -966,3 +973,10 @@ msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md) — 工作区细节、SSH /
 
 #~ msgid "ROS 2 Jazzy + rosdep (open-deploy-ws README)"
 #~ msgstr "ROS 2 Jazzy + rosdep（open-deploy-ws README）"
+
+#~ msgid ""
+#~ "After this, clone a deploy workspace and run **`./init_repo.sh`**, then "
+#~ "`source install/setup.bash` after `colcon build`."
+#~ msgstr ""
+#~ "完成后，克隆部署工作区并运行 **`./init_repo.sh`**，`colcon build` 之后再 `source "
+#~ "install/setup.bash`。"

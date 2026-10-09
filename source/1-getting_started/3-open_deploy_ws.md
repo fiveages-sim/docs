@@ -28,11 +28,19 @@ The top-level clone can use HTTPS. Nested remotes in [`.gitmodules`](https://git
 
 Machines without an `ssh` binary or GitHub SSH keys fail submodule fetch with `error: cannot run ssh: No such file or directory`.
 
-**Today:** prefer `./init_repo.sh` when you have `ssh` plus a key (or an `ssh-agent`). The script still drives `git submodule update --init` against those SSH URLs — it does **not** yet rewrite them to HTTPS.
+`git config url.https://github.com/.insteadOf git@github.com:` **alone is not enough** for `git submodule update`. Nested repos read their own `.gitmodules` and invoke `ssh` directly.
 
-`git config url.https://github.com/.insteadOf git@github.com:` **alone is not enough** for `git submodule update`. Git keeps the SSH URL in the submodule’s recorded remote.
+The `init_repo.sh` in [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) rewrites GitHub `git@` URLs in `.gitmodules` to HTTPS, runs `submodule sync` / `update`, then restores `.gitmodules` (so the working tree is not left dirty). That path runs when `ssh` is missing, when public mode has no usable key, or when you pass `--https` / `OPEN_DEPLOY_GIT_HTTPS=1`. After #8 merges — or once you pull an `init_repo.sh` that has these flags — prefer:
 
-Workaround that works today (public modules only): clone those remotes over HTTPS, or `gh repo clone <org/name>` with GitHub CLI auth:
+:::{code-block} bash
+./init_repo.sh --public --ocs2=deb --arms=source --common=source
+# force HTTPS even if ssh exists:
+./init_repo.sh --public --https --ocs2=deb --arms=source --common=source
+:::
+
+`./init_repo.sh --help` lists the rest. Hosts that already have SSH keys (especially for private nested modules) keep the original SSH URLs unless `--https` is set.
+
+**Older `init_repo.sh` (no `--https` / no CLI flags):** clone public remotes over HTTPS, or `gh repo clone <org/name>` with GitHub CLI auth:
 
 :::{code-block} bash
 # after the HTTPS clone of open-deploy-ws — matches init defaults (ocs2=deb, arms/common=source)
@@ -44,15 +52,13 @@ git clone https://github.com/fiveages-sim/robot-descriptions-common.git src/robo
 
 For **Taku**, clone descriptions on `feature/agilex` instead of the default `main` (see [Taku / `feature/agilex`](#taku--featureagilex)).
 
-If a later `init_repo.sh` adds an HTTPS fallback, use that and drop the hand clones. Check `./init_repo.sh --help` / the [README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) for what landed.
-
 ## Initialization
 
 ```bash
 ./init_repo.sh
 ```
 
-What the script does (open-deploy-ws README). **Today this menu is interactive** (`read` prompts: public/private, then per-module `d`/`s`):
+With no arguments the menu is interactive (`read` prompts: public/private, then per-module `d`/`s`). What the script does (open-deploy-ws README):
 
 | Menu | Role |
 |------|------|
@@ -77,15 +83,26 @@ Defaults in `open-deploy-ws`: OCS2=`d`, arms=`s`, common=`s`. Deb mode does **no
 
 ### CI / non-interactive init
 
-`init_repo.sh` currently has **no** non-interactive flags. Piping menu answers can work for a one-off and is brittle if the menu order changes — not the primary path.
-
-**Coming / if supported** (check `./init_repo.sh --help` after you pull; do not assume these exist yet), the intended shape is flags that match today’s defaults, for example:
+The CLI is in [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) (not on `main` until that PR merges). After you pull an `init_repo.sh` that has these flags, a container or CI job with no TTY can run:
 
 ```bash
 ./init_repo.sh --public --ocs2=deb --arms=source --common=source
 ```
 
-**Today** in a container or CI job without a TTY: use the HTTPS public clone steps above (same defaults: ocs2=deb, arms/common=source), then `colcon build`. That is a workaround, not a replacement for `./init_repo.sh` on a normal Ubuntu 24.04 desktop.
+Defaults match the interactive menu: `public`, ocs2=deb, arms=source, common=source. Passing `--public`, `--private`, or any module flag skips keyboard prompts. `./init_repo.sh --help` lists flow switches (`--init`, `--switch`, `--deb-only`, `--rosdep`, …).
+
+| Flag | Environment variable | Meaning |
+|------|----------------------|---------|
+| `--public` / `--private` | `OPEN_DEPLOY_VISIBILITY` | Nested visibility |
+| `--ocs2=deb\|source` | `OPEN_DEPLOY_OCS2` | ocs2 install mode |
+| `--arms=deb\|source` | `OPEN_DEPLOY_ARMS` | arms install mode |
+| `--common=deb\|source` | `OPEN_DEPLOY_COMMON` | common install mode |
+| `--https` | `OPEN_DEPLOY_GIT_HTTPS=1` | Force HTTPS for GitHub submodules |
+| `-y` / `--yes` | `OPEN_DEPLOY_YES=1` | Auto-confirm source-tree cleanup |
+
+Command-line flags override the matching env vars.
+
+**Older `init_repo.sh` (interactive only):** use the HTTPS / `gh` public clone fallback above, then `colcon build`. Do not pipe menu answers as the primary path.
 
 ### Lean Branches
 
@@ -157,7 +174,11 @@ In **public** mode, `./init_repo.sh` skips private nested modules listed in [`su
 - `libraries/lina_planning`
 - `libraries/ocs2_humanoid`
 
-Empty private nested dirs can make `colcon build` fail (colcon still walks them). **Today:** drop a `COLCON_IGNORE` file in each empty private dir:
+Empty private / uninitialized hardware dirs can make `colcon build` fail (colcon still walks them).
+
+The `init_repo.sh` in [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) writes `COLCON_IGNORE` on uninitialized nested paths (including `hardwares/*` and private visibility entries). A later private init removes that marker before clone. After #8 merges — or once you pull that script — you do not need to `touch` these by hand.
+
+**Older `init_repo.sh`:** drop a `COLCON_IGNORE` file in each empty private dir:
 
 :::{code-block} bash
 touch src/arms_ros2_control/controller/ocs2_wbc_controller/COLCON_IGNORE
@@ -166,8 +187,6 @@ touch src/arms_ros2_control/libraries/ocs2_humanoid/COLCON_IGNORE
 :::
 
 Other empty nested submodule dirs under `arms_ros2_control` (uninited hardware interfaces) get the same treatment if colcon errors on that path: `touch <empty-dir>/COLCON_IGNORE`.
-
-**Coming / if supported:** `init_repo.sh` should write those `COLCON_IGNORE` files in public mode. After that lands, you can skip the manual `touch`.
 
 ## Building
 
@@ -269,13 +288,13 @@ Re-run `./init_repo.sh` (menu 1). Do not use `git submodule update --init --recu
 
 ### `cannot run ssh` / Access Denied to Submodule
 
-`.gitmodules` URLs are SSH. You need an `ssh` binary plus a GitHub key, **or** the HTTPS / `gh` clone workaround above. `insteadOf` HTTPS rewrite alone does not fix `git submodule update`.
+`.gitmodules` URLs are SSH. `insteadOf` HTTPS rewrite alone does not fix `git submodule update`. After [open-deploy-ws#8](https://github.com/fiveages-sim/open-deploy-ws/pull/8) (or once you pull that `init_repo.sh`), the script rewrites `.gitmodules` to HTTPS for the fetch and restores it afterwards — use `--https` / `OPEN_DEPLOY_GIT_HTTPS=1` to force that. Older scripts: HTTPS / `gh` clone fallback above.
 
 Some nested modules are private. In `open-deploy-ws`, only public nested modules should be required. If you see access errors:
 
 1. Check you're on the correct branch (not accidentally on a private branch)
 2. Verify the submodule is listed as public in `submodules_visibility.conf`
-3. For empty private dirs that break colcon, add `COLCON_IGNORE` as above
+3. For empty private dirs that break colcon on an older init, add `COLCON_IGNORE` as above
 
 ### Build Fails with numpy
 
