@@ -10,7 +10,7 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile vendor-upstream vendor-check
 
 # English build (default)
 html:
@@ -34,6 +34,14 @@ update-po:
 # Clean build directory
 clean:
 	rm -rf "$(BUILDDIR)"
+
+# Fetch pinned upstream Markdown into source/_vendored/ (see SOURCES.json).
+vendor-upstream:
+	python3 scripts/vendor_upstream_md.py --sync
+
+# Verify vendored files match the recorded commit SHA (no network).
+vendor-check:
+	python3 scripts/vendor_upstream_md.py --check
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

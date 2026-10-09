@@ -1,6 +1,6 @@
 # Python Interface
 
-Control robots programmatically using the Python interface.
+Control robots from Python with `ROS2RobotInterface`.
 
 ## Prerequisites
 
@@ -25,102 +25,48 @@ cd fa-py-libraries
 `pip install ros2-robot-interface` on system Python is not the documented entry. If you must install the package alone, do it inside the fa-py-libraries env after `./init.sh env 3.12`.
 :::
 
-## Basic Usage
+## Connect, read, command
 
-### Connect to Robot
-
-:::{code-block} python
-from ros2_robot_interface import RobotInterface
-
-# Initialize
-robot = RobotInterface()
-robot.connect()
-
-# Check connection
-print(f"Connected: {robot.is_connected()}")
-:::
-
-### Move Robot
+Classes: `ROS2RobotInterface` and `ROS2RobotInterfaceConfig`. The README “Basic Example” (config, `connect()`, `get_joint_state()`, `left_arm_handler`) is on [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md).
 
 :::{code-block} python
-# Move to joint position (radians)
-robot.move_j([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])
+from geometry_msgs.msg import Pose
+from ros2_robot_interface import (
+    FSM_HOLD,
+    ROS2RobotInterface,
+    ROS2RobotInterfaceConfig,
+)
 
-# Move to Cartesian pose
-robot.move_l([0.3, 0.0, 0.4], [1.0, 0.0, 0.0, 0.0])  # [x,y,z], [qw,qx,qy,qz]
+config = ROS2RobotInterfaceConfig(
+    joint_states_topic="/joint_states",
+    end_effector_pose_topic="/left_current_pose",
+    end_effector_target_topic="/left_target",
+)
+interface = ROS2RobotInterface(config)
+interface.connect()
+
+joint_state = interface.get_joint_state()
+if joint_state:
+    print(joint_state["positions"])
+
+pose = interface.left_arm_handler.get_pose()
+
+target = Pose()
+target.position.x = 0.5
+target.position.z = 0.3
+target.orientation.w = 1.0
+interface.left_arm_handler.send_target(target)
+
+# Stroke in hardware units (not a 0–1 percent)
+interface.left_gripper_handler.send_joint_positions(0.01)
+
+interface.send_fsm_command(FSM_HOLD)
+interface.disconnect()
 :::
 
-### Gripper Control
+`right_arm_handler` / `right_gripper_handler` exist in dual-arm mode after `connect()` sees `/right_current_pose`. Cartesian vs joint vs gripper topics (including `*/twist`, `*/relative`, `target_percent`, and waist `waist_*`): [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md) (Topic ↔ API map).
 
-:::{code-block} python
-# Open gripper
-robot.gripper_open()
-
-# Close gripper
-robot.gripper_close()
-
-# Set position (0.0 = closed, 1.0 = open)
-robot.gripper_move(0.5)
-:::
-
-### Read State
-
-:::{code-block} python
-# Joint positions
-joints = robot.get_joint_positions()
-print(f"Joints: {joints}")
-
-# End-effector pose
-pose = robot.get_ee_pose()
-print(f"EE pose: {pose}")
-:::
-
-## Example: Pick and Place
-
-:::{code-block} python
-from ros2_robot_interface import RobotInterface
-import time
-
-robot = RobotInterface()
-robot.connect()
-
-# Move to home
-robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-time.sleep(1)
-
-# Move above pick location
-robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])
-time.sleep(0.5)
-
-# Move down to pick
-robot.move_l([0.3, 0.1, 0.15], [1.0, 0.0, 0.0, 0.0])
-time.sleep(0.5)
-
-# Close gripper
-robot.gripper_close()
-time.sleep(0.5)
-
-# Lift
-robot.move_l([0.3, 0.1, 0.3], [1.0, 0.0, 0.0, 0.0])
-time.sleep(0.5)
-
-# Move to place
-robot.move_l([0.3, -0.1, 0.3], [1.0, 0.0, 0.0, 0.0])
-time.sleep(0.5)
-
-# Lower
-robot.move_l([0.3, -0.1, 0.15], [1.0, 0.0, 0.0, 0.0])
-time.sleep(0.5)
-
-# Release
-robot.gripper_open()
-time.sleep(0.5)
-
-# Return home
-robot.move_j([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-:::
-
-## With Viser Visualization
+## With Viser visualization
 
 Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
 
@@ -131,67 +77,30 @@ cd ~/fa-py-libraries
 
 `ros2_viser` is a library dependency of that command. Embedding `ROS2ViserVisualizer` in your own script is covered on [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md).
 
-## FSM Commands
+## FSM commands
 
-`/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / `walk`). Values and legal transitions depend on the running controller. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+`/fsm_command` is **`std_msgs/Int32`** (not strings such as `stand` / `walk`). Send integers with `send_fsm_command` (`1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ, `5` COMPLIANCE). Values and legal transitions depend on the running controller. See [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
-## Async Interface
+WBC body / arm / base strings go to `/mode_command` via `send_mode_command`, which is a different topic from `/fsm_command`.
 
-For non-blocking operations:
+## Full method list
 
-:::{code-block} python
-import asyncio
-from ros2_robot_interface import AsyncRobotInterface
-
-async def main():
-    robot = AsyncRobotInterface()
-    await robot.connect()
-    
-    # Non-blocking motion
-    await robot.move_j_async([0.0, -0.5, 0.5, 0.0, 0.5, 0.0])
-    
-    # Do other things while moving
-    while robot.is_moving():
-        print("Moving...")
-        await asyncio.sleep(0.1)
-    
-    print("Done!")
-
-asyncio.run(main())
-:::
-
-## Verification
-
-:::{code-block} python
-# Test script
-from ros2_robot_interface import RobotInterface
-
-robot = RobotInterface()
-robot.connect()
-
-# Read current state
-print(f"Joints: {robot.get_joint_positions()}")
-print(f"EE Pose: {robot.get_ee_pose()}")
-
-# Small motion test
-current = robot.get_joint_positions()
-current[0] += 0.1  # Small rotation of first joint
-robot.move_j(current)
-:::
+Method signatures, arrival checks, and actions: [API_REFERENCE.md](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md).
 
 ## Troubleshooting
 
 ### Connection fails
 
-- Ensure robot demo is running
+- Ensure the robot demo is running
 - Check ROS 2 domain ID matches
 - Verify topics are publishing: `ros2 topic list`
+- `get_joint_state()` / `get_pose()` return `None` until the first message; command methods raise `ROS2NotConnectedError` if you never called `connect()`
 
 ### Motion commands ignored
 
-- Check controller is in correct mode
-- Verify target is within joint limits
-- Check for collision detection blocks
+- Check the controller FSM (`get_fsm_state()` / `ros2 topic echo /fsm_state`)
+- Pose targets need OCS2; joint targets need MOVEJ (the interface can switch these for you)
+- Verify the target is within joint limits
 
 ### Import error
 

@@ -42,22 +42,16 @@ ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 4"   # → MOVEJ
 
 ## Topics
 
-Command topics are namespaced to the controller name (README example: `/left_hand_controller/...`). Full table: the package README §6.
+Command topics are namespaced to the controller name (README example: `/left_hand_controller/...`). The table below is the package README **Topic Summary**, pinned at commit [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README.md). How to refresh the pin: [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
-| Topic | Type | Active state | Notes |
-|-------|------|--------------|-------|
-| `/fsm_command` | `std_msgs/Int32` | any | FSM / home-config switching |
-| `/{controller}/target_joint_position` | `std_msgs/Float64MultiArray` | MOVEJ | Direct joint targets |
-| `/{controller}/target_joint_trajectory` | `trajectory_msgs/JointTrajectory` | MOVEJ | Multi-waypoint |
-| `/{controller}/target_command` | `std_msgs/Int32` (`0`/`1`) | MOVEJ | Hand close/open (`target_command_enabled`) |
-| `/{controller}/target_percent` | `std_msgs/Float64` (`0`–`1`) | MOVEJ | Hand blend (`target_command_enabled`) |
-| `/{controller}/waist_lifting` | `std_msgs/Float64` | MOVEJ | Waist position delta (`waist_lifting_enabled`) |
-| `/{controller}/waist_lifting_pose_relative` | `std_msgs/Float64MultiArray` | MOVEJ | Local `[dx, dz, dphi]` |
-| `/{controller}/waist_lifting_pose_absolute` | `std_msgs/Float64MultiArray` | MOVEJ | Absolute `[x, z, phi]` (TF frames configurable) |
-| `/{controller}/waist_lifting_command` | `std_msgs/Float64` | MOVEJ | Waist velocity factor |
-| `/{controller}/waist_turning_command` | `std_msgs/Float64` | MOVEJ | Waist turning velocity factor |
+```{include} ../../_vendored/arms_ros2_control/basic_joint_controller/README.md
+:start-after: Topic Summary
+:end-before: Demo Launch
+```
 
-Waist absolute-pose defaults match **FiveAges W2** (`base_footprint` / `body_base`). README example for **ARX Lift / Lift 2S**: `waist_lifting_type: single_joint` with `base_link` / `lift_link`.
+Hand `target_command` / `target_percent` need `target_command_enabled`. Waist topics need `waist_lifting_enabled`. Absolute-pose defaults match **FiveAges W2** (`base_footprint` / `body_base`). README example for **ARX Lift / Lift 2S**: `waist_lifting_type: single_joint` with `base_link` / `lift_link`. Height-only commands (`waist_lifting`, `waist_lifting_command`, `target_joint_position`) do **not** use those frames.
+
+On **分体**, the body instance is typically `/body_joint_controller/…`. On **全身**, [API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) maps the same waist names under `/ocs2_wbc_controller/…`. Cartesian EE `*/twist` and `*/relative` are **not** this controller — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## Demo launch (README)
 
@@ -86,4 +80,5 @@ Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
 - [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 (`split_body.launch.py`) uses this controller for body/head
+- [Gripper and teleop plugins](6-gripper_teleop_plugins.md) — adaptive gripper channels vs this controller’s hand `target_percent`
 - [ocs2-wbc-controller](3-ocs2_wbc.md) — 全身控制

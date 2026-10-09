@@ -25,7 +25,7 @@ README states:
 
 The controller starts in **HOLD**. OCS2 can only return to HOLD.
 
-README transition commands (received on `/control_input`):
+README integers (package README still lists them as received on `/control_input`):
 
 | Command | Transition |
 |---------|------------|
@@ -33,7 +33,9 @@ README transition commands (received on `/control_input`):
 | `2` | HOME → HOLD, or OCS2 → HOLD |
 | `3` | HOLD → OCS2 |
 
-`arms_controller_common` also implements **MoveJ** (`StateMoveJ`) and `FSMCommandPublisher`, which publishes **`std_msgs/Int32`** on `/fsm_command` (values in that header: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ). On mixed OCS2/WBC stacks, `basic_joint_controller` treats `3` as OCS2 and `4` as MOVEJ — see [basic_joint_controller](7-basic_joint_controller.md).
+Operators and `ros2_robot_interface` send those same integers on **`/fsm_command`** (`std_msgs/Int32`). That is the stack-wide FSM topic — [FSM and Topics](../../3-concepts/4-fsm_and_topics.md). Joystick `control_input` (`arms_ros2_control_msgs/Inputs`) on `arms_target_manager` is a different message, scaled into `/left_target/twist`.
+
+`arms_controller_common` also implements **MoveJ** (`StateMoveJ`) and `FSMCommandPublisher`, which publishes **`std_msgs/Int32`** on `/fsm_command` (values in that header: `1` HOME, `2` HOLD, `3` OCS2, `4` MOVEJ). On mixed OCS2/WBC stacks, `basic_joint_controller` treats `3` and `4` as MOVEJ, while this controller treats `3` as OCS2 and `4` as MOVEJ — see [basic_joint_controller](7-basic_joint_controller.md).
 
 ## Split-body launch (分体控制)
 
@@ -48,6 +50,14 @@ ros2 launch ocs2_arm_controller split_body.launch.py robot:=<robot>
 :::
 
 The same package also has `full_body.launch.py` (`launch_mode` `full_body`), which spawns **`ocs2_wbc_controller`** when the robot config type is `ocs2_wbc_controller/Ocs2WbcController`. That is **全身控制** — see [ocs2-wbc-controller](3-ocs2_wbc.md).
+
+## Cartesian topics (`arms_target_manager`)
+
+EE goals are **not** listed as a full topic table in this controller’s README. They live in [`arms_target_manager`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md) (`PoseBasedReferenceManager`): `/left_target`, `/left_target/stamped`, `/left_target/twist`, `/left_target/relative`, plus right / dual counterparts and `/left_current_target`.
+
+On this controller, MOVEJ + `/left_target/stamped` (and right / dual) can run IK **MoveL** via [lina_planning](5-lina_planning.md) (`StateMoveJ.startLinearTrajectory`). Without that library the MOVEJ Cartesian side is a no-op. **`ocs2_wbc_controller` MOVEJ has no IK MoveL** (joint arrays only); `full_body.launch.py` sets `enable_movej_cartesian_markers:=false`. Body / head Cartesian (`/body_target…`, `/head_target…`) are WBC-only — 分体 uses `basic_joint_controller` for those joints.
+
+Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 
 ## Demo launch (README)
 
@@ -99,5 +109,6 @@ VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compl
 - [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
 - [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
+- [Gripper and teleop plugins](6-gripper_teleop_plugins.md)
 - [ocs2_ros2](1-ocs2_ros2.md)
 - [ocs2-wbc-controller](3-ocs2_wbc.md)

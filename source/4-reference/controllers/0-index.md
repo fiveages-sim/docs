@@ -35,4 +35,4 @@ Concepts: [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md). Ho
 | [ocs2-wbc-controller](3-ocs2_wbc.md) | 全身控制 (whole-body MPC) | Private |
 | [ocs2-humanoid](4-ocs2_humanoid.md) | `ocs2_wheel_humanoid` library | Private |
 | [lina_planning](5-lina_planning.md) | Trajectory primitives | Private |
-| [Plugins](6-gripper_teleop_plugins.md) | Gripper, teleop | Public |
+| [Plugins](6-gripper_teleop_plugins.md) | `adaptive_gripper_controller` (three channels + force feedback); `arms_target_manager` Cartesian topics | Public |

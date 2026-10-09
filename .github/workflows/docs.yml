@@ -32,6 +32,10 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Check vendored upstream markdown pins
+        run: |
+          python scripts/vendor_upstream_md.py --check
+
       - name: Check zh_CN translation coverage
         run: |
           python scripts/check_zh_coverage.py --threshold 95
