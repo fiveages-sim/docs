@@ -37,5 +37,5 @@ Camera plugins under [lerobot_ros2](../4-reference/python_apps/4-lerobot_ros2.md
 ## Related
 
 - [Controllers](../4-reference/controllers/0-index.md)
-- [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)
+- [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md)

@@ -76,4 +76,4 @@ If SDK-related errors occur:
 
 - [Public Hardware Interfaces](1-public_hi.md)
 - [Private Hardware Interfaces](2-private_hi.md)
-- [Hardware interface parameters](4-ros2_parameters.md)
+- [Hardware Interface parameters](4-ros2_parameters.md)

@@ -4,13 +4,13 @@ This section documents the simulation backends and USD assets.
 
 ## Overview
 
-The stack supports multiple simulation backends:
+The stack supports multiple simulation backends. **FaSim** is Isaac Sim high-fidelity simulation combined with the same ROS 2 运控 as the real robot, so you get matching motion plus simulation ground truth.
 
 | Backend | Use Case |
 |---------|----------|
-| Mock | Fast testing, no physics |
+| Mock | Fast testing, no physics (`hardware:=mock_components`) |
 | Gazebo Harmonic | Physics simulation |
-| Isaac Sim | High-fidelity, USD assets |
+| FaSim / Isaac Sim | High-fidelity USD; same 运控 as hardware + sim ground truth |
 
 ## In This Section
 

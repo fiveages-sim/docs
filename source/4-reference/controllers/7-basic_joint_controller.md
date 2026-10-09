@@ -1,6 +1,6 @@
-# basic_joint_controller
+# Basic Joint Controller
 
-Joint-position controller with a three-state FSM (Home / Hold / MoveJ). Optional dexterous-hand switch/percent control and optional waist lifting/turning.
+Joint-position controller (`basic_joint_controller/BasicJointController`) with a three-state FSM (HOME / HOLD / MOVEJ). Optional 灵巧手 switch/percent control and optional waist lifting/turning.
 
 ```{admonition} Source of truth
 :class: important
@@ -70,16 +70,16 @@ ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_head
 | `enable_body` | `true` | Body controllers |
 | `use_rviz` | `true` | Launch RViz |
 
-This demo does **not** declare `left_type` / `right_type`. Those first-class args come from `create_robot_profile_launch_arguments()` on OCS2 launches — [ocs2_arm_controller](2-ocs2_arm_controller.md).
+This demo does **not** declare `left_type` / `right_type`. Those first-class args come from `create_robot_profile_launch_arguments()` on OCS2 launches — [OCS2 Arm Controller](2-ocs2_arm_controller.md).
 
 Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-install`.
 
 ## Related
 
-- [Controller ROS 2 parameters](8-ros2_parameters.md) — README §3 keys and startup vs runtime
-- [Use basic_joint_controller](../../2-how_to/4-controllers/11-basic_joint.md)
+- [Controller ROS 2 parameters](8-ros2_parameters.md) — README keys and Startup vs Runtime
+- [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
-- [ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 (`split_body.launch.py`) uses this controller for body/head
-- [Gripper and teleop plugins](6-gripper_teleop_plugins.md) — adaptive gripper channels vs this controller’s hand `target_percent`
-- [ocs2-wbc-controller](3-ocs2_wbc.md) — 全身控制
+- [OCS2 Arm Controller](2-ocs2_arm_controller.md) — 分体控制 (`split_body.launch.py`) uses this controller for body/head
+- [Adaptive Gripper Controller](6-gripper_teleop_plugins.md) — 夹爪 channels vs this controller’s 灵巧手 `target_percent`
+- [OCS2 WBC Controller](3-ocs2_wbc.md) — 全身控制

@@ -17,7 +17,7 @@ Whole-body here is **全身控制** (`full_body.launch.py` / Lift 2S **full body
 1. [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md) — `split_body.launch.py` vs `full_body.launch.py`.
 2. [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) — `./quick_start.sh` menu: **full body**.
 3. [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) — private submodule; public loader is `full_body.launch.py`. Topics and FSM values: that package README after access.
-4. Waist **joint** commands on the split / `basic_joint_controller` side: [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) (`waist_lifting_*`, `waist_turning_command`). How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
+4. Waist **joint** commands on the 分体 / Basic Joint Controller side: [Basic Joint Controller](../4-reference/controllers/7-basic_joint_controller.md) (`waist_lifting_*`, `waist_turning_command`). How-to: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 Internal FA wheeled-arm humanoids: [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md) after access.
 

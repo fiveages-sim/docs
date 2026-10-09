@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 01:47+0000\n"
+"POT-Creation-Date: 2026-10-09 11:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,17 +21,17 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:1
-#: 0ff98f987abe4fdcabf5ff0d4682a788
+#: a4bd6f4b692d414da74d0ad788c12076
 msgid "FaSim-Isaac"
 msgstr "FaSim-Isaac"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:3
-#: 471df56988444640b33ff89911bd7329
+#: e855c1c3971748b180f1d4acdee3ed14
 msgid "NVIDIA Isaac Sim integration for FiveAges Sim."
 msgstr "FiveAges Sim 的 NVIDIA Isaac Sim 集成。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:5
-#: c9c710679d704940a9b801265d59ae7d
+#: a5167929e22947488c2a6a5d5ef7dbee
 msgid ""
 "**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-"
 "sim/FaSim-Isaac)"
@@ -40,7 +40,7 @@ msgstr ""
 "Isaac)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:7
-#: 65f0bb5752eb4cf296bd450ec23256d1
+#: a4aed03425274c29b2df23783b7d8bc7
 msgid ""
 "**README:** [README.md](https://github.com/fiveages-sim/FaSim-"
 "Isaac/blob/main/README.md)"
@@ -49,39 +49,42 @@ msgstr ""
 "Isaac/blob/main/README.md)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:9
-#: d620d03c2feb4f7c95656c7952807a95
+#: 1e74d29ff71449c28b9d8697f005c4e5
 msgid "Purpose"
 msgstr "用途"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:11
-#: c4494506351347f6a337e820a17cfb82
+#: cade0dbadb064fbd886d4916acb2d583
 msgid ""
-"FaSim-Isaac is the one-click Isaac asset workspace: it pulls robot USD "
-"and scene submodules, can install the Isaac ROS 2 Jazzy overlay, and "
-"starts Sim."
+"**FaSim** is NVIDIA Isaac Sim high-fidelity simulation plus the same ROS "
+"2 运控 stack as the real robot: matching motion capability, plus simulation"
+" ground truth. [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac)"
+" is the one-click asset workspace: it pulls robot USD and scene "
+"submodules, can install the Isaac ROS 2 Jazzy overlay, and starts Sim."
 msgstr ""
-"FaSim-Isaac 是一键 Isaac 资产工作空间：拉取机器人 USD 和场景子模块，可安装 Isaac ROS 2 Jazzy "
-"overlay，并启动 Sim。"
+"**FaSim** 是 NVIDIA Isaac Sim 高保真仿真加上与真机同一套 ROS 2 运控：运动能力对齐，并带仿真真值。[FaSim-"
+"Isaac](https://github.com/fiveages-sim/FaSim-Isaac) 是一键资产工作空间：拉取机器人 USD "
+"与场景子模块，可安装 Isaac ROS 2 Jazzy overlay，并启动 Sim。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:13
-#: 708bd1c866b5477f962b438206836ccf
+#: b9ebe761761c4db38a62bdd76ccb8fd5
 msgid "Prerequisites"
 msgstr "前提条件"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:15
-#: fdf408bc050c424ba512d037c1c7fb0f
+#: 91dcba906e8d40e898be08a9d4b50f3c
 msgid "NVIDIA Isaac Sim binary (GPU + matching drivers)"
 msgstr "NVIDIA Isaac Sim 二进制（GPU 及匹配驱动）"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:16
-#: 072ae48d1862411b9539285ae6645f0f
+#: f3e16e4b27c04b1e89e7db2044722164
 msgid ""
 "Default path `ISAACSIM_DIR` (`~/isaacsim`); override in "
 "`config/fa_sim.local.conf` or the environment"
 msgstr "默认路径 `ISAACSIM_DIR`（`~/isaacsim`）；在 `config/fa_sim.local.conf` 或环境变量中覆盖"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:18
-#: 61d62132c7f543edb9007b27e142b031
+#: 2646a5bae3a5448ca1d25ee1d00d5d3b
 msgid ""
 "Do not hardcode a single Isaac minor version. `./init.sh` operation 2 "
 "queries GitHub stable tags; fallback list in `config/fa_sim.conf` "
@@ -91,12 +94,12 @@ msgstr ""
 "`config/fa_sim.conf`，目前是 `6.0.1` / `6.0.0` / `5.1.0`。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:20
-#: 96bb4650ef244c23abb9920902c2e655
+#: 7b22b88185784f3b9a1404defe3adb75
 msgid "Installation"
 msgstr "安装"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:22
-#: 809f7bd133054097af39ae492e1c8356
+#: a5ae3377976345b6b317dff47cc321fa
 msgid ""
 "git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
@@ -109,19 +112,19 @@ msgstr ""
 "./run.sh"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:29
-#: d7fdec3a5ac8434080a92cc6edd680ac
+#: 0a546d8d1b93487987cafb964dac4a88
 msgid "What `./init.sh` does:"
 msgstr "`./init.sh` 做什么："
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:31
-#: 6598302f60464a40852a5303df07117f
+#: 8989b66e26ea408ea6c1305f491b093d
 msgid ""
 "Initialize selected submodules (`.gitmodules` / "
 "`submodules_visibility.conf`; public default)"
 msgstr "初始化勾选的子模块（`.gitmodules` / `submodules_visibility.conf`；默认 public）"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:32
-#: 2e173896850b473b826e6dc22028e7ca
+#: aad7da0679b147628be219c1f6e80958
 msgid ""
 "Optional Isaac ROS 2 Jazzy workspace (`isaac_jazzy_ws/`). Override "
 "version with `ISAAC_SIM_VERSION=… ./init.sh`"
@@ -130,7 +133,7 @@ msgstr ""
 "./init.sh` 覆盖版本"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:34
-#: d15c1e329ea949e38e9641ae01418ca5
+#: 826023f27a79427fbe4062ddeb438434
 msgid ""
 "What `./run.sh` does: optional CPU governor, optional Zenoh router, then "
 "a menu — **PhysX** / **Newton** / **Headless Streaming**. There is no "
@@ -140,12 +143,12 @@ msgstr ""
 " **Headless Streaming**。没有 `./run.sh --robot`、`--headless` 或 `--env`。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:36
-#: 2a27b6098b4144638ea00f5cfff0d538
+#: d692c11e195d48bdae8b5f0a92b1499b
 msgid "Local config:"
 msgstr "本机配置："
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:38
-#: f7b9933a4c02469c8aa1b3c38fdb0e8a
+#: 0c949f49e5ff457fb29cc9bfa46259ff
 msgid ""
 "cp config/fa_sim.local.template.conf config/fa_sim.local.conf\n"
 "# edit ISAACSIM_DIR / ISAAC_SIM_DEFAULT_VERSION"
@@ -154,29 +157,29 @@ msgstr ""
 "# edit ISAACSIM_DIR / ISAAC_SIM_DEFAULT_VERSION"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:43
-#: 1735c4bdbe494e0abafb83bddf8ad233
+#: 8b6c2b74c08d475d9882d33603047209
 msgid "ROS 2 Connection"
 msgstr "ROS 2 连接"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:45
-#: 5d834638736044d891e7c63d7bd13c51
+#: 84b0653739af4af3bff348e5850a4e74
 msgid ""
 "In a separate terminal (robot name is a ROS 2 launch argument, not a "
 "FaSim flag):"
 msgstr "在另一个终端（机器人名称是 ROS 2 launch 参数，不是 FaSim 标志）："
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:47
-#: 0343fa1ded7d403dba1de57686a53db1
+#: 7ec15b76913c4b95811a5038c9d9ee74
 msgid "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac"
 msgstr "ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:51
-#: 71570ccbe4bb4532bbcbf3124730a7ca
+#: 21b496f398c54d8c9e6fe3a1da524139
 msgid "Structure"
 msgstr "结构"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 1023e644c1134fa2a1947909f437cc9e
+#: db4702848f08484980d404bb2a13cbfe
 msgid ""
 "FaSim-Isaac/\n"
 "├── init.sh\n"
@@ -201,122 +204,122 @@ msgstr ""
 "└── isaac_jazzy_ws/            # created by init.sh operation 2"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:65
-#: ecec6377fc83456cadde5a071bfceb59
+#: 5de98eef630643208e384d47996fd89d
 msgid "Submodules"
 msgstr "子模块"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 2597b6dd3a814984b19679b7c9fca522
+#: 18292e21fea9464e82c1ff38ab49e583
 msgid "Path"
 msgstr "路径"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 5e4c26d53ad446e299448e06b6058bf2
+#: 14399d16b2b4436782dfe078adbf3edc
 msgid "Repository"
 msgstr "仓库"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 585a9eda451f4a80b6e6832f2396294e
+#: ea1b729fcf614eba8a6029ed5cc30fde
 msgid "Visibility"
 msgstr "可见性"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 490e0cba418c4ede91ce1adf4dbd8fc3
+#: d332f18977834c46b08e5366df3cc60c
 msgid "`robots/`"
 msgstr "`robots/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: c7a4596835b446e19b5f0cde60d8d831
+#: d0a4ef5f0f504dc1a739fa7a1b1d3c60
 msgid "robot_usds"
 msgstr "robot_usds"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 20f8d78599b04b35a83e9e6f50b36790 397514983ad84a35892318a98c6051f2
+#: 06854b29ded64199b79ed9ef50f7bfdd 31f6fb6118df4b91a0f4d3571333640a
 msgid "Public"
 msgstr "公开"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: c07f4dffbf254caaa6a141cbe26a3728
+#: 7d08e16312be4cf8afb16656a9684dab
 msgid "`environment/fiveages_env/`"
 msgstr "`environment/fiveages_env/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 2cfd829e964f45b7b28e50c743051be4
+#: 7253398e1c1a48b2a5f5298864d353dd
 msgid "fiveages-env-usds"
 msgstr "fiveages-env-usds"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: aec3237a739143538647469a5e7e0e3a
+#: b485e3ca89f448d083f55aecfbea7953
 msgid "`environment/fa-project-usd/`"
 msgstr "`environment/fa-project-usd/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 8688e515fbff4c86a2d0bd0abff61c42
+#: 49caf0d562874b3784789391389649cf
 msgid "fa-project-usd"
 msgstr "fa-project-usd"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: c5f5ec53bca04baca44b764c4a9114c6
+#: d08289c2e66f4946bcc70781a3021139
 msgid "Private"
 msgstr "私有"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:73
-#: 357d886a0c7e418c866fd248fe2d7533
+#: 2ff285a262b3406dbc9b09865dc962bf
 msgid "Topic Bridge"
 msgstr "话题桥接"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:75
-#: ec370c2c9a044e69824aa215565f1ab8
+#: 7ff6c30a531f4a0b848fa010c0f538a5
 msgid "FaSim-Isaac bridges Isaac Sim to ROS 2:"
 msgstr "FaSim-Isaac 将 Isaac Sim 桥接到 ROS 2："
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: c20979514ad0470f8e168ecb703b0e87
+#: fdcb419f41f24f6090596a89412a9eaf
 msgid "Isaac Topic"
 msgstr "Isaac 话题"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 5bcf926c9e6c457585659426a9a95a04
+#: 5707c489dc084cbc88feb498ccede879
 msgid "ROS 2 Topic"
 msgstr "ROS 2 话题"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 66c4710f4132483688a74891ce4a29e9
+#: 4721c388b2534fd6a84f00617769246f
 msgid "Direction"
 msgstr "方向"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: fb2d4f61f14944c3a0a7a7fc4d171d91
+#: e768f3c7a24b407786102ce491619128
 msgid "Joint positions"
 msgstr "关节位置"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 648f5425d4f54804a582eefb899c6577
+#: b1d619d527764c8f9ed81dc398b7e292
 msgid "`/joint_states`"
 msgstr "`/joint_states`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 5e08d8a5c08b426397b3ab182e761e4f
+#: 0084f8ab6ba347d88c4a96cff9d74a38
 msgid "Isaac → ROS"
 msgstr "Isaac → ROS"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: 34da6295fa504841824fab535e1e54a2
+#: a9a3b864d4094b03979ef00a95da19eb
 msgid "Joint commands"
 msgstr "关节指令"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: f22ffba95a784a6e919dbf7878954028
+#: 7b212e6ac574445da9d2ebcbe9a5eba0
 msgid "`/joint_commands`"
 msgstr "`/joint_commands`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:53
-#: d3148a73c2a84c5bb077ddf5fb5b204a
+#: 937474f7d73f499ba1b801408a9a783c
 msgid "ROS → Isaac"
 msgstr "ROS → Isaac"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:82
-#: 2673611bb08844dd8f4edb7855f09075
+#: fd94e93e10854e098f5eaf715475177b
 msgid ""
 "Open robot USD from `robots/` and scene USD from `environment/` in Isaac."
 " Selection is not a `run.sh` CLI flag."
@@ -325,17 +328,17 @@ msgstr ""
 "CLI 参数。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:84
-#: ea175533d1ec44afbd5001182b1e0ada
+#: b781cab9adc042dcae87db919f094742
 msgid "Troubleshooting"
 msgstr "故障排除"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:86
-#: 2f2f63874cd94c90aaa684507ab6f7e2
+#: 2ea219cce3f249b28429446f4b2ea8e6
 msgid "Isaac Sim Won't Start"
 msgstr "Isaac Sim 无法启动"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:88
-#: 2955cbb6a9fc4ac28ccb421306a406c6
+#: 47572ac3ca5f48afa25fac646845a9d3
 msgid ""
 "Confirm `ISAACSIM_DIR` contains `isaac-sim.sh` (and the Newton / "
 "streaming launchers named in `fa_sim.conf`)"
@@ -344,57 +347,57 @@ msgstr ""
 "streaming 启动脚本）"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:89
-#: 1532285212344953b1d9225d3e7940f9
+#: e66cbda31e5c4b9da57311f61fe0729d
 msgid "Override the path in `config/fa_sim.local.conf`"
 msgstr "在 `config/fa_sim.local.conf` 中覆盖路径"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:90
-#: f67704dee27147e5947f83c54f3b6c57
+#: 47048a1a9caf4f00b0db556c82472587
 msgid "Check GPU drivers: `nvidia-smi`"
 msgstr "检查 GPU 驱动：`nvidia-smi`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:91
-#: a2010e82fabd468eb26fda681c2f2752
+#: 1c622cd7be504a08b6edc46651bf0622
 msgid "Check logs: `~/.nvidia-omniverse/logs/`"
 msgstr "检查日志：`~/.nvidia-omniverse/logs/`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:93
-#: a227b08b2c024ad7be044161c7d8471e
+#: f199138813d447978792fe68d2dc3e2f
 msgid "No ROS 2 Connection"
 msgstr "无法连接 ROS 2"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:95
-#: d21596da80134de6af1a5747cfe84403
+#: 2b3a1bc210944945bbcf17375451a9c6
 msgid "Check domain ID matches"
 msgstr "检查 Domain ID 是否一致"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:96
-#: 7556ae672af5465ea4195abd2b5cae8d
+#: a6711471b57f44469eac9d05172200c0
 msgid "Verify ROS 2 bridge extension enabled"
 msgstr "确认已启用 ROS 2 桥接扩展"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:97
-#: 59f634fe88b94d4f90bca8751ee8f8d7
+#: ca9cc025761749cd9823989abb873944
 msgid "Restart `./run.sh` and the ROS 2 nodes"
 msgstr "重启 `./run.sh` 和 ROS 2 节点"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:99
-#: fd90122772bb49b7bbb813efc954150b
+#: d224cb740a9a40f78a39c359b9cdc2ed
 msgid "Related"
 msgstr "相关内容"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:101
-#: c5fe9d21a8484a798f267b719a65223f
+#: 56331f63d13c4a87a3a2d2dfb0751c95
 msgid "[robot_usds](3-robot_usds.md)"
 msgstr "[robot_usds](3-robot_usds.md)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:102
-#: 4139a86d6b544b90a24aa13ac0268038
+#: c761425370a441288acaa467ab718547
 msgid "[Isaac Sim How-To](../../2-how_to/2-simulation/4-isaac_sim.md)"
 msgstr "[Isaac Sim 操作指南](../../2-how_to/2-simulation/4-isaac_sim.md)"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:103
-#: a7e988fbf6264d45a6fc12a5cdaf3b79
+#: cb08fd9f75dd4accb852ca2ae21430dc
 msgid "[Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md)"
 msgstr "[合成数据](../../2-how_to/7-synthetic_data/0-index.md)"
 
@@ -553,4 +556,15 @@ msgstr "[合成数据](../../2-how_to/7-synthetic_data/0-index.md)"
 #~ msgstr ""
 #~ "# Create symlink to expected path\n"
 #~ "ln -s /your/actual/isaacsim/path ~/isaacsim\n"
+
+#~ msgid ""
+#~ "FaSim-Isaac is the one-click Isaac"
+#~ " asset workspace: it pulls robot USD"
+#~ " and scene submodules, can install "
+#~ "the Isaac ROS 2 Jazzy overlay, and"
+#~ " starts Sim."
+#~ msgstr ""
+#~ "FaSim-Isaac 是一键 Isaac 资产工作空间：拉取机器人 USD"
+#~ " 和场景子模块，可安装 Isaac ROS 2 Jazzy "
+#~ "overlay，并启动 Sim。"
 

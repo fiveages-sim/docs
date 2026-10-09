@@ -90,18 +90,20 @@ Robot descriptions define the URDF/xacro models, visual meshes, and ros2_control
 
 ### L2: Hardware Interfaces
 
-ROS 2 control plugins that communicate with physical or simulated hardware:
+ROS 2 **硬件接口** plugins that communicate with physical or simulated hardware (the 驱动层 / **硬件驱动**):
 
 - Public HIs: `arx-ros2-control`, `dobot-cr-ros2-control`, `unitree-ros2-control`, etc.
 - Private HIs: `rokae-ros2-control`, `eyou-ros2-control`, `wuji-ros2-control`, etc.
+
+Controller vs 硬件接口 vs 分体/全身: [ros2_control here](../3-concepts/1-ros2_control_here.md), [Hardware Interfaces](../4-reference/hardware/0-index.md), [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md).
 
 ### L3: Controllers + MPC
 
 Motion planning and control algorithms:
 
-- **arms_ros2_control** — Main controller package with OCS2 arm controller, gripper, and teleop plugins
+- **arms_ros2_control** — **Basic Joint Controller**, **OCS2 Arm Controller**, **Adaptive Gripper Controller**, teleop command nodes
 - **ocs2_ros2** — OCS2 MPC library (GitHub Release `.deb`: `ros-jazzy-ocs2`)
-- **ocs2-wbc-controller** — Whole-body control for wheeled-arm humanoids (private)
+- **OCS2 WBC Controller** (`ocs2-wbc-controller`) — 全身控制 for wheeled-arm humanoids (private)
 - **ocs2-humanoid** — Wheeled-arm humanoid specific library (private)
 
 ### L4: Simulation
@@ -109,6 +111,7 @@ Motion planning and control algorithms:
 Simulation backends and assets:
 
 - **Gazebo Harmonic** — Integrated via launch files in `arms_ros2_control`
+- **FaSim** — Isaac Sim high-fidelity + the same ROS 2 运控 as the real robot, plus simulation ground truth. One-click workspace: [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac)
 - **robot_usds** — USD assets for Isaac Sim (Gen1/2/3, Galbot, Ubtech)
 - **FaSim environments** — Scene assets via `fiveages-env-usds` and `fa-project-usd`
 

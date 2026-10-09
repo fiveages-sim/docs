@@ -32,9 +32,9 @@ Exact transitions depend on the **running controller**:
 
 | Controller | States | Commands |
 |------------|--------|----------|
-| [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | Home / Hold / MoveJ | README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a legacy MOVEJ alias, and means **OCS2** on mixed OCS2/WBC stacks |
-| [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) | HOME / OCS2 / HOLD | README integers: `1` HOME, `2` HOLD, `3` OCS2. Operators and `ros2_robot_interface` send them on **`/fsm_command`**. Starts in HOLD; OCS2 returns only to HOLD. Shared `FSMCommandPublisher` also defines `4` MOVEJ |
-| [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | Whole-body stack | Private package; extra states are in that README after access. Public Python still uses the same `/fsm_command` integers plus `/mode_command` strings |
+| [Basic Joint Controller](../4-reference/controllers/7-basic_joint_controller.md) | HOME / HOLD / MOVEJ | README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a **legacy MOVEJ alias** when this controller is standalone, and means **OCS2** on mixed OCS2/WBC stacks |
+| [OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md) | HOME / OCS2 / HOLD | README integers: `1` HOME, `2` HOLD, `3` **OCS2**. Operators and `ros2_robot_interface` send them on **`/fsm_command`**. Starts in HOLD; OCS2 returns only to HOLD. Shared `FSMCommandPublisher` also defines `4` MOVEJ |
+| [OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身 stack | Private package; extra states are in that README after access. Public Python still uses the same `/fsm_command` integers plus `/mode_command` strings |
 
 On mixed stacks, head / split-waist `basic_joint_controller` treats **`3` and `4` as MOVEJ**, while the arm / WBC controller treats **`3` as OCS2** and **`4` as MOVEJ**.
 
@@ -247,11 +247,11 @@ Python wraps **`ExecutePath`** as `execute_path` / `execute_left_path` / `execut
 
 ## Related
 
-- [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md)
+- [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)
 - [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)
 - [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)
 - [ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)
-- [Gripper and teleop plugins](../4-reference/controllers/6-gripper_teleop_plugins.md)
+- [Adaptive Gripper Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)
 - [Controllers reference](../4-reference/controllers/0-index.md)
 - [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)
 - [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)

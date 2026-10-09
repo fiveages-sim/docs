@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 10:11+0000\n"
+"POT-Creation-Date: 2026-10-09 11:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,24 +21,24 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:1
-#: 141dd26bd3614a6e9cc7a13fed43b52a
-msgid "ocs2_wbc_controller"
-msgstr "ocs2-wbc-controller"
+#: e777b81019ae40aca6d0ea36376b1656
+msgid "OCS2 WBC Controller"
+msgstr "OCS2 WBC Controller"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:3
-#: 9bde8bdfef79485e85575203b2466eea
+#: 72cedb317e69465fb64a4a1108482c46
 msgid ""
-"Whole-body MPC (**全身控制**) for wheeled dual-arm robots, using "
-"`ocs2_wheel_humanoid`."
-msgstr "轮式双臂的全身 MPC（**全身控制**），使用 `ocs2_wheel_humanoid`。"
+"Whole-body MPC — **全身控制** (`ocs2_wbc_controller`) — for wheeled dual-arm "
+"robots, using `ocs2_wheel_humanoid`."
+msgstr "全身 MPC — **全身控制**（`ocs2_wbc_controller`）— 面向轮式双臂，使用 `ocs2_wheel_humanoid`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:5
-#: 32f22324632e4d2c8274ba3218b7a84a
+#: a90d09a77fa54cb38c63318f97af1ed4
 msgid "Access Required"
 msgstr "需要访问权限"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:8
-#: 97d143c10ccb483685e58b22b6e8bcdc
+#: 3a6dc975715a48eba3638f82c2724a49
 msgid ""
 "`controller/ocs2_wbc_controller` in "
 "[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is"
@@ -52,55 +52,53 @@ msgstr ""
 "`full_body.launch.py`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:11
-#: 3605dbe1293940389360fdd64a1f3507
+#: 66ff852583e44876ac534434867b8d98
 msgid "Role"
 msgstr "作用"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:13
-#: f8a2c0d94735474fa1f9da16524e3d83
+#: 819f7447110f4b71904165895bf22950
 msgid ""
 "Unified **全身控制** stack: one `ocs2_wbc_controller` instead of arm MPC plus"
 " separate body/head joint controllers"
 msgstr "统一的**全身控制**栈：一个 `ocs2_wbc_controller`，而不是手臂 MPC 加独立的身体/头关节控制器"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:14
-#: 65ade6a92cf74c54b496a960acfb6ec4
+#: e03e6b857125436ca4be5022373c10be
 msgid ""
 "Motion library: `ocs2_wheel_humanoid` (see "
 "[ocs2-humanoid](4-ocs2_humanoid.md))"
 msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:16
-#: 6b878bf6c2c44b389b36560065820ce9
+#: a90179b3621a48a7a0e4628440034bb3
 msgid ""
-"Contrast with **分体控制 (split)**: "
-"[ocs2_arm_controller](2-ocs2_arm_controller.md) + "
-"[basic_joint_controller](7-basic_joint_controller.md) via "
+"Contrast with **分体控制**: [OCS2 Arm Controller](2-ocs2_arm_controller.md) +"
+" [Basic Joint Controller](7-basic_joint_controller.md) via "
 "`split_body.launch.py`."
 msgstr ""
-"对比**分体控制 (split)**：[ocs2_arm_controller](2-ocs2_arm_controller.md) + "
-"[basic_joint_controller](7-basic_joint_controller.md)，由 "
-"`split_body.launch.py` 启动。"
+"对照 **分体控制**：[OCS2 Arm Controller](2-ocs2_arm_controller.md) + [Basic "
+"Joint Controller](7-basic_joint_controller.md)，通过 `split_body.launch.py`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:18
-#: 2b0cd4252c75422dab1f9e8ee04b3d8e
+#: 48c8fdb6505c49ccabd79156cd32ea97
 msgid "Launch (from `ocs2_arm_controller`)"
 msgstr "启动（来自 `ocs2_arm_controller`）"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:20
-#: 6f2fd34f21ea4225b828633ee22ec048
+#: bbd621fc56e64cb4b752f960a531be63
 msgid ""
 "There is no public README listing a `ros2 launch ocs2_wbc_controller …` "
 "entry point. The in-tree path that loads this controller is:"
 msgstr "公开 README 没有列出 `ros2 launch ocs2_wbc_controller …` 入口。仓库内加载该控制器的路径是："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:22
-#: 956439993d9145a2844e610ae6ebe879
+#: ce9965847ffd46ad9714eba4a96ee58e
 msgid "ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>"
 msgstr "ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:26
-#: 33e4dc2825c84d40a017e92cdc61bb1b
+#: aee135a5b98747d0b2d6de6bfaf098b9
 msgid ""
 "`full_body.launch.py` (`launch_mode` `full_body`) spawns "
 "`ocs2_wbc_controller` when the robot’s `controller_manager` type is "
@@ -112,40 +110,40 @@ msgstr ""
 "`ocs2_wbc_controller`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:28
-#: 7b7124c839484c6c8178b318c32e3690
+#: cc64e82e7ccc41c682be21bde2c064f7
 msgid ""
 "The same file declares `type` and "
 "`create_robot_profile_launch_arguments()` (`left_type` / `right_type`, "
-"`use_profile_eef`). End-effectors: "
-"[ocs2_arm_controller](2-ocs2_arm_controller.md) and "
+"`use_profile_eef`). End-effectors: [OCS2 Arm "
+"Controller](2-ocs2_arm_controller.md) and "
 "[robot_common_launch](../descriptions/2-common.md)."
 msgstr ""
-"同一文件声明 `type` 和 `create_robot_profile_launch_arguments()`（`left_type` / "
-"`right_type`、`use_profile_eef`）。末端见 "
-"[ocs2_arm_controller](2-ocs2_arm_controller.md) 与 "
+"同一文件还声明 `type` 和 `create_robot_profile_launch_arguments()`（`left_type` / "
+"`right_type`、`use_profile_eef`）。末端：[OCS2 Arm "
+"Controller](2-ocs2_arm_controller.md) 与 "
 "[robot_common_launch](../descriptions/2-common.md)。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:30
-#: 90cea74852574549a185f9b4f4e8fd30
+#: deda958be9b347c58299d2bd903b04a7
 msgid ""
 "`split_body.launch.py` is the split (分体) path; whole-body control uses "
 "`full_body.launch.py`."
 msgstr "`split_body.launch.py` 是分体路径；全身控制用 `full_body.launch.py`。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:32
-#: 9d71414a6fc048029f337632d0f7ae45
+#: f32f372db7004fa8a764b168b631b65b
 msgid "Public command surface"
 msgstr "公开指令面"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:34
-#: c53be6441ea749b3a232561cf5f49f8d
+#: 884360db984641578b4737dbe7324419
 msgid ""
 "Extra FSM states stay in the private package README after access. From "
 "public sources, 全身 uses:"
 msgstr "额外 FSM 状态开通后见私有软件包 README。公开来源里，全身使用："
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:36
-#: 0b497a7262bb42d3b373e7b622405765
+#: 80efb69c19c448e0a2cd0b792d8d5ddf
 msgid ""
 "Cartesian body / head: `/body_target*`, `/head_target*` "
 "([arms_target_manager](https://github.com/fiveages-"
@@ -157,7 +155,7 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)）"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:37
-#: ef8ef076456b478ba138e110e4ce0fc6
+#: 47d6dec3ff48403c94a66ffb45ee5e9c
 msgid ""
 "`/mode_command` (`std_msgs/String`) and "
 "`/ocs2_wbc_controller/current_state` (`WbcCurrentState`)"
@@ -166,7 +164,7 @@ msgstr ""
 "`/ocs2_wbc_controller/current_state`（`WbcCurrentState`）"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:38
-#: cb2273d54b844697bcafd93b4171b236
+#: 03525629a63a4cce8ad1213997b2075e
 msgid ""
 "Shared action / service types: [`arms_ros2_control_msgs` "
 "README](https://github.com/fiveages-"
@@ -177,12 +175,12 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:40
-#: c5bec13cc3314438b967e076ca0c11c7
+#: 5f44641c5a9c47c19ffc6d13b6b5985a
 msgid "Whole-body (WBC) availability"
 msgstr "全身控制（WBC）可用性"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:43
-#: 0a5b1a922aee431381caa9208187073a
+#: 273a7e799d7f47b0b98325d990825e16
 msgid ""
 "These topics need **`ocs2_wbc_controller`** and that robot’s 全身 "
 "launch/config. Default mock demos (`demo.launch.py`) and 分体 "
@@ -210,49 +208,48 @@ msgstr ""
 "0.25]`。完整表格：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:46
-#: 9232e738504945ca9c60a2b47f215759
+#: 3572b15411af46c498df5890fbacfc3b
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:48
-#: 28bea26e9a784ba0b44c2f6710be011d
+#: 7a7f916c51d04e31a69547deca642e70
 msgid ""
 "[Controller ROS 2 parameters](8-ros2_parameters.md) — public overlay "
 "keys; full list is the private package README"
-msgstr ""
-"[控制器 ROS 2 参数](8-ros2_parameters.md) — 公开 overlay 键；完整列表见私有包 README"
+msgstr "[控制器 ROS 2 参数](8-ros2_parameters.md) — 公开 overlay 键；完整列表见私有包 README"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:49
-#: 1680d0583b3e4cc1a63fa95a9103ddc1
+#: 3280c2dbfd3445c09e4ac9fcc1dcd399
 msgid ""
-"[ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / "
+"[OCS2 Arm Controller](2-ocs2_arm_controller.md) — 分体控制 / "
 "`split_body.launch.py`"
 msgstr ""
-"[ocs2_arm_controller](2-ocs2_arm_controller.md) — 分体控制 / "
+"[OCS2 Arm Controller](2-ocs2_arm_controller.md) — 分体控制 / "
 "`split_body.launch.py`"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:50
-#: 6bd9a35f3c4646a2a238d079deac9ed6
-msgid "[basic_joint_controller](7-basic_joint_controller.md)"
-msgstr "[basic_joint_controller](7-basic_joint_controller.md)"
+#: 6505aa83200346228b4b36a680950b98
+msgid "[Basic Joint Controller](7-basic_joint_controller.md)"
+msgstr "[Basic Joint Controller](7-basic_joint_controller.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:51
-#: 4059042c93cf47dfa9efa6488f9ce3f2
+#: 05a8d56d82bc413d9731c337b5a76504
 msgid "[ocs2-humanoid](4-ocs2_humanoid.md) — `ocs2_wheel_humanoid`"
 msgstr "[ocs2-humanoid](4-ocs2_humanoid.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:52
-#: 0ec453633c8f48e9a068d20159cc53e9
+#: 22d6eaa085994f7ebb84321a6f419acd
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:53
-#: 5f2afda0e0c24814a719b3a21144c174
+#: 68c772508c9e45d39829ee53e2a82641
 msgid "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:54
-#: 4b72324d718341f699e02eae369ed07a
+#: fb592fd4aa384a7b8ecd541aafaa3b52
 msgid "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 

@@ -1,6 +1,6 @@
-# Gripper and Teleop Plugins
+# Adaptive Gripper Controller
 
-Controller plugins for grippers and teleoperation.
+夹爪 controller (`adaptive_gripper_controller`) and related teleop command nodes.
 
 **Repository:** [fiveages-sim/arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
 
@@ -40,7 +40,7 @@ Trigger: `|current_effort| > force_threshold`. New target = current + (original 
 
 YAML keys in the README: `joint`, `use_effort_interface` (default `true`), `force_threshold` (default `0.1`), `force_feedback_ratio` (default `0.5`). Startup vs runtime: [Controller ROS 2 parameters](8-ros2_parameters.md).
 
-Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedback), `send_target_command` (0/1), `send_position_percent` (0–1). Same `target_command` / `target_percent` names on a dexterous **hand** go to [basic_joint_controller](7-basic_joint_controller.md) Home-config blend, not this force path. Map: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md).
+Python: `left_gripper_handler.send_joint_positions` (direct stroke, **no** feedback), `send_target_command` (0/1), `send_position_percent` (0–1). Same `target_command` / `target_percent` names on a 灵巧手 go to [Basic Joint Controller](7-basic_joint_controller.md) Home-config blend, not this force path. Map: [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md).
 
 ## Teleop command nodes
 
@@ -50,9 +50,9 @@ The command package in the same repo is `command/` (`arms_target_manager`, `arms
 
 ## Related
 
-- [Controller ROS 2 parameters](8-ros2_parameters.md) — gripper keys and `arms_target_manager` node params
-- [ocs2_arm_controller](2-ocs2_arm_controller.md)
-- [basic_joint_controller](7-basic_joint_controller.md)
+- [Controller ROS 2 parameters](8-ros2_parameters.md) — 夹爪 keys and `arms_target_manager` node params
+- [OCS2 Arm Controller](2-ocs2_arm_controller.md)
+- [Basic Joint Controller](7-basic_joint_controller.md)
 - [ros2_control here](../../3-concepts/1-ros2_control_here.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [ros2_robot_interface](../python_apps/1-ros2_robot_interface.md)

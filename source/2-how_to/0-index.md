@@ -20,8 +20,8 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 ### Controllers
 
-- [Use basic_joint_controller](4-controllers/11-basic_joint.md) — Home / Hold / MoveJ (`std_msgs/Int32` `/fsm_command`)
-- [Configure ROS 2 controller parameters](4-controllers/12-ros2_parameters.md) — YAML vs CLI vs xacro `<param>`; startup vs runtime
+- [Use Basic Joint Controller](4-controllers/11-basic_joint.md) — HOME / HOLD / MOVEJ (`std_msgs/Int32` `/fsm_command`; mixed stacks: `3` = OCS2, MOVEJ = `4`)
+- [Configure ROS 2 controller parameters](4-controllers/12-ros2_parameters.md) — YAML vs CLI vs xacro `<param>`; Startup vs Runtime
 
 ### Teleoperation
 

@@ -35,12 +35,12 @@ From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READ
 
 | Package | Role |
 |---------|------|
-| [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md) | Home / Hold / MoveJ; body/head in 分体控制 |
-| [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md) | Arm MPC; `demo.launch.py` / `split_body.launch.py` |
-| [ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 via `full_body.launch.py` |
-| `adaptive_gripper_controller` | Gripper (same repo README) |
+| [Basic Joint Controller](../4-reference/controllers/7-basic_joint_controller.md) | HOME / HOLD / MOVEJ; body/head/灵巧手 in 分体控制 (`basic_joint_controller`) |
+| [OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md) | Arm MPC; `demo.launch.py` / `split_body.launch.py` (`ocs2_arm_controller`) |
+| [OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md) | 全身控制 via `full_body.launch.py` (`ocs2_wbc_controller`) |
+| [Adaptive Gripper Controller](../4-reference/controllers/6-gripper_teleop_plugins.md) | 夹爪 (`adaptive_gripper_controller`) |
 
-分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
+分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 ## Command / state interfaces (OCS2 arm README)
 
@@ -60,5 +60,5 @@ There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`
 - [robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`, profile merge
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs xacro `<param>`
 - [Controller ROS 2 parameters](../4-reference/controllers/8-ros2_parameters.md)
-- [Hardware interface parameters](../4-reference/hardware/4-ros2_parameters.md)
+- [Hardware Interface parameters](../4-reference/hardware/4-ros2_parameters.md)
 - [Controllers reference](../4-reference/controllers/0-index.md)
