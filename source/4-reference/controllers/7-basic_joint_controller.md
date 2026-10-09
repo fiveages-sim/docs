@@ -42,11 +42,11 @@ ros2 topic pub --once /fsm_command std_msgs/msg/Int32 "data: 4"   # → MOVEJ
 
 ## Topics
 
-Command topics are namespaced to the controller name (README example: `/left_hand_controller/...`). The table below is the package README **Topic Summary**, pinned at commit [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README.md). How to refresh the pin: [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
+Command topics are namespaced to the controller name (README example: `/left_hand_controller/...`). The table below is the package README **Topic Summary**, pinned at commit [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/basic_joint_controller/README.md). How to refresh the pin (and recompute `:start-line:` / `:end-line:`): [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
 ```{include} ../../_vendored/arms_ros2_control/basic_joint_controller/README.md
-:start-after: Topic Summary
-:end-before: Demo Launch
+:start-line: 274
+:end-line: 291
 ```
 
 Hand `target_command` / `target_percent` need `target_command_enabled`. Waist topics need `waist_lifting_enabled`. Absolute-pose defaults match **FiveAges W2** (`base_footprint` / `body_base`). README example for **ARX Lift / Lift 2S**: `waist_lifting_type: single_joint` with `base_link` / `lift_link`. Height-only commands (`waist_lifting`, `waist_lifting_command`, `target_joint_position`) do **not** use those frames.

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 04:26+0000\n"
+"POT-Creation-Date: 2026-10-09 09:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,47 +21,47 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:1
-#: f917dd69dabb4a448071f0ebf14bd6ee
+#: 9d5fd23d668444b68c9d193879495005
 msgid "Switch Robot"
 msgstr "切换机器人"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:3
-#: 03bcf8cf210a4dd68d9d62df356ebd69
+#: e71e41d099624c65a14b5b5d2a8a1b99
 msgid "Change the robot model in your workspace and launches."
 msgstr "在工作空间和启动文件中更换机器人型号。"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:5
-#: a91853cb215a4d9e9d7bc6cb7518e595
+#: b22726257a8c4faf9ed83308933568f0
 msgid "Prerequisites"
 msgstr "前提条件"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:7
-#: b64ad1db342d4f199fd2228329dad180
+#: d6e0a7c5a04046048d7ee0dc525f618d
 msgid "Workspace cloned and initialized"
 msgstr "工作空间已克隆并初始化"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:8
-#: 248182c183ec4151a47c3a8ef9242d7f
+#: 0d8f059d657d4210880125770e356f3d
 msgid "Target robot's description available"
 msgstr "目标机器人的描述已可用"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:10
-#: 35a5ff2c41b7477b9ed96354cfb66e03
+#: 5035dadea72147f587e1245cecc9cc01
 msgid "Steps"
 msgstr "步骤"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:12
-#: 5c4768bfc1774737be38e8d992c1c056
+#: cf405daf259d49e789a069ea4bf938b2
 msgid "1. Initialize Robot Description"
 msgstr "1. 初始化机器人描述"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:14
-#: 4754699a7ce0455cb86214abd66b3fcb
+#: 19e6d41c06dc4a9f8bdfcaa0f1654598
 msgid "If the robot description isn't already initialized:"
 msgstr "如果机器人描述尚未初始化："
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:16
-#: bc764499efe94e59981d89210d75d1ba
+#: 9e7709e4587d4790977e24457598c63b
 msgid ""
 "Prefer `./init_repo.sh` in `open-deploy-ws` so nested modules under `src"
 "/robot-descriptions/` match "
@@ -76,12 +76,12 @@ msgstr ""
 "--init --recursive`。"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:18
-#: 8049175eef41411389534973aa46f67f
+#: 9685d3dd2dbf411a813279415aaaf881
 msgid "2. Rebuild"
 msgstr "2. 重新编译"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:20
-#: 4d20555d9db84b1abe08d9e06fcfba02
+#: ec19aa3c06fa440290fdf06b4bb15043
 msgid ""
 "cd ~/open-deploy-ws\n"
 "colcon build --symlink-install\n"
@@ -92,77 +92,77 @@ msgstr ""
 "source install/setup.bash\n"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:26
-#: e5469d6175fa4be88db79f744acff546
+#: 5e08151511624b31a987da7599267ff2
 msgid "3. Launch with New Robot"
 msgstr "3. 使用新机器人启动"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:28
-#: 7d43ac419f3542d7a93fa1213e208b0a
+#: 7011b2b7eab14c21af8cd864a8742b63
 msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
 msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=<robot_name>\n"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:32
-#: 5048a1db8f91424ab4135cc904fbe23e
+#: 9028419653af408aa0126a0aa09c8797
 msgid "Robot Names"
 msgstr "机器人名称"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 0afb1910272840e2b03bd3fe1c4f0d0a
+#: 859e0a0ade3b458eb50681afab7abb9d
 msgid "Brand"
 msgstr "品牌"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 4fd23cd2d8234a44aa3233eac8205115
+#: a65b6a0caf734455833ecbe95e51fdeb
 msgid "`robot:=` keys used in this docs set"
 msgstr "本文档集使用的 `robot:=` 键"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 04325df12dbe42e69a8ac0d1cf9aa286
+#: eda11b1759054589b0a2eb2f29300a19
 msgid "Source"
 msgstr "来源"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 2d2415d7cdaa459a9e3ba933d3f0ebaf
+#: 9577abef49c046668b8bcf5422f315a9
 msgid "Dobot"
 msgstr "Dobot"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: b418049dedc3473186061b1cc9bea820
+#: 39244ad85dc7459fbb2b22e9fe89b5a8
 msgid "`cr5`"
 msgstr "`cr5`"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: e97d02095288421d86d20409536ce9f0
+#: 3cd511d246c847cfbd0d6ca6f4580c45
 msgid "`demo.launch.py` default"
 msgstr "`demo.launch.py` 默认值"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 0691c45be28848e2ab601f4bd9608361
+#: f0dbe84560b84a6698aa42a8fe6ccf00
 msgid "ARX (方舟无限)"
 msgstr "方舟无限（ARX）"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 3a1705216ecc460a89c85593c4800eba
+#: 83af75b3655d4e5dad0ef118cf1c0326
 msgid "`arx_acone` (**dual-arm**), `arx_lift2s` (**Lift 2S** full-body)"
 msgstr "`arx_acone`（**双臂**）、`arx_lift2s`（**Lift 2S** 全身）"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 31b051dc17ea42838246761dd1ab835d
+#: 7f07a7ec33024e2e8c0ea3eaa54ca171
 msgid "ARX how-to / description packages"
 msgstr "ARX how-to / 描述包"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 6ed16198f84949a6a43de1723e5bc103
+#: 823c0fa6da33448c9e155be2e75bde6b
 msgid "HighTorque (高擎)"
 msgstr "高擎（HighTorque）"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 1d3760e855214c278fc93dd0152d7186
+#: 1976a3a344f944f989c24f321c3f9dd1
 msgid "`panthera_ht`"
 msgstr "`panthera_ht`"
 
 #: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
-#: 87a8da56205342c0962a367862a49468
+#: c8fa67e664ab426bba61adefc1c9c954
 msgid ""
 "[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
 "/panthera-ht/README.EN.md)"
@@ -170,21 +170,40 @@ msgstr ""
 "[panthera-ht README](https://github.com/fiveages-sim/open-deploy-ws/blob"
 "/panthera-ht/README.EN.md)"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:40
-#: d0b9e843f2bf41deb6c604831bcaee17
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: f836b3116a0e40d8a8fab1b5d05a4b91
+msgid "Dyna"
+msgstr "Dyna"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: f90f5b24dd6f41afaff59e37ddd63fca
+msgid "`taku`"
+msgstr "`taku`"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md
+#: cf5b83cfb3ae48dd9e8afbb44db6531e
+msgid ""
+"`taku_description` on `robot_descriptions` **`feature/agilex`**; control "
+"`split_body.launch.py` / `full_body.launch.py`"
+msgstr ""
+"`robot_descriptions` **`feature/agilex`** 上的 `taku_description`；控制用 "
+"`split_body.launch.py` / `full_body.launch.py`"
+
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:41
+#: 622baf9fab5842d498e351c9c8ac6421
 #, python-brace-format
 msgid ""
 "Use the key that matches `{key}_description` (the description packages "
 "you initialized)."
 msgstr "使用与你已初始化的 `{key}_description` 对应的键。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:42
-#: 0d46d179ca7e4e659794bc64e9174e72
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:43
+#: 4fdf12565925419db4aef15cd53c5ec5
 msgid "Example: Dobot to ARX"
 msgstr "示例：从 Dobot 切换到 ARX"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:44
-#: ea479814d60843ca85497fb3a6a476ea
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:45
+#: cb48788ab68e4b279203537058a57f1d
 msgid ""
 "# Demo default robot key is cr5 (demo.launch.py)\n"
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
@@ -198,41 +217,50 @@ msgstr ""
 "# After init has ARX descriptions, launch Acone (dual-arm, not Lift 2S)\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:52
-#: cdd7ed7abf75488d97b50e5e18dfa594
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:53
+#: ed6d353ea9184cad9d3d82c8c95e4355
 msgid ""
 "`arx_acone` is **Acone** (dual-arm). Full-body **ARX Lift 2S** "
 "(`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the"
 " `arx-lift2s` branch — see [ARX Lift "
-"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). HighTorque "
-"Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera "
-"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)."
+"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). **Taku** "
+"(`taku`) uses the same split / full launches after descriptions are on "
+"`feature/agilex`: public mock is `split_body.launch.py`; "
+"`full_body.launch.py` needs the private `ocs2_wbc_controller` submodule —"
+" [Taku / `feature/agilex`](../../1-getting_started/3-open_deploy_ws.md). "
+"HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque "
+"Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md). Keep "
+"`demo.launch.py` for `cr5` / `arx_acone` / `panthera_ht`."
 msgstr ""
-"`arx_acone` 是 **Acone**（双臂）。全身 **ARX Lift 2S**（`arx_lift2s`）在 `arx-lift2s` 分支上使用 "
-"`split_body.launch.py` / `full_body.launch.py` — 见 [ARX Lift "
-"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md)。高擎 Panthera HT 的 "
-"launch 名是 `panthera_ht` — 见 [高擎 Panthera "
-"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
+"`arx_acone` 是 **Acone**（双臂）。全身 **ARX Lift 2S**（`arx_lift2s`）在 `arx-"
+"lift2s` 分支上使用 `split_body.launch.py` / `full_body.launch.py` — 见 [ARX "
+"Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md)。**Taku**"
+"（`taku`）在描述切到 `feature/agilex` 后使用同一套分体 / 全身启动：公开 mock 是 "
+"`split_body.launch.py`；`full_body.launch.py` 需要私有 `ocs2_wbc_controller` "
+"子模块 — [Taku / `feature/agilex`](../../1-getting_started/3-open_deploy_ws.md)。"
+"高擎 Panthera HT 的启动名是 `panthera_ht` — 见 [高擎 Panthera "
+"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)。`cr5` / "
+"`arx_acone` / `panthera_ht` 仍用 `demo.launch.py`。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:54
-#: 43733b133f69443f9793759bba94a68d
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:55
+#: 61857933790940219d1e9a6e021e5033
 msgid "End-effectors (`type` / `left_type` / `right_type`)"
 msgstr "末端执行器（`type` / `left_type` / `right_type`）"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:56
-#: ea09d94ddacb4bdaa068e0ccf7760137
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:57
+#: 134a1817c7bc4e4abc62a2df43a710dd
 msgid ""
 "There is **no** `gripper:=` argument. End-effectors are selected by "
 "**`robot_common_launch`**:"
 msgstr "没有 **`gripper:=`** 参数。末端由 **`robot_common_launch`** 选择："
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:58
-#: 5743a20e2f66494185dcc43ff2c1569e
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:59
+#: 60bc0812ec4c4274bad6e9794b8cdc38
 msgid "Symmetric EEF: `type:=<eef_key>`"
 msgstr "对称末端：`type:=<eef_key>`"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:59
-#: 411d9f4626ae407da45cab92256b1d18
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:60
+#: 540f67a221044845b605d91b8c180665
 msgid ""
 "Different left / right: `left_type:=` and `right_type:=` together; **do "
 "not pass `type:=`** then (`create_eef_side_launch_arguments()`)"
@@ -240,8 +268,8 @@ msgstr ""
 "左右不同：同时传 `left_type:=` 与 `right_type:=`；此时**不要再传 "
 "`type:=`**（`create_eef_side_launch_arguments()`）"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:60
-#: 3a3a3086c47b4ba58f03669ff6c0e2df
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:61
+#: 17b258f1269c482c973fb3620657dcad
 msgid ""
 "`type` may also be arm topology `left` / `right` / `dual` (that does "
 "**not** become `left_type` / `right_type`)"
@@ -249,8 +277,8 @@ msgstr ""
 "`type` 也可以是臂拓扑 `left` / `right` / `dual`（**不会**展开成 `left_type` / "
 "`right_type`）"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:61
-#: f63041cf759a4c1a8cb0d9527a6e6712
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:62
+#: ad9cde9dfba041c29378db18be92c302
 msgid ""
 "OCS2 `demo` / `split_body` / `full_body` declare these via "
 "`create_robot_profile_launch_arguments()`. `basic_joint_controller` "
@@ -260,8 +288,8 @@ msgstr ""
 "`create_robot_profile_launch_arguments()` 声明这些参数。`basic_joint_controller`"
 " 的 `demo.launch.py` 只声明 `type`。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:63
-#: 347a6ae4e0dc47b5b4504605e308156c
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:64
+#: 5218b6b85a61455aae81de4c4b5c7630
 msgid ""
 "Profile YAML `defaults.end_effectors` is applied when "
 "`use_profile_eef:=true` (default). Set `use_profile_eef:=false` to force "
@@ -274,8 +302,8 @@ msgstr ""
 "默认值**。力传感器（`ft` / `left_ft` / `right_ft`）和 TCP 偏移是独立项，除非 CLI 覆盖，否则始终使用 "
 "profile。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:65
-#: 91344f71079e4a9394d15f33fa11a5f0
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:66
+#: 5230083d12414bd0898af95189fbca5d
 msgid ""
 "# README: ignore profile EEF, set L/R from CLI\n"
 "ros2 launch ocs2_arm_controller demo.launch.py \\\n"
@@ -291,8 +319,8 @@ msgstr ""
 "  use_profile_eef:=false \\\n"
 "  left_type:=rg75 right_type:=linkerhand_o7"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:74
-#: 9810c2e7893540c0840871c101c4a492
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:75
+#: ef7ddaa8642b435ab331b9a09070e03a
 msgid ""
 "Full table: [robot-descriptions-"
 "common](../../4-reference/descriptions/2-common.md) "
@@ -302,38 +330,38 @@ msgstr ""
 "common](../../4-reference/descriptions/2-common.md)（`robot_common_launch`"
 " README）。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:76
-#: 6dff8ffdf2b341f4b511c01ee9923ae6
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:77
+#: a8b02c8ea05d4b6199a6fc4b54ecba29
 msgid "Verification"
 msgstr "验证"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:78
-#: 4f998089342c4ac1830df3bd1079c883
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:79
+#: 7b9ef608c59243978b39f99102b10850
 msgid "RViz shows the correct robot model"
 msgstr "RViz 显示正确的机器人模型"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:79
-#: b84a2d00a2664d1dba07567023be875e
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:80
+#: bcaf3d0f9a5a4944bad3f02f67d730c0
 msgid "Joint names in `/joint_states` match the new robot"
 msgstr "`/joint_states` 中的关节名称与新机器人匹配"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:80
-#: 3e1cca9d6cb84dc6b6524d94448f3994
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:81
+#: 5c0d1d1b8f85477b8fe5ec685a3111d9
 msgid "Controller accepts commands appropriate for the robot"
 msgstr "控制器接受适合该机器人的指令"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:82
-#: 591f42d3c8c5438e919550132eed9103
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:83
+#: 8e6153e84a26455e80c7dc4527dae6cd
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:84
-#: 15d57ea5851c4d68aa6dcba0ba410125
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:85
+#: ea90a0b707164596ba8f103e62012123
 msgid "Package not found"
 msgstr "找不到软件包"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:86
-#: c981aa75654f4bf1babb5b7c175947b7
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:87
+#: f80686202c664e9190dea415895a1004
 msgid ""
 "colcon build --symlink-install\n"
 "source install/setup.bash\n"
@@ -341,23 +369,23 @@ msgstr ""
 "colcon build --symlink-install\n"
 "source install/setup.bash\n"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:91
-#: b391860335a64f7f9e5e8d76f4c9d824
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:92
+#: 39e94761996d458ca2433ae1f784c189
 msgid "URDF errors"
 msgstr "URDF 错误"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:93
-#: 83f09cc7bc654b27ae5f94f474f3d8f7
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:94
+#: f8b7046a7ead4b638b311d7b285ca548
 msgid "Check the description package's README for dependencies."
 msgstr "查看描述软件包的 README 以了解依赖项。"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:95
-#: 88eca8a16b14412ea5c552adb328d2f0
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:96
+#: a0baa527df50476e9ce3b6141e341645
 msgid "Wrong joint limits"
 msgstr "关节限位不正确"
 
-#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:97
-#: e5dd02a8bd8340298246ffdb6216e19f
+#: ../../source/2-how_to/1-basic_operations/2-switch_robot.md:98
+#: 7012fd183c634a5cad2184858f9efb9c
 msgid ""
 "Each robot has its own joint limits in URDF. Verify commanded poses are "
 "within limits."

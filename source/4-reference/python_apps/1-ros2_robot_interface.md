@@ -26,11 +26,11 @@ Standalone clone of `ros2_robot_interface` and `pip install -e .` (inside a proj
 
 ## Quick start
 
-The following example is the package README “Basic Example”, pinned at commit [`200ea42`](https://github.com/fiveages-sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md). How to refresh the pin: [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
+The following example is the package README “Basic Example”, pinned at commit [`200ea42`](https://github.com/fiveages-sim/ros2_robot_interface/blob/200ea42d5671307cf1f3e4861fb544f356006e3d/README.md). How to refresh the pin (and recompute `:start-line:` / `:end-line:`): [Documentation Build](../../5-developer/2-docs_build.md#vendored-upstream-readme).
 
 ```{include} ../../_vendored/ros2_robot_interface/README.md
-:start-after: Basic Example
-:end-before: Center of Mass
+:start-line: 30
+:end-line: 73
 ```
 
 `connect()` auto-detects dual-arm pose topics, gripper / hand controllers, and split vs whole-body joint topics when they are already in the ROS graph. `is_connected` is a **property**. Cartesian and joint sends go through handlers (`left_arm_handler`, `right_arm_handler`, `left_gripper_handler`, …), not a `move_j` / `move_l` wrapper.
@@ -55,7 +55,7 @@ Operator-facing topics on a running OCS2 / `basic_joint_controller` stack, and t
 :::{admonition} Whole-body (WBC) availability
 :class: warning
 
-`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply these features are present. The controller is a **private** submodule; capability bits are machine-dependent (`WbcCapability`). Public Taku mock (`robot:=taku` on `demo.launch.py`) is arm-controller, not WBC. Details: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply these features are present. The controller is a **private** submodule; capability bits are machine-dependent (`WbcCapability`). Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC + body/head basic + grippers), not WBC. `full_body.launch.py robot:=taku` needs the private WBC submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the private module are present, Taku full-body default `headMode` is `HEAD_GAZE`. Details: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 :::
 
 ### FSM and WBC mode

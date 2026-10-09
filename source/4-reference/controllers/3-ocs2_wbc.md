@@ -40,7 +40,7 @@ Extra FSM states stay in the private package README after access. From public so
 :::{admonition} Whole-body (WBC) availability
 :class: warning
 
-These topics need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply they are present. Capability bits (`WbcCapability`) are machine-dependent — public Taku mock (`robot:=taku` on `demo.launch.py`) is arm-controller, not WBC; even on 全身, head 6D tracking is only there when `head_tracking_ee_enabled` is true. Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+These topics need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply they are present. Capability bits (`WbcCapability`) are machine-dependent. Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC + body/head basic + grippers), not WBC. `full_body.launch.py robot:=taku` needs the private WBC submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the private module are present, Taku full-body default `headMode` is `HEAD_GAZE` (gaze on `head_camera_mid_optical_frame`); `target_manager.yaml` has `enable_head_control: false`. Head 6D tracking (`HEAD_TRACKING`) is only there when `head_tracking_ee_enabled` is true. Taku body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`. Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 :::
 
 ## Related
