@@ -98,6 +98,8 @@ ART SDK interface for Fairino arms.
 See repository README for SDK setup and network configuration.
 ```
 
+Parameter lists after access: each private README. Pointers only: [Hardware interface parameters](4-ros2_parameters.md).
+
 ## Common Patterns
 
 ### Parameter Configuration

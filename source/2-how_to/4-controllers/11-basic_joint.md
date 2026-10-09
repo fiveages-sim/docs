@@ -68,6 +68,7 @@ Type is `std_msgs/Float64MultiArray`, not `sensor_msgs/JointState`. Optional tra
 
 ## Related
 
+- [Configure ROS 2 controller parameters](12-ros2_parameters.md) — YAML keys and startup vs runtime
 - [basic_joint_controller reference](../../4-reference/controllers/7-basic_joint_controller.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)

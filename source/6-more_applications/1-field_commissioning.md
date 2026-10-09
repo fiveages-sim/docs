@@ -40,3 +40,4 @@ Viser is a **browser** 3D view. The ros2-viser README also documents optional **
 - [Install Environment](../1-getting_started/2-install_environment.md)
 - [open-deploy-ws Setup](../1-getting_started/3-open_deploy_ws.md)
 - [FSM and Topics](../3-concepts/4-fsm_and_topics.md) — `/fsm_command` is `std_msgs/Int32`
+- [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs runtime `ros2 param`

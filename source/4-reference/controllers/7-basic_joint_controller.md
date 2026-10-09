@@ -76,6 +76,7 @@ Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-
 
 ## Related
 
+- [Controller ROS 2 parameters](8-ros2_parameters.md) — README §3 keys and startup vs runtime
 - [Use basic_joint_controller](../../2-how_to/4-controllers/11-basic_joint.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)

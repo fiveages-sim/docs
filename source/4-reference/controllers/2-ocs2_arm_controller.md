@@ -91,9 +91,9 @@ ros2 launch ocs2_arm_controller demo.launch.py \
 
 ## Configuration (README)
 
-YAML: `config/ocs2_arm_controller.yaml`. README lists `joints`, `home_pos`, `zero_pos`, `robot_pkg`, `update_rate`, `force_gains`.
+Parameter tables (including README names vs source `auto_declare`, and which keys are runtime): [Controller ROS 2 parameters](8-ros2_parameters.md). Machine YAML lives in `{robot}_description/config/ros2_control/ros2_controllers.yaml` (the package README’s `config/ocs2_arm_controller.yaml` is not in the public tree at this pin). README lists `joints`, `home_pos`, `zero_pos`, `robot_pkg`, `update_rate`, `force_gains`.
 
-OCS2 files (loaded from `robot_pkg`):
+OCS2 files (selected via `robot_name` → `{robot_name}_description`; **not** ROS 2 parameters):
 
 - Task: `{robot_pkg}/config/ocs2/task.info`
 - Planning URDF: xacro cache via `robot_common_launch` (`planning_urdf_path`)
@@ -105,6 +105,7 @@ VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compl
 
 ## Related
 
+- [Controller ROS 2 parameters](8-ros2_parameters.md)
 - [basic_joint_controller](7-basic_joint_controller.md)
 - [robot_common_launch](../descriptions/2-common.md) — `type` / `left_type` / `right_type`
 - [Switch Robot](../../2-how_to/1-basic_operations/2-switch_robot.md)
