@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-10-09 11:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,60 +21,58 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:1
-#: 13b75f720f8b43a9a5b0847da088f155
-msgid "Hardware Interface parameters"
-msgstr "硬件接口参数"
+#: cf15590e9afb43d9bce67dfddc99f969
+msgid "Driver layer parameters"
+msgstr "驱动层参数"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:3
-#: dc592f8b021e4a848aed117826985c97
+#: 99658e30ddf44a1f8bb36c0ea1fb92e0
 msgid ""
-"ros2_control **硬件接口** plugin arguments. These are URDF / xacro `<param>` "
-"entries under `<ros2_control><hardware>`, loaded in the plugin `on_init`."
-" They are **not** the same API as `ros2 param list` on a controller node."
-" 真机 CAN / serial / TCP stacks are the **驱动层** / **硬件驱动** behind this "
-"plugin boundary."
+"ros2_control **driver layer** (驱动层) plugin arguments — Hardware Interface"
+" / `<ros2_control><hardware>` `<param>` entries, loaded in the plugin "
+"`on_init`. They are **not** the same API as `ros2 param list` on a "
+"controller node."
 msgstr ""
-"ros2_control **硬件接口**插件参数。它们是 `<ros2_control><hardware>` 下的 URDF / xacro "
-"`<param>`，在插件 `on_init` 加载。与控制器节点上的 `ros2 param list` **不是**同一套 API。真机 "
-"CAN / 串口 / TCP 栈是这条插件边界之后的 **驱动层** / **硬件驱动**。"
+"ros2_control **驱动层**插件参数 — `Hardware Interface` / "
+"`<ros2_control><hardware>` 下的 `<param>`，在插件 `on_init` 加载。与控制器节点上的 "
+"`ros2 param list` **不是**同一套 API。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:5
-#: 8a7114fb244f457ab6cd9d656d17a673
+#: 50069542c1b44a4ea7519cf077828948
 msgid ""
 "How the launch `hardware:=` key selects a plugin: [ros2_control in This "
 "Stack](../../3-concepts/1-ros2_control_here.md). How to inspect "
-"controllers vs 硬件接口: [Configure ROS 2 controller "
+"controllers vs the driver layer: [Configure ROS 2 controller "
 "parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)."
 msgstr ""
 "launch 的 `hardware:=` 如何选插件：[本栈中的 "
-"ros2_control](../../3-concepts/1-ros2_control_here.md)。如何查看控制器 vs "
-"硬件接口：[配置 ROS 2 "
-"控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md)。"
+"ros2_control](../../3-concepts/1-ros2_control_here.md)。如何查看控制器 vs 驱动层：[配置"
+" ROS 2 控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:7
-#: 4d6458e60c954fea982bf8153e9249ce
+#: 945f3eed7d0e4a5e983f4c66fa2b8b4f
 msgid ""
 "The in-tree [`hardwares/README.md`](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
 " is **build-only** (`colcon build --packages-up-to …`). Parameter names "
-"live in each 硬件接口 README and in the robot xacro. **When** tags below "
-"match [topic_based README in #120](https://github.com/fiveages-"
+"live in each driver-layer README and in the robot xacro. **When** tags "
+"below match [topic_based README in #120](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)."
 msgstr ""
 "树内 [`hardwares/README.md`](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
-" 只讲**编译**（`colcon build --packages-up-to …`）。参数名在各硬件接口 README 和机型 xacro "
+" 只讲**编译**（`colcon build --packages-up-to …`）。参数名在各驱动层 README 和机型 xacro "
 "中。下面的**何时生效**与 [#120 的 topic_based README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)"
 " 一致。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:9
-#: 36ece4a480a44f30b3971c9150ff41f2
+#: 3998ffc6fc5d4b02971eacbca0d239a0
 msgid "topic_based_ros2_control"
 msgstr "topic_based_ros2_control"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:11
-#: 0a98d00f9ff04d4c8f239b2fee6a64e8
+#: 8427ac4339df43aebd430afe1fe72389
 msgid ""
 "Public plugin used when `hardware:=isaac` (Acone xacro: "
 "`/isaac/joint_command`, `/isaac/joint_states`). README: "
@@ -92,12 +90,12 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/topic_based_ros2_control/src/topic_based_system.cpp)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:13
-#: a30117c5cecf4475bf57576f1deaac40
+#: 7dff79f8a80946edae3cc6b4a177e415
 msgid "Plugin class: `topic_based_ros2_control/TopicBasedSystem`."
 msgstr "插件类：`topic_based_ros2_control/TopicBasedSystem`。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:15
-#: 25f52577437844348b290fab9967e4c3
+#: e0b9b7d1143048fcba146975ef97446e
 msgid ""
 "These are `info_.hardware_parameters` / per-joint `joint.parameters`, "
 "read in `on_init`. There is no `declare_parameter` and no "
@@ -110,12 +108,12 @@ msgstr ""
 "`controller_manager`（**仅启动**）。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:17
-#: f1a901b80ebb4b6d877fd7811309ade1
+#: 2fbf106d0afc4e8493fe35274298dfe1
 msgid "README example:"
 msgstr "README 示例："
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 31665ce509b646b7b313129e77cda920
+#: d544f7aa239d4d41af2ff6277aceb474
 msgid ""
 "<ros2_control name=\"my_system\" type=\"system\">\n"
 "  <hardware>\n"
@@ -136,62 +134,62 @@ msgstr ""
 "</ros2_control>"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: d076f953f91a40449f62b66c324f4a6c
+#: e1a69a9dc46849228d934df5de68aeec
 msgid "Parameter"
 msgstr "参数"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 0631d26af04c474bad55719e79399e90
+#: 39ae31f0fe824d3aa409e6461e7bd3ba
 msgid "Type / default"
 msgstr "类型 / 默认值"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: e21c5f6a746840f08baa924080ad55cd
+#: 1aaf2442689d46d9af01debc48ef1267
 msgid "Meaning"
 msgstr "含义"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a27a6e7c94cb4795a43ad4fff6118a25
+#: 375f0b7e2be3406eb99aec22f0c178cd
 msgid "`joint_commands_topic`"
 msgstr "`joint_commands_topic`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 15f605f8673e4b61bbc7ec30f1b0bdb4
+#: f093402a413b4f0286b608a6488fc808
 msgid "`\"/robot_joint_commands\"`"
 msgstr "`\"/robot_joint_commands\"`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 7c5e2a04568f4a8bbc03c8f3b2b97789
+#: ecdbd7894fd043c4b48e954953c67906
 msgid "Command `sensor_msgs/JointState` topic. **Startup only**."
 msgstr "命令用的 `sensor_msgs/JointState` 话题。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 284126d3ffc44f1694da4b98c828a199
+#: 2fb949ef6d90462db710c1f5de60941b
 msgid "`joint_states_topic`"
 msgstr "`joint_states_topic`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 27854ff5e5e84b0bbbcf122dc8861afb
+#: 095c7be2a8934320b6772f2781b3228a
 msgid "`\"/robot_joint_states\"`"
 msgstr "`\"/robot_joint_states\"`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a6d850b8811b43ae93c649c847554a40
+#: 5b22778724c84764ba5bddbf68556a21
 msgid "State `sensor_msgs/JointState` topic. **Startup only**."
 msgstr "状态用的 `sensor_msgs/JointState` 话题。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 1601534a85f744e690dfbac03ce92b14
+#: 8c7ce3e460eb411abfe67d5af3b81512
 msgid "`initialize_commands_from_state`"
 msgstr "`initialize_commands_from_state`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 4093399ca0b645d08657f4a17e1f6a2e
+#: ae2936c3d1fa4fb89a369e23a5ab85ca
 msgid "`true` (README: recommended for real hardware)"
 msgstr "`true`（README：真机建议）"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 0927c25a25984f2b847fea6cbf2cd867
+#: 0f14fc61c07442a4b6ff7daf6fa834ac
 msgid ""
 "`true`: first received state becomes the command (avoids a jump). "
 "`false`: use state_interface `initial_value`. **Startup only**."
@@ -200,158 +198,158 @@ msgstr ""
 "`initial_value`。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a89afaf017ee487798b4c63e88e59f68
+#: add4096ff1ef4a2ab70d361b3668863a
 msgid "`trigger_joint_command_threshold`"
 msgstr "`trigger_joint_command_threshold`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 784f19adb46f4fe8a13f43706e45d321
+#: 4a8a76fc11604c13ab70ac8e7ee88efc
 msgid "`1e-5`"
 msgstr "`1e-5`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 6ca0301a70e04ff7badd867b6449a0e2
+#: acc252271b7c4738b855eea79450ed14
 msgid ""
 "Skip publish when command vs state is below this delta; `-1` always send."
 " **Startup only**."
 msgstr "命令与状态差值低于此阈值则跳过发布；`-1` 总是发送。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a2be06cc43fd403ebe4dcde0447c7aa1
+#: 8fd33fed1457466d8ee1404c7443c9d4
 msgid "`sum_wrapped_joint_states`"
 msgstr "`sum_wrapped_joint_states`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: c0605ef9c2484a07a75a4e4d4c7bf267
+#: 5a15a2ee7d924dac91737a6b415db90d
 msgid "`false`"
 msgstr "`false`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 672abe2649ad42a9b6083c18efcc585d
+#: 6d2c14bf56414ac8a95dd208bc576965
 msgid "`true`: unwrap ±2π (Isaac-style wrapping). **Startup only**."
 msgstr "`true`：展开 ±2π（Isaac 式环绕）。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 6bffaf0273324774b2c10592dac9eb76
+#: 699412d734ad4f02b47eccd525f5a2eb
 msgid "`joint_name_prefix`"
 msgstr "`joint_name_prefix`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: ae026e4058dc47f18f8acd7fcd2a044c
+#: db64d9d0387c468a83bfc5e959af4e63
 msgid "`\"\"`"
 msgstr "`\"\"`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 02b08e26a8754d51aa0ee162bb3a4c90
+#: dfe245137fd444fb988b449177239758
 msgid ""
 "Strip this prefix from hardware joint names when matching topic names. "
 "**Startup only**."
 msgstr "匹配话题名时从此硬件关节名去掉该前缀。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 536409f94e0b452d8c852de7b20efaa1
+#: 2bfaa72608cf4841a6052a777fe329cf
 msgid "`initial_value`"
 msgstr "`initial_value`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 01985af69e724ceba03737ac11421a0b
+#: 925b53f6bb394828b240625129192b83
 msgid "per `state_interface`"
 msgstr "每个 `state_interface`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 7b5f0d03915848cd83b2bc268de2dc90
+#: 591424c8f09049b39cd7a96c2979a986
 msgid "Used when `initialize_commands_from_state` is `false`. **Startup only**."
 msgstr "`initialize_commands_from_state` 为 `false` 时使用。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: ddc79e9b75384541aace74ff1cd70fc0
+#: 871d87dd981747d0b052e1bd778b1690
 msgid "`mimic`"
 msgstr "`mimic`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 812aecfffc704d22a2105cacd802a40f
+#: 78d95f3da87c45ea8968b6f2b0c6981f
 msgid "per joint"
 msgstr "每个关节"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: b46178e6f2614519b3daec4e8f688a1e
+#: 1f7c0f982d464ec08a0b6ce9e92c27c2
 msgid "Name of the joint to mimic. **Startup only**."
 msgstr "要模仿的关节名。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 16854559bbfe4326bb21b7324f18d934
+#: 7d3f125a5ab6484f805806743a2e036e
 msgid "`multiplier`"
 msgstr "`multiplier`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: b74307210e70453f88b87393107b9045
+#: 49b4cfda0e0444c6add8c5b83656c429
 msgid "`1`"
 msgstr "`1`"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 9e344829eaf746858cab1122bfc38bcd
+#: 8f7f2d88de8548e6b496091ddb4aa411
 msgid "Mimic scale. **Startup only**."
 msgstr "模仿比例。**仅启动**。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:42
-#: f4cc8d429ce2425d87524df328f9dbd7
+#: b3d0d1fd7bc24ff081924acb6c429b91
 msgid "Isaac Sim: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)."
 msgstr "Isaac Sim：[Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:44
-#: 2ddb3077a046485a8cf4283a4ac63617
-msgid "Other public hardware interfaces"
-msgstr "其他公开硬件接口"
+#: 10932978255d4f78932890f463404efa
+msgid "Other public driver-layer plugins"
+msgstr "其他公开驱动层插件"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:46
-#: 04c36a546fae4bdebbf287fe980b0e6c
+#: 73270ce9264e4832bffad0ec359cb1c9
 msgid ""
-"Vendor plugins and the `<param>` names already listed on [Public hardware"
-" interfaces](1-public_hi.md) (for example ARX `can_interface`, Dobot "
-"`robot_ip` / `robot_port`, HighTorque `serial_port`, Modbus `serial_port`"
-" / `baudrate`). Those pages are the parameter lists. They are xacro "
+"Vendor plugins and the `<param>` names already listed on [Public driver "
+"layer](1-public_hi.md) (for example ARX `can_interface`, Dobot `robot_ip`"
+" / `robot_port`, HighTorque `serial_port`, Modbus `serial_port` / "
+"`baudrate`). Those pages are the parameter lists. They are xacro "
 "`<param>` values at plugin load — same **Startup only** rule as above."
 msgstr ""
-"厂商插件以及 [公开硬件接口](1-public_hi.md) 已列出的 `<param>` 名（例如 ARX 的 "
+"厂商插件以及 [公开驱动层](1-public_hi.md) 已列出的 `<param>` 名（例如 ARX 的 "
 "`can_interface`、Dobot 的 `robot_ip` / `robot_port`、HighTorque 的 "
 "`serial_port`、Modbus 的 `serial_port` / `baudrate`）。那些页面就是参数表。它们是插件加载时的 "
 "xacro `<param>` — 与上面相同的 **仅启动** 规则。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:48
-#: 833fd924210547eba47e6217cca484c1
+#: 81cf965689804e6a99167825762b90b5
 msgid "Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`."
 msgstr "插件类以该机型 `xacro/ros2_control/*.xacro` 为准。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:50
-#: 033aa1a7603140a9acdcf6629e2fd5a9
-msgid "Private hardware interfaces"
-msgstr "私有硬件接口"
+#: 53f89e0997d44d528e059e67384a53e4
+msgid "Private driver layer"
+msgstr "私有驱动层"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:52
-#: cdd8d29dcde147b3b230cba9e33ba8d8
+#: 0070fd2112bb4cae9b58a57f26a80cf0
 msgid ""
-"[Private hardware interfaces](2-private_hi.md) names the private packages"
-" (Rokae, Eyou, iNex, Wuji, DexCap, Fairino). Configuration keys, "
-"IP/serial layouts, and SDK env vars are in **that repository’s README "
-"after access**. This page does not list undocumented private SDK "
-"parameters. #120 likewise skipped private `hardwares/*` gitmodules."
+"[Private driver layer](2-private_hi.md) names the private packages "
+"(Rokae, Eyou, iNex, Wuji, DexCap, Fairino). Configuration keys, IP/serial"
+" layouts, and SDK env vars are in **that repository’s README after "
+"access**. This page does not list undocumented private SDK parameters. "
+"#120 likewise skipped private `hardwares/*` gitmodules."
 msgstr ""
-"[私有硬件接口](2-private_hi.md) "
+"[私有驱动层](2-private_hi.md) "
 "列出私有包（Rokae、Eyou、iNex、Wuji、DexCap、Fairino）。配置键、IP/串口布局和 SDK 环境变量见**开通后该仓库"
 " README**。本页不罗列未写入文档的私有 SDK 参数。#120 同样跳过了私有 `hardwares/*` gitmodules。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:54
-#: 180d86c6d36e446ab4650c96330461b2
+#: 517a5a491805431f84021594f107f16a
 msgid "SDK build notes: [SDK Notes](3-sdk_notes.md)."
 msgstr "SDK 编译说明：[SDK 说明](3-sdk_notes.md)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:56
-#: cb5bfa6544dc46168ef430861d78a872
+#: 24fe2c146450474d95f6991c3161403e
 msgid "OCS2 `.info` files"
 msgstr "OCS2 `.info` 文件"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:58
-#: 67c1af4ea5e446f581519631f1177af0
+#: 5315553863594fd7983bf1b78d95cc4a
 #, python-brace-format
 msgid ""
 "`{robot}_description/config/ocs2/*.info` (and the generated library under"
@@ -364,12 +362,12 @@ msgstr ""
 "2 参数](../controllers/8-ros2_parameters.md)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:60
-#: 50b38eb10a274546a89c1a30c27a0f13
+#: f86f78261e01450abdcec4fa8faac488
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:62
-#: cfce004716984a8e91cc67c3fc4a02d1
+#: eebd31c180e3486996ee92790925bd96
 msgid ""
 "[Configure ROS 2 controller "
 "parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
@@ -378,17 +376,17 @@ msgstr ""
 "parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:63
-#: 59709987d2b04e7e8a19eee2b76ebede
-msgid "[Public hardware interfaces](1-public_hi.md)"
-msgstr "[公开硬件接口](1-public_hi.md)"
+#: 1ef09a089792482cbb0e03d357d63768
+msgid "[Public driver layer](1-public_hi.md)"
+msgstr "[公开驱动层](1-public_hi.md)"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:64
-#: ac357f2427884e6db122282366983cec
-msgid "[Private hardware interfaces](2-private_hi.md)"
-msgstr "[私有硬件接口](2-private_hi.md)"
+#: 2e0670f147fc49ceb4007e293c8e69af
+msgid "[Private driver layer](2-private_hi.md)"
+msgstr "[私有驱动层](2-private_hi.md)"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:65
-#: ce28d98fee034b6cb5113d60b50500d4
+#: 0941334191ed45bf9e81593b4ff6850d
 msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
 msgstr "[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 
@@ -430,4 +428,10 @@ msgstr "[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 #~ "There is no `on_set_parameters` path in"
 #~ " this plugin."
 #~ msgstr "要改这些值，请编辑 xacro（或生成它的 overlay）并**重启**硬件。此插件没有 `on_set_parameters` 路径。"
+
+#~ msgid "Other public hardware interfaces"
+#~ msgstr "其他公开硬件接口"
+
+#~ msgid "Private hardware interfaces"
+#~ msgstr "私有硬件接口"
 

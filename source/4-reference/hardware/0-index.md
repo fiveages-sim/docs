@@ -1,15 +1,15 @@
-# Hardware Interfaces Reference
+# Driver layer
 
-This section documents the ros2_control **硬件接口** plugins (the 驱动层 / **硬件驱动** behind CAN, TCP, serial, and simulation).
+This section documents the **driver layer** (驱动层) — ros2_control hardware plugins (Hardware Interface).
 
 ## Overview
 
-Hardware interfaces bridge ROS 2 controllers to physical or simulated hardware:
+The driver layer bridges ROS 2 controllers to physical or simulated hardware:
 
 :::{code-block} none
 Controller Manager
        ↓
-Hardware Interface Plugin
+Driver layer plugin
        ↓
 CAN / TCP / Serial / Simulation
 :::
@@ -25,14 +25,14 @@ CAN / TCP / Serial / Simulation
 4-ros2_parameters
 ```
 
-URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware Interface parameters](4-ros2_parameters.md).
+URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Driver layer parameters](4-ros2_parameters.md).
 
 ## Quick Reference
 
-### Public Interfaces
+### Public driver layer
 
-| Interface | Bus | Robots |
-|-----------|-----|--------|
+| Plugin | Bus | Robots |
+|--------|-----|--------|
 | [arx-ros2-control](1-public_hi.md) | CAN | ARX X5, Acone (dual-arm), Lift 2S |
 | [dobot-cr-ros2-control](1-public_hi.md) | TCP | Dobot CR5, CR10 |
 | [unitree-ros2-control](1-public_hi.md) | SDK | Unitree quadrupeds |
@@ -42,10 +42,10 @@ URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware 
 | [can-ros2-control](1-public_hi.md) | CAN | Various hands |
 | [juxie-ros2-control](1-public_hi.md) | CAN FD | JX CSP |
 
-### Private Interfaces
+### Private driver layer
 
-| Interface | Bus | Robots |
-|-----------|-----|--------|
+| Plugin | Bus | Robots |
+|--------|-----|--------|
 | rokae-ros2-control | TCP | Rokae arms |
 | eyou-ros2-control | CANopen | Harmonic drives |
 | eyou_canfd_ros2_control | CAN FD | PHU CSP |

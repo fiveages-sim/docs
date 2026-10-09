@@ -32,4 +32,4 @@ Private brand trees that the public [robot_descriptions README](https://github.c
 - [robot_descriptions](1-robot_descriptions.md)
 - [robot_common_launch](2-common.md)
 - [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)
-- [Hardware Interfaces](../hardware/2-private_hi.md)
+- [Driver layer](../hardware/2-private_hi.md)

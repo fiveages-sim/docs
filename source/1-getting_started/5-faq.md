@@ -146,7 +146,7 @@ ros2 topic list
 Check that:
 1. Hardware parameter matches your setup (`mock_components`, `gz`, `isaac`, or `real` — there is no `hardware:=mock`)
 2. Robot parameter matches a `{key}_description` package
-3. Required hardware interfaces are initialized
+3. Required driver-layer plugins are initialized (`ros2 control list_hardware_interfaces`)
 
 ```bash
 ros2 launch ocs2_arm_controller demo.launch.py

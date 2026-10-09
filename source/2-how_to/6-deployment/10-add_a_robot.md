@@ -88,7 +88,7 @@ ros2 launch robot_common_launch manipulator.launch.py robot:=arx_acone
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 :::
 
-Launch files and hardware-interface class names come from the package you copied and its vendor HI README.
+Launch files and driver-layer class names come from the package you copied and its vendor HI README.
 
 ## 3. Isaac USD (FaSim-Isaac skill)
 

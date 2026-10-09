@@ -20,7 +20,7 @@ flowchart TB
     BRAND["brand desc:<br/>dobot / arx / galbot / ht / quadruped<br/>tianji / rokae / ubtech / …"]
   end
 
-  subgraph L2 [L2 Hardware Interfaces]
+  subgraph L2 [L2 Driver layer]
     HI["*-ros2-control<br/>public + private HIs<br/>nested under arms_ros2_control"]
   end
 
@@ -88,14 +88,14 @@ Robot descriptions define the URDF/xacro models, visual meshes, and ros2_control
 - **humanoid/FiveAges** — Private gitlink packages under that umbrella (not a separate `robot-descriptions-fiveages` repo). Paths: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)
 - **Brand packages** — Per-vendor descriptions (dobot, arx, galbot, etc.)
 
-### L2: Hardware Interfaces
+### L2: Driver layer
 
-ROS 2 **硬件接口** plugins that communicate with physical or simulated hardware (the 驱动层 / **硬件驱动**):
+ROS 2 control hardware plugins that communicate with physical or simulated hardware (**驱动层**; Hardware Interface):
 
-- Public HIs: `arx-ros2-control`, `dobot-cr-ros2-control`, `unitree-ros2-control`, etc.
-- Private HIs: `rokae-ros2-control`, `eyou-ros2-control`, `wuji-ros2-control`, etc.
+- Public: `arx-ros2-control`, `dobot-cr-ros2-control`, `unitree-ros2-control`, etc.
+- Private: `rokae-ros2-control`, `eyou-ros2-control`, `wuji-ros2-control`, etc.
 
-Controller vs 硬件接口 vs 分体/全身: [ros2_control here](../3-concepts/1-ros2_control_here.md), [Hardware Interfaces](../4-reference/hardware/0-index.md), [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md).
+Controller vs 驱动层 vs 分体/全身: [ros2_control here](../3-concepts/1-ros2_control_here.md), [Driver layer](../4-reference/hardware/0-index.md), [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md).
 
 ### L3: Controllers + MPC
 
@@ -128,7 +128,7 @@ High-level applications and teleoperation:
 :::{code-block} none
 Descriptions (URDF + ros2_control YAML)
     ↓
-Hardware Interface plugins
+Driver layer plugins
     ↓
 Controllers (arm MPC / WBC)
     ↓
@@ -139,6 +139,6 @@ Teleop / Apps (same topic/FSM contracts)
 
 When adding a new robot:
 1. Create or extend a description package
-2. Ensure the hardware interface plugin exists
+2. Ensure the driver-layer plugin exists
 3. Configure the controller parameters
 4. Test in mock → simulation → real hardware

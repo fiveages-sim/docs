@@ -1,6 +1,6 @@
 # Configure ROS 2 controller parameters
 
-Where controller and **硬件接口** parameters live, how to inspect them, and how this stack treats **startup vs runtime** changes. Per-parameter tables: [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md) and [Hardware Interface parameters](../../4-reference/hardware/4-ros2_parameters.md).
+Where controller and **驱动层** (driver layer) parameters live, how to inspect them, and how this stack treats **startup vs runtime** changes. Per-parameter tables: [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md) and [Driver layer parameters](../../4-reference/hardware/4-ros2_parameters.md).
 
 Topic lists and FSM integers stay on the controller pages — this guide is **parameters** plus the few mechanisms that several controllers share.
 
@@ -10,7 +10,7 @@ Topic lists and FSM integers stay on the controller pages — this guide is **pa
 |-------|------------|------------------|
 | `{robot}_description/config/ros2_control/ros2_controllers.yaml` | Loaded by `controller_manager` (merged with `common.yaml` / `{hardware}.yaml` / EEF compose / profile `control.patch` — [robot_common_launch](../../4-reference/descriptions/2-common.md)) | Controller plugin types, `joints`, Home poses, MoveL limits, 夹爪 force keys |
 | `ros2 param set` / node CLI | Live ROS 2 parameter API on a running node | Same names as YAML once the node is up |
-| URDF / xacro `<ros2_control>` `<param>` | **硬件接口** plugin arguments, not `ros2 param` | CAN device, topic names, `initialize_commands_from_state`, vendor IP — 真机 **驱动层** reads these at plugin load |
+| URDF / xacro `<ros2_control>` `<param>` | **驱动层** plugin arguments, not `ros2 param` | CAN device, topic names, `initialize_commands_from_state`, vendor IP — read at plugin load |
 | `{robot}_description/config/ocs2/*.info` | OCS2 **task files** | `baseFrame` / `eeFrame` defaults, MPC model. **Not** ROS 2 parameters |
 
 The **OCS2 Arm Controller** README names `config/ocs2_arm_controller.yaml`. At [arms_ros2_control `9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/config) that folder only has `demo.rviz`. Machine values are in the description YAML (example: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml)).
@@ -34,7 +34,7 @@ Hardware `<param>` values do **not** appear on `ros2 param list`. They are baked
 
 ## Startup vs runtime
 
-A YAML value is always applied when the controller or 硬件接口 plugin **starts**. Whether `ros2 param set` later changes behavior uses the same tags as the package READMEs:
+A YAML value is always applied when the controller or driver-layer plugin **starts**. Whether `ros2 param set` later changes behavior uses the same tags as the package READMEs:
 
 | Tag | Meaning |
 |-----|---------|
@@ -65,7 +65,7 @@ Unload and reload the controller to change these.
 
 One place for behavior that several controllers share in `libraries/arms_controller_common/`. MoveJ YAML keys are on the [Basic Joint Controller](../../4-reference/controllers/8-ros2_parameters.md) parameter table (the primary MoveJ page). **OCS2 Arm Controller** README FSM is HOME / HOLD / OCS2; it constructs `StateMoveJ` for canonical command `4` (and IK MoveL when `lina_planning` is present) but does not treat MoveJ as a README first-class mode.
 
-运控 layering (controller vs 硬件接口 vs 真机驱动层, 分体 vs 全身) stays on the existing pages — [ros2_control here](../../3-concepts/1-ros2_control_here.md), [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md), [Hardware Interfaces](../../4-reference/hardware/0-index.md). The internal Feishu 运控架构图 is whiteboard-only and is not redrawn here.
+运控 layering (controller vs 驱动层, 分体 vs 全身) stays on the existing pages — [ros2_control here](../../3-concepts/1-ros2_control_here.md), [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md), [Driver layer](../../4-reference/hardware/0-index.md). The internal Feishu 运控架构图 is whiteboard-only and is not redrawn here.
 
 ### `/fsm_command` value `3`
 
@@ -97,7 +97,7 @@ OCS2 Arm extra slots `home_pos` / `rest_pos` stay on that controller’s table.
 ## Related
 
 - [Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md)
-- [Hardware Interface parameters](../../4-reference/hardware/4-ros2_parameters.md)
+- [Driver layer parameters](../../4-reference/hardware/4-ros2_parameters.md)
 - [Use Basic Joint Controller](11-basic_joint.md)
 - [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)

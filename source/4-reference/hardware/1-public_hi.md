@@ -1,6 +1,6 @@
-# Public Hardware Interfaces
+# Public driver layer
 
-Public ros2_control hardware interface plugins.
+Public ros2_control hardware plugins in the **driver layer** (驱动层).
 
 ```{admonition} Real Hardware Ready
 :class: tip
@@ -213,7 +213,7 @@ See repository README for configuration details.
 Product mapping documentation to be expanded.
 ```
 
-Parameter names on this page are xacro `<param>` values loaded when the 硬件接口 plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware Interface parameters](4-ros2_parameters.md).
+Parameter names on this page are xacro `<param>` values loaded when the driver-layer plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Driver layer parameters](4-ros2_parameters.md).
 
 ## Common Operations
 

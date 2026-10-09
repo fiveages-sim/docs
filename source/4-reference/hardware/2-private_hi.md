@@ -1,6 +1,6 @@
-# Private Hardware Interfaces
+# Private driver layer
 
-Private ros2_control hardware interface plugins for internal use.
+Private ros2_control hardware plugins in the **driver layer** (驱动层), for internal use.
 
 ```{admonition} Access Required
 :class: warning
@@ -10,7 +10,7 @@ These packages require private repository access. Contact your team lead for acc
 
 ## Overview
 
-The following private hardware interfaces are available for internal deployments. For specific configuration parameters, API details, and usage instructions, refer to each repository's README and documentation.
+The following private driver-layer plugins are available for internal deployments. For specific configuration parameters, API details, and usage instructions, refer to each repository's README and documentation.
 
 ## Rokae
 
@@ -98,7 +98,7 @@ ART SDK interface for Fairino arms.
 See repository README for SDK setup and network configuration.
 ```
 
-Parameter lists after access: each private README. Pointers only: [Hardware Interface parameters](4-ros2_parameters.md).
+Parameter lists after access: each private README. Pointers only: [Driver layer parameters](4-ros2_parameters.md).
 
 ## Common Patterns
 

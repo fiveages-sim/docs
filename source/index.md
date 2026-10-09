@@ -13,7 +13,7 @@ New here? Start with the [Learning Path](0-overview/2-learning_path.md), then [I
 FiveAges Sim provides:
 
 - **Unified robot descriptions** — URDF/xacro packages for wheeled-arm humanoids, manipulators, and mobile robots
-- **Hardware interfaces** — ROS 2 **硬件接口** plugins for various robot platforms (Dobot, ARX, Galbot, HighTorque, and more)
+- **Driver layer** (驱动层) — ROS 2 control hardware plugins for various robot platforms (Dobot, ARX, Galbot, HighTorque, and more)
 - **MPC controllers** — OCS2-based arm (分体控制) and 全身控制
 - **Simulation backends** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity + ROS 2 运控, matching real-robot motion plus ground truth)
 - **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation

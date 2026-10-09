@@ -4,7 +4,7 @@ Stack-specific notes. Concrete names come from repository READMEs / launch / xac
 
 ## Topics Covered
 
-- [ros2_control Here](1-ros2_control_here.md) — `hardware:=` → `ros2_control_hardware_type`; Acone plugin table (运控: controller vs 硬件接口 vs 驱动层)
+- [ros2_control Here](1-ros2_control_here.md) — `hardware:=` → `ros2_control_hardware_type`; Acone plugin table (运控: controller vs 驱动层)
 - [Workspace Layout](2-workspace_layout.md) — `open-deploy-ws` tree and `./init_repo.sh`
 - [Naming Conventions](3-naming_conventions.md) — Launch `robot` / EEF `type` / `left_type` / `right_type` (not `gripper:=`); `hardware` values
 - [FSM and Topics](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command` (`3` = OCS2 on mixed stacks; MOVEJ = `4`); Topic vs Action vs Service; WBC body/head + `/mode_command`

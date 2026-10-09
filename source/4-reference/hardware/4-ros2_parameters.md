@@ -1,10 +1,10 @@
-# Hardware Interface parameters
+# Driver layer parameters
 
-ros2_control **硬件接口** plugin arguments. These are URDF / xacro `<param>` entries under `<ros2_control><hardware>`, loaded in the plugin `on_init`. They are **not** the same API as `ros2 param list` on a controller node. 真机 CAN / serial / TCP stacks are the **驱动层** / **硬件驱动** behind this plugin boundary.
+ros2_control **driver layer** (驱动层) plugin arguments — Hardware Interface / `<ros2_control><hardware>` `<param>` entries, loaded in the plugin `on_init`. They are **not** the same API as `ros2 param list` on a controller node.
 
-How the launch `hardware:=` key selects a plugin: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). How to inspect controllers vs 硬件接口: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
+How the launch `hardware:=` key selects a plugin: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). How to inspect controllers vs the driver layer: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
 
-The in-tree [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md) is **build-only** (`colcon build --packages-up-to …`). Parameter names live in each 硬件接口 README and in the robot xacro. **When** tags below match [topic_based README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md).
+The in-tree [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md) is **build-only** (`colcon build --packages-up-to …`). Parameter names live in each driver-layer README and in the robot xacro. **When** tags below match [topic_based README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md).
 
 ## topic_based_ros2_control
 
@@ -41,15 +41,15 @@ README example:
 
 Isaac Sim: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md).
 
-## Other public hardware interfaces
+## Other public driver-layer plugins
 
-Vendor plugins and the `<param>` names already listed on [Public hardware interfaces](1-public_hi.md) (for example ARX `can_interface`, Dobot `robot_ip` / `robot_port`, HighTorque `serial_port`, Modbus `serial_port` / `baudrate`). Those pages are the parameter lists. They are xacro `<param>` values at plugin load — same **Startup only** rule as above.
+Vendor plugins and the `<param>` names already listed on [Public driver layer](1-public_hi.md) (for example ARX `can_interface`, Dobot `robot_ip` / `robot_port`, HighTorque `serial_port`, Modbus `serial_port` / `baudrate`). Those pages are the parameter lists. They are xacro `<param>` values at plugin load — same **Startup only** rule as above.
 
 Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`.
 
-## Private hardware interfaces
+## Private driver layer
 
-[Private hardware interfaces](2-private_hi.md) names the private packages (Rokae, Eyou, iNex, Wuji, DexCap, Fairino). Configuration keys, IP/serial layouts, and SDK env vars are in **that repository’s README after access**. This page does not list undocumented private SDK parameters. #120 likewise skipped private `hardwares/*` gitmodules.
+[Private driver layer](2-private_hi.md) names the private packages (Rokae, Eyou, iNex, Wuji, DexCap, Fairino). Configuration keys, IP/serial layouts, and SDK env vars are in **that repository’s README after access**. This page does not list undocumented private SDK parameters. #120 likewise skipped private `hardwares/*` gitmodules.
 
 SDK build notes: [SDK Notes](3-sdk_notes.md).
 
@@ -60,6 +60,6 @@ SDK build notes: [SDK Notes](3-sdk_notes.md).
 ## Related
 
 - [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)
-- [Public hardware interfaces](1-public_hi.md)
-- [Private hardware interfaces](2-private_hi.md)
+- [Public driver layer](1-public_hi.md)
+- [Private driver layer](2-private_hi.md)
 - [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)

@@ -61,7 +61,7 @@ There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes b
 
 `fa-s2r-description` (`fiveages_s2r_description`) and `fa-wce3-description` (`fiveages_wce3_description`) appear only on `robot_descriptions` **`feature/agilex`** (`Gen2` / `Gen3`).
 
-## L2: Hardware Interfaces
+## L2: Driver layer
 
 ### Public
 

@@ -64,6 +64,8 @@ Keep **reader-facing product facts**:
 - Acone / AC One is **dual-arm** (双臂); Lift 2S is the **full-body** mobile manipulator. Do not call Acone arm-only / single-arm / 仅机械臂.
 - Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (方舟无限 = ARX, never bare “Ark”; 高擎 = HighTorque / Panthera). On reader pages, use names naturally (quiet first-mention pairs such as **ARX** (方舟无限) are fine). Do not lecture “方舟无限 = ARX, not bare Ark” on every page.
 
+Feishu 运控 glossary: the ros2_control hardware plugin layer is **驱动层** (EN **Driver layer**), not **硬件接口**. First English mention may parenthesize Hardware Interface / ros2_control hardware plugin for search. Keep `hardware:=`, `<hardware>`, plugin class names, and `ros2 control list_hardware_interfaces` as code. Do not split 硬件接口 vs 驱动层 as two product layers.
+
 Rewrite writer-scolding into a positive instruction:
 
 | Avoid on reader pages | Prefer |

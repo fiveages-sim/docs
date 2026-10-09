@@ -116,7 +116,7 @@ From the [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/
 :::{code-block} none
 open-deploy-ws/
 ├── src/
-│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs
+│   ├── arms_ros2_control/     # controllers / commands / driver layer / shared libs
 │   ├── robot-descriptions/    # common / manipulator / humanoid
 │   └── ocs2_ros2/             # only if that module is installed as source
 ├── init_repo.sh
@@ -218,7 +218,7 @@ colcon build --packages-up-to ocs2_arm_controller
 
 ## Supported Robots
 
-| Robot | Description Package | Hardware Interface | Notes |
+| Robot | Description Package | Driver layer | Notes |
 |-------|--------------------|--------------------|-------|
 | Dobot CR5 | robot-descriptions-dobot | dobot-cr-ros2-control | `dobot-cr5` branch |
 | ARX X5 | robot-descriptions-arx | arx-ros2-control | Co-debug in `arx-lift2s` |
