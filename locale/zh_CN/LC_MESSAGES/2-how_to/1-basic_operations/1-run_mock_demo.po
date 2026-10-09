@@ -210,14 +210,13 @@ msgstr ""
 #: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:59
 #: 7842e4a1a7544183a8d5bf49d5ea41b6
 msgid ""
-"In RViz, set **Fixed Frame** to **`agv_base`** (the package root link). "
-"The default `demo.rviz` / `base_link` makes the model look missing. The "
-"description’s `config/ocs2/target_manager.yaml` also sets "
-"`marker_fixed_frame: agv_base`."
+"In RViz, set **Fixed Frame** to **`base_link`** (package root) or the "
+"coincident **`base_footprint`**. OCS2 `baseFrame` / markers use "
+"`base_link` (`marker_fixed_frame` in `config/ocs2/target_manager.yaml`)."
 msgstr ""
-"在 RViz 中把 **Fixed Frame** 设为 **`agv_base`**（包根 link）。默认 "
-"`demo.rviz` / `base_link` 会让模型看起来消失。描述包的 "
-"`config/ocs2/target_manager.yaml` 也设置了 `marker_fixed_frame: agv_base`。"
+"在 RViz 中把 **Fixed Frame** 设为 **`base_link`**（包根）或重合的 "
+"**`base_footprint`**。OCS2 的 `baseFrame` / marker 使用 `base_link`"
+"（`config/ocs2/target_manager.yaml` 中的 `marker_fixed_frame`）。"
 
 #: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:61
 #: a901e50a767f41fa911c1e41f988e071
@@ -419,8 +418,8 @@ msgstr "描述包 README 中的 `check_urdf` / 可视化 launch"
 
 #: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:104
 #: 2e6e7401ed404d228951ec3e9a97dd62
-msgid "**Taku:** Fixed Frame must be **`agv_base`**, not the default `base_link`"
-msgstr "**Taku：** Fixed Frame 必须是 **`agv_base`**，不是默认的 `base_link`"
+msgid "**Taku:** Fixed Frame is **`base_link`** (or `base_footprint`)"
+msgstr "**Taku：** Fixed Frame 用 **`base_link`**（或 `base_footprint`）"
 
 #: ../../source/2-how_to/1-basic_operations/1-run_mock_demo.md:106
 #: 51cb8974e8b1470db91d0d05e23d1b42

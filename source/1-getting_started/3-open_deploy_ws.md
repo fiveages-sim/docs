@@ -170,7 +170,7 @@ source install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
 :::
 
-In RViz, set **Fixed Frame** to **`agv_base`** (package root link). Default `demo.rviz` / `base_link` makes the model look missing. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path.
+In RViz, set **Fixed Frame** to **`base_link`** (or the coincident `base_footprint`). OCS2 `baseFrame` / markers use `base_link`. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path.
 
 `ocs2_arm_controller demo.launch.py` uses the same `robot:=<key>` → `{key}_description` lookup. Taku ships `config/ocs2/` and a ros2_control yaml that names `ocs2_arm_controller`, so `robot:=taku` is the same convention — not a special-cased flag.
 
@@ -256,7 +256,7 @@ ros2 launch ocs2_arm_controller demo.launch.py
 # Acone (dual-arm, not Lift 2S). Omit hardware:= to keep mock_components.
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 
-# Taku (descriptions on feature/agilex). RViz Fixed Frame must be agv_base.
+# Taku (descriptions on feature/agilex). RViz Fixed Frame: base_link (or base_footprint).
 ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_components enable_gripper:=false
 ```
 

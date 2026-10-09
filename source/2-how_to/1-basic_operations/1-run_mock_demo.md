@@ -56,7 +56,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=taku hardware:=mock_compon
 
 [`demo.launch.py`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py) declares `enable_gripper` (default `true`). Taku’s field path uses `enable_gripper:=false`.
 
-In RViz, set **Fixed Frame** to **`agv_base`** (the package root link). The default `demo.rviz` / `base_link` makes the model look missing. The description’s `config/ocs2/target_manager.yaml` also sets `marker_fixed_frame: agv_base`.
+In RViz, set **Fixed Frame** to **`base_link`** (package root) or the coincident **`base_footprint`**. OCS2 `baseFrame` / markers use `base_link` (`marker_fixed_frame` in `config/ocs2/target_manager.yaml`).
 
 `hardware:=gz` (Gazebo) may need a GPU. Use mock + RViz as the default verify path; see [Gazebo Simulation](../2-simulation/3-gazebo_sim.md) if you need physics.
 
@@ -101,7 +101,7 @@ ros2 launch ocs2_arm_controller demo.launch.py \
 
 - Rebuild description packages
 - Check the description package README for `check_urdf` / visualize launch
-- **Taku:** Fixed Frame must be **`agv_base`**, not the default `base_link`
+- **Taku:** Fixed Frame is **`base_link`** (or `base_footprint`)
 
 ### Command not found
 
