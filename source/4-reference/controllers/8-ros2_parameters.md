@@ -1,6 +1,6 @@
 # Controller ROS 2 parameters
 
-ROS 2 parameters for public controllers in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). Code pin: [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48). **Startup / Runtime** wording matches the READMEs in [pull request #120](https://github.com/fiveages-sim/arms_ros2_control/pull/120) (`93d0829`). How to load and inspect: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md). Topics and FSM integers: the per-controller pages (not repeated here).
+ROS 2 parameters for public controllers in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). Code pin: [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48). **Startup / Runtime** wording matches the READMEs in [pull request #120](https://github.com/fiveages-sim/arms_ros2_control/pull/120) (`e1b7a147`). How to load and inspect: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md). Topics and FSM integers: the per-controller pages (not repeated here).
 
 ```{admonition} Source of truth
 :class: important
@@ -23,7 +23,7 @@ Three columns: **Parameter**, **Type / default**, **Meaning** (the **When** tag 
 (basic-joint-controller)=
 ## Basic Joint Controller
 
-Plugin `basic_joint_controller/BasicJointController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters). Home keys: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/basic_joint_controller/README.md) / [README_zh](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).
+Plugin `basic_joint_controller/BasicJointController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters). Home keys: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README.md) / [README_zh](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).
 
 This is the **primary MoveJ parameter table**. 灵巧手 uses `target_command_*` on this controller (not **Adaptive Gripper Controller**).
 
@@ -45,7 +45,7 @@ README defaults below. Shared C++ `auto_declare` on **OCS2 Arm Controller** uses
 
 `none` is not duration-extended. `joint_trajectory_with_para` uses the same vel/acc/jerk when a waypoint omits those arrays.
 
-MOVEJ `cartesian_defaults.*` (IK MoveL when `lina_planning` is present) are **Runtime** on the next MOVEJ command — [`arms_target_manager` README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/command/arms_target_manager/README.md).
+MOVEJ `cartesian_defaults.*` (IK MoveL when `lina_planning` is present) are **Runtime** on the next MOVEJ command — [`arms_target_manager` README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/command/arms_target_manager/README.md).
 
 ### 灵巧手 (`target_command`)
 
@@ -81,7 +81,7 @@ Lift 2S example (`body_joint_controller`): `waist_lifting_enabled: true`, `waist
 
 ## Adaptive Gripper Controller
 
-夹爪. Plugin `adaptive_gripper_controller/AdaptiveGripperController`. README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/adaptive_gripper_controller/README.md). Command channels: [Adaptive Gripper Controller](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`.
+夹爪. Plugin `adaptive_gripper_controller/AdaptiveGripperController`. README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/adaptive_gripper_controller/README.md). Command channels: [Adaptive Gripper Controller](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`.
 
 Uses `joint` (singular), not `joints`. `update_rate` and ControllerInterface command/state lists are **Startup only** at load. No `on_set_parameters` callback and no re-read in `update()`.
 
@@ -94,7 +94,7 @@ Uses `joint` (singular), not `joints`. `update_rate` and ControllerInterface com
 
 ## OCS2 Arm Controller
 
-Plugin `ocs2_arm_controller/Ocs2ArmController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters) and the [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome) names. README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md). Public YAML: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
+Plugin `ocs2_arm_controller/Ocs2ArmController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters) and the [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome) names. README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md). Public YAML: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
 
 README FSM is **HOME / HOLD / OCS2** (`3` = OCS2). Source also constructs `StateMoveJ` for canonical `/fsm_command` `4` (and IK MoveL when `lina_planning` is present). **Do not copy the Basic Joint MoveJ table here.** Declare-time deltas vs Basic Joint: `movej_interpolation_type` default `"linear"`, `movej_trajectory_blend_ratio` `0.2`. Waist keys, when `waist_lifting_enabled`, follow the Basic Joint waist table (only `waist_lifting_duration` is Runtime).
 
@@ -125,7 +125,7 @@ YAML frame overrides are injected in memory at Interface construction.
 
 ## arms_target_manager
 
-This is a **command node**, not a ros2_control controller. README: [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/command/arms_target_manager/README.md). Cartesian topics: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md), [Adaptive Gripper Controller](6-gripper_teleop_plugins.md).
+This is a **command node**, not a ros2_control controller. README: [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/command/arms_target_manager/README.md). Cartesian topics: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md), [Adaptive Gripper Controller](6-gripper_teleop_plugins.md).
 
 YAML: package [`config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/config/default.yaml), or a robot `config/ocs2/target_manager.yaml`.
 

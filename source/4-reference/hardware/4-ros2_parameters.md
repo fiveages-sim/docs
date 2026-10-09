@@ -4,11 +4,11 @@ ros2_control **硬件接口** plugin arguments. These are URDF / xacro `<param>`
 
 How the launch `hardware:=` key selects a plugin: [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). How to inspect controllers vs 硬件接口: [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
 
-The in-tree [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md) is **build-only** (`colcon build --packages-up-to …`). Parameter names live in each 硬件接口 README and in the robot xacro. **When** tags below match [topic_based README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/hardwares/topic_based_ros2_control/README.md).
+The in-tree [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md) is **build-only** (`colcon build --packages-up-to …`). Parameter names live in each 硬件接口 README and in the robot xacro. **When** tags below match [topic_based README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md).
 
 ## topic_based_ros2_control
 
-Public plugin used when `hardware:=isaac` (Acone xacro: `/isaac/joint_command`, `/isaac/joint_states`). README: [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/hardwares/topic_based_ros2_control/README.md). Source pin: [`9a1da3ba` `topic_based_system.cpp`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/topic_based_ros2_control/src/topic_based_system.cpp).
+Public plugin used when `hardware:=isaac` (Acone xacro: `/isaac/joint_command`, `/isaac/joint_states`). README: [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md). Source pin: [`9a1da3ba` `topic_based_system.cpp`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/topic_based_ros2_control/src/topic_based_system.cpp).
 
 Plugin class: `topic_based_ros2_control/TopicBasedSystem`.
 

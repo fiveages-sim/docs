@@ -17,7 +17,7 @@ The **OCS2 Arm Controller** README names `config/ocs2_arm_controller.yaml`. At [
 
 `arms_target_manager` also reads [`command/arms_target_manager/config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/config/default.yaml) or a robot `config/ocs2/target_manager.yaml`.
 
-**Startup / Runtime** tags on the tables match the public controller READMEs in [arms_ros2_control #120](https://github.com/fiveages-sim/arms_ros2_control/pull/120) (branch commit `93d0829`; code pin on `main` is still [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48)). After that PR merges, the same wording is on `main`.
+**Startup / Runtime** tags on the tables match the public controller READMEs in [arms_ros2_control #120](https://github.com/fiveages-sim/arms_ros2_control/pull/120) (branch commit `e1b7a147`; code pin on `main` is still [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48)). After that PR merges, the same wording is on `main`.
 
 ## Inspect running values
 
@@ -81,13 +81,13 @@ Do not send `3` expecting MOVEJ on the arm / WBC controller. Full integer table:
 (home-statehome)=
 ### Home (`StateHome`)
 
-Both **Basic Joint Controller** and **OCS2 Arm Controller** use `arms_controller_common::StateHome`. Names, defaults, and **When** tags: [`arms_controller_common` README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/93d0829c68f216cb452325f3e3167c57902c2f03/libraries/arms_controller_common/README.md).
+Both **Basic Joint Controller** and **OCS2 Arm Controller** use `arms_controller_common::StateHome`. Names, defaults, and **When** tags: [`arms_controller_common` README in #120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/libraries/arms_controller_common/README.md).
 
 | Parameter | Default | Meaning |
 |-----------|---------|---------|
 | `home_1` … `home_10` | from YAML (`home_1` required) | Preset configurations. **Startup only** (`StateHome::init`; not re-read). |
 | `home_duration` | `3.0` | Interpolation duration (s). **Runtime** (next HOME enter or config switch). |
-| `home_interpolation_type` | C++ `auto_declare` `"linear"`; Basic Joint README YAML example `"tanh"` | `"tanh"` \| `"linear"` (common README also lists `"doubles"` / `"none"`). **Runtime**. |
+| `home_interpolation_type` | `"linear"` (`auto_declare` and Basic Joint README YAML) | `"tanh"` \| `"linear"` \| `"doubles"` \| `"none"` (Home has no `"servo"`). **Runtime**. |
 | `home_tanh_scale` | `3.0` | tanh scale. **Runtime**. |
 | `home_max_velocity` / `home_max_acceleration` / `home_max_jerk` | `2.0` / `4.0` / `20.0` | Limits. **Runtime**. In the common README; Basic Joint §3 YAML example omits them. |
 | `switch_command_base` | `100` | HOME config switching. **Startup only** (constructor). |
