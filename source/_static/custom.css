@@ -36,3 +36,42 @@
 .sidebar-lang-switcher__select:hover {
     border-color: var(--color-brand-primary);
 }
+
+/* ROS 2 param pages: Furo + a short CJK last column wraps one glyph per line.
+   Scoped to these two reference pages. Widths apply only to 3-column tables. */
+section#controller-ros-2-parameters table.docutils,
+section#hardware-interface-parameters table.docutils {
+    display: table;
+    width: 100%;
+}
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) {
+    table-layout: fixed;
+}
+section#controller-ros-2-parameters table.docutils th,
+section#controller-ros-2-parameters table.docutils td,
+section#hardware-interface-parameters table.docutils th,
+section#hardware-interface-parameters table.docutils td {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    vertical-align: top;
+}
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(1),
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(1),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(1),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(1) {
+    width: 24%;
+}
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(2),
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(2),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(2),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(2) {
+    width: 32%;
+}
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(3),
+section#controller-ros-2-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(3),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) th:nth-child(3),
+section#hardware-interface-parameters table.docutils:has(thead th:nth-child(3):last-child) td:nth-child(3) {
+    width: 44%;
+}

@@ -25,14 +25,14 @@ README example:
 </ros2_control>
 :::
 
-| Parameter | README / source default | Meaning | Startup / runtime |
-|-----------|-------------------------|---------|-------------------|
-| `joint_commands_topic` | `"/robot_joint_commands"` | Command `sensor_msgs/JointState` topic | Startup (plugin load) |
-| `joint_states_topic` | `"/robot_joint_states"` | State `sensor_msgs/JointState` topic | Startup (plugin load) |
-| `initialize_commands_from_state` | `true` (README: recommended for real hardware) | `true`: first received state becomes the command (avoids a jump). `false`: use state_interface `initial_value` | Startup (plugin load) |
-| `trigger_joint_command_threshold` | `1e-5` (source; not in README) | Skip publish when command vs state is below this delta | Startup (plugin load) |
-| `sum_wrapped_joint_states` | `"false"` (source; not in README) | `"true"`: unwrap ±2π (Isaac-style wrapping) | Startup (plugin load) |
-| `joint_name_prefix` | `""` (source; not in README) | Strip this prefix from hardware joint names when matching topic names | Startup (plugin load) |
+| Parameter | Type / default | Meaning |
+|-----------|----------------|---------|
+| `joint_commands_topic` | `"/robot_joint_commands"` | **Startup (plugin load)** — Command `sensor_msgs/JointState` topic |
+| `joint_states_topic` | `"/robot_joint_states"` | **Startup (plugin load)** — State `sensor_msgs/JointState` topic |
+| `initialize_commands_from_state` | `true` (README: recommended for real hardware) | **Startup (plugin load)** — `true`: first received state becomes the command (avoids a jump). `false`: use state_interface `initial_value` |
+| `trigger_joint_command_threshold` | `1e-5` (source; not in README) | **Startup (plugin load)** — Skip publish when command vs state is below this delta |
+| `sum_wrapped_joint_states` | `"false"` (source; not in README) | **Startup (plugin load)** — `"true"`: unwrap ±2π (Isaac-style wrapping) |
+| `joint_name_prefix` | `""` (source; not in README) | **Startup (plugin load)** — Strip this prefix from hardware joint names when matching topic names |
 
 Per-joint `initial_value` on a `state_interface` is used when `initialize_commands_from_state` is `false`. Joint `mimic` / `multiplier` are standard ros2_control joint parameters read at the same `on_init`.
 

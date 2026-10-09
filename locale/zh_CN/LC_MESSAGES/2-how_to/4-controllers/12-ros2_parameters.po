@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 10:01+0000\n"
+"POT-Creation-Date: 2026-10-09 10:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:1
-#: 9de1bdb1ca2c4475a7bf0ae6e9d630ca
+#: f85578f2fb9c4185ad5cda817b9f9583
 msgid "Configure ROS 2 controller parameters"
 msgstr "配置 ROS 2 控制器参数"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:3
-#: a7eeede81ee64756b89584c47f4b97d3
+#: 47c291b88eaa4b05ba00769325ac7d3b
 msgid ""
 "Where controller and hardware-interface parameters live, how to inspect "
 "them, and how this stack treats **startup vs runtime** changes. Per-"
@@ -35,106 +35,110 @@ msgid ""
 "[Hardware interface "
 "parameters](../../4-reference/hardware/4-ros2_parameters.md)."
 msgstr ""
-"控制器与硬件接口参数写在哪里、如何查看，以及本栈如何区分**启动时 vs 运行时**变更。逐参数表：[控制器 ROS 2 参数](../../4-reference/controllers/8-ros2_parameters.md) 与 [硬件接口参数](../../4-reference/hardware/4-ros2_parameters.md)。"
+"控制器与硬件接口参数写在哪里、如何查看，以及本栈如何区分**启动时 vs 运行时**变更。逐参数表：[控制器 ROS 2 "
+"参数](../../4-reference/controllers/8-ros2_parameters.md) 与 "
+"[硬件接口参数](../../4-reference/hardware/4-ros2_parameters.md)。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:5
-#: e7a7419cad5b45d58cd9f1978b8e2081
+#: c70b5304df6c4860835f5980264d8fc5
 msgid ""
 "Topic lists and FSM integers stay on the existing controller pages — this"
 " guide is **parameters only**."
 msgstr "话题列表和 FSM 整数值仍在现有控制器页面 — 本指南只讲**参数**。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:7
-#: c270d62dea5e43a3bd36d716d6246f1c
+#: fdad85f466e545f2b8aa3900328c1728
 msgid "Where parameters live"
 msgstr "参数写在哪里"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: fa3440f8b3b9474fb4d2f46e7552c412
+#: 861693fbd8b140d89ec8c469fe5f7c8e
 msgid "Place"
 msgstr "位置"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: e818d88c0f3145f08e00adfc17b3fb5a
+#: b3bbe321dcd14694a319d2903699d8a9
 msgid "What it is"
 msgstr "是什么"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 897eb41fea33432db77e84bac7aabd0f
+#: 20f4ba817e80416896aec15a6ad33593
 msgid "Typical contents"
 msgstr "常见内容"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: d5907cd3e7464eb8a9ca106bc07e301d
+#: 3cb10404c2894062a7fb7694657174ac
 #, python-brace-format
 msgid "`{robot}_description/config/ros2_control/ros2_controllers.yaml`"
 msgstr "`{robot}_description/config/ros2_control/ros2_controllers.yaml`"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 62fdaeb33dcf4ad9955758f0bc1483c4
+#: 03141e754fbf491f83a9067489a0c27f
 #, python-brace-format
 msgid ""
 "Loaded by `controller_manager` (merged with `common.yaml` / "
 "`{hardware}.yaml` / EEF compose / profile `control.patch` — "
 "[robot_common_launch](../../4-reference/descriptions/2-common.md))"
 msgstr ""
-"由 `controller_manager` 加载（与 `common.yaml` / `{hardware}.yaml` / 末端组合 / profile 的 `control.patch` 合并 — [robot_common_launch](../../4-reference/descriptions/2-common.md)）"
+"由 `controller_manager` 加载（与 `common.yaml` / `{hardware}.yaml` / 末端组合 / "
+"profile 的 `control.patch` 合并 — "
+"[robot_common_launch](../../4-reference/descriptions/2-common.md)）"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: cfbb90c38fdf46b98687bada4dd9cb52
+#: 7504c7a987014b8680368ebc901d0e8f
 msgid ""
 "Controller plugin types, `joints`, Home poses, MoveL limits, gripper "
 "force keys"
 msgstr "控制器插件类型、`joints`、Home 构型、MoveL 限幅、夹爪力控键"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 425d318faa0649d4a4a40e176b963f09
+#: 9b2fe49239a54830bce0739b5ca4edb6
 msgid "`ros2 param set` / node CLI"
 msgstr "`ros2 param set` / node CLI"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: e5f88cfdc34d41f585f1c68c328420a5
+#: 6591dab58b644bf6b7cce163f3794094
 msgid "Live ROS 2 parameter API on a running node"
 msgstr "运行中节点上的 ROS 2 参数 API"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 43ef7fbef3e14ccab5ea3810e889ad3f
+#: 438acfdf1e9146d89beaa280c0c68b00
 msgid "Same names as YAML once the node is up"
 msgstr "节点起来后，名称与 YAML 中相同"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 667f47056da940c38c2d23646b62ef17
+#: a4a46df9f69c44c7b1e6e806f12c5649
 msgid "URDF / xacro `<ros2_control>` `<param>`"
 msgstr "URDF / xacro `<ros2_control>` `<param>`"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 6fe090c92ff14e2ba26d2b4209b50c5f
+#: b4f5890d2fd64afda6fbb4f07cf5f5ca
 msgid "Hardware **plugin** arguments, not `ros2 param`"
 msgstr "硬件**插件**参数，不是 `ros2 param`"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 84d8851d361a49b49ebac1cf763c97a9
+#: b65f32f528ca425ab9e800c1c2cd232a
 msgid "CAN device, topic names, `initialize_commands_from_state`, vendor IP"
 msgstr "CAN 设备、话题名、`initialize_commands_from_state`、厂商 IP"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: e1d78db019aa4a1d837dcbbdb27a935f
+#: bd27ea71b63f42ff97e642bf3da62628
 #, python-brace-format
 msgid "`{robot}_description/config/ocs2/*.info`"
 msgstr "`{robot}_description/config/ocs2/*.info`"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: 9d99488dc1f0451c9a7c727d3ae644e1
+#: d4a7f928ca8d4417986830840e6777fd
 msgid "OCS2 **task files**"
 msgstr "OCS2 **任务文件**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md
-#: e54ba1377651446791fa01d85c92f141
+#: 8cc0489826684a38bbb8f032a30e714d
 msgid "`baseFrame` / `eeFrame` defaults, MPC model. **Not** ROS 2 parameters"
 msgstr "`baseFrame` / `eeFrame` 默认值与 MPC 模型。**不是** ROS 2 参数"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:16
-#: d357163fb3a34bb8a69e2719e2ee7809
+#: e2140dc626764cd0aaf65bb732e745b0
 msgid ""
 "The `ocs2_arm_controller` README names `config/ocs2_arm_controller.yaml`."
 " At [arms_ros2_control `9a1da3ba`](https://github.com/fiveages-"
@@ -145,10 +149,16 @@ msgid ""
 "/fiveages-sim/robot-descriptions-"
 "dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml))."
 msgstr ""
-"`ocs2_arm_controller` README 写的是 `config/ocs2_arm_controller.yaml`。在 [arms_ros2_control `9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/config) 该目录只有 `demo.rviz`。机型取值在描述包 YAML（例如 [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml)）。"
+"`ocs2_arm_controller` README 写的是 `config/ocs2_arm_controller.yaml`。在 "
+"[arms_ros2_control `9a1da3ba`](https://github.com/fiveages-"
+"sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/config)"
+" 该目录只有 `demo.rviz`。机型取值在描述包 YAML（例如 "
+"[`cr5_description/.../ros2_controllers.yaml`](https://github.com"
+"/fiveages-sim/robot-descriptions-"
+"dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml)）。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:18
-#: 3c54741acc4349e5b1e2f6e86c34d998
+#: c60133f5d7774f5b8664a1c0b0b2434d
 msgid ""
 "`arms_target_manager` also reads "
 "[`command/arms_target_manager/config/default.yaml`](https://github.com"
@@ -156,22 +166,26 @@ msgid ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/config/default.yaml)"
 " or a robot `config/ocs2/target_manager.yaml`."
 msgstr ""
-"`arms_target_manager` 还会读取 [`command/arms_target_manager/config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/config/default.yaml)，或机型的 `config/ocs2/target_manager.yaml`。"
+"`arms_target_manager` 还会读取 "
+"[`command/arms_target_manager/config/default.yaml`](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/config/default.yaml)，或机型的"
+" `config/ocs2/target_manager.yaml`。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:20
-#: ac3a683131b5403eb695b60eb8345955
+#: d4b4bedd7893472bb68e53c46990e3f7
 msgid "Inspect running values"
 msgstr "查看运行中的取值"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:22
-#: 3b950df938a94c9bba41d7c4d863bbc7
+#: 8eb9dd7bfcbd430c9a0de91769205345
 msgid ""
 "Controller plugins are ROS 2 nodes named after the controller. After a "
 "launch:"
 msgstr "控制器插件是以控制器命名的 ROS 2 节点。启动后："
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 57e1d38cc1c14ccfb71a10245d11f929
+#: fd85ebc67cb14bc3bf984930708fe1e9
 msgid ""
 "ros2 param list\n"
 "ros2 param list /ocs2_arm_controller\n"
@@ -184,99 +198,102 @@ msgstr ""
 "ros2 param get /left_gripper_controller force_threshold"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:31
-#: 47194470eaf94f0f944a7e11bb9aa5d8
+#: 4d1b752b030043b1bd6714c493da18f4
 msgid ""
 "Hardware `<param>` values do **not** appear on `ros2 param list`. They "
 "are baked into `/robot_description` when xacro runs. Confirm the plugin "
 "with `ros2 control list_hardware_interfaces` and the xacro under "
 "`xacro/ros2_control/`."
 msgstr ""
-"硬件 `<param>` **不会**出现在 `ros2 param list` 上。它们在 xacro 运行时写入 `/robot_description`。用 `ros2 control list_hardware_interfaces` 以及 `xacro/ros2_control/` 下的 xacro 确认插件。"
+"硬件 `<param>` **不会**出现在 `ros2 param list` 上。它们在 xacro 运行时写入 "
+"`/robot_description`。用 `ros2 control list_hardware_interfaces` 以及 "
+"`xacro/ros2_control/` 下的 xacro 确认插件。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:33
-#: 0580caf2a2a74b45910ec75701d66fd1
+#: 22aa2c639a4a4f488192a64a115da4c5
 msgid "Startup vs runtime (what is verified)"
 msgstr "启动时 vs 运行时（已核实内容）"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:35
-#: e3c15c1a606e413182cca8c99c0d2f8b
+#: 697a8d0716cf488bad92765b4619b1d8
 msgid ""
 "A value in YAML is always applied when the controller or hardware plugin "
 "**starts**. Whether `ros2 param set` later changes behavior is recorded "
 "only when a source or README says so:"
 msgstr ""
-"YAML 中的值在控制器或硬件插件**启动**时总会生效。之后 `ros2 param set` 会不会改行为，只在源码或 README 写明时才记录："
+"YAML 中的值在控制器或硬件插件**启动**时总会生效。之后 `ros2 param set` 会不会改行为，只在源码或 README "
+"写明时才记录："
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: b676dd74068245e08257b8060e71a6ad
-msgid "Mark on the reference tables"
-msgstr "参考表中的标记"
+#: f134940d3b2a4da7b59c9d3be18ebde3
+msgid "Tag on the reference tables (leading the Meaning cell)"
+msgstr "参考表中的标记（写在「含义」格开头）"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: e7390e27da0f4963be783ced3d8e9cfb
+#: fa58590423294005aa16f3bef1e1d36b
 msgid "Meaning"
 msgstr "含义"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: c8a52cbe48114f94a9145b06d46bc75c
+#: 7561ad44568841f8a81fd40335573106
 msgid "**Runtime (callback)**"
 msgstr "**运行时（回调）**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 7a515b6a938e44ff868f222a58c0a6be
+#: 6971fc53210b4b459c4d40b33d30159f
 msgid "`add_on_set_parameters_callback` writes the new value into live fields"
 msgstr "`add_on_set_parameters_callback` 把新值写入运行中的字段"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: dae4862b3ea046a187b87dfb332cb5dc
+#: 43d07bcf5a1342b2b3dca81c21b7ae2b
 msgid "**Runtime (README)**"
 msgstr "**运行时（README）**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: dc58797018a340079543c30732b0254e
+#: 4a721ef07b08496c8712dc17ab526626
 msgid ""
 "Package README states a hot update (this stack: `movel_duration` as the "
 "example)"
 msgstr "包 README 写明可热更新（本栈以 `movel_duration` 为例）"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: d2aa1f651b4942e19100a9b3fbe1ba98
+#: e7219ca807af49c9a10c46ea6c71ff97
 msgid "**Startup only (README)**"
 msgstr "**仅启动时（README）**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 5ea8b882057c4a958f01665e1fac5f52
+#: bd3004a6ea0b4a7db312efe316c10d5b
 msgid ""
 "README states a restart is required (`base_frame` / `left_ee_frame` / "
 "`right_ee_frame`)"
 msgstr "README 写明需要重启（`base_frame` / `left_ee_frame` / `right_ee_frame`）"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: e122446c94cf49eeb6003be78ddc5106
+#: ded08abee21e4968a893627005c0a51d
 msgid "**Startup (plugin load)**"
 msgstr "**启动时（插件加载）**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 39954f2400cf499dadc5899fb1911043
+#: b3019caa303e41bcbaeb42475e41fb0a
 msgid ""
 "URDF / xacro `<param>` read in hardware `on_init` — change the xacro and "
 "restart"
 msgstr "URDF / xacro `<param>` 在硬件 `on_init` 读取 — 改 xacro 后重启"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 915353b34f79450790c3473a36025a6e
+#: 9aa84c0a1acc4ea6aa2cc276125a4518
 msgid "**未核实（启动时加载；运行时是否可改未在源码中确认）**"
 msgstr "**未核实（启动时加载；运行时是否可改未在源码中确认）**"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:24
-#: 400e0d52a7264d05869b4372f0b58d59
+#: ea3aa73b33844d3c9c84a0850e62a929
 msgid ""
 "Declared and read at init (or re-read without a documented callback). "
 "**Not** marked dynamic"
 msgstr "在初始化时声明并读取（或无文档化回调地重读）。**不**标为动态"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:45
-#: 2ccbe96770964de8bccc6943c9168261
+#: 29e7efb0493140b78d92d5ebedcbf5d8
 msgid ""
 "Verified runtime on `ocs2_arm_controller` at the same pin: "
 "`hardware_latency`, `traj_record_dir`, `traj_record_enabled`, "
@@ -284,53 +301,60 @@ msgid ""
 "`movel_*` family that `PoseBasedReferenceManager::updateParam()` re-reads"
 " and that the `arms_target_manager` README treats like `movel_duration`."
 msgstr ""
-"同一 pin 上 `ocs2_arm_controller` 已核实可运行时修改：`hardware_latency`、`traj_record_dir`、`traj_record_enabled`、`rt_timing_enabled`（`CtrlComponent::on_parameter_change`），以及 `PoseBasedReferenceManager::updateParam()` 会重读、且 `arms_target_manager` README 按 `movel_duration` 一类处理的 `movel_*` 系列。"
+"同一 pin 上 `ocs2_arm_controller` "
+"已核实可运行时修改：`hardware_latency`、`traj_record_dir`、`traj_record_enabled`、`rt_timing_enabled`（`CtrlComponent::on_parameter_change`），以及"
+" `PoseBasedReferenceManager::updateParam()` 会重读、且 `arms_target_manager` "
+"README 按 `movel_duration` 一类处理的 `movel_*` 系列。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:47
-#: d355657781b74e4f8aaaf92e2552e6fd
+#: 29d27d981fc94ebbbafabfc2499a8b22
 msgid ""
 "Everything else on the tables, including `basic_joint_controller` and "
 "`adaptive_gripper_controller` keys, is **未核实** unless a footnote says "
 "otherwise."
 msgstr ""
-"表中其余项（含 `basic_joint_controller` 与 `adaptive_gripper_controller` 的键）均为**未核实**，除非脚注另有说明。"
+"表中其余项（含 `basic_joint_controller` 与 `adaptive_gripper_controller` "
+"的键）均为**未核实**，除非脚注另有说明。"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:49
-#: d6b88ef74b55458c8f5776896ac82eea
+#: c7865d0b455e4518bd84330ea5dc529c
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:51
-#: 6d80ad706d2b4a3dbbb22e56cf296b77
+#: 900c1b24e63b4c98a71ab94cfd6b9726
 msgid ""
 "[Controller ROS 2 "
 "parameters](../../4-reference/controllers/8-ros2_parameters.md)"
 msgstr ""
-"[Controller ROS 2 parameters](../../4-reference/controllers/8-ros2_parameters.md)"
+"[Controller ROS 2 "
+"parameters](../../4-reference/controllers/8-ros2_parameters.md)"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:52
-#: 31f83dfa5a4c49979a3bcd1ff163afeb
+#: 9ad7b39278fc4f338e3c6233c6b64541
 msgid ""
 "[Hardware interface "
 "parameters](../../4-reference/hardware/4-ros2_parameters.md)"
 msgstr ""
-"[Hardware interface parameters](../../4-reference/hardware/4-ros2_parameters.md)"
+"[Hardware interface "
+"parameters](../../4-reference/hardware/4-ros2_parameters.md)"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:53
-#: c20c19896d9e41d5a109a2dde27aacf9
+#: b068dad115bf4e9eba129d95e0deb21d
 msgid "[Use basic_joint_controller](11-basic_joint.md)"
 msgstr "[使用 basic_joint_controller](11-basic_joint.md)"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:54
-#: ea0af65575d948689a74d8b4b2aab7e1
+#: 936d8d75bb5e4d3aaed113acf08eddb2
 msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
 msgstr "[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 
 #: ../../source/2-how_to/4-controllers/12-ros2_parameters.md:55
-#: caeb5fe5a9944773a9a193b23e7719a7
+#: 0f5d2ce357f9424985413d88dbc625ff
 msgid ""
 "[robot_common_launch](../../4-reference/descriptions/2-common.md) — YAML "
 "merge order"
 msgstr ""
-"[robot_common_launch](../../4-reference/descriptions/2-common.md) — YAML 合并顺序"
+"[robot_common_launch](../../4-reference/descriptions/2-common.md) — YAML "
+"合并顺序"
 

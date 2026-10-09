@@ -34,7 +34,7 @@ Hardware `<param>` values do **not** appear on `ros2 param list`. They are baked
 
 A value in YAML is always applied when the controller or hardware plugin **starts**. Whether `ros2 param set` later changes behavior is recorded only when a source or README says so:
 
-| Mark on the reference tables | Meaning |
+| Tag on the reference tables (leading the Meaning cell) | Meaning |
 |------------------------------|---------|
 | **Runtime (callback)** | `add_on_set_parameters_callback` writes the new value into live fields |
 | **Runtime (README)** | Package README states a hot update (this stack: `movel_duration` as the example) |
