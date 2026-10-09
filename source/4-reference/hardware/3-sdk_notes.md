@@ -1,10 +1,10 @@
 # SDK Notes
 
-Notes on vendor SDKs used by hardware interfaces.
+Notes on vendor SDKs used by the driver layer.
 
 ## Overview
 
-Some hardware interfaces depend on vendor SDKs that may have:
+Some driver-layer plugins depend on vendor SDKs that may have:
 - Licensing restrictions
 - Build requirements
 - Distribution limitations
@@ -24,13 +24,13 @@ Used internally by `marvin-ros2-control` and related interfaces.
 ### Build Notes
 
 - SDK is provided as pre-built library
-- Linked during hardware interface compilation
+- Linked during driver-layer compilation
 - Not redistributed separately
 
 ```{admonition} TODO
 :class: warning
 
-SDK documentation is limited. Usage is through the hardware interface layer.
+SDK documentation is limited. Usage is through the driver layer.
 ```
 
 ## Fairino ART SDK
@@ -70,10 +70,10 @@ If SDK-related errors occur:
 1. Check SDK is built/installed
 2. Verify library paths (`LD_LIBRARY_PATH`)
 3. Check device permissions
-4. Review hardware interface logs
+4. Review driver-layer logs
 
 ## Related
 
-- [Public Hardware Interfaces](1-public_hi.md)
-- [Private Hardware Interfaces](2-private_hi.md)
-- [Hardware Interface parameters](4-ros2_parameters.md)
+- [Public driver layer](1-public_hi.md)
+- [Private driver layer](2-private_hi.md)
+- [Driver layer parameters](4-ros2_parameters.md)

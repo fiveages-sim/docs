@@ -99,7 +99,7 @@ OCS2 files (selected via `robot_name` → `{robot_name}_description`; **not** RO
 - Planning URDF: xacro cache via `robot_common_launch` (`planning_urdf_path`)
 - Generated library: `{robot_name}_description/config/ocs2/generated`
 
-Control mode is auto-detected from hardware interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).
+Control mode is auto-detected from ros2_control command/state interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).
 
 VR teleop on Panthera HT / ARX uses that MIT / MIX path. Tianji / Rokae VR compliance is **position commands + vendor HI impedance**, not this MIX table — [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-10-09 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,101 +21,140 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:1
-#: 13b75f720f8b43a9a5b0847da088f155
-msgid "Hardware Interface parameters"
-msgstr "硬件接口参数"
+#: 1553b49f209f40e8952fe8f0b9bc7e3b
+msgid "Driver layer parameters"
+msgstr "驱动层参数"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:3
-#: dc592f8b021e4a848aed117826985c97
+#: c64b3746a534406791baa72fc9dbb485
 msgid ""
-"ros2_control **硬件接口** plugin arguments. These are URDF / xacro `<param>` "
-"entries under `<ros2_control><hardware>`, loaded in the plugin `on_init`."
-" They are **not** the same API as `ros2 param list` on a controller node."
-" 真机 CAN / serial / TCP stacks are the **驱动层** / **硬件驱动** behind this "
-"plugin boundary."
+"ros2_control **driver layer** (驱动层) plugin arguments. These are URDF / "
+"xacro `<param>` entries under `<ros2_control><hardware>`, loaded in the "
+"plugin `on_init`. They are **not** the same API as `ros2 param list` on a"
+" controller node, unless that plugin also `declare_parameter`s them (ARX,"
+" HighTorque, Marvin, some 灵巧手)."
 msgstr ""
-"ros2_control **硬件接口**插件参数。它们是 `<ros2_control><hardware>` 下的 URDF / xacro "
-"`<param>`，在插件 `on_init` 加载。与控制器节点上的 `ros2 param list` **不是**同一套 API。真机 "
-"CAN / 串口 / TCP 栈是这条插件边界之后的 **驱动层** / **硬件驱动**。"
+"ros2_control **驱动层**插件参数。它们是 `<ros2_control><hardware>` 下的 URDF / xacro `<param>`，在插件 "
+"`on_init` 加载。与控制器节点上的 `ros2 param list` **不是**同一套 API，除非该插件也把它们 `declare_parameter` "
+"了（ARX、HighTorque、Marvin、部分灵巧手）。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:5
-#: 8a7114fb244f457ab6cd9d656d17a673
+#: ea167a9cdc844cc5a027f54bd39432b2
 msgid ""
-"How the launch `hardware:=` key selects a plugin: [ros2_control in This "
-"Stack](../../3-concepts/1-ros2_control_here.md). How to inspect "
-"controllers vs 硬件接口: [Configure ROS 2 controller "
-"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)."
+"How `hardware:=` selects a plugin: [ros2_control in This "
+"Stack](../../3-concepts/1-ros2_control_here.md). How to inspect: "
+"[Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md). Package "
+"list: [Public driver layer](1-public_hi.md)."
 msgstr ""
-"launch 的 `hardware:=` 如何选插件：[本栈中的 "
-"ros2_control](../../3-concepts/1-ros2_control_here.md)。如何查看控制器 vs "
-"硬件接口：[配置 ROS 2 "
-"控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md)。"
+"`hardware:=` 如何选插件：[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)。如何查看：[配置 "
+"ROS 2 控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md)。软件包列表：[公开驱动层](1-public_hi.md)。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:7
-#: 4d6458e60c954fea982bf8153e9249ce
+#: a7eb4c7c41d248ac954dadef210af466
 msgid ""
 "The in-tree [`hardwares/README.md`](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
-" is **build-only** (`colcon build --packages-up-to …`). Parameter names "
-"live in each 硬件接口 README and in the robot xacro. **When** tags below "
-"match [topic_based README in #120](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)."
+"sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/README.md)"
+" is **build-only** (`colcon build --packages-up-to …`). Names below come "
+"from each public README and from `on_init` / plugin XML in that "
+"repository."
 msgstr ""
-"树内 [`hardwares/README.md`](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
-" 只讲**编译**（`colcon build --packages-up-to …`）。参数名在各硬件接口 README 和机型 xacro "
-"中。下面的**何时生效**与 [#120 的 topic_based README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)"
-" 一致。"
+"树内 [`hardwares/README.md`](https://github.com/fiveages-sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/README.md) "
+"只讲**编译**（`colcon build --packages-up-to …`）。下面的名称来自各公开 README，以及该仓库的 `on_init` "
+"/ 插件 XML。"
 
 #: ../../source/4-reference/hardware/4-ros2_parameters.md:9
-#: 36ece4a480a44f30b3971c9150ff41f2
+#: c45a6f2b4b7a4d32b856d1aa72fe1f4a
+msgid "How to read the tables"
+msgstr "如何读这些表"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:11
+#: 20c97f87e7a3422ea4aa0dd6e4830ee9
+msgid ""
+"Three columns: **Parameter**, **Type / default**, **Meaning** (the "
+"**When** tag is the last sentence of Meaning)."
+msgstr "三列：**参数**、**类型 / 默认值**、**含义**（**何时生效**写在含义的最后一句）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: f9ae44194ac64828b15748e6366e239a
+msgid "Tag"
+msgstr "标记"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: e64ac3be660d49aa81ed9bc6d4d374b1
+msgid "Evidence"
+msgstr "依据"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: b558f2e61d0444e4861cf4503178943b
+msgid "**Startup only**"
+msgstr "**仅启动**"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: dc09ed6f7fa34947bd0e83676a631c9c
+msgid ""
+"Read in `on_init` from `info_.hardware_parameters`. No "
+"`add_on_set_parameters_callback` (or README does not claim a hot update)."
+" Change the xacro and restart the hardware / `controller_manager`."
+msgstr ""
+"在 `on_init` 从 `info_.hardware_parameters` 读取。没有 `add_on_set_parameters_callback`（或 "
+"README 未声明可热更新）。改 xacro 并重启硬件 / `controller_manager`。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: a9800203272946d0bffc3d2931954dec
+msgid "**Runtime**"
+msgstr "**运行时**"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md
+#: f709f396d7384748b5fad2c7c81adb3b
+msgid ""
+"`add_on_set_parameters_callback`, or a README + source path that re-reads"
+" `ros2 param set` without reload (HighTorque kp/kd poll)."
+msgstr ""
+"`add_on_set_parameters_callback`，或 README + 源码路径表明 `ros2 param set` 无需重载即可生效（HighTorque "
+"的 kp/kd 轮询）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:18
+#: 812e79eebd6d4614981fb36138ce1eac
+msgid ""
+"Simulation `mock_components` / `gz` / `isaac` keys: [Driver "
+"layer](0-index.md). Private packages: [Private driver "
+"layer](2-private_hi.md)."
+msgstr ""
+"仿真键 `mock_components` / `gz` / `isaac`：[驱动层](0-index.md)。私有软件包：[私有驱动层](2-private_hi.md)。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:20
+#: ee48ba44747b4755bfcf242b6b7bc394
 msgid "topic_based_ros2_control"
 msgstr "topic_based_ros2_control"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:11
-#: 0a98d00f9ff04d4c8f239b2fee6a64e8
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:22
+#: 501d956468e64a4dbcec5374ee7aaa82
 msgid ""
-"Public plugin used when `hardware:=isaac` (Acone xacro: "
-"`/isaac/joint_command`, `/isaac/joint_states`). README: "
-"[#120](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)."
-" Source pin: [`9a1da3ba` `topic_based_system.cpp`](https://github.com"
-"/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/topic_based_ros2_control/src/topic_based_system.cpp)."
+"In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). "
+"Used when `hardware:=isaac` (Acone xacro: `/isaac/joint_command`, "
+"`/isaac/joint_states`). README: "
+"[topic_based_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/README.md)."
+" Source: [`topic_based_system.cpp`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/src/topic_based_system.cpp)"
+" at [`d50933d`](https://github.com/fiveages-"
+"sim/arms_ros2_control/tree/d50933d6862ad35ec7633ef522a134924827b115)."
 msgstr ""
-"`hardware:=isaac` 时使用的公开插件（Acone "
-"xacro：`/isaac/joint_command`、`/isaac/joint_states`）。README：[#120](https://github.com"
-"/fiveages-"
-"sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)。源码钉在"
-" [`9a1da3ba` `topic_based_system.cpp`](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/topic_based_ros2_control/src/topic_based_system.cpp)。"
+"位于 `arms_ros2_control/hardwares/` 树内（不是嵌套 gitmodule）。用于 `hardware:=isaac`（Acone "
+"xacro：`/isaac/joint_command`、`/isaac/joint_states`）。README：[topic_based_ros2_control](https://github.com/fiveages-sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/README.md)。源码：[`d50933d`](https://github.com/fiveages-sim/arms_ros2_control/tree/d50933d6862ad35ec7633ef522a134924827b115) "
+"的 [`topic_based_system.cpp`](https://github.com/fiveages-sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/src/topic_based_system.cpp)。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:13
-#: a30117c5cecf4475bf57576f1deaac40
-msgid "Plugin class: `topic_based_ros2_control/TopicBasedSystem`."
-msgstr "插件类：`topic_based_ros2_control/TopicBasedSystem`。"
-
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:15
-#: 25f52577437844348b290fab9967e4c3
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:24
+#: 71564e61d26443a890d3e9979586d911
 msgid ""
-"These are `info_.hardware_parameters` / per-joint `joint.parameters`, "
-"read in `on_init`. There is no `declare_parameter` and no "
-"`add_on_set_parameters_callback`. Changing any of them requires "
-"restarting the hardware / `controller_manager` (**Startup only**)."
+"Plugin: `topic_based_ros2_control/TopicBasedSystem`. No "
+"`declare_parameter` and no `on_set_parameters`."
 msgstr ""
-"它们是 `info_.hardware_parameters` / 每关节 `joint.parameters`，在 `on_init` "
-"读取。没有 `declare_parameter`，也没有 "
-"`add_on_set_parameters_callback`。改其中任何一项都需要重启硬件 / "
-"`controller_manager`（**仅启动**）。"
+"插件：`topic_based_ros2_control/TopicBasedSystem`。没有 `declare_parameter`，也没有 `on_set_parameters`。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:17
-#: f1a901b80ebb4b6d877fd7811309ade1
-msgid "README example:"
-msgstr "README 示例："
-
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 31665ce509b646b7b313129e77cda920
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7b622c93670e489d8ef46cf3c2a71130
 msgid ""
 "<ros2_control name=\"my_system\" type=\"system\">\n"
 "  <hardware>\n"
@@ -135,241 +174,2451 @@ msgstr ""
 "  </hardware>\n"
 "</ros2_control>"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: d076f953f91a40449f62b66c324f4a6c
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1c887468dca74ab4bf5df2aa0da9ee8c 27bcd103259d4dbaa77e02d50ff8cf52
+#: 3ad798be15834258bc2248f568f01831 419b54ce7b184ef39049daa87d88bd3a
+#: 42bb6d7516a14fe7935ac16a2a8a4248 73f39ddb444049a6af0f2099c3e98fda
+#: 7c322de45400469095dfb2e338449aea 80fa2e04516941f09bc6d4e04ef90562
+#: 8c2f54c75cda4ea9af405d548f0264d7 908a68da4193408d98f23d84253ae3b7
+#: 91abde1c8cb146239675dbc977d60e1f 949f4bb8f01843559fb2fab253355d0a
+#: a42b9d5661b24338b4d19a0bd21e1ccc a82eb99c14334e0993bffefed7668ea0
+#: c4a414b1d7804849aa8c1c69a664f694 d65db97554f14704af66430999185821
+#: d75750c448714fdbb8fa00f07ade1193 d994de61762142db8426f681c8829baa
+#: e1adf9a6fd644ada88bb8aa3642c54e2 fdc13413aca04732ae2aa5d9dca1bfd5
 msgid "Parameter"
 msgstr "参数"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 0631d26af04c474bad55719e79399e90
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 06f87cb7489b4129b2911d3a23a60987 25484b1e44e2423f8c4246cb511377e7
+#: 2686851d69bd46fa80863960d797cc79 333bac9cc2c3466a987ff691e1cae76f
+#: 37266f0d4d2b48d19b2d45cce623beb1 44b9fbaa41694b1d99ddcc0ff1fbfe50
+#: 4814fc21ea474463879e87464b15f909 5b200f805d1745d594a954551d52ca4d
+#: 6b090d9fcb534fc29b1aab74af6570e7 9780ac93a390477492276c5b5e75e09e
+#: a4c88be8d3cb41d19415b77ccd43a646 aaf969344b5045968c0cc1ca54722fce
+#: b9207d5f47a74c0c9c954a3731b65979 d357e86b50ff4a48b2f270ee376ffcfd
+#: d8707a83bd5947bbb74921370a125c76 e1771f5a251e49a5b914263db472d416
+#: ebe380035784421b99356c0290cfd5b9 ef1e11701c8444e5b63c5c932b5a885e
+#: efd0c61f158540d3a6124801c2be87df
 msgid "Type / default"
 msgstr "类型 / 默认值"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: e21c5f6a746840f08baa924080ad55cd
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 00593b333efe4d859c8f3165aa8b90d1 00c88cba29364634b68c778bfc7a53b9
+#: 04f0439f1419459986d70c7b40279924 207ef11327fa4d87a776c1ff88c31938
+#: 3211bfcc11eb448ab966839ba93cd70a 38b15113a86549a5a6415a75338d68bd
+#: 4135ca00fa3a4cf39b3ce0b615d0e583 431e108516184beca49b92bad098f500
+#: 59caa4b7ec544493a1c4ccaf9166630d 710d5e763a7e45eabb89b5d987846aa5
+#: 7e073b6c0aff4c1c8501d7e912f9adb1 93ab6d5a141749f8b1247cbc7ceceb7b
+#: 993a2c78bf2843448c18fe681321e7d7 bf8d2765c52a4578b4036d39af52a293
+#: c25da24de41b40fcae1603325931ce64 c5af50966159452f8e04e8d8460f7e8a
+#: c7dd1ecfa2ba46f0932a5c8fb947ef26 c92481b79caa4b65b08b53dca2a0d7bc
+#: e6959485221f426e990ecbacc9daa264 fae15a80797b414f9da4c4e42c81c510
 msgid "Meaning"
 msgstr "含义"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a27a6e7c94cb4795a43ad4fff6118a25
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4231ee6db87c42dd91e638048d3b623c
 msgid "`joint_commands_topic`"
 msgstr "`joint_commands_topic`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 15f605f8673e4b61bbc7ec30f1b0bdb4
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1ee534cf9a184d04a89a3c392c93f398
 msgid "`\"/robot_joint_commands\"`"
 msgstr "`\"/robot_joint_commands\"`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 7c5e2a04568f4a8bbc03c8f3b2b97789
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9a3bcef880a1411b9e913b94d759fb28
 msgid "Command `sensor_msgs/JointState` topic. **Startup only**."
-msgstr "命令用的 `sensor_msgs/JointState` 话题。**仅启动**。"
+msgstr "命令 `sensor_msgs/JointState` 话题。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 284126d3ffc44f1694da4b98c828a199
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5c694fadf39c423ea4e20d91150abb20
 msgid "`joint_states_topic`"
 msgstr "`joint_states_topic`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 27854ff5e5e84b0bbbcf122dc8861afb
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0846eb946b0b4ec58d3c72665986919a
 msgid "`\"/robot_joint_states\"`"
 msgstr "`\"/robot_joint_states\"`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a6d850b8811b43ae93c649c847554a40
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7439720de06f4074929b8687b1815291
 msgid "State `sensor_msgs/JointState` topic. **Startup only**."
-msgstr "状态用的 `sensor_msgs/JointState` 话题。**仅启动**。"
+msgstr "状态 `sensor_msgs/JointState` 话题。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 1601534a85f744e690dfbac03ce92b14
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3ab556fdebe1440caa1bd8d4d907d481
 msgid "`initialize_commands_from_state`"
 msgstr "`initialize_commands_from_state`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 4093399ca0b645d08657f4a17e1f6a2e
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c851d5c8ef8e4cd8a88e2c567da6e7a1
 msgid "`true` (README: recommended for real hardware)"
 msgstr "`true`（README：真机建议）"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 0927c25a25984f2b847fea6cbf2cd867
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: faba52595432459882f9e4d4e10e5a02
 msgid ""
-"`true`: first received state becomes the command (avoids a jump). "
-"`false`: use state_interface `initial_value`. **Startup only**."
-msgstr ""
-"`true`：用首次收到的状态作为命令（避免突跳）。`false`：使用 state_interface 的 "
-"`initial_value`。**仅启动**。"
+"`true`: first received state becomes the command. `false`: use "
+"state_interface `initial_value`. **Startup only**."
+msgstr "`true`：把收到的第一帧状态当作命令。`false`：使用 state_interface 的 `initial_value`。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a89afaf017ee487798b4c63e88e59f68
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 13beda4de55946778c52a6264d0c26a6
 msgid "`trigger_joint_command_threshold`"
 msgstr "`trigger_joint_command_threshold`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 784f19adb46f4fe8a13f43706e45d321
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 770d920fbf184606ac709f97ba077cd6
 msgid "`1e-5`"
 msgstr "`1e-5`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 6ca0301a70e04ff7badd867b6449a0e2
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 750ccce3f54c4fc690c32766a883c6e6
 msgid ""
 "Skip publish when command vs state is below this delta; `-1` always send."
 " **Startup only**."
-msgstr "命令与状态差值低于此阈值则跳过发布；`-1` 总是发送。**仅启动**。"
+msgstr "命令与状态差小于此阈值则跳过发布；`-1` 始终发送。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: a2be06cc43fd403ebe4dcde0447c7aa1
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d8f73c37b1c149a894760a44c3dbdfc6
 msgid "`sum_wrapped_joint_states`"
 msgstr "`sum_wrapped_joint_states`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: c0605ef9c2484a07a75a4e4d4c7bf267
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9e53f205101d47a692ae6937e4648fb4
 msgid "`false`"
 msgstr "`false`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 672abe2649ad42a9b6083c18efcc585d
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 27654d66bc78452595b8013e391af331
 msgid "`true`: unwrap ±2π (Isaac-style wrapping). **Startup only**."
-msgstr "`true`：展开 ±2π（Isaac 式环绕）。**仅启动**。"
+msgstr "`true`：展开 ±2π（Isaac 式回绕）。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 6bffaf0273324774b2c10592dac9eb76
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9bf1507bf1ec479c8ce78072c15bb7b8
 msgid "`joint_name_prefix`"
 msgstr "`joint_name_prefix`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: ae026e4058dc47f18f8acd7fcd2a044c
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 201de933aa0349a2aefe245d302f120a
 msgid "`\"\"`"
 msgstr "`\"\"`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 02b08e26a8754d51aa0ee162bb3a4c90
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bf8c1440e39e43698d8895a30ec2ce4b
 msgid ""
 "Strip this prefix from hardware joint names when matching topic names. "
 "**Startup only**."
-msgstr "匹配话题名时从此硬件关节名去掉该前缀。**仅启动**。"
+msgstr "匹配话题名时从硬件关节名去掉此前缀。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 536409f94e0b452d8c852de7b20efaa1
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a7ab4cc17f8f4b609a54e1a389c9fd8b
 msgid "`initial_value`"
 msgstr "`initial_value`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 01985af69e724ceba03737ac11421a0b
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 679deb41742e4474afa99aafc8b108a0
 msgid "per `state_interface`"
 msgstr "每个 `state_interface`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 7b5f0d03915848cd83b2bc268de2dc90
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5b0a2a33f2824c53a6cc2dec23599967
 msgid "Used when `initialize_commands_from_state` is `false`. **Startup only**."
 msgstr "`initialize_commands_from_state` 为 `false` 时使用。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: ddc79e9b75384541aace74ff1cd70fc0
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d40a5cbe2b18453dba99704d01c4998e
 msgid "`mimic`"
 msgstr "`mimic`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 812aecfffc704d22a2105cacd802a40f
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 42989320d4e3417c820f7bb34139d631
 msgid "per joint"
 msgstr "每个关节"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: b46178e6f2614519b3daec4e8f688a1e
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c7471a802d58457fba6cd18658a3f10c
 msgid "Name of the joint to mimic. **Startup only**."
 msgstr "要模仿的关节名。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 16854559bbfe4326bb21b7324f18d934
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 14c827814c814e43b1ce4e3140ee2e72
 msgid "`multiplier`"
 msgstr "`multiplier`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: b74307210e70453f88b87393107b9045
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9105f446deea43e299e7ad931dfefb86
 msgid "`1`"
 msgstr "`1`"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:19
-#: 9e344829eaf746858cab1122bfc38bcd
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a329e0eb759145489f73a23e96433618
 msgid "Mimic scale. **Startup only**."
 msgstr "模仿比例。**仅启动**。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:42
-#: f4cc8d429ce2425d87524df328f9dbd7
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:49
+#: e3cf021bce12405293e1eb69c34f1e1f
 msgid "Isaac Sim: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)."
 msgstr "Isaac Sim：[Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:44
-#: 2ddb3077a046485a8cf4283a4ac63617
-msgid "Other public hardware interfaces"
-msgstr "其他公开硬件接口"
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:51
+#: a2de30fccd8d477e8b84e01376288287
+msgid "unitree_ros2_control"
+msgstr "unitree_ros2_control"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:46
-#: 04c36a546fae4bdebbf287fe980b0e6c
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:53
+#: 89d7d30beccc42f0a56faf1fa5301db9
 msgid ""
-"Vendor plugins and the `<param>` names already listed on [Public hardware"
-" interfaces](1-public_hi.md) (for example ARX `can_interface`, Dobot "
-"`robot_ip` / `robot_port`, HighTorque `serial_port`, Modbus `serial_port`"
-" / `baudrate`). Those pages are the parameter lists. They are xacro "
-"`<param>` values at plugin load — same **Startup only** rule as above."
+"[unitree-ros2-control README](https://github.com/fiveages-sim/unitree-"
+"ros2-control/blob/main/README.md). Plugin XML: "
+"`unitree_ros2_control/HardwareUnitree`. No `on_set_parameters`."
 msgstr ""
-"厂商插件以及 [公开硬件接口](1-public_hi.md) 已列出的 `<param>` 名（例如 ARX 的 "
-"`can_interface`、Dobot 的 `robot_ip` / `robot_port`、HighTorque 的 "
-"`serial_port`、Modbus 的 `serial_port` / `baudrate`）。那些页面就是参数表。它们是插件加载时的 "
-"xacro `<param>` — 与上面相同的 **仅启动** 规则。"
+"[unitree-ros2-control README](https://github.com/fiveages-sim/unitree-ros2-control/blob/main/README.md)。插件 "
+"XML：`unitree_ros2_control/HardwareUnitree`。没有 `on_set_parameters`。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:48
-#: 833fd924210547eba47e6217cca484c1
-msgid "Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`."
-msgstr "插件类以该机型 `xacro/ros2_control/*.xacro` 为准。"
-
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:50
-#: 033aa1a7603140a9acdcf6629e2fd5a9
-msgid "Private hardware interfaces"
-msgstr "私有硬件接口"
-
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:52
-#: cdd8d29dcde147b3b230cba9e33ba8d8
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:55
+#: 58c00b9632a74cac84eda8ec1f4da4f2
 msgid ""
-"[Private hardware interfaces](2-private_hi.md) names the private packages"
-" (Rokae, Eyou, iNex, Wuji, DexCap, Fairino). Configuration keys, "
-"IP/serial layouts, and SDK env vars are in **that repository’s README "
-"after access**. This page does not list undocumented private SDK "
-"parameters. #120 likewise skipped private `hardwares/*` gitmodules."
+"README XML still writes `hardware_unitree_sdk2/HardwareUnitree`; the "
+"registered class is `unitree_ros2_control/HardwareUnitree`."
 msgstr ""
-"[私有硬件接口](2-private_hi.md) "
-"列出私有包（Rokae、Eyou、iNex、Wuji、DexCap、Fairino）。配置键、IP/串口布局和 SDK 环境变量见**开通后该仓库"
-" README**。本页不罗列未写入文档的私有 SDK 参数。#120 同样跳过了私有 `hardwares/*` gitmodules。"
+"README 的 XML 仍写 `hardware_unitree_sdk2/HardwareUnitree`；已注册的类是 `unitree_ros2_control/HardwareUnitree`。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:54
-#: 180d86c6d36e446ab4650c96330461b2
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:57
+#: 8e8c737da2734bc6ad89ed6eee32e057
+msgid ""
+"README xacro shows `domain` and `network_interface`. The rest of the "
+"table is from `HardwareUnitree::on_init`."
+msgstr ""
+"README 的 xacro 写出了 `domain` 和 `network_interface`。表中其余项来自 `HardwareUnitree::on_init`。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a56526c7125e4de192ce1a76a6958955
+msgid "`domain`"
+msgstr "`domain`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 40c8540e4159439190a638705399f942 5e121a373b5c4d698c513260f87137c5
+#: cabf60419a9a4f80b5d7e320036df7b1
+msgid "int / `1`"
+msgstr "int / `1`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0feab3f13a9348a8a56abfdd92ef2c55
+msgid "unitree_sdk2 domain. **Startup only**."
+msgstr "unitree_sdk2 域。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ab52e78e98ff48d9b9254ee5bd3ee92b
+msgid "`network_interface`"
+msgstr "`network_interface`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fcc805973fd243b780ad1853d5438452
+msgid "string / `\"lo\"`"
+msgstr "string / `\"lo\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a40a97c672954989bc9beda0c9e3b0fa
+msgid "NIC (`lo` in sim). **Startup only**."
+msgstr "网卡（仿真用 `lo`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1b9cfa1983c849d0ba10cafcced69951 955ac12b26da45628f7885bb1c228a4a
+msgid "`robot_type`"
+msgstr "`robot_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7f02a35c53fa4ce9954dffd06d1e05d9
+msgid "string / `\"quadruped\"` (source; not in README)"
+msgstr "string / `\"quadruped\"`（源码；README 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fc43e131c916414b90f54d2acd818813
+msgid ""
+"Factory key: `quadruped`, `humanoid`, `humanoid_arm_sdk`, `g1_arm_sdk`. "
+"**Startup only**."
+msgstr "工厂键：`quadruped`、`humanoid`、`humanoid_arm_sdk`、`g1_arm_sdk`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 13a8f41073c347019cc6c64df4541e67
+msgid "`enable_high_state`"
+msgstr "`enable_high_state`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5a920d4275be4af488f7ced92345ea01
+msgid "bool / `true` (source; not in README)"
+msgstr "bool / `true`（源码；README 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9eefbee970e2420daa068ed510a3cd78
+msgid "High-state read (sim). **Startup only**."
+msgstr "读取 high-state（仿真）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d163a34bee6044e5ac5f9f0702279717
+msgid "`show_foot_force`"
+msgstr "`show_foot_force`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 37e78b00520749b5924914ce25fdaa76
+msgid "bool / `false` (source; not in README)"
+msgstr "bool / `false`（源码；README 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 030b28dfa0eb4cc5be5e4b22bd58dc95
+msgid "Log foot force. **Startup only**."
+msgstr "记录足端力。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 08b25c1ba8624a6986dde4210c0d6ffd
+msgid "`default_kp`"
+msgstr "`default_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 08f8656bce294530a7549d31f0f9bbbf b0615f2eb40f465b92f0b7ed280256cf
+msgid "double / `0.0` (source; not in README)"
+msgstr "double / `0.0`（源码；README 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a8c819f02a05418fba8dedd841df7486
+msgid "Initial joint kp command. **Startup only**."
+msgstr "关节 kp 命令初值。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8eedd97b14984ed1830be8e29a915059
+msgid "`default_kd`"
+msgstr "`default_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 21023966daa141d8b47b934a9a221979
+msgid "Initial joint kd command. **Startup only**."
+msgstr "关节 kd 命令初值。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:69
+#: 2239c83cbdd44a19831142b76cc3de5e
+msgid "dobot_ros2_control"
+msgstr "dobot_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:71
+#: 280cebac086a4a9dacd117b1f0122049
+msgid ""
+"GitHub: [dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-"
+"ros2-control). [README 配置参数](https://github.com/fiveages-sim/dobot-cr-"
+"ros2-control/blob/main/README.md). Plugin: "
+"`dobot_ros2_control/DobotHardware`. No `on_set_parameters`. There is no "
+"`robot_port` `<param>` in `on_init`."
+msgstr ""
+"GitHub：[dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control)。[README "
+"配置参数](https://github.com/fiveages-sim/dobot-cr-ros2-control/blob/main/README.md)。插件：`dobot_ros2_control/DobotHardware`。没有 "
+"`on_set_parameters`。`on_init` 里没有 `robot_port` `<param>`。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b58bf05b2e69470abd6f15b61cfe6786
+msgid "`robot_ip`"
+msgstr "`robot_ip`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f3b89312cdf94cbb94ad6da69c146604
+msgid "string / `\"192.168.5.38\"`"
+msgstr "string / `\"192.168.5.38\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 73e47297c7be400d85a83362dca2bc08
+msgid "Robot IP. **Startup only**."
+msgstr "机器人 IP。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 37e2b1f37f854c17b50c2ee3ffa9dbbe
+msgid "`servo_time`"
+msgstr "`servo_time`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2f7b594b8a3b4641ac1b384440f011d4
+msgid "double / `0.03`"
+msgstr "double / `0.03`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 22b3b73113f2431d937c03063f1c3367
+msgid ""
+"ServoJ duration (s); README: match `1 / controller_manager.update_rate`. "
+"**Startup only**."
+msgstr "ServoJ 时长（秒）；README：与 `1 / controller_manager.update_rate` 对齐。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c336e9cb37064c5cb9beeaa8f94dd6f2
+msgid "`aheadtime`"
+msgstr "`aheadtime`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bdc39f0801de4295aba80cd376cca1ed f859f99f380245ff803d8e66fdc69b15
+msgid "double / `20.0`"
+msgstr "double / `20.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6d18b808750145cea9f6ec9d2549a09c
+msgid "Trajectory look-ahead (README range 20–100). **Startup only**."
+msgstr "轨迹前瞻（README 范围 20–100）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e7b859d306db4d258dd786c90bb7969a
+msgid "`gain`"
+msgstr "`gain`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c05f3cb341734aa2ae0894ffadc31f6d
+msgid "double / `500.0`"
+msgstr "double / `500.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a1e0efbdf48246f7b44bb10fb319c799
+msgid "Tracking gain (README range 200–1000). **Startup only**."
+msgstr "跟踪增益（README 范围 200–1000）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c98d2d291f144954aaf51b91a2123da2
+msgid "`speed_factor`"
+msgstr "`speed_factor`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3476782c319241ecb5c00edb12ddc68d b63ed8c230e2449e8c7e50383818cba4
+msgid "int / `5`"
+msgstr "int / `5`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ac7aa3788e424537b893665b56635eca
+msgid "Global speed percent (README range 1–100). **Startup only**."
+msgstr "全局速度百分比（README 范围 1–100）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7c5deb27f96f4596bc6d623a61fd8430
+msgid "`verbose`"
+msgstr "`verbose`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 08afef0a867e46a09cccf2eff0be2ae9 2606d7dfc77d46d6b3c88816d51c9a68
+#: 8960b76290cc41ab9f7192c9baa8b677 9330949f40c346a0b223b9960779b80f
+#: ba05d488f79f4a02a839153ae4977ad8 c6efcfb2e8834dd5a14f0cea1d2fcf17
+#: dcc8e16de7bc43aab3afe8e0528ffe27
+msgid "bool / `false`"
+msgstr "bool / `false`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 499bb6a268924f6fb231f36fc4bcf941
+msgid "TCP / command logs. **Startup only**."
+msgstr "TCP / 命令日志。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 22a2cc43fd21482e932aac84e6dd3957 fc2babb2872e4097951da5d0135d0901
+msgid "`gripper_type`"
+msgstr "`gripper_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 97586b3d2a4e4c52af512932b67552c0
+msgid "string / `\"changingtek\"` (source; not in README table)"
+msgstr "string / `\"changingtek\"`（源码；README 表未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d61b55fbf57c4acf967880ca2fd0e82d
+msgid "Used when a gripper joint is present. **Startup only**."
+msgstr "存在夹爪关节时使用。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f23043e97dfa4018a89e6e6363b3ad41
+msgid "`gripper_read_frequency_divider`"
+msgstr "`gripper_read_frequency_divider`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0e23db3bca324b19a115c7243be32d86
+msgid "int / `4` (source; not in README table)"
+msgstr "int / `4`（源码；README 表未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 29f5bc2acb5a44aa931ec29c02c5a948
+msgid "Gripper read divider. **Startup only**."
+msgstr "夹爪读取分频。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:84
+#: 338f464956894802a9451956fee68a67
+msgid "arx_ros2_control"
+msgstr "arx_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:86
+#: 13ca81ddb61b42f2abc2a3fc96a77024
+msgid ""
+"[arx-ros2-control README](https://github.com/fiveages-sim/arx-"
+"ros2-control/blob/main/README.md). Two plugins. URDF `<param>` are also "
+"declared as node parameters so rqt / `ros2 param set` can change the "
+"**Runtime** rows."
+msgstr ""
+"[arx-ros2-control README](https://github.com/fiveages-sim/arx-ros2-control/blob/main/README.md)。两个插件。URDF "
+"`<param>` 也会声明为节点参数，因此 rqt / `ros2 param set` 可以改 **运行时** 行。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:88
+#: 11f9b5cbc72d44edb7fe974d62864572
+msgid "`arx_ros2_control/ArxX5Hardware`"
+msgstr "`arx_ros2_control/ArxX5Hardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:90
+#: abae74669905487e8b8233ca4b6a8582
+msgid ""
+"`control_mode` other than `full_control` is warned and ignored. "
+"`robot_model` is hardcoded `X5` (not a ROS param)."
+msgstr "`control_mode` 若不是 `full_control` 会告警并忽略。`robot_model` 硬编码为 `X5`（不是 ROS 参数）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 15c6c06b1d774c8a8b291e27ea3805d5 4e9eae42ba774f029594e89b031b36a2
+#: 95ecaf3612a6485f9ec8b476e84efab7 ab4c7dd0fb424e28aa9659cc153f46f9
+#: c781de46f6bf4803a132229519c72920
+msgid "`can_interface`"
+msgstr "`can_interface`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 024550b3f79743dbb69753561feb310e 0dc34ece25f041e6a5cc288e044e39f3
+#: 12d9ac32393a4e6d87cdcec2a6467953 4cddb4fea4434b348600b45bebb1c9be
+#: 7860db492a344fb1a9dad2f89a5c4551
+msgid "string / `\"can0\"`"
+msgstr "string / `\"can0\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ee35f6b8c0ea465fba88f15ef6ecf059
+msgid "CAN device (README: single-arm right often `can3`). **Startup only**."
+msgstr "CAN 设备（README：单臂右侧常用 `can3`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bce0dce83aac4c31bc3e10734892a998 d7c8e3f12aa34c4481cfdbbb3a864bab
+msgid "`control_mode`"
+msgstr "`control_mode`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6c5b57bd40084321b6e0b75c6acbc83e
+msgid "string / `\"full_control\"`"
+msgstr "string / `\"full_control\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7d0dc48bea284245b621d60de40eed36
+msgid "Only `full_control` (MIT MIX) is honored. **Startup only**."
+msgstr "只接受 `full_control`（MIT MIX）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1ee56c2e2ffd4eebb350e2b8427272a9
+msgid "`joint_k_gains`"
+msgstr "`joint_k_gains`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2b69734bbdfc4c0d9ceb73473b607e90
+msgid "double[6] / `[80, 70, 70, 30, 30, 20]`"
+msgstr "double[6] / `[80, 70, 70, 30, 30, 20]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3cac4708a90a4c41961ae72a5cd1b762
+msgid "MIT kp. README: Lift2S field default `[20,20,20,20,10,10]`. **Runtime**."
+msgstr "MIT kp。README：Lift2S 现场默认 `[20,20,20,20,10,10]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e5813f69a0e94f2ab3146c802d6edb14
+msgid "`joint_d_gains`"
+msgstr "`joint_d_gains`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c54cdfdb1b2b4744b8f04524508e17e4
+msgid "double[6] / `[2, 2, 2, 1, 1, 0.7]`"
+msgstr "double[6] / `[2, 2, 2, 1, 1, 0.7]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: cdaa0af14adc457a90644edda94fffab
+msgid ""
+"MIT kd. README: Lift2S field default `[0.8,0.8,0.8,0.8,0.5,0.5]`. "
+"**Runtime**."
+msgstr "MIT kd。README：Lift2S 现场默认 `[0.8,0.8,0.8,0.8,0.5,0.5]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3c70d6b9c24c49448553a8f8f730d623 a5320c4f6047425b98ae008a9490393b
+msgid "`gripper_kp`"
+msgstr "`gripper_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 22a6f0f86409483b9963b1c2c7ae5de7 c7f99cc3c1ef43048369f0efab33102c
+#: efcfcef43a324400a5e2e708a31922c7
+msgid "double / `5.0`"
+msgstr "double / `5.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6e7d4962b72d44009b62bd1a41c2efd5 ed3ce4f131da4a95875b830c813eb0ff
+msgid "夹爪 kp. **Runtime**."
+msgstr "夹爪 kp。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4160be93592741eb9a6ddfb8f6bc63f5 f43fc42a725c4a8e8e93686cf207fff6
+msgid "`gripper_kd`"
+msgstr "`gripper_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f3f5be92078244debcdbf513e025345b
+msgid "double / `0.2`"
+msgstr "double / `0.2`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5e580c0f590d464ea36ab728b69ec9a9 6b96992ec1e6499c8561b1cf23c7ee35
+msgid "夹爪 kd. **Runtime**."
+msgstr "夹爪 kd。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 37bc081885b2449db2135f9bd71b2de6 7251f9022ae74530952856e52e497045
+#: c394108d48ef40d0ac0505ad374ed0f0
+msgid "`shutdown_return_home`"
+msgstr "`shutdown_return_home`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e5646bc0a069468d882870844d2f6a1c
+msgid "Interpolate to `shutdown_home` on deactivate. **Startup only**."
+msgstr "停用时插值到 `shutdown_home`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7b1fd54dc0a14538abf6837111776597 ca86591089304b35b6e709f6a2277684
+msgid "`shutdown_home`"
+msgstr "`shutdown_home`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 25846b49b28c4e6788d0497978356324 d6982322879f4c8ba3608716c6de2779
+msgid "double[6] / zeros"
+msgstr "double[6] / zeros"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a51ad14a2c4c4f7d83fba18d3f503ea7 b606dc6755d14dce8ecc508b89816d16
+msgid "Shutdown pose. **Startup only**."
+msgstr "关机位姿。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3ae94e22b25c4a41a85762467c165c7d d09b028c02f740958828267bf0dd2118
+#: d42f4208488d46169488688beb8deac5
+msgid "`shutdown_home_velocity`"
+msgstr "`shutdown_home_velocity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0f99314a275d4225906aa849d0f3d857 cc7ab7cbb43b42229adb6259bbddd978
+#: e6853e28e51a4dda911867d2f0f84edd
+msgid "double / `0.3`"
+msgstr "double / `0.3`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 24f0a4360040428bb05d11b9fa567316
+msgid "Shutdown interp speed. **Startup only**."
+msgstr "关机插值速度。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bce8d052bf884f41a578aa71e88b9077 c230360f2fb74abaa89cfa51c28dae8b
+#: d2c0aed3102b449caf54db3d1cdeb51e
+msgid "`shutdown_home_timeout`"
+msgstr "`shutdown_home_timeout`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2a52d136012248668556c49467364558 738310b2677b41e8a777df8cf5735ac9
+#: 8368f819616a47149fe4f3e8276583f6
+msgid "double / `2.0`"
+msgstr "double / `2.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d91954dc79834b4eb8dc7d49d559b385
+msgid "Shutdown timeout (s). **Startup only**."
+msgstr "关机超时（秒）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5fe20123a85841eb82e492a5acd884e1 80d08912bc734737b8a5bd04c5ca161f
+msgid "`status_debug`"
+msgstr "`status_debug`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3e6e5828f612432fab2240784c7415db ad20eb1450564a91818a6a8fe73af35b
+msgid "bool / `false` (source)"
+msgstr "bool / `false`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 491a51d312d647588d047c2f9ce940ea
+msgid "Extra MIT/status logs. **Runtime**."
+msgstr "额外 MIT/状态日志。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:106
+#: 52a3d1f6bc354188a913e8e4d0917aa6
+msgid "`arx_ros2_control/ArxLiftHardware`"
+msgstr "`arx_ros2_control/ArxLiftHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:108
+#: 3e1adab617354d02a71edcbca35f6374
+msgid ""
+"URDF keys from `on_init`. README chassis table says Lift2S xacro often "
+"sets `enable_chassis_cmd_vel` true; **source default is `false`**."
+msgstr ""
+"`on_init` 中的 URDF 键。README 底盘表写 Lift2S xacro 常把 `enable_chassis_cmd_vel` 设为 "
+"true；**源码默认是 `false`**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 30fa7edcdf1f4b4eb2ab97ce639bd299
+msgid "`can_name`"
+msgstr "`can_name`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fec70400dbe54a188fb521c68385d324
+msgid "string / `\"can5\"`"
+msgstr "string / `\"can5\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7570da5533dc47d295693d28a64bf06f
+msgid "Lift CAN. **Startup only**."
+msgstr "升降柱 CAN。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 301a5d2635d14cc1b1e502063bfd64d3 68676d86d0da4c83b3ab29919deb53cd
+#: 7817b66e45324035b03eb4cffc3df485 f1bbf0ad4daa41ae9cf536b27850de09
+msgid "int / `2`"
+msgstr "int / `2`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f158514b7b0d4445b54490f8b8c59018
+msgid "`0` LIFT / `1` X7S / `2` LIFTS. **Startup only**."
+msgstr "`0` LIFT / `1` X7S / `2` LIFTS。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 20e78b1a4c7b481faa8d2c115ed487b3 6bf586e7fcb34d6f8e3857bbfede5cbb
+msgid "`lift_motor_mode`"
+msgstr "`lift_motor_mode`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e6506952c3f54ec39bf75c6625da383f
+msgid "string / `\"hybrid\"`"
+msgstr "string / `\"hybrid\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 47398e562ea74f3a964738e63b14badd
+msgid ""
+"`hybrid` or `soft_p` / `position`. **Startup only** (live switch is the "
+"node param below)."
+msgstr "`hybrid` 或 `soft_p` / `position`。**仅启动**（运行中切换见下面的节点参数）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: adf8527ba7bc4dfbadaf502247792cdd
+msgid "`hybrid_kp`"
+msgstr "`hybrid_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1acc36b368cf4ae88e12ffffc4ecd7a3
+msgid "Hybrid kp. **Startup only** (seed for `arx_lift.hybrid_kp`)."
+msgstr "hybrid kp。**仅启动**（给 `arx_lift.hybrid_kp` 做初值）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6b66c8eda45849e2a6b323bdfb0f9cce
+msgid "`hybrid_kd`"
+msgstr "`hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 33ccdbfe18994bb7a09d0ba9636baf05
+msgid "Hybrid kd (alias `kd`). **Startup only**."
+msgstr "hybrid kd（别名 `kd`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b0ad6499bb6e4c9e829c38ee8b169bd2 fc355fdfe17b4ada86ace14e48a91750
+msgid "`soft_p_kp`"
+msgstr "`soft_p_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c851bb07cbdf47b3bc04a7f08c57500f
+msgid "double / `50.0`"
+msgstr "double / `50.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6c86b1f4d4ee4634825feff0502cea77
+msgid "Position-mode kp (aliases `lift_kp`, `kp`). **Startup only**."
+msgstr "位置模式 kp（别名 `lift_kp`、`kp`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ebd4751693604945969af50034c4ca91
+msgid "`gravity_compensation_torque`"
+msgstr "`gravity_compensation_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 55d6e275ef174c209e1b6cfc9b251719
+msgid "double / `-1.01`"
+msgstr "double / `-1.01`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: aa88b2ec7305422cb29f0914ed9295dd
+msgid "Gravity feedforward. **Startup only**."
+msgstr "重力前馈。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d14e8f9643104d0aad9854c2949d856e
+msgid "`coulomb_friction_torque`"
+msgstr "`coulomb_friction_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4f3301b2509843728d8f834a06d1ee95
+msgid "double / `0.32`"
+msgstr "double / `0.32`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 653d1c9d0c2d4f17ae32e820f3e39c48
+msgid "Coulomb friction. **Startup only**."
+msgstr "库仑摩擦。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 74c19a6297c443c0ac18ab62b569b33f
+msgid "`friction_vel_eps_mps`"
+msgstr "`friction_vel_eps_mps`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: dc56c15546cd4bc1a2a43535ccf6eb61
+msgid "double / `0.01`"
+msgstr "double / `0.01`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 14449551d7934b7588eed669c86cd617
+msgid "Friction deadband (m/s). **Startup only**."
+msgstr "摩擦死区（m/s）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 070dde04109648af93a24fce103112e2
+msgid "`lift_max_vel`"
+msgstr "`lift_max_vel`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2f3506e6c802462a891912c9fd51eb76
+msgid "double / `0.20`"
+msgstr "double / `0.20`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4ad56ca6b70f4158bf6907463fbf6a62
+msgid "Max lift speed. **Startup only**."
+msgstr "最大升降速度。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3b44e4c1b42649dfabd75eb6e91423bf
+msgid "`lift_max_torque`"
+msgstr "`lift_max_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 620c4f9e008d4ac1a1f642a22675dfda
+msgid "double / `15.0`"
+msgstr "double / `15.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a5f878fabd4c4651b7a61e5073c894e7
+msgid "Max torque. **Startup only**."
+msgstr "最大力矩。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ae7ee78d367c4c58afc86f45ec178fa7
+msgid "`height_rad_per_meter`"
+msgstr "`height_rad_per_meter`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9ce5bcc8ad0242a68457a472190f6706
+msgid "double / `41.54`"
+msgstr "double / `41.54`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0dd78e8839f9422e8a0dd43fed78b0e3
+msgid "m↔rad (alias `height_to_motor`). **Startup only**."
+msgstr "米↔弧度（别名 `height_to_motor`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9217d4b2b1604bc49d94bdcd3843351c
+msgid "`height_span_m`"
+msgstr "`height_span_m`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 41c7a517b9b3452b81e7af62a0156910
+msgid "double / `0.48`"
+msgstr "double / `0.48`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 10b32c0d9a65431b9ab17c00e66bbb08
+msgid "Stroke (alias `max_height_m`). **Startup only**."
+msgstr "行程（别名 `max_height_m`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b4dbfa4aacd84d8bb4933290f15f0659
+msgid "`sdk_max_rad`"
+msgstr "`sdk_max_rad`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c6e939c1fad541478c2839c17fa20d22
+msgid "SDK angle cap. **Startup only**."
+msgstr "SDK 角度上限。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0e586c2f3e01469b85bcdfa2fa583cd6
+msgid "`cmd_ramp_vel`"
+msgstr "`cmd_ramp_vel`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 494462dc98b2413ab26aa9dd95e033d8
+msgid "double / `0.04`"
+msgstr "double / `0.04`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: efab0454e9b84e83820240db2a99f8fe
+msgid "Shutdown-home ramp only. **Startup only**."
+msgstr "仅用于关机回零斜坡。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8f86d3c6075b44f888c320d1ed78b32d
+msgid "`enable_chassis_cmd_vel`"
+msgstr "`enable_chassis_cmd_vel`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6f13a0b86336426f9e83daf8fd294a07
+msgid "Subscribe Twist → chassis. **Startup only**."
+msgstr "订阅 Twist → 底盘。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9fd2221ffb1843b9a04b6f9f356757ea
+msgid "`chassis_cmd_vel_topic`"
+msgstr "`chassis_cmd_vel_topic`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5a29cfa5e1dd4b9eb57787928e93688a
+msgid "string / `\"/cmd_vel\"`"
+msgstr "string / `\"/cmd_vel\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7ca8bee912e3434c9cb73ba4ea4d6d30
+msgid "Chassis Twist topic. **Startup only**."
+msgstr "底盘 Twist 话题。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2b96ad8de2484869afd6a31cdd5e1eec
+msgid "`chassis_cmd_timeout`"
+msgstr "`chassis_cmd_timeout`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7ed3fa99ffef435fbf7bd862d64931d0
+msgid "Stop after timeout (s). **Startup only**."
+msgstr "超时后停止（秒）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1d3e82e50e844616a1634bc64b6b5cd7
+msgid "`chassis_max_vel_x` / `_y` / `_z`"
+msgstr "`chassis_max_vel_x` / `_y` / `_z`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 18b93c8f8a8d4d4eb793af786279a6d4
+msgid "double / `2` / `2` / `4`"
+msgstr "double / `2` / `2` / `4`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f2c1b4473fa8489db5bb1412a38fe2a0
+msgid ""
+"Chassis quantize limits (README: LIFTS `.so` omits these). **Startup "
+"only**."
+msgstr "底盘量化限幅（README：LIFTS `.so` 不含这些）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a8ea2a3997b3444692b408ec46f90aa5
+msgid "Return to `shutdown_height_m` on exit. **Startup only**."
+msgstr "退出时回到 `shutdown_height_m`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a260e3a000274a7eb1ae98d20930c274
+msgid "`shutdown_height_m`"
+msgstr "`shutdown_height_m`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3ca3dae9fe514ab4bd8ad7013b0e4000 7869bd4f6f4b4025addc70882747eb6d
+msgid "double / `0.0`"
+msgstr "double / `0.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e6dd20c52c77474ca3bd8d482d92cebe
+msgid "Shutdown height. **Startup only**."
+msgstr "关机高度。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 456752d6efb8410ea80dd6c7b8f2fe14
+msgid "double / `0.10`"
+msgstr "double / `0.10`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ae0fffcc1bed442784d832ff05de868f
+msgid "Shutdown speed. **Startup only**."
+msgstr "关机速度。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: de9504773db348cb8b381bad1f6c0e72
+msgid "Shutdown timeout. **Startup only**."
+msgstr "关机超时。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b0daebdfec4c4bd08cf3df4d0f402589
+msgid "Debug logs. **Runtime** (also a node param)."
+msgstr "调试日志。**运行时**（同时也是节点参数）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:137
+#: c270456ae31a4188a98588f59ac46f5c
+msgid ""
+"On activate, Lift also declares these **node** parameters "
+"(`add_on_set_parameters_callback`):"
+msgstr ""
+"On activate, Lift also declares these **node** parameters (`add_on_set_parameters_callback`):"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ca93f30796f446cab4aad26699385124
+msgid "Seeded from"
+msgstr "Seeded from"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a7ad8afbbc384a489c3ee275bcbb76cc
+msgid "`arx_lift.motor_mode`"
+msgstr "`arx_lift.motor_mode`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a2a7c81cf0a64a548033b3074a9bce32
+msgid "`hybrid` or `soft_p`/`position`. **Runtime**."
+msgstr "`hybrid` 或 `soft_p`/`position`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f4ce0365b95c4b05bcc5edb4a6002dba
+msgid "`arx_lift.soft_p_kp`"
+msgstr "`arx_lift.soft_p_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 16cb65744c194064a50e594021f41ccf 19457c5a4ba14143a342631f2f3d83cb
+#: 2aae196a320a4d50b8aadfe4cc989d9b bd85619747854430992dc301c9a7a66b
+#: da90d12333de49c2b09901721e6877cb
+msgid "**Runtime**."
+msgstr "**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 60daf8a5c9314f32a8895b93aa8a8792
+msgid "`arx_lift.hybrid_kp` / `arx_lift.hybrid_kd`"
+msgstr "`arx_lift.hybrid_kp` / `arx_lift.hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 82c9f8e8407f4d6a8be8212d3b6bea92
+msgid "`hybrid_kp` / `hybrid_kd`"
+msgstr "`hybrid_kp` / `hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d9095897a0d04d5bbb9333712f9fd2c5
+msgid "`arx_lift.gravity_compensation_torque`"
+msgstr "`arx_lift.gravity_compensation_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 663231fc20894d20827b784ea4553630
+msgid "same URDF key"
+msgstr "same URDF key"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: dc9a05b8b87e4dc79efccce6caf8c0e0
+msgid "`arx_lift.coulomb_friction_torque`"
+msgstr "`arx_lift.coulomb_friction_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: aeabc352547c4eda8fad3506fe52afc5 d9ec92a5db64493d8ce74c419b0e1377
+msgid "same"
+msgstr "same"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4342741ed411478c81a8af2d5997ecd8
+msgid "`arx_lift.friction_vel_eps_mps`"
+msgstr "`arx_lift.friction_vel_eps_mps`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:148
+#: 95b79f30b00047ca97f65f6eee3e159c
+msgid "ht_ros2_control"
+msgstr "ht_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:150
+#: a47379c26f15486a9a6fc6ff01c49c11
+msgid ""
+"[ht-ros2-control README](https://github.com/fiveages-sim/ht-"
+"ros2-control/blob/main/README.md). Plugin: "
+"`ht_ros2_control/PantheraHardwareInterface`. `config_file` is required in"
+" `on_init`. Description xacro chooses `Panthera.yaml` vs "
+"`PantheraDual.yaml`; there is no `dual_config_file` hardware_parameter in"
+" source (README names that as the xacro selector)."
+msgstr ""
+"[ht-ros2-control README](https://github.com/fiveages-sim/ht-ros2-control/blob/main/README.md)。插件：`ht_ros2_control/PantheraHardwareInterface`。`on_init` "
+"要求 `config_file`。描述包 xacro 在 `Panthera.yaml` 与 `PantheraDual.yaml` 之间选择；源码没有 "
+"`dual_config_file` 这一 hardware_parameter（README 把它当作 xacro 选择器）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:152
+#: 8fcea4b205a246e3b4c99a9ecce3bbd4
+msgid ""
+"`joint_kp` / `joint_kd` / `gripper_kp` / `gripper_kd` are exposed as node"
+" parameters. README: IO thread syncs about every 200 ms — `ros2 param "
+"set` / rqt takes effect without reload. No `on_set_parameters` callback; "
+"the poll is the Runtime path."
+msgstr ""
+"`joint_kp` / `joint_kd` / `gripper_kp` / `gripper_kd` 作为节点参数暴露。README：IO 线程大约每 "
+"200 ms 同步一次 — `ros2 param set` / rqt 无需重载即可生效。没有 `on_set_parameters` 回调；轮询就是运行时路径。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: db96c519ee07469b8c7b7e2db8959ebb
+msgid "`config_file`"
+msgstr "`config_file`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 60f64b81493d40318fc3900ff4b41346 ec6c0948861748548ae6728592673bc3
+msgid "string (required)"
+msgstr "string (required)"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4a5f2fefa4834f1894c3dd94ccf30a68
+msgid "Motor YAML path. **Startup only**."
+msgstr "电机 YAML 路径。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6eb588de3afc4260ba29822f03806a41
+msgid "`usb_select`"
+msgstr "`usb_select`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7cf1f060b93048ebb8eb82f3bca2f165 998d5cae41c04306bae9a85f3c333988
+#: fdea51f33f3b4dbf8070efb3b1492e37
+msgid "string / `\"auto\"`"
+msgstr "string / `\"auto\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d0bf760b6af04fec808072a846ef316c
+msgid "Control-box USB path, or `auto` (exactly one box). **Startup only**."
+msgstr "控制箱 USB 路径，或 `auto`（只能检测到一台）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0d3e1ccc1a8144d0b85a7bc50d58f2d5
+msgid "string / `\"mit\"`"
+msgstr "string / `\"mit\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c94f6a1df06d4f0789ca079562ea8052
+msgid "`mit` (old name `full_control`) / `effort` / `position`. **Startup only**."
+msgstr "`mit`（旧名 `full_control`） / `effort` / `position`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 56e08b62db0b4c84a45fe903ba40301e
+msgid "`gripper_rad_to_m`"
+msgstr "`gripper_rad_to_m`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3858582de4114b00a98e8159c39dd7c6
+msgid "double / `0.025`"
+msgstr "double / `0.025`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 57fdf98349f14257999e9ddcd3283827
+msgid "Gripper rad↔m. **Startup only**."
+msgstr "夹爪 弧度↔米。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e3bda2da854f4b949f51d9a861d1578d
+msgid "`max_torques`"
+msgstr "`max_torques`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0c811bead0ad45e285694e9747e2a8b6 c0b5909b3b2c4b7c87479081f0952f4b
+msgid "CSV, 7 per arm"
+msgstr "CSV, 7 per arm"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0bb45b84ba904be3913ff533fae4b97c
+msgid ""
+"Torque limits; source fallback `[21, 36, 36, 21, 10, 10, 0.5]`. **Startup"
+" only**."
+msgstr "力矩上限；源码回退 `[21, 36, 36, 21, 10, 10, 0.5]`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c4ed3e45af8248ea9db81bab27d707c0
+msgid "`max_velocities`"
+msgstr "`max_velocities`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7fc2bb1189e34d5f9cb157719f2dc1ba
+msgid ""
+"Velocity limits; source fallback `[4.2, 5.0, 5.0, 4.2, 3.7, 3.7, 0.3]`. "
+"**Startup only**."
+msgstr "速度上限；源码回退 `[4.2, 5.0, 5.0, 4.2, 3.7, 3.7, 0.3]`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8a1e9ef890c64f978bcb4e1abc184942
+msgid "`joint_kp`"
+msgstr "`joint_kp`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4972201c0ae4426ead68eb7fd7fa96b7
+msgid "CSV, 6 per arm / `[20, 30, 40, 20, 20, 20]`"
+msgstr "CSV, 6 per arm / `[20, 30, 40, 20, 20, 20]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ebabe89c58bb4a5fb04bc492a9b23214
+msgid "Arm kp. **Runtime**."
+msgstr "臂 kp。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8df1cd80798449d4b3e2c83b4f28a85c
+msgid "`joint_kd`"
+msgstr "`joint_kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6bbe04da18c94fadbf8b472788258e75
+msgid "CSV, 6 per arm / `[0.2, 0.3, 0.4, 0.2, 0.2, 0.2]`"
+msgstr "CSV, 6 per arm / `[0.2, 0.3, 0.4, 0.2, 0.2, 0.2]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 821671412c5e4b68aee4a99fb4d88812
+msgid "Arm kd. **Runtime**."
+msgstr "臂 kd。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0ffb518e25b04346bd48b08b7d683824
+msgid "double / `0.1`"
+msgstr "double / `0.1`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 48f580e7a83b40c1b5295a2791eba8e4 4e47294532054368b07f0fefa877aeb4
+#: 53c07a549b59435a8158dba7f27912df 6e65424103234d2ab702b2824de22263
+#: 8d459d9847504b1bb1425831b68c4e0b b776a033b3bd4905ae98abbbb5b270cd
+#: efd19fa1c4064b30ac2d76e46d89e8a0
+msgid "bool / `true`"
+msgstr "bool / `true`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 88e62571c4ef4cc8ba4d36a59f69becd
+msgid "Interp home then `set_stop`. **Startup only**."
+msgstr "插值回零后 `set_stop`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ca8ab4da377a43b28a22156afc201ac3
+msgid "CSV, 6 / zeros"
+msgstr "CSV, 6 / zeros"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c8fb0000a7e6465bba2fbd2687d2f0b7
+msgid "double / `3.5`"
+msgstr "double / `3.5`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 20b9d8d4fec24f2e890687bc9da0da3a
+msgid "Timeout (s). **Startup only**."
+msgstr "超时（秒）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9091a9176df74fc4a09b3a3a32ce65b0
+msgid "`shutdown_home_tolerance`"
+msgstr "`shutdown_home_tolerance`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 24fa2445fb574ede9ba751c794cba0e2
+msgid "double / `0.05`"
+msgstr "double / `0.05`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 22c38bbf4ce444b9a03fc6c5e272225f
+msgid "Arrive tolerance. **Startup only**."
+msgstr "到位容差。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b83136510e2d44f6b4db8e7476c4795d
+msgid "Interp speed. **Startup only**."
+msgstr "插值速度。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:172
+#: 8efd2b8d7d354d73845419da68562938
+msgid "marvin_ros2_control"
+msgstr "marvin_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:174
+#: eb86b6446904461283a0051b6bc00ce0
+msgid ""
+"[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-"
+"ros2-control/blob/master/README.md). Plugin: "
+"`marvin_ros2_control/MarvinHardware`. URDF `<param>` are declared as node"
+" parameters. README §4 lists the Runtime set; `paramCallback` matches "
+"those plus `drag_mode`, `cart_type`, `*_kine_param` / `*_dyn_param`, "
+"`tool_debug_log`."
+msgstr ""
+"[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)。插件：`marvin_ros2_control/MarvinHardware`。URDF "
+"`<param>` 会声明为节点参数。README §4 列出运行时集合；`paramCallback` 覆盖这些，外加 `drag_mode`、`cart_type`、`*_kine_param` "
+"/ `*_dyn_param`、`tool_debug_log`。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:176
+#: b0bf28c584f54cfd8afa455ad46ecd62
+msgid ""
+"`left_ee_channel` / `right_ee_channel`: `1` = CAN/CAN FD, `2` = COM1 "
+"RS485 (source `COM1_CHANNEL`)."
+msgstr ""
+"`left_ee_channel` / `right_ee_channel`：`1` = CAN/CAN FD，`2` = COM1 RS485（源码 "
+"`COM1_CHANNEL`）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:178
+#: 0e5bbb9bfefc4058a7a2d01b8a073c6d
+msgid "Startup (bus / tool type)"
+msgstr "启动时（总线 / 末端类型）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 84d9335f446a4696b24a5252cd4c0d0a
+msgid "`arm_type`"
+msgstr "`arm_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d7cfc063487a4bdc8d40a2c0cc3b3f1b
+msgid "string / `\"LEFT\"`"
+msgstr "string / `\"LEFT\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0991d1aecacf4a888503c64f1b027d04
+msgid "`left` / `right` / `dual` (normalized). **Startup only**."
+msgstr "`left` / `right` / `dual`（归一化）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3993d54d2e814be984458d80b9bb807a
+msgid "`device_ip`"
+msgstr "`device_ip`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 100f65b111184d6ba7d43fd862faf602
+msgid "string / `\"192.168.1.190\"`"
+msgstr "string / `\"192.168.1.190\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 60ea1368bdf34eb2ab0f2bbd05bf5f7f
+msgid "Controller IP. **Startup only**."
+msgstr "控制器 IP。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 543fc8df6399478fbed1cc5a0af15222
+msgid "`device_port`"
+msgstr "`device_port`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5f70d2f0fc21428db7e81071632ee2eb
+msgid "int / `8080`"
+msgstr "int / `8080`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: caea7a60c6d742bf8eeabfd12c6b0232
+msgid "Port. **Startup only**."
+msgstr "端口。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 84bc3f95d961421f9a2cb9ad9f05e393
+msgid "`left_ee_type` / `right_ee_type`"
+msgstr "`left_ee_type` / `right_ee_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 45dc00abdd944eb99d5bbb9b66c16b02
+msgid "string / empty"
+msgstr "string / empty"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0d4c738185634cea9a42c56e0a4751b5
+msgid "Tool key (README §1). **Startup only**."
+msgstr "末端键（README §1）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 799b51a9a4db472fbcecd1df6e428a1d
+msgid "`left_ee_channel` / `right_ee_channel`"
+msgstr "`left_ee_channel` / `right_ee_channel`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 29493906831448fd858d3a5cf53e8dcc
+msgid "Tool bus. **Startup only**."
+msgstr "末端总线。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 587b4cda98e84234a3d3be6cdee9aa36
+msgid "`use_async_tool_comm`"
+msgstr "`use_async_tool_comm`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1f5cabcd92d84741ae150cd30a438723
+msgid "bool / `true` (source; not in README §3.1)"
+msgstr "bool / `true`（源码；README §3.1 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2ed7b85759d84e9d9bbe957b35031b2d
+msgid "Async tool IO. **Startup only**."
+msgstr "异步末端 IO。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 270b89d9e43f48f3812eef39c807f778
+msgid "`kwr75_ft_enabled` / `left_ft_enabled` / `right_ft_enabled`"
+msgstr "`kwr75_ft_enabled` / `left_ft_enabled` / `right_ft_enabled`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: af12667a702343e28fee0aea9d9babf1
+msgid "bool (source; not in README §3.1)"
+msgstr "bool（源码；README §3.1 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 844fbdd6f58b4fe18a9e91e3bbf0b5f9
+msgid "COM2 KWR75. **Startup only**."
+msgstr "COM2 KWR75。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1068b3a1f0a744989050f2c1bd934f33
+msgid "`left_ft_channel` / `right_ft_channel`"
+msgstr "`left_ft_channel` / `right_ft_channel`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 003841b19b21460997913494d878fa55 00c707febdc047acbed9c548523c08b8
+#: cdf35cd0096b4774bb89a09d8725329a eb17b4d46e4d4e02b763ce9ae71a5154
+msgid "int (source)"
+msgstr "int（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: eec27d9f68814140b464808e878b3071
+msgid "FT SDK channels. **Startup only**."
+msgstr "力传感器 SDK 通道。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 25bf775fe11d4b22903f7ad34b01f92a
+msgid ""
+"`ft_poll_interval_ms` / `ft_command_code` / `ft_convert_to_si` / "
+"`ft_gravity` / `ft_warmup_timeout_ms`"
+msgstr ""
+"`ft_poll_interval_ms` / `ft_command_code` / `ft_convert_to_si` / `ft_gravity` "
+"/ `ft_warmup_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0a56b25166004d9ebde47d8a85df5512 62b06fbe9b564da6bad2ebd07cdbf9cc
+#: 7951521959d847608bb1ec8fb69557e6 a585f6f8487a48c2bb7777440b120371
+#: d594ddf3cd494a59b8f7405491aad790 df2081ca21cf4f60a4badca5e79e5fd9
+#: f31c4dc9cecd4122be29807a704d6d39
+msgid "source"
+msgstr "source"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ac267f45e7fd4bb29639d26f1da91fb8
+msgid "KWR75 on the arm bus. **Startup only**."
+msgstr "臂总线上等的 KWR75。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:192
+#: c60a4c8c99da4ecba7228a01490c0a5f
+msgid "Runtime (README §4 + `paramCallback`)"
+msgstr "运行时（README §4 + `paramCallback`）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5ad57564291141249bc9c3dfe13f3ee6
+msgid "`ctrl_mode`"
+msgstr "`ctrl_mode`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2742c83134f3443d993a7f5ebab4a917
+msgid "string / `\"POSITION\"`"
+msgstr "string / `\"POSITION\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6eeafeda09444710bcdedb9321f98e3e
+msgid ""
+"`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`. "
+"**Runtime**."
+msgstr "`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 933ac28ac4594ea38ef8da5cc6f80e19
+msgid "`joint_k_gains` / `joint_d_gains`"
+msgstr "`joint_k_gains` / `joint_d_gains`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 68074dee86fa41d4a9c138de3a1c9f4e
+msgid "double[7] / `[2,2,2,1.6,1,1,1]` / `[0.4×7]`"
+msgstr "double[7] / `[2,2,2,1.6,1,1,1]` / `[0.4×7]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1c70a440a2ff444dbd7329e6b00defa9
+msgid "Joint impedance. **Runtime**."
+msgstr "关节阻抗。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 99a87a2602974bc389b76548f5e4921d
+msgid "`cart_k_gains` / `cart_d_gains`"
+msgstr "`cart_k_gains` / `cart_d_gains`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fcbb6177a0764fb5b1b495cab7321928
+msgid ""
+"double[7] / `[1800,1800,1800,40,40,40,20]` / "
+"`[0.6,0.6,0.6,0.4,0.4,0.4,0.4]`"
+msgstr "double[7] / `[1800,1800,1800,40,40,40,20]` / `[0.6,0.6,0.6,0.4,0.4,0.4,0.4]`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 14a700b97d464b7ca5a2ac904eb553b1
+msgid "Cartesian impedance. **Runtime**."
+msgstr "笛卡尔阻抗。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 823b81e6f4b24ddbb61324e268219a9b
+msgid "`cart_type`"
+msgstr "`cart_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: dc7ef7fc60dd495a9bd4eb2580e37fd4
+msgid "Cartesian impedance type. **Runtime**."
+msgstr "笛卡尔阻抗类型。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f667338c492449c1b0003b09baaa0764
+msgid "`drag_mode`"
+msgstr "`drag_mode`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bc5c9fd7da0b4b82869e0dab80850baa
+msgid "int / `-1`"
+msgstr "int / `-1`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ccd1978b6daa45b883033a7fb8ed9d76
+msgid "`-1` no update, `0` off, `1` joint drag, `2` cartesian drag. **Runtime**."
+msgstr "`-1` 不更新，`0` 关，`1` 关节拖动，`2` 笛卡尔拖动。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8a25b50ae869467ba7670f3309be6476
+msgid "`max_joint_speed`"
+msgstr "`max_joint_speed`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 02e9aa8753fc47a18df3482ba7216008 d1e32a0ab6b44506820e6fecd58729be
+msgid "double / `10.0`"
+msgstr "double / `10.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a59dad8e027e411eb1f147ccb32f7cf3
+msgid "Joint speed limit (README XML example uses `50`). **Runtime**."
+msgstr "关节速度上限（README XML 示例用 `50`）。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 336544c6e4af4f7f8f2db9d53e48d1c1
+msgid "`max_joint_acceleration`"
+msgstr "`max_joint_acceleration`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 95122d293d78467097e31508b08f2d26
+msgid "Joint acc limit (README XML example uses `30`). **Runtime**."
+msgstr "关节加速度上限（README XML 示例用 `30`）。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7a0099eedea1477bbf7c1e422b7e5b4c
+msgid "`left_dyn_param` / `right_dyn_param`"
+msgstr "`left_dyn_param` / `right_dyn_param`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7e533eef543d4f20a4d09d4d871b5045
+msgid "double[10] / zeros"
+msgstr "double[10] / zeros"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6a2b678f07dc4a379a61e20b6c7b5c7f
+msgid "Tool dynamics. **Runtime**."
+msgstr "工具动力学。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f5feef53b0164908a8d40b72018dffd9
+msgid "`left_kine_param` / `right_kine_param`"
+msgstr "`left_kine_param` / `right_kine_param`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0099f61b83144651ae8c90edf1e64abe
+msgid "Tool kinematics. **Runtime**."
+msgstr "工具运动学。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d320d650cfc74b408540141ce0e2b066
+msgid "`left_tool_torque` / `left_tool_velocity`"
+msgstr "`left_tool_torque` / `left_tool_velocity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 04494dba365c46ec94491f6b95ffa7a4 340fddd830e9470a94f54a6cf6223333
+#: 5baaa12207aa44fb84e5be8d6e1844fa 5e84db2c8ad243de9052bfd82eac3c04
+#: b0f102a12f1f4d5b86ace5630b6e31db d545df4ab893418ab9e26c068d061b8f
+msgid "double / `1.0`"
+msgstr "double / `1.0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 221976fb1e8a40c1855d49f01f6821c5
+msgid "Left tool scale `[0,1]`. **Runtime**."
+msgstr "左侧工具比例 `[0,1]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 61d1da2151374979a03dbd0b080d1650
+msgid "`right_tool_torque` / `right_tool_velocity`"
+msgstr "`right_tool_torque` / `right_tool_velocity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bb236d38ecc84f3c8dbe063783d4aec4
+msgid "Right tool scale `[0,1]`. **Runtime**."
+msgstr "右侧工具比例 `[0,1]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 44850f29f1ec4ba4b98766264823d2d5
+msgid "`left_brake_release` / `right_brake_release`"
+msgstr "`left_brake_release` / `right_brake_release`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 507ec34f6dbd496fbd95b9e7e8d98354
+msgid "Brake; README: only in `POWER_OFF` with hardware inactive. **Runtime**."
+msgstr "抱闸；README：仅在 `POWER_OFF` 且硬件未激活时。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 33b63788a00449d1ade6d284411dc7df
+msgid "`tool_debug_log`"
+msgstr "`tool_debug_log`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a700d6bf77924c8d9a118d380c26b2f5
+msgid "Tool-frame logs. **Runtime**."
+msgstr "工具坐标系日志。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:210
+#: 26fd6db5612f461f9a64c88157b626ef
+msgid ""
+"`pd_k_gains` / `pd_d_gains` / `pd_control_period_ms` / `use_drag_mode` "
+"are declared in `on_init` (source defaults `[14,14,14,10.5,5.6,5.6,5.6]`,"
+" `[0.3×7]`, `5`, `false`). They are **not** in `paramCallback` or README "
+"§4 — **Startup only**."
+msgstr ""
+"`pd_k_gains` / `pd_d_gains` / `pd_control_period_ms` / `use_drag_mode` 在 `on_init` "
+"声明（源码默认 `[14,14,14,10.5,5.6,5.6,5.6]`、`[0.3×7]`、`5`、`false`）。它们**不在** `paramCallback` "
+"或 README §4 — **仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:212
+#: 16577e81d0cb4cc5bab2e44e2d6add38
+msgid "modbus_ros2_control"
+msgstr "modbus_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:214
+#: b078edfbc10e487594110104f89b919d
+msgid ""
+"[modbus-ros2-control README](https://github.com/fiveages-sim/modbus-"
+"ros2-control/blob/main/README.md) §4. Seven plugins. Default **Startup "
+"only** except the tool-scale rows with `on_set_parameters`."
+msgstr ""
+"[modbus-ros2-control README](https://github.com/fiveages-sim/modbus-ros2-control/blob/main/README.md) "
+"§4。七个插件。默认 **仅启动**，带 `on_set_parameters` 的工具比例行除外。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:216
+#: 0895959a61bf4d6294f09dc7bb23a0aa
+msgid "`modbus_ros2_control/ModbusHardware`"
+msgstr "`modbus_ros2_control/ModbusHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:218
+#: c63b98797f764444826092827cc3d7b9
+msgid "夹爪: `changingtek` (variants `90c` / `90d`) or `jodell`."
+msgstr "夹爪: `changingtek` (variants `90c` / `90d`) or `jodell`."
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4ab73d635bd84587a753cdd1431af582
+msgid "string / `\"changingtek\"`"
+msgstr "string / `\"changingtek\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9a059466d0fd437d8016e15e6e5fdbf2
+msgid "`changingtek` or `jodell`. **Startup only**."
+msgstr "`changingtek` 或 `jodell`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3562c7ec27474d1fa9bf7a266a8e924a
+msgid "`variant`"
+msgstr "`variant`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7f552131d4364f839ed9e44001c82b6d
+msgid "string / `\"90c\"`"
+msgstr "string / `\"90c\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 55125f7d6a6646b9ab315dc2797683a1
+msgid "Changingtek `90c` / `90d`. **Startup only**."
+msgstr "Changingtek `90c` / `90d`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 00d26028c147411c971279e1044f02fd 54ba0db71d9e43629c063b69a793dedf
+#: a1d06af467f2405caf260005913d3ca1 bca1453b59f84111bc8f6b05229d2721
+#: d07eff390b944a14ae3d0f849bd3b194 d24d8d3c77a346d987ce832b63d4d4a4
+#: f28dc6b76b614a968a527befc4ca998a
+msgid "`serial_port`"
+msgstr "`serial_port`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 57837f6d20df4c8aa6ddf468476d8dc6 7dea9afd237647c68a6a2815d74c87c6
+#: 9ed5cad748c947b99fc7ae278d08b799 bc9602b46a56453abfd51e4cd9fa9e72
+#: d48bbfbe0b384e71bf25c3e7b2f6a791 e62a82e8e1a5481f87bbb347f6b7f3a2
+msgid "string / `\"/dev/ttyUSB0\"`"
+msgstr "string / `\"/dev/ttyUSB0\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8f31d5f2dbd749079cc2cc66d9f28acd
+msgid "USB-RS485. **Startup only**."
+msgstr "USB-RS485。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 06c96898b54449d3a239acc34ea42e62 473bca6af3ac45f182461b4b77ba7923
+#: 6fe2133ee7064dcdb341d6924e68b935 c3d89304e065467697ac475ac8aef144
+msgid "`slave_id`"
+msgstr "`slave_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fd9f531b22634057b21f8b1ccefccd64
+msgid "int / `1` (Jodell source default `0x09`)"
+msgstr "int / `1`（Jodell 源码默认 `0x09`）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5472b6bde91a405cbfd9cd444eaaec47
+msgid "Modbus slave. **Startup only**."
+msgstr "Modbus 从站。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 593de7753eba49c988144b8fa61266d2 73543f951543449abba25aaaaff15e95
+#: 74d893a1abcb46e1a808d9e62f2d478d d07de19c851f4568819a11ae23a8bc2f
+#: fc05ec81b88647199f1cb731363d65f9 fd030865a9664135b2a12a9c9f10a3e7
+msgid "`baudrate`"
+msgstr "`baudrate`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 54a5f7ef54cf4685b56281d45be926f7
+msgid "uint / `115200`"
+msgstr "uint / `115200`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 051655a139db41de976a90c864011062 1422d5d3d84d43d68664059e67a6ce22
+#: 16335faa69ce45018da31ae6c38af27f 1736e1367b934f68a19dd3810b18d21f
+#: 18e7d39a4e87499eb4d0c591dd31f89e 1f4ebd0bee954e07b0ff8bbd5d64b1ad
+#: 1fbc6063140a43e6a3c4977a4f53475a 23615a80b13246668a8d3e28d3fd10cd
+#: 2887a43f6daa4195854cef416a8f68d7 2df6425fbd3b47b19fa90e4feb163da8
+#: 335df312031d485a923d23b0019b8e86 3c6c2cc6421340b198cf05b74dd3719f
+#: 3e26395e04a84df19c64e208c2344290 3eab16b521394dec922c6e98ebbf470e
+#: 508a3ad1e41d4f9d972b864392edeceb 6257e32ab60e48cf80aa0adf93c4db9c
+#: 64ff45ca658e4911bf9c84f817c52d58 6ec5768b1b4143a984c1687daa223694
+#: 703de483ac2948fd827d8052b21ffffd 7288b546145e4f76918fadeea2db8ffc
+#: 7642a83308d74567b4f851ab16692ac3 793c4cef8e6d4b808d9fb83a309b5213
+#: 82fc3a520b244232a375f316632bac0f 83067e034a894aa48a143116ead70a60
+#: 850d44b7fe5042d2bee4eee800e3ae9f 878c19b3742b4356b8f6dbb79afd7568
+#: 8cc188349aea4f178bf2dfbb69133040 97722a48370b4612b680bd2dd9d6a76b
+#: 9a254f36deb149edac9f3a8c280969e0 a6a83ae3f0154b34ba6533f1d87dd957
+#: adb06693c0d34c57b80dd7d23ee00303 af18985255f541928c7667535a9c57b0
+#: b579db7e822043ca82e7509f9c4dc553 b792c6d20ed542199e5b66d2a6ebfe8a
+#: b810cddc92cf478caa43423d592c6746 b8b0cd877ca64b3a9a9cf967e5201ce9
+#: c7a1bc4dfacd4d85a5afb148b8b99ba2 d02c22588c3742d7bcb23a68f5f61563
+#: d212065e18ed430ea2cb482ec9daa189 d56c252a40574778bbe169fd48998463
+#: d5c5576481a04cf3aa0d5d08de269a5e de55731feba742559c90387f2b902214
+#: e2ca6b125e634e3e89244c6729ceb3ed e8680b1c126c44e78ba2a029fa92b4f7
+#: ed73f320620b424dbae400c7c910eb10 fb8aecb4b90440a7a117eca605fcfd2f
+msgid "**Startup only**."
+msgstr "**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ec3aa835a4434fd58239f28e57858757
+msgid "`parity` / `data_bits` / `stop_bits`"
+msgstr "`parity` / `data_bits` / `stop_bits`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4ac82c6c3c4842cdb69ba365848be6d6
+msgid "source (not in README §4)"
+msgstr "源码（README §4 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bd36c4ed717443c7837f6a89c55dda15
+msgid "Serial format; README: 8N1. **Startup only**."
+msgstr "串口格式；README：8N1。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 04ebea42707f40c7bbb44840649dcf0b
+msgid "`response_timeout_ms` / `byte_timeout_ms`"
+msgstr "`response_timeout_ms` / `byte_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8a4c26fb6c09450f93043823bb7acb52
+msgid "Transaction timeouts. **Startup only**."
+msgstr "事务超时。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:230
+#: 6be97d7db2ed4c7aafdecb0e9255af9f
+msgid "`modbus_ros2_control/DexterousHandHardware`"
+msgstr "`modbus_ros2_control/DexterousHandHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:232
+#: bb63650439254be8a3519759efa19756
+msgid ""
+"LinkerHand O6/L6/O7 over Modbus. `hand_type` containing `INSPIRE` / "
+"`RH56` is rejected."
+msgstr "LinkerHand O6/L6/O7 走 Modbus。`hand_type` 含 `INSPIRE` / `RH56` 会被拒绝。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 13c9e543412540e6a6e33d1df4a3f64d
+msgid "string / `\"/dev/ttyUSB0\"` (README: required)"
+msgstr "string / `\"/dev/ttyUSB0\"`（README：必需）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1b2d72d7b17e4f29aa12f020c0c4a8d3 29704d9ac0024de9b48eb2304bd33225
+#: 3cab1ed68b2c40d6b897ffcbd27bd9bd 65786688720e49bc9d39ac08485561cc
+#: f28d67e62c2b4d0ba79afe6c6aa82af6
+msgid "`hand_side`"
+msgstr "`hand_side`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5748a6d8259a471f86289ecc7451af1b bd1b5c6a40124a558888ad1da3bfb8de
+msgid "string / `\"right\"`"
+msgstr "string / `\"right\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6aabca6588164a639e27b429e6dbb59a e9de1afffbe44e1f9af557eea37a5906
+msgid "Left `0x28`, right `0x27`. **Startup only**."
+msgstr "左 `0x28`，右 `0x27`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a36b874dc3f64ebb926a8f897c25767d
+msgid "`hand_type`"
+msgstr "`hand_type`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: eb7f30da10e74b2dba8036b052943767
+msgid "string / `\"simple_dexterous_hand\"`"
+msgstr "string / `\"simple_dexterous_hand\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: dfb8f42841644411aa0ade277a849c9a
+msgid "Distinguishes O6 / L6 / O7. **Startup only**."
+msgstr "区分 O6 / L6 / O7。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0cedb5ef1bb5432a824877e86ecea3b4 e012f3d868a44e9b816b8eff9ae4cce7
+msgid "`response_timeout_ms`"
+msgstr "`response_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 51803533993f4a34ab746076f844ff75 6291fff61bbd42d696ff49b54894be5b
+#: bf594a1b3b554576a602aa9869ce8a1c
+msgid "int / `20`"
+msgstr "int / `20`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7dc4d17bbfe141ce87371798046f131a
+msgid "`byte_timeout_ms`"
+msgstr "`byte_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 92e88cc7319943f4851e927162936e84 d9a4652d7a774fb08bcd9b2061498002
+msgid "`left_tool_torque` / `right_tool_torque`"
+msgstr "`left_tool_torque` / `right_tool_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 2c4406b25878420db43f420f656198c1 4181bec5fc944fc0a84e81eacc0578bc
+msgid "Side-matched `[0,1]`. **Runtime**."
+msgstr "按侧匹配 `[0,1]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 904e6b9de71f411eae4c6feca0f82e6f d7c4aec30dbd49bda2d849541e4df93a
+msgid "`left_tool_velocity` / `right_tool_velocity`"
+msgstr "`left_tool_velocity` / `right_tool_velocity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:244
+#: 7f6a2707e0e14c078c1498da5b099c31
+msgid "`modbus_ros2_control/InspireHandHardware`"
+msgstr "`modbus_ros2_control/InspireHandHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:246
+#: cd7cd8a7a4164458a846862dfa579721
+msgid "README §4 plus `on_init` extras."
+msgstr "README §4，外加 `on_init` 中的额外项。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 598995452857499eb51270a6ce0e6a72 90a32afa129f4dd988957cf41242d544
+msgid "string / `\"left\"`"
+msgstr "string / `\"left\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7f146a2f08b947ecaebb2401babd2f4c
+msgid "With `slave_id:=auto`: left `2`, right `1`. **Startup only**."
+msgstr "`slave_id:=auto` 时：左 `2`，右 `1`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: af13ce54f10945f68b588d97d1d0fcd7 ebb94d676f7949cc910b60b5057666a3
+#: f402dfa5f159405c830f1ef9d480c25e
+msgid "int / `115200`"
+msgstr "int / `115200`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 38f01367bd0040c194801d3ad7ac0376 4a023c757eca49118b624c3b21e1a208
+#: 5f2e70da81f842b3b56439b17673a521 61804a3d180d4a7fad40895d23ae99f7
+#: a50eeeca7fa24f0682acca613d45a89c
+msgid "`read_feedback`"
+msgstr "`read_feedback`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6c221ea545524b68a60a6ca8c9941e50
+msgid "`background_period_ms`"
+msgstr "`background_period_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: cacebe13b683400d8a4dbc973cde8320
+msgid "int (source; not in README §4)"
+msgstr "int（源码；README §4 未列出）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3925f95850f64170923f3a83c75bff52
+msgid "IO period. **Startup only**."
+msgstr "IO 周期。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 180ee32a29d040e89a4e6580ddb0656c 4f8ab0040f1d44e3abd07a7b0ca2a3a2
+msgid "`command_deadband_raw`"
+msgstr "`command_deadband_raw`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 324f56a3f84d4d648303fbb963d32a2f dd2cb21bbd274210a6463be186a33229
+msgid "`default_speed` / `default_force`"
+msgstr "`default_speed` / `default_force`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:259
+#: 685f04e71a2b473597b8e6c56c1f559a
+msgid "`modbus_ros2_control/FreedomRS485Hardware`"
+msgstr "`modbus_ros2_control/FreedomRS485Hardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: a0e8dcd40def4b01820ccb5df5b1f836
+msgid "`protocol_version`"
+msgstr "`protocol_version`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: eebc6bf1f01d4b86a76ea757ebc7733e
+msgid "`freedomv1` / `freedomv2`. **Startup only**."
+msgstr "`freedomv1` / `freedomv2`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f115d59c8f254963a50c6eb0dd14d6da
+msgid "string"
+msgstr "string"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e04a28801f4842448a073d5973a95ee8
+msgid "int / `115200` (source)"
+msgstr "int / `115200`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: cc752f0ecbf64dd6841f7f4b97395a1c
+msgid "`\"auto\"` (source)"
+msgstr "`\"auto\"`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f140e3513b00472da2362638735dbf3e
+msgid "`command_speed`"
+msgstr "`command_speed`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 23afb4b76e604bcc8bfedf3c22bdbc5e b27b2c5fa2d94799b8fb981ee6657f21
+msgid "int / `100`"
+msgstr "int / `100`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 962671a4e581430d80487671bb8b445f
+msgid "`current_limit`"
+msgstr "`current_limit`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: cb0fae5c85bb46dcb0d78a9f2433bda4 dd9ec883314947dcb19d2b5f13f01a86
+msgid "`command_deadband_deg`"
+msgstr "`command_deadband_deg`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 8797426f55bb4824b3f0ab7ea49bd7f6
+msgid "(source)"
+msgstr "(source)"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: ae9d5c7ce5c34caba004d701a3fcfd7b
+msgid "`feedback_timeout_ms` / `background_period_ms` / `read_feedback`"
+msgstr "`feedback_timeout_ms` / `background_period_ms` / `read_feedback`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:273
+#: cda55ca20c9c448184ac19eaf6281e17
+msgid "`modbus_ros2_control/XHand1RS485Hardware`"
+msgstr "`modbus_ros2_control/XHand1RS485Hardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 10547fb706e74260a88e39dc2958d92a
+msgid "int / `3000000`"
+msgstr "int / `3000000`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4afb405e23a74262acb03ad28cd72b92
+msgid "`hand_id` / `host_id`"
+msgstr "`hand_id` / `host_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c55bb0a787654cc5a842343668d6e88f
+msgid "int / `0` / `0xFE`"
+msgstr "int / `0` / `0xFE`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 86b29cbb925f4cf4961350ad148198c2
+msgid "`kp` / `ki` / `kd`"
+msgstr "`kp` / `ki` / `kd`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7dd53309acd34595a54bf146e84bc157
+msgid "int / `100` / `0` / `0`"
+msgstr "int / `100` / `0` / `0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1fe0eb4b5d16478880066d03e4023dec
+msgid "Per-frame. **Startup only**."
+msgstr "每帧下发。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 07c761ce350b42a4b362a44a0938386f
+msgid "`torque_limit`"
+msgstr "`torque_limit`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 0663e524c74e42ea8c0f22d061c85415
+msgid "int / `300`"
+msgstr "int / `300`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 25c4892ea455447082ff6fd8243e6496
+msgid "Base torque cap. **Startup only**."
+msgstr "基础力矩上限。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 846bc85edfdc48f4a403112dbde96bed
+msgid "`tool_torque`"
+msgstr "`tool_torque`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b46982ba912346d9a6cb96fba7219707
+msgid "double / `0.8`"
+msgstr "double / `0.8`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d4a888f9bb4b4cb39c05b08e3bd6b43a
+msgid "Ratio `[0,1]`. **Runtime**."
+msgstr "比例 `[0,1]`。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 918f92f5777a4bd19fd763637364dc62
+msgid "`tool_velocity`"
+msgstr "`tool_velocity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 58b450d5516745969fd8e3af2459ab7e
+msgid "`≤0` unlimited; `(0,1]` scaled. **Runtime**."
+msgstr "`≤0` 不限速；`(0,1]` 按比例。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c7b7823ab4064f7caa42ed88404ff43e
+msgid ""
+"`control_mode` / `command_deadband_rad` / `feedback_timeout_ms` / "
+"`read_feedback` / `require_initial_feedback`"
+msgstr ""
+"`control_mode` / `command_deadband_rad` / `feedback_timeout_ms` / `read_feedback` "
+"/ `require_initial_feedback`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:286
+#: 114f27261f3b4a28a64d554ec74700f8
+msgid "`modbus_ros2_control/TheoHandModbusHardware`"
+msgstr "`modbus_ros2_control/TheoHandModbusHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 272ac9e4b85d4d3db5ca683c18ca6fbe
+msgid "int / left `2`, right `1`"
+msgstr "int / left `2`, right `1`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1361d0f12d6c4b56b50a8de3ff0dcfab
+msgid ""
+"`background_period_ms` / `command_deadband_raw` / `command_settle_ms` / "
+"`feedback_quiet_after_write_ms`"
+msgstr ""
+"`background_period_ms` / `command_deadband_raw` / `command_settle_ms` / `feedback_quiet_after_write_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:296
+#: 47797f62677f45df8f21ddf07cd7f551
+msgid "`modbus_ros2_control/Kwr75ForceTorqueSensor`"
+msgstr "`modbus_ros2_control/Kwr75ForceTorqueSensor`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:298
+#: 8ff0bd87c42148908cd6b197152cc39a
+msgid ""
+"`SensorInterface`. README §4 default baudrate is `115200` (matches "
+"source)."
+msgstr "`SensorInterface`。README §4 默认波特率 `115200`（与源码一致）。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9e05677cb79a4f819a7aa245ffae3376
+msgid "`command_code`"
+msgstr "`command_code`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e5480eb2e3be46e99146adc8eaa863f8
+msgid "int / `72` (`0x48`)"
+msgstr "int / `72` (`0x48`)"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 1b95bf65d79145b7b97475f5705ce2e4
+msgid "Start-stream command. **Startup only**."
+msgstr "启动连续采集命令。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: cf38a54d91bc43538661ca913c16aec2
+msgid "`convert_to_si`"
+msgstr "`convert_to_si`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c19871fc2a4a450796b5bc79869cc9b4
+msgid "Kg→N. **Startup only**."
+msgstr "Kg→N。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 119c9b69995447478ba3152085f31a59 ba4fac7ea7bf4cf4aadefd389f35b903
+msgid "int / `50`"
+msgstr "int / `50`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4d6a60f3a8c344e99850bbfef0a11e04
+msgid "`startup_delay_ms`"
+msgstr "`startup_delay_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 60d8a7f49f024246af872c4bd65e9c31
+msgid "`warmup_attempts`"
+msgstr "`warmup_attempts`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 23ea9eda85714c358976cb5f043d5210
+msgid "`wrench_topic` / `frame_id`"
+msgstr "`wrench_topic` / `frame_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6e3fe26905a74ed5b8d035a270c9ba80
+msgid "string / `\"\"` / `\"ft_sensor\"` (source)"
+msgstr "string / `\"\"` / `\"ft_sensor\"`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 549afecb059945ce889807c4808cf7fc
+msgid "Optional `WrenchStamped`. **Startup only**."
+msgstr "可选 `WrenchStamped`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3ea334438c7c4a46b859174e1262f68d
+msgid "`gravity`"
+msgstr "`gravity`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 4eb0aa3c1ec9481ca334fb2a0bf7ab62
+msgid "double / `9.80665` (source)"
+msgstr "double / `9.80665`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 509a4bcc82854233be87855a9dd31de5
+msgid "`read_timeout_ms`"
+msgstr "`read_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 72435f7a3ee84aa78cb7bf80cfe7bca0 a1ff303e19ea45dca15c665ad8b5d458
+msgid "int / `3` (source)"
+msgstr "int / `3`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7a0c1cbe09404bd88aca4cbaf6b26901
+msgid "`max_read_failures`"
+msgstr "`max_read_failures`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:314
+#: 4acb71e59a674849a7b7a5ef7b3965d0
+msgid "can_ros2_control"
+msgstr "can_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:316
+#: 54ff79d08ca8404d86ec6293431b7fe5
+msgid ""
+"[can-ros2-control README](https://github.com/fiveages-sim/can-"
+"ros2-control/blob/main/README.md) §4."
+msgstr ""
+"[can-ros2-control README](https://github.com/fiveages-sim/can-ros2-control/blob/main/README.md) "
+"§4。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:318
+#: 39180e3ab9f947378a23dcb5ed3a7df1
+msgid "LinkerHand `O6CanHardware` / `L6CanHardware` / `O7CanHardware`"
+msgstr "LinkerHand `O6CanHardware` / `L6CanHardware` / `O7CanHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: bf16739d6742418a88045d57fb61c620
+msgid "SocketCAN. **Startup only**."
+msgstr "SocketCAN。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 77d5ba5182684248a42d4c9d80a2c29b
+msgid "`can_id`"
+msgstr "`can_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: e7c819e8e4cf4b8ba79a8e0a2cf8e92b
+msgid "optional"
+msgstr "optional"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d4c318bccb4a49f58969ad287f6774db
+msgid "Overrides default ID. **Startup only**."
+msgstr "覆盖默认 ID。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6db75aadb4604968abab55e83f8063a9
+msgid "`read_tactile`"
+msgstr "`read_tactile`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 184ee11021104c3faddb171e54f87f70
+msgid "Five-finger tactile topics. **Startup only**."
+msgstr "五指触觉话题。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: db1dcc08da9142018e1152158027dc79
+msgid "`tactile_timeout_ms`"
+msgstr "`tactile_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fa4e9cbfd7004a30b71324ac51a47844
+msgid "`tactile_period_ms`"
+msgstr "`tactile_period_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 02516affd3464fbdbb147426ba98cd4e 3101717be1bd4fd7aa40ccde99cfe264
+#: 437b85fd7b204f56bf01b84005305763
+msgid "`feedback_timeout_ms`"
+msgstr "`feedback_timeout_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 938abc6318e249a8955394a045e8f834
+msgid "ignored"
+msgstr "ignored"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: fab26207f9974e7fb9b164d1fe56bb6c
+msgid "README: non-blocking read."
+msgstr "README：非阻塞读。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 04e174b6f8544f298ee9dd86d4eed785 d7722cc18f9b43e0bb570f4242738c11
+msgid "`0`"
+msgstr "`0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c415078c53aa4422a57362a1a6b2ffaf
+msgid "README: kept for old xacro; not used to suppress sends. **Startup only**."
+msgstr "README：为旧 xacro 保留；不会用来抑制发送。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: b0d07edbed1c498fa2b6123f5b65a0c7
+msgid "`hand_type` / `send_initial_command`"
+msgstr "`hand_type` / `send_initial_command`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 207152c8bb2848f697d4692244a4d514
+msgid "Side-matched, 0–255 on the wire. **Runtime**."
+msgstr "按侧匹配，线上 0–255。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 562259e79bae4f8f8abccd2eb563e980
+msgid "Side-matched. **Runtime**."
+msgstr "按侧匹配。**运行时**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:335
+#: 0a84ab6599cd44c08cef675a6a810817
+msgid "`can_ros2_control/FreedomCanHardware`"
+msgstr "`can_ros2_control/FreedomCanHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 412db2a2b02c4ced86ade83623db0d5a
+msgid "`device_id`"
+msgstr "`device_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7ffc3badf22645ae8465ec5fcea35656
+msgid "int / `0`"
+msgstr "int / `0`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 9788d42d47b741248e94f40bee48df04
+msgid "0–31 (`slave_id` alias in source). **Startup only**."
+msgstr "0–31（源码中别名 `slave_id`）。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:345
+#: 5e19b7bf2170467ba5313c2f43bda2d8
+msgid "`can_ros2_control/InspireCanfdHardware`"
+msgstr "`can_ros2_control/InspireCanfdHardware`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 32cc844a7a614cdda7d13b289ef5a67f
+msgid "CAN FD. **Startup only**."
+msgstr "CAN FD。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: f156f8e836b64c5aa090293b98634571
+msgid "`hand_id:=auto` → left `2`, right `1`. **Startup only**."
+msgstr "`hand_id:=auto` → 左 `2`，右 `1`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: d21ef6f7866e46848f995f6eb6466b23
+msgid "`hand_id`"
+msgstr "`hand_id`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6e550139c4ee4908bf491f6b007f3b23
+msgid "`\"auto\"`"
+msgstr "`\"auto\"`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 6a522b4ab12a4a13bf0a10b41936d901
+msgid "Aliases `slave_id` / `device_id`. **Startup only**."
+msgstr "别名 `slave_id` / `device_id`。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c1607d6d3bd94810b0ad6c4ae4970aa7
+msgid "int / `4000` / `6000`"
+msgstr "int / `4000` / `6000`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 61a73399ddda4215baf851d8a2749959
+msgid "Init registers. **Startup only**."
+msgstr "初始化寄存器。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: c67da9fa093f4418a4bd3fb992cdc18c
+msgid "`wait_write_ack`"
+msgstr "`wait_write_ack`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 847adbfffca0461aa80888bc4ec7b256
+msgid "(README; no default listed)"
+msgstr "（README；未列默认值）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 65a52f95168d4f6f8c65c901fc6f3c08
+msgid "Wait for write ACK. **Startup only**."
+msgstr "等待写 ACK。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5907a2f3db3049c6968524272d56849d
+msgid "`command_deadband_raw` / `frame_tx_retries` / `inter_frame_delay_us`"
+msgstr "`command_deadband_raw` / `frame_tx_retries` / `inter_frame_delay_us`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:358
+#: 1d6fefe6a0354a1babcc95f0d9988c0b
+msgid "juxie_ros2_control"
+msgstr "juxie_ros2_control"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:360
+#: 7384945fa9854d508f2f4f77e2ed023e
+msgid ""
+"[juxie-ros2-control README](https://github.com/fiveages-sim/juxie-"
+"ros2-control/blob/main/README.md). Plugin: "
+"`juxie_ros2_control/JxHardware`. No `on_set_parameters`. README lists "
+"`max_position_step_nct` `25` and `max_position_accel_nct` `5`; **source "
+"`on_init` fallbacks are `90` and `10`**."
+msgstr ""
+"[juxie-ros2-control README](https://github.com/fiveages-sim/juxie-ros2-control/blob/main/README.md)。插件：`juxie_ros2_control/JxHardware`。没有 "
+"`on_set_parameters`。README 写 `max_position_step_nct` `25`、`max_position_accel_nct` "
+"`5`；**源码 `on_init` 回退值是 `90` 和 `10`**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 3fa1229f36e44516a316e29398ab510a
+msgid "CAN FD interface. **Startup only**."
+msgstr "CAN FD 接口。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: aa04f1e456724912a35f367af3fe3b71
+msgid "`motor_ids`"
+msgstr "`motor_ids`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 26aceed9864e41d7b0437bf9cb3c0b71
+msgid "`\"1,2,3\"` or `\"[1,2,3]\"`; order matches URDF joints. **Startup only**."
+msgstr "`\"1,2,3\"` 或 `\"[1,2,3]\"`；顺序与 URDF 关节一致。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 48f2eba87bd64576adc35c9f8323fc83
+msgid "`control_period_ms`"
+msgstr "`control_period_ms`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: dc41462f18d24ce49d6c3e202d109035
+msgid "Cycle (ms); default 1000 Hz. **Startup only**."
+msgstr "周期（ms）；默认 1000 Hz。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 7f3aee5a22cb40c59d4b34b1b703921e
+msgid "`max_position_step_nct`"
+msgstr "`max_position_step_nct`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 11703b03604e4156b665c82c6e33ef7e
+msgid "int / `90` (source)"
+msgstr "int / `90`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 37a5ae4e14cc45ccbb5d1e99838dd626
+msgid "Max per-cycle position step. **Startup only**."
+msgstr "每周期最大位置步长。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 157135ebb97b466cbb28f084cb1bf4ac
+msgid "`max_position_accel_nct`"
+msgstr "`max_position_accel_nct`"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 75791ab4ba1c4883aa141a834299368a
+msgid "int / `10` (source)"
+msgstr "int / `10`（源码）"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:26
+#: 5d34768b388e4d07891df5fc027e6d73
+msgid "Max delta change; `0` disables. **Startup only**."
+msgstr "最大增量变化；`0` 关闭。**仅启动**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:370
+#: 203b81435e86403d93e7cff18b58620d
+msgid "Private driver layer"
+msgstr "私有驱动层"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:372
+#: ec4bc848350541f5bcd395d47299995e
+msgid ""
+"[Private driver layer](2-private_hi.md) names Rokae, Eyou, iNex, Wuji, "
+"DexCap, Fairino. Keys, IP/serial layout, and SDK env vars are in **that "
+"repository’s README after access**."
+msgstr ""
+"[私有驱动层](2-private_hi.md) 列出 Rokae、Eyou、iNex、Wuji、DexCap、Fairino。键、IP/串口布局和 SDK "
+"环境变量见**开通后该仓库 README**。"
+
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:374
+#: 1562b485db1f4a8480ad384209083395
 msgid "SDK build notes: [SDK Notes](3-sdk_notes.md)."
 msgstr "SDK 编译说明：[SDK 说明](3-sdk_notes.md)。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:56
-#: cb5bfa6544dc46168ef430861d78a872
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:376
+#: 03907105f2f24deca71281e2279bf17c
 msgid "OCS2 `.info` files"
 msgstr "OCS2 `.info` 文件"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:58
-#: 67c1af4ea5e446f581519631f1177af0
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:378
+#: 5acae34e36fa4d10b5b770b63f424745
 #, python-brace-format
 msgid ""
-"`{robot}_description/config/ocs2/*.info` (and the generated library under"
-" `config/ocs2/generated`) are **OCS2 task / model files**, not ROS 2 "
-"parameters. `robot_name` chooses the description package at startup — "
-"[Controller ROS 2 parameters](../controllers/8-ros2_parameters.md)."
+"`{robot}_description/config/ocs2/*.info` are **OCS2 task / model files**,"
+" not ROS 2 parameters. `robot_name` chooses the description package at "
+"startup — [Controller ROS 2 "
+"parameters](../controllers/8-ros2_parameters.md)."
 msgstr ""
-"`{robot}_description/config/ocs2/*.info`（以及 `config/ocs2/generated` "
-"下的生成库）是 **OCS2 任务 / 模型文件**，不是 ROS 2 参数。`robot_name` 在启动时选择描述包 — [控制器 ROS "
-"2 参数](../controllers/8-ros2_parameters.md)。"
+"`{robot}_description/config/ocs2/*.info` 是 **OCS2 任务 / 模型文件**，不是 ROS 2 参数。启动时由 "
+"`robot_name` 选择描述包 — [控制器 ROS 2 参数](../controllers/8-ros2_parameters.md)。"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:60
-#: 50b38eb10a274546a89c1a30c27a0f13
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:380
+#: 2795b30a3df0496cae7881730509e6fb
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:62
-#: cfce004716984a8e91cc67c3fc4a02d1
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:382
+#: 71ff6dce09b647cd9e1ae41ad7e487b1
 msgid ""
 "[Configure ROS 2 controller "
 "parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
@@ -377,18 +2626,18 @@ msgstr ""
 "[Configure ROS 2 controller "
 "parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:63
-#: 59709987d2b04e7e8a19eee2b76ebede
-msgid "[Public hardware interfaces](1-public_hi.md)"
-msgstr "[公开硬件接口](1-public_hi.md)"
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:383
+#: 2bb1cca10ba54801a4027c19581bcfa1
+msgid "[Public driver layer](1-public_hi.md)"
+msgstr "[公开驱动层](1-public_hi.md)"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:64
-#: ac357f2427884e6db122282366983cec
-msgid "[Private hardware interfaces](2-private_hi.md)"
-msgstr "[私有硬件接口](2-private_hi.md)"
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:384
+#: 203b81435e86403d93e7cff18b58620d
+msgid "[Private driver layer](2-private_hi.md)"
+msgstr "[私有驱动层](2-private_hi.md)"
 
-#: ../../source/4-reference/hardware/4-ros2_parameters.md:65
-#: ce28d98fee034b6cb5113d60b50500d4
+#: ../../source/4-reference/hardware/4-ros2_parameters.md:385
+#: ad086cd5d6b841b6b8f7367300743ecd
 msgid "[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)"
 msgstr "[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 
@@ -430,4 +2679,74 @@ msgstr "[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)"
 #~ "There is no `on_set_parameters` path in"
 #~ " this plugin."
 #~ msgstr "要改这些值，请编辑 xacro（或生成它的 overlay）并**重启**硬件。此插件没有 `on_set_parameters` 路径。"
+
+#~ msgid "Other public hardware interfaces"
+#~ msgstr "其他公开硬件接口"
+
+#~ msgid "Private hardware interfaces"
+#~ msgstr "私有硬件接口"
+
+#~ msgid ""
+#~ "The in-tree "
+#~ "[`hardwares/README.md`](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
+#~ " is **build-only** (`colcon build "
+#~ "--packages-up-to …`). Parameter names "
+#~ "live in each driver-layer README "
+#~ "and in the robot xacro. **When** "
+#~ "tags below match [topic_based README in"
+#~ " #120](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)."
+#~ msgstr ""
+#~ "树内 [`hardwares/README.md`](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/hardwares/README.md)"
+#~ " 只讲**编译**（`colcon build --packages-up-to"
+#~ " …`）。参数名在各驱动层 README 和机型 xacro "
+#~ "中。下面的**何时生效**与 [#120 的 topic_based "
+#~ "README](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/hardwares/topic_based_ros2_control/README.md)"
+#~ " 一致。"
+
+#~ msgid ""
+#~ "These are `info_.hardware_parameters` / "
+#~ "per-joint `joint.parameters`, read in "
+#~ "`on_init`. There is no `declare_parameter` "
+#~ "and no `add_on_set_parameters_callback`. Changing"
+#~ " any of them requires restarting the"
+#~ " hardware / `controller_manager` (**Startup "
+#~ "only**)."
+#~ msgstr ""
+#~ "它们是 `info_.hardware_parameters` / 每关节 "
+#~ "`joint.parameters`，在 `on_init` 读取。没有 "
+#~ "`declare_parameter`，也没有 "
+#~ "`add_on_set_parameters_callback`。改其中任何一项都需要重启硬件 / "
+#~ "`controller_manager`（**仅启动**）。"
+
+#~ msgid "README example:"
+#~ msgstr "README 示例："
+
+#~ msgid "Other public driver-layer plugins"
+#~ msgstr "其他公开驱动层插件"
+
+#~ msgid ""
+#~ "Vendor plugins and the `<param>` names"
+#~ " already listed on [Public driver "
+#~ "layer](1-public_hi.md) (for example ARX "
+#~ "`can_interface`, Dobot `robot_ip` / "
+#~ "`robot_port`, HighTorque `serial_port`, Modbus "
+#~ "`serial_port` / `baudrate`). Those pages "
+#~ "are the parameter lists. They are "
+#~ "xacro `<param>` values at plugin load"
+#~ " — same **Startup only** rule as "
+#~ "above."
+#~ msgstr ""
+#~ "厂商插件以及 [公开驱动层](1-public_hi.md) 已列出的 `<param>` "
+#~ "名（例如 ARX 的 `can_interface`、Dobot 的 "
+#~ "`robot_ip` / `robot_port`、HighTorque 的 "
+#~ "`serial_port`、Modbus 的 `serial_port` / "
+#~ "`baudrate`）。那些页面就是参数表。它们是插件加载时的 xacro `<param>` —"
+#~ " 与上面相同的 **仅启动** 规则。"
+
+#~ msgid "Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`."
+#~ msgstr "插件类以该机型 `xacro/ros2_control/*.xacro` 为准。"
 

@@ -51,7 +51,7 @@ From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READ
 | Position (default) | `position` | `position`, `velocity` |
 | Force (auto) | `position`, `velocity`, `effort`, `kp`, `kd` | `position`, `velocity`, `effort` |
 
-That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji** (天玑) / **Rokae** (珞石) keep the controller on **position** commands; joint impedance is a vendor `ctrl_mode` on the hardware interface (`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)). VR comparison: [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md).
+That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji** (天玑) / **Rokae** (珞石) keep the controller on **position** commands; joint impedance is a vendor `ctrl_mode` on the driver layer (`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)). VR comparison: [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md).
 
 There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`). Action / Service types and WBC body/head topics: [FSM and Topics](4-fsm_and_topics.md).
 
@@ -60,5 +60,5 @@ There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`
 - [robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`, profile merge
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs xacro `<param>`
 - [Controller ROS 2 parameters](../4-reference/controllers/8-ros2_parameters.md)
-- [Hardware Interface parameters](../4-reference/hardware/4-ros2_parameters.md)
+- [Driver layer parameters](../4-reference/hardware/4-ros2_parameters.md)
 - [Controllers reference](../4-reference/controllers/0-index.md)

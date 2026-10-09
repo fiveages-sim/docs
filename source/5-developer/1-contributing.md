@@ -93,7 +93,7 @@ Use clear, descriptive commit messages:
 Add support for new gripper model
 
 - Add URDF for XYZ gripper
-- Implement hardware interface
+- Implement driver-layer plugin
 - Add launch file integration
 
 Closes #123

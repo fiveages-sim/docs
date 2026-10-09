@@ -13,7 +13,7 @@ Tree and init flow: [README.EN.md](https://github.com/fiveages-sim/open-deploy-w
 :::{code-block} none
 open-deploy-ws/
 ├── src/
-│   ├── arms_ros2_control/     # controllers / commands / hardware interfaces / shared libs
+│   ├── arms_ros2_control/     # controllers / commands / driver layer / shared libs
 │   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)
 │   └── ocs2_ros2/             # only if that module is installed as source
 ├── init_repo.sh

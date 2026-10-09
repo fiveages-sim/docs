@@ -156,7 +156,7 @@ Public YAML may still list an `ocs2_wbc_controller:` block (Lift 2S `home_3` / `
 ## Related
 
 - [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)
-- [Hardware Interface parameters](../hardware/4-ros2_parameters.md)
+- [Driver layer parameters](../hardware/4-ros2_parameters.md)
 - [Basic Joint Controller](7-basic_joint_controller.md)
 - [OCS2 Arm Controller](2-ocs2_arm_controller.md)
 - [Adaptive Gripper Controller](6-gripper_teleop_plugins.md)

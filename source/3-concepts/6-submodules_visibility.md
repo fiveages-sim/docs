@@ -24,7 +24,7 @@ src/arms_ros2_control|libraries/ocs2_humanoid|private
 src/arms_ros2_control|libraries/lina_planning|private
 :::
 
-Hardware-interface nested lines in that file are **commented out** (they are not active visibility rows).
+Driver-layer nested lines in that file are **commented out** (they are not active visibility rows).
 
 ## What `./init_repo.sh` does
 

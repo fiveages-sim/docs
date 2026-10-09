@@ -35,7 +35,7 @@ Passed through as xacro `ros2_control_hardware_type` ([`build_xacro_mappings()`]
 | `mock_components` | Default on `ocs2_arm_controller` `demo.launch.py` and `basic_joint_controller` `demo.launch.py` |
 | `gz` | Gazebo |
 | `isaac` | Isaac (`topic_based_ros2_control`); may merge `config/ros2_control/isaac.yaml` if present |
-| `real` | Vendor HI; profile `hardware:` YAML applies only here |
+| `real` | Vendor driver layer; profile `hardware:` YAML applies only here |
 
 There is **no** documented `hardware:=mock` key. Plugins: [ros2_control in This Stack](1-ros2_control_here.md).
 
@@ -46,7 +46,7 @@ There is **no** documented `hardware:=mock` key. Plugins: [ros2_control in This 
 | Description umbrella | `src/robot-descriptions/…` | open-deploy-ws README |
 | Brand descriptions | `robot-descriptions-arx` (`arx_acone_description`, `arx_lift2s_description`, …) | [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) |
 | Controllers | `basic_joint_controller`, `ocs2_arm_controller`, `adaptive_gripper_controller` | arms_ros2_control |
-| Isaac HI | `topic_based_ros2_control` | arms_ros2_control README |
+| Isaac driver layer | `topic_based_ros2_control` | arms_ros2_control README |
 
 Teleop packages are listed on the teleop reference pages (there is no `arms_teleop_controller` package in those READMEs).
 

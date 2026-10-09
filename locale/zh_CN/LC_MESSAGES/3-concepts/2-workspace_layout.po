@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:37+0000\n"
+"POT-Creation-Date: 2026-10-09 11:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/2-workspace_layout.md:1
-#: 89cd537827404739937987940da3fb62
+#: 26c208d1323c47f0acf955d54c38fec9
 msgid "Workspace Layout"
 msgstr "工作空间布局"
 
 #: ../../source/3-concepts/2-workspace_layout.md:3
-#: 309aa2f53eab465f8e89c7c1160ca01b
+#: 926d8e53bfbe495b9b3ab3f015ee7159
 msgid ""
 "Layout of the **public** deploy workspace, from the [open-deploy-ws "
 "README](https://github.com/fiveages-sim/open-deploy-"
@@ -34,20 +34,23 @@ msgid ""
 "listed in that README (`./init_repo.sh`, `submodules_visibility.conf`, "
 "`deb_versions.conf`, and `scripts/`)."
 msgstr ""
-"公开部署工作区的布局，摘自 [open-deploy-ws README](https://github.com/fiveages-sim/open-deploy-ws/blob/main/README.EN.md)。顶层脚本和配置就是该 README 列出的那些（`./init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和 `scripts/`）。"
+"公开部署工作区的布局，摘自 [open-deploy-ws README](https://github.com/fiveages-sim"
+"/open-deploy-ws/blob/main/README.EN.md)。顶层脚本和配置就是该 README "
+"列出的那些（`./init_repo.sh`、`submodules_visibility.conf`、`deb_versions.conf` 和"
+" `scripts/`）。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:5
-#: a5c1c71ae3264949ac7ff6236c5a1b99
+#: 85df4c48f09a43da8c598111af4a7cdc
 msgid "open-deploy-ws"
 msgstr "open-deploy-ws"
 
 #: ../../source/3-concepts/2-workspace_layout.md:7
-#: db6eca8e55f8408586db9e8321d6ee47
+#: 421220e731ae41cca0a86b93f98a1f91
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/3-concepts/2-workspace_layout.md:10
-#: e58afbf7b378438cacd62814664f7e96
+#: c1ff94d05c56492583757cc1270d7117
 msgid ""
 "Tree and init flow: [README.EN.md](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/README.EN.md). The repo root has `init_repo.sh`, "
@@ -61,12 +64,12 @@ msgstr ""
 "`scripts/` — 除 `./init_repo.sh` 外**没有**工作区 `setup.bash` / 环境安装脚本。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:13
-#: eb6b5e78ddc24a6d9cd1d3788c22cbac
+#: 34be54a724f746ef87cd2145def8dd8a
 msgid ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware "
-"interfaces / shared libs\n"
+"│   ├── arms_ros2_control/     # controllers / commands / driver layer / "
+"shared libs\n"
 "│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)"
 "\n"
 "│   └── ocs2_ros2/             # only if that module is installed as "
@@ -79,8 +82,8 @@ msgid ""
 msgstr ""
 "open-deploy-ws/\n"
 "├── src/\n"
-"│   ├── arms_ros2_control/     # controllers / commands / hardware "
-"interfaces / shared libs\n"
+"│   ├── arms_ros2_control/     # controllers / commands / driver layer / "
+"shared libs\n"
 "│   ├── robot-descriptions/    # common / manipulator / humanoid (hyphen)"
 "\n"
 "│   └── ocs2_ros2/             # only if that module is installed as "
@@ -92,7 +95,7 @@ msgstr ""
 "uninstall_core_debs.sh"
 
 #: ../../source/3-concepts/2-workspace_layout.md:25
-#: b33a39dd676c4ed09792199af879a101
+#: d0f554f3efe14fb2af1d097820f2128b
 msgid ""
 "**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). Do "
 "**not** `git submodule update --init --recursive`. After init, `colcon "
@@ -104,7 +107,7 @@ msgstr ""
 "install/setup.bash` — 这是标准 ROS 2 overlay，不是 FiveAges 环境脚本。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:27
-#: a2edfdbb5f434069821be290d1dce9d1
+#: bcafb9ab7cb1459eb79c9164f2132f07
 msgid ""
 "Lean robot branches (`dobot-cr5`, `arx-acone`, plus `arx-lift2s` / "
 "`panthera-ht` used in the how-tos) clone only that scheme’s packages. See"
@@ -114,12 +117,12 @@ msgstr ""
 "ht`）只克隆该方案所需软件包。见同一 README。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:29
-#: b27be2de2daa4cb09d90a02bd61e6346
+#: 69922f8b60f8434194ef5e0470a7d6f4
 msgid "arms_ros2_control (inside `src/`)"
 msgstr "arms_ros2_control（位于 `src/`）"
 
 #: ../../source/3-concepts/2-workspace_layout.md:31
-#: 8b056383620f44fbba3e4429d4b289d1
+#: 4851c09b38e14c548af4628a9e1c0458
 msgid ""
 "From the [arms_ros2_control README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/README.md):"
@@ -128,7 +131,7 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/README.md)："
 
 #: ../../source/3-concepts/2-workspace_layout.md:33
-#: 42a8a6ce2feb43998b55038e0bb6fdc8
+#: 2973c59f88614b11ba92820fdf8f4e95
 msgid ""
 "arms_ros2_control/\n"
 "├── controller/\n"
@@ -157,19 +160,19 @@ msgstr ""
 "arms_target_manager, arms_teleop"
 
 #: ../../source/3-concepts/2-workspace_layout.md:45
-#: d63f93e436fd403e8a0f57b0148d39c5
+#: 12817deb88794156ac605e8ded27ee54
 msgid ""
 "Nested public/private lines: [Submodules "
 "Visibility](6-submodules_visibility.md)."
 msgstr "嵌套 public/private 行：[子模块可见性](6-submodules_visibility.md)。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:47
-#: 30b83e37f302458bb5004de38d406f86
+#: 48e1dd0079a4429ebeda84425ae35f41
 msgid "fa-deploy-ws"
 msgstr "fa-deploy-ws"
 
 #: ../../source/3-concepts/2-workspace_layout.md:49
-#: d9a75712ebf84ec8aa85d3503b47dbee
+#: 34b12123db9a4beb8938808cbf97f4bb
 msgid ""
 "Internal workspace (private). Tree and extra flags are in that "
 "repository’s README after you have access. Public users stay on `open-"
@@ -177,17 +180,17 @@ msgid ""
 msgstr "内部工作区（私有）。目录树和额外参数在开通后的该仓库 README 里。公开用户继续用 `open-deploy-ws`。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:51
-#: ab062d8b195b40e68d0ea1f17dd7827f
+#: ef6050c8c47b4f909a16baa71f676a69
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/3-concepts/2-workspace_layout.md:53
-#: ef079e60bd6742d4be7330aa1d8fb308
+#: 27d7aa2221dc4939a44287bf94274294
 msgid "[Source vs Deb](5-source_vs_deb.md) — `./init_repo.sh` menus 1–4"
 msgstr "[源码 vs Deb](5-source_vs_deb.md) — `./init_repo.sh` 菜单 1–4"
 
 #: ../../source/3-concepts/2-workspace_layout.md:54
-#: 7edac49c376f4f4c96d39cc601b23691
+#: b807f9b655cc4a76a4fffa90c9938f73
 msgid "[open-deploy-ws setup](../1-getting_started/3-open_deploy_ws.md)"
 msgstr "[open-deploy-ws 配置](../1-getting_started/3-open_deploy_ws.md)"
 

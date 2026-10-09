@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-10-09 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,22 +21,47 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/hardware/1-public_hi.md:1
-#: d31ea5d261094acd8ed06e17c084b3ac
-msgid "Public Hardware Interfaces"
-msgstr "公开硬件接口"
+#: 0069e153fcbf4bb5aa09c930048f661e
+msgid "Public driver layer"
+msgstr "公开驱动层"
 
 #: ../../source/4-reference/hardware/1-public_hi.md:3
-#: e1b246f83ddb4c1d905e704df3189d02
-msgid "Public ros2_control hardware interface plugins."
-msgstr "公开的 ros2_control 硬件接口插件。"
+#: 92bf958b17f24934a760db1bd0b2963d
+msgid ""
+"Public ros2_control hardware plugins in the **driver layer** (驱动层), "
+"nested under [arms_ros2_control `hardwares/`](https://github.com"
+"/fiveages-sim/arms_ros2_control/blob/main/.gitmodules) (plus in-tree "
+"`topic_based_ros2_control`). Use the plugin class from that robot’s "
+"`xacro/ros2_control/*.xacro`. `<param>` tables: [Driver layer "
+"parameters](4-ros2_parameters.md)."
+msgstr ""
+"公开 ros2_control **驱动层**插件，嵌在 [arms_ros2_control `hardwares/`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/.gitmodules)（外加树内 "
+"`topic_based_ros2_control`）。插件类以该机型 `xacro/ros2_control/*.xacro` 为准。`<param>` "
+"表：[驱动层参数](4-ros2_parameters.md)。"
 
 #: ../../source/4-reference/hardware/1-public_hi.md:5
-#: ba220d52dc254bb28608c89d3e25049a
-msgid "Real Hardware Ready"
-msgstr "已可用于真实硬件"
+#: 9077f2c8a7a8420ebd98c0185307e9bb
+msgid "topic_based_ros2_control"
+msgstr "topic_based_ros2_control"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:8
-#: 81fc831cceff47968fe2bc5654d86608
+#: ../../source/4-reference/hardware/1-public_hi.md:7
+#: 82af1d8730c9436eb336fdc2442711c9
+msgid ""
+"In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). "
+"Plugin: `topic_based_ros2_control/TopicBasedSystem`. Used for "
+"`hardware:=isaac`. Parameters: [Driver layer "
+"parameters](4-ros2_parameters.md)."
+msgstr ""
+"位于 `arms_ros2_control/hardwares/` 树内（不是嵌套 gitmodule）。插件：`topic_based_ros2_control/TopicBasedSystem`。用于 "
+"`hardware:=isaac`。参数：[驱动层参数](4-ros2_parameters.md)。"
+
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: db45b30977ab4173b7629f16ed4f0124
+msgid "Real hardware ready"
+msgstr "真机可用"
+
+#: ../../source/4-reference/hardware/1-public_hi.md:12
+#: b88ae3be1c26491ca4b408c7dd3da036
 msgid ""
 "**ARX Lift 2S** (full-body) and **Acone** / **AC One** (dual-arm) use "
 "[arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) "
@@ -55,576 +80,301 @@ msgstr ""
 " Panthera "
 "HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:11
-#: 4c1084593a1b4970a8a5a8f66e53b436
+#: ../../source/4-reference/hardware/1-public_hi.md:15
+#: 3acb0b04ec604fc3ab729ad19c1bba6b
 msgid "ARX (方舟无限)"
 msgstr "方舟无限（ARX）"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:13
-#: 2775debe99be4763952a926e7a7242a5
+#: ../../source/4-reference/hardware/1-public_hi.md:17
+#: 25266279fde04e7693a06a2ce5e5980a
 msgid ""
 "**Repository:** [fiveages-sim/arx-ros2-control](https://github.com"
-"/fiveages-sim/arx-ros2-control)"
+"/fiveages-sim/arx-ros2-control) · [README](https://github.com/fiveages-"
+"sim/arx-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim"
-"/arx-ros2-control)"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:15
-#: ../../source/4-reference/hardware/1-public_hi.md:47
-#: ../../source/4-reference/hardware/1-public_hi.md:80
-#: ../../source/4-reference/hardware/1-public_hi.md:106
-#: ../../source/4-reference/hardware/1-public_hi.md:130
-#: ../../source/4-reference/hardware/1-public_hi.md:151
-#: ../../source/4-reference/hardware/1-public_hi.md:178
-#: ../../source/4-reference/hardware/1-public_hi.md:202
-#: 3db919e8a93b475b84048dbb03c5d13e 4384d31c2479408ea20d0428a78c00aa
-#: 60b6a4482877473b9d2249c90806d3c3 74110faf6ab54d40ba061805111743b9
-#: b80458dbb4734842b15ff3d239f396c8 bf295a620b554563b460a6f618b906f2
-#: c53143e33e474acfbdf499f570cca318 feb8b630ca864d77a032ebed1b955ece
-msgid "Purpose"
-msgstr "用途"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:17
-#: ae5df1458795470bb164636530c4861c
-msgid "CAN bus interface for ARX robots (X5, Acone dual-arm, Lift 2S full-body)."
-msgstr "方舟无限机器人的 CAN 总线接口（X5、Acone 双臂、Lift 2S 全身）。"
+"**Repository:** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) "
+"· [README](https://github.com/fiveages-sim/arx-ros2-control/blob/main/README.md)"
 
 #: ../../source/4-reference/hardware/1-public_hi.md:19
-#: ../../source/4-reference/hardware/1-public_hi.md:51
-#: ../../source/4-reference/hardware/1-public_hi.md:84
-#: ../../source/4-reference/hardware/1-public_hi.md:110
-#: ../../source/4-reference/hardware/1-public_hi.md:134
-#: ../../source/4-reference/hardware/1-public_hi.md:162
-#: ../../source/4-reference/hardware/1-public_hi.md:187
-#: ../../source/4-reference/hardware/1-public_hi.md:206
-#: 00d2039c12b4408b993a1fe1b2bdd888 2714c81eb3ef40a4b5c2f168ade82e91
-#: 28cf7be1f7d042a3bcd7381a737d8816 3fcfc922dd844694aea0161643f6aa74
-#: 7ca0437ab6b24ace995f6208c6dce41c 968e511bd8f246d9933c165be7ede7b3
-#: bfb5b51429be4825aac8a0521f05de25 ecf8156eed9e41d2bf00c26ae3804647
-msgid "Configuration"
-msgstr "配置"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:21
-#: ea31f2251a054388970df574382aaf36
+#: c0aeeb74ae6b482e9f1faaa794cd039a
 msgid ""
-"<ros2_control name=\"ArxSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>arx_ros2_control/ArxHardwareInterface</plugin>\n"
-"    <param name=\"can_interface\">can0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
-msgstr ""
-"<ros2_control name=\"ArxSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>arx_ros2_control/ArxHardwareInterface</plugin>\n"
-"    <param name=\"can_interface\">can0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"CAN driver-layer plugins for **ARX** X5 / Acone (dual-arm) and Lift 2S "
+"lift + chassis."
+msgstr "**ARX** X5 / Acone（双臂）以及 Lift 2S 升降柱 + 底盘的 CAN 驱动层插件。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:30
-#: 11b98db5a279414ca9ef8ca3b036dfc6
-msgid "CAN Setup"
-msgstr "CAN 设置"
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 8b3156e9210a4550a6290621b42803f6
+msgid "Plugin"
+msgstr "插件"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:32
-#: e1bdf4800fda4bc990e3731df470b1e6
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 5fb4bde6360241c1ad132e70b45c8375
+msgid "Role"
+msgstr "角色"
+
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 71fa40ae3c874ff98b3aa6803cdd828a
+msgid "`arx_ros2_control/ArxX5Hardware`"
+msgstr "`arx_ros2_control/ArxX5Hardware`"
+
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 652d598ca0f44d679e28b8e55372ee5a
 msgid ""
-"sudo ip link set can0 type can bitrate 1000000\n"
-"sudo ip link set can0 up\n"
+"One instance per arm (X5 SDK). MIT MIX: `position` + `velocity` + "
+"`effort`; kp/kd from `joint_k_gains` / `joint_d_gains`"
 msgstr ""
-"sudo ip link set can0 type can bitrate 1000000\n"
-"sudo ip link set can0 up\n"
+"每臂一个实例（X5 SDK）。MIT MIX：`position` + `velocity` + `effort`；kp/kd 来自 `joint_k_gains` "
+"/ `joint_d_gains`"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:37
-#: ../../source/4-reference/hardware/1-public_hi.md:63
-#: 48300ed2d5894f64885204cf330c14a3 82aad87ec80e48baa9cd092134b77369
-msgid "Parameters"
-msgstr "参数"
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 41bab951a64f4516aab3366e21a919b0
+msgid "`arx_ros2_control/ArxLiftHardware`"
+msgstr "`arx_ros2_control/ArxLiftHardware`"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 574c57d45cdc43d1a0a9bbae3cee4d6c 9899d2c07efb4401b597a5b9ce76ac60
-msgid "Parameter"
-msgstr "参数"
+#: ../../source/4-reference/hardware/1-public_hi.md:9
+#: 23d1b75c79da4dacb6b0b940bc75e23c
+msgid ""
+"Lift2S column (default CAN `can5`). `hybrid` or `soft_p` / `position`; "
+"optional `/cmd_vel` chassis"
+msgstr "Lift2S 升降柱（默认 CAN `can5`）。`hybrid` 或 `soft_p` / `position`；可选 `/cmd_vel` 底盘"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 8dca1de1ecc44db784dd52756fdcd412 b65c4e0c85834a65b150adea42e13e48
-msgid "Type"
-msgstr "类型"
+#: ../../source/4-reference/hardware/1-public_hi.md:26
+#: c16d9f9e7d7b4fdf93f9a8a02cf26e4f
+msgid ""
+"Acone `hardware:=real` xacro uses `arx_ros2_control/ArxX5Hardware` "
+"([ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md))."
+msgstr ""
+"Acone `hardware:=real` xacro 使用 `arx_ros2_control/ArxX5Hardware`（[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)）。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 6c789339f087433bad333d69b755052b d7d246f575cc4e84b0853395f1b1be70
-#: e7539e13adbf4e379fd6e0f582c64c44
-msgid "Description"
-msgstr "描述"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 5b1af5df44dd4c678d9057292b6bb580
-msgid "`can_interface`"
-msgstr "`can_interface`"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 587a97d8bb444eed8066073d2a2ae912 e79f6e96cf38414abb80ca2c28767815
-msgid "string"
-msgstr "string"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 1df36529c9e9497ba5657cb90602302a
-msgid "CAN interface name"
-msgstr "CAN 接口名称"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:43
-#: e4b7b1db49d94167ac1c7d7e5fc4e6e4
+#: ../../source/4-reference/hardware/1-public_hi.md:28
+#: e2abc7f3355d4ab1a5954e40c39868f2
 msgid "Dobot CR"
 msgstr "Dobot CR"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:45
-#: 4d13947062944614a966f9ed95beb181
+#: ../../source/4-reference/hardware/1-public_hi.md:30
+#: 379b54f003cb4f18ab84ffd623c67fb9
 msgid ""
 "**Repository:** [fiveages-sim/dobot-cr-ros2-control](https://github.com"
-"/fiveages-sim/dobot-cr-ros2-control)"
+"/fiveages-sim/dobot-cr-ros2-control) · [README](https://github.com"
+"/fiveages-sim/dobot-cr-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/dobot-cr-ros2-control](https://github.com/fiveages-"
-"sim/dobot-cr-ros2-control)"
+"**Repository:** [fiveages-sim/dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control) "
+"· [README](https://github.com/fiveages-sim/dobot-cr-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:49
-#: b476a43180214902bf131926c26d8605
-msgid "TCP interface for Dobot CR series collaborative robots."
-msgstr "面向 Dobot CR 系列协作机器人的 TCP 接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:53
-#: dcdb9ce1bed746bea7fc4107ab4b2457
+#: ../../source/4-reference/hardware/1-public_hi.md:32
+#: 4c917533f9664e8da691b60185c1e0d2
 msgid ""
-"<ros2_control name=\"DobotSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>dobot_cr_ros2_control/DobotCRHardwareInterface</plugin>\n"
-"    <param name=\"robot_ip\">192.168.1.6</param>\n"
-"    <param name=\"robot_port\">29999</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"TCP driver-layer plugin for Dobot CR. Plugin: "
+"`dobot_ros2_control/DobotHardware`. Dashboard / real-time TCP (README: "
+"29999 command, 30004 realtime). There is no `robot_port` `<param>` in "
+"`on_init`."
 msgstr ""
-"<ros2_control name=\"DobotSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>dobot_cr_ros2_control/DobotCRHardwareInterface</plugin>\n"
-"    <param name=\"robot_ip\">192.168.1.6</param>\n"
-"    <param name=\"robot_port\">29999</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"Dobot CR 的 TCP 驱动层插件。插件：`dobot_ros2_control/DobotHardware`。Dashboard / 实时 TCP（README：命令口 "
+"29999，实时口 30004）。`on_init` 里没有 `robot_port` `<param>`。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: e3d2d314d1804be1b9280c99373f291c
-msgid "`robot_ip`"
-msgstr "`robot_ip`"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 7fce18a6a01b479ca9561ea1b4cfcb80
-msgid "Robot IP address"
-msgstr "机器人 IP 地址"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 1e06fe4c6ecb414c9849eae931f44ea7
-msgid "`robot_port`"
-msgstr "`robot_port`"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 1cade36c7f69490ab3af7b64f1445eb6
-msgid "int"
-msgstr "int"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:5
-#: 18e4a7f6f6194d6bb352c3329d7bc51f
-msgid "Control port"
-msgstr "控制端口"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: ../../source/4-reference/hardware/1-public_hi.md:210
-#: 2765d751d97c4b83a168bf2fd6838b5f 718f5c2708704a7d8523a8cc4e7b10f4
-msgid "TODO"
-msgstr "待完成"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:73
-#: 172ae76412ca4f079517b332cfad901b
-msgid ""
-"Some roadmap features are not yet implemented. Check repository issues "
-"for status."
-msgstr "部分路线图功能尚未实现。请查看仓库 issues 了解进展。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:76
-#: c179b81bb6684dea8649504993c0f198
+#: ../../source/4-reference/hardware/1-public_hi.md:34
+#: 5df82844b9114a7c8fa2a344f435cd72
 msgid "Unitree"
 msgstr "Unitree"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:78
-#: bd961dec135045939e286fdadea4c905
+#: ../../source/4-reference/hardware/1-public_hi.md:36
+#: ff8c8c931bf64fd7ba6f5f6ef4b059be
 msgid ""
 "**Repository:** [fiveages-sim/unitree-ros2-control](https://github.com"
-"/fiveages-sim/unitree-ros2-control)"
+"/fiveages-sim/unitree-ros2-control) · [README](https://github.com"
+"/fiveages-sim/unitree-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/unitree-ros2-control](https://github.com/fiveages-"
-"sim/unitree-ros2-control)"
+"**Repository:** [fiveages-sim/unitree-ros2-control](https://github.com/fiveages-sim/unitree-ros2-control) "
+"· [README](https://github.com/fiveages-sim/unitree-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:82
-#: 78ce8baec5bd42f8a63a78a10176fc94
-msgid "SDK2 interface for Unitree quadruped robots."
-msgstr "面向 Unitree 四足机器人的 SDK2 接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:86
-#: a000c36b7d964ebdb15e60aa480ecb3a
+#: ../../source/4-reference/hardware/1-public_hi.md:38
+#: 18702bf158394dad96879b738c80e5b0
 msgid ""
-"<ros2_control name=\"UnitreeSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>unitree_ros2_control/UnitreeHardwareInterface</plugin>\n"
-"    <param name=\"simulation\">false</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"unitree_sdk2 driver-layer plugin. Plugin XML: "
+"`unitree_ros2_control/HardwareUnitree` (the README XML still shows a "
+"former `hardware_unitree_sdk2/…` name; use the pluginlib class). That "
+"README’s launch examples use `hardware:=unitree_sim` / `unitree_real` "
+"with `robot:=unitree_g1`."
 msgstr ""
-"<ros2_control name=\"UnitreeSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>unitree_ros2_control/UnitreeHardwareInterface</plugin>\n"
-"    <param name=\"simulation\">false</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"unitree_sdk2 驱动层插件。插件 XML：`unitree_ros2_control/HardwareUnitree`（README 里的 XML "
+"仍写着旧名 `hardware_unitree_sdk2/…`，以 pluginlib 类名为准）。该 README 的 launch 示例使用 `hardware:=unitree_sim` "
+"/ `unitree_real`，并配合 `robot:=unitree_g1`。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:95
-#: 5da3a53a83dd4eac9503e3a591df4487
-msgid "Modes"
-msgstr "模式"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 07ff37c845484950b3a5e502146a0f12
-msgid "Mode"
-msgstr "模式"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 3b99242063a94d64b91cef311943909d
-msgid "`simulation`"
-msgstr "`simulation`"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 81ca2150be0243d984f1a7f0db5d72ca
-msgid "SDK simulation mode"
-msgstr "SDK 仿真模式"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 1000a1f9e65f41d28a0fe9a3f88d07d2
-msgid "`real`"
-msgstr "`real`"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: cefd7e400691459f98d2623672d18c0f
-msgid "Physical hardware"
-msgstr "实体硬件"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:102
-#: 884cf2f6429749c0b2e365114d8dca1d
+#: ../../source/4-reference/hardware/1-public_hi.md:40
+#: a7ae4bd85fa74e2ab92a0d8969f7a6bc
 msgid "HighTorque (高擎)"
 msgstr "高擎（HighTorque）"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:104
-#: 9aaf1abd16f543fd89f28f0cf3d889e0
+#: ../../source/4-reference/hardware/1-public_hi.md:42
+#: bbf009f2c02c4553afd8b8d58bc3fb5e
 msgid ""
 "**Repository:** [fiveages-sim/ht-ros2-control](https://github.com"
-"/fiveages-sim/ht-ros2-control)"
+"/fiveages-sim/ht-ros2-control) · [README](https://github.com/fiveages-sim"
+"/ht-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/ht-ros2-control](https://github.com/fiveages-sim"
-"/ht-ros2-control)"
+"**Repository:** [fiveages-sim/ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) "
+"· [README](https://github.com/fiveages-sim/ht-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:108
-#: 666d2656c451413ab1f550fd18793b5c
-msgid "Serial interface for **HighTorque Panthera HT** robots."
-msgstr "**高擎 Panthera HT** 机器人的串口接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:112
-#: aed381e1da1a4a0ba75b2e200cbf91b7
+#: ../../source/4-reference/hardware/1-public_hi.md:44
+#: 3b788bc5281c45979af02788e8f05952
 msgid ""
-"<ros2_control name=\"HTSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>ht_ros2_control/HTHardwareInterface</plugin>\n"
-"    <param name=\"serial_port\">/dev/ttyACM0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"Serial driver-layer plugin for **HighTorque Panthera HT**. Plugin: "
+"`ht_ros2_control/PantheraHardwareInterface`. Motor YAML in "
+"`external/motor_cpp/robot_param/` (`Panthera.yaml` / "
+"`PantheraDual.yaml`). Default devices `/dev/ttyACM*`."
 msgstr ""
-"<ros2_control name=\"HTSystem\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>ht_ros2_control/HTHardwareInterface</plugin>\n"
-"    <param name=\"serial_port\">/dev/ttyACM0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"**HighTorque Panthera HT** 的串口驱动层插件。插件：`ht_ros2_control/PantheraHardwareInterface`。电机 "
+"YAML 在 `external/motor_cpp/robot_param/`（`Panthera.yaml` / `PantheraDual.yaml`）。默认设备 "
+"`/dev/ttyACM*`。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:121
-#: 5a6222a18121465a9041d0bb46284c44
-msgid "Features"
-msgstr "功能特性"
+#: ../../source/4-reference/hardware/1-public_hi.md:46
+#: c5caa91c16dd42eabc839184b8243531
+msgid ""
+"Features from that README: isomorphic master–slave teleop path on the "
+"description launch; gravity compensation via `ht_gravity_compensation` "
+"when kp/kd are not command interfaces."
+msgstr ""
+"该 README 中的能力：描述包 launch 上的同构主从遥操作路径；当 kp/kd 不是 command interface 时，用 `ht_gravity_compensation` "
+"做重力补偿。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:123
-#: 94607f68a19a42138b98c2ef395b0324
-msgid "Isomorphic master–slave teleop"
-msgstr "同构主从遥操作"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:124
-#: c392f23fbc6d47319a0f55347dca664d
-msgid "Gravity compensation on the master role"
-msgstr "主臂角色上的重力补偿"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:126
-#: f268b2b13527463fa2eaa928b5254685
+#: ../../source/4-reference/hardware/1-public_hi.md:48
+#: eb44f6920c05413ca5f98465f450235f
 msgid "Marvin"
 msgstr "Marvin"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:128
-#: 27bcf0cd53304a6ba78707f88e2b1e4e
+#: ../../source/4-reference/hardware/1-public_hi.md:50
+#: a94161387aa64873baba17b46db016b9
 msgid ""
 "**Repository:** [fiveages-sim/marvin-ros2-control](https://github.com"
-"/fiveages-sim/marvin-ros2-control)"
+"/fiveages-sim/marvin-ros2-control) · [README](https://github.com"
+"/fiveages-sim/marvin-ros2-control/blob/master/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/marvin-ros2-control](https://github.com/fiveages-"
-"sim/marvin-ros2-control)"
+"**Repository:** [fiveages-sim/marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control) "
+"· [README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:132
-#: 47f784f880724739a448a7429a1fa837
-msgid "Interface for Tianji Marvin robots with end-effector matrix support."
-msgstr "面向 Tianji Marvin 机器人的接口，支持末端执行器矩阵。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:136
-#: 2116ae6f4cb94b96b43bc11685c40948
+#: ../../source/4-reference/hardware/1-public_hi.md:52
+#: 6ef9b7bc8c524cc48113af5940b44389
 msgid ""
-"[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-"
-"ros2-control/blob/master/README.md): command interfaces are joint "
+"Marvin SDK driver-layer plugin (M6 and related). Plugin: "
+"`marvin_ros2_control/MarvinHardware`. Command interfaces are joint "
 "**`position` only**. Compliance is vendor `ctrl_mode` (`POSITION` / "
 "`JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`) plus `joint_k_gains` "
-"/ `joint_d_gains`. Plugin: `marvin_ros2_control/MarvinHardware`."
+"/ `joint_d_gains`. USB-dongle 夹爪 / 灵巧手 use [Modbus](#modbus) or "
+"[CAN](#can), not this package."
 msgstr ""
-"[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-"
-"ros2-control/blob/master/README.md)：命令接口是关节 **仅 `position`**。柔顺是厂商 "
-"`ctrl_mode`（`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / "
-"`POWER_OFF`）加上 `joint_k_gains` / "
-"`joint_d_gains`。插件：`marvin_ros2_control/MarvinHardware`。"
+"Marvin SDK 驱动层插件（M6 等）。插件：`marvin_ros2_control/MarvinHardware`。命令接口只有关节 **`position`**。柔顺靠厂商 "
+"`ctrl_mode`（`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`）以及 "
+"`joint_k_gains` / `joint_d_gains`。USB 转接的夹爪 / 灵巧手走 [Modbus](#modbus) 或 [CAN](#can)，不在本包。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:138
-#: a73fc02c8dc0452fb8f09de23dd00d41
+#: ../../source/4-reference/hardware/1-public_hi.md:54
+#: 9d6840462857457686e27d270ddef6cc
 msgid ""
 "Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control "
-"tool_dyn_identify_wizard` (`scripts/tool_dyn_identify_wizard.py`). VR "
-"path comparison: [VR "
+"tool_dyn_identify_wizard`. VR path: [VR "
 "Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md)."
 msgstr ""
-"工具动力学 / 负载辨识向导：`ros2 run marvin_ros2_control "
-"tool_dyn_identify_wizard`（`scripts/tool_dyn_identify_wizard.py`）。VR "
-"路径对比：[VR 遥操作](../../2-how_to/5-teleoperation/6-vr_teleop.md)。"
+"工具动力学 / 负载辨识向导：`ros2 run marvin_ros2_control tool_dyn_identify_wizard`。VR 路径：[VR "
+"遥操作](../../2-how_to/5-teleoperation/6-vr_teleop.md)。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:140
-#: b8117f2f6fae425ba25804b02052ecb8
-msgid "End-Effector Matrix"
-msgstr "末端执行器矩阵"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:142
-#: cc0f506b6a3f42b9bc75d5e526629b96
-msgid "Supports multiple end-effector configurations:"
-msgstr "支持多种末端执行器配置："
-
-#: ../../source/4-reference/hardware/1-public_hi.md:143
-#: 6b119551ec4046c98914433e84aaa26c
-msgid "Grippers"
-msgstr "夹爪"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:144
-#: faf86f04fb5744da9d39dec993c959ea
-msgid "Hands"
-msgstr "灵巧手"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:145
-#: 7c8b390a508940c6bd4c1038e9a66f25
-msgid "Custom tools"
-msgstr "自定义工具"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:147
-#: d523e71f0f4849f2b5795a6576eb2afb
+#: ../../source/4-reference/hardware/1-public_hi.md:56
+#: 0ba00a0d1e5e4da49116b90314a3ea4e
 msgid "Modbus"
 msgstr "Modbus"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:149
-#: c0c0772846594ff1ba8ed11b710019ef
+#: ../../source/4-reference/hardware/1-public_hi.md:58
+#: a0e22528b84447e3bbdc7baf3dc6a896
 msgid ""
 "**Repository:** [fiveages-sim/modbus-ros2-control](https://github.com"
-"/fiveages-sim/modbus-ros2-control)"
+"/fiveages-sim/modbus-ros2-control) · [README](https://github.com"
+"/fiveages-sim/modbus-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/modbus-ros2-control](https://github.com/fiveages-"
-"sim/modbus-ros2-control)"
+"**Repository:** [fiveages-sim/modbus-ros2-control](https://github.com/fiveages-sim/modbus-ros2-control) "
+"· [README](https://github.com/fiveages-sim/modbus-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:153
-#: 0a9cde3e33e54b81b24506e326da81a1
-msgid "RS485 Modbus interface for grippers and actuators."
-msgstr "面向夹爪和执行器的 RS485 Modbus 接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:155
-#: ../../source/4-reference/hardware/1-public_hi.md:182
-#: 57831f64da29421a99ee4624f69cde90 97554a063e5c482cb96ac0c41dd94bd7
-msgid "Supported Devices"
-msgstr "支持的设备"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 7201cb244b1f4e319ba6bf0f5a52b5eb
-msgid "Device"
-msgstr "设备"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 13ad377d99a846e4b01442afb9ce2b20
-msgid "Protocol"
-msgstr "协议"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 5e0c2bb14bcd4e228a961d30120524cb
-msgid "KWR75"
-msgstr "KWR75"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 910b77d14f684cd49e904a52b02e116a ffac6535c4454c7f9aae0711f9691d25
-msgid "Modbus RTU"
-msgstr "Modbus RTU"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:70
-#: 9d94ba984e4345d887f3b733ff3cad3d
-msgid "Various grippers"
-msgstr "多种夹爪"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:164
-#: 286abaeb88b348b69cf3a06647c3b896
+#: ../../source/4-reference/hardware/1-public_hi.md:60
+#: 7157333926c44f539e33d823692c90f4
 msgid ""
-"<ros2_control name=\"ModbusGripper\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>modbus_ros2_control/ModbusHardwareInterface</plugin>\n"
-"    <param name=\"serial_port\">/dev/ttyUSB0</param>\n"
-"    <param name=\"baudrate\">115200</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"RS485 / Modbus RTU driver-layer plugins for 夹爪, 灵巧手, and KWR75. Plugins: "
+"`ModbusHardware`, `DexterousHandHardware`, `InspireHandHardware`, "
+"`FreedomRS485Hardware`, `XHand1RS485Hardware`, `TheoHandModbusHardware`, "
+"`Kwr75ForceTorqueSensor`."
 msgstr ""
-"<ros2_control name=\"ModbusGripper\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>modbus_ros2_control/ModbusHardwareInterface</plugin>\n"
-"    <param name=\"serial_port\">/dev/ttyUSB0</param>\n"
-"    <param name=\"baudrate\">115200</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"夹爪、灵巧手和 KWR75 的 RS485 / Modbus RTU 驱动层插件。插件：`ModbusHardware`、`DexterousHandHardware`、`InspireHandHardware`、`FreedomRS485Hardware`、`XHand1RS485Hardware`、`TheoHandModbusHardware`、`Kwr75ForceTorqueSensor`。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:174
-#: 1a2e57d20bd440f2b836d1edab5c1f65
+#: ../../source/4-reference/hardware/1-public_hi.md:62
+#: 2a8165e39ca949e09cd24214382ce828
 msgid "CAN"
 msgstr "CAN"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:176
-#: b5c4fe40fa634b96a40317ea1ccab820
+#: ../../source/4-reference/hardware/1-public_hi.md:64
+#: 369c42e05b524730bf6a88e730786e03
 msgid ""
 "**Repository:** [fiveages-sim/can-ros2-control](https://github.com"
-"/fiveages-sim/can-ros2-control)"
+"/fiveages-sim/can-ros2-control) · [README](https://github.com/fiveages-"
+"sim/can-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/can-ros2-control](https://github.com/fiveages-sim"
-"/can-ros2-control)"
+"**Repository:** [fiveages-sim/can-ros2-control](https://github.com/fiveages-sim/can-ros2-control) "
+"· [README](https://github.com/fiveages-sim/can-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:180
-#: 9b206af085bb4e70be5f4bfc932a3084
-msgid "Generic CAN/CAN FD interface for hands and actuators."
-msgstr "面向灵巧手和执行器的通用 CAN/CAN FD 接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:184
-#: bfa47f4a80eb416e9b5d63f87284df8b
-msgid "CAN-based dexterous hands"
-msgstr "基于 CAN 的灵巧手"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:185
-#: 97f9f281ed06447eb63cb15e53f58d94
-msgid "CAN FD actuators"
-msgstr "CAN FD 执行器"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:189
-#: 5f466fabe6044f55bf24c174158444d8
+#: ../../source/4-reference/hardware/1-public_hi.md:66
+#: 97a12d36714a4fb2b70539f9c8de232e
 msgid ""
-"<ros2_control name=\"CANHand\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>can_ros2_control/CANHardwareInterface</plugin>\n"
-"    <param name=\"can_interface\">can0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"SocketCAN / CAN FD driver-layer plugins for 灵巧手. Plugins: "
+"`O6CanHardware`, `L6CanHardware`, `O7CanHardware`, `FreedomCanHardware`, "
+"`InspireCanfdHardware`. Freedom V2 and 夹爪 are out of scope on that "
+"README."
 msgstr ""
-"<ros2_control name=\"CANHand\" type=\"system\">\n"
-"  <hardware>\n"
-"    <plugin>can_ros2_control/CANHardwareInterface</plugin>\n"
-"    <param name=\"can_interface\">can0</param>\n"
-"  </hardware>\n"
-"</ros2_control>\n"
+"灵巧手的 SocketCAN / CAN FD 驱动层插件。插件：`O6CanHardware`、`L6CanHardware`、`O7CanHardware`、`FreedomCanHardware`、`InspireCanfdHardware`。该 "
+"README 不覆盖 Freedom V2 和夹爪。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:198
-#: c1627adaaf4b46dc99007d8bc46d2839
+#: ../../source/4-reference/hardware/1-public_hi.md:68
+#: e576a8934d6a4771927fec5159c6dd7b
 msgid "Juxie"
 msgstr "Juxie"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:200
-#: dd50bce17edb4eea96eec2d0ccc6fe8c
+#: ../../source/4-reference/hardware/1-public_hi.md:70
+#: d771c0850aaf489e93f7154c7d55ebe1
 msgid ""
 "**Repository:** [fiveages-sim/juxie-ros2-control](https://github.com"
-"/fiveages-sim/juxie-ros2-control)"
+"/fiveages-sim/juxie-ros2-control) · [README](https://github.com/fiveages-"
+"sim/juxie-ros2-control/blob/main/README.md)"
 msgstr ""
-"**仓库：** [fiveages-sim/juxie-ros2-control](https://github.com/fiveages-sim"
-"/juxie-ros2-control)"
+"**Repository:** [fiveages-sim/juxie-ros2-control](https://github.com/fiveages-sim/juxie-ros2-control) "
+"· [README](https://github.com/fiveages-sim/juxie-ros2-control/blob/main/README.md)"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:204
-#: 2112feaafa5f4e01a2eb6afe8f012c76
-msgid "CAN FD interface for JX CSP actuators."
-msgstr "面向 JX CSP 执行器的 CAN FD 接口。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:208
-#: 2719690ad23445d580949f870c37b4aa
-msgid "See repository README for configuration details."
-msgstr "配置细节请参见仓库 README。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:213
-#: 112f268ed30c47c793169c65e473aba2
-msgid "Product mapping documentation to be expanded."
-msgstr "产品映射文档待补充。"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:216
-#: 62108150600f48bfb58a5a570e660582
+#: ../../source/4-reference/hardware/1-public_hi.md:72
+#: 16983672d8f14d0ebbb7c6854fb4bf88
 msgid ""
-"Parameter names on this page are xacro `<param>` values loaded when the "
-"硬件接口 plugin starts. Tables and the Isaac `topic_based_ros2_control` "
-"plugin: [Hardware Interface parameters](4-ros2_parameters.md)."
-msgstr ""
-"本页参数名是硬件接口插件启动时加载的 xacro `<param>`。表格与 Isaac 的 `topic_based_ros2_control`"
-" 插件：[硬件接口参数](4-ros2_parameters.md)。"
+"CAN FD driver-layer plugin for JX motors in cyclic synchronous position "
+"(CSP) mode. Plugin: `juxie_ros2_control/JxHardware`."
+msgstr "JX 电机周期同步位置（CSP）模式的 CAN FD 驱动层插件。插件：`juxie_ros2_control/JxHardware`。"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:218
-#: bebd93b7d5a84e45a183993789ea2e58
-msgid "Common Operations"
+#: ../../source/4-reference/hardware/1-public_hi.md:74
+#: e03bb7df87394ffbb3bb3f0b58a272da
+msgid "Common operations"
 msgstr "常用操作"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:220
-#: 0cf6a7a3a1214191a81707fc50ba2951
-msgid "List Hardware Interfaces"
-msgstr "列出硬件接口"
+#: ../../source/4-reference/hardware/1-public_hi.md:76
+#: 53bb8d8c802943f3af77d9abbc23a8c0
+msgid ""
+"ros2 control list_hardware_interfaces\n"
+"ros2 control list_controllers\n"
+"ros2 topic echo /joint_states\n"
+msgstr ""
+"ros2 control list_hardware_interfaces\n"
+"ros2 control list_controllers\n"
+"ros2 topic echo /joint_states\n"
 
-#: ../../source/4-reference/hardware/1-public_hi.md:222
-#: 77272cf84116406dafedf7f6be1fb917
-msgid "ros2 control list_hardware_interfaces\n"
-msgstr "ros2 control list_hardware_interfaces\n"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:226
-#: 1194712bbdbb457f99d82cdee8bd82f6
-msgid "Check Controller Manager"
-msgstr "检查控制器管理器"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:228
-#: f0e27673f95241bbb468c65da24abad1
-msgid "ros2 control list_controllers\n"
-msgstr "ros2 control list_controllers\n"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:232
-#: 41b4f54cb40a49978d3e3bbaff5060b6
-msgid "Hardware State"
-msgstr "硬件状态"
-
-#: ../../source/4-reference/hardware/1-public_hi.md:234
-#: 05474c63c4de4af6b61d24c89497dd0b
-msgid "ros2 topic echo /joint_states\n"
-msgstr "ros2 topic echo /joint_states\n"
+#: ../../source/4-reference/hardware/1-public_hi.md:82
+#: cd20ccedf4d14b3891369d44b03ab77c
+msgid ""
+"Hardware `<param>` values do **not** appear on `ros2 param list` unless "
+"that plugin also `declare_parameter`s them. Confirm the plugin and xacro "
+"as in [Configure ROS 2 controller "
+"parameters](../../2-how_to/4-controllers/12-ros2_parameters.md)."
+msgstr ""
+"硬件 `<param>` **不会**出现在 `ros2 param list` 上，除非该插件也 `declare_parameter` 了同名项。按 "
+"[配置 ROS 2 控制器参数](../../2-how_to/4-controllers/12-ros2_parameters.md) 核对插件和 xacro。"
 
 #~ msgid "Drag teaching support"
 #~ msgstr "支持拖动示教"
@@ -653,4 +403,290 @@ msgstr "ros2 topic echo /joint_states\n"
 
 #~ msgid "See repository README for detailed configuration options."
 #~ msgstr "详细配置选项请参见仓库 README。"
+
+#~ msgid "Public Hardware Interfaces"
+#~ msgstr "公开硬件接口"
+
+#~ msgid "Public ros2_control hardware plugins in the **driver layer** (驱动层)."
+#~ msgstr "公开的 ros2_control **驱动层**硬件插件。"
+
+#~ msgid "Purpose"
+#~ msgstr "用途"
+
+#~ msgid ""
+#~ "CAN bus interface for ARX robots "
+#~ "(X5, Acone dual-arm, Lift 2S "
+#~ "full-body)."
+#~ msgstr "方舟无限机器人的 CAN 总线接口（X5、Acone 双臂、Lift 2S 全身）。"
+
+#~ msgid "Configuration"
+#~ msgstr "配置"
+
+#~ msgid ""
+#~ "<ros2_control name=\"ArxSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>arx_ros2_control/ArxHardwareInterface</plugin>\n"
+#~ "    <param name=\"can_interface\">can0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"ArxSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>arx_ros2_control/ArxHardwareInterface</plugin>\n"
+#~ "    <param name=\"can_interface\">can0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "CAN Setup"
+#~ msgstr "CAN 设置"
+
+#~ msgid ""
+#~ "sudo ip link set can0 type can bitrate 1000000\n"
+#~ "sudo ip link set can0 up\n"
+#~ msgstr ""
+#~ "sudo ip link set can0 type can bitrate 1000000\n"
+#~ "sudo ip link set can0 up\n"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Parameter"
+#~ msgstr "参数"
+
+#~ msgid "Type"
+#~ msgstr "类型"
+
+#~ msgid "Description"
+#~ msgstr "描述"
+
+#~ msgid "`can_interface`"
+#~ msgstr "`can_interface`"
+
+#~ msgid "string"
+#~ msgstr "string"
+
+#~ msgid "CAN interface name"
+#~ msgstr "CAN 接口名称"
+
+#~ msgid "TCP interface for Dobot CR series collaborative robots."
+#~ msgstr "面向 Dobot CR 系列协作机器人的 TCP 接口。"
+
+#~ msgid ""
+#~ "<ros2_control name=\"DobotSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>dobot_cr_ros2_control/DobotCRHardwareInterface</plugin>\n"
+#~ "    <param name=\"robot_ip\">192.168.1.6</param>\n"
+#~ "    <param name=\"robot_port\">29999</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"DobotSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>dobot_cr_ros2_control/DobotCRHardwareInterface</plugin>\n"
+#~ "    <param name=\"robot_ip\">192.168.1.6</param>\n"
+#~ "    <param name=\"robot_port\">29999</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "`robot_ip`"
+#~ msgstr "`robot_ip`"
+
+#~ msgid "Robot IP address"
+#~ msgstr "机器人 IP 地址"
+
+#~ msgid "`robot_port`"
+#~ msgstr "`robot_port`"
+
+#~ msgid "int"
+#~ msgstr "int"
+
+#~ msgid "Control port"
+#~ msgstr "控制端口"
+
+#~ msgid "TODO"
+#~ msgstr "待完成"
+
+#~ msgid ""
+#~ "Some roadmap features are not yet "
+#~ "implemented. Check repository issues for "
+#~ "status."
+#~ msgstr "部分路线图功能尚未实现。请查看仓库 issues 了解进展。"
+
+#~ msgid "SDK2 interface for Unitree quadruped robots."
+#~ msgstr "面向 Unitree 四足机器人的 SDK2 接口。"
+
+#~ msgid ""
+#~ "<ros2_control name=\"UnitreeSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>unitree_ros2_control/UnitreeHardwareInterface</plugin>\n"
+#~ "    <param name=\"simulation\">false</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"UnitreeSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>unitree_ros2_control/UnitreeHardwareInterface</plugin>\n"
+#~ "    <param name=\"simulation\">false</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "Modes"
+#~ msgstr "模式"
+
+#~ msgid "Mode"
+#~ msgstr "模式"
+
+#~ msgid "`simulation`"
+#~ msgstr "`simulation`"
+
+#~ msgid "SDK simulation mode"
+#~ msgstr "SDK 仿真模式"
+
+#~ msgid "`real`"
+#~ msgstr "`real`"
+
+#~ msgid "Physical hardware"
+#~ msgstr "实体硬件"
+
+#~ msgid "Serial interface for **HighTorque Panthera HT** robots."
+#~ msgstr "**高擎 Panthera HT** 机器人的串口接口。"
+
+#~ msgid ""
+#~ "<ros2_control name=\"HTSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>ht_ros2_control/HTHardwareInterface</plugin>\n"
+#~ "    <param name=\"serial_port\">/dev/ttyACM0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"HTSystem\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>ht_ros2_control/HTHardwareInterface</plugin>\n"
+#~ "    <param name=\"serial_port\">/dev/ttyACM0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "Features"
+#~ msgstr "功能特性"
+
+#~ msgid "Isomorphic master–slave teleop"
+#~ msgstr "同构主从遥操作"
+
+#~ msgid "Gravity compensation on the master role"
+#~ msgstr "主臂角色上的重力补偿"
+
+#~ msgid "Interface for Tianji Marvin robots with end-effector matrix support."
+#~ msgstr "面向 Tianji Marvin 机器人的接口，支持末端执行器矩阵。"
+
+#~ msgid "End-Effector Matrix"
+#~ msgstr "末端执行器矩阵"
+
+#~ msgid "Supports multiple end-effector configurations:"
+#~ msgstr "支持多种末端执行器配置："
+
+#~ msgid "Grippers"
+#~ msgstr "夹爪"
+
+#~ msgid "Hands"
+#~ msgstr "灵巧手"
+
+#~ msgid "Custom tools"
+#~ msgstr "自定义工具"
+
+#~ msgid "RS485 Modbus interface for grippers and actuators."
+#~ msgstr "面向夹爪和执行器的 RS485 Modbus 接口。"
+
+#~ msgid "Supported Devices"
+#~ msgstr "支持的设备"
+
+#~ msgid "Device"
+#~ msgstr "设备"
+
+#~ msgid "Protocol"
+#~ msgstr "协议"
+
+#~ msgid "KWR75"
+#~ msgstr "KWR75"
+
+#~ msgid "Modbus RTU"
+#~ msgstr "Modbus RTU"
+
+#~ msgid "Various grippers"
+#~ msgstr "多种夹爪"
+
+#~ msgid ""
+#~ "<ros2_control name=\"ModbusGripper\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>modbus_ros2_control/ModbusHardwareInterface</plugin>\n"
+#~ "    <param name=\"serial_port\">/dev/ttyUSB0</param>\n"
+#~ "    <param name=\"baudrate\">115200</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"ModbusGripper\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>modbus_ros2_control/ModbusHardwareInterface</plugin>\n"
+#~ "    <param name=\"serial_port\">/dev/ttyUSB0</param>\n"
+#~ "    <param name=\"baudrate\">115200</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "Generic CAN/CAN FD interface for hands and actuators."
+#~ msgstr "面向灵巧手和执行器的通用 CAN/CAN FD 接口。"
+
+#~ msgid "CAN-based dexterous hands"
+#~ msgstr "基于 CAN 的灵巧手"
+
+#~ msgid "CAN FD actuators"
+#~ msgstr "CAN FD 执行器"
+
+#~ msgid ""
+#~ "<ros2_control name=\"CANHand\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>can_ros2_control/CANHardwareInterface</plugin>\n"
+#~ "    <param name=\"can_interface\">can0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+#~ msgstr ""
+#~ "<ros2_control name=\"CANHand\" type=\"system\">\n"
+#~ "  <hardware>\n"
+#~ "    <plugin>can_ros2_control/CANHardwareInterface</plugin>\n"
+#~ "    <param name=\"can_interface\">can0</param>\n"
+#~ "  </hardware>\n"
+#~ "</ros2_control>\n"
+
+#~ msgid "CAN FD interface for JX CSP actuators."
+#~ msgstr "面向 JX CSP 执行器的 CAN FD 接口。"
+
+#~ msgid "See repository README for configuration details."
+#~ msgstr "配置细节请参见仓库 README。"
+
+#~ msgid "Product mapping documentation to be expanded."
+#~ msgstr "产品映射文档待补充。"
+
+#~ msgid ""
+#~ "Parameter names on this page are "
+#~ "xacro `<param>` values loaded when the"
+#~ " driver-layer plugin starts. Tables "
+#~ "and the Isaac `topic_based_ros2_control` "
+#~ "plugin: [Driver layer "
+#~ "parameters](4-ros2_parameters.md)."
+#~ msgstr ""
+#~ "本页参数名是驱动层插件启动时加载的 xacro `<param>`。表格与 Isaac 的"
+#~ " `topic_based_ros2_control` 插件：[驱动层参数](4-ros2_parameters.md)。"
+
+#~ msgid "List Hardware Interfaces"
+#~ msgstr "列出硬件接口"
+
+#~ msgid "Check Controller Manager"
+#~ msgstr "检查控制器管理器"
+
+#~ msgid "ros2 control list_controllers\n"
+#~ msgstr "ros2 control list_controllers\n"
+
+#~ msgid "Hardware State"
+#~ msgstr "硬件状态"
+
+#~ msgid "ros2 topic echo /joint_states\n"
+#~ msgstr "ros2 topic echo /joint_states\n"
 

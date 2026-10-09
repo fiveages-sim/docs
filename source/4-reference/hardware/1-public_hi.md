@@ -1,8 +1,12 @@
-# Public Hardware Interfaces
+# Public driver layer
 
-Public ros2_control hardware interface plugins.
+Public ros2_control hardware plugins in the **driver layer** (驱动层), nested under [arms_ros2_control `hardwares/`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/.gitmodules) (plus in-tree `topic_based_ros2_control`). Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`. `<param>` tables: [Driver layer parameters](4-ros2_parameters.md).
 
-```{admonition} Real Hardware Ready
+## topic_based_ros2_control
+
+In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). Plugin: `topic_based_ros2_control/TopicBasedSystem`. Used for `hardware:=isaac`. Parameters: [Driver layer parameters](4-ros2_parameters.md).
+
+```{admonition} Real hardware ready
 :class: tip
 
 **ARX Lift 2S** (full-body) and **Acone** / **AC One** (dual-arm) use [arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) (CAN). **HighTorque Panthera HT** uses [ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) (serial). See [ARX Lift 2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) and [HighTorque Panthera HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md).
@@ -10,227 +14,69 @@ Public ros2_control hardware interface plugins.
 
 ## ARX (方舟无限)
 
-**Repository:** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control)
+**Repository:** [fiveages-sim/arx-ros2-control](https://github.com/fiveages-sim/arx-ros2-control) · [README](https://github.com/fiveages-sim/arx-ros2-control/blob/main/README.md)
 
-### Purpose
+CAN driver-layer plugins for **ARX** X5 / Acone (dual-arm) and Lift 2S lift + chassis.
 
-CAN bus interface for ARX robots (X5, Acone dual-arm, Lift 2S full-body).
+| Plugin | Role |
+|--------|------|
+| `arx_ros2_control/ArxX5Hardware` | One instance per arm (X5 SDK). MIT MIX: `position` + `velocity` + `effort`; kp/kd from `joint_k_gains` / `joint_d_gains` |
+| `arx_ros2_control/ArxLiftHardware` | Lift2S column (default CAN `can5`). `hybrid` or `soft_p` / `position`; optional `/cmd_vel` chassis |
 
-### Configuration
-
-```xml
-<ros2_control name="ArxSystem" type="system">
-  <hardware>
-    <plugin>arx_ros2_control/ArxHardwareInterface</plugin>
-    <param name="can_interface">can0</param>
-  </hardware>
-</ros2_control>
-```
-
-### CAN Setup
-
-```bash
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-```
-
-### Parameters
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `can_interface` | string | CAN interface name |
+Acone `hardware:=real` xacro uses `arx_ros2_control/ArxX5Hardware` ([ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)).
 
 ## Dobot CR
 
-**Repository:** [fiveages-sim/dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control)
+**Repository:** [fiveages-sim/dobot-cr-ros2-control](https://github.com/fiveages-sim/dobot-cr-ros2-control) · [README](https://github.com/fiveages-sim/dobot-cr-ros2-control/blob/main/README.md)
 
-### Purpose
-
-TCP interface for Dobot CR series collaborative robots.
-
-### Configuration
-
-```xml
-<ros2_control name="DobotSystem" type="system">
-  <hardware>
-    <plugin>dobot_cr_ros2_control/DobotCRHardwareInterface</plugin>
-    <param name="robot_ip">192.168.1.6</param>
-    <param name="robot_port">29999</param>
-  </hardware>
-</ros2_control>
-```
-
-### Parameters
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `robot_ip` | string | Robot IP address |
-| `robot_port` | int | Control port |
-
-```{admonition} TODO
-:class: warning
-
-Some roadmap features are not yet implemented. Check repository issues for status.
-```
+TCP driver-layer plugin for Dobot CR. Plugin: `dobot_ros2_control/DobotHardware`. Dashboard / real-time TCP (README: 29999 command, 30004 realtime). There is no `robot_port` `<param>` in `on_init`.
 
 ## Unitree
 
-**Repository:** [fiveages-sim/unitree-ros2-control](https://github.com/fiveages-sim/unitree-ros2-control)
+**Repository:** [fiveages-sim/unitree-ros2-control](https://github.com/fiveages-sim/unitree-ros2-control) · [README](https://github.com/fiveages-sim/unitree-ros2-control/blob/main/README.md)
 
-### Purpose
-
-SDK2 interface for Unitree quadruped robots.
-
-### Configuration
-
-```xml
-<ros2_control name="UnitreeSystem" type="system">
-  <hardware>
-    <plugin>unitree_ros2_control/UnitreeHardwareInterface</plugin>
-    <param name="simulation">false</param>
-  </hardware>
-</ros2_control>
-```
-
-### Modes
-
-| Mode | Description |
-|------|-------------|
-| `simulation` | SDK simulation mode |
-| `real` | Physical hardware |
+unitree_sdk2 driver-layer plugin. Plugin XML: `unitree_ros2_control/HardwareUnitree` (the README XML still shows a former `hardware_unitree_sdk2/…` name; use the pluginlib class). That README’s launch examples use `hardware:=unitree_sim` / `unitree_real` with `robot:=unitree_g1`.
 
 ## HighTorque (高擎)
 
-**Repository:** [fiveages-sim/ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control)
+**Repository:** [fiveages-sim/ht-ros2-control](https://github.com/fiveages-sim/ht-ros2-control) · [README](https://github.com/fiveages-sim/ht-ros2-control/blob/main/README.md)
 
-### Purpose
+Serial driver-layer plugin for **HighTorque Panthera HT**. Plugin: `ht_ros2_control/PantheraHardwareInterface`. Motor YAML in `external/motor_cpp/robot_param/` (`Panthera.yaml` / `PantheraDual.yaml`). Default devices `/dev/ttyACM*`.
 
-Serial interface for **HighTorque Panthera HT** robots.
-
-### Configuration
-
-```xml
-<ros2_control name="HTSystem" type="system">
-  <hardware>
-    <plugin>ht_ros2_control/HTHardwareInterface</plugin>
-    <param name="serial_port">/dev/ttyACM0</param>
-  </hardware>
-</ros2_control>
-```
-
-### Features
-
-- Isomorphic master–slave teleop
-- Gravity compensation on the master role
+Features from that README: isomorphic master–slave teleop path on the description launch; gravity compensation via `ht_gravity_compensation` when kp/kd are not command interfaces.
 
 ## Marvin
 
-**Repository:** [fiveages-sim/marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control)
+**Repository:** [fiveages-sim/marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control) · [README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)
 
-### Purpose
+Marvin SDK driver-layer plugin (M6 and related). Plugin: `marvin_ros2_control/MarvinHardware`. Command interfaces are joint **`position` only**. Compliance is vendor `ctrl_mode` (`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`) plus `joint_k_gains` / `joint_d_gains`. USB-dongle 夹爪 / 灵巧手 use [Modbus](#modbus) or [CAN](#can), not this package.
 
-Interface for Tianji Marvin robots with end-effector matrix support.
-
-### Configuration
-
-[marvin-ros2-control README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md): command interfaces are joint **`position` only**. Compliance is vendor `ctrl_mode` (`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`) plus `joint_k_gains` / `joint_d_gains`. Plugin: `marvin_ros2_control/MarvinHardware`.
-
-Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard` (`scripts/tool_dyn_identify_wizard.py`). VR path comparison: [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
-
-### End-Effector Matrix
-
-Supports multiple end-effector configurations:
-- Grippers
-- Hands
-- Custom tools
+Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. VR path: [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
 
 ## Modbus
 
-**Repository:** [fiveages-sim/modbus-ros2-control](https://github.com/fiveages-sim/modbus-ros2-control)
+**Repository:** [fiveages-sim/modbus-ros2-control](https://github.com/fiveages-sim/modbus-ros2-control) · [README](https://github.com/fiveages-sim/modbus-ros2-control/blob/main/README.md)
 
-### Purpose
-
-RS485 Modbus interface for grippers and actuators.
-
-### Supported Devices
-
-| Device | Protocol |
-|--------|----------|
-| KWR75 | Modbus RTU |
-| Various grippers | Modbus RTU |
-
-### Configuration
-
-```xml
-<ros2_control name="ModbusGripper" type="system">
-  <hardware>
-    <plugin>modbus_ros2_control/ModbusHardwareInterface</plugin>
-    <param name="serial_port">/dev/ttyUSB0</param>
-    <param name="baudrate">115200</param>
-  </hardware>
-</ros2_control>
-```
+RS485 / Modbus RTU driver-layer plugins for 夹爪, 灵巧手, and KWR75. Plugins: `ModbusHardware`, `DexterousHandHardware`, `InspireHandHardware`, `FreedomRS485Hardware`, `XHand1RS485Hardware`, `TheoHandModbusHardware`, `Kwr75ForceTorqueSensor`.
 
 ## CAN
 
-**Repository:** [fiveages-sim/can-ros2-control](https://github.com/fiveages-sim/can-ros2-control)
+**Repository:** [fiveages-sim/can-ros2-control](https://github.com/fiveages-sim/can-ros2-control) · [README](https://github.com/fiveages-sim/can-ros2-control/blob/main/README.md)
 
-### Purpose
-
-Generic CAN/CAN FD interface for hands and actuators.
-
-### Supported Devices
-
-- CAN-based dexterous hands
-- CAN FD actuators
-
-### Configuration
-
-```xml
-<ros2_control name="CANHand" type="system">
-  <hardware>
-    <plugin>can_ros2_control/CANHardwareInterface</plugin>
-    <param name="can_interface">can0</param>
-  </hardware>
-</ros2_control>
-```
+SocketCAN / CAN FD driver-layer plugins for 灵巧手. Plugins: `O6CanHardware`, `L6CanHardware`, `O7CanHardware`, `FreedomCanHardware`, `InspireCanfdHardware`. Freedom V2 and 夹爪 are out of scope on that README.
 
 ## Juxie
 
-**Repository:** [fiveages-sim/juxie-ros2-control](https://github.com/fiveages-sim/juxie-ros2-control)
+**Repository:** [fiveages-sim/juxie-ros2-control](https://github.com/fiveages-sim/juxie-ros2-control) · [README](https://github.com/fiveages-sim/juxie-ros2-control/blob/main/README.md)
 
-### Purpose
+CAN FD driver-layer plugin for JX motors in cyclic synchronous position (CSP) mode. Plugin: `juxie_ros2_control/JxHardware`.
 
-CAN FD interface for JX CSP actuators.
-
-### Configuration
-
-See repository README for configuration details.
-
-```{admonition} TODO
-:class: warning
-
-Product mapping documentation to be expanded.
-```
-
-Parameter names on this page are xacro `<param>` values loaded when the 硬件接口 plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware Interface parameters](4-ros2_parameters.md).
-
-## Common Operations
-
-### List Hardware Interfaces
+## Common operations
 
 ```bash
 ros2 control list_hardware_interfaces
-```
-
-### Check Controller Manager
-
-```bash
 ros2 control list_controllers
-```
-
-### Hardware State
-
-```bash
 ros2 topic echo /joint_states
 ```
+
+Hardware `<param>` values do **not** appear on `ros2 param list` unless that plugin also `declare_parameter`s them. Confirm the plugin and xacro as in [Configure ROS 2 controller parameters](../../2-how_to/4-controllers/12-ros2_parameters.md).
