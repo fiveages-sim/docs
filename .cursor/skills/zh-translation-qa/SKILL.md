@@ -48,7 +48,7 @@ Skip obsolete `#~` entries. The PO **header** (`msgid ""`) may stay `#, fuzzy`.
 - FSM labels `HOME` / `HOLD` / `MOVEJ` (and `Home` / `Hold` / `MoveJ` in tables)
 - Tokens such as ROS, OCS2, Gazebo, Isaac, LeRobot, FaSim, README, Pico, ARX
 
-Product terms that **do** have Chinese in this site: **split body** → **分体** / **分体控制**; **full body** / whole-body → **全身** / **全身控制**; **driver layer** → **驱动层** (not 硬件接口). Do not leave `split body` / `full body` in Chinese sentences. Keep CLI `list_hardware_interfaces` and plugin class names in backticks.
+Product terms that **do** have Chinese in this site: **split body** → **分体** / **分体控制**; **full body** / whole-body → **全身** / **全身控制**; **hardware interface(s)** / Hardware Interfaces → **驱动层** (same layer as ros2_control Hardware Interface; not a second 硬件接口 product name, and not **Driver layer** as the English title). Do not leave `split body` / `full body` in Chinese sentences. Keep CLI `list_hardware_interfaces` and plugin class names in backticks.
 
 ## How to fill a hit
 

@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 12:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/hardware/5-ht.md:1 f131ee222c094635816336602f648f44
+msgid "HighTorque (高擎)"
+msgstr "HighTorque（高擎）"
+
+#: ../../source/4-reference/hardware/5-ht.md:3 44e38df8001b4aee84547ea3021ccff0
+msgid "Serial hardware interface plugin for **HighTorque Panthera HT**."
+msgstr "**HighTorque Panthera HT** 的串口驱动层插件。"
+
+#: ../../source/4-reference/hardware/5-ht.md:5 e2e0c903d7be4bf4931fc97aa47d105f
+msgid ""
+"**Repository:** [fiveages-sim/ht-ros2-control](https://github.com"
+"/fiveages-sim/ht-ros2-control) · [README](https://github.com/fiveages-sim"
+"/ht-ros2-control/blob/main/README.md)"
+msgstr ""
+"**Repository:** [fiveages-sim/ht-ros2-control](https://github.com"
+"/fiveages-sim/ht-ros2-control) · [README](https://github.com/fiveages-sim"
+"/ht-ros2-control/blob/main/README.md)"
+
+#: ../../source/4-reference/hardware/5-ht.md:7 498684927ce44fc9a7c0bc8c58df392c
+msgid ""
+"**Plugin:** `ht_ros2_control/PantheraHardwareInterface`. `config_file` is"
+" required in `on_init`. Description xacro chooses `Panthera.yaml` vs "
+"`PantheraDual.yaml`; there is no `dual_config_file` hardware_parameter in"
+" source (README names that as the xacro selector). Motor YAML in "
+"`external/motor_cpp/robot_param/` (`Panthera.yaml` / "
+"`PantheraDual.yaml`). Default devices `/dev/ttyACM*`."
+msgstr ""
+"**插件：** `ht_ros2_control/PantheraHardwareInterface`。`on_init` 要求 "
+"`config_file`。描述 xacro 选择 `Panthera.yaml` 或 `PantheraDual.yaml`；源码中没有 "
+"`dual_config_file` hardware_parameter（README 把它当作 xacro 选择器）。电机 YAML 在 "
+"`external/motor_cpp/robot_param/`（`Panthera.yaml` / "
+"`PantheraDual.yaml`）。默认设备 `/dev/ttyACM*`。"
+
+#: ../../source/4-reference/hardware/5-ht.md:9 288283c903d148cc8def8b896d6b2142
+msgid ""
+"Features from that README: isomorphic master–slave teleop path on the "
+"description launch; gravity compensation via `ht_gravity_compensation` "
+"when kp/kd are not command interfaces. Field how-to: [HighTorque Panthera"
+" HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)."
+msgstr ""
+"该 README 中的能力：描述 launch 上的同构主从遥操作路径；当 kp/kd 不是命令接口时，用 "
+"`ht_gravity_compensation` 做重力补偿。现场操作：[HighTorque Panthera "
+"HT](../../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
+
+#: ../../source/4-reference/hardware/5-ht.md:11
+#: 02b561e5b7f8464e80d2b9a86dbfa132
+msgid ""
+"`joint_kp` / `joint_kd` / `gripper_kp` / `gripper_kd` are exposed as node"
+" parameters. README: IO thread syncs about every 200 ms — `ros2 param "
+"set` / rqt takes effect without reload. No `on_set_parameters` callback; "
+"the poll is the Runtime path."
+msgstr ""
+"`joint_kp` / `joint_kd` / `gripper_kp` / `gripper_kd` 作为节点参数暴露。README：IO "
+"线程大约每 200 ms 同步一次 — `ros2 param set` / rqt 无需重载即可生效。没有 "
+"`on_set_parameters` 回调；轮询就是运行时路径。"
+
+#: ../../source/4-reference/hardware/5-ht.md:13
+#: 77526607f0454d77b3b3c4cdceead69b
+msgid ""
+"How to read **Startup only** / **Runtime**: [Hardware "
+"Interfaces](0-index.md)."
+msgstr "如何读 **仅启动** / **运行时**：[驱动层](0-index.md)。"
+
+#: ../../source/4-reference/hardware/5-ht.md:15
+#: fa2c9d895e2d4093a5a6dd100ac87f77
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/4-reference/hardware/5-ht.md ec187a599ec74c93b9ccc4215e5f0b1a
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/4-reference/hardware/5-ht.md d390b397e75c4ebe912577efc7abbb11
+msgid "Type / default"
+msgstr "类型 / 默认值"
+
+#: ../../source/4-reference/hardware/5-ht.md c740e6dbf6a5464a81ac4d10c01b8a31
+msgid "When"
+msgstr "时机"
+
+#: ../../source/4-reference/hardware/5-ht.md 18e559426b3c4780a2b33582b1f53b58
+msgid "Meaning"
+msgstr "含义"
+
+#: ../../source/4-reference/hardware/5-ht.md bb01abec26d94a4d9b540fba87681f5c
+msgid "`config_file`"
+msgstr "`config_file`"
+
+#: ../../source/4-reference/hardware/5-ht.md 96466751c5ae4d95b0fce961c2c9beaa
+msgid "string (required)"
+msgstr "string (required)"
+
+#: ../../source/4-reference/hardware/5-ht.md 198941c04d3141a9b129f9e0fc8f3ca6
+#: 1a3b412db51644598e7575cf8dd35363 34c4e0b2a5ef4744ac6871f86c3f6a5c
+#: 4da08fbeb72e4c44ad37db795d3cf346 5cdee83c19124e66b4f79e91586caabf
+#: 5e5c598db34648c5bdcba5c1fa0f0e0f 79a85956e81c438cbd6898251d9a998b
+#: 7be84ec53c35487abb50f790cf7c76eb b02bf1cdf950442c90eefa2c3af86350
+#: c0bbf5b78d354bb0b26e3e10253acd4b f61be64aa9a04b1fb075efd0a5032934
+msgid "**Startup only**"
+msgstr "**仅启动**"
+
+#: ../../source/4-reference/hardware/5-ht.md d4f9e8c6a4ef4b5dafe9c00657f4ab91
+msgid "Motor YAML path"
+msgstr "电机 YAML 路径"
+
+#: ../../source/4-reference/hardware/5-ht.md c5fa3ca36992451ba8c9c74f3247ce19
+msgid "`usb_select`"
+msgstr "`usb_select`"
+
+#: ../../source/4-reference/hardware/5-ht.md b7c941d19cd948ad912526b387ca6723
+msgid "string / `\"auto\"`"
+msgstr "string / `\"auto\"`"
+
+#: ../../source/4-reference/hardware/5-ht.md aed5e534a5724b9bbedd04d392c456f0
+msgid "Control-box USB path, or `auto` (exactly one box)"
+msgstr "控制盒 USB 路径，或 `auto`（只能有一个盒子）"
+
+#: ../../source/4-reference/hardware/5-ht.md 781ad14f2d8c4142ae7459c2ddec0d49
+msgid "`control_mode`"
+msgstr "`control_mode`"
+
+#: ../../source/4-reference/hardware/5-ht.md ac11a47989ce488fbc8f42dcb280c8da
+msgid "string / `\"mit\"`"
+msgstr "string / `\"mit\"`"
+
+#: ../../source/4-reference/hardware/5-ht.md d0755ebcae494ba08c142c68f2cbaadf
+msgid "`mit` (old name `full_control`) / `effort` / `position`"
+msgstr "`mit`（旧名 `full_control`）/ `effort` / `position`"
+
+#: ../../source/4-reference/hardware/5-ht.md 1382c3c4e8824008a535b0e49794939f
+msgid "`gripper_rad_to_m`"
+msgstr "`gripper_rad_to_m`"
+
+#: ../../source/4-reference/hardware/5-ht.md 47b250d7cd10446fa6fdd9ed06c57ee2
+msgid "double / `0.025`"
+msgstr "double / `0.025`"
+
+#: ../../source/4-reference/hardware/5-ht.md 655aea1a4fbe4eac8dc0b213e21f8d06
+msgid "Gripper rad↔m"
+msgstr "夹爪 rad↔m"
+
+#: ../../source/4-reference/hardware/5-ht.md 2c41584370d548dcb920aae28bd45bc4
+msgid "`max_torques`"
+msgstr "`max_torques`"
+
+#: ../../source/4-reference/hardware/5-ht.md 052c2db9b2df483ea2d877f01a5d0ff8
+#: 8b481b68b6c4402684ead3a4c4bdf6c7
+msgid "CSV, 7 per arm"
+msgstr "CSV, 7 per arm"
+
+#: ../../source/4-reference/hardware/5-ht.md ca1ce32d336e41f78507d08390c0d043
+msgid "Torque limits; source fallback `[21, 36, 36, 21, 10, 10, 0.5]`"
+msgstr "力矩上限；源码回退 `[21, 36, 36, 21, 10, 10, 0.5]`"
+
+#: ../../source/4-reference/hardware/5-ht.md 40dcc718b97e43ebbc93b1089213f2e7
+msgid "`max_velocities`"
+msgstr "`max_velocities`"
+
+#: ../../source/4-reference/hardware/5-ht.md a6164c58fb2741b1b7a91eb8e553b4d3
+msgid "Velocity limits; source fallback `[4.2, 5.0, 5.0, 4.2, 3.7, 3.7, 0.3]`"
+msgstr "速度上限；源码回退 `[4.2, 5.0, 5.0, 4.2, 3.7, 3.7, 0.3]`"
+
+#: ../../source/4-reference/hardware/5-ht.md f6aaf54f60744dee8551d61b1c877e31
+msgid "`joint_kp`"
+msgstr "`joint_kp`"
+
+#: ../../source/4-reference/hardware/5-ht.md 1498d61470fc4592b8f4fcdf5af14945
+msgid "CSV, 6 per arm / `[20, 30, 40, 20, 20, 20]`"
+msgstr "CSV, 6 per arm / `[20, 30, 40, 20, 20, 20]`"
+
+#: ../../source/4-reference/hardware/5-ht.md 182a762850c24969b2e0d5a9363acaa6
+#: 4dff37bbc8ed4ee8973593b324fbe00d 8d6154496a024522865b71aca1df304a
+#: e199833ff27c4ba59092c56931e3a1ee
+msgid "**Runtime**"
+msgstr "**运行时**"
+
+#: ../../source/4-reference/hardware/5-ht.md d75650c3831842839611e0332ee3401d
+msgid "Arm kp"
+msgstr "手臂 kp"
+
+#: ../../source/4-reference/hardware/5-ht.md 1af3c4b0f61f4a828c5087f2b842519e
+msgid "`joint_kd`"
+msgstr "`joint_kd`"
+
+#: ../../source/4-reference/hardware/5-ht.md 8de1f4c3150140119b2db662e21a3506
+msgid "CSV, 6 per arm / `[0.2, 0.3, 0.4, 0.2, 0.2, 0.2]`"
+msgstr "CSV, 6 per arm / `[0.2, 0.3, 0.4, 0.2, 0.2, 0.2]`"
+
+#: ../../source/4-reference/hardware/5-ht.md cf3f0206a572450f91da4ed2f1ddf400
+msgid "Arm kd"
+msgstr "手臂 kd"
+
+#: ../../source/4-reference/hardware/5-ht.md df615c96d0a74d108a2f56781c85cb3b
+msgid "`gripper_kp`"
+msgstr "`gripper_kp`"
+
+#: ../../source/4-reference/hardware/5-ht.md 06b39b9b947c4006b69a13db8b85ab24
+msgid "double / `5.0`"
+msgstr "double / `5.0`"
+
+#: ../../source/4-reference/hardware/5-ht.md 9273d8cd8f9f434b83b1526310fe30f5
+msgid "夹爪 kp"
+msgstr "夹爪 kp"
+
+#: ../../source/4-reference/hardware/5-ht.md fa5531ec2e44487c92415ef10a654b7e
+msgid "`gripper_kd`"
+msgstr "`gripper_kd`"
+
+#: ../../source/4-reference/hardware/5-ht.md 99aff2d518fc4fabbbf76a2c8808dbcc
+msgid "double / `0.1`"
+msgstr "double / `0.1`"
+
+#: ../../source/4-reference/hardware/5-ht.md b4ae2761cc704da09e33be564042ecd5
+msgid "夹爪 kd"
+msgstr "夹爪 kd"
+
+#: ../../source/4-reference/hardware/5-ht.md 005fc2c4318149dabe8af2c6f9063cf0
+msgid "`shutdown_return_home`"
+msgstr "`shutdown_return_home`"
+
+#: ../../source/4-reference/hardware/5-ht.md 8e5d414499c44c00a0ef633084c48465
+msgid "bool / `true`"
+msgstr "bool / `true`"
+
+#: ../../source/4-reference/hardware/5-ht.md 1efb4a65ea70447fb0fa74608df29f11
+msgid "Interp home then `set_stop`"
+msgstr "插值回零后 `set_stop`"
+
+#: ../../source/4-reference/hardware/5-ht.md 53e9015cf3ff4c35a49fcc4f00b2e124
+msgid "`shutdown_home`"
+msgstr "`shutdown_home`"
+
+#: ../../source/4-reference/hardware/5-ht.md d69cb2ae4b6344adaec36b8051ee2022
+msgid "CSV, 6 / zeros"
+msgstr "CSV, 6 / zeros"
+
+#: ../../source/4-reference/hardware/5-ht.md aa2f870587e04c0ba334bd3fd7942fe8
+msgid "Shutdown pose"
+msgstr "关机位姿"
+
+#: ../../source/4-reference/hardware/5-ht.md ceebdcba8e9e4e0dab9a35c1da1bee1c
+msgid "`shutdown_home_timeout`"
+msgstr "`shutdown_home_timeout`"
+
+#: ../../source/4-reference/hardware/5-ht.md 1840d303e7df4a01a4e4f9ecc01cc1eb
+msgid "double / `3.5`"
+msgstr "double / `3.5`"
+
+#: ../../source/4-reference/hardware/5-ht.md 37abb4e3d44342d8afeab5344ea0f3e8
+msgid "Timeout (s)"
+msgstr "超时（秒）"
+
+#: ../../source/4-reference/hardware/5-ht.md 9616e9e607634fb28bcb5b8140799dbf
+msgid "`shutdown_home_tolerance`"
+msgstr "`shutdown_home_tolerance`"
+
+#: ../../source/4-reference/hardware/5-ht.md d5937df12b394ba69a6911222085afc1
+msgid "double / `0.05`"
+msgstr "double / `0.05`"
+
+#: ../../source/4-reference/hardware/5-ht.md 00110df5991349239245dff2b63c1b7f
+msgid "Arrive tolerance"
+msgstr "到位容差"
+
+#: ../../source/4-reference/hardware/5-ht.md 5963788416d44e86b80f570ece4318e5
+msgid "`shutdown_home_velocity`"
+msgstr "`shutdown_home_velocity`"
+
+#: ../../source/4-reference/hardware/5-ht.md 8140fed88e504afb852b5fba39b547b6
+msgid "double / `0.3`"
+msgstr "double / `0.3`"
+
+#: ../../source/4-reference/hardware/5-ht.md d73082f3d96d440991bba56542e306ca
+msgid "Interp speed"
+msgstr "插值速度"
+

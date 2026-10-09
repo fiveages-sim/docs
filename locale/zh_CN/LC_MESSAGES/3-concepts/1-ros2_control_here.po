@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:40+0000\n"
+"POT-Creation-Date: 2026-10-09 12:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,24 +21,24 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:1
-#: 4785df42ba534fc08f9e4c05c6999e01
+#: eecd86f0f26e4d92bbc1c08ed9b0df65
 msgid "ros2_control in This Stack"
 msgstr "本技术栈中的 ros2_control"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:3
-#: c162b349cffb4e0bb848498604acec3f
+#: e708c4af0f80423c921c2092bc0a7af1
 msgid ""
 "How FiveAges Sim **selects a hardware plugin** and **loads controllers**."
 " This is not a generic ros2_control tutorial."
 msgstr "FiveAges Sim **如何选择硬件插件** 以及 **如何加载控制器**。这不是通用 ros2_control 教程。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: dd4d9be6431d428dbc6380d32d9bbf6a
+#: 9f91a6f3f5224ac78fac7e9ee025b20a
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:8
-#: 0ff44286ae1f45ea944d45c71281f800
+#: 04c14ffae1844ecd8c3b2154c3924c2c
 msgid ""
 "Launch `hardware:=` → xacro `ros2_control_hardware_type`: "
 "[`robot_common_launch` README](https://github.com/fiveages-sim/robot-"
@@ -56,7 +56,7 @@ msgstr ""
 "common/blob/main/robot_common_launch/robot_common_launch/common/launch_arg_utils.py)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:9
-#: 300c0c8080fc41c59feb753d1fe1c5dd
+#: 2a4c951f1d5a47f7a1db7ba9fe3cd9e3
 msgid ""
 "Default `hardware` on OCS2 demo: "
 "[`ocs2_arm_controller/launch/demo.launch.py`](https://github.com"
@@ -70,7 +70,7 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/launch/demo.launch.py)（`mock_components`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:10
-#: 271c38845bd0442cb681b176d8458783
+#: 9898c33044ff496db14b824748d86b68
 msgid ""
 "Plugin names below are from "
 "[`arx_acone_description/xacro/ros2_control/robot.xacro`](https://github.com"
@@ -86,7 +86,7 @@ msgstr ""
 " `hardware` 键；**真实**插件类以该机器人自己的 xacro 为准。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:13
-#: 1bb642cafb12466289375104022e7995
+#: c23362740b884b11a81059429cbbfb9c
 msgid ""
 "Upstream lifecycle / QoS / “how Controller Manager works in general”: "
 "[ros2_control documentation](https://control.ros.org/). This stack’s "
@@ -96,12 +96,12 @@ msgstr ""
 "文档](https://control.ros.org/)。不要把那些页面当作本技术栈的话题或参数列表。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:15
-#: ec72330060b94f259afcb334d4175b56
+#: 14b87d838f084126966ecb9a35541a7b
 msgid "What the launch argument does"
 msgstr "该 launch 参数做什么"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:17
-#: 12f1c8e4b09e405cad2957b581e4a619
+#: 3adcfe547dd7490b9c761bd4197ce9a2
 msgid ""
 "`build_xacro_mappings()` always sets `ros2_control_hardware_type` to the "
 "launch `hardware` string. When `hardware:=gz` it also sets `gazebo` to "
@@ -113,7 +113,7 @@ msgstr ""
 "`hardware:`（串口、`arm_ctrl_mode` 等）**仅**在 `hardware:=real` 时注入。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:19
-#: a0a734d338de4eba86c2686d058b8eee
+#: ef914669645f47ac8960e760eb92b158
 msgid ""
 "Documented launch values ([robot_common_launch](https://github.com"
 "/fiveages-sim/robot-descriptions-"
@@ -125,47 +125,47 @@ msgstr ""
 " xacro、`demo.launch.py`）："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 3f437a6a81f94be78ed17c472c7d514d
+#: 3cfebc27933e4d02aa76ac57dc4eca4e
 msgid "`hardware:=`"
 msgstr "`hardware:=` 参数"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 434b3b32c39e404198570bae139d3c30
+#: d8672ff67a9e45e1bbdf5b340d4c0308
 msgid "Acone xacro plugin"
 msgstr "Acone xacro 插件"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 91f954ec37f44d6d83ef935a2117e889
+#: 2318bd992f5d42f4835517a9d0b05449
 msgid "Notes"
 msgstr "说明"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 3d35fc228072434e8e21869478b81089
+#: c742f54a19eb45449c43a78f28269238
 msgid "`mock_components` (**default**)"
 msgstr "`mock_components`（**默认**）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 3bf68dc49f8348e59b122d386719877d
+#: d5f88d7abe6b4200b89c0dccaaad04e4
 msgid "`mock_components/GenericSystem`"
 msgstr "`mock_components/GenericSystem`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 07442ed6571d46bbb8ff4e681102bae7
+#: 3456809ba9aa4128a4e789bb7a958749
 msgid "No Gazebo / Isaac. There is **no** `hardware:=mock` branch in this xacro."
 msgstr "无 Gazebo / Isaac。此 xacro **没有** `hardware:=mock` 分支。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: f0acc10faf84445a894433bb223046ac
+#: 0b27d966ef7345ddac29aaf7dc2ca3d5
 msgid "`gz`"
 msgstr "`gz`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 95d1ecbbba194b40aa95744b86b03b4e
+#: 9ca3de2c206d4571a2903af7bf902edf
 msgid "`gz_ros2_control/GazeboSimSystem`"
 msgstr "`gz_ros2_control/GazeboSimSystem`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: ee25fb862c35496ebe2ea00516c56baf
+#: 94f7ec63ae7841fd94684c69f8c8b5fc
 msgid ""
 "[ocs2_arm README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md):"
@@ -176,17 +176,17 @@ msgstr ""
 " `ros-jazzy-ros-gz` 和 `ros-jazzy-gz-ros2-control`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 9d8090e3e9c44d70a21f6605239efc11
+#: 85fac824d16a4cd3b23e2ad55f1ca7e1
 msgid "`isaac`"
 msgstr "Isaac"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 2bb8244820434a77a7ba117b7301cd6f
+#: 725372b3d831410a9659478190423893
 msgid "`topic_based_ros2_control/TopicBasedSystem`"
 msgstr "`gz_ros2_control/GazeboSimSystem`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 7f30a575b15e4b3d80ae372fdcde4a3a
+#: ea972f1f00804a0e82893a1413ae9b35
 msgid ""
 "Acone params: `/isaac/joint_command`, `/isaac/joint_states`. Build "
 "`topic_based_ros2_control` ([arms_ros2_control README](https://github.com"
@@ -197,29 +197,29 @@ msgstr ""
 "/fiveages-sim/arms_ros2_control/blob/main/README.md)）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: bbce0ef68ecb4636be1aaa7549ee09f0
+#: c09d0377bdf049ba9d65968edc0d2fea
 msgid "`real`"
 msgstr "真机"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 20fd7241723649eebff562e548f1b72e
+#: 0c0a9d27daf14b6186628c4b76398666
 msgid "Vendor plugin (Acone: `arx_ros2_control/ArxX5Hardware`)"
 msgstr "厂商插件（Acone：`arx_ros2_control/ArxX5Hardware`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 82c45517004641a4aa7f7407d9db7255
+#: b05aa82e766643ce98a46c0b5026fefa
 msgid ""
 "Other brands: use the plugin class from that description’s "
 "`xacro/ros2_control/*.xacro`."
 msgstr "其他品牌：使用该描述包 `xacro/ros2_control/*.xacro` 中的插件类。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:28
-#: 79ddd8627b2c4658ae807940359c9ec3
+#: ab2253023d3c4a4fa8ad526cfadc7644
 msgid "`REAL_HARDWARE` in `launch_arg_utils.py` is only `real`."
 msgstr "`launch_arg_utils.py` 中的 `REAL_HARDWARE` 只有 `real`。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:30
-#: 41d54f898ba0488194fae8eb61066457
+#: 763f04ac330c44a69198ff1ff5aa46de
 msgid ""
 "Optional controller overlay: if "
 "`<robot>_description/config/ros2_control/<hardware>.yaml` exists, "
@@ -233,12 +233,12 @@ msgstr ""
 "`isaac.yaml`。没有文件则不 overlay。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:32
-#: cce27b4cc000401297794822681140d9
+#: c07465ffb5ca49c8894c367487831dfc
 msgid "Controllers (this repo)"
 msgstr "控制器"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:34
-#: a493f4906eba4c6eac7e905c3c7a4d8c
+#: 7d2f10aeb46a48b7a7a7a8577b1da186
 msgid ""
 "From [arms_ros2_control](https://github.com/fiveages-"
 "sim/arms_ros2_control) READMEs / launches:"
@@ -247,17 +247,17 @@ msgstr ""
 " 的 README / launch："
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 730a53ebffc64a9d9f5e752e3a7a8d59
+#: 55b4871734ff4a3e822207ed56bb5264
 msgid "Package"
 msgstr "软件包"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: d62669801c544ca49955737912128ba0
+#: 607a2b55f2934011b2ffe25e51cd464c
 msgid "Role"
 msgstr "作用"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: cccaf16576d64e299a416db46b8a6fc8
+#: 9aa62e0513a343d682a578900d6f4b3f
 msgid ""
 "[Basic Joint "
 "Controller](../4-reference/controllers/7-basic_joint_controller.md)"
@@ -266,32 +266,32 @@ msgstr ""
 "Controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 0d79ccbc00074c7dbd068a99fb86513c
+#: 01e0f3e7e3124adaa94ee66c98e560db
 msgid "HOME / HOLD / MOVEJ; body/head/灵巧手 in 分体控制 (`basic_joint_controller`)"
 msgstr "HOME / HOLD / MOVEJ；分体控制中的身体/头部/灵巧手（`basic_joint_controller`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: eaeb94790a064265ba06d5eaf79dccb8
+#: a56e18d2b2504871a3bf40dfd25e10e3
 msgid "[OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 msgstr "[OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: a6e804687b2445f2a465edd703ef670a
+#: a8eb0b70270e4eaf95bf587466b3dde5
 msgid "Arm MPC; `demo.launch.py` / `split_body.launch.py` (`ocs2_arm_controller`)"
 msgstr "机械臂 MPC；`demo.launch.py` / `split_body.launch.py`（`ocs2_arm_controller`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: a5974d99efee47ba9920726ae5899697
+#: c6c21119eeb6451c844f3be66e5cac11
 msgid "[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: a96749200a474e8589e8949d24cf4a01
+#: 0b9bfb9d666943619427b686ec04ca9b
 msgid "全身控制 via `full_body.launch.py` (`ocs2_wbc_controller`)"
 msgstr "通过 `full_body.launch.py` 做全身控制（`ocs2_wbc_controller`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 609e259728f7489d8eaa7a8298a3922e
+#: 22f1c6aaa0fa45908bbc4b3d6034c51b
 msgid ""
 "[Adaptive Gripper "
 "Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)"
@@ -300,12 +300,12 @@ msgstr ""
 "Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 78bf85123ed74de6b4267e67ad8487a5
+#: 49dfa224e4c14d338ddb7f40fe069b61
 msgid "夹爪 (`adaptive_gripper_controller`)"
 msgstr "夹爪（`adaptive_gripper_controller`）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:43
-#: 1a142276a2324fe2b5ba3d7a921df078
+#: 511c6c76b47343f680f67138b67b09bb
 msgid ""
 "分体 vs 全身: [分体控制 vs 全身控制](7-split_vs_wbc.md). How-to: [Use Basic Joint "
 "Controller](../2-how_to/4-controllers/11-basic_joint.md)."
@@ -314,12 +314,12 @@ msgstr ""
 "Controller](../2-how_to/4-controllers/11-basic_joint.md)。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:45
-#: 43510a6f713d40ec9c4cec5d2130fd13
+#: 2ae81ddf313945f5b30855b6e430b96f
 msgid "Command / state interfaces (OCS2 arm README)"
 msgstr "命令接口与状态接口"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:47
-#: cdbf06c2e843407fba5ec384d8624468
+#: 44c73149eb4f4b13841cb1ccdd6db53c
 msgid ""
 "[ocs2_arm_controller README — Interface Configuration](https://github.com"
 "/fiveages-"
@@ -332,56 +332,56 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)：控制器根据机器人配置中存在的接口**检测**模式。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: db1a29fcd1c943ffb3a98021940f19e3
+#: c158ae3843464b9e9d01c429772003f3
 msgid "Mode"
 msgstr "模式"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: f3f2388f1a0c4049a50e8fd087d14c03
+#: 2b9a543a8a9940d69e3205c0ba80cfc2
 msgid "Command"
 msgstr "命令"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 7b26ca5f7aff46e0bb0799f779b14283
+#: 4e38a5a29e8241f18aa910a36cb0bed5
 msgid "State"
 msgstr "状态"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 87bd7c9af64745b1a93ddcd001996c70
+#: 98d0e8910f98476a8901d0d24845937c
 msgid "Position (default)"
 msgstr "位置（默认）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 378930cdcbde4c268aa6d202869e864f
+#: a170b17b797e416aa314195a8991b0ea
 msgid "`position`"
 msgstr "`position`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: d517002c3acc4bd4b9d59b55e6055d5c
+#: 2361737d3cb543109b667452d7a8f816
 msgid "`position`, `velocity`"
 msgstr "`velocity`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 163428ce003d4d6da645190c3820bce0
+#: 88bb2d89f2f24819ad62904b8d1da912
 msgid "Force (auto)"
 msgstr "力控（自动）"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: dc831f629d674310ad3f354eb40816af
+#: 3a2d1b8368364c31bb33f4e89aef2df2
 msgid "`position`, `velocity`, `effort`, `kp`, `kd`"
 msgstr "`position`, `velocity`, `effort`, `kp`, `kd`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:5
-#: 7967687919874d0cad38357ce93d86ba
+#: 96962cbec395453c882b5b9382907fa1
 msgid "`position`, `velocity`, `effort`"
 msgstr "`position`, `velocity`, `effort`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:54
-#: 86d22e9d5e074f4bb64bfc9e94531cd0
+#: c52040c0d569443d82049fd5f57ed58b
 msgid ""
 "That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji**"
 " (天玑) / **Rokae** (珞石) keep the controller on **position** commands; "
-"joint impedance is a vendor `ctrl_mode` on the driver layer "
+"joint impedance is a vendor `ctrl_mode` on the hardware interface "
 "(`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-"
 "sim/marvin-ros2-control/blob/master/README.md)). VR comparison: [VR "
 "Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md)."
@@ -393,7 +393,7 @@ msgstr ""
 "遥操作](../2-how_to/5-teleoperation/6-vr_teleop.md)。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:56
-#: 6c0d888f2a764cb3949331a079df3d8f
+#: 8c0ca4330adb44929d605bb14733a53a
 #, python-brace-format
 msgid ""
 "There is no stack-wide `/target_pose` or `/target_joint_positions` "
@@ -409,12 +409,12 @@ msgstr ""
 " / Service 类型以及 WBC 身体/头部话题：[FSM 与话题](4-fsm_and_topics.md)。"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:58
-#: 9a8fe30ba4444f74b8e632f9ca62e73d
+#: 2a0124cedc8047459b1e51847c43a46d
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:60
-#: 8c4fb0e19476478c8f2aea32c6406d68
+#: 3536433481364349a4cd84b05659b481
 msgid ""
 "[robot_common_launch](../4-reference/descriptions/2-common.md) — `type` /"
 " `left_type` / `right_type`, profile merge"
@@ -423,7 +423,7 @@ msgstr ""
 " `left_type` / `right_type`，profile 合并"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:61
-#: 42684e90e5ce420f8fc32b884e7023f4
+#: 3d66d35331a24adf8d1cdbf57cdfe3aa
 msgid ""
 "[Configure ROS 2 controller "
 "parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs "
@@ -433,19 +433,26 @@ msgstr ""
 "vs xacro `<param>`"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:62
-#: 5b1bac3a6b4e4bf1890d0c3756317127
+#: 0b4e2092976e4838b77d0273b5bea89f
 msgid ""
 "[Controller ROS 2 "
 "parameters](../4-reference/controllers/8-ros2_parameters.md)"
 msgstr "[控制器 ROS 2 参数](../4-reference/controllers/8-ros2_parameters.md)"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:63
-#: 9db7686ee58b4789a688d052fbc1a82b
-msgid "[Driver layer parameters](../4-reference/hardware/4-ros2_parameters.md)"
-msgstr "[驱动层参数](../4-reference/hardware/4-ros2_parameters.md)"
+#: b28df236288a48e2ad057998e556ef46
+msgid "[Terminology](8-terminology.md) — 驱动层 ↔ Hardware Interface"
+msgstr "[术语对照](8-terminology.md) — 驱动层 ↔ Hardware Interface"
 
 #: ../../source/3-concepts/1-ros2_control_here.md:64
-#: df46a5992d3f4934b39f732fba5e67d9
+#: c847456ff80849a99f77560dc8369441
+msgid ""
+"[Hardware Interfaces](../4-reference/hardware/0-index.md) — per-driver "
+"plugin and `<param>` tables"
+msgstr "[驱动层](../4-reference/hardware/0-index.md) — 各驱动页插件与 `<param>` 表"
+
+#: ../../source/3-concepts/1-ros2_control_here.md:65
+#: 3e5fbb4d4ebe417aa0f9dff03279b30a
 msgid "[Controllers reference](../4-reference/controllers/0-index.md)"
 msgstr "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
@@ -814,4 +821,9 @@ msgstr "[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #~ msgid "Gripper (same repo README)"
 #~ msgstr "夹爪插件（同一仓库）"
+
+#~ msgid ""
+#~ "[Hardware Interface "
+#~ "parameters](../4-reference/hardware/4-ros2_parameters.md)"
+#~ msgstr "[驱动层参数](../4-reference/hardware/4-ros2_parameters.md)"
 

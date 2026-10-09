@@ -1,0 +1,616 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 12:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/hardware/4-arx.md:1
+#: 2011dad22f2244b5847bb9649d61d576
+msgid "ARX (方舟无限)"
+msgstr "ARX（方舟无限）"
+
+#: ../../source/4-reference/hardware/4-arx.md:3
+#: 2e13073b4652470590068a6dd380cbe4
+msgid ""
+"CAN hardware interface plugins for **ARX** X5 / Acone (dual-arm) and Lift"
+" 2S lift + chassis."
+msgstr "**ARX** X5 / Acone（双臂）以及 Lift 2S 升降柱 + 底盘的 CAN 驱动层插件。"
+
+#: ../../source/4-reference/hardware/4-arx.md:5
+#: c8292af4e9d44534a259ba813e03ecbc
+msgid ""
+"**Repository:** [fiveages-sim/arx-ros2-control](https://github.com"
+"/fiveages-sim/arx-ros2-control) · [README](https://github.com/fiveages-"
+"sim/arx-ros2-control/blob/main/README.md)"
+msgstr ""
+"**Repository:** [fiveages-sim/arx-ros2-control](https://github.com"
+"/fiveages-sim/arx-ros2-control) · [README](https://github.com/fiveages-"
+"sim/arx-ros2-control/blob/main/README.md)"
+
+#: ../../source/4-reference/hardware/4-arx.md 1b8f9d19650946e8b2886d65981d564f
+msgid "Plugin"
+msgstr "插件"
+
+#: ../../source/4-reference/hardware/4-arx.md 29f4bcccffd5498792d22b8f9968279c
+msgid "Role"
+msgstr "角色"
+
+#: ../../source/4-reference/hardware/4-arx.md
+#: ../../source/4-reference/hardware/4-arx.md:16
+#: e1bb8d5cab364e759045e2213de186e0 e423a15c34604861a83e97f610bbfd1d
+msgid "`arx_ros2_control/ArxX5Hardware`"
+msgstr "`arx_ros2_control/ArxX5Hardware`"
+
+#: ../../source/4-reference/hardware/4-arx.md bfe594d3b2cb4a9fb14e76f90bdc841c
+msgid ""
+"One instance per arm (X5 SDK). MIT MIX: `position` + `velocity` + "
+"`effort`; kp/kd from `joint_k_gains` / `joint_d_gains`"
+msgstr ""
+"每臂一个实例（X5 SDK）。MIT MIX：`position` + `velocity` + `effort`；kp/kd 来自 "
+"`joint_k_gains` / `joint_d_gains`"
+
+#: ../../source/4-reference/hardware/4-arx.md
+#: ../../source/4-reference/hardware/4-arx.md:34
+#: 4f447eae12384cfca63b8c7092551de3 a4135f3835114a48a3800ebb35ea0cec
+msgid "`arx_ros2_control/ArxLiftHardware`"
+msgstr "`arx_ros2_control/ArxLiftHardware`"
+
+#: ../../source/4-reference/hardware/4-arx.md 86aa6c9b849c400ba931598515d3a237
+msgid ""
+"Lift2S column (default CAN `can5`). `hybrid` or `soft_p` / `position`; "
+"optional `/cmd_vel` chassis"
+msgstr ""
+"Lift2S 升降柱（默认 CAN `can5`）。`hybrid` 或 `soft_p` / `position`；可选 `/cmd_vel` "
+"底盘"
+
+#: ../../source/4-reference/hardware/4-arx.md:12
+#: 3d55d1d746d244e59e5c84adc886a678
+msgid ""
+"Acone `hardware:=real` xacro uses `arx_ros2_control/ArxX5Hardware` "
+"([ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)). "
+"Field how-to: [ARX Lift "
+"2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)."
+msgstr ""
+"Acone `hardware:=real` xacro 使用 `arx_ros2_control/ArxX5Hardware`（[本栈中的 "
+"ros2_control](../../3-concepts/1-ros2_control_here.md)）。现场操作：[ARX Lift "
+"2S](../../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
+
+#: ../../source/4-reference/hardware/4-arx.md:14
+#: 1fcd50f6e65744b2a11b82c72f1d3f43
+msgid ""
+"URDF `<param>` are also declared as node parameters so rqt / `ros2 param "
+"set` can change the **Runtime** rows. How to read **Startup only** / "
+"**Runtime**: [Hardware Interfaces](0-index.md)."
+msgstr ""
+"URDF `<param>` 同时声明为节点参数，因此 rqt / `ros2 param set` 可改 **运行时** 行。如何读 "
+"**仅启动** / **运行时**：[驱动层](0-index.md)。"
+
+#: ../../source/4-reference/hardware/4-arx.md:18
+#: 6f2a3024ead44236be904bca85d377b2
+msgid ""
+"`control_mode` other than `full_control` is warned and ignored. "
+"`robot_model` is hardcoded `X5` (not a ROS param)."
+msgstr ""
+"`control_mode` 若不是 `full_control` 会告警并忽略。`robot_model` 硬编码为 `X5`（不是 ROS "
+"参数）。"
+
+#: ../../source/4-reference/hardware/4-arx.md 76be487da5514bd5a21022a2fc65cee3
+#: b76db9ec0bbd4a5eb7c4568f029be7d4 db4c9b5708574ff1ba4593cd9b4ae090
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/4-reference/hardware/4-arx.md 6a3fe2c8aac64c3e9651d22dc899d189
+#: 77d7f7b3286f4e47b04ee95413ec6868
+msgid "Type / default"
+msgstr "类型 / 默认值"
+
+#: ../../source/4-reference/hardware/4-arx.md 80eaa09bfbf84168ab12229c25e0bea1
+#: bc825fafa4674c45903e0a5a30c32571
+msgid "When"
+msgstr "时机"
+
+#: ../../source/4-reference/hardware/4-arx.md 0234e8c575a6441bad6cf0ae25adbdcb
+#: 44bef7ce8b87411b82db11c2182dd6f9 9141ea75debe4560a74444803dad699b
+msgid "Meaning"
+msgstr "含义"
+
+#: ../../source/4-reference/hardware/4-arx.md 31b8de2e82164b46b64863fcd52fe84b
+msgid "`can_interface`"
+msgstr "`can_interface`"
+
+#: ../../source/4-reference/hardware/4-arx.md 492754b444e84193a7997f9570108f5b
+msgid "string / `\"can0\"`"
+msgstr "string / `\"can0\"`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0652eed4b42a4a8e9a1c659bff25c9d9
+#: 078321a85218443680886ed004216519 0bb8e9c9b5d54927aa32ff915250854f
+#: 10c711b1b8ab472ca68ff50420b6de51 20a9105ab0534f8391dd65f0d877042d
+#: 448361f60a6843e6b8cd8c2d8e3bbcdc 48076c0c25f24ea6a28d55b052dfeb78
+#: 49458f0db6694b6dad4161f4f36a91e2 56765481ed0e441da5a9698f0cc48e0a
+#: 635a840bb4df43e7874da46e35a4cda1 6e17c0f7d8954a2b9c0dcefc3ff56e91
+#: 7b3efc0ba3f8479fa67ba0334264f638 83d386243e274f56af920125094af6c9
+#: 878069f5b96d4515a49e7a5abed72ed4 9a7838d9478246879e8d6cfde2518e75
+#: a09670d0ebed4fdcbc05744478927211 a3932ed904434273952490e5a73ff2e4
+#: ae367aeccbf64422a63f2967179b186a b041dea377ea4ef188fae3232a712312
+#: c1446a68e8ee4390a14146478ce5e537 c50f482f6c7442628ecc0879d33f91f8
+#: d0ade2f7d15f4f4c885507d9c52e1c7e d495cd17972e4405b1618b92a4016a7b
+#: d99edf2e2bcc49e48c6c44ea03051e3c dcf4ba2112ac4a618d8f7e584e8a482a
+#: ea8ea70454714bfda3a5c150c5167eb8 ed0afcb801d040f3803a4b2a9f349c0f
+#: f1096886824c4ff38e9ebfe47cc55d97 f56147ca902b4c85a944df5cd2e4d883
+msgid "**Startup only**"
+msgstr "**仅启动**"
+
+#: ../../source/4-reference/hardware/4-arx.md 00ee43602a97469aa2a0c6442ba1d2d2
+msgid "CAN device (README: single-arm right often `can3`)"
+msgstr "CAN 设备（README：单臂右臂常用 `can3`）"
+
+#: ../../source/4-reference/hardware/4-arx.md 96bf424571de4d93b1f821a155bc2de8
+msgid "`control_mode`"
+msgstr "`control_mode`"
+
+#: ../../source/4-reference/hardware/4-arx.md 453ec3aefe8a46b0bbe3f246a1e4badf
+msgid "string / `\"full_control\"`"
+msgstr "string / `\"full_control\"`"
+
+#: ../../source/4-reference/hardware/4-arx.md 25efdbf3c25b418bafe4b3fa0c173a0d
+msgid "Only `full_control` (MIT MIX) is honored"
+msgstr "只认 `full_control`（MIT MIX）"
+
+#: ../../source/4-reference/hardware/4-arx.md 3462a93f465841fa88216c16ab499b6b
+msgid "`joint_k_gains`"
+msgstr "`joint_k_gains`"
+
+#: ../../source/4-reference/hardware/4-arx.md 34299be3b9df4d92a416d03ff9bae71e
+msgid "double[6] / `[80, 70, 70, 30, 30, 20]`"
+msgstr "double[6] / `[80, 70, 70, 30, 30, 20]`"
+
+#: ../../source/4-reference/hardware/4-arx.md 06110e94e7884e5bb73d0cd1106806df
+#: 3ea04047ffd84caaa889a981bbd7bdf6 a37e4bd0cb04485bb330feed1f00e137
+#: ab9efe533c554edda8d387d767decdb7 b212147055a24da09a256dae37ff022b
+#: d1e2eb1a87f54c0493126fd425d7c6f8
+msgid "**Runtime**"
+msgstr "**运行时**"
+
+#: ../../source/4-reference/hardware/4-arx.md ad02e4c3d51c445782b5ddfabebd78b3
+msgid "MIT kp. README: Lift2S field default `[20,20,20,20,10,10]`"
+msgstr "MIT kp。README：Lift2S 现场默认 `[20,20,20,20,10,10]`"
+
+#: ../../source/4-reference/hardware/4-arx.md af9060da9fca440e942ef4ebb4d41a6e
+msgid "`joint_d_gains`"
+msgstr "`joint_d_gains`"
+
+#: ../../source/4-reference/hardware/4-arx.md dce7c2b5715b47159db214d2b58aa520
+msgid "double[6] / `[2, 2, 2, 1, 1, 0.7]`"
+msgstr "double[6] / `[2, 2, 2, 1, 1, 0.7]`"
+
+#: ../../source/4-reference/hardware/4-arx.md e6b87a5087da409ea7d206262cca0ab5
+msgid "MIT kd. README: Lift2S field default `[0.8,0.8,0.8,0.8,0.5,0.5]`"
+msgstr "MIT kd。README：Lift2S 现场默认 `[0.8,0.8,0.8,0.8,0.5,0.5]`"
+
+#: ../../source/4-reference/hardware/4-arx.md 56a5a080a4c04663abc959c6badf77d7
+msgid "`gripper_kp`"
+msgstr "`gripper_kp`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0224944664ef4950a5d50f99d5c5c7cb
+#: 949118d00e14445ab0e037f05c81edf8
+msgid "double / `5.0`"
+msgstr "double / `5.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md e115759d874c48f8aadd8ca226eb142e
+msgid "夹爪 kp"
+msgstr "夹爪 kp"
+
+#: ../../source/4-reference/hardware/4-arx.md 1da2e26983cb478382cc6d11e19bcb42
+msgid "`gripper_kd`"
+msgstr "`gripper_kd`"
+
+#: ../../source/4-reference/hardware/4-arx.md 7eeb4b7214824e1fa3e79106a556db8f
+msgid "double / `0.2`"
+msgstr "double / `0.2`"
+
+#: ../../source/4-reference/hardware/4-arx.md 37236861bb0942dfba9a9fb887ea4d56
+msgid "夹爪 kd"
+msgstr "夹爪 kd"
+
+#: ../../source/4-reference/hardware/4-arx.md 39d40045e6414c1a8760457d8b77b9bc
+#: 7b30a23be431400da223a5da06f6dfc9
+msgid "`shutdown_return_home`"
+msgstr "`shutdown_return_home`"
+
+#: ../../source/4-reference/hardware/4-arx.md 426fedb1644a457db6f2704f3d62fd91
+#: 818c4dfe2ee446e3a88d782f30b65df1 a297dd979cd04a5a80b4234b85c3cbac
+#: d2fe1ca849144c208b5300d5b0ae64bc
+msgid "bool / `false`"
+msgstr "bool / `false`"
+
+#: ../../source/4-reference/hardware/4-arx.md 515166a52cd54c239992fd2d72327547
+msgid "Interpolate to `shutdown_home` on deactivate"
+msgstr "停用时插值到 `shutdown_home`"
+
+#: ../../source/4-reference/hardware/4-arx.md 2a81f70d2b494a87938cc5f28f2632fb
+msgid "`shutdown_home`"
+msgstr "`shutdown_home`"
+
+#: ../../source/4-reference/hardware/4-arx.md bd67573b1c3c45de9514e77b41c6f08e
+msgid "double[6] / zeros"
+msgstr "double[6] / zeros"
+
+#: ../../source/4-reference/hardware/4-arx.md 5d7fed9abd954e2c9c8c04b70225e028
+msgid "Shutdown pose"
+msgstr "关机位姿"
+
+#: ../../source/4-reference/hardware/4-arx.md 6695ecbabf054eecac4a3fdc6cb9067b
+#: a8750303f4d142179691b9ccf4e9af80
+msgid "`shutdown_home_velocity`"
+msgstr "`shutdown_home_velocity`"
+
+#: ../../source/4-reference/hardware/4-arx.md 875e23c39aac4422a7139b10e840a419
+#: a0a8cb66358a4dd196b7a2071708f658
+msgid "double / `0.3`"
+msgstr "double / `0.3`"
+
+#: ../../source/4-reference/hardware/4-arx.md 3513f057acb3404d9e3aeaba9da15f89
+msgid "Shutdown interp speed"
+msgstr "关机插值速度"
+
+#: ../../source/4-reference/hardware/4-arx.md 518e9c6124b54a59b030b38b6a5281a8
+#: 9671664c774749b5aa1f45194cadae7f
+msgid "`shutdown_home_timeout`"
+msgstr "`shutdown_home_timeout`"
+
+#: ../../source/4-reference/hardware/4-arx.md 2d1d27c8bfdf4ada8d07171c461897d1
+#: 392c78791642432fad88640580fd8c50 dde814a05fba4afa9684c3847bb907dd
+msgid "double / `2.0`"
+msgstr "double / `2.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md 50356d3cc52f42c18d31a90da94b2250
+msgid "Shutdown timeout (s)"
+msgstr "关机超时（秒）"
+
+#: ../../source/4-reference/hardware/4-arx.md 6b4b4ad713584df3a8117a5064272b0c
+#: a7339bda0d0e442f9633d22a07d14d89
+msgid "`status_debug`"
+msgstr "`status_debug`"
+
+#: ../../source/4-reference/hardware/4-arx.md b6040fa664f942219578a4380f3d816e
+msgid "bool / `false` (source)"
+msgstr "bool / `false`（源码）"
+
+#: ../../source/4-reference/hardware/4-arx.md e6ae0f0a22ec43f0a0be3f12f3b08715
+msgid "Extra MIT/status logs"
+msgstr "额外 MIT/状态日志"
+
+#: ../../source/4-reference/hardware/4-arx.md:36
+#: 846269f998db44c39cc8223d181fff88
+msgid ""
+"URDF keys from `on_init`. README chassis table says Lift2S xacro often "
+"sets `enable_chassis_cmd_vel` true; **source default is `false`**."
+msgstr ""
+"`on_init` 中的 URDF 键。README 底盘表写 Lift2S xacro 常把 `enable_chassis_cmd_vel` "
+"设为 true；**源码默认是 `false`**。"
+
+#: ../../source/4-reference/hardware/4-arx.md 94825cd7f79841008a324de4a9a4251e
+msgid "`can_name`"
+msgstr "`can_name`"
+
+#: ../../source/4-reference/hardware/4-arx.md 9a340623677540e18609e8827bf44702
+msgid "string / `\"can5\"`"
+msgstr "string / `\"can5\"`"
+
+#: ../../source/4-reference/hardware/4-arx.md 9f46388de8f949a2b3ae4b1f493a3a80
+msgid "Lift CAN"
+msgstr "升降柱 CAN"
+
+#: ../../source/4-reference/hardware/4-arx.md 29afb67d975847da9149337676f162f1
+msgid "`robot_type`"
+msgstr "`robot_type`"
+
+#: ../../source/4-reference/hardware/4-arx.md f679effb7d104b68b80ec9898382e344
+msgid "int / `2`"
+msgstr "int / `2`"
+
+#: ../../source/4-reference/hardware/4-arx.md cdb61fe150b9475288b39432bb37530c
+msgid "`0` LIFT / `1` X7S / `2` LIFTS"
+msgstr "`0` LIFT / `1` X7S / `2` LIFTS"
+
+#: ../../source/4-reference/hardware/4-arx.md 02dd92fcc2b241e387ccfde679f93cc0
+#: fe62803af2fb4f5ebbbd285b19b426dd
+msgid "`lift_motor_mode`"
+msgstr "`lift_motor_mode`"
+
+#: ../../source/4-reference/hardware/4-arx.md 9d5d64ba60ef428993e9436ea5a1ea1b
+msgid "string / `\"hybrid\"`"
+msgstr "string / `\"hybrid\"`"
+
+#: ../../source/4-reference/hardware/4-arx.md f15c718bf31547e09c076cee01a8ad20
+msgid "`hybrid` or `soft_p` / `position`. Live switch is the node param below"
+msgstr "`hybrid` 或 `soft_p` / `position`。在线切换见下方节点参数"
+
+#: ../../source/4-reference/hardware/4-arx.md 5679db89d7e348548bff1c04d18f08c1
+msgid "`hybrid_kp`"
+msgstr "`hybrid_kp`"
+
+#: ../../source/4-reference/hardware/4-arx.md 7bb3c713e92c4c7f82b1d4c85ddd5d9b
+msgid "Hybrid kp. Seed for `arx_lift.hybrid_kp`"
+msgstr "Hybrid kp。作为 `arx_lift.hybrid_kp` 的种子"
+
+#: ../../source/4-reference/hardware/4-arx.md 4dfb0c4e58df4813b6fc07bfa03e14d5
+msgid "`hybrid_kd`"
+msgstr "`hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-arx.md b934b8216cf146ab86f223a292b4bb8b
+msgid "Hybrid kd (alias `kd`)"
+msgstr "Hybrid kd（别名 `kd`）"
+
+#: ../../source/4-reference/hardware/4-arx.md 4a25a7e4e5ba4c4ba3cf375889678278
+#: b23856d85f7e49e7b109f35220f97bd0
+msgid "`soft_p_kp`"
+msgstr "`soft_p_kp`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0823a65167d042daa2df20fcab65020a
+msgid "double / `50.0`"
+msgstr "double / `50.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md 8809051e423f4467bc467f27cad8d185
+msgid "Position-mode kp (aliases `lift_kp`, `kp`)"
+msgstr "位置模式 kp（别名 `lift_kp`、`kp`）"
+
+#: ../../source/4-reference/hardware/4-arx.md b3d18fbf6e104cec9f10c07af4ccf6a0
+msgid "`gravity_compensation_torque`"
+msgstr "`gravity_compensation_torque`"
+
+#: ../../source/4-reference/hardware/4-arx.md 6004e366ad0f413886b93ae437f78b2a
+msgid "double / `-1.01`"
+msgstr "double / `-1.01`"
+
+#: ../../source/4-reference/hardware/4-arx.md 45c9d9c4b2e84c87910f2946c8c83b0a
+msgid "Gravity feedforward"
+msgstr "重力前馈"
+
+#: ../../source/4-reference/hardware/4-arx.md 2c99d46da74b4ea88176bcb56e1f7b4a
+msgid "`coulomb_friction_torque`"
+msgstr "`coulomb_friction_torque`"
+
+#: ../../source/4-reference/hardware/4-arx.md 2df13cd814554b72a676d6332bb9aca0
+msgid "double / `0.32`"
+msgstr "double / `0.32`"
+
+#: ../../source/4-reference/hardware/4-arx.md f8a0543a44974ffda8e4ea7e6bb44aea
+msgid "Coulomb friction"
+msgstr "库仑摩擦"
+
+#: ../../source/4-reference/hardware/4-arx.md 1f14607fba994fb092ee53aa460a99ab
+msgid "`friction_vel_eps_mps`"
+msgstr "`friction_vel_eps_mps`"
+
+#: ../../source/4-reference/hardware/4-arx.md dfb04395caba4558939d152d3d4ae732
+msgid "double / `0.01`"
+msgstr "double / `0.01`"
+
+#: ../../source/4-reference/hardware/4-arx.md 920eae2fa66842ea9aefc8c395ef56c3
+msgid "Friction deadband (m/s)"
+msgstr "摩擦死区（m/s）"
+
+#: ../../source/4-reference/hardware/4-arx.md b0c0ae6caff54c6c904875214d9ee3d6
+msgid "`lift_max_vel`"
+msgstr "`lift_max_vel`"
+
+#: ../../source/4-reference/hardware/4-arx.md e11b608eeb334755833395bd5a74352b
+msgid "double / `0.20`"
+msgstr "double / `0.20`"
+
+#: ../../source/4-reference/hardware/4-arx.md 8db45243c3cf464b9fbd4acb42ef5c12
+msgid "Max lift speed"
+msgstr "最大升降速度"
+
+#: ../../source/4-reference/hardware/4-arx.md c544630d0a3a4602ae34c35c02a0e10b
+msgid "`lift_max_torque`"
+msgstr "`lift_max_torque`"
+
+#: ../../source/4-reference/hardware/4-arx.md 89b95259c8d345db8cc66c33cc5fb984
+msgid "double / `15.0`"
+msgstr "double / `15.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0e3d1e02cbde4cc2bab5bfcb694df335
+msgid "Max torque"
+msgstr "最大力矩"
+
+#: ../../source/4-reference/hardware/4-arx.md 19155dbf819949feba9199107d615ce3
+msgid "`height_rad_per_meter`"
+msgstr "`height_rad_per_meter`"
+
+#: ../../source/4-reference/hardware/4-arx.md e6ee98230271451b812a5b0ccebc4ff4
+msgid "double / `41.54`"
+msgstr "double / `41.54`"
+
+#: ../../source/4-reference/hardware/4-arx.md 1d66a6a91129402ea14d72735b8ed16a
+msgid "m↔rad (alias `height_to_motor`)"
+msgstr "m↔rad（别名 `height_to_motor`）"
+
+#: ../../source/4-reference/hardware/4-arx.md 513f4feedda54b6898eb34f9e457bbff
+msgid "`height_span_m`"
+msgstr "`height_span_m`"
+
+#: ../../source/4-reference/hardware/4-arx.md 28ec19ca51cd48abbd6b102281732cd9
+msgid "double / `0.48`"
+msgstr "double / `0.48`"
+
+#: ../../source/4-reference/hardware/4-arx.md 1187c21ad9f5491bb90d5178ab36b2b3
+msgid "Stroke (alias `max_height_m`)"
+msgstr "行程（别名 `max_height_m`）"
+
+#: ../../source/4-reference/hardware/4-arx.md 94441e676d7942e5bf7742619273afe2
+msgid "`sdk_max_rad`"
+msgstr "`sdk_max_rad`"
+
+#: ../../source/4-reference/hardware/4-arx.md 6a499735a18e4baea9feada3e1ac9f1d
+msgid "double / `20.0`"
+msgstr "double / `20.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md eae3222b2ac74c7197aab6edc9ee373d
+msgid "SDK angle cap"
+msgstr "SDK 角度上限"
+
+#: ../../source/4-reference/hardware/4-arx.md b0a56360ee174eb49e29eab49bca1f11
+msgid "`cmd_ramp_vel`"
+msgstr "`cmd_ramp_vel`"
+
+#: ../../source/4-reference/hardware/4-arx.md c884834ff365432aa1a7078bdecb7c36
+msgid "double / `0.04`"
+msgstr "double / `0.04`"
+
+#: ../../source/4-reference/hardware/4-arx.md 5c2c7caf175b4aae999d3c8d66c5208f
+msgid "Shutdown-home ramp only"
+msgstr "仅关机回零斜坡"
+
+#: ../../source/4-reference/hardware/4-arx.md b5098773c036493a8707b5161d1bb597
+msgid "`enable_chassis_cmd_vel`"
+msgstr "`enable_chassis_cmd_vel`"
+
+#: ../../source/4-reference/hardware/4-arx.md 17e515ee19364a83b1da0e6a6592ee5f
+msgid "Subscribe Twist → chassis"
+msgstr "订阅 Twist → 底盘"
+
+#: ../../source/4-reference/hardware/4-arx.md 81e14321dbef4ea9b26e76a41244eb9c
+msgid "`chassis_cmd_vel_topic`"
+msgstr "`chassis_cmd_vel_topic`"
+
+#: ../../source/4-reference/hardware/4-arx.md d0291e6f9b83456b94e14f864a8ac182
+msgid "string / `\"/cmd_vel\"`"
+msgstr "string / `\"/cmd_vel\"`"
+
+#: ../../source/4-reference/hardware/4-arx.md f6f9f8b016164567b510945dc0da3c5b
+msgid "Chassis Twist topic"
+msgstr "底盘 Twist 话题"
+
+#: ../../source/4-reference/hardware/4-arx.md a7b4165fbd1f41c1859f00e22f5a3b15
+msgid "`chassis_cmd_timeout`"
+msgstr "`chassis_cmd_timeout`"
+
+#: ../../source/4-reference/hardware/4-arx.md 458a1304dac34f528db02889d41c61cf
+msgid "Stop after timeout (s)"
+msgstr "超时后停止（秒）"
+
+#: ../../source/4-reference/hardware/4-arx.md 13378ea51b0649cab91a95196eba3243
+msgid "`chassis_max_vel_x` / `_y` / `_z`"
+msgstr "`chassis_max_vel_x` / `_y` / `_z`"
+
+#: ../../source/4-reference/hardware/4-arx.md 11c6a7eaf37d483f9f7bf1465e5d2557
+msgid "double / `2` / `2` / `4`"
+msgstr "double / `2` / `2` / `4`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0466d33a6f664c2182fc7a5c86d8709b
+msgid "Chassis quantize limits (README: LIFTS `.so` omits these)"
+msgstr "底盘量化限幅（README：LIFTS `.so` 省略这些）"
+
+#: ../../source/4-reference/hardware/4-arx.md 2ec46a140c804e9da26bdd3d81382f6a
+msgid "Return to `shutdown_height_m` on exit"
+msgstr "退出时回到 `shutdown_height_m`"
+
+#: ../../source/4-reference/hardware/4-arx.md 822d546e581e4ca19e3fc64e086abe31
+msgid "`shutdown_height_m`"
+msgstr "`shutdown_height_m`"
+
+#: ../../source/4-reference/hardware/4-arx.md 7280d03afc2c4657a2e625c82da2f06d
+msgid "double / `0.0`"
+msgstr "double / `0.0`"
+
+#: ../../source/4-reference/hardware/4-arx.md aa25443438a645bb9962033cc8c1834f
+msgid "Shutdown height"
+msgstr "关机高度"
+
+#: ../../source/4-reference/hardware/4-arx.md 45401ccdf83c47ae80e9d4fb8943c5da
+msgid "double / `0.10`"
+msgstr "double / `0.10`"
+
+#: ../../source/4-reference/hardware/4-arx.md 5042d05e03dc4c07bec8a234e555c6b6
+msgid "Shutdown speed"
+msgstr "关机速度"
+
+#: ../../source/4-reference/hardware/4-arx.md 8202c77111554718b43feb51059bc430
+msgid "Shutdown timeout"
+msgstr "关机超时"
+
+#: ../../source/4-reference/hardware/4-arx.md 6ccad5defe0c45cfbfffb1b28517646d
+msgid "Debug logs. Also a node param"
+msgstr "调试日志。也是节点参数"
+
+#: ../../source/4-reference/hardware/4-arx.md:65
+#: 694df1c9151246f4b2035defd9fe0750
+msgid ""
+"On activate, Lift also declares these **node** parameters "
+"(`add_on_set_parameters_callback`):"
+msgstr "激活时，Lift 还会声明这些**节点**参数（`add_on_set_parameters_callback`）："
+
+#: ../../source/4-reference/hardware/4-arx.md:67
+#: 79a9c971151640c3bc5c7ece370b8e9e
+msgid "All rows in this table are **Runtime**."
+msgstr "本表各行均为 **运行时**。"
+
+#: ../../source/4-reference/hardware/4-arx.md 03d12ee601b949ee8c9104b5336141b6
+msgid "Seeded from"
+msgstr "初值来自"
+
+#: ../../source/4-reference/hardware/4-arx.md 45550190d77b409688edf13e9e07c7ae
+msgid "`arx_lift.motor_mode`"
+msgstr "`arx_lift.motor_mode`"
+
+#: ../../source/4-reference/hardware/4-arx.md 0ccde0258b2f4cd4b2765fc89a3d5c08
+msgid "`hybrid` or `soft_p`/`position`"
+msgstr "`hybrid` 或 `soft_p`/`position`"
+
+#: ../../source/4-reference/hardware/4-arx.md bd53e6958e7c478fab412dbc346744e4
+msgid "`arx_lift.soft_p_kp`"
+msgstr "`arx_lift.soft_p_kp`"
+
+#: ../../source/4-reference/hardware/4-arx.md 493e6de52b194b5a89015af27112f2f0
+#: 6cc9d31e3546411cb16f4e121cec2b4b a6b9a327cc5c4d33b5b6427287399e34
+#: e1f281c44eb14f6689eb0974731b23bc ed12f3aceb7848e68db1bebc270f0efc
+msgid "Same as the URDF seed, as a node parameter"
+msgstr "与 URDF 种子相同，作为节点参数"
+
+#: ../../source/4-reference/hardware/4-arx.md 56a7f27a7c9449e6ac9f68b4a39872e9
+msgid "`arx_lift.hybrid_kp` / `arx_lift.hybrid_kd`"
+msgstr "`arx_lift.hybrid_kp` / `arx_lift.hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-arx.md 01b6bc98e4b5442cbc196a161dc77847
+msgid "`hybrid_kp` / `hybrid_kd`"
+msgstr "`hybrid_kp` / `hybrid_kd`"
+
+#: ../../source/4-reference/hardware/4-arx.md 3109cdf330ba4043ba4d20f590759cdb
+msgid "`arx_lift.gravity_compensation_torque`"
+msgstr "`arx_lift.gravity_compensation_torque`"
+
+#: ../../source/4-reference/hardware/4-arx.md ce5980488fac47108743516e0b78e49a
+msgid "same URDF key"
+msgstr "same URDF key"
+
+#: ../../source/4-reference/hardware/4-arx.md 9efdd75023c84d8695235a47767f7116
+msgid "`arx_lift.coulomb_friction_torque`"
+msgstr "`arx_lift.coulomb_friction_torque`"
+
+#: ../../source/4-reference/hardware/4-arx.md dae804e088ac445980f5246a07669600
+#: e8f9f0e45b6d46a780e06a5fbb6e97a1
+msgid "same"
+msgstr "same"
+
+#: ../../source/4-reference/hardware/4-arx.md f8bbcda7c2c1463eba931890366dabdb
+msgid "`arx_lift.friction_vel_eps_mps`"
+msgstr "`arx_lift.friction_vel_eps_mps`"
+

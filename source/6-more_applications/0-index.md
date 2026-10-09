@@ -6,9 +6,11 @@ It does not repeat the beginner day-by-day path. Task recipes stay under [How-To
 
 Whatever role you follow, carefully learning how to use the **motion-control / robot control stack** (运控系统) helps later work:
 
+- [Terminology](../3-concepts/8-terminology.md) — 驱动层 ↔ Hardware Interface; 分体 / 全身; 夹爪 / 灵巧手
 - [ros2_control in This Stack](../3-concepts/1-ros2_control_here.md) — `hardware:=` and how this stack loads controllers
 - [FSM and Topics](../3-concepts/4-fsm_and_topics.md) — `/fsm_command` is `std_msgs/Int32`
 - [Controllers](../4-reference/controllers/0-index.md) — Basic Joint Controller, OCS2 Arm Controller, OCS2 WBC Controller; 分体 / 全身
+- [Hardware Interfaces](../4-reference/hardware/0-index.md) — ros2_control plugins (Chinese: 驱动层)
 - [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)
 
 Hands-on: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).

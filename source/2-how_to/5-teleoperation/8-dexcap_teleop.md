@@ -120,4 +120,4 @@ Before each session:
 ## Related
 
 - [teleop-joint-mapper reference](../../4-reference/teleop/4-teleop_joint_mapper.md)
-- [wuji-ros2-control reference](../../4-reference/hardware/2-private_hi.md) (Hand hardware)
+- [wuji-ros2-control](../../4-reference/teleop/7-wuji_hand_hi.md) (Hand hardware) — private names: [Hardware Interfaces](../../4-reference/hardware/0-index.md)

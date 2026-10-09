@@ -45,8 +45,8 @@ How the arm **complies** with those poses depends on the robot. Two different pa
 
 | Path | Robots | Who provides compliance | What the controller commands |
 |------|--------|-------------------------|------------------------------|
-| **MIT-mode force control** | **HighTorque** (高擎) **Panthera HT**; **ARX** (方舟无限) arms | Controller + driver layer in MIT / `full_control` (pos + vel + effort; stiffness on the HI) | Force-capable / MIX when the interfaces allow it |
-| **Vendor joint impedance** | **Tianji** (天玑); **Rokae** (珞石) | Vendor stack, exposed on the driver layer | **Position only** |
+| **MIT-mode force control** | **HighTorque** (高擎) **Panthera HT**; **ARX** (方舟无限) arms | Controller + hardware interface in MIT / `full_control` (pos + vel + effort; stiffness on the HI) | Force-capable / MIX when the interfaces allow it |
+| **Vendor joint impedance** | **Tianji** (天玑); **Rokae** (珞石) | Vendor stack, exposed on the hardware interface | **Position only** |
 
 **Payload identification (负载辨识)** belongs to the **vendor-impedance** path (Tianji / Rokae), not the MIT path. Details below.
 
@@ -54,7 +54,7 @@ How the arm **complies** with those poses depends on the robot. Two different pa
 
 ### MIT-mode force control (Panthera HT / ARX)
 
-Use this path on **Panthera HT** and **ARX** arms. The driver layer must run a **force-capable** MIT configuration; the controller then tracks VR poses with that mix of position / velocity / effort.
+Use this path on **Panthera HT** and **ARX** arms. The hardware interface must run a **force-capable** MIT configuration; the controller then tracks VR poses with that mix of position / velocity / effort.
 
 **HighTorque Panthera HT** — [ht-ros2-control README](https://github.com/fiveages-sim/ht-ros2-control/blob/main/README.md):
 
@@ -83,7 +83,7 @@ This MIT path is **not** isomorphic teleop. Master–slave `mode:=mit` / `effort
 
 ### Vendor joint impedance (Tianji / Rokae)
 
-Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller only sends **joint position**. Joint impedance / compliance is the **vendor** feature, switched on the driver layer.
+Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller only sends **joint position**. Joint impedance / compliance is the **vendor** feature, switched on the hardware interface.
 
 **Tianji** — [marvin-ros2-control README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md):
 
@@ -92,7 +92,7 @@ Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller only
 - Joint impedance gains: `joint_k_gains` / `joint_d_gains` (7 values). Cartesian: `cart_k_gains` / `cart_d_gains`
 - Example: `ros2 param set /<hardware_node> ctrl_mode JOINT_IMPEDANCE`
 
-**Rokae** — same pattern (position commands; compliance in the vendor HI). Parameter names are in the private `rokae-ros2-control` README after access. Overview: [Private driver layer](../../4-reference/hardware/2-private_hi.md).
+**Rokae** — same pattern (position commands; compliance in the vendor HI). Parameter names are in the private `rokae-ros2-control` README after access. Overview: [Hardware Interfaces](../../4-reference/hardware/0-index.md).
 
 Internal FA robots that use Tianji / Rokae arms live in [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md). Extra robot IDs and launch flags are in that workspace README after access.
 
@@ -280,5 +280,5 @@ FULL_BODY may warn that `base_footprint` does not exist (`lookupTransform` targe
 - [Isomorphic Teleop](7-isomorphic_teleop.md) for master–slave joint following (Panthera HT `mode:=mit` / `effort` — not the VR MIT path above)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md) for mode control
 - [ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md) — `force_gains` and MIX detection
-- [marvin-ros2-control](../../4-reference/hardware/1-public_hi.md) — Tianji position + `JOINT_IMPEDANCE`
+- [marvin-ros2-control](../../4-reference/hardware/6-marvin.md) — Tianji position + `JOINT_IMPEDANCE`
 - [vr_pose_publisher](../../4-reference/teleop/1-vr_pose_publisher.md) — published `/teleop/*` topics
