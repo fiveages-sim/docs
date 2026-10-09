@@ -1,6 +1,6 @@
 # Hardware Interfaces Reference
 
-This section documents the ros2_control hardware interface plugins.
+This section documents the ros2_control **硬件接口** plugins (the 驱动层 / **硬件驱动** behind CAN, TCP, serial, and simulation).
 
 ## Overview
 
@@ -25,7 +25,7 @@ CAN / TCP / Serial / Simulation
 4-ros2_parameters
 ```
 
-URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware interface parameters](4-ros2_parameters.md).
+URDF / xacro `<param>` tables (including `topic_based_ros2_control`): [Hardware Interface parameters](4-ros2_parameters.md).
 
 ## Quick Reference
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 04:26+0000\n"
+"POT-Creation-Date: 2026-10-09 11:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,51 +20,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/0-overview/0-index.md:1 295cce2fd6e547538ecb111f86bb5336
+#: ../../source/0-overview/0-index.md:1 d4f7684f426f4a4f9b4af9094fee313f
 msgid "Introduction"
 msgstr "导读"
 
-#: ../../source/0-overview/0-index.md:3 76687c06811449cfa37ba49ddeee5980
+#: ../../source/0-overview/0-index.md:3 f1b56064fd434857978234f13d31ef51
 msgid ""
 "This section introduces the FiveAges Sim ecosystem — what it is, how its "
 "components fit together, and how to navigate the documentation."
 msgstr "本节介绍 FiveAges Sim 生态系统——它是什么、各组件如何协同，以及如何浏览文档。"
 
-#: ../../source/0-overview/0-index.md:5 51fdc09c42394dfd89768906218ba8f6
+#: ../../source/0-overview/0-index.md:5 c48168384d0d4833af471193c516758f
 msgid "What is FiveAges Sim?"
 msgstr "什么是 FiveAges Sim？"
 
-#: ../../source/0-overview/0-index.md:7 79ba6d7ba50b439a882b9a0bbc31e3ef
+#: ../../source/0-overview/0-index.md:7 c38e3002a4534a47bbf8d75c5bd77814
 msgid "FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:"
 msgstr "FiveAges Sim 是一组 ROS 2 软件包与工作空间，可用于："
 
-#: ../../source/0-overview/0-index.md:9 cba1302ae1e54322b8f0da3f4d364d04
+#: ../../source/0-overview/0-index.md:9 ae9f6f0822e04e36a07add6a3fcf347b
 msgid "**Robot Description** — URDF/xacro models with ros2_control integration"
 msgstr "**机器人描述** — 集成 ros2_control 的 URDF/xacro 模型"
 
-#: ../../source/0-overview/0-index.md:10 813bc191482240a3a94f7f5220b013c6
-msgid "**Hardware Control** — Interface plugins for real robot hardware"
-msgstr "**硬件控制** — 对接真实机器人硬件的接口插件"
+#: ../../source/0-overview/0-index.md:10 b65ef888b94e4b8b88b3903510340c05
+msgid "**Hardware Control** — 硬件接口 plugins for real robot hardware (驱动层 / 硬件驱动)"
+msgstr "**硬件控制** — 对接真机的**硬件接口**插件（驱动层 / 硬件驱动）"
 
-#: ../../source/0-overview/0-index.md:11 226993ca69d94d239100af7108972f73
-msgid "**MPC Controllers** — OCS2-based motion planning and control"
-msgstr "**MPC 控制器** — 基于 OCS2 的运动规划与控制"
+#: ../../source/0-overview/0-index.md:11 2b8d2a801d984e4eb3cc1f8aa5c11a6e
+msgid "**MPC Controllers** — OCS2-based motion planning and control (分体控制 / 全身控制)"
+msgstr "**MPC 控制器** — 基于 OCS2 的运动规划与控制（分体控制 / 全身控制）"
 
-#: ../../source/0-overview/0-index.md:12 1ac5964de369471b8c11a1f8c79ec52b
-msgid "**Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends"
-msgstr "**仿真** — Gazebo Harmonic 与 NVIDIA Isaac Sim 后端"
+#: ../../source/0-overview/0-index.md:12 64edfd13e98c4709ae1458561ac38907
+msgid ""
+"**Simulation** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity "
+"+ the same ROS 2 运控 as the real robot, plus simulation ground truth)"
+msgstr ""
+"**仿真** — Gazebo Harmonic，以及 **FaSim**（Isaac Sim 高保真 + 与真机同一套 ROS 2 "
+"运控，外加仿真真值）"
 
-#: ../../source/0-overview/0-index.md:13 0504e185572c45d4a3ce282baf899d1d
+#: ../../source/0-overview/0-index.md:13 48a7095d49ec409ea3018a143859fee7
 msgid "**Teleoperation** — VR, isomorphic teleop, and glove-based control"
 msgstr "**遥操作** — VR、同构遥操作以及基于手套的控制"
 
-#: ../../source/0-overview/0-index.md:14 7183227d26b146b89a5b38a2662e504a
+#: ../../source/0-overview/0-index.md:14 48c2b7c727674a5581432a5c49256be3
 msgid ""
 "**Python Applications** — High-level APIs for data collection and "
 "autonomous tasks"
 msgstr "**Python 应用** — 用于数据采集与自主任务的高层 API"
 
-#: ../../source/0-overview/0-index.md:15 ac8b8befb29144b59d863feed2a1bc6c
+#: ../../source/0-overview/0-index.md:15 7dc12cd1ac304c749c19a3a989c1e1bb
 msgid ""
 "**Synthetic data** — Isaac Sim USD → interface → composer → LeRobot "
 "record/export ([Synthetic Data](../2-how_to/7-synthetic_data/0-index.md))"
@@ -72,11 +76,11 @@ msgstr ""
 "**合成数据** — Isaac Sim USD → 接口 → composer → LeRobot "
 "录制/导出（[合成数据](../2-how_to/7-synthetic_data/0-index.md)）"
 
-#: ../../source/0-overview/0-index.md:17 4af8a3e95d1a495a99f6449bb6f6806f
+#: ../../source/0-overview/0-index.md:17 739a81e50df947b1b2fe13a24f42359c
 msgid "Terminology"
 msgstr "术语"
 
-#: ../../source/0-overview/0-index.md:20 7d5234062f89424caa18db0510d53862
+#: ../../source/0-overview/0-index.md:20 e56f0e4de31c4026844a1fc60b45a834
 msgid ""
 "In this documentation, **humanoid** means a **wheeled-arm humanoid** "
 "(mobile base + arms, e.g. FiveAges W2/W2R). It does **not** mean a "
@@ -85,75 +89,75 @@ msgstr ""
 "在本文档中，**humanoid / 人形机器人** 指 **轮臂人形**（移动底盘 + 双臂，例如 FiveAges "
 "W2/W2R），**不是** 双足或足式人形。"
 
-#: ../../source/0-overview/0-index.md:23 31d040c725eb44d6baac22afba02cb52
+#: ../../source/0-overview/0-index.md:23 f12ce8c5218641b9a4a121a646ada299
 msgid "Public vs Internal"
 msgstr "公开版与内部版"
 
-#: ../../source/0-overview/0-index.md:25 2d03069a340c48ddb94de82c34bd7282
+#: ../../source/0-overview/0-index.md:25 ed75f8e26e764995bdc9eacbba68776d
 msgid "The ecosystem has two entry points:"
 msgstr "该生态系统有两个入口："
 
-#: ../../source/0-overview/0-index.md:17 a56093d919964f11a2d0da9163a6b69c
+#: ../../source/0-overview/0-index.md:17 16b4d45ad586473e8f68cd0a9d96dca9
 msgid "Path"
 msgstr "路径"
 
-#: ../../source/0-overview/0-index.md:17 ffccabc3a4914ff286cbcb719b9c53c3
+#: ../../source/0-overview/0-index.md:17 6f7d2c45c5fa4982bb81bff6c00b5fe1
 msgid "Workspace"
 msgstr "工作空间"
 
-#: ../../source/0-overview/0-index.md:17 deb80a6e5403402da70ca75b28bb3e99
+#: ../../source/0-overview/0-index.md:17 06b7e0aff50c4b8f8901a0b9e08c732b
 msgid "Audience"
 msgstr "目标用户"
 
-#: ../../source/0-overview/0-index.md:17 91ed6b85f06a4a50b5df36f07f90dac8
+#: ../../source/0-overview/0-index.md:17 6b6ae817492c4494b90cae540781ec22
 msgid "Robots"
 msgstr "机器人"
 
-#: ../../source/0-overview/0-index.md:17 0b5462c999ff48878502fbf5d96957a2
+#: ../../source/0-overview/0-index.md:17 19000cc2a0524500beb99aa217e0bfa7
 msgid "**Public**"
 msgstr "**公开**"
 
-#: ../../source/0-overview/0-index.md:17 23bef4c3f4a34fd8aa1a154902ff3a2b
+#: ../../source/0-overview/0-index.md:17 1bdab6620293405b8edc6f0b397bb32a
 msgid "[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws)"
 msgstr "[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws)"
 
-#: ../../source/0-overview/0-index.md:17 08168393884646f1983889cb1393fb38
+#: ../../source/0-overview/0-index.md:17 40d3565183dd4936bddb9dde833ee956
 msgid "Open source users"
 msgstr "开源用户"
 
-#: ../../source/0-overview/0-index.md:17 b06721561789413d8ccadf544b73de3e
+#: ../../source/0-overview/0-index.md:17 b1102d02d8ab4e0098af21dfe3a39f09
 msgid ""
 "Dobot CR5, ARX Lift 2S, Acone (dual-arm), Galbot, HighTorque Panthera HT,"
 " etc."
 msgstr "越疆 CR5、方舟无限 Lift 2S、Acone（双臂）、银河通用、高擎 Panthera HT 等"
 
-#: ../../source/0-overview/0-index.md:17 30cb3a6fbd2a46e48fd50551a41b38e6
+#: ../../source/0-overview/0-index.md:17 381a3613b2c64aa8b6489065e3a1b664
 msgid "**Internal**"
 msgstr "**内部**"
 
-#: ../../source/0-overview/0-index.md:17 4b646ae0ce17425d99735c397c9d3b4d
+#: ../../source/0-overview/0-index.md:17 9fd0decfcd6b44fb95397d31ab1109f3
 msgid "fa-deploy-ws"
 msgstr "fa-deploy-ws"
 
-#: ../../source/0-overview/0-index.md:17 4c8232f9fefe4c6c82feba7a68707290
+#: ../../source/0-overview/0-index.md:17 0917ea7e320648cd9a55b456f1cf792d
 msgid "FiveAges team"
 msgstr "FiveAges 团队"
 
-#: ../../source/0-overview/0-index.md:17 24cb3c1096f0494da73d78a7b85d6676
+#: ../../source/0-overview/0-index.md:17 e5e7b00ed0ad47f8ac33554fe0e46fd4
 msgid "W2, W2R, S2, S2R, dual-arm CCS"
 msgstr "W2、W2R、S2、S2R、双臂 CCS"
 
-#: ../../source/0-overview/0-index.md:32 ce88d2645b62408fa8291efaf732851a
+#: ../../source/0-overview/0-index.md:32 1ad408f2120449f984a7d1906a6feb58
 msgid ""
 "**If you're new**, start with the public path. It uses only public "
 "submodules and can run demos without special access."
 msgstr "**如果你是新用户**，请从公开路径开始。该路径仅使用公开子模块，无需特殊权限即可运行演示。"
 
-#: ../../source/0-overview/0-index.md:34 fe3f8fa47fd94fd99dc6942dedc61023
+#: ../../source/0-overview/0-index.md:34 83450ebcea8f4d6c95d42fb02395a5c0
 msgid "Real Hardware on Public Path"
 msgstr "公开路径上的真实硬件"
 
-#: ../../source/0-overview/0-index.md:37 ac6aa3e0dcea4b5fbe4c63038c3fb4ba
+#: ../../source/0-overview/0-index.md:37 445401b71ff84f40beeaed4c595ce7ef
 msgid ""
 "**ARX Lift 2S** (full-body mobile manipulator, including chassis) and "
 "**HighTorque Panthera HT** (dual-arm manipulator) have dedicated `open-"
@@ -169,33 +173,33 @@ msgstr ""
 "Panthera "
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)。"
 
-#: ../../source/0-overview/0-index.md:40 8a7f82ee7d1f438c9574f0e64d6d012f
+#: ../../source/0-overview/0-index.md:40 be2a2d4305c64f9687c071557437f4db
 msgid "Documentation Map"
 msgstr "文档导航"
 
-#: ../../source/0-overview/0-index.md:42 7338e6cc1f17422c97272866b7c5642c
+#: ../../source/0-overview/0-index.md:42 72566a27b3c64dc0b046c95d0509e1ca
 msgid ""
 "**[Architecture](1-architecture.md)** — Layer diagram and dependency "
 "relationships"
 msgstr "**[架构](1-architecture.md)** — 层级图与依赖关系"
 
-#: ../../source/0-overview/0-index.md:43 15a3bf6bd2a84f9290a00346e36c5f0f
+#: ../../source/0-overview/0-index.md:43 5cb38934b0de4e7c9cd26facad5fa4d1
 msgid "**[Learning Path](2-learning_path.md)** — Day-by-day onboarding guide"
 msgstr "**[学习路径](2-learning_path.md)** — 按天推进的入门指南"
 
-#: ../../source/0-overview/0-index.md:44 8f79a8de64b14f589f27dd59969ff164
+#: ../../source/0-overview/0-index.md:44 15b0adedcdd248e2ae23184633d1a5bc
 msgid ""
 "**[Repository Map](3-repo_map.md)** — Complete list of repositories by "
 "layer"
 msgstr "**[仓库地图](3-repo_map.md)** — 按层级列出的完整仓库清单"
 
-#: ../../source/0-overview/0-index.md:45 a2ed41f419ff47fb8f872cc0f016aa43
+#: ../../source/0-overview/0-index.md:45 eeee6619eca4480192d98c8b614adc5d
 msgid ""
 "**[Public vs Internal](4-public_vs_internal.md)** — Detailed comparison "
 "of the two paths"
 msgstr "**[公开版与内部版](4-public_vs_internal.md)** — 两条路径的详细对比"
 
-#: ../../source/0-overview/0-index.md:46 1dda68afbc5b41cfa0f859719af1b344
+#: ../../source/0-overview/0-index.md:46 69b2932554bb4fc3926e506df7e2d330
 msgid ""
 "**[Synthetic Data](../2-how_to/7-synthetic_data/0-index.md)** — Isaac "
 "datagen pipeline (USD → orchestration → LeRobot export)"
@@ -203,21 +207,21 @@ msgstr ""
 "**[合成数据](../2-how_to/7-synthetic_data/0-index.md)** — Isaac 数据采集流水线（USD →"
 " 编排 → LeRobot 导出）"
 
-#: ../../source/0-overview/0-index.md:48 356e9e0dcc60419e84fbca65a9d2dd53
+#: ../../source/0-overview/0-index.md:48 806e84c13bef452d928dc9fa70a0c752
 msgid "Next Steps"
 msgstr "下一步"
 
-#: ../../source/0-overview/0-index.md:50 9f0668fad896489283a6319ef935e0fe
+#: ../../source/0-overview/0-index.md:50 434a9782b1334f7f99184d67b38bbb77
 msgid ""
 "Review the [Architecture](1-architecture.md) to understand component "
 "relationships"
 msgstr "阅读[架构](1-architecture.md)，了解各组件之间的关系"
 
-#: ../../source/0-overview/0-index.md:51 30df52e48b0a4d89bb59554dd151b280
+#: ../../source/0-overview/0-index.md:51 d49eec874fb04471b80c00e5e1cca449
 msgid "Follow the [Learning Path](2-learning_path.md) for structured onboarding"
 msgstr "跟随[学习路径](2-learning_path.md)进行结构化入门"
 
-#: ../../source/0-overview/0-index.md:52 5ef5da6bdd024aa889d809c960b40132
+#: ../../source/0-overview/0-index.md:52 cbb5e848ee344931abef3c19a37ea99b
 msgid ""
 "[Install Environment](../1-getting_started/2-install_environment.md), "
 "then [Quick Demo](../1-getting_started/1-quick_demo_public.md)"
@@ -244,4 +248,7 @@ msgstr ""
 #~ "Demo](../1-getting_started/1-quick_demo_public.md) to see"
 #~ " a robot move"
 #~ msgstr "前往[快速演示](../1-getting_started/1-quick_demo_public.md)查看机器人运动"
+
+#~ msgid "**Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends"
+#~ msgstr "**仿真** — Gazebo Harmonic 与 NVIDIA Isaac Sim 后端"
 

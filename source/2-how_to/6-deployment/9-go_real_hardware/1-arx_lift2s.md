@@ -77,7 +77,7 @@ Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and `export RM
 ## Related
 
 - [Go to Real Hardware](0-index.md)
-- [Use basic_joint_controller](../../4-controllers/11-basic_joint.md)
+- [Use Basic Joint Controller](../../4-controllers/11-basic_joint.md)
 - [分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)
 - [HighTorque Panthera HT](2-panthera_ht.md)
 - [open-deploy-ws setup](../../../1-getting_started/3-open_deploy_ws.md)

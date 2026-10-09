@@ -7,9 +7,9 @@ This section introduces the FiveAges Sim ecosystem — what it is, how its compo
 FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 
 - **Robot Description** — URDF/xacro models with ros2_control integration
-- **Hardware Control** — Interface plugins for real robot hardware
-- **MPC Controllers** — OCS2-based motion planning and control
-- **Simulation** — Gazebo Harmonic and NVIDIA Isaac Sim backends
+- **Hardware Control** — 硬件接口 plugins for real robot hardware (驱动层 / 硬件驱动)
+- **MPC Controllers** — OCS2-based motion planning and control (分体控制 / 全身控制)
+- **Simulation** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity + the same ROS 2 运控 as the real robot, plus simulation ground truth)
 - **Teleoperation** — VR, isomorphic teleop, and glove-based control
 - **Python Applications** — High-level APIs for data collection and autonomous tasks
 - **Synthetic data** — Isaac Sim USD → interface → composer → LeRobot record/export ([Synthetic Data](../2-how_to/7-synthetic_data/0-index.md))

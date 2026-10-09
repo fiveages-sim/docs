@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 02:14+0000\n"
+"POT-Creation-Date: 2026-10-09 11:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:1
-#: 0df97bafce514ef3a3b1d695d58ab612
+#: b6187ee9333a4a12b6214b739f1ab639
 msgid "ARX Lift 2S"
 msgstr "方舟无限 Lift 2S"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:3
-#: dfa12242c6744f5a89d36e51b0d55ca6
+#: aae1a69d76c34ae4b4c8d9bbf5673de2
 msgid ""
 "**ARX** (方舟无限) is the brand. **Lift 2S** is that brand’s full-body "
 "**mobile manipulator**: arms **plus** lift axis and **mobile base / "
@@ -36,7 +36,7 @@ msgstr ""
 "**移动底盘**，不是仅机械臂的机器人。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:5
-#: 25484b4e9ecb407a867f477453b33256
+#: 2feb622ac1ae48a6ba5f44ff6a0a2d4f
 msgid ""
 "**Acone** / **AC One** is **dual-arm**. It is not the Lift 2S platform. "
 "The `arx-lift2s` workspace can launch Acone from `quick_start` for co-"
@@ -46,17 +46,17 @@ msgstr ""
 "`quick_start` 中启动 Acone 做联调；该分支的产品重点是 Lift 2S。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:7
-#: 4c8ab67a6bdd43aa8de6b1acb3d79f9e
+#: 6905a5ca9e434f2084118eb913add138
 msgid "Source of truth"
 msgstr "事实来源"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:10
-#: a4c31c6f28874217ab8999efe925e84c
+#: 572d72d6babb4dbea41d2fa928e836dd
 msgid "Follow the branch README. Launch flags are those listed there."
 msgstr "遵循分支 README。launch 参数以其中列出的为准。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:12
-#: 86353700725a43e9ad18d1921dc7162a
+#: 89d4d42bfb464afcaf9a7da74c8137bf
 msgid ""
 "Chinese: [open-deploy-ws `arx-lift2s` README](https://github.com"
 "/fiveages-sim/open-deploy-ws/blob/arx-lift2s/README.md)"
@@ -65,7 +65,7 @@ msgstr ""
 "/open-deploy-ws/blob/arx-lift2s/README.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:13
-#: 1a426fa140974c01891b3c1e2ee93b32
+#: afcc6713fb414718b22e98261828e532
 msgid ""
 "English: [README.EN.md](https://github.com/fiveages-sim/open-deploy-"
 "ws/blob/arx-lift2s/README.EN.md)"
@@ -74,22 +74,22 @@ msgstr ""
 "/arx-lift2s/README.EN.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:16
-#: 268e715ba11c4a13a5e2461e25497caf
+#: 25030fcef5194d428132b75506f1ca09
 msgid "Clone and init"
 msgstr "克隆与初始化"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:18
-#: 6a72749c2dc748589ea452bdb77895b4
+#: 2e9dc2cb6aa84bc38c4d61d29ee6b099
 msgid "Directory name `lift2s-ws` is the example. The workspace repo is public."
 msgstr "目录名 `lift2s-ws` 为示例。工作空间仓库本身是公开的。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:20
-#: a5a2f7ddea54481ebfa83bd0c6573654
+#: 8e45e100135f4f179e3a4d09fabe944c
 msgid "**Public HTTPS** (no SSH key for the top-level clone):"
 msgstr "**公开 HTTPS**（顶层克隆不需要 SSH 密钥）："
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:22
-#: 88a78ed149184ade86f20b162451b1c4
+#: be54dbb4ed0f4660a64a44fd1716b846
 msgid ""
 "cd ~\n"
 "git clone -b arx-lift2s https://github.com/fiveages-sim/open-deploy-"
@@ -102,22 +102,22 @@ msgstr ""
 "cd ~/lift2s-ws"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:28
-#: f6ed604040464ab8aaf01601b4893125
+#: 9e9a8bc41831442fbdaf9182672e2632
 msgid ""
 "Then follow the branch README: `./init_repo.sh`, or a field zip plus "
 "`./release.sh --install` then `./quick_start.sh`. Descriptions stay as "
 "source; controllers / hardware interface come from `.deb`."
 msgstr ""
-"随后按分支 README：`./init_repo.sh`，或现场 zip 加上 `./release.sh --install` "
-"再 `./quick_start.sh`。描述保持源码；控制器 / 硬件接口来自 `.deb`。"
+"随后按分支 README：`./init_repo.sh`，或现场 zip 加上 `./release.sh --install` 再 "
+"`./quick_start.sh`。描述保持源码；控制器 / 硬件接口来自 `.deb`。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:30
-#: 682d3558fed64fc28691e0c033e0350c
+#: 1d39852a521543e58445c4dcf518f431
 msgid "**Developer SSH** (nested private modules when you have keys):"
 msgstr "**开发者 SSH**（已有密钥、需要嵌套私有模块时）："
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:32
-#: 88a78ed149184ade86f20b162451b1c4
+#: 0713d0e945fc4af2944983ef7d6b3f95
 msgid ""
 "cd ~\n"
 "git clone -b arx-lift2s git@github.com:fiveages-sim/open-deploy-ws.git "
@@ -132,19 +132,19 @@ msgstr ""
 "./init_repo.sh"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:39
-#: 3a3afd178d024e349df4fea31c5ce473
+#: 11f9bd48dd11404cbfcd421f9b82c368
 msgid "Build and launch (scripts first)"
 msgstr "编译与启动（脚本优先）"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:41
-#: a4c00a1c17dc448b913f9d8dc757efb2
+#: 65aa49e739d04d56bdea41daba521a19
 msgid ""
 "Primary path is `./quick_start.sh` (scenario build + Lift2S split/full "
 "body, simulation or real):"
 msgstr "主路径是 `./quick_start.sh`（按场景编译 + Lift2S 分身/全身，仿真或真机）："
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:43
-#: 47b7a2e8530b4d84a16696ba32225ee6
+#: d2ebdecde2654fe09efbad7fca566b5a
 msgid ""
 "cd ~/lift2s-ws\n"
 "./quick_start.sh"
@@ -153,19 +153,19 @@ msgstr ""
 "./quick_start.sh"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:48
-#: 0112c0b837ce41699763e32cb8868de3
+#: df996edb568c490db8d487a4185d3f2c
 msgid "README menu:"
 msgstr "README 菜单："
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:50
-#: d4a27b3ea74e4812ae136df0fef50cc1
+#: bad9efe2a5134affbc5ce4831386f99c
 msgid ""
 "**Build** — simulation packages, or real-hardware packages (includes "
 "`arx_ros2_control`)"
 msgstr "**编译** — 仿真软件包，或真机软件包（含 `arx_ros2_control`）"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:51
-#: bc6dc90ae5314205b2b3f92d31387752
+#: fd51a74471784df38c7e6ca8b8881854
 msgid ""
 "**Launch** — choose **Lift2S**, then **split body** (分体控制) or **full "
 "body** (全身控制), then simulation (`mock_components`) or **real hardware**. "
@@ -175,7 +175,7 @@ msgstr ""
 "**真机**。见 [分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:53
-#: f0350c63aab445ba8c60b4f5100f973e
+#: ecbd3c6816424304833d10c27b0b6aa4
 msgid ""
 "CAN (README): left/right arms `can1` / `can3`; no network IP. Lift axis "
 "defaults to `hybrid` (change to `soft_p` in `quick_start`)."
@@ -184,7 +184,7 @@ msgstr ""
 "中改为 `soft_p`）。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:55
-#: 20c6645364304293881286a5e717dd6e
+#: 27791fb987ba4e958e66a5bcef990da1
 msgid ""
 "X5 / R5 / **ACone** / Lift / X7S in the same menu are `robot-"
 "descriptions-arx` models for **co-debug**. Pick **ACone** only when you "
@@ -194,22 +194,22 @@ msgstr ""
 "arx` 模型。只有在需要 **机械臂**、而不是完整 Lift 2S 底盘时才选 **ACone**。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:57
-#: 9a5bb530e05c4f3abc034678858b73db
+#: e5749543b6d749e6bb0a697cae571fa2
 msgid "Optional README launch lines"
 msgstr "README 中的可选 launch 行"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:59
-#: d83a6f03fb1340e4bb882768606543fd
+#: d2685a363ed84ee59d26bf2ebea9883f
 msgid ""
 "Prefer the script. These are the README’s optional equivalents for "
 "**Lift2S**. Omit `hardware:=` for simulation — the launch default is "
 "`mock_components`. Pass `hardware:=real` on the robot."
 msgstr ""
-"优先用脚本。以下是 README 中 **Lift2S** 的可选等价命令。仿真省略 `hardware:=` — "
-"launch 默认是 `mock_components`。真机再传 `hardware:=real`。"
+"优先用脚本。以下是 README 中 **Lift2S** 的可选等价命令。仿真省略 `hardware:=` — launch 默认是 "
+"`mock_components`。真机再传 `hardware:=real`。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:61
-#: 08328129f2934023939eb83c76808fd0
+#: cb5a152311c6432cb6a6873c1d24fa04
 msgid ""
 "source ~/lift2s-ws/install/setup.bash\n"
 "# Visualization\n"
@@ -236,7 +236,7 @@ msgstr ""
 "hardware:=real"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:73
-#: 26ef76b14c9d472e8ec8acb3f5eca15d
+#: ee9e6124808e4af0ad156529f8096508
 msgid ""
 "Those OCS2 launches also take `type` / `left_type` / `right_type` from "
 "[robot_common_launch](../../../4-reference/descriptions/2-common.md) "
@@ -252,7 +252,7 @@ msgstr ""
 "`manipulator.launch.py` 使用同一套一等参数。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:75
-#: 109589a638df4b5aad6883feecc4dd23
+#: 306f2a305ab94297a206c37ee4e16321
 msgid ""
 "Zenoh: README asks for `sudo apt install ros-jazzy-rmw-zenoh-cpp` and "
 "`export RMW_IMPLEMENTATION=rmw_zenoh_cpp` on the deploy host."
@@ -261,32 +261,32 @@ msgstr ""
 "`export RMW_IMPLEMENTATION=rmw_zenoh_cpp`。"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:77
-#: 9c0922febb6049389cb0d02cc437da16
+#: 7428deee57354799801c88d4e9263bdb
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:79
-#: 641b533f37c6497f8dac2012c2f0fc21
+#: c8c66f48f7ae489fbbe49c652c62c297
 msgid "[Go to Real Hardware](0-index.md)"
 msgstr "[部署到真实机器人](0-index.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:80
-#: 4fdd0879588b4f8d932dc05578e8e8c8
-msgid "[Use basic_joint_controller](../../4-controllers/11-basic_joint.md)"
-msgstr "[使用 basic_joint_controller](../../4-controllers/11-basic_joint.md)"
+#: c6f1921efb6e49d0825581bd27d686d6
+msgid "[Use Basic Joint Controller](../../4-controllers/11-basic_joint.md)"
+msgstr "[使用 Basic Joint Controller](../../4-controllers/11-basic_joint.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:81
-#: 08debb5abded4e17b4de05cb4bd0dd1d
+#: ca4d3b337d24487da257af2686a1419d
 msgid "[分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:82
-#: a769b02cf8404a27810aa8e90517d07f
+#: 63c24eb04f264385a06f4ca1270c04f7
 msgid "[HighTorque Panthera HT](2-panthera_ht.md)"
 msgstr "[高擎 Panthera HT](2-panthera_ht.md)"
 
 #: ../../source/2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md:83
-#: b407f18e4f124cb58e97e027b9f3cd1f
+#: 52c426b3d90341019ceef84904a74cfb
 msgid "[open-deploy-ws setup](../../../1-getting_started/3-open_deploy_ws.md)"
 msgstr "[open-deploy-ws 设置](../../../1-getting_started/3-open_deploy_ws.md)"
 

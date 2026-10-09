@@ -90,7 +90,9 @@ sudo apt install ros-jazzy-gz-*
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 ```
 
-### Isaac Sim
+### Isaac Sim (FaSim)
+
+**FaSim** pairs NVIDIA Isaac Sim high-fidelity simulation with the same ROS 2 运控 stack as the real robot, so motion matches hardware while the sim supplies ground truth. Assets: [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac) (one-click USD + scene pull), [robot_usds](https://github.com/fiveages-sim/robot_usds).
 
 ```{admonition} FaSim-Isaac scripts
 :class: warning
@@ -116,7 +118,7 @@ Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM
 
 **Primary sources:** [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac), [robot_usds](https://github.com/fiveages-sim/robot_usds)
 
-**Outcome:** Physics-based simulation with Gazebo or Isaac Sim.
+**Outcome:** Physics-based simulation with Gazebo, or FaSim (Isaac + ROS 2 运控, matching real-robot motion plus ground truth).
 
 ## Day 4: Python Interface
 

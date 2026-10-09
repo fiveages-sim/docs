@@ -84,7 +84,7 @@ Open the scene USD in Isaac. There is no `./run.sh --env`.
 
 ## Hardware Interface
 
-The `hardware:=isaac` parameter uses the topic-based hardware interface that bridges Isaac Sim physics to ROS 2 control. Plugin `<param>` names (`joint_commands_topic`, `initialize_commands_from_state`, …): [Hardware interface parameters](../../4-reference/hardware/4-ros2_parameters.md).
+The `hardware:=isaac` parameter uses the topic-based 硬件接口 that bridges Isaac Sim physics to ROS 2 control. Plugin `<param>` names (`joint_commands_topic`, `initialize_commands_from_state`, …): [Hardware Interface parameters](../../4-reference/hardware/4-ros2_parameters.md).
 
 ## Verification
 

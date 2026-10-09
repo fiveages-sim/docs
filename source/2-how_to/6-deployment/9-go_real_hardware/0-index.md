@@ -108,7 +108,7 @@ ip addr show eth0
 Use the **branch README** / `./quick_start.sh`. There is no documented `<robot>_bringup hardware_test.launch.py` or `/enable_motors` service.
 
 - Lift2S: **split body** or **full body** — [ARX Lift 2S](1-arx_lift2s.md), [分体控制 vs 全身控制](../../../3-concepts/7-split_vs_wbc.md)
-- Joint FSM (Home / Hold / MoveJ): [Use basic_joint_controller](../../4-controllers/11-basic_joint.md) — `/fsm_command` is `std_msgs/Int32`; MoveJ targets are `/{controller}/target_joint_position` (`Float64MultiArray`), not `/target_joint_positions` `JointState`
+- Joint FSM (HOME / HOLD / MOVEJ): [Use Basic Joint Controller](../../4-controllers/11-basic_joint.md) — `/fsm_command` is `std_msgs/Int32` (mixed stacks: `3` = OCS2, MOVEJ = `4`); MoveJ targets are `/{controller}/target_joint_position` (`Float64MultiArray`), not `/target_joint_positions` `JointState`
 
 ### Gradual testing
 

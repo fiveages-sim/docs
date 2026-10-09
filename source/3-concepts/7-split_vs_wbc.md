@@ -13,9 +13,9 @@ Two real launch paths in [ocs2_arm_controller](https://github.com/fiveages-sim/a
 
 ## Packages
 
-- **basic_joint_controller** — joint FSM Home / Hold / MoveJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
-- **ocs2_arm_controller** — arm MPC FSM HOME / OCS2 / HOLD (package README).
-- **ocs2_wbc_controller** — private submodule; whole-body MPC. States and topics are in that package README after access.
+- **Basic Joint Controller** (`basic_joint_controller`) — joint FSM HOME / HOLD / MOVEJ; `/fsm_command` is `std_msgs/Int32`. How-to: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).
+- **OCS2 Arm Controller** (`ocs2_arm_controller`) — arm MPC FSM HOME / OCS2 / HOLD (package README).
+- **OCS2 WBC Controller** (`ocs2_wbc_controller`) — private submodule; 全身 MPC. States and topics are in that package README after access.
 
 FSM command values, Action / Service tables, and WBC Cartesian topics: [FSM and Topics](4-fsm_and_topics.md). Controllers index: [Controllers reference](../4-reference/controllers/0-index.md).
 

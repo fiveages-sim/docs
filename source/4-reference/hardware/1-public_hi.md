@@ -213,7 +213,7 @@ See repository README for configuration details.
 Product mapping documentation to be expanded.
 ```
 
-Parameter names on this page are xacro `<param>` values loaded when the hardware plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware interface parameters](4-ros2_parameters.md).
+Parameter names on this page are xacro `<param>` values loaded when the 硬件接口 plugin starts. Tables and the Isaac `topic_based_ros2_control` plugin: [Hardware Interface parameters](4-ros2_parameters.md).
 
 ## Common Operations
 

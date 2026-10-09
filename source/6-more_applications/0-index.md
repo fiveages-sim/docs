@@ -8,10 +8,10 @@ Whatever role you follow, carefully learning how to use the **motion-control / r
 
 - [ros2_control in This Stack](../3-concepts/1-ros2_control_here.md) — `hardware:=` and how this stack loads controllers
 - [FSM and Topics](../3-concepts/4-fsm_and_topics.md) — `/fsm_command` is `std_msgs/Int32`
-- [Controllers](../4-reference/controllers/0-index.md) — `basic_joint_controller`, OCS2, 分体 / 全身
+- [Controllers](../4-reference/controllers/0-index.md) — Basic Joint Controller, OCS2 Arm Controller, OCS2 WBC Controller; 分体 / 全身
 - [分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md)
 
-Hands-on: [Use basic_joint_controller](../2-how_to/4-controllers/11-basic_joint.md).
+Hands-on: [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md).
 
 ## Roles
 

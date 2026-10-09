@@ -8,7 +8,7 @@ NVIDIA Isaac Sim integration for FiveAges Sim.
 
 ## Purpose
 
-FaSim-Isaac is the one-click Isaac asset workspace: it pulls robot USD and scene submodules, can install the Isaac ROS 2 Jazzy overlay, and starts Sim.
+**FaSim** is NVIDIA Isaac Sim high-fidelity simulation plus the same ROS 2 运控 stack as the real robot: matching motion capability, plus simulation ground truth. [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac) is the one-click asset workspace: it pulls robot USD and scene submodules, can install the Isaac ROS 2 Jazzy overlay, and starts Sim.
 
 ## Prerequisites
 
