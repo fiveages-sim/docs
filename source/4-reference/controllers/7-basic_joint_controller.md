@@ -63,14 +63,14 @@ ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_head
 
 | Argument | Default | Description |
 |----------|---------|-------------|
-| `robot` | `fiveages_w1` | Robot name |
-| `type` | empty | Robot type; empty means do not pass `type` to xacro (launch file) |
+| `robot` | `fiveages_w1` | Description key (`{robot}_description`) |
+| `type` | empty | EEF / topology key (`left` / `right` / `dual`, or a symmetric EEF); empty means do not pass `type` to xacro |
 | `hardware` | `mock_components` | `gz` / `isaac` / `mock_components` |
 | `enable_head` | `true` | Head controllers |
 | `enable_body` | `true` | Body controllers |
 | `use_rviz` | `true` | Launch RViz |
 
-This demo does **not** declare `left_type` / `right_type`. Those first-class args come from `create_robot_profile_launch_arguments()` on OCS2 launches — [OCS2 Arm Controller](2-ocs2_arm_controller.md).
+This demo does **not** declare `left_type` / `right_type`. Those first-class args come from `create_robot_profile_launch_arguments()` on OCS2 launches — [OCS2 Arm Controller](2-ocs2_arm_controller.md). Launch `type` is the same EEF / topology key as [Naming Conventions](../../3-concepts/3-naming_conventions.md); `robot:=` already selected the description package.
 
 Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-install`.
 

@@ -6,15 +6,23 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 
 ## Launch arguments (`robot_common_launch`)
 
+`robot:=` selects the **description package** (`{robot}_description`). It is **not** launch `type` (EEF / topology).
+
 | Argument | Purpose | Notes |
 |----------|---------|-------|
-| `robot` | Description key | Examples used in READMEs / how-tos: `cr5` (OCS2 demo default), `arx_acone`, `arx_lift2s`, `panthera_ht` |
+| `robot` | Description key | Resolves `{robot}_description`. Examples used in READMEs / how-tos: `cr5` (OCS2 demo default), `arx_acone`, `arx_lift2s`, `panthera_ht` |
+| `chassis` | Chassis model | Profile `platform.chassis`. Empty = do not pass to xacro |
+| `arms` | Dual-arm kit | Profile `platform.arms`. Does **not** merge `config/ros2_control/{arms}.yaml`. Empty = do not pass to xacro |
+| `variant` | Platform variant (appearance, column, …) | Profile `platform.variant`. May merge `config/ros2_control/{variant}.yaml` if that file exists. Empty = do not pass to xacro |
+| `chassis_joints_movable` | Chassis joints movable | Profile `platform.chassis_joints_movable`. `true` / `false`. Empty = do not pass to xacro |
 | `type` | Symmetric **end-effector** key, **or** arm topology `left` / `right` / `dual` | Topology does **not** expand to `left_type` / `right_type` |
 | `left_type` / `right_type` | Different L/R EEF keys | Example keys: `rg75`, `ag2f90_c`, `linkerhand_o7`. **Do not pass `type:=`** with them |
 | `use_profile_eef` | Apply profile `defaults.end_effectors` (default `true`) | `false` forces CLI EEF |
 | `robot_profile` | Machine-profile YAML path | Merge: **CLI > profile > xacro defaults** |
 | `ft` / `left_ft` / `right_ft` | Force-torque | Not gated by `use_profile_eef`. Example: `kwr75_485` |
 | `hardware` | Plugin / overlay key | See below |
+
+Platform slots (`chassis` / `arms` / `variant` / `chassis_joints_movable`) resolve **CLI > profile `platform.*` > that robot’s `xacro/robot.xacro` default**. `create_platform_launch_arguments()` declares `chassis` / `arms` / `chassis_joints_movable` (humanoid / `full_body` / `split_body` / `demo`; bare manipulator launches omit that set). `variant` is declared with `create_robot_profile_launch_arguments()`.
 
 There is no `gripper:=` / `gripper_type:=`. Full merge: [robot_common_launch](../4-reference/descriptions/2-common.md).
 

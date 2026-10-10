@@ -113,7 +113,13 @@ Implementation: [`launch_arg_utils.py`](https://github.com/fiveages-sim/robot-de
 
 Profile schema (README):
 
-:::{code-block} yaml
+:::{code-block} none
+platform:
+  chassis: <key>
+  arms: <key>                 # dual-arm kit; {key}_description or a _vN suffix
+  variant: <key>
+  chassis_joints_movable: "true"|"false"
+
 defaults:
   end_effectors:
     type: <eef_key>            # symmetric; or write left / right
@@ -161,6 +167,26 @@ ros2 launch robot_common_launch humanoid.launch.py robot:=<robot_name> \
   tcp_offset_rpy:="0 0 ${PI/2}"
 :::
 
+### Platform slots (`chassis` / `arms` / `variant` / `chassis_joints_movable`)
+
+From the [`robot_common_launch` README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md) (platform slots). Resolution: **CLI > profile `platform.*` > that robot’s `xacro/robot.xacro` default**. Empty string means the arg is not passed to xacro.
+
+| Argument | Role |
+|----------|------|
+| `chassis` | Chassis model (robot-specific) |
+| `arms` | Swappable dual-arm kit. Does **not** merge `config/ros2_control/{arms}.yaml` (that overlay is `variant`) |
+| `variant` | Platform variant (appearance, column, …). May merge `config/ros2_control/{variant}.yaml` if the file exists |
+| `chassis_joints_movable` | Whether chassis joints are movable (`true` / `false`) |
+
+`create_platform_launch_arguments()` declares `chassis` / `arms` / `chassis_joints_movable` on humanoid / `component` and OCS2 `full_body` / `split_body` / `demo`. Bare manipulator launches omit that set. `variant` is declared with `create_robot_profile_launch_arguments()`.
+
+README examples:
+
+:::{code-block} bash
+ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 arms:=ar5_ccs
+ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w2r arms:=ar5_srs
+:::
+
 ### ros2_control config merge
 
 [`load_robot_config`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/robot_common_launch/common/robot_utils.py):
@@ -173,6 +199,11 @@ common.yaml
   → EEF compose (if any)
   → control.patch (profile)
 :::
+
+How `<type>.yaml` is chosen (`resolve_compose_type_key` / `_generate_progressive_type_candidates`):
+
+- **Symmetric** EEF (`type` only, or `left_type` equals `right_type`): progressive match by stripping `_` suffixes. Helper docstring example: `ccs_left_rg75` → `ccs_left` → `ccs`. First existing `{candidate}.yaml` wins; otherwise `ros2_controllers.yaml`.
+- **Asymmetric** (`left_type` ≠ `right_type`): skip progressive type YAML. Base file is `ros2_controllers.yaml`, then **EEF compose** from [`eef_control_registry.yaml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/config/eef_control_registry.yaml) plus per-side templates (`control_compose.py`).
 
 `hardware:=` values in that README: `mock_components` / `gz` / `isaac` / `real`. Overlay YAML is merged **only if the file exists**. Profile YAML `hardware:` (serial, `arm_ctrl_mode`) is a different layer and applies only when `hardware:=real`.
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-10-10 00:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:1
-#: a966c0620c644178b83b1a9b00c2eaa8
+#: cfd690900c424e8194c1f36d444168db
 msgid "Basic Joint Controller"
 msgstr "Basic Joint Controller"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:3
-#: 207f80d3060b44af94835edc91148268
+#: 077da4289d684184bdefbc1218ab77e0
 msgid ""
 "Joint-position controller (`basic_joint_controller/BasicJointController`)"
 " with a three-state FSM (HOME / HOLD / MOVEJ). Optional 灵巧手 "
@@ -33,19 +33,19 @@ msgstr ""
 "MOVEJ）的关节位置控制器（`basic_joint_controller/BasicJointController`）。可选灵巧手开关/比例控制，以及可选腰部升降/转向。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 650e7615b3f54be28234e3f4dd9565e7
+#: a2eee487ad9d4d0ca759b64e4c974c04
 msgid "Source of truth"
 msgstr "事实来源"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:8
-#: 837b3089f43e4900bdf71856992e98a2
+#: e34ac091d6304af89e3aaa3c812511a1
 msgid ""
 "Documented from the package READMEs only. Topics and command types are "
 "those listed there."
 msgstr "仅根据软件包 README 记录。话题和命令类型以其中列出的为准。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:10
-#: be119be84b3b4d2b87bd659c2d27b301
+#: b7601e60785e471cbc56f46984af2a5b
 msgid ""
 "English: [basic_joint_controller/README.md](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md)"
@@ -54,7 +54,7 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README.md)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:11
-#: fba6b47fb3ab4936abefa3d441c69ce6
+#: ea50d7a23ffb4d6a9097d35b7af8a819
 msgid ""
 "Chinese: [README_zh.md](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)"
@@ -63,7 +63,7 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/controller/basic_joint_controller/README_zh.md)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:14
-#: 182a626819234b37ab1064ae17323cba
+#: fc6bdfee0f214e59b64dac48d11228d1
 msgid ""
 "**Repository:** [fiveages-sim/arms_ros2_control](https://github.com"
 "/fiveages-sim/arms_ros2_control) (`controller/basic_joint_controller/`)"
@@ -72,7 +72,7 @@ msgstr ""
 "sim/arms_ros2_control)（`controller/basic_joint_controller/`）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:16
-#: 15dfbbcd61df4b749402b6473fdeb946
+#: 4c5fea5b9cfd42fb8aa2148a7eb9ad98
 msgid ""
 "Shared FSM types live in `libraries/arms_controller_common/` "
 "(`StateHome`, `StateHold`, `StateMoveJ`, `FSMCommandPublisher`)."
@@ -81,106 +81,106 @@ msgstr ""
 "`libraries/arms_controller_common/`（`StateHome`、`StateHold`、`StateMoveJ`、`FSMCommandPublisher`）。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:18
-#: db07e7773c894bb89c007d9d4f84e393
+#: b4b4667d096349b19ef7938a4d54427f
 msgid "FSM"
 msgstr "FSM"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:20
-#: 8cd05e33c06c447cb6a7009936396037
+#: ad26a8e5e466456bade4ef8e64865a33
 msgid "`/fsm_command` is **`std_msgs/Int32`**, not `String`."
 msgstr "`/fsm_command` 是 **`std_msgs/Int32`**，不是 `String`。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 223e8332ee7347b6bc8e3babeaf6612f
+#: 325d27ef9e2543b8a4f6d7b70ec27673
 msgid "Value"
 msgstr "取值"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: f0796f0f9a4e44ea8bd224675e3362f3
+#: fb1faec9907e4b4a856b6ad8e9cb6453
 msgid "Action"
 msgstr "Action"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: eb27688a880041d3a22feb230e57736b
+#: 824a5d3b14ab42d784f86f0f9e51a6e8
 msgid "`1`"
 msgstr "`1`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 590f776d301547a9bf3ee7fc93533e95
+#: dde2d448efd64fb0a62f88857c0d4fef
 msgid "Switch to **HOME** (only from HOLD)"
 msgstr "切换到 **HOME**（仅从 HOLD）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 8f1d63d4068b4ad58840273898e2d74c
+#: 684347fbb2634b69a7abc0b2532e5c0b
 msgid "`2`"
 msgstr "`2`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: a67343b1a7ab4072bfcfad02cdc10d06
+#: 886933e115fe4d03a2297c30842ccadb
 msgid "Switch to **HOLD** (from HOME / MOVEJ)"
 msgstr "切换到 **HOLD**（从 HOME / MOVEJ）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: bf8f87a55fb94f37ad14a78d0c4abc5d
+#: f79814952fc14e8895dc40297cd23295
 msgid "`4`"
 msgstr "`4`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 9d71ca2f559745aaa866983e984d670e
+#: 6a37d00843ad4893b5a2542f52c64a1a
 msgid ""
 "Switch to **MOVEJ** (only from HOLD; canonical, same as the whole-body "
 "stack)"
 msgstr "切换到 **MOVEJ**（仅从 HOLD；与全身栈统一的规范命令）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 05ee4f9234914677a774cffaf1955473
+#: fe6f72d557bc48189378569d35c3101b
 msgid "`3`"
 msgstr "`3`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: d7402e7260744aacb2954b034b3b7aa3
+#: 5049f131216e41fd897ea9f795aafd60
 msgid ""
 "Switch to **MOVEJ** (legacy alias for standalone use; on mixed OCS2/WBC "
 "stacks `3` means OCS2)"
 msgstr "切换到 **MOVEJ**（独立使用时的旧映射；在混合 OCS2/WBC 栈上 `3` 表示 OCS2）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 036812cb7bf34178829d899345e5f585
+#: 98e6ff87c6c748c79855b8e722a708ae
 msgid "`switch_command_base` (default `100`)"
 msgstr "`switch_command_base`（默认 `100`）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 253a050fce1b4b6fab3d8c8cab84a9de
+#: 160ac5bd12fe453ea5728b5da93c457a
 msgid "(HOME) Cycle to next configuration"
 msgstr "（HOME）循环到下一构型"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 6eb5f29717fe4f4ea00c19a7b24cdeaa
+#: eea2f8b6fdaa43428bd2362e78c6a870
 msgid "`switch_command_base + 1` (default `101`)"
 msgstr "`switch_command_base + 1`（默认 `101`）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 2ff9f9e3b19946eb95ee955787172859
+#: ed6df0dd6fe34d9d9d68741c8bdb228c
 msgid "(HOME) Switch to configuration 0"
 msgstr "（HOME）切换到构型 0"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: 047f397ae4914458a9b406870f40f63b
+#: 06c1200859804502b393fbf096d09db3
 msgid "`switch_command_base + 2` (default `102`)"
 msgstr "`switch_command_base + 2`（默认 `102`）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:5
-#: d864d96074524582811de96cd85ce1f9
+#: f3d3a63f48f948699598955330c8e61a
 msgid "(HOME) Switch to configuration 1"
 msgstr "（HOME）切换到构型 1"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:32
-#: 1b5d7e8c9ead4a65a7d713dd6a34b2ff
+#: 21818645937a49ce971f8c7605b46f7a
 msgid "MOVEJ can only return to HOLD (`2`). Direct MOVEJ → HOME is rejected."
 msgstr "MOVEJ 只能回到 HOLD（`2`），不允许直接 MOVEJ → HOME。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:34
-#: 68a1546905b8441cb8910a473386b7dd
+#: 984637b59ffe40c2a22cf4fbbc71a61a
 msgid ""
 "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 1\"   # → "
 "HOME\n"
@@ -193,29 +193,29 @@ msgstr ""
 "MOVEJ"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:39
-#: 52536c3a17084c058b1c1cd36b8feb08
+#: 5b175c59e7de4923afa0d264910e3b79
 msgid "**StateHome** — interpolate to one of up to 10 preset joint configurations"
 msgstr "**StateHome** — 插值到最多 10 个预设关节构型之一"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:40
-#: 8a8b6cde0778467688e45acc4da4d38c
+#: d0c0f4a702584720a392c808694be79d
 msgid "**StateHold** — hold current joint positions"
 msgstr "**StateHold** — 保持当前关节位置"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:41
-#: 4644515d355443499a892a362fe2967c
+#: 5a82b8492f764f3eaad176f19b05b19a
 msgid ""
 "**StateMoveJ** — interpolate to target joints; supports trajectories and "
 "prefix-based partial control"
 msgstr "**StateMoveJ** — 插值到目标关节；支持轨迹和基于前缀的局部控制"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:43
-#: e77396b2fdf049db9e0713d1be0317e1
+#: 04c8d314f2e747758f977530992f0d09
 msgid "Topics"
 msgstr "话题"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:45
-#: 82a46ff957d14099a39aa9979f3b8160
+#: 716a7a86548545f9a4007afb9c9965d4
 msgid ""
 "Command topics are namespaced to the controller name (README example: "
 "`/left_hand_controller/...`). The table below is the package README "
@@ -233,180 +233,180 @@ msgstr ""
 "#vendored-upstream-readme)。"
 
 #: ../../source/_vendored/arms_ros2_control/basic_joint_controller/README.md:276
-#: 9205826b2c8f4cfa8dc6dbda41d3521c
+#: afdb33aff9ed4d6dbc0838fb3b514db4
 msgid "Assuming controller name `my_controller`, joint name `j1`:"
 msgstr "假设控制器名为 `my_controller`，关节名为 `j1`："
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: f7a2525c05ae41bb8c364c03a4f28d93
+#: d0154e4a336b47e4ab954068403141ff
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 06eea497745c4648a23e1d277c5724a7
+#: 9bc05eb120784ee1bae312304d24dc0a
 msgid "Type"
 msgstr "类型"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 4cc13c8594e54ffdbf4ba4ead7d81224
+#: 0c97346c1626494497ecb109f7fee02b
 msgid "Requires state"
 msgstr "所需状态"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: ca9ce7eea47a4b19bf451049e244abe3
+#: 78dba394b10045899def32239a5b166b
 msgid "Notes"
 msgstr "说明"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 14726c55736a491fb57acb7a23c2b9c3
+#: dee92179445f48ba9d73e581413be0a3
 msgid "`/fsm_command`"
 msgstr "`/fsm_command`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 40a6aa3966fb4bd095e3848564073d82
+#: d8ef381a4ae843169d5a68f0c8354843
 msgid "`Int32`"
 msgstr "`Int32`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 42272cf66b18402fae443cb2c7311257
+#: 8e9f2ab8d35047a59d2eefc4c24cbcfa
 msgid "any"
 msgstr "任意"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 977277788fce46248e8cf8dfcf268b0a
+#: 74ea3d1f327a4a8c98f4f47643225d11
 msgid "FSM state/config switching"
 msgstr "FSM 状态 / 构型切换"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: d2cc07e0e84844bfabf76448c3ff8406
+#: ba3302b85dad4c66b0743d1c7727c226
 msgid "`/my_controller/target_joint_position`"
 msgstr "`/my_controller/target_joint_position`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 0de0f80ac48e4beaa405a2df510ac8fb 5d0630db260f4be89e34d52b82b957e5
-#: f944a1f6434049a2bc9b28b93ee34ecb
+#: 5a3063f9dc69494297b3e63ce37816ad ad2a63343780435da97c59ceb7381c9f
+#: d9e79ff00e8b45f0934334b61e7dcdf9
 msgid "`Float64MultiArray`"
 msgstr "`Float64MultiArray`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 089d31865470492682db5bfccf3e3614 17710e72d6de4c95a4e3d329a393f912
-#: 24b5184370484e59bbe851c18d517c70 34db6c3270194c59bf8a5adea38b8d5f
-#: 695b55fd8266458eb72285039d50058f 6ac341483c7c400c9fe4438d6b24a0fa
-#: 786535d0c95e4403b7c364c176687b08 da551a4344554ace9909a272cd183809
-#: ed794b2d8c0a493dbcdf92a87927fa4b
+#: 04344afef1a54c149827715a7e74a459 4c27d9b103a04f5f901ec212285e2f77
+#: 50e56bd819a440e5a2f3ddc14cb06b3b 6afd739716064b309d8d723c7e547e7a
+#: 7c09f2f82ad44ffe8a306fe0b2787faf b617987d7b734fe7a98d05f8c57293c1
+#: d3d1471f505e470683c11cd625ae789e ec72e2c69a474127807aa04b0cdb9534
+#: f6e68252401e474da19d175e2f8bf21f
 msgid "MOVEJ"
 msgstr "MOVEJ"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 3810c59fe5534d84ba487d7ebd890ad7
+#: 3a079b0154e646ccbdb51343cb00b164
 msgid ""
 "Direct joint targets; tanh/linear/doubles cap speed and may extend "
 "duration"
 msgstr "直接关节目标；tanh/linear/doubles 会限速并可能延长时长"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 7a24fec819c24784b6c200db3ff0607d
+#: b73e9638162c4579a0040d7c66e3cbe6
 msgid "`/my_controller/target_joint_trajectory`"
 msgstr "`/my_controller/target_joint_trajectory`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: dd3ab4135d9a48968793970717ea52ea
+#: 9f55434e477840b7b0ff9fa8d630b74e
 msgid "`JointTrajectory`"
 msgstr "`JointTrajectory`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 47ddae3919a5443faf13915d1b8001e5
+#: 680718e469c849f0891c688345591a4e
 msgid "Multi-waypoint trajectory"
 msgstr "多路点轨迹"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 33fc27e611124ea893fbd715e6d58976
+#: f9d554ccb7ea4e8e97138226d606bcfd
 msgid "`/my_controller/target_command`"
 msgstr "`/my_controller/target_command`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 9700378d8d4944a2b747d7110980e2c3
+#: cb5c07f9b6a9413eb192cb1cc295ab3b
 msgid "`Int32` (0/1)"
 msgstr "`Int32` (0/1)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: d194427d4ad3453a91526e6935b24f0f
+#: f6beeb9c5952453dba6ccc47ff5d78cd
 msgid "Hand open/close switch"
 msgstr "手部开合开关"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 03b73c14a4ef4597b6840ef774150458
+#: 01e9c02e01554bdf8787051c9f258c95
 msgid "`/my_controller/target_percent`"
 msgstr "`/my_controller/target_percent`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: d6dc7aef99264b16ae004f9852f7fd5a
+#: f2d32132672649d5b16ccc6c6a1898c6
 msgid "`Float64` (0~1)"
 msgstr "`Float64` (0~1)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 6f04c711fe304979b0ddd26c3bf97a61
+#: e78b9ef4f1a249a7ad9c52df5a8b8e32
 msgid "Hand proportional control"
 msgstr "手部比例控制"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: d9e5b7cbfc0649fdafbcb2854179d420
+#: 43847df081c04b9582f083a66e8eefcf
 msgid "`/my_controller/waist_lifting`"
 msgstr "`/my_controller/waist_lifting`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 044aafc1407c477eaaa2e47655086b47 33cadbdb15de4601a7dd427154e5315b
-#: 92889158d8e54a169a921aaaf1eef4a4
+#: 8022448f571f465188d054657cc97051 8cbe551b975f42b09d4374e000050886
+#: cba17476cfdb4c29a56a4828e3ee664f
 msgid "`Float64`"
 msgstr "`Float64`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: f813630a552948488df4268b6f270f83
+#: 7bc526d2dd4041cf835806fa04dfd80f
 msgid "Waist position delta"
 msgstr "腰部位置增量"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: b6a9adf3d98c48acb7f8daf436aa6686
+#: fd13ec45d75c48428ee0a1c4f3397858
 msgid "`/my_controller/waist_lifting_pose_relative`"
 msgstr "`/my_controller/waist_lifting_pose_relative`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 6d2ae6a882f94b3a9dce8932976170c4
+#: 53a07762b7b74fb59bc32c048855947e
 msgid "Waist local relative `[dx, dz, dphi]`"
 msgstr "腰部局部相对 `[dx, dz, dphi]`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 6a935f3a6cac4ffeaed709888ae2b6e9
+#: 824994d11dad4f10a428f164d9cd2836
 msgid "`/my_controller/waist_lifting_pose_absolute`"
 msgstr "`/my_controller/waist_lifting_pose_absolute`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 69620473897d464da65602d7cbe3a113
+#: 24e302221e004015a6e336c1981e8b15
 msgid "Absolute `[x, z, phi]` (TF frames configurable)"
 msgstr "绝对 `[x, z, phi]`（TF 坐标系可配置）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 79bb07ec76ea433681708fcbe3aca89b
+#: 2c29a12500554c1d8b9fe1538ab5e745
 msgid "`/my_controller/waist_lifting_command`"
 msgstr "`/my_controller/waist_lifting_command`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 54394c5a391e4455b14c852bd7c303b9
+#: 5b0d09cfa4ef4946a21cb4feb346ae7b
 msgid "Waist velocity factor"
 msgstr "腰部升降速度系数"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: 96d8af0891ec4bc28da08c7f9228b7fa
+#: 099d1095fa3345449d134d47f2ccff7c
 msgid "`/my_controller/waist_turning_command`"
 msgstr "`/my_controller/waist_turning_command`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:47
-#: a5221e30f8df4d9aa80bcb675fe64237
+#: 756750e26dee4433ba6f6c3798bb8f5b
 msgid "Waist turning velocity factor"
 msgstr "腰部转向速度系数"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:52
-#: 3ed9344f66b242f5929cc77e00d7f7d3
+#: d44ddb828c7f4ca2b16b4b64938bc6f6
 msgid ""
 "Hand `target_command` / `target_percent` need `target_command_enabled`. "
 "Waist topics need `waist_lifting_enabled`. Absolute-pose defaults match "
@@ -423,7 +423,7 @@ msgstr ""
 "`lift_link`。仅高度命令（`waist_lifting`、`waist_lifting_command`、`target_joint_position`）**不**使用这些坐标系。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:54
-#: 405987b45d7446b19ced9587da95a53a
+#: fe6c4709e4a047deacaf18fa5714750f
 #, #
 msgid ""
 "On **分体**, the body instance is typically `/body_joint_controller/…`. On "
@@ -444,12 +444,12 @@ msgstr ""
 "`execute_waist_lifting_pose_*_action`。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:56
-#: 26f54c010db944ca90cf9fa3b295bd5c
+#: b817faa19b6a4352ac2d7a8f13c46fdd
 msgid "Demo launch (README)"
 msgstr "Demo launch (README)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 7652eaa639404cca84eeed39ca7e1cac
+#: fbbc02da4aba40bea689293a3c0a2ea8
 msgid ""
 "ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1\n"
 "ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 "
@@ -464,114 +464,123 @@ msgstr ""
 "enable_head:=false"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 86f44349d4de4fc3bd60f20731060620
+#: 78079abf6d3b41e392600e010d548626
 msgid "Argument"
 msgstr "参数"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 4a533ea9562b4dbf8e8174f5270a942b
+#: 8d619cc83c6447b0979020064ead8ee6
 msgid "Default"
 msgstr "默认值"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 9d8148769e23408ab695da259eca38f8
+#: 18b39878f8f245968aeaae4146c29886
 msgid "Description"
 msgstr "说明"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 95c66db3bbf94a52a4b64b305115d942
+#: 4fa7d1e3eb114f1ab0de3ebba7476a53
 msgid "`robot`"
 msgstr "`robot`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: ececf9ab701e4865b7276be584dc81b5
+#: 116b3cfcddcc41c2aefc94b45e5f8df8
 msgid "`fiveages_w1`"
 msgstr "`fiveages_w1`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 94961f2e221b4431bd37c167a7a15dfe
-msgid "Robot name"
-msgstr "机器人名称"
+#: fa08e23d8ee344829536bf56ef8cf452
+#, python-brace-format
+msgid "Description key (`{robot}_description`)"
+msgstr "描述键（`{robot}_description`）"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 34f519f1575b4a6e8fe7624433749e9e
+#: 403784326089493abb33b885e47ddd37
 msgid "`type`"
 msgstr "`type`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 5f27c19592194742b980cc2956723a61
+#: 5b44d8ec058c4e7792db2521165bcb4a
 msgid "empty"
 msgstr "空"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 82d602e52d0c401ebbb0726cca9f99be
-msgid "Robot type; empty means do not pass `type` to xacro (launch file)"
-msgstr "机器人 type；为空表示不向 xacro 传 `type`（launch 文件）"
+#: 88ff0d71202c476bb770fd5621aa0879
+msgid ""
+"EEF / topology key (`left` / `right` / `dual`, or a symmetric EEF); empty"
+" means do not pass `type` to xacro"
+msgstr ""
+"末端 / 拓扑键（`left` / `right` / `dual`，或对称末端）；为空表示不向 xacro 传 `type`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 3576786fe3434325b94acf240da4a46d
+#: 1547b759af5a45f5827c495eb1770428
 msgid "`hardware`"
 msgstr "`hardware`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 745d7789b80b4e57aac0fff2e2cfdb1f
+#: dd7b0c0acc604c68afff3eed31899ab4
 msgid "`mock_components`"
 msgstr "`mock_components`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: f3ca340a0e5b49c2b8dcdcb36f8b5951
+#: 60d90b6d64634ffdbeea03555da0697f
 msgid "`gz` / `isaac` / `mock_components`"
 msgstr "`gz` / `isaac` / `mock_components`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 3f7a81a1d9384fe6b0cc665b16d0ea83
+#: 21f95bdc4b9e417fbf6d0a69a724aa47
 msgid "`enable_head`"
 msgstr "`enable_head`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 112618e4530f40508885416a36072789 4207af1fc7434f07845b27e3cb61cc47
-#: bd10f00be9ee4174958e21961473c4ae
+#: 1d4a7e311b0b40f185463d7f384911ca 524365f61dcf4432884d38f5e71b26e4
+#: aff401f4081649189f6bde15e6f824d7
 msgid "`true`"
 msgstr "`true`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: e092520bc1cd499c97b17a88a3442dda
+#: 68e929f8738441bda89066f2cf5949b2
 msgid "Head controllers"
 msgstr "头部控制器"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 481659a7b0364ba19a5124265d0d7304
+#: 481ec1e897c84e54b5b6f7de1a06c4a1
 msgid "`enable_body`"
 msgstr "`enable_body`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 54c657b769f146d29e17bb6e22e57952
+#: c222e6dd355c46daa7f2e3de59213e34
 msgid "Body controllers"
 msgstr "身体控制器"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 9b21963ae30a40cda5fc1db00b7b9714
+#: 9d3ccd3f9c1243c2898046fc675cff41
 msgid "`use_rviz`"
 msgstr "`use_rviz`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:58
-#: 2a6b319e87eb4c80a3ba25b85a1fa270
+#: 95a2382bff234e0e8692f4b15aaffed6
 msgid "Launch RViz"
 msgstr "启动 RViz"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:73
-#: dbc657c91c5d42259f62e8a33d63b1f5
+#: 5251e686dbb5424e95105a1d1c8bce56
 msgid ""
 "This demo does **not** declare `left_type` / `right_type`. Those first-"
 "class args come from `create_robot_profile_launch_arguments()` on OCS2 "
-"launches — [OCS2 Arm Controller](2-ocs2_arm_controller.md)."
+"launches — [OCS2 Arm Controller](2-ocs2_arm_controller.md). Launch `type`"
+" is the same EEF / topology key as [Naming "
+"Conventions](../../3-concepts/3-naming_conventions.md); `robot:=` already"
+" selected the description package."
 msgstr ""
 "此 demo **不**声明 `left_type` / `right_type`。那些一等参数来自 OCS2 launch 上的 "
 "`create_robot_profile_launch_arguments()` — [OCS2 Arm "
-"Controller](2-ocs2_arm_controller.md)。"
+"Controller](2-ocs2_arm_controller.md)。这里的 launch `type` 与"
+"[命名规范](../../3-concepts/3-naming_conventions.md) 的末端 / 拓扑键相同；`robot:=` "
+"已经选定了描述包。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:75
-#: d8f4cf4382134f859348753f6c525748
+#: cb57517c79b146cbae78097485a9ea27
 msgid ""
 "Build (README): `colcon build --packages-up-to basic_joint_controller "
 "--symlink-install`."
@@ -580,19 +589,19 @@ msgstr ""
 "--symlink-install`。"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:77
-#: bfce81707edf451fbad70cfc4dd66ae7
+#: e39fca5793064490b5631dfe888e6ac5
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:79
-#: a3728cbae00941f19fbe80d60af8587d
+#: 460fb64ba7cc41f39607e9f77edfb7eb
 msgid ""
 "[Controller ROS 2 parameters](8-ros2_parameters.md) — README keys and "
 "Startup vs Runtime"
 msgstr "[控制器 ROS 2 参数](8-ros2_parameters.md) — README 键以及仅启动 vs 运行时"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:80
-#: 3d0b52a9c32b422ba48969154e4d1b1c
+#: 57593c30f2f24c0c932fba91cd2b2d79
 msgid ""
 "[Use Basic Joint "
 "Controller](../../2-how_to/4-controllers/11-basic_joint.md)"
@@ -601,17 +610,17 @@ msgstr ""
 "Controller](../../2-how_to/4-controllers/11-basic_joint.md)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:81
-#: b346414978874d4ab9dfac3d74b94517
+#: 1ec7ccc24bbc4b17b0ac2114df7b03cb
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:82
-#: 73986745bded487bbe442a6e143967a3
+#: a5314d6bfbff41ee9bcd8635e0e5029f
 msgid "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 msgstr "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:83
-#: f43564356c7f4545b54dc4c9be65de66
+#: 83f8874b319c4b3f87db84afa2e0a3a7
 msgid ""
 "[OCS2 Arm Controller](2-ocs2_arm_controller.md) — 分体控制 "
 "(`split_body.launch.py`) uses this controller for body/head"
@@ -620,7 +629,7 @@ msgstr ""
 "分体控制（`split_body.launch.py`）用本控制器驱动身体/头部"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:84
-#: 4e67274b9d0c49e08dafa63e895af4d8
+#: 3d41ec26bb5d4653a6e475a0d08e181a
 msgid ""
 "[Adaptive Gripper Controller](6-gripper_teleop_plugins.md) — 夹爪 channels "
 "vs this controller’s 灵巧手 `target_percent`"
@@ -629,7 +638,7 @@ msgstr ""
 "本控制器灵巧手的 `target_percent`"
 
 #: ../../source/4-reference/controllers/7-basic_joint_controller.md:85
-#: 748a9f93b7c74a84b1e152e1bdd71aa6
+#: a6e811766451474b86f4d5977f1cba77
 msgid "[OCS2 WBC Controller](3-ocs2_wbc.md) — 全身控制"
 msgstr "[OCS2 WBC Controller](3-ocs2_wbc.md) — 全身控制"
 
@@ -656,4 +665,10 @@ msgstr "[OCS2 WBC Controller](3-ocs2_wbc.md) — 全身控制"
 
 #~ msgid "7. Demo Launch"
 #~ msgstr "Demo launch (README)"
+
+#~ msgid "Robot name"
+#~ msgstr "机器人名称"
+
+#~ msgid "Robot type; empty means do not pass `type` to xacro (launch file)"
+#~ msgstr "机器人 type；为空表示不向 xacro 传 `type`（launch 文件）"
 
