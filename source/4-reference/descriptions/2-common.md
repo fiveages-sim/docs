@@ -113,7 +113,7 @@ Implementation: [`launch_arg_utils.py`](https://github.com/fiveages-sim/robot-de
 
 Profile schema (README):
 
-:::{code-block} yaml
+:::{code-block} none
 platform:
   chassis: <key>
   arms: <key>                 # dual-arm kit; {key}_description or a _vN suffix
