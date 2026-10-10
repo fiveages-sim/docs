@@ -96,7 +96,7 @@ Parameter tables (Startup vs Runtime): [Controller ROS 2 parameters](8-ros2_para
 OCS2 files (selected via `robot_name` → `{robot_name}_description`; **not** ROS 2 parameters):
 
 - Task: `{robot_name}_description/config/ocs2/task.info`
-- Planning URDF: xacro cache via `robot_common_launch` (`planning_urdf_path`)
+- Planning URDF: xacro via `robot_common_launch` (`planning_urdf_variant:=xacro`, `planning_urdf_path`). Static `urdf/{robot}_{robot_type}.urdf` lookup was removed (`CtrlComponent.cpp`)
 - Generated library: `{robot_name}_description/config/ocs2/generated`
 
 Control mode is auto-detected from ros2_control command/state interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).

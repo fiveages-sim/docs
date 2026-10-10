@@ -25,7 +25,7 @@ ros2 launch ocs2_arm_controller full_body.launch.py robot:=<robot>
 
 `full_body.launch.py` (`launch_mode` `full_body`) spawns `ocs2_wbc_controller` when the robot’s `controller_manager` type is `ocs2_wbc_controller/Ocs2WbcController`.
 
-The same file declares `type` and `create_robot_profile_launch_arguments()` (`left_type` / `right_type`, `use_profile_eef`). End-effectors: [OCS2 Arm Controller](2-ocs2_arm_controller.md) and [robot_common_launch](../descriptions/2-common.md).
+The same file declares `type` and `create_robot_profile_launch_arguments()` (`left_type` / `right_type`, `use_profile_eef`). End-effectors: [OCS2 Arm Controller](2-ocs2_arm_controller.md) and [robot_common_launch](../descriptions/2-common.md). Planning URDF is the same xacro path (`planning_urdf_path`); static `urdf/{robot}_{robot_type}.urdf` lookup was removed.
 
 `split_body.launch.py` is the split (分体) path; whole-body control uses `full_body.launch.py`.
 

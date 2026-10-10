@@ -32,7 +32,7 @@ ros2 launch basic_joint_controller demo.launch.py robot:=fiveages_w1 enable_head
 | Argument | Default (README / launch) |
 |----------|---------------------------|
 | `robot` | `fiveages_w1` |
-| `type` | empty (do not pass a type arg to xacro) |
+| `type` | empty (EEF / topology; do not pass `type` to xacro when empty) |
 | `hardware` | `mock_components` (`gz` / `isaac` / `mock_components`) |
 | `enable_head` / `enable_body` | `true` |
 
