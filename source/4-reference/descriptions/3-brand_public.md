@@ -19,6 +19,8 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 | 珞石 | Rokae |
 | 优必选 | Ubtech |
 
+Tianji, Rokae, and Gento **description remotes** are public HTTPS repos; Fairino and Agibot G2 remotes stay private. See [Vendor arms](6-vendor_arms.md).
+
 ## Dobot (越疆)
 
 **Repository:** [fiveages-sim/robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot)

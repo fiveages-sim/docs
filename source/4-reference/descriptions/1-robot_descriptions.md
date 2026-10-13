@@ -22,12 +22,13 @@ robot_descriptions/
 │   ├── FiveAges/                        # gitlinks (not in README tables); W1/W2/S2 public, W2R/S2R not open
 │   ├── Dyna/taku_description            # in-tree on feature/agilex only
 │   ├── Galbot/                          # robot-descriptions-galbot
+│   ├── Gento/                           # robot-descriptions-gento (feature/agilex gitlink; public remote)
 │   └── Agibot/agibot_g2_description     # private
 ├── manipulator/
 │   ├── Dobot/                           # robot-descriptions-dobot
 │   ├── ARX/                             # robot-descriptions-arx
-│   ├── Tianji/                          # robot-descriptions-tianji
-│   ├── Rokae/                           # robot-descriptions-rokae
+│   ├── Tianji/                          # robot-descriptions-tianji (public remote)
+│   ├── Rokae/                           # robot-descriptions-rokae (public remote)
 │   └── HighTorque/panthera_ht_description
 └── … in-tree packages (see README tables)
 :::
@@ -39,11 +40,13 @@ robot_descriptions/
 | Common Components | `common` | [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) |
 | Quadruped Robots | `quadruped` | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) |
 | Dobot CR5 | `manipulator/Dobot` | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) |
-| Tianji M6 | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) |
-| Rokae AR5 | `manipulator/Rokae` | [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) |
+| Tianji M6 | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) (public) |
+| Rokae AR5 | `manipulator/Rokae` | [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) (public) |
 | ARX Robots | `manipulator/ARX` | [robot-descriptions-arx](https://github.com/fiveages-sim/robot-descriptions-arx) |
 | Galbot Robots | `humanoid/Galbot` | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) |
-| Agibot G2 | `humanoid/Agibot/agibot_g2_description` | [agibot-g2-description](https://github.com/fiveages-sim/agibot-g2-description) (private) |
+| Gento | `humanoid/Gento` | [robot-descriptions-gento](https://github.com/fiveages-sim/robot-descriptions-gento) (public; `feature/agilex` gitlink) |
+| Fairino ART7 | `manipulator/Fairino` | `robot-descriptions-fairino` (private; `feature/agilex` table) |
+| Agibot G2 | `humanoid/Agibot/agibot_g2_description` | `agibot-g2-description` (private) |
 | Panthera HT | `manipulator/HighTorque/panthera_ht_description` | [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) |
 
 README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Brand folders are those listed there.
@@ -74,4 +77,5 @@ Copy an existing `{robot}_description` and follow [Add a Robot](../../2-how_to/6
 - [robot-descriptions-common](2-common.md)
 - [Brand packages](3-brand_public.md)
 - [FiveAges robot descriptions](4-fiveages_umbrella.md)
+- [Vendor arms](6-vendor_arms.md)
 - [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)

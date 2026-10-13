@@ -58,6 +58,8 @@ src/robot-descriptions|manipulator/Tianji|private
 src/arms_ros2_control|controller/ocs2_wbc_controller|private
 :::
 
+The conf still marks `manipulator/Tianji` and `manipulator/Rokae` as `private` for **init selection**. Those GitHub remotes ([robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji), [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae)) are public; `./init_repo.sh` still does **not** pull them by default. See [Vendor arms](../4-reference/descriptions/6-vendor_arms.md) and [Submodules Visibility](../3-concepts/6-submodules_visibility.md).
+
 ### Lean Branches
 
 For minimal builds focusing on a single robot:
