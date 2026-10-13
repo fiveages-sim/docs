@@ -35,15 +35,15 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | [robot-descriptions-galbot](https://github.com/fiveages-sim/robot-descriptions-galbot) | [P] | Galbot mobile manipulators |
 | [panthera_ht_description](https://github.com/fiveages-sim/panthera_ht_description) | [P] | HighTorque Panthera HT (`manipulator/HighTorque/panthera_ht_description`) |
 | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) | [P] | Quadruped robots |
+| [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) | [P] | Tianji M6, M6S Lite, M20S, Marvin Pro (`manipulator/Tianji`) |
+| [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) | [P] | Rokae AR5-SRS, AR5-CCS (`manipulator/Rokae`) |
+| [robot-descriptions-gento](https://github.com/fiveages-sim/robot-descriptions-gento) | [P] | Gento Skye, Luna (`humanoid/Gento` on `feature/agilex`) |
 
 ### Brand-Specific (Private)
 
 | Repository | Visibility | Robots |
 |------------|------------|--------|
-| robot-descriptions-tianji | [I] | Tianji M6, M6S, M20S |
-| robot-descriptions-rokae | [I] | Rokae arms |
-| robot-descriptions-fairino | [I] | Fairino arms |
-| robot-descriptions-gento | [I] | Gento robots |
+| robot-descriptions-fairino | [I] | Fairino ART7 |
 | robot-descriptions-ubtech | [I] | Ubtech humanoids |
 | agibot-g2-description | [I] | Agibot G2 |
 

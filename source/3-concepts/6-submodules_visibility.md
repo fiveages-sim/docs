@@ -42,7 +42,7 @@ Do **not** `git submodule update --init --recursive` as the primary path.
 | Nested path (examples) | Visibility |
 |------------------------|------------|
 | `robot-descriptions` `common`, `manipulator/Dobot`, `manipulator/ARX`, `quadruped`, `humanoid/Galbot` | `public` |
-| `manipulator/Tianji`, `manipulator/Rokae`, FiveAges `fiveages_w*` descriptions, `humanoid/Ubtech` | `private` (conf still lists FiveAges here even though W1 / W2 / S2 / `fa-w2-components` remotes are now public; **W2R / S2R remotes are not open**) |
+| `manipulator/Tianji`, `manipulator/Rokae`, FiveAges `fiveages_w*` descriptions, `humanoid/Ubtech` | `private` (conf still lists Tianji / Rokae / FiveAges here for **init selection** even though those GitHub remotes are now public; `./init_repo.sh` does **not** pull them by default. **W2R / S2R remotes are not open**) |
 | `arms_ros2_control` `ocs2_wbc_controller`, `ocs2_humanoid`, `lina_planning` | `private` |
 
 If you need private nested modules, use a workspace/README that documents private access (`fa-deploy-ws`). Extra flags for that workspace are in its README after access.

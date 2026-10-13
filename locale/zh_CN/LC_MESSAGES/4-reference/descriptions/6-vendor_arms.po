@@ -1,0 +1,348 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-13 03:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:1
+#: a36f760c0b0148529261452b279a15c2
+msgid "Vendor Arms"
+msgstr "厂商机械臂"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:3
+#: aba70c2c92ed4dc590bdee9fa4e08c65
+msgid ""
+"Brand trees that the public [robot_descriptions "
+"README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md) lists as submodules. **Public"
+" remotes** (browse HTTPS): [robot-descriptions-tianji](https://github.com"
+"/fiveages-sim/robot-descriptions-tianji), [robot-descriptions-"
+"rokae](https://github.com/fiveages-sim/robot-descriptions-rokae), [robot-"
+"descriptions-gento](https://github.com/fiveages-sim/robot-descriptions-"
+"gento). **Still private** (404 without access; no browseable links): "
+"Fairino (`robot-descriptions-fairino`) and Agibot G2 "
+"(`agibot-g2-description`). After access to a private remote, follow "
+"**those package READMEs**. Public `hardware:=` keys remain "
+"`mock_components` / `gz` / `isaac` / `real` (there is **no** "
+"`hardware:=mock`)."
+msgstr ""
+"公开 [robot_descriptions README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md) 列为子模块的品牌树。**公开远端**（可浏览 HTTPS）："
+"[robot-descriptions-tianji](https://github.com/fiveages-sim/robot-"
+"descriptions-tianji)、[robot-descriptions-rokae](https://github.com"
+"/fiveages-sim/robot-descriptions-rokae)、[robot-descriptions-"
+"gento](https://github.com/fiveages-sim/robot-descriptions-gento)。**仍为私有**"
+"（无权限 404；不提供可浏览链接）：Fairino（`robot-descriptions-fairino`）与智元 G2"
+"（`agibot-g2-description`）。开通私有远端后以**那些包 README** 为准。公开 `hardware:=` 键仍是 "
+"`mock_components` / `gz` / `isaac` / `real`（**没有** `hardware:=mock`）。"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:5
+#: cc110013445543f3a0ab2f456a9b14fd
+msgid "Init selection vs GitHub remotes"
+msgstr "初始化选择与 GitHub 远端"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:8
+#: 632ea9923eac4fd698aafb55872802df
+msgid ""
+"[`open-deploy-ws` `submodules_visibility.conf`](https://github.com"
+"/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) still "
+"marks `manipulator/Tianji` and `manipulator/Rokae` as `private`, so "
+"`./init_repo.sh` does **not** pull them by default. That is **init "
+"selection**, not GitHub visibility — those remotes are public. The conf "
+"has no Gento line (Gento is on `robot_descriptions` `feature/agilex` "
+"only). Do not recursive-init from `open-deploy-ws`."
+msgstr ""
+"[`open-deploy-ws` `submodules_visibility.conf`](https://github.com"
+"/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) 仍把 "
+"`manipulator/Tianji` 与 `manipulator/Rokae` 标为 `private`，因此 "
+"`./init_repo.sh` **默认不会**拉取它们。这是**初始化选择**，不是 GitHub 可见性——那些远端已公开。该配置没有 "
+"Gento 行（Gento 只在 `robot_descriptions` 的 `feature/agilex`）。不要从 "
+"`open-deploy-ws` 递归初始化。"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: d182005ca2534a458e91ad2f72e6c45f
+msgid "Source of truth"
+msgstr "权威来源"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:14
+#: d9fb391275ff44b69178bcdc730293fe
+msgid ""
+"Paths: [robot_descriptions README (`main`)](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md), [`.gitmodules` on "
+"`main`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/.gitmodules) (Tianji / Rokae under "
+"`manipulator/`), and the [README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/README.md) / [`.gitmodules` on"
+" `feature/agilex`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/.gitmodules) (Gento at "
+"`humanoid/Gento`; Fairino; Rokae INEX)"
+msgstr ""
+"路径：[robot_descriptions README（`main`）](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/README.md)、[`main` 上的 "
+"`.gitmodules`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/.gitmodules)（天机 / 珞石在 "
+"`manipulator/`），以及 [README](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/README.md) / "
+"[`feature/agilex` 上的 `.gitmodules`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/feature/agilex/.gitmodules)（Gento 在 "
+"`humanoid/Gento`；法奥；珞石 INEX）"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:15
+#: 30611e997f0a468d95e7850437a3bbc8
+msgid ""
+"Public package lists: [robot-descriptions-tianji](https://github.com"
+"/fiveages-sim/robot-descriptions-tianji), [robot-descriptions-"
+"rokae](https://github.com/fiveages-sim/robot-descriptions-rokae), [robot-"
+"descriptions-gento](https://github.com/fiveages-sim/robot-descriptions-"
+"gento)"
+msgstr ""
+"公开包列表：[robot-descriptions-tianji](https://github.com/fiveages-sim/robot-"
+"descriptions-tianji)、[robot-descriptions-rokae](https://github.com"
+"/fiveages-sim/robot-descriptions-rokae)、[robot-descriptions-"
+"gento](https://github.com/fiveages-sim/robot-descriptions-gento)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:16
+#: f73b601ad3894fed83bfeee5c42525e7
+msgid "Launch / EEF: [robot_common_launch](2-common.md)"
+msgstr "Launch / 末端：[robot_common_launch](2-common.md)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:17
+#: 543a9f9def804583bf1a536536c21f64
+msgid ""
+"How to add a package: [Add a "
+"Robot](../../2-how_to/6-deployment/10-add_a_robot.md)"
+msgstr "如何加包：[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: e57a16ddfcc346d189e92c2a91bc10bf
+msgid "README name"
+msgstr "README 名称"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: caf9013a388d4bac8c94ebbdd2376db5
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: cd8fa65447b544bf9256d3bde74f3282
+msgid "Repository"
+msgstr "仓库"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 9e4db686cbc84bfd9af46c0614f0aecb
+msgid "Visibility"
+msgstr "可见性"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: be44d49f2338411ab0f71e77b2f9706a
+msgid "Tianji"
+msgstr "Tianji"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 6490adf7ecda4df78eb13ce42b033688
+msgid "`manipulator/Tianji`"
+msgstr "`manipulator/Tianji`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 78b6496ef6e04ee79b72c031e2b6cec7
+msgid ""
+"[robot-descriptions-tianji](https://github.com/fiveages-sim/robot-"
+"descriptions-tianji)"
+msgstr ""
+"[robot-descriptions-tianji](https://github.com/fiveages-sim/robot-"
+"descriptions-tianji)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 006369adb7a14fcb9f9fc451a381c248 5fd3111a34174584aa6469cc3aeb5c6e
+msgid "Public (`main` `.gitmodules`)"
+msgstr "公开（`main` `.gitmodules`）"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 534323fcb90e41fe9d25caf817385511
+msgid "Rokae"
+msgstr "Rokae"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 8bfc2a6b18de416795ee7c0146dd94da
+msgid "`manipulator/Rokae`"
+msgstr "`manipulator/Rokae`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 97c1ec533ad04e26aa00a5e2c5771319
+msgid ""
+"[robot-descriptions-rokae](https://github.com/fiveages-sim/robot-"
+"descriptions-rokae)"
+msgstr ""
+"[robot-descriptions-rokae](https://github.com/fiveages-sim/robot-"
+"descriptions-rokae)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 0ab03d3ce28348a885581f7454e151ce
+msgid "Gento"
+msgstr "Gento"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 6328d86747ce4106a48aa0268595ba9a
+msgid "`humanoid/Gento`"
+msgstr "`humanoid/Gento`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 5a736d9e712d4f9180813699752b1c4c
+msgid ""
+"[robot-descriptions-gento](https://github.com/fiveages-sim/robot-"
+"descriptions-gento)"
+msgstr ""
+"[robot-descriptions-gento](https://github.com/fiveages-sim/robot-"
+"descriptions-gento)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 26ad53e512ca45578c4d58c41437dac0
+msgid "Public (`feature/agilex` `.gitmodules`)"
+msgstr "公开（`feature/agilex` `.gitmodules`）"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: e19cc0a5892b430da5e3aba1e789dcaf
+msgid "Fairino ART7"
+msgstr "Fairino ART7"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 5b4bab55be74483fa28b6d44a730aa00
+msgid "`manipulator/Fairino`"
+msgstr "`manipulator/Fairino`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 97cd540c272f4a999dd78be249b063c5
+msgid "`robot-descriptions-fairino`"
+msgstr "`robot-descriptions-fairino`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: c666af8511f9466bac030f222b65fd5c
+msgid "Private (`feature/agilex` table)"
+msgstr "私有（`feature/agilex` 表）"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: b1bda81a6f6d45ae97ac84a4f8a61976
+msgid "Agibot G2"
+msgstr "Agibot G2"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 6076fb229d6240d395c69dac18a55012
+msgid "`humanoid/Agibot/agibot_g2_description`"
+msgstr "`humanoid/Agibot/agibot_g2_description`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 4ae3efce6fe8478aa331aa0985fcf412
+msgid "`agibot-g2-description`"
+msgstr "`agibot-g2-description`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 5e91ea652321453c88c882760a0a0c7b
+msgid "Private"
+msgstr "私有"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 34ab7fa37e6f47eaaf16cdf306734b33
+msgid "Rokae INEX"
+msgstr "Rokae INEX"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 2cc94dc58487464f969e2e44f9e849bf
+msgid "`humanoid/Rokae/rokae_inex_description`"
+msgstr "`humanoid/Rokae/rokae_inex_description`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: b68138ceff664002a526eff37a3c53e8
+msgid "in-tree on `feature/agilex`; `split-chassis-glb` canonical"
+msgstr "`feature/agilex` 仓内；`split-chassis-glb` 规范例"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:11
+#: 79fd958f72f146229e398f5e815cb6e0
+msgid "in-tree"
+msgstr "仓内"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:29
+#: 77f8eedfbffa48a88da1de21cee85d4a
+msgid "Packages named on those public READMEs / umbrella tables:"
+msgstr "这些公开 README / 伞形仓表列出的包："
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:31
+#: c8f95f412b33449ba1db5ba8667378b7
+msgid ""
+"Tianji: `m6_ccs_description`, `m6_srs_description`, "
+"`m20s_ccs_description`, `m6s_lite_ccs_description`, "
+"`marvin_pro_description`"
+msgstr ""
+"天机：`m6_ccs_description`、`m6_srs_description`、`m20s_ccs_description`、"
+"`m6s_lite_ccs_description`、`marvin_pro_description`"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:32
+#: 2f3bd7084d2b4663858f720e8c03f3cb
+msgid ""
+"Rokae arms: `ar5_srs_description`, `ar5_ccs_description`; INEX is the "
+"wheel humanoid at `humanoid/Rokae`"
+msgstr "珞石臂：`ar5_srs_description`、`ar5_ccs_description`；INEX 是 `humanoid/Rokae` 下的轮式人形"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:33
+#: 113e8e8d3ec143f39661cc1963e9ccf0
+msgid ""
+"Gento: `gento_skye_description`, `gento_luna_description`; Linkhou S2 v2 "
+"+ Tianji M6-CCS / M6S Lite"
+msgstr "Gento：`gento_skye_description`、`gento_luna_description`；灵猴 S2 v2 + 天机 M6-CCS / M6S Lite"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:34
+#: 20efdd92d64f47b2b32c1bffa5ba7348
+msgid "Fairino: ART7 dual-arm (private remote)"
+msgstr "法奥：ART7 双臂（私有远端）"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:35
+#: b0555edf85d04d7a9ddcc690a6ef1e15
+msgid "Agibot G2: private humanoid description"
+msgstr "智元 G2：私有人形描述"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:37
+#: 0fc771b147db4f2ca9e1187140748377
+msgid ""
+"Launch / xacro: the public package READMEs above. After access to a "
+"private remote, follow that package README."
+msgstr "Launch / xacro 见上面的公开包 README。开通私有远端后，以该包 README 为准。"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:39
+#: 92821548f39f4655bb2196765fee3a23
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:41
+#: ce15fd69a98940f6b53a867c6e9818e5
+msgid "[robot_descriptions](1-robot_descriptions.md)"
+msgstr "[robot_descriptions](1-robot_descriptions.md)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:42
+#: b0474d069bfc4b009ba02921447bf0a6
+msgid "[robot_common_launch](2-common.md)"
+msgstr "[robot_common_launch](2-common.md)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:43
+#: d9a21eb1a6534957ad14fc3b10bde481
+msgid "[Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)"
+msgstr "[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)"
+
+#: ../../source/4-reference/descriptions/6-vendor_arms.md:44
+#: 7b70477df60c4095ba2ab3151ff34ad9
+msgid "[Hardware Interfaces](../hardware/0-index.md)"
+msgstr "[驱动层](../hardware/0-index.md)"

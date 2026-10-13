@@ -36,7 +36,7 @@ FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, WCE3) ar
 
 FiveAges descriptions live as **git submodules** of the public umbrella. Checkout names and remotes below are from `.gitmodules`.
 
-**Public remotes** (W1, W2, S2, `fa-w2-components`): browse the HTTPS repos, or `git submodule update --init` the matching path on [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions). Launch / xacro: each package README ([W1](https://github.com/fiveages-sim/fa-w1-description), [W2](https://github.com/fiveages-sim/fa-w2-description), [S2](https://github.com/fiveages-sim/fa-s2-description), [components](https://github.com/fiveages-sim/fa-w2-components)). W1 reuses Rokae `ar5_*` descriptions; W2 and S2 reuse Tianji `m6_ccs_description` (those remotes are still private).
+**Public remotes** (W1, W2, S2, `fa-w2-components`): browse the HTTPS repos, or `git submodule update --init` the matching path on [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions). Launch / xacro: each package README ([W1](https://github.com/fiveages-sim/fa-w1-description), [W2](https://github.com/fiveages-sim/fa-w2-description), [S2](https://github.com/fiveages-sim/fa-s2-description), [components](https://github.com/fiveages-sim/fa-w2-components)). W1 reuses Rokae `ar5_*` descriptions ([robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae)); W2 and S2 reuse Tianji `m6_ccs_description` ([robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji)). Those vendor remotes are **public**.
 
 **Still private remotes** (**W2R**, **S2R**, Gen3): 404 without access. **W2R and S2R are not open yet.**
 
@@ -104,5 +104,6 @@ Copy an existing public `{robot}_description` only as a **layout hint** — [Add
 - [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md)
 - [robot_usds](../simulation/3-robot_usds.md)
 - [robot_common_launch](2-common.md)
+- [Vendor arms](6-vendor_arms.md)
 - [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md)
 - [WBC controller](../controllers/3-ocs2_wbc.md)
