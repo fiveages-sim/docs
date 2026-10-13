@@ -34,13 +34,13 @@ robot_usds/
 
 The following are managed as Git submodules:
 
-| Path | Repository | Branch |
-|------|------------|--------|
-| `humanoid/FiveAges/Gen1` | fiveages-gen1-robot-usds | main |
-| `humanoid/FiveAges/Gen2` | fiveages-gen2-robot-usds | main |
-| `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | main |
-| `humanoid/Galbot` | galbot-usds | main |
-| `humanoid/Ubtech` | ubtech-usds | main |
+| Path | Repository | Branch | Visibility |
+|------|------------|--------|------------|
+| `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | main | Public |
+| `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | main | Public (`W2/`, `S2/`, `components/`) |
+| `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | main | Private |
+| `humanoid/Galbot` | galbot-usds | main | Public |
+| `humanoid/Ubtech` | ubtech-usds | main | Private |
 
 ## Usage
 
@@ -80,13 +80,13 @@ Assets directly in `robot_usds` (not submodules):
 
 From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table:
 
-- **Gen1** — W1 (`humanoid/FiveAges/Gen1` → `fiveages-gen1-robot-usds`)
-- **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → `fiveages-gen2-robot-usds`)
-- **Gen3** — WCE3 (`humanoid/FiveAges/Gen3` → `fiveages-gen3-robot-usds`)
+- **Gen1** — W1 (`humanoid/FiveAges/Gen1` → [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds), public)
+- **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds), public). Tree: `W2/`, `S2/`, `components/`. **W2R and S2R are not in this repo.**
+- **Gen3** — WCE3 (`humanoid/FiveAges/Gen3` → `fiveages-gen3-robot-usds`, still private)
 
 URDF / deploy: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 
-Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA.
+Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA. FaSim `submodules_visibility.conf` still marks the FiveAges Gen\* trees `private`, so they are not selected by default; you can init the public Gen1/Gen2 gitlinks from `robot_usds` as in that README §2.1.
 
 ## Related
 

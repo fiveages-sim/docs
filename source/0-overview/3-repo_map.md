@@ -47,19 +47,19 @@ This page lists all repositories in the FiveAges Sim ecosystem, organized by arc
 | robot-descriptions-ubtech | [I] | Ubtech humanoids |
 | agibot-g2-description | [I] | Agibot G2 |
 
-### FiveAges (private gitlinks under `robot_descriptions`)
+### FiveAges (gitlinks under `robot_descriptions`)
 
 There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes below are from [robot_descriptions `.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). Details: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
 
 | Repository | Visibility | Umbrella path (`main`) |
 |------------|------------|------------------------|
-| fa-w1-description | [I] | `humanoid/FiveAges/fiveages_w1_description` |
-| fa-w2-description | [I] | `humanoid/FiveAges/fiveages_w2_description` |
-| fa-w2r-description | [I] | `humanoid/FiveAges/fiveages_w2r_description` |
-| fa-s2-description | [I] | `humanoid/FiveAges/fiveages_s2_description` |
-| fa-w2-components | [I] | `humanoid/FiveAges/fiveages_w2_common_description` |
+| [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) | [P] | `humanoid/FiveAges/fiveages_w1_description` |
+| [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) | [P] | `humanoid/FiveAges/fiveages_w2_description` |
+| fa-w2r-description | [I] — **not open** | `humanoid/FiveAges/fiveages_w2r_description` |
+| [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | [P] | `humanoid/FiveAges/fiveages_s2_description` |
+| [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | [P] | `humanoid/FiveAges/fiveages_w2_common_description` |
 
-`fa-s2r-description` (`fiveages_s2r_description`) and `fa-wce3-description` (`fiveages_wce3_description`) appear only on `robot_descriptions` **`feature/agilex`** (`Gen2` / `Gen3`).
+`fa-s2r-description` (`fiveages_s2r_description`, **still private — not open**) and `fa-wce3-description` (`fiveages_wce3_description`, still private) appear only on `robot_descriptions` **`feature/agilex`** (`Gen2` / `Gen3`).
 
 ## L2: Hardware Interfaces
 
@@ -105,8 +105,8 @@ There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes b
 | [robot_usds](https://github.com/fiveages-sim/robot_usds) | [P] | Isaac USD superproject |
 | [galbot-usds](https://github.com/fiveages-sim/galbot-usds) | [P] | Galbot USD assets |
 | [fiveages-env-usds](https://github.com/fiveages-sim/fiveages-env-usds) | [P] | Environment USD assets |
-| fiveages-gen1-robot-usds | [I] | Gen1 USD (W1; named in public `robot_usds` README) |
-| fiveages-gen2-robot-usds | [I] | Gen2 USD (W2 / S2) |
+| [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | [P] | Gen1 USD (W1) |
+| [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | [P] | Gen2 USD (W2 / S2; not W2R / S2R) |
 | fiveages-gen3-robot-usds | [I] | Gen3 USD (WCE3) |
 | fa-project-usd | [I] | FaSim project assets |
 

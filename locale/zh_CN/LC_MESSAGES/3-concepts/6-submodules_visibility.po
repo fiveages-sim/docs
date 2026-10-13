@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 12:28+0000\n"
+"POT-Creation-Date: 2026-10-13 03:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,22 +21,22 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:1
-#: f5f9b29fe36c49df8fce5ff6c0a26677
+#: 67192524207b43a9a3570bf794acdad1
 msgid "Submodules Visibility"
 msgstr "子模块可见性"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:3
-#: 2efbd2b58d8940f1b784b77db08a329f
+#: e68406a4ae1349fda5fcf3ad49f66cdc
 msgid "How `open-deploy-ws` decides which **nested** submodules to init."
 msgstr "`open-deploy-ws` 如何决定初始化哪些**嵌套**子模块。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:5
-#: a6c3357aac9244e99d8b2083ff53dad5
+#: 7193b6ca5ed3421b92f5a7a6e8b6dde8
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:8
-#: a363f9f2e5c74889a8ad4b2f46e85f4f
+#: 6939d539d05440bca2aeeb74c5a5e463
 msgid ""
 "[`submodules_visibility.conf`](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/submodules_visibility.conf) and "
@@ -49,12 +49,12 @@ msgstr ""
 "ws/blob/main/init_repo.sh)。格式是竖线分隔，不是 INI。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:11
-#: ef9fb0f3cc2e47a6b25522271dbefde3
+#: 1aac933bc8854b1f8a7c4ce4b627232b
 msgid "Format"
 msgstr "格式"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:13
-#: 7b3a92e67e564a35b69c51eb0c56f03d
+#: 18d20755035e4756b1795779fef25d9d
 msgid ""
 "Each data line: `parent_dir|relative_path|public` or `private`. Blank "
 "lines and `#` comments are ignored."
@@ -63,12 +63,12 @@ msgstr ""
 "`parent_dir|relative_path|public` 或 `private`。空行和 `#` 注释会被忽略。这不是 INI 文件。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:15
-#: 48d274106bc54e40bca0f89a7803604e
+#: 7bcf5e24f39b40cb9b103024d02edcda
 msgid "From the current file (examples, not the full list):"
 msgstr "来自当前文件（示例，不是完整列表）："
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: 2837c929aadf47efbd3d918fd9f969b8
+#: 7a9e343f607b4afd812b2d5c05e4afb4
 msgid ""
 "src/robot-descriptions|common|public\n"
 "src/robot-descriptions|manipulator/Dobot|public\n"
@@ -87,19 +87,19 @@ msgstr ""
 "src/arms_ros2_control|libraries/lina_planning|private"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:27
-#: ca889131744649678e7451bf68bb5af3
+#: b907c3b8983e4f2f9dd764234202bdb2
 msgid ""
 "Hardware-interface nested lines in that file are **commented out** (they "
 "are not active visibility rows)."
 msgstr "该文件中驱动层的嵌套行被**注释掉**（不是生效的可见性行）。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:29
-#: e4be8184d55e42078869c6ea1a9d9486
+#: 1f29f5ee6e6e46bf9c4cf1c6290fbc9a
 msgid "What `./init_repo.sh` does"
 msgstr "`./init_repo.sh` 做什么"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:31
-#: a20ca9e24914446a911bf23674412276
+#: 7b6233d9501147d89e06f8150cffc2a3
 msgid ""
 "From the [open-deploy-ws README](https://github.com/fiveages-sim/open-"
 "deploy-ws/blob/main/README.EN.md):"
@@ -108,14 +108,14 @@ msgstr ""
 "ws/blob/main/README.EN.md)："
 
 #: ../../source/3-concepts/6-submodules_visibility.md:33
-#: 622baaf6e1b54f82a0bbc11a5f27a8a3
+#: 265aa35aa74b46a2b674d02a152e512c
 msgid ""
 "**Nested visibility:** `public` (external) or `private` (needs internal "
 "GitHub access). This only affects nested modules **inside** each repo."
 msgstr "**嵌套可见性：** `public`（外部）或 `private`（需要内部 GitHub 权限）。这只影响各仓库**内部**的嵌套模块。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:34
-#: fcc0e773ca0440aba5b131ff1eeaa4fb
+#: 836a718fd7e64aadaf6365c99ffdbd01
 msgid ""
 "**Core module mode:** per module `d` (GitHub Release `.deb`) or `s` "
 "(source). Top-level `ocs2_ros2`, `arms_ros2_control`, and `robot-"
@@ -125,7 +125,7 @@ msgstr ""
 "`ocs2_ros2`、`arms_ros2_control` 和 `robot-descriptions/common`。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:36
-#: 7c3d0dcc881f407eb21af2bec51e2337
+#: a654b179ffac4b01b567d21d0616f6e4
 msgid ""
 "Then the script inits nested modules according to visibility (skipped if "
 "the parent or common is deb), checks out configured branches, runs "
@@ -135,27 +135,27 @@ msgstr ""
 "deb。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:38
-#: 723d45a2957849c4a709ecf5ed5a4912
+#: fbf2d19c34c34ccab1ed49bc9bf05987
 msgid "Do **not** `git submodule update --init --recursive` as the primary path."
 msgstr "**不要盲目递归初始化** — `git submodule update --init --recursive` 会在私有模块上失败"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:40
-#: b915d9cb94724dda86fb4c06347ae7e6
+#: 1e1c7feb75d64363ae0d75d6ae3f3b41
 msgid "Public vs private (this file)"
 msgstr "公开与私有子模块"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: e48a861a32ae48dfa08f5ee91e9948a5
+#: 91518adb86424205a95d9140e266821c
 msgid "Nested path (examples)"
 msgstr "嵌套路径（示例）"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: 43329264ac51434db34e44c26c450a77
+#: 4e72d14b13324008807d073baf5857e6
 msgid "Visibility"
-msgstr "子模块可见性"
+msgstr "可见性"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: 912d3d07bb5e41feb68d3e746f1acfe4
+#: 00b8dcef95984f7eb669ea342e9a81b9
 msgid ""
 "`robot-descriptions` `common`, `manipulator/Dobot`, `manipulator/ARX`, "
 "`quadruped`, `humanoid/Galbot`"
@@ -164,12 +164,12 @@ msgstr ""
 "`common`、`manipulator/Dobot`、`manipulator/ARX`、`quadruped`、`humanoid/Galbot`"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: 809ffa57d3d04fcfa70501fa378a3a2e
+#: 490929df31e249e195c8a0472e7af25e
 msgid "`public`"
 msgstr "`public`"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: edc51085549145008ab62127ea661afb
+#: 0edabe94cf3a458fbf3980b3926b129a
 msgid ""
 "`manipulator/Tianji`, `manipulator/Rokae`, FiveAges `fiveages_w*` "
 "descriptions, `humanoid/Ubtech`"
@@ -178,19 +178,29 @@ msgstr ""
 "描述、`humanoid/Ubtech`"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: 578f967884af4895b3efabc6290577a1 96785b6d355b49119512e3324072090d
-msgid "`private`"
-msgstr "`private`"
+#: 73312993f2ad4a66960b127df5a8b319
+msgid ""
+"`private` (conf still lists FiveAges here even though W1 / W2 / S2 / "
+"`fa-w2-components` remotes are now public; **W2R / S2R remotes are not "
+"open**)"
+msgstr ""
+"`private`（配置文件仍把 FiveAges 列在这里，尽管 W1 / W2 / S2 / `fa-w2-components`"
+"远端现已公开；**W2R / S2R 远端尚未开放**）"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:17
-#: fb5a0da1c60242d49669a4f2f8e8b35d
+#: 0acb2fea483a4f41844a2843c09f103f
 msgid ""
 "`arms_ros2_control` `ocs2_wbc_controller`, `ocs2_humanoid`, "
 "`lina_planning`"
 msgstr "ocs2-wbc-controller, ocs2-humanoid, lina_planning"
 
+#: ../../source/3-concepts/6-submodules_visibility.md:17
+#: d8d0cb660b30473e989de3226e7e7fd1
+msgid "`private`"
+msgstr "`private`"
+
 #: ../../source/3-concepts/6-submodules_visibility.md:48
-#: c3740cac95614e0bbfb7d16878e61266
+#: 4029601aad2f4fcb890536861fb6e02c
 msgid ""
 "If you need private nested modules, use a workspace/README that documents"
 " private access (`fa-deploy-ws`). Extra flags for that workspace are in "
@@ -198,37 +208,37 @@ msgid ""
 msgstr "若需要私有嵌套模块，使用文档写明私有权限的工作区/README（`fa-deploy-ws`）。该工作区的额外参数在开通后的 README 里。"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:50
-#: 27f74b4331b349f2bfed0f7764864bc4
+#: 8bab0532a1514e769efac032bbc73240
 msgid "Adding a nested submodule (contributors)"
 msgstr "添加嵌套子模块（贡献者）"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:52
-#: 23a65881fc094a19bf3d4c905d8d8f73
+#: baa6bc2e53af463281c7c4f7a1cb08d5
 msgid "Add it to the **parent** `.gitmodules` (Git INI)."
 msgstr "将其加入父仓库的 `.gitmodules`（Git 的 INI 格式）："
 
 #: ../../source/3-concepts/6-submodules_visibility.md:53
-#: 5bc55aa3defb4432bfda06adbb85b58a
+#: 1eafe5136b364182987c83ed64bed608
 msgid "Add one pipe line to `submodules_visibility.conf`."
 msgstr "在 `submodules_visibility.conf` 中加入一条竖线分隔的配置："
 
 #: ../../source/3-concepts/6-submodules_visibility.md:54
-#: 25f3229931304c13a59f6e732eeccfd0
+#: 7605676762c1497d841d2e4e4084b943
 msgid "Test with `./init_repo.sh` on a clean clone."
 msgstr "在干净的克隆中测试初始化"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:56
-#: a6df771c403b42c4a002349e5ef2976e
+#: fc8c536736a54486b63e07896993e2cc
 msgid "Related"
 msgstr "相关"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:58
-#: 2ca29b31e13b402d962e57ec8c7e596e
+#: 1df44a1f20264102969a358a55c2dc40
 msgid "[Workspace Layout](2-workspace_layout.md)"
 msgstr "[工作区布局](2-workspace_layout.md)"
 
 #: ../../source/3-concepts/6-submodules_visibility.md:59
-#: fcd2fec99c3f4672baef1860367f5b18
+#: 1e99f14e15f4480fb89ec77555948612
 msgid "[Source vs Deb](5-source_vs_deb.md)"
 msgstr "[源码 vs Deb](5-source_vs_deb.md)"
 

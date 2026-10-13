@@ -47,11 +47,18 @@ Do **not** document a hand-written `~/.bashrc` `source /opt/ros/...` chain as th
 
 ## Private repos
 
-For `fa-deploy-ws`, FiveAges URDF remotes (`fa-*-description`, `fa-w2-components`, `fa-wce3-description`), DexCap private workspace, `ocs2_wbc_controller`, and other 404-without-access remotes:
+For `fa-deploy-ws`, remaining private FiveAges remotes (`fa-w2r-description`, `fa-s2r-description`, `fa-wce3-description`, `fiveages-gen3-robot-usds`), DexCap private workspace, `ocs2_wbc_controller`, and other 404-without-access remotes:
 
 - Tell readers to follow **that repository’s README after access**
 - You may name the same **script name** as the public counterpart (`./init_repo.sh`) when that is the verified pattern
 - Do **not** list `--robot`, `robot.local.yaml`, `./quick_start.sh --mock`, `fiveages_bringup`, `init-sim.sh`, conda env names, or a guessed `common/` / `arms/` / `robot/` tree
+
+**Public** FiveAges remotes (link HTTPS; launch names only from those READMEs; no invented `open-deploy-ws` Gen1/Gen2 branch):
+
+- URDF: [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description), [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description), [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description), [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components)
+- USD: [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) (`robot_usds` path `humanoid/FiveAges/Gen1`), [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) (`W2/`, `S2/`, `components/`; path `humanoid/FiveAges/Gen2`)
+
+**W2R and S2R are not open.** `open-deploy-ws` `submodules_visibility.conf` and FaSim visibility still mark FiveAges paths `private`.
 
 FiveAges URDF gitlinks and USD Gen labels: [robot_descriptions `.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules) (`main` and `feature/agilex`) and [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1. There is **no** public `robot-descriptions-fiveages` umbrella.
 

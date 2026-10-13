@@ -84,7 +84,7 @@ This workspace requires private repository access. Contact your team lead if you
 ### Features
 
 - Internal workspace for FiveAges wheeled-arm humanoids (W2, W2R, S2, S2R) and dual-arm CCS
-- Description remotes live as private gitlinks under [robot_descriptions `humanoid/FiveAges/`](../4-reference/descriptions/4-fiveages_umbrella.md) — not a separate `robot-descriptions-fiveages` umbrella
+- Description remotes live as gitlinks under [robot_descriptions `humanoid/FiveAges/`](../4-reference/descriptions/4-fiveages_umbrella.md) — not a separate `robot-descriptions-fiveages` umbrella. **Public:** W1, W2, S2, `fa-w2-components`, plus Gen1/Gen2 USD. **Still private:** **W2R**, **S2R** (not open yet), Gen3. There is no `open-deploy-ws` Gen1 or Gen2 branch.
 - Full OCS2 + WBC source when that workspace’s README says so
 
 ```{admonition} Source of truth

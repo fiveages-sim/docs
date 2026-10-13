@@ -1,20 +1,31 @@
 # FiveAges robot descriptions
 
-One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and their **public USD** mapping.
+One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and their **USD** mapping.
 
-```{admonition} Access Required
+```{admonition} Public now (Gen1 W1 + Gen2 W2 / S2 + components + USD)
+:class: tip
+
+These remotes are public (HTTPS):
+
+- URDF: [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) (W1 / Gen1), [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) (W2), [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) (S2), [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) (shared Gen2 components)
+- USD: [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) (W1; `robot_usds` path `humanoid/FiveAges/Gen1`) and [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) (`W2/`, `S2/`, `components/`; path `humanoid/FiveAges/Gen2`)
+
+Launch names and xacro details: those **public package READMEs**. There is no `open-deploy-ws` Gen1 or Gen2 branch.
+```
+
+```{admonition} Still private — W2R and S2R are not open
 :class: warning
 
-FiveAges URDF remotes and `fa-deploy-ws` are **private** (GitHub 404 without access). Contact your team lead. After access, follow **those package READMEs** and that workspace’s init scripts.
+These remotes are **not** public (GitHub 404 without access): **W2R** (`fa-w2r-description`), **S2R** (`fa-s2r-description`), **Gen3** (`fa-wce3-description`, `fiveages-gen3-robot-usds`), and `fa-deploy-ws`. There is **no** public `robot-descriptions-fiveages` umbrella. Contact your team lead. After access, follow **those package READMEs**.
 ```
 
 ```{admonition} Source of truth
 :class: important
 
 - URDF gitlinks: [robot_descriptions `.gitmodules` on `main`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules) and the [same file on `feature/agilex`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/.gitmodules)
-- On-disk path: `humanoid/FiveAges/` inside the public [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) umbrella. There is **no** public `robot-descriptions-fiveages` repo (404)
+- On-disk path: `humanoid/FiveAges/` inside the public [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions) umbrella
 - The public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) **does not** table these packages — use `.gitmodules`, not the README brand tables
-- Public USD: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges
+- Public USD: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges, [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds), [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds)
 - Workspace pattern (script name only): [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`. Extra flags and robot IDs are in that private README after access.
 - Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `real`)
 ```
@@ -23,51 +34,59 @@ FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, WCE3) ar
 
 ## URDF packages (`robot_descriptions`)
 
-FiveAges descriptions are **private git submodules** of the public umbrella. Checkout names and remotes below are from `.gitmodules`. The remotes themselves 404 without access; launch files, xacro trees, and controller YAML are in those package READMEs.
+FiveAges descriptions live as **git submodules** of the public umbrella. Checkout names and remotes below are from `.gitmodules`.
+
+**Public remotes** (W1, W2, S2, `fa-w2-components`): browse the HTTPS repos, or `git submodule update --init` the matching path on [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions). Launch / xacro: each package README ([W1](https://github.com/fiveages-sim/fa-w1-description), [W2](https://github.com/fiveages-sim/fa-w2-description), [S2](https://github.com/fiveages-sim/fa-s2-description), [components](https://github.com/fiveages-sim/fa-w2-components)). W1 reuses Rokae `ar5_*` descriptions; W2 and S2 reuse Tianji `m6_ccs_description` (those remotes are still private).
+
+**Still private remotes** (**W2R**, **S2R**, Gen3): 404 without access. **W2R and S2R are not open yet.**
+
+[`open-deploy-ws` `submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) still marks the FiveAges description paths `private`, so `./init_repo.sh` does **not** pull them. Do not recursive-init from `open-deploy-ws`. There is no public `open-deploy-ws` Gen1 or Gen2 branch.
 
 ### `main` (flat under `humanoid/FiveAges/`)
 
-| Path | Package dir | Remote |
-|------|-------------|--------|
-| `humanoid/FiveAges/fiveages_w1_description` | `fiveages_w1_description` | `fa-w1-description` |
-| `humanoid/FiveAges/fiveages_w2_description` | `fiveages_w2_description` | `fa-w2-description` |
-| `humanoid/FiveAges/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` |
-| `humanoid/FiveAges/fiveages_s2_description` | `fiveages_s2_description` | `fa-s2-description` |
-| `humanoid/FiveAges/fiveages_w2_common_description` | `fiveages_w2_common_description` | `fa-w2-components` |
+| Path | Package dir | Remote | Visibility |
+|------|-------------|--------|------------|
+| `humanoid/FiveAges/fiveages_w1_description` | `fiveages_w1_description` | [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) | Public |
+| `humanoid/FiveAges/fiveages_w2_description` | `fiveages_w2_description` | [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) | Public |
+| `humanoid/FiveAges/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` | Private — **not open** |
+| `humanoid/FiveAges/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
+| `humanoid/FiveAges/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
 
 `main` has **no** `fiveages_s2r_description` and **no** `fiveages_wce3_description` gitlink.
 
 ### `feature/agilex` (grouped like USD: Gen1 / Gen2 / Gen3)
 
-| Gen | Path | Package dir | Remote |
-|-----|------|-------------|--------|
-| Gen1 | `humanoid/FiveAges/Gen1/fiveages_w1_description` | `fiveages_w1_description` | `fa-w1-description` |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_description` | `fiveages_w2_description` | `fa-w2-description` |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2_description` | `fiveages_s2_description` | `fa-s2-description` |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2r_description` | `fiveages_s2r_description` | `fa-s2r-description` |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_common_description` | `fiveages_w2_common_description` | `fa-w2-components` |
-| Gen3 | `humanoid/FiveAges/Gen3/fiveages_wce3_description` | `fiveages_wce3_description` | `fa-wce3-description` |
+| Gen | Path | Package dir | Remote | Visibility |
+|-----|------|-------------|--------|------------|
+| Gen1 | `humanoid/FiveAges/Gen1/fiveages_w1_description` | `fiveages_w1_description` | [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) | Public |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_description` | `fiveages_w2_description` | [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) | Public |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` | Private — **not open** |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2r_description` | `fiveages_s2r_description` | `fa-s2r-description` | Private — **not open** |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
+| Gen3 | `humanoid/FiveAges/Gen3/fiveages_wce3_description` | `fiveages_wce3_description` | `fa-wce3-description` | Private |
 
-Do not recursive-init these from `open-deploy-ws`; visibility is private. After access, init the path named in `.gitmodules` (or let `fa-deploy-ws` `./init_repo.sh` do it).
+`feature/agilex` adds Gen2 **W2R** and **S2R** gitlinks; those remotes stay private.
 
-## Public: Isaac USD (`robot_usds`)
+After access to a private remote, init the path named in `.gitmodules` (or let `fa-deploy-ws` `./init_repo.sh` do it).
 
-[robot_usds](https://github.com/fiveages-sim/robot_usds) maps FiveAges assets under `robots/humanoid/FiveAges/` as **Git submodules** (private USD repos). From that README:
+## Isaac USD (`robot_usds`)
 
-| Path (under `robot_usds` root) | Upstream | README names |
-|--------------------------------|----------|--------------|
-| `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | W1 / Gen1 |
-| `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 |
-| `humanoid/FiveAges/Gen3` | [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | WCE3 / Gen3 |
+[robot_usds](https://github.com/fiveages-sim/robot_usds) maps FiveAges assets under `humanoid/FiveAges/` as **Git submodules**. From that README and the Gen1 / Gen2 USD READMEs:
 
-Those three USD remotes and their READMEs are **not public**. Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that robot’s USDA.
+| Path (under `robot_usds` root) | Upstream | README names | Visibility |
+|--------------------------------|----------|--------------|------------|
+| `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | W1 / Gen1 | Public |
+| `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 (`W2/`, `S2/`, `components/`) | Public |
+| `humanoid/FiveAges/Gen3` | `fiveages-gen3-robot-usds` | WCE3 / Gen3 | Private |
 
-Checkout: FaSim-Isaac **`./init.sh`** (operation that inits `robots/` via `submodules_visibility.conf`), then **`./run.sh`**. See [robot_usds](../simulation/3-robot_usds.md).
+Gen2 USD is **W2 and S2** only. It does **not** publish W2R or S2R.
+
+Checkout: standalone `git submodule update --init humanoid/FiveAges/Gen2` (and `…/Gen1`) as in the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §2.1, or FaSim-Isaac **`./init.sh`** (operation that inits `robots/` via `submodules_visibility.conf`), then **`./run.sh`**. FaSim’s visibility file still marks the FiveAges Gen\* trees `private`, so `./init.sh` does not select them by default. See [robot_usds](../simulation/3-robot_usds.md).
 
 ## Private: deploy
 
-`fa-deploy-ws` is internal. Extra flags and robot IDs live in **that** README — not here.
+`fa-deploy-ws` is internal. Extra flags and robot IDs live in **that** README — not here. There is no public `open-deploy-ws` Gen1 or Gen2 branch.
 
 After access:
 

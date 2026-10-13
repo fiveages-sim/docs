@@ -19,7 +19,7 @@ robot_descriptions/
 ├── common/                              # robot-descriptions-common
 ├── quadruped/                           # robot-descriptions-quadruped
 ├── humanoid/                            # in-tree wheeled / leg humanoids
-│   ├── FiveAges/                        # private gitlinks (not in README tables)
+│   ├── FiveAges/                        # gitlinks (not in README tables); W1/W2/S2 public, W2R/S2R not open
 │   ├── Dyna/taku_description            # in-tree on feature/agilex only
 │   ├── Galbot/                          # robot-descriptions-galbot
 │   └── Agibot/agibot_g2_description     # private
@@ -48,7 +48,7 @@ robot_descriptions/
 
 README also tables **in-tree** wheeled humanoids, mobile manipulators, manipulators (including HighTorque Panthera HT path above), and leg humanoids. Brand folders are those listed there.
 
-FiveAges URDF packages are **private gitlinks** under `humanoid/FiveAges/` in [`.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). They are **not** in the README brand tables and are **not** a separate `robot-descriptions-fiveages` umbrella. Paths and remotes: [FiveAges robot descriptions](4-fiveages_umbrella.md).
+FiveAges URDF packages are gitlinks under `humanoid/FiveAges/` in [`.gitmodules`](https://github.com/fiveages-sim/robot_descriptions/blob/main/.gitmodules). They are **not** in the README brand tables and are **not** a separate `robot-descriptions-fiveages` umbrella. **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** **W2R**, **S2R** (not open yet), Gen3. Paths and remotes: [FiveAges robot descriptions](4-fiveages_umbrella.md).
 
 Standalone clone (README). In `open-deploy-ws`, prefer `./init_repo.sh` instead:
 
