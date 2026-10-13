@@ -28,7 +28,7 @@ These robots are fully supported for external users without requiring private re
 
 ### Internal Path (fa-deploy-ws)
 
-FiveAges team members can deploy to additional robots including W2, W2R, S2, S2R, and dual-arm CCS configurations. See [fa-deploy-ws setup](../../../1-getting_started/4-fa_deploy_ws.md).
+FiveAges team members can deploy to additional robots including W1, W2, W2R, S2, S2R, and dual-arm CCS configurations via `fa-deploy-ws` (there is no public `open-deploy-ws` Gen1 or Gen2 branch). W1/W2/S2 URDF remotes are public; **W2R and S2R remotes are not open**. See [fa-deploy-ws setup](../../../1-getting_started/4-fa_deploy_ws.md) and [FiveAges robot descriptions](../../../4-reference/descriptions/4-fiveages_umbrella.md).
 
 ## In this section
 

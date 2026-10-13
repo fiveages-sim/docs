@@ -27,7 +27,7 @@ The ecosystem has two entry points:
 | Path | Workspace | Audience | Robots |
 |------|-----------|----------|--------|
 | **Public** | [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws) | Open source users | Dobot CR5, ARX Lift 2S, Acone (dual-arm), Galbot, HighTorque Panthera HT, etc. |
-| **Internal** | fa-deploy-ws | FiveAges team | W2, W2R, S2, S2R, dual-arm CCS |
+| **Internal** | fa-deploy-ws | FiveAges team | W2, W2R, S2, S2R, dual-arm CCS (W1/W2/S2 **descriptions** are public; deploy workspace is not; **W2R / S2R remotes are not open**) |
 
 **If you're new**, start with the public path. It uses only public submodules and can run demos without special access.
 

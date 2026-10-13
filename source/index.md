@@ -25,7 +25,7 @@ FiveAges Sim provides:
 | Path | Workspace | Audience |
 |------|-----------|----------|
 | **Public** | `open-deploy-ws` | External users, OSS contributors; public submodules only |
-| **Internal** | `fa-deploy-ws` | FiveAges team; FA wheeled-arm humanoids (W2/W2R/S2/S2R) + dual-arm systems |
+| **Internal** | `fa-deploy-ws` | FiveAges team; FA wheeled-arm humanoids (W2/W2R/S2/S2R) + dual-arm systems. W1/W2/S2 **descriptions** are public; **W2R / S2R remotes are not open**. |
 
 Start with the [public path](1-getting_started/3-open_deploy_ws.md) if you're new. Internal users should read [fa-deploy-ws setup](1-getting_started/4-fa_deploy_ws.md) after getting familiar with the stack.
 

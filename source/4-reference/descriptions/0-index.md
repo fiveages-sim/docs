@@ -16,7 +16,7 @@ Robot descriptions are organized in a hierarchy:
 robot_descriptions/                 # umbrella paths from its README
 ├── common/                         # robot-descriptions-common
 ├── quadruped/
-├── humanoid/                       # in-tree + Galbot; FiveAges = private gitlinks
+├── humanoid/                       # in-tree + Galbot; FiveAges = public W1/W2/S2 + private W2R/S2R gitlinks
 └── manipulator/                    # Dobot, ARX, Tianji, Rokae, HighTorque, …
 :::
 
@@ -39,5 +39,5 @@ robot_descriptions/                 # umbrella paths from its README
 | [robot_descriptions](1-robot_descriptions.md) | Umbrella | Public |
 | [robot-descriptions-common](2-common.md) | Grippers, hands, sensors, `robot_common_launch` (path `common`) | Public |
 | [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HighTorque | Public |
-| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/2/3 USD | Private remotes |
+| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/2/3 USD | Public W1/W2/S2 + components + Gen1/Gen2 USD; W2R, S2R, Gen3 still private |
 | [Vendor arms](6-vendor_arms_private.md) | Tianji, Rokae, etc. | Private |

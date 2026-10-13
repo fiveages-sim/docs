@@ -16,7 +16,7 @@ flowchart TB
   subgraph L1 [L1 Descriptions]
     RD["robot_descriptions<br/>public umbrella"]
     RDC["robot-descriptions-common"]
-    FA["humanoid/FiveAges/*<br/>private gitlinks"]
+    FA["humanoid/FiveAges/*<br/>W1/W2/S2 public; W2R/S2R private"]
     BRAND["brand desc:<br/>dobot / arx / galbot / ht / quadruped<br/>tianji / rokae / ubtech / …"]
   end
 
@@ -85,7 +85,7 @@ Robot descriptions define the URDF/xacro models, visual meshes, and ros2_control
 
 - **robot_descriptions** — Public umbrella that aggregates brand-specific packages
 - **robot-descriptions-common** — Shared grippers, hands, sensors, and launch utilities
-- **humanoid/FiveAges** — Private gitlink packages under that umbrella (not a separate `robot-descriptions-fiveages` repo). Paths: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)
+- **humanoid/FiveAges** — Gitlink packages under that umbrella (not a separate `robot-descriptions-fiveages` repo). **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** **W2R**, **S2R** (not open yet), Gen3. Paths: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)
 - **Brand packages** — Per-vendor descriptions (dobot, arx, galbot, etc.)
 
 ### L2: Hardware Interfaces

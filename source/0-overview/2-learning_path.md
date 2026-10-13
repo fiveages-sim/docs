@@ -197,7 +197,7 @@ Use the matching **branch README** and `./quick_start.sh`. **Acone** / **AC One*
 ```{admonition} Internal Access Required
 :class: warning
 
-FA robots (W2, W2R, S2, S2R, dual-arm CCS) require access to `fa-deploy-ws`. Contact your team lead for repository access and hardware allocation.
+FA **deploy** (W1, W2, W2R, S2, S2R, dual-arm CCS) still requires access to `fa-deploy-ws`. W1/W2/S2 URDF and Gen1/Gen2 USD remotes are public; **W2R and S2R are not open**. See [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md). Contact your team lead for workspace access and hardware allocation.
 ```
 
 **Tasks:**

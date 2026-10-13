@@ -8,33 +8,33 @@ These are the only USD repositories in scope for this documentation (based on `r
 
 | Path | Repository | Description |
 |------|------------|-------------|
-| `humanoid/FiveAges/Gen1` | fiveages-gen1-robot-usds | W1 / Gen1 (private remote) |
-| `humanoid/FiveAges/Gen2` | fiveages-gen2-robot-usds | W2 / S2 / Gen2 (private remote) |
+| `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | W1 / Gen1 (public) |
+| `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 (public; `W2/`, `S2/`, `components/`) |
 | `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | WCE3 / Gen3 (private remote) |
 | `humanoid/Galbot` | galbot-usds | Galbot mobile manipulator |
 | `humanoid/Ubtech` | ubtech-usds | Ubtech humanoid |
 
 ## Gen1/Gen2/Gen3
 
-FiveAges robot USD assets organized by generation. Names below are from the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table. The remotes are private (404 without access). URDF gitlinks: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
+FiveAges robot USD assets organized by generation. Names below are from the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table. **Gen1 and Gen2 remotes are public; Gen3 is still private.** URDF gitlinks: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 
 ### Gen1
 
-**Repository:** fiveages-gen1-robot-usds
+**Repository:** [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds)
 
-README name: **W1**. Path: `humanoid/FiveAges/Gen1`.
+README name: **W1**. Path: `humanoid/FiveAges/Gen1`. Public.
 
 ### Gen2
 
-**Repository:** fiveages-gen2-robot-usds
+**Repository:** [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds)
 
-README names: **W2 / S2**. Path: `humanoid/FiveAges/Gen2`.
+README names: **W2 / S2**. Path: `humanoid/FiveAges/Gen2`. Public tree: `W2/`, `S2/`, `components/`. **W2R and S2R are not open** (not in this repo; URDF remotes stay private).
 
 ### Gen3
 
 **Repository:** fiveages-gen3-robot-usds
 
-README name: **WCE3**. Path: `humanoid/FiveAges/Gen3`.
+README name: **WCE3**. Path: `humanoid/FiveAges/Gen3`. Private remote.
 
 ## Galbot
 

@@ -71,9 +71,9 @@ Git submodules recorded there:
 | `humanoid/Ubtech` | ubtech-usds |
 | `humanoid/Galbot` | galbot-usds |
 
-FaSim `submodules_visibility.conf` marks Galbot **public** and the FiveAges Gen\* / Ubtech trees **private**. In-tree (not submodule) categories on robot_usds include grippers, dexhands, manipulators, mobile bases, mobile manipulators, and sensors — browse the repo for the current roots.
+FaSim `submodules_visibility.conf` marks Galbot **public** and the FiveAges Gen\* / Ubtech trees **private**, so `./init.sh` does not select FiveAges by default. The **remotes** for Gen1 (`fiveages-gen1-robot-usds`) and Gen2 (`fiveages-gen2-robot-usds`) are now public; Gen3 is still private. **W2R and S2R are not in the Gen2 USD repo.** In-tree (not submodule) categories on robot_usds include grippers, dexhands, manipulators, mobile bases, mobile manipulators, and sensors — browse the repo for the current roots.
 
-FiveAges **Gen1 / Gen2 / Gen3** are wheeled-arm USD generations under `humanoid/FiveAges/` (README maps Gen1→W1, Gen2→W2/S2). They are not bipedal humanoids.
+FiveAges **Gen1 / Gen2 / Gen3** are wheeled-arm USD generations under `humanoid/FiveAges/` (README maps Gen1→W1, Gen2→W2/S2). They are not bipedal humanoids. URDF status: [FiveAges robot descriptions](../../4-reference/descriptions/4-fiveages_umbrella.md).
 
 Full tree: [robot_usds reference](../../4-reference/simulation/3-robot_usds.md), [USD submodules](../../4-reference/simulation/4-usd_submodules.md).
 
