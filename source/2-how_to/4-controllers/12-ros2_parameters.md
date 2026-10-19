@@ -38,7 +38,7 @@ A YAML value is always applied when the controller or hardware interface plugin 
 
 | Tag | Meaning |
 |-----|---------|
-| **Runtime** | `ros2 param set` is picked up **without** reloading. These controllers have no generic `add_on_set_parameters_callback` for the documented keys. Home / MoveJ / waist duration / MoveL are re-read with `get_parameter` on the **next** matching state enter or command. |
+| **Runtime** | `ros2 param set` is picked up **without** reloading. These controllers have no generic `add_on_set_parameters_callback` for the documented keys. Home / MoveJ / waist duration / MoveL are re-read with `get_parameter` on the **next** matching state enter or command. HOLD thresholds are re-read on HOLD enter and each HOLD `run`. |
 | **Startup only** | Loaded in `on_init` / construction / first waist-planner create / hardware plugin `on_init`. Change the YAML or xacro and reload or restart. |
 | **Unverified** | Declared, but there is no callback or clear re-read path. The READMEs in #120 mark **none** of the previously documented keys this way. |
 
@@ -93,6 +93,18 @@ Both **Basic Joint Controller** and **OCS2 Arm Controller** use `arms_controller
 | `switch_command_base` | `100` | HOME config switching. **Startup only** (constructor). |
 
 OCS2 Arm extra slots `home_pos` / `rest_pos` stay on that controller’s table.
+
+(hold-statehold)=
+### Hold (`StateHold`)
+
+**Basic Joint Controller** and **OCS2 Arm Controller** both `auto_declare` these keys (default `0.1`) and use `arms_controller_common::StateHold`. Behavior: [`StateHold.cpp` at `9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/libraries/arms_controller_common/src/FSM/StateHold.cpp). They are **Runtime**: `StateHold::updateParam()` calls `get_parameter` on HOLD enter and each HOLD `run`. MIX HOLD impedance (`default_gains`) stays on the OCS2 Arm table.
+
+On enter, hold targets start as last-sent joint commands. Diff is the absolute joint-position error (rad).
+
+| Parameter | Default | Meaning |
+|-----------|---------|---------|
+| `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
+| `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
 
 ## Related
 
