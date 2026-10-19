@@ -14,7 +14,7 @@ Three columns: **Parameter**, **Type / default**, **Meaning** (the **When** tag 
 
 | Tag | Evidence (#120) |
 |-----|-----------------|
-| **Runtime** | `get_parameter` on the next HOME enter, MOVEJ enter / joint command, waist position plan, interpolating MoveL, or MOVEJ `cartesian_defaults` |
+| **Runtime** | `get_parameter` on the next HOME enter, MOVEJ enter / joint command, waist position plan, interpolating MoveL, MOVEJ `cartesian_defaults`, or HOLD enter / each HOLD `run` (`StateHold::updateParam`) |
 | **Startup only** | Member set in `on_init` / constructor / first waist-planner create; or README “reload / restart” |
 | **Unverified** | No documented key in these tables is Unverified in #120 |
 
@@ -23,7 +23,7 @@ Three columns: **Parameter**, **Type / default**, **Meaning** (the **When** tag 
 (basic-joint-controller)=
 ## Basic Joint Controller
 
-Plugin `basic_joint_controller/BasicJointController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters). Home keys: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README.md) / [README_zh](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).
+Plugin `basic_joint_controller/BasicJointController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters). Home keys: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). Hold keys: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold). README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README.md) / [README_zh](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/basic_joint_controller/README_zh.md). Topics: [Basic Joint Controller](7-basic_joint_controller.md). How-to: [Use Basic Joint Controller](../../2-how_to/4-controllers/11-basic_joint.md).
 
 This is the **primary MoveJ parameter table**. 灵巧手 uses `target_command_*` on this controller (not **Adaptive Gripper Controller**).
 
@@ -94,7 +94,7 @@ Uses `joint` (singular), not `joints`. `update_rate` and ControllerInterface com
 
 ## OCS2 Arm Controller
 
-Plugin `ocs2_arm_controller/Ocs2ArmController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters) and the [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome) names. README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md). Public YAML: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
+Plugin `ocs2_arm_controller/Ocs2ArmController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters), the [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome) names, and the [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold) keys. README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md). Public YAML: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
 
 README FSM is **HOME / HOLD / OCS2** (`3` = OCS2). Source also constructs `StateMoveJ` for canonical `/fsm_command` `4` (and IK MoveL when `lina_planning` is present). **Do not copy the Basic Joint MoveJ table here.** Declare-time deltas vs Basic Joint: `movej_interpolation_type` default `"linear"`, `movej_trajectory_blend_ratio` `0.2`. Waist keys, when `waist_lifting_enabled`, follow the Basic Joint waist table (only `waist_lifting_duration` is Runtime).
 
