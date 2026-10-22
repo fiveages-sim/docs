@@ -82,7 +82,7 @@ vr_pose_publisher:
     right: right_ee
 ```
 
-Robot-side VR insertion is separate: set `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off). Same file: `vr_update_rate`, `vr_follow_frame`. Button map and follow-frame troubleshooting: [VR Teleop How-To](../../2-how_to/5-teleoperation/6-vr_teleop.md).
+Robot-side VR insertion is separate: set `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off). Same file: `vr_update_rate`, `vr_follow_frame`. Button map (including WBC stop-one-arm vs VR pause) and follow-frame troubleshooting: {ref}`stop-one-arm-vs-stop-sending-vr-commands`.
 
 ## Network Setup
 

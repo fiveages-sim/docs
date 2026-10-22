@@ -206,6 +206,7 @@ Bindings depend on whether the robot is running **分体** (`split_body.launch.p
 | Left stick click | Mirror |
 | Right stick click | `STORAGE` ↔ `UPDATE` (**OCS2 only**) |
 | Grip (short press) | Toggle stick plane (`XY` ↔ `Z+Yaw`) |
+| Left **Y** / right **B** | Per-arm: **分体** = VR pause/resume (停发指令). **全身** default = that arm’s WBC ENABLE/DISABLE (停单臂); after event 16, same pause/resume. See [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands). |
 
 **全身** adds grip + stick (ignored in 分体; FSM must already be **OCS2**):
 
@@ -213,8 +214,40 @@ Bindings depend on whether the robot is running **分体** (`split_body.launch.p
 |---------|--------|
 | Left grip + left stick | Body: up = upright, down = lock waist, left = follow, right = custom lock |
 | Right grip + right stick | WBC: up = dual-arm couple on/off, down = chassis unlock/lock, left = reserved, right = reference-joint track |
+| Both grips + left **Y** + right **B** | Event 16: toggle the Y/B latch between WBC arm disable and VR pause/resume |
 
-Grip + same-hand trigger switches that trigger’s gripper between percent and open/close. Left **Y** + right **B** is scale-align (turns mirror off and returns to `STORAGE`). Both sticks together toggle chassis teleop ↔ end-effector control.
+Grip + same-hand trigger switches that trigger’s gripper between percent and open/close. Pressing left **Y** and right **B** together (no grips) is scale-align (turns mirror off and returns to `STORAGE`). Both sticks together toggle chassis teleop ↔ end-effector control.
+
+(stop-one-arm-vs-stop-sending-vr-commands)=
+### Stop one arm vs stop sending VR commands
+
+```{admonition} 停单臂 vs 停发指令
+:class: important
+
+On **全身**, default left **Y** / right **B** requests that arm’s WBC ENABLE/DISABLE (**停单臂**). That is not the same as freezing VR input for that arm (**停发指令** / pause). Event 16 flips which of those two Y/B does.
+```
+
+Y/B disable and event 16 apply when **全身** is active (`ocs2_wbc_controller`), VR is enabled, and FSM is **OCS2**. Implementation: [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/b55274481140ceb6e3e694ea4777b7fdd4cfa433/command/arms_target_manager/VR_INPUT_HANDLER_README.md) (「单臂启用 / 禁用与 Y/B 语义锁存」).
+
+| What you want | Control | Result |
+|---------------|---------|--------|
+| **Stop one arm** (停单臂) | Default left **Y** / right **B** | Request that arm’s WBC ENABLE/DISABLE. After WBC confirms `ARM_DISABLED`, VR stops publishing pose to that arm and stops accumulating that arm’s stick offset. The other arm stays controllable. Re-enable rebases from the current robot pose and the current headset / controller pose, then clears that arm’s stick offset. Does not require `UPDATE` / `STORAGE`. |
+| **Stop sending VR commands** (停发指令) | After event 16, same left **Y** / right **B** | Freeze / resume VR input for that arm (pause). Needs `UPDATE`. |
+| Switch Y/B meaning | Event 16: both grips + left **Y** + right **B** | Latch toggles between “WBC arm disable” and “VR pause/resume”. |
+
+**分体** ignores event 16. Left **Y** / right **B** stay VR pause/resume.
+
+Mirror swaps which physical button maps to which arm. WBC enabled/disabled state and rebase stay on the real arm.
+
+When event 16 switches to pause and that arm is already `ARM_DISABLED`, the handler requests ENABLE, rebases, then freezes as paused. When it switches back to disable and that arm is already VR-paused, it requests DISABLE, then clears pause after WBC confirms. Under pause semantics, entering `UPDATE` with the right stick click does not clear the pause.
+
+Constraints on **全身**:
+
+- While the arms are coupled, Y/B cannot toggle a single arm.
+- You cannot enable couple while any arm is disabled.
+- While coupled, event 16 cannot switch the latch from pause back to disable (the latch stays).
+- While a WBC switch or an event-16 conversion is still pending, event 16 and Y/B are ignored.
+- If the topology leaves 全身, the latch returns to the default disable meaning.
 
 ## Safety
 
@@ -268,6 +301,7 @@ Then:
 
 - Confirm `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off)
 - Verify controller is in teleop mode (`UPDATE` after entering OCS2)
+- On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED`) and that Y/B is not in VR-pause for that arm — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)
 - Check target poses are within workspace
 - Ensure no safety limits are triggered
 
