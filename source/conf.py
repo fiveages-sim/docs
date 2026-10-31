@@ -118,5 +118,26 @@ def _inject_language_switcher(
 
 
 def setup(app: Any) -> dict[str, Any]:
+    from sphinx.transforms import SphinxTransform
+
+    class RestoreMystSlugs(SphinxTransform):
+        # MyST stores heading anchors in env.metadata[docname]["myst_slugs"].
+        # sphinx-intl republishes each translated snippet under the same
+        # docname, and a snippet that itself contains a heading replaces that
+        # map. zh_CN cross-doc ``#anchors`` then fail under ``-W`` even though
+        # the HTML id is still on the page. Copy the full map back after Locale.
+        default_priority = 30  # after sphinx.transforms.i18n.Locale (20)
+
+        def apply(self, **kwargs: Any) -> None:
+            source = str(self.document.get("source") or "")
+            if "<translated>" in source:
+                return
+            slugs = getattr(self.document, "myst_slugs", None)
+            if not slugs:
+                return
+            meta = self.env.metadata.setdefault(self.env.docname, {})
+            meta["myst_slugs"] = slugs
+
+    app.add_transform(RestoreMystSlugs)
     app.connect("html-page-context", _inject_language_switcher)
     return {"parallel_read_safe": True}
