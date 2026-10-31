@@ -79,6 +79,15 @@ Only `waist_lifting_duration` is **Runtime**. Type, speed triples, kinematics, a
 
 Lift 2S example (`body_joint_controller`): `waist_lifting_enabled: true`, `waist_lifting_type: single_joint`, `waist_absolute_source_frame: base_link`, `waist_absolute_target_frame: lift_link`. Overlay: [`arx_lift2s_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_lift2s_description/config/ros2_control/ros2_controllers.yaml).
 
+### Hold
+
+`arms_controller_common::StateHold` keys. Fuller prose and enter/`run` behavior: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold).
+
+| Parameter | Type / default | Meaning |
+|-----------|----------------|---------|
+| `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
+| `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
+
 ## Adaptive Gripper Controller
 
 夹爪. Plugin `adaptive_gripper_controller/AdaptiveGripperController`. README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/adaptive_gripper_controller/README.md). Command channels: [Adaptive Gripper Controller](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`.
@@ -122,6 +131,15 @@ Older README names that are **not** parameters at this pin: `zero_pos` (use `res
 | `movel_auto_extend_duration` | `true` | Extend MoveL duration when limits require it. **Runtime**. |
 
 YAML frame overrides are injected in memory at Interface construction.
+
+### Hold
+
+Same `StateHold` keys as Basic Joint. Fuller prose: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold). MIX HOLD impedance (`default_gains`) stays in the table above.
+
+| Parameter | Type / default | Meaning |
+|-----------|----------------|---------|
+| `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
+| `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
 
 ## arms_target_manager
 
