@@ -65,6 +65,8 @@ Unload and reload the controller to change these.
 
 One place for behavior that several controllers share in `libraries/arms_controller_common/`. MoveJ YAML keys are on the [Basic Joint Controller](../../4-reference/controllers/8-ros2_parameters.md) parameter table (the primary MoveJ page). **OCS2 Arm Controller** README FSM is HOME / HOLD / OCS2; it constructs `StateMoveJ` for canonical command `4` (and IK MoveL when `lina_planning` is present) but does not treat MoveJ as a README first-class mode.
 
+Shared FSM names on the reference page (Home, Hold, and which section holds the MoveJ table): [Shared FSM parameters](../../4-reference/controllers/8-ros2_parameters.md#shared-fsm-parameters).
+
 运控 layering (controller vs hardware interface, 分体 vs 全身) stays on the existing pages — [Terminology](../../3-concepts/8-terminology.md), [ros2_control here](../../3-concepts/1-ros2_control_here.md), [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md), [Hardware Interfaces](../../4-reference/hardware/0-index.md). The internal Feishu 运控架构图 is whiteboard-only and is not redrawn here.
 
 ### `/fsm_command` value `3`

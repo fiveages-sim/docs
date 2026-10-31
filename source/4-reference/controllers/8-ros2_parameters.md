@@ -20,6 +20,40 @@ Three columns: **Parameter**, **Type / default**, **Meaning** (the **When** tag 
 
 `config/ocs2/*.info` is **not** the ROS 2 parameter server. `robot_name` selects `{robot_name}_description`; the task file is `{pkg}/config/ocs2/task.info` unless launch YAML sets `info_file_name`.
 
+## Shared FSM parameters
+
+**Basic Joint Controller** and **OCS2 Arm Controller** both use `libraries/arms_controller_common/` (`StateHome`, `StateHold`, `StateMoveJ`). This section indexes those shared ROS 2 names. Package-specific keys, and a second copy of the Hold rows, stay in the controller sections below. Fuller prose: [Shared mechanisms](../../2-how_to/4-controllers/12-ros2_parameters.md#shared-mechanisms).
+
+Separate lists on this page: [framework-common parameters](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters) (`joints`, `update_rate`, `command_interfaces`, `state_interfaces`, optional `command_prefix`); [Adaptive Gripper Controller](#adaptive-gripper-controller) (`joint` and the force keys); [arms_target_manager](#arms-target-manager) (command node). [OCS2 WBC Controller](#ocs2-wbc-controller) names are the private `ocs2-wbc-controller` README after access. At pin [`9a1da3ba`](https://github.com/fiveages-sim/arms_ros2_control/tree/9a1da3ba3747b3042866422c2269c1d49bb02f48) the public tree’s Home / Hold `auto_declare` calls are in Basic Joint and OCS2 Arm, so this index stops at those two controllers. Waist keys stay in each controller section (only `waist_lifting_duration` is **Runtime**).
+
+### Home (`StateHome`)
+
+Both controllers pass `auto_declare` into `StateHome::init`, which reads `home_1` … `home_10` from YAML overrides and stops at the first missing name. They also `auto_declare` `home_duration`, `home_interpolation_type` (`"linear"`), `home_tanh_scale`, and `switch_command_base`. The `StateHome` constructor calls `declare_parameter` for `home_max_velocity`, `home_max_acceleration`, and `home_max_jerk` when those names are absent (defaults `2.0` / `4.0` / `20.0`). The common README lists those limits; the Basic Joint §3 YAML example omits them. Same defaults and **When** tags: [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome). OCS2-only `home_pos` / `rest_pos` are rows on the [OCS2 Arm Controller](#ocs2-arm-controller) table.
+
+| Parameter | Type / default | Meaning |
+|-----------|----------------|---------|
+| `home_1` … `home_10` | double[] / from YAML (`home_1` required) | Preset configurations. **Startup only** (`StateHome::init`; not re-read). |
+| `home_duration` | double / `3.0` | Interpolation duration (s). **Runtime** (next HOME enter or config switch). |
+| `home_interpolation_type` | string / `"linear"` | `"tanh"` \| `"linear"` \| `"doubles"` \| `"none"` (Home has no `"servo"`). **Runtime**. |
+| `home_tanh_scale` | double / `3.0` | tanh scale. **Runtime**. |
+| `home_max_velocity` | double / `2.0` | Speed limit. **Runtime**. |
+| `home_max_acceleration` | double / `4.0` | Acceleration limit. **Runtime**. |
+| `home_max_jerk` | double / `20.0` | Jerk limit. **Runtime**. |
+| `switch_command_base` | integer / `100` | HOME config switching. **Startup only** (constructor). |
+
+### Hold (`StateHold`)
+
+Both controllers `auto_declare` these keys (default `0.1`) and use `arms_controller_common::StateHold`. The same rows: [Basic Joint Hold](#basic-joint-hold) and [OCS2 Arm Hold](#ocs2-arm-hold). Enter and each HOLD `run`: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold). MIX HOLD impedance (`default_gains`) stays on the OCS2 Arm table.
+
+| Parameter | Type / default | Meaning |
+|-----------|----------------|---------|
+| `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
+| `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
+
+### MoveJ (`StateMoveJ`)
+
+The primary MoveJ parameter table is [Basic Joint → MoveJ](#basic-joint-movej). **OCS2 Arm Controller** declare-time deltas against that table are `movej_interpolation_type` `"linear"` and `movej_trajectory_blend_ratio` `0.2`, stated on the [OCS2 Arm Controller](#ocs2-arm-controller) section.
+
 (basic-joint-controller)=
 ## Basic Joint Controller
 
@@ -27,6 +61,7 @@ Plugin `basic_joint_controller/BasicJointController`. Also declares the [framewo
 
 This is the **primary MoveJ parameter table**. 灵巧手 uses `target_command_*` on this controller (not **Adaptive Gripper Controller**).
 
+(basic-joint-movej)=
 ### MoveJ
 
 README defaults below. Shared C++ `auto_declare` on **OCS2 Arm Controller** uses `movej_interpolation_type` `"linear"` and `movej_trajectory_blend_ratio` `0.2` — see that page’s delta, not a second MoveJ table.
@@ -79,6 +114,7 @@ Only `waist_lifting_duration` is **Runtime**. Type, speed triples, kinematics, a
 
 Lift 2S example (`body_joint_controller`): `waist_lifting_enabled: true`, `waist_lifting_type: single_joint`, `waist_absolute_source_frame: base_link`, `waist_absolute_target_frame: lift_link`. Overlay: [`arx_lift2s_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_lift2s_description/config/ros2_control/ros2_controllers.yaml).
 
+(basic-joint-hold)=
 ### Hold
 
 `arms_controller_common::StateHold` keys. Fuller prose and enter/`run` behavior: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold).
@@ -88,6 +124,7 @@ Lift 2S example (`body_joint_controller`): `waist_lifting_enabled: true`, `waist
 | `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
 | `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
 
+(adaptive-gripper-controller)=
 ## Adaptive Gripper Controller
 
 夹爪. Plugin `adaptive_gripper_controller/AdaptiveGripperController`. README [配置参数](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/adaptive_gripper_controller/README.md). Command channels: [Adaptive Gripper Controller](6-gripper_teleop_plugins.md). Open/close limits come from `/robot_description`.
@@ -101,6 +138,7 @@ Uses `joint` (singular), not `joints`. `update_rate` and ControllerInterface com
 | `force_threshold` | double / `0.1` | Effort magnitude that triggers feedback. **Startup only**. |
 | `force_feedback_ratio` | double / `0.5` | After trigger: `0.0` stop here, `1.0` continue to original target. **Startup only**. |
 
+(ocs2-arm-controller)=
 ## OCS2 Arm Controller
 
 Plugin `ocs2_arm_controller/Ocs2ArmController`. Also declares the [framework-common keys](../../2-how_to/4-controllers/12-ros2_parameters.md#framework-common-parameters), the [shared Home](../../2-how_to/4-controllers/12-ros2_parameters.md#home-statehome) names, and the [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold) keys. README [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/controller/ocs2_arm_controller/README.md). FSM / launch: [OCS2 Arm Controller](2-ocs2_arm_controller.md). Public YAML: [`cr5_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot-descriptions-dobot/blob/main/cr5_description/config/ros2_control/ros2_controllers.yaml). Optional dual-arm overlay on `robot_descriptions` **`feature/agilex` only**: [`taku_description/.../ros2_controllers.yaml`](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/config/ros2_control/ros2_controllers.yaml).
@@ -132,6 +170,7 @@ Older README names that are **not** parameters at this pin: `zero_pos` (use `res
 
 YAML frame overrides are injected in memory at Interface construction.
 
+(ocs2-arm-hold)=
 ### Hold
 
 Same `StateHold` keys as Basic Joint. Fuller prose: [shared Hold](../../2-how_to/4-controllers/12-ros2_parameters.md#hold-statehold). MIX HOLD impedance (`default_gains`) stays in the table above.
@@ -141,6 +180,7 @@ Same `StateHold` keys as Basic Joint. Fuller prose: [shared Hold](../../2-how_to
 | `hold_first_check_position_threshold` | double / `0.1` | First HOLD check after enter (measured vs hold targets). If any joint exceeds this, retarget hold to current measured positions to avoid a startup jump, then mark the first check passed. `≤ 0` skips the first check. **Runtime**. |
 | `hold_position_threshold` | double / `0.1` | After the first check has passed, if measured vs hold target exceeds this, retarget hold to current measured positions. `≤ 0` disables automatic adjustment. **Runtime**. |
 
+(arms-target-manager)=
 ## arms_target_manager
 
 This is a **command node**, not a ros2_control controller. README: [#120](https://github.com/fiveages-sim/arms_ros2_control/blob/e1b7a147effca2f29f7cced0b2942837b096c1ff/command/arms_target_manager/README.md). Cartesian topics: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md), [Adaptive Gripper Controller](6-gripper_teleop_plugins.md).
@@ -165,6 +205,7 @@ YAML: package [`config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_
 | `vr_thumbstick_angular_scale` | `0.05` | VR stick angular step (rad/step). **Startup only**. |
 | `enable_vr` | `false` in `default.yaml`; C++ declare `true` | Enable VR handler. Launch YAML overrides the C++ default. **Startup only**. |
 
+(ocs2-wbc-controller)=
 ## OCS2 WBC Controller
 
 `controller/ocs2_wbc_controller` is a **private** submodule. Parameter names after access: that package README. Public launch: `ros2 launch ocs2_arm_controller full_body.launch.py` — [OCS2 WBC Controller](3-ocs2_wbc.md). Extra frame `body_frame` is **Startup only** per the target-manager notes in #120.
