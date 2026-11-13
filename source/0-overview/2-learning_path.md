@@ -86,6 +86,14 @@ ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
 
 `arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator (arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships in the `ros-jazzy-arms-ros2-control` deb.
 
+This clip shows operating the ARX Lift 2S (方舟无限 Lift 2S, a dual-arm mobile manipulator) in RViz: drag the left and right end-effector interactive markers, then use the right-click menu to send the end-effector pose; both arms follow the targets. The clip has no terminal or launch commands.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/day2-arx-lift2s.mp4" type="video/mp4">
+</video>
+```
+
 ### FiveAges W2 with xhand1
 
 W2 is a FiveAges wheeled-arm robot. Its URDF is public ([fa-w2-description](https://github.com/fiveages-sim/fa-w2-description)); the usual workspace is [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) (default branch `fa-w2`). See [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md) and [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
@@ -142,7 +150,17 @@ Do not copy the rest of the Python API here. Full Viser UI: [ros2-viser](../4-re
 
 **FaSim** pairs NVIDIA Isaac Sim with the same ROS 2 运控 stack as the real robot. Follow [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md): clone [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac), run `./init.sh`, then `./run.sh`, and connect with **one** of the two paths on that page (`hardware:=isaac`, or Play on a `ROS2ControlLaunch` payload). Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`.
 
-Start Viser the way you did on Day 3, after the Isaac / ROS 2 stack is up, so you can view and control the robot in the browser: [Start Viser](../2-how_to/3-programming/5-python_interface.md#start-viser). A G1-D demonstration of full-body control and chassis motion is on that How-To page: [G1-D full-body control and chassis motion](../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-chassis-motion).
+Start Viser the way you did on Day 3, after the Isaac / ROS 2 stack is up, so you can view and control the robot in the browser: [Start Viser](../2-how_to/3-programming/5-python_interface.md#start-viser).
+
+This clip is a G1-D demonstration of full-body control in Isaac Sim. On the Viser web control interface, drag the dual-arm end-effector targets and move the chassis in rotation and translation; G1-D in Isaac Sim moves with it. Start Viser as in [Start Viser](../2-how_to/3-programming/5-python_interface.md#start-viser) after the stack is up.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/isaac-g1d-full-body-mobile.mp4" type="video/mp4">
+</video>
+```
+
+The same clip, and the rest of the Isaac Sim steps, are on [G1-D full-body control and chassis motion](../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-chassis-motion).
 
 What the two connections and the Kit extensions do: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md). Assets: [robot_usds](../4-reference/simulation/3-robot_usds.md), [Environment assets](../4-reference/simulation/5-env_assets.md).
 
