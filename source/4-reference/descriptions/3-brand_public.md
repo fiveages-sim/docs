@@ -10,7 +10,7 @@ Brand **EN/ZH** labels follow [robot_usds README_zh-CN.md §3.1](https://github.
 | 方舟无限 | ARX |
 | 银河通用 | Galbot |
 | 高擎 | HighTorque, Panthera |
-| 中科第五纪 | FiveAges |
+| 第五纪 | FiveAges |
 | 天机智能 | Tianji, Gento |
 | 智元 | Agibot |
 | 因时 | Inspire |

@@ -2,7 +2,7 @@
 
 Motion generation and **task_queue** YAML orchestration: a skill registry turns YAML blocks into **`StageTarget`** sequences and runs them through **`ROS2RobotInterface`**. Optional LeRobot dataset recording is an extra, not the core path.
 
-**Repository:** [fiveages-sim/robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) `main` (`5c94cc08`). `feature/dex-grasp-generator` is no longer a branch; follow `main`.
+**Repository:** [fiveages-sim/robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) `main` (`5c94cc08`). Follow `main`. There is no `feature/dex-grasp-generator` branch.
 
 **README:** [README.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/README.md)
 
@@ -111,12 +111,13 @@ check-robot-status --robot fiveages_w2 --workspace .
 
 ## End-effector frames
 
-[`stages_in_command_ee_frame`](https://github.com/fiveages-sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py) rewrites a stage pose into the link OCS2 tracks. The two paths are not the same source:
+[`stages_in_command_ee_frame`](https://github.com/fiveages-sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py) rewrites a stage pose into the link OCS2 is tracking. Which frames it uses depends on `robot.yaml`.
 
-- **No `ee_tip` in `robot.yaml`.** Live TF from `ee_target_frame` to `ee_command_frame`. Public G1D ([`robot.yaml`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)) sets `{arm}_eef` → `{arm}_tcp`.
-- **`ee_tip` set.** First the USD local chain tip → parent (`parent_prim` / `tip_prim`), then an optional live TF from that parent frame to `ee_command_frame`. On W2, OCS2 often tracks `{arm}_eef`, not `{arm}_tcp`. A project `robot.yaml` on [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) `feature/sinopec-test-tube-picking` uses this path (needs access). The prim paths stay in that file.
+Without `ee_tip`, it reads live TF from `ee_target_frame` to `ee_command_frame`. Public G1D ([`robot.yaml`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)) goes from `{arm}_eef` to `{arm}_tcp`.
 
-Empty frame names send the pose unchanged.
+With `ee_tip`, it first walks the USD chain from the tip prim to its parent (`tip_prim` to `parent_prim`), then can apply a live TF from that parent frame to `ee_command_frame`. On W2, OCS2 usually tracks `{arm}_eef`, not `{arm}_tcp`. A project `robot.yaml` on [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) branch `feature/sinopec-test-tube-picking` uses this second path. Open that file for the prim paths. You need access to the repository.
+
+Empty frame names leave the pose unchanged.
 
 ## In-repo docs (`main`)
 

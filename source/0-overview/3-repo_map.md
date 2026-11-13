@@ -59,7 +59,7 @@ There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes b
 | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | [P] | `humanoid/FiveAges/fiveages_s2_description` |
 | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | [P] | `humanoid/FiveAges/fiveages_w2_common_description` |
 
-[fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) (`fiveages_s2r_description`, **still private — not open**) and [fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description) (`fiveages_wce3_description`, still private) appear only on `robot_descriptions` **`feature/agilex`** (`Gen2` / `Gen3`). Both links need access.
+[fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) (`fiveages_s2r_description`) is still private and appears on `robot_descriptions` **`feature/agilex`** under Gen2. The link needs access.
 
 ## L2: Hardware Interfaces
 
@@ -94,9 +94,11 @@ There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes b
 |------------|------------|---------|
 | [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) | [P] | OCS2 arm controller, teleop plugins |
 | [legubiao/ocs2_ros2](https://github.com/legubiao/ocs2_ros2) | [X] | OCS2 MPC library (branch: ros2) |
-| [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) | [I] | Whole-body control |
-| [ocs2-humanoid](https://github.com/fiveages-sim/ocs2-humanoid) | [I] | Wheeled-arm humanoid library |
-| [lina_planning](https://github.com/fiveages-sim/lina_planning) | [I] | Trajectory primitives |
+| [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) | [I] | Whole-body controller source. The binary is in `ros-jazzy-arms-ros2-control` |
+| [ocs2-humanoid](https://github.com/fiveages-sim/ocs2-humanoid) | [I] | Motion-library source. Same standard deb |
+| [lina_planning](https://github.com/fiveages-sim/lina_planning) | [I] | Trajectory-primitive source. Same standard deb |
+
+The standard package is the one `./scripts/install_core_debs.sh --only arms` installs ([arms deb notes](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.deb.md)). It is a GitHub Release deb, not an apt package, and it is not `ros-jazzy-arms-ros2-control-full`. Clone the three repositories above to read or change the source. Private descriptions and the hardware interfaces in L2 are not in this package.
 
 ## L4: Simulation
 
@@ -107,7 +109,6 @@ There is **no** separate `robot-descriptions-fiveages` umbrella (404). Remotes b
 | [fiveages-env-usds](https://github.com/fiveages-sim/fiveages-env-usds) | [P] | Environment USD assets |
 | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | [P] | Gen1 USD (W1) |
 | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | [P] | Gen2 USD (W2 / S2; not W2R / S2R) |
-| [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | [I] | Gen3 USD (WCE3) |
 | [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) | [I] | FaSim project assets |
 
 ## L5: Teleop and Applications

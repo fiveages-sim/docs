@@ -85,7 +85,7 @@ Robot descriptions define the URDF/xacro models, visual meshes, and ros2_control
 
 - **robot_descriptions** — Public umbrella that aggregates brand-specific packages
 - **robot-descriptions-common** — Shared grippers, hands, sensors, and launch utilities
-- **humanoid/FiveAges** — Gitlink packages under that umbrella (not a separate `robot-descriptions-fiveages` repo). **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** **W2R**, **S2R** (not open yet), Gen3. Paths: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)
+- **humanoid/FiveAges** — Gitlink packages under that umbrella. There is no separate `robot-descriptions-fiveages` repo. **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** **W2R** and **S2R**. Paths: [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md)
 - **Brand packages** — Per-vendor descriptions (dobot, arx, galbot, etc.)
 
 ### L2: Hardware Interfaces

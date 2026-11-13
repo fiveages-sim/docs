@@ -247,16 +247,6 @@ msgid "fiveages-gen2-robot-usds"
 msgstr "fiveages-gen2-robot-usds"
 
 #: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:53
-#: 87954f3b083d42c9b4482c7f9def3e93
-msgid "`humanoid/FiveAges/Gen3`"
-msgstr "`humanoid/FiveAges/Gen3`"
-
-#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:53
-#: 320aa28444f74419bda0219f0e478569
-msgid "fiveages-gen3-robot-usds"
-msgstr "fiveages-gen3-robot-usds"
-
-#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:53
 #: d022eac72ee641ac8f5cf8d2ff2ec3ae
 msgid "`humanoid/Ubtech`"
 msgstr "`humanoid/Ubtech`"
@@ -275,36 +265,6 @@ msgstr "`humanoid/Galbot`"
 #: 2d5581f1f8584890863096c4fbcdb6f8
 msgid "galbot-usds"
 msgstr "galbot-usds"
-
-#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:70
-#: 003f8396fd404e63b4bccdbe1f6be6fa
-msgid ""
-"FaSim `submodules_visibility.conf` marks Galbot **public** and the "
-"FiveAges Gen\\* / Ubtech trees **private**, so `./init.sh` does not "
-"select FiveAges by default. The **remotes** for Gen1 (`fiveages-gen1"
-"-robot-usds`) and Gen2 (`fiveages-gen2-robot-usds`) are now public; Gen3 "
-"is still private. **W2R and S2R are not in the Gen2 USD repo.** In-tree "
-"(not submodule) categories on robot_usds include grippers, dexhands, "
-"manipulators, mobile bases, mobile manipulators, and sensors — browse the"
-" repo for the current roots."
-msgstr ""
-"FaSim `submodules_visibility.conf`把 Galbot 标成 **public**，FiveAges Gen\\* "
-"/Ubtech 树标成 **private**，因此 `./init.sh`默认不勾选FiveAges。Gen1（`fiveages-gen1"
-"-robot-usds`）与Gen2（`fiveages-gen2-robot-usds`）的**远端**现已公开；Gen3 仍为私有。**W2R"
-" 与 S2R 不在 Gen2USD 仓库中。** robot_usds 树内（非子模块）类别包括夹爪、灵巧手、机械臂、移动底盘、移动机械臂和传感器"
-" — 以仓库当前根目录为准。"
-
-#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:72
-#: e9432363d485456182fb898ea9231f78
-msgid ""
-"FiveAges **Gen1 / Gen2 / Gen3** are wheeled-arm USD generations under "
-"`humanoid/FiveAges/` (README maps Gen1→W1, Gen2→W2/S2). They are not "
-"bipedal humanoids. URDF status: [FiveAges robot "
-"descriptions](../../4-reference/descriptions/4-fiveages_umbrella.md)."
-msgstr ""
-"FiveAges **Gen1 / Gen2 / Gen3** 是 `humanoid/FiveAges/`下的轮臂 "
-"USD世代（README：Gen1→W1，Gen2→W2/S2）。它们不是双足人形。URDF "
-"状态：[FiveAges机器人描述](../../4-reference/descriptions/4-fiveages_umbrella.md)。"
 
 #: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:74
 #: 42dc6b5acb5f4587b423bb60d350debe
@@ -482,4 +442,35 @@ msgstr ""
 #~ "`config/fa_sim.local.template.conf` → "
 #~ "`config/fa_sim.local.conf`）。菜单为 PhysX / Newton "
 #~ "/ Headless Streaming。"
+
+#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:69
+#: 003f8396fd404e63b4bccdbe1f6be6fa
+msgid ""
+"FaSim `submodules_visibility.conf` marks Galbot public and the FiveAges "
+"and Ubtech trees private, so `./init.sh` does not select FiveAges by "
+"default. The Gen1 remote (`fiveages-gen1-robot-usds`) and the Gen2 remote"
+" (`fiveages-gen2-robot-usds`) are public. W2R and S2R are not in the Gen2"
+" USD repo. robot_usds also keeps grippers, dexterous hands, manipulators,"
+" mobile bases, mobile manipulators, and sensors in the tree itself. "
+"Browse the repo for the current roots."
+msgstr ""
+"FaSim 的 `submodules_visibility.conf` 把 Galbot 标成公开，把第五纪和优必选的树标成私有，所以 "
+"`./init.sh` 默认不选第五纪。Gen1 远端（`fiveages-gen1-robot-usds`）和 Gen2 远端"
+"（`fiveages-gen2-robot-usds`）是公开的。W2R 和 S2R 不在 Gen2 的 USD 仓库里。robot_usds "
+"自己的树里还有夹爪、灵巧手、机械臂、移动底盘、移动操作臂和传感器。当前目录以仓库为准。"
+
+#: ../../source/2-how_to/7-synthetic_data/1-isaac_scenes.md:71
+#: e9432363d485456182fb898ea9231f78
+msgid ""
+"Gen1 and Gen2 under `humanoid/FiveAges/` are wheeled-arm USD. The README "
+"maps Gen1 to W1 and Gen2 to W2 and S2. They are not bipeds. URDF status: "
+"[FiveAges robot "
+"descriptions](../../4-reference/descriptions/4-fiveages_umbrella.md)."
+msgstr ""
+"`humanoid/FiveAges/` 下的 Gen1 和 Gen2 是轮臂 USD。README 把 Gen1 对应到 W1，把 Gen2 "
+"对应到 W2 和 S2。它们不是双足。URDF 状态见 "
+"[第五纪机器人描述](../../4-reference/descriptions/4-fiveages_umbrella.md)。"
+
+#~ msgid "`humanoid/FiveAges/Gen3`"
+#~ msgstr "`humanoid/FiveAges/Gen3`"
 

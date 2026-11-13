@@ -2,10 +2,12 @@
 
 Whole-body MPC — **全身控制** (`ocs2_wbc_controller`) — for wheeled dual-arm robots, using `ocs2_wheel_humanoid`.
 
-```{admonition} Access Required
-:class: warning
+```{admonition} Run the deb, clone the source to edit it
+:class: note
 
-`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is the private submodule [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller). The link needs repository access. Topics, FSM values, and launch names are in that package README after access. The in-tree loader on the public side is `full_body.launch.py`.
+You can run `ocs2_wbc_controller` without opening the private repository. It ships in the GitHub Release package `ros-jazzy-arms-ros2-control`, together with `ocs2_humanoid` and `lina_planning` ([arms deb notes](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.deb.md)). In `open-deploy-ws` or `fa-deploy-ws`, choose `d` for arms in `./init_repo.sh`, or run `./scripts/install_core_debs.sh --only arms`. That script installs the standard package. It does not install `ros-jazzy-arms-ros2-control-full`, and the package is not on Ubuntu or ROS apt.
+
+[ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is the source checkout under `controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). Open it when you need to read or change the source. Topics and FSM values that are only written in that README stay there. The public loader is `full_body.launch.py`.
 ```
 
 ## Role
@@ -40,7 +42,7 @@ Extra FSM states stay in the private package README after access. From public so
 :::{admonition} Whole-body (WBC) availability
 :class: warning
 
-These topics need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply they are present. Capability bits (`WbcCapability`) are machine-dependent. Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC + body/head basic + grippers), not WBC. `full_body.launch.py robot:=taku` needs the private WBC submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the private module are present, Taku full-body default `headMode` is `HEAD_GAZE` (gaze on `head_camera_mid_optical_frame`); `target_manager.yaml` has `enable_head_control: false`. Head 6D tracking (`HEAD_TRACKING`) is only there when `head_tracking_ee_enabled` is true. Taku body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`. Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+These topics need `ocs2_wbc_controller` and that robot’s 全身 launch and config. `demo.launch.py` and 分体 (`split_body.launch.py`) do not start them. Capability bits (`WbcCapability`) depend on the robot. Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC, body and head basic controllers, and grippers). `full_body.launch.py robot:=taku` needs `ocs2_wbc_controller` from the `ros-jazzy-arms-ros2-control` deb, or from a source checkout. Shipping `config/ocs2/fixed_base_tcp.info` is not enough. With that config and the controller installed, Taku full-body default `headMode` is `HEAD_GAZE` (gaze on `head_camera_mid_optical_frame`), and `target_manager.yaml` has `enable_head_control: false`. Head 6D tracking (`HEAD_TRACKING`) is there when `head_tracking_ee_enabled` is true. Taku’s body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`. Full tables: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 :::
 
 ## Related

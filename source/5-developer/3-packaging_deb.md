@@ -7,7 +7,7 @@ Creating `.deb` packages for FiveAges Sim components.
 Several components ship prebuilt `.deb` files on GitHub Releases (not on packages.ros.org / Ubuntu apt):
 - OCS2 (`ros-jazzy-ocs2`) — [legubiao/ocs2_ros2 releases](https://github.com/legubiao/ocs2_ros2/releases)
 - robot-descriptions-common (`ros-jazzy-robot-descriptions-common`) — [fiveages-sim/robot-descriptions-common releases](https://github.com/fiveages-sim/robot-descriptions-common/releases)
-- arms_ros2_control (`ros-jazzy-arms-ros2-control`, optional) — [fiveages-sim/arms_ros2_control releases](https://github.com/fiveages-sim/arms_ros2_control/releases)
+- arms_ros2_control (`ros-jazzy-arms-ros2-control`) — [fiveages-sim/arms_ros2_control releases](https://github.com/fiveages-sim/arms_ros2_control/releases). The standard package includes `ocs2_wbc_controller`, `ocs2_humanoid`, and `lina_planning`. `./scripts/install_core_debs.sh --only arms` installs this package, not `ros-jazzy-arms-ros2-control-full`.
 
 ## Package Documentation
 

@@ -151,15 +151,6 @@ msgstr ""
 "**OCS2 Arm Controller**（`ocs2_arm_controller`）— 机械臂 MPC 的 FSM：HOME / OCS2"
 " / HOLD（包 README）。"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md:18
-#: 48773177a72b4040a0745cdd70abfc36
-msgid ""
-"**OCS2 WBC Controller** (`ocs2_wbc_controller`) — private submodule; 全身 "
-"MPC. States and topics are in that package README after access."
-msgstr ""
-"**OCS2 WBC Controller**（`ocs2_wbc_controller`）— 私有子模块；全身 MPC。状态与话题见开通后该包 "
-"README。"
-
 #: ../../source/3-concepts/7-split_vs_wbc.md:20
 #: e3d9ca79f63b4743aae27a9d93f1f9d3
 #, #
@@ -171,24 +162,35 @@ msgstr ""
 "FSM 命令取值、Action / Service 表以及 WBC 笛卡尔话题：[FSM "
 "与话题](4-fsm_and_topics.md)。控制器索引：[控制器参考](../4-reference/controllers/0-index.md)。"
 
+#~ msgid "Packages (do not invent)"
+#~ msgstr "软件包（不要编造）"
+
+#: ../../source/3-concepts/7-split_vs_wbc.md:18
+#: 526984333e7e4352b1c4506889758c9e
+msgid ""
+"**OCS2 WBC Controller** (`ocs2_wbc_controller`) — 全身 MPC. The binary is "
+"in the `ros-jazzy-arms-ros2-control` deb. The private repository is the "
+"source. States and topics that are only in that package README stay "
+"there."
+msgstr ""
+"**OCS2 WBC 控制器**（`ocs2_wbc_controller`）：全身 MPC。二进制在 `ros-jazzy-arms-"
+"ros2-control` 这个 deb 里。私有仓库是源码。只写在那个包 README 里的状态和话题，仍以那份 README 为准。"
+
 #: ../../source/3-concepts/7-split_vs_wbc.md:22
-#: 1854c36644c544558ea1b68dfbb50674
+#: 6f0bf73e1dad42098544a2bea0e498fb
 msgid ""
 "`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` "
 "need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default"
 " mock demos (`demo.launch.py`) and 分体 do **not** imply those features are"
 " present; capability bits are machine-dependent. Public Taku mock uses "
 "`split_body.launch.py robot:=taku`; `full_body.launch.py robot:=taku` "
-"still needs the private `ocs2_wbc_controller` submodule (shipping "
-"`config/ocs2/fixed_base_tcp.info` is not enough)."
+"needs `ocs2_wbc_controller` from that deb or from a source checkout. "
+"Shipping `config/ocs2/fixed_base_tcp.info` is not enough."
 msgstr ""
-"`/body_target*`、`/head_target*`、`/mode_command` 以及 `WbcCurrentState` 需要 "
-"**`ocs2_wbc_controller`** 以及该机型的全身启动/配置。默认 mock "
-"演示（`demo.launch.py`）和分体**并不表示**这些能力可用；能力位取决于机型。公开的 Taku mock 使用 "
-"`split_body.launch.py robot:=taku`；`full_body.launch.py robot:=taku` "
-"仍需要私有 `ocs2_wbc_controller` 子模块（描述里有 `config/ocs2/fixed_base_tcp.info` "
-"并不够）。"
-
-#~ msgid "Packages (do not invent)"
-#~ msgstr "软件包（不要编造）"
+"`/body_target*`、`/head_target*`、`/mode_command` 和 `WbcCurrentState` 需要 "
+"**`ocs2_wbc_controller`**，以及这台机器人的全身 launch 和配置。默认 "
+"mock（`demo.launch.py`）和分体不会带上这些功能；能力位取决于这台机器人。公开的 Taku mock 用 "
+"`split_body.launch.py robot:=taku`；`full_body.launch.py robot:=taku` 需要这个"
+" deb 里的 `ocs2_wbc_controller`，或一份源码检出。只带 "
+"`config/ocs2/fixed_base_tcp.info` 不够。"
 

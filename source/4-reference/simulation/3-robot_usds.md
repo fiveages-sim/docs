@@ -4,7 +4,7 @@ USD robot asset superproject for Isaac Sim.
 
 **Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-sim/robot_usds)
 
-Brand **EN/ZH** labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (English folder names match that table). Examples: 方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 中科第五纪 = **FiveAges**.
+Brand labels in this docs set follow [README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照). English folder names match that table. Examples: 方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = **Galbot**; 第五纪 = **FiveAges**.
 
 ## Purpose
 
@@ -20,8 +20,7 @@ robot_usds/
 ├── humanoid/
 │   ├── FiveAges/
 │   │   ├── Gen1/             # → fiveages-gen1-robot-usds
-│   │   ├── Gen2/             # → fiveages-gen2-robot-usds
-│   │   └── Gen3/             # → fiveages-gen3-robot-usds
+│   │   └── Gen2/             # → fiveages-gen2-robot-usds
 │   ├── Galbot/               # → galbot-usds
 │   └── Ubtech/               # → ubtech-usds
 ├── manipulators/             # Arm USD assets
@@ -38,7 +37,6 @@ The following are managed as Git submodules:
 |------|------------|--------|------------|
 | `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | main | Public |
 | `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | main | Public (`W2/`, `S2/`, `components/`) |
-| `humanoid/FiveAges/Gen3` | fiveages-gen3-robot-usds | main | Private |
 | `humanoid/Galbot` | galbot-usds | main | Public |
 | `humanoid/Ubtech` | ubtech-usds | main | Private |
 
@@ -76,13 +74,12 @@ Assets directly in `robot_usds` (not submodules):
 
 ## Asset Naming
 
-### Gen1/Gen2/Gen3
+### Gen1 and Gen2
 
 From the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table:
 
 - **Gen1** — W1 (`humanoid/FiveAges/Gen1` → [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds), public)
-- **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds), public). Tree: `W2/`, `S2/`, `components/`. **W2R and S2R are not in this repo.**
-- **Gen3** — WCE3 (`humanoid/FiveAges/Gen3` → `fiveages-gen3-robot-usds`, still private)
+- **Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds), public). Tree: `W2/`, `S2/`, `components/`. W2R and S2R are not in this repo.
 
 URDF / deploy: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md).
 

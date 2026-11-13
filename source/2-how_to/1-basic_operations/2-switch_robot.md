@@ -50,7 +50,7 @@ ros2 launch ocs2_arm_controller demo.launch.py
 ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
 ```
 
-`arx_acone` is **Acone** (dual-arm). Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). **Taku** (`taku`) uses the same split / full launches after descriptions are on `feature/agilex`: public mock is `split_body.launch.py`; `full_body.launch.py` needs the private `ocs2_wbc_controller` submodule — [Taku / `feature/agilex`](../../1-getting_started/3-open_deploy_ws.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md). Keep `demo.launch.py` for `cr5` / `arx_acone` / `panthera_ht`.
+`arx_acone` is **Acone** (dual-arm). Full-body **ARX Lift 2S** (`arx_lift2s`) uses `split_body.launch.py` / `full_body.launch.py` on the `arx-lift2s` branch — see [ARX Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). **Taku** (`taku`) uses the same split / full launches after descriptions are on `feature/agilex`: public mock is `split_body.launch.py`; `full_body.launch.py` needs `ocs2_wbc_controller` from the `ros-jazzy-arms-ros2-control` deb, or from a source checkout — [Taku / `feature/agilex`](../../1-getting_started/3-open_deploy_ws.md). HighTorque Panthera HT launch name is `panthera_ht` — see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md). Keep `demo.launch.py` for `cr5` / `arx_acone` / `panthera_ht`.
 
 ## End-effectors (`type` / `left_type` / `right_type`)
 

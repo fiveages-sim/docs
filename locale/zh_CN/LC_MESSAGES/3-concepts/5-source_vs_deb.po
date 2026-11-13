@@ -119,10 +119,6 @@ msgstr ""
 "[fiveages-sim/arms_ros2_control](https://github.com/fiveages-"
 "sim/arms_ros2_control/releases)"
 
-#: ../../source/3-concepts/5-source_vs_deb.md e1d2e154b80b4cc2abdc1a43b0e39fb2
-msgid "Controllers (optional)"
-msgstr "控制器（可选）"
-
 #: ../../source/3-concepts/5-source_vs_deb.md:15
 #: 481a00550a4247ea899fd872bb1daec9
 msgid ""
@@ -855,3 +851,32 @@ msgstr "ros2 pkg list | grep ocs2\n"
 
 #~ msgid "Shared components"
 #~ msgstr "共享组件"
+
+
+#: ../../source/3-concepts/5-source_vs_deb.md 642b45f8a76740d89c2c2fdc9e401ec0
+msgid ""
+"Controllers, including `ocs2_wbc_controller`, `ocs2_humanoid`, and "
+"`lina_planning`"
+msgstr "控制器，包括 `ocs2_wbc_controller`、`ocs2_humanoid` 和 `lina_planning`"
+
+#: ../../source/3-concepts/5-source_vs_deb.md:15
+#: 7c24077e093f4496aeabc51f5d8362a2
+msgid ""
+"The standard arms package contains `ocs2_wbc_controller`, "
+"`ocs2_humanoid`, and `lina_planning` ([arms deb notes](https://github.com"
+"/fiveages-sim/arms_ros2_control/blob/main/README.deb.md)). "
+"`./scripts/install_core_debs.sh --only arms` installs `ros-jazzy-arms-"
+"ros2-control` and skips `ros-jazzy-arms-ros2-control-full`. You can run "
+"those three libraries without cloning their private repositories. Cloning"
+" is for reading or changing the source. Other private descriptions and "
+"hardware interfaces are not in this package."
+msgstr ""
+"标准 arms 包里有 `ocs2_wbc_controller`、`ocs2_humanoid` 和 `lina_planning`（[arms"
+" 的 deb 说明](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.deb.md)）。`./scripts/install_core_debs.sh"
+" --only arms` 安装 `ros-jazzy-arms-ros2-control`，会跳过 `ros-jazzy-arms-ros2"
+"-control-full`。这三个库不用克隆私有仓库也能运行。克隆是为了读源码或改源码。其他私有描述和驱动层不在这个包里。"
+
+#~ msgid "Controllers (optional)"
+#~ msgstr "控制器（可选）"
+

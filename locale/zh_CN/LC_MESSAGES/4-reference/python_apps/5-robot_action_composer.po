@@ -30,17 +30,6 @@ msgstr ""
 "运动生成与 **task_queue** YAML 编排：技能注册表把 YAML 块变成 **`StageTarget`** 序列，再通过 "
 "**`ROS2RobotInterface`** 执行。可选的 LeRobot 数据集录制是 extra，不是核心路径。"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:5
-#: 9d1e16d1aed34eec913778d4b8cb05f9
-msgid ""
-"**Repository:** [fiveages-sim/robot_action_composer](https://github.com"
-"/fiveages-sim/robot_action_composer) `main` (`5c94cc08`). `feature/dex-"
-"grasp-generator` is no longer a branch; follow `main`."
-msgstr ""
-"**仓库：** [fiveages-sim/robot_action_composer](https://github.com/fiveages-"
-"sim/robot_action_composer) 的 `main`（`5c94cc08`）。`feature/dex-grasp-"
-"generator` 已不再是分支，以 `main` 为准。"
-
 #: ../../source/4-reference/python_apps/5-robot_action_composer.md:7
 #: b154926ffb184c56a7ba9196cbc3af56
 msgid ""
@@ -495,56 +484,6 @@ msgstr ""
 msgid "End-effector frames"
 msgstr "末端坐标系"
 
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:114
-#: a973ad30ea9348cdb3c94a1d14953474
-msgid ""
-"[`stages_in_command_ee_frame`](https://github.com/fiveages-"
-"sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py)"
-" rewrites a stage pose into the link OCS2 tracks. The two paths are not "
-"the same source:"
-msgstr ""
-"[`stages_in_command_ee_frame`](https://github.com/fiveages-"
-"sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py)"
-" 把阶段位姿改写成 OCS2 跟踪的连杆。两条路径不是同一个来源："
-
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:116
-#: 32361dd521d540d4885f860475fac91a
-#, python-brace-format
-msgid ""
-"**No `ee_tip` in `robot.yaml`.** Live TF from `ee_target_frame` to "
-"`ee_command_frame`. Public G1D ([`robot.yaml`](https://github.com"
-"/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml))"
-" sets `{arm}_eef` → `{arm}_tcp`."
-msgstr ""
-"**`robot.yaml` 没有 `ee_tip`。** 用实时 TF，从 `ee_target_frame` 到 "
-"`ee_command_frame`。公开的 G1D（[`robot.yaml`](https://github.com/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)）是"
-" `{arm}_eef` → `{arm}_tcp`。"
-
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:117
-#: 897b39210b5d41e88b87976fa2574e38
-#, python-brace-format
-msgid ""
-"**`ee_tip` set.** First the USD local chain tip → parent (`parent_prim` /"
-" `tip_prim`), then an optional live TF from that parent frame to "
-"`ee_command_frame`. On W2, OCS2 often tracks `{arm}_eef`, not "
-"`{arm}_tcp`. A project `robot.yaml` on [fa-project-"
-"usd](https://github.com/fiveages-sim/fa-project-usd) `feature/sinopec-"
-"test-tube-picking` uses this path (needs access). The prim paths stay in "
-"that file."
-msgstr ""
-"**设置了 `ee_tip`。** 先走 USD 局部链，尖端到父级（`parent_prim` / `tip_prim`），再可选地用实时 TF"
-" 从该父级帧到 `ee_command_frame`。W2 上 OCS2 常常跟踪 `{arm}_eef`，而不是 `{arm}_tcp"
-"`。[fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) 分支 "
-"`feature/sinopec-test-tube-picking` 上的项目 `robot.yaml` "
-"走这条路径（需要权限）。图元路径留在那个文件里。"
-
-#: ../../source/4-reference/python_apps/5-robot_action_composer.md:119
-#: a69a7cf08d87463198a4565c1fb11efb
-msgid "Empty frame names send the pose unchanged."
-msgstr "坐标系名字都空着时，位姿原样下发。"
-
 #: ../../source/4-reference/python_apps/5-robot_action_composer.md:121
 #: 7eabab56cdd440c7be46b14f4fa6efa3
 msgid "In-repo docs (`main`)"
@@ -711,4 +650,65 @@ msgstr "[合成数据](../../2-how_to/7-synthetic_data/0-index.md) — Isaac 数
 #~ "PyTorch + lerobot + plugins (record "
 #~ "/ infer)\n"
 #~ "# or once: ./init.sh all"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:5
+#: 9d1e16d1aed34eec913778d4b8cb05f9
+msgid ""
+"**Repository:** [fiveages-sim/robot_action_composer](https://github.com"
+"/fiveages-sim/robot_action_composer) `main` (`5c94cc08`). Follow `main`. "
+"There is no `feature/dex-grasp-generator` branch."
+msgstr ""
+"**仓库：** [fiveages-sim/robot_action_composer](https://github.com/fiveages-"
+"sim/robot_action_composer) 的 `main`（`5c94cc08`）。以 `main` 为准。没有 `feature"
+"/dex-grasp-generator` 分支。"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:114
+#: a973ad30ea9348cdb3c94a1d14953474
+msgid ""
+"[`stages_in_command_ee_frame`](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py)"
+" rewrites a stage pose into the link OCS2 is tracking. Which frames it "
+"uses depends on `robot.yaml`."
+msgstr ""
+"[`stages_in_command_ee_frame`](https://github.com/fiveages-"
+"sim/robot_action_composer/blob/main/robot_action_composer/task_runtime/placement/frames.py)"
+" 把阶段位姿改写到 OCS2 正在跟踪的那根连杆。用哪些坐标系，由 `robot.yaml` 决定。"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:116
+#: 32361dd521d540d4885f860475fac91a
+#, python-brace-format
+msgid ""
+"Without `ee_tip`, it reads live TF from `ee_target_frame` to "
+"`ee_command_frame`. Public G1D ([`robot.yaml`](https://github.com"
+"/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml))"
+" goes from `{arm}_eef` to `{arm}_tcp`."
+msgstr ""
+"没有 `ee_tip` 时，它读取从 `ee_target_frame` 到 `ee_command_frame` 的实时 TF。公开的 "
+"G1D（[`robot.yaml`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)）是从"
+" `{arm}_eef` 到 `{arm}_tcp`。"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:118
+#: 897b39210b5d41e88b87976fa2574e38
+#, python-brace-format
+msgid ""
+"With `ee_tip`, it first walks the USD chain from the tip prim to its "
+"parent (`tip_prim` to `parent_prim`), then can apply a live TF from that "
+"parent frame to `ee_command_frame`. On W2, OCS2 usually tracks "
+"`{arm}_eef`, not `{arm}_tcp`. A project `robot.yaml` on [fa-project-"
+"usd](https://github.com/fiveages-sim/fa-project-usd) branch `feature"
+"/sinopec-test-tube-picking` uses this second path. Open that file for the"
+" prim paths. You need access to the repository."
+msgstr ""
+"有 `ee_tip` 时，它先沿 USD 从尖端图元走到父图元（`tip_prim` 到 "
+"`parent_prim`），然后还可以再加一段从该父坐标系到 `ee_command_frame` 的实时 TF。在 W2 上，OCS2 "
+"通常跟踪 `{arm}_eef`，不是 `{arm}_tcp`。[fa-project-usd](https://github.com"
+"/fiveages-sim/fa-project-usd) 分支 `feature/sinopec-test-tube-picking` 上的项目"
+" `robot.yaml` 走的是第二条。图元路径在那个文件里。打开仓库需要权限。"
+
+#: ../../source/4-reference/python_apps/5-robot_action_composer.md:120
+#: a69a7cf08d87463198a4565c1fb11efb
+msgid "Empty frame names leave the pose unchanged."
+msgstr "坐标系名为空时，位姿原样发送。"
 

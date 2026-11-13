@@ -47,7 +47,7 @@ Do **not** document a hand-written `~/.bashrc` `source /opt/ros/...` chain as th
 
 ## Private repos
 
-For `fa-deploy-ws`, remaining private FiveAges remotes (`fa-w2r-description`, `fa-s2r-description`, `fa-wce3-description`, `fiveages-gen3-robot-usds`), DexCap private workspace, `ocs2_wbc_controller`, and other 404-without-access remotes:
+For `fa-deploy-ws`, remaining private FiveAges remotes (`fa-w2r-description`, `fa-s2r-description`), the DexCap private workspace, and other 404-without-access remotes:
 
 - Tell readers to follow **that repository’s README after access**
 - You may name the same **script name** as the public counterpart (`./init_repo.sh`) when that is the verified pattern
@@ -69,7 +69,8 @@ Keep **reader-facing product facts**:
 - There is **no** `hardware:=mock`. Keys are `mock_components` / `gz` / `isaac` / `real`.
 - `/fsm_command` is `std_msgs/Int32`, not strings such as `stand` / `walk`.
 - Acone / AC One is **dual-arm** (双臂); Lift 2S is the **full-body** mobile manipulator. Do not call Acone arm-only / single-arm / 仅机械臂.
-- Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (方舟无限 = ARX, never bare “Ark”; 高擎 = HighTorque / Panthera). On reader pages, use names naturally (quiet first-mention pairs such as **ARX** (方舟无限) are fine). Do not lecture “方舟无限 = ARX, not bare Ark” on every page.
+- Brand labels follow [robot_usds README_zh-CN.md §3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-CN.md#31-中文简称与英文标识对照) (方舟无限 = ARX, never bare “Ark”; 高擎 = HighTorque / Panthera). Reader Chinese for the FiveAges brand is **第五纪**. Do not rewrite repo URLs, `humanoid/FiveAges/`, or prim names such as `FiveAges_W2`. On reader pages, use names naturally (quiet first-mention pairs such as **ARX** (方舟无限) are fine). Do not lecture “方舟无限 = ARX, not bare Ark” on every page.
+- `ocs2_wbc_controller`, `ocs2_humanoid`, and `lina_planning` ship in the GitHub Release package `ros-jazzy-arms-ros2-control`. Install with `./init_repo.sh` (arms = `d`) or `./scripts/install_core_debs.sh --only arms`. That script does not install `ros-jazzy-arms-ros2-control-full`, and the package is not on apt. Cloning the private repos is for reading or editing source. Do not claim other private descriptions or hardware repos are in this deb.
 
 Feishu 运控 glossary: Chinese **驱动层** is the ros2_control **hardware interface** layer. English reader titles, sidebar labels, and cross-link text use **Hardware Interface(s)** — not **Driver layer** as the primary EN name. zh `.po` msgstr for those titles stays **驱动层**. Do not treat 硬件接口 and 驱动层 as two product layers. Glossary: `source/3-concepts/8-terminology.md`. Keep `hardware:=`, `<hardware>`, plugin class names, and `ros2 control list_hardware_interfaces` as code.
 

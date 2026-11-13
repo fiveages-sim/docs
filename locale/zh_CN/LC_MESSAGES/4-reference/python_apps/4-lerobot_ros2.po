@@ -26,19 +26,6 @@ msgid ""
 " 2 topics."
 msgstr "LeRobot 与 ROS 2 的集成单体仓库。LeRobot 通过 ROS 2 话题与机器人通信。"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:5
-#: 9c9ba4de6e9048e58a58dd95b0776bb6
-msgid ""
-"**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
-"sim/lerobot_ros2) `main` (`f750af76`). `feature/sim-grasp-datagen` was "
-"merged in [#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10) "
-"(`147ea78d`, 2026-10-23) and is no longer a branch."
-msgstr ""
-"**仓库：** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
-"sim/lerobot_ros2) 的 `main`（`f750af76`）。`feature/sim-grasp-datagen` 已在 "
-"[#10](https://github.com/fiveages-"
-"sim/lerobot_ros2/pull/10)（`147ea78d`，2026-10-23）合入，该分支已不存在。"
-
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:7
 #: 2fe7b9ef4b354471bbc422c7b6cfd8f0
 msgid ""
@@ -232,23 +219,6 @@ msgstr "`./init.sh set-backend uv`"
 #: 93b855859ed8477a9f11ce02a02c93be
 msgid "Write `backend` in `.fa-env.toml` (`uv` or `conda`)"
 msgstr "写入 `.fa-env.toml` 中的 `backend`（`uv` 或 `conda`）"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:52
-#: 875fa5ce89294201967eb05d28339e2f
-msgid ""
-"Orchestration and dexterous grasp share one environment on NumPy 1.x so "
-"they match ROS 2’s system OpenCV / `cv_bridge`. Recording and policy "
-"inference install NumPy 2 for `lerobot` 0.5. Use a separate environment "
-"for that step. `./init.sh install-lerobot` in the grasp environment "
-"upgrades NumPy and then head-camera capture through `cv_bridge` no longer"
-" matches the system build. Dexterous grasp is optional (the reference "
-"robot is FiveAges W2 with Wuji Hand2). A robot without that grasp config "
-"still runs `all-motion`."
-msgstr ""
-"编排和灵巧手抓取共用一个 NumPy 1.x 环境，以便和 ROS 2 的系统 OpenCV / `cv_bridge` 一致。录制和策略推理为 "
-"`lerobot` 0.5 安装 NumPy 2。这一步用另一个环境。在抓取环境里执行 `./init.sh install-lerobot` "
-"会把 NumPy 升上去，之后经 `cv_bridge` 采头相机就和系统编译版本对不上。灵巧手抓取是可选项（参考机型是五纪 W2 加 Wuji "
-"Hand2）。没有这份抓取配置的机器人仍然跑 `all-motion`。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:54
 #: 14b642f1c08e43f8bcb7608c33e693a0
@@ -493,21 +463,6 @@ msgstr ""
 "Isaac Sim 6.0。本栈的版本菜单是 FaSim 的 `config/fa_sim.conf`（回退 `6.2.0` / `6.1.0` "
 "/ `6.0.1`）。"
 
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:122
-#: 293b0fc5819d4db78f0baaa5651cb631
-msgid ""
-"`motion-generation` runs in any directory that contains `robots/` or a "
-"project `robot.yaml`. A [fa-project-usd](https://github.com/fiveages-sim"
-"/fa-project-usd) project directory (private; needs access) can be that "
-"workspace when `LEROBOT_ROOT` points at this checkout and `robot.yaml` "
-"`extends` a profile under `examples/IsaacSim/robots/`. The public example"
-" in that README is:"
-msgstr ""
-"`motion-generation` 可以在任何含 `robots/` 或项目 `robot.yaml` 的目录里运行。[fa-project-"
-"usd](https://github.com/fiveages-sim/fa-project-usd) "
-"的项目目录（私有，需要权限）可以当这个工作区：`LEROBOT_ROOT` 指向本检出，且 `robot.yaml` 的 `extends` 指向"
-" `examples/IsaacSim/robots/` 下的一份配置。该 README 里的公开例子是："
-
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:124
 #: 6384c661c7a844a1aaaef642cf2a7833
 msgid ""
@@ -532,30 +487,6 @@ msgstr ""
 "<project>` 使用同一目录。场景旁边的编排文件（`robot.yaml`、`task_configs/`、`maps/` 或 "
 "`map/`）在 `fa-project-usd` 分支 `feature/sinopec-test-tube-picking` "
 "上，该分支领先于该仓库的 `main`。"
-
-#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:132
-#: d739495a7d204c599c4f6dad7875cddd
-#, python-brace-format
-msgid ""
-"Public G1D profile "
-"[`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com"
-"/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml):"
-" `ee_target_frame` is `{arm}_eef`, `ee_command_frame` is `{arm}_tcp`, and"
-" there is no `ee_tip`. `ros2_stack.motion.required` is `false` with "
-"`args.hardware: isaac`, because the scene USD already starts in-process "
-"control on Play. That YAML `hardware: isaac` is the composer stack "
-"preset. It is not the in-process plugin name `isaac_sim`. Leaving "
-"`required: true` would start a second controller manager."
-msgstr ""
-"公开的 G1D 配置 "
-"[`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com"
-"/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)：`ee_target_frame`"
-" 是 `{arm}_eef`，`ee_command_frame` 是 `{arm}_tcp`，没有 "
-"`ee_tip`。`ros2_stack.motion.required` 为 `false`，`args.hardware` 为 "
-"`isaac`，因为场景 USD 在播放时已经拉起进程内运控。这份 YAML 里的 `hardware: isaac` "
-"是编排器的栈预设，不是进程内插件名 `isaac_sim`。若把 `required` 留成 true，会再启动一套控制器管理器。"
 
 #: ../../source/4-reference/python_apps/4-lerobot_ros2.md:134
 #: ec94463b33aa4ea9ab8e0fb125335408
@@ -738,4 +669,78 @@ msgstr "[wuji-retargeting](7-wuji_retargeting.md)"
 #~ " also live under `docs/SIM_GRASP_*.md` on"
 #~ " this branch."
 #~ msgstr "仿真抓取交接 / 末端对齐说明也在本分支的 `docs/SIM_GRASP_*.md`。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:5
+#: 9c9ba4de6e9048e58a58dd95b0776bb6
+msgid ""
+"**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
+"sim/lerobot_ros2) `main` (`f750af76`). Simulation grasp datagen is on "
+"this branch ([#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10),"
+" `147ea78d`, 2026-10-23). There is no separate `feature/sim-grasp-"
+"datagen` branch to check out."
+msgstr ""
+"**仓库：** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-"
+"sim/lerobot_ros2) 的 "
+"`main`（`f750af76`）。仿真抓取数据生成在这个分支上（[#10](https://github.com/fiveages-"
+"sim/lerobot_ros2/pull/10)，`147ea78d`，2026-10-23）。没有单独的 `feature/sim-"
+"grasp-datagen` 分支可检出。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:52
+#: 875fa5ce89294201967eb05d28339e2f
+msgid ""
+"Keep orchestration and dexterous grasp in one environment on NumPy 1.x. "
+"That matches the OpenCV and `cv_bridge` that come with ROS 2. Recording "
+"and policy inference use NumPy 2 because `lerobot` 0.5 does. Put that "
+"step in a second environment. If you run `./init.sh install-lerobot` "
+"inside the grasp environment, NumPy moves to 2 and head-camera frames "
+"through `cv_bridge` no longer match the system build. Dexterous grasp is "
+"optional. The reference robot for it is FiveAges W2 with Wuji Hand2. A "
+"robot that has no grasp config still uses `all-motion`."
+msgstr ""
+"编排和灵巧手抓取放在同一个环境里，NumPy 保持 1.x，这样才和 ROS 2 自带的 OpenCV、`cv_bridge` "
+"一致。录制和策略推理用 NumPy 2，因为 `lerobot` 0.5 需要它。这一步放到另一个环境。如果在抓取环境里运行 `./init.sh"
+" install-lerobot`，NumPy 会升到 2，之后经 `cv_bridge` "
+"采的头相机帧就和系统编译版本对不上。灵巧手抓取是可选项。参考机型是第五纪 W2 加 Wuji Hand2。没有这套抓取配置的机器人仍然用 "
+"`all-motion`。"
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:122
+#: 293b0fc5819d4db78f0baaa5651cb631
+msgid ""
+"`motion-generation` runs in any directory that contains `robots/` or a "
+"project `robot.yaml`. A [fa-project-usd](https://github.com/fiveages-sim"
+"/fa-project-usd) project directory can be that workspace when you can "
+"open the repository, `LEROBOT_ROOT` points at this checkout, and "
+"`robot.yaml` `extends` a profile under `examples/IsaacSim/robots/`. The "
+"public example in that README is:"
+msgstr ""
+"`motion-generation` 可以在任何包含 `robots/` 或项目 `robot.yaml` 的目录里跑。你能打开 [fa-"
+"project-usd](https://github.com/fiveages-sim/fa-project-usd) 时，只要 "
+"`LEROBOT_ROOT` 指向这次检出，并且 `robot.yaml` 用 `extends` 指向 "
+"`examples/IsaacSim/robots/` 下的一份配置，项目目录就可以当工作区。该 README 里的公开例子是："
+
+#: ../../source/4-reference/python_apps/4-lerobot_ros2.md:132
+#: d739495a7d204c599c4f6dad7875cddd
+#, python-brace-format
+msgid ""
+"The public G1D profile "
+"[`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com"
+"/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)"
+" sets `ee_target_frame` to `{arm}_eef` and `ee_command_frame` to "
+"`{arm}_tcp`. It has no `ee_tip`. `ros2_stack.motion.required` is `false`,"
+" and `args.hardware` is `isaac`, because the scene USD already starts in-"
+"process control when you press Play. That YAML value `hardware: isaac` is"
+" the composer stack preset. It is not the in-process plugin name "
+"`isaac_sim`. If you leave `required: true`, a second controller manager "
+"starts."
+msgstr ""
+"公开的 G1D 配置 "
+"[`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com"
+"/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml)"
+" 把 `ee_target_frame` 设为 `{arm}_eef`，把 `ee_command_frame` 设为 "
+"`{arm}_tcp`。没有 `ee_tip`。`ros2_stack.motion.required` 是 "
+"`false`，`args.hardware` 是 `isaac`，因为场景 USD 在你按 Play 时已经启动了进程内运控。YAML 里的 "
+"`hardware: isaac` 是编排器的栈预设，不是进程内插件名 `isaac_sim`。如果留成 `required: "
+"true`，会再启动一个控制器管理器。"
 
