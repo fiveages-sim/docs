@@ -2,11 +2,11 @@
 
 This page stops at **LeRobot dataset recording / export**. It does not document training, online inference, or how a policy consumes the dataset.
 
-**Monorepo:** [lerobot_ros2 `@ feature/sim-grasp-datagen`](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-grasp-datagen)
+**Monorepo:** [lerobot_ros2 `main`](https://github.com/fiveages-sim/lerobot_ros2)
 
-**README:** [README.md on that branch](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/README.md)
+**README:** [README.md](https://github.com/fiveages-sim/lerobot_ros2/blob/main/README.md)
 
-Isaac-side shared steps: [`examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/examples/IsaacSim/README.md).
+Isaac-side shared steps: [`examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md).
 
 ## What recording uses
 
@@ -29,9 +29,9 @@ From the lerobot_ros2 README. **Python 3.12**, ROS 2 Jazzy, [uv](https://docs.as
 :::{code-block} bash
 git clone --recursive git@github.com:fiveages-sim/lerobot_ros2.git
 cd lerobot_ros2
-./init.sh all
-# motion / task queue only:     ./init.sh all-motion
-# recording plugins (if you skipped all):  ./init.sh install-lerobot
+./init.sh all-motion
+# recording / inference (NumPy 2, separate from the grasp env):
+./init.sh install-lerobot
 source .venv/bin/activate
 :::
 
@@ -55,7 +55,7 @@ cd examples/IsaacSim
 python record_datasets.py
 :::
 
-Interactive prompts (from `record_main` / `dataset_recording.launcher` on this branch):
+Interactive prompts (from `record_main` / `dataset_recording.launcher` on `main`):
 
 - Robot (registry under `examples/IsaacSim/robots`; default `dobot_cr5` if present)
 - Task folder / task (`task_key`)
@@ -65,7 +65,7 @@ Interactive prompts (from `record_main` / `dataset_recording.launcher` on this b
 - Optional depth+pointcloud at keypoints (only if `lerobot_config.py` has depth topics)
 - Optional manual review after return-to-home
 
-Per-robot `lerobot_config.py` (`LEROBOT_CFG`) is the LeRobot side of the split documented in [ROBOT_CONFIG.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROBOT_CONFIG.md); `robot.yaml` stays the motion/stack side.
+Per-robot `lerobot_config.py` (`LEROBOT_CFG`) is the LeRobot side of the split documented in [ROBOT_CONFIG.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROBOT_CONFIG.md); `robot.yaml` stays the motion/stack side.
 
 ## Export (what lands on disk)
 
@@ -75,7 +75,7 @@ On this branch the runner creates a local LeRobot dataset:
 <cwd>/lerobot_dataset/grasp_record_<unix_time>/
 :::
 
-via `LeRobotDataset.create` (`repo_id` = that path, `use_videos=True`, fps from the record profile). Episodes are `dataset.add_frame` then `dataset.save_episode`. That **is** the export this chapter covers. Do not assume a Hugging Face upload CLI unless a README on this branch says so.
+via `LeRobotDataset.create` (`repo_id` = that path, `use_videos=True`, fps from the record profile). Episodes are `dataset.add_frame` then `dataset.save_episode`. That is the export this chapter covers. A Hugging Face upload CLI is in scope only when the `main` README names one.
 
 ## Stop here
 

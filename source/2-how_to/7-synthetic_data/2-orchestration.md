@@ -2,7 +2,7 @@
 
 After the Isaac USD scene is up, datagen does **not** call OCS2 or Nav2 servers from Python by name. YAML `task_queue` blocks resolve to **registered skills**; skills emit **`StageTarget`** sequences and send them through **`ROS2RobotInterface`**.
 
-APIs below are from [robot_action_composer `@ feature/dex-grasp-generator`](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/README.md) and its `docs/`. YAML `skill:` values are registered names from that README (not a Python `ActionSequence` / `actions.MoveJ` class).
+APIs below are from [robot_action_composer `main`](https://github.com/fiveages-sim/robot_action_composer/blob/main/README.md) and its `docs/`. YAML `skill:` values are registered names from that README (not a Python `ActionSequence` / `actions.MoveJ` class).
 
 ## ros2_robot_interface (motion and recording)
 
@@ -21,7 +21,7 @@ Reference: [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_int
 
 ## robot_action_composer (task_queue + skills)
 
-**Branch:** [`feature/dex-grasp-generator`](https://github.com/fiveages-sim/robot_action_composer/tree/feature/dex-grasp-generator)
+**Revision:** [`main`](https://github.com/fiveages-sim/robot_action_composer)
 
 In the lerobot_ros2 monorepo this package is `submodules/robot_action_composer`. Two layers:
 
@@ -30,9 +30,9 @@ In the lerobot_ros2 monorepo this package is `submodules/robot_action_composer`.
 | **`motion_generation`** | Geometry → `StageTarget` / `ArmTarget` sequences; `execute_stage_sequence` calls `ROS2RobotInterface` (Cartesian, dual-arm, MoveJ, gripper timing). |
 | **`task_runtime`** | `runner.run_task_queue`: connect → FSM → optional Isaac reset → each YAML block → `get_skill` → execute. Unknown `skill:` names raise `KeyError` with the registered list. |
 
-YAML lives under `robots/<Robot>/task_configs/**/*.yaml` (optional vendor grouping `robots/<Vendor>/<Robot>/`). Discovery, merge rules, and `robot.yaml`: [TASK_CONFIG_YAML.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/TASK_CONFIG_YAML.md), [ROBOT_CONFIG.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROBOT_CONFIG.md).
+YAML lives under `robots/<Robot>/task_configs/**/*.yaml` (optional vendor grouping `robots/<Vendor>/<Robot>/`). Discovery, merge rules, and `robot.yaml`: [TASK_CONFIG_YAML.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/TASK_CONFIG_YAML.md), [ROBOT_CONFIG.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROBOT_CONFIG.md).
 
-Skill names (examples from the README index; parameters in [SKILLS_REFERENCE.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/SKILLS_REFERENCE.md)):
+Skill names (examples from the README index; parameters in [SKILLS_REFERENCE.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/SKILLS_REFERENCE.md)):
 
 | Category | Registered `skill:` names |
 |----------|---------------------------|
@@ -41,13 +41,13 @@ Skill names (examples from the README index; parameters in [SKILLS_REFERENCE.md]
 | Navigation | `nav.navigate_to_pose`, `nav.navigate_to_object`, `nav.navigate_relative`, `nav.send_nav_goal`, `nav.wait_nav_arrived` |
 | Joint / session / env | `joint.movej_to_config`, `joint.goto_cached_joints`, `robot.cache_ee_pose`, `robot.send_mode_command`, `env.randomize_object_local_xyz`, … |
 
-Datagen workspace used in the README is **`examples/IsaacSim`** inside lerobot_ros2 (contains `robots/`). Robot-specific notes, including wheeled-arm **FiveAges W2** dual-arm tasks, are next to those trees (e.g. [`robots/FiveAges_W2/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/examples/IsaacSim/robots/FiveAges_W2/README.md)).
+Datagen workspace used in the README is **`examples/IsaacSim`** inside lerobot_ros2 (contains `robots/`). Robot-specific notes, including wheeled-arm **FiveAges W2** dual-arm tasks, are next to those trees (e.g. [`robots/FiveAges_W2/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md)). A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) project directory can be the workspace instead (`LEROBOT_ROOT` plus that project’s `robot.yaml`). End-effector poses use one of the two frame paths in [robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md): live TF when `robot.yaml` has no `ee_tip`, or a USD tip→parent chain when `ee_tip` is set.
 
 ## Official Nav2, not a custom nav stack
 
 Composer **does not implement Nav2 servers**. `nav.*` skills wrap **`ROS2RobotInterface`’s Nav2 client API**. Scene-level launch is separate from the task YAML.
 
-From [docs/ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md):
+From [docs/ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROS2_STACK.md):
 
 - Do **not** put `ros2_stack` inside task-queue YAML.
 - Merge: `robot.yaml` → `ros2_stack:` then leaf **`.meta/ros2_stack.yaml`**.
@@ -67,17 +67,17 @@ Run from a directory that contains `robots/` (usually `examples/IsaacSim`):
 cd examples/IsaacSim
 
 # Scene-level OCS2 + Nav2 (background logs under .ros2_stack/<robot>/)
-ros2-stack --lang zh launch
-ros2-stack status
-ros2-stack stop
+ros2-stack launch --robot fiveages_w2 --group dex_hand
+ros2-stack status --robot fiveages_w2
+ros2-stack stop --robot fiveages_w2
 
 # Task queue (dry motion; optional --ensure-ros2-stack)
 motion-generation
-motion-generation --robot dobot_cr5 --task-key pick_place --scene default
+motion-generation --robot fiveages_w2 --task-key navigate_and_dex_grasp --scene apple
 motion-generation --robot fiveages_w2 --task-key transfer_blade --ensure-ros2-stack
 :::
 
-`grasp-generation serve …` is an optional grasp-setup UI on this branch ([GRASP_GENERATION.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/GRASP_GENERATION.md)); it is **not** the recording entry and is **not** ros2-viser.
+`grasp-generation serve …` is an optional grasp-setup UI ([GRASP_GENERATION.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/GRASP_GENERATION.md)); it is **not** the recording entry and is **not** ros2-viser. The same step inside a task queue is the skill `dex_hand.auto_grasp`.
 
 Isaac entity pose / joint dump helpers (`check-isaac-pose`, `check-robot-status`) need the sim and `/get_entity_state` as documented in the composer README.
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 02:37+0000\n"
+"POT-Creation-Date: 2026-11-13 09:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,50 +21,55 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:1
-#: 3df8dd5e72284ace81e7285756ac2a88
+#: 18264bd9c8e04b6dbbcb2beb76e95117
 msgid "fa-deploy-ws Setup"
 msgstr "fa-deploy-ws 配置"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:3
-#: d348cd258c724113bf12b9d4f58b21a7
+#: e4972f7bdc5e4ffc86dc7cd9542a9e7b
 msgid ""
-"Setup guide for the internal `fa-deploy-ws` workspace used for FiveAges "
-"robot deployment."
-msgstr "`fa-deploy-ws` 是用于 FiveAges 机器人部署的内部工作空间，本指南介绍其配置方法。"
+"Setup guide for the internal [fa-deploy-ws](https://github.com/fiveages-"
+"sim/fa-deploy-ws) workspace used for FiveAges robot deployment. The link "
+"needs repository access (default branch `fa-w2`). Without access, GitHub "
+"does not open the page."
+msgstr ""
+"内部工作空间 [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) "
+"的安装说明，用于五纪机器人部署。链接需要仓库权限（默认分支 `fa-w2`）。没有权限时，GitHub 打不开页面。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:5
-#: 622401cf287144feb4b591ec8bf2f415
+#: 697dfc9e993c49fca77192425b90361e
 msgid "Access Required"
 msgstr "需要访问权限"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:8
-#: b734f72714534ed084209e43e0a9c4ed
+#: 628f4a7e135b44fe8d301483f04cc871
 msgid ""
 "This workspace requires access to private repositories. Contact your team"
 " lead for access if needed."
 msgstr "该工作空间需要访问私有仓库。如需权限，请联系团队负责人。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:11
-#: 1ddfef2bbc7249f6a0eff5e5f7723ee8
+#: f273825dabcd4d308b558391cfbe3a13
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:14
-#: 5366d98ac05c48f88f18dabe6f451502
+#: 7a0b41df62704f71b17b2ccc1568e15c
 msgid ""
 "The `fa-deploy-ws` README is **not public**. After you have access, "
 "follow **that repository’s README** and its init / quick-start scripts. "
 "Flags, robot IDs, and on-robot YAML are documented only there."
 msgstr ""
-"`fa-deploy-ws` 的 README **不公开**。开通后以**该仓库 README** 及其 init / quick-start 脚本为准。参数、机器人 ID 和机上 YAML 只写在那里。"
+"`fa-deploy-ws` 的 README **不公开**。开通后以**该仓库 README** 及其 init / quick-start "
+"脚本为准。参数、机器人 ID 和机上 YAML 只写在那里。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:17
-#: 546dfa7ce2c348328692fc1ef106bb01
+#: 9e08fd2e538d474db5674e1dce287310
 msgid "Overview"
 msgstr "概述"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:19
-#: 4f820837aa7d4ec38b8e48f101a66c49
+#: a03d763ff5264e36b15136412adab68e
 msgid ""
 "`fa-deploy-ws` is the internal counterpart of [open-deploy-"
 "ws](3-open_deploy_ws.md). Public users stay on `open-deploy-ws`."
@@ -73,12 +78,12 @@ msgstr ""
 "`open-deploy-ws`。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:21
-#: fec2cb4357024d22ac15889b2cd0fad4
+#: 7e47d4b0f211447e97357ad659178980
 msgid "What is verified on the **public** side and still applies as the pattern:"
 msgstr "在**公开**侧已核实、仍可作为模式的内容："
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:23
-#: 624ded5912534be5b83be941a6f50ed9
+#: 2f7001396c2a45f0a0dc17f41a6b9129
 msgid ""
 "Clone the workspace, then run **`./init_repo.sh`** (same script name as "
 "[open-deploy-ws](https://github.com/fiveages-sim/open-deploy-"
@@ -88,12 +93,12 @@ msgstr ""
 "/fiveages-sim/open-deploy-ws/blob/main/README.EN.md) 相同）。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:24
-#: 4647535cf638477c8e55e238099b81e9
+#: 675243c6e1114c5cbeea477cd6e9a59b
 msgid "Do **not** `git submodule update --init --recursive`."
 msgstr "**不要** `git submodule update --init --recursive`。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:25
-#: 773212ba772e4b189b74fcec7ac32e3c
+#: e409342373354458b22106b1f7b1f53b
 msgid ""
 "After init, `colcon build`, then `source install/setup.bash` in the "
 "launch terminal (standard ROS overlay)."
@@ -102,41 +107,41 @@ msgstr ""
 "`source /opt/ros/...` 链当作文档路径。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:27
-#: a9c44045c1fd4413a6c9975d5c70a409
+#: 4aec45c7420d4391a5233900474586c2
 msgid ""
 "Extra flags, robot IDs, and on-robot YAML live in the private README — "
 "copy them from there."
 msgstr "额外参数、机器人 ID 和机上 YAML 在私有 README 中 — 从那里复制。"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:29
-#: 5c89889bfc5d491cbab0cc1460f5a8f2
+#: 84c6204e4f114c598b03095ab07545f2
 msgid "Related public pages"
 msgstr "发布包"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:31
-#: 79420e8da20246ebb1935b5b8169f204
+#: a7c5d09a3ead47c0bb0911057e725504
 msgid "[Install Environment](2-install_environment.md)"
 msgstr "[安装环境](2-install_environment.md)"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:32
-#: 3977e8c81cf043978209a1f107482683
+#: 5f50697797864caab8c17abaa476d5c6
 msgid "[open-deploy-ws Setup](3-open_deploy_ws.md)"
 msgstr "[open-deploy-ws 配置](3-open_deploy_ws.md)"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:33
-#: 3b7a2a8d64234dc29925b656061d81d3
+#: 822d3b3d7bfa40988e37b2326dbf7336
 msgid "[Workspace Layout](../3-concepts/2-workspace_layout.md)"
 msgstr "[工作区布局](../3-concepts/2-workspace_layout.md)"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:34
-#: 29900fe9f0924fe8b420468357841d8f
+#: e851514b8e2f42a9aa5a92c6e585527f
 msgid ""
 "[Go to real "
 "hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)"
 msgstr "[部署到真实硬件](../2-how_to/6-deployment/9-go_real_hardware/0-index.md)"
 
 #: ../../source/1-getting_started/4-fa_deploy_ws.md:35
-#: 94a6841f8fa844d38472861465c7c48e
+#: d9c90a99c39443308f84e39abeedc5d0
 msgid "[WBC controller reference](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[WBC 控制器参考](../4-reference/controllers/3-ocs2_wbc.md)"
 
@@ -633,4 +638,10 @@ msgstr "[WBC 控制器参考](../4-reference/controllers/3-ocs2_wbc.md)"
 #~ "release`、`robot.local.yaml`、`./quick_start.sh "
 #~ "--mock`、`fiveages_bringup` 或目录树。有权限后，以**该仓库 README** "
 #~ "及其 init / quick-start 脚本为准。"
+
+#~ msgid ""
+#~ "Setup guide for the internal `fa-"
+#~ "deploy-ws` workspace used for FiveAges "
+#~ "robot deployment."
+#~ msgstr "`fa-deploy-ws` 是用于 FiveAges 机器人部署的内部工作空间，本指南介绍其配置方法。"
 

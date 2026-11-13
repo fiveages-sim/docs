@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 12:40+0000\n"
+"POT-Creation-Date: 2026-11-13 09:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,23 +21,43 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/hardware/1-topic_based.md:1
-#: 61eac9cc781c4bbbbbc7dd048f9694a1
+#: 0d753071c85b440881388c7348a87594
 msgid "topic_based_ros2_control"
 msgstr "topic_based_ros2_control"
 
 #: ../../source/4-reference/hardware/1-topic_based.md:3
-#: 1dc5ffc8c6c64b55be85fdc1e0ef8139
+#: 80e3418c33f14850a71e223ed8dae577
 msgid ""
 "In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). "
-"ROS 2 topic hardware interface used when `hardware:=isaac` (Acone xacro: "
-"`/isaac/joint_command`, `/isaac/joint_states`)."
+"ROS 2 topic hardware interface used when `hardware:=isaac`."
 msgstr ""
-"树内位于 `arms_ros2_control/hardwares/`（不是嵌套 gitmodule）。`hardware:=isaac` "
-"时使用的 ROS 2 话题驱动层（Acone "
-"xacro：`/isaac/joint_command`、`/isaac/joint_states`）。"
+"位于 `arms_ros2_control/hardwares/` 树内（不是嵌套 git 子模块）。`hardware:=isaac` 时使用的"
+" ROS 2 话题驱动层。"
 
 #: ../../source/4-reference/hardware/1-topic_based.md:5
-#: 56684952dfa94a28ac4b23229de00b81
+#: 17abfcb1ca8944c18fef878cdc4424a4
+msgid ""
+"The plugin defaults below (`/robot_joint_commands`, "
+"`/robot_joint_states`) are the class defaults in the README. The shared "
+"description macro [`simulation_hardware.xacro`](https://github.com"
+"/fiveages-sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
+" overrides them to `/isaac/joint_command` and `/isaac/joint_states` "
+"(Acone uses that macro). W2’s topic-bridge USD uses `/joint_command` and "
+"`/joint_states` instead. The xacro `<param>` and the OmniGraph "
+"`topicName` are the same strings. In-process Isaac (`hardware=isaac_sim`)"
+" does not use this plugin."
+msgstr ""
+"下面的插件默认值（`/robot_joint_commands`、`/robot_joint_states`）是 README "
+"里的类默认值。共享描述宏 [`simulation_hardware.xacro`](https://github.com/fiveages-"
+"sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
+" 把它们改成 `/isaac/joint_command` 和 `/isaac/joint_states`（Acone 用这个宏）。W2 的话题桥"
+" USD 用的是 `/joint_command` 和 `/joint_states`。xacro 的 `<param>` 与 OmniGraph"
+" 的 `topicName` 是同一组字符串。进程内 Isaac（`hardware=isaac_sim`）不用这个插件。"
+
+#: ../../source/4-reference/hardware/1-topic_based.md:7
+#: 154875e98962412db18fe2aea616f15f
 msgid ""
 "**Plugin:** `topic_based_ros2_control/TopicBasedSystem`. No "
 "`declare_parameter` and no `on_set_parameters`."
@@ -45,8 +65,8 @@ msgstr ""
 "**插件：** `topic_based_ros2_control/TopicBasedSystem`。无 "
 "`declare_parameter`，也无 `on_set_parameters`。"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:7
-#: 194238ede4e3409697b3c760920fcc11
+#: ../../source/4-reference/hardware/1-topic_based.md:9
+#: bf6ab8d07cd94c3ca741c76f5913adb1
 msgid ""
 "**README:** [topic_based_ros2_control](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/d50933d6862ad35ec7633ef522a134924827b115/hardwares/topic_based_ros2_control/README.md)."
@@ -62,18 +82,18 @@ msgstr ""
 " [`d50933d`](https://github.com/fiveages-"
 "sim/arms_ros2_control/tree/d50933d6862ad35ec7633ef522a134924827b115)。"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:9
-#: ef0de5f40a36462e81b87e9b5795f697
+#: ../../source/4-reference/hardware/1-topic_based.md:11
+#: 2f6ebd835cbf492f852dbcbaec885aaa
 msgid ""
 "How to read **Startup only** / **Runtime**: [Hardware "
 "Interfaces](0-index.md). Isaac Sim: [Isaac "
 "Sim](../../2-how_to/2-simulation/4-isaac_sim.md)."
 msgstr ""
-"如何读 **仅启动** / **运行时**：[驱动层](0-index.md)。Isaac "
-"Sim：[Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。"
+"如何读 **仅启动** / **运行时**：[驱动层](0-index.md)。Isaac Sim：[Isaac "
+"Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: cf004df19bb34469b5012b3f3d592517
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: a2d4bbe6471147919a1c8bc13262bcd9
 msgid ""
 "<ros2_control name=\"my_system\" type=\"system\">\n"
 "  <hardware>\n"
@@ -93,165 +113,165 @@ msgstr ""
 "  </hardware>\n"
 "</ros2_control>"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:22
-#: 0b859bcb0b704e228d3574a2a36ce4fb
+#: ../../source/4-reference/hardware/1-topic_based.md:24
+#: f2d86d7dab844591be06eab3a9bd6691
 msgid "Parameters"
 msgstr "参数"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:24
-#: 67ac866bce674e4c872db7743459b436
+#: ../../source/4-reference/hardware/1-topic_based.md:26
+#: 1bcf486f8a894c3c8e5deab37b13bfe5
 msgid "All rows in this table are **Startup only**."
 msgstr "本表各行均为 **仅启动**。"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: b1887d34f0b54233a745a49464d69c99
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: d506cef0ac2146749571063506261144
 msgid "Parameter"
 msgstr "参数"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 5269b64bc068438db4493e57341a63f7
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 9301463c38204b67af44386e7587ffd2
 msgid "Type / default"
 msgstr "类型 / 默认值"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 9e072d1ae8c84e23beb2c027047efc0e
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 4f5ac52f60944d9b9646d4e3b3f3f1e6
 msgid "Meaning"
 msgstr "含义"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: eaec7ed6fc594712b9e329b11ab62097
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: b1630810fd4148f5ab393f3c9efed0ed
 msgid "`joint_commands_topic`"
 msgstr "`joint_commands_topic`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 446b5108b98c40d6a0961993acdd69bf
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: aada805e31ff4d648443a5cc917abaeb
 msgid "`\"/robot_joint_commands\"`"
 msgstr "`\"/robot_joint_commands\"`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 2eec0792ffa244c3bbd69a4d1db32794
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 44c042c5b4aa485f98a1d5e144f15ba9
 msgid "Command `sensor_msgs/JointState` topic"
 msgstr "命令 `sensor_msgs/JointState` 话题"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 412a63b35e374f499d00326f6abdfda6
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 4ae31c35369c47d0b20a65bb7d87955c
 msgid "`joint_states_topic`"
 msgstr "`joint_states_topic`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 4d263ee96aca4c79ae2942d30d38c929
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 3b6d2bc8c56e46d2a374e93be7c0ecd0
 msgid "`\"/robot_joint_states\"`"
 msgstr "`\"/robot_joint_states\"`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: da3ddb95f88b4fa8b582f802861371f9
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 51dada7ad2844de7873cbbb1722c0b12
 msgid "State `sensor_msgs/JointState` topic"
 msgstr "状态 `sensor_msgs/JointState` 话题"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: ed076b8fa23847ae9ffff8a3f2031d01
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 915c33b500634368945a9ca9ee4815d9
 msgid "`initialize_commands_from_state`"
 msgstr "`initialize_commands_from_state`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: caf13b6c2a194a5a82e0103acdb72787
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 729a7e88fc094533bd1c7948227d50c6
 msgid "`true` (README: recommended for real hardware)"
 msgstr "`true`（README：真机建议）"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 57c55e52d5c64ea385a6206e6fc16fe7
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 92f14a26dd1940e7827db00cac1a0509
 msgid ""
 "`true`: first received state becomes the command. `false`: use "
 "state_interface `initial_value`"
 msgstr "`true`：首次收到的状态作为命令。`false`：使用 state_interface `initial_value`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 2eb77224cd39467c96c57b9ffe4d19d5
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 5a73d233e48b44e7be16e80c0ee5afc1
 msgid "`trigger_joint_command_threshold`"
 msgstr "`trigger_joint_command_threshold`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 05be3995351b4d8e8b1b59e11965fd9a
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: f97b6012ec404fd18343ef1e2a6700a2
 msgid "`1e-5`"
 msgstr "`1e-5`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 448ab46d6e6d42f0b91f3b87615ccb9d
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 71529b4c30864f0c9c500164e1fe44ca
 msgid "Skip publish when command vs state is below this delta; `-1` always send"
 msgstr "命令与状态差低于此阈值则跳过发布；`-1` 始终发送"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 49faedf628ae47bb9fcc5ff35f857fef
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: bd73e56655f94f319747170cb34d452a
 msgid "`sum_wrapped_joint_states`"
 msgstr "`sum_wrapped_joint_states`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: dd026b6d5d464f37b72bf05ceb88d94e
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: ab4ede02b33a46eba38712cbdf4c7b92
 msgid "`false`"
 msgstr "`false`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 35a497b3bfc14566b7a723c59889a3bb
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: a5458ca234584a57a934f4a790fc6810
 msgid "`true`: unwrap ±2π (Isaac-style wrapping)"
 msgstr "`true`：展开 ±2π（Isaac 风格折返）"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 40321d5ba0e1452aba90aa3ee4a090d0
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 6648c101d4ab4ab192dad25d769168b6
 msgid "`joint_name_prefix`"
 msgstr "`joint_name_prefix`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: b916e299b8c94d29a61bb28f7464800d
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 58668e435f114b73bd555323c3ad4ada
 msgid "`\"\"`"
 msgstr "`\"\"`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 22048aa7754244dcaca20401fb899338
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: d1b71278e3dd4f808a662f67b2c84b79
 msgid "Strip this prefix from hardware joint names when matching topic names"
 msgstr "匹配话题名时从硬件关节名去掉此前缀"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 1153b40b72584e7c9836c29d83a113b8
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: a5da3d7af65a428ebcb065841c8534e8
 msgid "`initial_value`"
 msgstr "`initial_value`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: f06e28906ca8499c99b09daa2cbd162a
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 3051b39b61324a5498b9b9bdccfbb014
 msgid "per `state_interface`"
 msgstr "每个 `state_interface`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: cca5f178539747cdb10e17e74c82735f
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 2fc3d6edf52242f7ab1cd3d8b5f7a202
 msgid "Used when `initialize_commands_from_state` is `false`"
 msgstr "`initialize_commands_from_state` 为 `false` 时使用"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: e1627feb3bc94fe1b66837cf87d64074
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 7ea38dc07dbb4905a1d318d11e58ce15
 msgid "`mimic`"
 msgstr "`mimic`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: d786d23126024200a18402014b553f91
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: a39221888fa0479dad3b6199f336a815
 msgid "per joint"
 msgstr "每个关节"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: e401d63463e6476e9e88af22bf066094
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: f36c8b57b6a34c009828f8f6014fd1a5
 msgid "Name of the joint to mimic"
 msgstr "要跟随的关节名"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: a216a0b63cc6489f9771105214494faa
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 0fb8dfc024e0472d8570d9f1fa33404d
 msgid "`multiplier`"
 msgstr "`multiplier`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: 8b093eebd64141a5b0315f6f87660f02
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: fd4695af0dde4396aead1b3c159d77cb
 msgid "`1`"
 msgstr "`1`"
 
-#: ../../source/4-reference/hardware/1-topic_based.md:11
-#: aad36bed67da42ae9f0a51f921b39b13
+#: ../../source/4-reference/hardware/1-topic_based.md:13
+#: 36915314f3fd4a5ab8f7654b7d1d4918
 msgid "Mimic scale"
 msgstr "跟随比例"
 

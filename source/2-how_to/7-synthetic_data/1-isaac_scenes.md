@@ -17,13 +17,9 @@ cd FaSim-Isaac
 ./run.sh
 :::
 
-From the FaSim README:
+`./init.sh` menu and `./run.sh` flags: [Isaac Sim](../2-simulation/4-isaac_sim.md). Operation 1 selects submodules (`public` checked, private unchecked until you have access). Operation 4 is the optional Isaac ROS 2 Jazzy overlay. The version menu queries GitHub stable tags; `config/fa_sim.conf` falls back to `6.2.0` / `6.1.0` / `6.0.1`. Override with `ISAAC_SIM_VERSION=… ./init.sh`. Operation 5 installs `fasim.ros2.nodes` (needed before Play on an in-process `ROS2ControlLaunch` graph).
 
-1. **`./init.sh` operation 1** — initialize submodules listed in `.gitmodules` / `submodules_visibility.conf`. **public** items are selected by default; **private** items are not (need repo access). Re-runs are additive (`update --init` on the selection).
-2. **`./init.sh` operation 2** — optional **Isaac ROS 2 Jazzy workspace**: download matching Isaac ROS workspaces, extract `jazzy_ws` to `isaac_jazzy_ws/`, install rosdep/colcon deps, build, and append `~/.bashrc`. Version menu queries GitHub stable tags; fallback list in `config/fa_sim.conf` currently includes `6.0.1` / `6.0.0` / `5.1.0`. Override with `ISAAC_SIM_VERSION=… ./init.sh`.
-3. **`./run.sh`** — start Isaac Sim. Default install path is `ISAACSIM_DIR` (`~/isaacsim` unless you copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf`). The menu is PhysX / Newton / Headless Streaming.
-
-The datagen example README ([`examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/feature/sim-grasp-datagen/examples/IsaacSim/README.md) on `feature/sim-grasp-datagen`) currently lists Ubuntu 24.04, ROS 2 Jazzy, and Isaac Sim 6.0. Keep path/version in FaSim config rather than editing launch files by hand.
+The datagen example README ([`examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md) on `main`) still lists Ubuntu 24.04, ROS 2 Jazzy, and Isaac Sim 6.0. Keep path and version in FaSim config. The FaSim fallback list above is newer than that 6.0 line.
 
 Layout from that README:
 
@@ -36,7 +32,7 @@ FaSim-Isaac/
 ├── environment/
 │   ├── fiveages_env/       # → fiveages-env-usds (public scenes)
 │   └── fa-project-usd/     # → fa-project-usd (private project USD)
-└── isaac_jazzy_ws/         # created by init.sh operation 2
+└── isaac_jazzy_ws/         # created by init.sh operation 4
 :::
 
 Open the target robot USD from `robots/` (robot_usds) in Isaac and run the simulation. Enable Isaac’s ROS 2 simulation-control and prim services as in the [NVIDIA Isaac ROS 2 workspace docs](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/install_ros.html#setup-ros-2-workspaces) linked from the example README (`/set_simulation_state`, prim service for object pose).

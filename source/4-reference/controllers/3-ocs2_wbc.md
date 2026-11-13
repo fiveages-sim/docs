@@ -5,7 +5,7 @@ Whole-body MPC — **全身控制** (`ocs2_wbc_controller`) — for wheeled dual
 ```{admonition} Access Required
 :class: warning
 
-`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is a **private** submodule (`ocs2-wbc-controller`). Topics, FSM values, and launch names are in that package README after access. The in-tree loader on the public side is `full_body.launch.py`.
+`controller/ocs2_wbc_controller` in [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is the private submodule [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller). The link needs repository access. Topics, FSM values, and launch names are in that package README after access. The in-tree loader on the public side is `full_body.launch.py`.
 ```
 
 ## Role

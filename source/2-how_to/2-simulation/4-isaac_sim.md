@@ -1,125 +1,124 @@
 # Isaac Sim
 
-Run robot demos with NVIDIA Isaac Sim for high-fidelity simulation.
+Run a robot in NVIDIA Isaac Sim and connect it to the same ROS 2 运控 stack used on hardware.
 
-Use **FaSim-Isaac** `./init.sh` and `./run.sh`. Path and version live in that repo’s config; CLI flags are those named in its README.
+FaSim-Isaac is the asset workspace: `./init.sh` then `./run.sh` (or `./run_headless.sh`). Robot choice is which USD you open, not a `./run.sh --robot` flag. Path and Isaac version live in `config/fa_sim.conf` / `config/fa_sim.local.conf`.
+
+There are two ROS 2 connections. Pick one for a given stage.
+
+| Launch / graph | Plugin | What moves the joints |
+|----------------|--------|------------------------|
+| `hardware:=isaac` | `topic_based_ros2_control/TopicBasedSystem` | OmniGraph joint topics |
+| In-process `ROS2ControlLaunch` (Play) | `isaacsim_ros2_control/IsaacSimSystem` (`hardware=isaac_sim` inside the node) | Controller manager in the Isaac process |
+
+`isaac_sim` is a ros2_control hardware interface, not a second robot body. Details, clock, and TF: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
 
 ## Prerequisites
 
-- NVIDIA Isaac Sim binary installed (GPU + matching NVIDIA drivers)
-- ROS 2 Jazzy workspace
-- Default Isaac directory: `ISAACSIM_DIR` (`~/isaacsim` unless you override it)
+- NVIDIA Isaac Sim, GPU, and a matching driver. Default directory `ISAACSIM_DIR` (`~/isaacsim` unless you override it).
+- ROS 2 Jazzy workspace that already builds the robot (`open-deploy-ws` or, with access, [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws)).
+- For the topic bridge, the workspace includes `topic_based_ros2_control`. For the in-process graph, `./init.sh` operation 5 has installed `fasim.ros2.nodes` into this Isaac, and the description xacro accepts `hardware` `isaac_sim`.
 
-## Steps
-
-### 1. Clone FaSim-Isaac
+## Start FaSim
 
 :::{code-block} bash
-cd ~/
 git clone git@github.com:fiveages-sim/FaSim-Isaac.git
 cd FaSim-Isaac
-:::
-
-### 2. Initialize
-
-:::{code-block} bash
 ./init.sh
-:::
-
-What the script does (FaSim README):
-
-1. **Operation 1** — initialize submodules listed in `.gitmodules` / `submodules_visibility.conf` (`public` selected by default; `private` needs access). Re-runs are additive.
-2. **Operation 2** — optional **Isaac ROS 2 Jazzy workspace**: version menu queries GitHub stable tags (fallback list in `config/fa_sim.conf` currently `6.0.1` / `6.0.0` / `5.1.0`). Override with `ISAAC_SIM_VERSION=… ./init.sh`.
-
-### 3. Start Isaac Sim
-
-:::{code-block} bash
 ./run.sh
 :::
 
-What the script does: optional CPU governor, optional Zenoh router if `RMW_IMPLEMENTATION=rmw_zenoh_cpp`, then an interactive menu — **PhysX** / **Newton** / **Headless Streaming**. There is no `./run.sh --robot` or `./run.sh --headless`.
+`./init.sh` menu ([README](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/README.md)):
 
-Path/version overrides: copy `config/fa_sim.local.template.conf` → `config/fa_sim.local.conf` and set `ISAACSIM_DIR` / `ISAAC_SIM_DEFAULT_VERSION`. Env also works: `ISAACSIM_DIR=/path ./run.sh`.
+1. Init selected submodules (`.gitmodules` / `submodules_visibility.conf`). Public entries start checked. Private entries (including [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd)) stay unchecked until you have access. Re-runs only add what you check.
+2. Update submodules already checked out (`./init.sh --update`). The FaSim repo itself is not pulled.
+3. Download ArtVIP into `environment/ArtVIP/` (`tools/artvip_kitchen.py`).
+4. Optional Isaac ROS 2 Jazzy overlay under `isaac_jazzy_ws/`. The menu asks GitHub for stable tags. If that query fails, `config/fa_sim.conf` falls back to `6.2.0` / `6.1.0` / `6.0.1`. Override with `ISAAC_SIM_VERSION=… ./init.sh`.
+5. Install FaSim extensions into this Isaac (`exts/fasim.steering.nodes`, `exts/fasim.ros2.nodes`) and silence script warnings. Re-run after you reinstall Isaac. Restart Isaac so the extensions load.
 
-### 4. Launch ROS 2 Side
+`./run.sh` shows the saved backend, then asks PhysX or Newton, CPU governor, and which ROS 2 workspace to source. `./run_headless.sh` is the same menu for Headless Streaming. Non-interactive examples from the README:
 
-In a new terminal:
+:::{code-block} bash
+./run.sh -y --physics physx --cpu auto --ros-ws ~/ros2_ws
+./run_headless.sh -y --physics physx --instance 0
+./run.sh --asset-region china
+./run.sh --kit-profile none
+:::
+
+`config/fa_sim.conf` kit profiles (`--kit-profile` / `--list-kit-profiles`): `none`, `newton-physx-min`, `newton-physx`, `physx-compat`, `physx-compat-full`. `--asset-region` is `none`, `us`, or `china`. Copy `config/fa_sim.local.template.conf` to `config/fa_sim.local.conf` for a machine override. When `RMW_IMPLEMENTATION=rmw_zenoh_cpp`, `./run.sh` starts a Zenoh router and stops it on exit.
+
+Open the robot USD under `robots/` (robot_usds) or a scene under `environment/`. Operation 5 must already be done before a stage that uses `ROS2ControlLaunch`.
+
+## Topic bridge (`hardware:=isaac`)
+
+In another terminal, after the workspace overlay:
 
 :::{code-block} bash
 source ~/open-deploy-ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac
+ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=isaac
 :::
 
-Pass `robot:=…` on this ROS 2 launch as usual. Robot USD selection is done by opening the asset under FaSim `robots/` (robot_usds) in Isaac — not a FaSim `run.sh` flag.
+`robot:=` is the description key (`<key>_description`). `demo.launch.py` has no namespace argument. Do not append `namespace:=…` on this launch.
 
-### 5. Verify Connection
+The shared macro [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro) writes:
+
+- `joint_commands_topic` = `/isaac/joint_command`
+- `joint_states_topic` = `/isaac/joint_states`
+
+Those names have to be the OmniGraph `topicName` on **this** robot. W2’s topic-bridge payload [`W2/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/ros2.usda) publishes `/joint_command` and `/joint_states` instead. If the two sides differ, retarget the xacro `<param>` (or the graph) until `ros2 topic echo` shows the same `sensor_msgs/JointState` names the controller claims. Plugin parameters: [topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md).
+
+`use_sim_time` follows `hardware` (`isaac` → true) unless you pass `use_sim_time:=true` or `false`.
+
+Check:
 
 :::{code-block} bash
-ros2 topic list
+ros2 topic echo /isaac/joint_states --once
+# or the topicName this USD actually publishes
 :::
 
-Acone `hardware:=isaac` uses `topic_based_ros2_control/TopicBasedSystem` with `/isaac/joint_command` and `/isaac/joint_states` ([xacro](https://github.com/fiveages-sim/robot-descriptions-arx/blob/main/arx_acone_description/xacro/ros2_control/robot.xacro)). Do not expect a stack-wide `/target_pose`.
+A joint command on the matching command topic moves the articulation. There is no stack-wide `/target_pose`.
 
-## USD Assets
+## In-process driver (`isaac_sim`)
 
-FaSim-Isaac uses USD (Universal Scene Description) assets from `robot_usds`:
+Use this when the USD contains `fasim.ros2.nodes.ROS2ControlLaunch` (W2 in-process payload: [`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)). Play runs the graph. The node calls `emit_control`, which sets `hardware=isaac_sim`, passes the ArticulationRoot as `isaac_prim_path`, and starts the controller manager inside Isaac.
 
-| Path | Content |
+You still need a description package whose ros2_control xacro includes `simulation_hardware_plugin` for `isaac_sim` ([robot_common_launch README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)). The graph inputs are `robot`, `mode` (`demo`, `split_body`, `full_body`), `type`, and optional `namespace`, `infoFile`, `arms`. Empty `robot` reads the USD `Robot` variant; that string must be the description package stem.
+
+On Play, confirm:
+
+:::{code-block} bash
+ros2 control list_controllers
+ros2 topic echo /joint_states --once
+ros2 topic hz /clock
+:::
+
+`/joint_states` here is the controller’s `joint_state_broadcaster`, not the topic-bridge pair. `/clock` should tick near the physics rate. Arm degrees of freedom are not also bridged on `/isaac/joint_command`.
+
+`namespace` on the graph (empty for one robot) is how a second articulation gets `/<ns>/controller_manager`. It is not a `demo.launch.py` argument. Frame ids stay `world`, `odom`, and `base_link` / `base_footprint`. See the reference for TF and for `infoFile`.
+
+Whole-body mode needs the private [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) submodule. To hold a mobile base, keep the description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` graph with `infoFile` set to a `fixed_base` info file has no virtual chassis degree of freedom for that lock, and arm enable can sit in `WAITING_FOR_ENABLE_POLICY`.
+
+## What to open
+
+| Tree | Content |
 |------|---------|
-| `humanoid/FiveAges/Gen1` | Gen1 wheeled-arm USD |
-| `humanoid/FiveAges/Gen2` | Gen2 wheeled-arm USD |
-| `humanoid/FiveAges/Gen3` | Gen3 wheeled-arm USD |
-| `humanoid/Galbot` | Galbot mobile manipulator |
-| `humanoid/Ubtech` | Ubtech humanoid |
+| `robots/` → [robot_usds](https://github.com/fiveages-sim/robot_usds) | Robot USD |
+| `environment/fiveages_env/` | Public scenes |
+| `environment/fa-project-usd/` → [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) | Project scenes (private; needs access) |
+| `environment/artvip-usd/` | ArtVIP components |
 
-See [robot_usds reference](../../4-reference/simulation/3-robot_usds.md) for details.
+Gen labels and brand folders: [robot_usds reference](../../4-reference/simulation/3-robot_usds.md).
 
-## Environment Assets
+## When it fails
 
-Scene environments are loaded from:
-- `fiveages-env-usds` — Public environment assets
-- `fa-project-usd` — Internal project-specific scenes (private)
+**Isaac does not start.** `ISAACSIM_DIR` must contain the launchers named in `config/fa_sim.conf` (`isaac-sim.sh`, `isaac-sim.newton.sh`, `isaac-sim.streaming.sh`, `isaac-sim.newton.streaming.sh`). `nvidia-smi` shows a GPU. Logs: `~/.nvidia-omniverse/logs/`.
 
-Open the scene USD in Isaac. There is no `./run.sh --env`.
+**No ROS 2 topics after Play.** Domain id and `RMW_IMPLEMENTATION` match the sourced workspace. Topic bridge: the graph’s `topicName` matches the xacro. In-process: operation 5 is installed and Isaac was restarted; the stage’s `ROS` variant is the fiveages payload, not the topic-bridge payload.
 
-## Hardware Interface
+**Motion finishes much too fast.** On the in-process payload, `/clock` comes from the on-demand `ROS_Clock` graph (`OnPhysicsStep`), which is already how W2 `fiveages.usda` is wired. The topic-bridge `ros2.usda` still publishes the clock from `OnPlaybackTick`. Fix the clock source before editing joint gains. Mechanism: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
 
-The `hardware:=isaac` parameter uses the topic-based hardware interface that bridges Isaac Sim physics to ROS 2 control. Plugin `<param>` names (`joint_commands_topic`, `initialize_commands_from_state`, …): [topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md).
+## Next
 
-## Verification
-
-- Isaac Sim window (or Headless Streaming) is running from `./run.sh`
-- ROS 2 topics from Isaac appear in `ros2 topic list`
-- Robot responds to joint commands
-- Sensor data (if configured) publishes to ROS 2
-
-## Troubleshooting
-
-### Isaac Sim fails to launch
-
-1. Confirm `ISAACSIM_DIR` (default `~/isaacsim`) contains the launch scripts named in `config/fa_sim.conf` (`isaac-sim.sh`, `isaac-sim.newton.sh`, `isaac-sim.streaming.sh`)
-2. Set `ISAACSIM_DIR` in `config/fa_sim.local.conf` if Isaac is not at `~/isaacsim`
-3. Verify GPU drivers: `nvidia-smi`
-4. Check Isaac Sim logs in `~/.nvidia-omniverse/logs/`
-
-### No ROS 2 topics
-
-1. Verify the ROS 2 bridge extension is enabled in Isaac Sim
-2. Check domain ID matches between Isaac and ROS 2
-3. Restart `./run.sh` and the ROS 2 launch
-
-### USD asset not found
-
-Re-run `./init.sh` operation 1 and select the needed submodules (including `robots`).
-
-### Simulation runs slowly
-
-- Reduce rendering quality in Isaac Sim settings
-- Use `./run.sh` menu **Headless Streaming** for non-visual testing
-- Check GPU memory usage
-
-## Next Steps
-
-- [robot_usds reference](../../4-reference/simulation/3-robot_usds.md)
 - [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md)
-- [Synthetic Data](../7-synthetic_data/0-index.md) — datagen pipeline on Isaac (not Gazebo)
+- [Add a Robot](../6-deployment/10-add_a_robot.md) and the [Day 7 exam](../../0-overview/2-learning_path.md)
+- [Synthetic Data](../7-synthetic_data/0-index.md)
