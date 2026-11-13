@@ -561,7 +561,7 @@ msgstr "**预期结果：** 你可以用 Python 编写机器人运动脚本。"
 #: ../../source/0-overview/2-learning_path.md:129
 #: 13bc7f273b67416eb56b14c5337c852c
 msgid "Day 5: Teleoperation"
-msgstr "第 5 天: 遥操作"
+msgstr "第 5 天：遥操作"
 
 #: ../../source/0-overview/2-learning_path.md:131
 #: 4302e88f06074ddb89d0b4d3d7072167
@@ -1176,6 +1176,457 @@ msgid ""
 "unclear documentation"
 msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库提交 issue"
 
+#: ../../source/0-overview/2-learning_path.md:0
+#: 2b2289eefad94de0b306469d79687968
+msgid "fa-py-libraries and Viser"
+msgstr "fa-py-libraries 与 Viser"
+
+#: ../../source/0-overview/2-learning_path.md:0
+#: 9bbbb88166a64dd587ba7ca4bf5c0668
+msgid "Isaac Sim"
+msgstr "Isaac Sim"
+
+#: ../../source/0-overview/2-learning_path.md:97
+#: 13b551e443224318a9a277d7cb45ed5a
+msgid ""
+"This clip is a W2 with xhand1 operation demo: in RViz, drag the dual-arm "
+"end-effector targets, reset both arms, and adjust the head joints with "
+"JointControlPanel."
+msgstr ""
+"这段视频是 W2 配 xhand1 的操作演示：在 RViz 里拖动双臂末端目标，复位双臂，并用 JointControlPanel 调节头部关节。"
+
+#: ../../source/0-overview/2-learning_path.md:109
+#: 2b2289eefad94de0b306469d79687968
+msgid "Day 3: fa-py-libraries and Viser"
+msgstr "第 3 天：fa-py-libraries 与 Viser"
+
+#: ../../source/0-overview/2-learning_path.md:111
+#: 1e435dc089be48fda87b09825b543c62
+msgid ""
+"**Goal:** Install fa-py-libraries and open Viser in a browser, so you can "
+"see the robot and send basic commands before you start Isaac Sim."
+msgstr ""
+"**目标：** 安装 fa-py-libraries，并在浏览器里打开 Viser，这样在启动 Isaac Sim "
+"之前就能看到机器人、发出基本指令。"
+
+#: ../../source/0-overview/2-learning_path.md:113
+#: c37fa178f7e048249605ee218b2ecb4d
+msgid ""
+"Viser is the browser 3D view and control page from "
+"[ros2-viser](https://github.com/fiveages-sim/ros2-viser). Launch it from "
+"**fa-py-libraries**, not as a standalone product and not from "
+"lerobot_ros2."
+msgstr ""
+"Viser 是 [ros2-viser](https://github.com/fiveages-sim/ros2-viser) "
+"提供的浏览器三维查看与控制页面。从 **fa-py-libraries** 启动它，不要把它当成单独的产品，也不要从 lerobot_ros2 "
+"启动。"
+
+#: ../../source/0-overview/2-learning_path.md:117
+#: 1b2e81b2b661458694dd7949aca0cb13
+msgid ""
+"Keep a robot demo from Day 1 or Day 2 running. The ros2-viser README asks "
+"you to start the control stack first; `/robot_description` must be "
+"available."
+msgstr ""
+"先保持第 1 天或第 2 天的机器人演示在运行。ros2-viser 的 README 要求先启动运控；`/robot_description` "
+"必须已经可用。"
+
+#: ../../source/0-overview/2-learning_path.md:118
+#: 1f4dec5a40f240baa8b2354ae2852106
+msgid ""
+"Install fa-py-libraries (Python 3.12 env; this also installs "
+"`ros2_robot_interface` and `ros2-viser`):"
+msgstr ""
+"安装 fa-py-libraries（Python 3.12 环境；同时会装上 `ros2_robot_interface` 和 "
+"`ros2-viser`）："
+
+#: ../../source/0-overview/2-learning_path.md:119
+#: 1f4dec5a40f240baa8b2354ae2852106
+msgid ""
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all\n"
+msgstr ""
+"git clone https://github.com/fiveages-sim/fa-py-libraries.git\n"
+"cd fa-py-libraries\n"
+"./init.sh all\n"
+
+#: ../../source/0-overview/2-learning_path.md:124
+#: c62889ec812744bfa63feba2bca681dc
+msgid "Start Viser from that repository:"
+msgstr "从该仓库启动 Viser："
+
+#: ../../source/0-overview/2-learning_path.md:125
+#: 627699df354b45e0b5771eb50f84f020
+msgid "./run.sh viser\n"
+msgstr "./run.sh viser\n"
+
+#: ../../source/0-overview/2-learning_path.md:128
+#: d209530eaf0a4ee7a9d90536d6a98117
+msgid ""
+"`./run.sh` with no arguments opens a menu; item 1 is `ros2-viser launch`. "
+"The command runs `ros2-viser/launch.py`."
+msgstr ""
+"不带参数运行 `./run.sh` 会打开菜单；第 1 项是 `ros2-viser launch`。这条命令会执行 "
+"`ros2-viser/launch.py`。"
+
+#: ../../source/0-overview/2-learning_path.md:129
+#: 53faa6c2f42b4d20aa5403dbbef54fa5
+msgid ""
+"In a browser, open the URL that Viser prints in the terminal (`访问 URL`). "
+"The same output shows the host and port; this launch has no separate "
+"host/port flag. You can also scan the QR code it prints."
+msgstr ""
+"在浏览器里打开 Viser 在终端打印的地址（`访问 "
+"URL`）。同一段输出里有主机和端口；这次启动没有单独的主机/端口参数。也可以扫描它打印的二维码。"
+
+#: ../../source/0-overview/2-learning_path.md:130
+#: 45a9c452eefb4c58ac62c221be1ae555
+msgid ""
+"The page starts as an empty scene. If only one robot is present, it loads "
+"automatically. If there are several, pick one under “选择命名空间”. If the robot"
+" comes up later, click “刷新命名空间列表”."
+msgstr ""
+"页面一开始是空场景。如果当时只有一台机器人，会自动加载。如果有多台，在「选择命名空间」里选一个。如果机器人是后来才起来的，点「刷新命名空间列表」。"
+
+#: ../../source/0-overview/2-learning_path.md:131
+#: a16165cb99e6420ba43f15e413f8fb4c
+msgid ""
+"Confirm the model is visible. For a first control check: use HOME / HOLD "
+"on the state panel; switch to OCS2 and drag the end-effector handles; or "
+"switch to MOVEJ, move the joint sliders, and send the target. On a mobile "
+"base such as G1-D, `launch.py` sets the visualization frame to `world`; "
+"you can also choose `map` or `odom` on the page so the model and the "
+"handles share the same ground."
+msgstr ""
+"确认模型已经可见。第一次检查控制时：在状态面板用 HOME / HOLD；切到 OCS2，拖动末端手柄；或者切到 "
+"MOVEJ，拉动关节滑条再发送目标。像 G1-D 这样的移动底盘，`launch.py` 会把可视化坐标系设为 `world`；也可以在页面上改成 "
+"`map` 或 `odom`，让模型和手柄落在同一地面上。"
+
+#: ../../source/0-overview/2-learning_path.md:133
+#: 39765f5ad82a4409b865785096182078
+msgid ""
+"Do not copy the rest of the Python API here. Full Viser UI: "
+"[ros2-viser](../4-reference/python_apps/3-ros2_viser.md). Writing scripts "
+"with `ROS2RobotInterface`: [Python "
+"Interface](../2-how_to/3-programming/5-python_interface.md)."
+msgstr ""
+"这里不要再抄一遍其余 Python API。Viser 完整界面见 "
+"[ros2-viser](../4-reference/python_apps/3-ros2_viser.md)。用 "
+"`ROS2RobotInterface` 写脚本见 [Python "
+"接口](../2-how_to/3-programming/5-python_interface.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:135
+#: cfad2d9db829473fb1e87bddfb0d86aa
+msgid ""
+"**Primary sources:** [fa-py-libraries](https://github.com/fiveages-sim/fa-"
+"py-libraries), [ros2-viser](https://github.com/fiveages-sim/ros2-viser)"
+msgstr ""
+"**主要来源：** [fa-py-libraries](https://github.com/fiveages-sim/fa-py-"
+"libraries)、[ros2-viser](https://github.com/fiveages-sim/ros2-viser)"
+
+#: ../../source/0-overview/2-learning_path.md:137
+#: 4fdb3584b08c4ab39d81b9d5f235b63c
+msgid ""
+"**Outcome:** You can open Viser in a browser, see the robot, and use the "
+"page to move it while a demo is running."
+msgstr "**预期结果：** 能在浏览器里打开 Viser，看到机器人，并在演示运行时用这个页面对它进行控制。"
+
+#: ../../source/0-overview/2-learning_path.md:139
+#: 6cd786c4230a46be9850d2d5643e90e9
+msgid "Day 4: Isaac Sim"
+msgstr "第 4 天：Isaac Sim"
+
+#: ../../source/0-overview/2-learning_path.md:141
+#: 6c1a4fbd3717417584f5ea0c19f1a680
+msgid ""
+"**Goal:** Run physics simulation in Isaac Sim (FaSim), instead of mock "
+"hardware. This is the default simulation path."
+msgstr "**目标：** 在 Isaac Sim（FaSim）里跑物理仿真，而不是 mock 硬件。这是默认的仿真路径。"
+
+#: ../../source/0-overview/2-learning_path.md:145
+#: ea68f9803dc64d3385c302966562df00
+msgid ""
+"Start Viser the way you did on Day 3, after the Isaac / ROS 2 stack is up,"
+" so you can view and control the robot in the browser: [Start "
+"Viser](../2-how_to/3-programming/5-python_interface.md#start-viser). A "
+"G1-D demonstration of full-body control and chassis motion is on that How-"
+"To page: [G1-D full-body control and chassis "
+"motion](../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-"
+"and-chassis-motion)."
+msgstr ""
+"Isaac / ROS 2 运控起来之后，按第 3 天的方式启动 Viser，就可以在浏览器里查看和控制机器人：[启动 "
+"Viser](../2-how_to/3-programming/5-python_interface.md#start-viser)。G1-D "
+"全身控制和底盘运动的演示在该 How-To 页：[G1-D "
+"全身控制与底盘运动](../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-"
+"and-chassis-motion)。"
+
+#: ../../source/0-overview/2-learning_path.md:151
+#: d9553af5ece4466d9e3d834b01a6c49c
+msgid ""
+"**Outcome:** You can start FaSim and see the robot move in Isaac Sim with "
+"the same ROS 2 运控 as the real robot, plus simulation ground truth."
+msgstr "**预期结果：** 能启动 FaSim，看到机器人在 Isaac Sim 中运动，运控与真机同一套 ROS 2 运控，并带仿真真值。"
+
+#: ../../source/0-overview/2-learning_path.md:153
+#: 497f972944484fe39c4a370cf2ce0ae1
+msgid "Gazebo (alternative)"
+msgstr "Gazebo（备选）"
+
+#: ../../source/0-overview/2-learning_path.md:155
+#: 8183e2e419f94fe9b3cfbf36f105ad94
+msgid ""
+"If you need Gazebo Harmonic instead, follow [Gazebo "
+"Simulation](../2-how_to/2-simulation/3-gazebo_sim.md):"
+msgstr ""
+"如果需要改用 Gazebo Harmonic，按 [Gazebo "
+"仿真](../2-how_to/2-simulation/3-gazebo_sim.md)："
+
+#: ../../source/0-overview/2-learning_path.md:167
+#: 669bdddd22734991ade09dd6ba456292
+msgid ""
+"**Goal:** Start with VR or a game controller, then know what the other "
+"input methods are for."
+msgstr "**目标：** 先用 VR 或游戏手柄上手，再了解其他输入方式各自做什么。"
+
+#: ../../source/0-overview/2-learning_path.md:169
+#: 3a7107a4bdae4f189220022b4af36f92
+msgid ""
+"Keep the robot stack from Days 1–4 running. Teleop only publishes targets "
+"or assist events into that stack; it does not replace it."
+msgstr "保持第 1 到第 4 天的机器人运控在运行。遥操作只向这套运控发布目标或辅助事件，并不能代替它。"
+
+#: ../../source/0-overview/2-learning_path.md:171
+#: 85320b35b35245e7903361b84f85c94b
+msgid ""
+"Inputs in this stack have different jobs: **end-effector pose** (VR "
+"controllers, Vive Tracker, DexCap exoskeleton arms), **joint-space "
+"following** (isomorphic teleop), **fingers / grippers** (VR triggers, Wuji"
+" gloves, DexCap gloves), and **enable / pause / FSM assists** (some VR "
+"buttons, the joystick enable switch, the foot pedal)."
+msgstr ""
+"这套系统里，不同输入承担不同职责：**末端位姿**（VR 手柄、Vive Tracker、DexCap "
+"外骨骼的手臂）、**关节空间跟随**（同构遥操作）、**手指 / 夹爪**（VR 扳机、Wuji 手套、DexCap 手套），以及**使能 / 暂停"
+" / FSM 辅助**（部分 VR 按键、手柄使能开关、脚踏板）。"
+
+#: ../../source/0-overview/2-learning_path.md:173
+#: a931ff91a0af4ef08a51df1fd322c279
+msgid "Start here: VR"
+msgstr "从这里开始：VR"
+
+#: ../../source/0-overview/2-learning_path.md:175
+#: 8fef0e19aa504c0a81d094519ecf773c
+msgid ""
+"**What it is for.** Drive the arms from the headset controllers’ end-"
+"effector pose. Triggers operate the gripper or hand. Buttons handle FSM, "
+"pause, and — on 全身 — some arm enable/disable assists. Use this path when "
+"you have a Pico or Quest headset."
+msgstr ""
+"**适合做什么。** 用头显配套手柄的末端位姿来带动手臂。扳机关夹爪或灵巧手。按键处理 FSM、暂停，以及在全身上的部分手臂使能/禁用辅助。有 "
+"Pico 或 Quest 头显时走这条路径。"
+
+#: ../../source/0-overview/2-learning_path.md:177
+#: 2c66f7798d4b46e5904e991791ed3bdd
+msgid ""
+"**Minimum steps.** Follow [VR "
+"Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md). You need fa-"
+"py-libraries from Day 3, `enable_vr: true` in the description’s "
+"`config/ocs2/target_manager.yaml` (most robots default off), and a network"
+" to the headset. Then:"
+msgstr ""
+"**最短步骤。** 按 [VR 遥操作](../2-how_to/5-teleoperation/6-vr_teleop.md)。你需要第 3 天的"
+" fa-py-libraries，在描述包的 `config/ocs2/target_manager.yaml` 里把 `enable_vr: "
+"true`（多数机器人默认是关闭的），以及通向头显的网络。然后："
+
+#: ../../source/0-overview/2-learning_path.md:179
+#: 2b2289eefad94de0b306469d79687968
+msgid ""
+"cd ~/fa-py-libraries\n"
+"./run.sh vr\n"
+msgstr ""
+"cd ~/fa-py-libraries\n"
+"./run.sh vr\n"
+
+#: ../../source/0-overview/2-learning_path.md:184
+#: 1cfef8eb78a24b2ba3323561026cb411
+msgid ""
+"Open the URL shown in the headset browser (WebXR). For the lower-latency "
+"XRoboToolkit path, use `./run.sh vr-xrt-service` then `./run.sh vr-xrt` as"
+" on that page. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享, "
+"and a **different App** from Pico consumer)."
+msgstr ""
+"在头显浏览器里打开显示的 URL（WebXR）。延迟更低的 XRoboToolkit 路径，按该页使用 `./run.sh vr-xrt-"
+"service`，再运行 `./run.sh vr-xrt`。Pico **Enterprise** 是更推荐的 Pico 规格（支持 USB "
+"网络共享，并且和消费版 Pico 用的是**不同的 App**）。"
+
+#: ../../source/0-overview/2-learning_path.md:186
+#: f5d23ac11a454d228067850f97bc6bc9
+msgid ""
+"**What you should see.** The arms follow the VR controllers, and you can "
+"change FSM and the gripper from the controller buttons."
+msgstr "**预期看到的结果。** 手臂跟随 VR 手柄运动，你可以用手柄按键切换 FSM、操作夹爪。"
+
+#: ../../source/0-overview/2-learning_path.md:188
+#: 38cc2e72185b4039ab2221b4e17eb741
+msgid "Start here: game controller (joystick)"
+msgstr "从这里开始：游戏手柄（joystick）"
+
+#: ../../source/0-overview/2-learning_path.md:190
+#: ad40a811155e4fcc95b3b961111c95e0
+msgid ""
+"**What it is for.** A gamepad or joystick, without a headset, to command "
+"arm velocity (`control_input` → `/left_target/twist` and "
+"`/right_target/twist`) and, in chassis mode, `/cmd_vel`. Use this path "
+"when you only have a game controller."
+msgstr ""
+"**适合做什么。** 不用头显，用游戏手柄或摇杆以速度方式控制手臂（`control_input` → `/left_target/twist` 和"
+" `/right_target/twist`），在底盘模式下还可以发 `/cmd_vel`。只有游戏手柄时走这条路径。"
+
+#: ../../source/0-overview/2-learning_path.md:192
+#: c2e1f61c7a304486ad6ee3467545fd1a
+msgid ""
+"**Minimum steps.** With the robot stack already running, follow [Joystick "
+"teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md):"
+msgstr ""
+"**最短步骤。** 在机器人运控已经运行的前提下，按 "
+"[手柄遥操作](../2-how_to/5-teleoperation/9-joystick_teleop.md)："
+
+#: ../../source/0-overview/2-learning_path.md:194
+#: 341ef2307b284de9bd0b60d449c7f61f
+msgid "ros2 launch arms_teleop joystick_teleop.launch.py\n"
+msgstr "ros2 launch arms_teleop joystick_teleop.launch.py\n"
+
+#: ../../source/0-overview/2-learning_path.md:198
+#: 769f1095885b4e628f8326ed10d8adf1
+msgid ""
+"Joystick control starts disabled; press the right stick to enable it "
+"(package README). Most mapped gamepads use the generic SDL layout "
+"automatically."
+msgstr "手柄控制默认是关闭的；按下右摇杆使能（见软件包 README）。大多数已映射的游戏手柄会自动使用通用 SDL 布局。"
+
+#: ../../source/0-overview/2-learning_path.md:200
+#: 8189179a85b7465584693f0781affe90
+msgid ""
+"**What you should see.** After you enable the controller, stick motion "
+"changes the arm target, or the chassis in chassis mode."
+msgstr "**预期看到的结果。** 使能之后，拨动摇杆会改变手臂目标；在底盘模式下则控制底盘。"
+
+#: ../../source/0-overview/2-learning_path.md:202
+#: a7bc60bca0e94a27bb79c1c321076513
+msgid "Other methods"
+msgstr "其他方式"
+
+#: ../../source/0-overview/2-learning_path.md:204
+#: 0b56acb571434b5f8d785c3324255a04
+msgid ""
+"These are additional ways to supply pose, finger, or assist signals. Use "
+"the linked pages for setup; this day does not walk through them."
+msgstr "这些是补充位姿、手指或辅助信号的方式。具体布置看链接的页面；这一天不逐步讲解。"
+
+#: ../../source/0-overview/2-learning_path.md:206
+#: d37e6bf04cfc44d88667b7f33048e470
+msgid ""
+"**Isomorphic teleop** (同构遥操作) — Master–slave joint following on HighTorque"
+" Panthera HT, not end-effector pose. On the `panthera-ht` branch, real-"
+"robot teleop is `./teleop_start.sh`: [HighTorque Panthera "
+"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), "
+"[Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
+msgstr ""
+"**同构遥操作** — 在 HighTorque Panthera HT 上做主从关节跟随，不是末端位姿。`panthera-ht` "
+"分支上，真机遥操作是 `./teleop_start.sh`：[HighTorque Panthera "
+"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)、[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:207
+#: e52bc28497b747e5830e64ced0aa2881
+msgid ""
+"**DexCap exoskeleton and gloves** (internal) — The exoskeleton measures "
+"waist and arm joints; the gloves measure finger joints. Combined arm + "
+"hand teleop: [DexCap "
+"Teleoperation](../2-how_to/5-teleoperation/8-dexcap_teleop.md)."
+msgstr ""
+"**DexCap 外骨骼和手套**（内部）— 外骨骼测腰部和手臂关节，手套测手指关节。臂手一体遥操作：[DexCap "
+"遥操作](../2-how_to/5-teleoperation/8-dexcap_teleop.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:208
+#: ae5d2f7b156a451aaec023a610c466f3
+msgid ""
+"**VR gesture / hand tracking** — The current `./run.sh vr` path starts "
+"**controller** mode. This docs set does not document a launch entry that "
+"turns on VR gesture or hand-tracking recognition."
+msgstr ""
+"**VR 手势 / 手部追踪** — 当前的 `./run.sh vr` 路径启动的是**头显手柄**模式。本页文档没有给出打开 VR "
+"手势或手部追踪识别的启动入口。"
+
+#: ../../source/0-overview/2-learning_path.md:209
+#: babbafc7819a4a5181d6fe537617e30d
+msgid ""
+"**Wuji gloves** (internal) — Finger and hand joint teleop, with optional "
+"Vive Tracker for arm pose: "
+"[wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md)."
+msgstr ""
+"**Wuji 手套**（内部）— 手指和手部关节遥操作，可选配 Vive Tracker "
+"来带动手臂：[wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:210
+#: a97822ae788b4e6fab940018e7037e18
+msgid ""
+"**Foot pedal** — An assist, not a complete teleop setup. "
+"`foot_pedal_teleop` in `arms_teleop` publishes events on "
+"`/teleop/controller_state` (FSM up/down, arm enable, STORAGE/UPDATE, "
+"mirror). It does not replace VR or the game controller: [Joystick "
+"teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-"
+"assist-only)."
+msgstr ""
+"**脚踏板** — 这是辅助输入，不是完整的遥操作方案。`arms_teleop` 里的 `foot_pedal_teleop` 在 "
+"`/teleop/controller_state` 上发布事件（FSM 上/下、手臂使能、STORAGE/UPDATE、镜像）。它不能代替 VR "
+"或游戏手柄：[手柄遥操作](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-"
+"assist-only)。"
+
+#: ../../source/0-overview/2-learning_path.md:211
+#: 25c0db2abf944d969bebd29d83e1716a
+msgid ""
+"**Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to arm"
+" end-effector targets (`vive_tracker_teleop`). That is the name used in "
+"the package and in these docs; it is not documented as “Valve Tracker”: "
+"[Vive Tracker](../4-reference/teleop/6-vive_tracker.md)."
+msgstr ""
+"**Vive Tracker**（内部）— 把 SteamVR 的 **Vive Tracker** "
+"位姿映射到手臂末端目标（`vive_tracker_teleop`）。软件包和本文档用的就是这个名称，并没有写成 “Valve "
+"Tracker”：[Vive Tracker](../4-reference/teleop/6-vive_tracker.md)。"
+
+#: ../../source/0-overview/2-learning_path.md:213
+#: 5192ac4283074a0dab4f46c3eb73f0b7
+msgid ""
+"**Primary sources:** [VR "
+"Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md), [arms_teleop "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
+msgstr ""
+"**主要来源：** [VR "
+"遥操作](../2-how_to/5-teleoperation/6-vr_teleop.md)、[arms_teleop "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
+
+#: ../../source/0-overview/2-learning_path.md:215
+#: ce0c8b1a662945a9aed7729665ac58b4
+msgid ""
+"**Outcome:** You can run either the VR path or the game-controller path, "
+"and you can tell which of the other devices is for pose, fingers, or "
+"enable/pause assists."
+msgstr "**预期结果：** 你能跑通 VR 或游戏手柄其中一条路径，并且分得清其他设备分别用于位姿、手指，还是使能/暂停辅助。"
+
+#: ../../source/0-overview/2-learning_path.md:259
+#: bfb7275595e548379bbc0b9102a27b08
+msgid ""
+"**Before you start.** Finish Days 0–4. You can reach HOLD with "
+"`hardware:=mock_components`, Viser opens in the browser, Isaac Sim is "
+"installed, `ISAACSIM_DIR` is set, and you have run FaSim `./init.sh` and "
+"`./run.sh`."
+msgstr ""
+"**开始之前。** 做完第 0 到第 4 天。你能用 `hardware:=mock_components` 进到 HOLD，Viser "
+"能在浏览器里打开，Isaac Sim 已安装，`ISAACSIM_DIR` 已设置，并且已经跑过 FaSim 的 `./init.sh` 和 "
+"`./run.sh`。"
+
 #~ msgid "Day 6+"
 #~ msgstr ""
 
@@ -1784,4 +2235,3 @@ msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库
 #~ "动作结束得特别快，是 `/clock` 的问题。进程内的 W2 "
 #~ "载荷从物理步取时钟。话题桥载荷仍从播放节拍取时钟。[FaSim "
 #~ "参考](../4-reference/simulation/2-fasim_isaac.md) 写了这个时钟。改关节增益修不好。"
-

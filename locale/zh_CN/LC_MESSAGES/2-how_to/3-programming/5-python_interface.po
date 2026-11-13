@@ -39,8 +39,8 @@ msgstr "已安装 ROS 2 Jazzy"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:8
 #: 5a94673031a448ee934eabe0dcbb2c98
-msgid "Robot demo running (mock, Gazebo, or real)"
-msgstr "机器人演示正在运行（mock、Gazebo 或真实硬件）"
+msgid "Robot demo running (mock, Isaac Sim, or real; Gazebo is an alternative)"
+msgstr "机器人演示正在运行（mock、Isaac Sim 或真实硬件；Gazebo 是备选）"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:9
 #: 93c6d33ee68341a0b75c740e4daa9582
@@ -190,8 +190,8 @@ msgstr "`connect()` 看到 `/right_current_pose` 后，双臂模式下才有 `ri
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:69
 #: c464a2f81276427da3944f4975d52ae1
-msgid "With Viser visualization"
-msgstr "结合 Viser 可视化"
+msgid "Start Viser"
+msgstr "启动 Viser"
 
 #: ../../source/2-how_to/3-programming/5-python_interface.md:71
 #: 17db0b5dd5034bd8950db72cab7b44d4
@@ -349,6 +349,64 @@ msgid ""
 msgstr ""
 "cd ~/fa-py-libraries\n"
 "./init.sh all"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:73
+#: d200dcfea6934c609fb35cdff121d366
+msgid ""
+"Viser is the browser 3D view and control page from "
+"[ros2-viser](../../4-reference/python_apps/3-ros2_viser.md). Start the "
+"robot control stack first (`/robot_description` must be available), then "
+"launch Viser from **fa-py-libraries**. That is the primary entry; do not "
+"start it from lerobot_ros2 or treat `pip install ros2-viser` as the "
+"product launcher."
+msgstr ""
+"Viser 是 [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md) "
+"提供的浏览器三维查看与控制页面。先启动机器人运控（`/robot_description` 必须已经可用），再从 **fa-py-"
+"libraries** 启动 Viser。这是主要入口；不要从 lerobot_ros2 启动，也不要把 `pip install "
+"ros2-viser` 当成产品启动方式。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:80
+#: e3e4cface8344082acf8ddacaf1f8295
+msgid ""
+"`./run.sh` with no arguments opens a menu; item 1 is `ros2-viser launch`. "
+"The command runs `ros2-viser/launch.py`. In a browser, open the URL "
+"printed in the terminal (`访问 URL`). The same output shows the host and "
+"port; this launch has no separate host/port flag. You can also scan the QR"
+" code it prints."
+msgstr ""
+"不带参数运行 `./run.sh` 会打开菜单；第 1 项是 `ros2-viser launch`。这条命令会执行 "
+"`ros2-viser/launch.py`。在浏览器里打开终端打印的地址（`访问 "
+"URL`）。同一段输出里有主机和端口；这次启动没有单独的主机/端口参数。也可以扫描它打印的二维码。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:82
+#: 1317f2df27df4a4091d86f2b3ed48b9a
+msgid ""
+"The page starts as an empty scene. If only one robot is present, it loads "
+"automatically. If there are several, pick one under “选择命名空间”. If the robot"
+" comes up later, click “刷新命名空间列表”. Then confirm the model is visible. For "
+"a first control check: use HOME / HOLD on the state panel; switch to OCS2 "
+"and drag the end-effector handles; or switch to MOVEJ, move the joint "
+"sliders, and send the target. On a mobile base such as G1-D, `launch.py` "
+"sets the visualization frame to `world`; you can also choose `map` or "
+"`odom` on the page so the model and the handles share the same ground."
+msgstr ""
+"页面一开始是空场景。如果当时只有一台机器人，会自动加载。如果有多台，在「选择命名空间」里选一个。如果机器人是后来才起来的，点「刷新命名空间列表」。然后确认模型已经可见。第一次检查控制时：在状态面板用"
+" HOME / HOLD；切到 OCS2，拖动末端手柄；或者切到 MOVEJ，拉动关节滑条再发送目标。像 G1-D "
+"这样的移动底盘，`launch.py` 会把可视化坐标系设为 `world`；也可以在页面上改成 `map` 或 "
+"`odom`，让模型和手柄落在同一地面上。"
+
+#: ../../source/2-how_to/3-programming/5-python_interface.md:84
+#: 3034d27fa8fb4d3d84af48abedeba2e4
+msgid ""
+"`ros2_viser` is a library dependency of that command. The full UI and "
+"embedding `ROS2ViserVisualizer` in your own script are on "
+"[ros2-viser](../../4-reference/python_apps/3-ros2_viser.md). Use this page"
+" before you rely on Viser while running [Isaac "
+"Sim](../2-simulation/4-isaac_sim.md)."
+msgstr ""
+"`ros2_viser` 是这条命令的库依赖。完整界面，以及在自己的脚本里嵌入 `ROS2ViserVisualizer`，见 "
+"[ros2-viser](../../4-reference/python_apps/3-ros2_viser.md)。在跑 [Isaac "
+"Sim](../2-simulation/4-isaac_sim.md) 时要靠 Viser 查看之前，先看完这一页。"
 
 #~ msgid "Python 3.10+"
 #~ msgstr "Python 3.10+"
@@ -689,4 +747,3 @@ msgstr ""
 #~ "[ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md)"
 #~ " (Topic ↔ API map)."
 #~ msgstr ""
-

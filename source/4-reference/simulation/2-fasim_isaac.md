@@ -103,6 +103,8 @@ A simulated robot that runs 运控 inside Isaac starts faster for two reasons: t
 
 `ros2 control list_controllers` lists the controllers for that `mode`. `/joint_states` is the controller’s `joint_state_broadcaster`, not the topic-bridge `/isaac/joint_*` pair. `/clock` ticks near the physics rate (see [Clock](#clock)). A command moves the articulation in the viewport. Arm degrees of freedom are not also bridged on `/isaac/joint_command`.
 
+A G1-D demonstration of full-body control and chassis motion in Isaac Sim is on the [How-To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-chassis-motion).
+
 (fasim-swerve)=
 
 ## Swerve extension

@@ -18,6 +18,7 @@ Connect ROS 2 in one of two ways. Use one of them for a given stage. These are d
 - Isaac Sim is installed, the GPU driver matches it, and `ISAACSIM_DIR` points at that install (`~/isaacsim` unless you set another path).
 - A ROS 2 Jazzy workspace already builds this robot: `open-deploy-ws`, or [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) once you can open that repository.
 - The topic bridge needs `topic_based_ros2_control` in that workspace. The in-process graph and a swerve graph both need `./init.sh` operation 5 (the FaSim extensions) and a restart of Isaac. The in-process path also needs a description xacro that accepts `hardware` `isaac_sim`.
+- To view and control the robot in a browser, install fa-py-libraries and start Viser first. After the Isaac / ROS 2 stack is up, run `./run.sh viser` and open the URL printed in the terminal. Steps: [Start Viser](../3-programming/5-python_interface.md#start-viser).
 
 (start-fasim)=
 
@@ -114,6 +115,18 @@ If the opened USD uses `SwerveController` (Linkhou S2 or Taku chassis graphs), t
 | `environment/artvip-usd/` | ArtVIP components |
 
 Scene trees and project layout: [Environment assets](../../4-reference/simulation/5-env_assets.md).
+
+(g1-d-full-body-control-and-chassis-motion)=
+
+## G1-D full-body control and chassis motion
+
+This clip is a G1-D demonstration of full-body control in Isaac Sim. On the Viser web control interface, drag the dual-arm end-effector targets and move the chassis in rotation and translation; G1-D in Isaac Sim moves with it. Start Viser as in [Start Viser](../3-programming/5-python_interface.md#start-viser) after the stack is up.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../../_static/videos/isaac-g1d-full-body-mobile.mp4" type="video/mp4">
+</video>
+```
 
 (when-it-fails)=
 

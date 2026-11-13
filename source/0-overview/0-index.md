@@ -9,7 +9,7 @@ FiveAges Sim is a collection of ROS 2 packages and workspaces that enable:
 - **Robot Description** — URDF/xacro models with ros2_control integration
 - **Hardware interfaces** — ros2_control hardware plugins for real or simulated robots
 - **MPC Controllers** — OCS2-based motion planning and control (分体控制 / 全身控制)
-- **Simulation** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity + the same ROS 2 运控 as the real robot, plus simulation ground truth)
+- **Simulation** — **FaSim** (Isaac Sim high-fidelity + the same ROS 2 运控 as the real robot, plus simulation ground truth) is the default physics path; Gazebo Harmonic remains available
 - **Teleoperation** — VR, isomorphic teleop, and glove-based control
 - **Python Applications** — High-level APIs for data collection and autonomous tasks
 - **Synthetic data** — Isaac Sim USD → interface → composer → LeRobot record/export ([Synthetic Data](../2-how_to/7-synthetic_data/0-index.md))

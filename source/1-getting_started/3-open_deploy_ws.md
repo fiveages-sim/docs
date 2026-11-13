@@ -327,4 +327,6 @@ sudo ip link set <expected_name> up
 - [Switch robots](../2-how_to/1-basic_operations/2-switch_robot.md)
 - [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)
 - [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)
-- [Gazebo simulation](../2-how_to/2-simulation/3-gazebo_sim.md)
+- [Start Viser](../2-how_to/3-programming/5-python_interface.md#start-viser)
+- [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md)
+- [Gazebo Simulation](../2-how_to/2-simulation/3-gazebo_sim.md)

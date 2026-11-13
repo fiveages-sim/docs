@@ -14,7 +14,7 @@ Use the pages in this order. Each one points at a specific section when you need
 4. **Scenes and project layout** — [Environment assets](5-env_assets.md): public scenes, ArtVIP / LabUtopia components, and private project USD (including where `robot.yaml` currently lives).
 5. **Run, check, and debug** — [When it fails](../../2-how_to/2-simulation/4-isaac_sim.md#when-it-fails) on the How-To page. Clock and TF details stay in [Clock](2-fasim_isaac.md#clock) and [TF](2-fasim_isaac.md#tf).
 
-Gazebo is a separate backend: [Gazebo](1-gazebo.md), with steps in [Gazebo Simulation](../../2-how_to/2-simulation/3-gazebo_sim.md).
+Isaac Sim is the recommended backend. Gazebo remains available as an alternative: [Gazebo](1-gazebo.md), with steps in [Gazebo Simulation](../../2-how_to/2-simulation/3-gazebo_sim.md).
 
 Isaac **datagen** (USD → orchestration → LeRobot export, not Gazebo): [Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md).
 
@@ -23,13 +23,15 @@ Isaac **datagen** (USD → orchestration → LeRobot export, not Gazebo): [Synth
 ```{toctree}
 :maxdepth: 1
 
-1-gazebo
 2-fasim_isaac
 3-robot_usds
 5-env_assets
+1-gazebo
 ```
 
 ## Quick Comparison
+
+Isaac Sim is the recommended path. The table still lists Mock and Gazebo so you can compare backends; it does not change what each one supports.
 
 | Aspect | Mock | Gazebo | Isaac |
 |--------|------|--------|-------|

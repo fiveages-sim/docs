@@ -11,8 +11,8 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 ### Simulation
 
-- [Gazebo Simulation](2-simulation/3-gazebo_sim.md) — Physics simulation with Gazebo
-- [Isaac Sim](2-simulation/4-isaac_sim.md) — NVIDIA Isaac Sim integration
+- [Isaac Sim](2-simulation/4-isaac_sim.md) — NVIDIA Isaac Sim (FaSim); the default physics path
+- [Gazebo Simulation](2-simulation/3-gazebo_sim.md) — Gazebo as an alternative backend
 
 ### Programming
 
