@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 09:17+0000\n"
+"POT-Creation-Date: 2026-11-13 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,49 +20,131 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:1
-#: e330dd2785754f51b425d9a048c9c0ad
+#: d0df8e7394614867ae43f50ca27105ef
 msgid "Isaac Sim"
 msgstr "Isaac Sim"
 
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:3
+#: 771c0042355e4884869fcbece6dc769c
+msgid ""
+"Open a robot in NVIDIA Isaac Sim and drive it with the same ROS 2 stack "
+"you use on the real machine."
+msgstr "在 NVIDIA Isaac Sim 里打开一台机器人，用和真机同一套 ROS 2 运控把它驱动起来。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:5
+#: cdc020d3dcbd432aabf177151aef8ce3
+msgid ""
+"FaSim-Isaac holds the assets and installs the OmniGraph extensions. Run "
+"`./init.sh`, then `./run.sh` or `./run_headless.sh`. You choose the robot"
+" by opening its USD. There is no `./run.sh --robot`. The Isaac path and "
+"version are in `config/fa_sim.conf`, with a machine override in "
+"`config/fa_sim.local.conf`."
+msgstr "FaSim-Isaac 存放资产，并安装 OmniGraph 扩展。先 `./init.sh`，再 `./run.sh` 或 `./run_headless.sh`。打开哪份 USD，就是选哪台机器人。没有 `./run.sh --robot`。Isaac 的路径和版本在 `config/fa_sim.conf`，单机覆盖写在 `config/fa_sim.local.conf`。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:7
+#: 1325ee78323d45148a8db3b95a693a05
+msgid ""
+"Connect ROS 2 in one of two ways. Use one of them for a given stage. "
+"These are description hardware keys, not the FaSim Kit extensions."
+msgstr "ROS 2 有两种接法。一个舞台用其中一种。它们是描述包里的硬件键，不是 FaSim Kit 扩展。"
+
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 6b4a32b60adc47ba85764eaf3be0fde2
+#: 83b556b21a3e44f5b7fd3f1e11d65d56
+msgid "What you start"
+msgstr "你启动的是什么"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
+#: 3e755e79bd6743d5bf7cfae0999ade91
 msgid "Plugin"
 msgstr "Plugin"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 8f33c5db1d9e442ba6e056a46b034f62
+#: 01131b3b14d1418cadc1f52c4aec0140
 msgid "What moves the joints"
 msgstr "谁在驱动关节"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 5cc0b75c59b9496e8030be95dacfe47a
+#: 66fd36da17d54af0b448773e1aa74ff1
 msgid "`hardware:=isaac`"
 msgstr "`hardware:=isaac`"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 6beef602b389441eaa80468367f75051
+#: 0a3d21fad20f46ed8d0ee16c696fb19f
 msgid "`topic_based_ros2_control/TopicBasedSystem`"
 msgstr "`topic_based_ros2_control/TopicBasedSystem`"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 17ffa5a51d834cc89205693933dcfeef
+#: 648d2c6f878947ea8a1ae863ddff3fde
 msgid "OmniGraph joint topics"
 msgstr "OmniGraph 关节话题"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: d767d3346fad4cdf97e26fad98fe2d82
+#: 665bad2beafd4fd3a2fd193a66170f1d
+msgid "Play on an in-process `ROS2ControlLaunch`"
+msgstr "在进程内的 `ROS2ControlLaunch` 上按 Play"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
+#: f88cd321496f4253bc9741251c7ee864
 msgid ""
 "`isaacsim_ros2_control/IsaacSimSystem` (`hardware=isaac_sim` inside the "
 "node)"
 msgstr "`isaacsim_ros2_control/IsaacSimSystem`（节点内部的 `hardware=isaac_sim`）"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:22
-#: 103da11ebb3544a68d6b395b571f0ba0
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
+#: 770eba541e614d7ab93d5122553d46a8
+msgid "The controller manager inside the Isaac process"
+msgstr "Isaac 进程里的控制器管理器"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:14
+#: b6e5c6ca9f664813855c91a4df688a64
+msgid ""
+"`isaac_sim` is the hardware interface for that in-process controller. It "
+"is not a second robot. A swerve chassis uses a different node, "
+"`SwerveController`, which is not a hardware key. Mechanism, parameters, "
+"and clock/TF: [FaSim-Isaac "
+"reference](../../4-reference/simulation/2-fasim_isaac.md)."
+msgstr "`isaac_sim` 是这套进程内控制器的驱动层，不是第二台机器人。舵轮底盘用的是另一个节点 `SwerveController`，它不是硬件键。机制、参数以及时钟/TF 见 [FaSim-Isaac 参考](../../4-reference/simulation/2-fasim_isaac.md)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:16
+#: f17ff3393e38408fa2d2bacad4dd17ba
+msgid "Before you start"
+msgstr "开始之前"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:18
+#: 4dd75e3914444b38881a4e3f582af7b5
+msgid ""
+"Isaac Sim is installed, the GPU driver matches it, and `ISAACSIM_DIR` "
+"points at that install (`~/isaacsim` unless you set another path)."
+msgstr "Isaac Sim 已安装，显卡驱动与之匹配，`ISAACSIM_DIR` 指向这次安装（除非你另设路径，否则是 `~/isaacsim`）。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:19
+#: cffa4848c1904caea2033d36c6930181
+msgid ""
+"A ROS 2 Jazzy workspace already builds this robot: `open-deploy-ws`, or "
+"[fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) once you can"
+" open that repository."
+msgstr ""
+"一个已经能编译这台机器人的 ROS 2 Jazzy 工作区：`open-deploy-ws`，或者你能打开的 [fa-deploy-"
+"ws](https://github.com/fiveages-sim/fa-deploy-ws)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:20
+#: 9dd4f1b8710e40d18c15ae67c540abf2
+msgid ""
+"The topic bridge needs `topic_based_ros2_control` in that workspace. The "
+"in-process graph and a swerve graph both need `./init.sh` operation 5 "
+"(the FaSim extensions) and a restart of Isaac. The in-process path also "
+"needs a description xacro that accepts `hardware` `isaac_sim`."
+msgstr ""
+"话题桥需要工作区里有 `topic_based_ros2_control`。进程内的图需要 `./init.sh` 的第 5 项，它会把 "
+"`fasim.ros2.nodes` 装进这次 Isaac，并且描述 xacro 要接受 `hardware` 取值 `isaac_sim`。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:24
+#: 19cd1e43d12b400a8621da0db7e873d7
 msgid "Start FaSim"
 msgstr "启动 FaSim"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:24
-#: 3b4dc282e9364a7eaa82c2941e2b0d01
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:26
+#: 8657b09848ad43f4be28893c583d16ae
 msgid ""
 "git clone git@github.com:fiveages-sim/FaSim-Isaac.git\n"
 "cd FaSim-Isaac\n"
@@ -75,13 +156,65 @@ msgstr ""
 "./init.sh\n"
 "./run.sh"
 
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:33
+#: f6ef8468f94e486185f7fb53fe3b41c2
+msgid ""
+"`./init.sh` asks you to ([README](https://github.com/fiveages-sim/FaSim-"
+"Isaac/blob/main/README.md)):"
+msgstr ""
+"`./init.sh` 会请你做这些事（[README](https://github.com/fiveages-sim/FaSim-"
+"Isaac/blob/main/README.md)）："
+
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:35
-#: 771b023704c540408b68243af8551a89
+#: 9f3f25bd01564b0ca19b1b7abcca1f7d
+msgid ""
+"Check out the submodules you select (`.gitmodules` and "
+"`submodules_visibility.conf`). Public entries start checked. Private "
+"entries, including [fa-project-usd](https://github.com/fiveages-sim/fa-"
+"project-usd) and [labutopia-usd](https://github.com/fiveages-sim"
+"/labutopia-usd), stay unchecked until you can open them. A later run only"
+" adds what you check. Current public versus private rows: "
+"[robot_usds](../../4-reference/simulation/3-robot_usds.md) and "
+"[Environment assets](../../4-reference/simulation/5-env_assets.md)."
+msgstr "检出你勾选的子模块（`.gitmodules` 和 `submodules_visibility.conf`）。公开项默认勾上。私有项，包括 [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) 和 [labutopia-usd](https://github.com/fiveages-sim/labutopia-usd)，在你能打开之前保持不勾。以后再跑只会补上新勾的项。当前公开与私有行见 [robot_usds](../../4-reference/simulation/3-robot_usds.md) 和 [环境资产](../../4-reference/simulation/5-env_assets.md)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:36
+#: 1d38a2ad194c4102ae9a8129dc948f07
+msgid ""
+"Update submodules you already checked out (`./init.sh --update`). This "
+"does not pull the FaSim repository itself."
+msgstr "更新已经检出的子模块（`./init.sh --update`）。这一步不会拉取 FaSim 仓库本身。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:37
+#: fb8f0c9d116540298b712b7a0dae7428
 msgid "Download ArtVIP into `environment/ArtVIP/` (`tools/artvip_kitchen.py`)."
 msgstr "把 ArtVIP 下载到 `environment/ArtVIP/`（`tools/artvip_kitchen.py`）。"
 
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:38
+#: 7f4942b752b5423a93349a5cb87da0f8
+msgid ""
+"Optionally add an Isaac ROS 2 Jazzy overlay under `isaac_jazzy_ws/`. The "
+"menu asks GitHub for stable tags. If that query fails, "
+"`config/fa_sim.conf` falls back to `6.2.0`, `6.1.0`, and `6.0.1`. "
+"Override with `ISAAC_SIM_VERSION=… ./init.sh`."
+msgstr ""
+"可以在 `isaac_jazzy_ws/` 下加一层 Isaac ROS 2 Jazzy 叠加。菜单会向 GitHub "
+"查询稳定标签。查询失败时，`config/fa_sim.conf` 回退到 `6.2.0`、`6.1.0` 和 `6.0.1`。用 "
+"`ISAAC_SIM_VERSION=… ./init.sh` 覆盖。"
+
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:39
-#: 4ef86350d22341f1a1ed4ecbfd14911a
+#: 9751e031a905494da56d8579b765a14f
+msgid ""
+"Install the FaSim extensions into this Isaac "
+"(`exts/fasim.steering.nodes`, `exts/fasim.ros2.nodes`) and quiet the "
+"script warnings. Run this again after you reinstall Isaac, then restart "
+"Isaac so the extensions load. What each extension does: [FaSim Kit "
+"extensions](../../4-reference/simulation/2-fasim_isaac.md#fasim-kit-"
+"extensions)."
+msgstr "把 FaSim 扩展装进这次 Isaac（`exts/fasim.steering.nodes`、`exts/fasim.ros2.nodes`），并压低脚本警告。重装 Isaac 之后再做一次，然后重启 Isaac，扩展才会加载。各扩展做什么见 [FaSim Kit 扩展](../../4-reference/simulation/2-fasim_isaac.md#fasim-kit-extensions)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:41
+#: 166c1118071d499ab9d9057d68cc3db3
 msgid ""
 "`./run.sh` shows the saved backend, then asks PhysX or Newton, CPU "
 "governor, and which ROS 2 workspace to source. `./run_headless.sh` is the"
@@ -91,8 +224,8 @@ msgstr ""
 "`./run.sh` 先显示已保存的后端，再询问 PhysX 或 Newton、CPU 调速，以及要 source 哪个 ROS 2 "
 "工作空间。`./run_headless.sh` 是无头串流的同一套菜单。README 里的非交互例子："
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:41
-#: 3bf6db10115c4f229b4e5d7ee3b0f3ea
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:43
+#: 1305b82b8ed041a082cd59722a2e3451
 msgid ""
 "./run.sh -y --physics physx --cpu auto --ros-ws ~/ros2_ws\n"
 "./run_headless.sh -y --physics physx --instance 0\n"
@@ -104,8 +237,8 @@ msgstr ""
 "./run.sh --asset-region china\n"
 "./run.sh --kit-profile none"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:48
-#: 790f5bcf437846629f2b1b2a58368e45
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:50
+#: ad30f2a8c39a4e958c64cade14b8c697
 msgid ""
 "`config/fa_sim.conf` kit profiles (`--kit-profile` / `--list-kit-"
 "profiles`): `none`, `newton-physx-min`, `newton-physx`, `physx-compat`, "
@@ -121,28 +254,28 @@ msgstr ""
 "作为本机覆盖。当 `RMW_IMPLEMENTATION=rmw_zenoh_cpp` 时，`./run.sh` 会启动 Zenoh "
 "路由，并在退出时停掉它。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:50
-#: 132ab8a971414d63b9aa3955fbcfd2b8
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:52
+#: 2ba2f1f4a9144cbc9044e0e97f9ed63b
 msgid ""
 "Open the robot USD under `robots/` (robot_usds) or a scene under "
 "`environment/`. Operation 5 must already be done before a stage that uses"
-" `ROS2ControlLaunch`."
+" `ROS2ControlLaunch` or `SwerveController`."
 msgstr ""
 "打开 `robots/`（robot_usds）下的机器人 USD，或 `environment/` 下的场景。使用 "
 "`ROS2ControlLaunch` 的舞台，必须已经做过第 5 项。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:52
-#: 8fb0c603822f4ade8178ec4f8e89e5be
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:56
+#: 7043633195954ad4bdeb99ed7550f7a7
 msgid "Topic bridge (`hardware:=isaac`)"
 msgstr "Topic bridge (`hardware:=isaac`)"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:54
-#: 693c4016ee744196b2e442bc53bd5c92
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:58
+#: 670921c31b8e477aa61ea0921323b34e
 msgid "In another terminal, after the workspace overlay:"
 msgstr "另一个终端里，先 source 工作空间："
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:56
-#: d787220750c34b6ba452c602f6e266fd
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:60
+#: 85f7310d2fb54a0cabfcbf98b990af49
 msgid ""
 "source ~/open-deploy-ws/install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
@@ -152,8 +285,8 @@ msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone "
 "hardware:=isaac"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:61
-#: 2371d1891a004e238b0b42290936fcc3
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:65
+#: a0c1cdde5b3347368e7b967db8083a0f
 msgid ""
 "`robot:=` is the description key (`<key>_description`). `demo.launch.py` "
 "has no namespace argument. Do not append `namespace:=…` on this launch."
@@ -161,18 +294,51 @@ msgstr ""
 "`robot:=` 是描述包键（`<key>_description`）。`demo.launch.py` "
 "没有命名空间参数。这条启动命令上不要再加 `namespace:=…`。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:65
-#: 5270f899463a40e398e39d13f0d23fb7
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:67
+#: 70dc6a6ec620496492d5644ceb38419e
+msgid ""
+"The shared macro [`simulation_hardware.xacro`](https://github.com"
+"/fiveages-sim/robot-descriptions-"
+"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
+" sets:"
+msgstr ""
+"共享宏 [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-"
+"descriptions-"
+"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
+" 写成："
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:69
+#: 5e62bee3cee045478c4f0a5be10b548b
 msgid "`joint_commands_topic` = `/isaac/joint_command`"
 msgstr "`joint_commands_topic` = `/isaac/joint_command`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:66
-#: 72af61bb61214f3a911e9fb7b71acc77
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:70
+#: 6020bf51a1f44782822d15950205f8a6
 msgid "`joint_states_topic` = `/isaac/joint_states`"
 msgstr "`joint_states_topic` = `/isaac/joint_states`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:70
-#: bd4d8ca3041446c989c9c3a4824765b3
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:72
+#: 1c2ad96957c648c6a3f3fa86e3a02121
+msgid ""
+"Those strings have to match the OmniGraph `topicName` on this robot. W2’s"
+" topic-bridge payload [`W2/payloads/ROS/ros2.usda`](https://github.com"
+"/fiveages-sim/fiveages-gen2-robot-"
+"usds/blob/main/W2/payloads/ROS/ros2.usda) publishes `/joint_command` and "
+"`/joint_states` instead. If the two sides differ, change the xacro "
+"`<param>` or the graph until `ros2 topic echo` shows the same "
+"`sensor_msgs/JointState` names the controller is using. Plugin "
+"parameters: "
+"[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)."
+msgstr ""
+"这些字符串必须和这台机器人上 OmniGraph 的 `topicName` 一致。W2 的话题桥载荷 "
+"[`W2/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/fiveages-"
+"gen2-robot-usds/blob/main/W2/payloads/ROS/ros2.usda) 发布的是 "
+"`/joint_command` 和 `/joint_states`。两边不一致时，改 xacro 的 `<param>` 或改图，直到 "
+"`ros2 topic echo` 看到的 `sensor_msgs/JointState` 名字和控制器正在用的一致。插件参数见 "
+"[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:74
+#: b0cd4b8fe1df400e8ca1ae114461fbfe
 msgid ""
 "`use_sim_time` follows `hardware` (`isaac` → true) unless you pass "
 "`use_sim_time:=true` or `false`."
@@ -180,13 +346,13 @@ msgstr ""
 "`use_sim_time` 跟随 `hardware`（`isaac` 时为 true），除非你显式传入 "
 "`use_sim_time:=true` 或 `false`。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:72
-#: f8477caffdbc47beab48ae43469f1c7c
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:76
+#: 694432fb214f4dcf8a85d2d68e0e8f15
 msgid "Check:"
 msgstr "Check:"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:74
-#: 8bbdd22905c344ca8735adec117fdf84
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:78
+#: f50cdadc5f454fa390a4103a3447e7bc
 msgid ""
 "ros2 topic echo /isaac/joint_states --once\n"
 "# or the topicName this USD actually publishes"
@@ -194,15 +360,55 @@ msgstr ""
 "ros2 topic echo /isaac/joint_states --once\n"
 "# or the topicName this USD actually publishes"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:79
-#: c304fd35f77a4994b6333e6896fecf3e
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:83
+#: 00ab23fcd5c142d99ac7e7f24ce47c18
 msgid ""
 "A joint command on the matching command topic moves the articulation. "
 "There is no stack-wide `/target_pose`."
 msgstr "匹配的指令话题上的关节指令会驱动关节体。整栈没有统一的 `/target_pose`。"
 
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:87
+#: 139ded0d25264f6d8d2dda6473540538
+msgid "In-process hardware interface (`isaac_sim`)"
+msgstr "进程内驱动层（`isaac_sim`）"
+
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 620f72fd424a42cfa12fa8d6998adf64
+#: 6e49323f211048dca9f4129d23ce393a
+msgid ""
+"Use this when the USD contains `fasim.ros2.nodes.ROS2ControlLaunch`. W2’s"
+" in-process payload is "
+"[`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim"
+"/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda). Press"
+" Play. The node calls `emit_control`, which sets `hardware=isaac_sim`, "
+"passes the ArticulationRoot as `isaac_prim_path`, and starts the "
+"controller manager inside Isaac."
+msgstr ""
+"USD 里有 `fasim.ros2.nodes.ROS2ControlLaunch` 时用这条。W2 的进程内载荷是 "
+"[`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim"
+"/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)。按 "
+"Play。节点调用 `emit_control`，设置 `hardware=isaac_sim`，把 ArticulationRoot 传成 "
+"`isaac_prim_path`，并在 Isaac 里启动控制器管理器。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:91
+#: f80fa844ea8a4d369d6b829151285c54
+msgid ""
+"The description package still has to exist. Its ros2_control xacro "
+"includes `simulation_hardware_plugin` for `isaac_sim` "
+"([robot_common_launch README](https://github.com/fiveages-sim/robot-"
+"descriptions-common/blob/main/robot_common_launch/README.md)). Graph "
+"inputs, CppAD cache, and `infoFile`: [ROS 2 Control "
+"extension](../../4-reference/simulation/2-fasim_isaac.md#ros-2-control-"
+"extension). An empty `robot` reads the USD `Robot` variant. That "
+"string is the description package stem."
+msgstr "描述包仍然要有。它的 ros2_control xacro 要为 `isaac_sim` 包含 `simulation_hardware_plugin`（[robot_common_launch README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)）。图输入、CppAD 缓存和 `infoFile` 见 [ROS 2 Control 扩展](../../4-reference/simulation/2-fasim_isaac.md#ros-2-control-extension)。`robot` 留空时读取 USD 的 `Robot` 变体。该字符串是描述包的词干。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:93
+#: 04ac4c2a9c01494aa3a2352ca3b0f0f4
+msgid "After Play, check:"
+msgstr "Play 之后检查："
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 12206fa9a6fc4d69924d5aec284010d0
 msgid ""
 "ros2 control list_controllers\n"
 "ros2 topic echo /joint_states --once\n"
@@ -212,8 +418,8 @@ msgstr ""
 "ros2 topic echo /joint_states --once\n"
 "ros2 topic hz /clock"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
-#: d65473e70a124196a654760ad422c5f4
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:101
+#: 971939b9c8a14920a81286c323a46a79
 msgid ""
 "`/joint_states` here is the controller’s `joint_state_broadcaster`, not "
 "the topic-bridge pair. `/clock` should tick near the physics rate. Arm "
@@ -222,56 +428,88 @@ msgstr ""
 "这里的 `/joint_states` 是控制器的 `joint_state_broadcaster`，不是话题桥那一对。`/clock` "
 "应接近物理频率。手臂自由度不会再桥到 `/isaac/joint_command`。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:97
-#: 8ac769d5dba648b49d78f1202d24c3e5
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:103
+#: 45cdfe422760406b854463de25a75cf2
 msgid ""
 "`namespace` on the graph (empty for one robot) is how a second "
 "articulation gets `/<ns>/controller_manager`. It is not a "
 "`demo.launch.py` argument. Frame ids stay `world`, `odom`, and "
-"`base_link` / `base_footprint`. See the reference for TF and for "
-"`infoFile`."
-msgstr ""
-"图上的 `namespace`（单机器人时为空）用来给第二台关节体分配 `/<ns>/controller_manager`。它不是 "
-"`demo.launch.py` 的参数。帧 id 仍是 `world`、`odom`，以及 `base_link` / "
-"`base_footprint`。TF 和 `infoFile` 见参考页。"
+"`base_link` / `base_footprint`. See "
+"[TF](../../4-reference/simulation/2-fasim_isaac.md#tf)."
+msgstr "图上的 `namespace`（单机器人时为空）用来给第二台关节体分配 `/<ns>/controller_manager`。它不是 `demo.launch.py` 的参数。帧 id 仍是 `world`、`odom`，以及 `base_link` / `base_footprint`。见 [TF](../../4-reference/simulation/2-fasim_isaac.md#tf)。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:101
-#: c71c8d6d190142cfb05a58ce57bb1847
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:105
+#: e9010f8ca2af4f3d8724037470a8b3d1
+msgid ""
+"Whole-body mode (`mode` `full_body`) loads `ocs2_wbc_controller`. That "
+"package is already in the GitHub Release deb `ros-jazzy-arms-"
+"ros2-control`. Choose `d` for arms in `./init_repo.sh`, or run "
+"`./scripts/install_core_debs.sh --only arms`. Cloning [ocs2-wbc-"
+"controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how "
+"you read or edit the source. To hold a mobile base, keep the "
+"description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` "
+"graph whose `infoFile` points at a `fixed_base` info file has no virtual "
+"chassis joint for that lock, and arm enable can stay in "
+"`WAITING_FOR_ENABLE_POLICY`."
+msgstr ""
+"全身模式（`mode` 为 `full_body`）会加载 `ocs2_wbc_controller`。这个包已经在 GitHub Release"
+" 的 deb `ros-jazzy-arms-ros2-control` 里。`./init_repo.sh` 给 arms 选 `d`，或运行 "
+"`./scripts/install_core_debs.sh --only arms`。克隆 [ocs2-wbc-"
+"controller](https://github.com/fiveages-sim/ocs2-wbc-controller) "
+"是为了读源码或改源码。要按住移动底盘，保留描述里的 `mobile_base_tcp` info，并发送 "
+"`BASE_LOCK`。`full_body` 的图把 `infoFile` 指到一份 `fixed_base` info "
+"时，没有这把锁能用的虚拟底盘关节，手臂使能会停在 `WAITING_FOR_ENABLE_POLICY`。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:107
+#: b445797f786147978937da76afa8459a
+msgid ""
+"If the opened USD uses `SwerveController` (Linkhou S2 or Taku chassis "
+"graphs), that is the [swerve "
+"extension](../../4-reference/simulation/2-fasim_isaac.md#swerve-extension), "
+"not this hardware key. After Play, publish a `geometry_msgs/Twist` on the"
+" graph’s subscribe topic and check that steer joints move in position and"
+" wheel joints in velocity."
+msgstr "如果打开的 USD 用了 `SwerveController`（Linkhou S2 或 Taku 底盘图），那是 [舵轮扩展](../../4-reference/simulation/2-fasim_isaac.md#swerve-extension)，不是这个硬件键。Play 之后，往图的订阅话题发布 `geometry_msgs/Twist`，确认转向关节按位置运动、驱动关节按速度转动。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:109
+#: 6c1b9b4a47f7493abccf5e49ac1d7343
 msgid "What to open"
 msgstr "打开什么"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: f97cd87bdee6428d8934bec924751c28
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: cb4ddb62aba04650a2d97f182fb560ff
 msgid "Tree"
 msgstr "Tree"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 4c7c30b88b6448d9868b7d5344749334
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 0717ddbe03304e36b4cf442adbe07e26
 msgid "Content"
 msgstr "内容"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: f1f8487d9e504ee38261e1ea53aa2d2c
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: a30342e6f41a49f183d022e222d363be
 msgid "`robots/` → [robot_usds](https://github.com/fiveages-sim/robot_usds)"
 msgstr "`robots/` → [robot_usds](https://github.com/fiveages-sim/robot_usds)"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 3da7a164f6b642d1a8e266bed4c83b68
-msgid "Robot USD"
-msgstr "机器人 USD"
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 5f3dbf1a3abf4eb39aacca8811c17d3c
+msgid ""
+"Robot USD. Folder map: "
+"[robot_usds](../../4-reference/simulation/3-robot_usds.md)"
+msgstr "代际标签和品牌目录：[robot_usds 参考](../../4-reference/simulation/3-robot_usds.md)。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 0f244b453992468d86533b7225c89d50
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 6fa2e6fd6c8741e994bd9bf9ba8fe41d
 msgid "`environment/fiveages_env/`"
 msgstr "`environment/fiveages_env/`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 482d7522ba65470484472c8ed3cb958d
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: bd06fa248970428e827159993ec894ff
 msgid "Public scenes"
 msgstr "公开场景"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: 241830ef098042b6975e313ce00d948c
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 9b360dd056824573bcc4fd0f06ebd409
 msgid ""
 "`environment/fa-project-usd/` → [fa-project-usd](https://github.com"
 "/fiveages-sim/fa-project-usd)"
@@ -279,35 +517,35 @@ msgstr ""
 "`environment/fa-project-usd/` → [fa-project-usd](https://github.com"
 "/fiveages-sim/fa-project-usd)"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: f2faa12706f8469ab46f26b9b75e56f7
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: 7b5031709df44b7bbd3c00c7437165d3
 msgid "Project scenes (private; needs access)"
 msgstr "项目场景（私有，需要权限）"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: b286e97b7db74bc69992d30e89503bc9
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: bcc38cee86f444898e8ea5830d82067b
 msgid "`environment/artvip-usd/`"
 msgstr "`environment/artvip-usd/`"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:89
-#: dad5a37648db4207b6d068c9145adf55
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:95
+#: d4e3c326068a45ffa817ab8600ad35da
 msgid "ArtVIP components"
 msgstr "ArtVIP 组件"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:110
-#: 3b11356336294c2c87de52e02fc9c816
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:118
+#: f55b8402000146d189db6712b86d02d0
 msgid ""
-"Gen labels and brand folders: [robot_usds "
-"reference](../../4-reference/simulation/3-robot_usds.md)."
+"Scene trees and project layout: [Environment "
+"assets](../../4-reference/simulation/5-env_assets.md)."
 msgstr "代际标签和品牌目录：[robot_usds 参考](../../4-reference/simulation/3-robot_usds.md)。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:112
-#: 2042d970511a477e8b539ff081ba4305
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:122
+#: db1df23db3e748819a7d1fdb953dd20c
 msgid "When it fails"
 msgstr "打不开时"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:114
-#: 9baa9c8fd26645ceaca0be6ef8a12a54
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:124
+#: c28815e5dd5241f59e03f706a4034ddc
 msgid ""
 "**Isaac does not start.** `ISAACSIM_DIR` must contain the launchers named"
 " in `config/fa_sim.conf` (`isaac-sim.sh`, `isaac-sim.newton.sh`, `isaac-"
@@ -319,27 +557,59 @@ msgstr ""
 "sim.newton.streaming.sh`）。`nvidia-smi` 能看到 GPU。日志在 `~/.nvidia-"
 "omniverse/logs/`。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:120
-#: 0b75e41d73054ee99f4d59d334032786
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:126
+#: 40867fec332140c5ae3ee62f0bcc4fcc
+msgid ""
+"**Play starts, but no ROS 2 topics appear.** The domain id and "
+"`RMW_IMPLEMENTATION` match the workspace you sourced. For the topic "
+"bridge, the graph `topicName` matches the xacro. For the in-process "
+"graph, operation 5 is installed and Isaac was restarted, and the stage’s "
+"`ROS` variant is the fiveages payload rather than the topic-bridge "
+"payload. For a swerve graph, the `SwerveController` node type must be "
+"available (same operation 5 and restart)."
+msgstr ""
+"**Play 起来了，但没有 ROS 2 话题。** 域 ID 和 `RMW_IMPLEMENTATION` 要和你 source "
+"的工作区一致。话题桥：图的 `topicName` 和 xacro 一致。进程内：第 5 项已安装，Isaac 已重启，场景里的 `ROS` "
+"变体是 fiveages 载荷，而不是话题桥载荷。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:128
+#: 4dfb1736fece4aef816667fe36766671
+msgid ""
+"**A motion finishes much too fast.** On the in-process payload, `/clock` "
+"comes from the on-demand `ROS_Clock` graph (`OnPhysicsStep`). That is how"
+" W2 `fiveages.usda` is already wired. The topic-bridge `ros2.usda` still "
+"publishes the clock from `OnPlaybackTick`. Fix the clock before you edit "
+"joint gains. The mechanism is on the [FaSim-Isaac "
+"Clock](../../4-reference/simulation/2-fasim_isaac.md#clock) "
+"section."
+msgstr ""
+"**动作结束得特别快。** 进程内载荷上，`/clock` 来自按物理步更新的 `ROS_Clock` 图（`OnPhysicsStep`）。W2"
+" 的 `fiveages.usda` 已经是这样接的。话题桥的 `ros2.usda` 仍从 `OnPlaybackTick` "
+"发布时钟。先改时钟，再考虑关节增益。机制见 [FaSim-Isaac "
+"参考](../../4-reference/simulation/2-fasim_isaac.md)。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:130
+#: f78cd2cd56f848fcb69d41e979269e85
 msgid "Next"
 msgstr "Next"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:122
-#: 37c84783707f4a0da910d8a815ca32f2
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:132
+#: 46fc8e974669422b8e05d2b51f1afd5a
 msgid "[FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md)"
 msgstr "[FaSim-Isaac 参考](../../4-reference/simulation/2-fasim_isaac.md)"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:123
-#: fff47197c82048008f986f52bf5f65c4
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:133
+#: 7dc1ab80fde844a38a4efce5021b9414
 msgid ""
 "[Add a Robot](../6-deployment/10-add_a_robot.md) and the [Day 7 "
-"exam](../../0-overview/2-learning_path.md)"
+"exam](../../0-overview/2-learning_path.md#day-7-bring-one-new-robot-into-"
+"fasim)"
 msgstr ""
 "[添加机器人](../6-deployment/10-add_a_robot.md) 和 [第 7 "
 "天考核](../../0-overview/2-learning_path.md)"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:124
-#: 519d1959b74748b19073cb9bb53e7058
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:134
+#: d4b40f4e35564a6f91281fbcd5c620c5
 msgid "[Synthetic Data](../7-synthetic_data/0-index.md)"
 msgstr "[Synthetic Data](../7-synthetic_data/0-index.md)"
 
@@ -753,273 +1023,6 @@ msgstr "[Synthetic Data](../7-synthetic_data/0-index.md)"
 #~ msgid "Next Steps"
 #~ msgstr "下一步"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:3
-#: eec398ec68b34345a1c27c79c9049a9b
-msgid ""
-"Open a robot in NVIDIA Isaac Sim and drive it with the same ROS 2 stack "
-"you use on the real machine."
-msgstr "在 NVIDIA Isaac Sim 里打开一台机器人，用和真机同一套 ROS 2 运控把它驱动起来。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:5
-#: 38e6265491964a8998963e0b0ea9261c
-msgid ""
-"FaSim-Isaac holds the assets. Run `./init.sh`, then `./run.sh` or "
-"`./run_headless.sh`. You choose the robot by opening its USD. There is no"
-" `./run.sh --robot`. The Isaac path and version are in "
-"`config/fa_sim.conf`, with a machine override in "
-"`config/fa_sim.local.conf`."
-msgstr ""
-"FaSim-Isaac 放的是资产。先 `./init.sh`，再 `./run.sh` 或 `./run_headless.sh`。打开哪份 "
-"USD，就是选哪台机器人。没有 `./run.sh --robot`。Isaac 的路径和版本在 "
-"`config/fa_sim.conf`，单机覆盖写在 `config/fa_sim.local.conf`。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:7
-#: 1ca72c8d18ec4975b1dba5eb1dd78f7d
-msgid "Connect ROS 2 in one of two ways. Use one of them for a given stage."
-msgstr "ROS 2 有两种接法。一个舞台用其中一种。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: c2192d3e070b4957a43f2c29673a9c1b
-msgid "What you start"
-msgstr "你启动的是什么"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: 7181f54367e344a4a7180b0d4b8b0e06
-msgid "Play on an in-process `ROS2ControlLaunch`"
-msgstr "在进程内的 `ROS2ControlLaunch` 上按 Play"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md
-#: e87ba36b4f6040dc8778d365f18bf1d2
-msgid "The controller manager inside the Isaac process"
-msgstr "Isaac 进程里的控制器管理器"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:14
-#: dd4bcafb7ac345edb24b38cc2101e4d9
-msgid ""
-"`isaac_sim` is the hardware interface for that in-process controller. It "
-"is not a second robot. Clock, TF, and the rest of the mechanism: [FaSim-"
-"Isaac reference](../../4-reference/simulation/2-fasim_isaac.md)."
-msgstr ""
-"`isaac_sim` 是这套进程内控制器的驱动层，不是第二台机器人。时钟、TF 和其余机制见 [FaSim-Isaac "
-"参考](../../4-reference/simulation/2-fasim_isaac.md)。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:16
-#: 7c0e9a611c4e434d9c9b14310b70b02c
-msgid "Before you start"
-msgstr "开始之前"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:18
-#: 960288be4553446e89776e2ffa78f5d6
-msgid ""
-"Isaac Sim is installed, the GPU driver matches it, and `ISAACSIM_DIR` "
-"points at that install (`~/isaacsim` unless you set another path)."
-msgstr "Isaac Sim 已安装，显卡驱动与之匹配，`ISAACSIM_DIR` 指向这次安装（除非你另设路径，否则是 `~/isaacsim`）。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:19
-#: 6d0a1399cc7b4f919052d6bea3930496
-msgid ""
-"A ROS 2 Jazzy workspace already builds this robot: `open-deploy-ws`, or "
-"[fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) once you can"
-" open that repository."
-msgstr ""
-"一个已经能编译这台机器人的 ROS 2 Jazzy 工作区：`open-deploy-ws`，或者你能打开的 [fa-deploy-"
-"ws](https://github.com/fiveages-sim/fa-deploy-ws)。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:20
-#: f89d94db728c41eeab649686e97d658c
-msgid ""
-"The topic bridge needs `topic_based_ros2_control` in that workspace. The "
-"in-process graph needs `./init.sh` operation 5, which installs "
-"`fasim.ros2.nodes` into this Isaac, and a description xacro that accepts "
-"`hardware` `isaac_sim`."
-msgstr ""
-"话题桥需要工作区里有 `topic_based_ros2_control`。进程内的图需要 `./init.sh` 的第 5 项，它会把 "
-"`fasim.ros2.nodes` 装进这次 Isaac，并且描述 xacro 要接受 `hardware` 取值 `isaac_sim`。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:31
-#: f981f214b9a74e37907d0be1c9abd32f
-msgid ""
-"`./init.sh` asks you to ([README](https://github.com/fiveages-sim/FaSim-"
-"Isaac/blob/main/README.md)):"
-msgstr ""
-"`./init.sh` 会请你做这些事（[README](https://github.com/fiveages-sim/FaSim-"
-"Isaac/blob/main/README.md)）："
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:33
-#: 201ad5c9213e4636b1e93526b4bbf368
-msgid ""
-"Check out the submodules you select (`.gitmodules` and "
-"`submodules_visibility.conf`). Public entries start checked. Private "
-"entries, including [fa-project-usd](https://github.com/fiveages-sim/fa-"
-"project-usd), stay unchecked until you can open them. A later run only "
-"adds what you check."
-msgstr ""
-"检出你勾选的子模块（`.gitmodules` 和 `submodules_visibility.conf`）。公开项默认勾上。私有项，包括 "
-"[fa-project-usd](https://github.com/fiveages-sim/fa-project-"
-"usd)，在你能打开之前保持不勾。以后再跑只会补上新勾的项。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:34
-#: fdac0c8d24544704ac390b495b0e9eb2
-msgid ""
-"Update submodules you already checked out (`./init.sh --update`). This "
-"does not pull the FaSim repository itself."
-msgstr "更新已经检出的子模块（`./init.sh --update`）。这一步不会拉取 FaSim 仓库本身。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:36
-#: 79f7d4e9a4c04531ba259ac55d855534
-msgid ""
-"Optionally add an Isaac ROS 2 Jazzy overlay under `isaac_jazzy_ws/`. The "
-"menu asks GitHub for stable tags. If that query fails, "
-"`config/fa_sim.conf` falls back to `6.2.0`, `6.1.0`, and `6.0.1`. "
-"Override with `ISAAC_SIM_VERSION=… ./init.sh`."
-msgstr ""
-"可以在 `isaac_jazzy_ws/` 下加一层 Isaac ROS 2 Jazzy 叠加。菜单会向 GitHub "
-"查询稳定标签。查询失败时，`config/fa_sim.conf` 回退到 `6.2.0`、`6.1.0` 和 `6.0.1`。用 "
-"`ISAAC_SIM_VERSION=… ./init.sh` 覆盖。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:37
-#: 678d48302cfd4e009843f629a092bc42
-msgid ""
-"Install the FaSim extensions into this Isaac "
-"(`exts/fasim.steering.nodes`, `exts/fasim.ros2.nodes`) and quiet the "
-"script warnings. Run this again after you reinstall Isaac, then restart "
-"Isaac so the extensions load."
-msgstr ""
-"把 FaSim 扩展装进这次 "
-"Isaac（`exts/fasim.steering.nodes`、`exts/fasim.ros2.nodes`），并压低脚本警告。重装 "
-"Isaac 之后再做一次，然后重启 Isaac，扩展才会加载。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:63
-#: 6151d105f627487a82302991b1402293
-msgid ""
-"The shared macro [`simulation_hardware.xacro`](https://github.com"
-"/fiveages-sim/robot-descriptions-"
-"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
-" sets:"
-msgstr ""
-"共享宏 [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-"
-"descriptions-"
-"common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)"
-" 写成："
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:68
-#: 380774563cb04f3ea8563061e44124c7
-msgid ""
-"Those strings have to match the OmniGraph `topicName` on this robot. W2’s"
-" topic-bridge payload [`W2/payloads/ROS/ros2.usda`](https://github.com"
-"/fiveages-sim/fiveages-gen2-robot-"
-"usds/blob/main/W2/payloads/ROS/ros2.usda) publishes `/joint_command` and "
-"`/joint_states` instead. If the two sides differ, change the xacro "
-"`<param>` or the graph until `ros2 topic echo` shows the same "
-"`sensor_msgs/JointState` names the controller is using. Plugin "
-"parameters: "
-"[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)."
-msgstr ""
-"这些字符串必须和这台机器人上 OmniGraph 的 `topicName` 一致。W2 的话题桥载荷 "
-"[`W2/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/fiveages-"
-"gen2-robot-usds/blob/main/W2/payloads/ROS/ros2.usda) 发布的是 "
-"`/joint_command` 和 `/joint_states`。两边不一致时，改 xacro 的 `<param>` 或改图，直到 "
-"`ros2 topic echo` 看到的 `sensor_msgs/JointState` 名字和控制器正在用的一致。插件参数见 "
-"[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:81
-#: f20f7bc97ff440e09a350089d7740c63
-msgid "In-process hardware interface (`isaac_sim`)"
-msgstr "进程内驱动层（`isaac_sim`）"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:83
-#: b049d9a09e244815a1be9bbc20122fd8
-msgid ""
-"Use this when the USD contains `fasim.ros2.nodes.ROS2ControlLaunch`. W2’s"
-" in-process payload is "
-"[`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim"
-"/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda). Press"
-" Play. The node calls `emit_control`, which sets `hardware=isaac_sim`, "
-"passes the ArticulationRoot as `isaac_prim_path`, and starts the "
-"controller manager inside Isaac."
-msgstr ""
-"USD 里有 `fasim.ros2.nodes.ROS2ControlLaunch` 时用这条。W2 的进程内载荷是 "
-"[`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim"
-"/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)。按 "
-"Play。节点调用 `emit_control`，设置 `hardware=isaac_sim`，把 ArticulationRoot 传成 "
-"`isaac_prim_path`，并在 Isaac 里启动控制器管理器。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:85
-#: b35c19dc5ca74eeca2e63b16dc62fd1b
-msgid ""
-"The description package still has to exist. Its ros2_control xacro "
-"includes `simulation_hardware_plugin` for `isaac_sim` "
-"([robot_common_launch README](https://github.com/fiveages-sim/robot-"
-"descriptions-common/blob/main/robot_common_launch/README.md)). The graph "
-"inputs are `robot`, `mode` (`demo`, `split_body`, `full_body`), `type`, "
-"and the optional `namespace`, `infoFile`, and `arms`. An empty `robot` "
-"reads the USD `Robot` variant. That string is the description package "
-"stem."
-msgstr ""
-"描述包仍然要有。它的 ros2_control xacro 要为 `isaac_sim` 包含 "
-"`simulation_hardware_plugin`（[robot_common_launch "
-"README](https://github.com/fiveages-sim/robot-descriptions-"
-"common/blob/main/robot_common_launch/README.md)）。图的输入是 "
-"`robot`、`mode`（`demo`、`split_body`、`full_body`）、`type`，以及可选的 "
-"`namespace`、`infoFile`、`arms`。`robot` 为空时读取 USD 的 `Robot` "
-"变体，这个字符串就是描述包名去掉 `_description` 之前的那一段。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:87
-#: 1dc5843e037a43ee81473e5c64544453
-msgid "After Play, check:"
-msgstr "Play 之后检查："
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:99
-#: ff552b3cb6424fceb507f7f7d988ef71
-msgid ""
-"Whole-body mode (`mode` `full_body`) loads `ocs2_wbc_controller`. That "
-"package is already in the GitHub Release deb `ros-jazzy-arms-"
-"ros2-control`. Choose `d` for arms in `./init_repo.sh`, or run "
-"`./scripts/install_core_debs.sh --only arms`. Cloning [ocs2-wbc-"
-"controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how "
-"you read or edit the source. To hold a mobile base, keep the "
-"description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` "
-"graph whose `infoFile` points at a `fixed_base` info file has no virtual "
-"chassis joint for that lock, and arm enable can stay in "
-"`WAITING_FOR_ENABLE_POLICY`."
-msgstr ""
-"全身模式（`mode` 为 `full_body`）会加载 `ocs2_wbc_controller`。这个包已经在 GitHub Release"
-" 的 deb `ros-jazzy-arms-ros2-control` 里。`./init_repo.sh` 给 arms 选 `d`，或运行 "
-"`./scripts/install_core_debs.sh --only arms`。克隆 [ocs2-wbc-"
-"controller](https://github.com/fiveages-sim/ocs2-wbc-controller) "
-"是为了读源码或改源码。要按住移动底盘，保留描述里的 `mobile_base_tcp` info，并发送 "
-"`BASE_LOCK`。`full_body` 的图把 `infoFile` 指到一份 `fixed_base` info "
-"时，没有这把锁能用的虚拟底盘关节，手臂使能会停在 `WAITING_FOR_ENABLE_POLICY`。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:116
-#: d6a3afc4b83a4bfc8024e00dcc21ce27
-msgid ""
-"**Play starts, but no ROS 2 topics appear.** The domain id and "
-"`RMW_IMPLEMENTATION` match the workspace you sourced. For the topic "
-"bridge, the graph `topicName` matches the xacro. For the in-process "
-"graph, operation 5 is installed and Isaac was restarted, and the stage’s "
-"`ROS` variant is the fiveages payload rather than the topic-bridge "
-"payload."
-msgstr ""
-"**Play 起来了，但没有 ROS 2 话题。** 域 ID 和 `RMW_IMPLEMENTATION` 要和你 source "
-"的工作区一致。话题桥：图的 `topicName` 和 xacro 一致。进程内：第 5 项已安装，Isaac 已重启，场景里的 `ROS` 变体是"
-" fiveages 载荷，而不是话题桥载荷。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:118
-#: 6bfd06c9d34d49d3a5239c07c5abbce7
-msgid ""
-"**A motion finishes much too fast.** On the in-process payload, `/clock` "
-"comes from the on-demand `ROS_Clock` graph (`OnPhysicsStep`). That is how"
-" W2 `fiveages.usda` is already wired. The topic-bridge `ros2.usda` still "
-"publishes the clock from `OnPlaybackTick`. Fix the clock before you edit "
-"joint gains. The mechanism is on the [FaSim-Isaac "
-"reference](../../4-reference/simulation/2-fasim_isaac.md)."
-msgstr ""
-"**动作结束得特别快。** 进程内载荷上，`/clock` 来自按物理步更新的 `ROS_Clock` 图（`OnPhysicsStep`）。W2 的 "
-"`fiveages.usda` 已经是这样接的。话题桥的 `ros2.usda` 仍从 `OnPlaybackTick` "
-"发布时钟。先改时钟，再考虑关节增益。机制见 [FaSim-Isaac "
-"参考](../../4-reference/simulation/2-fasim_isaac.md)。"
-
 #~ msgid "There are two ROS 2 connections. Pick one for a given stage."
 #~ msgstr "有两种 ROS 2 连接。同一舞台只选一种。"
 
@@ -1038,4 +1041,7 @@ msgstr ""
 
 #~ msgid "On Play, confirm:"
 #~ msgstr "播放后确认："
+
+#~ msgid "Robot USD"
+#~ msgstr "机器人 USD"
 

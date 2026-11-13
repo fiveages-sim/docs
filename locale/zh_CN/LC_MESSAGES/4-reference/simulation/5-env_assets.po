@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 09:17+0000\n"
+"POT-Creation-Date: 2026-11-13 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,116 +20,153 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:1
-#: c340b61731534cc8858ba84b18a4ee71
+#: 25a6385bbdf442b7a5357f23cfe26f79
 msgid "Environment Assets"
 msgstr "环境资产"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:3
-#: a4c2b3493f3b4bf685ecbfddaf834607
-msgid "USD environment and scene assets for simulation."
-msgstr "用于仿真的 USD 环境与场景资产。"
+#: 00b53a89f6814d0bb591cda12e08964e
+msgid ""
+"USD environment and project scenes used with Isaac Sim. These trees are "
+"siblings of `robots/`, not submodules of `robot_usds`."
+msgstr "与 Isaac Sim 一起用的环境和项目场景 USD。这些树和 `robots/` 同级，不是 `robot_usds` 的子模块。"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:5
-#: 8fb11de8a2cc4a949435df3985e2ec54
-msgid "Overview"
-msgstr "概述"
+#: d4c358f5ba73407997cdeead7336d817
+msgid ""
+"Robot models: [robot_usds](3-robot_usds.md). How to start Sim and open a "
+"file: [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md). There is "
+"no `./run.sh --env` flag; open the scene USD from `environment/` after "
+"`./run.sh`."
+msgstr "机器人模型见 [robot_usds](3-robot_usds.md)。如何启动 Sim 并打开文件见 [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。没有 `./run.sh --env`；`./run.sh` 之后从 `environment/` 打开场景 USD。"
 
 #: ../../source/4-reference/simulation/5-env_assets.md:7
-#: f03d22a6eef84f59be9fdee6521d8d81
-msgid "Environment assets are separate from robot assets:"
-msgstr "环境资产与机器人资产相互独立："
-
-#: ../../source/4-reference/simulation/5-env_assets.md:8
-#: 5e3739e20cf74f0b878ea6bd5e4b3132
-msgid "**robot_usds** — Robot models"
-msgstr "**robot_usds** — 机器人模型"
+#: 65572fd2481e40fab84c26447dc5e247
+msgid "Location in FaSim-Isaac"
+msgstr "在 FaSim-Isaac 中："
 
 #: ../../source/4-reference/simulation/5-env_assets.md:9
-#: 4b73304d2b9e47fbb097930eb6c35039
-msgid "**Environment assets** — Scenes, objects, terrain"
-msgstr "**环境资产** — 场景、物体、地形"
+#: af3efdd399f143e681075a111e728aa8
+msgid ""
+"FaSim-Isaac/\n"
+"├── robots/                      # robot_usds\n"
+"└── environment/\n"
+"    ├── fiveages_env/            # → fiveages-env-usds\n"
+"    ├── fa-project-usd/          # private project scenes\n"
+"    ├── artvip-usd/              # ArtVIP components\n"
+"    ├── labutopia-usd/           # LabUtopia components (private)\n"
+"    └── ArtVIP/                  # official ArtVIP download (gitignore)"
+msgstr "FaSim-Isaac/\n├── robots/                      # robot_usds\n└── environment/\n    ├── fiveages_env/            # → fiveages-env-usds\n    ├── fa-project-usd/          # 私有项目场景\n    ├── artvip-usd/              # ArtVIP 组件\n    ├── labutopia-usd/           # LabUtopia 组件（私有）\n    └── ArtVIP/                  # 官方 ArtVIP 下载（gitignore）\n"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:11
-#: 5abe9d0582284fc2b33399334e88b7a0
-msgid "fiveages-env-usds"
+#: ../../source/4-reference/simulation/5-env_assets.md:20
+#: 304572ad8a1c4cc7a846ef6dbe664614
+msgid ""
+"Top-level URLs: [FaSim-Isaac `.gitmodules`](https://github.com/fiveages-"
+"sim/FaSim-Isaac/blob/main/.gitmodules). `./init.sh` operation 1 uses "
+"`submodules_visibility.conf`. As checked on 2026-11-13, `environment/fa-"
+"project-usd` and `environment/labutopia-usd` are marked private "
+"(unchecked until you have access). `environment/artvip-usd` is not listed"
+" as private in that file, so operation 1 checks it with the other public-"
+"marked items. The GitHub repository itself is still private; cloning it "
+"needs access."
+msgstr "顶层地址见 [FaSim-Isaac `.gitmodules`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.gitmodules)。`./init.sh` 操作 1 使用 `submodules_visibility.conf`。以 2026-11-13 的核对为准，`environment/fa-project-usd` 和 `environment/labutopia-usd` 被标为私有（有权限之前不勾选）。`environment/artvip-usd` 没有在该文件里标成私有，所以操作 1 会把它和其他公开项一起勾上。GitHub 仓库本身仍是私有的，克隆需要权限。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:22
+#: 169230441d594997bb62e82a9aa7f3a9
+msgid "fiveages_env"
 msgstr "fiveages-env-usds"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:13
-#: acb8f2b4fe584e5ebb21f23c77fa0fa1
+#: ../../source/4-reference/simulation/5-env_assets.md:24
+#: 46bab6f9f8674d48bc8dcf9552312f6b
 msgid ""
 "**Repository:** [fiveages-sim/fiveages-env-usds](https://github.com"
-"/fiveages-sim/fiveages-env-usds)"
+"/fiveages-sim/fiveages-env-usds) (public)"
 msgstr ""
 "**仓库：** [fiveages-sim/fiveages-env-usds](https://github.com/fiveages-sim"
 "/fiveages-env-usds)"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:15
-#: ../../source/4-reference/simulation/5-env_assets.md:45
-#: 24e3d30f03ad40e1a102320408eb5a84 f0033160313e474b919d951d81033e65
-msgid "Purpose"
-msgstr "用途"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:17
-#: 64fd13bfb6c845bdabff931ffe8cba33
-msgid "Public environment USD assets:"
-msgstr "公开的环境 USD 资产："
-
-#: ../../source/4-reference/simulation/5-env_assets.md:18
-#: 5e13eac82d0942cfb3824ef6f1de95ca
-msgid "Indoor scenes (office, lab)"
-msgstr "室内场景（办公室、实验室）"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:19
-#: 456d57dd41d5448bba3e441e4a487717
-msgid "Objects for manipulation"
-msgstr "操作物体"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:20
-#: 70f294dd31664aad88b9d71b1dc25fef
-msgid "Terrain"
-msgstr "地形"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:22
-#: ../../source/4-reference/simulation/5-env_assets.md:49
-#: 8b12a331a2d24052bb7eece1106b0c3b d3df7f1faa4441e2ab2a172173d9da55
-msgid "Location"
-msgstr "位置"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:24
-#: 876ccea5726747b898713123fb9d72de
-msgid "In FaSim-Isaac:"
-msgstr "在 FaSim-Isaac 中："
-
-#: ../../source/4-reference/simulation/5-env_assets.md:25
-#: 86a8894ae4e74f77b0dbdf61e1fee2f3
+#: ../../source/4-reference/simulation/5-env_assets.md:26
+#: 753f41ea19e14abe8ffc552e9e2e9960
 msgid ""
-"FaSim-Isaac/\n"
-"└── environment/\n"
-"    └── fiveages_env/    # → fiveages-env-usds"
-msgstr ""
-"FaSim-Isaac/\n"
-"└── environment/\n"
-"    └── fiveages_env/    # → fiveages-env-usds"
+"Shared Isaac scenes and task composition, as described in that "
+"[README](https://github.com/fiveages-sim/fiveages-env-"
+"usds/blob/main/README.md):"
+msgstr "共用的 Isaac 场景和任务组合，见该仓库 [README](https://github.com/fiveages-sim/fiveages-env-usds/blob/main/README.md)："
 
-#: ../../source/4-reference/simulation/5-env_assets.md:31
-#: c4d045eab484453c990872ceebdd8799
-msgid "Usage"
-msgstr "使用方法"
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: 3edd68e14d3b48b3b2fa9a61e04b6ed8
+msgid "Directory"
+msgstr "目录"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:33
-#: 85460f0378ef4190a5149a27244aa9c1
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: d8d9710f604848728380a2fb3c80c0fe
+msgid "Content"
+msgstr "内容"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: 64b29abd8ae94cebb99d0edfdaa7f3f0
+msgid "`static/`"
+msgstr "`static/`"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: cfbc97e87dbe421389100f2ab76609b3
+msgid "Static parts: tables, boxes, shelves"
+msgstr "静态部件：桌子、箱子、货架"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: 1ba62e04c80b4643bf0e245963ae388c
+msgid "`moveable/`"
+msgstr "`moveable/`"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: f18b210d7a184a1ca76afe8ec503f762
+msgid "Small movable objects"
+msgstr "可移动的小物体"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: d16b4d19dadf4c6ab13d16130edca370
+msgid "`articulation/`"
+msgstr "`articulation/`"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: 6e1262b426b74f45b1dcc1b48e45591f
+msgid "Articulated mechanisms such as drawers"
+msgstr "带关节的机构，例如抽屉"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: da9b307a5d424a63968fdc7cf83088c3
+msgid "`background/`"
+msgstr "`background/`"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: e47d70282751475d9ba2bdca92fbbcc8
+msgid "Room and background geometry"
+msgstr "房间和背景几何"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: f404e7d11a0348198e6d1c740d23fd34
+msgid "`tasks/`"
+msgstr "`tasks/`"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:9
+#: c6844abb66b64d9e8edccc20cb7366c5
+msgid "Composed task scenes that reference the directories above"
+msgstr "引用上述目录的组合任务场景"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:36
+#: 32485af91cf3408b9c0f530419666181
 msgid ""
-"Start Isaac with FaSim `./run.sh` and open the scene USD under "
-"`environment/fiveages_env/`."
-msgstr "用 FaSim 的 `./run.sh` 启动 Isaac，并打开 `environment/fiveages_env/` 下的场景 USD。"
+"Browse the repository for the current USD files. Open a scene under "
+"`environment/fiveages_env/` in Isaac after `./run.sh`."
+msgstr "当前的 USD 文件可直接在仓库里浏览。`./run.sh` 之后，在 Isaac 中打开 `environment/fiveages_env/` 下的场景。"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:35
-#: af6785ab6b60477098021d9d001740af
+#: ../../source/4-reference/simulation/5-env_assets.md:40
+#: 01ed30b46d414a679461ac887a55da2a
 msgid "fa-project-usd"
 msgstr "fa-project-usd"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:37
-#: ec106c16665041b6b880cf8f50de6776
+#: ../../source/4-reference/simulation/5-env_assets.md:42
+#: 585283fb34854077a95e405c65709f08
 msgid ""
 "**Repository:** [fa-project-usd](https://github.com/fiveages-sim/fa-"
 "project-usd) (private; the link needs access)"
@@ -138,120 +174,115 @@ msgstr ""
 "**仓库：** [fa-project-usd](https://github.com/fiveages-sim/fa-project-"
 "usd)（私有；链接需要权限）"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:39
-#: 641fb2827f8b4085adf583428d086b9d
-msgid "Access Required"
-msgstr "需要访问权限"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:42
-#: 34b2e17e16d346258121ef2b10514673
-msgid "This repository is private."
-msgstr "该仓库为私有仓库。"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:47
-#: aac3bbf2c9d3418e8ee100a039118ebe
-msgid "Internal project-specific USD scenes and assets."
-msgstr "内部项目专用的 USD 场景与资产。"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:51
-#: e6343b19cd824c95afd432b398b09e84
+#: ../../source/4-reference/simulation/5-env_assets.md:44
+#: a0207f20731544e7bd38178248490137
 msgid ""
-"FaSim-Isaac/\n"
-"└── environment/\n"
-"    └── fa-project-usd/"
-msgstr ""
-"FaSim-Isaac/\n"
-"└── environment/\n"
-"    └── fa-project-usd/"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:57
-#: 2b497a455b0b4437817f6cec0397927a
-msgid "Not robot_usds Submodules"
-msgstr "不是 robot_usds 的子模块"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:59
-#: b4c8e8e28bc049aa8ef7d1af128788f9
-msgid "Important"
-msgstr "重要"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:62
-#: 78fe321f6ad64377a2831fa7f382bf04
-msgid "Environment assets are **not** submodules of `robot_usds`. They are:"
-msgstr "环境资产**不是** `robot_usds` 的子模块。它们是："
-
-#: ../../source/4-reference/simulation/5-env_assets.md:63
-#: cfa384529b8f48c7b8ffbf5f50bc59fe
-msgid "Sibling directories in FaSim-Isaac"
-msgstr "FaSim-Isaac 中的同级目录"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:64
-#: b4e25c9f8d5c4ca59bf73af9104bc7de
-msgid "Separate submodules of FaSim-Isaac itself"
-msgstr "FaSim-Isaac 自身的独立子模块"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:67
-#: 9dc3f7e9bd6844c1a1138c3f74539022
-msgid "Usage in FaSim"
-msgstr "在 FaSim 中的用法"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:69
-#: aa37f20aa306473a92c3686e6faed112
-msgid ""
-"Start Isaac with FaSim `./run.sh` (PhysX / Newton / Headless Streaming "
-"menu). Open the scene USD under `environment/fiveages_env/` (or `fa-"
-"project-usd/`) in Isaac. There is no `./run.sh --env` flag."
-msgstr ""
-"用 FaSim `./run.sh` 启动 Isaac（PhysX / Newton / Headless Streaming 菜单）。在 "
-"Isaac 中打开 `environment/fiveages_env/`（或 `fa-project-usd/`）下的场景 USD。没有 "
-"`./run.sh --env` 参数。"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:71
-#: f23104095df54a988191b10f45ba4256
-msgid "Creating Custom Environments"
-msgstr "创建自定义环境"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:73
-#: 85fdecf665e44ce188fdc63693bfde46
-msgid "Create the USD scene in Isaac Sim."
-msgstr "在 Isaac Sim 里创建 USD 场景。"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:74
-#: 04a5991f850048268079666458604b4e
-msgid ""
-"Put it under `environment/fiveages_env/` or, with access, under [fa-"
-"project-usd](https://github.com/fiveages-sim/fa-project-usd)."
-msgstr ""
-"放到 `environment/fiveages_env/`，或有权限时放到 [fa-project-"
-"usd](https://github.com/fiveages-sim/fa-project-usd)。"
-
-#: ../../source/4-reference/simulation/5-env_assets.md:75
-#: 6bce1b50b4934a479240ca6900b732ff
-msgid ""
-"Open that file from `./run.sh`. On `main`, a project is `scene.usd(a)`, "
-"`objects/`, and `env/` ([README](https://github.com/fiveages-sim/fa-"
-"project-usd/blob/main/README.md)). `robot.yaml`, `task_configs/`, and "
-"`maps/` or `map/` sit on branch `feature/sinopec-test-tube-picking` "
-"(ahead of `main`, not merged)."
+"Internal project scenes. On `main`, a project is `scene.usd(a)`, "
+"`objects/`, and a runnable `env/` ([README](https://github.com/fiveages-"
+"sim/fa-project-usd/blob/main/README.md)). Projects may sit at the "
+"repository root or under a customer or series directory."
 msgstr ""
 "用 `./run.sh` 打开该文件。在 `main` 上，一个项目是 `scene.usd(a)`、`objects/` 和 "
 "`env/`（[README](https://github.com/fiveages-sim/fa-project-"
 "usd/blob/main/README.md)）。`robot.yaml`、`task_configs/` 以及 `maps/` 或 "
 "`map/` 在分支 `feature/sinopec-test-tube-picking` 上（领先 `main`，尚未合入）。"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:77
-#: 6e8a35c96f894237a9aaf6e9b65eb56e
+#: ../../source/4-reference/simulation/5-env_assets.md:46
+#: 742ac2cdcb9d4fb9ab52cfdf5496f3ba
+msgid ""
+"The files the orchestrator reads next to those scenes (`robot.yaml`, "
+"`task_configs/`, and `maps/` or `map/`) are on branch `feature/sinopec-"
+"test-tube-picking`. That branch was ahead of `main` and not merged when "
+"these pages were checked on 2026-11-13. Three projects there use this "
+"layout: `Fiveages/2026-11 Standard Moving Boxes`, `Siemens/2026-06 Wind "
+"Turbine Blade Detection`, and `Aimbo/2026-04 Bosch German&Poland POC`. "
+"You need access to open the branch."
+msgstr "编排器在这些场景旁边读取的文件（`robot.yaml`、`task_configs/`，以及 `maps/` 或 `map/`）在分支 `feature/sinopec-test-tube-picking` 上。2026-11-13 核对这些页面时，该分支领先于 `main`，尚未合入。使用这种布局的项目有三个：`Fiveages/2026-11 Standard Moving Boxes`、`Siemens/2026-06 Wind Turbine Blade Detection`，以及 `Aimbo/2026-04 Bosch German&Poland POC`。打开该分支需要权限。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:48
+#: eb2d5af888314ecb9759c935d29c2f68
+msgid ""
+"`NavigationLaunch` can point `map` at a `map.yaml` stored in that "
+"project, as a path relative to the opened `env/` layer. The node itself "
+"is documented under [FaSim-Isaac Navigation](2-fasim_isaac.md#navigation). The public way to run a project directory is [lerobot_ros2 "
+"`examples/IsaacSim/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md): `motion-"
+"generation` with `LEROBOT_ROOT` set. Keep camera rigs in the scene USD."
+msgstr "`NavigationLaunch` 可以把 `map` 指到该项目中的 `map.yaml`，路径相对于打开的 `env/` 层。节点本身写在 [FaSim-Isaac 导航](2-fasim_isaac.md#navigation)。公开的项目目录运行方式见 [lerobot_ros2 `examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md)：设置 `LEROBOT_ROOT` 后用 `motion-generation`。相机机位留在场景 USD 里。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:50
+#: 0d8f84f05690413f8d971f5617619a0c
+msgid "ArtVIP and LabUtopia"
+msgstr "ArtVIP 与 LabUtopia"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:52
+#: 4b3dc61372b948bf8a8d2627bba2bb0c
+msgid ""
+"`environment/artvip-usd` ([artvip-usd](https://github.com/fiveages-sim"
+"/artvip-usd)) holds ArtVIP scene components that payload the official "
+"dataset. `./init.sh` operation 3 downloads the official data into "
+"`environment/ArtVIP/` with `tools/artvip_kitchen.py`. The FaSim README: "
+"scene components stay in `artvip-usd`; the official data is not "
+"committed."
+msgstr "`environment/artvip-usd`（[artvip-usd](https://github.com/fiveages-sim/artvip-usd)）存放 payload 官方数据集的 ArtVIP 场景组件。`./init.sh` 操作 3 用 `tools/artvip_kitchen.py` 把官方数据下到 `environment/ArtVIP/`。FaSim README：场景组件留在 `artvip-usd`，官方数据不入库。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:54
+#: 0995e43013fd4fb19e34084dc9cf4552
+msgid ""
+"`environment/labutopia-usd` ([labutopia-usd](https://github.com/fiveages-"
+"sim/labutopia-usd)) holds LabUtopia components. The repository is "
+"private, and FaSim marks the submodule private."
+msgstr "`environment/labutopia-usd`（[labutopia-usd](https://github.com/fiveages-sim/labutopia-usd)）存放 LabUtopia 组件。仓库是私有的，FaSim 也把该子模块标为私有。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:56
+#: 294d29d4a70e4e4d8a26ebd96b48e341
+msgid "Creating a custom scene"
+msgstr "创建自定义场景"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:58
+#: 7537c82870a543f9b87998906ac66e20
+msgid "Create the USD scene in Isaac Sim."
+msgstr "在 Isaac Sim 里创建 USD 场景。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:59
+#: ec5a15f5c3c64f648925ba43f91d6282
+msgid ""
+"Put it under `environment/fiveages_env/` or, with access, under [fa-"
+"project-usd](https://github.com/fiveages-sim/fa-project-usd) using the "
+"`scene` / `objects` / `env` layout on `main`."
+msgstr "放到 `environment/fiveages_env/`，或有权限时放到 [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd)，并使用 `main` 上的 `scene` / `objects` / `env` 布局。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:60
+#: 32f2b8c2b3084d4d83747da9d0d7e7f9
+msgid "Open that file from `./run.sh`."
+msgstr "用 `./run.sh` 打开那份文件。"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:62
+#: 702c156a647f49eeabdb03cd648a22d3
 msgid "Related"
 msgstr "相关内容"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:79
-#: 9118f77b0e074ac78ed4b7bcb3a98208
+#: ../../source/4-reference/simulation/5-env_assets.md:64
+#: d23dcb0f32a14114896e767b79809ac7
 msgid "[robot_usds](3-robot_usds.md)"
 msgstr "[robot_usds](3-robot_usds.md)"
 
-#: ../../source/4-reference/simulation/5-env_assets.md:80
-#: 683649b091dd42dfae0cec74343eb9cd
+#: ../../source/4-reference/simulation/5-env_assets.md:65
+#: 68398ec6c1fc407e8287cfb9e5787715
 msgid "[FaSim-Isaac](2-fasim_isaac.md)"
 msgstr "[FaSim-Isaac](2-fasim_isaac.md)"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:66
+#: a2d69b05a64d46c281e09a66ee6f922c
+msgid "[Isaac Sim how-to](../../2-how_to/2-simulation/4-isaac_sim.md)"
+msgstr "[Isaac Sim 操作说明](../../2-how_to/2-simulation/4-isaac_sim.md)"
+
+#: ../../source/4-reference/simulation/5-env_assets.md:67
+#: 90d604586d2e4785802bcf249153ccc2
+msgid ""
+"[Isaac Scenes and USD](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)"
+" (datagen pipeline)"
+msgstr "[Isaac 场景与 USD](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)（数采流水线）"
 
 #~ msgid ""
 #~ "FaSim-Isaac/\n"
@@ -323,4 +354,105 @@ msgstr "[FaSim-Isaac](2-fasim_isaac.md)"
 #~ msgstr ""
 #~ "# Custom scene setup\n"
 #~ "scene_path = \"environment/custom_scene.usd\"\n"
+
+#~ msgid "USD environment and scene assets for simulation."
+#~ msgstr "用于仿真的 USD 环境与场景资产。"
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid "Environment assets are separate from robot assets:"
+#~ msgstr "环境资产与机器人资产相互独立："
+
+#~ msgid "**robot_usds** — Robot models"
+#~ msgstr "**robot_usds** — 机器人模型"
+
+#~ msgid "**Environment assets** — Scenes, objects, terrain"
+#~ msgstr "**环境资产** — 场景、物体、地形"
+
+#~ msgid "Purpose"
+#~ msgstr "用途"
+
+#~ msgid "Public environment USD assets:"
+#~ msgstr "公开的环境 USD 资产："
+
+#~ msgid "Indoor scenes (office, lab)"
+#~ msgstr "室内场景（办公室、实验室）"
+
+#~ msgid "Objects for manipulation"
+#~ msgstr "操作物体"
+
+#~ msgid "Terrain"
+#~ msgstr "地形"
+
+#~ msgid "Location"
+#~ msgstr "位置"
+
+#~ msgid ""
+#~ "FaSim-Isaac/\n"
+#~ "└── environment/\n"
+#~ "    └── fiveages_env/    # → fiveages-env-usds"
+#~ msgstr ""
+#~ "FaSim-Isaac/\n"
+#~ "└── environment/\n"
+#~ "    └── fiveages_env/    # → fiveages-env-usds"
+
+#~ msgid "Usage"
+#~ msgstr "使用方法"
+
+#~ msgid ""
+#~ "Start Isaac with FaSim `./run.sh` and"
+#~ " open the scene USD under "
+#~ "`environment/fiveages_env/`."
+#~ msgstr "用 FaSim 的 `./run.sh` 启动 Isaac，并打开 `environment/fiveages_env/` 下的场景 USD。"
+
+#~ msgid "Access Required"
+#~ msgstr "需要访问权限"
+
+#~ msgid "This repository is private."
+#~ msgstr "该仓库为私有仓库。"
+
+#~ msgid "Internal project-specific USD scenes and assets."
+#~ msgstr "内部项目专用的 USD 场景与资产。"
+
+#~ msgid ""
+#~ "FaSim-Isaac/\n"
+#~ "└── environment/\n"
+#~ "    └── fa-project-usd/"
+#~ msgstr ""
+#~ "FaSim-Isaac/\n"
+#~ "└── environment/\n"
+#~ "    └── fa-project-usd/"
+
+#~ msgid "Not robot_usds Submodules"
+#~ msgstr "不是 robot_usds 的子模块"
+
+#~ msgid "Important"
+#~ msgstr "重要"
+
+#~ msgid "Environment assets are **not** submodules of `robot_usds`. They are:"
+#~ msgstr "环境资产**不是** `robot_usds` 的子模块。它们是："
+
+#~ msgid "Sibling directories in FaSim-Isaac"
+#~ msgstr "FaSim-Isaac 中的同级目录"
+
+#~ msgid "Separate submodules of FaSim-Isaac itself"
+#~ msgstr "FaSim-Isaac 自身的独立子模块"
+
+#~ msgid "Usage in FaSim"
+#~ msgstr "在 FaSim 中的用法"
+
+#~ msgid ""
+#~ "Start Isaac with FaSim `./run.sh` (PhysX"
+#~ " / Newton / Headless Streaming menu)."
+#~ " Open the scene USD under "
+#~ "`environment/fiveages_env/` (or `fa-project-"
+#~ "usd/`) in Isaac. There is no "
+#~ "`./run.sh --env` flag."
+#~ msgstr ""
+#~ "用 FaSim `./run.sh` 启动 Isaac（PhysX / "
+#~ "Newton / Headless Streaming 菜单）。在 Isaac"
+#~ " 中打开 `environment/fiveages_env/`（或 `fa-"
+#~ "project-usd/`）下的场景 USD。没有 `./run.sh --env` "
+#~ "参数。"
 
