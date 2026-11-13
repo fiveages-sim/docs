@@ -16,7 +16,7 @@ Launch names and xacro details: those **public package READMEs**. There is no `o
 ```{admonition} Still private — W2R and S2R are not open
 :class: warning
 
-These remotes are **not** public (GitHub 404 without access): **W2R** (`fa-w2r-description`), **S2R** (`fa-s2r-description`), **Gen3** (`fa-wce3-description`, `fiveages-gen3-robot-usds`), and `fa-deploy-ws`. There is **no** public `robot-descriptions-fiveages` umbrella. Contact your team lead. After access, follow **those package READMEs**.
+These remotes need repository access (without it, GitHub does not open the page): **W2R** ([fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description)), **S2R** ([fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description)), **Gen3** ([fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description), [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds)), and [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws). There is **no** public `robot-descriptions-fiveages` umbrella. After access, follow **those package READMEs**.
 ```
 
 ```{admonition} Source of truth
@@ -27,7 +27,7 @@ These remotes are **not** public (GitHub 404 without access): **W2R** (`fa-w2r-d
 - The public [robot_descriptions README](https://github.com/fiveages-sim/robot_descriptions/blob/main/README.md) **does not** table these packages — use `.gitmodules`, not the README brand tables
 - Public USD: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §3.1 Humanoid → FiveAges, [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds), [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds)
 - Workspace pattern (script name only): [fa-deploy-ws Setup](../../1-getting_started/4-fa_deploy_ws.md) — `./init_repo.sh`. Extra flags and robot IDs are in that private README after access.
-- Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `real`)
+- Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `isaac_sim` / `real`)
 ```
 
 FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, WCE3) are **wheeled-arm humanoids** (mobile base + arms), not bipedal.
@@ -48,7 +48,7 @@ FiveAges descriptions live as **git submodules** of the public umbrella. Checkou
 |------|-------------|--------|------------|
 | `humanoid/FiveAges/fiveages_w1_description` | `fiveages_w1_description` | [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) | Public |
 | `humanoid/FiveAges/fiveages_w2_description` | `fiveages_w2_description` | [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) | Public |
-| `humanoid/FiveAges/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` | Private — **not open** |
+| `humanoid/FiveAges/fiveages_w2r_description` | `fiveages_w2r_description` | [fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description) | Private — **not open** |
 | `humanoid/FiveAges/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
 | `humanoid/FiveAges/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
 
@@ -60,11 +60,11 @@ FiveAges descriptions live as **git submodules** of the public umbrella. Checkou
 |-----|------|-------------|--------|------------|
 | Gen1 | `humanoid/FiveAges/Gen1/fiveages_w1_description` | `fiveages_w1_description` | [fa-w1-description](https://github.com/fiveages-sim/fa-w1-description) | Public |
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_description` | `fiveages_w2_description` | [fa-w2-description](https://github.com/fiveages-sim/fa-w2-description) | Public |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2r_description` | `fiveages_w2r_description` | `fa-w2r-description` | Private — **not open** |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2r_description` | `fiveages_w2r_description` | [fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description) | Private — **not open** |
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
-| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2r_description` | `fiveages_s2r_description` | `fa-s2r-description` | Private — **not open** |
+| Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2r_description` | `fiveages_s2r_description` | [fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) | Private — **not open** |
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
-| Gen3 | `humanoid/FiveAges/Gen3/fiveages_wce3_description` | `fiveages_wce3_description` | `fa-wce3-description` | Private |
+| Gen3 | `humanoid/FiveAges/Gen3/fiveages_wce3_description` | `fiveages_wce3_description` | [fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description) | Private |
 
 `feature/agilex` adds Gen2 **W2R** and **S2R** gitlinks; those remotes stay private.
 
@@ -78,7 +78,7 @@ After access to a private remote, init the path named in `.gitmodules` (or let `
 |--------------------------------|----------|--------------|------------|
 | `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | W1 / Gen1 | Public |
 | `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 (`W2/`, `S2/`, `components/`) | Public |
-| `humanoid/FiveAges/Gen3` | `fiveages-gen3-robot-usds` | WCE3 / Gen3 | Private |
+| `humanoid/FiveAges/Gen3` | [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | WCE3 / Gen3 | Private |
 
 Gen2 USD is **W2 and S2** only. It does **not** publish W2R or S2R.
 
@@ -95,7 +95,7 @@ After access:
 3. `colcon build`, then `source install/setup.bash` in the launch terminal (or that repo’s official quick-start script if it has one).
 4. EEF / `hardware:=` follow [robot_common_launch](2-common.md). There is no `gripper:=` and no `hardware:=mock`.
 
-Composer `--robot fiveages_w2` is a real key on [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md). It is **not** a documented `./init_repo.sh --robot` flag.
+Composer `--robot fiveages_w2` is a real key on [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROS2_STACK.md). It is **not** a documented `./init_repo.sh --robot` flag.
 
 Copy an existing public `{robot}_description` only as a **layout hint** — [Add a Robot](../../2-how_to/6-deployment/10-add_a_robot.md).
 

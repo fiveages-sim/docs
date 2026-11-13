@@ -98,10 +98,12 @@ The `fa-deploy-ws` README is **not public**. Flags, robot IDs, and on-robot YAML
 ### Initialization
 
 ```bash
-git clone <internal-url>/fa-deploy-ws.git
+git clone git@github.com:fiveages-sim/fa-deploy-ws.git
 cd fa-deploy-ws
 ./init_repo.sh
 ```
+
+[fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) needs repository access (default branch `fa-w2`). Without access, GitHub does not open the page.
 
 Same script **name** as `open-deploy-ws`. Extra flags, robot IDs, and on-robot YAML live in the private README — copy them from there.
 

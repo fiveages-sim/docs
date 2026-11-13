@@ -22,12 +22,13 @@ Documented launch values ([robot_common_launch](https://github.com/fiveages-sim/
 |--------------|--------------------|-------|
 | `mock_components` (**default**) | `mock_components/GenericSystem` | No Gazebo / Isaac. There is **no** `hardware:=mock` branch in this xacro. |
 | `gz` | `gz_ros2_control/GazeboSimSystem` | [ocs2_arm README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md): install `ros-jazzy-ros-gz` and `ros-jazzy-gz-ros2-control` |
-| `isaac` | `topic_based_ros2_control/TopicBasedSystem` | Acone params: `/isaac/joint_command`, `/isaac/joint_states`. Build `topic_based_ros2_control` ([arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)) |
+| `isaac` | `topic_based_ros2_control/TopicBasedSystem` | Shared macro: `/isaac/joint_command`, `/isaac/joint_states`. Match the graph `topicName` if this robot uses other names. Build `topic_based_ros2_control` ([arms_ros2_control README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.md)) |
+| `isaac_sim` | `isaacsim_ros2_control/IsaacSimSystem` | In-process driver. FaSim `ROS2ControlLaunch` sets it and `isaac_prim_path`. Not a `demo.launch.py` flag. |
 | `real` | Vendor plugin (Acone: `arx_ros2_control/ArxX5Hardware`) | Other brands: use the plugin class from that description’s `xacro/ros2_control/*.xacro`. |
 
 `REAL_HARDWARE` in `launch_arg_utils.py` is only `real`.
 
-Optional controller overlay: if `<robot>_description/config/ros2_control/<hardware>.yaml` exists, `load_robot_config` merges it. Example from the common README: `arx_lift2s` + `hardware:=isaac` merges `isaac.yaml`. No file → no overlay.
+Optional controller overlay: if `<robot>_description/config/ros2_control/<hardware>.yaml` exists, `load_robot_config` merges it **after** end-effector compose. Example from the common README: `arx_lift2s` + `hardware:=isaac` merges `isaac.yaml`. No file → no overlay. Order: [robot_common_launch](../4-reference/descriptions/2-common.md).
 
 ## Controllers (this repo)
 

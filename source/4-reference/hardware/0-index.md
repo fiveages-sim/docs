@@ -88,7 +88,7 @@ How-to: [Gazebo Simulation](../../2-how_to/2-simulation/3-gazebo_sim.md), [Isaac
 
 | Package | Bus | Plugins / robots |
 |---------|-----|------------------|
-| [topic_based_ros2_control](1-topic_based.md) | ROS 2 topics | Isaac (`hardware:=isaac`) |
+| [topic_based_ros2_control](1-topic_based.md) | ROS 2 topics | Isaac topic bridge (`hardware:=isaac`). In-process `isaac_sim` is a different plugin |
 | [unitree-ros2-control](2-unitree.md) | unitree_sdk2 | Unitree G1 / quadruped |
 | [dobot-cr-ros2-control](3-dobot.md) | TCP | Dobot CR |
 | [arx-ros2-control](4-arx.md) | CAN | ARX X5, Acone (dual-arm), Lift 2S |

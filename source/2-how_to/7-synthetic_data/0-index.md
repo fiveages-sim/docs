@@ -4,13 +4,13 @@ This chapter is the **Isaac Sim datagen pipeline**: USD scenes → ROS 2 interfa
 
 This How-To category is the Isaac datagen pipeline, not Gazebo or teleop. Reference pages stay the source of APIs; this chapter only explains **how the pieces connect**.
 
-```{admonition} Documented branches
+```{admonition} Documented revisions
 :class: note
 
-- [robot_action_composer](https://github.com/fiveages-sim/robot_action_composer/tree/feature/dex-grasp-generator) `@ feature/dex-grasp-generator`
-- [lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2/tree/feature/sim-grasp-datagen) `@ feature/sim-grasp-datagen`
+- [robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) `main`
+- [lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) `main` (`feature/sim-grasp-datagen` merged in [#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10))
 
-Those branches are newer than `main`. Follow them, not `main`.
+`feature/dex-grasp-generator` is no longer a branch.
 ```
 
 ```{admonition} Terminology
@@ -52,7 +52,7 @@ lerobot_ros2  (record_datasets.py → LeRobot dataset on disk)
 ## Baseline
 
 - **ROS 2 Jazzy**
-- **Python 3.12** (same baseline as the lerobot_ros2 / composer READMEs on those branches)
+- **Python 3.12** (same baseline as the lerobot_ros2 / composer READMEs on `main`)
 
 ## Out of scope
 

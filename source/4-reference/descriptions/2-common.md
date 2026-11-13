@@ -195,17 +195,19 @@ ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w2r arms:=ar5
 common.yaml
   → <type>.yaml / ros2_controllers.yaml
   → {variant}.yaml          # opt-in: config/ros2_control/<variant>.yaml
-  → {hardware}.yaml         # opt-in: config/ros2_control/<hardware>.yaml
   → EEF compose (if any)
+  → {hardware}.yaml         # opt-in: config/ros2_control/<hardware>.yaml
   → control.patch (profile)
 :::
+
+Hardware overlay runs **after** end-effector compose ([robot-descriptions-common #41](https://github.com/fiveages-sim/robot-descriptions-common/pull/41)), so a later compose pass does not drop gripper keys that `{hardware}.yaml` added.
 
 How `<type>.yaml` is chosen (`resolve_compose_type_key` / `_generate_progressive_type_candidates`):
 
 - **Symmetric** EEF (`type` only, or `left_type` equals `right_type`): progressive match by stripping `_` suffixes. Helper docstring example: `ccs_left_rg75` → `ccs_left` → `ccs`. First existing `{candidate}.yaml` wins; otherwise `ros2_controllers.yaml`.
 - **Asymmetric** (`left_type` ≠ `right_type`): skip progressive type YAML. Base file is `ros2_controllers.yaml`, then **EEF compose** from [`eef_control_registry.yaml`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/config/eef_control_registry.yaml) plus per-side templates (`control_compose.py`).
 
-`hardware:=` values in that README: `mock_components` / `gz` / `isaac` / `real`. Overlay YAML is merged **only if the file exists**. Profile YAML `hardware:` (serial, `arm_ctrl_mode`) is a different layer and applies only when `hardware:=real`.
+`hardware:=` values in that README: `mock_components` / `gz` / `isaac` / `isaac_sim` / `real`. `isaac_sim` is the in-process Isaac hardware interface ([`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro)); FaSim sets it from `ROS2ControlLaunch`, not from `demo.launch.py`. Overlay YAML is merged **only if the file exists**. `isaac_sim` can reuse `isaac.yaml` (`emit_control` passes `hardware_yaml=isaac`). Profile YAML `hardware:` (serial, `arm_ctrl_mode`) is a different layer and applies only when `hardware:=real`. `use_sim_time` defaults true for `gz`, `isaac`, and `isaac_sim` ([#42](https://github.com/fiveages-sim/robot-descriptions-common/pull/42)).
 
 ### Launch entries
 
@@ -227,7 +229,7 @@ Also on `main` under `launch/` (not named in that README table):
 | Manipulation | `manipulation/humanoid_ocs2.launch.py` |
 | Navigation | `navigation/navigation_cartographer.launch.py`, `navigation/navigation_isaac_gt.launch.py` |
 
-`navigation_isaac_gt.launch.py` is the default Nav2 launch cited by [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/feature/dex-grasp-generator/docs/ROS2_STACK.md).
+`navigation_isaac_gt.launch.py` is the default Nav2 launch cited by [robot_action_composer ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROS2_STACK.md).
 
 `robot_common_launch` README invoke table (same package; install first):
 

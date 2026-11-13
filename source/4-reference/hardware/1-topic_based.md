@@ -1,6 +1,8 @@
 # topic_based_ros2_control
 
-In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). ROS 2 topic hardware interface used when `hardware:=isaac` (Acone xacro: `/isaac/joint_command`, `/isaac/joint_states`).
+In-tree under `arms_ros2_control/hardwares/` (not a nested gitmodule). ROS 2 topic hardware interface used when `hardware:=isaac`.
+
+The plugin defaults below (`/robot_joint_commands`, `/robot_joint_states`) are the class defaults in the README. The shared description macro [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro) overrides them to `/isaac/joint_command` and `/isaac/joint_states` (Acone uses that macro). W2’s topic-bridge USD uses `/joint_command` and `/joint_states` instead. The xacro `<param>` and the OmniGraph `topicName` are the same strings. In-process Isaac (`hardware=isaac_sim`) does not use this plugin.
 
 **Plugin:** `topic_based_ros2_control/TopicBasedSystem`. No `declare_parameter` and no `on_set_parameters`.
 

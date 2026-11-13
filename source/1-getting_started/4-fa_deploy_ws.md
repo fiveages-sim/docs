@@ -1,6 +1,6 @@
 # fa-deploy-ws Setup
 
-Setup guide for the internal `fa-deploy-ws` workspace used for FiveAges robot deployment.
+Setup guide for the internal [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) workspace used for FiveAges robot deployment. The link needs repository access (default branch `fa-w2`). Without access, GitHub does not open the page.
 
 ```{admonition} Access Required
 :class: warning

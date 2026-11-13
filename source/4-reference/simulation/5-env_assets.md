@@ -30,19 +30,11 @@ FaSim-Isaac/
 
 ### Usage
 
-```python
-# Load environment in Isaac Sim
-from omni.isaac.core.utils.stage import add_reference_to_stage
-
-add_reference_to_stage(
-    usd_path="environment/fiveages_env/office.usd",
-    prim_path="/World/Environment"
-)
-```
+Start Isaac with FaSim `./run.sh` and open the scene USD under `environment/fiveages_env/`.
 
 ## fa-project-usd
 
-**Repository:** fa-project-usd (private)
+**Repository:** [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) (private; the link needs access)
 
 ```{admonition} Access Required
 :class: warning
@@ -78,14 +70,9 @@ Start Isaac with FaSim `./run.sh` (PhysX / Newton / Headless Streaming menu). Op
 
 ## Creating Custom Environments
 
-1. Create USD scene in Isaac Sim
-2. Export to `environment/` directory
-3. Reference in configuration
-
-```python
-# Custom scene setup
-scene_path = "environment/custom_scene.usd"
-```
+1. Create the USD scene in Isaac Sim.
+2. Put it under `environment/fiveages_env/` or, with access, under [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd).
+3. Open that file from `./run.sh`. On `main`, a project is `scene.usd(a)`, `objects/`, and `env/` ([README](https://github.com/fiveages-sim/fa-project-usd/blob/main/README.md)). `robot.yaml`, `task_configs/`, and `maps/` or `map/` sit on branch `feature/sinopec-test-tube-picking` (ahead of `main`, not merged).
 
 ## Related
 

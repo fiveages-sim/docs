@@ -103,7 +103,7 @@ What that skill covers (overview; follow the skill for the full procedure):
 2. Isaac 5: Import URDF → USD. Isaac 6: Asset Transformer → USDA.
 3. Robot Assembler (child → parent; one articulation root).
 4. Root `variantSets` + **local** adapter payloads (`payloads/Physics/{none,physics,physx,mujoco}.usda`, …).
-5. PhysX vs Newton/MuJoCo layers kept separate; host side `topic_based_ros2_control` + `hardware:=isaac`.
+5. PhysX vs Newton/MuJoCo layers kept separate. Connect ROS 2 with one path: host `hardware:=isaac` (`TopicBasedSystem`) **or** a `ROS2ControlLaunch` payload that sets in-process `isaac_sim`. Do not bridge the same joints on both.
 
 Asset layout: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) (`robots/manipulators/…`, `robots/mobile_manipulator/…`). FaSim-Isaac checkout: **`./init.sh`** (submodules + optional Isaac ROS 2 workspace), then **`./run.sh`**. See [Isaac Sim](../2-simulation/4-isaac_sim.md).
 
@@ -114,3 +114,4 @@ Asset layout: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blo
 - [robot_common_launch](../../4-reference/descriptions/2-common.md)
 - [Go to Real Hardware](9-go_real_hardware/0-index.md)
 - [Developer guide](../../5-developer/0-index.md)
+- [Day 7 exam](../../0-overview/2-learning_path.md) — one new robot in FaSim, mock then sim
