@@ -1,6 +1,6 @@
 # DexCap System
 
-DexCap glove teleoperation system.
+DexCap V4 exoskeleton and glove teleoperation system.
 
 ```{admonition} Access Required
 :class: warning
@@ -12,7 +12,7 @@ DexCap components require private repository access.
 
 | Component | Repository | Purpose |
 |-----------|------------|---------|
-| dexcap-ros2-control | Private | V4 driver |
+| dexcap-ros2-control | Private | V4 exoskeleton and glove driver |
 | dexcap_teleop_ws | Private | Workspace |
 | teleop-joint-mapper | Private | Joint mapping |
 
@@ -20,30 +20,28 @@ DexCap components require private repository access.
 
 ### Purpose
 
-ROS 2 driver for DexCap V4 gloves:
-- Sensor reading
+ROS 2 driver for the DexCap V4 exoskeleton and gloves:
+- Waist, arm, and glove joint publication
 - Calibration
-- Joint angle output
+- Mapper launches for grippers and LinkerHand O6
 
 ### Topics
 
 | Topic | Type | Description |
 |-------|------|-------------|
-| `/dexcap/joint_states` | `JointState` | Glove joint angles |
-| `/dexcap/hand_pose` | `PoseStamped` | Hand position |
-| `/dexcap/calibration_status` | `Bool` | Calibration state |
+| `/dexcap/waist` | `JointState` | Waist joints |
+| `/dexcap/left_arm` | `JointState` | Left arm joints |
+| `/dexcap/right_arm` | `JointState` | Right arm joints |
+| `/dexcap/left_hand` | `JointState` | Left glove, 21 joints |
+| `/dexcap/right_hand` | `JointState` | Right glove, 21 joints |
 
 ### Usage
 
 ```bash
-ros2 launch dexcap_ros2_control driver.launch.py
+ros2 launch dexcap_ros2_control dexcap_driver.launch.py
 ```
 
-First connection with safety:
-
-```bash
-ros2 launch dexcap_ros2_control driver.launch.py publish_command:=false
-```
+Optional `start_upper_body`, `start_left_hand`, and `start_right_hand` flags are in the private package README. `publish_command` is not a current launch argument.
 
 ## dexcap_teleop_ws
 

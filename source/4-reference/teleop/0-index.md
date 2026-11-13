@@ -4,15 +4,17 @@ This section documents the teleoperation systems.
 
 ## Overview
 
-The stack supports multiple teleoperation methods:
+The stack supports several teleoperation inputs. They are not interchangeable: some supply **end-effector pose**, some follow in **joint space**, some drive **fingers or grippers**, and some only send **enable / pause / FSM** assists. For a first run, use [VR](../../2-how_to/5-teleoperation/6-vr_teleop.md) or a [game controller](../../2-how_to/5-teleoperation/9-joystick_teleop.md).
 
-| Method | Input Device | Use Case |
-|--------|-------------|----------|
-| VR | VR headset (Pico Enterprise / consumer, Meta Quest) | Remote manipulation |
+| Method | Input | Role |
+|--------|-------|------|
+| VR | Headset + VR controllers (Pico Enterprise / consumer, Meta Quest) | End-effector pose; triggers for gripper/hand; buttons for FSM and pause. The current `./run.sh vr` path starts controller mode; this docs set does not document a launch entry for VR gesture / hand-tracking recognition. |
+| Game controller | Joystick / gamepad (`arms_teleop`) | Arm velocity via `control_input` → twist; chassis `/cmd_vel` in chassis mode |
 | Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
-| DexCap | Gloves | Dexterous teleop |
-| Vive | Trackers | Arm tracking |
-| Wuji | Gloves | Hand tracking |
+| DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves |
+| Wuji gloves (internal) | Gloves, optional Vive Tracker | Finger / hand joints; optional arm pose from Vive Tracker |
+| Vive Tracker (internal) | SteamVR Vive Tracker (`vive_tracker_teleop`) | Arm end-effector pose. Named **Vive Tracker** in the package and in these docs, not “Valve Tracker”. |
+| Foot pedal | USB pedal (`arms_teleop`, SayoDevice CM6K) | Assist only: events on `/teleop/controller_state`. Not a complete teleop setup. |
 
 ```{admonition} VR Headset Recommendation
 :class: tip
@@ -36,7 +38,8 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 
 ## Topic Contracts
 
-All teleop systems publish to standard topics:
+Pose-based VR, Wuji, and Vive Tracker paths publish to these end-effector topics. Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command` instead. The foot pedal publishes `/teleop/controller_state` only.
+
 
 | Topic | Type | Description |
 |-------|------|-------------|

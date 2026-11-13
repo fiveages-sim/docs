@@ -80,7 +80,7 @@ After access to a private remote, init the path named in `.gitmodules` (or let `
 
 Gen2 USD is **W2 and S2** only. It does **not** publish W2R or S2R.
 
-Checkout: standalone `git submodule update --init humanoid/FiveAges/Gen2` (and `…/Gen1`) as in the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §2.1, or FaSim-Isaac **`./init.sh`** (operation that inits `robots/` via `submodules_visibility.conf`), then **`./run.sh`**. FaSim’s visibility file still marks the FiveAges Gen\* trees `private`, so `./init.sh` does not select them by default. See [robot_usds](../simulation/3-robot_usds.md).
+Checkout: standalone `git submodule update --init humanoid/FiveAges/Gen2` (and `…/Gen1`) as in the [robot_usds README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) §2.1, or FaSim-Isaac **`./init.sh`** (operation 1 inits `robots/` via `submodules_visibility.conf`), then **`./run.sh`**. On FaSim-Isaac `main` as checked on 2026-11-13, Gen1 and Gen2 are marked public, so operation 1 selects them by default. Gen3 stays private and still needs access. See [robot_usds](../simulation/3-robot_usds.md).
 
 ## Private: deploy
 

@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 12:40+0000\n"
+"POT-Creation-Date: 2026-11-13 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,32 +20,40 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/2-how_to/2-simulation/0-index.md:1
-#: b6e74f58986c4fee9dc15910581ecc9b
+#: c876f2d9a13349308822311ae70e70a3
 msgid "Simulation"
 msgstr "仿真"
 
 #: ../../source/2-how_to/2-simulation/0-index.md:3
-#: 47eccbca145b4a5394c46a3b147a1224
-msgid "Physics simulation with Gazebo or NVIDIA Isaac Sim."
-msgstr "使用 Gazebo 或 NVIDIA Isaac Sim 进行物理仿真。"
+#: da4035665a1d43b7a5ee55926bf58060
+msgid ""
+"The default physics simulation path is NVIDIA Isaac Sim (FaSim). Start "
+"Isaac and run the first checks: [Isaac Sim](4-isaac_sim.md). To view and "
+"control the robot in a browser while Sim is running, start Viser first: "
+"[Start Viser](../3-programming/5-python_interface.md#start-viser). "
+"Mechanisms, extensions, and USD layout: [Simulation "
+"reference](../../4-reference/simulation/0-index.md)."
+msgstr "默认的物理仿真路径是 NVIDIA Isaac Sim（FaSim）。启动 Isaac 并做第一次检查：[Isaac Sim](4-isaac_sim.md)。仿真运行时若要在浏览器里查看并控制机器人，先启动 Viser：[启动 Viser](../3-programming/5-python_interface.md#start-viser)。机制、扩展和 USD 布局：[仿真参考](../../4-reference/simulation/0-index.md)。"
 
 #: ../../source/2-how_to/2-simulation/0-index.md:5
-#: 96052c13b8354b6d88f6d045d9f8aa11
+#: 927de6ea948546c3be2bcbee41c8b594
 msgid ""
 "`hardware:=mock_components` / `gz` / `isaac` are launch keys, not vendor "
-"hardware-interface packages under `hardwares/`. Plugin table: "
-"[ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md). "
-"Isaac topic `<param>` names: "
+"hardware-interface packages under `hardwares/`. `isaac_sim` is set inside"
+" Isaac on the in-process path; it is not a `demo.launch.py` flag. Plugin "
+"table: [ros2_control in This "
+"Stack](../../3-concepts/1-ros2_control_here.md). Isaac topic `<param>` "
+"names: "
 "[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)."
-msgstr ""
-"`hardware:=mock_components` / `gz` / `isaac` 是 launch 键，不是 `hardwares/` "
-"下的厂商驱动层包。插件表：[本栈中的 "
-"ros2_control](../../3-concepts/1-ros2_control_here.md)。Isaac 话题 `<param>`"
-" "
-"名：[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)。"
+msgstr "`hardware:=mock_components` / `gz` / `isaac` 是 launch 键，不是 `hardwares/` 下的厂商驱动层包。`isaac_sim` 是在进程内路径上、由 Isaac 内部设置的，不是 `demo.launch.py` 的参数。插件表：[本栈中的 ros2_control](../../3-concepts/1-ros2_control_here.md)。Isaac 话题 `<param>` 名称：[topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md)。"
 
 #: ../../source/2-how_to/2-simulation/0-index.md:7
-#: 511e3ddd3a0a4ed5b61000a814dd38d0
+#: 88a4e2c74efa4cbe9361882830e5b712
+msgid "Gazebo remains available as an alternative backend: [Gazebo Simulation](3-gazebo_sim.md)."
+msgstr "Gazebo 仍可作为备选后端使用：[Gazebo 仿真](3-gazebo_sim.md)。"
+
+#: ../../source/2-how_to/2-simulation/0-index.md:9
+#: 3dc5a6e05fa5443c85a698909f61b61a
 msgid ""
 "Isaac USD → composer → LeRobot datagen is the [Synthetic "
 "Data](../7-synthetic_data/0-index.md) How-To category, not Gazebo."

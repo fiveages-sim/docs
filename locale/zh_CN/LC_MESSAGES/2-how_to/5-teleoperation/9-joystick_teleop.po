@@ -1,0 +1,210 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-22 06:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:1
+#: 341cbe96e29d4d2d94edd2f238e45fbe
+msgid "Joystick teleop"
+msgstr "手柄遥操作"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:3
+#: 6851f8f07bc245f5a5c5c2e0c1a3cbda
+msgid ""
+"Use a game controller (joystick / gamepad) to command the arms and, in "
+"chassis mode, the mobile base. The package is "
+"[`arms_teleop`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md) in "
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). It"
+" also contains a foot-pedal assist, which is not a complete teleop setup."
+msgstr ""
+"用游戏手柄（joystick / gamepad）控制手臂，在底盘模式下还可以控制移动底盘。软件包是 "
+"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 里的 "
+"[`arms_teleop`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。它还包含脚踏板辅助，那并不是完整的遥操作方案。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:5
+#: f753df2abfb54a229497459f6c04237b
+msgid "Prerequisites"
+msgstr "前提"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:7
+#: 34ca6d8f43c94ba6b67bed21660ecad1
+msgid ""
+"A robot stack is already running (mock, Isaac Sim, or real). This launch "
+"does not start the controller."
+msgstr "机器人运控已经在运行（mock、Isaac Sim 或真机）。这次启动不会拉起控制器。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:8
+#: 105d41aaf0af4e04a739670fde76d2b3
+msgid ""
+"A game controller is connected. The default device is `/dev/input/js0`."
+msgstr "已接入游戏手柄。默认设备是 `/dev/input/js0`。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:10
+#: b711acc6ae6145a99362b03f42ae7451
+msgid "Start the joystick"
+msgstr "启动手柄"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:12
+#: 98e886ee9eef40f28d79a70fa1cb0ff0
+msgid ""
+"source install/setup.bash\n"
+"ros2 launch arms_teleop joystick_teleop.launch.py"
+msgstr ""
+"source install/setup.bash\n"
+"ros2 launch arms_teleop joystick_teleop.launch.py"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:17
+#: ce7d2a2be91a487983688b8fddffef82
+msgid ""
+"By default `joy_driver:=auto` uses `game_controller_node` when "
+"`joy_enumerate_devices` reports the device as mapped, with "
+"`generic_gamepad.yaml` (SDL standard layout). Unmapped devices fall back "
+"to `joy_node` and `default.yaml`. The package README lists typical mapped "
+"gamepads; do not treat that list as a compatibility guarantee for an "
+"untested device."
+msgstr ""
+"默认 `joy_driver:=auto`：当 `joy_enumerate_devices` 把设备报告为已映射时，使用 "
+"`game_controller_node`，配置为 `generic_gamepad.yaml`（SDL 标准布局）。未映射的设备会回退到 "
+"`joy_node` 和 `default.yaml`。软件包 README 列出了常见的已映射手柄；不要把这份名单当成对未测试设备的兼容性保证。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 233436aa380a4098b93e40b6c1231e99
+msgid ""
+"Joystick control starts **disabled**. Press the **right stick** to enable "
+"it, then move the sticks. Press the right stick again to disable."
+msgstr "手柄控制默认是**关闭**的。按下**右摇杆**使能，再拨动摇杆。再按一次右摇杆则关闭。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:21
+#: 393f8f36280549f29a84d829395c11b0
+msgid "List connected devices:"
+msgstr "列出已连接的设备："
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:23
+#: f9545e70fd004e17a549bce20e9bd0b2
+msgid "ros2 run joy joy_enumerate_devices"
+msgstr "ros2 run joy joy_enumerate_devices"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:27
+#: bb69137240e342248af0acd29c8e1310
+msgid ""
+"If more than one controller is connected, pass the device you want, for "
+"example `joy_dev:=/dev/input/js1`. Mapping overrides and keyboard teleop "
+"are in the [package README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md). Do not run"
+" `joystick_teleop` and `keyboard_teleop` at the same time if they would "
+"publish to the same topics."
+msgstr ""
+"如果接了不止一个手柄，传入你要用的设备，例如 `joy_dev:=/dev/input/js1`。映射覆盖和键盘遥操作见 [软件包 "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。如果 "
+"`joystick_teleop` 和 `keyboard_teleop` 会往同一组话题发布，不要同时运行。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:29
+#: 01dfa6532c6544898c34d311367f0fe6
+msgid "What it publishes"
+msgstr "它发布什么"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:31
+#: c89663d28fa04ce08a81398c38d55830
+msgid ""
+"The joystick node publishes `control_input` "
+"(`arms_ros2_control_msgs/Inputs`). "
+"[arms_target_manager](../../4-reference/controllers/6-gripper_teleop_plugins.md)"
+" scales that message into `/left_target/twist` and `/right_target/twist`. "
+"In chassis mode it publishes `/cmd_vel`. The joystick stack also publishes"
+" `/fsm_command`."
+msgstr ""
+"手柄节点发布 "
+"`control_input`（`arms_ros2_control_msgs/Inputs`）。[arms_target_manager](../../4-reference/controllers/6-gripper_teleop_plugins.md)"
+" 会把它换算成 `/left_target/twist` 和 `/right_target/twist`。在底盘模式下会发布 "
+"`/cmd_vel`。手柄这一路还会发布 `/fsm_command`。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:33
+#: 53b54a01befb4641b18a9eb711172bdd
+msgid "What you should see"
+msgstr "预期看到的结果"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:35
+#: 941dd1281aa54ddeb931182e6300fde9
+msgid ""
+"After you enable the controller, stick motion changes the active arm’s "
+"target, or the chassis when you are in chassis mode. `teleop_mode` reports"
+" whether the joystick is active."
+msgstr "使能之后，拨动摇杆会改变当前手臂的目标；处于底盘模式时则控制底盘。`teleop_mode` 会报告手柄是否处于活动状态。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:39
+#: 567a7ef317b04d689212fa3df02d72eb
+msgid "Foot pedal (assist only)"
+msgstr "脚踏板（仅作辅助）"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:41
+#: 1fc23d97e7cb4a318c57283be56f7c0b
+msgid ""
+"`foot_pedal_teleop` is an **assist**, not a standalone teleop path. It "
+"reads one USB foot pedal (the packaged udev rule is for the SayoDevice "
+"CM6K) and publishes events on `/teleop/controller_state`. It does **not** "
+"publish `/fsm_command`. FSM transitions and teleop toggles are handled by "
+"`VRInputHandler`."
+msgstr ""
+"`foot_pedal_teleop` 是**辅助输入**，不是独立的遥操作路径。它读取一块 USB 脚踏板（随包装的 udev 规则针对 "
+"SayoDevice CM6K），并在 `/teleop/controller_state` 上发布事件。它**不会**发布 "
+"`/fsm_command`。FSM 切换和遥操作开关由 `VRInputHandler` 处理。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:43
+#: 0ecd6b2421de488bb7d92f08e99fa4d3
+msgid "With exactly one supported pedal connected:"
+msgstr "在恰好接入一块受支持的脚踏板时："
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:45
+#: 985b0e06aab547f9ad8e39407ea01f3f
+msgid "ros2 run arms_teleop foot_pedal_teleop"
+msgstr "ros2 run arms_teleop foot_pedal_teleop"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:49
+#: 829d869c609e412bae4d8f655e7aa985
+msgid ""
+"The package README documents the event map (FSM up/down, left/right arm "
+"teleop enable, STORAGE/UPDATE, mirror), udev setup, and how to choose a "
+"device when more than one pedal is connected."
+msgstr ""
+"软件包 README 记录了事件映射（FSM 上/下、左/右臂遥操作使能、STORAGE/UPDATE、镜像）、udev "
+"配置，以及接入多块脚踏板时如何选择设备。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:51
+#: 8302626a70524fbfac50ebdf9cf4b869
+msgid "Related"
+msgstr "相关页面"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:53
+#: 7b816a0c685d49e8a92583bd70eeecf7
+msgid ""
+"[VR Teleoperation](6-vr_teleop.md) — headset controllers for end-effector "
+"pose"
+msgstr "[VR 遥操作](6-vr_teleop.md) — 用头显手柄提供末端位姿"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:54
+#: 481b3430c35743eab05122b8a9ce7b80
+msgid ""
+"[arms_teleop README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
+msgstr ""
+"[arms_teleop README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:55
+#: dcc676cdec124b49844b8ed70c646258
+msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
+msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"

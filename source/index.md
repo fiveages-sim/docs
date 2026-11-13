@@ -15,7 +15,7 @@ FiveAges Sim provides:
 - **Unified robot descriptions** — URDF/xacro packages for wheeled-arm humanoids, manipulators, and mobile robots
 - **Hardware interfaces** — ROS 2 control hardware plugins for various robot platforms (Dobot, ARX, Galbot, HighTorque, and more)
 - **MPC controllers** — OCS2-based arm (分体控制) and 全身控制
-- **Simulation backends** — Gazebo Harmonic, and **FaSim** (Isaac Sim high-fidelity + ROS 2 运控, matching real-robot motion plus ground truth)
+- **Simulation backends** — **FaSim** (Isaac Sim high-fidelity + ROS 2 运控, matching real-robot motion plus ground truth) is the default physics path; Gazebo Harmonic remains available
 - **Teleop solutions** — VR, isomorphic teleop, DexCap, and glove-based teleoperation
 - **Python libraries** — High-level interfaces for robot control and data collection
 - **Synthetic data pipeline** — Isaac USD scenes, task-queue orchestration, LeRobot record/export

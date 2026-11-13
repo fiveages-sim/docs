@@ -9,8 +9,8 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 | Day 0 | Map the stack | 1-2 hours reading |
 | Day 1 | First motion in sim | 2-4 hours |
 | Day 2 | Switch robots | 1-2 hours |
-| Day 3 | Gazebo / Isaac | 2-4 hours |
-| Day 4 | Python interface | 2-3 hours |
+| Day 3 | fa-py-libraries and Viser | 2-3 hours |
+| Day 4 | Isaac Sim | 2-4 hours |
 | Day 5 | Teleoperation | 2-4 hours |
 | Day 6 | Real hardware | Varies |
 | Day 7 | Bring one new robot into FaSim | One robot, mock then sim |
@@ -55,6 +55,14 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ros2 launch ocs2_arm_controller demo.launch.py
    ```
 
+After this launch, the clip below shows the effect in RViz (a single arm): drag the end-effector target, adjust joints with the JointControlPanel sliders, and use HOME to reset. It does not show the terminal or the launch command, so it is not a complete startup recording, and it is not Isaac physics verification.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/day1-first-motion-rviz-single-arm.mp4" type="video/mp4">
+</video>
+```
+
 **Primary sources:** [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws), [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
 
 **Outcome:** RViz opens with the OCS2 demo; FSM starts in HOLD. See [Quick Demo](../1-getting_started/1-quick_demo_public.md).
@@ -66,21 +74,85 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 **Tasks:**
 1. Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
 2. Rebuild the packages you need, then `source install/setup.bash`.
-3. Launch with the new robot (omit `hardware:=` to keep `mock_components`):
-   ```bash
-   ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
-   ```
-   `arx_acone` is **Acone** (dual-arm), not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+3. Launch one of the robots below. Omit `hardware:=`; the launch default is `mock_components`.
+
+### ARX Lift 2S
+
+Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+
+```bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
+```
+
+`arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator (arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships in the `ros-jazzy-arms-ros2-control` deb.
+
+### FiveAges W2 with xhand1
+
+W2 is a FiveAges wheeled-arm robot. Its URDF is public ([fa-w2-description](https://github.com/fiveages-sim/fa-w2-description)); the usual workspace is [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) (default branch `fa-w2`). See [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md) and [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
+
+```bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w2 type:=xhand1
+```
+
+This clip is a W2 with xhand1 operation demo: in RViz, drag the dual-arm end-effector targets, reset both arms, and adjust the head joints with JointControlPanel.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/day2-fiveages-w2-xhand1.mp4" type="video/mp4">
+</video>
+```
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You can switch between Dobot CR5, Acone (dual-arm), Galbot, etc.
+**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to a `full_body.launch.py` robot, for example ARX Lift 2S or FiveAges W2 with xhand1.
 
-## Day 3: Gazebo and Isaac Simulation
+## Day 3: fa-py-libraries and Viser
 
-**Goal:** Run physics simulation instead of mock hardware.
+**Goal:** Install fa-py-libraries and open Viser in a browser, so you can see the robot and send basic commands before you start Isaac Sim.
 
-### Gazebo Harmonic
+Viser is the browser 3D view and control page from [ros2-viser](https://github.com/fiveages-sim/ros2-viser). Launch it from **fa-py-libraries**, not as a standalone product and not from lerobot_ros2.
+
+**Tasks:**
+
+1. Keep a robot demo from Day 1 or Day 2 running. The ros2-viser README asks you to start the control stack first; `/robot_description` must be available.
+2. Install fa-py-libraries (Python 3.12 env; this also installs `ros2_robot_interface` and `ros2-viser`):
+   ```bash
+   git clone https://github.com/fiveages-sim/fa-py-libraries.git
+   cd fa-py-libraries
+   ./init.sh all
+   ```
+3. Start Viser from that repository:
+   ```bash
+   ./run.sh viser
+   ```
+   `./run.sh` with no arguments opens a menu; item 1 is `ros2-viser launch`. The command runs `ros2-viser/launch.py`.
+4. In a browser, open the URL that Viser prints in the terminal (`访问 URL`). The same output shows the host and port; this launch has no separate host/port flag. You can also scan the QR code it prints.
+5. The page starts as an empty scene. If only one robot is present, it loads automatically. If there are several, pick one under “选择命名空间”. If the robot comes up later, click “刷新命名空间列表”.
+6. Confirm the model is visible. For a first control check: use HOME / HOLD on the state panel; switch to OCS2 and drag the end-effector handles; or switch to MOVEJ, move the joint sliders, and send the target. On a mobile base such as G1-D, `launch.py` sets the visualization frame to `world`; you can also choose `map` or `odom` on the page so the model and the handles share the same ground.
+
+Do not copy the rest of the Python API here. Full Viser UI: [ros2-viser](../4-reference/python_apps/3-ros2_viser.md). Writing scripts with `ROS2RobotInterface`: [Python Interface](../2-how_to/3-programming/5-python_interface.md).
+
+**Primary sources:** [fa-py-libraries](https://github.com/fiveages-sim/fa-py-libraries), [ros2-viser](https://github.com/fiveages-sim/ros2-viser)
+
+**Outcome:** You can open Viser in a browser, see the robot, and use the page to move it while a demo is running.
+
+## Day 4: Isaac Sim
+
+**Goal:** Run physics simulation in Isaac Sim (FaSim), instead of mock hardware. This is the default simulation path.
+
+**FaSim** pairs NVIDIA Isaac Sim with the same ROS 2 运控 stack as the real robot. Follow [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md): clone [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac), run `./init.sh`, then `./run.sh`, and connect with **one** of the two paths on that page (`hardware:=isaac`, or Play on a `ROS2ControlLaunch` payload). Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`.
+
+Start Viser the way you did on Day 3, after the Isaac / ROS 2 stack is up, so you can view and control the robot in the browser: [Start Viser](../2-how_to/3-programming/5-python_interface.md#start-viser). A G1-D demonstration of full-body control and chassis motion is on that How-To page: [G1-D full-body control and chassis motion](../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-chassis-motion).
+
+What the two connections and the Kit extensions do: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md). Assets: [robot_usds](../4-reference/simulation/3-robot_usds.md), [Environment assets](../4-reference/simulation/5-env_assets.md).
+
+**Primary sources:** [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac), [robot_usds](https://github.com/fiveages-sim/robot_usds)
+
+**Outcome:** You can start FaSim and see the robot move in Isaac Sim with the same ROS 2 运控 as the real robot, plus simulation ground truth.
+
+### Gazebo (alternative)
+
+If you need Gazebo Harmonic instead, follow [Gazebo Simulation](../2-how_to/2-simulation/3-gazebo_sim.md):
 
 ```bash
 # Install Gazebo packages (if not already)
@@ -90,94 +162,57 @@ sudo apt install ros-jazzy-gz-*
 ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 ```
 
-### Isaac Sim (FaSim)
-
-**FaSim** pairs NVIDIA Isaac Sim high-fidelity simulation with the same ROS 2 运控 stack as the real robot, so motion matches hardware while the sim supplies ground truth. Assets: [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac) (one-click USD + scene pull), [robot_usds](https://github.com/fiveages-sim/robot_usds).
-
-```{admonition} FaSim-Isaac scripts
-:class: warning
-
-Use **FaSim-Isaac** `./init.sh` then `./run.sh`. Default Isaac path is `ISAACSIM_DIR` (`~/isaacsim`); override in `config/fa_sim.local.conf`. Version for the optional ROS 2 workspace comes from the init menu (fallback list in `config/fa_sim.conf`), not a hardcoded minor version in these docs.
-```
-
-1. Install NVIDIA Isaac Sim (default directory `~/isaacsim`, or set `ISAACSIM_DIR`).
-2. Clone and initialize FaSim-Isaac:
-   ```bash
-   git clone git@github.com:fiveages-sim/FaSim-Isaac.git
-   cd FaSim-Isaac
-   ./init.sh
-   ```
-3. Start Isaac (`./run.sh` menu: PhysX / Newton / Headless Streaming):
-   ```bash
-   ./run.sh
-   ```
-4. Connect ROS 2 using **one** of the two Isaac paths in [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md):
-   - Topic bridge, from the workspace terminal: `ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac`
-   - In-process: open a USD whose ROS payload contains `ROS2ControlLaunch` and press Play. That path sets `hardware=isaac_sim` inside Isaac. It is not a second `hardware:=` on `demo.launch.py`.
-
-**Primary sources:** [FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac), [robot_usds](https://github.com/fiveages-sim/robot_usds)
-
-**Outcome:** Physics-based simulation with Gazebo, or FaSim (Isaac + ROS 2 运控, matching real-robot motion plus ground truth).
-
-## Day 4: Python Interface
-
-**Goal:** Control the robot programmatically.
-
-**Tasks:**
-1. Install fa-py-libraries:
-   ```bash
-   cd ~/
-   git clone https://github.com/fiveages-sim/fa-py-libraries.git
-   cd fa-py-libraries
-   ./init.sh all    # Python 3.12 env; installs ros2_robot_interface and related submodules
-   ```
-2. Write a simple script:
-   ```python
-   from ros2_robot_interface import ROS2RobotInterface, ROS2RobotInterfaceConfig
-
-   interface = ROS2RobotInterface(ROS2RobotInterfaceConfig())
-   interface.connect()
-   joint_state = interface.get_joint_state()
-   pose = interface.left_arm_handler.get_pose()
-   ```
-
-**Primary sources:** [fa-py-libraries](https://github.com/fiveages-sim/fa-py-libraries), [ros2_robot_interface](https://github.com/fiveages-sim/ros2_robot_interface)
-
-**Outcome:** You can script robot motions in Python.
-
 ## Day 5: Teleoperation
 
-**Goal:** Control the robot via VR or isomorphic teleop.
+**Goal:** Start with VR or a game controller, then know what the other input methods are for.
 
-### VR Teleoperation
+Keep the robot stack from Days 1–4 running. Teleop only publishes targets or assist events into that stack; it does not replace it.
 
-**Supported headsets:** Pico Enterprise (recommended; USB 网络共享, Enterprise App), Pico consumer (different App), and Meta Quest. Backends: WebXR (`./run.sh vr`) or XRoboToolkit (`./run.sh vr-xrt`).
+Inputs in this stack have different jobs: **end-effector pose** (VR controllers, Vive Tracker, DexCap exoskeleton arms), **joint-space following** (isomorphic teleop), **fingers / grippers** (VR triggers, Wuji gloves, DexCap gloves), and **enable / pause / FSM assists** (some VR buttons, the joystick enable switch, the foot pedal).
+
+### Start here: VR
+
+**What it is for.** Drive the arms from the headset controllers’ end-effector pose. Triggers operate the gripper or hand. Buttons handle FSM, pause, and — on 全身 — some arm enable/disable assists. Use this path when you have a Pico or Quest headset.
+
+**Minimum steps.** Follow [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md). You need fa-py-libraries from Day 3, `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off), and a network to the headset. Then:
 
 ```bash
-cd fa-py-libraries
+cd ~/fa-py-libraries
 ./run.sh vr
 ```
 
-```{admonition} Pico Enterprise vs consumer
-:class: tip
+Open the URL shown in the headset browser (WebXR). For the lower-latency XRoboToolkit path, use `./run.sh vr-xrt-service` then `./run.sh vr-xrt` as on that page. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享, and a **different App** from Pico consumer).
 
-Pico **Enterprise** and Pico **consumer** are different SKUs: Enterprise supports USB 网络共享 and uses a **different App**. Install the App that matches the headset edition.
-```
+**What you should see.** The arms follow the VR controllers, and you can change FSM and the gripper from the controller buttons.
 
-### Isomorphic Teleop (HighTorque Panthera HT)
+### Start here: game controller (joystick)
 
-Master–slave **isomorphic teleop** (同构遥操作). On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh` — see [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md). Mock (package README):
+**What it is for.** A gamepad or joystick, without a headset, to command arm velocity (`control_input` → `/left_target/twist` and `/right_target/twist`) and, in chassis mode, `/cmd_vel`. Use this path when you only have a game controller.
+
+**Minimum steps.** With the robot stack already running, follow [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md):
 
 ```bash
-ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
-  role:=master hardware:=mock_components
-ros2 launch drag_teleop_controller drag_teleop_controller.launch.py \
-  role:=slave hardware:=mock_components
+ros2 launch arms_teleop joystick_teleop.launch.py
 ```
 
-**Primary sources:** VR pose publisher, [drag_teleop_controller](https://github.com/fiveages-sim/drag_teleop_controller)
+Joystick control starts disabled; press the right stick to enable it (package README). Most mapped gamepads use the generic SDL layout automatically.
 
-**Outcome:** Real-time control via VR headset or master–slave isomorphic teleop.
+**What you should see.** After you enable the controller, stick motion changes the arm target, or the chassis in chassis mode.
+
+### Other methods
+
+These are additional ways to supply pose, finger, or assist signals. Use the linked pages for setup; this day does not walk through them.
+
+- **Isomorphic teleop** (同构遥操作) — Master–slave joint following on HighTorque Panthera HT, not end-effector pose. On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh`: [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
+- **DexCap exoskeleton and gloves** (internal) — The exoskeleton measures waist and arm joints; the gloves measure finger joints. Combined arm + hand teleop: [DexCap Teleoperation](../2-how_to/5-teleoperation/8-dexcap_teleop.md).
+- **VR gesture / hand tracking** — The current `./run.sh vr` path starts **controller** mode. This docs set does not document a launch entry that turns on VR gesture or hand-tracking recognition.
+- **Wuji gloves** (internal) — Finger and hand joint teleop, with optional Vive Tracker for arm pose: [wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md).
+- **Foot pedal** — An assist, not a complete teleop setup. `foot_pedal_teleop` in `arms_teleop` publishes events on `/teleop/controller_state` (FSM up/down, arm enable, STORAGE/UPDATE, mirror). It does not replace VR or the game controller: [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only).
+- **Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to arm end-effector targets (`vive_tracker_teleop`). That is the name used in the package and in these docs; it is not documented as “Valve Tracker”: [Vive Tracker](../4-reference/teleop/6-vive_tracker.md).
+
+**Primary sources:** [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md), [arms_teleop README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)
+
+**Outcome:** You can run either the VR path or the game-controller path, and you can tell which of the other devices is for pose, fingers, or enable/pause assists.
 
 ## Day 6: Real Hardware
 
@@ -216,23 +251,22 @@ You can run whole-body control without those two source checkouts. The standard 
 
 **Safety:** Prove the motion in `mock_components`, or in the sim path that workspace documents, before you set `hardware:=real`.
 
+(day-7-bring-one-new-robot-into-fasim)=
 ## Day 7: Bring one new robot into FaSim
 
-**Goal:** Connect a robot that is not already a demo, so Isaac and the ROS 2 stack move it. You are done when a command moves that robot’s joints in the viewport. Replaying CR5 or W2 is practice, not the task.
+**Goal:** Independently connect a robot that is not already a demo, so Isaac and the ROS 2 stack move it. This is the exam, not a walkthrough of CR5 or W2. You are done when a command moves that robot in the viewport and you can hand in the items below.
 
-**Before you start.** Finish Days 0–3. You can reach HOLD with `hardware:=mock_components`, Isaac Sim is installed, `ISAACSIM_DIR` is set, and you have run FaSim `./init.sh` and `./run.sh`.
+**Before you start.** Finish Days 0–4. You can reach HOLD with `hardware:=mock_components`, Viser opens in the browser, Isaac Sim is installed, `ISAACSIM_DIR` is set, and you have run FaSim `./init.sh` and `./run.sh`.
 
-File layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Starting Isaac and choosing a connection: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). What the two connections do: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
+Package layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Start Sim and choose a connection: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). In-process inputs, swerve chassis graphs, clock, and TF: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
 
 ### Build these four pieces
 
 1. **A description.** Add a `{robot}_description` package whose xacro includes a `ros2_control` block. Simulation plugins come from [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro). Before you open Isaac, `ros2 launch ocs2_arm_controller demo.launch.py robot:=<key>` reaches HOLD. Leave `hardware` at the default.
 
-2. **A USD stage.** `./run.sh` opens it, and the stage has one ArticulationRoot for this robot. Put it under [robot_usds](https://github.com/fiveages-sim/robot_usds), or in a project scene you can open. There is no `./run.sh --robot`.
+2. **A USD stage.** `./run.sh` opens it, and the stage has one ArticulationRoot for this robot. Put it under [robot_usds](../4-reference/simulation/3-robot_usds.md), or in a project scene you can open. There is no `./run.sh --robot`.
 
-3. **One connection for those joints.**
-   - **Topic bridge.** `hardware:=isaac` uses `topic_based_ros2_control/TopicBasedSystem`. The xacro `joint_commands_topic` / `joint_states_topic` and the graph `topicName` are the same strings. The shared macro writes `/isaac/joint_command` and `/isaac/joint_states`. W2’s topic-bridge payload uses `/joint_command` and `/joint_states`. `demo.launch.py` has no namespace argument.
-   - **In-process.** Press Play on a payload that contains `ROS2ControlLaunch`. W2’s in-process payload is [`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda). The node sets `hardware=isaac_sim` and `isaac_prim_path`. The description xacro must accept `isaac_sim`.
+3. **One connection for those joints.** Use the topic bridge *or* the in-process graph, as in [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). For `isaac_sim`, the xacro must accept that hardware key, and the payload must contain `ROS2ControlLaunch` ([ROS 2 Control extension](../4-reference/simulation/2-fasim_isaac.md#ros-2-control-extension)). On a four-wheel swerve chassis such as Linkhou S2 or Taku, the steer and drive joints are commanded by `SwerveController`, not by that hardware key ([Swerve extension](../4-reference/simulation/2-fasim_isaac.md#swerve-extension)).
 
 4. **Controllers that match the body.** An arm, or a split-body robot, uses `ocs2_arm_controller` (`demo` or `split_body`). A planner model that includes the mobile base uses `full_body.launch.py` and `ocs2_wbc_controller`. That controller is already in the `ros-jazzy-arms-ros2-control` deb from Day 6. Cloning [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how you read or edit the source. Leave `infoFile` empty to keep the description default. Lock a mobile base with the `mobile_base_tcp` info file and `BASE_LOCK`. `full_body` together with a `fixed_base` info file has no virtual chassis joint for that lock, and arm enable can stay in `WAITING_FOR_ENABLE_POLICY`.
 
@@ -246,24 +280,23 @@ File layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Starting
 ### What you hand in
 
 - The description package, or the branch, and the USD path you opened.
-- The launch line, or the `ROS2ControlLaunch` prim you played.
+- The launch line, or the `ROS2ControlLaunch` prim you played (and the swerve graph, if you used one).
 - The joint-state topic or the controller list, and the motion you sent.
+- A short note of known limits, plus steps another person can replay, and a demo recording.
 
 ### How you know it works
 
-Check joint control, base motion, the end effector, and sensor data against the robot you chose.
+Check the functions that belong to the robot you chose: joint control, chassis motion, end effector, and sensor data. For a wheeled robot, show that the base drives; for a robot with a dexterous hand, show that the hand opens and closes.
 
-**Joints.** Mock reaches HOLD, Play runs, and the joint names in the state topic or in `ros2 control list_controllers` match the xacro. A command moves those joints in the viewport. On an in-process graph, `/robot_description` comes from `robot_state_publisher`, and the controller manager starts with robot-description publishing turned off.
+**Joints.** Mock reaches HOLD, Play runs, and the joint names in the state topic or in `ros2 control list_controllers` match the xacro. A command moves those joints in the viewport.
 
-**Base.** Isaac publishes `world → odom → base_*`. `robot_state_publisher` publishes the URDF tree, including `base_footprint → base_link` when both links exist. OCS2 `baseFrame` is that same link. One node publishes each TF edge. A ROS namespace does not rename `frame_id`. A base that drives on a map uses `NavigationLaunch` on the USD. `map` is a path relative to the opened `env/` layer, and the node starts `navigation_isaac_gt.launch.py`. Composer `ros2-stack` is a separate process on the host.
+**Base.** Follow the [TF](../4-reference/simulation/2-fasim_isaac.md#tf) and, if the robot drives on a map, [Navigation](../4-reference/simulation/2-fasim_isaac.md#navigation) sections. A ROS namespace does not rename `frame_id`. Composer `ros2-stack` is a separate process on the host.
 
 **End effector.** The launch arguments `type`, `left_type`, or `right_type` name this gripper or hand, and you can see it open or close. There is no `gripper:=` argument.
 
 **Sensors.** While Play is running, the camera or lidar topics from the scene are publishing. Camera rigs stay on the scene USD.
 
-**A second robot on the same stage.** Each ArticulationRoot has its own graph and its own `ROS2ControlLaunch` `namespace`. Topics live under `/<ns>/`. Frame names stay `world`, `odom`, and `base_link`.
-
-A motion that finishes much too fast is a `/clock` problem. The in-process W2 payload takes the clock from the physics step. The topic-bridge payload still takes it from the playback tick. The [FaSim reference](../4-reference/simulation/2-fasim_isaac.md) describes that clock. Changing joint gains does not fix it.
+If a timed motion finishes much too fast, check `/clock` against [Clock](../4-reference/simulation/2-fasim_isaac.md#clock) before you edit joint gains.
 
 ## Optional: Synthetic data (Isaac)
 

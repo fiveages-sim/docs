@@ -433,6 +433,119 @@ msgstr ""
 "[wuji-ros2-control](../../4-reference/teleop/7-wuji_hand_hi.md)（灵巧手硬件）— "
 "私有名称见：[驱动层](../../4-reference/hardware/0-index.md)"
 
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:3
+#: da523b8ca2b6427e86ac863eff34082e
+msgid ""
+"Use the DexCap V4 exoskeleton and gloves for combined arm and hand "
+"teleoperation. The exoskeleton measures waist and arm joints; the gloves "
+"measure finger joints."
+msgstr "用 DexCap V4 外骨骼和手套做臂手一体遥操作。外骨骼测腰部和手臂关节，手套测手指关节。"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:14
+#: 5d1438c38cda4c2888b450c4d6f68eee
+msgid "Waist and arm joint measurement from the exoskeleton"
+msgstr "由外骨骼测量腰部和手臂关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:15
+#: 192c8bf4297349b4ad2b848a576663e2
+msgid "Finger joint mapping from the gloves to robot hands"
+msgstr "由手套把手指关节映射到机器人手"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:41
+#: e728718175024b48bebeda9bf09b3cf4
+msgid "3. Start the driver"
+msgstr "3. 启动驱动"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:43
+#: 2e6895ad19644e3fa8cf1a1f48c6b789
+msgid "ros2 launch dexcap_ros2_control dexcap_driver.launch.py\n"
+msgstr "ros2 launch dexcap_ros2_control dexcap_driver.launch.py\n"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:47
+#: 1839ae13869042998176499edbce54c3
+msgid ""
+"To start only the exoskeleton or only one glove, pass `start_upper_body`, "
+"`start_left_hand`, and `start_right_hand` as in the private package "
+"README. That README is also the place to look for first-connection safety;"
+" `publish_command` is not a current launch argument."
+msgstr ""
+"如果只启动外骨骼或一只手套，按私有软件包 README 传入 `start_upper_body`、`start_left_hand` 和 "
+"`start_right_hand`。首次连接的安全注意事项也在那份 README 里；`publish_command` 不是当前的启动参数。"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 07696f46b1a945e8b965ced2fc43ffa1
+msgid "`/dexcap/waist`"
+msgstr "`/dexcap/waist`"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 2067e909604f4f9eb9a3d210eff8bc3b
+msgid "Waist joints from the exoskeleton"
+msgstr "外骨骼的腰部关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 61b5e12a38d64246bb8592e614b61419
+msgid "`/dexcap/left_arm`"
+msgstr "`/dexcap/left_arm`"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 228e550f72554d69814ba250b78a0e5e
+msgid "Left arm joints from the exoskeleton"
+msgstr "外骨骼的左臂关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 61b5e12a38d64246bb8592e614b61419
+msgid "`/dexcap/right_arm`"
+msgstr "`/dexcap/right_arm`"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 13b1aa1a7d154bceb08814a81703c002
+msgid "Right arm joints from the exoskeleton"
+msgstr "外骨骼的右臂关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 61b5e12a38d64246bb8592e614b61419
+msgid "`/dexcap/left_hand`"
+msgstr "`/dexcap/left_hand`"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 6c8a3d365f0a4025a8c9d0e0d7e4f703
+msgid "Left glove, 21 joints"
+msgstr "左手套，21 个关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 61b5e12a38d64246bb8592e614b61419
+msgid "`/dexcap/right_hand`"
+msgstr "`/dexcap/right_hand`"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:51
+#: 6c8a3d365f0a4025a8c9d0e0d7e4f703
+msgid "Right glove, 21 joints"
+msgstr "右手套，21 个关节"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:72
+#: 7b23ae0f3c704741822e3ddfe1a495ef
+msgid "Mapper outputs and further topics are in the private README."
+msgstr "映射输出和其他话题见私有 README。"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:101
+#: 2063c8a188fb4286bd7be49a85254a12
+msgid ""
+"`/dexcap/left_hand` and `/dexcap/right_hand` publish glove joint angles; "
+"`/dexcap/waist`, `/dexcap/left_arm`, and `/dexcap/right_arm` publish when "
+"the exoskeleton is started"
+msgstr ""
+"`/dexcap/left_hand` 和 `/dexcap/right_hand` "
+"发布手套关节角；启动外骨骼后，`/dexcap/waist`、`/dexcap/left_arm` 和 `/dexcap/right_arm` "
+"会发布数据"
+
+#: ../../source/2-how_to/5-teleoperation/8-dexcap_teleop.md:102
+#: bf52d75b27eb4593a68bc6f45e383be6
+msgid ""
+"The robot hand follows the gloves; the arms follow the exoskeleton when "
+"arm mapping is enabled"
+msgstr "机器人手跟随手套；启用手臂映射时，手臂跟随外骨骼"
+
 #~ msgid ""
 #~ "# Create conda environment\n"
 #~ "conda create -n dexcap python=3.12\n"

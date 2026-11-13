@@ -193,6 +193,139 @@ msgstr "`/teleop/head_pose`"
 msgid "Head tracking"
 msgstr "头部追踪"
 
+
+#: ../../source/4-reference/teleop/0-index.md:7
+#: 9766153d8a1547af9080abf73350f802
+msgid ""
+"The stack supports several teleoperation inputs. They are not "
+"interchangeable: some supply **end-effector pose**, some follow in **joint"
+" space**, some drive **fingers or grippers**, and some only send **enable "
+"/ pause / FSM** assists. For a first run, use "
+"[VR](../../2-how_to/5-teleoperation/6-vr_teleop.md) or a [game "
+"controller](../../2-how_to/5-teleoperation/9-joystick_teleop.md)."
+msgstr ""
+"本系统支持多种遥操作输入，彼此不能互相替代：有的提供**末端位姿**，有的在**关节空间**跟随，有的驱动**手指或夹爪**，有的只发送**使能 /"
+" 暂停 / FSM** 辅助。第一次上手，用 [VR](../../2-how_to/5-teleoperation/6-vr_teleop.md)"
+" 或 [游戏手柄](../../2-how_to/5-teleoperation/9-joystick_teleop.md)。"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 88c3b67f0e9d4c0e838523fcba6d337f
+msgid "Input"
+msgstr "输入"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 9108af5315d94eb8b144a2744ae8633b
+msgid "Role"
+msgstr "职责"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 106e6405454344b4a6196bbc37bd8170
+msgid "Headset + VR controllers (Pico Enterprise / consumer, Meta Quest)"
+msgstr "头显 + VR 手柄（Pico Enterprise / 消费版、Meta Quest）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: e8741034d4dd4939942b94edd1bb14a3
+msgid ""
+"End-effector pose; triggers for gripper/hand; buttons for FSM and pause. "
+"The current `./run.sh vr` path starts controller mode; this docs set does "
+"not document a launch entry for VR gesture / hand-tracking recognition."
+msgstr ""
+"末端位姿；扳机关夹爪或手；按键处理 FSM 和暂停。当前的 `./run.sh vr` 路径启动的是头显手柄模式；本页文档没有给出打开 VR "
+"手势或手部追踪识别的启动入口。"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: ad3439c70f004679a0549dc62c4f941e
+msgid "Game controller"
+msgstr "游戏手柄"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 50ea95abb64b4e4189d3c5547930530d
+msgid "Joystick / gamepad (`arms_teleop`)"
+msgstr "摇杆 / 游戏手柄（`arms_teleop`）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 11bf3c1e6000486f98c26f909ecbdccd
+msgid ""
+"Arm velocity via `control_input` → twist; chassis `/cmd_vel` in chassis "
+"mode"
+msgstr "通过 `control_input` → twist 控制手臂速度；底盘模式下发 `/cmd_vel`"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: bc9d50a9f1034319bbf3aa45a08a5b95
+msgid "DexCap (internal)"
+msgstr "DexCap（内部）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 1459b56a9b204405bf6426480aeede94
+msgid "Exoskeleton + gloves"
+msgstr "外骨骼 + 手套"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: e613b023c352470481ac9f71b1d2fdc2
+msgid "Waist/arm joints from the exoskeleton; finger joints from the gloves"
+msgstr "外骨骼提供腰部和手臂关节，手套提供手指关节"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: acfc6d5819e642a8950ccdc4c9b73b77
+msgid "Wuji gloves (internal)"
+msgstr "Wuji 手套（内部）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 2dbd2f74255041bab30b7514b5c8522d
+msgid "Gloves, optional Vive Tracker"
+msgstr "手套，可选配 Vive Tracker"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 674dcfb4f2d54aff953e093d8a51fcac
+msgid "Finger / hand joints; optional arm pose from Vive Tracker"
+msgstr "手指 / 手部关节；可选由 Vive Tracker 提供手臂位姿"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: c3f92cc6ae344d0189cf6cbc3d07af1a
+msgid "Vive Tracker (internal)"
+msgstr "Vive Tracker（内部）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 1a4dc949f2534b53b44f8cc08d5393fc
+msgid "SteamVR Vive Tracker (`vive_tracker_teleop`)"
+msgstr "SteamVR Vive Tracker（`vive_tracker_teleop`）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 8ff9565e04304cf68863a770ab2df65b
+msgid ""
+"Arm end-effector pose. Named **Vive Tracker** in the package and in these "
+"docs, not “Valve Tracker”."
+msgstr "手臂末端位姿。软件包和本文档中的名称是 **Vive Tracker**，而不是 “Valve Tracker”。"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: 2b1c0b84019b4e54b247e25908a8a2a8
+msgid "Foot pedal"
+msgstr "脚踏板"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: e36fd37bb52744bda67f0715909d13a3
+msgid "USB pedal (`arms_teleop`, SayoDevice CM6K)"
+msgstr "USB 脚踏板（`arms_teleop`，SayoDevice CM6K）"
+
+#: ../../source/4-reference/teleop/0-index.md:0
+#: bfe58a54f8f44dfd8fa696f19931f485
+msgid ""
+"Assist only: events on `/teleop/controller_state`. Not a complete teleop "
+"setup."
+msgstr "仅作辅助：在 `/teleop/controller_state` 上发布事件。不是完整的遥操作方案。"
+
+#: ../../source/4-reference/teleop/0-index.md:41
+#: af105193dfc04342bc3ec15460c45a15
+msgid ""
+"Pose-based VR, Wuji, and Vive Tracker paths publish to these end-effector "
+"topics. Joystick teleop uses `control_input`, twist, `/cmd_vel`, and "
+"`/fsm_command` instead. The foot pedal publishes "
+"`/teleop/controller_state` only."
+msgstr ""
+"基于位姿的 VR、Wuji 和 Vive Tracker 路径会发布到这些末端话题。手柄遥操作改用 "
+"`control_input`、twist、`/cmd_vel` 和 `/fsm_command`。脚踏板只发布 "
+"`/teleop/controller_state`。"
+
 #~ msgid "VR headset"
 #~ msgstr "VR headset"
 

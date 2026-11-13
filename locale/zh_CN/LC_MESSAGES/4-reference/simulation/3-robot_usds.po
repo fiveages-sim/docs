@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-13 02:56+0000\n"
+"POT-Creation-Date: 2026-11-13 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,17 +20,19 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:1
-#: 3353490419244a058a2501d4e25749a6
+#: 2685a53a0c5b407cb3491014e00772cb
 msgid "robot_usds"
 msgstr "robot_usds"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:3
-#: eda6d0b0ff924de5b3ea951653317bd4
-msgid "USD robot asset superproject for Isaac Sim."
+#: 168f7626cf6e44018ea3385fdd3891fc
+msgid ""
+"USD robot asset superproject for Isaac Sim. In FaSim-Isaac this tree is "
+"the `robots/` submodule."
 msgstr "面向 Isaac Sim 的 USD 机器人资产超级项目。"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:5
-#: 9fe2e1073149443b8508e41e51ca4e78
+#: ced9b450966e4462ab3b767e5341eed5
 msgid ""
 "**Repository:** [fiveages-sim/robot_usds](https://github.com/fiveages-"
 "sim/robot_usds)"
@@ -39,301 +40,466 @@ msgstr ""
 "**仓库：** [fiveages-sim/robot_usds](https://github.com/fiveages-"
 "sim/robot_usds)"
 
+#: ../../source/4-reference/simulation/3-robot_usds.md:7
+#: b67662659c2143d897bd22dc793fb30a
+msgid ""
+"Brand labels in this docs set follow [README_zh-CN.md "
+"§3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-"
+"CN.md#31-中文简称与英文标识对照). English folder names match that table. Examples: "
+"方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = "
+"**Galbot**; 第五纪 = **FiveAges**."
+msgstr ""
+"本文档的品牌中英文对照遵循 [README_zh-CN.md §3.1](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README_zh-"
+"CN.md#31-中文简称与英文标识对照)。英文目录名与该表一致。例如：方舟无限 = **ARX**；高擎 = **HighTorque** / "
+"Panthera；越疆 = **Dobot**；银河通用 = **Galbot**；第五纪 = **FiveAges**。"
+
 #: ../../source/4-reference/simulation/3-robot_usds.md:9
-#: b685a006a190457291f95294eb86bba3
+#: 36e91290fd464c5a966df5dc5dff25d0
+msgid ""
+"The [upstream README](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README.md) is the gallery and the full model "
+"list. This page records how the tree is checked out and which paths are "
+"git submodules."
+msgstr "[上游 README](https://github.com/fiveages-sim/robot_usds/blob/main/README.md) 是图册和完整机型列表。本页记录这棵树怎么检出，以及哪些路径是 git 子模块。"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:11
+#: 5c06eee1d2694d5bb131a469c116670b
 msgid "Purpose"
 msgstr "用途"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:11
-#: ba6b3d6e13ff42daa002661d35bf2171
-msgid "`robot_usds` provides:"
-msgstr "`robot_usds` 提供："
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:12
-#: e1e722e11b404e95a5503ab1e73fe7af
-msgid "USD robot models for Isaac Sim"
-msgstr "用于 Isaac Sim 的 USD 机器人模型"
-
 #: ../../source/4-reference/simulation/3-robot_usds.md:13
-#: e8a74cd39b474869981cc8b9127f6848
-msgid "Organized asset hierarchy"
-msgstr "结构化的资产层级"
+#: f7399d88aece45fea2a4d3e05c49f5ed
+msgid ""
+"`robot_usds` holds the robot USD models used in Isaac Sim, including in-"
+"tree brand folders and a small set of git submodules. Environment and "
+"project scenes are not in this repository; they sit beside it under FaSim"
+" `environment/`. See [Environment assets](5-env_assets.md)."
+msgstr "`robot_usds` 存放 Isaac Sim 用的机器人 USD，包括仓库内的品牌目录和少量 git 子模块。环境和项目场景不在这个仓库里，它们放在 FaSim 的 `environment/` 下，与它同级。见 [环境资产](5-env_assets.md)。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:14
-#: ec7bcd0c9f2f4cddbb979b01c0a4db72
-msgid "Submodule management for brand-specific assets"
-msgstr "按品牌管理的资产子模块"
+#: ../../source/4-reference/simulation/3-robot_usds.md:15
+#: 9e20923fda8147b38279bf93da9d24ed
+msgid "Checkout"
+msgstr "检出"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:16
-#: eb0feca2d2054c6bb24e20d74c2e79e5
-msgid "Structure"
-msgstr "结构"
+#: ../../source/4-reference/simulation/3-robot_usds.md:17
+#: 91cc169d89b9441582f5469cfdf7dcf3
+msgid ""
+"**Primary path:** inside FaSim-Isaac, `./init.sh` operation 1 initializes"
+" `robots/` according to `submodules_visibility.conf`. Start Sim with "
+"`./run.sh`. There is no `./run.sh --robot`; open the USD from `robots/` "
+"or from a scene under `environment/`. Steps: [Isaac "
+"Sim](../../2-how_to/2-simulation/4-isaac_sim.md)."
+msgstr "**主路径：** 在 FaSim-Isaac 里，`./init.sh` 操作 1 按 `submodules_visibility.conf` 初始化 `robots/`。用 `./run.sh` 启动 Sim。没有 `./run.sh --robot`；从 `robots/` 或 `environment/` 下的场景打开 USD。步骤见 [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:33
-#: 5235ee7a7d1b49558d9fb6d23bd84b6d
-msgid "Submodules"
-msgstr "子模块"
+#: ../../source/4-reference/simulation/3-robot_usds.md:19
+#: 86f03ed96259485793cf32b54d96fd3e
+msgid ""
+"FaSim’s visibility file, as checked on 2026-11-13 "
+"(`submodules_visibility.conf` on FaSim-Isaac `main`), marks:"
+msgstr "以 2026-11-13 核对的 FaSim-Isaac `main` 上的 `submodules_visibility.conf` 为准，可见性是："
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:35
-#: 9e83c2846aa7479580ad7834e96087c2
-msgid "The following are managed as Git submodules:"
-msgstr "以下内容作为 Git 子模块管理："
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: e32f492656c44639bf703f13bf301c35
+msgid "Path under `robots/`"
+msgstr "`robots/` 下的路径"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 0cb21922c72545dbad6f33bdebeecc6d
-msgid "Path"
-msgstr "路径"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 12728ceb8982447f961246e035a6901f
-msgid "Repository"
-msgstr "仓库"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: debf06815a48428a8353a8055f5e53fa
-msgid "Branch"
-msgstr "分支"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 1eb8ff9e5c064a1cb254b09186cbf71d
-msgid "Visibility"
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: 486ee036db394b56b5dbcd565bb38257
+msgid "Visibility in FaSim"
 msgstr "可见性"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: e439a43528a04e589fcf2b749d9f5e77
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: 6018578f31364f3a829ad02d257f169f
+msgid "GitHub remote"
+msgstr "GitHub 远程仓库"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 92e2c5bc39b2471d9040a66b41a4223c f757fe86dfea4668ac8fb9ccbd2347d5
 msgid "`humanoid/FiveAges/Gen1`"
 msgstr "`humanoid/FiveAges/Gen1`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: b9b016f4277a4c43a1b05aa19d2dafa4
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: a44a990ca4b8472bacf1a7db66ea5c0e cd68b6ce2e6a47688c64a0b7078dc5cf
+#: d3270e1df7b34751a979fb8f6cdc24eb
+msgid "public"
+msgstr "公开"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: 333013af22b243049482b85ce27dac37
+msgid ""
+"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
+"-robot-usds) (public)"
+msgstr ""
+"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 33a56a67aa9543d999007331bf11c08e 9d1388be17534046aa2ca04967d92b6b
+msgid "`humanoid/FiveAges/Gen2`"
+msgstr "`humanoid/FiveAges/Gen2`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: b3ee752fd8444ecd9231777afc495973
+msgid ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds) (public)"
+msgstr ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 25b395aec0004cf98acf98e9727f6142 8306bc94eb3346c39090c3897c3432a2
+msgid "`humanoid/FiveAges/Gen3`"
+msgstr "`humanoid/FiveAges/Gen2`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: 0340e3dfeeb04ca59e46dbe8baaf990a 717507b7283e4887a86cbc36ed8c227d
+msgid "private"
+msgstr "私有"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: dbb9bd47142f45a6af1760ddd91ad5b9
+msgid ""
+"[fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3"
+"-robot-usds) (private; needs access)"
+msgstr ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 402f95da7dfb421683a978cc46d90f00 df197a787e4d45d08c2b2f89f7810df5
+msgid "`humanoid/Galbot`"
+msgstr "`humanoid/Galbot`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 7ffe2bc75ae14ff8bdbc1e61c8f56cbb b4255e241fb044fabee38419ee3b6e1d
+msgid "[galbot-usds](https://github.com/fiveages-sim/galbot-usds)"
+msgstr ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 4a6906ed980f473898c7ca2246175b72 c7d6ee73d0564c5192c5e04a96aa70a9
+msgid "`humanoid/Ubtech`"
+msgstr "`humanoid/Ubtech`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md
+#: baf13969dbe64c008eff6205e4a7e941
+msgid "[ubtech-usds](https://github.com/fiveages-sim/ubtech-usds) (needs access)"
+msgstr ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:29
+#: 0854260da74949309043bf2dea949129
+msgid ""
+"Public rows start checked in operation 1. Private rows stay unchecked "
+"until you can open them. A later run only adds what you check."
+msgstr "操作 1 默认勾选公开项。私有项在你有权限之前保持不勾选。以后再跑，只追加你新勾选的内容。"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:31
+#: 6432672df9b44a939629d4fdce31fbc7
+msgid "Manual fallback"
+msgstr "手动回退"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:34
+#: d40e18fb269f4601a2c2e329c2aeecf3
+msgid ""
+"Standalone clone only if you are not using FaSim. After a plain clone, "
+"submodule directories are empty until you init them at the paths in "
+"`.gitmodules`:"
+msgstr "只有不走 FaSim 时才单独克隆。普通 clone 之后，子模块目录是空的，要按 `.gitmodules` 里的路径做 init："
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 4df6f3131b6742b8b7bca0a859d82a56
+msgid ""
+"git clone https://github.com/fiveages-sim/robot_usds.git\n"
+"cd robot_usds\n"
+"git submodule update --init"
+msgstr ""
+"git clone https://github.com/fiveages-sim/robot_usds.git\n"
+"cd robot_usds\n"
+"git submodule update --init"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:42
+#: 5f348c6c859544a8880e3bc07a9a96e0
+msgid ""
+"To init one public gitlink, for example Gen2: `git submodule update "
+"--init humanoid/FiveAges/Gen2`. If you use robot_usds outside FaSim, put "
+"`environment/fiveages_env` next to this tree so scene USDs can reference "
+"it ([environment README note](https://github.com/fiveages-"
+"sim/robot_usds/blob/main/README.md))."
+msgstr "只初始化某一个公开 gitlink 时，以 Gen2 为例：`git submodule update --init humanoid/FiveAges/Gen2`。如果在 FaSim 之外使用 robot_usds，把 `environment/fiveages_env` 放在这棵树旁边，场景 USD 才能引用它（[环境 README 说明](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)）。"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:47
+#: 0737a57cc7db4afea670d3d05d9517aa
+msgid "Git submodules"
+msgstr "子模块"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:49
+#: 7bdd2c149acb4d3586a6d7844517904e
+msgid ""
+"These are the only USD remotes in `robot_usds/.gitmodules` on `main`. "
+"Each gitlink has `branch = main`. The superproject still pins a commit; "
+"`git submodule update` checks out that revision."
+msgstr "这些是 `robot_usds/.gitmodules` 在 `main` 上仅有的 USD 远程。每个 gitlink 的 `branch` 都是 `main`。超仓库仍然钉住一次提交；`git submodule update` 检出的是那个修订。"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: bba0bfb2d3e04b15bff8896f5ac23b82
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 48008af5568548e9b761a169550828f7
+msgid "Repository"
+msgstr "仓库"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 6cc018ca46294d18822733b12cf85cb3
+msgid "What is in the public tree"
+msgstr "公开树里有什么"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 39ebbae8a6164bddbda00609a8af0f46
 msgid ""
 "[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
 "-robot-usds)"
 msgstr ""
-"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds)"
+"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1"
+"-robot-usds)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 4e52234b347949b79f3caaf27c124a7f 6e22515242324f668d0520b94e9a3cc7
-#: 7d35a7f8dddc47839038122fa67ae000 cc68d3833ce44da2ade1489fc9c8ce34
-#: f4fca2a1039c41d3bc2bae8d339ae18d
-msgid "main"
-msgstr "main"
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: aa2bda03ac8948ad90ef10bbe80675f4
+msgid "W1 / Gen1 (public)"
+msgstr "W1 / Gen1（公开）"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 31b385c693644cbdb8a52c8e6da3b19d 891a86763813457b8419bd5725e28123
-msgid "Public"
-msgstr "公开"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 4e1695444c9949c4a9819c0a63912735
-msgid "`humanoid/FiveAges/Gen2`"
-msgstr "`humanoid/FiveAges/Gen2`"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: ba1126286c004ec7a4ac9102f407a023
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 67cca9ad0f634156b49d5df8aa44ce66
 msgid ""
 "[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
 "-robot-usds)"
 msgstr ""
-"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds)"
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 8bce69c7a19c4c31aa73c489a5e86f2e
-msgid "Public (`W2/`, `S2/`, `components/`)"
-msgstr "公开（`W2/`、`S2/`、`components/`）"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 2a7b871864664bed95fbaee336f37ca4 66e6e26603954e3fb50b7cde937ebaa7
-msgid "Private"
-msgstr "私有"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 508755808af24fe7a15cc374659ba8b7
-msgid "`humanoid/Galbot`"
-msgstr "`humanoid/Galbot`"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: e5e4c6a533ca473a865265800e795a7b
-msgid "galbot-usds"
-msgstr "galbot-usds"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 55e5041d43264d3e96be515af6605ad4
-msgid "`humanoid/Ubtech`"
-msgstr "`humanoid/Ubtech`"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 85f9ac01c680436abcc4eaf20c8b9daa
-msgid "ubtech-usds"
-msgstr "ubtech-usds"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:45
-#: d4f07594fdb043ad88c53a154c34894f
-msgid "Usage"
-msgstr "使用方法"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:47
-#: 15d5d7e73e0d4a57b1ae7a12cf880acc
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: fd5e0ca472eb44788b63a46c58f81222
 msgid ""
-"**Primary path:** inside FaSim-Isaac, `./init.sh` operation 1 initializes"
-" `robots/` (this superproject) according to `submodules_visibility.conf`."
-msgstr ""
-"**主路径：** 在 FaSim-Isaac 内，`./init.sh` 操作 1 按 `submodules_visibility.conf` "
-"初始化 `robots/`（本超级工程）。"
+"W2 / S2 / Gen2 (public; `W2/`, `S2/`, `components/`). W2R and S2R are not"
+" in this repo. Their URDF remotes stay private."
+msgstr "W2 / S2 / Gen2（公开；`W2/`、`S2/`、`components/`）。W2R 和 S2R 不在这个仓库里。它们的 URDF 远程仓库仍是私有的。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:49
-#: acee3d1124cb48608ebc5bcd1017f126
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 01d1adca8078400f92de6a26bc20c463
 msgid ""
-"cd FaSim-Isaac\n"
-"./init.sh"
+"[fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3"
+"-robot-usds)"
 msgstr ""
-"cd FaSim-Isaac\n"
-"./init.sh"
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:54
-#: 3477a1feecb14b90b3e804d967f7dd37
-msgid "Manual fallback"
-msgstr "手动回退"
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: a8c5266015534841a62a3bb56afabf70
+msgid "Gen3 (private remote; needs access)"
+msgstr "Gen3（私有远程仓库，需要权限）"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:57
-#: 8102caa9e83946bca216e927c7b8fe22
-msgid "Standalone clone only if you are not using FaSim:"
-msgstr "仅当你不使用 FaSim 时才单独克隆："
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: ef112a92c48b4f4eadb849cd7bef3df5
+msgid "Galbot mobile manipulator USD"
+msgstr "`mobile_manipulators/`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 7446b9d4a7fa418493cca4625898179d
+msgid "[ubtech-usds](https://github.com/fiveages-sim/ubtech-usds)"
+msgstr ""
+"[fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2"
+"-robot-usds)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:36
+#: 68ec71c1247041de912901cd70de1347
+msgid "Ubtech humanoid USD (private remote; needs access)"
+msgstr "Ubtech 人形 USD（私有远程仓库，需要权限）"
 
 #: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 3b47db7f215e4e7ca3c62db2550aa2ef
+#: f7159a307e5c4649981247721753d715
 msgid ""
-"git clone https://github.com/fiveages-sim/robot_usds.git\n"
-"cd robot_usds\n"
-"git submodule update --init"
-msgstr ""
-"git clone https://github.com/fiveages-sim/robot_usds.git\n"
-"cd robot_usds\n"
-"git submodule update --init"
+"URDF / deploy for FiveAges robots: [FiveAges robot "
+"descriptions](../descriptions/4-fiveages_umbrella.md). Gen1 and Gen2 "
+"under `humanoid/FiveAges/` are wheeled-arm USD. They are not bipeds."
+msgstr "URDF / 部署：[FiveAges 机器人描述](../descriptions/4-fiveages_umbrella.md)。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:66
-#: d275c606640a4a118e4c5c40ab6d994d
-msgid "In-Tree Assets"
+#: ../../source/4-reference/simulation/3-robot_usds.md:61
+#: 25bd8a5901b94fd290ea2e1aa0a93583
+msgid "To see the pin, or to move one submodule (example: Galbot):"
+msgstr "查看钉住的提交，或移动某个子模块（以 Galbot 为例）："
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: a51842969890410bae1a929c6dc10366
+msgid ""
+"cd robot_usds\n"
+"git submodule status\n"
+"git submodule update --remote humanoid/Galbot\n"
+"# or pin: cd humanoid/Galbot && git checkout <commit> && cd ../.. && git "
+"add humanoid/Galbot\n"
+msgstr "cd robot_usds\ngit submodule status\ngit submodule update --remote humanoid/Galbot\n# or pin: cd humanoid/Galbot && git checkout <commit> && cd ../.. && git add humanoid/Galbot\n"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:70
+#: c301ddb4732b4f4f80188e5e10cc6a1b
+msgid ""
+"Prefer FaSim `./init.sh --update` when you work inside the Isaac "
+"workspace."
+msgstr "在 Isaac 工作区里工作时，优先用 FaSim 的 `./init.sh --update`。"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:72
+#: c20b42ff560a4cacbc32d5662acd8ff9
+msgid "In-tree categories"
 msgstr "仓库内资产"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:68
-#: 3d12af762b0d466eac5b7aab2a4ca734
-msgid "Assets directly in `robot_usds` (not submodules):"
-msgstr "`robot_usds` 仓库内直接包含的资产（非子模块）："
+#: ../../source/4-reference/simulation/3-robot_usds.md:74
+#: ed53db6c323c4146bc61d5229cf4e7f6
+msgid ""
+"Assets that are not git submodules live in the superproject itself. "
+"Category roots on `main`:"
+msgstr "不是 git 子模块的资产就在超仓库本身。`main` 上的分类根目录："
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: f8ed60e5e9e3468ba48873230e4d6bdf
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: a7153e2931644ba99133c5dc01ea7a68
 msgid "Directory"
 msgstr "目录"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 74a0109ac50944639bc95ae38196ff57
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: ba1afba02dba4cfe87b5de9d93e2b888
 msgid "Content"
 msgstr "内容"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 661a2e41fa59483181c7c48e18207006
-msgid "`grippers/`"
-msgstr "`grippers/`"
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 3094256f757d4a5b968c4f17c3870555
+msgid "`humanoid/`"
+msgstr "`humanoid/Ubtech`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 4c2d9d7806d049fda5b5745f4dd2b41e
-msgid "Gripper USD models"
-msgstr "夹爪 USD 模型"
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 5d4877b1c1b347db9ca0a17d0da8fa9c
+msgid ""
+"Humanoid and wheeled-arm USD, including the FiveAges, Galbot, and Ubtech "
+"gitlinks above, and in-tree brands such as Dyna Taku "
+"(`humanoid/Dyna/Taku`)"
+msgstr "人形与轮式臂 USD，包括上面的 FiveAges、Galbot、Ubtech gitlink，以及仓库内的品牌，例如 Dyna Taku（`humanoid/Dyna/Taku`）"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 067b447a8fb04bcab41d8d2de4f94796
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 84b2d3c9fef54d18af3e0c4046bf8e1d
 msgid "`manipulators/`"
 msgstr "`manipulators/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 89328ac27a91430686b91246a21e007f
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 6f5e3610966c489797c0d53c76dd9d78
 msgid "Arm models"
 msgstr "机械臂模型"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: 720a2c9a5d3d40bca521cc3d422f8034
-msgid "`mobile_manipulators/`"
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 1daf32c0acb44ce1b38f44686bf858e8
+msgid "`mobile_base/`"
 msgstr "`mobile_manipulators/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: eba303d4d84f4edcbc8c4b0024f7ace1
-msgid "Mobile + arm"
-msgstr "移动底盘 + 机械臂"
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 6d39db899f1448c1baf65a142467697b
+msgid "Chassis models, including Linkhou S2 (`mobile_base/Linkhou/S2_V1`)"
+msgstr "底盘模型，包括 Linkhou S2（`mobile_base/Linkhou/S2_V1`）"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: aa20a44a67794ea99410c6d9066678e3
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 3504eae27bd342eab50fe5d5b425e859
+msgid "`mobile_manipulator/`"
+msgstr "`mobile_manipulators/`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 2dbf90b76f37403eb7f1ae59a0f92890
+msgid "Mobile + arm (singular directory name)"
+msgstr "移动底盘加手臂（目录名是单数）"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 78bd468aa7d64899a9fbe717f69cf73a
+msgid "`grippers/`"
+msgstr "`grippers/`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: f330b97e89c64a96899cf000771772f9
+msgid "Gripper USD"
+msgstr "夹爪 USD 模型"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 94569cff95ea4d799bc60f363a2062bc
+msgid "`dexhands/`"
+msgstr "`dexhands/`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 31eb721249b74d5db95096799d73bb92
+msgid "Dexterous-hand USD"
+msgstr "灵巧手 USD"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 41b3300945434c32ab29078bf34e0a34
+msgid "`suction_cup/`"
+msgstr "`suction_cup/`"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: e72a406fdbcd4976a570bf1b233757c7
+msgid "Suction-cup USD"
+msgstr "吸盘 USD"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 664eab2341df4da6b20f4bde15d27aba
+msgid "`components/`"
+msgstr "内容"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 9d2585da39ee4b29995f9dbab34b54fa
+msgid "Shared wheels and fixtures"
+msgstr "共用的轮子和夹具"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 4ecfa18aaf0c4ef88015e5ccf9155223
 msgid "`sensors/`"
 msgstr "`sensors/`"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:59
-#: ab5dfbf7a15d4f57895f88819d8e5852
-msgid "Camera, lidar models"
+#: ../../source/4-reference/simulation/3-robot_usds.md:63
+#: 611dbfcbf1eb40dc8f4b5bf00d5af536
+msgid "Camera, lidar, and related models"
 msgstr "相机、激光雷达模型"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:77
-#: 3218bca6b28b4f36bee51106467efd24
-msgid "Asset Naming"
-msgstr "资产命名"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:81
-#: 20b7a950baab4f86a9581874c8e76135
+#: ../../source/4-reference/simulation/3-robot_usds.md:88
+#: 366ef2e57bf74811a8a6ff59b83041ca
 msgid ""
-"From the [robot_usds README](https://github.com/fiveages-"
-"sim/robot_usds/blob/main/README.md) Humanoid → FiveAges table:"
-msgstr ""
-"摘自 [robot_usds README](https://github.com/fiveages-"
-"sim/robot_usds/blob/main/README.md) Humanoid → FiveAges 表（不是自造名称）："
+"The full product list is in the [robot_usds README §3](https://github.com"
+"/fiveages-sim/robot_usds/blob/main/README.md). Swerve graph examples used"
+" by the FaSim steering extension: [Swerve extension](2-fasim_isaac.md"
+"#swerve-extension)."
+msgstr "完整产品列表见 [robot_usds README §3](https://github.com/fiveages-sim/robot_usds/blob/main/README.md)。FaSim 舵轮扩展用到的图示例见 [舵轮扩展](2-fasim_isaac.md#swerve-extension)。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:83
-#: a36837c7db154732b477192be52d32ba
-msgid ""
-"**Gen1** — W1 (`humanoid/FiveAges/Gen1` → [fiveages-gen1-robot-"
-"usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds), public)"
-msgstr ""
-"**Gen1** — W1（`humanoid/FiveAges/Gen1` →"
-"[fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds)"
-"，公开）"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:87
-#: cd76c293e5954f648f0f589f94d2609f
-msgid ""
-"URDF / deploy: [FiveAges robot "
-"descriptions](../descriptions/4-fiveages_umbrella.md)."
-msgstr "URDF / 部署：[FiveAges 机器人描述](../descriptions/4-fiveages_umbrella.md)。"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:89
-#: 307b43ac8f86412e96186e73a70b89de
-msgid ""
-"Load assets through FaSim-Isaac (`./init.sh` / `./run.sh`) and that "
-"robot’s USDA. FaSim `submodules_visibility.conf` still marks the FiveAges"
-" Gen\\* trees `private`, so they are not selected by default; you can "
-"init the public Gen1/Gen2 gitlinks from `robot_usds` as in that README "
-"§2.1."
-msgstr ""
-"通过 FaSim-Isaac（`./init.sh` / `./run.sh`）和该机器人的 USDA 加载资产。FaSim"
-"`submodules_visibility.conf`仍把 FiveAges Gen\\* 树标成 `private`，因此默认不勾选；可按该"
-"README §2.1 从 `robot_usds`初始化公开的 Gen1/Gen2 gitlink。"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:91
-#: da526835e3f14f128d18437e4fa83635
+#: ../../source/4-reference/simulation/3-robot_usds.md:90
+#: c3d52825a1f64eaabb33785edd712a7c
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:93
-#: 73db9614a86246e5a478ea188b7994ba
-msgid "[USD Submodules](4-usd_submodules.md)"
-msgstr "[USD 子模块](4-usd_submodules.md)"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:94
-#: b4d38857a53840c2926248654c026be4
+#: ../../source/4-reference/simulation/3-robot_usds.md:92
+#: 83333fbfef0e497390950c75e560d08a
 msgid "[FaSim-Isaac](2-fasim_isaac.md)"
 msgstr "[FaSim-Isaac](2-fasim_isaac.md)"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:95
-#: a4774865275d4d8b9d78203187bcf120
-msgid "[Synthetic Data](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)"
-msgstr "[合成数据](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)"
+#: ../../source/4-reference/simulation/3-robot_usds.md:93
+#: 288337a92e0e42779746963a9043c35a
+msgid "[Environment assets](5-env_assets.md)"
+msgstr "[环境资产](5-env_assets.md)"
+
+#: ../../source/4-reference/simulation/3-robot_usds.md:94
+#: 70806fb097d8403ba0f3aea39c6f3f4e
+msgid "[Isaac Sim how-to](../../2-how_to/2-simulation/4-isaac_sim.md)"
+msgstr "[Isaac Sim 操作说明](../../2-how_to/2-simulation/4-isaac_sim.md)"
 
 #~ msgid "Initialize"
 #~ msgstr "初始化"
@@ -400,66 +566,152 @@ msgstr "[合成数据](../../2-how_to/7-synthetic_data/1-isaac_scenes.md)"
 #~ "robot’s USDA."
 #~ msgstr "通过 FaSim-Isaac（`./init.sh` / `./run.sh`）和该机器人的 USDA 加载资产。"
 
-#: ../../source/4-reference/simulation/3-robot_usds.md:7
-#: 77d34037b495411a8ad3594f8362d39c
-msgid ""
-"Brand labels in this docs set follow [README_zh-CN.md "
-"§3.1](https://github.com/fiveages-sim/robot_usds/blob/main/README_zh-"
-"CN.md#31-中文简称与英文标识对照). English folder names match that table. Examples: "
-"方舟无限 = **ARX**; 高擎 = **HighTorque** / Panthera; 越疆 = **Dobot**; 银河通用 = "
-"**Galbot**; 第五纪 = **FiveAges**."
-msgstr ""
-"本文档的品牌中英文对照遵循 [README_zh-CN.md §3.1](https://github.com/fiveages-"
-"sim/robot_usds/blob/main/README_zh-"
-"CN.md#31-中文简称与英文标识对照)。英文目录名与该表一致。例如：方舟无限 = **ARX**；高擎 = **HighTorque** / "
-"Panthera；越疆 = **Dobot**；银河通用 = **Galbot**；第五纪 = **FiveAges**。"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:18
-#: 9295c9bbeef04a6b87e047f3a9366941
-msgid ""
-"robot_usds/\n"
-"├── humanoid/\n"
-"│   ├── FiveAges/\n"
-"│   │   ├── Gen1/             # → fiveages-gen1-robot-usds\n"
-"│   │   └── Gen2/             # → fiveages-gen2-robot-usds\n"
-"│   ├── Galbot/               # → galbot-usds\n"
-"│   └── Ubtech/               # → ubtech-usds\n"
-"├── manipulators/             # Arm USD assets\n"
-"├── mobile_manipulators/\n"
-"├── grippers/\n"
-"└── sensors/"
-msgstr ""
-"robot_usds/\n"
-"├── humanoid/\n"
-"│   ├── FiveAges/\n"
-"│   │   ├── Gen1/             # → fiveages-gen1-robot-usds\n"
-"│   │   └── Gen2/             # → fiveages-gen2-robot-usds\n"
-"│   ├── Galbot/               # → galbot-usds\n"
-"│   └── Ubtech/               # → ubtech-usds\n"
-"├── manipulators/             # Arm USD assets\n"
-"├── mobile_manipulators/\n"
-"├── grippers/\n"
-"└── sensors/"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:77
-#: b6d6938ddfb34e6a8f9c0b507643ace2
-msgid "Gen1 and Gen2"
-msgstr "Gen1 和 Gen2"
-
-#: ../../source/4-reference/simulation/3-robot_usds.md:82
-#: 86098a4a6ea5437db4e45ad8c785a4e3
-msgid ""
-"**Gen2** — W2 / S2 (`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-"
-"usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds), public)."
-" Tree: `W2/`, `S2/`, `components/`. W2R and S2R are not in this repo."
-msgstr ""
-"**Gen2**：W2 / S2（`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-"
-"usds](https://github.com/fiveages-sim/fiveages-gen2-robot-"
-"usds)，公开）。目录：`W2/`、`S2/`、`components/`。W2R 和 S2R 不在这个仓库里。"
-
 #~ msgid "`humanoid/FiveAges/Gen3`"
 #~ msgstr "`humanoid/FiveAges/Gen3`"
 
 #~ msgid "Gen1/Gen2/Gen3"
 #~ msgstr "Gen1/Gen2/Gen3"
+
+#~ msgid "`robot_usds` provides:"
+#~ msgstr "`robot_usds` 提供："
+
+#~ msgid "USD robot models for Isaac Sim"
+#~ msgstr "用于 Isaac Sim 的 USD 机器人模型"
+
+#~ msgid "Organized asset hierarchy"
+#~ msgstr "结构化的资产层级"
+
+#~ msgid "Submodule management for brand-specific assets"
+#~ msgstr "按品牌管理的资产子模块"
+
+#~ msgid "Structure"
+#~ msgstr "结构"
+
+#~ msgid "The following are managed as Git submodules:"
+#~ msgstr "以下内容作为 Git 子模块管理："
+
+#~ msgid "Branch"
+#~ msgstr "分支"
+
+#~ msgid "main"
+#~ msgstr "main"
+
+#~ msgid "Public (`W2/`, `S2/`, `components/`)"
+#~ msgstr "公开（`W2/`、`S2/`、`components/`）"
+
+#~ msgid "galbot-usds"
+#~ msgstr "galbot-usds"
+
+#~ msgid "ubtech-usds"
+#~ msgstr "ubtech-usds"
+
+#~ msgid "Usage"
+#~ msgstr "使用方法"
+
+#~ msgid ""
+#~ "**Primary path:** inside FaSim-Isaac, "
+#~ "`./init.sh` operation 1 initializes `robots/`"
+#~ " (this superproject) according to "
+#~ "`submodules_visibility.conf`."
+#~ msgstr ""
+#~ "**主路径：** 在 FaSim-Isaac 内，`./init.sh` 操作"
+#~ " 1 按 `submodules_visibility.conf` 初始化 "
+#~ "`robots/`（本超级工程）。"
+
+#~ msgid ""
+#~ "cd FaSim-Isaac\n"
+#~ "./init.sh"
+#~ msgstr ""
+#~ "cd FaSim-Isaac\n"
+#~ "./init.sh"
+
+#~ msgid "Standalone clone only if you are not using FaSim:"
+#~ msgstr "仅当你不使用 FaSim 时才单独克隆："
+
+#~ msgid "Assets directly in `robot_usds` (not submodules):"
+#~ msgstr "`robot_usds` 仓库内直接包含的资产（非子模块）："
+
+#~ msgid "Mobile + arm"
+#~ msgstr "移动底盘 + 机械臂"
+
+#~ msgid "Asset Naming"
+#~ msgstr "资产命名"
+
+#~ msgid ""
+#~ "From the [robot_usds README](https://github.com"
+#~ "/fiveages-sim/robot_usds/blob/main/README.md) Humanoid "
+#~ "→ FiveAges table:"
+#~ msgstr ""
+#~ "摘自 [robot_usds README](https://github.com/fiveages-"
+#~ "sim/robot_usds/blob/main/README.md) Humanoid → "
+#~ "FiveAges 表（不是自造名称）："
+
+#~ msgid ""
+#~ "**Gen1** — W1 (`humanoid/FiveAges/Gen1` → "
+#~ "[fiveages-gen1-robot-usds](https://github.com/fiveages-"
+#~ "sim/fiveages-gen1-robot-usds), public)"
+#~ msgstr ""
+#~ "**Gen1** — W1（`humanoid/FiveAges/Gen1` "
+#~ "→[fiveages-gen1-robot-usds](https://github.com/fiveages-"
+#~ "sim/fiveages-gen1-robot-usds)，公开）"
+
+#~ msgid ""
+#~ "Load assets through FaSim-Isaac "
+#~ "(`./init.sh` / `./run.sh`) and that "
+#~ "robot’s USDA. FaSim `submodules_visibility.conf` "
+#~ "still marks the FiveAges Gen\\* trees"
+#~ " `private`, so they are not selected"
+#~ " by default; you can init the "
+#~ "public Gen1/Gen2 gitlinks from `robot_usds`"
+#~ " as in that README §2.1."
+#~ msgstr ""
+#~ "通过 FaSim-Isaac（`./init.sh` / `./run.sh`）和该机器人的"
+#~ " USDA 加载资产。FaSim`submodules_visibility.conf`仍把 FiveAges"
+#~ " Gen\\* 树标成 `private`，因此默认不勾选；可按该README §2.1 "
+#~ "从 `robot_usds`初始化公开的 Gen1/Gen2 gitlink。"
+
+#~ msgid "[USD Submodules](4-usd_submodules.md)"
+#~ msgstr "[USD 子模块](4-usd_submodules.md)"
+
+#~ msgid ""
+#~ "robot_usds/\n"
+#~ "├── humanoid/\n"
+#~ "│   ├── FiveAges/\n"
+#~ "│   │   ├── Gen1/             # → fiveages-gen1-robot-usds\n"
+#~ "│   │   └── Gen2/             # → fiveages-gen2-robot-usds\n"
+#~ "│   ├── Galbot/               # → galbot-usds\n"
+#~ "│   └── Ubtech/               # → ubtech-usds\n"
+#~ "├── manipulators/             # Arm USD assets\n"
+#~ "├── mobile_manipulators/\n"
+#~ "├── grippers/\n"
+#~ "└── sensors/"
+#~ msgstr ""
+#~ "robot_usds/\n"
+#~ "├── humanoid/\n"
+#~ "│   ├── FiveAges/\n"
+#~ "│   │   ├── Gen1/             # → fiveages-gen1-robot-usds\n"
+#~ "│   │   └── Gen2/             # → fiveages-gen2-robot-usds\n"
+#~ "│   ├── Galbot/               # → galbot-usds\n"
+#~ "│   └── Ubtech/               # → ubtech-usds\n"
+#~ "├── manipulators/             # Arm USD assets\n"
+#~ "├── mobile_manipulators/\n"
+#~ "├── grippers/\n"
+#~ "└── sensors/"
+
+#~ msgid "Gen1 and Gen2"
+#~ msgstr "Gen1 和 Gen2"
+
+#~ msgid ""
+#~ "**Gen2** — W2 / S2 "
+#~ "(`humanoid/FiveAges/Gen2` → [fiveages-gen2-robot-"
+#~ "usds](https://github.com/fiveages-sim/fiveages-gen2"
+#~ "-robot-usds), public). Tree: `W2/`, `S2/`,"
+#~ " `components/`. W2R and S2R are not"
+#~ " in this repo."
+#~ msgstr ""
+#~ "**Gen2**：W2 / S2（`humanoid/FiveAges/Gen2` → "
+#~ "[fiveages-gen2-robot-usds](https://github.com/fiveages-"
+#~ "sim/fiveages-gen2-robot-"
+#~ "usds)，公开）。目录：`W2/`、`S2/`、`components/`。W2R 和 S2R "
+#~ "不在这个仓库里。"
 

@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-11-13 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,209 +20,241 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../source/4-reference/simulation/0-index.md:1
-#: 46139283ff544254b399249045f43350
+#: efcf6b9bb6f1487da18429070e334517
 msgid "Simulation Reference"
 msgstr "仿真参考"
 
 #: ../../source/4-reference/simulation/0-index.md:3
-#: ed62aac1e5394012afc6ca69c47df5fa
-msgid "This section documents the simulation backends and USD assets."
-msgstr "本节介绍仿真后端和 USD 资产。"
+#: 50577259f6c64fd48ae6eaf0ffe12456
+msgid ""
+"This section is the reference for the simulation backends and their USD "
+"assets. It explains what each piece is, how the pieces fit, and which "
+"parameters or layouts are in the current trees. Step-by-step start, "
+"launch, and first checks live in the How-To pages."
+msgstr "这一节是仿真后端和 USD 资产的参考：每块是什么、怎么拼在一起，以及当前树里的参数和布局。逐步启动、launch 和第一次检查写在 How-To 页面。"
 
 #: ../../source/4-reference/simulation/0-index.md:5
-#: 6ee14c7cd412418caf678bd3bceda1d8
-msgid "Overview"
-msgstr "概述"
+#: 9ac12d5763ca4a998d6934bf0efc1857
+msgid ""
+"**FaSim** is NVIDIA Isaac Sim plus the same ROS 2 运控 stack used on the "
+"real robot, so motion can match hardware while the sim supplies ground "
+"truth. FaSim-Isaac is more than a place to open a USD: it also installs "
+"the OmniGraph extensions that start 运控 inside Sim and that drive a swerve"
+" chassis."
+msgstr "**FaSim** 是 NVIDIA Isaac Sim，再加上真机同一套 ROS 2 运控，所以运动可以跟硬件对齐，同时仿真还能给出真值。FaSim-Isaac 不只是用来打开一份 USD：它还会安装 OmniGraph 扩展，在 Sim 里启动运控，并驱动舵轮底盘。"
 
 #: ../../source/4-reference/simulation/0-index.md:7
-#: 9b14fdc4379848f78eff2c5411d1bd44
+#: 3114c584722148739f7cd1992c16a86d
+msgid "Isaac Sim reading order"
+msgstr "Isaac Sim 阅读顺序"
+
+#: ../../source/4-reference/simulation/0-index.md:9
+#: 8a4774766fba48f2a9d0febd47ad4bbb
 msgid ""
-"The stack supports multiple simulation backends. **FaSim** is Isaac Sim "
-"high-fidelity simulation combined with the same ROS 2 运控 as the real "
-"robot, so you get matching motion plus simulation ground truth."
-msgstr "本栈支持多种仿真后端。**FaSim** 是 Isaac Sim 高保真仿真叠上与真机同一套 ROS 2 运控，因此运动对齐硬件，同时带有仿真真值。"
+"Use the pages in this order. Each one points at a specific section when "
+"you need more detail; they do not repeat the full mechanism."
+msgstr "按这个顺序读。需要细节时，各页会链到具体小节，而不是把整套机制再讲一遍。"
 
-#: ../../source/4-reference/simulation/0-index.md
-#: c4ae536fe75d492182a92bc441d52fac
-msgid "Backend"
-msgstr "后端"
+#: ../../source/4-reference/simulation/0-index.md:11
+#: 8c91bb12d269422a95e638f5e8f7efef
+msgid ""
+"**Prepare the machine and start Sim** — [Isaac "
+"Sim](../../2-how_to/2-simulation/4-isaac_sim.md): `./init.sh`, "
+"`./run.sh`, and the first ROS 2 connection."
+msgstr "**准备机器并启动 Sim** — [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md)：`./init.sh`、`./run.sh`，以及第一次接入 ROS 2。"
 
-#: ../../source/4-reference/simulation/0-index.md
-#: c51fb3b3a8f44d64b737b40f27956833
-msgid "Use Case"
-msgstr "使用场景"
+#: ../../source/4-reference/simulation/0-index.md:12
+#: ef248e24fda9425eb47d1f2d712b07e4
+msgid ""
+"**Robot USD assets** — [robot_usds](3-robot_usds.md): the `robots/` tree,"
+" its git submodules, and public versus private checkout."
+msgstr "**机器人 USD 资产** — [robot_usds](3-robot_usds.md)：`robots/` 目录、其中的 git 子模块，以及公开与私有检出。"
 
-#: ../../source/4-reference/simulation/0-index.md
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 0571edcabb3a464da6505c7d1e81ec1b 2e42af58c58a46df9a6a4529ff2be665
-msgid "Mock"
-msgstr "Mock"
+#: ../../source/4-reference/simulation/0-index.md:13
+#: 1fac824389e24c6197fdf51bf3b741f5
+msgid ""
+"**FaSim extensions** — [FaSim-Isaac](2-fasim_isaac.md): how the `isaac` /"
+" `isaac_sim` hardware keys differ from the Kit extensions, then the [ROS "
+"2 Control extension](2-fasim_isaac.md#ros-2-control-extension) and the [swerve"
+" extension](2-fasim_isaac.md#swerve-extension)."
+msgstr "**FaSim 扩展** — [FaSim-Isaac](2-fasim_isaac.md)：`isaac` / `isaac_sim` 硬件键和 Kit 扩展有何不同，然后是 [ROS 2 Control 扩展](2-fasim_isaac.md#ros-2-control-extension) 和 [舵轮扩展](2-fasim_isaac.md#swerve-extension)。"
 
-#: ../../source/4-reference/simulation/0-index.md
-#: cbce8541d1b0498fb6c0cac9a21ef168
-msgid "Fast testing, no physics (`hardware:=mock_components`)"
-msgstr "快速测试、无物理（`hardware:=mock_components`）"
-
-#: ../../source/4-reference/simulation/0-index.md
-#: 35353d6766ff4a9b9bfab59ec28a3fa5
-msgid "Gazebo Harmonic"
-msgstr "Gazebo Harmonic"
-
-#: ../../source/4-reference/simulation/0-index.md
-#: da421af7ef4f4be08699117d503f4843
-msgid "Physics simulation"
-msgstr "物理仿真"
-
-#: ../../source/4-reference/simulation/0-index.md
-#: dc2b09dab13046a39acd96bcd75fdbf0
-msgid "FaSim / Isaac Sim"
-msgstr "FaSim / Isaac Sim"
-
-#: ../../source/4-reference/simulation/0-index.md
-#: 60f24c77bad34ed49275134ee076aa55
-msgid "High-fidelity USD; same 运控 as hardware + sim ground truth"
-msgstr "高保真 USD；与真机同一套运控，并带仿真真值"
+#: ../../source/4-reference/simulation/0-index.md:14
+#: 3d9803df1b2a42c2af8ee053f5836cfe
+msgid ""
+"**Scenes and project layout** — [Environment assets](5-env_assets.md): "
+"public scenes, ArtVIP / LabUtopia components, and private project USD "
+"(including where `robot.yaml` currently lives)."
+msgstr "**场景与项目布局** — [环境资产](5-env_assets.md)：公开场景、ArtVIP / LabUtopia 组件，以及私有项目 USD（包括 `robot.yaml` 目前在哪）。"
 
 #: ../../source/4-reference/simulation/0-index.md:15
-#: f460cc1157db47df9d597a7dd828e0bd
-msgid "In This Section"
-msgstr "本节内容"
-
-#: ../../source/4-reference/simulation/0-index.md:27
-#: 456d6ebf0e6946fa9b733dba957c72ed
-msgid "Quick Comparison"
-msgstr "快速对比"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 03cdd23f7f154bbe8b76dff24a4e5741
-msgid "Aspect"
-msgstr "方面"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 4d1c4d06c335458e895e44946540bdab
-msgid "Gazebo"
-msgstr "Gazebo"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 0d42a45c3fb741e296f78243ea7a819a
-msgid "Isaac"
-msgstr "Isaac"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 6d30a0b937c6430898a7ca839a2d4a66
-msgid "Physics"
-msgstr "物理"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 35d1a1054ebb4058b175af801d377b8e 80fda27f2d6641e1ab9b2d10a2895435
-#: 9007a9732f1048cdb5c3989310add8b0
-msgid "No"
-msgstr "否"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 3c0c253aebee421ba8625119f6cf975d
-msgid "Yes"
-msgstr "是"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 5bc0f86dbb8142b48357e31b18a97870
-msgid "Yes (PhysX)"
-msgstr "是（PhysX）"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 013a107dd9274a7ca77d031743c4a57c
-msgid "Rendering"
-msgstr "渲染"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 5eb6d72646524a50a62ef9d8688294a0
-msgid "RViz only"
-msgstr "仅 RViz"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 9521f6c3671844e1b21fbcb4f274e5cf
-msgid "Basic"
-msgstr "基本用法"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: f23caf7fb72840879d756dedb264c3c1
-msgid "Photorealistic"
-msgstr "照片级真实感"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 2c3727779985404f81dc48b3b117df0a
-msgid "Setup"
-msgstr "设置"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 9227f2d6e088455588347588a8e1b3f8
-msgid "None"
-msgstr "无"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 20131eafa2194d0b865988f6ae8588ef
-msgid "`apt install`"
-msgstr "`apt install`"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: fca5f39dda874ad99e6107878b69aa8a
-msgid "FaSim-Isaac `./init.sh` + `./run.sh`"
-msgstr "FaSim-Isaac `./init.sh` + `./run.sh`"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: c8f6157c11d64b8699ceb444220e233d
-msgid "Speed"
-msgstr "速度"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: ab5b6edbcde242cb99eb0766bba3d1f5
-msgid "Real-time"
-msgstr "实时"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 0bfd19423d4d4472861fa6f85c6be7cd
-msgid "~Real-time"
-msgstr "接近实时"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: be485115729646218c30f377d11a3e94
-msgid "Configurable"
-msgstr "可配置"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: bf0f0d67a4bc4414ae616aba383b1750
-msgid "USD support"
-msgstr "USD 支持"
-
-#: ../../source/4-reference/simulation/0-index.md:17
-#: 8a2946eefb6e47e9a9a562ecca00b7bc
-msgid "Native"
-msgstr "原生"
-
-#: ../../source/4-reference/simulation/0-index.md:37
-#: d5ba5d354d724057a34df67f44725a2b
-msgid "Isaac Sim Requirements"
-msgstr "Isaac Sim 要求"
-
-#: ../../source/4-reference/simulation/0-index.md:40
-#: 543df65c4ca646ee929c10574b718bbf
+#: 6a8a27368e844cffaec5d205bcf7fcc0
 msgid ""
-"Isaac Sim integration uses **FaSim-Isaac** (`./init.sh`, `./run.sh`). "
-"Default path is `ISAACSIM_DIR` (`~/isaacsim`); version comes from FaSim "
-"config / the init menu. See [FaSim-Isaac](2-fasim_isaac.md)."
-msgstr ""
-"Isaac Sim 集成使用 **FaSim-Isaac**（`./init.sh`、`./run.sh`）。默认路径是 "
-"`ISAACSIM_DIR`（`~/isaacsim`）；版本来自 FaSim 配置 / init 菜单。见 [FaSim-"
-"Isaac](2-fasim_isaac.md)。"
+"**Run, check, and debug** — [When it "
+"fails](../../2-how_to/2-simulation/4-isaac_sim.md#when-it-fails) on the "
+"How-To page. Clock and TF details stay in [Clock](2-fasim_isaac.md#clock) and [TF](2-fasim_isaac.md#tf)."
+msgstr "**运行、检查和排障** — How-To 页的 [出了问题](../../2-how_to/2-simulation/4-isaac_sim.md#when-it-fails)。时钟和 TF 的细节仍在 [时钟](2-fasim_isaac.md#clock) 和 [TF](2-fasim_isaac.md#tf)。"
 
-#: ../../source/4-reference/simulation/0-index.md:43
-#: 5087483c71024a5894e632cc15d566c9
+#: ../../source/4-reference/simulation/0-index.md:17
+#: 800fb9353c1844a7b9d702099c6a8e5a
 msgid ""
-"Isaac **datagen** (USD → orchestration → LeRobot export, no Gazebo): "
+"Isaac Sim is the recommended backend. Gazebo remains available as an "
+"alternative: [Gazebo](1-gazebo.md), with steps in [Gazebo "
+"Simulation](../../2-how_to/2-simulation/3-gazebo_sim.md)."
+msgstr "推荐使用 Isaac Sim。Gazebo 仍可作为备选：[Gazebo](1-gazebo.md)，步骤见 [Gazebo 仿真](../../2-how_to/2-simulation/3-gazebo_sim.md)。"
+
+#: ../../source/4-reference/simulation/0-index.md:19
+#: 715fb438e8bf4fbf811ec6dfd1fd2088
+msgid ""
+"Isaac **datagen** (USD → orchestration → LeRobot export, not Gazebo): "
 "[Synthetic Data](../../2-how_to/7-synthetic_data/0-index.md)."
 msgstr ""
 "Isaac **数据采集**（USD → 编排 → LeRobot 导出，不含 "
 "Gazebo）：[合成数据](../../2-how_to/7-synthetic_data/0-index.md)。"
+
+#: ../../source/4-reference/simulation/0-index.md:21
+#: 92915c6d79404eddbc9823a4fff28866
+msgid "In This Section"
+msgstr "本节内容"
+
+#: ../../source/4-reference/simulation/0-index.md:32
+#: d883319334c44bb69f7e35ecf7dda331
+msgid "Quick Comparison"
+msgstr "快速对比"
+
+#: ../../source/4-reference/simulation/0-index.md
+msgid ""
+"Isaac Sim is the recommended path. The table still lists Mock and Gazebo "
+"so you can compare backends; it does not change what each one supports."
+msgstr "推荐路径是 Isaac Sim。表中仍列出 Mock 和 Gazebo，方便对比各后端；这并不改变它们各自的支持范围。"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: d5bb9f35442646e4adfa036a3c04a684
+msgid "Aspect"
+msgstr "方面"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: eb45bb8f72af4946b328792532b738ba
+msgid "Mock"
+msgstr "Mock"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: f0123459df6d4f608e6825ac4801e998
+msgid "Gazebo"
+msgstr "Gazebo"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: e32739ded5d44d2fb9533583d569c36e
+msgid "Isaac"
+msgstr "Isaac"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 227fbd5eb3444dd5ae7389772181a465
+msgid "Physics"
+msgstr "物理"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 3d181ba92f95488e9031870c60a62258 665046d12866408aa96755c63a7907cf
+#: cee0f6f324f24104bb11d50fba124302
+msgid "No"
+msgstr "否"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 189d489207dd4bfdb135b1d0faf0f31a
+msgid "Yes"
+msgstr "是"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 06a729fb4d7a4256bea2a2ef62d81a43
+msgid "Yes (PhysX or Newton, chosen in `./run.sh`)"
+msgstr "有（PhysX 或 Newton，在 `./run.sh` 里选）"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: e2b07df351f243dfa2cd9df3faa5f56f
+msgid "Rendering"
+msgstr "渲染"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 81a72aedc61d4df1b664caba51e145c4
+msgid "RViz only"
+msgstr "仅 RViz"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: d342da44252c4a47a8d97f619bdb4869
+msgid "Basic"
+msgstr "基本用法"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 7351e96afab64a08861a16e3c4f9e5b5
+msgid "Photorealistic"
+msgstr "照片级真实感"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 0a0ffc8b10ca45ff9c6a9bd9b4c4b032
+msgid "Setup"
+msgstr "设置"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 005b59d799e84a2dbdb272eeabc5a2ba
+msgid "None"
+msgstr "无"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 367e0b5cd3ae4cf5a3155f8bdafa898c
+msgid "`apt install`"
+msgstr "`apt install`"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 587e4198d05441c5b50f82603240d418
+msgid "FaSim-Isaac `./init.sh` + `./run.sh`"
+msgstr "FaSim-Isaac `./init.sh` + `./run.sh`"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: d1f0c089eb0c4c60880d71c0d8de6868
+msgid "Speed"
+msgstr "速度"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 861f787dc68e4679adfd5730fd5f9f7f
+msgid "Real-time"
+msgstr "实时"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: d0ff3c5348254b2c940a26e05f5e12f7
+msgid "~Real-time"
+msgstr "接近实时"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: 387083239f00499bb9b3010b8689e444
+msgid "Configurable"
+msgstr "可配置"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: ae8a1a795bf84f6aa2b339c6b26010ed
+msgid "USD support"
+msgstr "USD 支持"
+
+#: ../../source/4-reference/simulation/0-index.md:23
+#: c4136a1dac7341cd9f1e0c1f5c5d6225
+msgid "Native"
+msgstr "原生"
+
+#: ../../source/4-reference/simulation/0-index.md:42
+#: c498e34ae9fc413499e1bf0c6e4dca25
+msgid "Isaac Sim Requirements"
+msgstr "Isaac Sim 要求"
+
+#: ../../source/4-reference/simulation/0-index.md:45
+#: a7f38e80cb944a2586747288a9477cbb
+msgid ""
+"Isaac Sim integration uses **FaSim-Isaac** (`./init.sh`, `./run.sh`). "
+"Default path is `ISAACSIM_DIR` (`~/isaacsim`); the optional ROS 2 overlay"
+" version comes from FaSim config / the init menu. See [FaSim-"
+"Isaac](2-fasim_isaac.md)."
+msgstr ""
+"Isaac Sim 集成使用 **FaSim-Isaac**（`./init.sh`、`./run.sh`）。默认路径是 "
+"`ISAACSIM_DIR`（`~/isaacsim`）；版本来自 FaSim 配置 / init 菜单。见 [FaSim-"
+"Isaac](2-fasim_isaac.md)。"
 
 #~ msgid "Omniverse"
 #~ msgstr "Omniverse"
@@ -246,4 +277,45 @@ msgstr ""
 
 #~ msgid "High-fidelity, USD assets"
 #~ msgstr "高保真，使用 USD 资产"
+
+#~ msgid "This section documents the simulation backends and USD assets."
+#~ msgstr "本节介绍仿真后端和 USD 资产。"
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid ""
+#~ "The stack supports multiple simulation "
+#~ "backends. **FaSim** is Isaac Sim "
+#~ "high-fidelity simulation combined with the"
+#~ " same ROS 2 运控 as the real "
+#~ "robot, so you get matching motion "
+#~ "plus simulation ground truth."
+#~ msgstr ""
+#~ "本栈支持多种仿真后端。**FaSim** 是 Isaac Sim 高保真仿真叠上与真机同一套"
+#~ " ROS 2 运控，因此运动对齐硬件，同时带有仿真真值。"
+
+#~ msgid "Backend"
+#~ msgstr "后端"
+
+#~ msgid "Use Case"
+#~ msgstr "使用场景"
+
+#~ msgid "Fast testing, no physics (`hardware:=mock_components`)"
+#~ msgstr "快速测试、无物理（`hardware:=mock_components`）"
+
+#~ msgid "Gazebo Harmonic"
+#~ msgstr "Gazebo Harmonic"
+
+#~ msgid "Physics simulation"
+#~ msgstr "物理仿真"
+
+#~ msgid "FaSim / Isaac Sim"
+#~ msgstr "FaSim / Isaac Sim"
+
+#~ msgid "High-fidelity USD; same 运控 as hardware + sim ground truth"
+#~ msgstr "高保真 USD；与真机同一套运控，并带仿真真值"
+
+#~ msgid "Yes (PhysX)"
+#~ msgstr "是（PhysX）"
 

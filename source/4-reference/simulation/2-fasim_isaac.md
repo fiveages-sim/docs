@@ -1,16 +1,20 @@
 # FaSim-Isaac
 
-FaSim-Isaac is the Isaac Sim workspace: robot and scene USD, an optional Isaac ROS 2 Jazzy overlay, and the extensions that start 运控 inside Sim.
+FaSim-Isaac is the Isaac Sim workspace for this stack. It holds robot and scene USD, can install an optional Isaac ROS 2 Jazzy overlay, and installs two OmniGraph extensions: one starts 运控 inside Sim, and one computes swerve (舵轮) commands for a chassis. It is not only a launcher for opening a USD.
 
-Use this page when you need to see why a joint topic, a clock, or a TF edge behaves the way it does. To start Sim and pick a launch, follow [Isaac Sim](../../2-how_to/2-simulation/4-isaac_sim.md).
+Use the [Isaac Sim How-To](../../2-how_to/2-simulation/4-isaac_sim.md) to install, start Sim, pick a launch, and run the first checks. This page explains the hardware keys, the two Kit extensions, and why a joint topic, a clock, or a TF edge behaves the way it does.
 
-**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac) `main` (`3606dc89`, 2026-11-13). In-process ros2_control is on `main` ([#7](https://github.com/fiveages-sim/FaSim-Isaac/pull/7), `1a4193a3`). Replicator capture (`exts/fasim.replicator.sdg`) is on `feature/ros2-control-node`, not on `main`.
+**Repository:** [fiveages-sim/FaSim-Isaac](https://github.com/fiveages-sim/FaSim-Isaac) `main` (`3606dc89`, 2026-11-13). In-process ros2_control is on `main` ([#7](https://github.com/fiveages-sim/FaSim-Isaac/pull/7), `1a4193a3`). The swerve extension is also on `main`. Replicator capture (`exts/fasim.replicator.sdg`) is on `feature/ros2-control-node`, not on `main`.
 
 **README:** [README.md](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/README.md)
 
-## Two hardware interfaces
+(fasim-hardware-interfaces)=
 
-One stage uses one of these. `isaac` is the topic bridge you pass on a ROS 2 launch. `isaac_sim` is set inside Isaac when Play starts the in-process node. It is not a `demo.launch.py` flag, and it is not a second robot body.
+## Hardware keys `isaac` and `isaac_sim`
+
+These keys are ros2_control hardware interfaces in the robot description xacro. They are not the FaSim Kit extensions below, and they are not a second robot body. One stage uses one of them.
+
+`isaac` is the topic bridge you pass on a ROS 2 launch. `isaac_sim` is set inside Isaac when Play starts the in-process node. It is not a `demo.launch.py` flag.
 
 | Key | Where it is set | Plugin | Joint I/O |
 |-----|-----------------|--------|-----------|
@@ -29,13 +33,32 @@ The shared macro’s `/isaac/joint_*` pair is the topic-bridge default. Acone us
 
 In-process W2 ([`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)) does not bridge body or arm `JointState` topics. The controller manager owns those joints. Chassis `cmd_vel` and `odom` stay on the child ROS graph.
 
-## In-process launch
+(fasim-kit-extensions)=
 
-`OgnROS2ControlLaunch` ([`OgnROS2ControlLaunch.ogn`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.ros2.nodes/fasim/ros2/nodes/ogn/python/nodes/OgnROS2ControlLaunch.ogn)) runs once after Play:
+## FaSim Kit extensions
+
+`./init.sh` operation 5 installs two extensions into this Isaac (`ISAACSIM_DIR`, default `~/isaacsim`). The script symlinks `exts/<name>` into `extsUser/` and adds the extension to the full, Newton, and streaming kit files. Reinstall Isaac, then run operation 5 again. Restart a running Isaac so the extensions load.
+
+The two extensions have different entry points. Do not treat a `SwerveController` graph as a ros2_control hardware key, and do not treat `ROS2ControlLaunch` as `hardware:=isaac`.
+
+| Extension | OmniGraph nodes | What it is for |
+|-----------|-----------------|----------------|
+| `exts/fasim.ros2.nodes` | `ROS2ControlLaunch`, `NavigationLaunch` | Start the in-process controller manager (`hardware=isaac_sim`) and, optionally, host Nav2 |
+| `exts/fasim.steering.nodes` | `SwerveController` | Turn a planar twist into steer-position and wheel-velocity commands for a four-wheel swerve chassis |
+
+(fasim-ros2-control)=
+
+## ROS 2 Control extension
+
+`fasim.ros2.nodes` is the in-process 运控 entry. After Play, `OgnROS2ControlLaunch` ([`OgnROS2ControlLaunch.ogn`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.ros2.nodes/fasim/ros2/nodes/ogn/python/nodes/OgnROS2ControlLaunch.ogn)) runs once and calls `emit_control`. That path sets `hardware=isaac_sim`, passes the ArticulationRoot as `isaac_prim_path`, and starts Isaac’s ControllerManager in the same process. Examples on this path include G1D, G1, and W2. W2’s in-process payload is [`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda).
+
+This is not the topic-bridge path. A stage that only uses `hardware:=isaac` does not go through this node.
+
+### `ROS2ControlLaunch` inputs
 
 | Input | Role |
 |-------|------|
-| `targetPrim` | One ArticulationRoot |
+| `targetPrim` | One ArticulationRoot, or a parent that contains exactly one |
 | `robot` | Description stem (`unitree_g1d`, `fiveages_w2`). Empty reads the USD `Robot` variant |
 | `mode` | `demo`, `split_body`, or `full_body` |
 | `type` | `robot_common_launch` end-effector key. Empty reads EE variants on the stage |
@@ -43,6 +66,11 @@ In-process W2 ([`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-r
 | `infoFile` | OCS2 `.info` basename. Empty keeps the description default |
 | `useSimTime` | Forced true for `isaac_sim` (needs `/clock`) |
 | `publishRobotDescription` | Latch the same xacro on `/robot_description` (default true) |
+| `profile` | Optional robot profile YAML path |
+| `enableGripper` | Same as `robot_common_launch` `enable_gripper` |
+| `rosSetup` | Path to `install/setup.bash`. Empty: first non-`/opt/ros` install on `AMENT_PREFIX_PATH` |
+| `enableArmsTargetManager` | Spawn `arms_target_manager` as a host process (default true) |
+| `arms` | `robot_common_launch` arms xacro key. Empty keeps the description default |
 
 `emit_control` builds one xacro URDF and points both the controller manager and `/robot_description` at it. `Ros2ControlManager.setup` is called with `publish_robot_description=False`, so the manager does not publish that topic a second time. `robot_state_publisher` on the host publishes `/robot_description` and the URDF TF tree. If that process does not start, a latched `fasim_robot_description` publisher is the fallback. The resource manager therefore loads the description once.
 
@@ -62,7 +90,63 @@ A simulated robot that runs 运控 inside Isaac starts faster for two reasons: t
 
 `emit_control` warns when `mode` is `full_body` and the override name contains `fixed_base`. The planner then has `basePlan=0`, so a runtime `BASE_LOCK` has nothing to constrain, and arm enable can stay in `WAITING_FOR_ENABLE_POLICY`. Lock the base with `mobile_base_tcp` and `BASE_LOCK`.
 
-`full_body` loads `ocs2_wbc_controller` from the GitHub Release package `ros-jazzy-arms-ros2-control` (`./init_repo.sh` with arms set to `d`, or `./scripts/install_core_debs.sh --only arms`). The same package contains `ocs2_humanoid` and `lina_planning`. It is not an apt package, and it is not `ros-jazzy-arms-ros2-control-full`. Open [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) when you need to read or change the source.
+`full_body` loads `ocs2_wbc_controller` from the GitHub Release package `ros-jazzy-arms-ros2-control` (`./init_repo.sh` with arms set to `d`, or `./scripts/install_core_debs.sh --only arms`). The same package contains `ocs2_humanoid` and `lina_planning`. It is not an apt package, and it is not `ros-jazzy-arms-ros2-control-full`. Open [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) when you need to read or change the source. You can run the controller from the deb without that private source checkout.
+
+### Add a robot to the in-process path
+
+1. The `{robot}_description` xacro includes `simulation_hardware_plugin` for `isaac_sim`, or lists `isaac_sim` in `validated_hardware_type` if that robot uses a whitelist.
+2. The USD has one ArticulationRoot and a payload that contains `ROS2ControlLaunch`. Set `targetPrim`, `robot` or the `Robot` variant, and `mode`.
+3. Operation 5 is installed and Isaac was restarted. The ROS variant on the stage is the in-process payload, not the topic-bridge payload.
+4. Press Play, then check as in the [How-To](../../2-how_to/2-simulation/4-isaac_sim.md#in-process-hardware-interface-isaac_sim).
+
+### What you should see
+
+`ros2 control list_controllers` lists the controllers for that `mode`. `/joint_states` is the controller’s `joint_state_broadcaster`, not the topic-bridge `/isaac/joint_*` pair. `/clock` ticks near the physics rate (see [Clock](#clock)). A command moves the articulation in the viewport. Arm degrees of freedom are not also bridged on `/isaac/joint_command`.
+
+A G1-D demonstration of full-body control and chassis motion in Isaac Sim is on the [How-To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-chassis-motion).
+
+(fasim-swerve)=
+
+## Swerve extension
+
+`fasim.steering.nodes` provides `fasim.steering.nodes.SwerveController` ([`OgnSwerveController.ogn`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.steering.nodes/fasim/steering/nodes/ogn/python/nodes/OgnSwerveController.ogn), kinematics in [`swerve.py`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.steering.nodes/fasim/steering/nodes/swerve.py)). It is an OmniGraph node, not a ros2_control hardware interface. A ScriptNode used to hold the same kinematics in module globals, which made Isaac disable every Action Graph until the user opted in. This node keeps state on the instance instead.
+
+It reads a planar twist in the body frame and writes two arrays, in the same wheel order: front-left, rear-left, rear-right, front-right (`fl`, `rl`, `rr`, `fr`).
+
+- `Steer_Position_Command` and `Steer_Joints` — steer angles, in radians, sent as position commands
+- `Wheel_Velocity_Command` and `Wheel_Joints` — wheel velocity commands, sent as velocity commands
+
+The two command types go to two `isaacsim.core.nodes.IsaacArticulationController` nodes. Do not wire steer angles as wheel velocities, or the other way around.
+
+`Desired_Linear_Velocity_X` / `Y` are forward and lateral speed in metres per second. `Desired_Angular_Velocity` is yaw rate in radians per second. Wheel positions in the profiles are body-frame `(x, y)` in metres, with `x` forward and `y` left. Inverse kinematics use `vx_total = vx - ω y_i` and `vy_total = vy + ω x_i`.
+
+`linearGain` scales wheel speed after the inverse kinematics. `angularGain` scales yaw rate before it. `flipVelocityScale` (clamped to `[0, 1]`) scales wheel speed for one frame when the equivalent steer solution flips sign. `simTime` is unused; it remains so existing Taku graph connections still resolve.
+
+The node accepts only two profiles. An unknown `profile` raises `ValueError`. There is no separate profile YAML.
+
+| `profile` | Steer joints | Drive (wheel) joints | Wheel `(x, y)` (m) | Stop and command behaviour |
+|-----------|----------------|----------------------|--------------------|----------------------------|
+| `linkhou_s2_v1` (OGN default) | `fl_steer_joint`, `rl_steer_joint`, `rr_steer_joint`, `fr_steer_joint` | `fl_wheel_joint`, `rl_wheel_joint`, `rr_wheel_joint`, `fr_wheel_joint` | `(0.23072, 0.21738)`, `(-0.22928, 0.21738)`, `(-0.23072, -0.21738)`, `(0.22928, -0.21738)` | When both linear speed and yaw rate are below `0.0001`, steer commands snap to zero and wheel speeds go to zero |
+| `taku` | `agv_left_front_steering_joint`, `agv_left_back_steering_joint`, `agv_right_back_steering_joint`, `agv_right_front_steering_joint` | `agv_left_front_rotate_joint`, `agv_left_back_rotate_joint`, `agv_right_back_rotate_joint`, `agv_right_front_rotate_joint` | `(0.2745, 0.2045)`, `(-0.2745, 0.2045)`, `(-0.2745, -0.2045)`, `(0.2745, -0.2045)` | On stop, steer holds; steer slew is limited to 180°/s; wheel speed is scaled down until the steer error is small (full speed at 8°, zero at 35°). `msgCount` must keep changing: if it is unchanged for 0.25 s, the last twist is dropped. Linear deadband 0.02 m/s, yaw deadband 0.05 rad/s. Flip choice uses a 20° hysteresis. `deltaSeconds` is the playback frame dt (values `≤ 1e-6` or `> 0.1` fall back to `1/60`) |
+
+### Graph wiring on current assets
+
+Both example graphs tick from `OnPlaybackTick`, subscribe to a `geometry_msgs/Twist` with `ROS2SubscribeTwist`, break out linear `x`/`y` and angular `z`, and run `SwerveController`. Linear velocity is passed through `OgnIsaacScaleToFromStageUnit`.
+
+- Linkhou S2: [`mobile_base/Linkhou/S2_V1/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/robot_usds/blob/main/mobile_base/Linkhou/S2_V1/payloads/ROS/ros2.usda), graph `ROS_Steering_Controller`, `profile` `linkhou_s2_v1`. `linearGain` is 14.28, `angularGain` is 1.04. The ArticulationRoot target is `</Linkhou_S2_V1>`. Joint name arrays come from the node outputs `Steer_Joints` and `Wheel_Joints`. The `ROS2SubscribeTwist` `topicName` attribute is present in that USDA but has no value; confirm the topic on the opened stage before you publish.
+- Taku: [`humanoid/Dyna/Taku/components/Taku_Chassis/payloads/Graph/enable.usda`](https://github.com/fiveages-sim/robot_usds/blob/main/humanoid/Dyna/Taku/components/Taku_Chassis/payloads/Graph/enable.usda), graph `steering_wheel_controller`, `profile` `taku`. `topicName` is `/cmd_vel`. `linearGain` is 16, `flipVelocityScale` is 0.15, `angularGain` is 1. `deltaSeconds` comes from `OnPlaybackTick`, `msgCount` from a Counter on the subscriber `execOut`, and `simTime` from `IsaacReadSimulationTime` (the node does not use that last input). The ArticulationRoot target is `</Taku_Chassis/base_link>`. The two `IsaacArticulationController` nodes list the steer and drive joint names explicitly, in the same `fl`, `rl`, `rr`, `fr` order as the profile.
+
+OGN defaults, if a graph leaves them unset, are `linearGain` 50, `angularGain` 1, and `flipVelocityScale` 0.35.
+
+### Add a swerve chassis
+
+A new chassis is not configured by pointing `profile` at a file. Add a profile in [`swerve.py`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.steering.nodes/fasim/steering/nodes/swerve.py): wheel `(x, y)`, steer and drive joint names, and the stop behaviour that chassis needs. List the token in the OGN `allowedTokens`. Copy a graph from Linkhou S2 or Taku: subscribe a twist, set `profile`, and connect steer positions and wheel velocities to two `IsaacArticulationController` nodes on the ArticulationRoot. Joint names on those controllers, or on the node outputs, must match the USD and the profile, in `fl`, `rl`, `rr`, `fr` order. Install operation 5 and restart Isaac so `SwerveController` is available.
+
+### What you should see
+
+After Play, a `geometry_msgs/Twist` on the graph’s subscribe topic moves the chassis. Steer joints follow `Steer_Position_Command`; wheel joints follow `Wheel_Velocity_Command`. On Linkhou S2, a zero command snaps the steer joints to zero. On Taku, the steer joints hold, and a stale command (no new `msgCount` for 0.25 s) stops the wheels. If the node type is missing, operation 5 was not installed or Isaac was not restarted.
+
+(fasim-clock)=
 
 ## Clock
 
@@ -73,6 +157,8 @@ The topic-bridge payload on the same robot ([`ros2.usda`](https://github.com/fiv
 `/clock` is the controller’s time base when `use_sim_time` is true. A clock that ticks once per rendered frame jumps several physics steps, so a timed move finishes early. Use the physics-step clock. Changing joint gains does not fix that. New in-process payloads follow the same `ROS_Clock` pattern. This page checks it on W2. Odometry graphs keep their own `ReadSimTime` (`resetOnStop=1`) so `odom` stamps stay valid. Put cameras on the scene payload, not on this clock graph.
 
 `arms_target_manager`, when the node spawns it, is a host process with `use_sim_time:=false` so markers are not tied to the physics step.
+
+(fasim-tf)=
 
 ## TF
 
@@ -93,17 +179,17 @@ ros2 run tf2_ros tf2_echo world base_link --ros-args \
 
 `<ns>` is the string on that graph’s `namespace` input, not a `demo.launch.py` argument. A stage with one graph and one controller manager per robot has been run.
 
+(fasim-navigation)=
+
 ## Navigation
 
 `NavigationLaunch` ([`OgnNavigationLaunch.ogn`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/exts/fasim.ros2.nodes/fasim/ros2/nodes/ogn/python/nodes/OgnNavigationLaunch.ogn)) starts `ros2 launch robot_common_launch navigation_isaac_gt.launch.py` on Play when `enabled` is true. W2’s fiveages graph leaves `enabled` false.
 
 `map` and `paramsFile` are paths relative to the opened stage root, so an `env/` layer can point at `../../maps/<name>/map.yaml` stored in the same [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) project. The node does not call composer `ros2-stack`. Default `nav2Profile` is `map_only`. `publishMapWorldTf` defaults true (map drawn in USD world). `publishMapOdomTf` defaults false because odometry comes from Isaac.
 
-## Project scenes
+Where those map files and `robot.yaml` currently live: [Environment assets](5-env_assets.md#fa-project-usd).
 
-[fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) is a private repository. On `main`, a project is `scene.usd(a)`, `objects/`, and a runnable `env/` ([README](https://github.com/fiveages-sim/fa-project-usd/blob/main/README.md)).
-
-The files the orchestrator reads next to those scenes (`robot.yaml`, `task_configs/`, and `maps/` or `map/`) are on branch `feature/sinopec-test-tube-picking`. That branch was ahead of `main` and not merged when these pages were checked on 2026-11-13. Three projects there use this layout: `Fiveages/2026-11 Standard Moving Boxes`, `Siemens/2026-06 Wind Turbine Blade Detection`, and `Aimbo/2026-04 Bosch German&Poland POC`. You need access to open the branch. The public way to run a project directory is [lerobot_ros2 `examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md): `motion-generation` with `LEROBOT_ROOT` set. Keep camera rigs in the scene USD.
+(fasim-layout)=
 
 ## Layout
 
@@ -114,17 +200,17 @@ FaSim-Isaac/
 ├── run_headless.sh
 ├── config/                         # fa_sim.conf + optional fa_sim.local.conf
 ├── exts/fasim.ros2.nodes/          # ROS2ControlLaunch, NavigationLaunch
-├── exts/fasim.steering.nodes/      # swerve graph node
+├── exts/fasim.steering.nodes/      # SwerveController
 ├── tools/audit_mimic_joint_drives.py
 ├── robots/                         # → robot_usds
 └── environment/
     ├── fiveages_env/
     ├── fa-project-usd/             # private
     ├── artvip-usd/
-    └── labutopia-usd/
+    └── labutopia-usd/              # private
 :::
 
-Submodule URLs: [`.gitmodules`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.gitmodules). Visibility: `submodules_visibility.conf`.
+Submodule URLs: [`.gitmodules`](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/.gitmodules). Visibility: `submodules_visibility.conf`. Robot tree: [robot_usds](3-robot_usds.md). Scene trees: [Environment assets](5-env_assets.md).
 
 ## Mimic joints
 
@@ -133,7 +219,8 @@ Submodule URLs: [`.gitmodules`](https://github.com/fiveages-sim/FaSim-Isaac/blob
 ## Related
 
 - [Isaac Sim how-to](../../2-how_to/2-simulation/4-isaac_sim.md)
+- [robot_usds](3-robot_usds.md)
+- [Environment assets](5-env_assets.md)
 - [topic_based_ros2_control](../hardware/1-topic_based.md)
 - [robot_common_launch](../descriptions/2-common.md)
 - [lerobot_ros2](../python_apps/4-lerobot_ros2.md)
-- [Environment assets](5-env_assets.md)

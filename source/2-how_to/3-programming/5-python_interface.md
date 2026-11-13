@@ -5,7 +5,7 @@ Control robots from Python with `ROS2RobotInterface`.
 ## Prerequisites
 
 - ROS 2 Jazzy installed
-- Robot demo running (mock, Gazebo, or real)
+- Robot demo running (mock, Isaac Sim, or real; Gazebo is an alternative)
 - **Python 3.12** (ROS 2 Jazzy)
 
 ## Install fa-py-libraries
@@ -66,16 +66,22 @@ interface.disconnect()
 
 `right_arm_handler` / `right_gripper_handler` exist in dual-arm mode after `connect()` sees `/right_current_pose`. Cartesian vs joint vs gripper topics (including `*/twist`, `*/relative`, `target_percent`, and waist `waist_*`), plus `execute_*_action` and `execute_path`: [ros2_robot_interface](../../4-reference/python_apps/1-ros2_robot_interface.md) (Topic / Action / Service ↔ API map).
 
-## With Viser visualization
+(start-viser)=
 
-Launch Viser from **fa-py-libraries** (`./run.sh viser`). That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
+## Start Viser
+
+Viser is the browser 3D view and control page from [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md). Start the robot control stack first (`/robot_description` must be available), then launch Viser from **fa-py-libraries**. That is the primary entry; do not start it from lerobot_ros2 or treat `pip install ros2-viser` as the product launcher.
 
 :::{code-block} bash
 cd ~/fa-py-libraries
 ./run.sh viser
 :::
 
-`ros2_viser` is a library dependency of that command. Embedding `ROS2ViserVisualizer` in your own script is covered on [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md).
+`./run.sh` with no arguments opens a menu; item 1 is `ros2-viser launch`. The command runs `ros2-viser/launch.py`. In a browser, open the URL printed in the terminal (`访问 URL`). The same output shows the host and port; this launch has no separate host/port flag. You can also scan the QR code it prints.
+
+The page starts as an empty scene. If only one robot is present, it loads automatically. If there are several, pick one under “选择命名空间”. If the robot comes up later, click “刷新命名空间列表”. Then confirm the model is visible. For a first control check: use HOME / HOLD on the state panel; switch to OCS2 and drag the end-effector handles; or switch to MOVEJ, move the joint sliders, and send the target. On a mobile base such as G1-D, `launch.py` sets the visualization frame to `world`; you can also choose `map` or `odom` on the page so the model and the handles share the same ground.
+
+`ros2_viser` is a library dependency of that command. The full UI and embedding `ROS2ViserVisualizer` in your own script are on [ros2-viser](../../4-reference/python_apps/3-ros2_viser.md). Use this page before you rely on Viser while running [Isaac Sim](../2-simulation/4-isaac_sim.md).
 
 ## FSM commands
 

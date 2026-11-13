@@ -1,6 +1,6 @@
 # DexCap Teleoperation
 
-Use DexCap gloves for dexterous hand teleoperation.
+Use the DexCap V4 exoskeleton and gloves for combined arm and hand teleoperation. The exoskeleton measures waist and arm joints; the gloves measure finger joints.
 
 ```{admonition} Internal Access Required
 :class: warning
@@ -11,8 +11,8 @@ DexCap components require access to private repositories. Contact your team lead
 ## Overview
 
 DexCap teleoperation enables:
-- High-fidelity hand tracking via glove sensors
-- Finger joint mapping to robot hands
+- Waist and arm joint measurement from the exoskeleton
+- Finger joint mapping from the gloves to robot hands
 - Combined arm + hand teleoperation
 
 ## Components
@@ -38,13 +38,13 @@ cd dexcap_teleop_ws
 
 Follow that **private workspace’s README** for its init / setup scripts.
 
-### 3. Initialize Connection
-
-First connection should disable commands for safety:
+### 3. Start the driver
 
 ```bash
-ros2 launch dexcap_ros2_control driver.launch.py publish_command:=false
+ros2 launch dexcap_ros2_control dexcap_driver.launch.py
 ```
+
+To start only the exoskeleton or only one glove, pass `start_upper_body`, `start_left_hand`, and `start_right_hand` as in the private package README. That README is also the place to look for first-connection safety; `publish_command` is not a current launch argument.
 
 ## Launch Order
 
@@ -63,9 +63,13 @@ Launch order, package names, and topics: the **private README**.
 
 | Topic | Type | Description |
 |-------|------|-------------|
-| `/dexcap/joint_states` | `JointState` | Raw glove joint angles |
-| `/dexcap/hand_pose` | `PoseStamped` | Hand position/orientation |
-| `/teleop/target_hand_joints` | `JointState` | Mapped robot hand targets |
+| `/dexcap/waist` | `JointState` | Waist joints from the exoskeleton |
+| `/dexcap/left_arm` | `JointState` | Left arm joints from the exoskeleton |
+| `/dexcap/right_arm` | `JointState` | Right arm joints from the exoskeleton |
+| `/dexcap/left_hand` | `JointState` | Left glove, 21 joints |
+| `/dexcap/right_hand` | `JointState` | Right glove, 21 joints |
+
+Mapper outputs and further topics are in the private README.
 
 ## Joint Mapping
 
@@ -94,9 +98,8 @@ Before each session:
 ## Verification
 
 1. DexCap driver shows connected status
-2. `/dexcap/joint_states` publishes hand joint angles
-3. Robot hand follows glove motion
-4. Arm follows hand position (if arm teleop enabled)
+2. `/dexcap/left_hand` and `/dexcap/right_hand` publish glove joint angles; `/dexcap/waist`, `/dexcap/left_arm`, and `/dexcap/right_arm` publish when the exoskeleton is started
+3. The robot hand follows the gloves; the arms follow the exoskeleton when arm mapping is enabled
 
 ## Troubleshooting
 
