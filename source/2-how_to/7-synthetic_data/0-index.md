@@ -4,20 +4,9 @@ This chapter is the **Isaac Sim datagen pipeline**: USD scenes → ROS 2 interfa
 
 This How-To category is the Isaac datagen pipeline, not Gazebo or teleop. Reference pages stay the source of APIs; this chapter only explains **how the pieces connect**.
 
-```{admonition} Documented revisions
-:class: note
+Follow [robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) `main` and [lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) `main`. Simulation grasp datagen is included there ([#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10)). There is no `feature/dex-grasp-generator` branch.
 
-- [robot_action_composer](https://github.com/fiveages-sim/robot_action_composer) `main`
-- [lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) `main` (`feature/sim-grasp-datagen` merged in [#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10))
-
-`feature/dex-grasp-generator` is no longer a branch.
-```
-
-```{admonition} Terminology
-:class: note
-
-**Humanoid** here means a **wheeled-arm humanoid** (mobile base + arms, e.g. FiveAges W2). It does **not** mean a bipedal or footed humanoid.
-```
+**Humanoid** on these pages means a wheeled-arm robot: a mobile base plus arms, for example FiveAges W2. It does not mean a biped.
 
 ## Pipeline
 

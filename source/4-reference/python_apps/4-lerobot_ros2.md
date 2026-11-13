@@ -2,7 +2,7 @@
 
 LeRobot ↔ ROS 2 integration monorepo. LeRobot talks to the robot over ROS 2 topics.
 
-**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) `main` (`f750af76`). `feature/sim-grasp-datagen` was merged in [#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10) (`147ea78d`, 2026-10-23) and is no longer a branch.
+**Repository:** [fiveages-sim/lerobot_ros2](https://github.com/fiveages-sim/lerobot_ros2) `main` (`f750af76`). Simulation grasp datagen is on this branch ([#10](https://github.com/fiveages-sim/lerobot_ros2/pull/10), `147ea78d`, 2026-10-23). There is no separate `feature/sim-grasp-datagen` branch to check out.
 
 **README:** [README.md](https://github.com/fiveages-sim/lerobot_ros2/blob/main/README.md)
 
@@ -49,7 +49,7 @@ source .venv/bin/activate   # default backend=uv
 | `./init.sh all` | Submodules + env + orchestration + LeRobot plugins (NumPy 2) |
 | `./init.sh set-backend uv` | Write `backend` in `.fa-env.toml` (`uv` or `conda`) |
 
-Orchestration and dexterous grasp share one environment on NumPy 1.x so they match ROS 2’s system OpenCV / `cv_bridge`. Recording and policy inference install NumPy 2 for `lerobot` 0.5. Use a separate environment for that step. `./init.sh install-lerobot` in the grasp environment upgrades NumPy and then head-camera capture through `cv_bridge` no longer matches the system build. Dexterous grasp is optional (the reference robot is FiveAges W2 with Wuji Hand2). A robot without that grasp config still runs `all-motion`.
+Keep orchestration and dexterous grasp in one environment on NumPy 1.x. That matches the OpenCV and `cv_bridge` that come with ROS 2. Recording and policy inference use NumPy 2 because `lerobot` 0.5 does. Put that step in a second environment. If you run `./init.sh install-lerobot` inside the grasp environment, NumPy moves to 2 and head-camera frames through `cv_bridge` no longer match the system build. Dexterous grasp is optional. The reference robot for it is FiveAges W2 with Wuji Hand2. A robot that has no grasp config still uses `all-motion`.
 
 Optional submodules in [`.gitmodules`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/.gitmodules): [HUG](https://github.com/fiveages-sim/HUG) (private; Python 3.10 env under `submodules/hug/.venv`), [wuji-retargeting](https://github.com/fiveages-sim/wuji-retargeting), [internnav_w2](https://github.com/fiveages-sim/internnav_w2), [internnav_arx_lift2s](https://github.com/fiveages-sim/internnav_arx_lift2s), [LightNav-0_W2](https://github.com/fiveages-sim/LightNav-0_W2). `internnav_w2` and `LightNav-0_W2` need access. Runtime retargeting installs PyPI `wuji-sdk` (`./init.sh install-grasp`); do not recurse into the nested MuJoCo repos inside `wuji-retargeting`.
 
@@ -119,7 +119,7 @@ More examples are under `examples/`. `lerobot_robot_ros2` depends on the local `
 
 Shared steps: [`examples/IsaacSim/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/README.md). That README still lists Isaac Sim 6.0. FaSim `config/fa_sim.conf` is the version menu for this stack (fallback `6.2.0` / `6.1.0` / `6.0.1`).
 
-`motion-generation` runs in any directory that contains `robots/` or a project `robot.yaml`. A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) project directory (private; needs access) can be that workspace when `LEROBOT_ROOT` points at this checkout and `robot.yaml` `extends` a profile under `examples/IsaacSim/robots/`. The public example in that README is:
+`motion-generation` runs in any directory that contains `robots/` or a project `robot.yaml`. A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) project directory can be that workspace when you can open the repository, `LEROBOT_ROOT` points at this checkout, and `robot.yaml` `extends` a profile under `examples/IsaacSim/robots/`. The public example in that README is:
 
 :::{code-block} bash
 export LEROBOT_ROOT=/path/to/lerobot_ros2
@@ -129,7 +129,7 @@ motion-generation --robot fiveages_w2 --task-key poc_port4_bimanual_carry
 
 `ros2-stack`, `check-robot-status`, and `record_datasets.py --workspace <project>` take the same directory. Orchestration files beside those scenes (`robot.yaml`, `task_configs/`, `maps/` or `map/`) are on `fa-project-usd` branch `feature/sinopec-test-tube-picking`, which is ahead of that repo’s `main`.
 
-Public G1D profile [`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml): `ee_target_frame` is `{arm}_eef`, `ee_command_frame` is `{arm}_tcp`, and there is no `ee_tip`. `ros2_stack.motion.required` is `false` with `args.hardware: isaac`, because the scene USD already starts in-process control on Play. That YAML `hardware: isaac` is the composer stack preset. It is not the in-process plugin name `isaac_sim`. Leaving `required: true` would start a second controller manager.
+The public G1D profile [`examples/IsaacSim/robots/Unitree/G1D/robot.yaml`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/Unitree/G1D/robot.yaml) sets `ee_target_frame` to `{arm}_eef` and `ee_command_frame` to `{arm}_tcp`. It has no `ee_tip`. `ros2_stack.motion.required` is `false`, and `args.hardware` is `isaac`, because the scene USD already starts in-process control when you press Play. That YAML value `hardware: isaac` is the composer stack preset. It is not the in-process plugin name `isaac_sim`. If you leave `required: true`, a second controller manager starts.
 
 ## Camera plugin
 

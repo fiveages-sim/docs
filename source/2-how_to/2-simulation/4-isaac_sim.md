@@ -1,23 +1,23 @@
 # Isaac Sim
 
-Run a robot in NVIDIA Isaac Sim and connect it to the same ROS 2 运控 stack used on hardware.
+Open a robot in NVIDIA Isaac Sim and drive it with the same ROS 2 stack you use on the real machine.
 
-FaSim-Isaac is the asset workspace: `./init.sh` then `./run.sh` (or `./run_headless.sh`). Robot choice is which USD you open, not a `./run.sh --robot` flag. Path and Isaac version live in `config/fa_sim.conf` / `config/fa_sim.local.conf`.
+FaSim-Isaac holds the assets. Run `./init.sh`, then `./run.sh` or `./run_headless.sh`. You choose the robot by opening its USD. There is no `./run.sh --robot`. The Isaac path and version are in `config/fa_sim.conf`, with a machine override in `config/fa_sim.local.conf`.
 
-There are two ROS 2 connections. Pick one for a given stage.
+Connect ROS 2 in one of two ways. Use one of them for a given stage.
 
-| Launch / graph | Plugin | What moves the joints |
+| What you start | Plugin | What moves the joints |
 |----------------|--------|------------------------|
 | `hardware:=isaac` | `topic_based_ros2_control/TopicBasedSystem` | OmniGraph joint topics |
-| In-process `ROS2ControlLaunch` (Play) | `isaacsim_ros2_control/IsaacSimSystem` (`hardware=isaac_sim` inside the node) | Controller manager in the Isaac process |
+| Play on an in-process `ROS2ControlLaunch` | `isaacsim_ros2_control/IsaacSimSystem` (`hardware=isaac_sim` inside the node) | The controller manager inside the Isaac process |
 
-`isaac_sim` is a ros2_control hardware interface, not a second robot body. Details, clock, and TF: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
+`isaac_sim` is the hardware interface for that in-process controller. It is not a second robot. Clock, TF, and the rest of the mechanism: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
 
-## Prerequisites
+## Before you start
 
-- NVIDIA Isaac Sim, GPU, and a matching driver. Default directory `ISAACSIM_DIR` (`~/isaacsim` unless you override it).
-- ROS 2 Jazzy workspace that already builds the robot (`open-deploy-ws` or, with access, [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws)).
-- For the topic bridge, the workspace includes `topic_based_ros2_control`. For the in-process graph, `./init.sh` operation 5 has installed `fasim.ros2.nodes` into this Isaac, and the description xacro accepts `hardware` `isaac_sim`.
+- Isaac Sim is installed, the GPU driver matches it, and `ISAACSIM_DIR` points at that install (`~/isaacsim` unless you set another path).
+- A ROS 2 Jazzy workspace already builds this robot: `open-deploy-ws`, or [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) once you can open that repository.
+- The topic bridge needs `topic_based_ros2_control` in that workspace. The in-process graph needs `./init.sh` operation 5, which installs `fasim.ros2.nodes` into this Isaac, and a description xacro that accepts `hardware` `isaac_sim`.
 
 ## Start FaSim
 
@@ -28,13 +28,13 @@ cd FaSim-Isaac
 ./run.sh
 :::
 
-`./init.sh` menu ([README](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/README.md)):
+`./init.sh` asks you to ([README](https://github.com/fiveages-sim/FaSim-Isaac/blob/main/README.md)):
 
-1. Init selected submodules (`.gitmodules` / `submodules_visibility.conf`). Public entries start checked. Private entries (including [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd)) stay unchecked until you have access. Re-runs only add what you check.
-2. Update submodules already checked out (`./init.sh --update`). The FaSim repo itself is not pulled.
+1. Check out the submodules you select (`.gitmodules` and `submodules_visibility.conf`). Public entries start checked. Private entries, including [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd), stay unchecked until you can open them. A later run only adds what you check.
+2. Update submodules you already checked out (`./init.sh --update`). This does not pull the FaSim repository itself.
 3. Download ArtVIP into `environment/ArtVIP/` (`tools/artvip_kitchen.py`).
-4. Optional Isaac ROS 2 Jazzy overlay under `isaac_jazzy_ws/`. The menu asks GitHub for stable tags. If that query fails, `config/fa_sim.conf` falls back to `6.2.0` / `6.1.0` / `6.0.1`. Override with `ISAAC_SIM_VERSION=… ./init.sh`.
-5. Install FaSim extensions into this Isaac (`exts/fasim.steering.nodes`, `exts/fasim.ros2.nodes`) and silence script warnings. Re-run after you reinstall Isaac. Restart Isaac so the extensions load.
+4. Optionally add an Isaac ROS 2 Jazzy overlay under `isaac_jazzy_ws/`. The menu asks GitHub for stable tags. If that query fails, `config/fa_sim.conf` falls back to `6.2.0`, `6.1.0`, and `6.0.1`. Override with `ISAAC_SIM_VERSION=… ./init.sh`.
+5. Install the FaSim extensions into this Isaac (`exts/fasim.steering.nodes`, `exts/fasim.ros2.nodes`) and quiet the script warnings. Run this again after you reinstall Isaac, then restart Isaac so the extensions load.
 
 `./run.sh` shows the saved backend, then asks PhysX or Newton, CPU governor, and which ROS 2 workspace to source. `./run_headless.sh` is the same menu for Headless Streaming. Non-interactive examples from the README:
 
@@ -60,12 +60,12 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone hardware:=isaac
 
 `robot:=` is the description key (`<key>_description`). `demo.launch.py` has no namespace argument. Do not append `namespace:=…` on this launch.
 
-The shared macro [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro) writes:
+The shared macro [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro) sets:
 
 - `joint_commands_topic` = `/isaac/joint_command`
 - `joint_states_topic` = `/isaac/joint_states`
 
-Those names have to be the OmniGraph `topicName` on **this** robot. W2’s topic-bridge payload [`W2/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/ros2.usda) publishes `/joint_command` and `/joint_states` instead. If the two sides differ, retarget the xacro `<param>` (or the graph) until `ros2 topic echo` shows the same `sensor_msgs/JointState` names the controller claims. Plugin parameters: [topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md).
+Those strings have to match the OmniGraph `topicName` on this robot. W2’s topic-bridge payload [`W2/payloads/ROS/ros2.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/ros2.usda) publishes `/joint_command` and `/joint_states` instead. If the two sides differ, change the xacro `<param>` or the graph until `ros2 topic echo` shows the same `sensor_msgs/JointState` names the controller is using. Plugin parameters: [topic_based_ros2_control](../../4-reference/hardware/1-topic_based.md).
 
 `use_sim_time` follows `hardware` (`isaac` → true) unless you pass `use_sim_time:=true` or `false`.
 
@@ -78,13 +78,13 @@ ros2 topic echo /isaac/joint_states --once
 
 A joint command on the matching command topic moves the articulation. There is no stack-wide `/target_pose`.
 
-## In-process driver (`isaac_sim`)
+## In-process hardware interface (`isaac_sim`)
 
-Use this when the USD contains `fasim.ros2.nodes.ROS2ControlLaunch` (W2 in-process payload: [`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)). Play runs the graph. The node calls `emit_control`, which sets `hardware=isaac_sim`, passes the ArticulationRoot as `isaac_prim_path`, and starts the controller manager inside Isaac.
+Use this when the USD contains `fasim.ros2.nodes.ROS2ControlLaunch`. W2’s in-process payload is [`W2/payloads/ROS/fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda). Press Play. The node calls `emit_control`, which sets `hardware=isaac_sim`, passes the ArticulationRoot as `isaac_prim_path`, and starts the controller manager inside Isaac.
 
-You still need a description package whose ros2_control xacro includes `simulation_hardware_plugin` for `isaac_sim` ([robot_common_launch README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)). The graph inputs are `robot`, `mode` (`demo`, `split_body`, `full_body`), `type`, and optional `namespace`, `infoFile`, `arms`. Empty `robot` reads the USD `Robot` variant; that string must be the description package stem.
+The description package still has to exist. Its ros2_control xacro includes `simulation_hardware_plugin` for `isaac_sim` ([robot_common_launch README](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/README.md)). The graph inputs are `robot`, `mode` (`demo`, `split_body`, `full_body`), `type`, and the optional `namespace`, `infoFile`, and `arms`. An empty `robot` reads the USD `Robot` variant. That string is the description package stem.
 
-On Play, confirm:
+After Play, check:
 
 :::{code-block} bash
 ros2 control list_controllers
@@ -96,7 +96,7 @@ ros2 topic hz /clock
 
 `namespace` on the graph (empty for one robot) is how a second articulation gets `/<ns>/controller_manager`. It is not a `demo.launch.py` argument. Frame ids stay `world`, `odom`, and `base_link` / `base_footprint`. See the reference for TF and for `infoFile`.
 
-Whole-body mode needs the private [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) submodule. To hold a mobile base, keep the description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` graph with `infoFile` set to a `fixed_base` info file has no virtual chassis degree of freedom for that lock, and arm enable can sit in `WAITING_FOR_ENABLE_POLICY`.
+Whole-body mode (`mode` `full_body`) loads `ocs2_wbc_controller`. That package is already in the GitHub Release deb `ros-jazzy-arms-ros2-control`. Choose `d` for arms in `./init_repo.sh`, or run `./scripts/install_core_debs.sh --only arms`. Cloning [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how you read or edit the source. To hold a mobile base, keep the description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` graph whose `infoFile` points at a `fixed_base` info file has no virtual chassis joint for that lock, and arm enable can stay in `WAITING_FOR_ENABLE_POLICY`.
 
 ## What to open
 
@@ -113,9 +113,9 @@ Gen labels and brand folders: [robot_usds reference](../../4-reference/simulatio
 
 **Isaac does not start.** `ISAACSIM_DIR` must contain the launchers named in `config/fa_sim.conf` (`isaac-sim.sh`, `isaac-sim.newton.sh`, `isaac-sim.streaming.sh`, `isaac-sim.newton.streaming.sh`). `nvidia-smi` shows a GPU. Logs: `~/.nvidia-omniverse/logs/`.
 
-**No ROS 2 topics after Play.** Domain id and `RMW_IMPLEMENTATION` match the sourced workspace. Topic bridge: the graph’s `topicName` matches the xacro. In-process: operation 5 is installed and Isaac was restarted; the stage’s `ROS` variant is the fiveages payload, not the topic-bridge payload.
+**Play starts, but no ROS 2 topics appear.** The domain id and `RMW_IMPLEMENTATION` match the workspace you sourced. For the topic bridge, the graph `topicName` matches the xacro. For the in-process graph, operation 5 is installed and Isaac was restarted, and the stage’s `ROS` variant is the fiveages payload rather than the topic-bridge payload.
 
-**Motion finishes much too fast.** On the in-process payload, `/clock` comes from the on-demand `ROS_Clock` graph (`OnPhysicsStep`), which is already how W2 `fiveages.usda` is wired. The topic-bridge `ros2.usda` still publishes the clock from `OnPlaybackTick`. Fix the clock source before editing joint gains. Mechanism: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
+**A motion finishes much too fast.** On the in-process payload, `/clock` comes from the on-demand `ROS_Clock` graph (`OnPhysicsStep`). That is how W2 `fiveages.usda` is already wired. The topic-bridge `ros2.usda` still publishes the clock from `OnPlaybackTick`. Fix the clock before you edit joint gains. The mechanism is on the [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
 
 ## Next
 

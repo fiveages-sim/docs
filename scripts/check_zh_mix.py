@@ -36,7 +36,7 @@ ALLOW_WORDS = frozenset(
         deb apt rviz moveit colcon rosdep gazebo isaac isaacsim lerobot fasim
         fiveages sphinx myst furo ubuntu jazzy nvidia github git python linux
         docker home hold movej arx galbot dobot cr5 hightorque panthera ht
-        acone dexcap pico lift lift2s gen1 gen2 gen3 w1 w2 w2r s2 s2r wce3
+        acone dexcap pico lift lift2s gen1 gen2 gen3 w1 w2 w2r s2 s2r
         int32 string jointstate posestamped mock_components hardware robot
         type launch skill skills deb humanoid composer webxr xrobotoolkit
         enterprise consumer app pc service overlay setup bash cmake

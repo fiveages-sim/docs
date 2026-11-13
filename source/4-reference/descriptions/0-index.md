@@ -5,7 +5,7 @@ This section documents the robot description packages — URDF/xacro models, mes
 ```{admonition} Terminology
 :class: note
 
-FiveAges **humanoid** descriptions (W1, W2, W2R, S2, S2R, WCE3) are **wheeled-arm humanoids** (mobile base + arms). They are **not** bipedal or footed humanoids.
+FiveAges humanoid descriptions in this set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms. They are not bipeds.
 ```
 
 ## Overview
@@ -39,5 +39,5 @@ robot_descriptions/                 # umbrella paths from its README
 | [robot_descriptions](1-robot_descriptions.md) | Umbrella | Public |
 | [robot-descriptions-common](2-common.md) | Grippers, hands, sensors, `robot_common_launch` (path `common`) | Public |
 | [Brand packages](3-brand_public.md) | Dobot, ARX, Galbot, HighTorque | Public |
-| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/2/3 USD | Public W1/W2/S2 + components + Gen1/Gen2 USD; W2R, S2R, Gen3 still private |
+| [FiveAges descriptions](4-fiveages_umbrella.md) | `humanoid/FiveAges/*` URDF gitlinks + Gen1/Gen2 USD | Public W1/W2/S2 + components + Gen1/Gen2 USD; W2R and S2R still private |
 | [Vendor arms](6-vendor_arms.md) | Tianji, Rokae, Gento (public remotes); Fairino, Agibot G2 (private) | Public remotes + private remotes |

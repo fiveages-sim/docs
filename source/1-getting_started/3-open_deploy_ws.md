@@ -157,14 +157,14 @@ colcon build --packages-up-to ocs2_arm_controller taku_description
 source install/setup.bash
 # 分体 — public mock path (arm MPC + body/head basic + grippers)
 ros2 launch ocs2_arm_controller split_body.launch.py robot:=taku
-# 全身 — needs the private ocs2_wbc_controller submodule
+# 全身 — needs ocs2_wbc_controller from the arms deb, or from a source checkout
 ros2 launch ocs2_arm_controller full_body.launch.py robot:=taku
 :::
 
-```{admonition} Public mock vs private WBC
+```{admonition} Public mock and the WBC package
 :class: warning
 
-Shipping `config/ocs2/fixed_base_tcp.info` in the public description does **not** mean public mock can run `ocs2_wbc_controller`. Public mock uses **`split_body.launch.py`**. **`full_body.launch.py`** needs the private WBC submodule.
+Shipping `config/ocs2/fixed_base_tcp.info` in the public description does not make mock start `ocs2_wbc_controller`. Public mock uses `split_body.launch.py`. `full_body.launch.py` needs the `ocs2_wbc_controller` package. Install it with the arms GitHub Release deb (`ros-jazzy-arms-ros2-control`: arms = `d` in `./init_repo.sh`, or `./scripts/install_core_debs.sh --only arms`), or build it from the source checkout. The info file alone is not the controller.
 ```
 
 | Launch | Controllers |
@@ -172,7 +172,7 @@ Shipping `config/ocs2/fixed_base_tcp.info` in the public description does **not*
 | `split_body.launch.py` | `ocs2_arm_controller` (dual-arm MPC, `info_file_name: task`) + `body_joint_controller` (`folding_low/high` + `waist_pitch/yaw`) + `head_joint_controller` (`head_yaw/pitch/roll`) + grippers |
 | `full_body.launch.py` | `ocs2_wbc_controller` (body + dual arms + head, `info_file_name: fixed_base_tcp`) + grippers |
 
-When that config and the private module are present, full-body default `headMode` is **`HEAD_GAZE`** (gaze on `head_camera_mid_optical_frame`). `target_manager.yaml` has `enable_head_control: false`, so the head follows OCS2 rather than a joint-space marker. Split-body still teleops the head through `head_joint_controller` (RViz joint panel). Taku body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`.
+When that config and `ocs2_wbc_controller` are installed, full-body default `headMode` is **`HEAD_GAZE`** (gaze on `head_camera_mid_optical_frame`). `target_manager.yaml` has `enable_head_control: false`, so the head follows OCS2 rather than a joint-space marker. Split-body still teleops the head through `head_joint_controller` (RViz joint panel). Taku body-relative rest is around x≈−0.21, not Bot2 `[0, 0.25]`.
 
 In RViz, set **Fixed Frame** to **`base_link`** (or the coincident `base_footprint`). OCS2 `baseFrame` / markers use `base_link`. There is **no** `hardware:=mock` — the default key is `mock_components`. `hardware:=gz` may need a GPU; mock + RViz is the default verify path. The package README also lists `hardware:=isaac` on the same split / full launches.
 
@@ -182,7 +182,7 @@ The description is **inferred** (public Dyna kinematics; not official Dyna specs
 
 ## Empty private directories and `COLCON_IGNORE`
 
-In **public** mode, `./init_repo.sh` skips private nested modules listed in [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf). Under `src/arms_ros2_control` those placeholders stay empty, including:
+In **public** mode, `./init_repo.sh` skips private nested modules listed in [`submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf). If you chose the arms deb, you do not need these directories to run: `ocs2_wbc_controller`, `ocs2_humanoid`, and `lina_planning` are already in `ros-jazzy-arms-ros2-control`. If you chose source, the placeholders under `src/arms_ros2_control` stay empty until you can clone them, including:
 
 - `controller/ocs2_wbc_controller`
 - `libraries/lina_planning`

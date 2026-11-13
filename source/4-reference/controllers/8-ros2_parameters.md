@@ -208,7 +208,7 @@ YAML: package [`config/default.yaml`](https://github.com/fiveages-sim/arms_ros2_
 (ocs2-wbc-controller)=
 ## OCS2 WBC Controller
 
-`controller/ocs2_wbc_controller` is a **private** submodule. Parameter names after access: that package README. Public launch: `ros2 launch ocs2_arm_controller full_body.launch.py` — [OCS2 WBC Controller](3-ocs2_wbc.md). Extra frame `body_frame` is **Startup only** per the target-manager notes in #120.
+`ocs2_wbc_controller` runs from the `ros-jazzy-arms-ros2-control` deb. Parameter names that are only in the source README stay in [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller). Public launch: `ros2 launch ocs2_arm_controller full_body.launch.py` — [OCS2 WBC Controller](3-ocs2_wbc.md). Extra frame `body_frame` is **Startup only** per the target-manager notes in #120.
 
 Public YAML may still list an `ocs2_wbc_controller:` block (Lift 2S `home_3` / `home_4`; Taku on `feature/agilex`). Treat those keys as machine overlays; the private README is the parameter list.
 

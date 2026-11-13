@@ -191,87 +191,79 @@ Use the matching **branch README** and `./quick_start.sh`. **Acone** / **AC One*
 - **Acone** / **AC One** — **dual-arm**; same `arx-lift2s` workspace, pick ACone in `quick_start` for co-debug
 - **[HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)** — dual-arm: `git clone -b panthera-ht …` then `./init_repo.sh` / `./quick_start.sh`
 
-### Internal Path (FA Robots)
+### Internal path (FiveAges robots)
 
-```{admonition} Internal Access Required
-:class: warning
+FiveAges robots (W1, W2, W2R, S2, S2R, and the dual-arm CCS) use [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws), default branch `fa-w2`. W1, W2, and S2 URDF, plus the Gen1 and Gen2 USD remotes, are public. W2R and S2R are not. The description map is [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
 
-These links need repository access. Without it, GitHub does not open the page. That is expected.
+Open the checkout you were given and follow that repository’s README. The script name shared with the public workspace is `./init_repo.sh`.
 
-FA **deploy** (W1, W2, W2R, S2, S2R, dual-arm CCS) uses [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) (default branch `fa-w2`). W1/W2/S2 URDF and Gen1/Gen2 USD remotes are public; **W2R and S2R are not open**. See [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
-```
+GitHub hides a private repository from anyone without access. That does not block every binary.
 
-Open the private checkout you were given, then follow **that repository’s README**. The shared script name is `./init_repo.sh`. Flags and robot IDs stay in that README.
-
-| Repository | What it is | Access |
+| Repository | Use it for | Access |
 |------------|------------|--------|
-| [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) | Internal workspace (`fa-w2`) | Required |
-| [fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description) | W2R URDF | Required |
-| [fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) | S2R URDF | Required |
-| [fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description) | Gen3 URDF | Required |
-| [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | Gen3 USD | Required |
-| [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) | Whole-body controller | Required |
-| [ocs2-humanoid](https://github.com/fiveages-sim/ocs2-humanoid) | Wheeled-arm motion library | Required |
+| [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) | The internal workspace (`fa-w2`) | Clone and follow its README |
+| [fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description) | W2R URDF | Read or change that description |
+| [fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) | S2R URDF | Read or change that description |
+| [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) | Whole-body controller source | Read or change the source |
+| [ocs2-humanoid](https://github.com/fiveages-sim/ocs2-humanoid) | Wheeled-arm motion library source | Read or change the source |
 
-More private descriptions, hardware interfaces, and teleop checkouts are linked on the [Repository Map](3-repo_map.md). Public W1 / W2 / S2 URDF stays on [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
+You can run whole-body control without those two source checkouts. The standard GitHub Release package `ros-jazzy-arms-ros2-control` already contains `ocs2_wbc_controller`, `ocs2_humanoid`, and `lina_planning` ([arms deb notes](https://github.com/fiveages-sim/arms_ros2_control/blob/main/README.deb.md)). In `open-deploy-ws` or `fa-deploy-ws`, choose `d` for arms in `./init_repo.sh`, or run `./scripts/install_core_debs.sh --only arms`. The script installs that standard package. It does not install `ros-jazzy-arms-ros2-control-full`, and the package is not on Ubuntu or ROS apt. Private descriptions, other hardware interfaces, and teleop trees are separate repositories. They stay on the [Repository Map](3-repo_map.md). Public W1, W2, and S2 URDF stays on [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
 
 **Tasks:**
-1. Open [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) and run the init / quick-start scripts named in that README.
+
+1. Open [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) and run the init and quick-start scripts named in that README.
 2. Follow [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
 
-**Safety:** Verify in `mock_components` (or that workspace’s documented sim path) before `hardware:=real`.
+**Safety:** Prove the motion in `mock_components`, or in the sim path that workspace documents, before you set `hardware:=real`.
 
-## Day 7: FaSim integration exam
+## Day 7: Bring one new robot into FaSim
 
-**Goal:** Bring **one new robot** into FaSim so Isaac and the ROS 2 运控 stack move it. Pass by taking that robot through mock, then sim, until you can see the joints move. Replaying the existing CR5 or W2 demo is only a warm-up.
+**Goal:** Connect a robot that is not already a demo, so Isaac and the ROS 2 stack move it. You are done when a command moves that robot’s joints in the viewport. Replaying CR5 or W2 is practice, not the task.
 
-**You already need** Days 0–3: `./init_repo.sh`, a launch that reaches HOLD with `hardware:=mock_components`, and FaSim `./init.sh` / `./run.sh`. Isaac Sim is installed and `ISAACSIM_DIR` is set.
+**Before you start.** Finish Days 0–3. You can reach HOLD with `hardware:=mock_components`, Isaac Sim is installed, `ISAACSIM_DIR` is set, and you have run FaSim `./init.sh` and `./run.sh`.
 
-Pick one robot. Add odometry, Nav2, or a dexterous hand only when this robot has them. Work through the steps below.
+File layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Starting Isaac and choosing a connection: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). What the two connections do: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
 
-Procedure and file layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Isaac start and the two connections: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). Mechanism: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
+### Build these four pieces
 
-### Required for every robot
+1. **A description.** Add a `{robot}_description` package whose xacro includes a `ros2_control` block. Simulation plugins come from [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro). Before you open Isaac, `ros2 launch ocs2_arm_controller demo.launch.py robot:=<key>` reaches HOLD. Leave `hardware` at the default.
 
-1. **Description.** A `{robot}_description` package whose xacro has a `ros2_control` block. Simulation plugins come from [`simulation_hardware.xacro`](https://github.com/fiveages-sim/robot-descriptions-common/blob/main/robot_common_launch/xacro/ros2_control/simulation_hardware.xacro). `ros2 launch ocs2_arm_controller demo.launch.py robot:=<key>` (omit `hardware:=`) reaches HOLD before you open Isaac.
-2. **USD.** A stage `./run.sh` can open, with one ArticulationRoot for this robot, under [robot_usds](https://github.com/fiveages-sim/robot_usds) or a project scene you can access. There is no `./run.sh --robot`.
-3. **One sim connection** for those joints.
-   - **Topic bridge:** `hardware:=isaac` → `TopicBasedSystem`. The xacro `joint_commands_topic` / `joint_states_topic` equal that graph’s `topicName`. The shared macro writes `/isaac/joint_command` and `/isaac/joint_states`. A robot graph may use other names (W2 topic-bridge payload: `/joint_command` and `/joint_states`). `demo.launch.py` has no namespace argument.
-   - **In-process:** Play a payload that contains `ROS2ControlLaunch` (W2: [`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda)). The node sets `hardware=isaac_sim` and `isaac_prim_path`. The description xacro must accept `isaac_sim`.
-4. **Controllers.** Arm or split body: `ocs2_arm_controller` (`demo` or `split_body`). Whole body only when this robot’s planner model includes the mobile base: `full_body.launch.py` and, with access, [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller). Leave `infoFile` empty to keep the description default. To lock a mobile base, use `mobile_base_tcp` and `BASE_LOCK`. `full_body` together with a `fixed_base` info file has no virtual chassis joint for that lock, and arm enable can stay waiting.
-5. **Motion you can see.** A small FSM home or joint target changes the same joints in Isaac.
+2. **A USD stage.** `./run.sh` opens it, and the stage has one ArticulationRoot for this robot. Put it under [robot_usds](https://github.com/fiveages-sim/robot_usds), or in a project scene you can open. There is no `./run.sh --robot`.
 
-### Only if this robot has it
+3. **One connection for those joints.**
+   - **Topic bridge.** `hardware:=isaac` uses `topic_based_ros2_control/TopicBasedSystem`. The xacro `joint_commands_topic` / `joint_states_topic` and the graph `topicName` are the same strings. The shared macro writes `/isaac/joint_command` and `/isaac/joint_states`. W2’s topic-bridge payload uses `/joint_command` and `/joint_states`. `demo.launch.py` has no namespace argument.
+   - **In-process.** Press Play on a payload that contains `ROS2ControlLaunch`. W2’s in-process payload is [`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-robot-usds/blob/main/W2/payloads/ROS/fiveages.usda). The node sets `hardware=isaac_sim` and `isaac_prim_path`. The description xacro must accept `isaac_sim`.
 
-| Piece | When | What to wire |
-|-------|------|----------------|
-| Chassis / odom | It has a mobile base | Isaac publishes `world → odom → base_*`. `robot_state_publisher` publishes the URDF tree (`base_footprint → base_link` when both exist). OCS2 `baseFrame` is that same link. One publisher per TF edge. A ROS namespace does not rename `frame_id`. |
-| Gripper or hand | It has one | Launch `type` / `left_type` / `right_type`. There is no `gripper:=`. |
-| Navigation | The scene drives the base on a map | `NavigationLaunch` on the USD. `map` is a path relative to the opened `env/` layer. It starts `navigation_isaac_gt.launch.py`. Composer `ros2-stack` is a separate host process. |
-| Second robot | Two articulations in one stage | Each root has its own graph and `ROS2ControlLaunch` `namespace`. Topics live under `/<ns>/`. Frame names stay `world`, `odom`, `base_link`. |
+4. **Controllers that match the body.** An arm, or a split-body robot, uses `ocs2_arm_controller` (`demo` or `split_body`). A planner model that includes the mobile base uses `full_body.launch.py` and `ocs2_wbc_controller`. That controller is already in the `ros-jazzy-arms-ros2-control` deb from Day 6. Cloning [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how you read or edit the source. Leave `infoFile` empty to keep the description default. Lock a mobile base with the `mobile_base_tcp` info file and `BASE_LOCK`. `full_body` together with a `fixed_base` info file has no virtual chassis joint for that lock, and arm enable can stay in `WAITING_FOR_ENABLE_POLICY`.
 
-### Phases
+### Work in this order
 
-1. Mock: the demo launch above, FSM HOLD, joint names from the xacro.
-2. `./run.sh`, open your USD, Play runs physics.
-3. Topic bridge **or** in-process graph. `ros2 topic echo` the joint-state topic, or `ros2 control list_controllers`.
-4. Command a small motion. The sim joints move. On the in-process graph, `ros2 topic hz /clock` tracks the physics step.
+1. In mock, the launch above reaches HOLD, and the joint names match the xacro.
+2. Run `./run.sh`, open your USD, and press Play so physics runs.
+3. Connect with the topic bridge or the in-process graph. Read the joint-state topic with `ros2 topic echo`, or run `ros2 control list_controllers`.
+4. Send a small joint target. The same joints move in Isaac. On the in-process graph, `ros2 topic hz /clock` follows the physics step.
 
 ### What you hand in
 
-- The description package (or branch) and the USD path you opened.
-- The launch line **or** the `ROS2ControlLaunch` prim you played.
-- The joint-state topic or controller list you saw, and the motion you commanded.
+- The description package, or the branch, and the USD path you opened.
+- The launch line, or the `ROS2ControlLaunch` prim you played.
+- The joint-state topic or the controller list, and the motion you sent.
 
-### Pass when you can show
+### How you know it works
 
-- Mock HOLD, then sim Play, on **this** robot.
-- Joint state or the controller state interfaces match the xacro joint names.
-- A command moves those joints in Isaac.
-- If the payload publishes odometry: `world → odom → base_*` from Isaac, URDF tree from `robot_state_publisher`, and no second node on the same edge.
-- In-process: `/robot_description` comes from `robot_state_publisher`. The controller manager is started with robot-description publishing off.
+Check joint control, base motion, the end effector, and sensor data against the robot you chose.
 
-A motion that finishes too fast is a `/clock` problem (physics-step clock versus playback tick). The FaSim reference describes that clock. It is not fixed by editing joint gains.
+**Joints.** Mock reaches HOLD, Play runs, and the joint names in the state topic or in `ros2 control list_controllers` match the xacro. A command moves those joints in the viewport. On an in-process graph, `/robot_description` comes from `robot_state_publisher`, and the controller manager starts with robot-description publishing turned off.
+
+**Base.** Isaac publishes `world → odom → base_*`. `robot_state_publisher` publishes the URDF tree, including `base_footprint → base_link` when both links exist. OCS2 `baseFrame` is that same link. One node publishes each TF edge. A ROS namespace does not rename `frame_id`. A base that drives on a map uses `NavigationLaunch` on the USD. `map` is a path relative to the opened `env/` layer, and the node starts `navigation_isaac_gt.launch.py`. Composer `ros2-stack` is a separate process on the host.
+
+**End effector.** The launch arguments `type`, `left_type`, or `right_type` name this gripper or hand, and you can see it open or close. There is no `gripper:=` argument.
+
+**Sensors.** While Play is running, the camera or lidar topics from the scene are publishing. Camera rigs stay on the scene USD.
+
+**A second robot on the same stage.** Each ArticulationRoot has its own graph and its own `ROS2ControlLaunch` `namespace`. Topics live under `/<ns>/`. Frame names stay `world`, `odom`, and `base_link`.
+
+A motion that finishes much too fast is a `/clock` problem. The in-process W2 payload takes the clock from the physics step. The topic-bridge payload still takes it from the playback tick. The [FaSim reference](../4-reference/simulation/2-fasim_isaac.md) describes that clock. Changing joint gains does not fix it.
 
 ## Optional: Synthetic data (Isaac)
 

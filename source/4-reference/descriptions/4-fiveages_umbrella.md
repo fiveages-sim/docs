@@ -1,6 +1,6 @@
 # FiveAges robot descriptions
 
-One page for FiveAges (中科第五纪) wheeled-arm humanoid **URDF** packages and their **USD** mapping.
+URDF packages and USD mapping for FiveAges (第五纪) wheeled-arm robots.
 
 ```{admonition} Public now (Gen1 W1 + Gen2 W2 / S2 + components + USD)
 :class: tip
@@ -16,7 +16,7 @@ Launch names and xacro details: those **public package READMEs**. There is no `o
 ```{admonition} Still private — W2R and S2R are not open
 :class: warning
 
-These remotes need repository access (without it, GitHub does not open the page): **W2R** ([fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description)), **S2R** ([fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description)), **Gen3** ([fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description), [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds)), and [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws). There is **no** public `robot-descriptions-fiveages` umbrella. After access, follow **those package READMEs**.
+These remotes need repository access. Without it, GitHub does not open the page: **W2R** ([fa-w2r-description](https://github.com/fiveages-sim/fa-w2r-description)), **S2R** ([fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description)), and [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws). There is no public `robot-descriptions-fiveages` umbrella. After you can open a repository, follow that package README.
 ```
 
 ```{admonition} Source of truth
@@ -30,7 +30,7 @@ These remotes need repository access (without it, GitHub does not open the page)
 - Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `isaac_sim` / `real`)
 ```
 
-FiveAges **humanoid** platforms in this docs set (W1, W2, W2R, S2, S2R, WCE3) are **wheeled-arm humanoids** (mobile base + arms), not bipedal.
+FiveAges platforms in this docs set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms. They are not bipeds.
 
 ## URDF packages (`robot_descriptions`)
 
@@ -38,7 +38,7 @@ FiveAges descriptions live as **git submodules** of the public umbrella. Checkou
 
 **Public remotes** (W1, W2, S2, `fa-w2-components`): browse the HTTPS repos, or `git submodule update --init` the matching path on [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions). Launch / xacro: each package README ([W1](https://github.com/fiveages-sim/fa-w1-description), [W2](https://github.com/fiveages-sim/fa-w2-description), [S2](https://github.com/fiveages-sim/fa-s2-description), [components](https://github.com/fiveages-sim/fa-w2-components)). W1 reuses Rokae `ar5_*` descriptions ([robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae)); W2 and S2 reuse Tianji `m6_ccs_description` ([robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji)). Those vendor remotes are **public**.
 
-**Still private remotes** (**W2R**, **S2R**, Gen3): 404 without access. **W2R and S2R are not open yet.**
+**W2R** and **S2R** stay private. Without access, GitHub does not open those pages. They are not open yet.
 
 [`open-deploy-ws` `submodules_visibility.conf`](https://github.com/fiveages-sim/open-deploy-ws/blob/main/submodules_visibility.conf) still marks the FiveAges description paths `private`, so `./init_repo.sh` does **not** pull them. Do not recursive-init from `open-deploy-ws`. There is no public `open-deploy-ws` Gen1 or Gen2 branch.
 
@@ -52,9 +52,9 @@ FiveAges descriptions live as **git submodules** of the public umbrella. Checkou
 | `humanoid/FiveAges/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
 | `humanoid/FiveAges/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
 
-`main` has **no** `fiveages_s2r_description` and **no** `fiveages_wce3_description` gitlink.
+`main` has no `fiveages_s2r_description` gitlink.
 
-### `feature/agilex` (grouped like USD: Gen1 / Gen2 / Gen3)
+### `feature/agilex` (grouped like the USD tree: Gen1 / Gen2)
 
 | Gen | Path | Package dir | Remote | Visibility |
 |-----|------|-------------|--------|------------|
@@ -64,9 +64,8 @@ FiveAges descriptions live as **git submodules** of the public umbrella. Checkou
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2_description` | `fiveages_s2_description` | [fa-s2-description](https://github.com/fiveages-sim/fa-s2-description) | Public |
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_s2r_description` | `fiveages_s2r_description` | [fa-s2r-description](https://github.com/fiveages-sim/fa-s2r-description) | Private — **not open** |
 | Gen2 | `humanoid/FiveAges/Gen2/fiveages_w2_common_description` | `fiveages_w2_common_description` | [fa-w2-components](https://github.com/fiveages-sim/fa-w2-components) | Public |
-| Gen3 | `humanoid/FiveAges/Gen3/fiveages_wce3_description` | `fiveages_wce3_description` | [fa-wce3-description](https://github.com/fiveages-sim/fa-wce3-description) | Private |
 
-`feature/agilex` adds Gen2 **W2R** and **S2R** gitlinks; those remotes stay private.
+`feature/agilex` adds the Gen2 **W2R** and **S2R** gitlinks. Those remotes stay private.
 
 After access to a private remote, init the path named in `.gitmodules` (or let `fa-deploy-ws` `./init_repo.sh` do it).
 
@@ -78,7 +77,6 @@ After access to a private remote, init the path named in `.gitmodules` (or let `
 |--------------------------------|----------|--------------|------------|
 | `humanoid/FiveAges/Gen1` | [fiveages-gen1-robot-usds](https://github.com/fiveages-sim/fiveages-gen1-robot-usds) | W1 / Gen1 | Public |
 | `humanoid/FiveAges/Gen2` | [fiveages-gen2-robot-usds](https://github.com/fiveages-sim/fiveages-gen2-robot-usds) | W2 / S2 / Gen2 (`W2/`, `S2/`, `components/`) | Public |
-| `humanoid/FiveAges/Gen3` | [fiveages-gen3-robot-usds](https://github.com/fiveages-sim/fiveages-gen3-robot-usds) | WCE3 / Gen3 | Private |
 
 Gen2 USD is **W2 and S2** only. It does **not** publish W2R or S2R.
 

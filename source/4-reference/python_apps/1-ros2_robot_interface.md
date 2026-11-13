@@ -55,7 +55,7 @@ Operator-facing topics on a running OCS2 / `basic_joint_controller` stack, and t
 :::{admonition} Whole-body (WBC) availability
 :class: warning
 
-`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply these features are present. The controller is a **private** submodule; capability bits are machine-dependent (`WbcCapability`). Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC + body/head basic + grippers), not WBC. `full_body.launch.py robot:=taku` needs the private WBC submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the private module are present, Taku full-body default `headMode` is `HEAD_GAZE`. Details: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
+`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` need **`ocs2_wbc_controller`** and that robot’s 全身 launch/config. Default mock demos (`demo.launch.py`) and 分体 (`split_body.launch.py`) do **not** imply these features are present. The controller runs from the `ros-jazzy-arms-ros2-control` deb. Capability bits depend on the robot (`WbcCapability`). Public Taku mock uses `split_body.launch.py robot:=taku` (arm MPC, body and head basic controllers, and grippers). That is not WBC. `full_body.launch.py robot:=taku` needs `ocs2_wbc_controller` from that deb or from a source checkout. Shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the controller are installed, Taku full-body default `headMode` is `HEAD_GAZE`. Details: [FSM and Topics](../../3-concepts/4-fsm_and_topics.md).
 :::
 
 ### FSM and WBC mode

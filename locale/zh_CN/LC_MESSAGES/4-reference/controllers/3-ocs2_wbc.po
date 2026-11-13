@@ -32,27 +32,6 @@ msgid ""
 "robots, using `ocs2_wheel_humanoid`."
 msgstr "全身 MPC — **全身控制**（`ocs2_wbc_controller`）— 面向轮式双臂，使用 `ocs2_wheel_humanoid`。"
 
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:5
-#: a6cd5f663dd44c908d2d30ede52b1ab9
-msgid "Access Required"
-msgstr "需要访问权限"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:8
-#: 6800a55a98c1472e89eecf3b313d98d1
-msgid ""
-"`controller/ocs2_wbc_controller` in "
-"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) is"
-" the private submodule [ocs2-wbc-controller](https://github.com/fiveages-"
-"sim/ocs2-wbc-controller). The link needs repository access. Topics, FSM "
-"values, and launch names are in that package README after access. The in-"
-"tree loader on the public side is `full_body.launch.py`."
-msgstr ""
-"[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) 里的"
-" `controller/ocs2_wbc_controller` 是私有子模块 [ocs2-wbc-"
-"controller](https://github.com/fiveages-sim/ocs2-wbc-"
-"controller)。链接需要仓库权限。话题、FSM 取值和启动名在开通后见该包 README。公开侧的加载入口是 "
-"`full_body.launch.py`。"
-
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:11
 #: 4b20573b389145d1adb66bd16ed7f77b
 msgid "Role"
@@ -184,34 +163,6 @@ msgstr ""
 #: 54a93353d0f649c1b2e7edc0fa9e1178
 msgid "Whole-body (WBC) availability"
 msgstr "全身控制（WBC）可用性"
-
-#: ../../source/4-reference/controllers/3-ocs2_wbc.md:43
-#: 67fbbd8585614478a1f6471918bd919c
-msgid ""
-"These topics need **`ocs2_wbc_controller`** and that robot’s 全身 "
-"launch/config. Default mock demos (`demo.launch.py`) and 分体 "
-"(`split_body.launch.py`) do **not** imply they are present. Capability "
-"bits (`WbcCapability`) are machine-dependent. Public Taku mock uses "
-"`split_body.launch.py robot:=taku` (arm MPC + body/head basic + "
-"grippers), not WBC. `full_body.launch.py robot:=taku` needs the private "
-"WBC submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. "
-"When that config and the private module are present, Taku full-body "
-"default `headMode` is `HEAD_GAZE` (gaze on "
-"`head_camera_mid_optical_frame`); `target_manager.yaml` has "
-"`enable_head_control: false`. Head 6D tracking (`HEAD_TRACKING`) is only "
-"there when `head_tracking_ee_enabled` is true. Taku body-relative rest is"
-" around x≈−0.21, not Bot2 `[0, 0.25]`. Full tables: [FSM and "
-"Topics](../../3-concepts/4-fsm_and_topics.md)."
-msgstr ""
-"这些话题需要 **`ocs2_wbc_controller`** 以及该机型的全身启动/配置。默认 mock "
-"演示（`demo.launch.py`）和分体（`split_body.launch.py`）**并不表示**它们可用。能力位（`WbcCapability`）取决于机型。公开的"
-" Taku mock 使用 `split_body.launch.py robot:=taku`（臂 MPC + 身体/头 basic + "
-"夹爪），不是 WBC。`full_body.launch.py robot:=taku` 需要私有 WBC 子模块；描述里有 "
-"`config/ocs2/fixed_base_tcp.info` 并不够。当该配置和私有模块都在时，Taku 全身默认 `headMode` 是"
-" `HEAD_GAZE`（注视 `head_camera_mid_optical_frame`）；`target_manager.yaml` 里 "
-"`enable_head_control: false`。头部 6D 跟踪（`HEAD_TRACKING`）只有 "
-"`head_tracking_ee_enabled` 为真时才有。Taku 身体相对静止位大约在 x≈−0.21，不是 Bot2 的 `[0, "
-"0.25]`。完整表格：[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
 
 #: ../../source/4-reference/controllers/3-ocs2_wbc.md:46
 #: 72fd2893685f4c19b76c92f3096fa724
@@ -572,4 +523,96 @@ msgstr "[分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)"
 
 #~ msgid "Do not treat `split_body.launch.py` as whole-body control."
 #~ msgstr "不要把 `split_body.launch.py` 当成全身控制。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:5
+#: a2540d3745b8480ea827a35b78182467
+msgid "Run the deb, clone the source to edit it"
+msgstr "用 deb 运行，要改代码再克隆源码"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:8
+#: f02af7f427154064a18e4c7cd2cfb3c6
+msgid ""
+"You can run `ocs2_wbc_controller` without opening the private repository."
+" It ships in the GitHub Release package `ros-jazzy-arms-ros2-control`, "
+"together with `ocs2_humanoid` and `lina_planning` ([arms deb "
+"notes](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.deb.md)). In `open-deploy-ws` or "
+"`fa-deploy-ws`, choose `d` for arms in `./init_repo.sh`, or run "
+"`./scripts/install_core_debs.sh --only arms`. That script installs the "
+"standard package. It does not install `ros-jazzy-arms-ros2-control-full`,"
+" and the package is not on Ubuntu or ROS apt."
+msgstr ""
+"运行 `ocs2_wbc_controller` 不必打开私有仓库。它在 GitHub Release 包 `ros-jazzy-arms-"
+"ros2-control` 里，一起的还有 `ocs2_humanoid` 和 `lina_planning`（[arms 的 deb "
+"说明](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/README.deb.md)）。在 `open-deploy-ws` 或 `fa-"
+"deploy-ws` 里，`./init_repo.sh` 给 arms 选 `d`，或运行 "
+"`./scripts/install_core_debs.sh --only arms`。脚本装的是标准包，不会装 `ros-jazzy-"
+"arms-ros2-control-full`，也不在 Ubuntu 或 ROS 的 apt 源里。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:10
+#: 6800a55a98c1472e89eecf3b313d98d1
+msgid ""
+"[ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-"
+"controller) is the source checkout under `controller/ocs2_wbc_controller`"
+" in [arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control). Open it when you need to read or change the "
+"source. Topics and FSM values that are only written in that README stay "
+"there. The public loader is `full_body.launch.py`."
+msgstr ""
+"[ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-"
+"controller) 是 [arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control) 里 `controller/ocs2_wbc_controller` "
+"的源码检出。要读源码或改源码时再打开它。只写在那份 README 里的话题和 FSM 取值，仍以那份 README 为准。公开侧的加载入口是 "
+"`full_body.launch.py`。"
+
+#: ../../source/4-reference/controllers/3-ocs2_wbc.md:45
+#: 67fbbd8585614478a1f6471918bd919c
+msgid ""
+"These topics need `ocs2_wbc_controller` and that robot’s 全身 launch and "
+"config. `demo.launch.py` and 分体 (`split_body.launch.py`) do not start "
+"them. Capability bits (`WbcCapability`) depend on the robot. Public Taku "
+"mock uses `split_body.launch.py robot:=taku` (arm MPC, body and head "
+"basic controllers, and grippers). `full_body.launch.py robot:=taku` needs"
+" `ocs2_wbc_controller` from the `ros-jazzy-arms-ros2-control` deb, or "
+"from a source checkout. Shipping `config/ocs2/fixed_base_tcp.info` is not"
+" enough. With that config and the controller installed, Taku full-body "
+"default `headMode` is `HEAD_GAZE` (gaze on "
+"`head_camera_mid_optical_frame`), and `target_manager.yaml` has "
+"`enable_head_control: false`. Head 6D tracking (`HEAD_TRACKING`) is there"
+" when `head_tracking_ee_enabled` is true. Taku’s body-relative rest is "
+"around x≈−0.21, not Bot2 `[0, 0.25]`. Full tables: [FSM and "
+"Topics](../../3-concepts/4-fsm_and_topics.md)."
+msgstr ""
+"这些话题需要 `ocs2_wbc_controller`，以及这台机器人的全身 launch 和配置。`demo.launch.py` "
+"和分体（`split_body.launch.py`）不会启动它们。能力位（`WbcCapability`）取决于这台机器人。公开的 Taku "
+"mock 用 `split_body.launch.py robot:=taku`（手臂 "
+"MPC、身体和头部的基础控制器，以及夹爪）。`full_body.launch.py robot:=taku` 需要 `ros-jazzy-"
+"arms-ros2-control` 这个 deb 里的 `ocs2_wbc_controller`，或一份源码检出。只带 "
+"`config/ocs2/fixed_base_tcp.info` 不够。配置和控制器都装上之后，Taku 全身模式默认 `headMode` 是"
+" `HEAD_GAZE`（注视 `head_camera_mid_optical_frame`），`target_manager.yaml` 里 "
+"`enable_head_control: false`。`head_tracking_ee_enabled` 为真时才有头部 6D "
+"跟踪（`HEAD_TRACKING`）。Taku 相对身体的静止位置大约在 x≈−0.21，不是 Bot2 的 `[0, 0.25]`。完整表见 "
+"[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)。"
+
+#~ msgid "Access Required"
+#~ msgstr "需要访问权限"
+
+#~ msgid ""
+#~ "`controller/ocs2_wbc_controller` in "
+#~ "[arms_ros2_control](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control) is the private "
+#~ "submodule [ocs2-wbc-controller](https://github.com"
+#~ "/fiveages-sim/ocs2-wbc-controller). The link "
+#~ "needs repository access. Topics, FSM "
+#~ "values, and launch names are in "
+#~ "that package README after access. The"
+#~ " in-tree loader on the public "
+#~ "side is `full_body.launch.py`."
+#~ msgstr ""
+#~ "[arms_ros2_control](https://github.com/fiveages-"
+#~ "sim/arms_ros2_control) 里的 `controller/ocs2_wbc_controller`"
+#~ " 是私有子模块 [ocs2-wbc-controller](https://github.com"
+#~ "/fiveages-sim/ocs2-wbc-controller)。链接需要仓库权限。话题、FSM "
+#~ "取值和启动名在开通后见该包 README。公开侧的加载入口是 `full_body.launch.py`。"
 

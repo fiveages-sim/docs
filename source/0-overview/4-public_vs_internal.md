@@ -8,8 +8,8 @@ This page explains the differences between the public (`open-deploy-ws`) and int
 |--------|-------------|---------------|
 | **Workspace** | `open-deploy-ws` | `fa-deploy-ws` |
 | **Access** | Anyone (public GitHub) | FiveAges team only |
-| **Robots** | Dobot, ARX, Galbot, HighTorque, quadruped | FA W2/W2R/S2/S2R, dual-arm CCS |
-| **Real Hardware** | ARX Lift 2S (full-body), Acone (dual-arm), HighTorque Panthera HT | All FA robots |
+| **Robots** | Dobot, ARX, Galbot, HighTorque, quadruped | FiveAges W2, W2R, S2, S2R, dual-arm CCS |
+| **Real Hardware** | ARX Lift 2S (full-body), Acone (dual-arm), HighTorque Panthera HT | FiveAges robots on that workspace |
 | **Submodules** | Public only | Public + private |
 | **OCS2** | GitHub Release `.deb` or source | Full source (default) |
 | **Purpose** | Learning, OSS development, real robot deployment | Production deployment |
@@ -86,8 +86,8 @@ This workspace requires private repository access. Contact your team lead if you
 ### Features
 
 - Internal workspace for FiveAges wheeled-arm humanoids (W2, W2R, S2, S2R) and dual-arm CCS
-- Description remotes live as gitlinks under [robot_descriptions `humanoid/FiveAges/`](../4-reference/descriptions/4-fiveages_umbrella.md) — not a separate `robot-descriptions-fiveages` umbrella. **Public:** W1, W2, S2, `fa-w2-components`, plus Gen1/Gen2 USD. **Still private:** **W2R**, **S2R** (not open yet), Gen3. There is no `open-deploy-ws` Gen1 or Gen2 branch.
-- Full OCS2 + WBC source when that workspace’s README says so
+- Description remotes live as gitlinks under [robot_descriptions `humanoid/FiveAges/`](../4-reference/descriptions/4-fiveages_umbrella.md). There is no separate `robot-descriptions-fiveages` umbrella. **Public:** W1, W2, S2, `fa-w2-components`, plus Gen1 and Gen2 USD. **Still private:** **W2R** and **S2R**. There is no `open-deploy-ws` Gen1 or Gen2 branch.
+- Running `ocs2_wbc_controller` uses the `ros-jazzy-arms-ros2-control` deb. A full source checkout of OCS2 or WBC is what that workspace’s README describes when you are changing the code.
 
 ```{admonition} Source of truth
 :class: important

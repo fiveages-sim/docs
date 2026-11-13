@@ -54,7 +54,7 @@ source install/setup.bash
 ros2 launch ocs2_arm_controller split_body.launch.py robot:=taku
 ```
 
-Public mock is **`split_body.launch.py`**: `ocs2_arm_controller` (dual-arm MPC) plus `body_joint_controller` / `head_joint_controller` and Dynaclaw via `adaptive_gripper_controller` (`*_gripper_joint`; mimic jaw in URDF). There is no chassis or per-arm basic controller. **`full_body.launch.py robot:=taku`** needs the private `ocs2_wbc_controller` submodule; shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the private module are present, full-body default `headMode` is **`HEAD_GAZE`** (gaze on `head_camera_mid_optical_frame`). `target_manager.yaml` has `enable_head_control: false`. Split-body still uses `head_joint_controller`.
+Public mock is **`split_body.launch.py`**: `ocs2_arm_controller` (dual-arm MPC) plus `body_joint_controller` / `head_joint_controller` and Dynaclaw via `adaptive_gripper_controller` (`*_gripper_joint`; mimic jaw in URDF). There is no chassis or per-arm basic controller. **`full_body.launch.py robot:=taku`** needs `ocs2_wbc_controller` from the `ros-jazzy-arms-ros2-control` deb, or from a source checkout. Shipping `config/ocs2/fixed_base_tcp.info` is not enough. When that config and the controller are installed, full-body default `headMode` is **`HEAD_GAZE`** (gaze on `head_camera_mid_optical_frame`). `target_manager.yaml` has `enable_head_control: false`. Split-body still uses `head_joint_controller`.
 
 In RViz, set **Fixed Frame** to **`base_link`** (package root) or the coincident **`base_footprint`**. OCS2 `baseFrame` / markers use `base_link` (`marker_fixed_frame` in `config/ocs2/target_manager.yaml`).
 
