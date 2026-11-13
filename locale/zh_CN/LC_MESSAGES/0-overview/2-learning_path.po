@@ -303,11 +303,13 @@ msgstr "**目标：** 更换机器人模型，并理解描述系统。"
 #: ../../source/0-overview/2-learning_path.md:67
 #: a0d02a62701b48e6b8f28bb5a4a6892b
 msgid ""
-"Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/`"
-" match `submodules_visibility.conf` (do not recursive-init)."
+"Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the "
+"Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift "
+"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md). Prefer "
+"`./init_repo.sh` so nested modules under `src/robot-descriptions/` match "
+"`submodules_visibility.conf` (do not recursive-init)."
 msgstr ""
-"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 "
-"`submodules_visibility.conf` 一致（不要递归 init）。"
+"这台机器人用 `open-deploy-ws` 的 `arx-lift2s` 分支，而不是第 1 天的默认仓库树。克隆和 `./init_repo.sh` 见 [方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 `submodules_visibility.conf` 一致（不要递归 init）。"
 
 #: ../../source/0-overview/2-learning_path.md:68
 #: de1712a77b4d48c8a6cf7553e2d7501b
@@ -316,24 +318,23 @@ msgstr "重建所需软件包，然后 `source install/setup.bash`。"
 
 #: ../../source/0-overview/2-learning_path.md:69
 #: e47541b30b964e1f9637c89fcbceabcb
-msgid "Launch with the new robot (omit `hardware:=` to keep `mock_components`):"
-msgstr "用新机器人启动（省略 `hardware:=` 以保持 `mock_components`）："
+msgid "Launch the new robot (omit `hardware:=`; the launch default is `mock_components`):"
+msgstr "用新机器人启动（省略 `hardware:=`；启动默认是 `mock_components`）："
 
 #: ../../source/0-overview/2-learning_path.md:70
 #: 341ef2307b284de9bd0b60d449c7f61f
-msgid "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
-msgstr "ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone\n"
+msgid "ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s\n"
+msgstr "ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s\n"
 
 #: ../../source/0-overview/2-learning_path.md:73
 #: a5be7239184d4f47963445b8ad9c64fb
 msgid ""
-"`arx_acone` is **Acone** (dual-arm), not Lift 2S. Full-body ARX Lift 2S "
-"uses the `arx-lift2s` branch scripts — see [ARX Lift "
-"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)."
+"`arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator "
+"(arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, "
+"dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships "
+"in the `ros-jazzy-arms-ros2-control` deb."
 msgstr ""
-"`arx_acone` 是 **Acone**（双臂），不是 Lift 2S。全身方舟无限 Lift 2S 使用 `arx-lift2s` "
-"分支脚本 — 见 [方舟无限 Lift "
-"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
+"`arx_lift2s` 是 **方舟无限 Lift 2S**，全身移动操作臂（手臂、升降轴和底盘）。它不是 **Acone** / **AC One**（`arx_acone`，双臂）。`full_body.launch.py` 会启动 `ocs2_wbc_controller`，该控制器已包含在 `ros-jazzy-arms-ros2-control` 这个 deb 里。"
 
 #: ../../source/0-overview/2-learning_path.md:75
 #: 6b2a31deb5a640dabec15053f4c9e34f
@@ -347,9 +348,9 @@ msgstr ""
 #: ../../source/0-overview/2-learning_path.md:77
 #: 617b97f80ba94f13bcc9956df572dd43
 msgid ""
-"**Outcome:** You can switch between Dobot CR5, Acone (dual-arm), Galbot, "
-"etc."
-msgstr "**预期结果：** 你可以在 Dobot CR5、Acone（双臂）、Galbot 等机型之间切换。"
+"**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to ARX "
+"Lift 2S on `full_body.launch.py`."
+msgstr "**预期结果：** 你已从第 1 天的 CR5 `demo.launch.py`，切换到方舟无限 Lift 2S 的 `full_body.launch.py`。"
 
 #: ../../source/0-overview/2-learning_path.md:79
 #: 6cd786c4230a46be9850d2d5643e90e9

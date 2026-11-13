@@ -64,17 +64,17 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 **Goal:** Change the robot model and understand the description system.
 
 **Tasks:**
-1. Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
+1. Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md). Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
 2. Rebuild the packages you need, then `source install/setup.bash`.
-3. Launch with the new robot (omit `hardware:=` to keep `mock_components`):
+3. Launch the new robot (omit `hardware:=`; the launch default is `mock_components`):
    ```bash
-   ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_acone
+   ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
    ```
-   `arx_acone` is **Acone** (dual-arm), not Lift 2S. Full-body ARX Lift 2S uses the `arx-lift2s` branch scripts — see [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+   `arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator (arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships in the `ros-jazzy-arms-ros2-control` deb.
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You can switch between Dobot CR5, Acone (dual-arm), Galbot, etc.
+**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to ARX Lift 2S on `full_body.launch.py`.
 
 ## Day 3: Gazebo and Isaac Simulation
 
