@@ -55,6 +55,14 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ros2 launch ocs2_arm_controller demo.launch.py
    ```
 
+After this launch, the clip below shows the effect in RViz (a single arm): drag the end-effector target, adjust joints with the JointControlPanel sliders, and use HOME to reset. It does not show the terminal or the launch command, so it is not a complete startup recording, and it is not Isaac physics verification.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/day1-first-motion-rviz-single-arm.mp4" type="video/mp4">
+</video>
+```
+
 **Primary sources:** [open-deploy-ws](https://github.com/fiveages-sim/open-deploy-ws), [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)
 
 **Outcome:** RViz opens with the OCS2 demo; FSM starts in HOLD. See [Quick Demo](../1-getting_started/1-quick_demo_public.md).
@@ -64,17 +72,39 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
 **Goal:** Change the robot model and understand the description system.
 
 **Tasks:**
-1. Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md). Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
+1. Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/` match `submodules_visibility.conf` (do not recursive-init).
 2. Rebuild the packages you need, then `source install/setup.bash`.
-3. Launch the new robot (omit `hardware:=`; the launch default is `mock_components`):
-   ```bash
-   ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
-   ```
-   `arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator (arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships in the `ros-jazzy-arms-ros2-control` deb.
+3. Launch one of the robots below. Omit `hardware:=`; the launch default is `mock_components`.
+
+### ARX Lift 2S
+
+Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md).
+
+```bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s
+```
+
+`arx_lift2s` is **ARX Lift 2S** (方舟无限), the full-body mobile manipulator (arms, lift, and chassis). It is not **Acone** / **AC One** (`arx_acone`, dual-arm). `full_body.launch.py` starts `ocs2_wbc_controller`, which ships in the `ros-jazzy-arms-ros2-control` deb.
+
+### FiveAges W2 with xhand1
+
+W2 is a FiveAges wheeled-arm robot. Its URDF is public ([fa-w2-description](https://github.com/fiveages-sim/fa-w2-description)); the usual workspace is [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws) (default branch `fa-w2`). See [FiveAges robot descriptions](../4-reference/descriptions/4-fiveages_umbrella.md) and [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md).
+
+```bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w2 type:=xhand1
+```
+
+This clip is a W2 with xhand1 operation demo:
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../_static/videos/day2-fiveages-w2-xhand1.mp4" type="video/mp4">
+</video>
+```
 
 **Primary sources:** [robot_descriptions](https://github.com/fiveages-sim/robot_descriptions), brand-specific READMEs
 
-**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to ARX Lift 2S on `full_body.launch.py`.
+**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to a `full_body.launch.py` robot, for example ARX Lift 2S or FiveAges W2 with xhand1.
 
 ## Day 3: Gazebo and Isaac Simulation
 

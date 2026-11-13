@@ -270,6 +270,26 @@ msgstr ""
 "source install/setup.bash\n"
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
+#: ../../source/0-overview/2-learning_path.md
+msgid ""
+"After this launch, the clip below shows the effect in RViz (a single arm): "
+"drag the end-effector target, adjust joints with the JointControlPanel "
+"sliders, and use HOME to reset. It does not show the terminal or the launch "
+"command, so it is not a complete startup recording, and it is not Isaac "
+"physics verification."
+msgstr ""
+"启动之后，下面这段视频展示 RViz 里的单臂操作效果：拖动末端目标，用 JointControlPanel 的滑条调节关节，再按 HOME 复位。视频里没有终端和启动命令，所以它不是完整的启动录屏，也不是 Isaac 物理运行验证。"
+
+#: ../../source/0-overview/2-learning_path.md
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../_static/videos/day1-first-motion-rviz-single-arm.mp4\" type=\"video/mp4\">\n"
+"</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../_static/videos/day1-first-motion-rviz-single-arm.mp4\" type=\"video/mp4\">\n"
+"</video>"
+
 #: ../../source/0-overview/2-learning_path.md:58
 #: 04b909f6ef9f44edabe227022ebe7a39
 msgid ""
@@ -303,13 +323,11 @@ msgstr "**目标：** 更换机器人模型，并理解描述系统。"
 #: ../../source/0-overview/2-learning_path.md:67
 #: a0d02a62701b48e6b8f28bb5a4a6892b
 msgid ""
-"Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the "
-"Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift "
-"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md). Prefer "
-"`./init_repo.sh` so nested modules under `src/robot-descriptions/` match "
-"`submodules_visibility.conf` (do not recursive-init)."
+"Prefer `./init_repo.sh` so nested modules under `src/robot-descriptions/`"
+" match `submodules_visibility.conf` (do not recursive-init)."
 msgstr ""
-"这台机器人用 `open-deploy-ws` 的 `arx-lift2s` 分支，而不是第 1 天的默认仓库树。克隆和 `./init_repo.sh` 见 [方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 `submodules_visibility.conf` 一致（不要递归 init）。"
+"优先用 `./init_repo.sh`，让 `src/robot-descriptions/` 下的嵌套模块与 "
+"`submodules_visibility.conf` 一致（不要递归 init）。"
 
 #: ../../source/0-overview/2-learning_path.md:68
 #: de1712a77b4d48c8a6cf7553e2d7501b
@@ -318,11 +336,23 @@ msgstr "重建所需软件包，然后 `source install/setup.bash`。"
 
 #: ../../source/0-overview/2-learning_path.md:69
 #: e47541b30b964e1f9637c89fcbceabcb
-msgid "Launch the new robot (omit `hardware:=`; the launch default is `mock_components`):"
-msgstr "用新机器人启动（省略 `hardware:=`；启动默认是 `mock_components`）："
+msgid "Launch one of the robots below. Omit `hardware:=`; the launch default is `mock_components`."
+msgstr "在下面的机型里选一个启动。省略 `hardware:=`；启动默认是 `mock_components`。"
 
 #: ../../source/0-overview/2-learning_path.md:70
 #: 341ef2307b284de9bd0b60d449c7f61f
+msgid "ARX Lift 2S"
+msgstr "方舟无限 Lift 2S"
+
+#: ../../source/0-overview/2-learning_path.md
+msgid ""
+"Use the `arx-lift2s` branch of `open-deploy-ws` for this robot, not the "
+"Day 1 default tree. Clone and `./init_repo.sh` are on [ARX Lift "
+"2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)."
+msgstr ""
+"这台机器人用 `open-deploy-ws` 的 `arx-lift2s` 分支，而不是第 1 天的默认仓库树。克隆和 `./init_repo.sh` 见 [方舟无限 Lift 2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md)。"
+
+#: ../../source/0-overview/2-learning_path.md
 msgid "ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s\n"
 msgstr "ros2 launch ocs2_arm_controller full_body.launch.py robot:=arx_lift2s\n"
 
@@ -347,10 +377,44 @@ msgstr ""
 
 #: ../../source/0-overview/2-learning_path.md:77
 #: 617b97f80ba94f13bcc9956df572dd43
+msgid "FiveAges W2 with xhand1"
+msgstr "第五纪 W2 配 xhand1"
+
+#: ../../source/0-overview/2-learning_path.md
 msgid ""
-"**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to ARX "
-"Lift 2S on `full_body.launch.py`."
-msgstr "**预期结果：** 你已从第 1 天的 CR5 `demo.launch.py`，切换到方舟无限 Lift 2S 的 `full_body.launch.py`。"
+"W2 is a FiveAges wheeled-arm robot. Its URDF is public ([fa-w2-"
+"description](https://github.com/fiveages-sim/fa-w2-description)); the "
+"usual workspace is [fa-deploy-ws](https://github.com/fiveages-sim/fa-"
+"deploy-ws) (default branch `fa-w2`). See [FiveAges robot "
+"descriptions](../4-reference/descriptions/4-fiveages_umbrella.md) and [fa-"
+"deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md)."
+msgstr ""
+"W2 是第五纪的轮臂机器人。它的 URDF 是公开的（[fa-w2-description](https://github.com/fiveages-sim/fa-w2-description)）；常用工作空间是 [fa-deploy-ws](https://github.com/fiveages-sim/fa-deploy-ws)（默认分支 `fa-w2`）。见 [第五纪机器人描述](../4-reference/descriptions/4-fiveages_umbrella.md) 和 [fa-deploy-ws 配置](../1-getting_started/4-fa_deploy_ws.md)。"
+
+#: ../../source/0-overview/2-learning_path.md
+msgid "ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w2 type:=xhand1\n"
+msgstr "ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w2 type:=xhand1\n"
+
+#: ../../source/0-overview/2-learning_path.md
+msgid "This clip is a W2 with xhand1 operation demo:"
+msgstr "这段视频是 W2 配 xhand1 的操作演示："
+
+#: ../../source/0-overview/2-learning_path.md
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../_static/videos/day2-fiveages-w2-xhand1.mp4\" type=\"video/mp4\">\n"
+"</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../_static/videos/day2-fiveages-w2-xhand1.mp4\" type=\"video/mp4\">\n"
+"</video>"
+
+#: ../../source/0-overview/2-learning_path.md
+msgid ""
+"**Outcome:** You have switched from the Day 1 CR5 `demo.launch.py` to a "
+"`full_body.launch.py` robot, for example ARX Lift 2S or FiveAges W2 with "
+"xhand1."
+msgstr "**预期结果：** 你已从第 1 天的 CR5 `demo.launch.py`，切换到某个 `full_body.launch.py` 机型，例如方舟无限 Lift 2S，或第五纪 W2 配 xhand1。"
 
 #: ../../source/0-overview/2-learning_path.md:79
 #: 6cd786c4230a46be9850d2d5643e90e9
