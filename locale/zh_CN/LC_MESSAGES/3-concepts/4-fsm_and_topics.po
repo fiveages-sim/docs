@@ -1259,23 +1259,24 @@ msgstr "全身模式（`/mode_command`）"
 #: ../../source/3-concepts/4-fsm_and_topics.md:195
 #: ce542c5fa0084558b623fd4c94595331
 msgid ""
-"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is"
-" not `/fsm_command`. Same availability as the body/head Cartesian topics "
+"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is "
+"not `/fsm_command`. Same availability as the body/head Cartesian topics "
 "above: 分体 and default mock demos do not start this path. Typical Python: "
 "`send_mode_command`, then `wait_until_mode_commands_applied` against "
 "`/ocs2_wbc_controller/current_state` "
-"(`arms_ros2_control_msgs/WbcCurrentState`). API_REFERENCE: FSM is usually"
-" already **OCS2**, or the controller may ignore the mode. API_REFERENCE "
-"does **not** map `HEAD_*` strings onto `send_mode_command`; head 6D is "
-"gated by `WbcCurrentState.head_state`."
+"(`arms_ros2_control_msgs/WbcCurrentState`). The FSM is usually already "
+"**OCS2**, or the controller may ignore the mode. The Python interface maps "
+"`HEAD_DISABLE`, `HEAD_TRACKING`, `HEAD_GAZE`, and `HEAD_FORWARD` onto "
+"`head_state`."
 msgstr ""
-"在**全身 / WBC** 栈上，`/mode_command` 是 **`std_msgs/String`**。它不是 "
-"`/fsm_command`。可用性与上面的身体/头部笛卡尔话题相同：分体和默认 mock 演示不会启动这条路径。典型 "
-"Python：`send_mode_command`，再对照 "
+"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**，不是 "
+"`/fsm_command`。可用性与上文的身体/头部笛卡尔话题相同：分体和默认 mock 演示不会启动这条路径。典型的 Python 用法是先 "
+"`send_mode_command`，再对照 "
 "`/ocs2_wbc_controller/current_state`（`arms_ros2_control_msgs/WbcCurrentState`）调用"
-" `wait_until_mode_commands_applied`。API_REFERENCE：FSM 通常已在 "
-"**OCS2**，否则控制器可能忽略该 mode。API_REFERENCE **不会**把 `HEAD_*` 字符串映射到 "
-"`send_mode_command`；头部 6D 由 `WbcCurrentState.head_state` 门控。"
+" `wait_until_mode_commands_applied`。FSM 通常需要已经处于 "
+"**OCS2**，否则控制器可能忽略该模式。Python 接口会把 `HEAD_DISABLE`、`HEAD_TRACKING`、`HEAD_GAZE`"
+" 和 `HEAD_FORWARD` 映射到 `head_state`。"
+
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:197
 #: 95e7bda44c064cb88745bea1e3d6cf2a
@@ -2617,3 +2618,668 @@ msgid ""
 msgstr ""
 "如果本机消息定义与表格不同，请先核对消息包版本。升级消息定义后，按需重新构建依赖它的源码包，source "
 "更新后的工作空间，再重新启动发布端和订阅端，让两端使用一致的接口。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 18415377487f48cf99e9dcb2f17c574f
+msgid "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+msgstr "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:239
+#: b9720c6164cf4370b5e9fe0030c01a54
+msgid "Switch on midpoint gaze (`HEAD_GAZE`)"
+msgstr "打开中点注视（`HEAD_GAZE`）"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:241
+#: 414a6c11f2a34955b27cd0f51a8f0ca1
+msgid ""
+"Do not publish to `/ocs2_wbc_controller/current_state`. That topic is "
+"feedback. `head_state: 2` means `HEAD_GAZE`, and `head_midpoint_gaze_active`"
+" becomes `true` only after that mode is active. It is not a separate "
+"command."
+msgstr ""
+"不要向 `/ocs2_wbc_controller/current_state` 发布。这个话题是状态反馈。`head_state: 2` 表示 "
+"`HEAD_GAZE`，`head_midpoint_gaze_active` 只在该模式生效后才会变成 `true`，它不是一条单独的命令。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:243
+#: 5ae28317356145e480fe5c8e3d290c63
+msgid ""
+"First confirm that midpoint gaze is configured: "
+"`WbcCapability.head_midpoint_gaze_enabled` should be `true`. This capability"
+" comes from the robot's OCS2 task `.info` file, in the top-level "
+"`headMidpointGaze` section (`activate`, `cameraFrame`, and the camera "
+"parameters). If the bit is false, the controller will not apply `HEAD_GAZE`."
+" The FSM is usually already **OCS2**; otherwise the controller may ignore "
+"the mode command."
+msgstr ""
+"先确认已经配置了中点注视：`WbcCapability.head_midpoint_gaze_enabled` 应为 `true`。该能力来自机器人 "
+"OCS2 任务 `.info` 文件中的顶层 `headMidpointGaze` 段（`activate`、`cameraFrame` "
+"以及相机参数）。如果该位为假，控制器不会应用 `HEAD_GAZE`。FSM 通常需要已经处于 **OCS2**，否则控制器可能忽略这条模式命令。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:245
+#: 01e5db37f6144705bd822695bf3fd002
+msgid "Then request the mode on `/mode_command`:"
+msgstr "然后向 `/mode_command` 请求该模式："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:247
+#: de799cdc9ea94c4e970dff8a2cbda4e2
+msgid ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'HEAD_GAZE'\"\n"
+msgstr ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'HEAD_GAZE'\""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:251
+#: 9c9ba8c126e248929a75c89cc26ebd89
+msgid ""
+"Or in Python, call `send_mode_command(\"HEAD_GAZE\")`, then "
+"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`. If the controller runs "
+"in a namespace, use its actual topic name. The RViz OCS2 panel also offers "
+"注视 (Gaze) when this capability is enabled."
+msgstr ""
+"在 Python 中，先调用 `send_mode_command(\"HEAD_GAZE\")`，再调用 "
+"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`。控制器带命名空间时，请使用实际的话题名。能力开启时，RViz"
+" 的 OCS2 面板里也有「注视」。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:253
+#: 8766dd9820f744fcb305922dbbcf1a46
+msgid ""
+"When the command is accepted, `/ocs2_wbc_controller/current_state` should "
+"report `head_state: 2` (`HEAD_GAZE`) and `head_midpoint_gaze_active: true`. "
+"That reports an active task, not that the head is already aligned or that "
+"the target is reachable. Send `HEAD_DISABLE` to stop gaze. A worked sequence"
+" is in the [mode-command check example](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+msgstr ""
+"命令被接受后，`/ocs2_wbc_controller/current_state` 应回报 `head_state: "
+"2`（`HEAD_GAZE`）且 `head_midpoint_gaze_active: "
+"true`。这表示任务已激活，不表示头部已经对准，也不表示目标可达。发送 `HEAD_DISABLE` "
+"可停止注视。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。"
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
+#: bde4786ea6e54e8d89cf32963a357cae
+msgid "`/ocs2_wbc_controller/wbc_capabilities`"
+msgstr "`/ocs2_wbc_controller/wbc_capabilities`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
+#: 4498415a8c9440a29deea51ece4178de
+msgid "`arms_ros2_control_msgs/WbcCapability`"
+msgstr "`arms_ros2_control_msgs/WbcCapability`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
+#: b77ed219be7347c584e9c79864539a4e
+msgid "Which WBC constraints this robot has configured"
+msgstr "该机器人已配置哪些 WBC 约束"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:195
+#: 3677fd7e1aa04b0297e85a01bbad7aa5
+msgid "Switch whole-body modes (`/mode_command`)"
+msgstr "切换全身模式（`/mode_command`）"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:197
+#: c1702a12fadf4b2692dc6bbfa99ac9ee
+msgid ""
+"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is "
+"not `/fsm_command`, and it is not a write path for "
+"`/ocs2_wbc_controller/current_state`. That topic is feedback only. Same "
+"availability as the body/head Cartesian topics above: 分体 and default mock "
+"demos do not start this path."
+msgstr ""
+"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**。它不是 "
+"`/fsm_command`，也不能用来向 `/ocs2_wbc_controller/current_state` "
+"写入；那个话题只是反馈。可用性与上文的身体/头部笛卡尔话题相同：分体和默认的 mock 演示不会启动这条路径。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:199
+#: 09c9fc62bff54b3f95812a59e0600bd6
+msgid ""
+"The usual sequence is: confirm that `ocs2_wbc_controller` is running, switch"
+" the FSM to **OCS2** if it is not already there, publish the mode string, "
+"then confirm the matching field on `/ocs2_wbc_controller/current_state`. You"
+" can also publish the mode while still in **HOLD** or **MOVEJ** and then "
+"enter OCS2; entering OCS2 keeps the mode you already set. Leaving OCS2, or "
+"activating the controller, restores the default mode."
+msgstr ""
+"通常做法是：先确认 `ocs2_wbc_controller` 已在运行，若 FSM 还不是 **OCS2** 就先切过去，再发布模式字符串，然后在 "
+"`/ocs2_wbc_controller/current_state` 上确认对应字段。也可以在仍处于 **HOLD** 或 **MOVEJ** "
+"时先发布模式，再进入 OCS2；进入 OCS2 会保留你已经设好的模式。离开 OCS2，或激活控制器时，会恢复默认模式。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:201
+#: 9ebb8eaf9e46418c92456dfa5444ba42
+msgid "First check whether the robot supports the mode you want:"
+msgstr "先确认机器人是否支持你要的模式："
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:203
+#: f876821fb7ff425da538dd690afab8ae
+msgid "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
+msgstr "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:207
+#: 2d5e6f1fd0d047a6a211483fd532554e
+msgid ""
+"If the relevant `WbcCapability` bit is `false`, the controller will not "
+"apply that command. These bits come from the robot's OCS2 task `.info` file,"
+" for example `headMidpointGaze`, `headTrackingEE`, `headCoupling`, and "
+"`homeJointReference`. If the controller runs in a namespace, use its actual "
+"topic names."
+msgstr ""
+"如果对应的 `WbcCapability` 位是 `false`，控制器不会应用这条命令。这些能力位来自机器人的 OCS2 任务 `.info` "
+"文件，例如 `headMidpointGaze`、`headTrackingEE`、`headCoupling` 和 "
+"`homeJointReference`。控制器带命名空间时，请使用实际的话题名。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:209
+#: e04a1e06f3d44e63a41e55f5a838ed02
+msgid "Then request the mode:"
+msgstr "然后请求该模式："
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:211
+#: 59abd467b319465cbfa4d69b421301a2
+msgid ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'BODY_TRACKING'\"\n"
+msgstr ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'BODY_TRACKING'\"\n"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:215
+#: 0c53f16fee904141ab895bde9991da02
+msgid ""
+"Replace the string with any command in the tables below. In Python, call "
+"`send_mode_command(...)`, then `wait_until_mode_commands_applied(...)`. If "
+"you send several modes, publish them all first, then wait once on the "
+"combined list; do not wait after every command. The RViz OCS2 panel "
+"publishes the same strings when the corresponding capability is enabled."
+msgstr ""
+"把字符串换成下表中的任意命令。在 Python 中，先调用 `send_mode_command(...)`，再调用 "
+"`wait_until_mode_commands_applied(...)`。如果要发多条模式，先全部发布，再对合并后的列表等待一次，不要每条都等。能力开启时，RViz"
+" 的 OCS2 面板也会发布相同的字符串。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:217
+#: 51b641a8e72a4b59af7132b070615718
+msgid ""
+"interface.send_fsm_command(3)  # OCS2\n"
+"interface.send_mode_command(\"BODY_TRACKING\")\n"
+"interface.send_mode_command(\"BASE_LOCK\")\n"
+"ok = interface.wait_until_mode_commands_applied(\n"
+"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
+"    timeout=5.0,\n"
+")\n"
+msgstr ""
+"interface.send_fsm_command(3)  # OCS2\n"
+"interface.send_mode_command(\"BODY_TRACKING\")\n"
+"interface.send_mode_command(\"BASE_LOCK\")\n"
+"ok = interface.wait_until_mode_commands_applied(\n"
+"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
+"    timeout=5.0,\n"
+")\n"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:227
+#: dcd500a946b14919aafcc06f2a52f35c
+msgid ""
+"When the command is accepted, the matching `current_state` field changes. "
+"That reports a selected mode or an active task, not that a pose has already "
+"been reached. A worked sequence is in the [mode-command check "
+"example](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+" The Python mapping is `MODE_COMMAND_TO_WBC_EXPECT` in the "
+"[API_REFERENCE](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/API_REFERENCE.md)."
+msgstr ""
+"命令被接受后，对应的 `current_state` "
+"字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。Python"
+" 中的映射是 [API_REFERENCE](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 里的 "
+"`MODE_COMMAND_TO_WBC_EXPECT`。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:229
+#: 81ea0435546a435e969ef5009789da9a
+msgid "Body"
+msgstr "身体"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 315b29b4d915497da97c5d94e780d529 9917ac6d6d174daf8df98ada5b493660
+#: 1e0cbc34355c42759de749ff98b5cc47 c4a443af0fb241ea979ce93b0be2a050
+msgid "Feedback when accepted"
+msgstr "生效后的反馈"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 6278345556c64c5da774974f81f1dd4f 3a89775863c7463ba5f4c433572cc189
+#: 30e0704be23545138d9115cedfe20144 f967f898e9ef478098aa530bca0315c2
+msgid "Capability"
+msgstr "能力"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2e5721d5a6c3432db346266a34453911
+msgid "`BODY_FREE`"
+msgstr "`BODY_FREE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 0f2053dbbf504c86ac6c1125738875b5
+msgid "`body_state` = `0` (`BODY_FREE`)"
+msgstr "`body_state` = `0` (`BODY_FREE`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: d0759ca5413946c39e949635df3197c4 12cd759c40a340bc8943b2ec40e6988f
+#: a698faa1835f4bc7a8b1bf8a41c63a9b
+msgid "—"
+msgstr "—"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2e0714e58fdd49bda4e669f62faa9a25
+msgid "`BODY_RELATIVE`"
+msgstr "`BODY_RELATIVE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2bbc4cba3870497b9f426e7bbe4e48f7
+msgid "`body_state` = `1` (`BODY_VERTICAL`)"
+msgstr "`body_state` = `1` (`BODY_VERTICAL`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: fc5abe730baa4b6e9c0902fc72137acf
+msgid ""
+"`has_body_relative_constraint`. `BODY_VERTICAL` is a backward-compatible "
+"alias for the same command."
+msgstr "`has_body_relative_constraint`。`BODY_VERTICAL` 是同一条命令的兼容别名。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 12c4826deb804b78bcc2d597165baf3b
+msgid "`BODY_TRACKING`"
+msgstr "`BODY_TRACKING`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: c6565a2ab0e14e2da04f11e8e58dd652
+msgid "`body_state` = `2` (`BODY_TRACKING`)"
+msgstr "`body_state` = `2` (`BODY_TRACKING`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 164eb8004b3c4751b19242a94167eb6b
+msgid "`body_tracking_ee_enabled`"
+msgstr "`body_tracking_ee_enabled`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 98e19a4a544c4bbabde09dada1921625
+msgid "`BODY_LOCK`"
+msgstr "`BODY_LOCK`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: e929ec92b023426197b69a8436e24f4a
+msgid "`body_state` = `3` (`BODY_LOCKED`)"
+msgstr "`body_state` = `3` (`BODY_LOCKED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 1d37cc14d21a4765b98e7b273aec9a5a
+msgid "`has_waist_lock`"
+msgstr "`has_waist_lock`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2ed4781046874f3e803742661ffc6e4b
+msgid "`BODY_CUSTOM_LOCK`"
+msgstr "`BODY_CUSTOM_LOCK`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: c3d70a22746a45988b6747d54f13543f
+msgid "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
+msgstr "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: c3887554af9a4fb5bf3fd65efa30a5d2
+msgid "`has_custom_joint_lock`"
+msgstr "`has_custom_joint_lock`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:239
+#: 9cd5bf6be3d643068b606e2ef28a164e
+msgid "Base"
+msgstr "底盘"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 5850ba1b9b0d43709abd96cd1cf0ca1a
+msgid "`BASE_LOCK`"
+msgstr "`BASE_LOCK`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 99bcc807cdff4bcab5d54e52a251848b
+msgid "`base_state` = `0` (`BASE_LOCKED`)"
+msgstr "`base_state` = `0` (`BASE_LOCKED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 38480203575f480d8ccc3ac164f5d70c b70d2df84ebb4a3a8603598af8f87a73
+msgid "`has_mobile_base`"
+msgstr "`has_mobile_base`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 5c11f737b1254e2098d7a14f00849710
+msgid "`BASE_UNLOCK`"
+msgstr "`BASE_UNLOCK`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2acde59ad4f142ecbb827c163d5e9a78
+msgid "`base_state` = `1` (`BASE_UNLOCKED`)"
+msgstr "`base_state` = `1` (`BASE_UNLOCKED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:246
+#: d13a73aeca16438a82bc5e12dc4a060e
+msgid "Head"
+msgstr "头部"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:248
+#: a402297234544324861a9244233492b6
+msgid ""
+"Head modes are mutually exclusive, and they are independent of the body "
+"mode. `head_midpoint_gaze_active` is not a separate command; it becomes "
+"`true` only after `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop gaze."
+msgstr ""
+"头部模式彼此互斥，并且独立于身体模式。`head_midpoint_gaze_active` 不是一条单独的命令；它只在 `HEAD_GAZE` "
+"生效后才会变成 `true`。发送 `HEAD_DISABLE` 可停止注视。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 4fc0667e9f04401484af615adbaf6746
+msgid "`HEAD_DISABLE`"
+msgstr "`HEAD_DISABLE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 43f1f58bc32349bc9f6907416987c5b7
+msgid ""
+"`head_state` = `0` (`HEAD_DISABLED`); `head_midpoint_gaze_active` is `false`"
+msgstr ""
+"`head_state` = `0`（`HEAD_DISABLED`），`head_midpoint_gaze_active` 为 `false`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: fa6212b859044e0f964f930e7f07a9df
+msgid "`HEAD_TRACKING`"
+msgstr "`HEAD_TRACKING`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 710e11d91f944656be09c7e9d210a179
+msgid "`head_state` = `1` (`HEAD_TRACKING`)"
+msgstr "`head_state` = `1` (`HEAD_TRACKING`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: e2e71eaae0d44b64a9e31eacd666956a
+msgid ""
+"`head_tracking_ee_enabled`, from the `headTrackingEE` section. After this "
+"mode is on, publish a target on `/head_target` or `/head_target/stamped`; "
+"otherwise the head will not move."
+msgstr ""
+"`head_tracking_ee_enabled`，来自 `headTrackingEE` 段。进入该模式后，还需要向 `/head_target` "
+"或 `/head_target/stamped` 发布目标，否则头部不会运动。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 8697243604794d6d95b3e01db33111ea
+msgid "`HEAD_GAZE`"
+msgstr "`HEAD_GAZE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: de516f56e4334157b8451e245576f5f2
+msgid ""
+"`head_state` = `2` (`HEAD_GAZE`) and `head_midpoint_gaze_active` = `true`"
+msgstr ""
+"`head_state` = `2`（`HEAD_GAZE`），且 `head_midpoint_gaze_active` = `true`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 8c5d2201cc4041669ffdd09520e2377e
+msgid ""
+"`head_midpoint_gaze_enabled`, from the top-level `headMidpointGaze` section "
+"(`activate`, `cameraFrame`, and the camera parameters). This reports an "
+"active task, not that the head is already aligned or that the target is "
+"reachable."
+msgstr ""
+"`head_midpoint_gaze_enabled`，来自顶层 `headMidpointGaze` "
+"段（`activate`、`cameraFrame` 以及相机参数）。这表示任务已激活，不表示头部已经对准，也不表示目标可达。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 9df65f07b889405c97fefb6fd8800cd0
+msgid "`HEAD_FORWARD`"
+msgstr "`HEAD_FORWARD`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: bd4cf4f36a2f4fec8db00cba671833b9
+msgid "`head_state` = `3` (`HEAD_FORWARD`)"
+msgstr "`head_state` = `3` (`HEAD_FORWARD`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 0f9379dea35a492586d3bcb410c73394
+msgid ""
+"`has_head_coupling`, from the `headCoupling` section. In this mode, "
+"`body_state` still reports the body mode you selected, but the former lock-"
+"head constraints temporarily override it. Leaving `HEAD_FORWARD` restores "
+"that body selection."
+msgstr ""
+"`has_head_coupling`，来自 `headCoupling` 段。在此模式下，`body_state` "
+"仍回报你选择的身体模式，但会暂时被原来的锁头约束覆盖。退出 `HEAD_FORWARD` 后，该身体选择会恢复。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:257
+#: 8680d58500014cd8a6eba62b9435318c
+msgid "Arms"
+msgstr "手臂"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:259
+#: bff6358da0a14f7d93bb6eee07c824bf
+msgid ""
+"Switch a single arm only while the arms are independent. If they are already"
+" coupled, `LEFT_ARM_*` and `RIGHT_ARM_*` are ignored. `ARMS_COUPLED` is "
+"accepted only when both arms are enabled."
+msgstr ""
+"只有在双臂独立时才能切换单臂使能。如果已经耦合，`LEFT_ARM_*` 和 `RIGHT_ARM_*` 会被忽略。只有左右臂都已启用时，才会接受 "
+"`ARMS_COUPLED`。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 07e3dd9632eb4a2ab4e1783580012efc
+msgid "`ARMS_INDEPENDENT`"
+msgstr "`ARMS_INDEPENDENT`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: c72fabab30d34b138b0833dbb36f046b
+msgid "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
+msgstr "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2e21b7b0bac240c1b2223b92b03e24f8
+msgid "`ARMS_COUPLED`"
+msgstr "`ARMS_COUPLED`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: b453a3d252b54adda2825b195c694c5f
+msgid "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
+msgstr "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 4353dea5c6e74ca694e6199e3f839d10
+msgid "`has_bimanual_coupling`, and both arms enabled"
+msgstr "`has_bimanual_coupling`，且左右臂均已启用"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: e21f6758c97c446f9d0f902a52c177fd
+msgid "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
+msgstr "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 47bda5c0bdd845ff8312dc5539d89b86
+msgid "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+msgstr "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 06f862c4f8dd4990948d85b326e074b8 73a1f1cd2662405faffa47b9f3b887a5
+msgid "Arms must already be independent"
+msgstr "双臂必须已经处于独立模式"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: eea63eb2f1a9442197d06e19084c09d4
+msgid "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
+msgstr "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: c2f36e62e3ac4337a33c06e8ee61408d
+msgid "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+msgstr "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:268
+#: 39c18b0d5e77497bba29f4d0069f0c89
+msgid "HOME joint reference"
+msgstr "HOME 关节参考"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:270
+#: ee06596c3a204268806fa8e4df202c0c
+msgid ""
+"`HOME_JOINT_ON` and `HOME_JOINT_OFF` turn the HOME joint-reference "
+"constraint on or off. This is a constraint switch, not a report that the FSM"
+" is in HOME. Confirm it on `home_joint_reference_enabled`. The constraint "
+"can be applied while the FSM is in HOLD, MOVEJ, or OCS2, but the usual "
+"sequence is still to enter OCS2 first."
+msgstr ""
+"`HOME_JOINT_ON` 和 `HOME_JOINT_OFF` 用于打开或关闭 HOME 关节参考约束。这是约束开关，并不表示 FSM 处于 "
+"HOME。请在 `home_joint_reference_enabled` 上确认。该约束可以在 FSM 处于 HOLD、MOVEJ 或 OCS2 "
+"时应用，但通常仍建议先进入 OCS2。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:272
+#: 3b1753a067164693905ce5af5abec48a
+msgid ""
+"The capability bit is `has_home_joint_reference`, from the "
+"`homeJointReference` section. If that bit is `false`, the controller ignores"
+" the command. If `HOME_JOINT_ON` is rejected, for example because the "
+"current home reference is outside the URDF joint limits, "
+"`home_joint_reference_enabled` stays `false`."
+msgstr ""
+"对应的能力位是 `has_home_joint_reference`，来自 `homeJointReference` 段。如果该位为 "
+"`false`，控制器会忽略这条命令。如果 `HOME_JOINT_ON` 被拒绝，例如当前 HOME 参考超出了 URDF "
+"关节限位，`home_joint_reference_enabled` 会保持为 `false`。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:274
+#: b9c994fce5ee47da9531f8f4a1648e8a
+msgid ""
+"The controller also accepts body presets of the form `PRESET:HM_*`. Those "
+"change the body, arms, and base together and leave the current head mode "
+"unchanged. Confirm the result on `current_state`; the Python mapping does "
+"not list these preset names."
+msgstr ""
+"控制器也接受形如 `PRESET:HM_*` 的身体预设。它们会同时改变身体、双臂和底盘，并保留当前的头部模式。请在 `current_state` "
+"上确认结果；Python 映射里没有列出这些预设名。"
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:209
+#: 010650206c5042a2b1dd975be7644a91
+msgid ""
+"For a controller that is already running, enter OCS2 if needed, then request"
+" the mode and inspect the feedback:"
+msgstr "控制器已运行时，如有需要先进入 OCS2，再请求模式并查看反馈："
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:211
+#: e6e0a2d6845e4f33b219652956df6251
+msgid ""
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+msgstr ""
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:229
+#: dcd500a946b14919aafcc06f2a52f35c
+msgid ""
+"When the command is accepted, the matching `current_state` field changes. "
+"That reports a selected mode or an active task, not that a pose has already "
+"been reached. A worked sequence is in the [mode-command check "
+"example](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+" The current Python mapping is `MODE_COMMAND_TO_WBC_EXPECT` in the "
+"[interface source](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)."
+msgstr ""
+"命令被接受后，对应的 `current_state` "
+"字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。当前"
+" Python 映射为[接口源码](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)中的 "
+"`MODE_COMMAND_TO_WBC_EXPECT`。"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 2949edfe0a0644018092f8e357c8590c
+msgid "`HOME_JOINT_ON`"
+msgstr "`HOME_JOINT_ON`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 286b2e8350f14ab6a59149239faa43f2
+msgid "`home_joint_reference_enabled` = `true`"
+msgstr "`home_joint_reference_enabled` = `true`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 4e75298fa47f41eab156b1804bce9ffe
+msgid "`HOME_JOINT_OFF`"
+msgstr "`HOME_JOINT_OFF`"
+
+
+#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
+#: 286b2e8350f14ab6a59149239faa43f2
+msgid "`home_joint_reference_enabled` = `false`"
+msgstr "`home_joint_reference_enabled` = `false`"

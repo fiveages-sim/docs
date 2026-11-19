@@ -36,7 +36,7 @@ The same file declares `type` and `create_robot_profile_launch_arguments()` (`le
 Extra FSM states stay in the private package README after access. From public sources, 全身 uses:
 
 - Cartesian body / head: `/body_target*`, `/head_target*` ([arms_target_manager](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md))
-- `/mode_command` (`std_msgs/String`) requests mode changes; `/ocs2_wbc_controller/current_state` (`WbcCurrentState`) reports the current modes. See {ref}`current-state fields and values <wbc-current-state>` for every field, its numeric values, and how to interpret the feedback.
+- `/mode_command` (`std_msgs/String`) requests mode changes; `/ocs2_wbc_controller/current_state` (`WbcCurrentState`) reports the current modes. See {ref}`how to switch modes <wbc-mode-command>` for the command strings and steps, and {ref}`current-state fields and values <wbc-current-state>` for every field, its numeric values, and how to interpret the feedback.
 - Shared action / service types: [`arms_ros2_control_msgs` README](https://github.com/fiveages-sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)
 
 :::{admonition} Whole-body (WBC) availability
