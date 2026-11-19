@@ -2410,3 +2410,210 @@ msgstr ""
 "`head_joint_controller` 遥操作头部。Taku 相对身体的静止位置大约在 x≈−0.21，不是 Bot2 的 `[0, "
 "0.25]`。头部 6D 跟踪（`HEAD_TRACKING`）只在控制器报告 `head_tracking_ee_enabled` 时才有。"
 
+#: ../../source/3-concepts/4-fsm_and_topics.md:206
+#: 45bf2e65de6f47b994a07699a1ffacd3
+msgid "Read the current WBC modes (`current_state`)"
+msgstr "查看当前全身控制模式（`current_state`）"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:208
+#: e42deb44e2b1452ea8c1e00488cc0d99
+msgid ""
+"Subscribe to `/ocs2_wbc_controller/current_state` to see the modes reported "
+"by the whole-body controller. The message type is "
+"`arms_ros2_control_msgs/msg/WbcCurrentState`. These fields describe WBC "
+"modes and constraints, not joint positions or motion completion. They are "
+"separate from the FSM state on `/fsm_state`."
+msgstr ""
+"订阅 `/ocs2_wbc_controller/current_state` 可以查看全身控制器反馈的模式，消息类型是 "
+"`arms_ros2_control_msgs/msg/WbcCurrentState`。这些字段表示 WBC "
+"的模式和约束，不表示关节位置或运动是否完成，也不是 `/fsm_state` 中的控制器状态。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:210
+#: 08090581666f4c8cb94de1870d54e00b
+msgid ""
+"With the whole-body controller running and its workspace sourced, inspect "
+"the feedback and the installed message definition:"
+msgstr "启动全身控制器并 source 对应工作空间后，可以查看状态反馈和本机安装的消息定义："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:212
+#: 78e4da3426f54a19b681a4d26ae50cac
+msgid ""
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
+msgstr ""
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:217
+#: b6e02e2d494b45eaad1adbb281fe3df1
+msgid ""
+"If the controller runs in a namespace, use its actual topic name. The fields"
+" below follow the current [message definition](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)"
+" and [message package README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)."
+msgstr ""
+"控制器带命名空间时，请使用实际的话题名。下面的字段以当前[消息定义](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)和[消息包"
+" README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md) "
+"为依据。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 029392dd0143474aaa81af5783749c22
+msgid "Values and meaning"
+msgstr "取值与含义"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 48d57aed7afc4c7893c83fa1d07ef97e 3bd090b330474341ac6ca252d5ba62f5
+#: cfd8b08ec57c408da9e3ec611758f667 12ea7e137bd74471b8ff9b7d768c6a59
+#: 02fcdeae40724d13b8db410152d8ff22 a145af394f744ba0a9e166290dd74ff1
+msgid "`uint8`"
+msgstr "`uint8`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: b9ed82ed8adf4cae8d3cca9b23b6f6cc
+msgid ""
+"Base mode: `0` = `BASE_LOCKED` (locked); `1` = `BASE_UNLOCKED` (unlocked)."
+msgstr "底盘模式：`0` 为 `BASE_LOCKED`（锁定），`1` 为 `BASE_UNLOCKED`（解锁）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: e113e426b9dc4b72b86038f577af117a
+msgid ""
+"Selected body mode: `0` = `BODY_FREE` (free); `1` = `BODY_VERTICAL` "
+"(vertical); `2` = `BODY_TRACKING` (tracking); `3` = `BODY_LOCKED` (locked); "
+"`5` = `BODY_CUSTOM_LOCKED` (custom joint lock). The former lock-head value "
+"`4` is no longer published."
+msgstr ""
+"选择的身体模式：`0` 为 `BODY_FREE`（自由），`1` 为 `BODY_VERTICAL`（竖直），`2` 为 "
+"`BODY_TRACKING`（跟随），`3` 为 `BODY_LOCKED`（锁定），`5` 为 "
+"`BODY_CUSTOM_LOCKED`（自定义关节锁定）。旧的锁头值 `4` 已不再发布。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: b31cf8d388cc48e0981a50193169eeea
+msgid ""
+"Arm coordination: `0` = `BIMANUAL_INDEPENDENT` (independent); `1` = "
+"`BIMANUAL_COUPLED` (coupled)."
+msgstr "双臂协同模式：`0` 为 `BIMANUAL_INDEPENDENT`（独立），`1` 为 `BIMANUAL_COUPLED`（耦合）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: e23afc754ad74c2392ac5801887be0e9
+msgid "`left_arm_state`"
+msgstr "`left_arm_state`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: fbc2ac61a8dc44278f03e4a7cdb89e49
+msgid ""
+"Left arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
+"(enabled)."
+msgstr "WBC 中的左臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: fef0e3d128e847af8224332b2a363de1
+msgid "`right_arm_state`"
+msgstr "`right_arm_state`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 51ae4c74ae0b4ac3983d1dc2c06e2b96
+msgid ""
+"Right arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
+"(enabled)."
+msgstr "WBC 中的右臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 79f0394d89c94a6d9d451ba595520816
+msgid "`home_joint_reference_enabled`"
+msgstr "`home_joint_reference_enabled`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: d7427c4faa9f4b2a9c1a1b40bf62f7f9 c5a9284c9e5f48b7b6cbe26465207f23
+msgid "`bool`"
+msgstr "`bool`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: a7845890ba6047cc9f7ba0bb0e1e25de
+msgid ""
+"Whether the HOME joint-reference constraint is on: `true` = on; `false` = "
+"off. This is a constraint switch, not a report that the FSM is in HOME."
+msgstr "HOME 关节参考约束是否打开：`true` 为打开，`false` 为关闭。这是约束开关，不表示 FSM 处于 HOME 状态。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 3ac91168d0cf4aedae519b5982b01c3e
+msgid ""
+"Head mode: `0` = `HEAD_DISABLED` (disabled); `1` = `HEAD_TRACKING` (6D pose "
+"tracking); `2` = `HEAD_GAZE` (gaze at the midpoint between the two end "
+"effectors); `3` = `HEAD_FORWARD` (the former lock-head head/waist coupling "
+"and waist constraints)."
+msgstr ""
+"头部模式：`0` 为 `HEAD_DISABLED`（禁用），`1` 为 `HEAD_TRACKING`（六维位姿跟踪），`2` 为 "
+"`HEAD_GAZE`（注视双手末端中点），`3` 为 `HEAD_FORWARD`（原锁头模式的头腰联动及腰部约束）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 0e02ff0e493f42e9b99a8b4eb68fdf42
+msgid "`head_midpoint_gaze_active`"
+msgstr "`head_midpoint_gaze_active`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 528b99f76a8042feb3cf1e36a5aea1ff
+msgid ""
+"Whether midpoint gaze is active. It is `true` only while `HEAD_GAZE` is "
+"active, independently of the selected body mode. It does not guarantee that "
+"the head is aligned with the target or that the target is reachable."
+msgstr ""
+"双手末端中点注视任务是否激活。只有 `HEAD_GAZE` 生效时才为 `true`，与选择的身体模式无关。它不保证头部已经对准目标，也不保证目标可达。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:230
+#: b5537a51b1cf4818b5712b1136b1a304
+msgid "Interpret the feedback"
+msgstr "怎样判断状态"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:232
+#: e8042c932a5041c7a076bd684424f16b
+msgid ""
+"In `HEAD_FORWARD`, `body_state` still reports the body mode you selected, "
+"but the former lock-head constraints temporarily override it. Leaving "
+"`HEAD_FORWARD` restores that body selection. Read `head_state` together with"
+" `body_state` rather than treating the body field alone as the active "
+"constraint set."
+msgstr ""
+"处于 `HEAD_FORWARD` 时，`body_state` 仍反馈之前选择的身体模式，但实际约束暂时由原锁头约束覆盖；退出 "
+"`HEAD_FORWARD` 后恢复该身体选择。因此，判断当前约束时要同时看 `head_state` 和 `body_state`，不能只看身体字段。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:234
+#: cc72aa12bdc04fbbb2c11cadd66d65bf
+msgid ""
+"Capabilities and active states answer different questions. "
+"`WbcCapability.head_midpoint_gaze_enabled` tells you whether midpoint gaze "
+"is configured; `WbcCurrentState.head_midpoint_gaze_active` tells you whether"
+" the task is active now. Likewise, `WbcCapability.has_home_joint_reference` "
+"indicates support for the HOME joint-reference constraint, while "
+"`home_joint_reference_enabled` reports its current switch state."
+msgstr ""
+"能力和当前状态回答的是不同问题。`WbcCapability.head_midpoint_gaze_enabled` "
+"表示是否配置了中点注视能力，`WbcCurrentState.head_midpoint_gaze_active` "
+"表示此刻是否激活了该任务。同样，`WbcCapability.has_home_joint_reference` 表示是否支持 HOME "
+"关节参考约束，`home_joint_reference_enabled` 则表示当前是否打开。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:236
+#: 1441b5e964954560b812ffe3f090f1b6
+msgid ""
+"After a mode request, check the corresponding feedback field instead of "
+"assuming that publishing a command means it was applied. For example, "
+"`base_state: 0` reports a locked base, and `head_state: 2` with "
+"`head_midpoint_gaze_active: true` reports an active midpoint-gaze task, not "
+"that the head is already aligned."
+msgstr ""
+"发送模式请求后，要检查对应的反馈字段，不要把“命令已发出”当作“模式已生效”。例如，`base_state: 0` "
+"表示底盘处于锁定模式；`head_state: 2` 且 `head_midpoint_gaze_active: true` "
+"表示中点注视任务已激活，而不是头部已经对准。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:238
+#: 609facaf37d04790b436d775451cb66b
+msgid ""
+"If the installed definition differs from this table, check the message "
+"package version. After a message upgrade, rebuild the dependent source "
+"packages as needed and source the updated workspace before restarting "
+"publishers and subscribers with matching interfaces."
+msgstr ""
+"如果本机消息定义与表格不同，请先核对消息包版本。升级消息定义后，按需重新构建依赖它的源码包，source "
+"更新后的工作空间，再重新启动发布端和订阅端，让两端使用一致的接口。"

@@ -202,17 +202,40 @@ Documented command strings and the `WbcCurrentState` fields they check ([API_REF
 | `ARMS_COUPLED` / `ARMS_INDEPENDENT` | `bimanual_state` |
 | `BASE_LOCK` / `BASE_UNLOCK` | `base_state` |
 
-`WbcCurrentState` constants from the msgs README (not extra FSM integers on `/fsm_command`):
+(wbc-current-state)=
+## Read the current WBC modes (`current_state`)
 
-| Field | Values |
-|-------|--------|
-| `base_state` | `BASE_LOCKED=0` / `BASE_UNLOCKED=1` |
-| `body_state` | `BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2` / `LOCKED=3` / `CUSTOM_LOCKED=5` (`4` was a former lock-head value and is no longer published) |
-| `bimanual_state` | `BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1` |
-| `left_arm_state` / `right_arm_state` | `ARM_DISABLED=0` / `ARM_ENABLED=1` |
-| `head_state` | `HEAD_DISABLED=0` / `HEAD_TRACKING=1` / `HEAD_GAZE=2` / `HEAD_FORWARD=3` |
+Subscribe to `/ocs2_wbc_controller/current_state` to see the modes reported by the whole-body controller. The message type is `arms_ros2_control_msgs/msg/WbcCurrentState`. These fields describe WBC modes and constraints, not joint positions or motion completion. They are separate from the FSM state on `/fsm_state`.
 
-Capability bits (`WbcCapability`: mobile base, body relative, head 6D, midpoint gaze, …) are in the same README. Extra WBC **FSM** states stay in the private `ocs2_wbc_controller` README after access.
+With the whole-body controller running and its workspace sourced, inspect the feedback and the installed message definition:
+
+```bash
+ros2 topic echo /ocs2_wbc_controller/current_state
+ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState
+```
+
+If the controller runs in a namespace, use its actual topic name. The fields below follow the current [message definition](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg) and [message package README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md).
+
+| Field | Type | Values and meaning |
+|---|---|---|
+| `base_state` | `uint8` | Base mode: `0` = `BASE_LOCKED` (locked); `1` = `BASE_UNLOCKED` (unlocked). |
+| `body_state` | `uint8` | Selected body mode: `0` = `BODY_FREE` (free); `1` = `BODY_VERTICAL` (vertical); `2` = `BODY_TRACKING` (tracking); `3` = `BODY_LOCKED` (locked); `5` = `BODY_CUSTOM_LOCKED` (custom joint lock). The former lock-head value `4` is no longer published. |
+| `bimanual_state` | `uint8` | Arm coordination: `0` = `BIMANUAL_INDEPENDENT` (independent); `1` = `BIMANUAL_COUPLED` (coupled). |
+| `left_arm_state` | `uint8` | Left arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` (enabled). |
+| `right_arm_state` | `uint8` | Right arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` (enabled). |
+| `home_joint_reference_enabled` | `bool` | Whether the HOME joint-reference constraint is on: `true` = on; `false` = off. This is a constraint switch, not a report that the FSM is in HOME. |
+| `head_state` | `uint8` | Head mode: `0` = `HEAD_DISABLED` (disabled); `1` = `HEAD_TRACKING` (6D pose tracking); `2` = `HEAD_GAZE` (gaze at the midpoint between the two end effectors); `3` = `HEAD_FORWARD` (the former lock-head head/waist coupling and waist constraints). |
+| `head_midpoint_gaze_active` | `bool` | Whether midpoint gaze is active. It is `true` only while `HEAD_GAZE` is active, independently of the selected body mode. It does not guarantee that the head is aligned with the target or that the target is reachable. |
+
+### Interpret the feedback
+
+In `HEAD_FORWARD`, `body_state` still reports the body mode you selected, but the former lock-head constraints temporarily override it. Leaving `HEAD_FORWARD` restores that body selection. Read `head_state` together with `body_state` rather than treating the body field alone as the active constraint set.
+
+Capabilities and active states answer different questions. `WbcCapability.head_midpoint_gaze_enabled` tells you whether midpoint gaze is configured; `WbcCurrentState.head_midpoint_gaze_active` tells you whether the task is active now. Likewise, `WbcCapability.has_home_joint_reference` indicates support for the HOME joint-reference constraint, while `home_joint_reference_enabled` reports its current switch state.
+
+After a mode request, check the corresponding feedback field instead of assuming that publishing a command means it was applied. For example, `base_state: 0` reports a locked base, and `head_state: 2` with `head_midpoint_gaze_active: true` reports an active midpoint-gaze task, not that the head is already aligned.
+
+If the installed definition differs from this table, check the message package version. After a message upgrade, rebuild the dependent source packages as needed and source the updated workspace before restarting publishers and subscribers with matching interfaces.
 
 ## Actions
 
