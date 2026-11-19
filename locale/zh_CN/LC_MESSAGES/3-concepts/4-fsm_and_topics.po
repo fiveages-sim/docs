@@ -1259,23 +1259,24 @@ msgstr "全身模式（`/mode_command`）"
 #: ../../source/3-concepts/4-fsm_and_topics.md:195
 #: ce542c5fa0084558b623fd4c94595331
 msgid ""
-"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is"
-" not `/fsm_command`. Same availability as the body/head Cartesian topics "
+"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is "
+"not `/fsm_command`. Same availability as the body/head Cartesian topics "
 "above: 分体 and default mock demos do not start this path. Typical Python: "
 "`send_mode_command`, then `wait_until_mode_commands_applied` against "
 "`/ocs2_wbc_controller/current_state` "
-"(`arms_ros2_control_msgs/WbcCurrentState`). API_REFERENCE: FSM is usually"
-" already **OCS2**, or the controller may ignore the mode. API_REFERENCE "
-"does **not** map `HEAD_*` strings onto `send_mode_command`; head 6D is "
-"gated by `WbcCurrentState.head_state`."
+"(`arms_ros2_control_msgs/WbcCurrentState`). The FSM is usually already "
+"**OCS2**, or the controller may ignore the mode. The Python interface maps "
+"`HEAD_DISABLE`, `HEAD_TRACKING`, `HEAD_GAZE`, and `HEAD_FORWARD` onto "
+"`head_state`."
 msgstr ""
-"在**全身 / WBC** 栈上，`/mode_command` 是 **`std_msgs/String`**。它不是 "
-"`/fsm_command`。可用性与上面的身体/头部笛卡尔话题相同：分体和默认 mock 演示不会启动这条路径。典型 "
-"Python：`send_mode_command`，再对照 "
+"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**，不是 "
+"`/fsm_command`。可用性与上文的身体/头部笛卡尔话题相同：分体和默认 mock 演示不会启动这条路径。典型的 Python 用法是先 "
+"`send_mode_command`，再对照 "
 "`/ocs2_wbc_controller/current_state`（`arms_ros2_control_msgs/WbcCurrentState`）调用"
-" `wait_until_mode_commands_applied`。API_REFERENCE：FSM 通常已在 "
-"**OCS2**，否则控制器可能忽略该 mode。API_REFERENCE **不会**把 `HEAD_*` 字符串映射到 "
-"`send_mode_command`；头部 6D 由 `WbcCurrentState.head_state` 门控。"
+" `wait_until_mode_commands_applied`。FSM 通常需要已经处于 "
+"**OCS2**，否则控制器可能忽略该模式。Python 接口会把 `HEAD_DISABLE`、`HEAD_TRACKING`、`HEAD_GAZE`"
+" 和 `HEAD_FORWARD` 映射到 `head_state`。"
+
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:197
 #: 95e7bda44c064cb88745bea1e3d6cf2a
@@ -2617,3 +2618,81 @@ msgid ""
 msgstr ""
 "如果本机消息定义与表格不同，请先核对消息包版本。升级消息定义后，按需重新构建依赖它的源码包，source "
 "更新后的工作空间，再重新启动发布端和订阅端，让两端使用一致的接口。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:175
+#: 18415377487f48cf99e9dcb2f17c574f
+msgid "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+msgstr "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:239
+#: b9720c6164cf4370b5e9fe0030c01a54
+msgid "Switch on midpoint gaze (`HEAD_GAZE`)"
+msgstr "打开中点注视（`HEAD_GAZE`）"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:241
+#: 414a6c11f2a34955b27cd0f51a8f0ca1
+msgid ""
+"Do not publish to `/ocs2_wbc_controller/current_state`. That topic is "
+"feedback. `head_state: 2` means `HEAD_GAZE`, and `head_midpoint_gaze_active`"
+" becomes `true` only after that mode is active. It is not a separate "
+"command."
+msgstr ""
+"不要向 `/ocs2_wbc_controller/current_state` 发布。这个话题是状态反馈。`head_state: 2` 表示 "
+"`HEAD_GAZE`，`head_midpoint_gaze_active` 只在该模式生效后才会变成 `true`，它不是一条单独的命令。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:243
+#: 5ae28317356145e480fe5c8e3d290c63
+msgid ""
+"First confirm that midpoint gaze is configured: "
+"`WbcCapability.head_midpoint_gaze_enabled` should be `true`. This capability"
+" comes from the robot's OCS2 task `.info` file, in the top-level "
+"`headMidpointGaze` section (`activate`, `cameraFrame`, and the camera "
+"parameters). If the bit is false, the controller will not apply `HEAD_GAZE`."
+" The FSM is usually already **OCS2**; otherwise the controller may ignore "
+"the mode command."
+msgstr ""
+"先确认已经配置了中点注视：`WbcCapability.head_midpoint_gaze_enabled` 应为 `true`。该能力来自机器人 "
+"OCS2 任务 `.info` 文件中的顶层 `headMidpointGaze` 段（`activate`、`cameraFrame` "
+"以及相机参数）。如果该位为假，控制器不会应用 `HEAD_GAZE`。FSM 通常需要已经处于 **OCS2**，否则控制器可能忽略这条模式命令。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:245
+#: 01e5db37f6144705bd822695bf3fd002
+msgid "Then request the mode on `/mode_command`:"
+msgstr "然后向 `/mode_command` 请求该模式："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:247
+#: de799cdc9ea94c4e970dff8a2cbda4e2
+msgid ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'HEAD_GAZE'\"\n"
+msgstr ""
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'HEAD_GAZE'\""
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:251
+#: 9c9ba8c126e248929a75c89cc26ebd89
+msgid ""
+"Or in Python, call `send_mode_command(\"HEAD_GAZE\")`, then "
+"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`. If the controller runs "
+"in a namespace, use its actual topic name. The RViz OCS2 panel also offers "
+"注视 (Gaze) when this capability is enabled."
+msgstr ""
+"在 Python 中，先调用 `send_mode_command(\"HEAD_GAZE\")`，再调用 "
+"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`。控制器带命名空间时，请使用实际的话题名。能力开启时，RViz"
+" 的 OCS2 面板里也有「注视」。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:253
+#: 8766dd9820f744fcb305922dbbcf1a46
+msgid ""
+"When the command is accepted, `/ocs2_wbc_controller/current_state` should "
+"report `head_state: 2` (`HEAD_GAZE`) and `head_midpoint_gaze_active: true`. "
+"That reports an active task, not that the head is already aligned or that "
+"the target is reachable. Send `HEAD_DISABLE` to stop gaze. A worked sequence"
+" is in the [mode-command check example](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+msgstr ""
+"命令被接受后，`/ocs2_wbc_controller/current_state` 应回报 `head_state: "
+"2`（`HEAD_GAZE`）且 `head_midpoint_gaze_active: "
+"true`。这表示任务已激活，不表示头部已经对准，也不表示目标可达。发送 `HEAD_DISABLE` "
+"可停止注视。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。"

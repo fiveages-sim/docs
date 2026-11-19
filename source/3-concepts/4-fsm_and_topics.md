@@ -192,7 +192,7 @@ Python wrappers: [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_
 
 ## Whole-body mode (`/mode_command`)
 
-`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is not `/fsm_command`. Same availability as the body/head Cartesian topics above: 分体 and default mock demos do not start this path. Typical Python: `send_mode_command`, then `wait_until_mode_commands_applied` against `/ocs2_wbc_controller/current_state` (`arms_ros2_control_msgs/WbcCurrentState`). API_REFERENCE: FSM is usually already **OCS2**, or the controller may ignore the mode. API_REFERENCE does **not** map `HEAD_*` strings onto `send_mode_command`; head 6D is gated by `WbcCurrentState.head_state`.
+`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is not `/fsm_command`. Same availability as the body/head Cartesian topics above: 分体 and default mock demos do not start this path. Typical Python: `send_mode_command`, then `wait_until_mode_commands_applied` against `/ocs2_wbc_controller/current_state` (`arms_ros2_control_msgs/WbcCurrentState`). The FSM is usually already **OCS2**, or the controller may ignore the mode. The Python interface maps `HEAD_DISABLE`, `HEAD_TRACKING`, `HEAD_GAZE`, and `HEAD_FORWARD` onto `head_state`.
 
 Documented command strings and the `WbcCurrentState` fields they check ([API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) `MODE_COMMAND_TO_WBC_EXPECT`):
 
@@ -201,6 +201,7 @@ Documented command strings and the `WbcCurrentState` fields they check ([API_REF
 | `BODY_*` (examples: `BODY_TRACKING`, `BODY_FREE`; `BODY_VERTICAL` is an alias) | `body_state` |
 | `ARMS_COUPLED` / `ARMS_INDEPENDENT` | `bimanual_state` |
 | `BASE_LOCK` / `BASE_UNLOCK` | `base_state` |
+| `HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD` | `head_state` |
 
 (wbc-current-state)=
 ## Read the current WBC modes (`current_state`)
@@ -234,6 +235,22 @@ In `HEAD_FORWARD`, `body_state` still reports the body mode you selected, but th
 Capabilities and active states answer different questions. `WbcCapability.head_midpoint_gaze_enabled` tells you whether midpoint gaze is configured; `WbcCurrentState.head_midpoint_gaze_active` tells you whether the task is active now. Likewise, `WbcCapability.has_home_joint_reference` indicates support for the HOME joint-reference constraint, while `home_joint_reference_enabled` reports its current switch state.
 
 After a mode request, check the corresponding feedback field instead of assuming that publishing a command means it was applied. For example, `base_state: 0` reports a locked base, and `head_state: 2` with `head_midpoint_gaze_active: true` reports an active midpoint-gaze task, not that the head is already aligned.
+
+### Switch on midpoint gaze (`HEAD_GAZE`)
+
+Do not publish to `/ocs2_wbc_controller/current_state`. That topic is feedback. `head_state: 2` means `HEAD_GAZE`, and `head_midpoint_gaze_active` becomes `true` only after that mode is active. It is not a separate command.
+
+First confirm that midpoint gaze is configured: `WbcCapability.head_midpoint_gaze_enabled` should be `true`. This capability comes from the robot's OCS2 task `.info` file, in the top-level `headMidpointGaze` section (`activate`, `cameraFrame`, and the camera parameters). If the bit is false, the controller will not apply `HEAD_GAZE`. The FSM is usually already **OCS2**; otherwise the controller may ignore the mode command.
+
+Then request the mode on `/mode_command`:
+
+```bash
+ros2 topic pub --once /mode_command std_msgs/msg/String "data: 'HEAD_GAZE'"
+```
+
+Or in Python, call `send_mode_command("HEAD_GAZE")`, then `wait_until_mode_commands_applied(["HEAD_GAZE"])`. If the controller runs in a namespace, use its actual topic name. The RViz OCS2 panel also offers 注视 (Gaze) when this capability is enabled.
+
+When the command is accepted, `/ocs2_wbc_controller/current_state` should report `head_state: 2` (`HEAD_GAZE`) and `head_midpoint_gaze_active: true`. That reports an active task, not that the head is already aligned or that the target is reachable. Send `HEAD_DISABLE` to stop gaze. A worked sequence is in the [mode-command check example](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py).
 
 If the installed definition differs from this table, check the message package version. After a message upgrade, rebuild the dependent source packages as needed and source the updated workspace before restarting publishers and subscribers with matching interfaces.
 
