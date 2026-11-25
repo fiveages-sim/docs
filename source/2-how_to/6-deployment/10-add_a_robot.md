@@ -461,6 +461,14 @@ This screenshot is a correct example. The collision is configured from the real 
 
 ### 3.4 Sensors
 
+When `isaac` is true, the description omits the sensor `visual` and keeps the link frame. The fragment is in [1.6](#16-xacro-assembly). In Isaac, the camera and other sensor assets are modular USD pieces mounted on that frame.
+
+The figure is a sketch of the mount after import. Check the position, the orientation, and the matching `frame`.
+
+![Camera and other sensor assets placed in Isaac after import](images/isaac-camera-asset-import.png)
+
+This screenshot shows the asset in place after import. Check that the position and the orientation match the `frame` kept in the description.
+
 - [ ] Confirm the sensor model and the shared asset. When a visual asset is standing in for another, record that substitution, and check the geometry, the optical frame, and the simulated output separately.
 
 - [ ] On its own, look at the lens direction of the sensor mesh after it is brought in from the shared asset. Then look at the real pose with the whole-robot assembly script. Check whether the head shell or the torso blocks the lens.
