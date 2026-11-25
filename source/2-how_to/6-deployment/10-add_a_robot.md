@@ -470,6 +470,17 @@ This screenshot is a correct example. The collision is configured from the real 
 
 Check the driving joint, the follower joints, the motion direction, and the multiplier and offset. The imported gripper has to match that relationship.
 
+(gripper-self-collision-incorrect)=
+**Incorrect example.** This clip is a separate case. The gripper `mimic` is already configured, and the two fingers close inward together. At the closed position the model and the collision wireframe overlap and pass through each other, and the gripper stays in that interference. This is not the force-limit stop of `adaptive_gripper_controller`.
+
+```{raw} html
+<video controls preload="metadata" width="100%" aria-labelledby="gripper-self-collision-incorrect">
+  <source src="../../_static/videos/gripper-self-collision-misconfigured.mp4" type="video/mp4">
+</video>
+```
+
+Check the physics collision bodies inside the gripper, and the collision filter and self-collision setup for contact among those bodies. Through the full open and close, look for internal contact that should not be there. The two sides moving together still leaves the `mimic` direction, multiplier, and offset to be checked on their own.
+
 ### 3.4 Sensors
 
 When `isaac` is true, the description omits the sensor `visual` and keeps the link frame. The fragment is in [1.6](#16-xacro-assembly). In Isaac, the camera and other sensor assets are modular USD pieces mounted on that frame.
