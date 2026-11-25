@@ -427,6 +427,20 @@ Asset layout: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blo
 
 This section checks settling on the ground, support, and contact in Isaac Sim. That is simulation physics. The physics collision meshes used by simulation are handled in the USD simulation assets.
 
+Planning collision stays in the description package. Chapter 2 uses it for OCS2 distance queries. Physical contact in Isaac uses collision shapes or meshes configured on the USD asset.
+
+On import, go through the collision that arrived with the URDF. Remove simplified collision bodies written for planning, or replace them with the contact collision for the simulation. Those planning bodies do not follow the real geometry. Left in the Isaac physics simulation, contact is not accurate. In the USD, set the collision shapes or meshes for physical contact from the real geometry. A convex decomposition, or another simplified shape that still follows that geometry, can be the contact collision. The high-resolution visual triangle mesh stays on the visual. It is not the dynamic collision mesh.
+
+In Isaac, show the collision, check that the bounds sit on the real geometry, and check that contact happens where the parts actually meet.
+
+**Incorrect example.** The figure below is a wrong result, not a recommended configuration. Simplified collision bodies from planning were carried into the Isaac physics simulation. The collision bounds do not match the real geometry, so contact is not accurate.
+
+![Incorrect example: planning collision bodies carried into the Isaac physics simulation](images/isaac-planning-collision-incorrect.png)
+
+This screenshot is an incorrect example. Simplified collision from the planning model is active in the Isaac physics view. The collision bounds do not match the robot geometry, and contact is not accurate. This is not a configuration to copy.
+
+- [ ] On import, remove or replace simplified collision bodies written for planning. In the USD, configure collision shapes or meshes for physical contact from the real geometry. In Isaac, check the fit of the bounds and the contact.
+
 - [ ] Put a ground and a physics scene in the empty scene. After the simulation starts, check the ground height, how the robot is fixed, whether the support is stable, and whether collision penetrates, and check the limits the simulation actually uses.
 
 - [ ] When the base is unstable, compare the wheel collision shape, the ground collision shape, the initial position, and the contact settings separately. On a retest, keep the initial pose and the contact parameters fixed, and change only the wheels or only the ground. One combination falling over only says that combination has a problem. Changing one item at a time is what shows which change made the support more stable.
