@@ -439,6 +439,12 @@ In Isaac, show the collision, check that the bounds sit on the real geometry, an
 
 This screenshot is an incorrect example. Simplified collision from the planning model is active in the Isaac physics view. The collision bounds do not match the robot geometry, and contact is not accurate. This is not a configuration to copy.
 
+**Correct example.** The figure below is the physical collision configured from the real part geometry, placed next to the incorrect example. In Isaac, check that the collision follows the part outline and where contact sits.
+
+![Correct example: physical collision configured from the real part geometry](images/isaac-physical-collision-correct.png)
+
+This screenshot is a correct example. The collision is configured from the real part geometry for physical contact. Check the outline fit and the contact position. The previous figure is still the incorrect example: simplified collision bodies from planning used in the physics simulation.
+
 - [ ] On import, remove or replace simplified collision bodies written for planning. In the USD, configure collision shapes or meshes for physical contact from the real geometry. In Isaac, check the fit of the bounds and the contact.
 
 - [ ] Put a ground and a physics scene in the empty scene. After the simulation starts, check the ground height, how the robot is fixed, whether the support is stable, and whether collision penetrates, and check the limits the simulation actually uses.
