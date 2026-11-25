@@ -1,6 +1,6 @@
 # Deployment
 
-Deploy to physical robots, or integrate a new description.
+Deploy to physical robots, or integrate a new description from meshes through ros2_control and Isaac Sim.
 
 ```{toctree}
 :maxdepth: 2
