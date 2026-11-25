@@ -138,6 +138,35 @@ def setup(app: Any) -> dict[str, Any]:
             meta = self.env.metadata.setdefault(self.env.docname, {})
             meta["myst_slugs"] = slugs
 
+    class RestoreTaskListCheckboxes(SphinxTransform):
+        # MyST task boxes are raw HTML inside the item paragraph. zh_CN
+        # replaces that paragraph with the translated sentence, and the box
+        # is not part of the sentence, so it disappears. English already has it.
+        default_priority = 25  # after sphinx.transforms.i18n.Locale (20)
+
+        def apply(self, **kwargs: Any) -> None:
+            from docutils import nodes
+
+            html = (
+                '<input class="task-list-item-checkbox" '
+                'disabled="disabled" type="checkbox">'
+            )
+            for item in self.document.findall(nodes.list_item):
+                if "task-list-item" not in (item.get("classes") or []):
+                    continue
+                for para in item.children:
+                    if not isinstance(para, nodes.paragraph):
+                        continue
+                    if any(
+                        isinstance(child, nodes.raw) and "checkbox" in child.astext()
+                        for child in para.children
+                    ):
+                        break
+                    para.insert(0, nodes.raw("", html, format="html"))
+                    para.insert(1, nodes.Text(" "))
+                    break
+
     app.add_transform(RestoreMystSlugs)
+    app.add_transform(RestoreTaskListCheckboxes)
     app.connect("html-page-context", _inject_language_switcher)
     return {"parallel_read_safe": True}

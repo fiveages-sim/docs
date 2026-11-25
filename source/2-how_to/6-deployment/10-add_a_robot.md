@@ -109,6 +109,7 @@ Asset layout: [robot_usds README](https://github.com/fiveages-sim/robot_usds/blo
 
 ## Related
 
+- [Robot Asset Onboarding Checklist](11-robot_asset_checklist.md) — meshes, Xacro, the OCS2 planning model, and Isaac import
 - [ros2_control in This Stack](../../3-concepts/1-ros2_control_here.md)
 - [Workspace Layout](../../3-concepts/2-workspace_layout.md)
 - [robot_common_launch](../../4-reference/descriptions/2-common.md)

@@ -36,6 +36,7 @@ This section contains task-oriented recipes for common operations. Each guide fo
   - [ARX Lift 2S](6-deployment/9-go_real_hardware/1-arx_lift2s.md) — Full-body ARX (方舟无限) mobile manipulator
   - [HighTorque Panthera HT](6-deployment/9-go_real_hardware/2-panthera_ht.md) — Dual-arm manipulator (`panthera-ht` branch)
 - [Add a Robot](6-deployment/10-add_a_robot.md) — Integrate new robot models
+- [Robot Asset Onboarding Checklist](6-deployment/11-robot_asset_checklist.md) — Description meshes, ros2_control and OCS2, then Isaac import
 
 ### Synthetic Data
 
