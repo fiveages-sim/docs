@@ -2130,22 +2130,22 @@ msgid "Check the driving joint, the follower joints, the motion direction, and t
 msgstr "检查主动关节、从动关节、运动方向，以及倍率和偏置。导入后的夹爪要和这组关系一致。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md
-msgid "**Incorrect example.** This clip is a separate case. The gripper `mimic` is already configured, and the two fingers close inward together. At the closed position the model and the collision wireframe overlap and pass through each other, and the gripper stays in that interference. This is not the force-limit stop of `adaptive_gripper_controller`."
-msgstr "**错误示例。** 这段是另一则错误示例。夹爪的 `mimic` 已经配置，两指向内一起闭合。闭合处模型和碰撞线框重叠并互相穿插，夹爪停在这个干涉状态。这不是 `adaptive_gripper_controller` 受力达到上限后停止。"
+msgid "**Incorrect example.** A joint that should not take part in `mimic` was set as a follower joint. That adds a motion constraint the mechanism does not have, and the internal force from the constraint goes into the whole arm."
+msgstr "**错误示例。** 不应参与 `mimic` 的关节被误设为从动关节。这引入了错误的运动约束，约束内力传入整条手臂。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md
 msgid ""
-"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-self-collision-incorrect\">\n"
-"  <source src=\"../../_static/videos/gripper-self-collision-misconfigured.mp4\" type=\"video/mp4\">\n"
+"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-unintended-mimic\">\n"
+"  <source src=\"../../_static/videos/gripper-unintended-mimic.mp4\" type=\"video/mp4\">\n"
 "</video>"
 msgstr ""
-"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-self-collision-incorrect\">\n"
-"  <source src=\"../../_static/videos/gripper-self-collision-misconfigured.mp4\" type=\"video/mp4\">\n"
+"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-unintended-mimic\">\n"
+"  <source src=\"../../_static/videos/gripper-unintended-mimic.mp4\" type=\"video/mp4\">\n"
 "</video>"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md
-msgid "Check the physics collision bodies inside the gripper, and the collision filter and self-collision setup for contact among those bodies. Through the full open and close, look for internal contact that should not be there. The two sides moving together still leaves the `mimic` direction, multiplier, and offset to be checked on their own."
-msgstr "检查夹爪内部的物理碰撞体，以及这些碰撞体之间的碰撞过滤和自碰撞配置。在完整开合行程里查看不该出现的内部接触。两侧一起运动时，`mimic` 的方向、倍率和偏置仍要单独核对。"
+msgid "Use `mimic` only for the follower joints the mechanism actually needs. Check the source joint, the target joint, the multiplier, and the offset. After the extra relationship is removed, check the gripper motion and the arm motion."
+msgstr "`mimic` 只用于机构实际需要的从动关节。核对来源关节、目标关节、倍率和偏置。去掉误加的关系后，再检查夹爪和手臂的运动。"
 
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:456
 #: fefb06c23c614371bd2584a4b2de1d1f

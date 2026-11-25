@@ -470,16 +470,16 @@ This screenshot is a correct example. The collision is configured from the real 
 
 Check the driving joint, the follower joints, the motion direction, and the multiplier and offset. The imported gripper has to match that relationship.
 
-(gripper-self-collision-incorrect)=
-**Incorrect example.** This clip is a separate case. The gripper `mimic` is already configured, and the two fingers close inward together. At the closed position the model and the collision wireframe overlap and pass through each other, and the gripper stays in that interference. This is not the force-limit stop of `adaptive_gripper_controller`.
+(gripper-unintended-mimic)=
+**Incorrect example.** A joint that should not take part in `mimic` was set as a follower joint. That adds a motion constraint the mechanism does not have, and the internal force from the constraint goes into the whole arm.
 
 ```{raw} html
-<video controls preload="metadata" width="100%" aria-labelledby="gripper-self-collision-incorrect">
-  <source src="../../_static/videos/gripper-self-collision-misconfigured.mp4" type="video/mp4">
+<video controls preload="metadata" width="100%" aria-labelledby="gripper-unintended-mimic">
+  <source src="../../_static/videos/gripper-unintended-mimic.mp4" type="video/mp4">
 </video>
 ```
 
-Check the physics collision bodies inside the gripper, and the collision filter and self-collision setup for contact among those bodies. Through the full open and close, look for internal contact that should not be there. The two sides moving together still leaves the `mimic` direction, multiplier, and offset to be checked on their own.
+Use `mimic` only for the follower joints the mechanism actually needs. Check the source joint, the target joint, the multiplier, and the offset. After the extra relationship is removed, check the gripper motion and the arm motion.
 
 ### 3.4 Sensors
 
