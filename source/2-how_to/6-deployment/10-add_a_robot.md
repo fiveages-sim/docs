@@ -481,6 +481,15 @@ Check the driving joint, the follower joints, the motion direction, and the mult
 
 Use `mimic` only for the follower joints the mechanism actually needs. Check the source joint, the target joint, the multiplier, and the offset. After the extra relationship is removed, check the gripper motion and the arm motion.
 
+(gripper-correct-operation)=
+**Correct example.** The two fingers and the linkages close together in a steady motion. The arm stays in place, with no visible shake.
+
+```{raw} html
+<video controls preload="metadata" width="100%" aria-labelledby="gripper-correct-operation">
+  <source src="../../_static/videos/gripper-correct-operation.mp4" type="video/mp4">
+</video>
+```
+
 ### 3.4 Sensors
 
 When `isaac` is true, the description omits the sensor `visual` and keeps the link frame. The fragment is in [1.6](#16-xacro-assembly). In Isaac, the camera and other sensor assets are modular USD pieces mounted on that frame.
