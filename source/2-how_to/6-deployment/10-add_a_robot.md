@@ -459,6 +459,17 @@ This screenshot is a correct example. The collision is configured from the real 
 
 - [ ] Compare gripper feedback in RViz and in Isaac at open, closed, and partial opening. When the gripper needs to open and close gradually, check the interpolation, the speed limit, and how the control interface runs that motion. When `adaptive_gripper_controller` is used, check that the controller stops after the force goes over the limit.
 
+(gripper-mimic-incorrect)=
+**Incorrect example.** The clip below is a gripper whose `mimic` is not configured correctly. The fingers and the linkages pass through each other, and the two sides do not move together. This is not the force-limit stop of `adaptive_gripper_controller`.
+
+```{raw} html
+<video controls preload="metadata" width="100%" aria-labelledby="gripper-mimic-incorrect">
+  <source src="../../_static/videos/gripper-mimic-misconfigured.mp4" type="video/mp4">
+</video>
+```
+
+Check the driving joint, the follower joints, the motion direction, and the multiplier and offset. The imported gripper has to match that relationship.
+
 ### 3.4 Sensors
 
 When `isaac` is true, the description omits the sensor `visual` and keeps the link frame. The fragment is in [1.6](#16-xacro-assembly). In Isaac, the camera and other sensor assets are modular USD pieces mounted on that frame.

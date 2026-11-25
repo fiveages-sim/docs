@@ -2111,6 +2111,24 @@ msgstr ""
 "对比 RViz 和 Isaac 中夹爪开启、闭合和部分开度的反馈。需要渐进开合时，检查插值、速度限制及控制接口的执行方式。使用 "
 "`adaptive_gripper_controller` 时，检查力超过上限后控制器会停机。"
 
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md
+msgid "**Incorrect example.** The clip below is a gripper whose `mimic` is not configured correctly. The fingers and the linkages pass through each other, and the two sides do not move together. This is not the force-limit stop of `adaptive_gripper_controller`."
+msgstr "**错误示例。** 下面这段是夹爪的 `mimic` 没有配置好。手指和多连杆互相穿插，左右两侧运动不同步。这不是 `adaptive_gripper_controller` 受力达到上限后停止。"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-mimic-incorrect\">\n"
+"  <source src=\"../../_static/videos/gripper-mimic-misconfigured.mp4\" type=\"video/mp4\">\n"
+"</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\" aria-labelledby=\"gripper-mimic-incorrect\">\n"
+"  <source src=\"../../_static/videos/gripper-mimic-misconfigured.mp4\" type=\"video/mp4\">\n"
+"</video>"
+
+#: ../../source/2-how_to/6-deployment/10-add_a_robot.md
+msgid "Check the driving joint, the follower joints, the motion direction, and the multiplier and offset. The imported gripper has to match that relationship."
+msgstr "检查主动关节、从动关节、运动方向，以及倍率和偏置。导入后的夹爪要和这组关系一致。"
+
 #: ../../source/2-how_to/6-deployment/10-add_a_robot.md:456
 #: fefb06c23c614371bd2584a4b2de1d1f
 msgid "3.4 Sensors"
