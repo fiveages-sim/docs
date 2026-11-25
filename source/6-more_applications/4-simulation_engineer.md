@@ -17,9 +17,8 @@ Gazebo (different backend): [Gazebo Simulation](../2-how_to/2-simulation/3-gazeb
 1. [Switch Robot](../2-how_to/1-basic_operations/2-switch_robot.md) — `robot:=` and EEF `type` / `left_type` / `right_type`.
 2. [robot_common_launch](../4-reference/descriptions/2-common.md) — launch args, machine profile, merge order.
 3. [Naming Conventions](../3-concepts/3-naming_conventions.md).
-4. [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md) — copy a real description package; use the plugin class from that robot’s `xacro/ros2_control/*.xacro`.
-5. [Robot Asset Onboarding Checklist](../2-how_to/6-deployment/11-robot_asset_checklist.md) — meshes, Xacro, ros2_control and OCS2, then Isaac import.
-6. Brand packages: [Brand Packages (Public)](../4-reference/descriptions/3-brand_public.md). FiveAges wheeled-arm gitlinks: [FiveAges descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
+4. [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md#1-description-package-configuration-split-and-modularization) — description package, ros2_control and OCS2, then Isaac import. Use the plugin class from that robot’s `xacro/ros2_control/*.xacro`.
+5. Brand packages: [Brand Packages (Public)](../4-reference/descriptions/3-brand_public.md). FiveAges wheeled-arm gitlinks: [FiveAges descriptions](../4-reference/descriptions/4-fiveages_umbrella.md).
 
 ## 3. Action composition / orchestration
 

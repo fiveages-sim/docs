@@ -276,7 +276,13 @@ You can run whole-body control without those two source checkouts. The standard 
 
 **Before you start.** Finish Days 0–4. You can reach HOLD with `hardware:=mock_components`, Viser opens in the browser, Isaac Sim is installed, `ISAACSIM_DIR` is set, and you have run FaSim `./init.sh` and `./run.sh`.
 
-Package layout: [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md). Meshes, Xacro, the OCS2 planning model, and Isaac layers: [Robot Asset Onboarding Checklist](../2-how_to/6-deployment/11-robot_asset_checklist.md). Start Sim and choose a connection: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). In-process inputs, swerve chassis graphs, clock, and TF: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
+Bring the robot in on [Add a Robot](../2-how_to/6-deployment/10-add_a_robot.md):
+
+- [Description package](../2-how_to/6-deployment/10-add_a_robot.md#1-description-package-configuration-split-and-modularization)
+- [ros2_control and OCS2](../2-how_to/6-deployment/10-add_a_robot.md#2-configure-ros2_control-and-ocs2)
+- [Isaac import](../2-how_to/6-deployment/10-add_a_robot.md#3-import-into-isaac-sim-and-close-the-loop)
+
+Start Sim and choose a connection: [Isaac Sim](../2-how_to/2-simulation/4-isaac_sim.md). In-process inputs, swerve chassis graphs, clock, and TF: [FaSim-Isaac](../4-reference/simulation/2-fasim_isaac.md).
 
 ### Build these four pieces
 
