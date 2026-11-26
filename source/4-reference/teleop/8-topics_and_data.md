@@ -30,7 +30,7 @@ ros2 topic echo /robot_a/teleop/mode_state
 
 With an empty namespace, echo `/teleop/mode_state`. Match QoS `Reliable` + `TransientLocal` on the subscription.
 
-Headset pose, stick axes, and trigger pull are the root names in [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics) (`/teleop/head_pose`, and the rest of that set). `teleop/mode_state` follows the robot namespace.
+Headset pose, stick axes, trigger pull, and the shared end-effector poses are the root names in {ref}`the teleop pose stream <teleop-pose-stream>` (`/teleop/head_pose`, `/teleop/left_ee_pose`, and the rest of that set). `teleop/mode_state` follows the robot namespace.
 
 ## Event-bus status (`TeleopModeState`)
 
@@ -99,16 +99,52 @@ The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not 
 
 The keyboard does not publish `/fsm_command`. The joystick does.
 
-## Poses, sticks, and triggers
+(teleop-pose-stream)=
+## Teleop pose stream
 
-Names, types, and rates for the headset stream are [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics). That stream is the root `/teleop/...` set from `xr_target_node`. The current mode is still `teleop/mode_state`, not a value on `/teleop/controller_state`.
+`VRInputHandler` in `arms_target_manager` reads this stream. In UPDATE it drives arm targets from `/teleop/left_ee_pose` and `/teleop/right_ee_pose`. The latched mode stays on `teleop/mode_state` (`TeleopModeState`). A `0` on `/teleop/controller_state` means this frame had no button edge.
+
+`/teleop/left_ee_pose` and `/teleop/right_ee_pose` are `geometry_msgs/Pose` with no `header`. A session uses one publisher for that pair:
+
+| Node | Where it runs | What it publishes |
+|------|---------------|------------------------|
+| `xr_target_node` | [vr_pose_publisher](1-vr_pose_publisher.md), WebXR (`./run.sh vr`) and XRoboToolkit (`./run.sh vr-xrt`) | Controller 6-DOF, or the optical palm when the preset is `wrist` / `hand` |
+| `dexcap_cartesian_teleop` | `dexcap_teleop` | Both arms from exoskeleton forward kinematics. Default 100 Hz. Stale input (default 0.1 s) stops the pair |
+| `tracker_openvr` | [vive_tracker_teleop](6-vive_tracker.md) | Absolute Vive Tracker poses. Default `publish_rate_hz` is 120. A side with no tracker publishes an identity pose while any live side is enabled |
+
+With Wuji gloves (`wuji_glove_teleop`), arm pose on this pair comes from `tracker_openvr`. The glove node reads `/teleop/controller_state` and `/teleop/mirror_mode`, and publishes finger commands on its own topics. [wuji_glove_teleop](5-wuji_glove.md).
+
+`dexcap_cartesian_teleop` reads `/teleop/controller_state` and rebases its virtual pose when the code becomes `4`. Headset pose, sticks, triggers, and `/teleop/xrt_diag` come from `xr_target_node`. A DexCap-only session also publishes a zero `Twist` on `/teleop/thumbstick_axes`, so `VRInputHandler` can finish a pending stick-centered check. The command is in the [dexcap_teleop README](https://github.com/fiveages-sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md). Run that zero stream while no other node is publishing the topic.
+
+The field layout is [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md).
+
+| Topic | Type | Who publishes | Contents |
+|-------|------|---------------|----------|
+| `/teleop/head_pose` | `geometry_msgs/Pose` | `xr_target_node`, every frame | Headset 6-DOF pose |
+| `/teleop/left_ee_pose` | `geometry_msgs/Pose` | `xr_target_node`, `dexcap_cartesian_teleop`, or `tracker_openvr` | Left 6-DOF pose, no `header` |
+| `/teleop/right_ee_pose` | `geometry_msgs/Pose` | `xr_target_node`, `dexcap_cartesian_teleop`, or `tracker_openvr` | Right 6-DOF pose, no `header` |
+| `/teleop/controller_state` | `std_msgs/Int32` | `xr_target_node`, every frame | Button event code. `0` means no edge this frame. The foot pedal sends the same codes on namespaced `teleop/controller_state` |
+| `/teleop/thumbstick_axes` | `geometry_msgs/Twist` | `xr_target_node`, every frame | Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / `angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`. A DexCap-only session also publishes a zero `Twist` here |
+| `/teleop/trigger_values` | `geometry_msgs/Twist` | `xr_target_node`, every frame | Left trigger pull in `linear.x`, right trigger pull in `angular.x`. `0.0` is released, `1.0` is full |
+| `/teleop/xrt_diag` | `std_msgs/Int64MultiArray` | `xr_target_node`, with the pose frame | Diagnostic. Downstream control can skip it |
+
+Poses from `xr_target_node` are in the robot world frame (`x` forward, `y` left, `z` up). WebXR publishes on a fixed 30 Hz timer. XRoboToolkit publishes when the VR `timeStampNs` changes: about 90 Hz with the default Pico App, and about 400 Hz with the enterprise send rate over USB.
+
+Pull depth stays on `/teleop/trigger_values` every frame. The press edge is a separate code on `/teleop/controller_state` (`9` left, `10` right).
+
+`VRInputHandler` subscribes to the pose topics, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`. Grippers in percent mode follow `trigger_values` when that topic is present. Headset button behavior: {ref}`VR Teleoperation <controller-buttons>`.
+
+These names are the root topics (`/teleop/...`). `teleop/mode_state` follows the robot namespace.
+
+The fa-py-libraries `./run.sh vr-record` bag records the headset pose, button, stick, and trigger topics: `/teleop/head_pose`, both end-effector poses, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`.
 
 Optical wrist presets also publish `/teleop/optical_r0_caps`, `/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and `/teleop/mirror_mode`. The handshake is in [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md). The dexterous-hand joint command on that path is `q_des` ([xr_hand_retarget README](https://github.com/fiveages-sim/xr_hand_retarget/blob/main/README.md)). Launch and the headset panel: {ref}`Hand tracking <vr-hand-tracking>`.
-
-Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its own `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).
 
 ## Related
 
 - [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md)
+- [DexCap Teleoperation](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)
+- [wuji_glove_teleop](5-wuji_glove.md)
+- [vive_tracker_teleop](6-vive_tracker.md)
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md)
 - [vr_pose_publisher](1-vr_pose_publisher.md)

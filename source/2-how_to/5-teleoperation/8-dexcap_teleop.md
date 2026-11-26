@@ -69,7 +69,7 @@ Launch order, package names, and topics: the **private README**.
 | `/dexcap/left_hand` | `JointState` | Left glove, 21 joints |
 | `/dexcap/right_hand` | `JointState` | Right glove, 21 joints |
 
-Mapper outputs and further topics are in the private README.
+Exoskeleton arm FK publishes `/teleop/left_ee_pose` and `/teleop/right_ee_pose` (`geometry_msgs/Pose`). {ref}`teleop-pose-stream`. Mapper outputs and further topics are in the private README.
 
 ## Joint Mapping
 

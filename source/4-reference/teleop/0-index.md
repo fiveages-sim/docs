@@ -11,7 +11,7 @@ The stack supports several teleoperation inputs. They are not interchangeable: s
 | VR | Headset (Pico Enterprise / consumer, Meta Quest), controllers or optical hand tracking | Controller path (`./run.sh vr`, `./run.sh vr-xrt`): end-effector pose, triggers, FSM and pause buttons. Hand tracking (`./run.sh vr-xrt wrist`, `./run.sh vr-hand`): optical-wrist 6DoF and bare-hand gestures — {ref}`Hand tracking <vr-hand-tracking>`. |
 | Game controller | Joystick / gamepad (`arms_teleop`) | Arm velocity via `control_input` → twist; chassis `/cmd_vel` in chassis mode |
 | Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
-| DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves |
+| DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves. Arm FK poses: {ref}`teleop-pose-stream` |
 | Wuji gloves (internal) | Gloves, optional Vive Tracker | Finger / hand joints; optional arm pose from Vive Tracker |
 | Vive Tracker (internal) | SteamVR Vive Tracker (`vive_tracker_teleop`) | Arm end-effector pose. Named **Vive Tracker** in the package and in these docs, not “Valve Tracker”. |
 | Foot pedal | USB pedal (`arms_teleop`, SayoDevice CM6K) | Assist only: events on relative `teleop/controller_state`. Current mode is `teleop/mode_state`. |
@@ -39,4 +39,4 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 
 ## Topic contracts
 
-Topic, type, QoS, namespace, and fields: {ref}`Teleop topics and data <teleop-topics-and-data>`. Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).
+Topic, type, QoS, namespace, and fields: {ref}`Teleop topics and data <teleop-topics-and-data>`. The shared end-effector poses are {ref}`teleop-pose-stream`. Wuji glove finger topics are on [wuji_glove_teleop](5-wuji_glove.md).
