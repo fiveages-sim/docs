@@ -1,8 +1,18 @@
 # Teleoperation
 
-Start with [VR](6-vr_teleop.md) or a [game controller](9-joystick_teleop.md). The other pages cover isomorphic teleop, DexCap, Wuji gloves, Vive Tracker, and related assists.
+FaSim offers several ways to teleoperate a robot. Each way matches its own hardware. Open the page for the hardware you have.
 
-VR, a foot pedal, or an exoskeleton report the current mode on `teleop/mode_state`. A game controller or the keyboard report it on `teleop_mode`. Topic, type, QoS, namespace, and fields: {ref}`Teleop topics and data <teleop-topics-and-data>`. How the operator reads the same latch: {ref}`teleop-mode-status`.
+| Way | Hardware | Start here |
+|-----|----------|------------|
+| VR | Headset (Pico or Meta Quest), with controllers or optical hand tracking | [VR Teleoperation](6-vr_teleop.md) |
+| Game controller | Joystick / gamepad | [Joystick teleop](9-joystick_teleop.md) |
+| Isomorphic | HighTorque Panthera HT master arm and follower | [Isomorphic Teleop](7-isomorphic_teleop.md) |
+| DexCap (internal) | Exoskeleton and gloves | [DexCap Teleoperation](8-dexcap_teleop.md) |
+| Wuji gloves (internal) | Gloves, with an optional Vive Tracker for the arms | [wuji_glove_teleop](../../4-reference/teleop/5-wuji_glove.md) |
+| Vive Tracker (internal) | SteamVR Vive Tracker | [vive_tracker_teleop](../../4-reference/teleop/6-vive_tracker.md) |
+| Foot pedal | USB pedal (SayoDevice CM6K), used beside another method | [Foot pedal](9-joystick_teleop.md#foot-pedal-assist-only) |
+
+Message names and fields are on {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 ```{toctree}
 :maxdepth: 1

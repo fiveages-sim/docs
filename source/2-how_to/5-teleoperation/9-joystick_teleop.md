@@ -41,7 +41,7 @@ The joystick node publishes `control_input` (`arms_ros2_control_msgs/Inputs`) an
 | `speed_level` | `int32` | Keyboard `1`–`10`. Joystick `0` = LOW, `1` = HIGH. |
 | `speed_scale` | `float32` | Scale actually applied |
 
-These names are relative to the node namespace. The other contract — VR, foot pedal, and an exoskeleton on `teleop/controller_state` / `teleop/mode_state` — is in {ref}`teleop-mode-status`. A hand or a UI that is following the joystick reads `teleop_mode`.
+These names are relative to the node namespace. Headset, foot pedal, and exoskeleton mode fields are on {ref}`Teleop topics and data <teleop-topics-and-data>`. A hand or a UI that is following the joystick reads `teleop_mode`.
 
 ## What you should see
 
@@ -70,7 +70,7 @@ ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a
 ros2 topic echo /robot_a/teleop/mode_state
 :::
 
-With exactly one supported pedal and an empty namespace, `ros2 run arms_teleop foot_pedal_teleop` is enough; the status topic is then `/teleop/mode_state`. The pedal can run next to the joystick or the keyboard. The package README documents the event map (FSM up/down, left/right arm teleop, STORAGE/UPDATE, mirror), udev setup, and how to choose a device when more than one pedal is connected. The latch fields are in {ref}`teleop-mode-status`.
+With exactly one supported pedal and an empty namespace, `ros2 run arms_teleop foot_pedal_teleop` is enough; the status topic is then `/teleop/mode_state`. The pedal can run next to the joystick or the keyboard. The package README documents the event map (FSM up/down, left/right arm teleop, STORAGE/UPDATE, mirror), udev setup, and how to choose a device when more than one pedal is connected. The mode fields are on {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 ## Related
 
