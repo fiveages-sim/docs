@@ -351,3 +351,43 @@ msgstr ""
 #~ " 两款头显。二者均支持 **Web** 和 **XROtoolkit** "
 #~ "模式。**Pico 的支持更好**——企业版发布节奏更快，追踪延迟更低（更跟手）。"
 
+
+msgid "Assist only: events on relative `teleop/controller_state`. Current mode is `teleop/mode_state`."
+msgstr "仅作辅助：在相对话题 `teleop/controller_state` 上发事件。当前模式在 `teleop/mode_state`。"
+
+msgid "Pose-based VR, Wuji, and Vive Tracker paths publish to these end-effector topics. Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command` instead."
+msgstr "基于位姿的 VR、舞肌和 Vive Tracker 路径会发布到这些末端话题。手柄遥操作改用 `control_input`、twist、`/cmd_vel` 和 `/fsm_command`。"
+
+#, python-brace-format
+msgid "Mode changes and the latched mode are a separate pair. Field-by-field reading is in {ref}`teleop-mode-status`."
+msgstr "改模式和锁存下来的当前模式是另一对。逐字段说明见 {ref}`teleop-mode-status`。"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Change the mode"
+msgstr "改模式"
+
+msgid "Read the current mode"
+msgstr "看当前模式"
+
+msgid "Joystick / keyboard"
+msgstr "手柄 / 键盘"
+
+msgid "`control_input` (`Inputs`)"
+msgstr "`control_input`（`Inputs`）"
+
+msgid "`teleop_mode` (`TeleopMode`), from `joystick_teleop` / `keyboard_teleop`"
+msgstr "来自 `joystick_teleop` / `keyboard_teleop` 的 `teleop_mode`（`TeleopMode`）"
+
+msgid "Event bus (VR, foot pedal, exoskeleton)"
+msgstr "事件总线（VR、脚踏板、外骨骼）"
+
+msgid "`teleop/controller_state` (`std_msgs/Int32`)"
+msgstr "`teleop/controller_state`（`std_msgs/Int32`）"
+
+msgid "`teleop/mode_state` (`TeleopModeState`), from `VRInputHandler`"
+msgstr "来自 `VRInputHandler` 的 `teleop/mode_state`（`TeleopModeState`）"
+
+msgid "The topic names are relative to the robot namespace (`/robot_a/teleop/mode_state` when the robot is `/robot_a`). QoS is `Reliable` + `TransientLocal`. A dexterous hand or a UI reads the status topic. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. The foot pedal publishes `teleop/controller_state` only."
+msgstr "话题名相对机器人命名空间（机器人在 `/robot_a` 时为 `/robot_a/teleop/mode_state`）。QoS 为 `Reliable` + `TransientLocal`。灵巧手或界面读反馈话题。开合与比例命令仍走 `*/target_command` 和 `*/target_percent`。脚踏板只发布 `teleop/controller_state`。"

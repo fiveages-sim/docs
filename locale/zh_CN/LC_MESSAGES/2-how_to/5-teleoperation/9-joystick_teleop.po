@@ -208,3 +208,93 @@ msgstr ""
 #: dcc676cdec124b49844b8ed70c646258
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
+
+msgid "The joystick node publishes `control_input` (`arms_ros2_control_msgs/Inputs`) and `teleop_mode` (`arms_ros2_control_msgs/TeleopMode`). `arms_target_manager` scales `control_input` into `left_target/twist` and `right_target/twist`. In chassis mode the node publishes `/cmd_vel`. The joystick also publishes `/fsm_command`. The keyboard node publishes the same `control_input` and `teleop_mode` pair, and it does not publish `/fsm_command`."
+msgstr "手柄节点发布 `control_input`（`arms_ros2_control_msgs/Inputs`）和 `teleop_mode`（`arms_ros2_control_msgs/TeleopMode`）。`arms_target_manager` 把 `control_input` 换算成 `left_target/twist` 和 `right_target/twist`。底盘模式下该节点发布 `/cmd_vel`。手柄还会发布 `/fsm_command`。键盘节点发布同一对 `control_input` 和 `teleop_mode`，不发布 `/fsm_command`。"
+
+msgid "`teleop_mode` is the status for this path. QoS is `Reliable` + `TransientLocal`: one message at startup, then another when active, control mode, mirror, or speed changes. Switching the active arm does not republish it. The arm is `Inputs.target` (`1` left, `2` right). If the joystick pauses `Inputs` in chassis mode, keep the last `target`."
+msgstr "`teleop_mode` 是这条路径的反馈。QoS 为 `Reliable` + `TransientLocal`：启动发一次，激活状态、控制模式、镜像或速度变化时再发。切换当前臂不会因此再发。当前臂是 `Inputs.target`（`1` 左，`2` 右）。手柄在底盘模式下如果暂停了 `Inputs`，请保留最近一次 `target`。"
+
+msgid "Field"
+msgstr "字段"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Meaning"
+msgstr "含义"
+
+msgid "`stamp`"
+msgstr "`stamp`"
+
+msgid "`builtin_interfaces/Time`"
+msgstr "`builtin_interfaces/Time`"
+
+msgid "Time this snapshot was published"
+msgstr "这条快照的发布时间"
+
+msgid "`active`"
+msgstr "`active`"
+
+msgid "`bool`"
+msgstr "`bool`"
+
+msgid "Joystick is true only after the right stick enables teleop. Keyboard is always true."
+msgstr "手柄要等右摇杆按下启用后才为 true。键盘始终为 true。"
+
+msgid "`control_mode`"
+msgstr "`control_mode`"
+
+msgid "`uint8`"
+msgstr "`uint8`"
+
+msgid "`0` = `CONTROL_ARM`; `1` = `CONTROL_CHASSIS`"
+msgstr "`0` = `CONTROL_ARM`；`1` = `CONTROL_CHASSIS`"
+
+msgid "`mirror_movement`"
+msgstr "`mirror_movement`"
+
+msgid "Mirror on or off"
+msgstr "镜像开或关"
+
+msgid "`speed_level`"
+msgstr "`speed_level`"
+
+msgid "`int32`"
+msgstr "`int32`"
+
+msgid "Keyboard `1`–`10`. Joystick `0` = LOW, `1` = HIGH."
+msgstr "键盘为 `1`–`10`。手柄 `0` 为 LOW，`1` 为 HIGH。"
+
+msgid "`speed_scale`"
+msgstr "`speed_scale`"
+
+msgid "`float32`"
+msgstr "`float32`"
+
+msgid "Scale actually applied"
+msgstr "实际使用的速度倍率"
+
+#, python-brace-format
+msgid "These names are relative to the node namespace. The other contract — VR, foot pedal, and an exoskeleton on `teleop/controller_state` / `teleop/mode_state` — is in {ref}`teleop-mode-status`. A hand or a UI that is following the joystick reads `teleop_mode`."
+msgstr "这些名字相对节点命名空间。另一套契约——VR、脚踏板和外骨骼的 `teleop/controller_state` / `teleop/mode_state`——见 {ref}`teleop-mode-status`。跟着手柄的手或界面读 `teleop_mode`。"
+
+msgid "After you enable the controller, stick motion changes the active arm’s target, or the chassis when you are in chassis mode. `teleop_mode.active` is true after that enable. On the keyboard it is already true."
+msgstr "启用之后，摇杆运动会改变当前臂的目标；底盘模式下则改变底盘。启用后 `teleop_mode.active` 为 true。键盘上它一开始就是 true。"
+
+msgid "`foot_pedal_teleop` is an assist, not a standalone teleop path. It reads one USB foot pedal (the packaged udev rule is for the SayoDevice CM6K) and publishes events on the relative topic `teleop/controller_state` (`std_msgs/Int32`). It does not publish a mode snapshot, and it does not publish `/fsm_command`. `VRInputHandler` applies the events and publishes the current mode on `teleop/mode_state` (`TeleopModeState`, QoS `Reliable` + `TransientLocal`)."
+msgstr "`foot_pedal_teleop` 是辅助输入，不是独立的遥操作路径。它读取一块 USB 脚踏板（包内 udev 规则面向 SayoDevice CM6K），在相对话题 `teleop/controller_state`（`std_msgs/Int32`）上发布事件。它不发布模式快照，也不发布 `/fsm_command`。`VRInputHandler` 处理这些事件，并把当前模式发到 `teleop/mode_state`（`TeleopModeState`，QoS 为 `Reliable` + `TransientLocal`）。"
+
+msgid "Run the pedal in the same namespace as that robot’s `arms_target_manager`:"
+msgstr "把脚踏板跑在该机器人 `arms_target_manager` 的同一命名空间里："
+
+msgid ""
+"ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a\n"
+"ros2 topic echo /robot_a/teleop/mode_state"
+msgstr ""
+"ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a\n"
+"ros2 topic echo /robot_a/teleop/mode_state"
+
+#, python-brace-format
+msgid "With exactly one supported pedal and an empty namespace, `ros2 run arms_teleop foot_pedal_teleop` is enough; the status topic is then `/teleop/mode_state`. The pedal can run next to the joystick or the keyboard. The package README documents the event map (FSM up/down, left/right arm teleop, STORAGE/UPDATE, mirror), udev setup, and how to choose a device when more than one pedal is connected. The latch fields are in {ref}`teleop-mode-status`."
+msgstr "只接了一块受支持的脚踏板、且命名空间为空时，`ros2 run arms_teleop foot_pedal_teleop` 即可；此时反馈话题是 `/teleop/mode_state`。脚踏板可以和手柄或键盘一起跑。事件表（FSM 上/下、左右臂遥操、STORAGE/UPDATE、镜像）、udev 和多块脚踏板时如何选设备，见软件包 README。锁存字段见 {ref}`teleop-mode-status`。"

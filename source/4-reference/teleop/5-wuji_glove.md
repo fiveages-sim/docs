@@ -57,5 +57,6 @@ See repository documentation for detailed configuration.
 
 ## Related
 
+- When a Wuji hand follows a VR session, mirror and per-arm pause come from `teleop/mode_state` (`TeleopModeState`) in the robot namespace. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. {ref}`teleop-mode-status`.
 - [wuji-ros2-control](7-wuji_hand_hi.md)
 - [Vive Tracker](6-vive_tracker.md)

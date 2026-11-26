@@ -182,6 +182,8 @@ VR teleoperation publishes to:
 | `/teleop/head_pose` | `PoseStamped` | Head tracking |
 | `/teleop/trigger` | `Bool` | Controller trigger state |
 
+Mode changes and the latched mode use a separate pair of topics. [Read the current teleop mode](#teleop-mode-status).
+
 ## Arm Following
 
 Configure which arm follows which controller:
@@ -227,7 +229,7 @@ Grip + same-hand trigger switches that trigger’s gripper between percent and o
 On **全身**, default left **Y** / right **B** requests that arm’s WBC ENABLE/DISABLE (**停单臂**). That is not the same as freezing VR input for that arm (**停发指令** / pause). Event 16 flips which of those two Y/B does.
 ```
 
-Y/B disable and event 16 apply when **全身** is active (`ocs2_wbc_controller`), VR is enabled, and FSM is **OCS2**. Implementation: [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/b55274481140ceb6e3e694ea4777b7fdd4cfa433/command/arms_target_manager/VR_INPUT_HANDLER_README.md) (「单臂启用 / 禁用与 Y/B 语义锁存」).
+Y/B disable and event 16 apply when **全身** is active (`ocs2_wbc_controller`), VR is enabled, and FSM is **OCS2**. Implementation: [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md) (「单臂启用 / 禁用与 Y/B 语义锁存」).
 
 | What you want | Control | Result |
 |---------------|---------|--------|
@@ -248,6 +250,84 @@ Constraints on **全身**:
 - While coupled, event 16 cannot switch the latch from pause back to disable (the latch stays).
 - While a WBC switch or an event-16 conversion is still pending, event 16 and Y/B are ignored.
 - If the topology leaves 全身, the latch returns to the default disable meaning.
+
+Which meaning is latched is `yb_pause_semantics` on `teleop/mode_state`. Per-arm teleop pause is `left_arm_paused` / `right_arm_paused`. Those pause flags are independent of WBC `left_arm_state` / `right_arm_state` on `WbcCurrentState`. [Read the current teleop mode](#teleop-mode-status).
+
+(teleop-mode-status)=
+## Read the current teleop mode
+
+VR, a foot pedal, and an exoskeleton that sends the same event codes share one contract. A game controller and the keyboard share another. The two run side by side.
+
+| Path | Change the mode | Read the current mode | Who publishes the status |
+|------|-----------------|----------------------|--------------------------|
+| Joystick / keyboard | `control_input` (`Inputs`) and the related command topics | `teleop_mode` (`TeleopMode`) | `joystick_teleop` / `keyboard_teleop` |
+| Event bus (VR, foot pedal, exoskeleton) | `teleop/controller_state` (`std_msgs/Int32` event code) | `teleop/mode_state` (`TeleopModeState`) | `VRInputHandler` in `arms_target_manager` |
+
+Publish on the change topic to request a new mode. Subscribe to the status topic to see the mode that is active now. A dexterous hand, DualHand, or a UI reads `teleop/mode_state` for an event-bus session, or `teleop_mode` when it is following the joystick or the keyboard. `teleop/controller_state` carries the change event. The current mode is the status message.
+
+The names above are relative. They follow the robot namespace, so two robots in one scene stay apart. With no namespace the event-bus status topic is `/teleop/mode_state`. In namespace `/robot_a` it is `/robot_a/teleop/mode_state`. Subscribe in that same namespace.
+
+Use QoS `Reliable` + `TransientLocal`. The publisher sends one message at startup, then another when a field changes. A node that starts later still receives the last snapshot.
+
+Definitions: [`TeleopModeState.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopModeState.msg), [`TeleopMode.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopMode.msg), and [section 1 of the message README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md).
+
+### Event-bus status (`TeleopModeState`)
+
+`TeleopModeState` is the latch for the event bus. `TeleopMode` is a different message, for the joystick and the keyboard. Body lock and whether WBC has an arm enabled stay on {ref}`wbc-current-state` (`/ocs2_wbc_controller/current_state`).
+
+`left_arm_paused` and `right_arm_paused` are that arm’s teleop pause. They stand apart from `left_arm_state` / `right_arm_state`: an arm can be VR-paused and still be `ARM_ENABLED`. On 全身, `yb_pause_semantics` reports which meaning left **Y** / right **B** currently have. `false` is WBC single-arm disable (停单臂). `true` is teleop pause (停发指令). The buttons that flip the latch are in [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands).
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `stamp` | `builtin_interfaces/Time` | Time this snapshot was published |
+| `enabled` | `bool` | Event-bus handler is enabled |
+| `update_mode` | `bool` | `true` = UPDATE (follow; HUD `TELEOP ON`); `false` = STORAGE (`TELEOP OFF`) |
+| `chassis_mode` | `bool` | `true` = chassis teleop (event 20); `false` = end-effector sticks |
+| `yb_pause_semantics` | `bool` | 全身 Y/B latch: `false` = WBC arm disable; `true` = teleop pause |
+| `left_arm_paused` / `right_arm_paused` | `bool` | That arm’s teleop pause |
+| `left_stick_plane` / `right_stick_plane` | `uint8` | Arm stick: `0` = `PLANE_XY`, `1` = `PLANE_Z_YAW` |
+| `body_stick_plane` | `uint8` | Waist left stick: `0` = XY, `1` = forward + roll |
+| `body_right_stick_plane` | `uint8` | Waist right stick: `0` = lift + yaw, `1` = pitch + yaw |
+| `left_gripper_percent_mode` / `right_gripper_percent_mode` | `bool` | `true` = percent; `false` = open/close |
+| `mirror_movement` | `bool` | Mirror on or off |
+| `mirror_profile` | `uint8` | `0` = `MIRROR_PROFILE_A`, `1` = `MIRROR_PROFILE_B` (used when mirror is on) |
+| `topology` | `uint8` | `0` = `TOPOLOGY_UNKNOWN`, `1` = `TOPOLOGY_SPLIT_BODY` (分体), `2` = `TOPOLOGY_FULL_BODY` (全身) |
+
+Subscribe to `teleop/mode_state` in the robot namespace. Read `mirror_movement` for mirror. Read pause, the gripper-mode flags, `update_mode`, and `topology` when the hand or the UI needs them. Open/close and percent commands stay on `*/target_command` and `*/target_percent`.
+
+:::{code-block} bash
+ros2 topic echo /robot_a/teleop/mode_state
+:::
+
+With an empty namespace, echo `/teleop/mode_state`. Match QoS `Reliable` + `TransientLocal` on the subscription.
+
+### Joystick and keyboard status (`TeleopMode`)
+
+`TeleopMode` on `teleop_mode` is the latch for the joystick and the keyboard. It uses the same QoS, and the same rule: once at startup, again when a field changes. The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not a field of `TeleopMode`. In chassis mode the joystick may pause the periodic `Inputs` stream, so keep the last `target`. Fields and the enable switch: [Joystick teleop](9-joystick_teleop.md).
+
+### When VR moves the arm and the gripper
+
+VR end-effector targets and VR gripper output follow `update_mode`.
+
+| `update_mode` | HUD | What VR publishes |
+|---------------|-----|-------------------|
+| `true` (UPDATE) | `TELEOP ON` | End-effector targets from the controller pose, and trigger gripper commands |
+| `false` (STORAGE) | `TELEOP OFF` | No arm targets and no VR gripper commands. The latest VR pose stays cached for the next UPDATE. |
+
+Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, joystick and keyboard `hand_command` on `control_input` still open and close the hand. While UPDATE is on, the VR trigger stream keeps writing the gripper; leave UPDATE when the joystick should own the hand.
+
+### RViz teleop HUD
+
+`arms_rviz_control_plugin/TeleopModeDisplay` is one RViz display with two cards, stacked at the top left of the 3D view. If only one path is active, that card fills the top slot. Add it from Displays → Add → TeleopModeDisplay. `Scale` runs from 0.5 to 2.0. A card stays hidden until its message arrives, and while that path is inactive. The display runs in any FSM state. Put RViz in the same namespace as `arms_target_manager`.
+
+| Card | Visible when | What it reads |
+|------|--------------|---------------|
+| Event bus (VR, foot pedal, exoskeleton) | `teleop/mode_state.enabled` is true | `teleop/mode_state` |
+| Control input (joystick / keyboard) | `teleop_mode.active` is true | `teleop_mode`, and `control_input` for the active arm |
+
+The event-bus card shows `TELEOP` `ON`/`OFF`, `MIRROR`, and `L`/`R` as `RUN` or `PAUSE`, plus the stick plane, chassis, and gripper mode for the current route. A click publishes the same `teleop/controller_state` events as the headset: `4` toggles UPDATE, `7` toggles mirror, and `L`/`R` match left **Y** / right **B**. On 全身, when `yb_pause_semantics` is still false, `L`/`R` send event `16` first, wait until the latch flips, then send `3` or `6`. The control-input card is read-only: active arm `L`/`R` or `CHASSIS`, mirror, and speed `HIGH`/`LOW`.
+
+Sources: [arms_rviz_control_plugin README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_rviz_control_plugin/README.md) (遥操状态 HUD), [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md), and [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md).
 
 ## Safety
 
@@ -277,8 +357,9 @@ Then:
 ## Verification
 
 1. VR bridge logs show tracking data
-2. `ros2 topic echo /teleop/right_ee_pose` shows updates
-3. Robot follows VR controller motion
+2. `ros2 topic echo /teleop/right_ee_pose` shows updates (use `/<namespace>/teleop/right_ee_pose` when the robot has a namespace)
+3. `ros2 topic echo /teleop/mode_state` shows `update_mode: true` while the arms follow (`/<namespace>/teleop/mode_state` in a robot namespace). Subscribe with QoS `Reliable` + `TransientLocal`.
+4. Robot follows VR controller motion in UPDATE. In STORAGE the arms and the VR gripper stay put; the joystick can still move the hand.
 
 ## Troubleshooting
 
@@ -300,8 +381,8 @@ Then:
 ### Robot doesn't follow
 
 - Confirm `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off)
-- Verify controller is in teleop mode (`UPDATE` after entering OCS2)
-- On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED`) and that Y/B is not in VR-pause for that arm — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)
+- Confirm `update_mode` is true on `teleop/mode_state` (UPDATE / HUD `TELEOP ON`) after entering OCS2. In STORAGE, VR does not publish arm targets or VR gripper commands.
+- On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED` on `WbcCurrentState`) and that `left_arm_paused` / `right_arm_paused` is false when you expect that arm to follow — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)
 - Check target poses are within workspace
 - Ensure no safety limits are triggered
 
