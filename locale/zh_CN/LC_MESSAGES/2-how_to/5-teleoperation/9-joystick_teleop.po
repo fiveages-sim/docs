@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 11:33+0000\n"
+"POT-Creation-Date: 2026-11-26 11:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Generated-By: Babel 2.19.0\n"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:1
-#: 341cbe96e29d4d2d94edd2f238e45fbe
+#: b2dd430a41d1494eb221beabdb608dcc
 msgid "Joystick teleop"
 msgstr "手柄遥操作"
 
@@ -27,7 +27,11 @@ msgid ""
 "[`arms_teleop`](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/command/arms_teleop/README.md) "
 "([arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control))."
-msgstr "游戏手柄控制手臂；底盘模式下也控制移动底盘。节点是 [`arms_teleop`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md) 里的 `joystick_teleop`（[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control)）。"
+msgstr ""
+"游戏手柄控制手臂；底盘模式下也控制移动底盘。节点是 [`arms_teleop`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md) 里的 "
+"`joystick_teleop`（[arms_ros2_control](https://github.com/fiveages-"
+"sim/arms_ros2_control)）。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:5
 #: 89d22f03e25c41ddb75bd85700f05e1b
@@ -52,7 +56,7 @@ msgid "2. Start"
 msgstr "​2. 启动"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:12
-#: 98e886ee9eef40f28d79a70fa1cb0ff0
+#: 9eb11d11c2944cf7a818a4071df29210
 msgid ""
 "source install/setup.bash\n"
 "ros2 launch arms_teleop joystick_teleop.launch.py"
@@ -70,7 +74,13 @@ msgid ""
 "sim/arms_ros2_control/blob/main/command/arms_teleop/config/joy_mapping/generic_gamepad.yaml)"
 " (SDL layout: F710, PS4, Xbox, Switch Pro, GameSir). An unmapped device "
 "uses `joy_node` and `default.yaml`."
-msgstr "`joy_driver:=auto` 按 `ros2 run joy joy_enumerate_devices` 的结果选驱动。报告里是 `Mapped: true` 时，launch 使用 `game_controller_node` 和 [`generic_gamepad.yaml`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/config/joy_mapping/generic_gamepad.yaml)（SDL 布局：F710、PS4、Xbox、Switch Pro、GameSir）。未映射的设备使用 `joy_node` 和 `default.yaml`。"
+msgstr ""
+"`joy_driver:=auto` 按 `ros2 run joy joy_enumerate_devices` 的结果选驱动。报告里是 "
+"`Mapped: true` 时，launch 使用 `game_controller_node` 和 "
+"[`generic_gamepad.yaml`](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/config/joy_mapping/generic_gamepad.yaml)（SDL"
+" 布局：F710、PS4、Xbox、Switch Pro、GameSir）。未映射的设备使用 `joy_node` 和 "
+"`default.yaml`。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
 #: 3c3cd4a60151423abf0ddd5703310d03
@@ -83,7 +93,8 @@ msgid ""
 "joy_driver:=joy"
 msgstr ""
 "ros2 run joy joy_enumerate_devices\n"
-"ros2 launch arms_teleop joystick_teleop.launch.py joy_dev:=/dev/input/js1\n"
+"ros2 launch arms_teleop joystick_teleop.launch.py joy_dev:=/dev/input/js1"
+"\n"
 "ros2 launch arms_teleop joystick_teleop.launch.py joy_driver:=joy\n"
 "ros2 launch arms_teleop joystick_teleop.launch.py config:=default "
 "joy_driver:=joy"
@@ -153,14 +164,19 @@ msgid ""
 "`generic_gamepad.yaml` under `game_controller_node`. With "
 "`joy_driver:=joy`, use `default.yaml` and restart the launch after you "
 "flip the mode switch."
-msgstr "`config:=auto` 按同一套已映射 / 未映射来分：`generic_gamepad` 或 `default`。F710 的 X 档和 D 档在 `game_controller_node` 下共用 `generic_gamepad.yaml`。改成 `joy_driver:=joy` 时用 `default.yaml`，拨动模式开关后重新启动这次 launch。"
+msgstr ""
+"`config:=auto` 按同一套已映射 / 未映射来分：`generic_gamepad` 或 `default`。F710 的 X 档和 "
+"D 档在 `game_controller_node` 下共用 `generic_gamepad.yaml`。改成 "
+"`joy_driver:=joy` 时用 `default.yaml`，拨动模式开关后重新启动这次 launch。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:34
 #: 9754daf1e38a40cc89338c7c2b6b0506
 msgid ""
 "For an unmapped device, echo `/joy`, note the button and axis indices, "
 "and add a YAML under `config/joy_mapping/`. Start with `config:=<name>`."
-msgstr "设备未映射时，echo `/joy`，记下按键和轴的序号，在 `config/joy_mapping/` 下加一份 YAML。启动时写 `config:=<name>`。"
+msgstr ""
+"设备未映射时，echo `/joy`，记下按键和轴的序号，在 `config/joy_mapping/` 下加一份 YAML。启动时写 "
+"`config:=<name>`。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:36
 #: d92ef5de37d64496acaabed923aec581
@@ -168,21 +184,259 @@ msgid ""
 "On a lean branch, the `quick_start.sh` assist menu can start this launch."
 " One controller starts on its own; several controllers ask for the device"
 " id and pass `joy_dev`."
-msgstr "在精简分支上，`quick_start.sh` 的辅助菜单可以启动这次 launch。一只手柄会直接启动；多只手柄会询问设备 id，并传入 `joy_dev`。"
+msgstr ""
+"在精简分支上，`quick_start.sh` 的辅助菜单可以启动这次 launch。一只手柄会直接启动；多只手柄会询问设备 id，并传入 "
+"`joy_dev`。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:38
 #: fb042ec38f5b422c9062f5f69f3785df
 msgid ""
 "Leave `keyboard_teleop` stopped while `joystick_teleop` is publishing "
 "`control_input` and `/cmd_vel`. Both nodes write those topics."
-msgstr "`joystick_teleop` 正在发布 `control_input` 和 `/cmd_vel` 时，让 `keyboard_teleop` 保持停止。两个节点都会写这些话题。"
+msgstr ""
+"`joystick_teleop` 正在发布 `control_input` 和 `/cmd_vel` 时，让 `keyboard_teleop`"
+" 保持停止。两个节点都会写这些话题。"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:40
-#: 6980c50bb00145eb8834cfcfae70229f
-msgid "3. Buttons"
-msgstr "​3. 按键"
+#: 77617423b63e4dc0ae44e0c1d1954dad
+msgid "3. Controllers we have checked"
+msgstr "​3. 核对过的手柄"
 
 #: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:42
+#: 5fb595f2d34e4951b426b7754c14aa71
+msgid ""
+"Three controllers have been tried on X86, Jetson Thor, and RK3588. The "
+"names in the table are the ones from that check."
+msgstr "X86、Jetson Thor 和 RK3588 上核对过三只手柄。表里的名字就是那次核对用的名字。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 260226842e0a44edb761ceb83ac2c636
+msgid "Controller"
+msgstr "手柄"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 518354544df1430ab3e425aadf207121
+msgid "X86"
+msgstr "X86"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 052f6d1cba0f4b0096f17666b8e10dc0
+msgid "Jetson Thor"
+msgstr "Jetson Thor"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: b0c4112eb52240ecbb3485f51254a974
+msgid "RK3588"
+msgstr "RK3588"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: ac5c3f518ceb40d99b912e24810a4072
+msgid "罗技 F710"
+msgstr "罗技 F710"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 662d34f4290f477d82e55fdd88922161
+msgid "Both X-input and D-input"
+msgstr "双模支持"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 8559c662be9e44e1b0a3ff5d467af09c
+msgid "X-input only"
+msgstr "仅支持 X-input 模式"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 8416f3b0032c45c393b85a824f061b40
+msgid "D-input only"
+msgstr "仅支持 D-input 模式"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: c01ecbd721d94ac196f6dffff39cd0c1
+msgid "小鸡手机支架版本"
+msgstr "小鸡手机支架版本"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 135994ada21c490c9b203a548c63d4dc 1eabd776d6174ce09e9933cce582e954
+#: 1ed593b641c24386b104a9222c760f64
+msgid "Supported"
+msgstr "支持"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: a187d0b279cd4096874c52abb595628b
+msgid "小鸡超新星（灵猴二代底盘自带）"
+msgstr "小鸡超新星（灵猴二代底盘自带）"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: 3f4e7561e76a4012b33ca393e05011f8 5892068abba6467b8d6553c6c4389ab5
+msgid "Every mode except Switch"
+msgstr "除 Switch 模式都支持"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: bf3f77dc39e5495fb26f462bb4ec1a32
+msgid "PS4 mode only"
+msgstr "仅支持 PS4 模式"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:50
+#: 2f599c498422411885272da11cc37a30
+msgid "3.1 罗技 F710"
+msgstr "3.1 罗技 F710"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:52
+#: 02da5640a184497d8cae47f571eca144
+msgid ""
+"The F710 connects over 2.4G. The receiver sits in the shell on the back. "
+"X86 accepts both switch positions. Jetson Thor uses X-input. RK3588 uses "
+"D-input."
+msgstr "F710 走 2.4G。接收器在背面壳子里。X86 两个档位都可用。Jetson Thor 用 X-input。RK3588 用 D-input。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:54
+#: d5e2733e3b834b73a5ac58a8bb0284da
+msgid ""
+"Under `game_controller_node`, X and D share `generic_gamepad.yaml`. With "
+"`joy_driver:=joy`, use `default.yaml` and restart the launch after you "
+"flip the switch. That split is in the [package README](https://github.com"
+"/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)."
+msgstr "在 `game_controller_node` 下，X 档和 D 档共用 `generic_gamepad.yaml`。使用 `joy_driver:=joy` 时用 `default.yaml`，拨动开关后重新启动这次 launch。这个区分写在[软件包 README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:56
+#: 9667aa7e66f0418181182fe54d80e0bc
+msgid "![Logitech F710, front](../../_static/joystick/04-logitech-f710.png)"
+msgstr "![罗技 F710 正面](../../_static/joystick/04-logitech-f710.png)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:56
+#: 060ace9b7d6f405a82fc97173c1aa7fc
+msgid "Logitech F710, front"
+msgstr "罗技 F710 正面"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:58
+#: f08908b7784443929cde482ac9d53bdc
+msgid ""
+"![Logitech F710 from the back: RB, RT, LB, LT, and the power "
+"switch](../../_static/joystick/logitech-f710-back.png)"
+msgstr "![罗技 F710 背面：RB、RT、LB、LT 和电源开关](../../_static/joystick/logitech-f710-back.png)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:58
+#: 960311df47a6436f8ea3bf3a224b7943
+msgid "Logitech F710 from the back: RB, RT, LB, LT, and the power switch"
+msgstr "罗技 F710 背面：RB、RT、LB、LT 和电源开关"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:60
+#: 49802cd1cd1844bdb589e9e6ce1b47e8
+msgid "3.2 小鸡手机支架版本"
+msgstr "3.2 小鸡手机支架版本"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:62
+#: 9634ce1f4d5b4f8b8957bef0cec02020
+msgid ""
+"For a quick link, use 2.4G. Plug in the receiver, then press **X** and "
+"the screenshot key together. A blue Home light means it is connected. "
+"Other modes are in the [G8+ "
+"guide](https://doc.xiaoji.com/zh/g8+/detail/1504.html)."
+msgstr "快速连接用 2.4G。插入接收器，同时按下 **X** 和截图键。Home 灯变蓝表示已经连上。其他模式见 [G8+ 说明](https://doc.xiaoji.com/zh/g8+/detail/1504.html)。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:64
+#: 30b207f1fd5e42e78f1c1cd34dc9101d
+msgid ""
+"![GameSir phone-holder layout: front, shoulder keys, USB-C, and the back "
+"paddles](../../_static/joystick/03-gamesir-key-layout.png)"
+msgstr "![小鸡手机支架版键位：正面、肩键、USB-C 和背面拨片](../../_static/joystick/03-gamesir-key-layout.png)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:64
+#: 966c8b296ee34e5589671e38aa4f349e
+msgid ""
+"GameSir phone-holder layout: front, shoulder keys, USB-C, and the back "
+"paddles"
+msgstr "小鸡手机支架版键位：正面、肩键、USB-C 和背面拨片"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:66
+#: 862cd6f1628d4dafaba2229f665134d9
+msgid "3.3 小鸡超新星"
+msgstr "3.3 小鸡超新星"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:68
+#: c0fbd8ed647046f2a7eeaa568e9e0c67
+msgid ""
+"This controller comes with the 灵猴二代 chassis. Turn it on from the back, "
+"select 2.4G, plug in USB, and press Home. Hold **−** and **+** together "
+"to change the radio mode."
+msgstr "这只手柄随灵猴二代底盘附带。从背面开机，选 2.4G，插上 USB，再按 Home。同时按住 **−** 和 **+** 切换无线模式。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:70
+#: 4a8a20fc39964baf9d4d2ac10e59777e
+msgid ""
+"Use Xbox mode. Switch mode uses a different button map, so leave it off. "
+"On RK3588 the check passed only in PS4 mode. On X86 and Jetson Thor every"
+" mode except Switch passed. Pairing steps are in the [Nova Pro "
+"guide](https://doc.xiaoji.com/zh/nova-pro/)."
+msgstr "用 Xbox 模式。Switch 模式的键位映射不同。RK3588 上只通过了 PS4 模式。X86 和 Jetson Thor 上，除 Switch 以外的模式都通过了。配对步骤见 [Nova Pro 说明](https://doc.xiaoji.com/zh/nova-pro/)。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:72
+#: 7e75bf35201b45878ab34d01b5f7118c
+msgid ""
+"On this drawing, **−** is the Back key and **+** is Start. The button "
+"table below uses those names from the package README."
+msgstr "这张图上，**−** 是 Back 键，**+** 是 Start 键。下面的按键表用的是软件包 README 里的这两个名字。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:74
+#: 339d6f7090f5403095399074a7abc483
+msgid ""
+"![GameSir Nova key labels](../../_static/joystick/08-gamesir-2-key-"
+"labels.png)"
+msgstr "![小鸡超新星键位标注](../../_static/joystick/08-gamesir-2-key-labels.png)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:74
+#: c48c7bda510a4a7ebae25e56e5f6cab2
+msgid "GameSir Nova key labels"
+msgstr "小鸡超新星键位标注"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:76
+#: 78bcac9829ba4655a46f1b3f186d150f
+msgid ""
+"The channel lights sit on the front, beside the M key. The check marks "
+"the pattern with four blue lights as Xbox mode."
+msgstr "通道灯在正面，M 键旁边。核对记录把四颗蓝灯这一档标成 Xbox 模式。"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:78
+#: 560239b9dabf4990ad8e260e96ca0781
+msgid ""
+"![GameSir Nova, front, one channel light "
+"on](../../_static/joystick/10-gamesir-2-front-one-led.jpg)"
+msgstr "![小鸡超新星正面，一颗通道灯亮](../../_static/joystick/10-gamesir-2-front-one-led.jpg)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:78
+#: a73859c5dd5f423aa9cf358f711fadbe
+msgid "GameSir Nova, front, one channel light on"
+msgstr "小鸡超新星正面，一颗通道灯亮"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:80
+#: 4b88f1845791455a8fb1a3a63196826c
+msgid ""
+"![GameSir Nova, front, three channel lights "
+"on](../../_static/joystick/11-gamesir-2-front.jpg)"
+msgstr "![小鸡超新星正面，三颗通道灯亮](../../_static/joystick/11-gamesir-2-front.jpg)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:80
+#: 9e713f393b15488bbc5f7ab5c97187dc
+msgid "GameSir Nova, front, three channel lights on"
+msgstr "小鸡超新星正面，三颗通道灯亮"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:82
+#: 02ec1258232c4f54a7a719dc417f213b
+msgid ""
+"![GameSir Nova, front, four blue channel "
+"lights](../../_static/joystick/12-gamesir-2-front-four-leds.jpg)"
+msgstr "![小鸡超新星正面，四颗蓝色通道灯](../../_static/joystick/12-gamesir-2-front-four-leds.jpg)"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:82
+#: dc67716222044de5a6a4d0ec7755e262
+msgid "GameSir Nova, front, four blue channel lights"
+msgstr "小鸡超新星正面，四颗蓝色通道灯"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:84
+#: 6980c50bb00145eb8834cfcfae70229f
+msgid "4. Buttons"
+msgstr "​4. 按键"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:86
 #: af22fe5c2dc948c3a410bd6fb8e7a4c5
 msgid ""
 "Teleop starts disabled. Press the **right stick** to enable it, then move"
@@ -214,6 +468,8 @@ msgstr "手臂 ↔ 底盘"
 msgid "**Back**"
 msgstr "**Back**"
 
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:19
+#: ba6be92e2b5b4986bf4f4a56c401832c
 msgid "Mirror on or off"
 msgstr "镜像开或关"
 
@@ -297,32 +553,37 @@ msgstr "**LB** + **START**"
 msgid "FSM OCS2"
 msgstr "FSM OCS2"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:57
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:101
 #: 16ce84f86671432db6a6a148bae0202e
 msgid ""
 "Hold **LB** for the FSM chords. The node log prints this map at startup. "
 "Extra ROS parameters (`mirror_movement`, `speed.*`, `chassis.*`, "
 "`button_mapping.*`, `axes_mapping.*`) come from the mapping YAML."
-msgstr "按住 **LB** 再用组合键发 FSM。节点启动时会把这张表打到日志里。其余 ROS 参数（`mirror_movement`、`speed.*`、`chassis.*`、`button_mapping.*`、`axes_mapping.*`）来自映射 YAML。"
+msgstr ""
+"按住 **LB** 再用组合键发 FSM。节点启动时会把这张表打到日志里。其余 ROS "
+"参数（`mirror_movement`、`speed.*`、`chassis.*`、`button_mapping.*`、`axes_mapping.*`）来自映射"
+" YAML。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:59
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:103
 #: 5203ba408d7142879c5c603f4b197792
-msgid "4. Keyboard"
-msgstr "​4. 键盘"
+msgid "5. Keyboard"
+msgstr "​5. 键盘"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:61
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:105
 #: 504683a6d36d48d2b6d21fa65063fc9d
 msgid ""
 "`keyboard_teleop` uses the same `control_input` and `teleop_mode` "
 "contract. Run it in its own terminal so stdin is a real TTY:"
-msgstr "`keyboard_teleop` 使用同一套 `control_input` 和 `teleop_mode`。把它放在自己的终端里跑，这样标准输入才是真正的 TTY："
+msgstr ""
+"`keyboard_teleop` 使用同一套 `control_input` 和 "
+"`teleop_mode`。把它放在自己的终端里跑，这样标准输入才是真正的 TTY："
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:63
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:107
 #: ecc87ffff4b54bdc938e34f395eedd88
 msgid "ros2 run arms_teleop keyboard_teleop"
 msgstr "ros2 run arms_teleop keyboard_teleop"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:67
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:111
 #: 6f82c3d2c2e24843b4183bc648818b45
 msgid ""
 "The key map (WASD, arm / chassis, mirror, speed, gripper) is [section 4 "
@@ -330,27 +591,33 @@ msgid ""
 "sim/arms_ros2_control/blob/main/command/arms_teleop/README.md). "
 "`/fsm_command` comes from the joystick. The same `quick_start.sh` assist "
 "menu has a keyboard entry, and that entry takes the current terminal."
-msgstr "按键表（WASD、手臂 / 底盘、镜像、速度、夹爪）在[软件包 README 第 4 节](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。`/fsm_command` 由手柄发出。同一个 `quick_start.sh` 辅助菜单里有键盘一项，那一项会占用当前终端。"
+msgstr ""
+"按键表（WASD、手臂 / 底盘、镜像、速度、夹爪）在[软件包 README 第 4 节](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。`/fsm_command`"
+" 由手柄发出。同一个 `quick_start.sh` 辅助菜单里有键盘一项，那一项会占用当前终端。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:69
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:113
 #: 7d04c46f522046cc8c844ede7fa78f30
-msgid "5. What you should see"
-msgstr "​5. 预期看到的结果"
+msgid "6. What you should see"
+msgstr "​6. 预期看到的结果"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:71
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:115
 #: f7cdc737ab97467991362b639c77729f
 msgid ""
 "After the right-stick enable, stick motion moves the active arm, or the "
 "chassis in chassis mode. `teleop_mode.active` is true after that enable. "
 "On the keyboard it is already true."
-msgstr "右摇杆打开之后，摇杆移动当前手臂；底盘模式下则移动底盘。打开之后 `teleop_mode.active` 为 true。键盘上它一开始就是 true。"
+msgstr ""
+"右摇杆打开之后，摇杆移动当前手臂；底盘模式下则移动底盘。打开之后 `teleop_mode.active` 为 true。键盘上它一开始就是 "
+"true。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:73
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:117
 #: 452bcaa5fa91465d93e178303b169b9b
-msgid "5.1 Control-input HUD"
-msgstr "5.1 控制输入 HUD"
+msgid "6.1 Control-input HUD"
+msgstr "6.1 控制输入 HUD"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:75
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:119
 #: db046a1989c44dbe9671be8dac928b78
 msgid ""
 "With the joystick running, RViz shows one teleop card at the top left of "
@@ -359,32 +626,42 @@ msgid ""
 "`LOW`/`HIGH` for `speed_level`. On the card, `R` is orange, `L` is blue, "
 "`MIRROR ON` is gold, `MIRROR OFF` is muted, `SPD HIGH` is gold, and `SPD "
 "LOW` is blue."
-msgstr "手柄在跑时，RViz 三维视图左上角有一张遥操卡片。卡片是 `TeleopMode` 加上当前臂：`ARM` 的 `L` 或 `R`（`Inputs.target`），`MIRROR` 对应 `mirror_movement`，`SPD` 的 `LOW`/`HIGH` 对应 `speed_level`。卡片上 `R` 为橙色，`L` 为蓝色，`MIRROR ON` 为金色，`MIRROR OFF` 为暗色，`SPD HIGH` 为金色，`SPD LOW` 为蓝色。"
-
-msgid ""
-"The clip is a FiveAges W2 in `fullbody.rviz`. The card moves between the"
-" right arm and the left arm, turns mirror on and off, and steps speed"
-" between low and high. When the FSM enters OCS2, the FSM panel, joint"
-" panel, and MPC readout appear beside it."
 msgstr ""
-"这段是第五纪 W2 在 `fullbody.rviz` 里的画面。卡片在右臂和左臂之间切换，镜像开合，速度在低档和高档之间变化。FSM 进入 OCS2"
-" 后，旁边会出现 FSM 面板、关节面板和 MPC 读数。"
+"手柄在跑时，RViz 三维视图左上角有一张遥操卡片。卡片是 `TeleopMode` 加上当前臂：`ARM` 的 `L` 或 "
+"`R`（`Inputs.target`），`MIRROR` 对应 `mirror_movement`，`SPD` 的 `LOW`/`HIGH` "
+"对应 `speed_level`。卡片上 `R` 为橙色，`L` 为蓝色，`MIRROR ON` 为金色，`MIRROR OFF` "
+"为暗色，`SPD HIGH` 为金色，`SPD LOW` 为蓝色。"
 
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:121
+#: df26d4c18e644ef7957a0d0cf3d0da1b
 msgid ""
-"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
-" src=\"../../_static/videos/joystick-rviz-hud.mp4\""
-" type=\"video/mp4\">\n</video>"
+"The clip is a FiveAges W2 in `fullbody.rviz`. The card moves between the "
+"right arm and the left arm, turns mirror on and off, and steps speed "
+"between low and high. When the FSM enters OCS2, the FSM panel, joint "
+"panel, and MPC readout appear beside it."
 msgstr ""
-"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
-" src=\"../../_static/videos/joystick-rviz-hud.mp4\""
-" type=\"video/mp4\">\n</video>"
+"这段是第五纪 W2 在 `fullbody.rviz` 里的画面。卡片在右臂和左臂之间切换，镜像开合，速度在低档和高档之间变化。FSM 进入 "
+"OCS2 后，旁边会出现 FSM 面板、关节面板和 MPC 读数。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:85
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:123
+#: eb70244de2524e0c8e513d5be37c250a
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../../_static/videos/joystick-rviz-hud.mp4\" "
+"type=\"video/mp4\">\n"
+"</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../../_static/videos/joystick-rviz-hud.mp4\" "
+"type=\"video/mp4\">\n"
+"</video>"
+
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:129
 #: a93e17995aae486baa5563203f30bfae
-msgid "6. Topics"
-msgstr "​6. 话题"
+msgid "7. Topics"
+msgstr "​7. 话题"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:87
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:131
 #: ec43c88da29a4764a4081d7e335467dc
 msgid ""
 "The joystick publishes `control_input` (`arms_ros2_control_msgs/Inputs`),"
@@ -392,23 +669,29 @@ msgid ""
 "chassis mode, the waist commands, and `/fsm_command`. "
 "`arms_target_manager` turns `control_input` into `left_target/twist` and "
 "`right_target/twist`."
-msgstr "手柄发布 `control_input`（`arms_ros2_control_msgs/Inputs`）、`teleop_mode`（`arms_ros2_control_msgs/TeleopMode`），底盘模式下还有 `/cmd_vel`，以及腰部命令和 `/fsm_command`。`arms_target_manager` 把 `control_input` 转成 `left_target/twist` 和 `right_target/twist`。"
+msgstr ""
+"手柄发布 "
+"`control_input`（`arms_ros2_control_msgs/Inputs`）、`teleop_mode`（`arms_ros2_control_msgs/TeleopMode`），底盘模式下还有"
+" `/cmd_vel`，以及腰部命令和 `/fsm_command`。`arms_target_manager` 把 "
+"`control_input` 转成 `left_target/twist` 和 `right_target/twist`。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:89
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:133
 #: 20fbab36679f4bbdb67ab8e05876358c
 #, python-brace-format
 msgid ""
 "Field names, types, and QoS for `teleop_mode` and `control_input` are on "
 "{ref}`Teleop topics and data <teleop-topics-and-data>`. Headset, foot "
 "pedal, and exoskeleton mode fields are on that same page."
-msgstr "`teleop_mode` 和 `control_input` 的字段名、类型和 QoS 在 {ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。头显、脚踏板和外骨骼的模式字段也在那一页。"
+msgstr ""
+"`teleop_mode` 和 `control_input` 的字段名、类型和 QoS 在 {ref}`遥操相关话题与数据说明 <teleop-"
+"topics-and-data>`。头显、脚踏板和外骨骼的模式字段也在那一页。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:92
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:136
 #: c2f4d2479a134fe987abc162a3c8957c
-msgid "7. Foot pedal"
-msgstr "​7. 脚踏板"
+msgid "8. Foot pedal"
+msgstr "​8. 脚踏板"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:94
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:138
 #: 720d8204e5cd460b90c989e16ad60ce0
 msgid ""
 "`foot_pedal_teleop` is an assist next to the joystick or the keyboard. It"
@@ -416,11 +699,19 @@ msgid ""
 "and publishes event codes on the relative topic `teleop/controller_state`"
 " (`std_msgs/Int32`). `VRInputHandler` applies those events and publishes "
 "the current mode on `teleop/mode_state` (`TeleopModeState`)."
-msgstr "`foot_pedal_teleop` 是手柄或键盘旁边的辅助输入。它读一块 USB 脚踏板（包内 udev 规则面向 SayoDevice CM6K），在相对话题 `teleop/controller_state`（`std_msgs/Int32`）上发布事件码。`VRInputHandler` 处理这些事件，并把当前模式发到 `teleop/mode_state`（`TeleopModeState`）。"
+msgstr ""
+"`foot_pedal_teleop` 是手柄或键盘旁边的辅助输入。它读一块 USB 脚踏板（包内 udev 规则面向 SayoDevice "
+"CM6K），在相对话题 "
+"`teleop/controller_state`（`std_msgs/Int32`）上发布事件码。`VRInputHandler` "
+"处理这些事件，并把当前模式发到 `teleop/mode_state`（`TeleopModeState`）。"
 
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:140
+#: 03dcf2eb36f344e8a457791f3ff7a7df
 msgid "Run the pedal in the same namespace as that robot’s `arms_target_manager`:"
 msgstr "把脚踏板跑在该机器人 `arms_target_manager` 的同一命名空间里："
 
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:142
+#: ca110f5117be4ef8a3d382dab9e11542
 msgid ""
 "ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a\n"
 "ros2 topic echo /robot_a/teleop/mode_state"
@@ -428,7 +719,7 @@ msgstr ""
 "ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a\n"
 "ros2 topic echo /robot_a/teleop/mode_state"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:103
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:147
 #: d5e2733e3b834b73a5ac58a8bb0284da
 #, python-brace-format
 msgid ""
@@ -440,22 +731,28 @@ msgid ""
 "/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)."
 " Mode fields are on {ref}`Teleop topics and data <teleop-topics-and-"
 "data>`."
-msgstr "只接了一块受支持的脚踏板、且命名空间为空时，`ros2 run arms_teleop foot_pedal_teleop` 即可；此时状态话题是 `/teleop/mode_state`。事件表（FSM 上/下、左右臂遥操、STORAGE/UPDATE、镜像）、udev，以及接了多块脚踏板时如何选设备，在[软件包 README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。模式字段在 {ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。"
+msgstr ""
+"只接了一块受支持的脚踏板、且命名空间为空时，`ros2 run arms_teleop foot_pedal_teleop` 即可；此时状态话题是"
+" `/teleop/mode_state`。事件表（FSM "
+"上/下、左右臂遥操、STORAGE/UPDATE、镜像）、udev，以及接了多块脚踏板时如何选设备，在[软件包 "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)。模式字段在 "
+"{ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:105
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:149
 #: 1144c758ea364c8c863e0dc9bc3f23ea
-msgid "8. Related"
-msgstr "​8. 相关"
+msgid "9. Related"
+msgstr "​9. 相关"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:107
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:151
 #: 055fa7396684419098c70d4129b8a773
 msgid ""
 "[VR Teleoperation](6-vr_teleop.md) — headset and VR controllers for end-"
 "effector pose"
 msgstr "[VR 遥操作](6-vr_teleop.md) — 头显和 VR 手柄提供末端位姿"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:54
-#: 481b3430c35743eab05122b8a9ce7b80
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:152
+#: 1849837ee34b495e8e35a6a282306622
 msgid ""
 "[arms_teleop README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
@@ -463,8 +760,8 @@ msgstr ""
 "[arms_teleop README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)"
 
-#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:55
-#: dcc676cdec124b49844b8ed70c646258
+#: ../../source/2-how_to/5-teleoperation/9-joystick_teleop.md:153
+#: bf10d5033bf24315a3b8fabd5b7eb1be
 msgid "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md)"
 msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
@@ -623,3 +920,4 @@ msgstr "[FSM 与话题](../../3-concepts/4-fsm_and_topics.md)"
 
 #~ msgid "Foot pedal (assist only)"
 #~ msgstr "脚踏板（仅作辅助）"
+

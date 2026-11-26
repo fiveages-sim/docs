@@ -5,7 +5,7 @@ On a real arm, impedance control is how the arm gives under contact. Two kinds a
 | Kind | Robots | Who provides compliance | What the controller commands |
 |------|--------|-------------------------|------------------------------|
 | **MIT-mode force / MIX** | **HighTorque** (高擎) **Panthera HT**; **ARX** (方舟无限) arms | Controller + hardware interface in MIT / `full_control` (position + velocity + effort; stiffness on the HI) | Force-capable / MIX when those interfaces are present |
-| **Vendor joint impedance** | **Tianji** (天玑); **Rokae** (珞石) | Vendor stack, on the hardware interface | **Joint position** |
+| **Vendor joint impedance** | **Tianji** (天机); **Rokae** (珞石) | Vendor stack, on the hardware interface | **Joint position** |
 
 ## 1. MIT-mode force control (Panthera HT / ARX)
 
@@ -38,7 +38,7 @@ Master–slave `mode:=mit` / `effort` on Panthera HT is [Isomorphic Teleop](../5
 
 ## 2. Vendor joint impedance (Tianji / Rokae)
 
-Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller sends **joint position**. Joint impedance is the vendor feature on the hardware interface.
+Use this path on **Tianji** (天机) and **Rokae** (珞石). The controller sends **joint position**. Joint impedance is the vendor feature on the hardware interface.
 
 **Tianji** — [marvin-ros2-control README](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md):
 
