@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 09:17+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:1
 #: d5c661ed672e4d05befeb2b01085cf0f
@@ -260,20 +260,41 @@ msgstr ""
 "`robot.cache_ee_pose`, `robot.send_mode_command`, "
 "`env.randomize_object_local_xyz`, …"
 
+#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:44
+#: 18c2d73f48884bed9bf8740232970ea2
+msgid ""
+"The README runs this from **`examples/IsaacSim`** inside lerobot_ros2, "
+"which contains `robots/`. Notes for each robot, including dual-arm tasks "
+"on FiveAges W2, sit next to those trees, for example "
+"[`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md)."
+" A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) "
+"project directory can be the workspace instead: set `LEROBOT_ROOT` and "
+"use that project’s `robot.yaml`. End-effector poses follow "
+"[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)."
+" Without `ee_tip`, the pose comes from live TF. With `ee_tip`, it walks "
+"the USD chain from the tip to its parent first."
+msgstr ""
+"README 从 lerobot_ros2 里的 **`examples/IsaacSim`** 跑，这里有 "
+"`robots/`。各机器人的说明，包括第五纪 W2 的双臂任务，就写在这些目录旁边，例如 "
+"[`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
+"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md)。也可以改用"
+" [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) "
+"的项目目录当工作区：设置 `LEROBOT_ROOT`，并用该项目的 `robot.yaml`。末端位姿见 "
+"[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)。没有"
+" `ee_tip` 时，位姿来自实时 TF。有 `ee_tip` 时，先沿 USD 从尖端走到它的父连杆。"
+
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:46
-#: e9bf6b7301274401be574b0e2d8dc066
-msgid "Official Nav2, not a custom nav stack"
-msgstr "官方 Nav2，不是自研导航栈"
+#: 47ca0187953f475989c2dcb2d7fc1285
+msgid "Nav2 client"
+msgstr "Nav2 客户端"
 
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:48
-#: 87289bee57214337a436c44779db8d66
+#: fb93ff8c77c54cd192b43a5b4868826f
 msgid ""
-"Composer **does not implement Nav2 servers**. `nav.*` skills wrap "
-"**`ROS2RobotInterface`’s Nav2 client API**. Scene-level launch is "
-"separate from the task YAML."
-msgstr ""
-"composer **不实现 Nav2 服务端**。`nav.*` 技能封装的是 **`ROS2RobotInterface` 的 Nav2 "
-"客户端 API**。场景级 launch 与任务 YAML 分开。"
+"`nav.*` skills call **`ROS2RobotInterface`’s Nav2 client API**. Scene-"
+"level launch is separate from the task YAML."
+msgstr "`nav.*` 技能调用的是 **`ROS2RobotInterface` 的 Nav2 客户端 API**。场景级 launch 和任务 YAML 是分开的。"
 
 #: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:50
 #: 1bdc11e254dd426c934c6d3705e83d09
@@ -433,27 +454,5 @@ msgstr ""
 "录制是叠在这条队列上的 extra：同一套 YAML `task_queue`，再加上 LeRobot 插件。继续看 [LeRobot "
 "录制与导出](3-record_export.md)。"
 
-#: ../../source/2-how_to/7-synthetic_data/2-orchestration.md:44
-#: 18c2d73f48884bed9bf8740232970ea2
-msgid ""
-"The README runs this from **`examples/IsaacSim`** inside lerobot_ros2, "
-"which contains `robots/`. Notes for each robot, including dual-arm tasks "
-"on FiveAges W2, sit next to those trees, for example "
-"[`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md)."
-" A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) "
-"project directory can be the workspace instead: set `LEROBOT_ROOT` and "
-"use that project’s `robot.yaml`. End-effector poses follow "
-"[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)."
-" Without `ee_tip`, the pose comes from live TF. With `ee_tip`, it walks "
-"the USD chain from the tip to its parent first."
-msgstr ""
-"README 从 lerobot_ros2 里的 **`examples/IsaacSim`** 跑，这里有 "
-"`robots/`。各机器人的说明，包括第五纪 W2 的双臂任务，就写在这些目录旁边，例如 "
-"[`robots/FiveAges_W2/README.md`](https://github.com/fiveages-"
-"sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md)。也可以改用"
-" [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) "
-"的项目目录当工作区：设置 `LEROBOT_ROOT`，并用该项目的 `robot.yaml`。末端位姿见 "
-"[robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md)。没有"
-" `ee_tip` 时，位姿来自实时 TF。有 `ee_tip` 时，先沿 USD 从尖端走到它的父连杆。"
-
+#~ msgid "Official Nav2, not a custom nav stack"
+#~ msgstr "官方 Nav2，不是自研导航栈"

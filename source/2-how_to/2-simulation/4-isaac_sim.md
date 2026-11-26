@@ -11,7 +11,7 @@ Connect ROS 2 in one of two ways. Use one of them for a given stage. These are d
 | `hardware:=isaac` | `topic_based_ros2_control/TopicBasedSystem` | OmniGraph joint topics |
 | Play on an in-process `ROS2ControlLaunch` | `isaacsim_ros2_control/IsaacSimSystem` (`hardware=isaac_sim` inside the node) | The controller manager inside the Isaac process |
 
-`isaac_sim` is the hardware interface for that in-process controller. It is not a second robot. A swerve chassis uses a different node, `SwerveController`, which is not a hardware key. Mechanism, parameters, and clock/TF: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
+`isaac_sim` is the hardware interface for that in-process controller. A swerve chassis uses the `SwerveController` node. Mechanism, parameters, and clock/TF: [FaSim-Isaac reference](../../4-reference/simulation/2-fasim_isaac.md).
 
 ## Before you start
 
@@ -99,7 +99,7 @@ ros2 topic hz /clock
 
 `/joint_states` here is the controller’s `joint_state_broadcaster`, not the topic-bridge pair. `/clock` should tick near the physics rate. Arm degrees of freedom are not also bridged on `/isaac/joint_command`.
 
-`namespace` on the graph (empty for one robot) is how a second articulation gets `/<ns>/controller_manager`. It is not a `demo.launch.py` argument. Frame ids stay `world`, `odom`, and `base_link` / `base_footprint`. See [TF](../../4-reference/simulation/2-fasim_isaac.md#tf).
+`namespace` on the graph (empty for one robot) is how a second articulation gets `/<ns>/controller_manager`. Frame ids stay `world`, `odom`, and `base_link` / `base_footprint`. See [TF](../../4-reference/simulation/2-fasim_isaac.md#tf).
 
 Whole-body mode (`mode` `full_body`) loads `ocs2_wbc_controller`. That package is already in the GitHub Release deb `ros-jazzy-arms-ros2-control`. Choose `d` for arms in `./init_repo.sh`, or run `./scripts/install_core_debs.sh --only arms`. Cloning [ocs2-wbc-controller](https://github.com/fiveages-sim/ocs2-wbc-controller) is how you read or edit the source. To hold a mobile base, keep the description’s `mobile_base_tcp` info and send `BASE_LOCK`. A `full_body` graph whose `infoFile` points at a `fixed_base` info file has no virtual chassis joint for that lock, and arm enable can stay in `WAITING_FOR_ENABLE_POLICY`.
 

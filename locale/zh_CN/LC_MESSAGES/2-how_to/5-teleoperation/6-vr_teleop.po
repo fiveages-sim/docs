@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 08:17+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -31,9 +31,9 @@ msgid "Control robots from a VR headset: controllers, or optical hand tracking."
 msgstr "用 VR 头显控制机器人：手柄，或光学手部追踪。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:5
-#: 111e9736efdd44608d37683845914f89
-msgid "Supported Headsets"
-msgstr "支持的头显"
+#: 17c48a78a7464d68b05e473e3a2ac241
+msgid "1. Supported Headsets"
+msgstr "​1. 支持的头显"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
 #: 26e9c4987be7434ca38daf6346199e0f
@@ -72,11 +72,11 @@ msgid "Web, XRoboToolkit"
 msgstr "Web、XRoboToolkit"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
-#: c007e863d63d496cbdae85005be22914
+#: d4d849db00874a4e90c949bf1f0a51d6
 msgid ""
-"USB shared networking (USB 网络共享); **its own App**, not the consumer Pico "
-"App"
-msgstr "USB 网络共享；**使用自己的 App**，不是消费版 Pico App"
+"USB shared networking (USB 网络共享); **its own App**, separate from the "
+"consumer Pico App"
+msgstr "USB 网络共享；**使用自己的 App**，与消费版 Pico App 分开"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
 #: 0def7cbf57a14e76871eec0e1d9933ac
@@ -89,9 +89,9 @@ msgid "Supported"
 msgstr "支持"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
-#: 28ed34b5badc4386800867554c1d9239
-msgid "Different headset App from Enterprise; no USB-tether path documented here"
-msgstr "头显 App 与企业版不同；本文不记录 USB 网络共享路径"
+#: 54ee3aeb41b94b55a2bb2a3578fc1c0a
+msgid "Its own headset App; Wi-Fi to the ROS 2 PC"
+msgstr "使用自己的头显 App；通过 Wi-Fi 连到 ROS 2 主机"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md
 #: 14af6f4135ec4c2f98f7d08c7cea48a7
@@ -116,25 +116,20 @@ msgid ""
 msgstr "将 **Pico 企业版** 和 **Pico 消费版** 视为不同 SKU。不要把同一个头显 App 写成同时覆盖两者。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:18
-#: 137b4aa544e648839bc52c7ec52c5f07
+#: dfcc889deccc4245afeff6c1e283a8b7
 msgid ""
-"**USB shared networking (USB 网络共享)** — Pico Enterprise can share a "
-"network with the ROS 2 PC over USB. That is an Enterprise capability; it "
-"is not the consumer Pico path."
-msgstr "**USB 网络共享** — Pico 企业版可通过 USB 与 ROS 2 主机共享网络。这是企业版能力，不是消费版 Pico 的路径。"
+"**USB shared networking (USB 网络共享)** — Pico Enterprise shares a network "
+"with the ROS 2 PC over USB. Consumer Pico uses the Wi-Fi path."
+msgstr "**USB 网络共享** — Pico 企业版通过 USB 与 ROS 2 主机共享网络。消费版 Pico 走 Wi-Fi。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:19
-#: ee579880c79945f7ac8bac31bb3d3873
+#: ec02cda3f96a4a2db2ae06d2df3f7185
 msgid ""
-"**Different Apps** — Enterprise and consumer Pico use **different** "
-"headset Apps. Install the App that matches the headset edition. The fa-"
-"py-libraries README’s XRoboToolkit path is “XRoboToolkit App + PC "
-"Service” versus browser WebXR; it does not name a single store listing "
-"for both Pico editions."
-msgstr ""
-"**不同的 App** — 企业版与消费版 Pico 使用**不同的**头显 App。请安装与头显版本匹配的 App。fa-py-"
-"libraries README 的 XRoboToolkit 路径是「XRoboToolkit App + PC Service」对比浏览器 "
-"WebXR；它没有给出同时覆盖两个 Pico 版本的商店条目。"
+"**Different Apps** — Enterprise and consumer Pico each have their own "
+"headset App. Install the App that matches the headset edition. fa-py-"
+"libraries documents XRoboToolkit as “XRoboToolkit App + PC Service”, and "
+"WebXR as the browser path."
+msgstr "**不同的 App** — 企业版和消费版 Pico 各自有头显 App。安装与头显版本对应的 App。fa-py-libraries 把 XRoboToolkit 写成「XRoboToolkit App + PC Service」，把 WebXR 写成浏览器路径。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:21
 #: 114e4d016c1f4323b4d121212625e928
@@ -160,9 +155,9 @@ msgstr ""
 "Meta Quest 在 `./run.sh` 菜单里选同一组 WebXR 和 XRoboToolkit。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:30
-#: e0d87e88c6b14933945792338070e199
-msgid "Prerequisites"
-msgstr "前提条件"
+#: 193f1196f22c403a80a6284f0e3ff211
+msgid "2. Prerequisites"
+msgstr "​2. 前提条件"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:32
 #: fe9260a11d0b41e88e6f4bcd1904faf7
@@ -210,9 +205,9 @@ msgstr ""
 "[故障排除](#troubleshooting)）。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:40
-#: 1069a499ad3842b3bcb031e78119a953
-msgid "Overview"
-msgstr "概述"
+#: dd4c4145008c4948b97c682bfdf251a0
+msgid "3. Overview"
+msgstr "​3. 概述"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:42
 #: ef94a4d106b6420bb2c33887c59c42bd
@@ -226,26 +221,23 @@ msgstr ""
 "tracking)。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:44
-#: 349819c46e034c2493da9295028a68ad
+#: a453b587366a4a94b755599eae1e015d
 msgid ""
-"On a real arm, use [force control and "
-"compliance](../4-controllers/13-force_control.md) when the arm should "
-"comply with contact. MIT-mode force control covers Panthera HT and ARX. "
-"Vendor joint impedance and payload identification cover Tianji and Rokae."
-msgstr ""
-"真机上，手臂要在接触时柔顺，就用 [力控与柔顺](../4-controllers/13-force_control.md)。Panthera "
-"HT 和方舟无限走 MIT 力控。天玑和珞石走厂商关节阻抗，负载辨识也在这条路径上。"
+"On a real arm, use [How to use impedance "
+"control](../4-controllers/13-force_control.md) when the arm should give "
+"under contact. MIT-mode force control covers Panthera HT and ARX. Vendor "
+"joint impedance and payload identification cover Tianji and Rokae."
+msgstr "真机上，手臂要在接触时退让，用 [如何使用阻抗控制](../4-controllers/13-force_control.md)。Panthera HT 和方舟无限走 MIT 力控。天玑和珞石走厂商关节阻抗，负载辨识也在这条路径上。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:46
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:72
-#: a56f6110007b486dbcaaa8a5a6e66fdb c2d432dff22e4337a5aa6f1f2f910b55
-msgid "Setup"
-msgstr "设置"
+#: fe4893f371e0463d8c2a376070c6c5d5
+msgid "4. Setup"
+msgstr "​4. 设置"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:48
-#: 2dedd84310cb4f669d680df2063edee7
-msgid "1. Install fa-py-libraries"
-msgstr "1. 安装 fa-py-libraries"
+#: 0bc1acd03c9a45e59e0a0763eca2f998
+msgid "4.1 Install fa-py-libraries"
+msgstr "4.1 安装 fa-py-libraries"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:50
 #: 39bdc5bcbfba44b3aba123bb4d8674c6
@@ -280,9 +272,9 @@ msgstr ""
 "`ros2-viser` / `vr_pose_publisher` / `xr_hand_retarget`。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:61
-#: e005ebdd10e6479e8e51fb02a85bed7c
-msgid "2. Start Robot Demo"
-msgstr "2. 启动机器人演示"
+#: a568e5ecc76246df87b03a455329451b
+msgid "4.2 Start Robot Demo"
+msgstr "4.2 启动机器人演示"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:63
 #: 959004f714994d629f69f451f068c25d
@@ -294,9 +286,9 @@ msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:68
-#: e72776b2e6034a84a992842578caf034
-msgid "3. Start the VR bridge"
-msgstr "3. 启动 VR 桥接"
+#: 7798dd8ad29b4dd486286e888d500433
+msgid "4.3 Start the VR bridge"
+msgstr "4.3 启动 VR 桥接"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:70
 #: cd06ef1ad5b846819109a5e87313db24
@@ -366,10 +358,10 @@ msgstr ""
 "这些菜单项也有对应命令：`./run.sh vr`，先 `./run.sh vr-xrt-service` 再 `./run.sh vr-xrt`，以及 "
 "`./run.sh vr-hand`。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:79
-#: 086021daba6149afa2d3d4c22c10f95d
-msgid "VR Modes"
-msgstr "VR 模式"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:87
+#: 7d58256dbc694840841a85efbb1a5d0b
+msgid "5. VR Modes"
+msgstr "​5. VR 模式"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:89
 #: 41c1720de69247a1949e6ebf14625399
@@ -387,6 +379,12 @@ msgstr "模式"
 #: 4eaf068732f646f0a7de45a41dc1c2eb
 msgid "Connection"
 msgstr "连接"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:46
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:72
+#: a56f6110007b486dbcaaa8a5a6e66fdb c2d432dff22e4337a5aa6f1f2f910b55
+msgid "Setup"
+msgstr "设置"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:72
 #: 7abf3e1bd70444d6ac92d97acf51cba2
@@ -443,10 +441,10 @@ msgstr "较低"
 msgid "`4)`, then `3) 手柄遥操 (controller)`"
 msgstr "先 `4)`，再 `3) 手柄遥操 (controller)`"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:88
-#: c2e87264bd3d44fba43343827de6131d
-msgid "Web Mode (WebXR)"
-msgstr "Web 模式（WebXR）"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:96
+#: 903dc1a75d88460caeb6605c3f182b65
+msgid "5.1 Web Mode (WebXR)"
+msgstr "5.1 Web 模式（WebXR）"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:98
 #: d2cdb54a3c7b4fed84a756a9939d3b45
@@ -455,10 +453,10 @@ msgid ""
 "browser."
 msgstr "菜单第 `6` 项，或 `./run.sh vr`。在头显浏览器里打开终端打印的地址。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:98
-#: 16a226cc0fa944e8a8eab2627be89257
-msgid "XRoboToolkit Mode"
-msgstr "XRoboToolkit 模式"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:100
+#: 6e7f1a78e0f245618055d29f9b5538f9
+msgid "5.2 XRoboToolkit Mode"
+msgstr "5.2 XRoboToolkit 模式"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:102
 #: 0d1a293337ee4829b13a5035d1850bb6
@@ -526,9 +524,9 @@ msgstr ""
 "</video>"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:122
-#: 2f13620817534a8ea937d08d986ca538
-msgid "Hand tracking (手势)"
-msgstr "手部追踪（手势）"
+#: bd3cf294c80f4c1aa420bbd53ca6acf2
+msgid "6. Hand tracking (手势)"
+msgstr "​6. 手部追踪（手势）"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:124
 #: 31365d13cbb948ec9d9f4ad1de9255e0
@@ -661,10 +659,10 @@ msgstr ""
 "RViz 卡片显示头显当前的模式。[当前模式](#teleop-mode-status)。字段名见 {ref}`遥操相关话题与数据说明 "
 "<teleop-topics-and-data>`。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:164
-#: 954e8488db1a4177af68681598536b6a
-msgid "Arm Following"
-msgstr "机械臂跟随"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:156
+#: ae58166469314389ae9748387c41b22d
+msgid "7. Arm Following"
+msgstr "​7. 机械臂跟随"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:166
 #: cc215c1e90de4b4a8c63705af966f859
@@ -688,10 +686,10 @@ msgstr ""
 "  # or for single arm:\n"
 "  right_arm: \"any_controller\"\n"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:178
-#: 3ff822309aa84d19848b63d5e09428a5
-msgid "Controller buttons (分体 vs 全身)"
-msgstr "手柄按键（分体 vs 全身）"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:170
+#: ec46a1002e244947b9f14b99d19ebb93
+msgid "8. Controller buttons (分体 vs 全身)"
+msgstr "​8. 手柄按键（分体 vs 全身）"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:180
 #: c4055679efa64e6882dae0f6aaffd700
@@ -834,10 +832,10 @@ msgstr ""
 "握把 + 同侧扳机切换该扳机所映射夹爪的百分比 / 开合模式。同时按下左 **Y** 和右 **B**（不按握把）为尺度对齐（关闭镜像并退回 "
 "`STORAGE`）。左右摇杆同时按下切换底盘遥控 ↔ 末端控制。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:202
-#: 893f1accaad946b0931db6b98675195b
-msgid "Stop one arm vs stop sending VR commands"
-msgstr "停单臂 vs 停发指令"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:194
+#: 5769b9ffc7d241c6a9d25a4f12946fff
+msgid "8.1 Stop one arm vs stop sending VR commands"
+msgstr "8.1 停单臂 vs 停发指令"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:204
 #: f2289b85e3864b80b3a670f17abadb01
@@ -944,17 +942,15 @@ msgid ""
 "enabled/disabled state and rebase stay on the real arm."
 msgstr "镜像只交换物理按键到机械臂的映射。WBC 启用/禁用状态与重新对齐始终按实际机械臂保存。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:222
-#: 8ed8318d59d147d7b67f7c23917e4d27
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:214
+#: 2c8dab987f674163bcdbf8b4f39bd95c
 msgid ""
 "When event 16 switches to pause and that arm is already `ARM_DISABLED`, "
 "the handler requests ENABLE, rebases, then freezes as paused. When it "
 "switches back to disable and that arm is already VR-paused, it requests "
-"DISABLE, then clears pause after WBC confirms. Under pause semantics, "
-"entering `UPDATE` with the right stick click does not clear the pause."
-msgstr ""
-"事件 16 切到停发指令且该臂已是 `ARM_DISABLED` 时，会先请求 `ENABLE`，重新对齐后再冻结为暂停。切回停单臂且该臂已处于 "
-"VR 暂停时，会请求 `DISABLE`，WBC 确认禁用后再清除暂停。处于停发指令语义时，点右摇杆进入 `UPDATE` 不会清除暂停。"
+"DISABLE, then clears pause after WBC confirms. Under pause semantics, the"
+" right-stick click into `UPDATE` leaves the pause set."
+msgstr "事件 16 切到停发指令且该臂已是 `ARM_DISABLED` 时，处理程序会请求 ENABLE，重新对齐，再冻结为暂停。切回停单臂且该臂已处于 VR 暂停时，会请求 DISABLE，WBC 确认后再清除暂停。处于停发指令语义时，右摇杆点进 `UPDATE` 会保留这次暂停。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:224
 #: 1cfc741c0c1841f195116d02970e4fa3
@@ -1006,9 +1002,9 @@ msgstr ""
 "卡片上能看到暂停。[当前模式](#teleop-mode-status)。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:227
-#: aa3b31ace4e44b0aabd82486e2e205b3
-msgid "Current mode"
-msgstr "当前模式"
+#: 8d4312b2b25241098c8ffa738fda61d0
+msgid "9. Current mode"
+msgstr "​9. 当前模式"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:229
 #: 0fb46b31faab4acfab811188aa8708a0
@@ -1060,10 +1056,10 @@ msgstr ""
 "[停单臂与停发指令](#stop-one-arm-vs-stop-sending-vr-commands)。WBC 使能见 "
 "{ref}`wbc-current-state`。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:297
-#: 9a24e685347f41d089d091203d59e4c7
-msgid "RViz teleop HUD"
-msgstr "RViz 遥操状态叠加层"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:237
+#: fb242ba75f84494cbb3da14b16ce418e
+msgid "9.1 RViz teleop HUD"
+msgstr "9.1 RViz 遥操状态叠加层"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:239
 #: 76718ec7ec1f44829570d1f1d5e252ac
@@ -1145,10 +1141,10 @@ msgstr ""
 " [arms_target_manager README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md)。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:320
-#: 4f78b57042794220a8c65c51d6b0a81e
-msgid "Safety"
-msgstr "安全"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:255
+#: a5dfe77c1ce2498a8ed0050707850a74
+msgid "10. Safety"
+msgstr "​10. 安全"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:322
 #: cc7ad4ab473b4c93b8c8d71d254add8d
@@ -1180,10 +1176,10 @@ msgstr "清空机器人工作空间"
 msgid "Use workspace limits in software"
 msgstr "在软件中使用工作空间限位"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:332
-#: 4267ed6b90fb44fc9ed27c5afc345430
-msgid "Network Setup"
-msgstr "网络设置"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:267
+#: 6a1e1ee8a35b443895fb27696e463e02
+msgid "11. Network Setup"
+msgstr "​11. 网络设置"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:334
 #: bcf3f454871b4dc4be5adfbc1513e47f
@@ -1192,16 +1188,13 @@ msgid ""
 "ID; Zenoh or DDS as needed)."
 msgstr "头显与 ROS 2 主机必须处于可达网络（相同 Domain ID；按需使用 Zenoh 或 DDS）。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:336
-#: f3cd386cd060432aaa9e06772f70ca5f
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:271
+#: 81c255cb8a8346258f6ab7f2ad4e0ee8
 msgid ""
-"**Pico Enterprise:** USB shared networking (USB 网络共享) is supported — "
-"tether the headset to the PC over USB so they share a network. Follow the"
-" headset’s own USB-network UI; this page does not list ADB or `usb0` "
-"commands."
-msgstr ""
-"**Pico 企业版：** 支持 USB 网络共享 — 用 USB 将头显连接到电脑以共享网络。按头显自带的 USB 网络界面操作；本页不列出 "
-"ADB 或 `usb0` 命令。"
+"**Pico Enterprise:** USB shared networking (USB 网络共享) — tether the "
+"headset to the PC over USB so they share a network. Use the headset’s own"
+" USB-network UI."
+msgstr "**Pico 企业版：** USB 网络共享 — 用 USB 把头显接到电脑，让两边在同一网络里。用头显自带的 USB 网络界面。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:337
 #: fd1fa5e5b0b34aeab9012a620de10c93
@@ -1230,10 +1223,10 @@ msgstr "若不在同一局域网，配置 ROS 2 Domain 或 Zenoh 桥接"
 msgid "Set firewall rules for ROS 2 ports"
 msgstr "为 ROS 2 端口设置防火墙规则"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:345
-#: b4941b870e2d4d2fb98d10f587c5012b
-msgid "Verification"
-msgstr "验证"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:280
+#: 297dbc875590430e9988a8b453601707
+msgid "12. Verification"
+msgstr "​12. 验证"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:347
 #: 01b64e3efede43e5b29a6e88952e1d00
@@ -1267,15 +1260,15 @@ msgid ""
 "the VR gripper stay put."
 msgstr "UPDATE 下机器人跟随 VR 手柄。STORAGE 下手臂和 VR 夹爪保持不动。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:352
-#: dea5dacb7762475691f22219e48f8020
-msgid "Troubleshooting"
-msgstr "故障排除"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:288
+#: 95ea23fa57a54abe9d0d7b1bcd05584b
+msgid "13. Troubleshooting"
+msgstr "​13. 故障排除"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:354
-#: e73ca67f5dff4e5bb73b2df8c45646d1
-msgid "No tracking data"
-msgstr "没有追踪数据"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:290
+#: 9d5e1b9560b9419eb141c777969f71e3
+msgid "13.1 No tracking data"
+msgstr "13.1 没有追踪数据"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:356
 #: 94b2611934ec4520be20749f95c6766e
@@ -1297,10 +1290,10 @@ msgstr "检查网络（Wi-Fi，或 Pico 企业版上的 USB 网络共享）"
 msgid "Confirm the headset App matches the Pico edition (Enterprise vs consumer)"
 msgstr "确认头显 App 与 Pico 版本匹配（企业版 vs 消费版）"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:361
-#: 862ceba4ad9f451c882c87eec5a4b8b2
-msgid "High latency"
-msgstr "延迟较高"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:297
+#: 7930e6848b684bc8b3be166f71ebff4b
+msgid "13.2 High latency"
+msgstr "13.2 延迟较高"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:363
 #: fc13201b60354671b04be498f2088cdf
@@ -1329,10 +1322,10 @@ msgstr "在配置中降低更新频率"
 msgid "Check for network congestion"
 msgstr "检查是否存在网络拥塞"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:369
-#: 26bf10c15b2c4619b3a54255217dc193
-msgid "Robot doesn't follow"
-msgstr "机器人不跟随"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:305
+#: c4505fe91ee049ddb958dfcb5d0cbb6b
+msgid "13.3 Robot doesn't follow"
+msgstr "13.3 机器人不跟随"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:371
 #: 01a59ea51f23454f9ce53a1c6c592cc8
@@ -1351,17 +1344,14 @@ msgstr ""
 "进入 OCS2 后，确认 `teleop/mode_state` 上 `update_mode` 为 true（UPDATE / HUD 上为 "
 "`TELEOP ON`）。STORAGE 下，手臂目标和 VR 夹爪等到下一次 UPDATE。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:373
-#: 282870be56a04800ac648e37d82139bd
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:309
+#: 544dc5d37e324502becd70bd44d2e865
 msgid ""
-"On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED` on "
-"`WbcCurrentState`) and that `left_arm_paused` / `right_arm_paused` is "
-"false when you expect that arm to follow — [Stop one arm vs stop sending "
-"VR commands](#stop-one-arm-vs-stop-sending-vr-commands)"
-msgstr ""
-"**全身**下，确认该臂没有被 WBC 禁用（`WbcCurrentState` 上为 `ARM_DISABLED`），并且期望它跟随时 "
-"`left_arm_paused` / `right_arm_paused` 为 false。[停单臂与停发指令](#stop-one-arm-"
-"vs-stop-sending-vr-commands)"
+"On **全身**, that arm’s `WbcCurrentState` is `ARM_ENABLED`, and "
+"`left_arm_paused` / `right_arm_paused` is false when you expect the arm "
+"to follow — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-"
+"stop-sending-vr-commands)"
+msgstr "**全身**下，期望手臂跟随时，该臂的 `WbcCurrentState` 是 `ARM_ENABLED`，并且 `left_arm_paused` / `right_arm_paused` 为 false — [停单臂 vs 停发指令](#stop-one-arm-vs-stop-sending-vr-commands)"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:374
 #: 599324a3276b42c3aad01e7922c0f90b
@@ -1373,38 +1363,32 @@ msgstr "确认目标位姿在工作空间内"
 msgid "Ensure no safety limits are triggered"
 msgstr "确认没有触发安全限位"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:377
-#: b795aa5a53a44405b211481167bea990
-msgid "`base_footprint` missing (全身 / FULL_BODY)"
-msgstr "`base_footprint` 缺失（全身 / FULL_BODY）"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:313
+#: 0c73d7eca5214e509a0c55791ff40588
+msgid "13.4 `base_footprint` missing (全身 / FULL_BODY)"
+msgstr "13.4 `base_footprint` 缺失（全身 / FULL_BODY）"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:379
-#: 3d0e955460fe4ece895a8fc3f8916e12
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:315
+#: d1f3d37e688d48c7a780a52510514d57
 msgid ""
-"FULL_BODY may warn that `base_footprint` does not exist "
-"(`lookupTransform` target_frame). Default `vr_follow_frame` is "
-"`base_footprint`. Set `vr_follow_frame` in "
+"FULL_BODY may warn that `lookupTransform` cannot find `base_footprint`. "
+"Default `vr_follow_frame` is `base_footprint`. Set `vr_follow_frame` in "
 "`config/ocs2/target_manager.yaml` to the robot’s real base (for example "
 "`base_link`)."
-msgstr ""
-"全身控制可能警告 `base_footprint` 不存在（`lookupTransform` 的 target_frame）。默认 "
-"`vr_follow_frame` 是 `base_footprint`。在 `config/ocs2/target_manager.yaml` "
-"里把 `vr_follow_frame` 改成机器人实际基座（例如 `base_link`）。"
+msgstr "FULL_BODY 可能警告 `lookupTransform` 找不到 `base_footprint`。默认 `vr_follow_frame` 是 `base_footprint`。在 `config/ocs2/target_manager.yaml` 里把 `vr_follow_frame` 设成机器人实际基座（例如 `base_link`）。"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:381
-#: 6f66a5849a7b4ecb84bfbf84a3eacb8c
-msgid "Next Steps"
-msgstr "下一步"
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:317
+#: 6ad3c6a4d554464ba5e8d83b1de50e0a
+msgid "14. Next Steps"
+msgstr "​14. 下一步"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:383
-#: 24e0e902ccdd4768ba4a69ce134cb2f6
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:319
+#: e46d78bcad784388a8ae8963ae05a004
 msgid ""
-"[Force control and compliance](../4-controllers/13-force_control.md) — "
+"[How to use impedance control](../4-controllers/13-force_control.md) — "
 "MIT-mode force control on Panthera HT / ARX; vendor joint impedance and "
 "payload identification on Tianji / Rokae"
-msgstr ""
-"[力控与柔顺](../4-controllers/13-force_control.md) — Panthera HT / 方舟无限的 MIT "
-"力控；天玑 / 珞石的厂商关节阻抗和负载辨识"
+msgstr "[如何使用阻抗控制](../4-controllers/13-force_control.md) — Panthera HT / 方舟无限走 MIT 力控；天玑 / 珞石走厂商关节阻抗，并做负载辨识"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:384
 #: 0c76de13a26440eabaecc41319715e98
@@ -1457,3 +1441,8 @@ msgid ""
 msgstr ""
 "[vr_pose_publisher](../../4-reference/teleop/1-vr_pose_publisher.md) — 发布"
 " `/teleop/*` 的节点"
+
+#~ msgid ""
+#~ "Different headset App from Enterprise; "
+#~ "no USB-tether path documented here"
+#~ msgstr "头显 App 与企业版不同；本文不记录 USB 网络共享路径"

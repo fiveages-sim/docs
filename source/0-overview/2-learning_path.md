@@ -55,7 +55,7 @@ This guide provides a structured day-by-day approach to learning the FiveAges Si
    ros2 launch ocs2_arm_controller demo.launch.py
    ```
 
-After this launch, the clip below shows the effect in RViz (a single arm): drag the end-effector target, adjust joints with the JointControlPanel sliders, and use HOME to reset. It does not show the terminal or the launch command, so it is not a complete startup recording, and it is not Isaac physics verification.
+After this launch, the clip below shows the effect in RViz (a single arm): drag the end-effector target, adjust joints with the JointControlPanel sliders, and use HOME to reset. The clip is the RViz motion. The launch command is the block above. Isaac physics is on [Day 4](#day-4-isaac-sim).
 
 ```{raw} html
 <video controls preload="metadata" width="100%">
@@ -184,7 +184,7 @@ ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
 
 **Goal:** Start with VR or a game controller, then know what the other input methods are for.
 
-Keep the robot stack from Days 1–4 running. Teleop only publishes targets or assist events into that stack; it does not replace it.
+Keep the robot stack from Days 1–4 running. Teleop publishes targets or assist events into that stack.
 
 Inputs in this stack have different jobs: **end-effector pose** (VR controllers, Vive Tracker, DexCap exoskeleton arms), **joint-space following** (isomorphic teleop), **fingers / grippers** (VR triggers, Wuji gloves, DexCap gloves), and **enable / pause / FSM assists** (some VR buttons, the joystick enable switch, the foot pedal).
 
@@ -196,10 +196,10 @@ Inputs in this stack have different jobs: **end-effector pose** (VR controllers,
 
 ```bash
 cd ~/fa-py-libraries
-./run.sh vr
+./run.sh
 ```
 
-Open the URL shown in the headset browser (WebXR). For the lower-latency XRoboToolkit path, use `./run.sh vr-xrt-service` then `./run.sh vr-xrt` as on that page. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享, and a **different App** from Pico consumer).
+With no arguments the menu prints `请选择要启动的功能`. WebXR is `6) vr pose launch (Vuer/WebXR)`. Open the printed URL in the headset browser. XRoboToolkit is `4) 启动 XRoboToolkit PC Service`, then `3) 手柄遥操 (controller)`. The same steps as commands are `./run.sh vr`, and `./run.sh vr-xrt-service` then `./run.sh vr-xrt`. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享, and its own App).
 
 **What you should see.** The arms follow the VR controllers once the session is in UPDATE, and you can change FSM and the gripper from the controller buttons. The current mode (UPDATE or STORAGE, mirror, per-arm pause) is on `teleop/mode_state`. {ref}`teleop-mode-status`.
 
@@ -219,14 +219,14 @@ Joystick control starts disabled; press the right stick to enable it (package RE
 
 ### Other methods
 
-These are additional ways to supply pose, finger, or assist signals. Use the linked pages for setup; this day does not walk through them.
+These are additional ways to supply pose, finger, or assist signals. Setup for each one is on the linked page.
 
-- **Isomorphic teleop** (同构遥操作) — Master–slave joint following on HighTorque Panthera HT, not end-effector pose. On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh`: [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
+- **Isomorphic teleop** (同构遥操作) — Master–slave joint following on HighTorque Panthera HT. On the `panthera-ht` branch, real-robot teleop is `./teleop_start.sh`: [HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), [Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md).
 - **DexCap exoskeleton and gloves** (internal) — The exoskeleton measures waist and arm joints; the gloves measure finger joints. Combined arm + hand teleop: [DexCap Teleoperation](../2-how_to/5-teleoperation/8-dexcap_teleop.md).
 - **VR gesture / hand tracking** — Optical wrist and bare-hand gestures: `./run.sh vr-xrt wrist` or `./run.sh vr-hand` on {ref}`Hand tracking <vr-hand-tracking>`. Controller mode stays `./run.sh vr` / `./run.sh vr-xrt`.
 - **Wuji gloves** (internal) — Finger and hand joint teleop, with optional Vive Tracker for arm pose: [wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md).
-- **Foot pedal** — An assist, not a complete teleop setup. `foot_pedal_teleop` in `arms_teleop` publishes events on the relative topic `teleop/controller_state` (FSM up/down, arm teleop, STORAGE/UPDATE, mirror). The current mode comes back on `teleop/mode_state`. It does not replace VR or the game controller: [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only).
-- **Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to arm end-effector targets (`vive_tracker_teleop`). That is the name used in the package and in these docs; it is not documented as “Valve Tracker”: [Vive Tracker](../4-reference/teleop/6-vive_tracker.md).
+- **Foot pedal** — An assist beside VR or the game controller. `foot_pedal_teleop` in `arms_teleop` publishes events on the relative topic `teleop/controller_state` (FSM up/down, arm teleop, STORAGE/UPDATE, mirror). The current mode comes back on `teleop/mode_state`: {ref}`Foot pedal <foot-pedal-assist-only>`.
+- **Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to arm end-effector targets (`vive_tracker_teleop`). The package and these docs call it **Vive Tracker**: [Vive Tracker](../4-reference/teleop/6-vive_tracker.md).
 
 **Primary sources:** [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md), [arms_teleop README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)
 

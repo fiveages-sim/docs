@@ -201,7 +201,7 @@ Python wrappers: [ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_
 (wbc-mode-command)=
 ## Switch whole-body modes (`/mode_command`)
 
-`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is not `/fsm_command`, and it is not a write path for `/ocs2_wbc_controller/current_state`. That topic is feedback only. Same availability as the body/head Cartesian topics above: 分体 and default mock demos do not start this path.
+`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It switches the mode. `/ocs2_wbc_controller/current_state` is the status you read. `/fsm_command` is the FSM integer on the other command topic. 分体 and the default mock demos start the split-body stack; this path comes up with `ocs2_wbc_controller`.
 
 The usual sequence is: confirm that `ocs2_wbc_controller` is running, switch the FSM to **OCS2** if it is not already there, publish the mode string, then confirm the matching field on `/ocs2_wbc_controller/current_state`. You can also publish the mode while still in **HOLD** or **MOVEJ** and then enter OCS2; entering OCS2 keeps the mode you already set. Leaving OCS2, or activating the controller, restores the default mode.
 
@@ -254,7 +254,7 @@ When the command is accepted, the matching `current_state` field changes. That r
 
 ### Head
 
-Head modes are mutually exclusive, and they are independent of the body mode. `head_midpoint_gaze_active` is not a separate command; it becomes `true` only after `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop gaze.
+Head modes are mutually exclusive, and they are independent of the body mode. `head_midpoint_gaze_active` becomes `true` when `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop gaze.
 
 | `/mode_command` | Feedback when accepted | Capability |
 |-----------------|------------------------|------------|
@@ -285,7 +285,7 @@ Switch a single arm only while the arms are independent. If they are already cou
 
 The capability bit is `has_home_joint_reference`, from the `homeJointReference` section. If that bit is `false`, the controller ignores the command. If `HOME_JOINT_ON` is rejected, for example because the current home reference is outside the URDF joint limits, `home_joint_reference_enabled` stays `false`.
 
-The controller also accepts body presets of the form `PRESET:HM_*`. Those change the body, arms, and base together and leave the current head mode unchanged. Confirm the result on `current_state`; the Python mapping does not list these preset names.
+The controller also accepts body presets of the form `PRESET:HM_*`. Those change the body, arms, and base together and leave the current head mode unchanged. Confirm the result on `current_state`. The Python helpers cover the mode strings in the tables above.
 
 (wbc-current-state)=
 ## Read the current WBC modes (`current_state`)

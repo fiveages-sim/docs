@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 06:57+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,22 +21,21 @@ msgstr ""
 "Generated-By: Babel 2.19.0\n"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:1
-#: a05e6382d44f4d5cafde168487e7b14d
-msgid "Force control and compliance"
-msgstr "力控与柔顺"
+#: e8418a5c5abf4320a9d99491a2906208
+msgid "How to use impedance control"
+msgstr "如何使用阻抗控制"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:3
-#: 768c4ba2106d4fe285a0529c0c9be90a
+#: b83c8fce4a744df7ad5e8de7767f0bf9
 msgid ""
-"On a real arm, use one of the two paths below so the arm can give under "
-"contact. **Payload identification (负载辨识)** belongs to the **vendor-"
-"impedance** path (Tianji / Rokae)."
-msgstr "真机上，手臂要在接触时能退让，用下面两条路径之一。**负载辨识**属于**厂商阻抗**路径（天玑 / 珞石）。"
+"On a real arm, impedance control is how the arm gives under contact. Two "
+"kinds are in use. Pick the one that matches the robot."
+msgstr "真机上，阻抗控制就是手臂在接触时会退让。现在用的是两种。按机器人选对应的那一种。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: a592f630b2084a8da0359adb5a9b7435
-msgid "Path"
-msgstr "路径"
+#: 1c6f9febb420424897bddefc699c0f89
+msgid "Kind"
+msgstr "种类"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
 #: a0dc657c538e4177a943d50aad90dbd7
@@ -54,9 +53,9 @@ msgid "What the controller commands"
 msgstr "控制器下发什么"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: 6937be31b2b64506938534de40b09ea8
-msgid "**MIT-mode force control**"
-msgstr "**MIT 力控**"
+#: 3a117e344f26467ea4d07cad39b0563d
+msgid "**MIT-mode force / MIX**"
+msgstr "**MIT 力控 / MIX**"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
 #: c29918b58898441d876db9c2c749957d
@@ -64,16 +63,16 @@ msgid "**HighTorque** (高擎) **Panthera HT**; **ARX** (方舟无限) arms"
 msgstr "**高擎 Panthera HT**；**方舟无限** 机械臂"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: 1772e47a952c4deb9fd903af84d26df8
+#: ed9ba3f6eb194165b5f7e93ca1b77073
 msgid ""
-"Controller + hardware interface in MIT / `full_control` (pos + vel + "
-"effort; stiffness on the HI)"
-msgstr "控制器 + 驱动层走 MIT / `full_control`（位置 + 速度 + 力矩；刚度在驱动层上）"
+"Controller + hardware interface in MIT / `full_control` (position + "
+"velocity + effort; stiffness on the HI)"
+msgstr "控制器和驱动层都在 MIT / `full_control`（位置 + 速度 + 力矩；刚度在驱动层参数上）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: 85ee8d484d3a42a6b90e5af2c81a7f64
-msgid "Force-capable / MIX when the interfaces allow it"
-msgstr "接口齐全时走带力控 / MIX"
+#: eaad55f502704d0eaadf9809794ccd2c
+msgid "Force-capable / MIX when those interfaces are present"
+msgstr "这些接口都在时，走带力控 / MIX"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
 #: f5bcb9ec5a034908b287169716a953ca
@@ -86,32 +85,28 @@ msgid "**Tianji** (天玑); **Rokae** (珞石)"
 msgstr "**天玑**；**珞石**"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: 108451fbd527479c8846222bae66c2b3
-msgid "Vendor stack, exposed on the hardware interface"
-msgstr "厂商栈，经驱动层暴露"
+#: a2f985de6ab04dec8686fc4f0cb113c0
+msgid "Vendor stack, on the hardware interface"
+msgstr "厂商栈，在驱动层上"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md
-#: 1b482a46edbf4aa398480df3e80b4baf
-msgid "**Position only**"
-msgstr "**仅位置**"
+#: 7e155b3b786343fdaf96dbafafa979e0
+msgid "**Joint position**"
+msgstr "**关节位置**"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:10
-#: 7a12b5f4462e425081e853d9e10a6ca3
-msgid "MIT-mode force control (Panthera HT / ARX)"
-msgstr "MIT 力控（Panthera HT / 方舟无限）"
+#: 0ec288588b6343f2bde9ff4ae7516f0c
+msgid "1. MIT-mode force control (Panthera HT / ARX)"
+msgstr "​1. MIT 力控（Panthera HT / 方舟无限）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:12
-#: 88d9a2f5864d44bbad30d5cc0594eeea
+#: b98442b59e9b4f288118dee6104fba1e
 msgid ""
 "Use this path on **Panthera HT** and **ARX** arms. The hardware interface"
-" must run a **force-capable** MIT configuration; the controller then "
-"tracks the pose target with that mix of position / velocity / effort. VR "
-"teleop is one client of this path: [VR "
-"Teleoperation](../5-teleoperation/6-vr_teleop.md)."
-msgstr ""
-"在 **Panthera HT** 和 **方舟无限** 机械臂上走这条路径。驱动层必须运行**带力控**的 MIT 配置；控制器再用位置 / "
-"速度 / 力矩的组合跟踪位姿目标。VR 遥操作是这条路径的一种用法：[VR "
-"遥操作](../5-teleoperation/6-vr_teleop.md)。"
+" runs a force-capable MIT configuration. The controller tracks the pose "
+"with that mix of position, velocity, and effort. VR teleop is one client:"
+" [VR Teleoperation](../5-teleoperation/6-vr_teleop.md)."
+msgstr "在 **Panthera HT** 和 **方舟无限** 机械臂上用这一条。驱动层跑带力控的 MIT 配置。控制器用位置、速度和力矩的组合跟踪位姿。VR 遥操作是这条路径上的一种用法：[VR 遥操作](../5-teleoperation/6-vr_teleop.md)。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:14
 #: d052c08ad9c840c6b8ccced15939a16a
@@ -123,9 +118,11 @@ msgstr ""
 "/fiveages-sim/ht-ros2-control/blob/main/README.md)："
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:16
-#: d9de363d79994643b9af24f067134f12
-msgid "HI `control_mode:=mit` (default; older name `full_control` still accepted)"
-msgstr "驱动层 `control_mode:=mit`（默认；旧名 `full_control` 仍可用）"
+#: 5208e35a1d214212b78e46fa6caff320
+msgid ""
+"HI `control_mode:=mit` (default; the older name `full_control` is still "
+"accepted)"
+msgstr "驱动层 `control_mode:=mit`（默认；旧名 `full_control` 仍然可用）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:17
 #: e242eb41c366436784c01a6d7501c990
@@ -135,11 +132,11 @@ msgid ""
 msgstr "驱动下发位置 + 速度 + 力矩 + kp/kd（`pos_vel_tqe_kp_kd`）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:18
-#: 9e7809fda02d4e2fa0a83827d87028d2
+#: 2989f8d50e6d4e87949dd5a6f30286e5
 msgid ""
-"Stiffness is HI parameters `joint_kp` / `joint_kd` (rqt / `ros2 param`), "
-"**not** kp/kd command interfaces"
-msgstr "刚度是驱动层参数 `joint_kp` / `joint_kd`（rqt / `ros2 param`），**不是** kp/kd 命令接口"
+"Stiffness is the HI parameters `joint_kp` / `joint_kd` (rqt / `ros2 "
+"param`)"
+msgstr "刚度在驱动层参数 `joint_kp` / `joint_kd` 上（rqt / `ros2 param`）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:19
 #: a14b4aa307e24b02a7fe393d238b9b29
@@ -158,23 +155,21 @@ msgstr ""
 "/arx-ros2-control/blob/main/README.md)："
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:23
-#: e719b181e4ac4f4fb0c7b5f223d3df0d
+#: 25b6543574694123ba88ff4a40f4a632
 msgid ""
-"Arms support only `full_control` / MIT MIX. Other `control_mode` values "
-"in xacro are warned and ignored"
-msgstr "机械臂只支持 `full_control` / MIT MIX。xacro 里写的其他 `control_mode` 会告警并被忽略"
+"Arms use `full_control` / MIT MIX. Other `control_mode` values in xacro "
+"are ignored, with a warning"
+msgstr "机械臂使用 `full_control` / MIT MIX。xacro 里其他 `control_mode` 会告警并被忽略"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:24
-#: 05e377c2c65947fd96875ae854dfe874
-msgid "`write()` always sends position + velocity + effort"
-msgstr "`write()` 始终下发位置 + 速度 + 力矩"
+#: c44c06fa9b9a4430a2ae3825a9d2f42f
+msgid "`write()` sends position + velocity + effort"
+msgstr "`write()` 下发位置 + 速度 + 力矩"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:25
-#: a6631017f0da454594b6c2982834e057
-msgid ""
-"MIT `kp` / `kd` come from HI `joint_k_gains` / `joint_d_gains` (no kp/kd "
-"command interface)"
-msgstr "MIT 的 `kp` / `kd` 来自驱动层的 `joint_k_gains` / `joint_d_gains`（没有 kp/kd 命令接口）"
+#: 3959a10eddba4d158cbf810585592eb5
+msgid "MIT `kp` / `kd` come from HI `joint_k_gains` / `joint_d_gains`"
+msgstr "MIT 的 `kp` / `kd` 来自驱动层的 `joint_k_gains` / `joint_d_gains`"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:26
 #: 77fd53eb6357468c9bdfd201ee42eb7f
@@ -195,11 +190,9 @@ msgstr ""
 "sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)："
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:30
-#: 48ae35c29f9f476e9009b2a84e6d24a5
-msgid ""
-"Mode is **auto-detected** from the robot config (no extra launch flag "
-"named `force:=`)"
-msgstr "模式由机器人配置**自动检测**（没有名为 `force:=` 的额外 launch 参数）"
+#: 7fc34903572c46d49daaef1b58857cbb
+msgid "The mode is auto-detected from the robot config"
+msgstr "模式由机器人配置自动检测"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:31
 #: e838d654402a4576a312caa8340e881e
@@ -207,27 +200,21 @@ msgid "Position-only: command `position`; state `position` + `velocity`"
 msgstr "仅位置：命令 `position`；状态 `position` + `velocity`"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:32
-#: 34aff7c686db428092c61b3ead920710
+#: 704d8dbf823f48349117d33702f4c73e
 msgid ""
-"Force / MIX: command `position`, `velocity`, `effort`, `kp`, `kd` all "
-"present. `[kp, kd]` is `default_gains` (HOME / HOLD) and `pd_gains` (OCS2"
-" state), **Startup only**. The older name `force_gains` is not a "
-"parameter"
-msgstr ""
-"力控 / MIX：命令接口里 `position`、`velocity`、`effort`、`kp`、`kd` 都有。`[kp, kd]` 由 "
-"`default_gains`（HOME / HOLD）和 `pd_gains`（OCS2 状态）给出，**仅启动**。旧名 "
-"`force_gains` 不是参数"
+"Force / MIX: command `position`, `velocity`, `effort`, `kp`, and `kd` are"
+" all present. `[kp, kd]` is `default_gains` (HOME / HOLD) and `pd_gains` "
+"(OCS2), at **Startup**"
+msgstr "力控 / MIX：命令接口里 `position`、`velocity`、`effort`、`kp`、`kd` 都在。`[kp, kd]` 用 `default_gains`（HOME / HOLD）和 `pd_gains`（OCS2），只在 **Startup** 时写入"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:33
-#: 393e0c4392ff4ba0812529c4ba37d256
+#: 31b96583d9e84275aff2d54975348426
 msgid ""
-"ARX documents OCS2 MIX as pos + vel + effort with kp/kd on the HI. HT "
-"notes that when kp/kd are **not** command interfaces, OCS2 may stay in "
-"position mode; gravity compensation then uses `ht_gravity_compensation` "
-"or larger `joint_kp` (same HT README)"
-msgstr ""
-"方舟无限文档把 OCS2 MIX 写成位置 + 速度 + 力矩，kp/kd 在驱动层上。高擎说明：当 kp/kd **不是**命令接口时，OCS2"
-" 可能停在位置模式；重力补偿改用 `ht_gravity_compensation` 或调大 `joint_kp`（同一份 HT README）"
+"ARX documents OCS2 MIX as position + velocity + effort, with kp/kd on the"
+" HI. On HT, when kp/kd stay HI parameters, OCS2 may stay in position "
+"mode. Gravity compensation then uses `ht_gravity_compensation` or a "
+"larger `joint_kp` (same HT README)"
+msgstr "方舟无限文档把 OCS2 MIX 写成位置 + 速度 + 力矩，kp/kd 在驱动层上。高擎上，kp/kd 留在驱动层参数时，OCS2 可以停在位置模式。重力补偿用 `ht_gravity_compensation`，或把 `joint_kp` 调大（同一份 HT README）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:35
 #: 2d594e3ed0194310bb08bc78db5c88ef
@@ -249,17 +236,17 @@ msgstr ""
 "[同构遥操作](../5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:39
-#: c88a76983f434b6daa690f4588390c99
-msgid "Vendor joint impedance (Tianji / Rokae)"
-msgstr "厂商关节阻抗（天玑 / 珞石）"
+#: 92828c7084a14cd5a3cb811bc81e48f2
+msgid "2. Vendor joint impedance (Tianji / Rokae)"
+msgstr "​2. 厂商关节阻抗（天玑 / 珞石）"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:41
-#: 2c806044a9d64b918c3d4de1c4980579
+#: 6f23aef9b6184e788a5927eacff9985c
 msgid ""
-"Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller only "
-"sends **joint position**. Joint impedance / compliance is the **vendor** "
-"feature, switched on the hardware interface."
-msgstr "在 **天玑** 和 **珞石** 上走这条路径。控制器只发 **关节位置**。关节阻抗 / 柔顺是**厂商**能力，在驱动层上切换。"
+"Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller sends"
+" **joint position**. Joint impedance is the vendor feature on the "
+"hardware interface."
+msgstr "在 **天玑** 和 **珞石** 上用这一条。控制器发送 **关节位置**。关节阻抗是驱动层上的厂商功能。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:43
 #: 434db51fc65545a684809d36d1ee4b9b
@@ -271,11 +258,11 @@ msgstr ""
 "/marvin-ros2-control/blob/master/README.md)："
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:45
-#: e2f7116a862f464a92bd8585e84e9d4b
+#: 200c9729c8364348bbe7eb2b4d4c3cca
 msgid ""
-"Command interfaces: joint **`position` only**. State: `position`, "
-"`velocity`, `effort`"
-msgstr "命令接口：关节 **仅 `position`**。状态：`position`、`velocity`、`effort`"
+"Command interface: joint **`position`**. State: `position`, `velocity`, "
+"`effort`"
+msgstr "命令接口：关节 **`position`**。状态：`position`、`velocity`、`effort`"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:46
 #: cbdee36998ce4a72be1cdec97dc3bdb8
@@ -301,86 +288,62 @@ msgid "Example: `ros2 param set /<hardware_node> ctrl_mode JOINT_IMPEDANCE`"
 msgstr "示例：`ros2 param set /<hardware_node> ctrl_mode JOINT_IMPEDANCE`"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:50
-#: eb67863b994f43de995ed08d2922fdd6
+#: bba66045ca704ca486171308262fc56f
 msgid ""
-"**Rokae** — same pattern (position commands; compliance in the vendor "
-"HI). Parameter names are in the private `rokae-ros2-control` README after"
-" access. Overview: [Hardware "
+"**Rokae** uses the same split: the controller sends position, and "
+"compliance is the vendor hardware interface. Parameter names are in the "
+"private `rokae-ros2-control` README after access. Overview: [Hardware "
 "Interfaces](../../4-reference/hardware/0-index.md)."
-msgstr ""
-"**珞石** — 同一模式（位置命令；柔顺在厂商驱动层）。参数名在开通后的私有 `rokae-ros2-control` "
-"README。概览：[驱动层](../../4-reference/hardware/0-index.md)。"
+msgstr "**珞石** 也是这一分法：控制器发送位置，柔顺在厂商驱动层上。参数名在开通后的私有 `rokae-ros2-control` README。概览：[驱动层](../../4-reference/hardware/0-index.md)。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:52
-#: 0512a9ae17f64cba97a411307fcf1b7d
+#: 70197140d9e94f6eacac5d98aacca4d6
 msgid ""
-"Internal FA robots that use Tianji / Rokae arms live in [fa-deploy-ws "
-"Setup](../../1-getting_started/4-fa_deploy_ws.md). Extra robot IDs and "
-"launch flags are in that workspace README after access."
-msgstr ""
-"使用天玑 / 珞石臂的内部第五纪机器人见 [fa-deploy-ws "
-"配置](../../1-getting_started/4-fa_deploy_ws.md)。额外机器人 ID 和 launch "
-"参数在开通后的该仓库 README。"
+"Internal FA robots that use Tianji / Rokae arms are in [fa-deploy-ws "
+"Setup](../../1-getting_started/4-fa_deploy_ws.md). Robot IDs and launch "
+"flags for that workspace are in its README after access."
+msgstr "使用天玑 / 珞石臂的内部第五纪机器人见 [fa-deploy-ws 配置](../../1-getting_started/4-fa_deploy_ws.md)。该工作区的机器人 ID 和 launch 参数在开通后的 README。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:54
-#: 64ca69772ff54d2a85d399d67dd7328b
-msgid "Payload identification (负载辨识)"
-msgstr "负载辨识"
+#: 0926d6dbbe8843f1a5bcce635a670ce4
+msgid "3. Payload identification (负载辨识)"
+msgstr "​3. 负载辨识"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:56
-#: 894e14c809234767972509d34080de56
-msgid ""
-"负载辨识 is **only** on the Tianji / Rokae (vendor impedance) path. The MIT /"
-" OCS2 side uses `default_gains` / `pd_gains` for `[kp, kd]`. It does not "
-"run this wizard."
-msgstr ""
-"负载辨识**只**在天玑 / 珞石（厂商阻抗）路径上。MIT / OCS2 这边用 `default_gains` / `pd_gains` 写 "
-"`[kp, kd]`，不跑这个向导。"
+#: aa82a9120a10427bb3390f635ff0f3a1
+msgid "负载辨识 is on the Tianji / Rokae path. Run the public Tianji wizard:"
+msgstr "负载辨识在天玑 / 珞石这条路径上做。运行公开的天玑向导："
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:58
-#: 7cc8e27aa0a44eb79a72178c31a5aec9
-msgid ""
-"**Public, verified Tianji wizard** (semi-automatic tool-dynamics ID on "
-"CCS): [marvin-ros2-control "
-"`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-sim"
-"/marvin-ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py), "
-"installed as `ros2 run marvin_ros2_control tool_dyn_identify_wizard` "
-"(`CMakeLists.txt` `install(PROGRAMS … RENAME tool_dyn_identify_wizard)`)."
-msgstr ""
-"**公开、核对过的天玑向导**（CCS 上半自动工具动力学辨识）：[marvin-ros2-control "
-"`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-sim"
-"/marvin-"
-"ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py)，安装后为 `ros2 "
-"run marvin_ros2_control tool_dyn_identify_wizard`（`CMakeLists.txt` 的 "
-"`install(PROGRAMS … RENAME tool_dyn_identify_wizard)`）。"
-
-#: ../../source/2-how_to/4-controllers/13-force_control.md:60
-#: 86e9cf73f3ad481ea8f6dd65973ea5da
-msgid ""
-"The wizard banner is **机械臂负载辨识向导（工具动力学参数辨识 / CCS）**. It connects to the "
-"Marvin controller IP, collects no-load then loaded PVT trajectories, and "
-"prints 10-D tool dynamics (`m, mx, my, mz, ixx, …`). Those values match "
-"HI parameters `left_dyn_param` / `right_dyn_param` on the same README."
-msgstr ""
-"向导标题是**机械臂负载辨识向导（工具动力学参数辨识 / CCS）**。它连接 Marvin 控制器 IP，先采空载再采带载 PVT 轨迹，并打印"
-" 10 维工具动力学（`m, mx, my, mz, ixx, …`）。这些值对应同一 README 里的驱动层参数 "
-"`left_dyn_param` / `right_dyn_param`。"
+#: a6b0aa5c9ba7444ca9386cfa11c39748
+msgid "ros2 run marvin_ros2_control tool_dyn_identify_wizard"
+msgstr "ros2 run marvin_ros2_control tool_dyn_identify_wizard"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:62
-#: 9a0a826d0dab4a3f851fbbe9dc10a481
+#: af3279babd5f4e71aa98261fbfb39522
 msgid ""
-"There is **no** public `open-deploy-ws` payload-ID flow. Internal on-site"
-" Tianji payload identification is in the private **fa-deploy-ws** README "
-"after access (default branch is typically `fa-w2`). Use that README’s "
-"script names — they are not listed here."
-msgstr ""
-"公开的 `open-deploy-ws` **没有**负载辨识流程。内部现场天玑负载辨识在开通后的私有 **fa-deploy-ws** "
-"README（默认分支通常是 `fa-w2`）。脚本名以该 README 为准，这里不列出。"
+"The program is [`scripts/tool_dyn_identify_wizard.py`](https://github.com"
+"/fiveages-sim/marvin-"
+"ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py), installed "
+"by `CMakeLists.txt` as `tool_dyn_identify_wizard`. The banner is "
+"**机械臂负载辨识向导（工具动力学参数辨识 / CCS）**. It connects to the Marvin controller IP, "
+"collects a no-load PVT trajectory and then a loaded one, and prints the "
+"10-D tool dynamics (`m, mx, my, mz, ixx, …`). Those values are the HI "
+"parameters `left_dyn_param` / `right_dyn_param` on the same README."
+msgstr "程序是 [`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py)，由 `CMakeLists.txt` 安装为 `tool_dyn_identify_wizard`。标题是 **机械臂负载辨识向导（工具动力学参数辨识 / CCS）**。它连接 Marvin 控制器 IP，先采空载 PVT 轨迹，再采带载轨迹，并打印 10 维工具动力学（`m, mx, my, mz, ixx, …`）。这些值就是同一 README 里的驱动层参数 `left_dyn_param` / `right_dyn_param`。"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:64
-#: 3a3ac7aeb00d4fbcabb7b009a47290d9
-msgid "Related"
-msgstr "相关"
+#: da4e57e2c8dd4effb6d0a7bbd3c41440
+msgid ""
+"On the MIT / OCS2 path, `[kp, kd]` is `default_gains` and `pd_gains`. On-"
+"site identification for internal robots is in the private **fa-deploy-"
+"ws** README after access (the default branch is typically `fa-w2`)."
+msgstr "在 MIT / OCS2 这条路径上，`[kp, kd]` 是 `default_gains` 和 `pd_gains`。内部机器人的现场辨识在开通后的私有 **fa-deploy-ws** README（默认分支一般是 `fa-w2`）。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:66
+#: 73f9291c3f094663b4d1f55b0841c4d9
+msgid "4. Related"
+msgstr "​4. 相关"
 
 #: ../../source/2-how_to/4-controllers/13-force_control.md:66
 #: 8085f98e54444b398338c79a9cd98ee1
@@ -435,3 +398,62 @@ msgstr ""
 msgid "[Isomorphic Teleop](../5-teleoperation/7-isomorphic_teleop.md)"
 msgstr "[同构遥操作](../5-teleoperation/7-isomorphic_teleop.md)"
 
+#~ msgid "Force control and compliance"
+#~ msgstr "力控与柔顺"
+
+#~ msgid ""
+#~ "On a real arm, use one of "
+#~ "the two paths below so the arm "
+#~ "can give under contact. **Payload "
+#~ "identification (负载辨识)** belongs to the "
+#~ "**vendor-impedance** path (Tianji / Rokae)."
+#~ msgstr "真机上，手臂要在接触时能退让，用下面两条路径之一。**负载辨识**属于**厂商阻抗**路径（天玑 / 珞石）。"
+
+#~ msgid "Path"
+#~ msgstr "路径"
+
+#~ msgid ""
+#~ "负载辨识 is **only** on the Tianji /"
+#~ " Rokae (vendor impedance) path. The "
+#~ "MIT / OCS2 side uses `default_gains` "
+#~ "/ `pd_gains` for `[kp, kd]`. It "
+#~ "does not run this wizard."
+#~ msgstr ""
+#~ "负载辨识**只**在天玑 / 珞石（厂商阻抗）路径上。MIT / OCS2 "
+#~ "这边用 `default_gains` / `pd_gains` 写 `[kp,"
+#~ " kd]`，不跑这个向导。"
+
+#~ msgid ""
+#~ "**Public, verified Tianji wizard** (semi-"
+#~ "automatic tool-dynamics ID on CCS): "
+#~ "[marvin-ros2-control "
+#~ "`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-"
+#~ "sim/marvin-"
+#~ "ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py), "
+#~ "installed as `ros2 run marvin_ros2_control "
+#~ "tool_dyn_identify_wizard` (`CMakeLists.txt` "
+#~ "`install(PROGRAMS … RENAME "
+#~ "tool_dyn_identify_wizard)`)."
+#~ msgstr ""
+#~ "**公开、核对过的天玑向导**（CCS 上半自动工具动力学辨识）：[marvin-ros2-control "
+#~ "`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-"
+#~ "sim/marvin-"
+#~ "ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py)，安装后为 "
+#~ "`ros2 run marvin_ros2_control "
+#~ "tool_dyn_identify_wizard`（`CMakeLists.txt` 的 "
+#~ "`install(PROGRAMS … RENAME "
+#~ "tool_dyn_identify_wizard)`）。"
+
+#~ msgid ""
+#~ "There is **no** public `open-deploy-"
+#~ "ws` payload-ID flow. Internal on-"
+#~ "site Tianji payload identification is in"
+#~ " the private **fa-deploy-ws** README"
+#~ " after access (default branch is "
+#~ "typically `fa-w2`). Use that README’s "
+#~ "script names — they are not listed"
+#~ " here."
+#~ msgstr ""
+#~ "公开的 `open-deploy-ws` "
+#~ "**没有**负载辨识流程。内部现场天玑负载辨识在开通后的私有 **fa-deploy-ws** "
+#~ "README（默认分支通常是 `fa-w2`）。脚本名以该 README 为准，这里不列出。"

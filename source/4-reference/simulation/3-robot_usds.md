@@ -56,7 +56,7 @@ These are the only USD remotes in `robot_usds/.gitmodules` on `main`. Each gitli
 | `humanoid/Galbot` | [galbot-usds](https://github.com/fiveages-sim/galbot-usds) | Galbot mobile manipulator USD |
 | `humanoid/Ubtech` | [ubtech-usds](https://github.com/fiveages-sim/ubtech-usds) | Ubtech humanoid USD (private remote; needs access) |
 
-URDF / deploy for FiveAges robots: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md). Gen1 and Gen2 under `humanoid/FiveAges/` are wheeled-arm USD. They are not bipeds.
+URDF / deploy for FiveAges robots: [FiveAges robot descriptions](../descriptions/4-fiveages_umbrella.md). Gen1 and Gen2 under `humanoid/FiveAges/` are wheeled-arm USD.
 
 To see the pin, or to move one submodule (example: Galbot):
 

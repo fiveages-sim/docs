@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-11-26 06:57+0000\n"
+"POT-Creation-Date: 2026-11-26 11:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,16 +271,14 @@ msgstr ""
 "ros2 launch ocs2_arm_controller demo.launch.py\n"
 
 #: ../../source/0-overview/2-learning_path.md:58
-#: becd9e3b62fb4da8b7f588ee2287eb2e
+#: aad4f346474247abb0f32bafa7a6830b
 msgid ""
 "After this launch, the clip below shows the effect in RViz (a single "
 "arm): drag the end-effector target, adjust joints with the "
-"JointControlPanel sliders, and use HOME to reset. It does not show the "
-"terminal or the launch command, so it is not a complete startup "
-"recording, and it is not Isaac physics verification."
-msgstr ""
-"启动之后，下面这段视频展示 RViz 里的单臂操作效果：拖动末端目标，用 JointControlPanel 的滑条调节关节，再按 HOME "
-"复位。视频里没有终端和启动命令，所以它不是完整的启动录屏，也不是 Isaac 物理运行验证。"
+"JointControlPanel sliders, and use HOME to reset. The clip is the RViz "
+"motion. The launch command is the block above. Isaac physics is on [Day "
+"4](#day-4-isaac-sim)."
+msgstr "这次启动之后，下面这段视频是 RViz 里的单臂效果：拖动末端目标，用 JointControlPanel 的滑条调节关节，再按 HOME 复位。视频是 RViz 里的运动。启动命令是上面的代码块。Isaac 物理在 [第 4 天](#day-4-isaac-sim)。"
 
 #: ../../source/0-overview/2-learning_path.md:60
 #: 7c768f4e98164837b90a897914783963
@@ -761,11 +759,11 @@ msgid ""
 msgstr "**目标：** 先用 VR 或游戏手柄上手，再了解其他输入方式各自做什么。"
 
 #: ../../source/0-overview/2-learning_path.md:187
-#: c46aca4456b948c6a2646cd6b3f9dce1
+#: a572c79b80df404d866c7989e7f72ea0
 msgid ""
-"Keep the robot stack from Days 1–4 running. Teleop only publishes targets"
-" or assist events into that stack; it does not replace it."
-msgstr "保持第 1 到第 4 天的机器人运控在运行。遥操作只向这套运控发布目标或辅助事件，并不能代替它。"
+"Keep the robot stack from Days 1–4 running. Teleop publishes targets or "
+"assist events into that stack."
+msgstr "保持第 1 到第 4 天的机器人运控在运行。遥操作把目标或辅助事件发进这套运控。"
 
 #: ../../source/0-overview/2-learning_path.md:189
 #: f40b49929b83469cb34b37fe94b22f85
@@ -810,25 +808,24 @@ msgstr ""
 " true`（多数机器人默认是关闭的），以及通向头显的网络。然后："
 
 #: ../../source/0-overview/2-learning_path.md:197
-#: 315626fa4d2045c3b3020338dc5a16d9
+#: e32a988b23b2404287de5e7245ecf6c8
 msgid ""
 "cd ~/fa-py-libraries\n"
-"./run.sh vr\n"
+"./run.sh\n"
 msgstr ""
 "cd ~/fa-py-libraries\n"
-"./run.sh vr\n"
+"./run.sh\n"
 
 #: ../../source/0-overview/2-learning_path.md:202
-#: ebd4394b99634eb3825edb378d7f540b
+#: c521f02dc41b4792aa8520e3c8d15ed8
 msgid ""
-"Open the URL shown in the headset browser (WebXR). For the lower-latency "
-"XRoboToolkit path, use `./run.sh vr-xrt-service` then `./run.sh vr-xrt` "
-"as on that page. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享,"
-" and a **different App** from Pico consumer)."
-msgstr ""
-"在头显浏览器里打开显示的 URL（WebXR）。延迟更低的 XRoboToolkit 路径，按该页使用 `./run.sh vr-xrt-"
-"service`，再运行 `./run.sh vr-xrt`。Pico **Enterprise** 是更推荐的 Pico 规格（支持 USB "
-"网络共享，并且和消费版 Pico 用的是**不同的 App**）。"
+"With no arguments the menu prints `请选择要启动的功能`. WebXR is `6) vr pose "
+"launch (Vuer/WebXR)`. Open the printed URL in the headset browser. "
+"XRoboToolkit is `4) 启动 XRoboToolkit PC Service`, then `3) 手柄遥操 "
+"(controller)`. The same steps as commands are `./run.sh vr`, and "
+"`./run.sh vr-xrt-service` then `./run.sh vr-xrt`. Pico **Enterprise** is "
+"the preferred Pico SKU (USB 网络共享, and its own App)."
+msgstr "不带参数时，菜单会打印 `请选择要启动的功能`。WebXR 是 `6) vr pose launch (Vuer/WebXR)`。在头显浏览器里打开打印出来的 URL。XRoboToolkit 先选 `4) 启动 XRoboToolkit PC Service`，再选 `3) 手柄遥操 (controller)`。对应的命令是 `./run.sh vr`，以及先 `./run.sh vr-xrt-service` 再 `./run.sh vr-xrt`。Pico **企业版** 是优先的 Pico 型号（USB 网络共享，以及它自己的 App）。"
 
 #: ../../source/0-overview/2-learning_path.md:204
 #: 9b9bd8af89394e71bcb7302f531f2192
@@ -893,24 +890,21 @@ msgid "Other methods"
 msgstr "其他方式"
 
 #: ../../source/0-overview/2-learning_path.md:222
-#: 65c675972ae74643b9d17cd64d0e557c
+#: 08436450d62f460c8b5108824939cb0d
 msgid ""
-"These are additional ways to supply pose, finger, or assist signals. Use "
-"the linked pages for setup; this day does not walk through them."
-msgstr "这些是补充位姿、手指或辅助信号的方式。具体布置看链接的页面；这一天不逐步讲解。"
+"These are additional ways to supply pose, finger, or assist signals. "
+"Setup for each one is on the linked page."
+msgstr "这些是另外提供位姿、手指或辅助信号的方式。每一种的布置在对应页面上。"
 
 #: ../../source/0-overview/2-learning_path.md:224
-#: 89e2a456d40d4d6d8bed07f4b9940d0d
+#: 33ffdd4b8bb34a6ea84fb197cda272f7
 msgid ""
 "**Isomorphic teleop** (同构遥操作) — Master–slave joint following on "
-"HighTorque Panthera HT, not end-effector pose. On the `panthera-ht` "
-"branch, real-robot teleop is `./teleop_start.sh`: [HighTorque Panthera "
+"HighTorque Panthera HT. On the `panthera-ht` branch, real-robot teleop is"
+" `./teleop_start.sh`: [HighTorque Panthera "
 "HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md), "
 "[Isomorphic Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
-msgstr ""
-"**同构遥操作** — 在 HighTorque Panthera HT 上做主从关节跟随，不是末端位姿。`panthera-ht` "
-"分支上，真机遥操作是 `./teleop_start.sh`：[HighTorque Panthera "
-"HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)、[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
+msgstr "**同构遥操作** — 在 HighTorque Panthera HT 上做主从关节跟随。`panthera-ht` 分支上，真机遥操作是 `./teleop_start.sh`：[HighTorque Panthera HT](../2-how_to/6-deployment/9-go_real_hardware/2-panthera_ht.md)、[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/0-overview/2-learning_path.md:225
 #: 8288e3719dd64fe2a416c7370eeb824f
@@ -943,33 +937,24 @@ msgstr ""
 "来带动手臂：[wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md)。"
 
 #: ../../source/0-overview/2-learning_path.md:228
-#: 64dc85ae823d4c4a84074ca9de9311d6
+#: 5a384ef1977c402d88e4e8da1cb2f41b
+#, python-brace-format
 msgid ""
-"**Foot pedal** — An assist, not a complete teleop setup. "
+"**Foot pedal** — An assist beside VR or the game controller. "
 "`foot_pedal_teleop` in `arms_teleop` publishes events on the relative "
 "topic `teleop/controller_state` (FSM up/down, arm teleop, STORAGE/UPDATE,"
-" mirror). The current mode comes back on `teleop/mode_state`. It does not"
-" replace VR or the game controller: [Joystick "
-"teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-"
-"assist-only)."
-msgstr ""
-"**脚踏板** — 这是辅助输入，不是完整的遥操作方案。`arms_teleop` 里的 `foot_pedal_teleop` 在相对话题 "
-"`teleop/controller_state` 上发布事件（FSM 上/下、手臂遥操、STORAGE/UPDATE、镜像）。当前模式由 "
-"`teleop/mode_state` 返回。它不能代替 VR "
-"或游戏手柄：[手柄遥操作](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-"
-"pedal-assist-only)。"
+" mirror). The current mode comes back on `teleop/mode_state`: {ref}`Foot "
+"pedal <foot-pedal-assist-only>`."
+msgstr "**脚踏板** — 放在 VR 或游戏手柄旁边的辅助输入。`arms_teleop` 里的 `foot_pedal_teleop` 在相对话题 `teleop/controller_state` 上发布事件（FSM 上/下、手臂遥操、STORAGE/UPDATE、镜像）。当前模式由 `teleop/mode_state` 返回：{ref}`脚踏板 <foot-pedal-assist-only>`。"
 
 #: ../../source/0-overview/2-learning_path.md:229
-#: a188465148c844c089b6720d6f5debc3
+#: 023958650ae54336b4ad7f4609874fdf
 msgid ""
 "**Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to "
-"arm end-effector targets (`vive_tracker_teleop`). That is the name used "
-"in the package and in these docs; it is not documented as “Valve "
-"Tracker”: [Vive Tracker](../4-reference/teleop/6-vive_tracker.md)."
-msgstr ""
-"**Vive Tracker**（内部）— 把 SteamVR 的 **Vive Tracker** "
-"位姿映射到手臂末端目标（`vive_tracker_teleop`）。软件包和本文档用的就是这个名称，并没有写成 “Valve "
-"Tracker”：[Vive Tracker](../4-reference/teleop/6-vive_tracker.md)。"
+"arm end-effector targets (`vive_tracker_teleop`). The package and these "
+"docs call it **Vive Tracker**: [Vive "
+"Tracker](../4-reference/teleop/6-vive_tracker.md)."
+msgstr "**Vive Tracker**（内部）— 把 SteamVR **Vive Tracker** 位姿映射到手臂末端目标（`vive_tracker_teleop`）。软件包和本文档都叫它 **Vive Tracker**：[Vive Tracker](../4-reference/teleop/6-vive_tracker.md)。"
 
 #: ../../source/0-overview/2-learning_path.md:231
 #: a150864f23974cf9b1c9dd27e07ec1b8
@@ -2419,3 +2404,18 @@ msgstr "**提出问题** — 遇到缺陷或文档不清时，请在相应仓库
 #~ "或游戏手柄：[手柄遥操作](../2-how_to/5-teleoperation/9-joystick_teleop.md"
 #~ "#foot-pedal-assist-only)。"
 
+#~ msgid ""
+#~ "Open the URL shown in the headset"
+#~ " browser (WebXR). For the lower-"
+#~ "latency XRoboToolkit path, use `./run.sh "
+#~ "vr-xrt-service` then `./run.sh vr-"
+#~ "xrt` as on that page. Pico "
+#~ "**Enterprise** is the preferred Pico SKU"
+#~ " (USB 网络共享, and a **different App**"
+#~ " from Pico consumer)."
+#~ msgstr ""
+#~ "在头显浏览器里打开显示的 URL（WebXR）。延迟更低的 XRoboToolkit 路径，按该页使用"
+#~ " `./run.sh vr-xrt-service`，再运行 `./run.sh"
+#~ " vr-xrt`。Pico **Enterprise** 是更推荐的 Pico "
+#~ "规格（支持 USB 网络共享，并且和消费版 Pico 用的是**不同的 "
+#~ "App**）。"

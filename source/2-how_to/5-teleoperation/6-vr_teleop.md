@@ -2,12 +2,12 @@
 
 Control robots from a VR headset: controllers, or optical hand tracking.
 
-## Supported Headsets
+## 1. Supported Headsets
 
 | Headset | Support Level | Modes | Notes |
 |---------|---------------|-------|-------|
-| **Pico Enterprise** | **Recommended** | Web, XRoboToolkit | USB shared networking (USB 网络共享); **its own App**, not the consumer Pico App |
-| **Pico consumer** | Supported | Web, XRoboToolkit | Different headset App from Enterprise; no USB-tether path documented here |
+| **Pico Enterprise** | **Recommended** | Web, XRoboToolkit | USB shared networking (USB 网络共享); **its own App**, separate from the consumer Pico App |
+| **Pico consumer** | Supported | Web, XRoboToolkit | Its own headset App; Wi-Fi to the ROS 2 PC |
 | **Meta Quest** | Supported | Web, XRoboToolkit | Good consumer availability |
 
 ```{admonition} Pico Enterprise vs consumer
@@ -15,8 +15,8 @@ Control robots from a VR headset: controllers, or optical hand tracking.
 
 Treat **Pico Enterprise** and **Pico consumer** as different SKUs. Each edition has its own headset App.
 
-1. **USB shared networking (USB 网络共享)** — Pico Enterprise can share a network with the ROS 2 PC over USB. That is an Enterprise capability; it is not the consumer Pico path.
-2. **Different Apps** — Enterprise and consumer Pico use **different** headset Apps. Install the App that matches the headset edition. The fa-py-libraries README’s XRoboToolkit path is “XRoboToolkit App + PC Service” versus browser WebXR; it does not name a single store listing for both Pico editions.
+1. **USB shared networking (USB 网络共享)** — Pico Enterprise shares a network with the ROS 2 PC over USB. Consumer Pico uses the Wi-Fi path.
+2. **Different Apps** — Enterprise and consumer Pico each have their own headset App. Install the App that matches the headset edition. fa-py-libraries documents XRoboToolkit as “XRoboToolkit App + PC Service”, and WebXR as the browser path.
 
 Store listings, extra package names, and ADB steps are in the headset / fa-py-libraries READMEs when they document them.
 ```
@@ -27,7 +27,7 @@ Store listings, extra package names, and ADB steps are in the headset / fa-py-li
 **Pico Enterprise** is the preferred Pico SKU for VR teleop (USB 网络共享, matching Enterprise App, lower-latency tracking / 更跟手). Consumer Pico and Meta Quest use the same WebXR and XRoboToolkit choices in the `./run.sh` menu.
 ```
 
-## Prerequisites
+## 2. Prerequisites
 
 - Working robot demo (mock, sim, or real)
 - VR headset (**Pico Enterprise** recommended; Pico consumer or **Meta Quest** also used)
@@ -37,15 +37,15 @@ Store listings, extra package names, and ADB steps are in the headset / fa-py-li
 
 Before the controller will consume VR targets, set `enable_vr: true` in that YAML. Related fields on the same file: `vr_update_rate` (used when VR is on) and `vr_follow_frame` (full-body follow frame; see [Troubleshooting](#troubleshooting)).
 
-## Overview
+## 3. Overview
 
 With controllers, VR teleoperation publishes end-effector pose targets from controller tracking. The MPC controller then generates joint trajectories to follow these targets. Optical wrist and bare-hand gestures are [Hand tracking](#vr-hand-tracking).
 
-On a real arm, use [force control and compliance](../4-controllers/13-force_control.md) when the arm should comply with contact. MIT-mode force control covers Panthera HT and ARX. Vendor joint impedance and payload identification cover Tianji and Rokae.
+On a real arm, use [How to use impedance control](../4-controllers/13-force_control.md) when the arm should give under contact. MIT-mode force control covers Panthera HT and ARX. Vendor joint impedance and payload identification cover Tianji and Rokae.
 
-## Setup
+## 4. Setup
 
-### 1. Install fa-py-libraries
+### 4.1 Install fa-py-libraries
 
 :::{code-block} bash
 cd ~/
@@ -58,14 +58,14 @@ HTTPS is the public clone. SSH (`git clone git@github.com:fiveages-sim/fa-py-lib
 
 What `./init.sh all` does: submodules + Python 3.12 env + `ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher` / `xr_hand_retarget`.
 
-### 2. Start Robot Demo
+### 4.2 Start Robot Demo
 
 ```bash
 source ~/open-deploy-ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py
 ```
 
-### 3. Start the VR bridge
+### 4.3 Start the VR bridge
 
 Open a new terminal, go to fa-py-libraries, and start the menu:
 
@@ -84,7 +84,7 @@ With no arguments, `./run.sh` prints `请选择要启动的功能` and waits for
 
 The same menu entries exist as commands: `./run.sh vr`, `./run.sh vr-xrt-service` then `./run.sh vr-xrt`, and `./run.sh vr-hand`.
 
-## VR Modes
+## 5. VR Modes
 
 Both **Pico** and **Meta Quest** support two connection modes. Pick them from the menu above.
 
@@ -93,11 +93,11 @@ Both **Pico** and **Meta Quest** support two connection modes. Pick them from th
 | **Web** (WebXR) | Browser-based | Open the printed URL | Higher | `6) vr pose launch (Vuer/WebXR)` |
 | **XRoboToolkit** | Native app + PC Service | Matching headset App, then PC Service | Lower | `4)`, then `3) 手柄遥操 (controller)` |
 
-### Web Mode (WebXR)
+### 5.1 Web Mode (WebXR)
 
 Menu item `6`, or `./run.sh vr`. Open the printed URL in the headset browser.
 
-### XRoboToolkit Mode
+### 5.2 XRoboToolkit Mode
 
 Lower latency. Install the PC side once, from the fa-py-libraries README:
 
@@ -119,7 +119,7 @@ On Pico, after XRoboToolkit reports Network Status **WORKING**, close the settin
 ```
 
 (vr-hand-tracking)=
-## Hand tracking (手势)
+## 6. Hand tracking (手势)
 
 Menu items `6` and `3` follow the VR controllers. Optical wrists and bare hands are menu item `2`.
 
@@ -153,7 +153,7 @@ Wrist and headset poses are on `/teleop/head_pose`, `/teleop/left_ee_pose`, and 
 
 The RViz card shows the mode the headset is in. [Current mode](#teleop-mode-status). Field names are on {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
-## Arm Following
+## 7. Arm Following
 
 Configure which arm follows which controller:
 
@@ -167,7 +167,7 @@ teleop_config:
 ```
 
 (controller-buttons)=
-## Controller buttons (分体 vs 全身)
+## 8. Controller buttons (分体 vs 全身)
 
 Bindings depend on whether the robot is running **分体** (`split_body.launch.py`) or **全身** (`full_body.launch.py`). Shared on both:
 
@@ -191,7 +191,7 @@ Bindings depend on whether the robot is running **分体** (`split_body.launch.p
 Grip + same-hand trigger switches that trigger’s gripper between percent and open/close. Pressing left **Y** and right **B** together (no grips) is scale-align (turns mirror off and returns to `STORAGE`). Both sticks together toggle chassis teleop ↔ end-effector control.
 
 (stop-one-arm-vs-stop-sending-vr-commands)=
-### Stop one arm vs stop sending VR commands
+### 8.1 Stop one arm vs stop sending VR commands
 
 ```{admonition} 停单臂 vs 停发指令
 :class: important
@@ -211,7 +211,7 @@ Y/B disable and event 16 apply when **全身** is active (`ocs2_wbc_controller`)
 
 Mirror swaps which physical button maps to which arm. WBC enabled/disabled state and rebase stay on the real arm.
 
-When event 16 switches to pause and that arm is already `ARM_DISABLED`, the handler requests ENABLE, rebases, then freezes as paused. When it switches back to disable and that arm is already VR-paused, it requests DISABLE, then clears pause after WBC confirms. Under pause semantics, entering `UPDATE` with the right stick click does not clear the pause.
+When event 16 switches to pause and that arm is already `ARM_DISABLED`, the handler requests ENABLE, rebases, then freezes as paused. When it switches back to disable and that arm is already VR-paused, it requests DISABLE, then clears pause after WBC confirms. Under pause semantics, the right-stick click into `UPDATE` leaves the pause set.
 
 Constraints on **全身**:
 
@@ -224,7 +224,7 @@ Constraints on **全身**:
 `yb_pause_semantics` on `teleop/mode_state` is the current meaning of **Y** / **B**. Per-arm pause is `left_arm_paused` / `right_arm_paused`. WBC enable is `left_arm_state` / `right_arm_state` on `WbcCurrentState`. The RViz card shows the pause. [Current mode](#teleop-mode-status).
 
 (teleop-mode-status)=
-## Current mode
+## 9. Current mode
 
 The RViz card at the top left of the 3D view shows what the headset session is doing. `TELEOP ON` means the arms follow (UPDATE). `TELEOP OFF` means STORAGE: the latest VR pose stays cached, and arm targets plus the VR gripper wait for the next UPDATE. `L`/`R` `RUN` means that arm is following. `PAUSE` is `left_arm_paused` or `right_arm_paused`. Mirror and the gripper mode are on the same card.
 
@@ -234,7 +234,7 @@ Right-stick click toggles UPDATE and STORAGE while FSM is **OCS2**. In UPDATE th
 
 On 全身, `yb_pause_semantics` is the current meaning of left **Y** / right **B**. `false` is WBC single-arm disable (停单臂). `true` is teleop pause (停发指令). The buttons are in [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands). WBC enable is on {ref}`wbc-current-state`.
 
-### RViz teleop HUD
+### 9.1 RViz teleop HUD
 
 Add `arms_rviz_control_plugin/TeleopModeDisplay` from Displays → Add. `Scale` runs from 0.5 to 2.0. Put RViz in the same namespace as `arms_target_manager`. The card appears when `teleop/mode_state` arrives with `enabled` true, in any FSM state.
 
@@ -252,7 +252,7 @@ The clip shows this card. `TELEOP ON` is green. `TELEOP OFF` is STORAGE. `PAUSE`
 
 Sources: [arms_rviz_control_plugin README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_rviz_control_plugin/README.md) (遥操状态 HUD), [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md), and [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md).
 
-## Safety
+## 10. Safety
 
 ```{admonition} Motion Limits
 :class: warning
@@ -264,11 +264,11 @@ VR teleoperation can command rapid motions. When using real hardware:
 4. Use workspace limits in software
 ```
 
-## Network Setup
+## 11. Network Setup
 
 The headset and the ROS 2 PC must be on a reachable network (same Domain ID; Zenoh or DDS as needed).
 
-- **Pico Enterprise:** USB shared networking (USB 网络共享) is supported — tether the headset to the PC over USB so they share a network. Follow the headset’s own USB-network UI; this page does not list ADB or `usb0` commands.
+- **Pico Enterprise:** USB shared networking (USB 网络共享) — tether the headset to the PC over USB so they share a network. Use the headset’s own USB-network UI.
 - **Pico consumer / Meta Quest:** use the usual Wi-Fi (or other IP) path. Do not assume USB 网络共享.
 
 Then:
@@ -277,23 +277,24 @@ Then:
 2. Configure ROS 2 domain or Zenoh bridge if they are not on one LAN
 3. Set firewall rules for ROS 2 ports
 
-## Verification
+## 12. Verification
 
 1. VR bridge logs show tracking data
 2. `ros2 topic echo /teleop/right_ee_pose` shows updates (use `/<namespace>/teleop/right_ee_pose` when the robot has a namespace)
 3. `ros2 topic echo /teleop/mode_state` shows `update_mode: true` while the arms follow (`/<namespace>/teleop/mode_state` in a robot namespace). Subscribe with QoS `Reliable` + `TransientLocal`.
 4. The robot follows the VR controllers in UPDATE. In STORAGE the arms and the VR gripper stay put.
 
-## Troubleshooting
+(troubleshooting)=
+## 13. Troubleshooting
 
-### No tracking data
+### 13.1 No tracking data
 
 - Check VR device is properly tracked
 - Verify browser/app has WebXR permissions
 - Check network (Wi-Fi, or USB 网络共享 on Pico Enterprise)
 - Confirm the headset App matches the Pico edition (Enterprise vs consumer)
 
-### High latency
+### 13.2 High latency
 
 - Prefer **Pico Enterprise** (USB 网络共享 when possible)
 - Use **XRoboToolkit** (menu item `3`, or `./run.sh vr-xrt`). WebXR is menu item `6`
@@ -301,21 +302,21 @@ Then:
 - Reduce update rate in configuration
 - Check for network congestion
 
-### Robot doesn't follow
+### 13.3 Robot doesn't follow
 
 - Confirm `enable_vr: true` in the description’s `config/ocs2/target_manager.yaml` (most robots default off)
 - Confirm `update_mode` is true on `teleop/mode_state` (UPDATE / HUD `TELEOP ON`) after entering OCS2. In STORAGE, arm targets and the VR gripper wait for the next UPDATE.
-- On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED` on `WbcCurrentState`) and that `left_arm_paused` / `right_arm_paused` is false when you expect that arm to follow — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)
+- On **全身**, that arm’s `WbcCurrentState` is `ARM_ENABLED`, and `left_arm_paused` / `right_arm_paused` is false when you expect the arm to follow — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)
 - Check target poses are within workspace
 - Ensure no safety limits are triggered
 
-### `base_footprint` missing (全身 / FULL_BODY)
+### 13.4 `base_footprint` missing (全身 / FULL_BODY)
 
-FULL_BODY may warn that `base_footprint` does not exist (`lookupTransform` target_frame). Default `vr_follow_frame` is `base_footprint`. Set `vr_follow_frame` in `config/ocs2/target_manager.yaml` to the robot’s real base (for example `base_link`).
+FULL_BODY may warn that `lookupTransform` cannot find `base_footprint`. Default `vr_follow_frame` is `base_footprint`. Set `vr_follow_frame` in `config/ocs2/target_manager.yaml` to the robot’s real base (for example `base_link`).
 
-## Next Steps
+## 14. Next Steps
 
-- [Force control and compliance](../4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
+- [How to use impedance control](../4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
 - [Isomorphic Teleop](7-isomorphic_teleop.md) — master–slave joint following (Panthera HT `mode:=mit` / `effort`)
 - [Teleop topics and data](../../4-reference/teleop/8-topics_and_data.md) — topic names, message types, and fields
 - [FSM and Topics](../../3-concepts/4-fsm_and_topics.md) — `/fsm_command`, and WBC `current_state` / `/mode_command`

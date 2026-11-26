@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 19:29+0800\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:1
 #: d0df8e7394614867ae43f50ca27105ef
@@ -96,14 +96,13 @@ msgid "The controller manager inside the Isaac process"
 msgstr "Isaac 进程里的控制器管理器"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:14
-#: b6e5c6ca9f664813855c91a4df688a64
+#: bc9b6833eb434edcb5dd2ffa8057516f
 msgid ""
-"`isaac_sim` is the hardware interface for that in-process controller. It "
-"is not a second robot. A swerve chassis uses a different node, "
-"`SwerveController`, which is not a hardware key. Mechanism, parameters, "
+"`isaac_sim` is the hardware interface for that in-process controller. A "
+"swerve chassis uses the `SwerveController` node. Mechanism, parameters, "
 "and clock/TF: [FaSim-Isaac "
 "reference](../../4-reference/simulation/2-fasim_isaac.md)."
-msgstr "`isaac_sim` 是这套进程内控制器的驱动层，不是第二台机器人。舵轮底盘用的是另一个节点 `SwerveController`，它不是硬件键。机制、参数以及时钟/TF 见 [FaSim-Isaac 参考](../../4-reference/simulation/2-fasim_isaac.md)。"
+msgstr "`isaac_sim` 是这套进程内控制器的驱动层。舵轮底盘使用 `SwerveController` 节点。机制、参数以及时钟/TF 见 [FaSim-Isaac 参考](../../4-reference/simulation/2-fasim_isaac.md)。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:16
 #: f17ff3393e38408fa2d2bacad4dd17ba
@@ -137,6 +136,18 @@ msgid ""
 msgstr ""
 "话题桥需要工作区里有 `topic_based_ros2_control`。进程内的图需要 `./init.sh` 的第 5 项，它会把 "
 "`fasim.ros2.nodes` 装进这次 Isaac，并且描述 xacro 要接受 `hardware` 取值 `isaac_sim`。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:21
+#: dc92c9512a4448e4899bff0e09556df6
+msgid ""
+"To view and control the robot in a browser, install fa-py-libraries and "
+"start Viser first. After the Isaac / ROS 2 stack is up, run `./run.sh "
+"viser` and open the URL printed in the terminal. Steps: [Start "
+"Viser](../3-programming/5-python_interface.md#start-viser)."
+msgstr ""
+"要在浏览器里查看和控制机器人，先安装 fa-py-libraries 并启动 Viser。Isaac / ROS 2 运控起来之后，运行 "
+"`./run.sh viser`，打开终端打印的 URL。步骤见 [启动 "
+"Viser](../3-programming/5-python_interface.md#start-viser)。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:24
 #: 19cd1e43d12b400a8621da0db7e873d7
@@ -428,15 +439,14 @@ msgstr ""
 "这里的 `/joint_states` 是控制器的 `joint_state_broadcaster`，不是话题桥那一对。`/clock` "
 "应接近物理频率。手臂自由度不会再桥到 `/isaac/joint_command`。"
 
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:103
-#: 45cdfe422760406b854463de25a75cf2
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:102
+#: 18c46e91bf7c43e3a81936b9dbac5d07
 msgid ""
 "`namespace` on the graph (empty for one robot) is how a second "
-"articulation gets `/<ns>/controller_manager`. It is not a "
-"`demo.launch.py` argument. Frame ids stay `world`, `odom`, and "
-"`base_link` / `base_footprint`. See "
+"articulation gets `/<ns>/controller_manager`. Frame ids stay `world`, "
+"`odom`, and `base_link` / `base_footprint`. See "
 "[TF](../../4-reference/simulation/2-fasim_isaac.md#tf)."
-msgstr "图上的 `namespace`（单机器人时为空）用来给第二台关节体分配 `/<ns>/controller_manager`。它不是 `demo.launch.py` 的参数。帧 id 仍是 `world`、`odom`，以及 `base_link` / `base_footprint`。见 [TF](../../4-reference/simulation/2-fasim_isaac.md#tf)。"
+msgstr "图上的 `namespace`（单机器人时为空）用来给第二台关节体分配 `/<ns>/controller_manager`。帧 id 仍是 `world`、`odom`，以及 `base_link` / `base_footprint`。见 [TF](../../4-reference/simulation/2-fasim_isaac.md#tf)。"
 
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:105
 #: e9010f8ca2af4f3d8724037470a8b3d1
@@ -539,6 +549,36 @@ msgid ""
 "assets](../../4-reference/simulation/5-env_assets.md)."
 msgstr "代际标签和品牌目录：[robot_usds 参考](../../4-reference/simulation/3-robot_usds.md)。"
 
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:121
+#: 0a87f45f7248407eaae0dfa1f9686635
+msgid "G1-D full-body control and chassis motion"
+msgstr "G1-D 全身控制与底盘运动"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:123
+#: 9395180f7a9347ef96ec6760f1d8038f
+msgid ""
+"This clip is a G1-D demonstration of full-body control in Isaac Sim. On "
+"the Viser web control interface, drag the dual-arm end-effector targets "
+"and move the chassis in rotation and translation; G1-D in Isaac Sim moves "
+"with it. Start Viser as in [Start "
+"Viser](../3-programming/5-python_interface.md#start-viser) after the stack"
+" is up."
+msgstr ""
+"这段视频是 G1-D 在 Isaac Sim 中做全身控制的演示。在 Viser 网页控制界面上拖动双臂末端目标，并控制底盘旋转和平移；Isaac "
+"Sim 中的 G1-D 同步运动。运控起来之后，按 [启动 "
+"Viser](../3-programming/5-python_interface.md#start-viser) 启动 Viser。"
+
+#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:125
+#: 19f86f0c3fef4cb9b942b316fc23cb4f
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../../_static/videos/isaac-g1d-full-body-mobile.mp4\" type=\"video/mp4\">\n"
+"</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../../_static/videos/isaac-g1d-full-body-mobile.mp4\" type=\"video/mp4\">\n"
+"</video>"
+
 #: ../../source/2-how_to/2-simulation/4-isaac_sim.md:122
 #: db1df23db3e748819a7d1fdb953dd20c
 msgid "When it fails"
@@ -612,49 +652,6 @@ msgstr ""
 #: d4b40f4e35564a6f91281fbcd5c620c5
 msgid "[Synthetic Data](../7-synthetic_data/0-index.md)"
 msgstr "[Synthetic Data](../7-synthetic_data/0-index.md)"
-
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:21
-#: dc92c9512a4448e4899bff0e09556df6
-msgid ""
-"To view and control the robot in a browser, install fa-py-libraries and "
-"start Viser first. After the Isaac / ROS 2 stack is up, run `./run.sh "
-"viser` and open the URL printed in the terminal. Steps: [Start "
-"Viser](../3-programming/5-python_interface.md#start-viser)."
-msgstr ""
-"要在浏览器里查看和控制机器人，先安装 fa-py-libraries 并启动 Viser。Isaac / ROS 2 运控起来之后，运行 "
-"`./run.sh viser`，打开终端打印的 URL。步骤见 [启动 "
-"Viser](../3-programming/5-python_interface.md#start-viser)。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:121
-#: 0a87f45f7248407eaae0dfa1f9686635
-msgid "G1-D full-body control and chassis motion"
-msgstr "G1-D 全身控制与底盘运动"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:123
-#: 9395180f7a9347ef96ec6760f1d8038f
-msgid ""
-"This clip is a G1-D demonstration of full-body control in Isaac Sim. On "
-"the Viser web control interface, drag the dual-arm end-effector targets "
-"and move the chassis in rotation and translation; G1-D in Isaac Sim moves "
-"with it. Start Viser as in [Start "
-"Viser](../3-programming/5-python_interface.md#start-viser) after the stack"
-" is up."
-msgstr ""
-"这段视频是 G1-D 在 Isaac Sim 中做全身控制的演示。在 Viser 网页控制界面上拖动双臂末端目标，并控制底盘旋转和平移；Isaac "
-"Sim 中的 G1-D 同步运动。运控起来之后，按 [启动 "
-"Viser](../3-programming/5-python_interface.md#start-viser) 启动 Viser。"
-
-#: ../../source/2-how_to/2-simulation/4-isaac_sim.md:125
-#: 19f86f0c3fef4cb9b942b316fc23cb4f
-msgid ""
-"<video controls preload=\"metadata\" width=\"100%\">\n"
-"  <source src=\"../../_static/videos/isaac-g1d-full-body-mobile.mp4\" type=\"video/mp4\">\n"
-"</video>"
-msgstr ""
-"<video controls preload=\"metadata\" width=\"100%\">\n"
-"  <source src=\"../../_static/videos/isaac-g1d-full-body-mobile.mp4\" type=\"video/mp4\">\n"
-"</video>"
 
 #~ msgid "NVIDIA Omniverse Launcher installed"
 #~ msgstr "NVIDIA Omniverse Launcher installed"
@@ -1087,4 +1084,3 @@ msgstr ""
 
 #~ msgid "Robot USD"
 #~ msgstr "机器人 USD"
-

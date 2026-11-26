@@ -22,7 +22,7 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 - [Use Basic Joint Controller](4-controllers/11-basic_joint.md) — HOME / HOLD / MOVEJ (`std_msgs/Int32` `/fsm_command`; mixed stacks: `3` = OCS2, MOVEJ = `4`)
 - [Configure ROS 2 controller parameters](4-controllers/12-ros2_parameters.md) — YAML vs CLI vs xacro `<param>`; Startup vs Runtime
-- [Force control and compliance](4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
+- [How to use impedance control](4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
 
 ### Teleoperation
 

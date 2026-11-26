@@ -44,7 +44,7 @@ Follow that **private workspace’s README** for its init / setup scripts.
 ros2 launch dexcap_ros2_control dexcap_driver.launch.py
 ```
 
-To start only the exoskeleton or only one glove, pass `start_upper_body`, `start_left_hand`, and `start_right_hand` as in the private package README. That README is also the place to look for first-connection safety; `publish_command` is not a current launch argument.
+To start only the exoskeleton or only one glove, pass `start_upper_body`, `start_left_hand`, and `start_right_hand` as in the private package README. First-connection safety is in that same README.
 
 ## Launch Order
 

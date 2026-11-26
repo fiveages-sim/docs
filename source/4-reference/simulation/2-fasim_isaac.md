@@ -12,9 +12,9 @@ Use the [Isaac Sim How-To](../../2-how_to/2-simulation/4-isaac_sim.md) to instal
 
 ## Hardware keys `isaac` and `isaac_sim`
 
-These keys are ros2_control hardware interfaces in the robot description xacro. They are not the FaSim Kit extensions below, and they are not a second robot body. One stage uses one of them.
+These keys are ros2_control hardware interfaces in the robot description xacro. The FaSim Kit extensions are in the next section. One stage uses one of these keys.
 
-`isaac` is the topic bridge you pass on a ROS 2 launch. `isaac_sim` is set inside Isaac when Play starts the in-process node. It is not a `demo.launch.py` flag.
+`isaac` is the topic bridge you pass on a ROS 2 launch. `isaac_sim` is set inside Isaac when Play starts the in-process node. Pass it through that in-process launch, not as `hardware:=` on `demo.launch.py`.
 
 | Key | Where it is set | Plugin | Joint I/O |
 |-----|-----------------|--------|-----------|
@@ -39,7 +39,7 @@ In-process W2 ([`fiveages.usda`](https://github.com/fiveages-sim/fiveages-gen2-r
 
 `./init.sh` operation 5 installs two extensions into this Isaac (`ISAACSIM_DIR`, default `~/isaacsim`). The script symlinks `exts/<name>` into `extsUser/` and adds the extension to the full, Newton, and streaming kit files. Reinstall Isaac, then run operation 5 again. Restart a running Isaac so the extensions load.
 
-The two extensions have different entry points. Do not treat a `SwerveController` graph as a ros2_control hardware key, and do not treat `ROS2ControlLaunch` as `hardware:=isaac`.
+The two extensions have different entry points. `SwerveController` is the swerve chassis graph. `ROS2ControlLaunch` is the in-process controller (`isaac_sim`). `hardware:=isaac` is the topic-bridge launch.
 
 | Extension | OmniGraph nodes | What it is for |
 |-----------|-----------------|----------------|

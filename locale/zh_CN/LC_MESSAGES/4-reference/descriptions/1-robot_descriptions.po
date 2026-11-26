@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-13 03:15+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:1
 #: 7589038f2cbb41af9bc3b8ce6a60e454
@@ -68,7 +68,7 @@ msgstr ""
 "descriptions/`。不要在那里递归 init。"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:12
-#: a4865e4df987468181e4c039fdab3ce4
+#: 9e3effd64c374bbfbae42cf9cb0bb975
 #, python-brace-format
 msgid ""
 "Description-side Cursor skills: **`feature/agilex` only** (`split-"
@@ -81,20 +81,9 @@ msgid ""
 "README](https://github.com/fiveages-"
 "sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)"
 " §3.1 / §3.2); meshes under `meshes/{chassis,body,head,arm,dynaclaw}/`. "
-"Control is `split_body.launch.py` / `full_body.launch.py` with "
-"`robot:=taku`, not `demo.launch.py`. It is not on `main` and is not a row"
-" in that branch’s brand tables."
-msgstr ""
-"描述侧 Cursor skill：**仅 `feature/agilex`**（`split-chassis-glb`）— "
-"[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。**`main` 没有 "
-"`.cursor/skills`**。更新的 AgileX / 珞石 INEX "
-"行：[README（`feature/agilex`）](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/feature/agilex/README.md)。**Taku** 在该分支仓内 "
-"`humanoid/Dyna/taku_description`（[包 README](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md)"
-" §3.1 / §3.2）；网格在 `meshes/{chassis,body,head,arm,dynaclaw}/`。控制用 "
-"`split_body.launch.py` / `full_body.launch.py`，并传 `robot:=taku`，不是 "
-"`demo.launch.py`。不在 `main` 上，也不是该分支品牌表中的一行。"
+"Launch it with `split_body.launch.py` or `full_body.launch.py` and "
+"`robot:=taku`. The package lives on that `feature/agilex` branch."
+msgstr "描述侧 Cursor skill：**仅 `feature/agilex`**（`split-chassis-glb`）— [添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)。**`main` 没有 `.cursor/skills`**。更新的 AgileX / 珞石 INEX 行：[README（`feature/agilex`）](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/README.md)。**Taku** 在该分支仓内 `humanoid/Dyna/taku_description`（[包 README](https://github.com/fiveages-sim/robot_descriptions/blob/feature/agilex/humanoid/Dyna/taku_description/README.md) §3.1 / §3.2）；网格在 `meshes/{chassis,body,head,arm,dynaclaw}/`。用 `split_body.launch.py` 或 `full_body.launch.py` 启动，并传 `robot:=taku`。这个包在 `feature/agilex` 分支上。"
 
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:15
 #: 21224c8e082342bf8b44392fbc4615af
@@ -379,6 +368,23 @@ msgid ""
 "humanoids. Brand folders are those listed there."
 msgstr "README 还用表格列出了**仓内**轮式人形、移动操作臂、操作臂（含上面的高擎 Panthera HT 路径）和足式人形。品牌目录以该表为准。"
 
+#: ../../source/4-reference/descriptions/1-robot_descriptions.md:54
+#: fe415ed06fbf4fc6b171fd69a8c7003c
+msgid ""
+"FiveAges URDF packages are gitlinks under `humanoid/FiveAges/` in "
+"[`.gitmodules`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/.gitmodules). They are not in the README"
+" brand tables, and there is no separate `robot-descriptions-fiveages` "
+"umbrella. **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** "
+"**W2R** and **S2R**. Paths and remotes: [FiveAges robot "
+"descriptions](4-fiveages_umbrella.md)."
+msgstr ""
+"第五纪的 URDF 包是 [`.gitmodules`](https://github.com/fiveages-"
+"sim/robot_descriptions/blob/main/.gitmodules) 里 `humanoid/FiveAges/` 下的 "
+"gitlink。它们不在 README 的品牌表里，也没有单独的 `robot-descriptions-fiveages` "
+"伞形仓。**公开：** W1、W2、S2、`fa-w2-components`。**仍私有：** **W2R** 和 **S2R**。路径和远端见"
+" [第五纪机器人描述](4-fiveages_umbrella.md)。"
+
 #: ../../source/4-reference/descriptions/1-robot_descriptions.md:56
 #: ffa80fc2bd904e19928c660aa9adc0d1
 msgid ""
@@ -619,21 +625,3 @@ msgstr "[添加机器人](../../2-how_to/6-deployment/10-add_a_robot.md)"
 #~ msgstr ""
 #~ "[agibot-g2-description](https://github.com/fiveages-"
 #~ "sim/agibot-g2-description) (private)"
-
-#: ../../source/4-reference/descriptions/1-robot_descriptions.md:54
-#: fe415ed06fbf4fc6b171fd69a8c7003c
-msgid ""
-"FiveAges URDF packages are gitlinks under `humanoid/FiveAges/` in "
-"[`.gitmodules`](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/main/.gitmodules). They are not in the README"
-" brand tables, and there is no separate `robot-descriptions-fiveages` "
-"umbrella. **Public:** W1, W2, S2, `fa-w2-components`. **Still private:** "
-"**W2R** and **S2R**. Paths and remotes: [FiveAges robot "
-"descriptions](4-fiveages_umbrella.md)."
-msgstr ""
-"第五纪的 URDF 包是 [`.gitmodules`](https://github.com/fiveages-"
-"sim/robot_descriptions/blob/main/.gitmodules) 里 `humanoid/FiveAges/` 下的 "
-"gitlink。它们不在 README 的品牌表里，也没有单独的 `robot-descriptions-fiveages` "
-"伞形仓。**公开：** W1、W2、S2、`fa-w2-components`。**仍私有：** **W2R** 和 **S2R**。路径和远端见"
-" [第五纪机器人描述](4-fiveages_umbrella.md)。"
-

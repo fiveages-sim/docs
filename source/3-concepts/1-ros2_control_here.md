@@ -1,6 +1,6 @@
 # ros2_control in This Stack
 
-How FiveAges Sim **selects a hardware plugin** and **loads controllers**. This is not a generic ros2_control tutorial.
+How FiveAges Sim **selects a hardware plugin** and **loads controllers**.
 
 ```{admonition} Source of truth
 :class: important
@@ -52,14 +52,14 @@ From [arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control) READ
 | Position (default) | `position` | `position`, `velocity` |
 | Force (auto) | `position`, `velocity`, `effort`, `kp`, `kd` | `position`, `velocity`, `effort` |
 
-That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji** (天玑) / **Rokae** (珞石) keep the controller on **position** commands; joint impedance is a vendor `ctrl_mode` on the hardware interface (`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)). Both paths, and Tianji payload identification: [Force control and compliance](../2-how_to/4-controllers/13-force_control.md).
+That table is the **OCS2 MIX / MIT** path (Panthera HT / ARX). **Tianji** (天玑) / **Rokae** (珞石) keep the controller on **position** commands; joint impedance is a vendor `ctrl_mode` on the hardware interface (`JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md)). Both paths, and Tianji payload identification: [How to use impedance control](../2-how_to/4-controllers/13-force_control.md).
 
 There is no stack-wide `/target_pose` or `/target_joint_positions` (`JointState`). MoveJ on `basic_joint_controller` is `/{controller}/target_joint_position` (`std_msgs/Float64MultiArray`). FSM: `/fsm_command` (`std_msgs/Int32`). Action / Service types and WBC body/head topics: [FSM and Topics](4-fsm_and_topics.md).
 
 ## Related
 
 - [robot_common_launch](../4-reference/descriptions/2-common.md) — `type` / `left_type` / `right_type`, profile merge
-- [Force control and compliance](../2-how_to/4-controllers/13-force_control.md) — MIT-mode force control, vendor joint impedance, payload identification
+- [How to use impedance control](../2-how_to/4-controllers/13-force_control.md) — MIT-mode force control, vendor joint impedance, payload identification
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs xacro `<param>`
 - [Controller ROS 2 parameters](../4-reference/controllers/8-ros2_parameters.md)
 - [Terminology](8-terminology.md) — 驱动层 ↔ Hardware Interface

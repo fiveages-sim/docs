@@ -58,7 +58,7 @@ Headset pose, stick axes, trigger pull, and the shared end-effector poses are th
 
 `left_arm_paused` and `right_arm_paused` are the event-bus teleop pause for that arm. The headset, the foot pedal, and the exoskeleton all write this latch. WBC arm enable is `left_arm_state` and `right_arm_state` on `/ocs2_wbc_controller/current_state` (`WbcCurrentState`). Teleop pause and WBC enable are separate bits: an arm can be paused here while its WBC state is `ARM_ENABLED`.
 
-On 全身, event 16 switches what left **Y** / right **B** mean. After the switch, `yb_pause_semantics` holds the current meaning. `left_arm_state` and `right_arm_state` are the WBC enable bits. The button chord is on [Stop one arm vs stop sending VR commands](../../2-how_to/5-teleoperation/6-vr_teleop.md#stop-one-arm-vs-stop-sending-vr-commands).
+On 全身, event 16 switches what left **Y** / right **B** mean. After the switch, `yb_pause_semantics` holds the current meaning. `left_arm_state` and `right_arm_state` are the WBC enable bits. The button chord is on {ref}`Stop one arm vs stop sending VR commands <stop-one-arm-vs-stop-sending-vr-commands>`.
 
 Field values for `WbcCurrentState`: {ref}`wbc-current-state`. Mode strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` (`std_msgs/String` on the 全身 stack) switches the mode. `current_state` is the status you read.
 

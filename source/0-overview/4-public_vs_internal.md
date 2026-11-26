@@ -48,7 +48,7 @@ The init script will:
 
 ### Visibility Configuration
 
-The workspace uses `submodules_visibility.conf` to control which **nested** submodules are public or private. The file is pipe-separated (`parent_dir|relative_path|visibility`); blank lines and `#` comments are ignored. It is not an INI file with `[public]` / `[private]` sections.
+The workspace uses `submodules_visibility.conf` to control which **nested** submodules are public or private. The file is pipe-separated (`parent_dir|relative_path|visibility`). Blank lines and `#` comments are ignored.
 
 :::{code-block} none
 # Format: parent_dir|relative_path|public or private

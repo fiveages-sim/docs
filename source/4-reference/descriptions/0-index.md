@@ -5,7 +5,7 @@ This section documents the robot description packages — URDF/xacro models, mes
 ```{admonition} Terminology
 :class: note
 
-FiveAges humanoid descriptions in this set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms. They are not bipeds.
+FiveAges humanoid descriptions in this set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms.
 ```
 
 ## Overview
