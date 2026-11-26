@@ -1,6 +1,6 @@
 # LeRobot Record and Export
 
-This page stops at **LeRobot dataset recording / export**. It does not document training, online inference, or how a policy consumes the dataset.
+This page covers **LeRobot dataset recording / export**. Training and online inference are in the [lerobot_ros2 README](https://github.com/fiveages-sim/lerobot_ros2/blob/main/README.md).
 
 **Monorepo:** [lerobot_ros2 `main`](https://github.com/fiveages-sim/lerobot_ros2)
 

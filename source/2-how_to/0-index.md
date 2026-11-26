@@ -22,11 +22,11 @@ This section contains task-oriented recipes for common operations. Each guide fo
 
 - [Use Basic Joint Controller](4-controllers/11-basic_joint.md) — HOME / HOLD / MOVEJ (`std_msgs/Int32` `/fsm_command`; mixed stacks: `3` = OCS2, MOVEJ = `4`)
 - [Configure ROS 2 controller parameters](4-controllers/12-ros2_parameters.md) — YAML vs CLI vs xacro `<param>`; Startup vs Runtime
-- [Force control and compliance](4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
+- [How to use impedance control](4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
 
 ### Teleoperation
 
-- [VR Teleop](5-teleoperation/6-vr_teleop.md) — Headset control, and where to read the current teleop mode
+- [VR Teleop](5-teleoperation/6-vr_teleop.md) — Headset, VR controllers, or optical hand tracking
 - [Joystick teleop](5-teleoperation/9-joystick_teleop.md) — Game controller; status on `teleop_mode`
 - [Isomorphic Teleop](5-teleoperation/7-isomorphic_teleop.md) — Master–slave isomorphic teleop (同构遥操作, HighTorque Panthera HT)
 - [DexCap Teleop](5-teleoperation/8-dexcap_teleop.md) — DexCap glove (internal)

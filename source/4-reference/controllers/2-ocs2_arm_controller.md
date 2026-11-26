@@ -101,7 +101,7 @@ OCS2 files (selected via `robot_name` → `{robot_name}_description`; **not** RO
 
 Control mode is auto-detected from ros2_control command/state interfaces (position-only vs force/`MIX` when `position`, `velocity`, `effort`, `kp`, `kd` are all present).
 
-Panthera HT / ARX use that MIT / MIX path. Tianji / Rokae stay on **position commands**, with joint impedance on the vendor hardware interface: [Force control and compliance](../../2-how_to/4-controllers/13-force_control.md).
+Panthera HT / ARX use that MIT / MIX path. Tianji / Rokae stay on **position commands**, with joint impedance on the vendor hardware interface: [How to use impedance control](../../2-how_to/4-controllers/13-force_control.md).
 
 ## Related
 

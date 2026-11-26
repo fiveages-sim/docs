@@ -9,7 +9,7 @@ Two real launch paths in [ocs2_arm_controller](https://github.com/fiveages-sim/a
 | Launch | `ros2 launch ocs2_arm_controller split_body.launch.py` (`launch_mode` `split_body`) | `ros2 launch ocs2_arm_controller full_body.launch.py` (`launch_mode` `full_body`) when the robot config type is `ocs2_wbc_controller/Ocs2WbcController` |
 | Lift2S menu | `./quick_start.sh` → Launch → Lift2S → **split body** | same menu → **full body** |
 
-`split_body.launch.py` is the split (分体) path. Whole-body control uses `full_body.launch.py` (there is no public standalone `ros2 launch ocs2_wbc_controller …` entry).
+`split_body.launch.py` is the split (分体) path. Whole-body control uses `full_body.launch.py`.
 
 ## Packages
 

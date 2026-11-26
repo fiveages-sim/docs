@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 12:28+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/3-concepts/2-workspace_layout.md:1
 #: 4563459e722948ec9aacea5055760531
@@ -95,16 +95,12 @@ msgstr ""
 "uninstall_core_debs.sh"
 
 #: ../../source/3-concepts/2-workspace_layout.md:25
-#: 36a33b9999da4d5c81eeec197a98bd45
+#: edeae9377415472893f05ca3f6ee6d23
 msgid ""
-"**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). Do "
-"**not** `git submodule update --init --recursive`. After init, `colcon "
-"build` (the README does not wrap that). Then `source install/setup.bash` "
-"in that workspace — standard ROS 2 overlay, not a FiveAges env script."
-msgstr ""
-"**主路径：** `./init_repo.sh`（可见性 + 按模块 `d`/`s`）。**不要** `git submodule update"
-" --init --recursive`。初始化后 `colcon build`（README 没有封装这一步）。然后在该工作区 `source "
-"install/setup.bash` — 这是标准 ROS 2 overlay，不是 FiveAges 环境脚本。"
+"**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). "
+"After init, `colcon build`, then `source install/setup.bash` in that "
+"workspace. That overlay is the standard ROS 2 one."
+msgstr "**主路径：** `./init_repo.sh`（可见性 + 按模块 `d`/`s`）。初始化之后 `colcon build`，再在该工作区 `source install/setup.bash`。这个 overlay 就是标准的 ROS 2 overlay。"
 
 #: ../../source/3-concepts/2-workspace_layout.md:27
 #: e41367d8e593497db6fd6960665463e9
@@ -703,4 +699,3 @@ msgstr "[open-deploy-ws 配置](../1-getting_started/3-open_deploy_ws.md)"
 #~ " open-deploy-ws and fa-deploy-"
 #~ "ws"
 #~ msgstr "**保持工作空间分离** — 不要混用 open-deploy-ws 与 fa-deploy-ws"
-

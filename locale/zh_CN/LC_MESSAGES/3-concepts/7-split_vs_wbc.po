@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:1 fb3961003e7048bb92fff1ada6c84862
 msgid "分体控制 vs 全身控制"
@@ -117,14 +117,11 @@ msgid "same menu → **full body**"
 msgstr "同一菜单 → **全身**（菜单：`full body`）"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:12
-#: 81d58679da424f7d8bb3d22e4e199038
+#: 2d6d1f1f16c34ecdb74bc08531dac509
 msgid ""
 "`split_body.launch.py` is the split (分体) path. Whole-body control uses "
-"`full_body.launch.py` (there is no public standalone `ros2 launch "
-"ocs2_wbc_controller …` entry)."
-msgstr ""
-"`split_body.launch.py` 是分体路径。全身控制用 `full_body.launch.py`（没有公开的单独 `ros2 "
-"launch ocs2_wbc_controller …` 入口）。"
+"`full_body.launch.py`."
+msgstr "`split_body.launch.py` 是分体路径。全身控制用 `full_body.launch.py`。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:14
 #: b487888794154b709197355ce39dae02
@@ -151,20 +148,6 @@ msgstr ""
 "**OCS2 Arm Controller**（`ocs2_arm_controller`）— 机械臂 MPC 的 FSM：HOME / OCS2"
 " / HOLD（包 README）。"
 
-#: ../../source/3-concepts/7-split_vs_wbc.md:20
-#: e3d9ca79f63b4743aae27a9d93f1f9d3
-#, #
-msgid ""
-"FSM command values, Action / Service tables, and WBC Cartesian topics: "
-"[FSM and Topics](4-fsm_and_topics.md). Controllers index: [Controllers "
-"reference](../4-reference/controllers/0-index.md)."
-msgstr ""
-"FSM 命令取值、Action / Service 表以及 WBC 笛卡尔话题：[FSM "
-"与话题](4-fsm_and_topics.md)。控制器索引：[控制器参考](../4-reference/controllers/0-index.md)。"
-
-#~ msgid "Packages (do not invent)"
-#~ msgstr "软件包（不要编造）"
-
 #: ../../source/3-concepts/7-split_vs_wbc.md:18
 #: 526984333e7e4352b1c4506889758c9e
 msgid ""
@@ -175,6 +158,17 @@ msgid ""
 msgstr ""
 "**OCS2 WBC 控制器**（`ocs2_wbc_controller`）：全身 MPC。二进制在 `ros-jazzy-arms-"
 "ros2-control` 这个 deb 里。私有仓库是源码。只写在那个包 README 里的状态和话题，仍以那份 README 为准。"
+
+#: ../../source/3-concepts/7-split_vs_wbc.md:20
+#: e3d9ca79f63b4743aae27a9d93f1f9d3
+#, #
+msgid ""
+"FSM command values, Action / Service tables, and WBC Cartesian topics: "
+"[FSM and Topics](4-fsm_and_topics.md). Controllers index: [Controllers "
+"reference](../4-reference/controllers/0-index.md)."
+msgstr ""
+"FSM 命令取值、Action / Service 表以及 WBC 笛卡尔话题：[FSM "
+"与话题](4-fsm_and_topics.md)。控制器索引：[控制器参考](../4-reference/controllers/0-index.md)。"
 
 #: ../../source/3-concepts/7-split_vs_wbc.md:22
 #: 6f0bf73e1dad42098544a2bea0e498fb
@@ -194,3 +188,5 @@ msgstr ""
 " deb 里的 `ocs2_wbc_controller`，或一份源码检出。只带 "
 "`config/ocs2/fixed_base_tcp.info` 不够。"
 
+#~ msgid "Packages (do not invent)"
+#~ msgstr "软件包（不要编造）"

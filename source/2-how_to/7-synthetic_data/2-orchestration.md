@@ -43,9 +43,9 @@ Skill names (examples from the README index; parameters in [SKILLS_REFERENCE.md]
 
 The README runs this from **`examples/IsaacSim`** inside lerobot_ros2, which contains `robots/`. Notes for each robot, including dual-arm tasks on FiveAges W2, sit next to those trees, for example [`robots/FiveAges_W2/README.md`](https://github.com/fiveages-sim/lerobot_ros2/blob/main/examples/IsaacSim/robots/FiveAges_W2/README.md). A [fa-project-usd](https://github.com/fiveages-sim/fa-project-usd) project directory can be the workspace instead: set `LEROBOT_ROOT` and use that project’s `robot.yaml`. End-effector poses follow [robot_action_composer](../../4-reference/python_apps/5-robot_action_composer.md). Without `ee_tip`, the pose comes from live TF. With `ee_tip`, it walks the USD chain from the tip to its parent first.
 
-## Official Nav2, not a custom nav stack
+## Nav2 client
 
-Composer **does not implement Nav2 servers**. `nav.*` skills wrap **`ROS2RobotInterface`’s Nav2 client API**. Scene-level launch is separate from the task YAML.
+`nav.*` skills call **`ROS2RobotInterface`’s Nav2 client API**. Scene-level launch is separate from the task YAML.
 
 From [docs/ROS2_STACK.md](https://github.com/fiveages-sim/robot_action_composer/blob/main/docs/ROS2_STACK.md):
 

@@ -30,7 +30,7 @@ These remotes need repository access. Without it, GitHub does not open the page:
 - Public launch / `hardware:=`: [robot_common_launch](2-common.md) (`mock_components` / `gz` / `isaac` / `isaac_sim` / `real`)
 ```
 
-FiveAges platforms in this docs set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms. They are not bipeds.
+FiveAges platforms in this docs set (W1, W2, W2R, S2, S2R) are wheeled-arm robots: a mobile base plus arms.
 
 ## URDF packages (`robot_descriptions`)
 

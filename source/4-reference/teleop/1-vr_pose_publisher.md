@@ -19,12 +19,12 @@ Available through fa-py-libraries (public) or as standalone (private).
 ```{admonition} Pico Enterprise vs consumer
 :class: important
 
-Pico **Enterprise** and Pico **consumer** are not the same SKU:
+Pico **Enterprise** and Pico **consumer** are separate SKUs:
 
 1. Enterprise supports **USB shared networking (USB 网络共享)**.
-2. They use **different headset Apps** — do not install one App and expect it to cover both.
+2. Each edition has its own headset App. Install the App that matches the headset.
 
-fa-py-libraries documents XRoboToolkit as “XRoboToolkit App + PC Service” vs browser WebXR (`./run.sh vr` / `./run.sh vr-xrt`). It does not publish store links or ADB steps for either Pico edition.
+fa-py-libraries documents XRoboToolkit as “XRoboToolkit App + PC Service” and WebXR as the browser path (`./run.sh vr` / `./run.sh vr-xrt`). Store listings and ADB steps are in the headset and fa-py-libraries READMEs when they document them.
 ```
 
 ## Purpose

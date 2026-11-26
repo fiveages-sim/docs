@@ -140,5 +140,5 @@ DexCap glove → robot mapping is a **different** package: [teleop-joint-mapper]
 - [drag_teleop_controller reference](../../4-reference/teleop/2-drag_teleop.md)
 - [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)
 - [Go to Real Hardware](../6-deployment/9-go_real_hardware/0-index.md)
-- [Force control and compliance](../4-controllers/13-force_control.md) — MIT-mode force control, and vendor joint impedance
+- [How to use impedance control](../4-controllers/13-force_control.md) — MIT-mode force control, and vendor joint impedance
 - [VR Teleoperation](6-vr_teleop.md) — headset pose following

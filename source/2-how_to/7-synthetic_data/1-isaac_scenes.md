@@ -1,6 +1,6 @@
 # Isaac Scenes and USD
 
-Synthetic datagen in this stack is an **Isaac Sim** line. Gazebo is not part of this pipeline.
+Synthetic datagen in this stack runs in **Isaac Sim**.
 
 Scene assets live in **FaSim-Isaac**. Robot USD files are the **robot_usds** superproject (FaSim submodule `robots/`). Environment and private project USDs sit beside that tree, not inside it.
 

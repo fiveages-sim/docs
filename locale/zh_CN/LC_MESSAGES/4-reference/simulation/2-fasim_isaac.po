@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 19:29+0800\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:1
 #: 5e563fa481f54b8096cf8f7f864647a4
@@ -76,22 +76,20 @@ msgid "Hardware keys `isaac` and `isaac_sim`"
 msgstr "硬件键 `isaac` 和 `isaac_sim`"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:15
-#: 7d444f061a2743d4a8477f62bb37c0db
+#: 9e9fa26021a64eab8717a085e5d94486
 msgid ""
 "These keys are ros2_control hardware interfaces in the robot description "
-"xacro. They are not the FaSim Kit extensions below, and they are not a "
-"second robot body. One stage uses one of them."
-msgstr "这两个键是机器人描述 xacro 里的 ros2_control 硬件接口。它们不是下面的 FaSim Kit 扩展，也不是第二台机器人。一个舞台只用其中一种。"
+"xacro. The FaSim Kit extensions are in the next section. One stage uses "
+"one of these keys."
+msgstr "这些键是机器人描述 xacro 里的 ros2_control 硬件接口。FaSim Kit 扩展在下一节。一个舞台使用其中一个键。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:17
-#: b40ecb01267e4e289943838e45605173
+#: f097dcb8f4984da385bdab4f3a720775
 msgid ""
 "`isaac` is the topic bridge you pass on a ROS 2 launch. `isaac_sim` is "
-"set inside Isaac when Play starts the in-process node. It is not a "
-"`demo.launch.py` flag."
-msgstr ""
-"一个舞台用下面两种之一。`isaac` 是你在 ROS 2 launch 上传的话题桥。`isaac_sim` 是 Play 启动进程内节点时在 "
-"Isaac 里设置的。它不是 `demo.launch.py` 的参数，也不是第二台机器人。"
+"set inside Isaac when Play starts the in-process node. Pass it through "
+"that in-process launch, not as `hardware:=` on `demo.launch.py`."
+msgstr "`isaac` 是你在 ROS 2 launch 上传的话题桥。`isaac_sim` 是 Play 启动进程内节点时在 Isaac 里设置的。通过那次进程内 launch 传入；`demo.launch.py` 的 `hardware:=` 走的是另一条入口。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 4e04dc593c8f40309dee3f6b3919f5c9
@@ -270,12 +268,12 @@ msgid ""
 msgstr "`./init.sh` 操作 5 把两个扩展装进这套 Isaac（`ISAACSIM_DIR`，默认 `~/isaacsim`）。脚本把 `exts/<name>` 链到 `extsUser/`，并写入 full、Newton 和 streaming 的 kit 文件。重装 Isaac 后要再跑一次操作 5。正在运行的 Isaac 要重启后扩展才会加载。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:42
-#: 84ddcafa0a8448b3aa068a58dc93ff96
+#: a244e9ba56a84f01b96581ed91a9bbe8
 msgid ""
-"The two extensions have different entry points. Do not treat a "
-"`SwerveController` graph as a ros2_control hardware key, and do not treat"
-" `ROS2ControlLaunch` as `hardware:=isaac`."
-msgstr "这两个扩展的入口不同。不要把 `SwerveController` 图当成 ros2_control 硬件键，也不要把 `ROS2ControlLaunch` 当成 `hardware:=isaac`。"
+"The two extensions have different entry points. `SwerveController` is the"
+" swerve chassis graph. `ROS2ControlLaunch` is the in-process controller "
+"(`isaac_sim`). `hardware:=isaac` is the topic-bridge launch."
+msgstr "两个扩展的入口不同。`SwerveController` 是舵轮底盘图。`ROS2ControlLaunch` 是进程内控制器（`isaac_sim`）。`hardware:=isaac` 是话题桥 launch。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md
 #: 8f46483fc7cb4db2a4d03d0da20068d2
@@ -675,6 +673,17 @@ msgid ""
 "viewport. Arm degrees of freedom are not also bridged on "
 "`/isaac/joint_command`."
 msgstr "`ros2 control list_controllers` 会列出该 `mode` 下的控制器。这里的 `/joint_states` 来自控制器的 `joint_state_broadcaster`，不是话题桥的 `/isaac/joint_*`。`/clock` 的频率应接近物理步（见 [时钟](#clock)）。一条指令能在视口里带动 articulation。手臂自由度不会再走 `/isaac/joint_command` 桥接。"
+
+#: ../../source/4-reference/simulation/2-fasim_isaac.md:106
+#: 64cfc481cf5e4ce9bdd83a839bd50348
+msgid ""
+"A G1-D demonstration of full-body control and chassis motion in Isaac Sim "
+"is on the [How-To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-"
+"body-control-and-chassis-motion)."
+msgstr ""
+"Isaac Sim 中 G1-D 全身控制与底盘运动的演示，见 [How-"
+"To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-"
+"chassis-motion)。"
 
 #: ../../source/4-reference/simulation/2-fasim_isaac.md:108
 #: 902523f3bdc2499ea3251b20040464bf
@@ -1219,18 +1228,6 @@ msgstr "[robot_common_launch](../descriptions/2-common.md)"
 msgid "[lerobot_ros2](../python_apps/4-lerobot_ros2.md)"
 msgstr "[lerobot_ros2](../python_apps/4-lerobot_ros2.md)"
 
-
-#: ../../source/4-reference/simulation/2-fasim_isaac.md:106
-#: 64cfc481cf5e4ce9bdd83a839bd50348
-msgid ""
-"A G1-D demonstration of full-body control and chassis motion in Isaac Sim "
-"is on the [How-To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-"
-"body-control-and-chassis-motion)."
-msgstr ""
-"Isaac Sim 中 G1-D 全身控制与底盘运动的演示，见 [How-"
-"To](../../2-how_to/2-simulation/4-isaac_sim.md#g1-d-full-body-control-and-"
-"chassis-motion)。"
-
 #~ msgid ""
 #~ "FaSim-Isaac/\n"
 #~ "├── robots/                    # → robot_usds submodule\n"
@@ -1756,3 +1753,13 @@ msgstr ""
 #~ "`LEROBOT_ROOT` 后运行 `motion-generation`。相机安装保持在场景 "
 #~ "USD 里。"
 
+#~ msgid ""
+#~ "The two extensions have different entry"
+#~ " points. Do not treat a "
+#~ "`SwerveController` graph as a ros2_control "
+#~ "hardware key, and do not treat "
+#~ "`ROS2ControlLaunch` as `hardware:=isaac`."
+#~ msgstr ""
+#~ "这两个扩展的入口不同。不要把 `SwerveController` 图当成 ros2_control"
+#~ " 硬件键，也不要把 `ROS2ControlLaunch` 当成 "
+#~ "`hardware:=isaac`。"

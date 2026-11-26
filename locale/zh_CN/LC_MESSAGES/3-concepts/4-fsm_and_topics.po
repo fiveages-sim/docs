@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-11-26 08:17+0000\n"
+"POT-Creation-Date: 2026-11-26 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1351,17 +1351,14 @@ msgid "Switch whole-body modes (`/mode_command`)"
 msgstr "切换全身模式（`/mode_command`）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:204
-#: 5f8dcded2b5342f38943017bff9962c3
+#: b5a5d0bd66c14eb29cdf03e8865895e6
 msgid ""
-"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is"
-" not `/fsm_command`, and it is not a write path for "
-"`/ocs2_wbc_controller/current_state`. That topic is feedback only. Same "
-"availability as the body/head Cartesian topics above: 分体 and default mock"
-" demos do not start this path."
-msgstr ""
-"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**。它不是 "
-"`/fsm_command`，也不能用来向 `/ocs2_wbc_controller/current_state` "
-"写入；那个话题只是反馈。可用性与上文的身体/头部笛卡尔话题相同：分体和默认的 mock 演示不会启动这条路径。"
+"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It "
+"switches the mode. `/ocs2_wbc_controller/current_state` is the status you"
+" read. `/fsm_command` is the FSM integer on the other command topic. 分体 "
+"and the default mock demos start the split-body stack; this path comes up"
+" with `ocs2_wbc_controller`."
+msgstr "`/mode_command` 是 **全身 / WBC** 栈上的 **`std_msgs/String`**。它切换模式。`/ocs2_wbc_controller/current_state` 是你读的状态。`/fsm_command` 是另一条命令话题上的 FSM 整数。分体和默认 mock 演示启动的是分体栈；这条路径随 `ocs2_wbc_controller` 起来。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:206
 #: 378de7b56c074c9aa1f61c81bf2694db
@@ -1614,15 +1611,12 @@ msgid "Head"
 msgstr "头部"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:257
-#: 75833615797a43d2ac0833e892e829bf
+#: 59092d3005004b7199f2e329eb3a9808
 msgid ""
 "Head modes are mutually exclusive, and they are independent of the body "
-"mode. `head_midpoint_gaze_active` is not a separate command; it becomes "
-"`true` only after `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop "
-"gaze."
-msgstr ""
-"头部模式彼此互斥，并且独立于身体模式。`head_midpoint_gaze_active` 不是一条单独的命令；它只在 `HEAD_GAZE` "
-"生效后才会变成 `true`。发送 `HEAD_DISABLE` 可停止注视。"
+"mode. `head_midpoint_gaze_active` becomes `true` when `HEAD_GAZE` is "
+"active. Send `HEAD_DISABLE` to stop gaze."
+msgstr "头部模式彼此互斥，并且独立于身体模式。`HEAD_GAZE` 生效时，`head_midpoint_gaze_active` 变为 `true`。发送 `HEAD_DISABLE` 停止注视。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:178
 #: 05b7e100dc9546f798fd708e6f55b20d
@@ -1815,15 +1809,13 @@ msgstr ""
 "关节限位，`home_joint_reference_enabled` 会保持为 `false`。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:288
-#: 1e3afbeca32f4987b835b8223a684688
+#: 8f2da47fc3404cbab74a57d3e5904853
 msgid ""
 "The controller also accepts body presets of the form `PRESET:HM_*`. Those"
 " change the body, arms, and base together and leave the current head mode"
-" unchanged. Confirm the result on `current_state`; the Python mapping "
-"does not list these preset names."
-msgstr ""
-"控制器也接受形如 `PRESET:HM_*` 的身体预设。它们会同时改变身体、双臂和底盘，并保留当前的头部模式。请在 "
-"`current_state` 上确认结果；Python 映射里没有列出这些预设名。"
+" unchanged. Confirm the result on `current_state`. The Python helpers "
+"cover the mode strings in the tables above."
+msgstr "控制器也接受形如 `PRESET:HM_*` 的身体预设。它们一起改变身体、双臂和底盘，并保留当前头部模式。在 `current_state` 上确认结果。Python 辅助函数覆盖上面表格里的模式字符串。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:291
 #: b04729b03c484acfa75a1b2ab980e8b1
@@ -3411,3 +3403,18 @@ msgstr ""
 #~ "`/teleop/optical_r0_caps`、`/teleop/optical_r0_request`、`/teleop/optical_r0_ready`"
 #~ " 和 `/teleop/mirror_mode`。握手过程在同一份协议里。"
 
+#~ msgid ""
+#~ "`/mode_command` is **`std_msgs/String`** on "
+#~ "the **全身 / WBC** stack. It is "
+#~ "not `/fsm_command`, and it is not "
+#~ "a write path for "
+#~ "`/ocs2_wbc_controller/current_state`. That topic is"
+#~ " feedback only. Same availability as "
+#~ "the body/head Cartesian topics above: 分体"
+#~ " and default mock demos do not "
+#~ "start this path."
+#~ msgstr ""
+#~ "`/mode_command` 是全身 / WBC 栈上的 "
+#~ "**`std_msgs/String`**。它不是 `/fsm_command`，也不能用来向 "
+#~ "`/ocs2_wbc_controller/current_state` "
+#~ "写入；那个话题只是反馈。可用性与上文的身体/头部笛卡尔话题相同：分体和默认的 mock 演示不会启动这条路径。"

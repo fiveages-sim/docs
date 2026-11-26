@@ -41,7 +41,7 @@ ROS 2 driver for the DexCap V4 exoskeleton and gloves:
 ros2 launch dexcap_ros2_control dexcap_driver.launch.py
 ```
 
-Optional `start_upper_body`, `start_left_hand`, and `start_right_hand` flags are in the private package README. `publish_command` is not a current launch argument.
+Optional `start_upper_body`, `start_left_hand`, and `start_right_hand` flags are in the private package README.
 
 ## dexcap_teleop_ws
 

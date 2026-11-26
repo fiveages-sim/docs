@@ -22,7 +22,7 @@ open-deploy-ws/
 └── scripts/                   # install_core_debs.sh, uninstall_core_debs.sh
 :::
 
-**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). Do **not** `git submodule update --init --recursive`. After init, `colcon build` (the README does not wrap that). Then `source install/setup.bash` in that workspace — standard ROS 2 overlay, not a FiveAges env script.
+**Primary path:** `./init_repo.sh` (visibility + per-module `d`/`s`). After init, `colcon build`, then `source install/setup.bash` in that workspace. That overlay is the standard ROS 2 one.
 
 Lean robot branches (`dobot-cr5`, `arx-acone`, plus `arx-lift2s` / `panthera-ht` used in the how-tos) clone only that scheme’s packages. See the same README.
 
