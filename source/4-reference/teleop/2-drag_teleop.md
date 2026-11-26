@@ -15,8 +15,6 @@ One `ros2_control` controller plugin, started twice:
 
 Joint mapping (and effort mapping under power conservation) is applied **before** publishing `teleop_states`. Arm joints (12) are commanded by this controller; grippers use `adaptive_gripper_controller`.
 
-There is **no** `enter_teach_mode`, `/start_recording`, or `/playback` service.
-
 ## Launch
 
 Launch file: `drag_teleop_controller.launch.py` (not `drag_teleop.launch.py`).

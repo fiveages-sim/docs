@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 12:40+0000\n"
+"POT-Creation-Date: 2026-11-26 06:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,15 +18,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/4-reference/hardware/6-marvin.md:1
-#: 4eceae2cdd4246438a3b50062722eacc
+#: 4d983db8687d4941bd746ebce18c894c
 msgid "Marvin"
 msgstr "Marvin"
 
 #: ../../source/4-reference/hardware/6-marvin.md:3
-#: 8592a585b76642cdb955c4aa08b1e5d1
+#: 73c651214df54aa0ae6972f1a9ff98dd
 msgid ""
 "Marvin SDK hardware interface plugin (M6 and related). Command interfaces"
 " are joint **`position` only**. Compliance is vendor `ctrl_mode` "
@@ -40,7 +40,7 @@ msgstr ""
 "[Modbus](7-modbus.md) 或 [CAN](8-can.md)，不是本包。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:5
-#: 0e799cd72fe54e8389237f8b46296f97
+#: 1cbe3d71cbc74ceeac72616f171638ef
 msgid ""
 "**Repository:** [fiveages-sim/marvin-ros2-control](https://github.com"
 "/fiveages-sim/marvin-ros2-control) · [README](https://github.com"
@@ -51,7 +51,7 @@ msgstr ""
 "/fiveages-sim/marvin-ros2-control/blob/master/README.md)"
 
 #: ../../source/4-reference/hardware/6-marvin.md:7
-#: b67b700bca6f45ffb84f3cb9592496ae
+#: 26f6e8c60d9a4c209611f6099d04fab7
 msgid ""
 "**Plugin:** `marvin_ros2_control/MarvinHardware`. URDF `<param>` are "
 "declared as node parameters. README §4 lists the Runtime set; "
@@ -63,7 +63,7 @@ msgstr ""
 "`drag_mode`、`cart_type`、`*_kine_param` / `*_dyn_param`、`tool_debug_log`。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:9
-#: 2f0b0e1168634517b0cb2e33248c7f9a
+#: b448b3a9834047cbba300f84188c2a3d
 msgid ""
 "Tianji control SDK (`TJ_FX_ROBOT_CONTRL_SDK`, private submodule) is a "
 "pre-built library linked when this hardware interface compiles; it is not"
@@ -71,7 +71,7 @@ msgid ""
 msgstr "天玑控制 SDK（`TJ_FX_ROBOT_CONTRL_SDK`，私有子模块）是预编译库，在本驱动层编译时链接；不单独再分发。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:11
-#: 0e2eb47f4598423593de83e64a9f3cd9
+#: 030136a4cd9e46a5a33b72cb1c82515b
 msgid ""
 "`left_ee_channel` / `right_ee_channel`: `1` = CAN/CAN FD, `2` = COM1 "
 "RS485 (source `COM1_CHANNEL`)."
@@ -80,164 +80,163 @@ msgstr ""
 "RS485（源码 `COM1_CHANNEL`）。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:13
-#: c22ee6b15a87439d9d74925ac6da2bab
+#: ae120761ed2a40d6a023b3e009874c82
 msgid ""
 "Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control "
-"tool_dyn_identify_wizard`. VR path: [VR "
-"Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md)."
-msgstr ""
-"工具动力学 / 负载辨识向导：`ros2 run marvin_ros2_control tool_dyn_identify_wizard`。VR"
-" 路径：[VR 遥操作](../../2-how_to/5-teleoperation/6-vr_teleop.md)。"
+"tool_dyn_identify_wizard`. This wizard, and MIT-mode force control on "
+"Panthera HT / ARX: [Force control and "
+"compliance](../../2-how_to/4-controllers/13-force_control.md)."
+msgstr "工具动力学 / 负载辨识向导：`ros2 run marvin_ros2_control tool_dyn_identify_wizard`。这个向导，以及 Panthera HT / 方舟无限的 MIT 力控：[力控与柔顺](../../2-how_to/4-controllers/13-force_control.md)。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:15
-#: e8e3d93e5ceb4d088d377381f6ceddc6
+#: cdf09307e09e4cde8393602d30c259ee
 msgid ""
 "How to read **Startup only** / **Runtime**: [Hardware "
 "Interfaces](0-index.md)."
 msgstr "如何读 **仅启动** / **运行时**：[驱动层](0-index.md)。"
 
 #: ../../source/4-reference/hardware/6-marvin.md:17
-#: 1a50402fd77d41209573e2a654f9dd75
+#: 2d3afc816a9c4acbb42decd144b44ba9
 msgid "Startup (bus / tool type)"
 msgstr "启动（总线 / 末端类型）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 08cd1c67bb7c48e59cb88048dbe566a3 396163051f6f4760b9515f26da337631
+#: 49a7cc02318542d19a4c41fe122016ee d93af197b3e845a7b99d1d0b64c1d013
 msgid "Parameter"
 msgstr "参数"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 9de672401f614502a6fd3b4a98afdc0f f59c7844a7024afd919e24171a87402e
+#: 03a201d5b2c04f99886fb998c21f3190 961ed20d512b457a8a256830c319c6de
 msgid "Type / default"
 msgstr "类型 / 默认值"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 6992b02d346042c897ff700b2f2c92e9 7dae56e4d85f453b908df318b5dcec26
+#: 2f1022c0868746b2802e072204f2c510 bce89d79b98d4edc972dc6ceb8355d62
 msgid "Meaning"
 msgstr "含义"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 6dfab7b75bfa4b12bc993b2f398fe480
+#: ff66ae59600849598ae89401f884e888
 msgid "`arm_type`"
 msgstr "`arm_type`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 63ce6a75e7fc446385e90137bd5c12cb
+#: 8d253e61791940f89b0322ecf092fc36
 msgid "string / `\"LEFT\"`"
 msgstr "string / `\"LEFT\"`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 8d9ef6528b9a4825898af9fe9b787dfc
+#: 31b2b36786814d10a306632acf70c709
 msgid "`left` / `right` / `dual` (normalized)"
 msgstr "`left` / `right` / `dual`（归一化）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 60680364f8f042da978295ec0c520a84
+#: eec9ac5607fe44a8a211b37569ee9c8f
 msgid "`device_ip`"
 msgstr "`device_ip`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: f77746b2c8f64f1b87b2aec9a0cdd43a
+#: a2ef9c184978431ea347828dc300ec42
 msgid "string / `\"192.168.1.190\"`"
 msgstr "string / `\"192.168.1.190\"`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: b74b49e120014082ad892a37087a6f26
+#: 301626badc0c43fb91cfba908f38f995
 msgid "Controller IP"
 msgstr "控制器 IP"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: a2dceb8e9d3f4d7f9710cfc57da0d64c
+#: 1869a5da336149a4a306cf1ea9f56e82
 msgid "`device_port`"
 msgstr "`device_port`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 8c5f223a1290471c9c58edea655fc481
+#: fa207ce36b7f462dbb6727f437d8bd24
 msgid "int / `8080`"
 msgstr "int / `8080`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 650dcc1f8c9c48eabc3c910a06b0646a
+#: c1d7647320d34cccb704a384ce57ff8e
 msgid "Port"
 msgstr "端口"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: d52a6e65263b42c6b689df51f7bdfe82
+#: b8f0c05869004a33b7bc1df3a02afca1
 msgid "`left_ee_type` / `right_ee_type`"
 msgstr "`left_ee_type` / `right_ee_type`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: bf70d1e3587b4406b10c98e06864b044
+#: 31e01c96ca144742840366ea86b64419
 msgid "string / empty"
 msgstr "string / 空"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: faf34639d10845e38ecf466869fa3fd2
+#: daca6cfdaee44fb39585ead5260f7f80
 msgid "Tool key (README §1)"
 msgstr "工具键（README §1）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0d5ea0d2ae154edaa7350de902ff3e7f
+#: fed5c90a9a9943e68ec7e799c802142a
 msgid "`left_ee_channel` / `right_ee_channel`"
 msgstr "`left_ee_channel` / `right_ee_channel`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 1427d4fc408c4fd591b0eec4157bd0c7 852668cd41f342af92646385968b5d84
+#: 0d28fbce4b2d4d00851578bdac8fc276 86564733570049649a8002b0916e8aff
 msgid "int / `2`"
 msgstr "int / `2`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: fd4dc47418764d3e86a61d5b8587050e
+#: 0111db2c400648ed9341515b77acb225
 msgid "Tool bus"
 msgstr "工具总线"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 4cb6c695e7774626b87939f1fc780113
+#: fcfb63ae181143edbae155d273c1e499
 msgid "`use_async_tool_comm`"
 msgstr "`use_async_tool_comm`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: c2e46ed4c38e4475bc9c2b9a3f576494
+#: b76e17c5b65844fea3786aebcee9ac38
 msgid "bool / `true` (source; not in README §3.1)"
 msgstr "bool / `true`（源码；README §3.1 未列出）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 26e80e3f1efd42698ac3d57a1a3a7ec0
+#: 974fbce028824c0c91bd7bcc536f71de
 msgid "Async tool IO"
 msgstr "异步工具 IO"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: d650170a80f345fbac90dc8276d0430e
+#: 4a9b7397aa3144a4a1547a986de1340a
 msgid "`kwr75_ft_enabled` / `left_ft_enabled` / `right_ft_enabled`"
 msgstr "`kwr75_ft_enabled` / `left_ft_enabled` / `right_ft_enabled`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: d1d118b6001644a194a90a6f9f7e89fe
+#: efb2a84a856c4cf0a7c9c1a57e6b1053
 msgid "bool (source; not in README §3.1)"
 msgstr "bool（源码；README §3.1 未列出）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0dc3dfe89ea345a3bcda5ae2e9e8bcb4
+#: 05990e0f413f4a2abd3ab188f1d30989
 msgid "COM2 KWR75"
 msgstr "COM2 KWR75"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: de643ca916954e76babf4cc703eba690
+#: e41d8034ff4c4780983be910a557187f
 msgid "`left_ft_channel` / `right_ft_channel`"
 msgstr "`left_ft_channel` / `right_ft_channel`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 6e924c673cd04513824bd70119844e83
+#: ac06bb6c71aa4b20acb1b64ca972d8f3
 msgid "int (source)"
 msgstr "int（源码）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: c25c85425aed41f4b9b15f1050ac3644
+#: 91c215b3fd274955b3e350d2a76b149b
 msgid "FT SDK channels"
 msgstr "力传感器 SDK 通道"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 45a82aab08a14df5b1f1a3b0072ed69b
+#: 7eeb9b586e954cf2b70db8b0b85a8816
 msgid ""
 "`ft_poll_interval_ms` / `ft_command_code` / `ft_convert_to_si` / "
 "`ft_gravity` / `ft_warmup_timeout_ms`"
@@ -246,17 +245,17 @@ msgstr ""
 "`ft_gravity` / `ft_warmup_timeout_ms`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 6e6a3b47b8244bf4818c030313c80f76
+#: d47fde65903644f7ab8c180e27f10269
 msgid "source"
 msgstr "source"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 4cbd457a59834d2dbcc1b817563e9ce4
+#: e53ba45a98454b22b47a7c573acae4c5
 msgid "KWR75 on the arm bus"
 msgstr "机械臂总线上的 KWR75"
 
 #: ../../source/4-reference/hardware/6-marvin.md:31
-#: 588e048722384e89aa6324e2c4866f8e
+#: 54be07af235a4632bfbc2cfa44f0c7c0
 msgid ""
 "`pd_k_gains` / `pd_d_gains` / `pd_control_period_ms` / `use_drag_mode` "
 "are declared in `on_init` (source defaults `[14,14,14,10.5,5.6,5.6,5.6]`,"
@@ -269,47 +268,47 @@ msgstr ""
 "`paramCallback` 或 README §4 —"
 
 #: ../../source/4-reference/hardware/6-marvin.md:33
-#: 6de90103879d444f8eecd63dafe1b368
+#: 8f54b758d8c24cbdb0cfb446da0c0659
 msgid "Runtime (README §4 + `paramCallback`)"
 msgstr "运行时（README §4 + `paramCallback`）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 49584a8f5502408bafc01fe228753a09
+#: f549492b50f346bea4cbe4726aa833c8
 msgid "`ctrl_mode`"
 msgstr "`ctrl_mode`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 164575fdaeff4da99f871dd3719d78df
+#: 4e59d42764224030968659d2885a9d3d
 msgid "string / `\"POSITION\"`"
 msgstr "string / `\"POSITION\"`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 983bc34da82746018235952d5ab3c1e9
+#: b753791f98494a528604e38f8174d2ee
 msgid "`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`"
 msgstr "`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / `POWER_OFF`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: bb056d3f52aa469ca2235f5ff81fe1f6
+#: 5dc31529b2744c678049dfed0c582bed
 msgid "`joint_k_gains` / `joint_d_gains`"
 msgstr "`joint_k_gains` / `joint_d_gains`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 8ddba4dbe07147449a4f545fceb3cd42
+#: 074cb0f2b405444d9a2d17291d2be166
 msgid "double[7] / `[2,2,2,1.6,1,1,1]` / `[0.4×7]`"
 msgstr "double[7] / `[2,2,2,1.6,1,1,1]` / `[0.4×7]`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 87554df53ff142b2a4742821a3af9860
+#: 06e04ce9233345f687ebb8e827b5f4ac
 msgid "Joint impedance"
 msgstr "关节阻抗"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 3f3c4fb5ade146b49fa8dacfb18475e5
+#: 8f664e56da8a4709b6219ca187441ed3
 msgid "`cart_k_gains` / `cart_d_gains`"
 msgstr "`cart_k_gains` / `cart_d_gains`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: e9e9e90644744bc495b166bbf437a585
+#: 1948fd9db6f74437afee94755e301062
 msgid ""
 "double[7] / `[1800,1800,1800,40,40,40,20]` / "
 "`[0.6,0.6,0.6,0.4,0.4,0.4,0.4]`"
@@ -318,142 +317,142 @@ msgstr ""
 "`[0.6,0.6,0.6,0.4,0.4,0.4,0.4]`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: c37b5b0cfd5949d2915c7c9cae87e899
+#: bfaaed9b24724d5cb81bcc34544773fc
 msgid "Cartesian impedance"
 msgstr "笛卡尔阻抗"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: d780aa02b1d74d2e8452649149db5708
+#: cc9b644c421140f0ae18335141f57bba
 msgid "`cart_type`"
 msgstr "`cart_type`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 46f5c9a46206480691903bf80028a723
+#: 1825260d5516435e91bf6ffaa677e6ae
 msgid "Cartesian impedance type"
 msgstr "笛卡尔阻抗类型"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 99c839247654495cb1dc42d6d3873257
+#: d6bd9bac406c424f8da8fb377f04feb5
 msgid "`drag_mode`"
 msgstr "`drag_mode`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0069164c184c43b9b609dcbb191de467
+#: 5ecfb210c92043f3b6b0dd013306db19
 msgid "int / `-1`"
 msgstr "int / `-1`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 97cd74bcab9547928f6de62102b44150
+#: fe737f076d83462d963833222a0b6dee
 msgid "`-1` no update, `0` off, `1` joint drag, `2` cartesian drag"
 msgstr "`-1` 不更新，`0` 关，`1` 关节拖动，`2` 笛卡尔拖动"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 2f63bc212d3e4b9abb4aaa0187725687
+#: cb1dc53edcc24159bfa4550285009873
 msgid "`max_joint_speed`"
 msgstr "`max_joint_speed`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 282f3a233b2740a9bab09e2f3d375546 ebbad28c78c44a77ac9e36c6323b3470
+#: 11ec5cbb5ed84209a847cc1c79f26fce ad854767ed2e4949a5346d6cdea5e5dd
 msgid "double / `10.0`"
 msgstr "double / `10.0`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0a827ee0331b46a7905cd3ec3c30c06a
+#: f64d04ca7f604877afa87eb4d7702355
 msgid "Joint speed limit (README XML example uses `50`)"
 msgstr "关节速度上限（README XML 示例用 `50`）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: a8499729c2f0496f96f4c84740da0447
+#: 3aca1e38023347cc86fffba74cc4a14b
 msgid "`max_joint_acceleration`"
 msgstr "`max_joint_acceleration`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 7d86ebece2a44e6aaaf12e9018383158
+#: be6256807cf749e5b091e24e422016f6
 msgid "Joint acc limit (README XML example uses `30`)"
 msgstr "关节加速度上限（README XML 示例用 `30`）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 46ac693936bc453a9e7a491b9b6e4672
+#: f1f199bde2d9456aa6a047e5a27f62a4
 msgid "`left_dyn_param` / `right_dyn_param`"
 msgstr "`left_dyn_param` / `right_dyn_param`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 98988ff5c99840ca9ae7e9b5a544e2c9
+#: f2319b8f916d4e009c59f3b2257d7c4c
 msgid "double[10] / zeros"
 msgstr "double[10] / zeros"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 49771ea8aac24a7ba34fcc1c6a2fd180
+#: 6b455801b7f7477185b90888fa33fc33
 msgid "Tool dynamics"
 msgstr "工具动力学"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 01c30a4c6f0b4d45911c28e43dbf2618
+#: f917c98c4c994de099e6ac2e990d519b
 msgid "`left_kine_param` / `right_kine_param`"
 msgstr "`left_kine_param` / `right_kine_param`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 9dd6f188533f493889944e3f53992eae
+#: e3a57a68a1964c91b02a9ed124093f1d
 msgid "double[6] / zeros"
 msgstr "double[6] / zeros"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: cedcc064494f449b86829df931aa5c81
+#: f581a79b6bc1403db2d4c1674de8296e
 msgid "Tool kinematics"
 msgstr "工具运动学"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: cfb46163f5e040e3a50d40b39f43147c
+#: 9aa4714c5676493f8badb21ab4ba428f
 msgid "`left_tool_torque` / `left_tool_velocity`"
 msgstr "`left_tool_torque` / `left_tool_velocity`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 02cc484179464ae2bc2fb80534d43812 472b6305b5d34b8f8542ec021d22d260
+#: 6acc7b9bcadd4ce9a6b6b18d3b676a58 7d407857208f4bc18516d4bfb1edd929
 msgid "double / `1.0`"
 msgstr "double / `1.0`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0cc07df990f946329805f1d6c012c9fc
+#: 6596dbd9192a4f779907e2c05251cba5
 msgid "Left tool scale `[0,1]`"
 msgstr "左工具比例 `[0,1]`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 87f92859a9d048bf9b609bf31c21835e
+#: cb681ad70ce74b1d9a13d48ff94a971f
 msgid "`right_tool_torque` / `right_tool_velocity`"
 msgstr "`right_tool_torque` / `right_tool_velocity`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 1ce00810a3a54c5ea3d250a90e8a2cbf
+#: 577971aa48134b3daa50c3c9c113e9da
 msgid "Right tool scale `[0,1]`"
 msgstr "右工具比例 `[0,1]`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 5300f25b0b224b57bac25baef95387e6
+#: 75bd03dd63e340c98b7bbcfb481c251a
 msgid "`left_brake_release` / `right_brake_release`"
 msgstr "`left_brake_release` / `right_brake_release`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 0f1ec6ec390a49a3962152343e8576da
+#: 4f8fb1c2a5f34acab65aaad6b1176c91
 msgid "bool / `false`"
 msgstr "bool / `false`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: d9cad7ecbd154d01891381a548d1c24a
+#: 47e98589759a40c1a0261faf08d73e4c
 msgid "Brake; README: only in `POWER_OFF` with hardware inactive"
 msgstr "抱闸；README：仅在 `POWER_OFF` 且硬件未激活时"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 9af5d5ffd5be4517ba1ade9f4b34a8bf
+#: e5fb3e99086d4a08b8f29f5911f3e6b9
 msgid "`tool_debug_log`"
 msgstr "`tool_debug_log`"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 380799e0ffab45ccae5ef0ecfe9a5cf4
+#: 409ec0f3ef8541f280a0b0838ecf4619
 msgid "bool / `false` (source)"
 msgstr "bool / `false`（源码）"
 
 #: ../../source/4-reference/hardware/6-marvin.md
-#: 69249ced5f274b3ab0979ee1904f3c6d
+#: c3abe2172b6e4c858de829274dcdcb77
 msgid "Tool-frame logs"
 msgstr "工具系日志"
 

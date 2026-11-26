@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024-2026, FiveAges
+# This file is distributed under the same license as the FiveAges Sim
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FiveAges Sim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-26 06:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.19.0\n"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:1
+#: a05e6382d44f4d5cafde168487e7b14d
+msgid "Force control and compliance"
+msgstr "力控与柔顺"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:3
+#: 768c4ba2106d4fe285a0529c0c9be90a
+msgid ""
+"On a real arm, use one of the two paths below so the arm can give under "
+"contact. **Payload identification (负载辨识)** belongs to the **vendor-"
+"impedance** path (Tianji / Rokae)."
+msgstr "真机上，手臂要在接触时能退让，用下面两条路径之一。**负载辨识**属于**厂商阻抗**路径（天玑 / 珞石）。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: a592f630b2084a8da0359adb5a9b7435
+msgid "Path"
+msgstr "路径"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: a0dc657c538e4177a943d50aad90dbd7
+msgid "Robots"
+msgstr "机器人"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 3d9009bcd24247158fe991a1160e16e1
+msgid "Who provides compliance"
+msgstr "柔顺由谁提供"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 9054c7191d3048b5a054bde8498ef8b1
+msgid "What the controller commands"
+msgstr "控制器下发什么"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 6937be31b2b64506938534de40b09ea8
+msgid "**MIT-mode force control**"
+msgstr "**MIT 力控**"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: c29918b58898441d876db9c2c749957d
+msgid "**HighTorque** (高擎) **Panthera HT**; **ARX** (方舟无限) arms"
+msgstr "**高擎 Panthera HT**；**方舟无限** 机械臂"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 1772e47a952c4deb9fd903af84d26df8
+msgid ""
+"Controller + hardware interface in MIT / `full_control` (pos + vel + "
+"effort; stiffness on the HI)"
+msgstr "控制器 + 驱动层走 MIT / `full_control`（位置 + 速度 + 力矩；刚度在驱动层上）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 85ee8d484d3a42a6b90e5af2c81a7f64
+msgid "Force-capable / MIX when the interfaces allow it"
+msgstr "接口齐全时走带力控 / MIX"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: f5bcb9ec5a034908b287169716a953ca
+msgid "**Vendor joint impedance**"
+msgstr "**厂商关节阻抗**"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: f2ec9b3703bf4e97a254103c3655ae71
+msgid "**Tianji** (天玑); **Rokae** (珞石)"
+msgstr "**天玑**；**珞石**"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 108451fbd527479c8846222bae66c2b3
+msgid "Vendor stack, exposed on the hardware interface"
+msgstr "厂商栈，经驱动层暴露"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md
+#: 1b482a46edbf4aa398480df3e80b4baf
+msgid "**Position only**"
+msgstr "**仅位置**"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:10
+#: 7a12b5f4462e425081e853d9e10a6ca3
+msgid "MIT-mode force control (Panthera HT / ARX)"
+msgstr "MIT 力控（Panthera HT / 方舟无限）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:12
+#: 88d9a2f5864d44bbad30d5cc0594eeea
+msgid ""
+"Use this path on **Panthera HT** and **ARX** arms. The hardware interface"
+" must run a **force-capable** MIT configuration; the controller then "
+"tracks the pose target with that mix of position / velocity / effort. VR "
+"teleop is one client of this path: [VR "
+"Teleoperation](../5-teleoperation/6-vr_teleop.md)."
+msgstr ""
+"在 **Panthera HT** 和 **方舟无限** 机械臂上走这条路径。驱动层必须运行**带力控**的 MIT 配置；控制器再用位置 / "
+"速度 / 力矩的组合跟踪位姿目标。VR 遥操作是这条路径的一种用法：[VR "
+"遥操作](../5-teleoperation/6-vr_teleop.md)。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:14
+#: d052c08ad9c840c6b8ccced15939a16a
+msgid ""
+"**HighTorque Panthera HT** — [ht-ros2-control README](https://github.com"
+"/fiveages-sim/ht-ros2-control/blob/main/README.md):"
+msgstr ""
+"**高擎 Panthera HT** — [ht-ros2-control README](https://github.com"
+"/fiveages-sim/ht-ros2-control/blob/main/README.md)："
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:16
+#: d9de363d79994643b9af24f067134f12
+msgid "HI `control_mode:=mit` (default; older name `full_control` still accepted)"
+msgstr "驱动层 `control_mode:=mit`（默认；旧名 `full_control` 仍可用）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:17
+#: e242eb41c366436784c01a6d7501c990
+msgid ""
+"The driver sends position + velocity + effort + kp/kd "
+"(`pos_vel_tqe_kp_kd`)"
+msgstr "驱动下发位置 + 速度 + 力矩 + kp/kd（`pos_vel_tqe_kp_kd`）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:18
+#: 9e7809fda02d4e2fa0a83827d87028d2
+msgid ""
+"Stiffness is HI parameters `joint_kp` / `joint_kd` (rqt / `ros2 param`), "
+"**not** kp/kd command interfaces"
+msgstr "刚度是驱动层参数 `joint_kp` / `joint_kd`（rqt / `ros2 param`），**不是** kp/kd 命令接口"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:19
+#: a14b4aa307e24b02a7fe393d238b9b29
+msgid ""
+"Other documented HI modes: `effort` (torque only), `position` (position "
+"only)"
+msgstr "文档里驱动层的其他模式：`effort`（仅力矩）、`position`（仅位置）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:21
+#: 42d5b5cecb8248e6ab2beb1ea99b0300
+msgid ""
+"**ARX arms** — [arx-ros2-control README](https://github.com/fiveages-sim"
+"/arx-ros2-control/blob/main/README.md):"
+msgstr ""
+"**方舟无限机械臂** — [arx-ros2-control README](https://github.com/fiveages-sim"
+"/arx-ros2-control/blob/main/README.md)："
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:23
+#: e719b181e4ac4f4fb0c7b5f223d3df0d
+msgid ""
+"Arms support only `full_control` / MIT MIX. Other `control_mode` values "
+"in xacro are warned and ignored"
+msgstr "机械臂只支持 `full_control` / MIT MIX。xacro 里写的其他 `control_mode` 会告警并被忽略"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:24
+#: 05e377c2c65947fd96875ae854dfe874
+msgid "`write()` always sends position + velocity + effort"
+msgstr "`write()` 始终下发位置 + 速度 + 力矩"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:25
+#: a6631017f0da454594b6c2982834e057
+msgid ""
+"MIT `kp` / `kd` come from HI `joint_k_gains` / `joint_d_gains` (no kp/kd "
+"command interface)"
+msgstr "MIT 的 `kp` / `kd` 来自驱动层的 `joint_k_gains` / `joint_d_gains`（没有 kp/kd 命令接口）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:26
+#: 77fd53eb6357468c9bdfd201ee42eb7f
+msgid ""
+"README mapping: OCS2 trajectory → position; OCS2 `future_input` → "
+"velocity; OCS2 effort → gravity / static feedforward torque"
+msgstr "README 映射：OCS2 轨迹 → 位置；OCS2 `future_input` → 速度；OCS2 力矩 → 重力 / 静力学前馈力矩"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:28
+#: e8d86728877344bf8c55e13f88973ade
+msgid ""
+"**Controller** — [ocs2_arm_controller README — Interface "
+"Configuration](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md):"
+msgstr ""
+"**控制器** — [ocs2_arm_controller README — 接口配置](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/controller/ocs2_arm_controller/README.md)："
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:30
+#: 48ae35c29f9f476e9009b2a84e6d24a5
+msgid ""
+"Mode is **auto-detected** from the robot config (no extra launch flag "
+"named `force:=`)"
+msgstr "模式由机器人配置**自动检测**（没有名为 `force:=` 的额外 launch 参数）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:31
+#: e838d654402a4576a312caa8340e881e
+msgid "Position-only: command `position`; state `position` + `velocity`"
+msgstr "仅位置：命令 `position`；状态 `position` + `velocity`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:32
+#: 34aff7c686db428092c61b3ead920710
+msgid ""
+"Force / MIX: command `position`, `velocity`, `effort`, `kp`, `kd` all "
+"present. `[kp, kd]` is `default_gains` (HOME / HOLD) and `pd_gains` (OCS2"
+" state), **Startup only**. The older name `force_gains` is not a "
+"parameter"
+msgstr ""
+"力控 / MIX：命令接口里 `position`、`velocity`、`effort`、`kp`、`kd` 都有。`[kp, kd]` 由 "
+"`default_gains`（HOME / HOLD）和 `pd_gains`（OCS2 状态）给出，**仅启动**。旧名 "
+"`force_gains` 不是参数"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:33
+#: 393e0c4392ff4ba0812529c4ba37d256
+msgid ""
+"ARX documents OCS2 MIX as pos + vel + effort with kp/kd on the HI. HT "
+"notes that when kp/kd are **not** command interfaces, OCS2 may stay in "
+"position mode; gravity compensation then uses `ht_gravity_compensation` "
+"or larger `joint_kp` (same HT README)"
+msgstr ""
+"方舟无限文档把 OCS2 MIX 写成位置 + 速度 + 力矩，kp/kd 在驱动层上。高擎说明：当 kp/kd **不是**命令接口时，OCS2"
+" 可能停在位置模式；重力补偿改用 `ht_gravity_compensation` 或调大 `joint_kp`（同一份 HT README）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:35
+#: 2d594e3ed0194310bb08bc78db5c88ef
+msgid ""
+"Bring the robot up with the lean-branch `./quick_start.sh` / "
+"`hardware:=real` path on [HighTorque Panthera "
+"HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) or [ARX Lift "
+"2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md). For the headset,"
+" follow [VR Teleoperation](../5-teleoperation/6-vr_teleop.md)."
+msgstr "用精简分支的 `./quick_start.sh` / `hardware:=real` 把机器人拉起来，见 [高擎 Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) 或 [方舟无限 Lift 2S](../6-deployment/9-go_real_hardware/1-arx_lift2s.md)。头显按 [VR 遥操作](../5-teleoperation/6-vr_teleop.md)。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:37
+#: ab416f3ffd8843d4930326e58f51962f
+msgid ""
+"Master–slave `mode:=mit` / `effort` on Panthera HT is [Isomorphic "
+"Teleop](../5-teleoperation/7-isomorphic_teleop.md)."
+msgstr ""
+"Panthera HT 上主从的 `mode:=mit` / `effort` 见 "
+"[同构遥操作](../5-teleoperation/7-isomorphic_teleop.md)。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:39
+#: c88a76983f434b6daa690f4588390c99
+msgid "Vendor joint impedance (Tianji / Rokae)"
+msgstr "厂商关节阻抗（天玑 / 珞石）"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:41
+#: 2c806044a9d64b918c3d4de1c4980579
+msgid ""
+"Use this path on **Tianji** (天玑) and **Rokae** (珞石). The controller only "
+"sends **joint position**. Joint impedance / compliance is the **vendor** "
+"feature, switched on the hardware interface."
+msgstr "在 **天玑** 和 **珞石** 上走这条路径。控制器只发 **关节位置**。关节阻抗 / 柔顺是**厂商**能力，在驱动层上切换。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:43
+#: 434db51fc65545a684809d36d1ee4b9b
+msgid ""
+"**Tianji** — [marvin-ros2-control README](https://github.com/fiveages-sim"
+"/marvin-ros2-control/blob/master/README.md):"
+msgstr ""
+"**天玑** — [marvin-ros2-control README](https://github.com/fiveages-sim"
+"/marvin-ros2-control/blob/master/README.md)："
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:45
+#: e2f7116a862f464a92bd8585e84e9d4b
+msgid ""
+"Command interfaces: joint **`position` only**. State: `position`, "
+"`velocity`, `effort`"
+msgstr "命令接口：关节 **仅 `position`**。状态：`position`、`velocity`、`effort`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:46
+#: cbdee36998ce4a72be1cdec97dc3bdb8
+msgid ""
+"Runtime `ctrl_mode`: `POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / "
+"`POWER_OFF`"
+msgstr ""
+"运行时 `ctrl_mode`：`POSITION` / `JOINT_IMPEDANCE` / `CART_IMPEDANCE` / "
+"`POWER_OFF`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:47
+#: e665559dc66547979698b27187c102c1
+msgid ""
+"Joint impedance gains: `joint_k_gains` / `joint_d_gains` (7 values). "
+"Cartesian: `cart_k_gains` / `cart_d_gains`"
+msgstr ""
+"关节阻抗增益：`joint_k_gains` / `joint_d_gains`（7 维）。笛卡尔：`cart_k_gains` / "
+"`cart_d_gains`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:48
+#: 0471f8de129a48788352b79182664899
+msgid "Example: `ros2 param set /<hardware_node> ctrl_mode JOINT_IMPEDANCE`"
+msgstr "示例：`ros2 param set /<hardware_node> ctrl_mode JOINT_IMPEDANCE`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:50
+#: eb67863b994f43de995ed08d2922fdd6
+msgid ""
+"**Rokae** — same pattern (position commands; compliance in the vendor "
+"HI). Parameter names are in the private `rokae-ros2-control` README after"
+" access. Overview: [Hardware "
+"Interfaces](../../4-reference/hardware/0-index.md)."
+msgstr ""
+"**珞石** — 同一模式（位置命令；柔顺在厂商驱动层）。参数名在开通后的私有 `rokae-ros2-control` "
+"README。概览：[驱动层](../../4-reference/hardware/0-index.md)。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:52
+#: 0512a9ae17f64cba97a411307fcf1b7d
+msgid ""
+"Internal FA robots that use Tianji / Rokae arms live in [fa-deploy-ws "
+"Setup](../../1-getting_started/4-fa_deploy_ws.md). Extra robot IDs and "
+"launch flags are in that workspace README after access."
+msgstr ""
+"使用天玑 / 珞石臂的内部第五纪机器人见 [fa-deploy-ws "
+"配置](../../1-getting_started/4-fa_deploy_ws.md)。额外机器人 ID 和 launch "
+"参数在开通后的该仓库 README。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:54
+#: 64ca69772ff54d2a85d399d67dd7328b
+msgid "Payload identification (负载辨识)"
+msgstr "负载辨识"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:56
+#: 894e14c809234767972509d34080de56
+msgid ""
+"负载辨识 is **only** on the Tianji / Rokae (vendor impedance) path. The MIT /"
+" OCS2 side uses `default_gains` / `pd_gains` for `[kp, kd]`. It does not "
+"run this wizard."
+msgstr ""
+"负载辨识**只**在天玑 / 珞石（厂商阻抗）路径上。MIT / OCS2 这边用 `default_gains` / `pd_gains` 写 "
+"`[kp, kd]`，不跑这个向导。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:58
+#: 7cc8e27aa0a44eb79a72178c31a5aec9
+msgid ""
+"**Public, verified Tianji wizard** (semi-automatic tool-dynamics ID on "
+"CCS): [marvin-ros2-control "
+"`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-sim"
+"/marvin-ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py), "
+"installed as `ros2 run marvin_ros2_control tool_dyn_identify_wizard` "
+"(`CMakeLists.txt` `install(PROGRAMS … RENAME tool_dyn_identify_wizard)`)."
+msgstr ""
+"**公开、核对过的天玑向导**（CCS 上半自动工具动力学辨识）：[marvin-ros2-control "
+"`scripts/tool_dyn_identify_wizard.py`](https://github.com/fiveages-sim"
+"/marvin-"
+"ros2-control/blob/master/scripts/tool_dyn_identify_wizard.py)，安装后为 `ros2 "
+"run marvin_ros2_control tool_dyn_identify_wizard`（`CMakeLists.txt` 的 "
+"`install(PROGRAMS … RENAME tool_dyn_identify_wizard)`）。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:60
+#: 86e9cf73f3ad481ea8f6dd65973ea5da
+msgid ""
+"The wizard banner is **机械臂负载辨识向导（工具动力学参数辨识 / CCS）**. It connects to the "
+"Marvin controller IP, collects no-load then loaded PVT trajectories, and "
+"prints 10-D tool dynamics (`m, mx, my, mz, ixx, …`). Those values match "
+"HI parameters `left_dyn_param` / `right_dyn_param` on the same README."
+msgstr ""
+"向导标题是**机械臂负载辨识向导（工具动力学参数辨识 / CCS）**。它连接 Marvin 控制器 IP，先采空载再采带载 PVT 轨迹，并打印"
+" 10 维工具动力学（`m, mx, my, mz, ixx, …`）。这些值对应同一 README 里的驱动层参数 "
+"`left_dyn_param` / `right_dyn_param`。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:62
+#: 9a0a826d0dab4a3f851fbbe9dc10a481
+msgid ""
+"There is **no** public `open-deploy-ws` payload-ID flow. Internal on-site"
+" Tianji payload identification is in the private **fa-deploy-ws** README "
+"after access (default branch is typically `fa-w2`). Use that README’s "
+"script names — they are not listed here."
+msgstr ""
+"公开的 `open-deploy-ws` **没有**负载辨识流程。内部现场天玑负载辨识在开通后的私有 **fa-deploy-ws** "
+"README（默认分支通常是 `fa-w2`）。脚本名以该 README 为准，这里不列出。"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:64
+#: 3a3ac7aeb00d4fbcabb7b009a47290d9
+msgid "Related"
+msgstr "相关"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:66
+#: 8085f98e54444b398338c79a9cd98ee1
+msgid "[VR Teleoperation](../5-teleoperation/6-vr_teleop.md)"
+msgstr "[VR 遥操作](../5-teleoperation/6-vr_teleop.md)"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:67
+#: 140521647d0d4288a4500b3180792511
+msgid ""
+"[ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md)"
+" — MIX detection, `default_gains` / `pd_gains`"
+msgstr ""
+"[ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md)"
+" — MIX 检测、`default_gains` / `pd_gains`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:68
+#: 671fe50ffee54db4aea9c67004349103
+msgid ""
+"[Controller ROS 2 "
+"parameters](../../4-reference/controllers/8-ros2_parameters.md)"
+msgstr "[控制器 ROS 2 参数](../../4-reference/controllers/8-ros2_parameters.md)"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:69
+#: 7069c7402063485492f4872e341d6c14
+msgid ""
+"[HighTorque](../../4-reference/hardware/5-ht.md) — `control_mode:=mit`, "
+"`joint_kp` / `joint_kd`"
+msgstr ""
+"[高擎](../../4-reference/hardware/5-ht.md) — `control_mode:=mit`、`joint_kp`"
+" / `joint_kd`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:70
+#: 25a5c5f00377431f8f12d5c62aac6232
+msgid ""
+"[ARX](../../4-reference/hardware/4-arx.md) — `full_control`, "
+"`joint_k_gains` / `joint_d_gains`"
+msgstr ""
+"[方舟无限](../../4-reference/hardware/4-arx.md) — "
+"`full_control`、`joint_k_gains` / `joint_d_gains`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:71
+#: f79b9348bdbd4b3eb16f0e40170c55a9
+msgid ""
+"[Marvin](../../4-reference/hardware/6-marvin.md) — `JOINT_IMPEDANCE`, "
+"`left_dyn_param` / `right_dyn_param`"
+msgstr ""
+"[Marvin](../../4-reference/hardware/6-marvin.md) — "
+"`JOINT_IMPEDANCE`、`left_dyn_param` / `right_dyn_param`"
+
+#: ../../source/2-how_to/4-controllers/13-force_control.md:72
+#: 32a03c9ea1eb4751a952d3dfb3bae92e
+msgid "[Isomorphic Teleop](../5-teleoperation/7-isomorphic_teleop.md)"
+msgstr "[同构遥操作](../5-teleoperation/7-isomorphic_teleop.md)"
+

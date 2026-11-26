@@ -41,3 +41,4 @@ Viser is a **browser** 3D view. The ros2-viser README also documents optional **
 - [open-deploy-ws Setup](../1-getting_started/3-open_deploy_ws.md)
 - [FSM and Topics](../3-concepts/4-fsm_and_topics.md) — `/fsm_command` is `std_msgs/Int32`
 - [Configure ROS 2 controller parameters](../2-how_to/4-controllers/12-ros2_parameters.md) — YAML vs runtime `ros2 param`
+- [Force control and compliance](../2-how_to/4-controllers/13-force_control.md) — MIT-mode force control, vendor joint impedance, payload identification

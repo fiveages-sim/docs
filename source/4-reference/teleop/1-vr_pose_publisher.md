@@ -62,25 +62,9 @@ Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise â‰
 
 ## Topics Published
 
-| Topic | Type | Rate | Description |
-|-------|------|------|-------------|
-| `/teleop/left_ee_pose` | `PoseStamped` | 90Hz | Left controller |
-| `/teleop/right_ee_pose` | `PoseStamped` | 90Hz | Right controller |
-| `/teleop/head_pose` | `PoseStamped` | 90Hz | Headset |
-| `/teleop/left_trigger` | `Bool` | Event | Left trigger |
-| `/teleop/right_trigger` | `Bool` | Event | Right trigger |
+`xr_target_node` publishes the `/teleop/*` set for both backends. Names, types, fields, and rates: [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics).
 
 ## Configuration
-
-```yaml
-vr_pose_publisher:
-  frame_id: base_link
-  publish_rate: 90
-  
-  controller_mapping:
-    left: left_ee
-    right: right_ee
-```
 
 Robot-side VR insertion is separate: set `enable_vr: true` in the descriptionâ€™s `config/ocs2/target_manager.yaml` (most robots default off). Same file: `vr_update_rate`, `vr_follow_frame`. Button map (including WBC stop-one-arm vs VR pause) and follow-frame troubleshooting: {ref}`stop-one-arm-vs-stop-sending-vr-commands`. The latched mode for that session is `teleop/mode_state`: {ref}`teleop-mode-status`.
 

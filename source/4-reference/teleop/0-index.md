@@ -8,7 +8,7 @@ The stack supports several teleoperation inputs. They are not interchangeable: s
 
 | Method | Input | Role |
 |--------|-------|------|
-| VR | Headset + VR controllers (Pico Enterprise / consumer, Meta Quest) | End-effector pose; triggers for gripper/hand; buttons for FSM and pause. The current `./run.sh vr` path starts controller mode; this docs set does not document a launch entry for VR gesture / hand-tracking recognition. |
+| VR | Headset (Pico Enterprise / consumer, Meta Quest), controllers or optical hand tracking | Controller path (`./run.sh vr`, `./run.sh vr-xrt`): end-effector pose, triggers, FSM and pause buttons. Hand tracking (`./run.sh vr-xrt wrist`, `./run.sh vr-hand`): optical-wrist 6DoF and bare-hand gestures — {ref}`Hand tracking <vr-hand-tracking>`. |
 | Game controller | Joystick / gamepad (`arms_teleop`) | Arm velocity via `control_input` → twist; chassis `/cmd_vel` in chassis mode |
 | Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
 | DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves |
@@ -38,13 +38,9 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 
 ## Topic Contracts
 
-Pose-based VR, Wuji, and Vive Tracker paths publish to these end-effector topics. Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command` instead.
+VR poses, stick axes, and trigger pull are [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics). Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).
 
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left arm target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right arm target |
-| `/teleop/head_pose` | `PoseStamped` | Head tracking |
+Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command`.
 
 Mode changes and the latched mode are a separate pair. Field-by-field reading is in {ref}`teleop-mode-status`.
 
