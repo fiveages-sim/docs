@@ -23,21 +23,14 @@ Maps Vive tracker poses to arm end-effector targets:
 
 | Topic | Type | Description |
 |-------|------|-------------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left arm target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right arm target |
+| `/teleop/left_ee_pose` | `geometry_msgs/Pose` | Left absolute end-effector pose |
+| `/teleop/right_ee_pose` | `geometry_msgs/Pose` | Right absolute end-effector pose |
+
+`tracker_openvr` publishes these two poses. A side with no tracker publishes an identity pose while any live side is enabled. Headset pose, sticks, and triggers are on {ref}`the teleop pose stream <teleop-pose-stream>`.
 
 ## Configuration
 
-```yaml
-vive_tracker_teleop:
-  ros__parameters:
-    left_tracker_id: LHR-xxx
-    right_tracker_id: LHR-yyy
-    
-    transform_offset:
-      position: [0.0, 0.0, 0.1]
-      orientation: [0.0, 0.0, 0.0, 1.0]
-```
+Copy `trackers.example.yaml` to `trackers.yaml` and fill each tracker serial. That example sets `publish_rate_hz` to 120, plus `wrist_C_rpy_deg`, `wrist_offset`, and `room_yaw_deg`. The package README lists the fields.
 
 ## Setup
 

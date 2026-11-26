@@ -182,29 +182,9 @@ ARX Lift 2S vendor chassis/lift (`/body_control`) is a **different** stack from 
 :::
 
 (vr-published-topics)=
-## VR published topics
+## Teleop pose stream
 
-`xr_target_node` in [vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md) publishes this set for both WebXR (`./run.sh vr`) and XRoboToolkit (`./run.sh vr-xrt`). The contract is [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md). The fa-py-libraries `./run.sh vr-record` bag records the same pose, button, stick, and trigger topics.
-
-| Topic | Type | Cadence | Contents |
-|-------|------|---------|----------|
-| `/teleop/head_pose` | `geometry_msgs/Pose` | every frame | Headset 6-DOF pose |
-| `/teleop/left_ee_pose` | `geometry_msgs/Pose` | every frame | Left controller 6-DOF pose |
-| `/teleop/right_ee_pose` | `geometry_msgs/Pose` | every frame | Right controller 6-DOF pose |
-| `/teleop/controller_state` | `std_msgs/Int32` | every frame | Button event code. `0` means no edge this frame |
-| `/teleop/thumbstick_axes` | `geometry_msgs/Twist` | every frame | Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / `angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0` |
-| `/teleop/trigger_values` | `geometry_msgs/Twist` | every frame | Left trigger pull in `linear.x`, right trigger pull in `angular.x`. `0.0` is released, `1.0` is full |
-| `/teleop/xrt_diag` | `std_msgs/Int64MultiArray` | with the pose frame | Diagnostic. Downstream control can skip it |
-
-Poses are `geometry_msgs/Pose` (no `header`), in the robot world frame (`x` forward, `y` left, `z` up). WebXR publishes on a fixed 30 Hz timer. XRoboToolkit publishes when the VR `timeStampNs` changes: about 90 Hz with the default Pico App, and about 400 Hz with the enterprise send rate over USB.
-
-Pull depth stays on `/teleop/trigger_values` every frame. The press edge is a separate code on `/teleop/controller_state` (`9` left, `10` right).
-
-`VRInputHandler` in `arms_target_manager` subscribes to the pose topics, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`. In UPDATE it drives arm targets from the controller poses. Grippers that are in percent mode follow `trigger_values`. The latched mode is `teleop/mode_state` (`TeleopModeState`). Headset button behavior: {ref}`VR Teleoperation <controller-buttons>`.
-
-The names above are the root topics in the protocol (`/teleop/...`). `teleop/mode_state` is relative to the robot namespace. Topic, type, QoS, and the status fields: {ref}`Teleop topics and data <teleop-topics-and-data>`.
-
-Optical wrist presets also publish `/teleop/optical_r0_caps`, `/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and `/teleop/mirror_mode`. The handshake is in the same protocol.
+The shared end-effector poses, the headset pose, sticks, and triggers are on {ref}`Teleop topics and data <teleop-pose-stream>`. The headset, the exoskeleton, and Vive Tracker publish the poses. The foot pedal sends the same event codes on `teleop/controller_state`.
 
 ## Topic vs Action vs Service
 

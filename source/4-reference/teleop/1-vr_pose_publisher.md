@@ -62,7 +62,7 @@ Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise â‰
 
 ## Topics Published
 
-`xr_target_node` publishes the `/teleop/*` set for both backends. Names, types, fields, and rates: [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics). The status latch for that stream is {ref}`Teleop topics and data <teleop-topics-and-data>`.
+`xr_target_node` publishes the headset set for both backends: poses, button events, sticks, triggers, and `/teleop/xrt_diag`. Names, types, fields, and rates are in {ref}`teleop-pose-stream`. `dexcap_cartesian_teleop` and `tracker_openvr` publish the two end-effector poses on that same pair. The status latch is {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 ## Configuration
 
