@@ -171,6 +171,14 @@ Native application for lower latency — recommended for production. From the fa
 
 Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise App ≠ consumer Pico App) plus PC Service. `./run.sh vr-xrt-service stop` shuts down the PC Service.
 
+On Pico, after XRoboToolkit reports Network Status **WORKING**, close the settings panel with the **X** at its top-right. The clip is the headset view in XRoboToolkit 1.1.2: the panel is already up, shared network is checked, and the right-controller ray closes it. With the panel gone, later rays stay on the passthrough view.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../../_static/videos/pico-hide-xrobotoolkit-ui.mp4" type="video/mp4">
+</video>
+```
+
 ## Topics
 
 VR teleoperation publishes to:
@@ -325,7 +333,17 @@ Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, j
 | Event bus (VR, foot pedal, exoskeleton) | `teleop/mode_state.enabled` is true | `teleop/mode_state` |
 | Control input (joystick / keyboard) | `teleop_mode.active` is true | `teleop_mode`, and `control_input` for the active arm |
 
-The event-bus card shows `TELEOP` `ON`/`OFF`, `MIRROR`, and `L`/`R` as `RUN` or `PAUSE`, plus the stick plane, chassis, and gripper mode for the current route. A click publishes the same `teleop/controller_state` events as the headset: `4` toggles UPDATE, `7` toggles mirror, and `L`/`R` match left **Y** / right **B**. On 全身, when `yb_pause_semantics` is still false, `L`/`R` send event `16` first, wait until the latch flips, then send `3` or `6`. The control-input card is read-only: active arm `L`/`R` or `CHASSIS`, mirror, and speed `HIGH`/`LOW`.
+The event-bus card shows `TELEOP` `ON`/`OFF`, `MIRROR`, and `L`/`R` as `RUN` or `PAUSE`, plus the stick plane, chassis, and gripper mode for the current route. A click publishes the same `teleop/controller_state` events as the headset: `4` toggles UPDATE, `7` toggles mirror, and `L`/`R` match left **Y** / right **B**. On 全身, when `yb_pause_semantics` is still false, `L`/`R` send event `16` first, wait until the latch flips, then send `3` or `6`. The control-input card is read-only: active arm `L`/`R` or `CHASSIS`, mirror, and speed `HIGH`/`LOW`. A joystick-only view of that card is in [Joystick teleop](9-joystick_teleop.md#control-input-hud).
+
+The clip below shows the event-bus card alone: only the active path fills the top-left slot. Read it as `TeleopModeState`. `TELEOP ON` is `update_mode` true (UPDATE) and is green; `TELEOP OFF` is STORAGE. `L`/`R` `RUN` means that arm is following; `PAUSE` is `left_arm_paused` or `right_arm_paused`, in magenta, with `RUN` in green. `STICK XY` is the arm stick plane. `WAIST XY` and `WAIST ZYAW` replace those labels while the body mode is 跟随. `GRIP %` is percent mode; `GRIP SW` is open/close.
+
+`MIRROR` stays `OFF` for the whole clip. The card moves from TELEOP off with both arms running, to TELEOP on, through a one-arm pause, then to the waist labels. `GRIP` flips from `%` to `SW` and back; while it shows `SW`, the gripper panel’s buttons read Close.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../../_static/videos/vr-teleop-rviz-hud.mp4" type="video/mp4">
+</video>
+```
 
 Sources: [arms_rviz_control_plugin README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_rviz_control_plugin/README.md) (遥操状态 HUD), [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md), and [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md).
 
