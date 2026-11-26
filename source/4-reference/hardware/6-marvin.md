@@ -10,7 +10,7 @@ Tianji control SDK (`TJ_FX_ROBOT_CONTRL_SDK`, private submodule) is a pre-built 
 
 `left_ee_channel` / `right_ee_channel`: `1` = CAN/CAN FD, `2` = COM1 RS485 (source `COM1_CHANNEL`).
 
-Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. VR path: [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
+Tool-dynamics / 负载辨识 wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. This wizard, and MIT-mode force control on Panthera HT / ARX: [Force control and compliance](../../2-how_to/4-controllers/13-force_control.md).
 
 How to read **Startup only** / **Runtime**: [Hardware Interfaces](0-index.md).
 

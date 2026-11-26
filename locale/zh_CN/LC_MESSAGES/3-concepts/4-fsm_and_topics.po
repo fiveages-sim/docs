@@ -8,22 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-11-26 07:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:1
-#: 6013118faf9049fd91a1088d563f1d35
+#: 7db65841a0c74203a1a94ff733f2d1d4
 msgid "FSM and Topics"
 msgstr "状态机与话题"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:3
-#: fa8bb6141e004e0aa23113f19e4ab28b
+#: 9a97e9f3c073462091f06da09f9ecc3d
 msgid ""
 "Finite-state machines in this stack live in "
 "[arms_ros2_control](https://github.com/fiveages-sim/arms_ros2_control). "
@@ -41,12 +41,12 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)（`PoseBasedReferenceManager`）持有。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: b7249a5799a245aa9ecee50f89a17a76
+#: d27ec7df3b9a40ae856119d5d3b83b5c
 msgid "Source of truth"
 msgstr "权威来源"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:8
-#: a300f9c43c7d43e5b00c5001ec461398
+#: d4f53ccd760d4b7c91eab023520c7632
 msgid ""
 "`/fsm_command` is **`std_msgs/Int32`**, not `String`, and not wheeled-arm"
 " strings such as `stand` / `walk` / `arm_teleop`."
@@ -55,7 +55,7 @@ msgstr ""
 "`arm_teleop` 这类轮式臂字符串。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:10
-#: 3acb776e82d14d07b3435f228ed5f21e
+#: b6ba4668fa354f40a9b5aa5774348fe1
 msgid ""
 "`/fsm_state` is also **`std_msgs/Int32`** (latched) — "
 "[ros2_robot_interface API_REFERENCE](https://github.com/fiveages-"
@@ -70,7 +70,7 @@ msgstr ""
 "ht/README.EN.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:12
-#: 95148edfd3a449f6be66a40a903a372d
+#: 29e7251c079e4ad0bbb0d16688475d41
 msgid ""
 "`/mode_command` is **`std_msgs/String`** on the WBC stack "
 "(`send_mode_command` in ros2_robot_interface: `BODY_TRACKING`, "
@@ -82,7 +82,7 @@ msgstr ""
 " FSM 字符串，也不能代替 `/fsm_command`。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:14
-#: ce7ad09b938548048e926d9e458da4ce
+#: 870d0613410c4262b7929973f9c1fa7f
 msgid ""
 "Cartesian EE goals are `/left_target`, `/left_target/stamped`, "
 "`/left_target/twist`, and `/left_target/relative` (and the right / dual "
@@ -96,76 +96,76 @@ msgstr ""
 "对照：[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:17
-#: 4174e4b4258e4ba4ab4763c907c0ffb4
+#: e0261db7e47841b48823c4a16d71d7bf
 msgid "`/fsm_command` (`std_msgs/Int32`)"
 msgstr "`/fsm_command`（`std_msgs/Int32`）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:19
-#: b55f10ad02244d4a847851fd0b06e882
+#: 0ebd9664476f4d0a840f7229f0c5af71
 msgid ""
 "`FSMCommandPublisher` publishes `std_msgs/Int32` on `/fsm_command`. "
 "Shared integers:"
 msgstr "`FSMCommandPublisher` 向 `/fsm_command` 发布 `std_msgs/Int32`。约定整数："
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 5feaf1f17cbb4529b7070f139856208d
+#: 360924fb03174819b7a982085f9cbbce
 msgid "Value"
 msgstr "取值"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 72b7050503184f20bd3cba4bdb294a5f
+#: 95f852c443fe40c7af348926c2e32c39
 msgid "Constant / label"
 msgstr "常量 / 标签"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 106feea1aa014aab889b55579bc0a5e9 4288908d8ae94517a563bf9cbdc3bc47
-#: d3164ec4e63d4fb08c2eaab132f965d7
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 235d178aa753438e93069f4f33dd8346 80eab1375b874794ae46a6e456b007f3
+#: 87b6310dfafa428882a0b74c4f3d197f
 msgid "Role"
 msgstr "作用"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: b0177e7f08d24cd58ef23e58b3d3a8ba
+#: 507515fcbad94f80b8b4896d790684df
 msgid "`1`"
 msgstr "`1`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: b82eb6c1af774d6ea0f488176ae11f6b
+#: c10f0cbb49904b12947546c3e9075e16
 msgid "`FSM_HOME` / HOME"
 msgstr "`FSM_HOME` / HOME"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: c10d3134b3404fb0a619f678f4877eb2
+#: 1e473cdea2944d1684029dc257170019
 msgid "Move to a preset home configuration"
 msgstr "运动到预设 HOME 构型"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 9dc88bba8e2449bc89c2c9793755ede4
+#: 752d689ddcb041eeaba946dbf00748af
 msgid "`2`"
 msgstr "`2`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: d25977779edc4f52957642ac437960b2
+#: 32f06f4f747f43a58a0baa20124d1e08
 msgid "`FSM_HOLD` / HOLD"
 msgstr "`FSM_HOLD` / HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 81bfc0ad42764c8cb72e895f1d6221cc
+#: 6863eef39aa3459aa915b4241476ab22
 msgid "Hold; safe stop. Typical return path from OCS2 / MOVEJ"
 msgstr "保持；安全停止。从 OCS2 / MOVEJ 回来的典型路径"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 40bac9f6e99e45198e5acb73807bc131
+#: aafc90e1acd846a0825bc40e64c41eb0
 msgid "`3`"
 msgstr "`3`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: de29f1efae6748ec984069f0c77f9abb
+#: d7f50e9221aa4e7db1717a4864ee826a
 msgid "`FSM_OCS2` / OCS2"
 msgstr "`FSM_OCS2` / OCS2"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 048f53e20484495480e61c87a3637065
+#: 8b80dd63460c437c9e728b1a2c95bcd4
 msgid ""
 "Arm / WBC MPC (Cartesian targets). On **standalone** "
 "`basic_joint_controller`, `3` is a **legacy MOVEJ alias**"
@@ -174,49 +174,49 @@ msgstr ""
 "的遗留别名**"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 9b44b931edbd4966a1f9b8ea87a3b77e
+#: fe1d21d2c2f546c5bd925bc61e182082
 msgid "`4`"
 msgstr "`4`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: fee3d35451fb4667a39f88696065f468
+#: 82aee66a75ae42e98f80137ef93cbac8
 msgid "`FSM_MOVEJ` / MOVEJ"
 msgstr "`FSM_MOVEJ` / MOVEJ"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 861d74a1550f425cac89e92fcef30c49
+#: 974000588d364221abc74325f33984fe
 msgid "Direct joint-position mode (canonical MOVEJ on mixed OCS2/WBC stacks)"
 msgstr "直接关节位置模式（混合 OCS2/WBC 栈上的规范 MOVEJ）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 9bdc556f10bf48f9bf168ea8867a8006
+#: 7515efc5374d4f7ca53c2f89fb1aba71
 msgid "`5`"
 msgstr "`5`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 579fff099a074779bfe12d314af08518
+#: a211417b3b384ef4827e7084e9ff8082
 msgid "`FSM_COMPLIANCE`"
 msgstr "`FSM_COMPLIANCE`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 95eec7a0a4da4dc5b9715670377b3c0f
+#: 5fe5c0d8305648f3b293ae9a94c443f5
 msgid ""
 "Compliance / FT force mode in ros2_robot_interface "
 "(`enter_compliance()`). Must go through HOLD"
 msgstr "ros2_robot_interface 中的柔顺 / FT 力控模式（`enter_compliance()`）。必须经 HOLD 转入"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: e7c97b41d2a148fea2fea933d75c8c71
+#: 5f37de0db027413bb44ccfe498ba96fa
 msgid "`100`"
 msgstr "`100`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 6377848f1ab44379ac07ee1309c8a30d
+#: e24e69a8397540fba000eb1a720f527a
 msgid "`switch_command_base` (default)"
 msgstr "`switch_command_base` (default)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 1f4fb12edb4a4f83b97c38fa981ac245
+#: 82b331583c7d4491a6692f51ae4203ba
 msgid ""
 "While already in HOME: cycle to the next `home_*` configuration "
 "([basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md))"
@@ -225,42 +225,42 @@ msgstr ""
 "构型（[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: a0bab8d7739a41d6ad17f2cc0aa180d8
+#: 10c388ea81f944888dd5993c7ef34adb
 msgid "`101`, `102`, …"
 msgstr "`101`, `102`, …"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: bbff254605594a7aa10c1c6dd8ade730
+#: 05dac8b65a9c42dc984f95b258122ea3
 msgid "`switch_command_base + 1 + index`"
 msgstr "`switch_command_base + 1 + index`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 5d92faaf561e4831b9714e75aa527dee
+#: 2cde6cfbd53846d78921937f1e0d1261
 msgid "While in HOME: select configuration index `0`, `1`, …"
 msgstr "在 HOME 中：选择构型索引 `0`、`1`、…"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:31
-#: 1d9aaf679f2544bfa38404ce6d4623ac
+#: 0c6733e0b1b04ce78f5e540e535906d5
 msgid "Exact transitions depend on the **running controller**:"
 msgstr "具体转换取决于**正在运行的控制器**："
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 4b242cc43af54814aac8d8488e2e704b
+#: 766c4bfc61bd400e9fdff9d219a842e3
 msgid "Controller"
 msgstr "控制器"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 9270f06fe13246bdb8c67c0dd673d731
+#: 332bda6b429c4a87b97a0ffb266ed167
 msgid "States"
 msgstr "状态"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 070d10f01be746debbc61ddb04deff7e
+#: 2a6b98fc5f524c588e57343e1d832542
 msgid "Commands"
 msgstr "命令"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 36c5cce03a28414d80b4a913ef690f61
+#: 77c648b042a64c589bb68c78b75198e7
 msgid ""
 "[Basic Joint "
 "Controller](../4-reference/controllers/7-basic_joint_controller.md)"
@@ -269,12 +269,12 @@ msgstr ""
 "Controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 91d99ec7474d406aa1ebd61489696767
+#: a41f359adcf148d8b7e33724744e0eba
 msgid "HOME / HOLD / MOVEJ"
 msgstr "HOME / HOLD / MOVEJ"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 65d9f10acd114ae183f9631044b52bbf
+#: 2455368f95dd4e3f833178f8ebdc4eca
 msgid ""
 "README: `1` HOME, `2` HOLD, `4` MOVEJ (canonical); `3` is a **legacy "
 "MOVEJ alias** when this controller is standalone, and means **OCS2** on "
@@ -284,17 +284,17 @@ msgstr ""
 "别名**，在混合 OCS2/WBC 栈上表示 **OCS2**"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 92d4168290884beb855616d85e1be901
+#: 2e21f64204a44f35ab2e15c1b1554c3c
 msgid "[OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 msgstr "[OCS2 Arm Controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 7efa68ae3e3b43a58b18928869b3e877
+#: d58c92eb2f2141378f3b6522d4380ea6
 msgid "HOME / OCS2 / HOLD"
 msgstr "HOME / OCS2 / HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: b8a4baca0a114cd1806394ea2e9a67e3
+#: 2f227b8c311047b2aaa2284d50a5f975
 msgid ""
 "README integers: `1` HOME, `2` HOLD, `3` **OCS2**. Operators and "
 "`ros2_robot_interface` send them on **`/fsm_command`**. Starts in HOLD; "
@@ -306,17 +306,27 @@ msgstr ""
 "还定义了 `4` MOVEJ"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 8375c6b78c234d019a556337209efa59
+#: c5ef414be03949df84a30c3d535d708d
 msgid "[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[OCS2 WBC Controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: 52031d39de604108bc0529b3b20cef09
+#: 0d517ae6527b4d4bb9710b0e3aedfba5
 msgid "全身 stack"
 msgstr "全身栈"
 
+#: ../../source/3-concepts/4-fsm_and_topics.md:5
+#: af65050d98d84ad7989164f830abe1a3
+msgid ""
+"Binary in `ros-jazzy-arms-ros2-control`. Extra states are in the source "
+"README. Public Python still uses the same `/fsm_command` integers plus "
+"`/mode_command` strings"
+msgstr ""
+"二进制在 `ros-jazzy-arms-ros2-control` 里。多出来的状态写在源码 README。公开的 Python 仍使用同一组 "
+"`/fsm_command` 整数，外加 `/mode_command` 字符串。"
+
 #: ../../source/3-concepts/4-fsm_and_topics.md:39
-#: 72c3ab7247574667a861c0a2f725ffa2
+#: f7596a424b8e4e64a6c6ae36c63c9621
 msgid ""
 "On mixed stacks, head / split-waist `basic_joint_controller` treats **`3`"
 " and `4` as MOVEJ**, while the arm / WBC controller treats **`3` as "
@@ -326,7 +336,7 @@ msgstr ""
 "WBC 控制器则把 **`3` 当作 OCS2**、**`4` 当作 MOVEJ**。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:41
-#: 8461c0d524c84e4c878410b54d4a9421
+#: 00673306b4db4d3ca28457e7ecf78903
 msgid ""
 "The [ocs2_arm_controller README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/ocs2_arm_controller/README.md)"
@@ -343,12 +353,12 @@ msgstr ""
 "`/left_target/twist` / `/right_target/twist`。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 877830ae1516479582d35e98d694605f
+#: 7565bb06f0ac4a0e87ec1b8c7e5110d8
 msgid "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
 msgstr "ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 2\"   # HOLD"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:47
-#: c03298bd4b7740029f6b6e3e22bde3f1
+#: f73904fabd6f4aa2b8c9291ef5044fa1
 msgid ""
 "Split vs whole-body launches (and the Lift2S `quick_start` **split body**"
 " / **full body** menu) are on [分体控制 vs 全身控制](7-split_vs_wbc.md). Teleop "
@@ -360,12 +370,12 @@ msgstr ""
 "状态——[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:49
-#: f3b5247d4792414f83e05e676e4196b0
+#: dc85f08684f043598dd69774999bed3a
 msgid "Status and command topics"
 msgstr "状态与指令话题"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:51
-#: c4e445141f614f14b6c45b7ee65d8379
+#: e7e79df4b3d54dd284e55c5dd99dac3e
 msgid ""
 "Names below are those the public "
 "[ros2_robot_interface](https://github.com/fiveages-"
@@ -378,138 +388,154 @@ msgstr ""
 "WBC 关节前缀同时存在时，`connect()` 会改写前缀（WBC 优先）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:53
-#: 68fe2a45002b48288012acbaae6f639d
+#: 70d3e7eb064e4a78acfc87ce0f9bf432
 msgid "State"
 msgstr "状态"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 0a264e9a2b7946f28196cae6591c9ccc 1194d9e2e2c644c6bd8057c58c85d49b
-#: 14da532309194588891168aba33d2eb3 551689962c414dee978f26d06bf62a7c
-#: 70559d9044bb469888ed2da64e2229c7 788eac5affb545e4849df99d94ca2cfe
-#: 9851da540f0a4c71ae976c60ee28b390 c285b30241ce414f8a0fdd1a87cfa6e2
-#: d9c15e0e23ad4ed4a7cc8d8752e5ee7d
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0ae9202be48846918742d69061ad2b0f 116c18559e9241168b05f610c2d9919b
+#: 6406c1f0f3a54b68a9f416f58bbc8870 65c670288f874bcab727bf9d631ed507
+#: 69418bf6658c4b0cad2a772143672957 8cd0c215ebed47baab9bb32307069ae9
+#: 96d180af15aa405c908da5a44f674842 cd52b220afce4f4ca5ffeb7ffa4108c5
+#: d45f82db5ed94770be03b792784ff728 dcb1c509799546a9a316f7a37db993f9
 msgid "Topic"
 msgstr "话题"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 1e7afb953909403db89651ecd04adfc7 2efed01d47e542a5ba47a3ea22b06be2
-#: 47cf32130c5d4d9e99b2648eb2f8ff59 58a70434e28a44e6b99ecb971d349032
-#: 818aa73414f146718f53f88f39bee899 c2b4ab1fdd9b48c9b2c74e4fa4e9f309
-#: cbce1c84457d4786ba1415e9f37de156 dbecaeb0b4f54ba39b9f44288b488372
-#: dfe1c91c6bfd441fb18765fd9deafc5e faa9913a49f64d55a949a7862351322d
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0159bfc4c5f44de0bbe141d96edfd487 22a289df2c484cd6b7fc31dd2548d47c
+#: 25a50284dac94ef690d64b6f317afa96 46329c4bf3834d07a48ea0dad8b122d7
+#: 48d72b4501624645925f95e69db192ba 5d6459c3c7e04fea971fda0bc8916cd4
+#: 60316e330a0b474f9e38412dc7ff43bb 84a021214fbd49bd8e1c6d15a2a0cadd
+#: 84b638dceb0e44dd9df43f13909d67d0 8b0bcf84b4d24ad1bd66ddc8083667e8
+#: e3bbbf73ae0c49feadf3919af6374c6a f4d02bc9e9e84ca0a018b4f0d5cf92cb
 msgid "Type"
 msgstr "类型"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 1df79e59dad94e749e37f1d8a7e5016e 489b82d62b3c4f569ed47be11e5e9a75
-#: 5420250a38f144b1a6ec022ef81b1928 658e43c2b7aa492d974b4f4c48566a24
-#: 8305c04c71b748fe8292e33db5770c9d a401e3b0a2e3458fa86eeddef13d2618
-#: a707440971df46f080bde2a58e40e452 edb89d05179f433d9ec13928a11d718f
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 00a98240ef254c0cbbd40a050ff0cf12 07940004c717464898a615485837a785
+#: 092a7a92898b41b6b51e760f6addbf97 59f6a921b9cc4bffa1ac7ba2e9c2e2c3
+#: 7864119eb2e94f24b91011ded1b1e928 85aa2e7314ba41259c063b62023454f9
+#: c0935877f31d4937a04b631052460c62 e537b194655846eea7016840e18bf161
 msgid "Typical use"
 msgstr "典型用途"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: b892df3c94324a768446a6278d322b1f
+#: d68ebbb7e97d473999e4663b4caf8ff9
 msgid "`/joint_states`"
 msgstr "`/joint_states`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 9df7d2501de64842abee0cf852b8c2d4
+#: d40bb4473f2c4aa4ac46e5dede2a1944
 msgid "`sensor_msgs/JointState`"
 msgstr "`sensor_msgs/JointState`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: d7792ede388b402194a0550e885ed9dc
+#: 565fb6ec8b0744919e6e4816727fcce8
 msgid "All joints (arms, head, waist, grippers)"
 msgstr "全部关节（手臂、头部、腰部、夹爪）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 3075a0d50afd43f4b4d7ea346fb95068
+#: 809096221b7c4d9dacfd9912a345bd1f
 msgid "`/left_current_pose`, `/right_current_pose`"
 msgstr "`/left_current_pose`, `/right_current_pose`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 10e7e1953c594c68a0e66c244cebdfa7 1b956b1bdba740319384bb7a12045275
-#: 31652d4d14a34f57a07cf666ce957113 71cee657cbbb475fab10167b5318e5a6
-#: 7a99f42026ca47609c916b462b584b0c 8efe5cae61f74255aef4438f5f4cbeff
-#: b25f0758caba4110be0aa92daa466b81 bf9f2bf6eb2e48c1968957efa6a3322e
-#: c300acea12c24cffa939985542754e38 e3ebd5c43866424e8420531e2626f2c8
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 1501a077ea35411382ceec5672ca592a 2d333bb61a1243f687f9b4adb92faba1
+#: 4184e79f59c540c293a392e1ac9ea6be 4bbd52ef1dcf4d839b433ae31e07052f
+#: 5b8536197ebc499eaba5a7821948ef6c 631b94d7f30a40fba64c509f65548609
+#: 949dfce492f04b8b89405c17f08b29f8 9f87029fa2fc4af9ae04f2a0dab5e056
+#: a854fbd71caa4edb9a836b738fca29cb bbae4a365f794b94929d9149c8a55e82
 msgid "`geometry_msgs/PoseStamped`"
 msgstr "`geometry_msgs/PoseStamped`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 7285a8003cde4c58b9497a68df63d7a5
+#: 1c9cd8cd5e2c45429304f59d416afdc7
 msgid ""
 "Current EE pose (`frame_id` is **base**, or WBC wheeled world — not the "
 "EE link)"
 msgstr "当前末端位姿（`frame_id` 是 **base**，或 WBC 轮式 world——不是末端 link）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: c03ab929466649c99f030ca93380a5c6
+#: 13f68b7e784e4aaea4efdcd13710adb3
 msgid "`/left_current_target`, `/right_current_target`"
 msgstr "`/left_current_target`, `/right_current_target`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ee1d0596afad4cd28cb01cf2157a5573
+#: 9865f4d3efcf472393445247f7303093
 msgid "Active Cartesian command echo; arrival checks (`check_arrival()`)"
 msgstr "当前笛卡尔指令回写；到位检查（`check_arrival()`）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 36a9761c902c4bcd9626e366537a32f4
+#: 9b90a74bdf96437487305186924da33b
 msgid "`/body_current_pose`"
 msgstr "`/body_current_pose`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 45ee107206ca49b6a59e8e6fad82d1ba
+#: 385e1e676e944628a8e3922ad6a14d80
 msgid "WBC current body pose"
 msgstr "WBC 当前身体位姿"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 914e88ea5d5e4808a9e0e5162c334426 fb35bcf471124128a88b9870b4ce8c7b
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 3e2849e683384b76813d3444c1a31679 5c14995c863e4257aeabdf4e7d97a566
 msgid "`/body_current_target`"
 msgstr "`/body_current_target`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: bb0e656a90ae4761a866b3817d498bd9
+#: 3091f927805142e38272024758264956
 msgid "WBC body command echo (`body_target_enabled`)"
 msgstr "WBC 身体指令回写（`body_target_enabled`）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 3b517293b07d4c91a41f2515aef5546f 7a51097def0f44faa609244716cafee5
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 2c921e99eaaa4e098ce88e889f5de3b6 975d5f12ba8640509283ba3c7f77739c
 msgid "`/head_current_target`"
 msgstr "`/head_current_target`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 74bf6a36c7b4469ba258b75cf6d4b12a
+#: 54ad51e305414da789a8dfa64fd5f1e5
 msgid "WBC Head 6D final-target echo; `arms_target_manager` subscribes only"
 msgstr "WBC 头部 6D 最终目标回写；`arms_target_manager` 只订阅"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: cf3dd2a9ee0346febcd59afe96ae7538
+#: 2f2775816bae43bf94fd5174b45ae189
+msgid "`/ocs2_wbc_controller/wbc_capabilities`"
+msgstr "`/ocs2_wbc_controller/wbc_capabilities`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:43
+#: f51ea0ba60114756a8626493c11ccb4f
+msgid "`arms_ros2_control_msgs/WbcCapability`"
+msgstr "`arms_ros2_control_msgs/WbcCapability`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:43
+#: 1efeeac0a8d5460398e3f07cab1444fe
+msgid "Which WBC constraints this robot has configured"
+msgstr "该机器人已配置哪些 WBC 约束"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:43
+#: 9da4efe64c374ee8bd681973a7c803e1
 #, #
 msgid "`/ocs2_wbc_controller/current_state`"
 msgstr "`/ocs2_wbc_controller/current_state`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 6a7a6a043bab4aa4b1efac206e1326ec
+#: f479d35a6d7041c0bb2b8c582e0cab49
 msgid "`arms_ros2_control_msgs/WbcCurrentState`"
 msgstr "`arms_ros2_control_msgs/WbcCurrentState`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 7529c55b6dae453191af194a406e20d2
+#: cbc226fff6b640e589c7745afa903e09
 msgid "WBC constraint snapshot; used to confirm `/mode_command`"
 msgstr "WBC 约束快照；用来确认 `/mode_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:65
-#: 9e42fb5920744d83abc20f4e4b7e9212
+#: ../../source/3-concepts/4-fsm_and_topics.md:66
+#: 9bbbc1209fb9468eb523d480fa8f9f6e
 msgid ""
 "ros2 topic echo /joint_states\n"
 "ros2 topic echo /left_current_pose\n"
@@ -519,13 +545,13 @@ msgstr ""
 "ros2 topic echo /left_current_pose\n"
 "ros2 topic echo /left_current_target\n"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:71
-#: 7eebe149f47c4796ba5bc236ed89480d
+#: ../../source/3-concepts/4-fsm_and_topics.md:72
+#: eb7423079312445a8d02df5c46ae415b
 msgid "Cartesian arm targets (`arms_target_manager`)"
 msgstr "笛卡尔手臂目标（`arms_target_manager`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:73
-#: ac4e1c536f5b4ab295ed7abe0c77a4ef
+#: ../../source/3-concepts/4-fsm_and_topics.md:74
+#: d5ea34119cb742bf8f16ccf8f316ccd9
 msgid ""
 "Left arm; right arm is symmetric (`/right_target…`). From the "
 "[arms_target_manager README](https://github.com/fiveages-"
@@ -537,8 +563,8 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)"
 " 的 `PoseBasedReferenceManager` 表。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:75
-#: 9be117ead00f4aec9160765daf30fe0b
+#: ../../source/3-concepts/4-fsm_and_topics.md:76
+#: 20753fff341643a18421dcec215db059
 msgid ""
 "Unstamped `/left_target` replaces the current EE goal with **one** pose "
 "(VR / high-rate teleop). Stamped `/left_target/stamped` runs TF into the "
@@ -550,98 +576,102 @@ msgstr ""
 " stamp 的远距离跳变可能产生冲击。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ec4c81051dee4417baa7096569e195d7
+#: 6047450b276f44c08f6298474c6c418c
 msgid "`/left_target`, `/right_target`"
 msgstr "`/left_target`, `/right_target`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 29388da1df764a9399985f667efd2409 2cb74e36936447deb9283d602632e91a
-#: 721d7f66251845dc88fb3b158bee7ef5
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 3caf43ba1901450781a277519bbeccf2 3fb66dc1705748a6a3d86ec9ae67a259
+#: 8d70c451d0da4badb0336eae94d94fe6 cc12a0dae54c4fa58101c2ca5494d9ba
+#: d11fea294a1845de83be2ea92990f299 e335a3374c5d428ca8a3416683c3e699
 msgid "`geometry_msgs/Pose`"
 msgstr "`geometry_msgs/Pose`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 6ceec3d9b14949e69919f69122e81825
+#: b528db4b4ad44280a07dce99fd9aae4c
 msgid "Immediate absolute pose in `base_frame`"
 msgstr "`base_frame` 下立即采用的绝对位姿"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 5d13c67d33494cb4bde505fcd230658f
+#: d4f4587cd2fb4e87a12916c0028e87c2
 msgid "`/left_target/stamped`, `/right_target/stamped`"
 msgstr "`/left_target/stamped`, `/right_target/stamped`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 1443121fbcd84086b57413c144cd89bd
+#: 9ea17b547ed34ad5a855541ebb5e9604
 msgid "Absolute **MoveL**; non-base `frame_id` is TF’d to base"
 msgstr "绝对 **MoveL**；非 base 的 `frame_id` 会经 TF 变到 base"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 6128c4062c874a13a04f7110490d050d
+#: 3257741f16a54609a54ac3b5fced5ea6
 msgid "`/left_target/twist`, `/right_target/twist`"
 msgstr "`/left_target/twist`, `/right_target/twist`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 10dd59049f3d4f4381e146b2279c548a
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 014bca43096c4ff0bba1cec1bf3c681b 02aa547fb087496c8725e9cd9c94a690
+#: ba8cf76010094e558fa53d10d811a595
 msgid "`geometry_msgs/Twist`"
 msgstr "`geometry_msgs/Twist`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: e0421d690ad54424b9d90ae7df2dba3e
+#: 9802d30a23f9441e887bdf066abc7755
 msgid ""
 "**Velocity stream** (m/s, rad/s) in base; latch + `dt` integrate. "
 "Joystick `control_input` is mapped here"
 msgstr "**速度流**（m/s、rad/s），在 base 下；锁存并以 `dt` 积分。手柄 `control_input` 映射到这里"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 6672d08ba407429ab1b7636663bd8edf
+#: ed38ee6562ed43e29dd8a55dbfc470f0
 msgid "`/left_target/relative`, `/right_target/relative`"
 msgstr "`/left_target/relative`, `/right_target/relative`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9465934b07a745aea2340f3ce2f379d6 e0248589af1e4260ac7bad53781acd26
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 2a3280ebf53c4729afd0e0846495f5e8 7ea73d36268446acbf3776b1ed4ff1e0
 msgid "`geometry_msgs/TwistStamped`"
 msgstr "`geometry_msgs/TwistStamped`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 4620bff0cc64446f8f2598098e6a9431
+#: fe2e87700fa44e959cc579d3c65b08fd
 msgid ""
 "**One-shot relative** increment (m, rad) + MoveL; `header.frame_id` is "
 "the increment frame (base / EE / other TF)"
 msgstr "**一次性相对**增量（m、rad）再走 MoveL；`header.frame_id` 是增量坐标系（base / 末端 / 其它 TF）"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 53a94d5ec81c4a4ea112028feebca442
+#: fe81947848e44d77bc8080871ff573eb
 msgid "`/dual_target/stamped`"
 msgstr "`/dual_target/stamped`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 1b52ffa04f20452b90d6968775e7970c cfa5905ff9bf459f9a0e9c25538de909
+#: 55a3347ee90944b1bd43914ce25a8739 f67c03a97701472db4b1cfe60729d96d
 msgid "`nav_msgs/Path`"
 msgstr "`nav_msgs/Path`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 30ba206bcb80400c951bd4c74cb2001a
+#: 2d2cc2f790c74b65a5637e19b3e6e8e4
 msgid ""
 "Dual-arm; Path poses `[left, right]` (optional body as a third pose on "
 "WBC). MOVEJ dual send ignores a body pose if three are present"
 msgstr "双臂；Path 位姿为 `[left, right]`（WBC 上可选第三项 body）。MOVEJ 双臂发送若有三个 pose，会忽略 body"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 9ec9ebaeb57f4452bfa1e9955c2b132c
+#: 58cd0889cc69440ea4068aa305dce940
 msgid "`/target_path`"
 msgstr "`/target_path`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:43
-#: 70ca37e5789f405ab897cdf0932f8449
+#: a1c2c3781bd64f2da84500b2a9b0aa2a
 msgid ""
 "Dual-arm waypoint path (Python API marks this topic deprecated in favor "
 "of the `execute_path` service)"
 msgstr "双臂路点路径（Python API 标明该话题已弃用，改用 `execute_path` 服务）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:86
-#: 6036bd23c4ff4557a15c4481d02257dc
+#: ../../source/3-concepts/4-fsm_and_topics.md:87
+#: e3028d62c88d436e9386a784763a33a4
 #, python-brace-format
 msgid ""
 "`relative` uses **TwistStamped**: `twist` is a displacement increment, "
@@ -655,18 +685,18 @@ msgstr ""
 "`Twist`（速度语义，仅基座）。`angular.{x,y,z}` 对应 roll / pitch / yaw（合成：`R' = "
 "RΔ(yaw)·RΔ(pitch)·RΔ(roll)·R`）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:88
-#: d41f48ebbfe447938b5c52b9922d6ff6
+#: ../../source/3-concepts/4-fsm_and_topics.md:89
+#: 9245fad5cd5b4dc3b834b22705f90595
 msgid "Body targets (全身 OCS2)"
 msgstr "身体目标（全身 OCS2）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ce58ecc3fe9247a3b298756ffba2dd98
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 27855c6ee7714d66abd4233c65ad99b6
 msgid "Whole-body (WBC) availability"
 msgstr "全身控制（WBC）可用性"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:93
-#: 9d0628252efe4258a034dcdc8df8813e
+#: ../../source/3-concepts/4-fsm_and_topics.md:94
+#: 439620c19b014c81a8c32f6b8b9e88d1
 msgid ""
 "`/body_target*`, `/head_target*`, `/mode_command`, and `WbcCurrentState` "
 "(`/ocs2_wbc_controller/current_state`) need **`ocs2_wbc_controller`** and"
@@ -681,8 +711,45 @@ msgstr ""
 "`ocs2_wbc_controller/Ocs2WbcController` 时用 `full_body.launch.py`）。默认 mock"
 " 演示（`demo.launch.py`）和分体（`split_body.launch.py`）**并不表示**这些能力可用。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:98
-#: 1c65b4f408f54b07a8112716084d85b2
+#: ../../source/3-concepts/4-fsm_and_topics.md:96
+#: 5f2eab79020a4c72975c37d65ab5482b
+msgid ""
+"`ocs2_wbc_controller` runs from the `ros-jazzy-arms-ros2-control` deb. "
+"Extra FSM states stay in the source README. Which constraints are live "
+"depends on the robot (`WbcCapability` in the [msgs "
+"README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md):"
+" mobile base, body relative, head 6D, midpoint gaze, …). Public Taku mock"
+" uses `split_body.launch.py robot:=taku` (arm MPC + body/head "
+"`basic_joint_controller` + `adaptive_gripper_controller`). That is not "
+"WBC. `full_body.launch.py robot:=taku` needs `ocs2_wbc_controller` from "
+"that deb or from a source checkout. Shipping "
+"`config/ocs2/fixed_base_tcp.info` in the public description is not "
+"enough. When that config and the controller are installed, Taku full-body"
+" default `headMode` is `HEAD_GAZE` (gaze on "
+"`head_camera_mid_optical_frame`); `target_manager.yaml` has "
+"`enable_head_control: false` so the head follows OCS2 rather than a "
+"joint-space marker. Split-body still teleops the head through "
+"`head_joint_controller`. Taku body-relative rest is around x≈−0.21, not "
+"Bot2 `[0, 0.25]`. Head 6D tracking (`HEAD_TRACKING`) is only there when "
+"the controller reports `head_tracking_ee_enabled`."
+msgstr ""
+"`ocs2_wbc_controller` 从 `ros-jazzy-arms-ros2-control` 这个 deb 运行。多出来的 FSM "
+"状态留在源码 README。哪些约束在生效取决于这台机器人（[消息 README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
+" 里的 `WbcCapability`：移动底盘、身体相对、头部 6D、中点注视等）。公开的 Taku mock 用 "
+"`split_body.launch.py robot:=taku`（手臂 MPC + 身体/头部 "
+"`basic_joint_controller` + `adaptive_gripper_controller`）。那不是 "
+"WBC。`full_body.launch.py robot:=taku` 需要这个 deb 里的 "
+"`ocs2_wbc_controller`，或一份源码检出。公开描述里带 `config/ocs2/fixed_base_tcp.info` "
+"不够。配置和控制器都装上之后，Taku 全身模式默认 `headMode` 是 `HEAD_GAZE`（注视 "
+"`head_camera_mid_optical_frame`）；`target_manager.yaml` 里 "
+"`enable_head_control: false`，头跟随 OCS2，而不是关节空间里的标记。分体模式仍通过 "
+"`head_joint_controller` 遥操作头部。Taku 相对身体的静止位置大约在 x≈−0.21，不是 Bot2 的 `[0, "
+"0.25]`。头部 6D 跟踪（`HEAD_TRACKING`）只在控制器报告 `head_tracking_ee_enabled` 时才有。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:99
+#: e56f58ded55e4eb3af2f8258299bb273
 #, #
 msgid ""
 "These Cartesian body topics are on the **全身 / WBC** path "
@@ -698,46 +765,46 @@ msgstr ""
 "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 " 的关节话题驱动腰部（`/body_joint_controller/target_joint_position` 等），不是这组话题。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 13316287b4054f14b055cf463835207f
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 11e5931e3dca4d5f9fa4186e9d4878c0
 msgid "`/body_target`"
 msgstr "`/body_target`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ed5518d8769746438d3cb4d98d8b8ca7
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: cd5829baf16e4238bc1849c45c823a6d
 #, #
 msgid "Immediate absolute body pose"
 msgstr "立即绝对身体位姿"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 5a25bbef803542d7957b09f10b29ca2a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 7f8220021b8f4a6d9023e1629b769a51
 msgid "`/body_target/stamped`"
 msgstr "`/body_target/stamped`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: a3a4160548824472bb9ed86779154047
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: b7b00a00dc57489ea749cc5445355311
 msgid "Absolute body **MoveL** (RViz TRACKING)"
 msgstr "绝对身体 **MoveL**（RViz TRACKING）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: d7f4cdfb392d4cd9812bd36048e31d1e
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 65bc6054117644d486ef38fd6365faf7
 msgid "`/body_target/relative`"
 msgstr "`/body_target/relative`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: b7f25213d65e4ac390ec613f88216b25
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 9513b69e75134e33b39d7aa3a3d25cc4
 msgid ""
 "One-shot relative body increment + MoveL (`frame_id` = base / "
 "`body_frame`)"
 msgstr "身体一次性相对增量再走 MoveL（`frame_id` = base / `body_frame`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 4f2f2e97c06a4e1da418b5c44e1dda41
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 0803dfb81393414099f4d407c1809bd1
 msgid "Active body command echo"
 msgstr "当前身体指令回显"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:107
-#: f4b800f26d2d47d7a0241e55e1964ae9
+#: ../../source/3-concepts/4-fsm_and_topics.md:108
+#: 71dd332abe584cf7b307762d243f88f0
 msgid ""
 "Python `send_body_target*` / `send_body_relative` also publish "
 "`/mode_command` `BODY_TRACKING` (skipped if already in that mode). Dual-"
@@ -748,13 +815,13 @@ msgstr ""
 "的 `BODY_TRACKING`（已在该模式则跳过）。双臂 `/dual_target/stamped` 仅在 WBC 上可带**第三个**身体"
 " pose；MOVEJ 双臂下发若有三个 pose 会忽略身体那个。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:109
-#: 2798c81cd8954bb5ae285e2ca1a462f7
+#: ../../source/3-concepts/4-fsm_and_topics.md:110
+#: 24ae458eefa44639b976bb5532864c5c
 msgid "Head 6D targets (全身 OCS2)"
 msgstr "头部六维目标（全身 OCS2）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:111
-#: 4d17548e00854437b42bdaa18c0cce78
+#: ../../source/3-concepts/4-fsm_and_topics.md:112
+#: e82a549f57b34da88809664a4c2a013d
 msgid ""
 "WBC Head XYZ+RPY. `arms_target_manager` inserts the 6D marker when FSM is"
 " **OCS2** and `WbcCurrentState.head_state` is **`HEAD_TRACKING`**. "
@@ -768,34 +835,34 @@ msgstr ""
 "marker。`HEAD_GAZE`（中点注视）走同一门控并隐藏 marker。`split_body` 不会打开这个 "
 "marker。分体头部关节仍走 `/head_joint_controller/target_joint_position`。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9821c590bcfc4da09dd2fac316719d44
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: a7def76c1ffe4e708e6181f3ef0d0bdb
 msgid "`/head_target`"
 msgstr "`/head_target`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: daa7aa5966b44fab8ad4ce412549b105
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 398c6d8681f647839e05962f5b18d195
 msgid "WBC Head 6D final target, continuous"
 msgstr "WBC 头部 6D 最终目标，连续更新"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ab18be19660c4acba3fd8b176aae2ba5
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 0ed02d1528b240f5a8dc3c0588ebc61b
 msgid "`/head_target/stamped`"
 msgstr "`/head_target/stamped`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9390dcd2427a4ab990737ede170e4010
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 6714d4ed2f5148b2bd3534b3b32e832d
 msgid "WBC Head 6D interpolated target, one-shot"
 msgstr "WBC 头部 6D 插值目标，单次发送"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: a4db971ec32b47ab8a1f77e9ab6a06c9
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 64e4899dd9f845b5983b309eb05cdaa4
 #, #
 msgid "Final-target echo; `arms_target_manager` subscribes only"
 msgstr "最终目标回显；仅 `arms_target_manager` 订阅"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:119
-#: 94c4f11cffc54b3c9a127ae08f00734e
+#: ../../source/3-concepts/4-fsm_and_topics.md:120
+#: d3e925fc9e3f4d3a8a24a5a4785b3d2c
 msgid ""
 "API_REFERENCE maps head **joints** (`send_head_joint_positions`), not "
 "`/head_target`. `head_state` constants: msgs README (`HEAD_DISABLED` / "
@@ -805,13 +872,13 @@ msgstr ""
 "`/head_target`。`head_state` 常量见 msgs README（`HEAD_DISABLED` / "
 "`HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:121
-#: 2e68192a6cfa44c79e4cdd5437665b02
+#: ../../source/3-concepts/4-fsm_and_topics.md:122
+#: d8225f174250410a8e2ed6c1ea565b7b
 msgid "MOVEJ + stamped → IK MoveL"
 msgstr "MOVEJ + stamped → IK MoveL"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:123
-#: f7ca55560db547c081f8dfcf17031789
+#: ../../source/3-concepts/4-fsm_and_topics.md:124
+#: b4f94817a2c74d92b586c084aec71c03
 msgid ""
 "`PoseBasedReferenceManager` is the sole holder of `left` / `right` / "
 "`dual_target/stamped` and the TF buffer. While FSM is **OCS2**, stamped "
@@ -831,8 +898,8 @@ msgstr ""
 "[lina_planning](../4-reference/controllers/5-lina_planning.md) 时，MOVEJ "
 "侧为空操作。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:125
-#: ddf9213f05ea4836863500cd0414a386
+#: ../../source/3-concepts/4-fsm_and_topics.md:126
+#: c0c556ae18fd4352ac40dcf5f6e47e9f
 msgid ""
 "This IK MoveL path is on **`ocs2_arm_controller`**. `ocs2_wbc_controller`"
 " MOVEJ is **joint-only** (no IK MoveL). `full_body.launch.py` sets "
@@ -847,13 +914,13 @@ msgstr ""
 "`send_target_stamped` 发同一条 stamped 话题；要走 IK 路径须保持 FSM=MOVEJ（关闭位姿类自动切 "
 "OCS2）。RViz Joint 面板的 MOVEJ 仍只发关节数组。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:127
-#: b87dedd3aba84e278fb8aa1dcd66c709
+#: ../../source/3-concepts/4-fsm_and_topics.md:128
+#: 689cbd61f5af4ed080c91ab1994f48a4
 msgid "MoveJ"
 msgstr "MoveJ"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9ce29c4c1804486a8f691d6583afe14c
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 8a9694df48df4d55ab8b2f509aac369d
 msgid ""
 "`/ocs2_wbc_controller/target_joint_position/left` (and `/right`, `/body`,"
 " `/head`)"
@@ -861,72 +928,72 @@ msgstr ""
 "`/ocs2_wbc_controller/target_joint_position/left` (and `/right`, `/body`,"
 " `/head`)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 1cbc22a033f74ad19e79d59ce1305f85 27bf84b5c42549d3be5b1eaf5f7de765
-#: 30ff19c444b54139b5efe33ccb732cf7 35c0f86d93894df3bb14a945c5234180
-#: b4ea9ecabfa2412694212c6226b165d9 cd972fe0f2ca4d1f9cd119db51823684
-#: dbc38e999eb645feae8e0e795b67bdc0
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 401598624a4b4b85b083c8af61f71fc3 4a7b2292b8d54a8483497eba65d87541
+#: 6353f5b4151048e3b164055f230e7450 c122c973880d4d619a35b409e93fe3a5
+#: d4d2bf29204b4ddeb703cf93882fcec7 ecebe07fde5f405f9d68255660413f40
+#: f9f1ec9174704bb38633275548586553
 msgid "`std_msgs/Float64MultiArray`"
 msgstr "`std_msgs/Float64MultiArray`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 8575812af56d490f804d2ac575301a5c
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: e31b2d0512c6427aa61f0f3bdfd35dea
 msgid "全身 / `full_body.launch.py`"
 msgstr "全身 / `full_body.launch.py`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 2c81214355e14bb480598648fdf10f56
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 516b740ebe924fb6a7d9de55f75179db
 msgid "`/ocs2_arm_controller/target_joint_position/left` (and `/right`)"
 msgstr "`/ocs2_arm_controller/target_joint_position/left` (and `/right`)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: de51b10fc4c844e1a6f695ef66fc993d
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: bfb6eb2fc1c74a71b34c8d75f483ab1a
 msgid "分体 arms / `split_body.launch.py`"
 msgstr "分体手臂 / `split_body.launch.py`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: a10503a1fc274d38ac0172c95341aa2a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: d7059f90e0b04a1c81d7b6dc3b57ccf2
 msgid "`/ocs2_arm_controller/target_joint_position`"
 msgstr "`/ocs2_arm_controller/target_joint_position`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: d63a90207b5d43e48d16c1bb99c71ab0
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: d4d671e515b84c988801e3111e7eb359
 msgid "Single-arm OCS2"
 msgstr "单臂 OCS2"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 1864fd36f33b4b21a0de219cd1c3df7b
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 09fe38ab612a426eb54458fcc52e0904
 msgid "`/body_joint_controller/target_joint_position`"
 msgstr "`/body_joint_controller/target_joint_position`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 5e7966b492574d76a97e7b5e5fca8ee1
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: cb38f03e2f2a4c10929df7805d74ef04
 msgid "分体 waist"
 msgstr "分体腰部"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9d4b4ded58bd4db1a6d5b893c1e12f35
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 0dcfc7c5aa2e4e9eb39db236a6bc7785
 msgid "`/head_joint_controller/target_joint_position`"
 msgstr "`/head_joint_controller/target_joint_position`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: e1202ff143b847318756a2ffa2b958c0
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: e60983cf7c7a4069921826213d9ba42a
 msgid "Head (`basic_joint_controller`)"
 msgstr "头部（`basic_joint_controller`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: ec4479a8085345e8a94ebf758be1aac7
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 4b664c726dd24c25b3db354620f5eb05
 #, python-brace-format
 msgid "`/{controller}/target_joint_trajectory`"
 msgstr "`/{controller}/target_joint_trajectory`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 1bc013153fa9452887ad85f42eb6b3bf
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 9a091f81308f4b68962a96d1b51d3cd9
 msgid "`trajectory_msgs/JointTrajectory`"
 msgstr "`trajectory_msgs/JointTrajectory`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 9786f6b24dca4ebaae783385b203620f
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 720907da6c6646eba35bdb18493ce340
 msgid ""
 "Multi-waypoint MoveJ. Split examples: `/body_joint_controller/…`, "
 "`/head_joint_controller/…`. WBC: "
@@ -935,13 +1002,13 @@ msgstr ""
 "多路点 "
 "MoveJ。分体示例：`/body_joint_controller/…`、`/head_joint_controller/…`。WBC：`/ocs2_wbc_controller/target_joint_trajectory`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:138
-#: a177fcb2e8cc4d719787d4015b4ac5e5
+#: ../../source/3-concepts/4-fsm_and_topics.md:139
+#: 3854d2fc87934f8fa81c7e6735a632a1
 msgid "Gripper (`adaptive_gripper_controller`)"
 msgstr "夹爪（`adaptive_gripper_controller`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:140
-#: c593e656f67b45138dfa1f9bff4b0033
+#: ../../source/3-concepts/4-fsm_and_topics.md:141
+#: 01baa24c83354972bf6ea083d295d593
 msgid ""
 "Three independent channels; each command takes effect immediately. From "
 "the [adaptive_gripper_controller README](https://github.com/fiveages-"
@@ -954,56 +1021,56 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/controller/adaptive_gripper_controller/README.md)。示例名称：控制器"
 " `left_gripper_controller`，关节 `left_gripper_joint`。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 381494c26bc84a8f9ec00274977158f1
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 861950a4720e4ff6bab1445bfd83b23b
 msgid "`/left_gripper_joint/position_command`"
 msgstr "`/left_gripper_joint/position_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 2327b5f976584c27a9d170173762f021 39fa5a7ef67a409fb4ced92a5f5f4690
-#: 607cd883449041de9744b24cc404a85e dfd5e30022e84e05a40b3540bb68971b
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 265db74c43f24a7587c80c8febf36220 2887d92b77de4871b225049182f25142
+#: 500fa20361034f4ab800f73e4d9bfb84 88ee490f2e9740c59e6348aebb7020c0
 msgid "`std_msgs/Float64`"
 msgstr "`std_msgs/Float64`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 8a7d717cb21f4e2dbc39db58d9dcfc3a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 5382de146e344687a57bf59d09b5e071
 msgid "Direct stroke (rad or m). **No** force feedback. Clamped to URDF limits"
 msgstr "直接行程（弧度或米）。**无**力反馈。截断到 URDF 限位"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: c160821cb8854936808cf8f641cc2e40
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 52d3d09c73184d859ad6d7dd75ff69b4
 msgid "`/left_gripper_controller/target_command`"
 msgstr "`/left_gripper_controller/target_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 102e040b28794a599eb516ea429de1e3 f4a1add0cc3140009294c1c8eb006b34
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 5e6b8cb855214fbcbeb28af84b4c4cae fe52a6488d6f4fb3abee47f79784d316
 msgid "`std_msgs/Int32` (`0`/`1`)"
 msgstr "`std_msgs/Int32` (`0`/`1`)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 354e9216743a45fe93870efc1ad6df23
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: f7458b8c53d34f4288a4157c7bebb706
 msgid "`0` close **with** force feedback; `1` open, no feedback"
 msgstr "`0` 关闭并**启用力反馈**；`1` 打开、无力反馈"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 1634802103e9437c92d50f143e648d7a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 9da5baa3bed34d408cda87d9952d8e40
 msgid "`/left_gripper_controller/target_percent`"
 msgstr "`/left_gripper_controller/target_percent`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 7be122a3da624753981537a310147941 ddc61b19721d4d2597bf5d37486270e0
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: cc4b22914bf7451eab7d7d97163fb959 ef7421a9895e416fbebd8992ae393115
 msgid "`std_msgs/Float64` (`0.0`–`1.0`)"
 msgstr "`std_msgs/Float64` (`0.0`–`1.0`)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 77ec6870d80945a1899dee81e0e6aa8a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 45258fc40c9d406699e45821a8861228
 msgid ""
 "Linear blend closed↔open. Closing direction enables force feedback; "
 "opening does not"
 msgstr "在关闭↔打开之间线性混合。向关闭方向启用力反馈；向打开方向不启用"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:148
-#: 52aa9d0c4d694c2aa309d5b3d9004b3b
+#: ../../source/3-concepts/4-fsm_and_topics.md:149
+#: 662910c659414011b339f36e55e70e80
 msgid ""
 "Force feedback runs only on the switch / percent channels, when "
 "`use_effort_interface` is true, the motion is **closing**, and `|effort| "
@@ -1015,47 +1082,61 @@ msgstr ""
 "`|effort| > force_threshold`。随后剩余行程按 `force_feedback_ratio` 缩放（`0.0` "
 "停在当前位置，`1.0` 继续到原始目标）。直接 `position_command` 从不走这条路径。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:150
-#: e8cbc97ac39347dc9a99aedb068a1b03
+#: ../../source/3-concepts/4-fsm_and_topics.md:151
+#: b3046a5deddc473a95fc2cd569a91d69
 msgid "Hand (`basic_joint_controller`)"
 msgstr "手（`basic_joint_controller`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:152
-#: 567e5db054fa4cda9f293818ea597295
+#: ../../source/3-concepts/4-fsm_and_topics.md:153
+#: ae25d07934964b77bbca7e0b18787e1f
 msgid ""
 "Requires `target_command_enabled` and MOVEJ. Open/close poses are Home "
 "configurations."
 msgstr "需要 `target_command_enabled` 且处于 MOVEJ。开/合位姿来自 Home 构型。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 0cf8e7f7aebc4197ad67d4c2678e6198
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 65c71ec3db384e2bbe9028c625ba9147
 #, python-brace-format
 msgid "`/{hand_controller}/target_command`"
 msgstr "`/{hand_controller}/target_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 300ce19920c247db84e9cc0889acbd3d
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: d37e830e6c8b4859a54ebee78df42d6f
 msgid "`0` close pose, `1` open pose"
 msgstr "`0` 闭合构型，`1` 打开构型"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: b90ba28d2fe448dd8c7f5da66dd42674
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: dc92930b8a6c439680cb17af4ab8462e
 #, python-brace-format
 msgid "`/{hand_controller}/target_percent`"
 msgstr "`/{hand_controller}/target_percent`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: dae79d5d026940158dc6853a58eaf28b
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: ad4d9603a7c04bfcac9d2a0fd0fecd00
 msgid "Per-joint blend between those two Home configs"
 msgstr "在那两组 Home 构型之间按关节混合"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:159
-#: 81ea864531b74aad8fb639b84115bd05
+#: ../../source/3-concepts/4-fsm_and_topics.md:160
+#: 65c31d3de7d842ec838ae6d48f0274bd
+#, python-brace-format
+msgid ""
+"Open/close and the percent blend are these two topics. A hand node that "
+"mirrors the operator, pauses with an arm, or follows the VR gripper’s "
+"percent vs open/close flag reads that from `teleop/mode_state` "
+"(`TeleopModeState`) in the same robot namespace. The change event is "
+"`teleop/controller_state`. {ref}`teleop-mode-status`."
+msgstr ""
+"开合和比例插值就是这两个话题。手节点若要跟随操作者做镜像、随某条臂暂停，或跟随 VR 扳机的比例与开合标志，就在同一机器人命名空间下读 "
+"`teleop/mode_state`（`TeleopModeState`）。修改事件是 "
+"`teleop/controller_state`。{ref}`teleop-mode-status`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:162
+#: 403aa40d6c4543dd8962759f90cd3b87
 msgid "Waist (`basic_joint_controller`)"
 msgstr "腰部（`basic_joint_controller`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:161
-#: fcf373a57571417ab2032fc653684ac8
+#: ../../source/3-concepts/4-fsm_and_topics.md:164
+#: eed9f012a1934a848384e87722a9c4de
 msgid ""
 "Requires `waist_lifting_enabled` and MOVEJ. README topics are namespaced "
 "to the controller (often `/body_joint_controller/…` on 分体). "
@@ -1068,63 +1149,63 @@ msgstr ""
 "sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 在全身上把同样名称映射到 "
 "`/ocs2_wbc_controller/…`。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 8b61e63a9fc9438099ba572f2debc49a
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 4d89387f261146c3ba30641fe60ac928
 #, python-brace-format
 msgid "`/{controller}/waist_lifting`"
 msgstr "`/{controller}/waist_lifting`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 55e55b4ca2e5473ca761614820749a10
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 89fe467ce66c4e4484f82e76410de664
 msgid "Height delta (m) from the current pose"
 msgstr "相对当前位姿的高度增量（米）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: e38a8fdb2c3443249ad27e4a4a9772c6
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: b3ca7f15dcf14a2f8205f44facb7efa6
 #, python-brace-format
 msgid "`/{controller}/waist_lifting_pose_relative`"
 msgstr "`/{controller}/waist_lifting_pose_relative`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: dec3fcc07e86411a9b3d338706e15bb9
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: ed2445f7dfc048d8a1b2f15368431db3
 msgid "Local `[dx, dz, dphi]` (no world/ground TF)"
 msgstr "局部 `[dx, dz, dphi]`（不做世界/地面 TF）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 295755b16c834246979f06be7f19f24c
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 7433be6fcae4441e971a26ac69eda6b0
 #, python-brace-format
 msgid "`/{controller}/waist_lifting_pose_absolute`"
 msgstr "`/{controller}/waist_lifting_pose_absolute`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 004690905ecc49e2b8979552546ed711
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: b950072eaf584902a3cbb52a76c24ffe
 msgid "Absolute `[x, z, phi]` (TF frames configurable)"
 msgstr "绝对 `[x, z, phi]`（TF 坐标系可配置）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 4e8c0fba18c24eb99e36fcda8ba092cc
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 3d37ed8c460f44b5a79e3ef3a7178a20
 #, python-brace-format
 msgid "`/{controller}/waist_lifting_command`"
 msgstr "`/{controller}/waist_lifting_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 4330206dba04414bb29d8348d5133725
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: d834300ac6f64df0b963af0da744a2d5
 msgid "Lifting velocity factor `[-1, 1]`"
 msgstr "升降速度系数 `[-1, 1]`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 8f7080c3791e4c4b8f12490396cf98e6
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: 17338b4fe0214fa4bba973b16d63e67d
 #, python-brace-format
 msgid "`/{controller}/waist_turning_command`"
 msgstr "`/{controller}/waist_turning_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:90
-#: 26863f483bd94099bdf379a81b52eb21
+#: ../../source/3-concepts/4-fsm_and_topics.md:91
+#: aad576262b624f1d93444beaf635c836
 msgid "Turning velocity factor `[-1, 1]`"
 msgstr "转向速度系数 `[-1, 1]`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:171
-#: b7c2b343cb7a45b8849ed2a1bbfe3363
+#: ../../source/3-concepts/4-fsm_and_topics.md:174
+#: 74ea9a28ba5242f781dcc4cdea1cb9e9
 msgid ""
 "Waist absolute-pose defaults match **FiveAges W2** (`base_footprint` / "
 "`body_base`). README example for **ARX Lift / Lift 2S**: "
@@ -1137,8 +1218,8 @@ msgstr ""
 " "
 "`lift_link`。仅高度命令（`waist_lifting`、`waist_lifting_command`、`target_joint_position`）**不**使用这些坐标系。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:173
-#: bb1799361df54b81a057693dc3de2ef8
+#: ../../source/3-concepts/4-fsm_and_topics.md:176
+#: f2b0a37ec98146e0b7383cdd55083560
 msgid ""
 "Python method names for every row that API_REFERENCE documents: "
 "[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)."
@@ -1146,13 +1227,13 @@ msgstr ""
 "API_REFERENCE 已记载的各行 Python "
 "方法名：[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: bae0ae76ea3144d69a401cb86e615a2b
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e4d69eb051da4b8e894c796cd6d6d4e1
 msgid "Lift 2S vendor `/body_control`"
 msgstr "Lift 2S 厂商 `/body_control`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:178
-#: 46f3705f2e7a4819a495b4a6c080507f
+#: ../../source/3-concepts/4-fsm_and_topics.md:181
+#: be6e34b0ae534b94a81a5e3e07704d81
 msgid ""
 "ARX Lift 2S vendor chassis/lift (`/body_control`) is a **different** "
 "stack from these OCS2 / `basic_joint_controller` topics. "
@@ -1162,13 +1243,207 @@ msgstr ""
 "ARX Lift 2S 厂商底盘/升降（`/body_control`）与这些 OCS2 / `basic_joint_controller` "
 "话题是**另一套**栈。`ros2_robot_interface` 使用 MoveJ 表里的身体关节话题，而不是该厂商命令。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:181
-#: cc5426bc8e354b5482ded9b9f8d98bf5
+#: ../../source/3-concepts/4-fsm_and_topics.md:185
+#: b87dbd073f1d4bf9aa7421388a194cd0
+msgid "VR published topics"
+msgstr "VR 发布话题"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:187
+#: 752ec68a8ba840439699716752cb7f32
+msgid ""
+"`xr_target_node` in "
+"[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md) "
+"publishes this set for both WebXR (`./run.sh vr`) and XRoboToolkit "
+"(`./run.sh vr-xrt`). The contract is [PROTOCOL_CN.md](https://github.com"
+"/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md). The fa-"
+"py-libraries `./run.sh vr-record` bag records the same pose, button, "
+"stick, and trigger topics."
+msgstr ""
+"`xr_target_node`（[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)）为"
+" WebXR（`./run.sh vr`）和 XRoboToolkit（`./run.sh vr-xrt`）发布这一组话题。协议见 "
+"[PROTOCOL_CN.md](https://github.com/fiveages-"
+"sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)。fa-py-libraries 的 "
+"`./run.sh vr-record` 录的是同一组位姿、按钮、摇杆和扳机话题。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: ae65a201a7d54e3683ac17b978733ccd
+msgid "Cadence"
+msgstr "发布时机"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: ff89447640474fc89197c6a571b3daf4
+msgid "Contents"
+msgstr "内容"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0f7d8963607e41438b7ec5b9dedd930e
+msgid "`/teleop/head_pose`"
+msgstr "`/teleop/head_pose`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 36553efd2d9e468c8723bda186587ab4 8b3bf46d042d4523936449994df6c199
+#: cb550f5010234c3e9a428f2dfa0d29b9 d582771380174e6bb0072b58f9418f9c
+#: dea5058d4b814315918a83fc7876f9d6 e7a83ad9add24d409b50e3fda745e438
+msgid "every frame"
+msgstr "每帧"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: a5611b2dc68345f984249f5463fe0687
+msgid "Headset 6-DOF pose"
+msgstr "头显六自由度位姿"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 87ab91aab224434f92dfb091bab8c451
+msgid "`/teleop/left_ee_pose`"
+msgstr "`/teleop/left_ee_pose`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f6371895abfc420b8c5c46fa07f9ad13
+msgid "Left controller 6-DOF pose"
+msgstr "左手柄六自由度位姿"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 6edbcc7d3c3148e09a08596372e64912
+msgid "`/teleop/right_ee_pose`"
+msgstr "`/teleop/right_ee_pose`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 63b5925d3cb347b39d51dc64f89f86e1
+msgid "Right controller 6-DOF pose"
+msgstr "右手柄六自由度位姿"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: c8bbbcdd8c044896bb32ce9fd7dcd9e8
+msgid "`/teleop/controller_state`"
+msgstr "`/teleop/controller_state`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 085a64a3d2914cea8d52af587c4b46e2
+msgid "`std_msgs/Int32`"
+msgstr "`std_msgs/Int32`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: bbc74509699f47a4b46477ac7b9e9552
+msgid "Button event code. `0` means no edge this frame"
+msgstr "按钮事件码。`0` 表示这一帧没有边沿"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 51ac479c10d849bbbcdea8a2517e0807
+msgid "`/teleop/thumbstick_axes`"
+msgstr "`/teleop/thumbstick_axes`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: fcd53a346f294c80809ef8fc3f9f7516
+msgid ""
+"Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / "
+"`angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`"
+msgstr ""
+"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在"
+" 0.1 死区内时发布 `0.0`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 39fc803385b2422c9f9b9329fe5ce948
+msgid "`/teleop/trigger_values`"
+msgstr "`/teleop/trigger_values`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e0e060587bb34cd19de8a0272eddc3bc
+msgid ""
+"Left trigger pull in `linear.x`, right trigger pull in `angular.x`. `0.0`"
+" is released, `1.0` is full"
+msgstr "左扳机行程在 `linear.x`，右扳机行程在 `angular.x`。`0.0` 是松开，`1.0` 是拉满"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 524312ef62d64bbab9ce466b4a1ff29a
+msgid "`/teleop/xrt_diag`"
+msgstr "`/teleop/xrt_diag`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 6d1793b878be44da8abef5e1f9d55746
+msgid "`std_msgs/Int64MultiArray`"
+msgstr "`std_msgs/Int64MultiArray`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0de5549524b3474885e6d78e529f3e6b
+msgid "with the pose frame"
+msgstr "与位姿同一帧"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 4ab3c731c4c6429e91ba9467a9652e0b
+msgid "Diagnostic. Downstream control can skip it"
+msgstr "诊断。下游可以不订阅"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:199
+#: e5145bc9517e4b4b814d9d38b942bc56
+msgid ""
+"Poses are `geometry_msgs/Pose` (no `header`), in the robot world frame "
+"(`x` forward, `y` left, `z` up). WebXR publishes on a fixed 30 Hz timer. "
+"XRoboToolkit publishes when the VR `timeStampNs` changes: about 90 Hz "
+"with the default Pico App, and about 400 Hz with the enterprise send rate"
+" over USB."
+msgstr ""
+"位姿是 `geometry_msgs/Pose`（没有 `header`），在机器人世界系（`x` 向前、`y` 向左、`z` 向上）。WebXR"
+" 用固定 30 Hz 定时器发布。XRoboToolkit 在 VR `timeStampNs` 变化时发布：默认 Pico App 大约 90 "
+"Hz，企业发送速率走 USB 时大约 400 Hz。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:201
+#: 224e9032661e4ea88841ddb563ac9c05
+msgid ""
+"Pull depth stays on `/teleop/trigger_values` every frame. The press edge "
+"is a separate code on `/teleop/controller_state` (`9` left, `10` right)."
+msgstr ""
+"行程深度每帧都在 `/teleop/trigger_values`。按下边沿是 `/teleop/controller_state` "
+"上的另一个码（左 `9`，右 `10`）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:203
+#: bc8bc24f4d0c44fc8ea138acf7f04d20
+#, python-brace-format
+msgid ""
+"`VRInputHandler` in `arms_target_manager` subscribes to the pose topics, "
+"`/teleop/controller_state`, `/teleop/thumbstick_axes`, and "
+"`/teleop/trigger_values`. In UPDATE it drives arm targets from the "
+"controller poses. Grippers that are in percent mode follow "
+"`trigger_values`. The latched mode is `teleop/mode_state` "
+"(`TeleopModeState`). Headset button behavior: {ref}`VR Teleoperation "
+"<controller-buttons>`."
+msgstr ""
+"`arms_target_manager` 里的 `VRInputHandler` "
+"订阅位姿话题、`/teleop/controller_state`、`/teleop/thumbstick_axes` 和 "
+"`/teleop/trigger_values`。UPDATE 时它用手柄位姿驱动手臂目标。百分比模式的夹爪跟随 "
+"`trigger_values`。锁存模式是 "
+"`teleop/mode_state`（`TeleopModeState`）。头显按键：{ref}`VR 遥操作 <controller-"
+"buttons>`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:205
+#: 1d2277cd33c24afaa85c2a4a4a9b6233
+#, python-brace-format
+msgid ""
+"The names above are the root topics in the protocol (`/teleop/...`). "
+"`teleop/mode_state` is relative to the robot namespace. Topic, type, QoS,"
+" and the status fields: {ref}`Teleop topics and data <teleop-topics-and-"
+"data>`."
+msgstr ""
+"上面这些名字是协议里的根话题（`/teleop/...`）。`teleop/mode_state` 相对机器人命名空间。话题、类型、QoS "
+"和状态字段见 {ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:207
+#: b9577247e0644b61a6548b1cb6eb5455
+msgid ""
+"Optical wrist presets also publish `/teleop/optical_r0_caps`, "
+"`/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and "
+"`/teleop/mirror_mode`. The handshake is in the same protocol."
+msgstr ""
+"光学腕预设还会发布 "
+"`/teleop/optical_r0_caps`、`/teleop/optical_r0_request`、`/teleop/optical_r0_ready`"
+" 和 `/teleop/mirror_mode`。握手过程在同一份协议里。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:209
+#: e088ab71ed234b68a1b3e64cccad10dc
 msgid "Topic vs Action vs Service"
 msgstr "话题 vs Action vs Service"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:183
-#: dfd4248634154aa8a0bcb490328ec980
+#: ../../source/3-concepts/4-fsm_and_topics.md:211
+#: 177a301f0eca418db10ffcd8d4099f3d
 msgid ""
 "Same motion can exist as a **topic** (fire-and-forget), an **action** "
 "(goal, progress feedback, result), and sometimes a **service** (one-shot "
@@ -1183,64 +1458,64 @@ msgstr ""
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)。控制器实际"
 " advertise 哪些名字以该控制器为准；下表列出该 README 中的类型。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 6dc19bd91e814cafaacfc3ae0cb8995a
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 866973c3c4674784bb431606566d8fc4
 msgid "Kind"
 msgstr "种类"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 8887bdd3cd454e9b88dd1e7333cdf5e9
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: ddba63d689d94e12a3e31a86dec6eb5a
 msgid "Behaviour"
 msgstr "行为"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 6e0be44c7e6745f28d0467b1d16b1b9e
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 9bfa1a1cdf804f3b9c8dc76cd920bf24
 msgid "Example"
 msgstr "示例"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 3ccb07d9a158409098979ded4a7e533d
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 61a90c03ee73484e9d2f969ac4a8b2c9
 msgid "Publish and continue; no result"
 msgstr "发出即继续；无结果"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 0e4f5288bb5e467c8951d6af8475a45e
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 3818e56f564a4d14acffe39049adbd81
 #, python-brace-format
 msgid "`/left_target/stamped`, `/{controller}/target_joint_trajectory`"
 msgstr "`/left_target/stamped`、`/{controller}/target_joint_trajectory`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 6dec0fc20cda4b28ad837739c2c1a493
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: ed2f0a92fa414b37b87540711eb7e2f7
 msgid "Action"
 msgstr "Action"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 168197dc38544edd85aa0196dfb839b9
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 9c9f195541ef442a8a928ad63e3186a9
 msgid "Send a goal; wait for result (and optional `progress`)"
 msgstr "发送目标；等待结果（以及可选的 `progress`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 9c3bdc913c974d078a24ab69ad88e2ca
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 97e359ed07354c55976101923d38e78b
 msgid "`ExecuteLinear`, `JointTrajectory`, `WaistLiftingPose`"
 msgstr "`ExecuteLinear`、`JointTrajectory`、`WaistLiftingPose`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 54cb178e2cad473380a8d347c8d4b6b4
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 8cb5cdd7188342ed83ccf2da9029301c
 msgid "Service"
 msgstr "Service"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 7b55c6c690b249328541dc835f7db142
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 006c7cef717b416caabb97aaaab0cb5f
 msgid "One request / response"
 msgstr "一次请求 / 响应"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 950190cdb15d483787393d7094458b7f
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0677ad78f8994811afb456fecb626f64
 msgid "`ExecutePath`, `KinematicsService`"
 msgstr "`ExecutePath`、`KinematicsService`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:191
-#: b65489861e414471bedfec82389d327b
+#: ../../source/3-concepts/4-fsm_and_topics.md:219
+#: 1a260bd4f7b54eecbc3bacd4345cfd9e
 #, #
 msgid ""
 "Python wrappers: "
@@ -1251,168 +1526,732 @@ msgstr ""
 "封装：[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)。msgs"
 " README 里若干 srv 类型**没有**对应 Python 方法。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:193
-#: 0d4e5484a81949adb802e1dc0a1aa0dd
-msgid "Whole-body mode (`/mode_command`)"
-msgstr "全身模式（`/mode_command`）"
+#: ../../source/3-concepts/4-fsm_and_topics.md:222
+#: 8c91cc2a07b640afae0fad5d27e1af6b
+msgid "Switch whole-body modes (`/mode_command`)"
+msgstr "切换全身模式（`/mode_command`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:195
-#: ce542c5fa0084558b623fd4c94595331
+#: ../../source/3-concepts/4-fsm_and_topics.md:224
+#: dbba3931ed5e498086413b1d28103feb
 msgid ""
-"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is "
-"not `/fsm_command`. Same availability as the body/head Cartesian topics "
-"above: 分体 and default mock demos do not start this path. Typical Python: "
-"`send_mode_command`, then `wait_until_mode_commands_applied` against "
-"`/ocs2_wbc_controller/current_state` "
-"(`arms_ros2_control_msgs/WbcCurrentState`). The FSM is usually already "
-"**OCS2**, or the controller may ignore the mode. The Python interface maps "
-"`HEAD_DISABLE`, `HEAD_TRACKING`, `HEAD_GAZE`, and `HEAD_FORWARD` onto "
-"`head_state`."
+"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is"
+" not `/fsm_command`, and it is not a write path for "
+"`/ocs2_wbc_controller/current_state`. That topic is feedback only. Same "
+"availability as the body/head Cartesian topics above: 分体 and default mock"
+" demos do not start this path."
 msgstr ""
-"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**，不是 "
-"`/fsm_command`。可用性与上文的身体/头部笛卡尔话题相同：分体和默认 mock 演示不会启动这条路径。典型的 Python 用法是先 "
-"`send_mode_command`，再对照 "
-"`/ocs2_wbc_controller/current_state`（`arms_ros2_control_msgs/WbcCurrentState`）调用"
-" `wait_until_mode_commands_applied`。FSM 通常需要已经处于 "
-"**OCS2**，否则控制器可能忽略该模式。Python 接口会把 `HEAD_DISABLE`、`HEAD_TRACKING`、`HEAD_GAZE`"
-" 和 `HEAD_FORWARD` 映射到 `head_state`。"
+"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**。它不是 "
+"`/fsm_command`，也不能用来向 `/ocs2_wbc_controller/current_state` "
+"写入；那个话题只是反馈。可用性与上文的身体/头部笛卡尔话题相同：分体和默认的 mock 演示不会启动这条路径。"
 
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:197
-#: 95e7bda44c064cb88745bea1e3d6cf2a
+#: ../../source/3-concepts/4-fsm_and_topics.md:226
+#: 24b28cda0c7241f180f3b64ef7356f34
 msgid ""
-"Documented command strings and the `WbcCurrentState` fields they check "
-"([API_REFERENCE](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/API_REFERENCE.md) "
-"`MODE_COMMAND_TO_WBC_EXPECT`):"
+"The usual sequence is: confirm that `ocs2_wbc_controller` is running, "
+"switch the FSM to **OCS2** if it is not already there, publish the mode "
+"string, then confirm the matching field on "
+"`/ocs2_wbc_controller/current_state`. You can also publish the mode while"
+" still in **HOLD** or **MOVEJ** and then enter OCS2; entering OCS2 keeps "
+"the mode you already set. Leaving OCS2, or activating the controller, "
+"restores the default mode."
 msgstr ""
-"已文档化的命令字符串，以及它们检查的 `WbcCurrentState` "
-"字段（[API_REFERENCE](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 的 "
-"`MODE_COMMAND_TO_WBC_EXPECT`）："
+"通常做法是：先确认 `ocs2_wbc_controller` 已在运行，若 FSM 还不是 **OCS2** "
+"就先切过去，再发布模式字符串，然后在 `/ocs2_wbc_controller/current_state` 上确认对应字段。也可以在仍处于 "
+"**HOLD** 或 **MOVEJ** 时先发布模式，再进入 OCS2；进入 OCS2 会保留你已经设好的模式。离开 "
+"OCS2，或激活控制器时，会恢复默认模式。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 47dc8ddc01004ed3ae9a791e675c13a9
+#: ../../source/3-concepts/4-fsm_and_topics.md:228
+#: 01b37e6cd5e74e78b873493d3e566cde
+msgid "First check whether the robot supports the mode you want:"
+msgstr "先确认机器人是否支持你要的模式："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:230
+#: e3029126427642aab95aabef9969fea9
+msgid "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
+msgstr "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:234
+#: 22455bdd1768461d8ad989b47c6b613d
+msgid ""
+"If the relevant `WbcCapability` bit is `false`, the controller will not "
+"apply that command. These bits come from the robot's OCS2 task `.info` "
+"file, for example `headMidpointGaze`, `headTrackingEE`, `headCoupling`, "
+"and `homeJointReference`. If the controller runs in a namespace, use its "
+"actual topic names."
+msgstr ""
+"如果对应的 `WbcCapability` 位是 `false`，控制器不会应用这条命令。这些能力位来自机器人的 OCS2 任务 `.info` "
+"文件，例如 `headMidpointGaze`、`headTrackingEE`、`headCoupling` 和 "
+"`homeJointReference`。控制器带命名空间时，请使用实际的话题名。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:236
+#: 64f11cb674764accad5b6bd8cf5b1a4f
+msgid ""
+"For a controller that is already running, enter OCS2 if needed, then "
+"request the mode and inspect the feedback:"
+msgstr "控制器已运行时，如有需要先进入 OCS2，再请求模式并查看反馈："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:238
+#: b63f36e6a12c4c5fa4f8de8016a7aacd
+msgid ""
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'BODY_TRACKING'\"\n"
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+msgstr ""
+"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
+"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
+"'BODY_TRACKING'\"\n"
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:244
+#: 98d1fcef30a141ebb54fa493cfe7ab91
+msgid ""
+"Replace the string with any command in the tables below. In Python, call "
+"`send_mode_command(...)`, then `wait_until_mode_commands_applied(...)`. "
+"If you send several modes, publish them all first, then wait once on the "
+"combined list; do not wait after every command. The RViz OCS2 panel "
+"publishes the same strings when the corresponding capability is enabled."
+msgstr ""
+"把字符串换成下表中的任意命令。在 Python 中，先调用 `send_mode_command(...)`，再调用 "
+"`wait_until_mode_commands_applied(...)`。如果要发多条模式，先全部发布，再对合并后的列表等待一次，不要每条都等。能力开启时，RViz"
+" 的 OCS2 面板也会发布相同的字符串。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:246
+#: 8706c28e342546ee94199f59733b0f6a
+msgid ""
+"interface.send_fsm_command(3)  # OCS2\n"
+"interface.send_mode_command(\"BODY_TRACKING\")\n"
+"interface.send_mode_command(\"BASE_LOCK\")\n"
+"ok = interface.wait_until_mode_commands_applied(\n"
+"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
+"    timeout=5.0,\n"
+")\n"
+msgstr ""
+"interface.send_fsm_command(3)  # OCS2\n"
+"interface.send_mode_command(\"BODY_TRACKING\")\n"
+"interface.send_mode_command(\"BASE_LOCK\")\n"
+"ok = interface.wait_until_mode_commands_applied(\n"
+"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
+"    timeout=5.0,\n"
+")\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:256
+#: 995811c317254ae3ae605fbc2956d857
+msgid ""
+"When the command is accepted, the matching `current_state` field changes."
+" That reports a selected mode or an active task, not that a pose has "
+"already been reached. A worked sequence is in the [mode-command check "
+"example](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+" The current Python mapping is `MODE_COMMAND_TO_WBC_EXPECT` in the "
+"[interface source](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)."
+msgstr ""
+"命令被接受后，对应的 `current_state` "
+"字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com"
+"/fiveages-"
+"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。当前"
+" Python 映射为[接口源码](https://github.com/fiveages-"
+"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)中的"
+" `MODE_COMMAND_TO_WBC_EXPECT`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:258
+#: 8107a380574343018bc80e82ca37c315
+msgid "Body"
+msgstr "身体"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 52873e06c7dd4bef9fbf58ed6996c4ff ae8d2011e540452a91599a721ad15f7c
+#: caccc8c053b8457eb7b46bdc44e2c5f8 cd10dccd97cf4295b0827509662eac0b
+#: df816154f2df4d0e8885f435bda0106c
 #, #
 msgid "`/mode_command`"
 msgstr "`/mode_command`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 90f85e04f2be4e439e1a93535cbc8c11
-msgid "`WbcCurrentState` field"
-msgstr "`WbcCurrentState` 字段"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 28ebf419817f4cd6b3ecad6cc392bc8b 2c247facbe9748e3afc86d667b32c446
+#: 38c61195908d49eb9e02f90f92f3a2b5 641e0625658e42acbdd09e5da1a3affb
+#: d114aab8dca04b2e94ade7ddab9ef329
+msgid "Feedback when accepted"
+msgstr "生效后的反馈"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 6d3d71a986b84cb887cd9647330dd679
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 16c41b1102324b9d9184ce57da9d6ed1 35a61291df9242648ee39d3cde5a35f6
+#: 8e3cb27187864dab9df5602a315bf17f ba2b53b0f28f4e439952b1a7f9a9aa3f
+msgid "Capability"
+msgstr "能力"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e3936f1f3d6543839addade4420f8dc6
+msgid "`BODY_FREE`"
+msgstr "`BODY_FREE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 35ac9635b47343f1820d5f3361b57788
+msgid "`body_state` = `0` (`BODY_FREE`)"
+msgstr "`body_state` = `0` (`BODY_FREE`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 535bb148429641a2af7922cc8dd8bb23 68f7a193efc143af981a5dfeabd311bc
+#: d3d3cfd3f41641cd891385394a30a7aa
+msgid "—"
+msgstr "—"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 683f96eb73e044fb9fa7fc223721f69c
+msgid "`BODY_RELATIVE`"
+msgstr "`BODY_RELATIVE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e457ec2faa144693ac43ac42af12a64b
+msgid "`body_state` = `1` (`BODY_VERTICAL`)"
+msgstr "`body_state` = `1` (`BODY_VERTICAL`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f0e73789afaa418eb2d3e7a49baf051a
 msgid ""
-"`BODY_*` (examples: `BODY_TRACKING`, `BODY_FREE`; `BODY_VERTICAL` is an "
-"alias)"
-msgstr "`BODY_*`（例如 `BODY_TRACKING`、`BODY_FREE`；`BODY_VERTICAL` 是别名）"
+"`has_body_relative_constraint`. `BODY_VERTICAL` is a backward-compatible "
+"alias for the same command."
+msgstr "`has_body_relative_constraint`。`BODY_VERTICAL` 是同一条命令的兼容别名。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 15f22a87aa2e40e496f26d9a66c3f01c f6cdc33ed2534e26bc6f843a97305552
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 5d5cf10b0fe342d096b2bdfe38ad75a9
+msgid "`BODY_TRACKING`"
+msgstr "`BODY_TRACKING`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: ce775923532a4e0f827352389dd34896
+msgid "`body_state` = `2` (`BODY_TRACKING`)"
+msgstr "`body_state` = `2` (`BODY_TRACKING`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 9f152aba510f40238e4760671658c72a
+msgid "`body_tracking_ee_enabled`"
+msgstr "`body_tracking_ee_enabled`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 16a21d5e8bc54dafa8d50336f4c5968d
+msgid "`BODY_LOCK`"
+msgstr "`BODY_LOCK`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 516f1c40181b4cba9b4dd98d50b2b1a6
+msgid "`body_state` = `3` (`BODY_LOCKED`)"
+msgstr "`body_state` = `3` (`BODY_LOCKED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 277b7f04d2764ab983e5c12413a0a953
+msgid "`has_waist_lock`"
+msgstr "`has_waist_lock`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: d3ea911829ea426db215882b72ae6116
+msgid "`BODY_CUSTOM_LOCK`"
+msgstr "`BODY_CUSTOM_LOCK`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 8bf20506454f47d3ab99e741c9725ff0
+msgid "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
+msgstr "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: d1947c4f030a4d1fb19cdd45bd9b1f63
+msgid "`has_custom_joint_lock`"
+msgstr "`has_custom_joint_lock`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:268
+#: 03cd88de70a5475f816d0475bcff7230
+msgid "Base"
+msgstr "底盘"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 312115724bfb4cf888bd3c0ba8ead3ef
+msgid "`BASE_LOCK`"
+msgstr "`BASE_LOCK`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 3e85a775d38f46c5a5a9d16355bf79a1
+msgid "`base_state` = `0` (`BASE_LOCKED`)"
+msgstr "`base_state` = `0` (`BASE_LOCKED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 574cdc8d8fd14c6692ec63cd36b39247 a705e4f8232b49629e7a564ce54b7f23
+msgid "`has_mobile_base`"
+msgstr "`has_mobile_base`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 52cf175ae5714e3d806fbb249bc17b98
+msgid "`BASE_UNLOCK`"
+msgstr "`BASE_UNLOCK`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0ebfc2de96a4468c8b59da83ec96e9aa
+msgid "`base_state` = `1` (`BASE_UNLOCKED`)"
+msgstr "`base_state` = `1` (`BASE_UNLOCKED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:275
+#: cd7bc374253f4dcf88b87622c02cfc21
+msgid "Head"
+msgstr "头部"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:277
+#: 5d7527489a7c4d37b7aa9d8106a1a0cf
+msgid ""
+"Head modes are mutually exclusive, and they are independent of the body "
+"mode. `head_midpoint_gaze_active` is not a separate command; it becomes "
+"`true` only after `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop "
+"gaze."
+msgstr ""
+"头部模式彼此互斥，并且独立于身体模式。`head_midpoint_gaze_active` 不是一条单独的命令；它只在 `HEAD_GAZE` "
+"生效后才会变成 `true`。发送 `HEAD_DISABLE` 可停止注视。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0d5b15b8781146e3a80e5be11cd83816
+msgid "`HEAD_DISABLE`"
+msgstr "`HEAD_DISABLE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 1ccd319c8063419c93ed932ad5396bee
+msgid ""
+"`head_state` = `0` (`HEAD_DISABLED`); `head_midpoint_gaze_active` is "
+"`false`"
+msgstr "`head_state` = `0`（`HEAD_DISABLED`），`head_midpoint_gaze_active` 为 `false`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 90af929364b3405880669e388d43e2df
+msgid "`HEAD_TRACKING`"
+msgstr "`HEAD_TRACKING`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e6c572822c7e43338a1a421e172f9feb
+msgid "`head_state` = `1` (`HEAD_TRACKING`)"
+msgstr "`head_state` = `1` (`HEAD_TRACKING`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: d252f25be41944589832e81fba25b2ef
+msgid ""
+"`head_tracking_ee_enabled`, from the `headTrackingEE` section. After this"
+" mode is on, publish a target on `/head_target` or "
+"`/head_target/stamped`; otherwise the head will not move."
+msgstr ""
+"`head_tracking_ee_enabled`，来自 `headTrackingEE` 段。进入该模式后，还需要向 "
+"`/head_target` 或 `/head_target/stamped` 发布目标，否则头部不会运动。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 9812d68cd25e4191821f871a30e50728
+msgid "`HEAD_GAZE`"
+msgstr "`HEAD_GAZE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 50f05a8343424561a3ac609ca70510c3
+msgid "`head_state` = `2` (`HEAD_GAZE`) and `head_midpoint_gaze_active` = `true`"
+msgstr "`head_state` = `2`（`HEAD_GAZE`），且 `head_midpoint_gaze_active` = `true`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 99d8cb3e99db4f1fb286219956abb8e9
+msgid ""
+"`head_midpoint_gaze_enabled`, from the top-level `headMidpointGaze` "
+"section (`activate`, `cameraFrame`, and the camera parameters). This "
+"reports an active task, not that the head is already aligned or that the "
+"target is reachable."
+msgstr ""
+"`head_midpoint_gaze_enabled`，来自顶层 `headMidpointGaze` "
+"段（`activate`、`cameraFrame` 以及相机参数）。这表示任务已激活，不表示头部已经对准，也不表示目标可达。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 748d250e55904af9af255eefef8f97a1
+msgid "`HEAD_FORWARD`"
+msgstr "`HEAD_FORWARD`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 3e4f91df10544c5d96328b570683e702
+msgid "`head_state` = `3` (`HEAD_FORWARD`)"
+msgstr "`head_state` = `3` (`HEAD_FORWARD`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f90e1cd3d7bd418d9f940afd5b0362d1
+msgid ""
+"`has_head_coupling`, from the `headCoupling` section. In this mode, "
+"`body_state` still reports the body mode you selected, but the former "
+"lock-head constraints temporarily override it. Leaving `HEAD_FORWARD` "
+"restores that body selection."
+msgstr ""
+"`has_head_coupling`，来自 `headCoupling` 段。在此模式下，`body_state` "
+"仍回报你选择的身体模式，但会暂时被原来的锁头约束覆盖。退出 `HEAD_FORWARD` 后，该身体选择会恢复。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:286
+#: 9cf149d756f34d4a902c3580901c4f8b
+msgid "Arms"
+msgstr "手臂"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:288
+#: 10240f3c75904c56ae24a9eb6e99c711
+msgid ""
+"Switch a single arm only while the arms are independent. If they are "
+"already coupled, `LEFT_ARM_*` and `RIGHT_ARM_*` are ignored. "
+"`ARMS_COUPLED` is accepted only when both arms are enabled."
+msgstr ""
+"只有在双臂独立时才能切换单臂使能。如果已经耦合，`LEFT_ARM_*` 和 `RIGHT_ARM_*` 会被忽略。只有左右臂都已启用时，才会接受"
+" `ARMS_COUPLED`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 21a21f539178471f98092f1be8cfb600
+msgid "`ARMS_INDEPENDENT`"
+msgstr "`ARMS_INDEPENDENT`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: c15ee1f8221e42748240ba0fcfe802c0
+msgid "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
+msgstr "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 60314e33555b498980387ee449480232
+msgid "`ARMS_COUPLED`"
+msgstr "`ARMS_COUPLED`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 72be9232ecb74116ac5cc945f5f1854d
+msgid "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
+msgstr "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 86dfa98162a84cf6a124ef0fdd007e8f
+msgid "`has_bimanual_coupling`, and both arms enabled"
+msgstr "`has_bimanual_coupling`，且左右臂均已启用"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 934cf2bf10c5421a8230209e800e4cff
+msgid "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
+msgstr "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f3b924e0b9e84b0486b5c3145b9b1947
+msgid "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+msgstr "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 52bec887ea3c41ac9a868169b8b282e1 8b1a98393a8a4a2bb92b2dcd67c680c6
+msgid "Arms must already be independent"
+msgstr "双臂必须已经处于独立模式"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f343e2456d62416a8d0126837d944771
+msgid "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
+msgstr "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: c7abddf711d64865bf2831eb6612d5d4
+msgid "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+msgstr "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:297
+#: d6f58179d6f046c8947325537faeb078
+msgid "HOME joint reference"
+msgstr "HOME 关节参考"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: fbe3181f34e9400ebcc42bb72e7b90bc
+msgid "`HOME_JOINT_ON`"
+msgstr "`HOME_JOINT_ON`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 241b05e252354d5fa20f01aa910f2c79
+msgid "`home_joint_reference_enabled` = `true`"
+msgstr "`home_joint_reference_enabled` = `true`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 852b83f195404b8d9e9b1860939d2937
+msgid "`HOME_JOINT_OFF`"
+msgstr "`HOME_JOINT_OFF`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: c73ebe84400b42ebb94cba90d2183820
+msgid "`home_joint_reference_enabled` = `false`"
+msgstr "`home_joint_reference_enabled` = `false`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:304
+#: f2581e127c0049fcac2378befc7eb26c
+msgid ""
+"`HOME_JOINT_ON` and `HOME_JOINT_OFF` turn the HOME joint-reference "
+"constraint on or off. This is a constraint switch, not a report that the "
+"FSM is in HOME. Confirm it on `home_joint_reference_enabled`. The "
+"constraint can be applied while the FSM is in HOLD, MOVEJ, or OCS2, but "
+"the usual sequence is still to enter OCS2 first."
+msgstr ""
+"`HOME_JOINT_ON` 和 `HOME_JOINT_OFF` 用于打开或关闭 HOME 关节参考约束。这是约束开关，并不表示 FSM 处于"
+" HOME。请在 `home_joint_reference_enabled` 上确认。该约束可以在 FSM 处于 HOLD、MOVEJ 或 "
+"OCS2 时应用，但通常仍建议先进入 OCS2。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:306
+#: 504ea3e0132d47ac8601c5966a825f67
+msgid ""
+"The capability bit is `has_home_joint_reference`, from the "
+"`homeJointReference` section. If that bit is `false`, the controller "
+"ignores the command. If `HOME_JOINT_ON` is rejected, for example because "
+"the current home reference is outside the URDF joint limits, "
+"`home_joint_reference_enabled` stays `false`."
+msgstr ""
+"对应的能力位是 `has_home_joint_reference`，来自 `homeJointReference` 段。如果该位为 "
+"`false`，控制器会忽略这条命令。如果 `HOME_JOINT_ON` 被拒绝，例如当前 HOME 参考超出了 URDF "
+"关节限位，`home_joint_reference_enabled` 会保持为 `false`。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:308
+#: 2a7653345b164d40b3ab5e92b6b73b27
+msgid ""
+"The controller also accepts body presets of the form `PRESET:HM_*`. Those"
+" change the body, arms, and base together and leave the current head mode"
+" unchanged. Confirm the result on `current_state`; the Python mapping "
+"does not list these preset names."
+msgstr ""
+"控制器也接受形如 `PRESET:HM_*` 的身体预设。它们会同时改变身体、双臂和底盘，并保留当前的头部模式。请在 "
+"`current_state` 上确认结果；Python 映射里没有列出这些预设名。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:311
+#: 2acbfdbab6754e04bd2d597b95b27793
+msgid "Read the current WBC modes (`current_state`)"
+msgstr "查看当前全身控制模式（`current_state`）"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:313
+#: ed915f5a93804de981b66b5b820b21a0
+msgid ""
+"Subscribe to `/ocs2_wbc_controller/current_state` to see the modes "
+"reported by the whole-body controller. The message type is "
+"`arms_ros2_control_msgs/msg/WbcCurrentState`. These fields describe WBC "
+"modes and constraints, not joint positions or motion completion. They are"
+" separate from the FSM state on `/fsm_state`."
+msgstr ""
+"订阅 `/ocs2_wbc_controller/current_state` 可以查看全身控制器反馈的模式，消息类型是 "
+"`arms_ros2_control_msgs/msg/WbcCurrentState`。这些字段表示 WBC "
+"的模式和约束，不表示关节位置或运动是否完成，也不是 `/fsm_state` 中的控制器状态。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:315
+#: 3845cdd458004445af9f10444d442b61
+msgid ""
+"With the whole-body controller running and its workspace sourced, inspect"
+" the feedback and the installed message definition:"
+msgstr "启动全身控制器并 source 对应工作空间后，可以查看状态反馈和本机安装的消息定义："
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:317
+#: 98dfbe414c37471386df9f3fbbd2878b
+msgid ""
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
+msgstr ""
+"ros2 topic echo /ocs2_wbc_controller/current_state\n"
+"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:322
+#: 6cb4814ef9124725a3f87a1094a241d4
+msgid ""
+"If the controller runs in a namespace, use its actual topic name. The "
+"fields below follow the current [message definition](https://github.com"
+"/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)"
+" and [message package README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)."
+msgstr ""
+"控制器带命名空间时，请使用实际的话题名。下面的字段以当前[消息定义](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)和[消息包"
+" README](https://github.com/fiveages-"
+"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)"
+" 为依据。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: b21b87353d4142e9a5d826d9120ceb64
+msgid "Field"
+msgstr "字段"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 9373378802b94408bf55aa7206517920
+msgid "Values and meaning"
+msgstr "取值与含义"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: dea95c0905b94684845802e4a129bacc
+msgid "`base_state`"
+msgstr "`base_state`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 691fed17fdcd44a88e15d6b4f4eff3e0 7e4a97a2e2604b818b72a8bdd728fdcb
+#: 93f5c32d3df4425993f6221a7e6f1c79 a22ac2f828ce4ba0a4f2068ef8fe24c9
+#: e90cac28d75f4894a33e113a5a3a3d61 fd4799403237470c8049c5fb943b9b47
+msgid "`uint8`"
+msgstr "`uint8`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: eedd9807eaaa4421b534e341a71dbff2
+msgid "Base mode: `0` = `BASE_LOCKED` (locked); `1` = `BASE_UNLOCKED` (unlocked)."
+msgstr "底盘模式：`0` 为 `BASE_LOCKED`（锁定），`1` 为 `BASE_UNLOCKED`（解锁）。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 7bb25461304941a89922d5165cd049fa
 #, #
 msgid "`body_state`"
 msgstr "`body_state`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 26b9b7172e2f4ceeaabab800218f5b6d
-msgid "`ARMS_COUPLED` / `ARMS_INDEPENDENT`"
-msgstr "`ARMS_COUPLED` / `ARMS_INDEPENDENT`"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 8431e2bbf4c54f58a67233e213b0a8ac
+msgid ""
+"Selected body mode: `0` = `BODY_FREE` (free); `1` = `BODY_VERTICAL` "
+"(vertical); `2` = `BODY_TRACKING` (tracking); `3` = `BODY_LOCKED` "
+"(locked); `5` = `BODY_CUSTOM_LOCKED` (custom joint lock). The former "
+"lock-head value `4` is no longer published."
+msgstr ""
+"选择的身体模式：`0` 为 `BODY_FREE`（自由），`1` 为 `BODY_VERTICAL`（竖直），`2` 为 "
+"`BODY_TRACKING`（跟随），`3` 为 `BODY_LOCKED`（锁定），`5` 为 "
+"`BODY_CUSTOM_LOCKED`（自定义关节锁定）。旧的锁头值 `4` 已不再发布。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 25642a04591a47098553381b70a134d7 814fc9eb7cac4231a7d0b6f919c9bbd9
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: fba11621b1c34d3189f802a8332766b7
 #, #
 msgid "`bimanual_state`"
 msgstr "`bimanual_state`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 1f0c05282f064e1cbb21ad525d0f7eb7
-msgid "`BASE_LOCK` / `BASE_UNLOCK`"
-msgstr "`BASE_LOCK` / `BASE_UNLOCK`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 257449ed166e4d209ca768c5cbfd8bac 355531eb49774b71af55071483e7a26e
-msgid "`base_state`"
-msgstr "`base_state`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:205
-#: 324b412d5dec47f8b44813498bddd81b
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: b399446a1d6141ce806e82417a7dde36
 msgid ""
-"`WbcCurrentState` constants from the msgs README (not extra FSM integers "
-"on `/fsm_command`):"
-msgstr "msgs README 中的 `WbcCurrentState` 常量（不是 `/fsm_command` 上额外的 FSM 整数）："
+"Arm coordination: `0` = `BIMANUAL_INDEPENDENT` (independent); `1` = "
+"`BIMANUAL_COUPLED` (coupled)."
+msgstr "双臂协同模式：`0` 为 `BIMANUAL_INDEPENDENT`（独立），`1` 为 `BIMANUAL_COUPLED`（耦合）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 2df1087fce7646cb975e02c0019118c3
-msgid "Field"
-msgstr "字段"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 28f7c35a535349c9bfcc42c84d12d677
+msgid "`left_arm_state`"
+msgstr "`left_arm_state`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 569eb7d2780a44c8a8b6543a1f831550
-#, #
-msgid "Values"
-msgstr "取值"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 9281a5e979874b30bb289b91887786e9
-msgid "`BASE_LOCKED=0` / `BASE_UNLOCKED=1`"
-msgstr "`BASE_LOCKED=0` / `BASE_UNLOCKED=1`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 7bcb57f51ab741c7b3115cecc4b8df74
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: de803de00a984c8284f2b3297a288ddb
 msgid ""
-"`BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2` / `LOCKED=3` / "
-"`CUSTOM_LOCKED=5` (`4` was a former lock-head value and is no longer "
-"published)"
-msgstr ""
-"`BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2` / `LOCKED=3` / "
-"`CUSTOM_LOCKED=5`（`4` 曾是旧锁头值，不再发布）"
+"Left arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
+"(enabled)."
+msgstr "WBC 中的左臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 5d7c986f907b462697cc2f34acfb0f98
-msgid "`BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1`"
-msgstr "`BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1`"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 54206a284eb043c988af5084c7784d4c
+msgid "`right_arm_state`"
+msgstr "`right_arm_state`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: e7a67994977f438da05b5e271d16a07d
-#, #
-msgid "`left_arm_state` / `right_arm_state`"
-msgstr "`left_arm_state` / `right_arm_state`"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: f9a3ba3465ef4c98ad9557861b1e3bff
+msgid ""
+"Right arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
+"(enabled)."
+msgstr "WBC 中的右臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 2ee5ce49874e414685712c8d617c337a
-msgid "`ARM_DISABLED=0` / `ARM_ENABLED=1`"
-msgstr "`ARM_DISABLED=0` / `ARM_ENABLED=1`"
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 25a91b0f804e4055b346368e151cfb97
+msgid "`home_joint_reference_enabled`"
+msgstr "`home_joint_reference_enabled`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: acdadb23ada64fd6af849958e1f0844c
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 1a2c9c23ef6f449bafd68ef6d5f4f591 519093a45a334943b282953121cdcb75
+msgid "`bool`"
+msgstr "`bool`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 089ceea6f5c54bc7a2d90384041b2a35
+msgid ""
+"Whether the HOME joint-reference constraint is on: `true` = on; `false` ="
+" off. This is a constraint switch, not a report that the FSM is in HOME."
+msgstr "HOME 关节参考约束是否打开：`true` 为打开，`false` 为关闭。这是约束开关，不表示 FSM 处于 HOME 状态。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: d15781d004354eae8a15869ed607eeb7
 #, #
 msgid "`head_state`"
 msgstr "`head_state`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: f5847991488f4d97a8c98a1476358d23
-msgid "`HEAD_DISABLED=0` / `HEAD_TRACKING=1` / `HEAD_GAZE=2` / `HEAD_FORWARD=3`"
-msgstr "`HEAD_DISABLED=0` / `HEAD_TRACKING=1` / `HEAD_GAZE=2` / `HEAD_FORWARD=3`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:215
-#: c349d9fdf5d24ae6a1c682cdfd738ad3
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: cabfbefac3c94edcb31851d77b28b159
 msgid ""
-"Capability bits (`WbcCapability`: mobile base, body relative, head 6D, "
-"midpoint gaze, …) are in the same README. Extra WBC **FSM** states stay "
-"in the private `ocs2_wbc_controller` README after access."
+"Head mode: `0` = `HEAD_DISABLED` (disabled); `1` = `HEAD_TRACKING` (6D "
+"pose tracking); `2` = `HEAD_GAZE` (gaze at the midpoint between the two "
+"end effectors); `3` = `HEAD_FORWARD` (the former lock-head head/waist "
+"coupling and waist constraints)."
 msgstr ""
-"能力位（`WbcCapability`：移动底盘、身体相对、头部 6D、中点注视等）在同一 README。额外的 WBC **FSM** "
-"状态开通后见私有 `ocs2_wbc_controller` README。"
+"头部模式：`0` 为 `HEAD_DISABLED`（禁用），`1` 为 `HEAD_TRACKING`（六维位姿跟踪），`2` 为 "
+"`HEAD_GAZE`（注视双手末端中点），`3` 为 `HEAD_FORWARD`（原锁头模式的头腰联动及腰部约束）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:217
-#: e6f84632de38446f807692e3597083f4
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 68ba57b5c74a4e50a99e5daf949b7eaf
+msgid "`head_midpoint_gaze_active`"
+msgstr "`head_midpoint_gaze_active`"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 3fc6481742464a3e8e2fc5cd31494ce2
+msgid ""
+"Whether midpoint gaze is active. It is `true` only while `HEAD_GAZE` is "
+"active, independently of the selected body mode. It does not guarantee "
+"that the head is aligned with the target or that the target is reachable."
+msgstr ""
+"双手末端中点注视任务是否激活。只有 `HEAD_GAZE` 生效时才为 "
+"`true`，与选择的身体模式无关。它不保证头部已经对准目标，也不保证目标可达。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:335
+#: 7989eabebdd54831a145923f27e3d120
+msgid "Interpret the feedback"
+msgstr "怎样判断状态"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:337
+#: 929dc9d7528c4415961f60eb9142a380
+msgid ""
+"In `HEAD_FORWARD`, `body_state` still reports the body mode you selected,"
+" but the former lock-head constraints temporarily override it. Leaving "
+"`HEAD_FORWARD` restores that body selection. Read `head_state` together "
+"with `body_state` rather than treating the body field alone as the active"
+" constraint set."
+msgstr ""
+"处于 `HEAD_FORWARD` 时，`body_state` 仍反馈之前选择的身体模式，但实际约束暂时由原锁头约束覆盖；退出 "
+"`HEAD_FORWARD` 后恢复该身体选择。因此，判断当前约束时要同时看 `head_state` 和 "
+"`body_state`，不能只看身体字段。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:339
+#: 1e72ea051f0d45ba92c2c92a62ab45a6
+msgid ""
+"Capabilities and active states answer different questions. "
+"`WbcCapability.head_midpoint_gaze_enabled` tells you whether midpoint "
+"gaze is configured; `WbcCurrentState.head_midpoint_gaze_active` tells you"
+" whether the task is active now. Likewise, "
+"`WbcCapability.has_home_joint_reference` indicates support for the HOME "
+"joint-reference constraint, while `home_joint_reference_enabled` reports "
+"its current switch state."
+msgstr ""
+"能力和当前状态回答的是不同问题。`WbcCapability.head_midpoint_gaze_enabled` "
+"表示是否配置了中点注视能力，`WbcCurrentState.head_midpoint_gaze_active` "
+"表示此刻是否激活了该任务。同样，`WbcCapability.has_home_joint_reference` 表示是否支持 HOME "
+"关节参考约束，`home_joint_reference_enabled` 则表示当前是否打开。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:341
+#: 07f430ccba0d42379cd3e734c0d04517
+msgid ""
+"After a mode request, check the corresponding feedback field instead of "
+"assuming that publishing a command means it was applied. For example, "
+"`base_state: 0` reports a locked base, and `head_state: 2` with "
+"`head_midpoint_gaze_active: true` reports an active midpoint-gaze task, "
+"not that the head is already aligned."
+msgstr ""
+"发送模式请求后，要检查对应的反馈字段，不要把“命令已发出”当作“模式已生效”。例如，`base_state: 0` "
+"表示底盘处于锁定模式；`head_state: 2` 且 `head_midpoint_gaze_active: true` "
+"表示中点注视任务已激活，而不是头部已经对准。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:343
+#: 98b38f434e4e42afa3e9647d345f9a5d
+msgid ""
+"If the installed definition differs from this table, check the message "
+"package version. After a message upgrade, rebuild the dependent source "
+"packages as needed and source the updated workspace before restarting "
+"publishers and subscribers with matching interfaces."
+msgstr ""
+"如果本机消息定义与表格不同，请先核对消息包版本。升级消息定义后，按需重新构建依赖它的源码包，source "
+"更新后的工作空间，再重新启动发布端和订阅端，让两端使用一致的接口。"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:345
+#: 85736e989bc549f08e738c0974d5fa32
 msgid "Actions"
 msgstr "Action"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:219
-#: 5562f251cc114561a2585fc26fea293f
+#: ../../source/3-concepts/4-fsm_and_topics.md:347
+#: 72a7b5fdfa094cb8a4cd0322d74d8490
 msgid ""
 "From the msgs README. Default **arm** action names on "
 "`ROS2RobotInterfaceConfig` point at `ocs2_arm_controller`; override the "
@@ -1425,89 +2264,89 @@ msgstr ""
 "名会自动检测（`/ocs2_wbc_controller/waist_lifting_pose` 或 "
 "`/body_joint_controller/waist_lifting_pose`）。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 02fb9c3c8f9d445a9e177767e4d490d3 9f294f24a2164f869c113220f0009d99
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 110fe60b0f3c4ecbbdb1a9befa95e874 ea4163deff504b0680128bfcaf84025d
 msgid "Name"
 msgstr "名称"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 3b570234d1484f42ae26dd2074c4bceb
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 1bc165f0ba5e48d0a7313befe299aa33
 #, #
 msgid "Typical path"
 msgstr "典型路径"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: eebac30745b040aca6737ad92a6bf61b fd1d188a84f84c07b12e87d7c7b3998b
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 0ba89e3a50ab4ea5a7e7c844aed75f8c a66a680ad2e642fcb01930f6cdc43a61
 msgid "`ExecuteLinear`"
 msgstr "`ExecuteLinear`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 403084c63c6240d3885e70bed2b753a0 44a423c713b54e239d32ca90bb9ece0a
-#: 8175a20689c54f2ca8ad3efe3535dcc4 97079c90c8c74f4dbe2d444491645ded
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 123d4b9c1cd145c7b7226b2a79a0e2be 4c00defe0ddd498fb73cd666c4c3b3da
+#: 63f93fe90f084136b8bf53ab434cffdb 9e8ec6aced36418497362a35bd7367a4
 msgid "action"
 msgstr "action"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 3c32d0bb8d2349c5b026a14acb1a661a
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: e8a7b5ac60e74a62866ad06a30a57db3
 #, #
 msgid "`/ocs2_arm_controller/execute_linear`"
 msgstr "`/ocs2_arm_controller/execute_linear`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: e5541efa608243fc8ba02a94984ba982
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 40f3465c7bb94a31b6a3bc7edad5c85b
 msgid "Parameterized MoveL (`LinearMessage` goal)"
 msgstr "参数化 MoveL（`LinearMessage` 目标）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: de9a59f485074fee9fab7726cb7c4316 dfb11006abde4e5c8db110c84fdab96a
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 562f7b91c6f24daca42870f8e31d0745 db40fa5146ca44f58e8645c658558616
 msgid "`MovecUseIK`"
 msgstr "`MovecUseIK`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: eebd8d42e7154d8fa7f05ca83f0709fc
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 29acb820b59e4be781c01ed4573f066e
 #, #
 msgid "`/ocs2_arm_controller/execute_circle_use_ik`"
 msgstr "`/ocs2_arm_controller/execute_circle_use_ik`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: cc6a9d4dd65c437c880978e6d5d8b95b
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: fadd79042a9543af9c38040dc204de12
 msgid "MoveC (`CircleMessage`; three-point or parametric)"
 msgstr "MoveC（`CircleMessage`；三点法或参数法）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 4494da650aa1481185cb669d6cf4a952 893abb0a07f44155888ec89454592401
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 01ca57dfc289450981c1ecf2a1c91ec0 c56c4b8e89914979a1c5d64440ef7444
 #, #
 msgid "`JointTrajectory`"
 msgstr "`JointTrajectory`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: f95c892c15994efb80cf356a5811fbe6
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 232ef965fe524635a398689dadf50681
 #, #
 msgid "`/ocs2_arm_controller/joint_trajectory_with_para`"
 msgstr "`/ocs2_arm_controller/joint_trajectory_with_para`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 9f2378ee029c413688b195b10d3244ef
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 73f8cd34c87540378316fdbf06dd4b1a
 msgid "Parameterized MoveJ (`JointWaypoint[]`)"
 msgstr "参数化 MoveJ（`JointWaypoint[]`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: c5f3525dd70c412b8b33b916ebd969cd
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: a6a66e3b4cf24b2fab14d1d08f68a66c
 msgid "`WaistLiftingPose`"
 msgstr "`WaistLiftingPose`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: fb776300da4245e0bd4918c5654b69e5
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 1eacbf96f43c49828509dbde65235f5a
 msgid "`…/waist_lifting_pose`"
 msgstr "`…/waist_lifting_pose`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: bd0cf0ba68214948b39bd8d2f636d2a1
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 46a7ad1355424b3ea3cba7102a6122c3
 msgid "Waist pose; goal `MODE_ABSOLUTE=0` / `MODE_RELATIVE=1`"
 msgstr "腰部位姿；目标 `MODE_ABSOLUTE=0` / `MODE_RELATIVE=1`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:228
-#: 2ef2fd3e2f7b419097ea988cb2b1f275
+#: ../../source/3-concepts/4-fsm_and_topics.md:356
+#: 6d033ceae9734649be3601f226d04a72
 msgid ""
 "Python: `execute_movel_action`, `execute_movec_action_three_point` / "
 "`execute_movec_action_parametric`, `execute_joint_trajectory_action` / "
@@ -1523,8 +2362,8 @@ msgstr ""
 " / "
 "`execute_waist_lifting_pose_relative_action`。它们会阻塞直到有结果或超时。对应话题（`*/stamped`、`target_joint_trajectory`、`waist_lifting_pose_*`）**没有**结果。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:230
-#: 6ad2e14369bd4b7d9a52546ead6aeb60
+#: ../../source/3-concepts/4-fsm_and_topics.md:358
+#: abecfc49c59e4bf4a03e7eedba7ffcf9
 msgid ""
 "`execute_movel_action` with `auto_switch_fsm=True` switches FSM to "
 "**MOVEJ**. Unstamped / stamped **topics** switch to **OCS2**."
@@ -1532,84 +2371,84 @@ msgstr ""
 "`execute_movel_action` 在 `auto_switch_fsm=True` 时把 FSM 切到 **MOVEJ**。无 "
 "stamp / 有 stamp 的**话题**则切到 **OCS2**。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:232
-#: 2710b7d88610481a8adf68454a64e626
+#: ../../source/3-concepts/4-fsm_and_topics.md:360
+#: c367125508874725b2033fcc25f97925
 msgid "Services"
 msgstr "Service"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:234
-#: 430bee57936548b4bd4cee55a88c0d8e
+#: ../../source/3-concepts/4-fsm_and_topics.md:362
+#: eb81c41d76dd4533b65d1f79061b2347
 msgid ""
 "From the msgs README. Service is a single request/response; action adds "
 "progress. Names a running controller advertises win."
 msgstr "来自 msgs README。Service 是一次请求/响应；Action 另有进度。以正在运行的控制器实际 advertise 的名字为准。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 0e879726dc884105b7470c0611bd845e 1eb255e73b4144db8376f581bba33ff0
-#: c6b32ae19e4f451385bd2a099588475a c8134991acdf4e1d908c55994177743c
-#: e02a05bd709540ca83ad50ee0654bb41 fa424249fbe74655a5192fc6182f2c86
-#: fe824d5fdf064c9e91ac0ddf3790360d
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 4273ba5074e84b39a409839a1080e509 8447e12a5d984f7fa2124fce5a159e35
+#: 98f7b51086ab4e6bb0040748ee8b4774 a0906a2fcef04dea8469d675775bf199
+#: a6f8019d12994aedbc484aba5a0df57d c92846be52314bdba52fb102a92fcc50
+#: e24aed5f49974961b5674b734b2dbf16
 msgid "srv"
 msgstr "srv"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 972ea743f7b24e7c95390f2eebd58b4f
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 2eb57889f52b4471a504adaf5d4cf539
 msgid "Same `LinearMessage` as the action, without progress"
 msgstr "与 Action 相同的 `LinearMessage`，没有进度"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 4ef2f29bedcf4d80945d5348ea0a4db6
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 854b292a86cf42b8acd99c37813253c2
 msgid "`ExecuteCircle`"
 msgstr "`ExecuteCircle`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 5aae658b7b334aa3bbfda675ac843330
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: c74c23b08f574da0ac766f311a427962
 msgid "`CircleMessage`"
 msgstr "`CircleMessage`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: c9a4aee0252c412c9ee4a4f2fd1d57cc
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 4ad539463bb144fcbd889df32128df94
 msgid "`CircleMessage` (action of the same name has duration + progress)"
 msgstr "`CircleMessage`（同名 Action 另含时长与进度）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 1cb0c7b3bb5b46b39d36ad180fc7df37
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: b4efeffc47684878876f66475cc2a840
 msgid "`joint_names` + `JointWaypoint[]`"
 msgstr "`joint_names` + `JointWaypoint[]`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: b713297c964d45fcb0b198b44924fa8e
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 934b61f5d88947988f1ec1f0cd613696
 msgid "`ExecutePath`"
 msgstr "`ExecutePath`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 770cbb1a8ae6434897afe49904b0022d
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: a08b6eb359394d18b4ed421750ad2efd
 msgid "Left/right `nav_msgs/Path` + `trajectory_duration`"
 msgstr "左右臂 `nav_msgs/Path` + `trajectory_duration`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 474e1d6ac9bf490a88bc39fbab5ad511
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 6d1b58ddefab496a82bdfe21f4ea9de9
 #, #
 msgid "`CartesianPath`"
 msgstr "`CartesianPath`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 8ef87f122b164b8faad70debdb2f4cc4
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 5f1675ed98134cd2b0752a10401efec4
 msgid "Left/right `Path` + `duration`"
 msgstr "左右臂 `Path` + `duration`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 8daaf44f53794640bf688b8aef6b6e1e
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: 13b7aa8807434844b424cf86792a7308
 msgid "`KinematicsService`"
 msgstr "`KinematicsService`"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: a49b448c830a4dd685f8f6b9f6b34d96
+#: ../../source/3-concepts/4-fsm_and_topics.md:178
+#: a0e08e2f29544fb09818f2a25fede2ec
 msgid "FK / IK (`operation_type` `\"fk\"` / `\"ik\"`)"
 msgstr "正/逆运动学（`operation_type` `\"fk\"` / `\"ik\"`）"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:246
-#: 970f66d869c5482f9f5b25e4f49d3dff
+#: ../../source/3-concepts/4-fsm_and_topics.md:374
+#: 1c83b8d04fdf4763b00e6ce4ada5fdcb
 msgid ""
 "Python wraps **`ExecutePath`** as `execute_path` / `execute_left_path` / "
 "`execute_right_path` (service name `execute_path`). The other srv types "
@@ -1620,33 +2459,48 @@ msgstr ""
 "`execute_right_path`（服务名 `execute_path`）。该 README 中其余 srv 类型没有 "
 "`ros2_robot_interface` 方法——若控制器 advertise 了它们，请用 ROS 2 客户端直接调用。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:248
-#: 2ad4c1714999458e96fa40e1e5be7e5b
+#: ../../source/3-concepts/4-fsm_and_topics.md:376
+#: 23788302404b49e68d788b894fa97f10
 msgid "Related"
 msgstr "相关"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:250
-#: 0beb30823b7f4c8981f2388fa4028607
+#: ../../source/3-concepts/4-fsm_and_topics.md:378
+#: da7564d2432e4a7890dd15db82693e89
+msgid "[VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md)"
+msgstr "[VR 遥操作](../2-how_to/5-teleoperation/6-vr_teleop.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:379
+#: aa7e6b74fab6479289d607734d75a792
+msgid "[Teleop topics and data](../4-reference/teleop/8-topics_and_data.md)"
+msgstr "[遥操相关话题与数据说明](../4-reference/teleop/8-topics_and_data.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:380
+#: aa7e6b74fab6479289d607734d75a792
+msgid "[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)"
+msgstr "[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:381
+#: 2908fda3d8da453884f030cf63b1b4e3
 msgid "[Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)"
 msgstr "[使用 Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:251
-#: 2aee975d081141c9aaff0d1edd5a430f
+#: ../../source/3-concepts/4-fsm_and_topics.md:382
+#: eed60a8953e947ad9f4ae9754247160b
 msgid "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 msgstr "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:252
-#: fffc140a529e4cd7b6bb342f34e3a860
+#: ../../source/3-concepts/4-fsm_and_topics.md:383
+#: 5dd2ab589ad74ef28454f7b20c1c997e
 msgid "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 msgstr "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:253
-#: fbbf2c392ffd49e486e575e3158253a8
+#: ../../source/3-concepts/4-fsm_and_topics.md:384
+#: 2948fed9e763451ba19ae1f36e513e28
 msgid "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:254
-#: 5b2858fd0582435eaa47311795df0773
+#: ../../source/3-concepts/4-fsm_and_topics.md:385
+#: d89a033d4b0e4b59afcfa5cfb59e7873
 msgid ""
 "[Adaptive Gripper "
 "Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)"
@@ -1654,18 +2508,18 @@ msgstr ""
 "[Adaptive Gripper "
 "Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:255
-#: 35a1aa6e4316406eba41661e647500f5
+#: ../../source/3-concepts/4-fsm_and_topics.md:386
+#: 085aec34c1fe4eeead9600e32e4a553f
 msgid "[Controllers reference](../4-reference/controllers/0-index.md)"
 msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:256
-#: 417a5924b3cf41ce99a6a58536589bdd
+#: ../../source/3-concepts/4-fsm_and_topics.md:387
+#: b4cab94640dc4314bfe462c33ab6b046
 msgid "[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:257
-#: 6829c0721e444416a7aba8fa9a2b1cd8
+#: ../../source/3-concepts/4-fsm_and_topics.md:388
+#: f2d5789a33e3480c845907fc2dfbc88f
 msgid ""
 "[arms_target_manager README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)"
@@ -1673,8 +2527,8 @@ msgstr ""
 "[arms_target_manager README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:258
-#: c7f08145bae14bebbfc70bd114a22e99
+#: ../../source/3-concepts/4-fsm_and_topics.md:389
+#: 8ad4a611eb394e348ef3bd835d0f1508
 #, #
 msgid ""
 "[arms_ros2_control_msgs README](https://github.com/fiveages-"
@@ -2364,926 +3218,225 @@ msgstr ""
 #~ msgid "Whole-body stack"
 #~ msgstr "全身栈"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:5
-#: d540be30c6eb4d039ae17d6af6df2f3e
-msgid ""
-"Binary in `ros-jazzy-arms-ros2-control`. Extra states are in the source "
-"README. Public Python still uses the same `/fsm_command` integers plus "
-"`/mode_command` strings"
-msgstr ""
-"二进制在 `ros-jazzy-arms-ros2-control` 里。多出来的状态写在源码 README。公开的 Python 仍使用同一组 "
-"`/fsm_command` 整数，外加 `/mode_command` 字符串。"
+#~ msgid "Whole-body mode (`/mode_command`)"
+#~ msgstr "全身模式（`/mode_command`）"
+
+#~ msgid ""
+#~ "`/mode_command` is **`std_msgs/String`** on "
+#~ "the **全身 / WBC** stack. It is "
+#~ "not `/fsm_command`. Same availability as "
+#~ "the body/head Cartesian topics above: 分体"
+#~ " and default mock demos do not "
+#~ "start this path. Typical Python: "
+#~ "`send_mode_command`, then "
+#~ "`wait_until_mode_commands_applied` against "
+#~ "`/ocs2_wbc_controller/current_state` "
+#~ "(`arms_ros2_control_msgs/WbcCurrentState`). The FSM "
+#~ "is usually already **OCS2**, or the "
+#~ "controller may ignore the mode. The "
+#~ "Python interface maps `HEAD_DISABLE`, "
+#~ "`HEAD_TRACKING`, `HEAD_GAZE`, and `HEAD_FORWARD` "
+#~ "onto `head_state`."
+#~ msgstr ""
+#~ "`/mode_command` 是全身 / WBC 栈上的 "
+#~ "**`std_msgs/String`**，不是 "
+#~ "`/fsm_command`。可用性与上文的身体/头部笛卡尔话题相同：分体和默认 mock "
+#~ "演示不会启动这条路径。典型的 Python 用法是先 `send_mode_command`，再对照"
+#~ " "
+#~ "`/ocs2_wbc_controller/current_state`（`arms_ros2_control_msgs/WbcCurrentState`）调用"
+#~ " `wait_until_mode_commands_applied`。FSM 通常需要已经处于 "
+#~ "**OCS2**，否则控制器可能忽略该模式。Python 接口会把 "
+#~ "`HEAD_DISABLE`、`HEAD_TRACKING`、`HEAD_GAZE` 和 "
+#~ "`HEAD_FORWARD` 映射到 `head_state`。"
+
+#~ msgid ""
+#~ "Documented command strings and the "
+#~ "`WbcCurrentState` fields they check "
+#~ "([API_REFERENCE](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/API_REFERENCE.md) "
+#~ "`MODE_COMMAND_TO_WBC_EXPECT`):"
+#~ msgstr ""
+#~ "已文档化的命令字符串，以及它们检查的 `WbcCurrentState` "
+#~ "字段（[API_REFERENCE](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 的 "
+#~ "`MODE_COMMAND_TO_WBC_EXPECT`）："
+
+#~ msgid "`WbcCurrentState` field"
+#~ msgstr "`WbcCurrentState` 字段"
+
+#~ msgid ""
+#~ "`BODY_*` (examples: `BODY_TRACKING`, `BODY_FREE`;"
+#~ " `BODY_VERTICAL` is an alias)"
+#~ msgstr "`BODY_*`（例如 `BODY_TRACKING`、`BODY_FREE`；`BODY_VERTICAL` 是别名）"
+
+#~ msgid "`ARMS_COUPLED` / `ARMS_INDEPENDENT`"
+#~ msgstr "`ARMS_COUPLED` / `ARMS_INDEPENDENT`"
+
+#~ msgid "`BASE_LOCK` / `BASE_UNLOCK`"
+#~ msgstr "`BASE_LOCK` / `BASE_UNLOCK`"
+
+#~ msgid ""
+#~ "`WbcCurrentState` constants from the msgs "
+#~ "README (not extra FSM integers on "
+#~ "`/fsm_command`):"
+#~ msgstr "msgs README 中的 `WbcCurrentState` 常量（不是 `/fsm_command` 上额外的 FSM 整数）："
+
+#~ msgid "Values"
+#~ msgstr "取值"
+
+#~ msgid "`BASE_LOCKED=0` / `BASE_UNLOCKED=1`"
+#~ msgstr "`BASE_LOCKED=0` / `BASE_UNLOCKED=1`"
+
+#~ msgid ""
+#~ "`BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2`"
+#~ " / `LOCKED=3` / `CUSTOM_LOCKED=5` (`4` "
+#~ "was a former lock-head value and"
+#~ " is no longer published)"
+#~ msgstr ""
+#~ "`BODY_FREE=0` / `VERTICAL=1` / `TRACKING=2`"
+#~ " / `LOCKED=3` / `CUSTOM_LOCKED=5`（`4` "
+#~ "曾是旧锁头值，不再发布）"
+
+#~ msgid "`BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1`"
+#~ msgstr "`BIMANUAL_INDEPENDENT=0` / `BIMANUAL_COUPLED=1`"
+
+#~ msgid "`left_arm_state` / `right_arm_state`"
+#~ msgstr "`left_arm_state` / `right_arm_state`"
+
+#~ msgid "`ARM_DISABLED=0` / `ARM_ENABLED=1`"
+#~ msgstr "`ARM_DISABLED=0` / `ARM_ENABLED=1`"
+
+#~ msgid ""
+#~ "`HEAD_DISABLED=0` / `HEAD_TRACKING=1` / "
+#~ "`HEAD_GAZE=2` / `HEAD_FORWARD=3`"
+#~ msgstr ""
+#~ "`HEAD_DISABLED=0` / `HEAD_TRACKING=1` / "
+#~ "`HEAD_GAZE=2` / `HEAD_FORWARD=3`"
+
+#~ msgid ""
+#~ "Capability bits (`WbcCapability`: mobile base,"
+#~ " body relative, head 6D, midpoint "
+#~ "gaze, …) are in the same README."
+#~ " Extra WBC **FSM** states stay in "
+#~ "the private `ocs2_wbc_controller` README after"
+#~ " access."
+#~ msgstr ""
+#~ "能力位（`WbcCapability`：移动底盘、身体相对、头部 6D、中点注视等）在同一 README。额外的"
+#~ " WBC **FSM** 状态开通后见私有 `ocs2_wbc_controller` "
+#~ "README。"
+
+#~ msgid "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+#~ msgstr "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
+
+#~ msgid "Switch on midpoint gaze (`HEAD_GAZE`)"
+#~ msgstr "打开中点注视（`HEAD_GAZE`）"
+
+#~ msgid ""
+#~ "Do not publish to "
+#~ "`/ocs2_wbc_controller/current_state`. That topic is"
+#~ " feedback. `head_state: 2` means "
+#~ "`HEAD_GAZE`, and `head_midpoint_gaze_active` becomes"
+#~ " `true` only after that mode is "
+#~ "active. It is not a separate "
+#~ "command."
+#~ msgstr ""
+#~ "不要向 `/ocs2_wbc_controller/current_state` "
+#~ "发布。这个话题是状态反馈。`head_state: 2` 表示 "
+#~ "`HEAD_GAZE`，`head_midpoint_gaze_active` 只在该模式生效后才会变成 "
+#~ "`true`，它不是一条单独的命令。"
+
+#~ msgid ""
+#~ "First confirm that midpoint gaze is "
+#~ "configured: `WbcCapability.head_midpoint_gaze_enabled` "
+#~ "should be `true`. This capability comes"
+#~ " from the robot's OCS2 task `.info`"
+#~ " file, in the top-level "
+#~ "`headMidpointGaze` section (`activate`, "
+#~ "`cameraFrame`, and the camera parameters). "
+#~ "If the bit is false, the "
+#~ "controller will not apply `HEAD_GAZE`. "
+#~ "The FSM is usually already **OCS2**; "
+#~ "otherwise the controller may ignore the"
+#~ " mode command."
+#~ msgstr ""
+#~ "先确认已经配置了中点注视：`WbcCapability.head_midpoint_gaze_enabled` 应为 "
+#~ "`true`。该能力来自机器人 OCS2 任务 `.info` 文件中的顶层 "
+#~ "`headMidpointGaze` 段（`activate`、`cameraFrame` "
+#~ "以及相机参数）。如果该位为假，控制器不会应用 `HEAD_GAZE`。FSM 通常需要已经处于 "
+#~ "**OCS2**，否则控制器可能忽略这条模式命令。"
+
+#~ msgid "Then request the mode on `/mode_command`:"
+#~ msgstr "然后向 `/mode_command` 请求该模式："
+
+#~ msgid ""
+#~ "ros2 topic pub --once /mode_command "
+#~ "std_msgs/msg/String \"data: 'HEAD_GAZE'\"\n"
+#~ msgstr ""
+#~ "ros2 topic pub --once /mode_command "
+#~ "std_msgs/msg/String \"data: 'HEAD_GAZE'\""
+
+#~ msgid ""
+#~ "Or in Python, call "
+#~ "`send_mode_command(\"HEAD_GAZE\")`, then "
+#~ "`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`. If "
+#~ "the controller runs in a namespace, "
+#~ "use its actual topic name. The "
+#~ "RViz OCS2 panel also offers 注视 "
+#~ "(Gaze) when this capability is enabled."
+#~ msgstr ""
+#~ "在 Python 中，先调用 "
+#~ "`send_mode_command(\"HEAD_GAZE\")`，再调用 "
+#~ "`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`。控制器带命名空间时，请使用实际的话题名。能力开启时，RViz"
+#~ " 的 OCS2 面板里也有「注视」。"
+
+#~ msgid ""
+#~ "When the command is accepted, "
+#~ "`/ocs2_wbc_controller/current_state` should report "
+#~ "`head_state: 2` (`HEAD_GAZE`) and "
+#~ "`head_midpoint_gaze_active: true`. That reports "
+#~ "an active task, not that the head"
+#~ " is already aligned or that the "
+#~ "target is reachable. Send `HEAD_DISABLE` "
+#~ "to stop gaze. A worked sequence is"
+#~ " in the [mode-command check "
+#~ "example](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+#~ msgstr ""
+#~ "命令被接受后，`/ocs2_wbc_controller/current_state` 应回报 "
+#~ "`head_state: 2`（`HEAD_GAZE`）且 `head_midpoint_gaze_active:"
+#~ " true`。这表示任务已激活，不表示头部已经对准，也不表示目标可达。发送 `HEAD_DISABLE` "
+#~ "可停止注视。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。"
+
+#~ msgid "Then request the mode:"
+#~ msgstr "然后请求该模式："
+
+#~ msgid ""
+#~ "ros2 topic pub --once /mode_command "
+#~ "std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
+#~ msgstr ""
+#~ "ros2 topic pub --once /mode_command "
+#~ "std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
+
+#~ msgid ""
+#~ "When the command is accepted, the "
+#~ "matching `current_state` field changes. That"
+#~ " reports a selected mode or an "
+#~ "active task, not that a pose has"
+#~ " already been reached. A worked "
+#~ "sequence is in the [mode-command "
+#~ "check example](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
+#~ " The Python mapping is "
+#~ "`MODE_COMMAND_TO_WBC_EXPECT` in the "
+#~ "[API_REFERENCE](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/API_REFERENCE.md)."
+#~ msgstr ""
+#~ "命令被接受后，对应的 `current_state` "
+#~ "字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com"
+#~ "/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。Python"
+#~ " 中的映射是 [API_REFERENCE](https://github.com/fiveages-"
+#~ "sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 里的 "
+#~ "`MODE_COMMAND_TO_WBC_EXPECT`。"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:95
-#: 4959e6efb0b6499aa84385c2fce768ee
-msgid ""
-"`ocs2_wbc_controller` runs from the `ros-jazzy-arms-ros2-control` deb. "
-"Extra FSM states stay in the source README. Which constraints are live "
-"depends on the robot (`WbcCapability` in the [msgs "
-"README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md):"
-" mobile base, body relative, head 6D, midpoint gaze, …). Public Taku mock"
-" uses `split_body.launch.py robot:=taku` (arm MPC + body/head "
-"`basic_joint_controller` + `adaptive_gripper_controller`). That is not "
-"WBC. `full_body.launch.py robot:=taku` needs `ocs2_wbc_controller` from "
-"that deb or from a source checkout. Shipping "
-"`config/ocs2/fixed_base_tcp.info` in the public description is not "
-"enough. When that config and the controller are installed, Taku full-body"
-" default `headMode` is `HEAD_GAZE` (gaze on "
-"`head_camera_mid_optical_frame`); `target_manager.yaml` has "
-"`enable_head_control: false` so the head follows OCS2 rather than a "
-"joint-space marker. Split-body still teleops the head through "
-"`head_joint_controller`. Taku body-relative rest is around x≈−0.21, not "
-"Bot2 `[0, 0.25]`. Head 6D tracking (`HEAD_TRACKING`) is only there when "
-"the controller reports `head_tracking_ee_enabled`."
-msgstr ""
-"`ocs2_wbc_controller` 从 `ros-jazzy-arms-ros2-control` 这个 deb 运行。多出来的 FSM "
-"状态留在源码 README。哪些约束在生效取决于这台机器人（[消息 README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_ros2_control_msgs/README.md)"
-" 里的 `WbcCapability`：移动底盘、身体相对、头部 6D、中点注视等）。公开的 Taku mock 用 "
-"`split_body.launch.py robot:=taku`（手臂 MPC + 身体/头部 "
-"`basic_joint_controller` + `adaptive_gripper_controller`）。那不是 "
-"WBC。`full_body.launch.py robot:=taku` 需要这个 deb 里的 "
-"`ocs2_wbc_controller`，或一份源码检出。公开描述里带 `config/ocs2/fixed_base_tcp.info` "
-"不够。配置和控制器都装上之后，Taku 全身模式默认 `headMode` 是 `HEAD_GAZE`（注视 "
-"`head_camera_mid_optical_frame`）；`target_manager.yaml` 里 "
-"`enable_head_control: false`，头跟随 OCS2，而不是关节空间里的标记。分体模式仍通过 "
-"`head_joint_controller` 遥操作头部。Taku 相对身体的静止位置大约在 x≈−0.21，不是 Bot2 的 `[0, "
-"0.25]`。头部 6D 跟踪（`HEAD_TRACKING`）只在控制器报告 `head_tracking_ee_enabled` 时才有。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:206
-#: 45bf2e65de6f47b994a07699a1ffacd3
-msgid "Read the current WBC modes (`current_state`)"
-msgstr "查看当前全身控制模式（`current_state`）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:208
-#: e42deb44e2b1452ea8c1e00488cc0d99
-msgid ""
-"Subscribe to `/ocs2_wbc_controller/current_state` to see the modes reported "
-"by the whole-body controller. The message type is "
-"`arms_ros2_control_msgs/msg/WbcCurrentState`. These fields describe WBC "
-"modes and constraints, not joint positions or motion completion. They are "
-"separate from the FSM state on `/fsm_state`."
-msgstr ""
-"订阅 `/ocs2_wbc_controller/current_state` 可以查看全身控制器反馈的模式，消息类型是 "
-"`arms_ros2_control_msgs/msg/WbcCurrentState`。这些字段表示 WBC "
-"的模式和约束，不表示关节位置或运动是否完成，也不是 `/fsm_state` 中的控制器状态。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:210
-#: 08090581666f4c8cb94de1870d54e00b
-msgid ""
-"With the whole-body controller running and its workspace sourced, inspect "
-"the feedback and the installed message definition:"
-msgstr "启动全身控制器并 source 对应工作空间后，可以查看状态反馈和本机安装的消息定义："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:212
-#: 78e4da3426f54a19b681a4d26ae50cac
-msgid ""
-"ros2 topic echo /ocs2_wbc_controller/current_state\n"
-"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
-msgstr ""
-"ros2 topic echo /ocs2_wbc_controller/current_state\n"
-"ros2 interface show arms_ros2_control_msgs/msg/WbcCurrentState\n"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:217
-#: b6e02e2d494b45eaad1adbb281fe3df1
-msgid ""
-"If the controller runs in a namespace, use its actual topic name. The fields"
-" below follow the current [message definition](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)"
-" and [message package README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)."
-msgstr ""
-"控制器带命名空间时，请使用实际的话题名。下面的字段以当前[消息定义](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/WbcCurrentState.msg)和[消息包"
-" README](https://github.com/fiveages-"
-"sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md) "
-"为依据。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 029392dd0143474aaa81af5783749c22
-msgid "Values and meaning"
-msgstr "取值与含义"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 48d57aed7afc4c7893c83fa1d07ef97e 3bd090b330474341ac6ca252d5ba62f5
-#: cfd8b08ec57c408da9e3ec611758f667 12ea7e137bd74471b8ff9b7d768c6a59
-#: 02fcdeae40724d13b8db410152d8ff22 a145af394f744ba0a9e166290dd74ff1
-msgid "`uint8`"
-msgstr "`uint8`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: b9ed82ed8adf4cae8d3cca9b23b6f6cc
-msgid ""
-"Base mode: `0` = `BASE_LOCKED` (locked); `1` = `BASE_UNLOCKED` (unlocked)."
-msgstr "底盘模式：`0` 为 `BASE_LOCKED`（锁定），`1` 为 `BASE_UNLOCKED`（解锁）。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: e113e426b9dc4b72b86038f577af117a
-msgid ""
-"Selected body mode: `0` = `BODY_FREE` (free); `1` = `BODY_VERTICAL` "
-"(vertical); `2` = `BODY_TRACKING` (tracking); `3` = `BODY_LOCKED` (locked); "
-"`5` = `BODY_CUSTOM_LOCKED` (custom joint lock). The former lock-head value "
-"`4` is no longer published."
-msgstr ""
-"选择的身体模式：`0` 为 `BODY_FREE`（自由），`1` 为 `BODY_VERTICAL`（竖直），`2` 为 "
-"`BODY_TRACKING`（跟随），`3` 为 `BODY_LOCKED`（锁定），`5` 为 "
-"`BODY_CUSTOM_LOCKED`（自定义关节锁定）。旧的锁头值 `4` 已不再发布。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: b31cf8d388cc48e0981a50193169eeea
-msgid ""
-"Arm coordination: `0` = `BIMANUAL_INDEPENDENT` (independent); `1` = "
-"`BIMANUAL_COUPLED` (coupled)."
-msgstr "双臂协同模式：`0` 为 `BIMANUAL_INDEPENDENT`（独立），`1` 为 `BIMANUAL_COUPLED`（耦合）。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: e23afc754ad74c2392ac5801887be0e9
-msgid "`left_arm_state`"
-msgstr "`left_arm_state`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: fbc2ac61a8dc44278f03e4a7cdb89e49
-msgid ""
-"Left arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
-"(enabled)."
-msgstr "WBC 中的左臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: fef0e3d128e847af8224332b2a363de1
-msgid "`right_arm_state`"
-msgstr "`right_arm_state`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 51ae4c74ae0b4ac3983d1dc2c06e2b96
-msgid ""
-"Right arm in WBC: `0` = `ARM_DISABLED` (disabled); `1` = `ARM_ENABLED` "
-"(enabled)."
-msgstr "WBC 中的右臂状态：`0` 为 `ARM_DISABLED`（禁用），`1` 为 `ARM_ENABLED`（启用）。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 79f0394d89c94a6d9d451ba595520816
-msgid "`home_joint_reference_enabled`"
-msgstr "`home_joint_reference_enabled`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: d7427c4faa9f4b2a9c1a1b40bf62f7f9 c5a9284c9e5f48b7b6cbe26465207f23
-msgid "`bool`"
-msgstr "`bool`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: a7845890ba6047cc9f7ba0bb0e1e25de
-msgid ""
-"Whether the HOME joint-reference constraint is on: `true` = on; `false` = "
-"off. This is a constraint switch, not a report that the FSM is in HOME."
-msgstr "HOME 关节参考约束是否打开：`true` 为打开，`false` 为关闭。这是约束开关，不表示 FSM 处于 HOME 状态。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 3ac91168d0cf4aedae519b5982b01c3e
-msgid ""
-"Head mode: `0` = `HEAD_DISABLED` (disabled); `1` = `HEAD_TRACKING` (6D pose "
-"tracking); `2` = `HEAD_GAZE` (gaze at the midpoint between the two end "
-"effectors); `3` = `HEAD_FORWARD` (the former lock-head head/waist coupling "
-"and waist constraints)."
-msgstr ""
-"头部模式：`0` 为 `HEAD_DISABLED`（禁用），`1` 为 `HEAD_TRACKING`（六维位姿跟踪），`2` 为 "
-"`HEAD_GAZE`（注视双手末端中点），`3` 为 `HEAD_FORWARD`（原锁头模式的头腰联动及腰部约束）。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 0e02ff0e493f42e9b99a8b4eb68fdf42
-msgid "`head_midpoint_gaze_active`"
-msgstr "`head_midpoint_gaze_active`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 528b99f76a8042feb3cf1e36a5aea1ff
-msgid ""
-"Whether midpoint gaze is active. It is `true` only while `HEAD_GAZE` is "
-"active, independently of the selected body mode. It does not guarantee that "
-"the head is aligned with the target or that the target is reachable."
-msgstr ""
-"双手末端中点注视任务是否激活。只有 `HEAD_GAZE` 生效时才为 `true`，与选择的身体模式无关。它不保证头部已经对准目标，也不保证目标可达。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:230
-#: b5537a51b1cf4818b5712b1136b1a304
-msgid "Interpret the feedback"
-msgstr "怎样判断状态"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:232
-#: e8042c932a5041c7a076bd684424f16b
-msgid ""
-"In `HEAD_FORWARD`, `body_state` still reports the body mode you selected, "
-"but the former lock-head constraints temporarily override it. Leaving "
-"`HEAD_FORWARD` restores that body selection. Read `head_state` together with"
-" `body_state` rather than treating the body field alone as the active "
-"constraint set."
-msgstr ""
-"处于 `HEAD_FORWARD` 时，`body_state` 仍反馈之前选择的身体模式，但实际约束暂时由原锁头约束覆盖；退出 "
-"`HEAD_FORWARD` 后恢复该身体选择。因此，判断当前约束时要同时看 `head_state` 和 `body_state`，不能只看身体字段。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:234
-#: cc72aa12bdc04fbbb2c11cadd66d65bf
-msgid ""
-"Capabilities and active states answer different questions. "
-"`WbcCapability.head_midpoint_gaze_enabled` tells you whether midpoint gaze "
-"is configured; `WbcCurrentState.head_midpoint_gaze_active` tells you whether"
-" the task is active now. Likewise, `WbcCapability.has_home_joint_reference` "
-"indicates support for the HOME joint-reference constraint, while "
-"`home_joint_reference_enabled` reports its current switch state."
-msgstr ""
-"能力和当前状态回答的是不同问题。`WbcCapability.head_midpoint_gaze_enabled` "
-"表示是否配置了中点注视能力，`WbcCurrentState.head_midpoint_gaze_active` "
-"表示此刻是否激活了该任务。同样，`WbcCapability.has_home_joint_reference` 表示是否支持 HOME "
-"关节参考约束，`home_joint_reference_enabled` 则表示当前是否打开。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:236
-#: 1441b5e964954560b812ffe3f090f1b6
-msgid ""
-"After a mode request, check the corresponding feedback field instead of "
-"assuming that publishing a command means it was applied. For example, "
-"`base_state: 0` reports a locked base, and `head_state: 2` with "
-"`head_midpoint_gaze_active: true` reports an active midpoint-gaze task, not "
-"that the head is already aligned."
-msgstr ""
-"发送模式请求后，要检查对应的反馈字段，不要把“命令已发出”当作“模式已生效”。例如，`base_state: 0` "
-"表示底盘处于锁定模式；`head_state: 2` 且 `head_midpoint_gaze_active: true` "
-"表示中点注视任务已激活，而不是头部已经对准。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:238
-#: 609facaf37d04790b436d775451cb66b
-msgid ""
-"If the installed definition differs from this table, check the message "
-"package version. After a message upgrade, rebuild the dependent source "
-"packages as needed and source the updated workspace before restarting "
-"publishers and subscribers with matching interfaces."
-msgstr ""
-"如果本机消息定义与表格不同，请先核对消息包版本。升级消息定义后，按需重新构建依赖它的源码包，source "
-"更新后的工作空间，再重新启动发布端和订阅端，让两端使用一致的接口。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:175
-#: 18415377487f48cf99e9dcb2f17c574f
-msgid "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
-msgstr "`HEAD_DISABLE` / `HEAD_TRACKING` / `HEAD_GAZE` / `HEAD_FORWARD`"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:239
-#: b9720c6164cf4370b5e9fe0030c01a54
-msgid "Switch on midpoint gaze (`HEAD_GAZE`)"
-msgstr "打开中点注视（`HEAD_GAZE`）"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:241
-#: 414a6c11f2a34955b27cd0f51a8f0ca1
-msgid ""
-"Do not publish to `/ocs2_wbc_controller/current_state`. That topic is "
-"feedback. `head_state: 2` means `HEAD_GAZE`, and `head_midpoint_gaze_active`"
-" becomes `true` only after that mode is active. It is not a separate "
-"command."
-msgstr ""
-"不要向 `/ocs2_wbc_controller/current_state` 发布。这个话题是状态反馈。`head_state: 2` 表示 "
-"`HEAD_GAZE`，`head_midpoint_gaze_active` 只在该模式生效后才会变成 `true`，它不是一条单独的命令。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:243
-#: 5ae28317356145e480fe5c8e3d290c63
-msgid ""
-"First confirm that midpoint gaze is configured: "
-"`WbcCapability.head_midpoint_gaze_enabled` should be `true`. This capability"
-" comes from the robot's OCS2 task `.info` file, in the top-level "
-"`headMidpointGaze` section (`activate`, `cameraFrame`, and the camera "
-"parameters). If the bit is false, the controller will not apply `HEAD_GAZE`."
-" The FSM is usually already **OCS2**; otherwise the controller may ignore "
-"the mode command."
-msgstr ""
-"先确认已经配置了中点注视：`WbcCapability.head_midpoint_gaze_enabled` 应为 `true`。该能力来自机器人 "
-"OCS2 任务 `.info` 文件中的顶层 `headMidpointGaze` 段（`activate`、`cameraFrame` "
-"以及相机参数）。如果该位为假，控制器不会应用 `HEAD_GAZE`。FSM 通常需要已经处于 **OCS2**，否则控制器可能忽略这条模式命令。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:245
-#: 01e5db37f6144705bd822695bf3fd002
-msgid "Then request the mode on `/mode_command`:"
-msgstr "然后向 `/mode_command` 请求该模式："
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:247
-#: de799cdc9ea94c4e970dff8a2cbda4e2
-msgid ""
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
-"'HEAD_GAZE'\"\n"
-msgstr ""
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
-"'HEAD_GAZE'\""
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:251
-#: 9c9ba8c126e248929a75c89cc26ebd89
-msgid ""
-"Or in Python, call `send_mode_command(\"HEAD_GAZE\")`, then "
-"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`. If the controller runs "
-"in a namespace, use its actual topic name. The RViz OCS2 panel also offers "
-"注视 (Gaze) when this capability is enabled."
-msgstr ""
-"在 Python 中，先调用 `send_mode_command(\"HEAD_GAZE\")`，再调用 "
-"`wait_until_mode_commands_applied([\"HEAD_GAZE\"])`。控制器带命名空间时，请使用实际的话题名。能力开启时，RViz"
-" 的 OCS2 面板里也有「注视」。"
-
-#: ../../source/3-concepts/4-fsm_and_topics.md:253
-#: 8766dd9820f744fcb305922dbbcf1a46
-msgid ""
-"When the command is accepted, `/ocs2_wbc_controller/current_state` should "
-"report `head_state: 2` (`HEAD_GAZE`) and `head_midpoint_gaze_active: true`. "
-"That reports an active task, not that the head is already aligned or that "
-"the target is reachable. Send `HEAD_DISABLE` to stop gaze. A worked sequence"
-" is in the [mode-command check example](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
-msgstr ""
-"命令被接受后，`/ocs2_wbc_controller/current_state` 应回报 `head_state: "
-"2`（`HEAD_GAZE`）且 `head_midpoint_gaze_active: "
-"true`。这表示任务已激活，不表示头部已经对准，也不表示目标可达。发送 `HEAD_DISABLE` "
-"可停止注视。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。"
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
-#: bde4786ea6e54e8d89cf32963a357cae
-msgid "`/ocs2_wbc_controller/wbc_capabilities`"
-msgstr "`/ocs2_wbc_controller/wbc_capabilities`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
-#: 4498415a8c9440a29deea51ece4178de
-msgid "`arms_ros2_control_msgs/WbcCapability`"
-msgstr "`arms_ros2_control_msgs/WbcCapability`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:43
-#: b77ed219be7347c584e9c79864539a4e
-msgid "Which WBC constraints this robot has configured"
-msgstr "该机器人已配置哪些 WBC 约束"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:195
-#: 3677fd7e1aa04b0297e85a01bbad7aa5
-msgid "Switch whole-body modes (`/mode_command`)"
-msgstr "切换全身模式（`/mode_command`）"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:197
-#: c1702a12fadf4b2692dc6bbfa99ac9ee
-msgid ""
-"`/mode_command` is **`std_msgs/String`** on the **全身 / WBC** stack. It is "
-"not `/fsm_command`, and it is not a write path for "
-"`/ocs2_wbc_controller/current_state`. That topic is feedback only. Same "
-"availability as the body/head Cartesian topics above: 分体 and default mock "
-"demos do not start this path."
-msgstr ""
-"`/mode_command` 是全身 / WBC 栈上的 **`std_msgs/String`**。它不是 "
-"`/fsm_command`，也不能用来向 `/ocs2_wbc_controller/current_state` "
-"写入；那个话题只是反馈。可用性与上文的身体/头部笛卡尔话题相同：分体和默认的 mock 演示不会启动这条路径。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:199
-#: 09c9fc62bff54b3f95812a59e0600bd6
-msgid ""
-"The usual sequence is: confirm that `ocs2_wbc_controller` is running, switch"
-" the FSM to **OCS2** if it is not already there, publish the mode string, "
-"then confirm the matching field on `/ocs2_wbc_controller/current_state`. You"
-" can also publish the mode while still in **HOLD** or **MOVEJ** and then "
-"enter OCS2; entering OCS2 keeps the mode you already set. Leaving OCS2, or "
-"activating the controller, restores the default mode."
-msgstr ""
-"通常做法是：先确认 `ocs2_wbc_controller` 已在运行，若 FSM 还不是 **OCS2** 就先切过去，再发布模式字符串，然后在 "
-"`/ocs2_wbc_controller/current_state` 上确认对应字段。也可以在仍处于 **HOLD** 或 **MOVEJ** "
-"时先发布模式，再进入 OCS2；进入 OCS2 会保留你已经设好的模式。离开 OCS2，或激活控制器时，会恢复默认模式。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:201
-#: 9ebb8eaf9e46418c92456dfa5444ba42
-msgid "First check whether the robot supports the mode you want:"
-msgstr "先确认机器人是否支持你要的模式："
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:203
-#: f876821fb7ff425da538dd690afab8ae
-msgid "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
-msgstr "ros2 topic echo /ocs2_wbc_controller/wbc_capabilities\n"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:207
-#: 2d5e6f1fd0d047a6a211483fd532554e
-msgid ""
-"If the relevant `WbcCapability` bit is `false`, the controller will not "
-"apply that command. These bits come from the robot's OCS2 task `.info` file,"
-" for example `headMidpointGaze`, `headTrackingEE`, `headCoupling`, and "
-"`homeJointReference`. If the controller runs in a namespace, use its actual "
-"topic names."
-msgstr ""
-"如果对应的 `WbcCapability` 位是 `false`，控制器不会应用这条命令。这些能力位来自机器人的 OCS2 任务 `.info` "
-"文件，例如 `headMidpointGaze`、`headTrackingEE`、`headCoupling` 和 "
-"`homeJointReference`。控制器带命名空间时，请使用实际的话题名。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:209
-#: e04a1e06f3d44e63a41e55f5a838ed02
-msgid "Then request the mode:"
-msgstr "然后请求该模式："
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:211
-#: 59abd467b319465cbfa4d69b421301a2
-msgid ""
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
-"'BODY_TRACKING'\"\n"
-msgstr ""
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: "
-"'BODY_TRACKING'\"\n"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:215
-#: 0c53f16fee904141ab895bde9991da02
-msgid ""
-"Replace the string with any command in the tables below. In Python, call "
-"`send_mode_command(...)`, then `wait_until_mode_commands_applied(...)`. If "
-"you send several modes, publish them all first, then wait once on the "
-"combined list; do not wait after every command. The RViz OCS2 panel "
-"publishes the same strings when the corresponding capability is enabled."
-msgstr ""
-"把字符串换成下表中的任意命令。在 Python 中，先调用 `send_mode_command(...)`，再调用 "
-"`wait_until_mode_commands_applied(...)`。如果要发多条模式，先全部发布，再对合并后的列表等待一次，不要每条都等。能力开启时，RViz"
-" 的 OCS2 面板也会发布相同的字符串。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:217
-#: 51b641a8e72a4b59af7132b070615718
-msgid ""
-"interface.send_fsm_command(3)  # OCS2\n"
-"interface.send_mode_command(\"BODY_TRACKING\")\n"
-"interface.send_mode_command(\"BASE_LOCK\")\n"
-"ok = interface.wait_until_mode_commands_applied(\n"
-"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
-"    timeout=5.0,\n"
-")\n"
-msgstr ""
-"interface.send_fsm_command(3)  # OCS2\n"
-"interface.send_mode_command(\"BODY_TRACKING\")\n"
-"interface.send_mode_command(\"BASE_LOCK\")\n"
-"ok = interface.wait_until_mode_commands_applied(\n"
-"    [\"BODY_TRACKING\", \"BASE_LOCK\"],\n"
-"    timeout=5.0,\n"
-")\n"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:227
-#: dcd500a946b14919aafcc06f2a52f35c
-msgid ""
-"When the command is accepted, the matching `current_state` field changes. "
-"That reports a selected mode or an active task, not that a pose has already "
-"been reached. A worked sequence is in the [mode-command check "
-"example](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
-" The Python mapping is `MODE_COMMAND_TO_WBC_EXPECT` in the "
-"[API_REFERENCE](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/API_REFERENCE.md)."
-msgstr ""
-"命令被接受后，对应的 `current_state` "
-"字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。Python"
-" 中的映射是 [API_REFERENCE](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/API_REFERENCE.md) 里的 "
-"`MODE_COMMAND_TO_WBC_EXPECT`。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:229
-#: 81ea0435546a435e969ef5009789da9a
-msgid "Body"
-msgstr "身体"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 315b29b4d915497da97c5d94e780d529 9917ac6d6d174daf8df98ada5b493660
-#: 1e0cbc34355c42759de749ff98b5cc47 c4a443af0fb241ea979ce93b0be2a050
-msgid "Feedback when accepted"
-msgstr "生效后的反馈"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 6278345556c64c5da774974f81f1dd4f 3a89775863c7463ba5f4c433572cc189
-#: 30e0704be23545138d9115cedfe20144 f967f898e9ef478098aa530bca0315c2
-msgid "Capability"
-msgstr "能力"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2e5721d5a6c3432db346266a34453911
-msgid "`BODY_FREE`"
-msgstr "`BODY_FREE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 0f2053dbbf504c86ac6c1125738875b5
-msgid "`body_state` = `0` (`BODY_FREE`)"
-msgstr "`body_state` = `0` (`BODY_FREE`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: d0759ca5413946c39e949635df3197c4 12cd759c40a340bc8943b2ec40e6988f
-#: a698faa1835f4bc7a8b1bf8a41c63a9b
-msgid "—"
-msgstr "—"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2e0714e58fdd49bda4e669f62faa9a25
-msgid "`BODY_RELATIVE`"
-msgstr "`BODY_RELATIVE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2bbc4cba3870497b9f426e7bbe4e48f7
-msgid "`body_state` = `1` (`BODY_VERTICAL`)"
-msgstr "`body_state` = `1` (`BODY_VERTICAL`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: fc5abe730baa4b6e9c0902fc72137acf
-msgid ""
-"`has_body_relative_constraint`. `BODY_VERTICAL` is a backward-compatible "
-"alias for the same command."
-msgstr "`has_body_relative_constraint`。`BODY_VERTICAL` 是同一条命令的兼容别名。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 12c4826deb804b78bcc2d597165baf3b
-msgid "`BODY_TRACKING`"
-msgstr "`BODY_TRACKING`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: c6565a2ab0e14e2da04f11e8e58dd652
-msgid "`body_state` = `2` (`BODY_TRACKING`)"
-msgstr "`body_state` = `2` (`BODY_TRACKING`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 164eb8004b3c4751b19242a94167eb6b
-msgid "`body_tracking_ee_enabled`"
-msgstr "`body_tracking_ee_enabled`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 98e19a4a544c4bbabde09dada1921625
-msgid "`BODY_LOCK`"
-msgstr "`BODY_LOCK`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: e929ec92b023426197b69a8436e24f4a
-msgid "`body_state` = `3` (`BODY_LOCKED`)"
-msgstr "`body_state` = `3` (`BODY_LOCKED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 1d37cc14d21a4765b98e7b273aec9a5a
-msgid "`has_waist_lock`"
-msgstr "`has_waist_lock`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2ed4781046874f3e803742661ffc6e4b
-msgid "`BODY_CUSTOM_LOCK`"
-msgstr "`BODY_CUSTOM_LOCK`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: c3d70a22746a45988b6747d54f13543f
-msgid "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
-msgstr "`body_state` = `5` (`BODY_CUSTOM_LOCKED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: c3887554af9a4fb5bf3fd65efa30a5d2
-msgid "`has_custom_joint_lock`"
-msgstr "`has_custom_joint_lock`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:239
-#: 9cd5bf6be3d643068b606e2ef28a164e
-msgid "Base"
-msgstr "底盘"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 5850ba1b9b0d43709abd96cd1cf0ca1a
-msgid "`BASE_LOCK`"
-msgstr "`BASE_LOCK`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 99bcc807cdff4bcab5d54e52a251848b
-msgid "`base_state` = `0` (`BASE_LOCKED`)"
-msgstr "`base_state` = `0` (`BASE_LOCKED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 38480203575f480d8ccc3ac164f5d70c b70d2df84ebb4a3a8603598af8f87a73
-msgid "`has_mobile_base`"
-msgstr "`has_mobile_base`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 5c11f737b1254e2098d7a14f00849710
-msgid "`BASE_UNLOCK`"
-msgstr "`BASE_UNLOCK`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2acde59ad4f142ecbb827c163d5e9a78
-msgid "`base_state` = `1` (`BASE_UNLOCKED`)"
-msgstr "`base_state` = `1` (`BASE_UNLOCKED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:246
-#: d13a73aeca16438a82bc5e12dc4a060e
-msgid "Head"
-msgstr "头部"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:248
-#: a402297234544324861a9244233492b6
-msgid ""
-"Head modes are mutually exclusive, and they are independent of the body "
-"mode. `head_midpoint_gaze_active` is not a separate command; it becomes "
-"`true` only after `HEAD_GAZE` is active. Send `HEAD_DISABLE` to stop gaze."
-msgstr ""
-"头部模式彼此互斥，并且独立于身体模式。`head_midpoint_gaze_active` 不是一条单独的命令；它只在 `HEAD_GAZE` "
-"生效后才会变成 `true`。发送 `HEAD_DISABLE` 可停止注视。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 4fc0667e9f04401484af615adbaf6746
-msgid "`HEAD_DISABLE`"
-msgstr "`HEAD_DISABLE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 43f1f58bc32349bc9f6907416987c5b7
-msgid ""
-"`head_state` = `0` (`HEAD_DISABLED`); `head_midpoint_gaze_active` is `false`"
-msgstr ""
-"`head_state` = `0`（`HEAD_DISABLED`），`head_midpoint_gaze_active` 为 `false`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: fa6212b859044e0f964f930e7f07a9df
-msgid "`HEAD_TRACKING`"
-msgstr "`HEAD_TRACKING`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 710e11d91f944656be09c7e9d210a179
-msgid "`head_state` = `1` (`HEAD_TRACKING`)"
-msgstr "`head_state` = `1` (`HEAD_TRACKING`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: e2e71eaae0d44b64a9e31eacd666956a
-msgid ""
-"`head_tracking_ee_enabled`, from the `headTrackingEE` section. After this "
-"mode is on, publish a target on `/head_target` or `/head_target/stamped`; "
-"otherwise the head will not move."
-msgstr ""
-"`head_tracking_ee_enabled`，来自 `headTrackingEE` 段。进入该模式后，还需要向 `/head_target` "
-"或 `/head_target/stamped` 发布目标，否则头部不会运动。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 8697243604794d6d95b3e01db33111ea
-msgid "`HEAD_GAZE`"
-msgstr "`HEAD_GAZE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: de516f56e4334157b8451e245576f5f2
-msgid ""
-"`head_state` = `2` (`HEAD_GAZE`) and `head_midpoint_gaze_active` = `true`"
-msgstr ""
-"`head_state` = `2`（`HEAD_GAZE`），且 `head_midpoint_gaze_active` = `true`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 8c5d2201cc4041669ffdd09520e2377e
-msgid ""
-"`head_midpoint_gaze_enabled`, from the top-level `headMidpointGaze` section "
-"(`activate`, `cameraFrame`, and the camera parameters). This reports an "
-"active task, not that the head is already aligned or that the target is "
-"reachable."
-msgstr ""
-"`head_midpoint_gaze_enabled`，来自顶层 `headMidpointGaze` "
-"段（`activate`、`cameraFrame` 以及相机参数）。这表示任务已激活，不表示头部已经对准，也不表示目标可达。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 9df65f07b889405c97fefb6fd8800cd0
-msgid "`HEAD_FORWARD`"
-msgstr "`HEAD_FORWARD`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: bd4cf4f36a2f4fec8db00cba671833b9
-msgid "`head_state` = `3` (`HEAD_FORWARD`)"
-msgstr "`head_state` = `3` (`HEAD_FORWARD`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 0f9379dea35a492586d3bcb410c73394
-msgid ""
-"`has_head_coupling`, from the `headCoupling` section. In this mode, "
-"`body_state` still reports the body mode you selected, but the former lock-"
-"head constraints temporarily override it. Leaving `HEAD_FORWARD` restores "
-"that body selection."
-msgstr ""
-"`has_head_coupling`，来自 `headCoupling` 段。在此模式下，`body_state` "
-"仍回报你选择的身体模式，但会暂时被原来的锁头约束覆盖。退出 `HEAD_FORWARD` 后，该身体选择会恢复。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:257
-#: 8680d58500014cd8a6eba62b9435318c
-msgid "Arms"
-msgstr "手臂"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:259
-#: bff6358da0a14f7d93bb6eee07c824bf
-msgid ""
-"Switch a single arm only while the arms are independent. If they are already"
-" coupled, `LEFT_ARM_*` and `RIGHT_ARM_*` are ignored. `ARMS_COUPLED` is "
-"accepted only when both arms are enabled."
-msgstr ""
-"只有在双臂独立时才能切换单臂使能。如果已经耦合，`LEFT_ARM_*` 和 `RIGHT_ARM_*` 会被忽略。只有左右臂都已启用时，才会接受 "
-"`ARMS_COUPLED`。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 07e3dd9632eb4a2ab4e1783580012efc
-msgid "`ARMS_INDEPENDENT`"
-msgstr "`ARMS_INDEPENDENT`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: c72fabab30d34b138b0833dbb36f046b
-msgid "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
-msgstr "`bimanual_state` = `0` (`BIMANUAL_INDEPENDENT`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2e21b7b0bac240c1b2223b92b03e24f8
-msgid "`ARMS_COUPLED`"
-msgstr "`ARMS_COUPLED`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: b453a3d252b54adda2825b195c694c5f
-msgid "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
-msgstr "`bimanual_state` = `1` (`BIMANUAL_COUPLED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 4353dea5c6e74ca694e6199e3f839d10
-msgid "`has_bimanual_coupling`, and both arms enabled"
-msgstr "`has_bimanual_coupling`，且左右臂均已启用"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: e21f6758c97c446f9d0f902a52c177fd
-msgid "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
-msgstr "`LEFT_ARM_ENABLE` / `LEFT_ARM_DISABLE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 47bda5c0bdd845ff8312dc5539d89b86
-msgid "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
-msgstr "`left_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 06f862c4f8dd4990948d85b326e074b8 73a1f1cd2662405faffa47b9f3b887a5
-msgid "Arms must already be independent"
-msgstr "双臂必须已经处于独立模式"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: eea63eb2f1a9442197d06e19084c09d4
-msgid "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
-msgstr "`RIGHT_ARM_ENABLE` / `RIGHT_ARM_DISABLE`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: c2f36e62e3ac4337a33c06e8ee61408d
-msgid "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
-msgstr "`right_arm_state` = `1` (`ARM_ENABLED`) or `0` (`ARM_DISABLED`)"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:268
-#: 39c18b0d5e77497bba29f4d0069f0c89
-msgid "HOME joint reference"
-msgstr "HOME 关节参考"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:270
-#: ee06596c3a204268806fa8e4df202c0c
-msgid ""
-"`HOME_JOINT_ON` and `HOME_JOINT_OFF` turn the HOME joint-reference "
-"constraint on or off. This is a constraint switch, not a report that the FSM"
-" is in HOME. Confirm it on `home_joint_reference_enabled`. The constraint "
-"can be applied while the FSM is in HOLD, MOVEJ, or OCS2, but the usual "
-"sequence is still to enter OCS2 first."
-msgstr ""
-"`HOME_JOINT_ON` 和 `HOME_JOINT_OFF` 用于打开或关闭 HOME 关节参考约束。这是约束开关，并不表示 FSM 处于 "
-"HOME。请在 `home_joint_reference_enabled` 上确认。该约束可以在 FSM 处于 HOLD、MOVEJ 或 OCS2 "
-"时应用，但通常仍建议先进入 OCS2。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:272
-#: 3b1753a067164693905ce5af5abec48a
-msgid ""
-"The capability bit is `has_home_joint_reference`, from the "
-"`homeJointReference` section. If that bit is `false`, the controller ignores"
-" the command. If `HOME_JOINT_ON` is rejected, for example because the "
-"current home reference is outside the URDF joint limits, "
-"`home_joint_reference_enabled` stays `false`."
-msgstr ""
-"对应的能力位是 `has_home_joint_reference`，来自 `homeJointReference` 段。如果该位为 "
-"`false`，控制器会忽略这条命令。如果 `HOME_JOINT_ON` 被拒绝，例如当前 HOME 参考超出了 URDF "
-"关节限位，`home_joint_reference_enabled` 会保持为 `false`。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:274
-#: b9c994fce5ee47da9531f8f4a1648e8a
-msgid ""
-"The controller also accepts body presets of the form `PRESET:HM_*`. Those "
-"change the body, arms, and base together and leave the current head mode "
-"unchanged. Confirm the result on `current_state`; the Python mapping does "
-"not list these preset names."
-msgstr ""
-"控制器也接受形如 `PRESET:HM_*` 的身体预设。它们会同时改变身体、双臂和底盘，并保留当前的头部模式。请在 `current_state` "
-"上确认结果；Python 映射里没有列出这些预设名。"
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:209
-#: 010650206c5042a2b1dd975be7644a91
-msgid ""
-"For a controller that is already running, enter OCS2 if needed, then request"
-" the mode and inspect the feedback:"
-msgstr "控制器已运行时，如有需要先进入 OCS2，再请求模式并查看反馈："
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:211
-#: e6e0a2d6845e4f33b219652956df6251
-msgid ""
-"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
-"ros2 topic echo /ocs2_wbc_controller/current_state\n"
-msgstr ""
-"ros2 topic pub --once /fsm_command std_msgs/msg/Int32 \"data: 3\"\n"
-"ros2 topic pub --once /mode_command std_msgs/msg/String \"data: 'BODY_TRACKING'\"\n"
-"ros2 topic echo /ocs2_wbc_controller/current_state\n"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:229
-#: dcd500a946b14919aafcc06f2a52f35c
-msgid ""
-"When the command is accepted, the matching `current_state` field changes. "
-"That reports a selected mode or an active task, not that a pose has already "
-"been reached. A worked sequence is in the [mode-command check "
-"example](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)."
-" The current Python mapping is `MODE_COMMAND_TO_WBC_EXPECT` in the "
-"[interface source](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)."
-msgstr ""
-"命令被接受后，对应的 `current_state` "
-"字段会改变。这表示已选中某个模式，或某项任务已激活，不表示位姿已经到达。完整示例见[模式命令检查脚本](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/examples/test/01_mode_and_fsm/check_mode_commands.py)。当前"
-" Python 映射为[接口源码](https://github.com/fiveages-"
-"sim/ros2_robot_interface/blob/main/ros2_robot_interface/ros_interface.py)中的 "
-"`MODE_COMMAND_TO_WBC_EXPECT`。"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 2949edfe0a0644018092f8e357c8590c
-msgid "`HOME_JOINT_ON`"
-msgstr "`HOME_JOINT_ON`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 286b2e8350f14ab6a59149239faa43f2
-msgid "`home_joint_reference_enabled` = `true`"
-msgstr "`home_joint_reference_enabled` = `true`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 4e75298fa47f41eab156b1804bce9ffe
-msgid "`HOME_JOINT_OFF`"
-msgstr "`HOME_JOINT_OFF`"
-
-
-#: ../../workspace/docs-wbc-current-state-20261119/source/3-concepts/4-fsm_and_topics.md:176
-#: 286b2e8350f14ab6a59149239faa43f2
-msgid "`home_joint_reference_enabled` = `false`"
-msgstr "`home_joint_reference_enabled` = `false`"
-
-#, python-brace-format
-msgid "Open/close and the percent blend are these two topics. A hand node that mirrors the operator, pauses with an arm, or follows the VR gripper’s percent vs open/close flag reads that from `teleop/mode_state` (`TeleopModeState`) in the same robot namespace. The change event is `teleop/controller_state`. {ref}`teleop-mode-status`."
-msgstr "开合和比例插值就是这两个话题。手节点若要跟随操作者做镜像、随某条臂暂停，或跟随 VR 扳机的比例与开合标志，就在同一机器人命名空间下读 `teleop/mode_state`（`TeleopModeState`）。修改事件是 `teleop/controller_state`。{ref}`teleop-mode-status`。"

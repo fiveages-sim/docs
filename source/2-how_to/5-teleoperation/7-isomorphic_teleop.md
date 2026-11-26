@@ -2,7 +2,7 @@
 
 Master–slave **isomorphic teleop** (同构遥操作) for **HighTorque Panthera HT** dual-arm: move the master arm in joint space and the slave follows.
 
-**Implemented:** 同构遥操作 via [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller) (package name is historical). **Not implemented:** drag teaching (拖动遥操作), trajectory record/playback, or `enter_teach_mode`.
+同构遥操作 uses [`drag_teleop_controller`](https://github.com/fiveages-sim/drag_teleop_controller). The package name is historical; it is not drag teaching.
 
 On the `panthera-ht` `open-deploy-ws` branch, prefer **`./teleop_start.sh`** (see [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md) and that branch README). The launches below match the `drag_teleop_controller` README.
 
@@ -140,4 +140,5 @@ DexCap glove → robot mapping is a **different** package: [teleop-joint-mapper]
 - [drag_teleop_controller reference](../../4-reference/teleop/2-drag_teleop.md)
 - [HighTorque Panthera HT](../6-deployment/9-go_real_hardware/2-panthera_ht.md)
 - [Go to Real Hardware](../6-deployment/9-go_real_hardware/0-index.md)
-- [VR Teleoperation](6-vr_teleop.md) — VR pose following uses a different MIT / vendor-impedance split; this page is master–slave joint following only
+- [Force control and compliance](../4-controllers/13-force_control.md) — MIT-mode force control, and vendor joint impedance
+- [VR Teleoperation](6-vr_teleop.md) — headset pose following

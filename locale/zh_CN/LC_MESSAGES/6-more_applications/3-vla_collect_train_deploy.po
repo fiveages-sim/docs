@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 11:09+0000\n"
+"POT-Creation-Date: 2026-11-26 06:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,15 +18,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:1
-#: 72e66e035e7c47fb903896d5b5b59f82
+#: 969b4167baf24fd49a2e4be221402970
 msgid "VLA collect / train / deploy"
 msgstr "VLA 采训推"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:3
-#: e5c49bcfa01c43c5872cddcb8b310be6
+#: a80404a096304f8db9b44623c795f0f7
 msgid ""
 "For teams that collect motion data (VR or sim), then train and deploy a "
 "VLA-style policy. This page is a **collection and stack** path. Training "
@@ -34,12 +34,12 @@ msgid ""
 msgstr "面向先采集运动数据（VR 或仿真）、再训练并部署 VLA 类策略的团队。本页是 **采集与栈** 路径。训练和策略推理服务尚未成文。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:5
-#: fe593c3a965e40f2b65141801329c6d6
+#: 8cb58593e4b64357aa9cdd78da80236a
 msgid "1. Collect with VR teleop"
 msgstr "1. 用 VR 遥操作采集"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:7
-#: 7cd01a14e08e41fbb523020ad5bd0485
+#: cb324e066765466f88a64e174c83e4cb
 msgid ""
 "Bring up the robot (mock, sim, or real) from [Go to Real "
 "Hardware](../2-how_to/6-deployment/9-go_real_hardware/0-index.md) or [Run"
@@ -50,7 +50,7 @@ msgstr ""
 "演示](../2-how_to/1-basic_operations/1-run_mock_demo.md)拉起机器人（mock、仿真或真机）。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:8
-#: 59cd236cf87942a88a675562c7f318ac
+#: 383c569f8b4c4bdd9d08a256347cf132
 msgid ""
 "[VR Teleop](../2-how_to/5-teleoperation/6-vr_teleop.md) — `./run.sh vr` "
 "or `./run.sh vr-xrt` from [fa-py-"
@@ -61,7 +61,7 @@ msgstr ""
 " vr` 或 `./run.sh vr-xrt`。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:9
-#: 24959a256b5d4e518da853510c0f2ef2
+#: 4a72f0a6c05d4ddc9e494b3141ca73fb
 msgid ""
 "Optional bags: the fa-py-libraries README lists `./run.sh vr-record` / "
 "`./run.sh vr-playback` for `/teleop/*`."
@@ -70,24 +70,24 @@ msgstr ""
 "`./run.sh vr-playback`。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:11
-#: 665728ecf5bc4c4c83d78879c7cb60bd
+#: 2c73441f502f4db081b6fca7a61d656f
 msgid "Pico Enterprise vs consumer stays on the VR how-to."
 msgstr "Pico 企业版与消费版的说明仍在 VR 操作指南。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:13
-#: 288210a46ac849048992344e2fe29cdb
+#: fdc1ed6ac2bb45e8a2d0618703dbc641
 msgid "2. Whole-body control with waist"
 msgstr "2. 带腰部的全身控制"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:15
-#: 568098f040404efaa7581353a8d19de3
+#: d6122e07588e4a39a78aba0b4c0ae7ea
 msgid ""
 "Whole-body here is **全身控制** (`full_body.launch.py` / Lift 2S **full "
 "body**), not a separate waist-only product."
 msgstr "这里的全身控制就是 **全身控制**（`full_body.launch.py` / Lift 2S **全身**），不是单独的仅腰部产品。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:17
-#: 2eca62f6972340c8b7de93055b96ce98
+#: 628bf0ccdf674e0daef62046a9385cd2
 msgid ""
 "[分体控制 vs 全身控制](../3-concepts/7-split_vs_wbc.md) — `split_body.launch.py` "
 "vs `full_body.launch.py`."
@@ -96,7 +96,7 @@ msgstr ""
 "与 `full_body.launch.py`。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:18
-#: 56ca205b56df4da2a0372f9895081326
+#: c5e02d89fcb74c5984aa281a926f7354
 msgid ""
 "[ARX Lift "
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) — "
@@ -106,8 +106,20 @@ msgstr ""
 "2S](../2-how_to/6-deployment/9-go_real_hardware/1-arx_lift2s.md) — "
 "`./quick_start.sh` 菜单选 **全身**。"
 
+#: ../../source/6-more_applications/3-vla_collect_train_deploy.md:19
+#: b11f554226eb46e5b7f6413c0fc33986
+msgid ""
+"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) — run it "
+"from the `ros-jazzy-arms-ros2-control` deb. The public loader is "
+"`full_body.launch.py`. Open the source repository to read topics and FSM "
+"values that are only in that README."
+msgstr ""
+"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)：从 `ros-"
+"jazzy-arms-ros2-control` 这个 deb 运行。公开侧的加载入口是 `full_body.launch.py`。只在源码 "
+"README 里的话题和 FSM 取值，打开源码仓库再看。"
+
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:20
-#: 7fe6678cf44348228ca902427bf615af
+#: 77d558b5fdd7430a877e84c01565f685
 msgid ""
 "Waist **joint** commands on the 分体 / Basic Joint Controller side: [Basic "
 "Joint Controller](../4-reference/controllers/7-basic_joint_controller.md)"
@@ -119,29 +131,26 @@ msgstr ""
 " Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:22
-#: e50ad3a74f0a47e3a9b88e1c7836a644
+#: aaa9f0107cd94a9b82f784b2caaf1dd2
 msgid ""
 "Internal FA wheeled-arm humanoids: [fa-deploy-ws "
 "Setup](../1-getting_started/4-fa_deploy_ws.md) after access."
 msgstr "内部 FA 轮臂人形：开通后见 [fa-deploy-ws 配置](../1-getting_started/4-fa_deploy_ws.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:24
-#: 4c4c2cd398e948fab101d42055287977
+#: a13636f8b37a4507b0e5f1e926a791be
 msgid "3. Arm force control and load identification"
 msgstr "3. 机械臂力控与负载辨识"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:26
-#: a43c11b15e284928b04271ca8a59f541
+#: 28c6c4f971fd4e23ad3a81073a18e1d9
 msgid ""
-"VR teleop uses **two** compliance paths — pick by robot: [VR "
-"Teleoperation — Force control and "
-"compliance](../2-how_to/5-teleoperation/6-vr_teleop.md)."
-msgstr ""
-"VR 遥操作有**两条**柔顺路径 — 按机型选择：[VR 遥操作 — "
-"力控与柔顺](../2-how_to/5-teleoperation/6-vr_teleop.md)。"
+"Pick the compliance path by robot: [Force control and "
+"compliance](../2-how_to/4-controllers/13-force_control.md)."
+msgstr "按机型选择柔顺路径：[力控与柔顺](../2-how_to/4-controllers/13-force_control.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:28
-#: 537d255df8ee423db52824f6b50857d4
+#: 43d90a6b12ab4e5cbfa3e9fed08f0f8e
 msgid ""
 "**MIT / force-capable HI** — **Panthera HT** and **ARX** arms: HT "
 "`control_mode:=mit`, ARX `full_control` + `joint_k_gains` / "
@@ -154,7 +163,7 @@ msgstr ""
 "MIX：[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:29
-#: a503ade5a2b74643b7681f1f9b59fd1c
+#: 40864e3c00f948b19d45f4bbd712c714
 msgid ""
 "**Vendor joint impedance** — **Tianji** (天玑) / **Rokae** (珞石): controller"
 " sends **position** only; HI `ctrl_mode` `JOINT_IMPEDANCE` on [marvin-"
@@ -166,7 +175,7 @@ msgstr ""
 "/marvin-ros2-control/blob/master/README.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:31
-#: 21f1c111523c4602889bd97ef67a3a94
+#: 738b9011b91748ca96b61c30460942a0
 msgid ""
 "**Payload identification (负载辨识)** is on the Tianji / Rokae path only. "
 "Public wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. "
@@ -178,21 +187,19 @@ msgstr ""
 "配置](../1-getting_started/4-fa_deploy_ws.md) README。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:33
-#: d5e1bc2bd01f4b529021d4394e18829b
+#: 342cf160e21c454a911d107b09acc271
 msgid ""
-"Isomorphic HT `mode:=mit` / `effort` is a different page: [Isomorphic "
+"Master–slave `mode:=mit` / `effort` on Panthera HT: [Isomorphic "
 "Teleop](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)."
-msgstr ""
-"同构 HT 的 `mode:=mit` / `effort` "
-"是另一页：[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
+msgstr "Panthera HT 上主从的 `mode:=mit` / `effort`：[同构遥操作](../2-how_to/5-teleoperation/7-isomorphic_teleop.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:35
-#: 7352afea2372406f8f7427d7f114d27f
+#: 6d72a4e1a2864ba08b7cd3c8820afd73
 msgid "4. Sim collection (optional)"
 msgstr "4. 仿真采集（可选）"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:37
-#: 0043ea44f7b84df1b7d9d30b78d4c3e8
+#: 38ddc9d85d524b81a6ab0e1138c1c09f
 msgid ""
 "Isaac USD → interface → composer → LeRobot **record/export** (not "
 "training): [Synthetic Data](../2-how_to/7-synthetic_data/0-index.md)."
@@ -201,7 +208,7 @@ msgstr ""
 "**录制/导出**（不是训练）：[合成数据](../2-how_to/7-synthetic_data/0-index.md)。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:39
-#: 66eae89e8e35487c9e142c69ddc02966
+#: 7a7507b616534c7ea05c3a1c551950ab
 msgid ""
 "[LeRobot Record and "
 "Export](../2-how_to/7-synthetic_data/3-record_export.md) stops at the "
@@ -211,22 +218,22 @@ msgstr ""
 "停在磁盘上的数据集。"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:41
-#: f24997ce493f42d8a0cc91bd5ee8efea
+#: 6c0677fd1b1241e38d7a35572dbfcc95
 msgid "Not in this docs set yet"
 msgstr "本文档集尚未覆盖"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:43
-#: 49a0cad189f14c60ad326951b629cbc6
+#: 2bde7bbdeaa440b5bd400748b14f6e27
 msgid "VLA **training** (optimizer, dataset mix, checkpoint format)"
 msgstr "VLA **训练**（优化器、数据配比、checkpoint 格式）"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:44
-#: 8bd7854d42e540df87d6943228dfbcbb
+#: e3ecf41ade524caba6b141e46180f9f0
 msgid "VLA **deploy / inference** on the robot (policy node, runtime flags)"
 msgstr "机器人上的 VLA **部署 / 推理**（策略节点、运行参数）"
 
 #: ../../source/6-more_applications/3-vla_collect_train_deploy.md:46
-#: 9ac1bfc5e55d47168de8da8ac8702c61
+#: d99a2bdb2e584d93b7ee2d0403a214c7
 msgid ""
 "When those land, they should get their own How-To. Until then, collect "
 "with the paths above and keep training in the project that owns the "
@@ -275,16 +282,4 @@ msgstr "这些内容落地后应单独写成操作指南。在此之前，用上
 #~ "the package README linked from those "
 #~ "pages."
 #~ msgstr "未列出的参数，以这些页面链接的包 README 为准。"
-
-#: ../../source/6-more_applications/3-vla_collect_train_deploy.md:19
-#: d2e900467f0c446b93961067adc19491
-msgid ""
-"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md) — run it "
-"from the `ros-jazzy-arms-ros2-control` deb. The public loader is "
-"`full_body.launch.py`. Open the source repository to read topics and FSM "
-"values that are only in that README."
-msgstr ""
-"[ocs2_wbc_controller](../4-reference/controllers/3-ocs2_wbc.md)：从 `ros-"
-"jazzy-arms-ros2-control` 这个 deb 运行。公开侧的加载入口是 `full_body.launch.py`。只在源码 "
-"README 里的话题和 FSM 取值，打开源码仓库再看。"
 

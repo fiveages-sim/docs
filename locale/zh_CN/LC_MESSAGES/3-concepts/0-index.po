@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 00:49+0000\n"
+"POT-Creation-Date: 2026-11-26 07:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,23 +18,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.19.0\n"
 
-#: ../../source/3-concepts/0-index.md:1 eb25383bd1374e5294905cf2cd2a5551
+#: ../../source/3-concepts/0-index.md:1 6c6f16c1e58947c697ed7394168a96b9
 msgid "Introduction"
 msgstr "导读"
 
-#: ../../source/3-concepts/0-index.md:3 9d8c897e25ec4cd28a0e902c215ef1a3
+#: ../../source/3-concepts/0-index.md:3 689b480582f748259de67751dd5fffb5
 msgid ""
 "Stack-specific notes. Concrete names come from repository READMEs / "
 "launch / xacro — not a generic ROS 2 textbook."
 msgstr "本技术栈专用说明。具体名称来自仓库 README / launch / xacro — 不是通用 ROS 2 教材。"
 
-#: ../../source/3-concepts/0-index.md:5 ccaad55228cd414a8017a186338a4b0e
+#: ../../source/3-concepts/0-index.md:5 a716b9534c694c3cad7d4af57895ac06
 msgid "Topics Covered"
 msgstr "涵盖主题"
 
-#: ../../source/3-concepts/0-index.md:7 0be3aec1d59147f4b050a61bb05c6679
+#: ../../source/3-concepts/0-index.md:7 d8fe430b2d3a4d26b08d90a0054c2e67
 msgid ""
 "[Terminology](8-terminology.md) — 驱动层 ↔ Hardware Interface; 分体 / 全身; 夹爪 /"
 " 灵巧手; `mock_components` / `isaac` / `gz`"
@@ -42,7 +42,7 @@ msgstr ""
 "[术语对照](8-terminology.md) — 驱动层 ↔ Hardware Interface；分体 / 全身；夹爪 / "
 "灵巧手；`mock_components` / `isaac` / `gz`"
 
-#: ../../source/3-concepts/0-index.md:8 6ef8e6998381446bacc8e019600ab0c0
+#: ../../source/3-concepts/0-index.md:8 4878b936ac584b3489f9f029241d88d9
 msgid ""
 "[ros2_control Here](1-ros2_control_here.md) — `hardware:=` → "
 "`ros2_control_hardware_type`; Acone plugin table (运控: controller vs "
@@ -52,34 +52,42 @@ msgstr ""
 "`ros2_control_hardware_type`; Acone plugin table (运控: controller vs "
 "hardware interface)"
 
-#: ../../source/3-concepts/0-index.md:9 7864007c592e4df6ac9fa1838582463e
+#: ../../source/3-concepts/0-index.md:9 3537c9f0ff4b47959fe8fa57e57b2fc2
 msgid ""
 "[Workspace Layout](2-workspace_layout.md) — `open-deploy-ws` tree and "
 "`./init_repo.sh`"
 msgstr "[工作空间布局](2-workspace_layout.md) — 部署工作空间的结构"
 
-#: ../../source/3-concepts/0-index.md:10 c376cdd2ff6348d2a9c1e91e0623e17d
+#: ../../source/3-concepts/0-index.md:10 1a7acd6d2e5942c5b4679df5ce94993b
 msgid ""
 "[Naming Conventions](3-naming_conventions.md) — Launch `robot:=` selects "
 "the description (not `type`); platform `chassis` / `arms` / `variant`; "
 "EEF `type` / `left_type` / `right_type` (not `gripper:=`); `hardware` "
 "values"
 msgstr ""
-"[命名规范](3-naming_conventions.md) — launch 的 `robot:=` 选择描述包（不是 "
-"`type`）；平台 `chassis` / `arms` / `variant`；末端 `type` / `left_type` / "
-"`right_type`（不是 `gripper:=`）；`hardware` 取值"
+"[命名规范](3-naming_conventions.md) — launch 的 `robot:=` 选择描述包（不是 `type`）；平台 "
+"`chassis` / `arms` / `variant`；末端 `type` / `left_type` / `right_type`（不是 "
+"`gripper:=`）；`hardware` 取值"
 
-#: ../../source/3-concepts/0-index.md:11 3cbff08ed069495888adbae150b51886
-#, #
+#: ../../source/3-concepts/0-index.md:11 baee730b9c7844f0aa02711f0a85d4ec
 msgid ""
 "[FSM and Topics](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command` "
 "(`3` = OCS2 on mixed stacks; MOVEJ = `4`); Topic vs Action vs Service; "
 "WBC body/head + `/mode_command`"
 msgstr ""
 "[FSM 与话题](4-fsm_and_topics.md) — `std_msgs/Int32` `/fsm_command`（混合栈上 `3`"
-" = OCS2；MOVEJ = `4`）；话题 vs Action vs Service；WBC 身体/头部 + `/mode_command`"
+" = OCS2；MOVEJ = `4`）；话题、Action 与 Service；WBC 身体/头部 + `/mode_command`"
 
-#: ../../source/3-concepts/0-index.md:12 6120c795f82d4bfebb463110698d94b9
+#: ../../source/3-concepts/0-index.md:12 673bbb8a157e400c82360918cd26e51a
+msgid ""
+"[Teleop topics and data](../4-reference/teleop/8-topics_and_data.md) — "
+"joystick / keyboard and the VR event bus: command topic, status topic, "
+"QoS, and fields"
+msgstr ""
+"[遥操相关话题与数据说明](../4-reference/teleop/8-topics_and_data.md) — 手柄 / "
+"键盘和 VR 事件总线：命令话题、状态话题、QoS 和字段"
+
+#: ../../source/3-concepts/0-index.md:13 8b789c300bce4f208cc9b51d35b2a34d
 msgid ""
 "[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body` (OCS2 Arm + Basic Joint)"
 " vs `full_body` (OCS2 WBC)"
@@ -87,27 +95,27 @@ msgstr ""
 "[分体控制 vs 全身控制](7-split_vs_wbc.md) — `split_body`（OCS2 Arm + Basic "
 "Joint）vs `full_body`（OCS2 WBC）"
 
-#: ../../source/3-concepts/0-index.md:13 044e5663a09e4df4a4f05130ff3f32ea
+#: ../../source/3-concepts/0-index.md:14 009fe633f384454c9d3c3400162e6458
 msgid ""
 "[Source vs Deb](5-source_vs_deb.md) — GitHub Release `.deb` vs source via"
 " `./init_repo.sh`"
 msgstr "[源码与 Deb](5-source_vs_deb.md) — 何时使用 GitHub Release `.deb`、何时从源码编译"
 
-#: ../../source/3-concepts/0-index.md:14 57ec3bf7a25141f285abcd40124ec728
+#: ../../source/3-concepts/0-index.md:15 410bdd47c8dc425ca558ccebb6db4c39
 msgid ""
 "[Submodules Visibility](6-submodules_visibility.md) — "
 "`parent|path|public|private` and init"
 msgstr "[子模块可见性](6-submodules_visibility.md) — 公开与私有子模块的管理"
 
-#: ../../source/3-concepts/0-index.md:16 9e208f39822b4b3f80fc1c56430f0d11
+#: ../../source/3-concepts/0-index.md:17 ab7d4ca43167466ead0fa06da620e26f
 msgid "Related Sections"
 msgstr "相关章节"
 
-#: ../../source/3-concepts/0-index.md:18 8f9164aa84bd49f4b5436b2bd27384cb
+#: ../../source/3-concepts/0-index.md:19 9fb528c93468435098a124496f135d48
 msgid "[Reference](../4-reference/descriptions/0-index.md) — Package pages"
 msgstr "[参考手册](../4-reference/descriptions/0-index.md) — 详细的软件包文档"
 
-#: ../../source/3-concepts/0-index.md:19 420eadf9f1de42cca6baef0b33a4dc5a
+#: ../../source/3-concepts/0-index.md:20 b1f3d10b4fba4f9d879748edffcfd61e
 msgid "[How-To Guides](../2-how_to/0-index.md)"
 msgstr "[How-To 指南](../2-how_to/0-index.md)"
 

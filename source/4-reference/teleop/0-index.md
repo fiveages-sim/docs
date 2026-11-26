@@ -8,7 +8,7 @@ The stack supports several teleoperation inputs. They are not interchangeable: s
 
 | Method | Input | Role |
 |--------|-------|------|
-| VR | Headset + VR controllers (Pico Enterprise / consumer, Meta Quest) | End-effector pose; triggers for gripper/hand; buttons for FSM and pause. The current `./run.sh vr` path starts controller mode; this docs set does not document a launch entry for VR gesture / hand-tracking recognition. |
+| VR | Headset (Pico Enterprise / consumer, Meta Quest), controllers or optical hand tracking | Controller path (`./run.sh vr`, `./run.sh vr-xrt`): end-effector pose, triggers, FSM and pause buttons. Hand tracking (`./run.sh vr-xrt wrist`, `./run.sh vr-hand`): optical-wrist 6DoF and bare-hand gestures — {ref}`Hand tracking <vr-hand-tracking>`. |
 | Game controller | Joystick / gamepad (`arms_teleop`) | Arm velocity via `control_input` → twist; chassis `/cmd_vel` in chassis mode |
 | Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
 | DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves |
@@ -27,6 +27,7 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 ```{toctree}
 :maxdepth: 1
 
+8-topics_and_data
 1-vr_pose_publisher
 2-drag_teleop
 3-dexcap
@@ -36,21 +37,6 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 7-wuji_hand_hi
 ```
 
-## Topic Contracts
+## Topic contracts
 
-Pose-based VR, Wuji, and Vive Tracker paths publish to these end-effector topics. Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command` instead.
-
-| Topic | Type | Description |
-|-------|------|-------------|
-| `/teleop/left_ee_pose` | `PoseStamped` | Left arm target |
-| `/teleop/right_ee_pose` | `PoseStamped` | Right arm target |
-| `/teleop/head_pose` | `PoseStamped` | Head tracking |
-
-Mode changes and the latched mode are a separate pair. Field-by-field reading is in {ref}`teleop-mode-status`.
-
-| Path | Change the mode | Read the current mode |
-|------|-----------------|----------------------|
-| Joystick / keyboard | `control_input` (`Inputs`) | `teleop_mode` (`TeleopMode`), from `joystick_teleop` / `keyboard_teleop` |
-| Event bus (VR, foot pedal, exoskeleton) | `teleop/controller_state` (`std_msgs/Int32`) | `teleop/mode_state` (`TeleopModeState`), from `VRInputHandler` |
-
-The topic names are relative to the robot namespace (`/robot_a/teleop/mode_state` when the robot is `/robot_a`). QoS is `Reliable` + `TransientLocal`. A dexterous hand or a UI reads the status topic. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. The foot pedal publishes `teleop/controller_state` only.
+Topic, type, QoS, namespace, and fields: {ref}`Teleop topics and data <teleop-topics-and-data>`. Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).

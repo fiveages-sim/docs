@@ -48,7 +48,7 @@ cd ~/ht-deploy-ws
 
 README: **Build** (simulation vs real-hardware packages), then **Launch** (single / dual arm, simulation or real). Real hardware uses serial (`/dev/ttyACM*`); the script prompts for permissions.
 
-Isomorphic teleop (同构遥操作) on this branch is `./teleop_start.sh` (master / slave). See [Isomorphic Teleop](../../5-teleoperation/7-isomorphic_teleop.md) and the same README section on `teleop_start.sh`. Drag teaching (拖动遥操作) is **not** a separate implemented stack.
+Isomorphic teleop (同构遥操作) on this branch is `./teleop_start.sh` (master / slave). See [Isomorphic Teleop](../../5-teleoperation/7-isomorphic_teleop.md) and the same README section on `teleop_start.sh`.
 
 ## Optional README launch lines
 
