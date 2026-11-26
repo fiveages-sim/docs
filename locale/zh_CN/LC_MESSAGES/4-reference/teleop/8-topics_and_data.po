@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 07:59+0000\n"
+"POT-Creation-Date: 2026-11-26 08:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -59,8 +59,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:8
 #: 38207143d0054fdea38f56437db96c3f
-msgid "Two contracts"
-msgstr "两套契约"
+msgid "1. Two contracts"
+msgstr "​1. 两套契约"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:10
 #: e3c8ef7fec754e60970a9e2cfd5bc50d
@@ -153,8 +153,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:21
 #: 1f5a97d041284e0dbac77677cf002b25
-msgid "Namespace and QoS"
-msgstr "命名空间与 QoS"
+msgid "2. Namespace and QoS"
+msgstr "​2. 命名空间与 QoS"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:23
 #: a09402e88452451ca0ddd3bec228dc3e
@@ -199,13 +199,13 @@ msgid ""
 " `teleop/mode_state` follows the robot namespace."
 msgstr ""
 "头显位姿、摇杆轴、扳机行程，以及共用的末端位姿，都是 {ref}`遥操位姿流 <teleop-pose-stream>` "
-"里的根名称（`/teleop/head_pose`、`/teleop/left_ee_pose`，以及这一组里的其余话题）。`teleop/mode_state` "
-"跟随机器人命名空间。"
+"里的根名称（`/teleop/head_pose`、`/teleop/left_ee_pose`，以及这一组里的其余话题）。`teleop/mode_state`"
+" 跟随机器人命名空间。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:35
 #: efa17eff4eb04ce295aac726050b5784
-msgid "Event-bus status (`TeleopModeState`)"
-msgstr "事件总线状态（`TeleopModeState`）"
+msgid "3. Event-bus status (`TeleopModeState`)"
+msgstr "​3. 事件总线状态（`TeleopModeState`）"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:37
 #: 8bb16eb84fcf4786a4eb10799574f3d3
@@ -412,8 +412,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:57
 #: aa5326dadbad41629c6e13e4405522f0
-msgid "Arm pause and WBC arm enable"
-msgstr "手臂暂停与 WBC 手臂使能"
+msgid "3.1 Arm pause and WBC arm enable"
+msgstr "3.1 手臂暂停与 WBC 手臂使能"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:59
 #: 019321a0a9ec451eaddc8e98a1dd12c2
@@ -457,8 +457,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:65
 #: 0896a7c90aa34be1be3d03e191ea96d7
-msgid "When VR publishes arm and gripper targets"
-msgstr "VR 何时发布手臂和夹爪目标"
+msgid "3.2 When VR publishes arm and gripper targets"
+msgstr "3.2 VR 何时发布手臂和夹爪目标"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:67
 #: deaf5ad649854fe988bdbc95673aac8d
@@ -507,8 +507,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:76
 #: 917d002b350641be85e18f5298b0585a
-msgid "Joystick and keyboard (`TeleopMode`)"
-msgstr "手柄与键盘（`TeleopMode`）"
+msgid "4. Joystick and keyboard (`TeleopMode`)"
+msgstr "​4. 手柄与键盘（`TeleopMode`）"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:78
 #: f1bff7d32e0c41eabfb86d2bb9c2751f
@@ -647,8 +647,8 @@ msgstr "键盘不发布 `/fsm_command`。手柄会发布。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:103
 #: 974cd123c0c8409e94ff6f4a7e920ee0
-msgid "Teleop pose stream"
-msgstr "遥操位姿流"
+msgid "5. Teleop pose stream"
+msgstr "​5. 遥操位姿流"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:105
 #: 193ce87c0e9f4967a9505da024a603c7
@@ -741,7 +741,9 @@ msgstr "[vive_tracker_teleop](6-vive_tracker.md)"
 msgid ""
 "Absolute Vive Tracker poses. Default `publish_rate_hz` is 120. A side "
 "with no tracker publishes an identity pose while any live side is enabled"
-msgstr "Vive Tracker 的绝对位姿。默认 `publish_rate_hz` 为 120。只要还有一侧在发，没装 Tracker 的那一侧就发单位位姿"
+msgstr ""
+"Vive Tracker 的绝对位姿。默认 `publish_rate_hz` 为 120。只要还有一侧在发，没装 Tracker "
+"的那一侧就发单位位姿"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:115
 #: 6af9c614993a4974aa618da519732dd1
@@ -768,10 +770,10 @@ msgid ""
 "zero stream while no other node is publishing the topic."
 msgstr ""
 "`dexcap_cartesian_teleop` 读取 `/teleop/controller_state`，事件码变为 `4` "
-"时重设虚拟位姿的基准。头显位姿、摇杆、扳机和 `/teleop/xrt_diag` 由 `xr_target_node` 发布。只跑 DexCap "
-"时，还会在 `/teleop/thumbstick_axes` 上发一条全零 `Twist`，让 `VRInputHandler` "
-"做完待处理的摇杆回中检查。命令写在 [dexcap_teleop "
-"README](https://github.com/fiveages-sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md)。没有别的节点正在发布该话题时，再跑这条零值流。"
+"时重设虚拟位姿的基准。头显位姿、摇杆、扳机和 `/teleop/xrt_diag` 由 `xr_target_node` 发布。只跑 DexCap"
+" 时，还会在 `/teleop/thumbstick_axes` 上发一条全零 `Twist`，让 `VRInputHandler` "
+"做完待处理的摇杆回中检查。命令写在 [dexcap_teleop README](https://github.com/fiveages-"
+"sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md)。没有别的节点正在发布该话题时，再跑这条零值流。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:119
 #: c2b5a5d7c4d7419cb99eddc716f40e0b
@@ -779,8 +781,8 @@ msgid ""
 "The field layout is [PROTOCOL_CN.md](https://github.com/fiveages-"
 "sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)."
 msgstr ""
-"字段排布见 "
-"[PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)。"
+"字段排布见 [PROTOCOL_CN.md](https://github.com/fiveages-"
+"sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: 2ac4995790cb44bc999ec51e8c33e806
@@ -878,8 +880,8 @@ msgid ""
 "`angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`. "
 "A DexCap-only session also publishes a zero `Twist` here"
 msgstr ""
-"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在 "
-"0.1 死区内时值为 `0.0`。只跑 DexCap 时，这里还会发一条全零 `Twist`"
+"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在"
+" 0.1 死区内时值为 `0.0`。只跑 DexCap 时，这里还会发一条全零 `Twist`"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: 27db40395b6b4b91962e28622de51cde
@@ -922,8 +924,8 @@ msgid ""
 " Pico App, and about 400 Hz with the enterprise send rate over USB."
 msgstr ""
 "`xr_target_node` 的位姿在机器人世界系（`x` 向前、`y` 向左、`z` 向上）。WebXR 用固定 30 Hz "
-"定时器发布。XRoboToolkit 在 VR 的 `timeStampNs` 变化时发布：默认 Pico App 大约 90 Hz，企业版经 USB "
-"大约 400 Hz。"
+"定时器发布。XRoboToolkit 在 VR 的 `timeStampNs` 变化时发布：默认 Pico App 大约 90 Hz，企业版经 "
+"USB 大约 400 Hz。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:133
 #: bf1a0ba72de942579a32885b72d4cbca
@@ -944,9 +946,10 @@ msgid ""
 "`trigger_values` when that topic is present. Headset button behavior: "
 "{ref}`VR Teleoperation <controller-buttons>`."
 msgstr ""
-"`VRInputHandler` 订阅位姿话题、`/teleop/controller_state`、`/teleop/thumbstick_axes` "
-"和 `/teleop/trigger_values`。百分比模式下的夹爪，在有 `trigger_values` 时跟随它。头显按键见 {ref}`VR "
-"遥操作 <controller-buttons>`。"
+"`VRInputHandler` "
+"订阅位姿话题、`/teleop/controller_state`、`/teleop/thumbstick_axes` 和 "
+"`/teleop/trigger_values`。百分比模式下的夹爪，在有 `trigger_values` 时跟随它。头显按键见 "
+"{ref}`VR 遥操作 <controller-buttons>`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:137
 #: cd3752966dd0447ba4656f2ca567d980
@@ -964,8 +967,8 @@ msgid ""
 "`/teleop/trigger_values`."
 msgstr ""
 "fa-py-libraries 的 `./run.sh vr-record` "
-"录包包含头显位姿、按键、摇杆和扳机：`/teleop/head_pose`、左右末端位姿、`/teleop/controller_state`、`/teleop/thumbstick_axes` "
-"和 `/teleop/trigger_values`。"
+"录包包含头显位姿、按键、摇杆和扳机：`/teleop/head_pose`、左右末端位姿、`/teleop/controller_state`、`/teleop/thumbstick_axes`"
+" 和 `/teleop/trigger_values`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:141
 #: c5803b0ff29f4cfba5e0049c9165135f
@@ -992,8 +995,8 @@ msgstr ""
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:143
 #: 9a40738f07e74dd18e8f07fc7a40e65c
-msgid "Related"
-msgstr "相关内容"
+msgid "6. Related"
+msgstr "​6. 相关内容"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:145
 #: c089bbd7bc084fada3e76c3712c13101

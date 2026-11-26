@@ -5,7 +5,7 @@ A program that watches teleoperation subscribes to the topics on this page. Each
 
 Definitions: [`TeleopModeState.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopModeState.msg), [`TeleopMode.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopMode.msg), [`Inputs.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/Inputs.msg), and [section 1 of the message README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md).
 
-## Two contracts
+## 1. Two contracts
 
 Joystick / keyboard and the event bus run side by side. Each path has its own status message.
 
@@ -18,7 +18,7 @@ Send the change on the command topic. The mode that is active now is only on the
 
 A dexterous hand, DualHand, or a UI reads `teleop/mode_state` for an event-bus session, or `teleop_mode` when it follows the joystick or the keyboard. The foot pedal publishes `teleop/controller_state` only.
 
-## Namespace and QoS
+## 2. Namespace and QoS
 
 The command and status names above are relative to the robot namespace. With no namespace the event-bus status topic is `/teleop/mode_state`. In namespace `/robot_a` it is `/robot_a/teleop/mode_state`. Subscribe in that same namespace. Two robots in one scene stay apart.
 
@@ -32,7 +32,7 @@ With an empty namespace, echo `/teleop/mode_state`. Match QoS `Reliable` + `Tran
 
 Headset pose, stick axes, trigger pull, and the shared end-effector poses are the root names in {ref}`the teleop pose stream <teleop-pose-stream>` (`/teleop/head_pose`, `/teleop/left_ee_pose`, and the rest of that set). `teleop/mode_state` follows the robot namespace.
 
-## Event-bus status (`TeleopModeState`)
+## 3. Event-bus status (`TeleopModeState`)
 
 `TeleopModeState` on `teleop/mode_state` is the latch for the event bus. `VRInputHandler` publishes it after a field changes. The message is the current mode. It does not say which button produced the last event. `TeleopMode` is a different message, for the joystick and the keyboard.
 
@@ -54,7 +54,7 @@ Headset pose, stick axes, trigger pull, and the shared end-effector poses are th
 
 Read `mirror_movement` for mirror. Read pause, the gripper-mode flags, `update_mode`, and `topology` when the hand or the UI needs them. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. This message reports which gripper mode is latched. It does not carry the gripper command.
 
-### Arm pause and WBC arm enable
+### 3.1 Arm pause and WBC arm enable
 
 `left_arm_paused` and `right_arm_paused` are teleop pause. WBC arm enable is `left_arm_state` and `right_arm_state` on `/ocs2_wbc_controller/current_state` (`WbcCurrentState`). An arm can be VR-paused and still be `ARM_ENABLED`.
 
@@ -62,7 +62,7 @@ On 全身, event 16 switches what left **Y** / right **B** mean. After that swit
 
 Field values for `WbcCurrentState`: {ref}`wbc-current-state`. Mode strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` is `std_msgs/String` on the 全身 stack. It is not a write path for `current_state`.
 
-### When VR publishes arm and gripper targets
+### 3.2 When VR publishes arm and gripper targets
 
 VR end-effector targets and VR gripper output follow `update_mode`.
 
@@ -73,7 +73,7 @@ VR end-effector targets and VR gripper output follow `update_mode`.
 
 Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, joystick and keyboard `hand_command` on `control_input` can still open and close the hand. While UPDATE is on, the VR trigger stream keeps writing the gripper.
 
-## Joystick and keyboard (`TeleopMode`)
+## 4. Joystick and keyboard (`TeleopMode`)
 
 `TeleopMode` on `teleop_mode` is the latch for the joystick and the keyboard. Same QoS: once at startup, again when `active`, `control_mode`, `mirror_movement`, or speed changes. Switching the active arm does not republish this message.
 
@@ -100,7 +100,7 @@ The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not 
 The keyboard does not publish `/fsm_command`. The joystick does.
 
 (teleop-pose-stream)=
-## Teleop pose stream
+## 5. Teleop pose stream
 
 `VRInputHandler` in `arms_target_manager` reads this stream. In UPDATE it drives arm targets from `/teleop/left_ee_pose` and `/teleop/right_ee_pose`. The latched mode stays on `teleop/mode_state` (`TeleopModeState`). A `0` on `/teleop/controller_state` means this frame had no button edge.
 
@@ -140,7 +140,7 @@ The fa-py-libraries `./run.sh vr-record` bag records the headset pose, button, s
 
 Optical wrist presets also publish `/teleop/optical_r0_caps`, `/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and `/teleop/mirror_mode`. The handshake is in [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md). The dexterous-hand joint command on that path is `q_des` ([xr_hand_retarget README](https://github.com/fiveages-sim/xr_hand_retarget/blob/main/README.md)). Launch and the headset panel: {ref}`Hand tracking <vr-hand-tracking>`.
 
-## Related
+## 6. Related
 
 - [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md)
 - [DexCap Teleoperation](../../2-how_to/5-teleoperation/8-dexcap_teleop.md)
