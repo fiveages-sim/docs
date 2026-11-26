@@ -184,7 +184,7 @@ ARX Lift 2S vendor chassis/lift (`/body_control`) is a **different** stack from 
 (vr-published-topics)=
 ## Teleop pose stream
 
-End-effector poses, the headset pose, sticks, and triggers are on {ref}`Teleop topics and data <teleop-pose-stream>`.
+The shared end-effector poses, the headset pose, sticks, and triggers are on {ref}`Teleop topics and data <teleop-pose-stream>`. The headset, the exoskeleton, and Vive Tracker publish the poses. The foot pedal sends the same event codes on `teleop/controller_state`.
 
 ## Topic vs Action vs Service
 

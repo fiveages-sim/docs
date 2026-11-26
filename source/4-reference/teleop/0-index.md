@@ -4,7 +4,7 @@ This section documents the teleoperation systems.
 
 ## Overview
 
-The stack supports several teleoperation inputs. They are not interchangeable: some supply **end-effector pose**, some follow in **joint space**, some drive **fingers or grippers**, and some only send **enable / pause / FSM** assists. For a first run, use [VR](../../2-how_to/5-teleoperation/6-vr_teleop.md) or a [game controller](../../2-how_to/5-teleoperation/9-joystick_teleop.md).
+The stack supports several teleoperation inputs. Each one has its own role: some supply **end-effector pose**, some follow in **joint space**, some drive **fingers or grippers**, and some send **enable / pause / FSM** assists. For a first run, use [VR](../../2-how_to/5-teleoperation/6-vr_teleop.md) or a [game controller](../../2-how_to/5-teleoperation/9-joystick_teleop.md).
 
 | Method | Input | Role |
 |--------|-------|------|
@@ -13,7 +13,7 @@ The stack supports several teleoperation inputs. They are not interchangeable: s
 | Isomorphic | Master–slave (HighTorque Panthera HT) | Joint-space following |
 | DexCap (internal) | Exoskeleton + gloves | Waist/arm joints from the exoskeleton; finger joints from the gloves. Arm FK poses: {ref}`teleop-pose-stream` |
 | Wuji gloves (internal) | Gloves, optional Vive Tracker | Finger / hand joints; optional arm pose from Vive Tracker |
-| Vive Tracker (internal) | SteamVR Vive Tracker (`vive_tracker_teleop`) | Arm end-effector pose. Named **Vive Tracker** in the package and in these docs, not “Valve Tracker”. |
+| Vive Tracker (internal) | SteamVR Vive Tracker (`vive_tracker_teleop`) | Arm end-effector pose. The package and these docs call it **Vive Tracker**. |
 | Foot pedal | USB pedal (`arms_teleop`, SayoDevice CM6K) | Assist only: events on relative `teleop/controller_state`. Current mode is `teleop/mode_state`. |
 
 ```{admonition} VR Headset Recommendation

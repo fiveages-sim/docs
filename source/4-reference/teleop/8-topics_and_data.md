@@ -1,7 +1,7 @@
 (teleop-topics-and-data)=
 # Teleop topics and data
 
-A program that watches teleoperation subscribes to the topics on this page. Each section gives the topic, the message type, the QoS, the namespace, and the fields. Headset buttons and the RViz card stay on [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
+A program that watches teleoperation subscribes to the topics on this page. Each section gives the topic, the message type, the QoS, the namespace, and the fields. Headset buttons and the RViz card are on [VR Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md).
 
 Definitions: [`TeleopModeState.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopModeState.msg), [`TeleopMode.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopMode.msg), [`Inputs.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/Inputs.msg), and [section 1 of the message README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md).
 
@@ -14,9 +14,9 @@ Joystick / keyboard and the event bus run side by side. Each path has its own st
 | Joystick / keyboard | `control_input` (`arms_ros2_control_msgs/Inputs`) | `teleop_mode` (`TeleopMode`) | `joystick_teleop` / `keyboard_teleop` |
 | Event bus (VR, foot pedal, exoskeleton, HUD) | `teleop/controller_state` (`std_msgs/Int32`) | `teleop/mode_state` (`TeleopModeState`) | `VRInputHandler` in `arms_target_manager` |
 
-Send the change on the command topic. The mode that is active now is only on the status topic. `teleop/controller_state` carries the event code. A `0` on that topic means this frame had no button edge. UPDATE, STORAGE, pause, and mirror are fields of `TeleopModeState` on `teleop/mode_state`.
+Send a mode change on the command topic, and read the active mode on the status topic. `teleop/controller_state` carries the event code. A `0` means this frame had no button edge. UPDATE, STORAGE, pause, and mirror are fields of `TeleopModeState` on `teleop/mode_state`.
 
-A dexterous hand, DualHand, or a UI reads `teleop/mode_state` for an event-bus session, or `teleop_mode` when it follows the joystick or the keyboard. The foot pedal publishes `teleop/controller_state` only.
+A dexterous hand, DualHand, or a UI reads `teleop/mode_state` in an event-bus session, and `teleop_mode` when it follows the joystick or the keyboard. The foot pedal writes its event codes to `teleop/controller_state`.
 
 ## 2. Namespace and QoS
 
@@ -34,7 +34,7 @@ Headset pose, stick axes, trigger pull, and the shared end-effector poses are th
 
 ## 3. Event-bus status (`TeleopModeState`)
 
-`TeleopModeState` on `teleop/mode_state` is the latch for the event bus. `VRInputHandler` publishes it after a field changes. The message is the current mode. It does not say which button produced the last event. `TeleopMode` is a different message, for the joystick and the keyboard.
+`TeleopModeState` on `teleop/mode_state` is the latched mode for the event bus. `VRInputHandler` publishes a new snapshot when a field changes. The event code for that change is on `teleop/controller_state`. Joystick and keyboard use `TeleopMode` on `teleop_mode`.
 
 | Field | Type | Meaning |
 |-------|------|---------|
@@ -52,15 +52,15 @@ Headset pose, stick axes, trigger pull, and the shared end-effector poses are th
 | `mirror_profile` | `uint8` | `MIRROR_PROFILE_A` = `0`, `MIRROR_PROFILE_B` = `1`. Used when `mirror_movement` is true |
 | `topology` | `uint8` | `TOPOLOGY_UNKNOWN` = `0`, `TOPOLOGY_SPLIT_BODY` = `1` (分体), `TOPOLOGY_FULL_BODY` = `2` (全身) |
 
-Read `mirror_movement` for mirror. Read pause, the gripper-mode flags, `update_mode`, and `topology` when the hand or the UI needs them. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. This message reports which gripper mode is latched. It does not carry the gripper command.
+`mirror_movement` is the mirror latch. Pause, the gripper-mode flags, `update_mode`, and `topology` are on this message for the hand and the UI. The latched gripper mode is `left_gripper_percent_mode` / `right_gripper_percent_mode`. The open/close or percent command is on `*/target_command` and `*/target_percent`.
 
 ### 3.1 Arm pause and WBC arm enable
 
-`left_arm_paused` and `right_arm_paused` are teleop pause. WBC arm enable is `left_arm_state` and `right_arm_state` on `/ocs2_wbc_controller/current_state` (`WbcCurrentState`). An arm can be VR-paused and still be `ARM_ENABLED`.
+`left_arm_paused` and `right_arm_paused` are the event-bus teleop pause for that arm. The headset, the foot pedal, and the exoskeleton all write this latch. WBC arm enable is `left_arm_state` and `right_arm_state` on `/ocs2_wbc_controller/current_state` (`WbcCurrentState`). Teleop pause and WBC enable are separate bits: an arm can be paused here while its WBC state is `ARM_ENABLED`.
 
-On 全身, event 16 switches what left **Y** / right **B** mean. After that switch, the current meaning is `yb_pause_semantics`. `left_arm_state` and `right_arm_state` stay the WBC enable bits. The button chord is on [Stop one arm vs stop sending VR commands](../../2-how_to/5-teleoperation/6-vr_teleop.md#stop-one-arm-vs-stop-sending-vr-commands).
+On 全身, event 16 switches what left **Y** / right **B** mean. After the switch, `yb_pause_semantics` holds the current meaning. `left_arm_state` and `right_arm_state` are the WBC enable bits. The button chord is on [Stop one arm vs stop sending VR commands](../../2-how_to/5-teleoperation/6-vr_teleop.md#stop-one-arm-vs-stop-sending-vr-commands).
 
-Field values for `WbcCurrentState`: {ref}`wbc-current-state`. Mode strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` is `std_msgs/String` on the 全身 stack. It is not a write path for `current_state`.
+Field values for `WbcCurrentState`: {ref}`wbc-current-state`. Mode strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` (`std_msgs/String` on the 全身 stack) switches the mode. `current_state` is the status you read.
 
 ### 3.2 When VR publishes arm and gripper targets
 
@@ -69,13 +69,13 @@ VR end-effector targets and VR gripper output follow `update_mode`.
 | `update_mode` | What VR publishes |
 |---------------|-------------------|
 | `true` (UPDATE) | End-effector targets from the controller pose, and trigger gripper commands |
-| `false` (STORAGE) | No arm targets and no VR gripper commands. The latest VR pose stays cached for the next UPDATE |
+| `false` (STORAGE) | Latest VR pose, cached until the next UPDATE. Arm targets and gripper commands wait for UPDATE |
 
-Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, joystick and keyboard `hand_command` on `control_input` can still open and close the hand. While UPDATE is on, the VR trigger stream keeps writing the gripper.
+Right stick click toggles the two while FSM is **OCS2**. In STORAGE, joystick and keyboard `hand_command` on `control_input` open and close the hand. In UPDATE, the VR trigger stream writes the gripper.
 
 ## 4. Joystick and keyboard (`TeleopMode`)
 
-`TeleopMode` on `teleop_mode` is the latch for the joystick and the keyboard. Same QoS: once at startup, again when `active`, `control_mode`, `mirror_movement`, or speed changes. Switching the active arm does not republish this message.
+`TeleopMode` on `teleop_mode` is the latched mode for the joystick and the keyboard. QoS matches the event bus: one message at startup, and another when `active`, `control_mode`, `mirror_movement`, or speed changes. Changing the active arm leaves this snapshot as it is.
 
 | Field | Type | Meaning |
 |-------|------|---------|
@@ -86,7 +86,7 @@ Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, j
 | `speed_level` | `int32` | Keyboard `1`–`10`. Joystick `0` = LOW, `1` = HIGH |
 | `speed_scale` | `float32` | Speed scale in use |
 
-The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not a field of `TeleopMode`. In chassis mode the joystick may pause the periodic `Inputs` stream. Keep the last `target`. Enable switch and the keyboard keys: [Joystick teleop](../../2-how_to/5-teleoperation/9-joystick_teleop.md).
+The active arm is `Inputs.target` on `control_input` (`1` left, `2` right). In chassis mode the joystick may pause the periodic `Inputs` stream, so keep the last `target`. Enable switch and keyboard keys: [Joystick teleop](../../2-how_to/5-teleoperation/9-joystick_teleop.md).
 
 `Inputs` on `control_input` is the command stream for that path.
 
@@ -97,14 +97,14 @@ The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not 
 | `target` | `int32` | `1` left arm, `2` right arm |
 | `hand_command` | `float32` | `NaN` = no command; `0` close; `1` open; any other value in `0`–`1` is an open ratio |
 
-The keyboard does not publish `/fsm_command`. The joystick does.
+Only the joystick publishes `/fsm_command`.
 
 (teleop-pose-stream)=
 ## 5. Teleop pose stream
 
-`VRInputHandler` in `arms_target_manager` reads this stream. In UPDATE it drives arm targets from `/teleop/left_ee_pose` and `/teleop/right_ee_pose`. The latched mode stays on `teleop/mode_state` (`TeleopModeState`). A `0` on `/teleop/controller_state` means this frame had no button edge.
+`VRInputHandler` in `arms_target_manager` reads this stream. In UPDATE it drives arm targets from `/teleop/left_ee_pose` and `/teleop/right_ee_pose`.
 
-`/teleop/left_ee_pose` and `/teleop/right_ee_pose` are `geometry_msgs/Pose` with no `header`. A session uses one publisher for that pair:
+`/teleop/left_ee_pose` and `/teleop/right_ee_pose` are `geometry_msgs/Pose` with no `header`. One node publishes that pair for a session:
 
 | Node | Where it runs | What it publishes |
 |------|---------------|------------------------|
@@ -114,7 +114,7 @@ The keyboard does not publish `/fsm_command`. The joystick does.
 
 With Wuji gloves (`wuji_glove_teleop`), arm pose on this pair comes from `tracker_openvr`. The glove node reads `/teleop/controller_state` and `/teleop/mirror_mode`, and publishes finger commands on its own topics. [wuji_glove_teleop](5-wuji_glove.md).
 
-`dexcap_cartesian_teleop` reads `/teleop/controller_state` and rebases its virtual pose when the code becomes `4`. Headset pose, sticks, triggers, and `/teleop/xrt_diag` come from `xr_target_node`. A DexCap-only session also publishes a zero `Twist` on `/teleop/thumbstick_axes`, so `VRInputHandler` can finish a pending stick-centered check. The command is in the [dexcap_teleop README](https://github.com/fiveages-sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md). Run that zero stream while no other node is publishing the topic.
+`dexcap_cartesian_teleop` reads `/teleop/controller_state` and rebases its virtual pose when the code becomes `4`. Headset pose, sticks, triggers, and `/teleop/xrt_diag` come from `xr_target_node`. In a DexCap-only session, publish a zero `Twist` on `/teleop/thumbstick_axes` so `VRInputHandler` can finish a pending stick-centered check. The command is in the [dexcap_teleop README](https://github.com/fiveages-sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md). Run that zero publisher by itself on `/teleop/thumbstick_axes`.
 
 The field layout is [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md).
 
@@ -124,17 +124,17 @@ The field layout is [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_pub
 | `/teleop/left_ee_pose` | `geometry_msgs/Pose` | `xr_target_node`, `dexcap_cartesian_teleop`, or `tracker_openvr` | Left 6-DOF pose, no `header` |
 | `/teleop/right_ee_pose` | `geometry_msgs/Pose` | `xr_target_node`, `dexcap_cartesian_teleop`, or `tracker_openvr` | Right 6-DOF pose, no `header` |
 | `/teleop/controller_state` | `std_msgs/Int32` | `xr_target_node`, every frame | Button event code. `0` means no edge this frame. The foot pedal sends the same codes on namespaced `teleop/controller_state` |
-| `/teleop/thumbstick_axes` | `geometry_msgs/Twist` | `xr_target_node`, every frame | Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / `angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`. A DexCap-only session also publishes a zero `Twist` here |
+| `/teleop/thumbstick_axes` | `geometry_msgs/Twist` | `xr_target_node`, every frame | Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / `angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`. A DexCap-only session adds a zero `Twist` here |
 | `/teleop/trigger_values` | `geometry_msgs/Twist` | `xr_target_node`, every frame | Left trigger pull in `linear.x`, right trigger pull in `angular.x`. `0.0` is released, `1.0` is full |
-| `/teleop/xrt_diag` | `std_msgs/Int64MultiArray` | `xr_target_node`, with the pose frame | Diagnostic. Downstream control can skip it |
+| `/teleop/xrt_diag` | `std_msgs/Int64MultiArray` | `xr_target_node`, with the pose frame | Pose-frame diagnostic. Control reads the pose topics |
 
 Poses from `xr_target_node` are in the robot world frame (`x` forward, `y` left, `z` up). WebXR publishes on a fixed 30 Hz timer. XRoboToolkit publishes when the VR `timeStampNs` changes: about 90 Hz with the default Pico App, and about 400 Hz with the enterprise send rate over USB.
 
-Pull depth stays on `/teleop/trigger_values` every frame. The press edge is a separate code on `/teleop/controller_state` (`9` left, `10` right).
+Trigger pull depth is on `/teleop/trigger_values` every frame. The press edge is its own code on `/teleop/controller_state` (`9` left, `10` right).
 
 `VRInputHandler` subscribes to the pose topics, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`. Grippers in percent mode follow `trigger_values` when that topic is present. Headset button behavior: {ref}`VR Teleoperation <controller-buttons>`.
 
-These names are the root topics (`/teleop/...`). `teleop/mode_state` follows the robot namespace.
+These `/teleop/...` names are root topics. `teleop/mode_state` follows the robot namespace.
 
 The fa-py-libraries `./run.sh vr-record` bag records the headset pose, button, stick, and trigger topics: `/teleop/head_pose`, both end-effector poses, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`.
 

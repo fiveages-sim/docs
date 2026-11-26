@@ -26,7 +26,7 @@ Maps Vive tracker poses to arm end-effector targets:
 | `/teleop/left_ee_pose` | `geometry_msgs/Pose` | Left absolute end-effector pose |
 | `/teleop/right_ee_pose` | `geometry_msgs/Pose` | Right absolute end-effector pose |
 
-`tracker_openvr` publishes these two poses. A side with no tracker publishes an identity pose while any live side is enabled. Headset pose, sticks, and triggers stay on {ref}`the teleop pose stream <teleop-pose-stream>`.
+`tracker_openvr` publishes these two poses. A side with no tracker publishes an identity pose while any live side is enabled. Headset pose, sticks, and triggers are on {ref}`the teleop pose stream <teleop-pose-stream>`.
 
 ## Configuration
 

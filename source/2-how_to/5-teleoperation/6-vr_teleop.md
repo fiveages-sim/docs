@@ -153,7 +153,7 @@ After the panel closes, the operator uses bare hands. The wheeled dual-arm in th
 
 The foot pedal still publishes events on `teleop/controller_state` (FSM, UPDATE / STORAGE, mirror). With no pedal, `./run.sh vr-ocs2` publishes `/fsm_command` `3` (OCS2).
 
-Wrist and headset poses stay on `/teleop/head_pose`, `/teleop/left_ee_pose`, and `/teleop/right_ee_pose` ({ref}`teleop-pose-stream`). The dexterous-hand joint command is `q_des` ([xr_hand_retarget README](https://github.com/fiveages-sim/xr_hand_retarget/blob/main/README.md)).
+Wrist and headset poses are on `/teleop/head_pose`, `/teleop/left_ee_pose`, and `/teleop/right_ee_pose` ({ref}`teleop-pose-stream`). The dexterous-hand joint command is `q_des` ([xr_hand_retarget README](https://github.com/fiveages-sim/xr_hand_retarget/blob/main/README.md)).
 
 ## Topics
 

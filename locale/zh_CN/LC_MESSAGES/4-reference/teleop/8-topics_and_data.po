@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 08:09+0000\n"
+"POT-Creation-Date: 2026-11-26 08:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -30,7 +30,7 @@ msgstr "遥操相关话题与数据说明"
 msgid ""
 "A program that watches teleoperation subscribes to the topics on this "
 "page. Each section gives the topic, the message type, the QoS, the "
-"namespace, and the fields. Headset buttons and the RViz card stay on [VR "
+"namespace, and the fields. Headset buttons and the RViz card are on [VR "
 "Teleoperation](../../2-how_to/5-teleoperation/6-vr_teleop.md)."
 msgstr ""
 "监视遥操作的程序订这一页的话题。每一节给出话题、消息类型、QoS、命名空间和字段。头显按键和 RViz 卡片在 [VR "
@@ -132,24 +132,25 @@ msgstr "`arms_target_manager` 中的 `VRInputHandler`"
 #: ../../source/4-reference/teleop/8-topics_and_data.md:17
 #: 2a8b6aef74d7427ea859e08296e9f015
 msgid ""
-"Send the change on the command topic. The mode that is active now is only"
-" on the status topic. `teleop/controller_state` carries the event code. A"
-" `0` on that topic means this frame had no button edge. UPDATE, STORAGE, "
-"pause, and mirror are fields of `TeleopModeState` on `teleop/mode_state`."
+"Send a mode change on the command topic, and read the active mode on the "
+"status topic. `teleop/controller_state` carries the event code. A `0` "
+"means this frame had no button edge. UPDATE, STORAGE, pause, and mirror "
+"are fields of `TeleopModeState` on `teleop/mode_state`."
 msgstr ""
-"改模式发在命令话题上。当前生效的模式只在状态话题上。`teleop/controller_state` 带的是事件码。该话题上的 `0` "
-"表示这一帧没有按键边沿。UPDATE、STORAGE、暂停和镜像是 `teleop/mode_state` 上 `TeleopModeState`"
-" 的字段。"
+"改模式发在命令话题上，当前模式到状态话题上读。`teleop/controller_state` 带的是事件码。`0` "
+"表示这一帧没有按键边沿。UPDATE、STORAGE、暂停和镜像是 `teleop/mode_state` 上 `TeleopModeState` "
+"的字段。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:19
 #: 234bb24b92314bd78be701fe2bc42239
 msgid ""
-"A dexterous hand, DualHand, or a UI reads `teleop/mode_state` for an "
-"event-bus session, or `teleop_mode` when it follows the joystick or the "
-"keyboard. The foot pedal publishes `teleop/controller_state` only."
+"A dexterous hand, DualHand, or a UI reads `teleop/mode_state` in an "
+"event-bus session, and `teleop_mode` when it follows the joystick or the "
+"keyboard. The foot pedal writes its event codes to "
+"`teleop/controller_state`."
 msgstr ""
-"灵巧手、DualHand 或界面在事件总线会话里读 `teleop/mode_state`；跟随手柄或键盘时读 "
-"`teleop_mode`。脚踏板只发布 `teleop/controller_state`。"
+"灵巧手、DualHand 或界面在事件总线会话里读 `teleop/mode_state`，跟随手柄或键盘时读 "
+"`teleop_mode`。脚踏板把事件码写到 `teleop/controller_state`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:21
 #: 1f5a97d041284e0dbac77677cf002b25
@@ -210,13 +211,14 @@ msgstr "​3. 事件总线状态（`TeleopModeState`）"
 #: ../../source/4-reference/teleop/8-topics_and_data.md:37
 #: 8bb16eb84fcf4786a4eb10799574f3d3
 msgid ""
-"`TeleopModeState` on `teleop/mode_state` is the latch for the event bus. "
-"`VRInputHandler` publishes it after a field changes. The message is the "
-"current mode. It does not say which button produced the last event. "
-"`TeleopMode` is a different message, for the joystick and the keyboard."
+"`TeleopModeState` on `teleop/mode_state` is the latched mode for the "
+"event bus. `VRInputHandler` publishes a new snapshot when a field "
+"changes. The event code for that change is on `teleop/controller_state`. "
+"Joystick and keyboard use `TeleopMode` on `teleop_mode`."
 msgstr ""
-"`teleop/mode_state` 上的 `TeleopModeState` 是事件总线的锁存。`VRInputHandler` "
-"在字段变化后发布它。这条消息就是当前模式。上一次事件来自哪个按键，不在这条消息里。`TeleopMode` 是另一条消息，给手柄和键盘用。"
+"`teleop/mode_state` 上的 `TeleopModeState` 是事件总线锁存的当前模式。字段变化时，`VRInputHandler` "
+"再发一条快照。这次变化的事件码在 `teleop/controller_state` 上。手柄和键盘用 `teleop_mode` 上的 "
+"`TeleopMode`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: c8b0fa56569b49beaebcb0e809cfa433 d594002f0d0a496f99fdebb62a772466
@@ -400,15 +402,16 @@ msgstr ""
 #: ../../source/4-reference/teleop/8-topics_and_data.md:55
 #: 4e53211cb2f24549a5c5ff9a9930a138
 msgid ""
-"Read `mirror_movement` for mirror. Read pause, the gripper-mode flags, "
-"`update_mode`, and `topology` when the hand or the UI needs them. "
-"Open/close and percent commands stay on `*/target_command` and "
-"`*/target_percent`. This message reports which gripper mode is latched. "
-"It does not carry the gripper command."
+"`mirror_movement` is the mirror latch. Pause, the gripper-mode flags, "
+"`update_mode`, and `topology` are on this message for the hand and the "
+"UI. The latched gripper mode is `left_gripper_percent_mode` / "
+"`right_gripper_percent_mode`. The open/close or percent command is on "
+"`*/target_command` and `*/target_percent`."
 msgstr ""
-"镜像读 `mirror_movement`。手或界面需要时再读暂停、夹爪模式、`update_mode` 和 "
-"`topology`。开合和比例命令仍在 `*/target_command` 和 "
-"`*/target_percent`。这条消息报告锁存的夹爪模式，夹爪命令不在这条消息里。"
+"`mirror_movement` 是镜像锁存。暂停、夹爪模式、`update_mode` 和 `topology` "
+"也在这条消息上，给手和界面读。锁存的夹爪模式是 `left_gripper_percent_mode` / "
+"`right_gripper_percent_mode`。开合或比例命令在 `*/target_command` 和 "
+"`*/target_percent` 上。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:57
 #: aa5326dadbad41629c6e13e4405522f0
@@ -416,44 +419,47 @@ msgid "3.1 Arm pause and WBC arm enable"
 msgstr "3.1 手臂暂停与 WBC 手臂使能"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:59
-#: 019321a0a9ec451eaddc8e98a1dd12c2
+#: 68aa2ee9e3024b3c9e9a4d821653a23b
 msgid ""
-"`left_arm_paused` and `right_arm_paused` are teleop pause. WBC arm enable"
-" is `left_arm_state` and `right_arm_state` on "
-"`/ocs2_wbc_controller/current_state` (`WbcCurrentState`). An arm can be "
-"VR-paused and still be `ARM_ENABLED`."
+"`left_arm_paused` and `right_arm_paused` are the event-bus teleop pause "
+"for that arm. The headset, the foot pedal, and the exoskeleton all write "
+"this latch. WBC arm enable is `left_arm_state` and `right_arm_state` on "
+"`/ocs2_wbc_controller/current_state` (`WbcCurrentState`). Teleop pause "
+"and WBC enable are separate bits: an arm can be paused here while its WBC"
+" state is `ARM_ENABLED`."
 msgstr ""
-"`left_arm_paused` 和 `right_arm_paused` 是遥操暂停。WBC 手臂使能是 "
-"`/ocs2_wbc_controller/current_state`（`WbcCurrentState`）上的 "
-"`left_arm_state` 和 `right_arm_state`。一条手臂可以处于 VR 暂停，同时仍是 `ARM_ENABLED`。"
+"`left_arm_paused` 和 `right_arm_paused` "
+"是这条手臂在事件总线上的遥操暂停。头显、脚踏板和外骨骼都会写这个锁存。WBC 手臂使能是 "
+"`/ocs2_wbc_controller/current_state`（`WbcCurrentState`）上的 `left_arm_state` 和 "
+"`right_arm_state`。遥操暂停和 WBC 使能是两组位：手臂可以在这里暂停，同时 WBC 状态仍是 `ARM_ENABLED`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:61
 #: 1ed02c6ced80490e9fbcc0c525bab5f9
 msgid ""
-"On 全身, event 16 switches what left **Y** / right **B** mean. After that "
-"switch, the current meaning is `yb_pause_semantics`. `left_arm_state` and"
-" `right_arm_state` stay the WBC enable bits. The button chord is on [Stop"
-" one arm vs stop sending VR "
+"On 全身, event 16 switches what left **Y** / right **B** mean. After the "
+"switch, `yb_pause_semantics` holds the current meaning. `left_arm_state` "
+"and `right_arm_state` are the WBC enable bits. The button chord is on "
+"[Stop one arm vs stop sending VR "
 "commands](../../2-how_to/5-teleoperation/6-vr_teleop.md#stop-one-arm-vs-"
 "stop-sending-vr-commands)."
 msgstr ""
-"在全身下，事件 16 切换左 **Y** / 右 **B** 的含义。切换之后，当前含义是 "
-"`yb_pause_semantics`。`left_arm_state` 和 `right_arm_state` 仍是 WBC "
-"的使能位。按键组合见 [停单臂 vs 停发指令](../../2-how_to/5-teleoperation/6-vr_teleop.md"
-"#stop-one-arm-vs-stop-sending-vr-commands)。"
+"在全身下，事件 16 切换左 **Y** / 右 **B** 的含义。切换之后，当前含义记在 "
+"`yb_pause_semantics`。`left_arm_state` 和 `right_arm_state` 是 WBC 的使能位。按键组合见 "
+"[停单臂 vs "
+"停发指令](../../2-how_to/5-teleoperation/6-vr_teleop.md#stop-one-arm-vs-stop-sending-vr-commands)。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:63
 #: f0d6c33677554c9a99e2c7eb65ecfc72
 #, python-brace-format
 msgid ""
 "Field values for `WbcCurrentState`: {ref}`wbc-current-state`. Mode "
-"strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` is "
-"`std_msgs/String` on the 全身 stack. It is not a write path for "
-"`current_state`."
+"strings on `/mode_command`: {ref}`wbc-mode-command`. `/mode_command` "
+"(`std_msgs/String` on the 全身 stack) switches the mode. `current_state` is"
+" the status you read."
 msgstr ""
-"`WbcCurrentState` 各字段的取值见 {ref}`wbc-current-state`。`/mode_command` "
-"上的模式字符串见 {ref}`wbc-mode-command`。`/mode_command` 在全身栈上是 "
-"`std_msgs/String`。写入 `current_state` 不走这条话题。"
+"`WbcCurrentState` 各字段的取值见 {ref}`wbc-current-state`。`/mode_command` 上的模式字符串见 "
+"{ref}`wbc-mode-command`。`/mode_command`（全身栈上的 "
+"`std_msgs/String`）用来切换模式。`current_state` 是读回来的状态。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:65
 #: 0896a7c90aa34be1be3d03e191ea96d7
@@ -488,22 +494,21 @@ msgid "`false` (STORAGE)"
 msgstr "`false`（STORAGE）"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
-#: b33d0b071e894b57b3f09d443e505909
+#: c8dd098c5f4f4f88b1a57fada00f6482
 msgid ""
-"No arm targets and no VR gripper commands. The latest VR pose stays "
-"cached for the next UPDATE"
-msgstr "没有手臂目标，也没有 VR 夹爪命令。最近一次 VR 位姿会留到下一次 UPDATE"
+"Latest VR pose, cached until the next UPDATE. Arm targets and gripper "
+"commands wait for UPDATE"
+msgstr "最新的 VR 位姿缓存到下一次 UPDATE。手臂目标和夹爪命令等到 UPDATE 再发"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:74
 #: 4bac41b079f148f687f3abac68f0a2d4
 msgid ""
-"Right stick click toggles the two, and only while FSM is **OCS2**. In "
-"STORAGE, joystick and keyboard `hand_command` on `control_input` can "
-"still open and close the hand. While UPDATE is on, the VR trigger stream "
-"keeps writing the gripper."
+"Right stick click toggles the two while FSM is **OCS2**. In STORAGE, "
+"joystick and keyboard `hand_command` on `control_input` open and close "
+"the hand. In UPDATE, the VR trigger stream writes the gripper."
 msgstr ""
-"右摇杆按下在两者之间切换，且仅当 FSM 为 **OCS2**。STORAGE 下，手柄和键盘在 `control_input` 上的 "
-"`hand_command` 仍能开合手。UPDATE 打开时，VR 扳机流持续写夹爪。"
+"右摇杆按下在两者之间切换，FSM 处于 **OCS2** 时生效。STORAGE 下，手柄和键盘用 `control_input` 上的 "
+"`hand_command` 开合手。UPDATE 下，VR 扳机流写夹爪。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:76
 #: 917d002b350641be85e18f5298b0585a
@@ -513,14 +518,14 @@ msgstr "​4. 手柄与键盘（`TeleopMode`）"
 #: ../../source/4-reference/teleop/8-topics_and_data.md:78
 #: f1bff7d32e0c41eabfb86d2bb9c2751f
 msgid ""
-"`TeleopMode` on `teleop_mode` is the latch for the joystick and the "
-"keyboard. Same QoS: once at startup, again when `active`, `control_mode`,"
-" `mirror_movement`, or speed changes. Switching the active arm does not "
-"republish this message."
+"`TeleopMode` on `teleop_mode` is the latched mode for the joystick and "
+"the keyboard. QoS matches the event bus: one message at startup, and "
+"another when `active`, `control_mode`, `mirror_movement`, or speed "
+"changes. Changing the active arm leaves this snapshot as it is."
 msgstr ""
-"`teleop_mode` 上的 `TeleopMode` 是手柄和键盘的锁存。QoS "
-"相同：启动时一次，`active`、`control_mode`、`mirror_movement` "
-"或速度变化时再发。切换当前手臂不会重发这条消息。"
+"`teleop_mode` 上的 `TeleopMode` 是手柄和键盘锁存的当前模式。QoS "
+"与事件总线相同：启动时发一条，`active`、`control_mode`、`mirror_movement` "
+"或速度变化时再发一条。更换当前手臂时，这条快照保持原样。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: bfe2df8997504500861fe9ff1a79451c
@@ -584,13 +589,12 @@ msgstr "正在使用的速度倍率"
 #: 1532367413394dc295c98f8d6656abb9
 msgid ""
 "The active arm is `Inputs.target` on `control_input` (`1` left, `2` "
-"right), not a field of `TeleopMode`. In chassis mode the joystick may "
-"pause the periodic `Inputs` stream. Keep the last `target`. Enable switch"
-" and the keyboard keys: [Joystick "
-"teleop](../../2-how_to/5-teleoperation/9-joystick_teleop.md)."
+"right). In chassis mode the joystick may pause the periodic `Inputs` "
+"stream, so keep the last `target`. Enable switch and keyboard keys: "
+"[Joystick teleop](../../2-how_to/5-teleoperation/9-joystick_teleop.md)."
 msgstr ""
-"当前手臂是 `control_input` 上的 `Inputs.target`（`1` 左，`2` 右），不是 `TeleopMode` "
-"的字段。底盘模式下手柄可能暂停周期性的 `Inputs` 流。保留最近一次 `target`。使能开关和键盘按键见 "
+"当前手臂写在 `control_input` 的 `Inputs.target` 里（`1` 左，`2` 右）。底盘模式下手柄可能暂停周期性的 "
+"`Inputs` 流，所以保留最近一次 `target`。使能开关和键盘按键见 "
 "[手柄遥操作](../../2-how_to/5-teleoperation/9-joystick_teleop.md)。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:91
@@ -642,8 +646,8 @@ msgstr "`NaN` 为无命令；`0` 闭合；`1` 张开；`0`–`1` 之间的其他
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:100
 #: 8890cf28c09e4c659e62145c53f10ed8
-msgid "The keyboard does not publish `/fsm_command`. The joystick does."
-msgstr "键盘不发布 `/fsm_command`。手柄会发布。"
+msgid "Only the joystick publishes `/fsm_command`."
+msgstr "只有手柄会发布 `/fsm_command`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:103
 #: 974cd123c0c8409e94ff6f4a7e920ee0
@@ -655,24 +659,20 @@ msgstr "​5. 遥操位姿流"
 msgid ""
 "`VRInputHandler` in `arms_target_manager` reads this stream. In UPDATE it"
 " drives arm targets from `/teleop/left_ee_pose` and "
-"`/teleop/right_ee_pose`. The latched mode stays on `teleop/mode_state` "
-"(`TeleopModeState`). A `0` on `/teleop/controller_state` means this frame"
-" had no button edge."
+"`/teleop/right_ee_pose`."
 msgstr ""
 "`arms_target_manager` 里的 `VRInputHandler` 读取这条流。UPDATE 时，它用 "
-"`/teleop/left_ee_pose` 和 `/teleop/right_ee_pose` 驱动手臂目标。锁存的模式仍在 "
-"`teleop/mode_state`（`TeleopModeState`）。`/teleop/controller_state` 上的 `0` "
-"表示这一帧没有按键边沿。"
+"`/teleop/left_ee_pose` 和 `/teleop/right_ee_pose` 驱动手臂目标。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:107
 #: a449dac953d445a8853664710db99a94
 msgid ""
 "`/teleop/left_ee_pose` and `/teleop/right_ee_pose` are "
-"`geometry_msgs/Pose` with no `header`. A session uses one publisher for "
-"that pair:"
+"`geometry_msgs/Pose` with no `header`. One node publishes that pair for a"
+" session:"
 msgstr ""
 "`/teleop/left_ee_pose` 和 `/teleop/right_ee_pose` 是不带 `header` 的 "
-"`geometry_msgs/Pose`。一次会话里，这对话题只用一个发布者："
+"`geometry_msgs/Pose`。一次会话里，这对话题由一个节点发布："
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: bf0ee4bf892748e7a959e62163e49f6a
@@ -762,18 +762,19 @@ msgstr ""
 msgid ""
 "`dexcap_cartesian_teleop` reads `/teleop/controller_state` and rebases "
 "its virtual pose when the code becomes `4`. Headset pose, sticks, "
-"triggers, and `/teleop/xrt_diag` come from `xr_target_node`. A DexCap-"
-"only session also publishes a zero `Twist` on `/teleop/thumbstick_axes`, "
-"so `VRInputHandler` can finish a pending stick-centered check. The "
-"command is in the [dexcap_teleop README](https://github.com/fiveages-"
+"triggers, and `/teleop/xrt_diag` come from `xr_target_node`. In a DexCap-"
+"only session, publish a zero `Twist` on `/teleop/thumbstick_axes` so "
+"`VRInputHandler` can finish a pending stick-centered check. The command "
+"is in the [dexcap_teleop README](https://github.com/fiveages-"
 "sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md). Run that "
-"zero stream while no other node is publishing the topic."
+"zero publisher by itself on `/teleop/thumbstick_axes`."
 msgstr ""
 "`dexcap_cartesian_teleop` 读取 `/teleop/controller_state`，事件码变为 `4` "
-"时重设虚拟位姿的基准。头显位姿、摇杆、扳机和 `/teleop/xrt_diag` 由 `xr_target_node` 发布。只跑 DexCap"
-" 时，还会在 `/teleop/thumbstick_axes` 上发一条全零 `Twist`，让 `VRInputHandler` "
-"做完待处理的摇杆回中检查。命令写在 [dexcap_teleop README](https://github.com/fiveages-"
-"sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md)。没有别的节点正在发布该话题时，再跑这条零值流。"
+"时重设虚拟位姿的基准。头显位姿、摇杆、扳机和 `/teleop/xrt_diag` 由 `xr_target_node` 发布。只跑 DexCap "
+"时，在 `/teleop/thumbstick_axes` 上发一条全零 `Twist`，让 `VRInputHandler` "
+"做完待处理的摇杆回中检查。命令写在 [dexcap_teleop "
+"README](https://github.com/fiveages-sim/dexcap_teleop_ws/blob/main/src/dexcap_teleop/README.md)。这条零值发布单独占着 "
+"`/teleop/thumbstick_axes`。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:119
 #: c2b5a5d7c4d7419cb99eddc716f40e0b
@@ -878,10 +879,10 @@ msgstr "`geometry_msgs/Twist`"
 msgid ""
 "Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / "
 "`angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`. "
-"A DexCap-only session also publishes a zero `Twist` here"
+"A DexCap-only session adds a zero `Twist` here"
 msgstr ""
-"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在"
-" 0.1 死区内时值为 `0.0`。只跑 DexCap 时，这里还会发一条全零 `Twist`"
+"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在 "
+"0.1 死区内时值为 `0.0`。只跑 DexCap 时，这里再加一条全零 `Twist`"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
 #: 27db40395b6b4b91962e28622de51cde
@@ -911,9 +912,9 @@ msgid "`xr_target_node`, with the pose frame"
 msgstr "`xr_target_node`，与位姿同一帧"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:27
-#: be3ee1c36c7f4b98adb6e0b60ad33c64
-msgid "Diagnostic. Downstream control can skip it"
-msgstr "诊断信息。下游控制可以不订"
+#: 1ef1b5b00cfa493491b594fd04a85b2c
+msgid "Pose-frame diagnostic. Control reads the pose topics"
+msgstr "位姿帧的诊断。控制读位姿话题"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:131
 #: ca7610e2404e47f289ff1b8359dbaf0d
@@ -930,11 +931,12 @@ msgstr ""
 #: ../../source/4-reference/teleop/8-topics_and_data.md:133
 #: bf1a0ba72de942579a32885b72d4cbca
 msgid ""
-"Pull depth stays on `/teleop/trigger_values` every frame. The press edge "
-"is a separate code on `/teleop/controller_state` (`9` left, `10` right)."
+"Trigger pull depth is on `/teleop/trigger_values` every frame. The press "
+"edge is its own code on `/teleop/controller_state` (`9` left, `10` "
+"right)."
 msgstr ""
-"行程深度每帧都在 `/teleop/trigger_values` 上。按下边沿是 `/teleop/controller_state` "
-"上单独的事件码（左 `9`，右 `10`）。"
+"扳机行程每帧都在 `/teleop/trigger_values` 上。按下边沿记在 `/teleop/controller_state`（左 "
+"`9`，右 `10`）。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:135
 #: 4ff73e65c2824eacb79d0a970816f170
@@ -954,9 +956,9 @@ msgstr ""
 #: ../../source/4-reference/teleop/8-topics_and_data.md:137
 #: cd3752966dd0447ba4656f2ca567d980
 msgid ""
-"These names are the root topics (`/teleop/...`). `teleop/mode_state` "
-"follows the robot namespace."
-msgstr "这些名称是根话题（`/teleop/...`）。`teleop/mode_state` 跟随机器人命名空间。"
+"These `/teleop/...` names are root topics. `teleop/mode_state` follows "
+"the robot namespace."
+msgstr "这些 `/teleop/...` 名称是根话题。`teleop/mode_state` 跟随机器人命名空间。"
 
 #: ../../source/4-reference/teleop/8-topics_and_data.md:139
 #: 705cf5b3f1874cffb3fe346fa5b008c7
@@ -1055,4 +1057,31 @@ msgstr "[vr_pose_publisher](1-vr_pose_publisher.md)"
 
 #~ msgid "What lands on the pair"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "`TeleopModeState` on `teleop/mode_state` is "
+#~ "the latch for the event bus. "
+#~ "`VRInputHandler` publishes it after a "
+#~ "field changes. The message is the "
+#~ "current mode. It does not say "
+#~ "which button produced the last event."
+#~ " `TeleopMode` is a different message, "
+#~ "for the joystick and the keyboard."
+#~ msgstr ""
+#~ "`teleop/mode_state` 上的 `TeleopModeState` "
+#~ "是事件总线的锁存。`VRInputHandler` "
+#~ "在字段变化后发布它。这条消息就是当前模式。上一次事件来自哪个按键，不在这条消息里。`TeleopMode` "
+#~ "是另一条消息，给手柄和键盘用。"
+
+#~ msgid ""
+#~ "No arm targets and no VR gripper"
+#~ " commands. The latest VR pose stays"
+#~ " cached for the next UPDATE"
+#~ msgstr "没有手臂目标，也没有 VR 夹爪命令。最近一次 VR 位姿会留到下一次 UPDATE"
+
+#~ msgid "The keyboard does not publish `/fsm_command`. The joystick does."
+#~ msgstr "键盘不发布 `/fsm_command`。手柄会发布。"
+
+#~ msgid "Diagnostic. Downstream control can skip it"
+#~ msgstr "诊断信息。下游控制可以不订"
 
