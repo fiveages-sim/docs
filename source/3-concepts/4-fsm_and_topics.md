@@ -157,6 +157,8 @@ Requires `target_command_enabled` and MOVEJ. Open/close poses are Home configura
 | `/{hand_controller}/target_command` | `std_msgs/Int32` (`0`/`1`) | `0` close pose, `1` open pose |
 | `/{hand_controller}/target_percent` | `std_msgs/Float64` (`0.0`–`1.0`) | Per-joint blend between those two Home configs |
 
+Open/close and the percent blend are these two topics. A hand node that mirrors the operator, pauses with an arm, or follows the VR gripper’s percent vs open/close flag reads that from `teleop/mode_state` (`TeleopModeState`) in the same robot namespace. The change event is `teleop/controller_state`. {ref}`teleop-mode-status`.
+
 ### Waist (`basic_joint_controller`)
 
 Requires `waist_lifting_enabled` and MOVEJ. README topics are namespaced to the controller (often `/body_joint_controller/…` on 分体). [API_REFERENCE](https://github.com/fiveages-sim/ros2_robot_interface/blob/main/API_REFERENCE.md) maps the same names under `/ocs2_wbc_controller/…` on 全身.

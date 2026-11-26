@@ -1541,3 +1541,336 @@ msgstr ""
 #~ msgid "Toggle gripper state"
 #~ msgstr "切换夹爪状态"
 
+
+msgid "Mode changes and the latched mode use a separate pair of topics. [Read the current teleop mode](#teleop-mode-status)."
+msgstr "改模式和锁存下来的当前模式走另一对话题。[看当前遥操模式](#teleop-mode-status)。"
+
+msgid "Y/B disable and event 16 apply when **全身** is active (`ocs2_wbc_controller`), VR is enabled, and FSM is **OCS2**. Implementation: [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md) (「单臂启用 / 禁用与 Y/B 语义锁存」)."
+msgstr "**Y**/**B** 停单臂与事件 16 仅在**全身**已激活（`ocs2_wbc_controller`）、已启用 VR、且 FSM 为 **OCS2** 时生效。实现见 [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md)（「单臂启用 / 禁用与 **Y**/**B** 语义锁存」）。"
+
+msgid "Which meaning is latched is `yb_pause_semantics` on `teleop/mode_state`. Per-arm teleop pause is `left_arm_paused` / `right_arm_paused`. Those pause flags are independent of WBC `left_arm_state` / `right_arm_state` on `WbcCurrentState`. [Read the current teleop mode](#teleop-mode-status)."
+msgstr "当前锁存的是哪一种含义，看 `teleop/mode_state` 上的 `yb_pause_semantics`。单臂遥操暂停是 `left_arm_paused` / `right_arm_paused`。这两个暂停位与 `WbcCurrentState` 上的 `left_arm_state` / `right_arm_state` 相互独立。[看当前遥操模式](#teleop-mode-status)。"
+
+msgid "Read the current teleop mode"
+msgstr "看当前遥操模式"
+
+msgid "VR, a foot pedal, and an exoskeleton that sends the same event codes share one contract. A game controller and the keyboard share another. The two run side by side."
+msgstr "VR、脚踏板，以及发送同一套事件码的外骨骼，共用一套契约。游戏手柄和键盘共用另一套。两套并行。"
+
+msgid "Change the mode"
+msgstr "改模式"
+
+msgid "Read the current mode"
+msgstr "看当前模式"
+
+msgid "Who publishes the status"
+msgstr "谁发反馈"
+
+msgid "Joystick / keyboard"
+msgstr "手柄 / 键盘"
+
+msgid "`control_input` (`Inputs`) and the related command topics"
+msgstr "`control_input`（`Inputs`）及相关指令话题"
+
+msgid "`teleop_mode` (`TeleopMode`)"
+msgstr "`teleop_mode`（`TeleopMode`）"
+
+msgid "`joystick_teleop` / `keyboard_teleop`"
+msgstr "`joystick_teleop` / `keyboard_teleop`"
+
+msgid "Event bus (VR, foot pedal, exoskeleton)"
+msgstr "事件总线（VR、脚踏板、外骨骼）"
+
+msgid "`teleop/controller_state` (`std_msgs/Int32` event code)"
+msgstr "`teleop/controller_state`（`std_msgs/Int32` 事件码）"
+
+msgid "`teleop/mode_state` (`TeleopModeState`)"
+msgstr "`teleop/mode_state`（`TeleopModeState`）"
+
+msgid "`VRInputHandler` in `arms_target_manager`"
+msgstr "`arms_target_manager` 里的 `VRInputHandler`"
+
+msgid "Publish on the change topic to request a new mode. Subscribe to the status topic to see the mode that is active now. A dexterous hand, DualHand, or a UI reads `teleop/mode_state` for an event-bus session, or `teleop_mode` when it is following the joystick or the keyboard. `teleop/controller_state` carries the change event. The current mode is the status message."
+msgstr "要改模式，往修改话题上发。要看现在处于哪种模式，订反馈话题。灵巧手、DualHand 或界面在事件总线会话里读 `teleop/mode_state`；跟着手柄或键盘时读 `teleop_mode`。`teleop/controller_state` 承载的是修改事件。当前模式在反馈消息里。"
+
+msgid "The names above are relative. They follow the robot namespace, so two robots in one scene stay apart. With no namespace the event-bus status topic is `/teleop/mode_state`. In namespace `/robot_a` it is `/robot_a/teleop/mode_state`. Subscribe in that same namespace."
+msgstr "上面这些名字都是相对话题，落在机器人命名空间里，同一场景两台机器人互不串扰。没有命名空间时，事件总线的反馈话题是 `/teleop/mode_state`。命名空间为 `/robot_a` 时是 `/robot_a/teleop/mode_state`。订阅端放在同一个命名空间。"
+
+msgid "Use QoS `Reliable` + `TransientLocal`. The publisher sends one message at startup, then another when a field changes. A node that starts later still receives the last snapshot."
+msgstr "QoS 用 `Reliable` + `TransientLocal`。发布端启动时发一次，之后字段变化再发。后启动的节点仍能收到最近一次快照。"
+
+msgid "Definitions: [`TeleopModeState.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopModeState.msg), [`TeleopMode.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopMode.msg), and [section 1 of the message README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)."
+msgstr "定义见 [`TeleopModeState.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopModeState.msg)、[`TeleopMode.msg`](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/msg/TeleopMode.msg)，以及[消息 README 第 1 节](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_ros2_control_msgs/README.md)。"
+
+msgid "Event-bus status (`TeleopModeState`)"
+msgstr "事件总线反馈（`TeleopModeState`）"
+
+#, python-brace-format
+msgid "`TeleopModeState` is the latch for the event bus. `TeleopMode` is a different message, for the joystick and the keyboard. Body lock and whether WBC has an arm enabled stay on {ref}`wbc-current-state` (`/ocs2_wbc_controller/current_state`)."
+msgstr "`TeleopModeState` 是事件总线的锁存。`TeleopMode` 是另一条消息，给手柄和键盘用。身体锁定、以及 WBC 里某条臂是否使能，仍看 {ref}`wbc-current-state`（`/ocs2_wbc_controller/current_state`）。"
+
+msgid "`left_arm_paused` and `right_arm_paused` are that arm’s teleop pause. They stand apart from `left_arm_state` / `right_arm_state`: an arm can be VR-paused and still be `ARM_ENABLED`. On 全身, `yb_pause_semantics` reports which meaning left **Y** / right **B** currently have. `false` is WBC single-arm disable (停单臂). `true` is teleop pause (停发指令). The buttons that flip the latch are in [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)."
+msgstr "`left_arm_paused` 和 `right_arm_paused` 是该臂的遥操暂停，与 `left_arm_state` / `right_arm_state` 分开：一条臂可以处于 VR 暂停，同时仍是 `ARM_ENABLED`。全身下，`yb_pause_semantics` 报告左 **Y** / 右 **B** 当前是哪种含义。`false` 是 WBC 单臂禁用（停单臂）。`true` 是遥操暂停（停发指令）。翻转这把锁存的按键见 [停单臂与停发指令](#stop-one-arm-vs-stop-sending-vr-commands)。"
+
+msgid "Field"
+msgstr "字段"
+
+msgid "Meaning"
+msgstr "含义"
+
+msgid "`stamp`"
+msgstr "`stamp`"
+
+msgid "`builtin_interfaces/Time`"
+msgstr "`builtin_interfaces/Time`"
+
+msgid "Time this snapshot was published"
+msgstr "这条快照的发布时间"
+
+msgid "`enabled`"
+msgstr "`enabled`"
+
+msgid "`bool`"
+msgstr "`bool`"
+
+msgid "Event-bus handler is enabled"
+msgstr "事件总线处理器已启用"
+
+msgid "`update_mode`"
+msgstr "`update_mode`"
+
+msgid "`true` = UPDATE (follow; HUD `TELEOP ON`); `false` = STORAGE (`TELEOP OFF`)"
+msgstr "`true` 为 UPDATE（跟随；HUD 上为 `TELEOP ON`）；`false` 为 STORAGE（`TELEOP OFF`）"
+
+msgid "`chassis_mode`"
+msgstr "`chassis_mode`"
+
+msgid "`true` = chassis teleop (event 20); `false` = end-effector sticks"
+msgstr "`true` 为底盘遥控（事件 20）；`false` 为末端摇杆"
+
+msgid "`yb_pause_semantics`"
+msgstr "`yb_pause_semantics`"
+
+msgid "全身 Y/B latch: `false` = WBC arm disable; `true` = teleop pause"
+msgstr "全身下 Y/B 锁存：`false` 为 WBC 单臂禁用；`true` 为遥操暂停"
+
+msgid "`left_arm_paused` / `right_arm_paused`"
+msgstr "`left_arm_paused` / `right_arm_paused`"
+
+msgid "That arm’s teleop pause"
+msgstr "该臂的遥操暂停"
+
+msgid "`left_stick_plane` / `right_stick_plane`"
+msgstr "`left_stick_plane` / `right_stick_plane`"
+
+msgid "`uint8`"
+msgstr "`uint8`"
+
+msgid "Arm stick: `0` = `PLANE_XY`, `1` = `PLANE_Z_YAW`"
+msgstr "臂摇杆：`0` = `PLANE_XY`，`1` = `PLANE_Z_YAW`"
+
+msgid "`body_stick_plane`"
+msgstr "`body_stick_plane`"
+
+msgid "Waist left stick: `0` = XY, `1` = forward + roll"
+msgstr "腰部左摇杆：`0` 为 XY，`1` 为前进加侧摆（roll）"
+
+msgid "`body_right_stick_plane`"
+msgstr "`body_right_stick_plane`"
+
+msgid "Waist right stick: `0` = lift + yaw, `1` = pitch + yaw"
+msgstr "腰部右摇杆：`0` 为升降加偏航（yaw），`1` 为俯仰加偏航（yaw）"
+
+msgid "`left_gripper_percent_mode` / `right_gripper_percent_mode`"
+msgstr "`left_gripper_percent_mode` / `right_gripper_percent_mode`"
+
+msgid "`true` = percent; `false` = open/close"
+msgstr "`true` 为比例；`false` 为开合"
+
+msgid "`mirror_movement`"
+msgstr "`mirror_movement`"
+
+msgid "Mirror on or off"
+msgstr "镜像开或关"
+
+msgid "`mirror_profile`"
+msgstr "`mirror_profile`"
+
+msgid "`0` = `MIRROR_PROFILE_A`, `1` = `MIRROR_PROFILE_B` (used when mirror is on)"
+msgstr "`0` = `MIRROR_PROFILE_A`，`1` = `MIRROR_PROFILE_B`（镜像打开时有效）"
+
+msgid "`topology`"
+msgstr "`topology`"
+
+msgid "`0` = `TOPOLOGY_UNKNOWN`, `1` = `TOPOLOGY_SPLIT_BODY` (分体), `2` = `TOPOLOGY_FULL_BODY` (全身)"
+msgstr "`0` = `TOPOLOGY_UNKNOWN`，`1` = `TOPOLOGY_SPLIT_BODY`（分体），`2` = `TOPOLOGY_FULL_BODY`（全身）"
+
+msgid "Subscribe to `teleop/mode_state` in the robot namespace. Read `mirror_movement` for mirror. Read pause, the gripper-mode flags, `update_mode`, and `topology` when the hand or the UI needs them. Open/close and percent commands stay on `*/target_command` and `*/target_percent`."
+msgstr "在机器人命名空间下订阅 `teleop/mode_state`。镜像读 `mirror_movement`。手或界面需要时再读暂停、夹爪模式、`update_mode` 和 `topology`。开合与比例命令仍走 `*/target_command` 和 `*/target_percent`。"
+
+msgid "ros2 topic echo /robot_a/teleop/mode_state"
+msgstr "ros2 topic echo /robot_a/teleop/mode_state"
+
+msgid "With an empty namespace, echo `/teleop/mode_state`. Match QoS `Reliable` + `TransientLocal` on the subscription."
+msgstr "没有命名空间时，查看 `/teleop/mode_state`。订阅 QoS 用 `Reliable` + `TransientLocal`。"
+
+msgid "Joystick and keyboard status (`TeleopMode`)"
+msgstr "手柄与键盘反馈（`TeleopMode`）"
+
+msgid "`TeleopMode` on `teleop_mode` is the latch for the joystick and the keyboard. It uses the same QoS, and the same rule: once at startup, again when a field changes. The active arm is `Inputs.target` on `control_input` (`1` left, `2` right), not a field of `TeleopMode`. In chassis mode the joystick may pause the periodic `Inputs` stream, so keep the last `target`. Fields and the enable switch: [Joystick teleop](9-joystick_teleop.md)."
+msgstr "`teleop_mode` 上的 `TeleopMode` 是手柄和键盘的锁存。QoS 相同，规则也相同：启动发一次，字段变化再发。当前臂是 `control_input` 上的 `Inputs.target`（`1` 左，`2` 右），不是 `TeleopMode` 的字段。底盘模式下手柄可能暂停周期 `Inputs`，请保留最近一次 `target`。字段和启用开关见 [手柄遥操作](9-joystick_teleop.md)。"
+
+msgid "When VR moves the arm and the gripper"
+msgstr "VR 何时推动手臂和夹爪"
+
+msgid "VR end-effector targets and VR gripper output follow `update_mode`."
+msgstr "VR 的末端目标和 VR 夹爪输出跟随 `update_mode`。"
+
+msgid "HUD"
+msgstr "HUD"
+
+msgid "What VR publishes"
+msgstr "VR 发布什么"
+
+msgid "`true` (UPDATE)"
+msgstr "`true`（UPDATE）"
+
+msgid "`TELEOP ON`"
+msgstr "`TELEOP ON`"
+
+msgid "End-effector targets from the controller pose, and trigger gripper commands"
+msgstr "由手柄位姿得到的末端目标，以及扳机夹爪命令"
+
+msgid "`false` (STORAGE)"
+msgstr "`false`（STORAGE）"
+
+msgid "`TELEOP OFF`"
+msgstr "`TELEOP OFF`"
+
+msgid "No arm targets and no VR gripper commands. The latest VR pose stays cached for the next UPDATE."
+msgstr "不发臂目标，也不发 VR 夹爪命令。最近一次 VR 位姿会留下，供下次进入 UPDATE 时对齐。"
+
+msgid "Right stick click toggles the two, and only while FSM is **OCS2**. In STORAGE, joystick and keyboard `hand_command` on `control_input` still open and close the hand. While UPDATE is on, the VR trigger stream keeps writing the gripper; leave UPDATE when the joystick should own the hand."
+msgstr "点右摇杆在两者之间切换，且仅在 FSM 为 **OCS2** 时可以。STORAGE 下，手柄和键盘经 `control_input` 的 `hand_command` 仍能开合手。UPDATE 打开时，VR 扳机流会持续写夹爪；要让手柄独占手，先退出 UPDATE。"
+
+msgid "RViz teleop HUD"
+msgstr "RViz 遥操状态叠加层"
+
+msgid "`arms_rviz_control_plugin/TeleopModeDisplay` is one RViz display with two cards, stacked at the top left of the 3D view. If only one path is active, that card fills the top slot. Add it from Displays → Add → TeleopModeDisplay. `Scale` runs from 0.5 to 2.0. A card stays hidden until its message arrives, and while that path is inactive. The display runs in any FSM state. Put RViz in the same namespace as `arms_target_manager`."
+msgstr "`arms_rviz_control_plugin/TeleopModeDisplay` 是一个 RViz 显示项，在三维视图左上角叠两张卡片。只有一条路径在用时，那张卡片补到最上。从 Displays → Add → TeleopModeDisplay 添加。`Scale` 为 0.5 到 2.0。对应消息还没到，或该路径未激活时，卡片隐藏。任何 FSM 状态下都会画。把 RViz 放在与 `arms_target_manager` 相同的命名空间。"
+
+msgid "Card"
+msgstr "卡片"
+
+msgid "Visible when"
+msgstr "何时显示"
+
+msgid "What it reads"
+msgstr "读什么"
+
+msgid "`teleop/mode_state.enabled` is true"
+msgstr "`teleop/mode_state.enabled` 为 true"
+
+msgid "`teleop/mode_state`"
+msgstr "`teleop/mode_state`"
+
+msgid "Control input (joystick / keyboard)"
+msgstr "控制输入（手柄 / 键盘）"
+
+msgid "`teleop_mode.active` is true"
+msgstr "`teleop_mode.active` 为 true"
+
+msgid "`teleop_mode`, and `control_input` for the active arm"
+msgstr "`teleop_mode`，以及当前臂用的 `control_input`"
+
+msgid "The event-bus card shows `TELEOP` `ON`/`OFF`, `MIRROR`, and `L`/`R` as `RUN` or `PAUSE`, plus the stick plane, chassis, and gripper mode for the current route. A click publishes the same `teleop/controller_state` events as the headset: `4` toggles UPDATE, `7` toggles mirror, and `L`/`R` match left **Y** / right **B**. On 全身, when `yb_pause_semantics` is still false, `L`/`R` send event `16` first, wait until the latch flips, then send `3` or `6`. The control-input card is read-only: active arm `L`/`R` or `CHASSIS`, mirror, and speed `HIGH`/`LOW`."
+msgstr "事件总线卡片显示 `TELEOP` 的 `ON`/`OFF`、`MIRROR`，以及 `L`/`R` 的 `RUN` 或 `PAUSE`，并随当前路由显示摇杆平面、底盘和夹爪模式。点击会向 `teleop/controller_state` 发与头显相同的事件：`4` 切换 UPDATE，`7` 切换镜像，`L`/`R` 与左 **Y** / 右 **B** 相同。全身下，若 `yb_pause_semantics` 仍为 false，`L`/`R` 先发事件 `16`，等到锁存翻转后再发 `3` 或 `6`。控制输入卡片只读：当前臂 `L`/`R` 或 `CHASSIS`，镜像，以及速度 `HIGH`/`LOW`。"
+
+msgid "Sources: [arms_rviz_control_plugin README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_rviz_control_plugin/README.md) (遥操状态 HUD), [VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md), and [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md)."
+msgstr "来源：[arms_rviz_control_plugin README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_rviz_control_plugin/README.md)（遥操状态 HUD）、[VRInputHandler README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/VR_INPUT_HANDLER_README.md)，以及 [arms_target_manager README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_target_manager/README.md)。"
+
+msgid "`ros2 topic echo /teleop/right_ee_pose` shows updates (use `/<namespace>/teleop/right_ee_pose` when the robot has a namespace)"
+msgstr "`ros2 topic echo /teleop/right_ee_pose` 有更新（机器人有命名空间时用 `/<namespace>/teleop/right_ee_pose`）"
+
+msgid "`ros2 topic echo /teleop/mode_state` shows `update_mode: true` while the arms follow (`/<namespace>/teleop/mode_state` in a robot namespace). Subscribe with QoS `Reliable` + `TransientLocal`."
+msgstr "手臂跟随时，`ros2 topic echo /teleop/mode_state` 上 `update_mode: true`（有机器人命名空间时用 `/<namespace>/teleop/mode_state`）。订阅 QoS 用 `Reliable` + `TransientLocal`。"
+
+msgid "Robot follows VR controller motion in UPDATE. In STORAGE the arms and the VR gripper stay put; the joystick can still move the hand."
+msgstr "UPDATE 下机器人跟随 VR 手柄。STORAGE 下手臂和 VR 夹爪保持不动；手柄仍能动手。"
+
+msgid "Confirm `update_mode` is true on `teleop/mode_state` (UPDATE / HUD `TELEOP ON`) after entering OCS2. In STORAGE, VR does not publish arm targets or VR gripper commands."
+msgstr "进入 OCS2 后，确认 `teleop/mode_state` 上 `update_mode` 为 true（UPDATE / HUD 上为 `TELEOP ON`）。STORAGE 下 VR 不发布臂目标，也不发布 VR 夹爪命令。"
+
+msgid "On **全身**, confirm that arm is not WBC-disabled (`ARM_DISABLED` on `WbcCurrentState`) and that `left_arm_paused` / `right_arm_paused` is false when you expect that arm to follow — [Stop one arm vs stop sending VR commands](#stop-one-arm-vs-stop-sending-vr-commands)"
+msgstr "**全身**下，确认该臂没有被 WBC 禁用（`WbcCurrentState` 上为 `ARM_DISABLED`），并且期望它跟随时 `left_arm_paused` / `right_arm_paused` 为 false。[停单臂与停发指令](#stop-one-arm-vs-stop-sending-vr-commands)"
+
+msgid ""
+"On Pico, after XRoboToolkit reports Network Status **WORKING**, close the"
+" settings panel with the **X** at its top-right. The clip is the headset"
+" view in XRoboToolkit 1.1.2: the panel is already up, shared network is"
+" checked, and the right-controller ray closes it. With the panel gone,"
+" later rays stay on the passthrough view."
+msgstr ""
+"在 Pico 上，XRoboToolkit 的网络状态显示 **WORKING** 之后，用面板右上角的 **X**"
+" 关掉设置面板。这段是头显画面（XRoboToolkit"
+" 1.1.2）：面板已经打开，共享网络已勾选，右手柄射线点在右上角把它关掉。面板收起后，之后的射线留在透视画面上。"
+
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
+" src=\"../../_static/videos/pico-hide-xrobotoolkit-ui.mp4\""
+" type=\"video/mp4\">\n</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
+" src=\"../../_static/videos/pico-hide-xrobotoolkit-ui.mp4\""
+" type=\"video/mp4\">\n</video>"
+
+msgid ""
+"The event-bus card shows `TELEOP` `ON`/`OFF`, `MIRROR`, and `L`/`R` as"
+" `RUN` or `PAUSE`, plus the stick plane, chassis, and gripper mode for the"
+" current route. A click publishes the same `teleop/controller_state` events"
+" as the headset: `4` toggles UPDATE, `7` toggles mirror, and `L`/`R` match"
+" left **Y** / right **B**. On 全身, when `yb_pause_semantics` is still false,"
+" `L`/`R` send event `16` first, wait until the latch flips, then send `3`"
+" or `6`. The control-input card is read-only: active arm `L`/`R` or"
+" `CHASSIS`, mirror, and speed `HIGH`/`LOW`. A joystick-only view of that"
+" card is in [Joystick teleop](9-joystick_teleop.md#control-input-hud)."
+msgstr ""
+"事件总线卡片显示 `TELEOP` 的 `ON`/`OFF`、`MIRROR`，以及 `L`/`R` 的 `RUN` 或"
+" `PAUSE`，并随当前路由显示摇杆平面、底盘和夹爪模式。点击会向 `teleop/controller_state` 发与头显相同的事件：`4`"
+" 切换 UPDATE，`7` 切换镜像，`L`/`R` 与左 **Y** / 右 **B** 相同。全身下，若"
+" `yb_pause_semantics` 仍为 false，`L`/`R` 先发事件 `16`，等到锁存翻转后再发 `3` 或"
+" `6`。控制输入卡片只读：当前臂 `L`/`R` 或 `CHASSIS`，镜像，以及速度 `HIGH`/`LOW`。只开手柄时的这张卡片见"
+" [手柄遥操作](9-joystick_teleop.md#control-input-hud)。"
+
+msgid ""
+"The clip below shows the event-bus card alone: only the active path fills"
+" the top-left slot. Read it as `TeleopModeState`. `TELEOP ON` is"
+" `update_mode` true (UPDATE) and is green; `TELEOP OFF` is STORAGE. `L`/`R`"
+" `RUN` means that arm is following; `PAUSE` is `left_arm_paused` or"
+" `right_arm_paused`, in magenta, with `RUN` in green. `STICK XY` is the arm"
+" stick plane. `WAIST XY` and `WAIST ZYAW` replace those labels while the"
+" body mode is 跟随. `GRIP %` is percent mode; `GRIP SW` is open/close."
+msgstr ""
+"下面这段只显示事件总线卡片：左上角只留给当前通路。把它读成 `TeleopModeState`。`TELEOP ON` 是 `update_mode`"
+" 为 true（UPDATE），绿色；`TELEOP OFF` 是 STORAGE。`L`/`R` 的 `RUN` 表示该臂在跟随；`PAUSE` 是"
+" `left_arm_paused` 或 `right_arm_paused`，品红色，`RUN` 为绿色。`STICK XY`"
+" 是臂摇杆平面。身体模式为跟随时，这些标签换成 `WAIST XY` 和 `WAIST ZYAW`。`GRIP %` 是比例模式，`GRIP SW`"
+" 是开合模式。"
+
+msgid ""
+"`MIRROR` stays `OFF` for the whole clip. The card moves from TELEOP off"
+" with both arms running, to TELEOP on, through a one-arm pause, then to the"
+" waist labels. `GRIP` flips from `%` to `SW` and back; while it shows `SW`,"
+" the gripper panel’s buttons read Close."
+msgstr ""
+"整段里 `MIRROR` 一直是 `OFF`。卡片从 TELEOP 关闭、双臂 RUN，到 TELEOP 打开，经过单臂"
+" PAUSE，再切到腰部标签。`GRIP` 在 `%` 和 `SW` 之间来回切换；显示 `SW` 时，夹爪面板上的按钮为 `Close`。"
+
+msgid ""
+"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
+" src=\"../../_static/videos/vr-teleop-rviz-hud.mp4\""
+" type=\"video/mp4\">\n</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n  <source"
+" src=\"../../_static/videos/vr-teleop-rviz-hud.mp4\""
+" type=\"video/mp4\">\n</video>"

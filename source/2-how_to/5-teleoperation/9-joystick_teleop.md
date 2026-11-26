@@ -28,25 +28,49 @@ If more than one controller is connected, pass the device you want, for example 
 
 ## What it publishes
 
-The joystick node publishes `control_input` (`arms_ros2_control_msgs/Inputs`). [arms_target_manager](../../4-reference/controllers/6-gripper_teleop_plugins.md) scales that message into `/left_target/twist` and `/right_target/twist`. In chassis mode it publishes `/cmd_vel`. The joystick stack also publishes `/fsm_command`.
+The joystick node publishes `control_input` (`arms_ros2_control_msgs/Inputs`) and `teleop_mode` (`arms_ros2_control_msgs/TeleopMode`). `arms_target_manager` scales `control_input` into `left_target/twist` and `right_target/twist`. In chassis mode the node publishes `/cmd_vel`. The joystick also publishes `/fsm_command`. The keyboard node publishes the same `control_input` and `teleop_mode` pair, and it does not publish `/fsm_command`.
+
+`teleop_mode` is the status for this path. QoS is `Reliable` + `TransientLocal`: one message at startup, then another when active, control mode, mirror, or speed changes. Switching the active arm does not republish it. The arm is `Inputs.target` (`1` left, `2` right). If the joystick pauses `Inputs` in chassis mode, keep the last `target`.
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `stamp` | `builtin_interfaces/Time` | Time this snapshot was published |
+| `active` | `bool` | Joystick is true only after the right stick enables teleop. Keyboard is always true. |
+| `control_mode` | `uint8` | `0` = `CONTROL_ARM`; `1` = `CONTROL_CHASSIS` |
+| `mirror_movement` | `bool` | Mirror on or off |
+| `speed_level` | `int32` | Keyboard `1`–`10`. Joystick `0` = LOW, `1` = HIGH. |
+| `speed_scale` | `float32` | Scale actually applied |
+
+These names are relative to the node namespace. The other contract — VR, foot pedal, and an exoskeleton on `teleop/controller_state` / `teleop/mode_state` — is in {ref}`teleop-mode-status`. A hand or a UI that is following the joystick reads `teleop_mode`.
 
 ## What you should see
 
-After you enable the controller, stick motion changes the active arm’s target, or the chassis when you are in chassis mode. `teleop_mode` reports whether the joystick is active.
+After you enable the controller, stick motion changes the active arm’s target, or the chassis when you are in chassis mode. `teleop_mode.active` is true after that enable. On the keyboard it is already true.
 
-(foot-pedal)=
+### Control-input HUD
+
+With only the joystick running, RViz shows one teleop card at the top left of the 3D view. That card is `TeleopMode` plus the active arm: `ARM` `L` or `R` (`Inputs.target`), `MIRROR` for `mirror_movement`, and `SPD` `LOW`/`HIGH` for `speed_level`. On the card, `R` is orange, `L` is blue, `MIRROR ON` is gold, `MIRROR OFF` is muted, `SPD HIGH` is gold, and `SPD LOW` is blue.
+
+The clip is a FiveAges W2 in `fullbody.rviz`. The card moves between the right arm and the left arm, turns mirror on and off, and steps speed between low and high. When the FSM enters OCS2, the FSM panel, joint panel, and MPC readout appear beside it.
+
+```{raw} html
+<video controls preload="metadata" width="100%">
+  <source src="../../_static/videos/joystick-rviz-hud.mp4" type="video/mp4">
+</video>
+```
 
 ## Foot pedal (assist only)
 
-`foot_pedal_teleop` is an **assist**, not a standalone teleop path. It reads one USB foot pedal (the packaged udev rule is for the SayoDevice CM6K) and publishes events on `/teleop/controller_state`. It does **not** publish `/fsm_command`. FSM transitions and teleop toggles are handled by `VRInputHandler`.
+`foot_pedal_teleop` is an assist, not a standalone teleop path. It reads one USB foot pedal (the packaged udev rule is for the SayoDevice CM6K) and publishes events on the relative topic `teleop/controller_state` (`std_msgs/Int32`). It does not publish a mode snapshot, and it does not publish `/fsm_command`. `VRInputHandler` applies the events and publishes the current mode on `teleop/mode_state` (`TeleopModeState`, QoS `Reliable` + `TransientLocal`).
 
-With exactly one supported pedal connected:
+Run the pedal in the same namespace as that robot’s `arms_target_manager`:
 
 :::{code-block} bash
-ros2 run arms_teleop foot_pedal_teleop
+ros2 run arms_teleop foot_pedal_teleop --ros-args -r __ns:=/robot_a
+ros2 topic echo /robot_a/teleop/mode_state
 :::
 
-The package README documents the event map (FSM up/down, left/right arm teleop enable, STORAGE/UPDATE, mirror), udev setup, and how to choose a device when more than one pedal is connected.
+With exactly one supported pedal and an empty namespace, `ros2 run arms_teleop foot_pedal_teleop` is enough; the status topic is then `/teleop/mode_state`. The pedal can run next to the joystick or the keyboard. The package README documents the event map (FSM up/down, left/right arm teleop, STORAGE/UPDATE, mirror), udev setup, and how to choose a device when more than one pedal is connected. The latch fields are in {ref}`teleop-mode-status`.
 
 ## Related
 

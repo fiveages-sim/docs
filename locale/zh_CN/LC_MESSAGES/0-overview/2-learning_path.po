@@ -2313,3 +2313,10 @@ msgstr ""
 #~ "动作结束得特别快，是 `/clock` 的问题。进程内的 W2 "
 #~ "载荷从物理步取时钟。话题桥载荷仍从播放节拍取时钟。[FaSim "
 #~ "参考](../4-reference/simulation/2-fasim_isaac.md) 写了这个时钟。改关节增益修不好。"
+
+#, python-brace-format
+msgid "**What you should see.** The arms follow the VR controllers once the session is in UPDATE, and you can change FSM and the gripper from the controller buttons. The current mode (UPDATE or STORAGE, mirror, per-arm pause) is on `teleop/mode_state`. {ref}`teleop-mode-status`."
+msgstr "**预期看到的结果。** 会话进入 UPDATE 后，手臂跟随 VR 手柄，也可以用手柄按键切换 FSM、操作夹爪。当前模式（UPDATE 或 STORAGE、镜像、单臂暂停）在 `teleop/mode_state`。{ref}`teleop-mode-status`。"
+
+msgid "**Foot pedal** — An assist, not a complete teleop setup. `foot_pedal_teleop` in `arms_teleop` publishes events on the relative topic `teleop/controller_state` (FSM up/down, arm teleop, STORAGE/UPDATE, mirror). The current mode comes back on `teleop/mode_state`. It does not replace VR or the game controller: [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only)."
+msgstr "**脚踏板** — 这是辅助输入，不是完整的遥操作方案。`arms_teleop` 里的 `foot_pedal_teleop` 在相对话题 `teleop/controller_state` 上发布事件（FSM 上/下、手臂遥操、STORAGE/UPDATE、镜像）。当前模式由 `teleop/mode_state` 返回。它不能代替 VR 或游戏手柄：[手柄遥操作](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only)。"

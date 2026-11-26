@@ -201,7 +201,7 @@ cd ~/fa-py-libraries
 
 Open the URL shown in the headset browser (WebXR). For the lower-latency XRoboToolkit path, use `./run.sh vr-xrt-service` then `./run.sh vr-xrt` as on that page. Pico **Enterprise** is the preferred Pico SKU (USB 网络共享, and a **different App** from Pico consumer).
 
-**What you should see.** The arms follow the VR controllers, and you can change FSM and the gripper from the controller buttons.
+**What you should see.** The arms follow the VR controllers once the session is in UPDATE, and you can change FSM and the gripper from the controller buttons. The current mode (UPDATE or STORAGE, mirror, per-arm pause) is on `teleop/mode_state`. {ref}`teleop-mode-status`.
 
 ### Start here: game controller (joystick)
 
@@ -225,7 +225,7 @@ These are additional ways to supply pose, finger, or assist signals. Use the lin
 - **DexCap exoskeleton and gloves** (internal) — The exoskeleton measures waist and arm joints; the gloves measure finger joints. Combined arm + hand teleop: [DexCap Teleoperation](../2-how_to/5-teleoperation/8-dexcap_teleop.md).
 - **VR gesture / hand tracking** — The current `./run.sh vr` path starts **controller** mode. This docs set does not document a launch entry that turns on VR gesture or hand-tracking recognition.
 - **Wuji gloves** (internal) — Finger and hand joint teleop, with optional Vive Tracker for arm pose: [wuji_glove_teleop](../4-reference/teleop/5-wuji_glove.md).
-- **Foot pedal** — An assist, not a complete teleop setup. `foot_pedal_teleop` in `arms_teleop` publishes events on `/teleop/controller_state` (FSM up/down, arm enable, STORAGE/UPDATE, mirror). It does not replace VR or the game controller: [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only).
+- **Foot pedal** — An assist, not a complete teleop setup. `foot_pedal_teleop` in `arms_teleop` publishes events on the relative topic `teleop/controller_state` (FSM up/down, arm teleop, STORAGE/UPDATE, mirror). The current mode comes back on `teleop/mode_state`. It does not replace VR or the game controller: [Joystick teleop](../2-how_to/5-teleoperation/9-joystick_teleop.md#foot-pedal-assist-only).
 - **Vive Tracker** (internal) — SteamVR **Vive Tracker** poses mapped to arm end-effector targets (`vive_tracker_teleop`). That is the name used in the package and in these docs; it is not documented as “Valve Tracker”: [Vive Tracker](../4-reference/teleop/6-vive_tracker.md).
 
 **Primary sources:** [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md), [arms_teleop README](https://github.com/fiveages-sim/arms_ros2_control/blob/main/command/arms_teleop/README.md)

@@ -82,4 +82,5 @@ Build (README): `colcon build --packages-up-to basic_joint_controller --symlink-
 - [分体控制 vs 全身控制](../../3-concepts/7-split_vs_wbc.md)
 - [OCS2 Arm Controller](2-ocs2_arm_controller.md) — 分体控制 (`split_body.launch.py`) uses this controller for body/head
 - [Adaptive Gripper Controller](6-gripper_teleop_plugins.md) — 夹爪 channels vs this controller’s 灵巧手 `target_percent`
+- {ref}`teleop-mode-status` — 灵巧手 and DualHand read mirror and pause from `teleop/mode_state`; `target_command` / `target_percent` stay the open/close commands
 - [OCS2 WBC Controller](3-ocs2_wbc.md) — 全身控制
