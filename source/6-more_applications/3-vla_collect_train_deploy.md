@@ -26,7 +26,7 @@ Internal FA wheeled-arm humanoids: [fa-deploy-ws Setup](../1-getting_started/4-f
 Pick the compliance path by robot: [How to use impedance control](../2-how_to/4-controllers/13-force_control.md).
 
 - **MIT / force-capable HI** — **Panthera HT** and **ARX** arms: HT `control_mode:=mit`, ARX `full_control` + `joint_k_gains` / `joint_d_gains`. Controller MIX: [ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md).
-- **Vendor joint impedance** — **Tianji** (天玑) / **Rokae** (珞石): controller sends **position** only; HI `ctrl_mode` `JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md).
+- **Vendor joint impedance** — **Tianji** (天机) / **Rokae** (珞石): controller sends **position** only; HI `ctrl_mode` `JOINT_IMPEDANCE` on [marvin-ros2-control](https://github.com/fiveages-sim/marvin-ros2-control/blob/master/README.md).
 
 **Payload identification (负载辨识)** is on the Tianji / Rokae path only. Public wizard: `ros2 run marvin_ros2_control tool_dyn_identify_wizard`. Internal on-site flow: [fa-deploy-ws Setup](../1-getting_started/4-fa_deploy_ws.md) README after access.
 
