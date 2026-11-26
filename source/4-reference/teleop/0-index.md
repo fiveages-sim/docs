@@ -27,6 +27,7 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 ```{toctree}
 :maxdepth: 1
 
+8-topics_and_data
 1-vr_pose_publisher
 2-drag_teleop
 3-dexcap
@@ -36,17 +37,6 @@ For VR teleoperation, **Pico** and **Meta Quest** are the primary tested headset
 7-wuji_hand_hi
 ```
 
-## Topic Contracts
+## Topic contracts
 
-VR poses, stick axes, and trigger pull are [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics). Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).
-
-Joystick teleop uses `control_input`, twist, `/cmd_vel`, and `/fsm_command`.
-
-Mode changes and the latched mode are a separate pair. Field-by-field reading is in {ref}`teleop-mode-status`.
-
-| Path | Change the mode | Read the current mode |
-|------|-----------------|----------------------|
-| Joystick / keyboard | `control_input` (`Inputs`) | `teleop_mode` (`TeleopMode`), from `joystick_teleop` / `keyboard_teleop` |
-| Event bus (VR, foot pedal, exoskeleton) | `teleop/controller_state` (`std_msgs/Int32`) | `teleop/mode_state` (`TeleopModeState`), from `VRInputHandler` |
-
-The topic names are relative to the robot namespace (`/robot_a/teleop/mode_state` when the robot is `/robot_a`). QoS is `Reliable` + `TransientLocal`. A dexterous hand or a UI reads the status topic. Open/close and percent commands stay on `*/target_command` and `*/target_percent`. The foot pedal publishes `teleop/controller_state` only.
+Topic, type, QoS, namespace, and fields: {ref}`Teleop topics and data <teleop-topics-and-data>`. Wuji glove topics are on [wuji_glove_teleop](5-wuji_glove.md). Vive Tracker lists its `/teleop/left_ee_pose` and `/teleop/right_ee_pose` on [vive_tracker_teleop](6-vive_tracker.md).

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-11-26 06:49+0000\n"
+"POT-Creation-Date: 2026-11-26 07:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1258,7 +1258,12 @@ msgid ""
 "/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md). The fa-"
 "py-libraries `./run.sh vr-record` bag records the same pose, button, "
 "stick, and trigger topics."
-msgstr "`xr_target_node`（[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)）为 WebXR（`./run.sh vr`）和 XRoboToolkit（`./run.sh vr-xrt`）发布这一组话题。协议见 [PROTOCOL_CN.md](https://github.com/fiveages-sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)。fa-py-libraries 的 `./run.sh vr-record` 录的是同一组位姿、按钮、摇杆和扳机话题。"
+msgstr ""
+"`xr_target_node`（[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)）为"
+" WebXR（`./run.sh vr`）和 XRoboToolkit（`./run.sh vr-xrt`）发布这一组话题。协议见 "
+"[PROTOCOL_CN.md](https://github.com/fiveages-"
+"sim/vr_pose_publisher/blob/main/docs/PROTOCOL_CN.md)。fa-py-libraries 的 "
+"`./run.sh vr-record` 录的是同一组位姿、按钮、摇杆和扳机话题。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:178
 #: ae65a201a7d54e3683ac17b978733ccd
@@ -1332,7 +1337,9 @@ msgstr "`/teleop/thumbstick_axes`"
 msgid ""
 "Left stick in `linear.x` / `linear.y`, right stick in `angular.x` / "
 "`angular.y` (about −1 to 1). Inside the 0.1 deadzone the value is `0.0`"
-msgstr "左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在 0.1 死区内时发布 `0.0`"
+msgstr ""
+"左摇杆在 `linear.x` / `linear.y`，右摇杆在 `angular.x` / `angular.y`（大约 −1 到 1）。落在"
+" 0.1 死区内时发布 `0.0`"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:178
 #: 39fc803385b2422c9f9b9329fe5ce948
@@ -1374,14 +1381,19 @@ msgid ""
 "XRoboToolkit publishes when the VR `timeStampNs` changes: about 90 Hz "
 "with the default Pico App, and about 400 Hz with the enterprise send rate"
 " over USB."
-msgstr "位姿是 `geometry_msgs/Pose`（没有 `header`），在机器人世界系（`x` 向前、`y` 向左、`z` 向上）。WebXR 用固定 30 Hz 定时器发布。XRoboToolkit 在 VR `timeStampNs` 变化时发布：默认 Pico App 大约 90 Hz，企业发送速率走 USB 时大约 400 Hz。"
+msgstr ""
+"位姿是 `geometry_msgs/Pose`（没有 `header`），在机器人世界系（`x` 向前、`y` 向左、`z` 向上）。WebXR"
+" 用固定 30 Hz 定时器发布。XRoboToolkit 在 VR `timeStampNs` 变化时发布：默认 Pico App 大约 90 "
+"Hz，企业发送速率走 USB 时大约 400 Hz。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:201
 #: 224e9032661e4ea88841ddb563ac9c05
 msgid ""
 "Pull depth stays on `/teleop/trigger_values` every frame. The press edge "
 "is a separate code on `/teleop/controller_state` (`9` left, `10` right)."
-msgstr "行程深度每帧都在 `/teleop/trigger_values`。按下边沿是 `/teleop/controller_state` 上的另一个码（左 `9`，右 `10`）。"
+msgstr ""
+"行程深度每帧都在 `/teleop/trigger_values`。按下边沿是 `/teleop/controller_state` "
+"上的另一个码（左 `9`，右 `10`）。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:203
 #: bc8bc24f4d0c44fc8ea138acf7f04d20
@@ -1393,16 +1405,26 @@ msgid ""
 "controller poses. Grippers that are in percent mode follow "
 "`trigger_values`. The latched mode is `teleop/mode_state` "
 "(`TeleopModeState`). Headset button behavior: {ref}`VR Teleoperation "
-"<controller-buttons>`. How to read the latch: {ref}`teleop-mode-status`."
-msgstr "`arms_target_manager` 里的 `VRInputHandler` 订阅位姿话题、`/teleop/controller_state`、`/teleop/thumbstick_axes` 和 `/teleop/trigger_values`。UPDATE 时它用手柄位姿驱动手臂目标。百分比模式的夹爪跟随 `trigger_values`。锁存模式是 `teleop/mode_state`（`TeleopModeState`）。头显按键：{ref}`VR 遥操作 <controller-buttons>`。怎么读锁存：{ref}`teleop-mode-status`。"
+"<controller-buttons>`."
+msgstr ""
+"`arms_target_manager` 里的 `VRInputHandler` "
+"订阅位姿话题、`/teleop/controller_state`、`/teleop/thumbstick_axes` 和 "
+"`/teleop/trigger_values`。UPDATE 时它用手柄位姿驱动手臂目标。百分比模式的夹爪跟随 "
+"`trigger_values`。锁存模式是 "
+"`teleop/mode_state`（`TeleopModeState`）。头显按键：{ref}`VR 遥操作 <controller-"
+"buttons>`。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:205
 #: 1d2277cd33c24afaa85c2a4a4a9b6233
+#, python-brace-format
 msgid ""
 "The names above are the root topics in the protocol (`/teleop/...`). "
-"`teleop/mode_state` is relative to the robot namespace; the VR how-to "
-"shows the latch fields."
-msgstr "上面这些名字是协议里的根话题（`/teleop/...`）。`teleop/mode_state` 相对机器人命名空间；锁存字段见 VR 遥操作页。"
+"`teleop/mode_state` is relative to the robot namespace. Topic, type, QoS,"
+" and the status fields: {ref}`Teleop topics and data <teleop-topics-and-"
+"data>`."
+msgstr ""
+"上面这些名字是协议里的根话题（`/teleop/...`）。`teleop/mode_state` 相对机器人命名空间。话题、类型、QoS "
+"和状态字段见 {ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:207
 #: b9577247e0644b61a6548b1cb6eb5455
@@ -1410,7 +1432,10 @@ msgid ""
 "Optical wrist presets also publish `/teleop/optical_r0_caps`, "
 "`/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and "
 "`/teleop/mirror_mode`. The handshake is in the same protocol."
-msgstr "光学腕预设还会发布 `/teleop/optical_r0_caps`、`/teleop/optical_r0_request`、`/teleop/optical_r0_ready` 和 `/teleop/mirror_mode`。握手过程在同一份协议里。"
+msgstr ""
+"光学腕预设还会发布 "
+"`/teleop/optical_r0_caps`、`/teleop/optical_r0_request`、`/teleop/optical_r0_ready`"
+" 和 `/teleop/mirror_mode`。握手过程在同一份协议里。"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:209
 #: e088ab71ed234b68a1b3e64cccad10dc
@@ -2446,30 +2471,35 @@ msgstr "[VR 遥操作](../2-how_to/5-teleoperation/6-vr_teleop.md)"
 
 #: ../../source/3-concepts/4-fsm_and_topics.md:379
 #: aa7e6b74fab6479289d607734d75a792
+msgid "[Teleop topics and data](../4-reference/teleop/8-topics_and_data.md)"
+msgstr "[遥操相关话题与数据说明](../4-reference/teleop/8-topics_and_data.md)"
+
+#: ../../source/3-concepts/4-fsm_and_topics.md:380
+#: aa7e6b74fab6479289d607734d75a792
 msgid "[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)"
 msgstr "[vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:380
+#: ../../source/3-concepts/4-fsm_and_topics.md:381
 #: 2908fda3d8da453884f030cf63b1b4e3
 msgid "[Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)"
 msgstr "[使用 Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:381
+#: ../../source/3-concepts/4-fsm_and_topics.md:382
 #: eed60a8953e947ad9f4ae9754247160b
 msgid "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 msgstr "[basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:382
+#: ../../source/3-concepts/4-fsm_and_topics.md:383
 #: 5dd2ab589ad74ef28454f7b20c1c997e
 msgid "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 msgstr "[ocs2_arm_controller](../4-reference/controllers/2-ocs2_arm_controller.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:383
+#: ../../source/3-concepts/4-fsm_and_topics.md:384
 #: 2948fed9e763451ba19ae1f36e513e28
 msgid "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 msgstr "[ocs2-wbc-controller](../4-reference/controllers/3-ocs2_wbc.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:384
+#: ../../source/3-concepts/4-fsm_and_topics.md:385
 #: d89a033d4b0e4b59afcfa5cfb59e7873
 msgid ""
 "[Adaptive Gripper "
@@ -2478,17 +2508,17 @@ msgstr ""
 "[Adaptive Gripper "
 "Controller](../4-reference/controllers/6-gripper_teleop_plugins.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:385
+#: ../../source/3-concepts/4-fsm_and_topics.md:386
 #: 085aec34c1fe4eeead9600e32e4a553f
 msgid "[Controllers reference](../4-reference/controllers/0-index.md)"
 msgstr "[控制器参考](../4-reference/controllers/0-index.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:386
+#: ../../source/3-concepts/4-fsm_and_topics.md:387
 #: b4cab94640dc4314bfe462c33ab6b046
 msgid "[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
 msgstr "[ros2_robot_interface](../4-reference/python_apps/1-ros2_robot_interface.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:387
+#: ../../source/3-concepts/4-fsm_and_topics.md:388
 #: f2d5789a33e3480c845907fc2dfbc88f
 msgid ""
 "[arms_target_manager README](https://github.com/fiveages-"
@@ -2497,7 +2527,7 @@ msgstr ""
 "[arms_target_manager README](https://github.com/fiveages-"
 "sim/arms_ros2_control/blob/9a1da3ba3747b3042866422c2269c1d49bb02f48/command/arms_target_manager/README.md)"
 
-#: ../../source/3-concepts/4-fsm_and_topics.md:388
+#: ../../source/3-concepts/4-fsm_and_topics.md:389
 #: 8ad4a611eb394e348ef3bd835d0f1508
 #, #
 msgid ""

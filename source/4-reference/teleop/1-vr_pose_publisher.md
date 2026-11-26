@@ -62,7 +62,7 @@ Requires the **edition-matching** XRoboToolkit App on the headset (Enterprise â‰
 
 ## Topics Published
 
-`xr_target_node` publishes the `/teleop/*` set for both backends. Names, types, fields, and rates: [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics).
+`xr_target_node` publishes the `/teleop/*` set for both backends. Names, types, fields, and rates: [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics). The status latch for that stream is {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 ## Configuration
 

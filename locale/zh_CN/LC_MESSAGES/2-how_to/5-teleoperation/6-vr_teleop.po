@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FiveAges Sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 06:57+0000\n"
+"POT-Creation-Date: 2026-11-26 07:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -222,7 +222,9 @@ msgid ""
 "from controller tracking. The MPC controller then generates joint "
 "trajectories to follow these targets. Optical wrist and bare-hand "
 "gestures are [Hand tracking](#vr-hand-tracking)."
-msgstr "走手柄时，VR 遥操作按手柄追踪发布末端位姿目标。MPC 控制器再生成关节轨迹去跟这些目标。光学腕和空手手势见 [手部追踪](#vr-hand-tracking)。"
+msgstr ""
+"走手柄时，VR 遥操作按手柄追踪发布末端位姿目标。MPC 控制器再生成关节轨迹去跟这些目标。光学腕和空手手势见 [手部追踪](#vr-hand-"
+"tracking)。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:44
 #: 8e806b77665d4e03b46f6ccf61e46f82
@@ -274,7 +276,9 @@ msgid ""
 "What `./init.sh all` does: submodules + Python 3.12 env + "
 "`ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher` / "
 "`xr_hand_retarget`."
-msgstr "`./init.sh all` 会做：子模块 + Python 3.12 环境 + `ros2_robot_interface` / `ros2-viser` / `vr_pose_publisher` / `xr_hand_retarget`。"
+msgstr ""
+"`./init.sh all` 会做：子模块 + Python 3.12 环境 + `ros2_robot_interface` / "
+"`ros2-viser` / `vr_pose_publisher` / `xr_hand_retarget`。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:61
 #: 2ae739f30612407aa7e28dfe45e16a97
@@ -518,7 +522,10 @@ msgid ""
 "`configs/local.yaml`: `xhand1`, `wuji`, `o6`, `l6`, `o7`. `FA_HAND` "
 "overrides `local.yaml`. `FA_HAND=none` or `--no-hands` keeps the wrist "
 "and does not start the hands."
-msgstr "`wrist` 把光学腕六自由度发给手臂，把空手手势发给灵巧手。手型用 `FA_HAND`，或 `configs/local.yaml` 里的 `hands.type`：`xhand1`、`wuji`、`o6`、`l6`、`o7`。`FA_HAND` 覆盖 `local.yaml`。`FA_HAND=none` 或 `--no-hands` 只留光学腕，不启动灵巧手。"
+msgstr ""
+"`wrist` 把光学腕六自由度发给手臂，把空手手势发给灵巧手。手型用 `FA_HAND`，或 `configs/local.yaml` 里的 "
+"`hands.type`：`xhand1`、`wuji`、`o6`、`l6`、`o7`。`FA_HAND` 覆盖 "
+"`local.yaml`。`FA_HAND=none` 或 `--no-hands` 只留光学腕，不启动灵巧手。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:134
 #: cf220d5ce7494d5fa81532373b98a5b8
@@ -526,14 +533,19 @@ msgid ""
 "FA_HAND=wuji ./run.sh vr-xrt wrist\n"
 "FA_HAND=none ./run.sh vr-xrt wrist\n"
 "./run.sh vr-xrt wrist --no-hands"
-msgstr "FA_HAND=wuji ./run.sh vr-xrt wrist\nFA_HAND=none ./run.sh vr-xrt wrist\n./run.sh vr-xrt wrist --no-hands"
+msgstr ""
+"FA_HAND=wuji ./run.sh vr-xrt wrist\n"
+"FA_HAND=none ./run.sh vr-xrt wrist\n"
+"./run.sh vr-xrt wrist --no-hands"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:140
 #: 93820b092ce347d595e9120f0c1091a4
 msgid ""
 "`./run.sh vr-hand` asks which hand, then starts this same wrist path. A "
 "choice other than `none` is written to `configs/local.yaml`."
-msgstr "`./run.sh vr-hand` 先问手型，再启动同一条光学腕路径。除 `none` 以外的选择会写入 `configs/local.yaml`。"
+msgstr ""
+"`./run.sh vr-hand` 先问手型，再启动同一条光学腕路径。除 `none` 以外的选择会写入 "
+"`configs/local.yaml`。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:142
 #: 872d0ea0652743bf9d9ddac575183fcc
@@ -552,7 +564,11 @@ msgid ""
 "**Hand** on and **Controller** off. The physical controllers can stay on "
 "the desk. Close the panel with the top-right **X** before teleop, so "
 "later rays stay on the passthrough view. That close is the clip above."
-msgstr "手部追踪的开关在 XRoboToolkit 浮动设置面板上，不是 RViz 遥操作 HUD。这段录像（Pico 企业版透视，XRoboToolkit 1.1.2）里，网络状态已经是 **WORKING**，共享网络已开，企业追踪已勾选。Tracking 下面，Head 保持开；把 **Hand** 打开，**Controller** 关掉。实体手柄可以留在桌上。遥操作前用右上角 **X** 关掉面板，之后的射线才留在透视画面上。关掉面板的操作见上面那段录像。"
+msgstr ""
+"手部追踪的开关在 XRoboToolkit 浮动设置面板上，不是 RViz 遥操作 HUD。这段录像（Pico "
+"企业版透视，XRoboToolkit 1.1.2）里，网络状态已经是 **WORKING**，共享网络已开，企业追踪已勾选。Tracking "
+"下面，Head 保持开；把 **Hand** 打开，**Controller** 关掉。实体手柄可以留在桌上。遥操作前用右上角 **X** "
+"关掉面板，之后的射线才留在透视画面上。关掉面板的操作见上面那段录像。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:146
 #: 5681ce28b3cc4217a8c9318bae493845
@@ -561,7 +577,11 @@ msgid ""
 "  <source src=\"../../_static/videos/vr-gesture-hand-tracking.mp4\" "
 "type=\"video/mp4\">\n"
 "</video>"
-msgstr "<video controls preload=\"metadata\" width=\"100%\">\n  <source src=\"../../_static/videos/vr-gesture-hand-tracking.mp4\" type=\"video/mp4\">\n</video>"
+msgstr ""
+"<video controls preload=\"metadata\" width=\"100%\">\n"
+"  <source src=\"../../_static/videos/vr-gesture-hand-tracking.mp4\" "
+"type=\"video/mp4\">\n"
+"</video>"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:152
 #: 44ee67116ac74b2c9d2137e7031f589e
@@ -576,7 +596,9 @@ msgid ""
 "The foot pedal still publishes events on `teleop/controller_state` (FSM, "
 "UPDATE / STORAGE, mirror). With no pedal, `./run.sh vr-ocs2` publishes "
 "`/fsm_command` `3` (OCS2)."
-msgstr "脚踏板仍把事件发在 `teleop/controller_state`（FSM、UPDATE / STORAGE、镜像）。没有脚踏板时，`./run.sh vr-ocs2` 发布 `/fsm_command` `3`（OCS2）。"
+msgstr ""
+"脚踏板仍把事件发在 `teleop/controller_state`（FSM、UPDATE / "
+"STORAGE、镜像）。没有脚踏板时，`./run.sh vr-ocs2` 发布 `/fsm_command` `3`（OCS2）。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:156
 #: 780b7768db0143f7a3dc969b8cbf36c2
@@ -586,7 +608,11 @@ msgid ""
 "dexterous-hand joint command is `q_des` ([xr_hand_retarget "
 "README](https://github.com/fiveages-"
 "sim/xr_hand_retarget/blob/main/README.md))."
-msgstr "腕部和头显位姿仍在 [VR 发布话题](../../3-concepts/4-fsm_and_topics.md#vr-published-topics) 的 `/teleop/*` 里。灵巧手关节命令是 `q_des`（[xr_hand_retarget README](https://github.com/fiveages-sim/xr_hand_retarget/blob/main/README.md)）。"
+msgstr ""
+"腕部和头显位姿仍在 [VR 发布话题](../../3-concepts/4-fsm_and_topics.md#vr-published-"
+"topics) 的 `/teleop/*` 里。灵巧手关节命令是 `q_des`（[xr_hand_retarget "
+"README](https://github.com/fiveages-"
+"sim/xr_hand_retarget/blob/main/README.md)）。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:158
 #: 093a6c4ce000483fabac9f51401a19eb
@@ -594,13 +620,13 @@ msgid "Topics"
 msgstr "主题"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:160
-#: 258e8b89f742456086411670ecbd980b
+#: e3fd71b004014ebcb22513ed36023cdf
+#, python-brace-format
 msgid ""
-"Poses, stick axes, and trigger pull are on [VR published "
-"topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics)."
+"Which topic to subscribe to, the message type, QoS, namespace, and the "
+"status fields: {ref}`Teleop topics and data <teleop-topics-and-data>`."
 msgstr ""
-"位姿、摇杆轴和扳机行程见 [VR 发布话题](../../3-concepts/4-fsm_and_topics.md#vr-published-"
-"topics)。"
+"订阅哪个话题、消息类型、QoS、命名空间和状态字段：{ref}`遥操相关话题与数据说明 <teleop-topics-and-data>`。"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:162
 #: cf35d7d61ac64a009d98ec3f121a6baa
@@ -1801,15 +1827,24 @@ msgstr ""
 "`effort`）"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:385
-#: 2c43b894d50b4cad9e338882d9bb9d93
+#: 42279bdfae7541eba7a16bfb349edc81
 msgid ""
-"[FSM and Topics](../../3-concepts/4-fsm_and_topics.md#vr-published-"
-"topics) — published `/teleop/*` topics, and `/fsm_command`"
+"[Teleop topics and data](../../4-reference/teleop/8-topics_and_data.md) —"
+" which topic to subscribe to, the message type, QoS, and the fields"
 msgstr ""
-"[状态机与话题](../../3-concepts/4-fsm_and_topics.md#vr-published-topics) — 已发布的"
-" `/teleop/*` 话题，以及 `/fsm_command`"
+"[遥操相关话题与数据说明](../../4-reference/teleop/8-topics_and_data.md) — "
+"订阅哪个话题、消息类型、QoS 和字段"
 
 #: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:386
+#: 2c43b894d50b4cad9e338882d9bb9d93
+msgid ""
+"[FSM and Topics](../../3-concepts/4-fsm_and_topics.md) — `/fsm_command`, "
+"and WBC `current_state` / `/mode_command`"
+msgstr ""
+"[FSM 与话题](../../3-concepts/4-fsm_and_topics.md) — `/fsm_command`，以及 WBC "
+"的 `current_state` / `/mode_command`"
+
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:387
 #: 4fb5a2fd755c4b72b844808f439da749
 msgid ""
 "[ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md)"
@@ -1818,7 +1853,7 @@ msgstr ""
 "[ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md)"
 " — `default_gains` / `pd_gains` 和 MIX 检测"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:387
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:388
 #: e0252e10867f4ee5a65f8615bc8e12ac
 msgid ""
 "[marvin-ros2-control](../../4-reference/hardware/6-marvin.md) — Tianji "
@@ -1827,7 +1862,7 @@ msgstr ""
 "[marvin-ros2-control](../../4-reference/hardware/6-marvin.md) — 天玑位置 + "
 "`JOINT_IMPEDANCE`"
 
-#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:388
+#: ../../source/2-how_to/5-teleoperation/6-vr_teleop.md:389
 #: 9405158521f8415595e98c1fe90ccd22
 msgid ""
 "[vr_pose_publisher](../../4-reference/teleop/1-vr_pose_publisher.md) — "
@@ -2337,4 +2372,23 @@ msgstr ""
 #~ "`yb_pause_semantics` 仍为 false，`L`/`R` 先发事件 "
 #~ "`16`，等到锁存翻转后再发 `3` 或 `6`。控制输入卡片只读：当前臂 `L`/`R`"
 #~ " 或 `CHASSIS`，镜像，以及速度 `HIGH`/`LOW`。"
+
+#~ msgid ""
+#~ "Poses, stick axes, and trigger pull "
+#~ "are on [VR published "
+#~ "topics](../../3-concepts/4-fsm_and_topics.md#vr-published-"
+#~ "topics)."
+#~ msgstr ""
+#~ "位姿、摇杆轴和扳机行程见 [VR "
+#~ "发布话题](../../3-concepts/4-fsm_and_topics.md#vr-published-"
+#~ "topics)。"
+
+#~ msgid ""
+#~ "[FSM and Topics](../../3-concepts/4-fsm_and_topics.md"
+#~ "#vr-published-topics) — published "
+#~ "`/teleop/*` topics, and `/fsm_command`"
+#~ msgstr ""
+#~ "[状态机与话题](../../3-concepts/4-fsm_and_topics.md#vr-published-"
+#~ "topics) — 已发布的 `/teleop/*` 话题，以及 "
+#~ "`/fsm_command`"
 

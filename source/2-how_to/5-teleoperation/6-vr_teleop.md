@@ -157,7 +157,7 @@ Wrist and headset poses stay on the `/teleop/*` set in [VR published topics](../
 
 ## Topics
 
-Poses, stick axes, and trigger pull are on [VR published topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics).
+Which topic to subscribe to, the message type, QoS, namespace, and the status fields: {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 Mode changes and the latched mode use a separate pair of topics. [Read the current teleop mode](#teleop-mode-status).
 
@@ -382,7 +382,8 @@ FULL_BODY may warn that `base_footprint` does not exist (`lookupTransform` targe
 
 - [Force control and compliance](../4-controllers/13-force_control.md) — MIT-mode force control on Panthera HT / ARX; vendor joint impedance and payload identification on Tianji / Rokae
 - [Isomorphic Teleop](7-isomorphic_teleop.md) — master–slave joint following (Panthera HT `mode:=mit` / `effort`)
-- [FSM and Topics](../../3-concepts/4-fsm_and_topics.md#vr-published-topics) — published `/teleop/*` topics, and `/fsm_command`
+- [Teleop topics and data](../../4-reference/teleop/8-topics_and_data.md) — which topic to subscribe to, the message type, QoS, and the fields
+- [FSM and Topics](../../3-concepts/4-fsm_and_topics.md) — `/fsm_command`, and WBC `current_state` / `/mode_command`
 - [ocs2_arm_controller](../../4-reference/controllers/2-ocs2_arm_controller.md) — `default_gains` / `pd_gains` and MIX detection
 - [marvin-ros2-control](../../4-reference/hardware/6-marvin.md) — Tianji position + `JOINT_IMPEDANCE`
 - [vr_pose_publisher](../../4-reference/teleop/1-vr_pose_publisher.md) — the node that publishes `/teleop/*`

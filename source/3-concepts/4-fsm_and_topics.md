@@ -200,9 +200,9 @@ Poses are `geometry_msgs/Pose` (no `header`), in the robot world frame (`x` forw
 
 Pull depth stays on `/teleop/trigger_values` every frame. The press edge is a separate code on `/teleop/controller_state` (`9` left, `10` right).
 
-`VRInputHandler` in `arms_target_manager` subscribes to the pose topics, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`. In UPDATE it drives arm targets from the controller poses. Grippers that are in percent mode follow `trigger_values`. The latched mode is `teleop/mode_state` (`TeleopModeState`). Headset button behavior: {ref}`VR Teleoperation <controller-buttons>`. How to read the latch: {ref}`teleop-mode-status`.
+`VRInputHandler` in `arms_target_manager` subscribes to the pose topics, `/teleop/controller_state`, `/teleop/thumbstick_axes`, and `/teleop/trigger_values`. In UPDATE it drives arm targets from the controller poses. Grippers that are in percent mode follow `trigger_values`. The latched mode is `teleop/mode_state` (`TeleopModeState`). Headset button behavior: {ref}`VR Teleoperation <controller-buttons>`.
 
-The names above are the root topics in the protocol (`/teleop/...`). `teleop/mode_state` is relative to the robot namespace; the VR how-to shows the latch fields.
+The names above are the root topics in the protocol (`/teleop/...`). `teleop/mode_state` is relative to the robot namespace. Topic, type, QoS, and the status fields: {ref}`Teleop topics and data <teleop-topics-and-data>`.
 
 Optical wrist presets also publish `/teleop/optical_r0_caps`, `/teleop/optical_r0_request`, `/teleop/optical_r0_ready`, and `/teleop/mirror_mode`. The handshake is in the same protocol.
 
@@ -376,6 +376,7 @@ Python wraps **`ExecutePath`** as `execute_path` / `execute_left_path` / `execut
 ## Related
 
 - [VR Teleoperation](../2-how_to/5-teleoperation/6-vr_teleop.md)
+- [Teleop topics and data](../4-reference/teleop/8-topics_and_data.md)
 - [vr_pose_publisher](../4-reference/teleop/1-vr_pose_publisher.md)
 - [Use Basic Joint Controller](../2-how_to/4-controllers/11-basic_joint.md)
 - [basic_joint_controller](../4-reference/controllers/7-basic_joint_controller.md)
